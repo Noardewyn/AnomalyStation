@@ -2650,8 +2650,8 @@ proc	/datum/controller/global_vars	InitGlobalelectrolyzer_reactions	code/modules
 proc	/datum/controller/global_vars	InitGlobalhfr_fuels_list	code/modules/atmospherics/machinery/components/fusion/hfr_fuel_datums.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalgas_recipe_meta	code/modules/atmospherics/machinery/components/gas_recipe_machines/atmos_machines_recipes.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalatmos_components	code/modules/atmospherics/machinery/pipes/smart.dm:1		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalthe_gateway	code/modules/awaymissions/gateway.dm:2		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalgateway_destinations	code/modules/awaymissions/gateway.dm:4		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalthe_gateway	code/modules/awaymissions/gateway.dm:2		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalgateway_destinations	code/modules/awaymissions/gateway.dm:4		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalsc_safecode1	code/modules/awaymissions/mission_code/stationCollision.dm:77		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalsc_safecode2	code/modules/awaymissions/mission_code/stationCollision.dm:78		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalsc_safecode3	code/modules/awaymissions/mission_code/stationCollision.dm:79		no	-	proc root
@@ -37809,27 +37809,27 @@ proc	/datum/autowiki/techweb/experimental	valid_node	code/modules/autowiki/pages
 type	/datum/autowiki/vending	/datum/autowiki	code/modules/autowiki/pages/vending.dm:2	inert	datum_autowiki_vending	0	0
 proc	/datum/autowiki/vending	generate	code/modules/autowiki/pages/vending.dm:4		no	-	proc
 proc	/datum/autowiki/vending	format_product_list	code/modules/autowiki/pages/vending.dm:50	product_list	no	-	proc root
-type	/datum/gateway_destination	/datum	code/modules/awaymissions/gateway.dm:12	inert	datum_gateway_destination	0	0
-proc	/datum/gateway_destination	is_available	code/modules/awaymissions/gateway.dm:18		no	-	proc root
-proc	/datum/gateway_destination	get_available_reason	code/modules/awaymissions/gateway.dm:22		no	-	proc root
-proc	/datum/gateway_destination	incoming_pass_check	code/modules/awaymissions/gateway.dm:29	AM	no	-	proc root
-proc	/datum/gateway_destination	get_target_turf	code/modules/awaymissions/gateway.dm:33		no	-	proc root
-proc	/datum/gateway_destination	post_transfer	code/modules/awaymissions/gateway.dm:37	AM	no	-	proc root
-proc	/datum/gateway_destination	activate	code/modules/awaymissions/gateway.dm:44	activated	no	-	proc root
-proc	/datum/gateway_destination	deactivate	code/modules/awaymissions/gateway.dm:48	deactivated	no	-	proc root
-proc	/datum/gateway_destination	get_ui_data	code/modules/awaymissions/gateway.dm:52		no	-	proc root
-type	/datum/gateway_destination/gateway	/datum/gateway_destination	code/modules/awaymissions/gateway.dm:64	inert	datum_gateway_destination_gateway	0	0
-proc	/datum/gateway_destination/gateway	activate	code/modules/awaymissions/gateway.dm:67	activated	no	-	proc
-proc	/datum/gateway_destination/gateway	deactivate	code/modules/awaymissions/gateway.dm:72	deactivated	no	-	proc
-proc	/datum/gateway_destination/gateway	is_available	code/modules/awaymissions/gateway.dm:76		no	-	proc
-proc	/datum/gateway_destination/gateway	get_available_reason	code/modules/awaymissions/gateway.dm:79		no	-	proc
-proc	/datum/gateway_destination/gateway	get_target_turf	code/modules/awaymissions/gateway.dm:88		no	-	proc
-proc	/datum/gateway_destination/gateway	post_transfer	code/modules/awaymissions/gateway.dm:91	AM	no	-	proc
-type	/datum/gateway_destination/gateway/home	/datum/gateway_destination/gateway	code/modules/awaymissions/gateway.dm:98	inert	datum_gateway_destination_gateway_home	0	0
-proc	/datum/gateway_destination/gateway/home	incoming_pass_check	code/modules/awaymissions/gateway.dm:98	AM	no	-	proc
-proc	/datum/gateway_destination/gateway/home	check_exile_implant	code/modules/awaymissions/gateway.dm:114	L	no	-	proc root
-type	/datum/gateway_destination/point	/datum/gateway_destination	code/modules/awaymissions/gateway.dm:123	inert	datum_gateway_destination_point	0	0
-proc	/datum/gateway_destination/point	get_target_turf	code/modules/awaymissions/gateway.dm:127		no	-	proc
+type	/datum/gateway_destination	/datum	code/modules/awaymissions/gateway.dm:12	live	datum_gateway_destination	1	0
+proc	/datum/gateway_destination	is_available	code/modules/awaymissions/gateway.dm:18		yes	full	proc root
+proc	/datum/gateway_destination	get_available_reason	code/modules/awaymissions/gateway.dm:22		yes	full	proc root
+proc	/datum/gateway_destination	incoming_pass_check	code/modules/awaymissions/gateway.dm:29	AM	yes	full	proc root
+proc	/datum/gateway_destination	get_target_turf	code/modules/awaymissions/gateway.dm:33		yes	full	proc root
+proc	/datum/gateway_destination	post_transfer	code/modules/awaymissions/gateway.dm:37	AM	yes	full	proc root
+proc	/datum/gateway_destination	activate	code/modules/awaymissions/gateway.dm:44	activated	yes	full	proc root
+proc	/datum/gateway_destination	deactivate	code/modules/awaymissions/gateway.dm:48	deactivated	yes	full	proc root
+proc	/datum/gateway_destination	get_ui_data	code/modules/awaymissions/gateway.dm:52		yes	full	proc root
+type	/datum/gateway_destination/gateway	/datum/gateway_destination	code/modules/awaymissions/gateway.dm:64	live	datum_gateway_destination_gateway	1	0
+proc	/datum/gateway_destination/gateway	activate	code/modules/awaymissions/gateway.dm:67	activated	yes	full	proc
+proc	/datum/gateway_destination/gateway	deactivate	code/modules/awaymissions/gateway.dm:72	deactivated	yes	full	proc
+proc	/datum/gateway_destination/gateway	is_available	code/modules/awaymissions/gateway.dm:76		yes	full	proc
+proc	/datum/gateway_destination/gateway	get_available_reason	code/modules/awaymissions/gateway.dm:79		yes	full	proc
+proc	/datum/gateway_destination/gateway	get_target_turf	code/modules/awaymissions/gateway.dm:88		yes	full	proc
+proc	/datum/gateway_destination/gateway	post_transfer	code/modules/awaymissions/gateway.dm:91	AM	yes	full	proc
+type	/datum/gateway_destination/gateway/home	/datum/gateway_destination/gateway	code/modules/awaymissions/gateway.dm:98	live	datum_gateway_destination_gateway_home	1	0
+proc	/datum/gateway_destination/gateway/home	incoming_pass_check	code/modules/awaymissions/gateway.dm:98	AM	yes	full	proc
+proc	/datum/gateway_destination/gateway/home	check_exile_implant	code/modules/awaymissions/gateway.dm:114	L	yes	full	proc root
+type	/datum/gateway_destination/point	/datum/gateway_destination	code/modules/awaymissions/gateway.dm:123	live	datum_gateway_destination_point	1	0
+proc	/datum/gateway_destination/point	get_target_turf	code/modules/awaymissions/gateway.dm:127		yes	full	proc
 type	/datum/map_generator_module	/datum	code/modules/procedural_mapping/mapGeneratorModule.dm:3	live	datum_map_generator_module	1	0
 proc	/datum/map_generator_module	Destroy	code/modules/procedural_mapping/mapGeneratorModule.dm:11	force	yes	full	proc
 proc	/datum/map_generator_module	sync	code/modules/procedural_mapping/mapGeneratorModule.dm:16	mum	yes	full	proc root
@@ -50575,14 +50575,14 @@ proc	/atom/movable/screen/map_view/camera	generate_view	code/game/machinery/comp
 proc	/atom/movable/screen/map_view/camera	display_to_client	code/game/machinery/computer/camera.dm:178	show_to	yes	full	proc
 proc	/atom/movable/screen/map_view/camera	show_camera	code/game/machinery/computer/camera.dm:182	visible_turfs,size_x,size_y	yes	full	proc root
 proc	/atom/movable/screen/map_view/camera	show_camera_static	code/game/machinery/computer/camera.dm:187		yes	full	proc root
-type	/atom/movable/screen/map_view/gateway_port	/atom/movable/screen/map_view	code/modules/awaymissions/gateway.dm:399	inert	atom_movable_screen_map_view_gateway_port	0	0
-proc	/atom/movable/screen/map_view/gateway_port	Initialize	code/modules/awaymissions/gateway.dm:403	mapload,hud_owner	no	-	proc
-proc	/atom/movable/screen/map_view/gateway_port	generate_view	code/modules/awaymissions/gateway.dm:413	map_key	no	-	proc
-proc	/atom/movable/screen/map_view/gateway_port	Destroy	code/modules/awaymissions/gateway.dm:418		no	-	proc
-proc	/atom/movable/screen/map_view/gateway_port	display_on_ui_visible	code/modules/awaymissions/gateway.dm:422	show_to	no	-	proc
-proc	/atom/movable/screen/map_view/gateway_port	setup_visuals	code/modules/awaymissions/gateway.dm:426	D	no	-	proc root
-proc	/atom/movable/screen/map_view/gateway_port	reset_visuals	code/modules/awaymissions/gateway.dm:431		no	-	proc root
-proc	/atom/movable/screen/map_view/gateway_port	update_portal_filters	code/modules/awaymissions/gateway.dm:436		no	-	proc root
+type	/atom/movable/screen/map_view/gateway_port	/atom/movable/screen/map_view	code/modules/awaymissions/gateway.dm:399	live	atom_movable_screen_map_view_gateway_port	1	0
+proc	/atom/movable/screen/map_view/gateway_port	Initialize	code/modules/awaymissions/gateway.dm:403	mapload,hud_owner	yes	full	proc
+proc	/atom/movable/screen/map_view/gateway_port	generate_view	code/modules/awaymissions/gateway.dm:413	map_key	yes	full	proc
+proc	/atom/movable/screen/map_view/gateway_port	Destroy	code/modules/awaymissions/gateway.dm:418		yes	full	proc
+proc	/atom/movable/screen/map_view/gateway_port	display_on_ui_visible	code/modules/awaymissions/gateway.dm:422	show_to	yes	full	proc
+proc	/atom/movable/screen/map_view/gateway_port	setup_visuals	code/modules/awaymissions/gateway.dm:426	D	yes	full	proc root
+proc	/atom/movable/screen/map_view/gateway_port	reset_visuals	code/modules/awaymissions/gateway.dm:431		yes	full	proc root
+proc	/atom/movable/screen/map_view/gateway_port	update_portal_filters	code/modules/awaymissions/gateway.dm:436		yes	full	proc root
 type	/atom/movable/screen/map_view/char_preview	/atom/movable/screen/map_view	code/modules/client/preferences.dm:354	live	atom_movable_screen_map_view_char_preview	1	0
 proc	/atom/movable/screen/map_view/char_preview	Initialize	code/modules/client/preferences.dm:363	mapload,hud_owner,preferences	yes	full	proc
 proc	/atom/movable/screen/map_view/char_preview	Destroy	code/modules/client/preferences.dm:367		yes	full	proc
@@ -80685,27 +80685,27 @@ proc	/obj/item/modular_computer	ui_data	code/modules/modular_computers/computers
 proc	/obj/item/modular_computer	ui_act	code/modules/modular_computers/computers/item/computer_ui.dm:130	action,params,ui,state	yes	partial	proc
 proc	/obj/item/modular_computer	ui_host	code/modules/modular_computers/computers/item/computer_ui.dm:236		yes	full	proc
 proc	/obj/item/modular_computer	ui_close	code/modules/modular_computers/computers/item/computer_ui.dm:241	user	yes	full	proc
-type	/obj/item/modular_computer/laptop	/obj/item/modular_computer	code/modules/modular_computers/computers/item/laptop.dm:2	inert	obj_item_modular_computer_laptop	0	1
-proc	/obj/item/modular_computer/laptop	Initialize	code/modules/modular_computers/computers/item/laptop.dm:28	mapload	no	-	proc
-proc	/obj/item/modular_computer/laptop	examine	code/modules/modular_computers/computers/item/laptop.dm:35	user	no	-	proc
-proc	/obj/item/modular_computer/laptop	add_context	code/modules/modular_computers/computers/item/laptop.dm:40	source,context,held_item,user	no	-	proc
-proc	/obj/item/modular_computer/laptop	on_speed_potioned	code/modules/modular_computers/computers/item/laptop.dm:51	source	no	-	proc root
-proc	/obj/item/modular_computer/laptop	update_icon_state	code/modules/modular_computers/computers/item/laptop.dm:56		no	-	proc
-proc	/obj/item/modular_computer/laptop	update_overlays	code/modules/modular_computers/computers/item/laptop.dm:62		no	-	proc
-proc	/obj/item/modular_computer/laptop	attack_self	code/modules/modular_computers/computers/item/laptop.dm:68	user	no	-	proc
-proc	/obj/item/modular_computer/laptop	open_computer	code/modules/modular_computers/computers/item/laptop.dm:74		no	-	verb root
-proc	/obj/item/modular_computer/laptop	__gvb_open_computer	code/modules/modular_computers/computers/item/laptop.dm:74	structured_args	no	-	proc root
-proc	/obj/item/modular_computer/laptop	try_toggle_open	code/modules/modular_computers/computers/item/laptop.dm:78	user	no	-	proc root
-proc	/obj/item/modular_computer/laptop	click_alt	code/modules/modular_computers/computers/item/laptop.dm:89	user	no	-	proc
-proc	/obj/item/modular_computer/laptop	attack_hand_secondary	code/modules/modular_computers/computers/item/laptop.dm:95	user,modifiers	no	-	proc
-proc	/obj/item/modular_computer/laptop	toggle_open	code/modules/modular_computers/computers/item/laptop.dm:103	user	no	-	proc root
-proc	/obj/item/modular_computer/laptop	get_messenger_ending	code/modules/modular_computers/computers/item/laptop.dm:123		no	-	proc
-type	/obj/item/modular_computer/laptop/gamer	/obj/item/modular_computer/laptop	code/modules/bitrunning/objects/gimmick_disks/sports_disk.dm:84	inert	obj_item_modular_computer_laptop_gamer	1	0
+type	/obj/item/modular_computer/laptop	/obj/item/modular_computer	code/modules/modular_computers/computers/item/laptop.dm:2	live	obj_item_modular_computer_laptop	1	1
+proc	/obj/item/modular_computer/laptop	Initialize	code/modules/modular_computers/computers/item/laptop.dm:28	mapload	yes	full	proc
+proc	/obj/item/modular_computer/laptop	examine	code/modules/modular_computers/computers/item/laptop.dm:35	user	yes	full	proc
+proc	/obj/item/modular_computer/laptop	add_context	code/modules/modular_computers/computers/item/laptop.dm:40	source,context,held_item,user	stub	deferred	proc
+proc	/obj/item/modular_computer/laptop	on_speed_potioned	code/modules/modular_computers/computers/item/laptop.dm:51	source	yes	full	proc root
+proc	/obj/item/modular_computer/laptop	update_icon_state	code/modules/modular_computers/computers/item/laptop.dm:56		yes	full	proc
+proc	/obj/item/modular_computer/laptop	update_overlays	code/modules/modular_computers/computers/item/laptop.dm:62		yes	full	proc
+proc	/obj/item/modular_computer/laptop	attack_self	code/modules/modular_computers/computers/item/laptop.dm:68	user	yes	full	proc
+proc	/obj/item/modular_computer/laptop	open_computer	code/modules/modular_computers/computers/item/laptop.dm:74		yes	full	verb root
+proc	/obj/item/modular_computer/laptop	__gvb_open_computer	code/modules/modular_computers/computers/item/laptop.dm:74	structured_args	yes	full	proc root
+proc	/obj/item/modular_computer/laptop	try_toggle_open	code/modules/modular_computers/computers/item/laptop.dm:78	user	yes	full	proc root
+proc	/obj/item/modular_computer/laptop	click_alt	code/modules/modular_computers/computers/item/laptop.dm:89	user	yes	full	proc
+proc	/obj/item/modular_computer/laptop	attack_hand_secondary	code/modules/modular_computers/computers/item/laptop.dm:95	user,modifiers	yes	full	proc
+proc	/obj/item/modular_computer/laptop	toggle_open	code/modules/modular_computers/computers/item/laptop.dm:103	user	yes	full	proc root
+proc	/obj/item/modular_computer/laptop	get_messenger_ending	code/modules/modular_computers/computers/item/laptop.dm:123		yes	full	proc
+type	/obj/item/modular_computer/laptop/gamer	/obj/item/modular_computer/laptop	code/modules/bitrunning/objects/gimmick_disks/sports_disk.dm:84	live	obj_item_modular_computer_laptop_gamer	1	0
 proc	/obj/item/modular_computer/laptop/gamer	install_default_programs	code/modules/bitrunning/objects/gimmick_disks/sports_disk.dm:95		yes	full	proc
-type	/obj/item/modular_computer/laptop/buildable	/obj/item/modular_computer/laptop	code/modules/modular_computers/computers/item/laptop.dm:128	inert	obj_item_modular_computer_laptop_buildable	0	0
-type	/obj/item/modular_computer/laptop/preset	/obj/item/modular_computer/laptop	(implied by a subtype's path)	inert	obj_item_modular_computer_laptop_preset	0	1
-type	/obj/item/modular_computer/laptop/preset/civilian	/obj/item/modular_computer/laptop/preset	code/modules/modular_computers/computers/item/laptop_presets.dm:2	inert	obj_item_modular_computer_laptop_preset_civilian	0	1
-type	/obj/item/modular_computer/laptop/preset/mafia	/obj/item/modular_computer/laptop/preset	code/modules/modular_computers/computers/item/laptop_presets.dm:9	inert	obj_item_modular_computer_laptop_preset_mafia	0	0
+type	/obj/item/modular_computer/laptop/buildable	/obj/item/modular_computer/laptop	code/modules/modular_computers/computers/item/laptop.dm:128	live	obj_item_modular_computer_laptop_buildable	0	0
+type	/obj/item/modular_computer/laptop/preset	/obj/item/modular_computer/laptop	(implied by a subtype's path)	live	obj_item_modular_computer_laptop_preset	0	1
+type	/obj/item/modular_computer/laptop/preset/civilian	/obj/item/modular_computer/laptop/preset	code/modules/modular_computers/computers/item/laptop_presets.dm:2	live	obj_item_modular_computer_laptop_preset_civilian	0	1
+type	/obj/item/modular_computer/laptop/preset/mafia	/obj/item/modular_computer/laptop/preset	code/modules/modular_computers/computers/item/laptop_presets.dm:9	live	obj_item_modular_computer_laptop_preset_mafia	0	0
 type	/obj/item/modular_computer/pda	/obj/item/modular_computer	code/modules/modular_computers/computers/item/pda.dm:2	base	obj_item_modular_computer_pda	1	0
 proc	/obj/item/modular_computer/pda	Initialize	code/modules/modular_computers/computers/item/pda.dm:60	mapload	yes	full	proc
 proc	/obj/item/modular_computer/pda	Destroy	code/modules/modular_computers/computers/item/pda.dm:65		yes	full	proc
@@ -86610,14 +86610,14 @@ proc	/obj/machinery/computer/shuttle/syndicate	launch_check	code/modules/shuttle
 type	/obj/machinery/computer/shuttle/syndicate/recall	/obj/machinery/computer/shuttle/syndicate	code/modules/shuttle/shuttle_consoles/syndicate.dm:32	live	obj_machinery_computer_shuttle_syndicate_recall	1	0
 type	/obj/machinery/computer/shuttle/syndicate/drop_pod	/obj/machinery/computer/shuttle/syndicate	code/modules/shuttle/shuttle_consoles/syndicate.dm:37	live	obj_machinery_computer_shuttle_syndicate_drop_pod	1	0
 proc	/obj/machinery/computer/shuttle/syndicate/drop_pod	launch_check	code/modules/shuttle/shuttle_consoles/syndicate.dm:48	user	yes	full	proc
-type	/obj/machinery/computer/gateway_control	/obj/machinery/computer	code/modules/awaymissions/gateway.dm:332	inert	obj_machinery_computer_gateway_control	0	1
-proc	/obj/machinery/computer/gateway_control	Initialize	code/modules/awaymissions/gateway.dm:337	mapload,C	no	-	proc
-proc	/obj/machinery/computer/gateway_control	ui_interact	code/modules/awaymissions/gateway.dm:341	user,ui	no	-	proc
-proc	/obj/machinery/computer/gateway_control	ui_data	code/modules/awaymissions/gateway.dm:349	user	no	-	proc
-proc	/obj/machinery/computer/gateway_control	ui_act	code/modules/awaymissions/gateway.dm:363	action,params,ui,state	no	-	proc
-proc	/obj/machinery/computer/gateway_control	ui_close	code/modules/awaymissions/gateway.dm:380	user	no	-	proc
-proc	/obj/machinery/computer/gateway_control	try_to_linkup	code/modules/awaymissions/gateway.dm:384		no	-	proc root
-proc	/obj/machinery/computer/gateway_control	try_to_connect	code/modules/awaymissions/gateway.dm:387	D	no	-	proc root
+type	/obj/machinery/computer/gateway_control	/obj/machinery/computer	code/modules/awaymissions/gateway.dm:332	live	obj_machinery_computer_gateway_control	1	1
+proc	/obj/machinery/computer/gateway_control	Initialize	code/modules/awaymissions/gateway.dm:337	mapload,C	yes	full	proc
+proc	/obj/machinery/computer/gateway_control	ui_interact	code/modules/awaymissions/gateway.dm:341	user,ui	yes	full	proc
+proc	/obj/machinery/computer/gateway_control	ui_data	code/modules/awaymissions/gateway.dm:349	user	yes	full	proc
+proc	/obj/machinery/computer/gateway_control	ui_act	code/modules/awaymissions/gateway.dm:363	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/computer/gateway_control	ui_close	code/modules/awaymissions/gateway.dm:380	user	yes	full	proc
+proc	/obj/machinery/computer/gateway_control	try_to_linkup	code/modules/awaymissions/gateway.dm:384		yes	full	proc root
+proc	/obj/machinery/computer/gateway_control	try_to_connect	code/modules/awaymissions/gateway.dm:387	D	yes	full	proc root
 type	/obj/machinery/computer/tram_controls	/obj/machinery/computer	code/modules/transport/tram/tram_controls.dm:2	live	obj_machinery_computer_tram_controls	1	0
 proc	/obj/machinery/computer/tram_controls	ninjadrain_act	code/modules/mod/modules/modules_ninja.dm:637	ninja,hacking_module	stub	deferred	proc
 proc	/obj/machinery/computer/tram_controls	post_machine_initialize	code/modules/transport/tram/tram_controls.dm:53		yes	full	proc
@@ -87733,32 +87733,32 @@ proc	/obj/machinery/nebula_shielding/radiation	examine	code/game/machinery/nebul
 proc	/obj/machinery/nebula_shielding/radiation	generate_reward	code/game/machinery/nebula_shielding.dm:104		no	-	proc
 proc	/obj/machinery/nebula_shielding/radiation	screwdriver_act	code/game/machinery/nebula_shielding.dm:109	user,tool	no	-	proc
 proc	/obj/machinery/nebula_shielding/radiation	crowbar_act	code/game/machinery/nebula_shielding.dm:112	user,tool	no	-	proc
-type	/obj/machinery/pdapainter	/obj/machinery	code/game/machinery/PDApainter.dm:3	inert	obj_machinery_pdapainter	0	1
-proc	/obj/machinery/pdapainter	update_icon_state	code/game/machinery/PDApainter.dm:22		no	-	proc
-proc	/obj/machinery/pdapainter	update_overlays	code/game/machinery/PDApainter.dm:29		no	-	proc
-proc	/obj/machinery/pdapainter	Initialize	code/game/machinery/PDApainter.dm:38	mapload	no	-	proc
-proc	/obj/machinery/pdapainter	Destroy	code/game/machinery/PDApainter.dm:59		no	-	proc
-proc	/obj/machinery/pdapainter	on_deconstruction	code/game/machinery/PDApainter.dm:64	disassembled	no	-	proc
-proc	/obj/machinery/pdapainter	contents_explosion	code/game/machinery/PDApainter.dm:73	severity,target	no	-	proc
-proc	/obj/machinery/pdapainter	Exited	code/game/machinery/PDApainter.dm:91	gone,direction	no	-	proc
-proc	/obj/machinery/pdapainter	add_context	code/game/machinery/PDApainter.dm:100	source,context,held_item,user	no	-	proc
-proc	/obj/machinery/pdapainter	wrench_act	code/game/machinery/PDApainter.dm:125	user,tool	no	-	proc
-proc	/obj/machinery/pdapainter	welder_act	code/game/machinery/PDApainter.dm:131	user,tool	no	-	proc
-proc	/obj/machinery/pdapainter	item_interaction	code/game/machinery/PDApainter.dm:147	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/pdapainter	attack_hand_secondary	code/game/machinery/PDApainter.dm:154	user,modifiers	no	-	proc
-proc	/obj/machinery/pdapainter	insert_pda	code/game/machinery/PDApainter.dm:173	new_pda,user	no	-	proc root
-proc	/obj/machinery/pdapainter	eject_pda	code/game/machinery/PDApainter.dm:194	user	no	-	proc root
-proc	/obj/machinery/pdapainter	insert_id_card	code/game/machinery/PDApainter.dm:212	new_id_card,user	no	-	proc root
-proc	/obj/machinery/pdapainter	eject_id_card	code/game/machinery/PDApainter.dm:239	user	no	-	proc root
-proc	/obj/machinery/pdapainter	ui_interact	code/game/machinery/PDApainter.dm:249	user,ui	no	-	proc
-proc	/obj/machinery/pdapainter	ui_data	code/game/machinery/PDApainter.dm:255	user	no	-	proc
-proc	/obj/machinery/pdapainter	ui_static_data	code/game/machinery/PDApainter.dm:274	user	no	-	proc
-proc	/obj/machinery/pdapainter	ui_act	code/game/machinery/PDApainter.dm:282	action,params,ui,state	no	-	proc
-type	/obj/machinery/pdapainter/security	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:369	inert	obj_machinery_pdapainter_security	0	1
-type	/obj/machinery/pdapainter/medbay	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:374	inert	obj_machinery_pdapainter_medbay	0	1
-type	/obj/machinery/pdapainter/research	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:379	inert	obj_machinery_pdapainter_research	0	1
-type	/obj/machinery/pdapainter/engineering	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:384	inert	obj_machinery_pdapainter_engineering	0	1
-type	/obj/machinery/pdapainter/supply	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:389	inert	obj_machinery_pdapainter_supply	0	1
+type	/obj/machinery/pdapainter	/obj/machinery	code/game/machinery/PDApainter.dm:3	live	obj_machinery_pdapainter	1	1
+proc	/obj/machinery/pdapainter	update_icon_state	code/game/machinery/PDApainter.dm:22		yes	full	proc
+proc	/obj/machinery/pdapainter	update_overlays	code/game/machinery/PDApainter.dm:29		yes	full	proc
+proc	/obj/machinery/pdapainter	Initialize	code/game/machinery/PDApainter.dm:38	mapload	yes	full	proc
+proc	/obj/machinery/pdapainter	Destroy	code/game/machinery/PDApainter.dm:59		yes	full	proc
+proc	/obj/machinery/pdapainter	on_deconstruction	code/game/machinery/PDApainter.dm:64	disassembled	yes	full	proc
+proc	/obj/machinery/pdapainter	contents_explosion	code/game/machinery/PDApainter.dm:73	severity,target	yes	full	proc
+proc	/obj/machinery/pdapainter	Exited	code/game/machinery/PDApainter.dm:91	gone,direction	yes	full	proc
+proc	/obj/machinery/pdapainter	add_context	code/game/machinery/PDApainter.dm:100	source,context,held_item,user	stub	deferred	proc
+proc	/obj/machinery/pdapainter	wrench_act	code/game/machinery/PDApainter.dm:125	user,tool	yes	full	proc
+proc	/obj/machinery/pdapainter	welder_act	code/game/machinery/PDApainter.dm:131	user,tool	yes	full	proc
+proc	/obj/machinery/pdapainter	item_interaction	code/game/machinery/PDApainter.dm:147	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/pdapainter	attack_hand_secondary	code/game/machinery/PDApainter.dm:154	user,modifiers	yes	full	proc
+proc	/obj/machinery/pdapainter	insert_pda	code/game/machinery/PDApainter.dm:173	new_pda,user	yes	full	proc root
+proc	/obj/machinery/pdapainter	eject_pda	code/game/machinery/PDApainter.dm:194	user	yes	full	proc root
+proc	/obj/machinery/pdapainter	insert_id_card	code/game/machinery/PDApainter.dm:212	new_id_card,user	yes	full	proc root
+proc	/obj/machinery/pdapainter	eject_id_card	code/game/machinery/PDApainter.dm:239	user	yes	full	proc root
+proc	/obj/machinery/pdapainter	ui_interact	code/game/machinery/PDApainter.dm:249	user,ui	yes	full	proc
+proc	/obj/machinery/pdapainter	ui_data	code/game/machinery/PDApainter.dm:255	user	yes	full	proc
+proc	/obj/machinery/pdapainter	ui_static_data	code/game/machinery/PDApainter.dm:274	user	yes	full	proc
+proc	/obj/machinery/pdapainter	ui_act	code/game/machinery/PDApainter.dm:282	action,params,ui,state	yes	full	proc
+type	/obj/machinery/pdapainter/security	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:369	live	obj_machinery_pdapainter_security	0	1
+type	/obj/machinery/pdapainter/medbay	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:374	live	obj_machinery_pdapainter_medbay	0	1
+type	/obj/machinery/pdapainter/research	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:379	live	obj_machinery_pdapainter_research	0	1
+type	/obj/machinery/pdapainter/engineering	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:384	live	obj_machinery_pdapainter_engineering	0	1
+type	/obj/machinery/pdapainter/supply	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:389	live	obj_machinery_pdapainter_supply	0	1
 type	/obj/machinery/photobooth	/obj/machinery	code/game/machinery/photobooth.dm:8	inert	obj_machinery_photobooth	0	1
 proc	/obj/machinery/photobooth	Initialize	code/game/machinery/photobooth.dm:43	mapload	no	-	proc
 proc	/obj/machinery/photobooth	interact	code/game/machinery/photobooth.dm:47	user,modifiers	no	-	proc
@@ -90810,18 +90810,18 @@ type	/obj/machinery/newscaster/directional/north	/obj/machinery/newscaster/direc
 type	/obj/machinery/newscaster/directional/south	/obj/machinery/newscaster/directional	code/game/machinery/newscaster/newscaster_machine.dm:73	live	obj_machinery_newscaster_directional_south	0	1
 type	/obj/machinery/newscaster/directional/east	/obj/machinery/newscaster/directional	code/game/machinery/newscaster/newscaster_machine.dm:73	live	obj_machinery_newscaster_directional_east	0	1
 type	/obj/machinery/newscaster/directional/west	/obj/machinery/newscaster/directional	code/game/machinery/newscaster/newscaster_machine.dm:73	live	obj_machinery_newscaster_directional_west	0	1
-type	/obj/machinery/pipedispenser	/obj/machinery	code/game/machinery/pipe/pipe_dispenser.dm:6	inert	obj_machinery_pipedispenser	0	1
-proc	/obj/machinery/pipedispenser	attack_paw	code/game/machinery/pipe/pipe_dispenser.dm:23	user,modifiers	no	-	proc
-proc	/obj/machinery/pipedispenser	ui_static_data	code/game/machinery/pipe/pipe_dispenser.dm:26	user	no	-	proc
-proc	/obj/machinery/pipedispenser	ui_data	code/game/machinery/pipe/pipe_dispenser.dm:30		no	-	proc
-proc	/obj/machinery/pipedispenser	ui_act	code/game/machinery/pipe/pipe_dispenser.dm:65	action,params,ui,state	no	-	proc
-proc	/obj/machinery/pipedispenser	ui_interact	code/game/machinery/pipe/pipe_dispenser.dm:148	user,ui	no	-	proc
-proc	/obj/machinery/pipedispenser	item_interaction	code/game/machinery/pipe/pipe_dispenser.dm:154	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/pipedispenser	verify_recipe	code/game/machinery/pipe/pipe_dispenser.dm:162	recipes,path	no	-	proc root
-proc	/obj/machinery/pipedispenser	wrench_act	code/game/machinery/pipe/pipe_dispenser.dm:171	user,tool	no	-	proc
-type	/obj/machinery/pipedispenser/disposal	/obj/machinery/pipedispenser	code/game/machinery/pipe/pipe_dispenser.dm:178	inert	obj_machinery_pipedispenser_disposal	0	1
-proc	/obj/machinery/pipedispenser/disposal	mouse_drop_receive	code/game/machinery/pipe/pipe_dispenser.dm:186	pipe,user,params	no	-	proc
-type	/obj/machinery/pipedispenser/disposal/transit_tube	/obj/machinery/pipedispenser/disposal	code/game/machinery/pipe/pipe_dispenser.dm:201	inert	obj_machinery_pipedispenser_disposal_transit_tube	0	0
+type	/obj/machinery/pipedispenser	/obj/machinery	code/game/machinery/pipe/pipe_dispenser.dm:6	live	obj_machinery_pipedispenser	1	1
+proc	/obj/machinery/pipedispenser	attack_paw	code/game/machinery/pipe/pipe_dispenser.dm:23	user,modifiers	yes	full	proc
+proc	/obj/machinery/pipedispenser	ui_static_data	code/game/machinery/pipe/pipe_dispenser.dm:26	user	yes	full	proc
+proc	/obj/machinery/pipedispenser	ui_data	code/game/machinery/pipe/pipe_dispenser.dm:30		yes	full	proc
+proc	/obj/machinery/pipedispenser	ui_act	code/game/machinery/pipe/pipe_dispenser.dm:65	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/pipedispenser	ui_interact	code/game/machinery/pipe/pipe_dispenser.dm:148	user,ui	yes	full	proc
+proc	/obj/machinery/pipedispenser	item_interaction	code/game/machinery/pipe/pipe_dispenser.dm:154	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/pipedispenser	verify_recipe	code/game/machinery/pipe/pipe_dispenser.dm:162	recipes,path	yes	full	proc root
+proc	/obj/machinery/pipedispenser	wrench_act	code/game/machinery/pipe/pipe_dispenser.dm:171	user,tool	yes	full	proc
+type	/obj/machinery/pipedispenser/disposal	/obj/machinery/pipedispenser	code/game/machinery/pipe/pipe_dispenser.dm:178	live	obj_machinery_pipedispenser_disposal	1	1
+proc	/obj/machinery/pipedispenser/disposal	mouse_drop_receive	code/game/machinery/pipe/pipe_dispenser.dm:186	pipe,user,params	yes	full	proc
+type	/obj/machinery/pipedispenser/disposal/transit_tube	/obj/machinery/pipedispenser/disposal	code/game/machinery/pipe/pipe_dispenser.dm:201	live	obj_machinery_pipedispenser_disposal_transit_tube	0	0
 type	/obj/machinery/porta_turret	/obj/machinery	code/game/machinery/porta_turret/portable_turret.dm:28	live	obj_machinery_porta_turret	1	1
 proc	/obj/machinery/porta_turret	Initialize	code/game/machinery/porta_turret/portable_turret.dm:122	mapload	yes	full	proc
 proc	/obj/machinery/porta_turret	Destroy	code/game/machinery/porta_turret/portable_turret.dm:144		yes	full	proc
@@ -91869,27 +91869,27 @@ proc	/obj/machinery/portable_atmospherics/pump	ui_act	code/modules/atmospherics/
 proc	/obj/machinery/portable_atmospherics/pump	unregister_holding	code/modules/atmospherics/machinery/portable/pump.dm:170		yes	full	proc
 type	/obj/machinery/portable_atmospherics/pump/lil_pump	/obj/machinery/portable_atmospherics/pump	code/modules/atmospherics/machinery/portable/pump.dm:175	live	obj_machinery_portable_atmospherics_pump_lil_pump	1	1
 proc	/obj/machinery/portable_atmospherics/pump/lil_pump	Initialize	code/modules/atmospherics/machinery/portable/pump.dm:177	mapload	yes	full	proc
-type	/obj/machinery/gateway	/obj/machinery	code/modules/awaymissions/gateway.dm:146	inert	obj_machinery_gateway	0	1
-proc	/obj/machinery/gateway	Initialize	code/modules/awaymissions/gateway.dm:179	mapload	no	-	proc
-proc	/obj/machinery/gateway	Destroy	code/modules/awaymissions/gateway.dm:187		no	-	proc
-proc	/obj/machinery/gateway	generate_destination	code/modules/awaymissions/gateway.dm:194		no	-	proc root
-proc	/obj/machinery/gateway	deactivate	code/modules/awaymissions/gateway.dm:200		no	-	proc root
-proc	/obj/machinery/gateway	process	code/modules/awaymissions/gateway.dm:211		no	-	proc
-proc	/obj/machinery/gateway	valid_destination	code/modules/awaymissions/gateway.dm:226	possible_destination	no	-	proc root
-proc	/obj/machinery/gateway	show_light_overlays	code/modules/awaymissions/gateway.dm:235	light_state,toggle	no	-	proc root
-proc	/obj/machinery/gateway	update_overlays	code/modules/awaymissions/gateway.dm:247		no	-	proc
-proc	/obj/machinery/gateway	safe_throw_at	code/modules/awaymissions/gateway.dm:252	target,range,speed,thrower,spin,diagonals_first,callback,force,gentle	no	-	proc
-proc	/obj/machinery/gateway	generate_bumper	code/modules/awaymissions/gateway.dm:255		no	-	proc root
-proc	/obj/machinery/gateway	activate	code/modules/awaymissions/gateway.dm:259	D	no	-	proc root
-proc	/obj/machinery/gateway	Transfer	code/modules/awaymissions/gateway.dm:271	AM	no	-	proc root
-proc	/obj/machinery/gateway	attack_ghost	code/modules/awaymissions/gateway.dm:277	user	no	-	proc
-proc	/obj/machinery/gateway	multitool_act	code/modules/awaymissions/gateway.dm:305	user,I	no	-	proc
-proc	/obj/machinery/gateway	shuttleRotate	code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:105	rotation,params	no	-	proc
-type	/obj/machinery/gateway/centerstation	/obj/machinery/gateway	code/modules/awaymissions/gateway.dm:292	inert	obj_machinery_gateway_centerstation	0	1
-proc	/obj/machinery/gateway/centerstation	Initialize	code/modules/awaymissions/gateway.dm:295	mapload	no	-	proc
-proc	/obj/machinery/gateway/centerstation	Destroy	code/modules/awaymissions/gateway.dm:300		no	-	proc
-type	/obj/machinery/gateway/away	/obj/machinery/gateway	code/modules/awaymissions/gateway.dm:316	inert	obj_machinery_gateway_away	0	0
-proc	/obj/machinery/gateway/away	interact	code/modules/awaymissions/gateway.dm:319	user	no	-	proc
+type	/obj/machinery/gateway	/obj/machinery	code/modules/awaymissions/gateway.dm:146	live	obj_machinery_gateway	1	1
+proc	/obj/machinery/gateway	Initialize	code/modules/awaymissions/gateway.dm:179	mapload	yes	full	proc
+proc	/obj/machinery/gateway	Destroy	code/modules/awaymissions/gateway.dm:187		yes	full	proc
+proc	/obj/machinery/gateway	generate_destination	code/modules/awaymissions/gateway.dm:194		yes	full	proc root
+proc	/obj/machinery/gateway	deactivate	code/modules/awaymissions/gateway.dm:200		yes	full	proc root
+proc	/obj/machinery/gateway	process	code/modules/awaymissions/gateway.dm:211		yes	full	proc
+proc	/obj/machinery/gateway	valid_destination	code/modules/awaymissions/gateway.dm:226	possible_destination	yes	full	proc root
+proc	/obj/machinery/gateway	show_light_overlays	code/modules/awaymissions/gateway.dm:235	light_state,toggle	yes	full	proc root
+proc	/obj/machinery/gateway	update_overlays	code/modules/awaymissions/gateway.dm:247		yes	full	proc
+proc	/obj/machinery/gateway	safe_throw_at	code/modules/awaymissions/gateway.dm:252	target,range,speed,thrower,spin,diagonals_first,callback,force,gentle	yes	full	proc
+proc	/obj/machinery/gateway	generate_bumper	code/modules/awaymissions/gateway.dm:255		yes	full	proc root
+proc	/obj/machinery/gateway	activate	code/modules/awaymissions/gateway.dm:259	D	yes	full	proc root
+proc	/obj/machinery/gateway	Transfer	code/modules/awaymissions/gateway.dm:271	AM	yes	full	proc root
+proc	/obj/machinery/gateway	attack_ghost	code/modules/awaymissions/gateway.dm:277	user	yes	full	proc
+proc	/obj/machinery/gateway	multitool_act	code/modules/awaymissions/gateway.dm:305	user,I	yes	full	proc
+proc	/obj/machinery/gateway	shuttleRotate	code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:105	rotation,params	yes	full	proc
+type	/obj/machinery/gateway/centerstation	/obj/machinery/gateway	code/modules/awaymissions/gateway.dm:292	live	obj_machinery_gateway_centerstation	1	1
+proc	/obj/machinery/gateway/centerstation	Initialize	code/modules/awaymissions/gateway.dm:295	mapload	yes	full	proc
+proc	/obj/machinery/gateway/centerstation	Destroy	code/modules/awaymissions/gateway.dm:300		yes	full	proc
+type	/obj/machinery/gateway/away	/obj/machinery/gateway	code/modules/awaymissions/gateway.dm:316	live	obj_machinery_gateway_away	1	0
+proc	/obj/machinery/gateway/away	interact	code/modules/awaymissions/gateway.dm:319	user	yes	full	proc
 type	/obj/machinery/transport	/obj/machinery	code/modules/transport/_transport_machinery.dm:2	live	obj_machinery_transport	1	0
 proc	/obj/machinery/transport	Initialize	code/modules/transport/_transport_machinery.dm:31	mapload	yes	full	proc
 proc	/obj/machinery/transport	add_context	code/modules/transport/_transport_machinery.dm:36	source,context,held_item,user	stub	deferred	proc
@@ -98042,9 +98042,9 @@ type	/obj/effect/playeronly_barrier	/obj/effect	code/modules/awaymissions/away_p
 proc	/obj/effect/playeronly_barrier	CanAllowThrough	code/modules/awaymissions/away_props.dm:135	mover,border_dir	no	-	proc
 type	/obj/effect/invisible_wall	/obj/effect	code/modules/awaymissions/away_props.dm:142	inert	obj_effect_invisible_wall	0	0
 proc	/obj/effect/invisible_wall	CanAllowThrough	code/modules/awaymissions/away_props.dm:150	mover,border_dir	no	-	proc
-type	/obj/effect/gateway_portal_bumper	/obj/effect	code/modules/awaymissions/gateway.dm:132	inert	obj_effect_gateway_portal_bumper	0	0
-proc	/obj/effect/gateway_portal_bumper	Bumped	code/modules/awaymissions/gateway.dm:136	AM	no	-	proc
-proc	/obj/effect/gateway_portal_bumper	Destroy	code/modules/awaymissions/gateway.dm:141	force	no	-	proc
+type	/obj/effect/gateway_portal_bumper	/obj/effect	code/modules/awaymissions/gateway.dm:132	live	obj_effect_gateway_portal_bumper	1	0
+proc	/obj/effect/gateway_portal_bumper	Bumped	code/modules/awaymissions/gateway.dm:136	AM	yes	full	proc
+proc	/obj/effect/gateway_portal_bumper	Destroy	code/modules/awaymissions/gateway.dm:141	force	yes	full	proc
 type	/obj/effect/murderdome	/obj/effect	(implied by a subtype's path)	live	obj_effect_murderdome	0	0
 type	/obj/effect/murderdome/dead_barricade	/obj/effect/murderdome	code/modules/awaymissions/mission_code/murderdome.dm:31	inert	obj_effect_murderdome_dead_barricade	0	0
 proc	/obj/effect/murderdome/dead_barricade	Initialize	code/modules/awaymissions/mission_code/murderdome.dm:37	mapload	no	-	proc

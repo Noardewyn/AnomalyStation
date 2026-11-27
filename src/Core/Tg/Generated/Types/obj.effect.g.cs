@@ -5331,9 +5331,9 @@ public partial class obj_effect_invisible_wall : obj_effect
     }
 }
 
-// tg: code/modules/awaymissions/gateway.dm:132
-[DmPath("/obj/effect/gateway_portal_bumper"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_gateway_portal_bumper : obj_effect
+// tg: code/modules/awaymissions/gateway.dm:132 (the var block of a hand-written class)
+[DmPath("/obj/effect/gateway_portal_bumper")]
+public partial class obj_effect_gateway_portal_bumper
 {
     public obj_machinery_gateway gateway; // tg: code/modules/awaymissions/gateway.dm:132
 

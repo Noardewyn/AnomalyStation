@@ -71,11 +71,12 @@ public class PlayTest20261114Tests
     }
 
     [Fact]
-    public void AnInertLaptopBrokenByABlastIsDeletedAsItIs()
+    public void ALaptopBrokenByABlastIsDeleted()
     {
         AudioRoom r = Room(16103);
+        // the laptop was inert when this was found; it is live since the MetaStation leftovers
         var laptop = r.In(() => Dm.@new<obj_item_modular_computer_laptop>(locate(5, LineY, 1)));
-        Assert.True(r.In(() => InertSeam.IsInert(laptop) && laptop.physical == null));
+        Assert.False(r.In(() => InertSeam.IsInert(laptop)));
         r.In(() => Waiting.NoSleep(laptop.deconstruct(FALSE)));
         Assert.True(r.In(() => QDELETED(laptop)));
         r.AssertNoRuntimes();

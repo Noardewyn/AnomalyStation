@@ -59,4 +59,31 @@ public class MetaLeftoversMetaTests : IClassFixture<MetaWorldFixture>
             Assert.All(shutters, s => Assert.Equal(Dm.truthy(s.density) ? RAD_EXTREME_INSULATION : RAD_NO_INSULATION, s.rad_insulation));
         }
     }
+
+    [MetaFact]
+    public void Metas_painters_dispenser_laptops_and_gateway_are_live_and_linked()
+    {
+        using (_meta.World.Enter())
+        {
+            var painters = Dm.each<obj_machinery_pdapainter>().Where(p => p.z > 0).ToList();
+            Assert.True(painters.Count >= 6, $"{painters.Count} PDA painters");
+            Assert.All(painters, p => Assert.False(InertSeam.IsInert(p), "a PDA painter is inert"));
+            Assert.All(painters, p => Assert.True(p.pda_types.len > 0 && p.card_trims.len > 0, "a PDA painter offers nothing"));
+
+            var dispensers = Dm.each<obj_machinery_pipedispenser>().Where(p => p.z > 0).ToList();
+            Assert.NotEmpty(dispensers);
+            Assert.All(dispensers, d => Assert.False(InertSeam.IsInert(d), "a pipe dispenser is inert"));
+
+            var laptops = Dm.each<obj_item_modular_computer_laptop>().Where(l => l.z > 0 || l.loc != null).ToList();
+            Assert.True(laptops.Count >= 2, $"{laptops.Count} laptops");
+            Assert.All(laptops, l => Assert.False(InertSeam.IsInert(l), "a laptop is inert"));
+
+            Assert.NotNull(GLOB.the_gateway);
+            Assert.False(InertSeam.IsInert(GLOB.the_gateway));
+            var consoles = Dm.each<obj_machinery_computer_gateway_control>().Where(c => c.z > 0).ToList();
+            Assert.Single(consoles);
+            Assert.Same(GLOB.the_gateway, consoles[0].G);
+            _output.WriteLine($"painters {painters.Count}, dispensers {dispensers.Count}, laptops {laptops.Count}, gateway destinations {GLOB.gateway_destinations.len}");
+        }
+    }
 }

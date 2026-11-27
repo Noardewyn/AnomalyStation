@@ -1281,9 +1281,6 @@ public partial class obj_item_modular_computer : obj_item
     public override async DmTask atom_deconstruct(float? disassembled = null)
     {
         disassembled ??= TRUE;
-        // DEVIATION(DV27): an inert computer (a laptop) made no physical, parts or files (D112): the blast or the damage deletes it as it is
-        if (InertSeam.MissingInitialize(this, "atom_deconstruct"))
-            return;
         atom droploc = drop_location() as atom;
         remove_pai();
         await eject_aicard();

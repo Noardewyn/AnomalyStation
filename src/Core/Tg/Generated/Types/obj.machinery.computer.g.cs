@@ -6157,9 +6157,9 @@ public partial class obj_machinery_computer_shuttle_syndicate_drop_pod
     }
 }
 
-// tg: code/modules/awaymissions/gateway.dm:332
-[DmPath("/obj/machinery/computer/gateway_control"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_gateway_control : obj_machinery_computer
+// tg: code/modules/awaymissions/gateway.dm:332 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/gateway_control")]
+public partial class obj_machinery_computer_gateway_control
 {
     public obj_machinery_gateway G; // tg: code/modules/awaymissions/gateway.dm:335
 

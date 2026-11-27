@@ -195,6 +195,17 @@ public partial class obj_machinery_atmospherics : obj_machinery
     }
 }
 
+// tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:105
+public partial class obj_machinery_gateway : obj_machinery
+{
+    // tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:105
+    public override async DmTask shuttleRotate(object rotation = null, float? @params = null)
+    {
+        @params = NONE;
+        await base.shuttleRotate(rotation, @params);
+    }
+}
+
 // tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:109
 public partial class obj_machinery_door_airlock : obj_machinery_door
 {

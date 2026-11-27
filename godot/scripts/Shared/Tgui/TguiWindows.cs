@@ -362,6 +362,9 @@ public static class TguiInterfaces
         ["ExoscannerConsole"] = ExoscannerConsole.Render, // the exploration drones' scanner array control console
         ["ExodroneConsole"] = ExodroneConsole.Render, // the exploration drone control console
         ["AdventureBrowser"] = AdventureBrowser.Render, // the admins' adventure manager
+        ["PaintingMachine"] = PaintingMachine.Render, // the PDA & ID painter
+        ["PipeDispenser"] = PipeDispenser.Render, // the pipe, disposal pipe and transit tube dispensers
+        ["Gateway"] = Gateway.Render, // the gateway control console
     };
 
     /// <summary>The interface of that name, or null when it is not translated yet.</summary>

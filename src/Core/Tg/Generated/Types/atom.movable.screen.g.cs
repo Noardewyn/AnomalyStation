@@ -5204,9 +5204,9 @@ public partial class atom_movable_screen_map_view_camera
     public atom_movable_screen_background cam_background; // tg: code/game/machinery/computer/camera.dm:166
 }
 
-// tg: code/modules/awaymissions/gateway.dm:399
-[DmPath("/atom/movable/screen/map_view/gateway_port"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_map_view_gateway_port : atom_movable_screen_map_view
+// tg: code/modules/awaymissions/gateway.dm:399 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/map_view/gateway_port")]
+public partial class atom_movable_screen_map_view_gateway_port
 {
     public datum_gateway_destination our_destination; // tg: code/modules/awaymissions/gateway.dm:399
     public atom_movable_screen_background cam_background; // tg: code/modules/awaymissions/gateway.dm:401

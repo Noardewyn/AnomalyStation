@@ -5531,3 +5531,18 @@ pump's multitool overclock.
 |---|---|---|---|---|
 | `tools/engineering/wrench.dm:70` | the medical wrench's `suicide_act` (the prayer, the light and the servitude overlay; a live-partial row, as the other suicide acts) | the suicide verb | M10+ (the suicide verb) | `game/objects/items/tools/engineering/wrench.cs` |
 
+## 256. MetaStation's machines with windows (gaps MT2, the 2026-11-26 audit)
+Live: `machinery/PDApainter.dm` whole (the painter and its five departmental variants with their PDA and trim lists from SSid_access,
+the PDA's look and the ID's trim, the swap and eject, the repair; the PaintingMachine window), `machinery/pipe/pipe_dispenser.dm`
+whole (the pipe, disposal pipe and transit tube dispensers with their recipes, cooldown and smart pipe directions, the pipes put back
+and the disposal pipes dragged in; the PipeDispenser window), `computers/item/laptop.dm` and `laptop_presets.dm` (open and closed,
+their weight class and slowdown, the Toggle Open verb, the messenger's ending), `awaymissions/gateway.dm` (the destinations, the
+station's gateway with its home destination, the portal bumper, the away gateway, the control console with the Gateway window and
+the map view's static) and the gateway's `shuttleRotate`. Away missions are not ported (PORT-CHECKLIST 12): on MetaStation the
+console lists no destination, as tg's does with no away map loaded.
+
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `machinery/PDApainter.dm:100`, `computers/item/laptop.dm:40` | the screentip contexts (`add_context`, live-partial rows; `register_context` deferred) | hovering with an item | M10+ (the screentips, D264) | `game/machinery/PDApainter.cs`, `modules/modular_computers/computers/item/laptop.cs` |
+| `awaymissions/gateway.dm:239` | the portal lights' emissive copy (`GLOB.emissive_color` on `EMISSIVE_PLANE`) | an active gateway | DV12 (lighting planes) | `modules/awaymissions/gateway.cs` |
+

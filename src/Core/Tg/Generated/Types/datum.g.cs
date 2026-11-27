@@ -34532,9 +34532,9 @@ public partial class datum_autowiki_vending : datum_autowiki
     }
 }
 
-// tg: code/modules/awaymissions/gateway.dm:12
-[DmPath("/datum/gateway_destination"), DmGeneratedOnly, DmInert]
-public partial class datum_gateway_destination : datum
+// tg: code/modules/awaymissions/gateway.dm:12 (the var block of a hand-written class)
+[DmPath("/datum/gateway_destination")]
+public partial class datum_gateway_destination
 {
     public string name = "Unknown Destination"; // tg: code/modules/awaymissions/gateway.dm:12
     public float wait = 0; // tg: code/modules/awaymissions/gateway.dm:13
@@ -34542,20 +34542,20 @@ public partial class datum_gateway_destination : datum
     public float? hidden = 0; // tg: code/modules/awaymissions/gateway.dm:15
 }
 
-// tg: code/modules/awaymissions/gateway.dm:64
-[DmPath("/datum/gateway_destination/gateway"), DmGeneratedOnly, DmInert]
-public partial class datum_gateway_destination_gateway : datum_gateway_destination
+// tg: code/modules/awaymissions/gateway.dm:64 (the var block of a hand-written class)
+[DmPath("/datum/gateway_destination/gateway")]
+public partial class datum_gateway_destination_gateway
 {
     public obj_machinery_gateway target_gateway; // tg: code/modules/awaymissions/gateway.dm:64
 }
 
-// tg: code/modules/awaymissions/gateway.dm:98
-[DmPath("/datum/gateway_destination/gateway/home"), DmGeneratedOnly, DmInert]
-public partial class datum_gateway_destination_gateway_home : datum_gateway_destination_gateway { }
+// tg: code/modules/awaymissions/gateway.dm:98 (the var block of a hand-written class)
+[DmPath("/datum/gateway_destination/gateway/home")]
+public partial class datum_gateway_destination_gateway_home { }
 
-// tg: code/modules/awaymissions/gateway.dm:123
-[DmPath("/datum/gateway_destination/point"), DmGeneratedOnly, DmInert]
-public partial class datum_gateway_destination_point : datum_gateway_destination
+// tg: code/modules/awaymissions/gateway.dm:123 (the var block of a hand-written class)
+[DmPath("/datum/gateway_destination/point")]
+public partial class datum_gateway_destination_point
 {
     public DmList target_turfs; // tg: code/modules/awaymissions/gateway.dm:123
     public Type id; // tg: code/modules/awaymissions/gateway.dm:125

@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Gaps BR1 (D339, D341): the whole file. The loadouts are var blocks (generated, D111). The gamer's laptop installs only its starting
-// programs; it stays inert while its parent, the laptop (modular_computers/computers/item/laptop.dm), is not ported.
+// programs; the laptop it is (modular_computers/computers/item/laptop.dm) is live.
 
 // tg: code/modules/bitrunning/objects/gimmick_disks/sports_disk.dm:84
 public partial class obj_item_modular_computer_laptop_gamer : obj_item_modular_computer_laptop

@@ -32680,9 +32680,9 @@ public partial class obj_item_modular_computer
     // GAP(types): idle_threads = list() (code/modules/modular_computers/computers/item/computer.dm:50): to be initialized in the hand-written dm_init_vars of obj_item_modular_computer
 }
 
-// tg: code/modules/modular_computers/computers/item/laptop.dm:2
-[DmPath("/obj/item/modular_computer/laptop"), DmGeneratedOnly, DmInert]
-public partial class obj_item_modular_computer_laptop : obj_item_modular_computer
+// tg: code/modules/modular_computers/computers/item/laptop.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/modular_computer/laptop")]
+public partial class obj_item_modular_computer_laptop
 {
     public float start_open = 1; // tg: code/modules/modular_computers/computers/item/laptop.dm:23
     public string icon_state_closed = "laptop-closed"; // tg: code/modules/modular_computers/computers/item/laptop.dm:24
@@ -32717,7 +32717,7 @@ public partial class obj_item_modular_computer_laptop : obj_item_modular_compute
 }
 
 // tg: code/modules/bitrunning/objects/gimmick_disks/sports_disk.dm:84 (the var block of a hand-written class)
-[DmPath("/obj/item/modular_computer/laptop/gamer"), DmInert]
+[DmPath("/obj/item/modular_computer/laptop/gamer")]
 public partial class obj_item_modular_computer_laptop_gamer
 {
     // tg: code/modules/bitrunning/objects/gimmick_disks/sports_disk.dm:84
@@ -32737,7 +32737,7 @@ public partial class obj_item_modular_computer_laptop_gamer
 }
 
 // tg: code/modules/modular_computers/computers/item/laptop.dm:128
-[DmPath("/obj/item/modular_computer/laptop/buildable"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/modular_computer/laptop/buildable"), DmGeneratedOnly]
 public partial class obj_item_modular_computer_laptop_buildable : obj_item_modular_computer_laptop
 {
     // tg: code/modules/modular_computers/computers/item/laptop.dm:128
@@ -32748,11 +32748,11 @@ public partial class obj_item_modular_computer_laptop_buildable : obj_item_modul
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/obj/item/modular_computer/laptop/preset"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/modular_computer/laptop/preset"), DmGeneratedOnly]
 public partial class obj_item_modular_computer_laptop_preset : obj_item_modular_computer_laptop { }
 
 // tg: code/modules/modular_computers/computers/item/laptop_presets.dm:2
-[DmPath("/obj/item/modular_computer/laptop/preset/civilian"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/modular_computer/laptop/preset/civilian"), DmGeneratedOnly]
 public partial class obj_item_modular_computer_laptop_preset_civilian : obj_item_modular_computer_laptop_preset
 {
     // tg: code/modules/modular_computers/computers/item/laptop_presets.dm:2
@@ -32770,7 +32770,7 @@ public partial class obj_item_modular_computer_laptop_preset_civilian : obj_item
 }
 
 // tg: code/modules/modular_computers/computers/item/laptop_presets.dm:9
-[DmPath("/obj/item/modular_computer/laptop/preset/mafia"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/modular_computer/laptop/preset/mafia"), DmGeneratedOnly]
 public partial class obj_item_modular_computer_laptop_preset_mafia : obj_item_modular_computer_laptop_preset
 {
     // tg: code/modules/modular_computers/computers/item/laptop_presets.dm:9

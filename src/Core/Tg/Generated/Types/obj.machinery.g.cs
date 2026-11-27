@@ -3559,9 +3559,9 @@ public partial class obj_machinery_nebula_shielding_radiation : obj_machinery_ne
     }
 }
 
-// tg: code/game/machinery/PDApainter.dm:3
-[DmPath("/obj/machinery/pdapainter"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_pdapainter : obj_machinery
+// tg: code/game/machinery/PDApainter.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/machinery/pdapainter")]
+public partial class obj_machinery_pdapainter
 {
     public obj_item_card_id stored_id_card; // tg: code/game/machinery/PDApainter.dm:12
     public obj_item_modular_computer_pda stored_pda; // tg: code/game/machinery/PDApainter.dm:14
@@ -3592,7 +3592,7 @@ public partial class obj_machinery_pdapainter : obj_machinery
 }
 
 // tg: code/game/machinery/PDApainter.dm:369
-[DmPath("/obj/machinery/pdapainter/security"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/pdapainter/security"), DmGeneratedOnly]
 public partial class obj_machinery_pdapainter_security : obj_machinery_pdapainter
 {
     // tg: code/game/machinery/PDApainter.dm:369
@@ -3604,7 +3604,7 @@ public partial class obj_machinery_pdapainter_security : obj_machinery_pdapainte
 }
 
 // tg: code/game/machinery/PDApainter.dm:374
-[DmPath("/obj/machinery/pdapainter/medbay"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/pdapainter/medbay"), DmGeneratedOnly]
 public partial class obj_machinery_pdapainter_medbay : obj_machinery_pdapainter
 {
     // tg: code/game/machinery/PDApainter.dm:374
@@ -3616,7 +3616,7 @@ public partial class obj_machinery_pdapainter_medbay : obj_machinery_pdapainter
 }
 
 // tg: code/game/machinery/PDApainter.dm:379
-[DmPath("/obj/machinery/pdapainter/research"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/pdapainter/research"), DmGeneratedOnly]
 public partial class obj_machinery_pdapainter_research : obj_machinery_pdapainter
 {
     // tg: code/game/machinery/PDApainter.dm:379
@@ -3628,7 +3628,7 @@ public partial class obj_machinery_pdapainter_research : obj_machinery_pdapainte
 }
 
 // tg: code/game/machinery/PDApainter.dm:384
-[DmPath("/obj/machinery/pdapainter/engineering"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/pdapainter/engineering"), DmGeneratedOnly]
 public partial class obj_machinery_pdapainter_engineering : obj_machinery_pdapainter
 {
     // tg: code/game/machinery/PDApainter.dm:384
@@ -3640,7 +3640,7 @@ public partial class obj_machinery_pdapainter_engineering : obj_machinery_pdapai
 }
 
 // tg: code/game/machinery/PDApainter.dm:389
-[DmPath("/obj/machinery/pdapainter/supply"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/pdapainter/supply"), DmGeneratedOnly]
 public partial class obj_machinery_pdapainter_supply : obj_machinery_pdapainter
 {
     // tg: code/game/machinery/PDApainter.dm:389
@@ -7396,9 +7396,9 @@ public partial class obj_machinery_newscaster_directional_west : obj_machinery_n
     }
 }
 
-// tg: code/game/machinery/pipe/pipe_dispenser.dm:6
-[DmPath("/obj/machinery/pipedispenser"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_pipedispenser : obj_machinery
+// tg: code/game/machinery/pipe/pipe_dispenser.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/machinery/pipedispenser")]
+public partial class obj_machinery_pipedispenser
 {
     public float wait = 0; // tg: code/game/machinery/pipe/pipe_dispenser.dm:14
     public float piping_layer = 3; // tg: code/game/machinery/pipe/pipe_dispenser.dm:15
@@ -7419,9 +7419,9 @@ public partial class obj_machinery_pipedispenser : obj_machinery
     }
 }
 
-// tg: code/game/machinery/pipe/pipe_dispenser.dm:178
-[DmPath("/obj/machinery/pipedispenser/disposal"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_pipedispenser_disposal : obj_machinery_pipedispenser
+// tg: code/game/machinery/pipe/pipe_dispenser.dm:178 (the var block of a hand-written class)
+[DmPath("/obj/machinery/pipedispenser/disposal")]
+public partial class obj_machinery_pipedispenser_disposal
 {
     // tg: code/game/machinery/pipe/pipe_dispenser.dm:178
     public obj_machinery_pipedispenser_disposal()
@@ -7436,7 +7436,7 @@ public partial class obj_machinery_pipedispenser_disposal : obj_machinery_pipedi
 }
 
 // tg: code/game/machinery/pipe/pipe_dispenser.dm:201
-[DmPath("/obj/machinery/pipedispenser/disposal/transit_tube"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/pipedispenser/disposal/transit_tube"), DmGeneratedOnly]
 public partial class obj_machinery_pipedispenser_disposal_transit_tube : obj_machinery_pipedispenser_disposal
 {
     // tg: code/game/machinery/pipe/pipe_dispenser.dm:201
@@ -10744,42 +10744,9 @@ public partial class obj_machinery_portable_atmospherics_pump_lil_pump
     }
 }
 
-// tg: code/modules/awaymissions/gateway.dm:146
-[DmPath("/obj/machinery/gateway"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_gateway : obj_machinery
-{
-    public float calibrated = 1; // tg: code/modules/awaymissions/gateway.dm:163
-    public Type destination_type = typeof(datum_gateway_destination_gateway); // tg: code/modules/awaymissions/gateway.dm:165
-    public string destination_name = "Unknown Gateway"; // tg: code/modules/awaymissions/gateway.dm:167
-    public Type destination; // tg: code/modules/awaymissions/gateway.dm:169
-    public datum_gateway_destination target; // tg: code/modules/awaymissions/gateway.dm:171
-    public obj_effect_gateway_portal_bumper portal; // tg: code/modules/awaymissions/gateway.dm:173
-    public atom_movable_screen_map_view_gateway_port portal_visuals; // tg: code/modules/awaymissions/gateway.dm:175
-    public float teleportion_possible = 0; // tg: code/modules/awaymissions/gateway.dm:176
-    public float transport_active = 0; // tg: code/modules/awaymissions/gateway.dm:177
-
-    // tg: code/modules/awaymissions/gateway.dm:146
-    public obj_machinery_gateway()
-    {
-        name = "gateway";
-        desc = "A mysterious gateway built by unknown hands, it allows for faster than light travel to far-flung locations.";
-        icon = Dm.resource("icons/obj/machines/gateway.dmi");
-        icon_state = "portal_frame";
-        resistance_flags = 115;
-        pixel_x = -32;
-        pixel_y = -32;
-        bound_height = 64;
-        bound_width = 96;
-        bound_x = -32;
-        bound_y = 0;
-        density = 1;
-        active_power_usage = 5000;
-    }
-}
-
-// tg: code/modules/awaymissions/gateway.dm:292
-[DmPath("/obj/machinery/gateway/centerstation"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_gateway_centerstation : obj_machinery_gateway
+// tg: code/modules/awaymissions/gateway.dm:292 (the var block of a hand-written class)
+[DmPath("/obj/machinery/gateway/centerstation")]
+public partial class obj_machinery_gateway_centerstation
 {
     // tg: code/modules/awaymissions/gateway.dm:292
     public obj_machinery_gateway_centerstation()
@@ -10789,9 +10756,9 @@ public partial class obj_machinery_gateway_centerstation : obj_machinery_gateway
     }
 }
 
-// tg: code/modules/awaymissions/gateway.dm:316
-[DmPath("/obj/machinery/gateway/away"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_gateway_away : obj_machinery_gateway
+// tg: code/modules/awaymissions/gateway.dm:316 (the var block of a hand-written class)
+[DmPath("/obj/machinery/gateway/away")]
+public partial class obj_machinery_gateway_away
 {
     // tg: code/modules/awaymissions/gateway.dm:316
     public obj_machinery_gateway_away()

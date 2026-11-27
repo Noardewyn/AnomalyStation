@@ -6,10 +6,10 @@ in section 12; they will most likely not be ported.
 
 Sources:
 - tg's snapshot `1d99bd7f` (2026-10-04) in `../tgstation/`;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-26): 46,051 tg types, of them 41,043
-  live and 4,998 inert; 65,645 tg procs, of them 52,001 translated (79%) and 447 stubbed;
+- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-26): 46,051 tg types, of them 41,100
+  live and 4,941 inert; 65,645 tg procs, of them 52,114 translated (79%) and 443 stubbed;
 - MetaStation's map (`_maps/map_files/MetaStation/MetaStation.dmm`): how many of each type it places;
-- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 345 of tg's 444 interfaces;
+- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 348 of tg's 444 interfaces;
 - `docs/ROADMAP.md`, `docs/ai/DECISIONS.md`, `docs/ai/specs/not-translated.md` for what is planned, deferred or cut by the owner.
 
 How to read a row:
@@ -30,14 +30,14 @@ How to read a row:
 ## 0. Overview by tg area
 
 Share of tg's procs declared in each area of `code/` (translated or stubbed), recounted 2026-11-26 by
-`tools/checklist/refresh-port-checklist.py`. All of `code/`: 52,448/65,645 (79%). An area at 100% can still have leaves in
+`tools/checklist/refresh-port-checklist.py`. All of `code/`: 52,557/65,645 (80%). An area at 100% can still have leaves in
 `not-translated.md`; the rows below say what of it runs.
 
 | State | Areas (procs declared / tg procs) |
 |---|---|
 | Done (100%) | art 98/98, brain traumas 216/216, detective work 36/36, dna 104/104, dna infuser 174/174, economy 45/45, experisci 127/127, food and drinks 969/969, forensics 37/37, grenades 141/141, hallucination 236/236, holiday 110/110, hydroponics 529/529, instruments 97/97, library 228/228, lost crew 38/38, mafia 124/124, materials 197/197, meteors 78/78, mining 947/947, mutations 235/235, newscaster 71/71, paperwork 407/407, plumbing 148/148, porta turrets 105/105, power 994/994, rcd 182/182, recycling (disposal pipes) 232/232, religion 283/283, research 993/993, robot items 198/198, security levels 20/20, silicons 528/528, skills 13/13, station goals 94/94, TCG 67/67, telecomms 123/123, transit tubes 74/74, water structures 60/60, weather 66/66, wounds 182/182 |
-| Mostly ported (70-99%) | fishing 785/787, transport 366/368, computers 522/525, explorer drones 205/207, bitrunning 274/277, structures 1,368/1,383, reagents 2,012/2,041, station traits 136/138, holodeck 64/65, language 64/65, pai 121/123, manufactorio 95/97, atmospherics 1,150/1,178, wiremod 1,037/1,063, memory 183/188, diseases 299/308, weaponry 413/426, items 1,239/1,280, cards 59/61, doors 359/372, movespeed and actionspeed 27/28, devices 698/724, storage 209/217, uplink 55/58, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, tgui 134/144, AI modules 66/71, wires 181/195, MODsuits 817/882, simple animals 408/448, AI controllers 775/853, machinery 1,555/1,715, modular computers 677/751, actions 221/246, clothing 1,048/1,173, martial arts 143/164, cargo 347/398, tools 225/259, turfs 657/761, mapping 337/393, stacks 338/398, lobby menu 26/31, status effects 627/755, implants 131/160, projectiles 943/1,153, effects 716/876, basic mobs 2,150/2,756, jobs 195/251, carbon 897/1,182, vehicles and mechs 659/876, elements 902/1,200, `__HELPERS` 820/1,108, components 2,640/3,579, `_onclick` 677/935, subsystems 1,126/1,578, photography 75/106, events 398/564 |
-| Partly (2-69%) | shuttles 280/401, vending 97/148, mob spawners 69/116, basketball 29/51, client 367/737, mapfluff 125/268, spells 186/426, keybindings 28/71, antagonists 915/3,715, species (`carbon/human/species_types`) 59/273, awaymissions 19/136, admin 179/1,643, admin verbs 86/975, quirks 10/287 |
+| Mostly ported (70-99%) | fishing 785/787, transport 366/368, computers 522/525, explorer drones 205/207, bitrunning 274/277, structures 1,368/1,383, reagents 2,012/2,041, station traits 136/138, holodeck 64/65, language 64/65, pai 121/123, manufactorio 95/97, atmospherics 1,150/1,178, wiremod 1,037/1,063, memory 183/188, diseases 299/308, doors 361/372, weaponry 413/426, items 1,239/1,280, cards 59/61, movespeed and actionspeed 27/28, devices 698/724, storage 209/217, uplink 55/58, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, tgui 134/144, AI modules 66/71, wires 181/195, MODsuits 817/882, modular computers 691/751, machinery 1,575/1,715, simple animals 408/448, AI controllers 775/853, actions 221/246, clothing 1,048/1,173, tools 227/259, martial arts 143/164, cargo 347/398, turfs 657/761, mapping 337/393, stacks 338/398, lobby menu 26/31, status effects 627/755, effects 721/876, implants 131/160, projectiles 943/1,153, basic mobs 2,150/2,756, jobs 195/251, carbon 897/1,182, vehicles and mechs 659/876, elements 902/1,200, `__HELPERS` 820/1,108, components 2,640/3,579, `_onclick` 677/935, subsystems 1,126/1,578, photography 75/106, events 398/564, shuttles 281/401 |
+| Partly (2-69%) | vending 97/148, mob spawners 69/116, basketball 29/51, awaymissions 71/136, client 367/737, mapfluff 125/268, spells 186/426, keybindings 28/71, antagonists 916/3,715, species (`carbon/human/species_types`) 59/273, admin 179/1,643, admin verbs 86/975, quirks 10/287 |
 | Not started (0-1%) | achievements 1/72, minimap 1/127, buildmode 0/102, CTF 0/101, deathmatch 0/113, tutorials 0/48 |
 
 ---
@@ -57,7 +57,7 @@ Live mechanics that still miss a window, a leaf or a piece the owner put off.
 - [x] Memory panel (gaps G4: the 54 memories and the HUD button; win: MemoryPanel; DV191 retired by gaps S3: the captain's code folder). Left: the tattoo kit and the engravings (with the art), the memories of callers not yet live
 - [x] Floors with their own procs (gaps G2; the engine floor family, 35 types, Meta 496 tiles: engineering E4): wood (Meta 480), carpet (223), grass (68), large, circuit, the reinforced plating (`plating/reinforced`) and others (Meta's 24 floor types, 1,045 tiles); volcanic mineral turfs (9), plastitanium walls (5). Left inert, none on Meta: the tram's high-traction floor, the rusted and meat platings, the random, ore, gibtonite and biome rocks, the explosive plastitanium wall, snow, ice and lavaland floors
 - [x] Meta's untranslated mapping helpers and spawners (gaps G3; the dead body placer's cadavers came with gaps OG1; left: the holidays wait for `check_holidays`) (ROADMAP 3, M4 follow-up): request console helpers (Meta 64), mail sorting, `dead_body_placer`, Ian's birthday and new year, `turn_off_lights_with_lightswitch`, xmas trees, costumes, maintenance MOD, `round_default_module`
-- [ ] The deferred leaves of ported mechanics: `not-translated.md` (244 sections; the sites tagged M10+) and `live-partial.txt` (444 lines); each names its milestone
+- [ ] The deferred leaves of ported mechanics: `not-translated.md` (246 sections; the sites tagged M10+) and `live-partial.txt` (440 lines); each names its milestone
 - [ ] Owner-deferred pieces of ported milestones: screentips (M9 G, owner; the object examines and `examine_more` are done, D288: X1, X2, X3); chat icons, icon2html (owner: later); the fireman carry and piggyback (M9 F, owner); leaning on walls, the table slam and the table flip (done, gaps L1); the hand-item emotes' leftovers
 - [x] M10x's slices (D281, D282, `docs/ai/specs/lobby.md`; done, released in 1.1.0-pre-alpha): G the Esc menu, bug reports and tg's admin help, D the character's looks, E the preview, I the closing; not now (owner): tg's server game preferences (stashed, D282), the Quirks, Loadout and Personality tabs, the polls (the Antagonists tab: syndicate A3, D316)
 - [x] M9x station life (D228, D249): eating, drinking and hunger with the nutrition HUD (done, gaps S1), vending machines (done, gaps S2: free until the economy, DV225), paper, pens, clipboards and the hand labeler (done, gaps S3), the PDA's job apps (done, gaps S4; the cargo apps, the budget orders, shipping and bounty board: gaps P4)
@@ -192,7 +192,7 @@ EMP and shocks, the engineering tools, the RPD, construction and destruction, ex
 - [x] Plumbing (engineering E15; the reactions wait for chemistry) (`modules/plumbing` 148/148, machines 0/24; ducts partly ported): the chemical factory (win: ChemAcclimator, ChemAutomaticBuffer, ChemDisposer, ChemFilter, ChemMixingChamber, ChemPress, ChemReactionChamber, ChemSplitter, ChemSynthesizer; synthesizer Meta 1), the plumbed reagent tanks (Meta 11)
 - [x] The big manipulator (engineering E16; the lathe's designs since silicons SI3) (`game/machinery/big_manipulator` 128/128; win: BigManipulator) and the manufacturing machines (`modules/manufactorio` 95/97; win: ManufacturingSorter): not mapped, buildable
 - [x] The portable gravity unit (engineering E16; no weather until SSweather) (win: Portagrav) and the barometric (mining weather) monitors (Meta 2; win: AnomalousWeatherTower)
-- [ ] The disposal pipe dispenser (`/obj/machinery/pipedispenser` and its disposal subtype, Meta 1; win: PipeDispenser) (gaps MT2)
+- [x] The disposal pipe dispenser (`/obj/machinery/pipedispenser` and its disposal subtype, Meta 1; win: PipeDispenser) (gaps MT2; the transit tube dispenser too)
 
 ### 5.2 Medical
 
@@ -246,7 +246,7 @@ hallucinations, cryo cells, stasis beds, IV drips, buckling.
 - [x] **Vending machines** (gaps S2; `modules/vending` 97/148; 78 of 85 types live; all of Meta's 92 machines; win: Vending): products, restocking (refills Meta 3), wires, tilting and crushing, the prices and payment (gaps P4a). Left: NtosRestock (the PDA app, S4; NtosCouponMaster with gaps P4b), the custom, runic and museum vendors (the labor camp's, paid in labour points: gaps LV1)
 - [ ] **Recreation**: the holodeck (its computer Meta 1; win: Holodeck; done, gaps RC1, with its 29 programs; the skate park's board waits for the skateboards), the arcade (Orion Trail Meta 1, the battle arcade, the amputation arcade; win: OrionGame, BattleArcade; done, gaps RC1), slot machines and the roulette (win: SlotMachine, Roulette; done, gaps RC1), playing cards (done, syndicate G3d), dice (Meta 2), the trading card game (done, gaps RC1, with SStrading_card_game and the card holders), toys (`/obj/item/toy` 194/197; Meta 40) and plushies (done, syndicate G3c), crayons and spray cans (graffiti; win: Crayon), the gym's punching bags, weight machines and training machine (Meta 3, 5, 3; win: TrainingMachine; done, gaps ST4, with the training toolbox; the athletics experience and the exercised status came with gaps SL1)
 - [x] **Music** (silicons SI6c; the legacy MIDI instruments' notes silent, DV391; the synthesizer's circuit shell, gaps CI3): instruments (26 types; Meta 4) and the piano and other musician structures, songs and the instrument editor (win: InstrumentEditor)
-- [ ] **Art** (silicons SI4d: canvases, easels, paintings and frames, the portrait printer; sculpting came with silicons SI2; left: the PDA painter): canvases and easels (Meta 15+7; win: Canvas), paintings and frames (Meta 13; persistence), sculpting (carving blocks, the chisel), the portrait printer (win: NtosPortraitPrinter), the PDA painter (Meta 6; win: PaintingMachine)
+- [ ] **Art** (silicons SI4d: canvases, easels, paintings and frames, the portrait printer; sculpting came with silicons SI2; the PDA painter: gaps MT2): canvases and easels (Meta 15+7; win: Canvas), paintings and frames (Meta 13; persistence), sculpting (carving blocks, the chisel), the portrait printer (win: NtosPortraitPrinter), the PDA painter (Meta 6; win: PaintingMachine)
 - [ ] **Photography** (gaps J3: cameras and photos work without the picture itself; `modules/photography` 75/106 before it): cameras (Meta 4) and photos, picture frames (Meta 5), photo albums, the photo booths and their button (Meta 2+1) (gaps MT3: the booths, the frames and the photo's picture; the greenscreen camera is done, 5.7)
 - [x] **Fishing** (`modules/fishing` 785/787): rods and baits (done, gaps FI2: the rods, lines, hooks, lures and bait, the cast and the line, the minigame with its HUD; win: FishingRod), fish and their traits (done, gaps FI1: every fish with its life, feeding, growth, breeding, evolutions, butchering and eating, the fish cases, SSfishing's caches), fishing spots (done, gaps FI2: water, lava, sand, ice holes, toilets, moisture traps, trays, vendors, fryers, chasms, opened bodies, holodeck water, the oil well; the fishing capsules' templates left), the fishing portal generator (Meta 1; done, gaps FI2), aquariums and fish tanks (Meta 1+1; done, gaps FI3: the aquariums with their fluid, temperature, modes, feeding, breeding, the fish swimming in them, the fish tanks, the upgrade kits and the bioelectricity generator, the props; win: Aquarium), the fish mount (Meta 1; done, gaps FI1), the fishing toolboxes (Meta 2; done), the fishing calculator (done, gaps FI2; win: FishingCalculator), the fish analyzer and catalog (the catalog done, gaps FI1, the analyzer gaps FI3; win: FishAnalyzer, FishCatalog), the athletic fishing gloves and the fishing boxes (done, gaps FI3). Left (not-translated.md 251, 252): the autowiki tables, the screentips, a fish tank in hand drawn without its fish
 
@@ -294,8 +294,8 @@ access, the crew manifest, the heads' outfits and captaincy, the automated annou
 - [x] Holopads and holocalls (silicons SI4; Meta 89; win: Holopad)
 - [x] Faxes (gaps S3; faxing CentCom stays with the admin tools; Meta 16; win: Fax, NtosFaxBond) and photocopiers (Meta 13; win: Photocopier)
 - [x] The teleporter: hub, station and console (Meta 2 each; win: Teleporter), the hand teleporter (Meta 2), quantum pads and launchpads (win: LaunchpadConsole, LaunchpadRemote; the briefcase launchpad and its remote: syndicate G2; the hub, station, console and hand teleporter: done, gaps TP1; the quantum pads with their keycards and the launchpad console: done, gaps OR2)
-- [ ] The gateway's station side (Meta 1 and its console; win: Gateway; gaps MT2); away missions are in section 12
-- [ ] The PDA painter and its five department subtypes (Meta 6; win: PaintingMachine) (gaps MT2)
+- [x] The gateway's station side (Meta 1 and its console; win: Gateway; gaps MT2: the console lists no destination until away missions exist); away missions are in section 12
+- [x] The PDA painter and its five department subtypes (Meta 6; win: PaintingMachine) (gaps MT2)
 - [x] The communications console's leftovers: buying shuttles, messages to CentCom and the Syndicate, the status display messages (gaps CM1: the shuttle catalogue with tg's purchasable emergency shuttles converted, DV188, the nuke codes' request, the spare ID safe code's drop pod, the console hacks, the syndicate console; left: the cross-sector messages to other servers, the battlecruiser card, the ninja's drain, the Scrapheap Challenge and Arena shuttles, not-translated.md 200)
 - [x] The captain's chain of command (Meta 1; `/obj/item/melee/chainofcommand` 3/3) and the station charter (`/obj/item/station_charter` 3/3)
 
@@ -354,7 +354,7 @@ the runed metal for the cult, `not-translated.md` section 214).
 - [x] Devices (`items/devices` 698/724 procs; gaps DE1 and DV2): binoculars (4), tape recorders and tapes (9+1; done, gaps DE1: recording, playback, the transcript, the tape's sides, unspooling and respooling), telephones (9; the red phone, done, gaps DE1), the laser pointer (1), the inspector (2; done, gaps DE1: the N-spect contraband scan), the universal price scanner, the radio jammer (done, syndicate G2), the chameleon projector (done, syndicate G1d), pinpointers (10/10 live; the vent pointer, gaps LV1), the bluespace locator (win: BluespaceLocator; done, gaps TP1), the radioactive microlaser (win: RadioactiveMicrolaser; done, syndicate G2), the eight ball (win: EightBallVote; done, syndicate G4a), the reverse bear trap (done, syndicate G4a); the boombox and its music tapes, the hydro-vaporizer, the forcefield projector, pressure plates, the table clock, the quantum spin inverter, the desynchronizer, the hemoanalytic scanner, the quantum keycard, the pipe painter, the anomaly neutralizer and releaser, the polycircuit, the slime scanner, the flashlights' and scanners' leftovers (the flashdark, the space bubble lantern, the penlight's holosign, the disease analyzer), the machine wand and the portable wind turbine (done, gaps DV2). Left: the battle royale (an admin event), the syndicate intelliCard (`not-translated.md` section 216); the debug items (the human spawner, the omnitool, the spawntool) are done, gaps OD2
 - [ ] Household and odds (gaps DE1 for the most): pillows (6; done, gaps DE1, with the pillow suit and the mattress shield; the pillow lance, gaps WP1), lipstick (7; done, syndicate G3b), the desk bell (12; live), skub (1; done, gaps DE1), the rubber ducky and the bike horn (2; live), banners (15/15 and the banner backpacks, the godstaves, the courtroom's gavel, the dice and dice bags but the Die of Fate, the shooting targets and the melee file's odd weapons: done, gaps DE1; Meta 1), the V8 engine and the House Edge, the street drugs, the flatpacks and the flatpack cart, the piggy banks, the ethereal disco ball, the busts and the Maneki-Neko, the virgin mary, the rolling table dock, the bot pad and its remote, the carp DNA sampler, the lead pipe and the lead-acid battery, the hair dye spray, the gun maintenance kits and the pitchfork (done, gaps OD2; Meta: the two flatpacks, the battery, the vault piggy bank), vending refills (56/57, gaps S2), vehicle keys (7/7 live; Meta 2), granters (manuals that teach skills and spells, `/obj/item/book/granter` 36/47 live: the skill, crafting, sign language, origami, chuunibyou and smoke manuals, done, gaps SL1; the wizard's 12 spellbooks wait for the wizard). Left: the wizard's spellbooks (section 221) and the Die of Fate (`not-translated.md` section 206), the skateboards (they wait for the vehicles), the piggy banks' persistence (section 218)
 - [x] Toys (gaps TY1): `toys.dm` whole (the water balloon, the cap gun, the toy swords and the double-bladed toy, the windup toolbox, the snap pops, the talking figures with their chatter voices, the toy nuke and AI, the action figures, the dummy, the steampunk watch, the Codex Cicatrix toy, the Intento, the banhammer and the rest; the floor-placeable toys are set down where the floor is clicked), the toy mechs and their battles (`toy_mechs.dm`), the latex glove balloon, the hourglass. Left: the wizard's frog statue (the trading card game came with gaps RC1) (`not-translated.md` section 212); the Donksoft guns came with gaps GU1
-- [ ] Laptops (`/obj/item/modular_computer/laptop` and the civilian preset, Meta 2; gaps MT2): opening and closing, their icon states and the messenger's ending
+- [x] Laptops (`/obj/item/modular_computer/laptop` and the civilian preset, Meta 2; gaps MT2; a 3D model waits, required-models.md): opening and closing, their icon states and the messenger's ending
 
 ---
 
@@ -396,7 +396,7 @@ ruins, the CentCom level and the transit and reserved levels. The port runs the 
 
 ### 11.1 Interface and HUD
 
-- [ ] The tgui windows the client does not draw: 99 of tg's 444; the full index is section 13
+- [ ] The tgui windows the client does not draw: 96 of tg's 444; the full index is section 13
 - [ ] The HUDs of other mobs (`/datum/hud`: pAI (done, silicons SI6), alien and larva (done, gaps X5), blob overmind, revenant, guardian and dextrous (done, syndicate X2), soulscythe); the human and ghost HUDs are live (the robot's: silicons SI2, the AI's: SI4)
 - [ ] Action buttons: item actions (`/datum/action/item_action` 114/125 live); spells (226), innate actions (`/datum/action/innate` 103/162) and vehicle actions (`/datum/action/vehicle` 30/43) come with their owners
 - [ ] The remaining screen alerts (`/atom/movable/screen/alert` 189/201 live)
@@ -449,7 +449,7 @@ A MetaStation round can still meet them (built from boards, ordered or found in 
 
 ### 12.3 Away missions, ruins, admin and debug content
 
-- Away missions behind the gateway (`modules/awaymissions` 19/136, `_maps/RandomZLevels`): the away maps and their content. Meta's gateway itself is in the main list (5.7).
+- Away missions behind the gateway (`modules/awaymissions` 71/136, `_maps/RandomZLevels`): the away maps and their content. Meta's gateway itself is in the main list (5.7).
 - Ruin-only content (`modules/mapfluff` 125/268): the ruins' own machines, mobs, puzzles and loot (the vault controller, win: VaultController; the lore terminals, win: Terminal; the wish granter; the abstract puzzle gizmos; the anomalous crystals); Lavaland's ruins' code is done (gaps LV6, section 10).
 - Admin-only and one-off: the highlander, the greentext, the admin's CentCom rooms; the pirates' data siphon comes with the pirates (section 3).
 - Debug tools: the debug chemical synthesizer and recipe debugger (win: ChemDebugSynthesizer, ChemRecipeDebug), the debug component printer, the cyborg boot debug (win: CyborgBootDebug), `modules/debugging`.
@@ -478,7 +478,7 @@ Well-known SS13 mechanics that are not in tg any more; nothing to port. Checked 
 
 ## 13. Index of the tgui windows not drawn yet
 
-396 of tg's 444 windows (the client drew 48 when this index was made); 299 of the 396 are ticked now. One row per
+396 of tg's 444 windows (the client drew 48 when this index was made); 302 of the 396 are ticked now. One row per
 window, grouped by where its mechanic sits above; tick it when the client draws it (a registration in TguiWindows.cs), in the
 package that draws it. Windows of section 12 are listed for completeness.
 
@@ -560,7 +560,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] TacVisorEyesMenu (gaps OG1)
 - [ ] TrackedPlaytime
 
-### Engineering and atmospherics (5.1): 34 (33 drawn)
+### Engineering and atmospherics (5.1): 34 (34 drawn)
 
 - [x] AirlockButtonController (E8)
 - [x] AirlockController (E8)
@@ -586,7 +586,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] ManufacturingSorter (E16)
 - [x] ModularShieldConsole (E10)
 - [x] ModularShieldGen (E10)
-- [ ] PipeDispenser
+- [x] PipeDispenser (gaps MT2)
 - [x] Portagrav (E16)
 - [x] RapidConstructionDevice (E13)
 - [x] RapidDecorationDevice (E13)
@@ -652,7 +652,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] Techweb (gaps RD2)
 - [x] TransferValve (syndicate G4b)
 
-### Service (5.4): 33 (32 drawn)
+### Service (5.4): 33 (33 drawn)
 
 - [x] Aquarium (gaps FI3)
 - [x] BattleArcade (gaps RC1)
@@ -674,7 +674,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] LibraryVisitor (gaps LB1)
 - [x] MarkdownViewer (J2)
 - [x] OrionGame (gaps RC1)
-- [ ] PaintingMachine
+- [x] PaintingMachine (gaps MT2)
 - [x] PlantAnalyzer (gaps P2)
 - [x] ReligiousTool (gaps CH1)
 - [x] Roulette (gaps RC1)
@@ -730,9 +730,9 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] TurretControl (syndicate package G4d)
 - [x] WarrantConsole (gaps SC2)
 
-### Command (5.7): 10 (9 drawn)
+### Command (5.7): 10 (10 drawn)
 
-- [ ] Gateway
+- [x] Gateway (gaps MT2)
 - [x] Holopad (silicons SI4)
 - [x] LaunchpadConsole (gaps OR2)
 - [x] LaunchpadRemote (syndicate G2)

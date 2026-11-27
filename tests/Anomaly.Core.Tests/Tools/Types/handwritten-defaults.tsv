@@ -4400,6 +4400,28 @@
 /obj/machinery/electrolyzer	armor_type	override	code/modules/atmospherics/machinery/components/electrolyzer/electrolyzer.dm:13	{"K":"type","N":0,"S":"/datum/armor/machinery_electrolyzer"}
 /obj/machinery/electrolyzer	circuit	override	code/modules/atmospherics/machinery/components/electrolyzer/electrolyzer.dm:14	{"K":"type","N":0,"S":"/obj/item/circuitboard/machine/electrolyzer"}
 /obj/machinery/electrolyzer	use_power	override	code/modules/atmospherics/machinery/components/electrolyzer/electrolyzer.dm:16	{"K":"num","N":0}
+/obj/machinery/gateway	calibrated	decl	code/modules/awaymissions/gateway.dm:163	{"K":"num","N":1}
+/obj/machinery/gateway	destination_type	decl	code/modules/awaymissions/gateway.dm:165	{"K":"type","N":0,"S":"/datum/gateway_destination/gateway"}
+/obj/machinery/gateway	destination_name	decl	code/modules/awaymissions/gateway.dm:167	{"K":"str","N":0,"S":"Unknown Gateway"}
+/obj/machinery/gateway	destination	decl	code/modules/awaymissions/gateway.dm:169	{"K":"null","N":0}
+/obj/machinery/gateway	target	decl	code/modules/awaymissions/gateway.dm:171	{"K":"null","N":0}
+/obj/machinery/gateway	portal	decl	code/modules/awaymissions/gateway.dm:173	{"K":"null","N":0}
+/obj/machinery/gateway	portal_visuals	decl	code/modules/awaymissions/gateway.dm:175	{"K":"null","N":0}
+/obj/machinery/gateway	teleportion_possible	decl	code/modules/awaymissions/gateway.dm:176	{"K":"num","N":0}
+/obj/machinery/gateway	transport_active	decl	code/modules/awaymissions/gateway.dm:177	{"K":"num","N":0}
+/obj/machinery/gateway	name	override	code/modules/awaymissions/gateway.dm:146	{"K":"str","N":0,"S":"gateway"}
+/obj/machinery/gateway	desc	override	code/modules/awaymissions/gateway.dm:147	{"K":"str","N":0,"S":"A mysterious gateway built by unknown hands, it allows for faster than light travel to far-flung locations."}
+/obj/machinery/gateway	icon	override	code/modules/awaymissions/gateway.dm:148	{"K":"res","N":0,"S":"icons/obj/machines/gateway.dmi"}
+/obj/machinery/gateway	icon_state	override	code/modules/awaymissions/gateway.dm:149	{"K":"str","N":0,"S":"portal_frame"}
+/obj/machinery/gateway	resistance_flags	override	code/modules/awaymissions/gateway.dm:150	{"K":"num","N":115}
+/obj/machinery/gateway	pixel_x	override	code/modules/awaymissions/gateway.dm:153	{"K":"num","N":-32}
+/obj/machinery/gateway	pixel_y	override	code/modules/awaymissions/gateway.dm:154	{"K":"num","N":-32}
+/obj/machinery/gateway	bound_height	override	code/modules/awaymissions/gateway.dm:155	{"K":"num","N":64}
+/obj/machinery/gateway	bound_width	override	code/modules/awaymissions/gateway.dm:156	{"K":"num","N":96}
+/obj/machinery/gateway	bound_x	override	code/modules/awaymissions/gateway.dm:157	{"K":"num","N":-32}
+/obj/machinery/gateway	bound_y	override	code/modules/awaymissions/gateway.dm:158	{"K":"num","N":0}
+/obj/machinery/gateway	density	override	code/modules/awaymissions/gateway.dm:159	{"K":"num","N":1}
+/obj/machinery/gateway	active_power_usage	override	code/modules/awaymissions/gateway.dm:161	{"K":"num","N":5000}
 /obj/machinery/grill	grilled_item	decl	code/modules/food_and_drinks/machinery/grill.dm:20	{"K":"null","N":0}
 /obj/machinery/grill	name	override	code/modules/food_and_drinks/machinery/grill.dm:7	{"K":"str","N":0,"S":"Barbeque grill"}
 /obj/machinery/grill	desc	override	code/modules/food_and_drinks/machinery/grill.dm:8	{"K":"str","N":0,"S":"Just like the old days. Smokes items over a light heat"}

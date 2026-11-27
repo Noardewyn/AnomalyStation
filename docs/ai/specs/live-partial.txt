@@ -770,3 +770,7 @@
 
 ## The MetaStation leftovers (gaps MT1)
 /obj/item/wrench/medical	suicide_act	M10+	deferred	suicides (the suicide verb, M10+)
+
+## The MetaStation leftovers' machines (gaps MT2)
+/obj/machinery/pdapainter	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
+/obj/item/modular_computer/laptop	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)

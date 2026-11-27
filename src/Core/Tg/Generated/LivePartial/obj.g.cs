@@ -1653,6 +1653,19 @@ public partial class obj_item_soulstone
     }
 }
 
+// tg: code/modules/modular_computers/computers/item/laptop.dm:2
+public partial class obj_item_modular_computer_laptop
+{
+    // tg: code/modules/modular_computers/computers/item/laptop.dm:40
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/modules/modular_computers/computers/item/laptop.dm:40", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
+        return default;
+    }
+}
+
 // tg: code/modules/cargo/universal_scanner.dm:4
 public partial class obj_item_universal_scanner
 {
@@ -2320,6 +2333,19 @@ public partial class obj_machinery_medipen_refiller
     public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
     {
         Dm.Deferred("code/game/machinery/medipen_refiller.dm:32", "add_context: screentips (D264) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/game/machinery/PDApainter.dm:3
+public partial class obj_machinery_pdapainter
+{
+    // tg: code/game/machinery/PDApainter.dm:100
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/game/machinery/PDApainter.dm:100", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
         return default;
     }
 }

@@ -148,6 +148,9 @@ public sealed class Session
 
     public int PhotosRefused { get; set; }
 
+    /// <summary>Version 99: the refusals of a photo answering no request, or one too late, already logged (each once a session).</summary>
+    internal HashSet<string> PhotoRefusalsLogged { get; } = new();
+
     /// <summary>Version 53: the bug report being received (its parts so far), or null; true in <see cref="BugReportRefused"/> while a refused one's parts still come.</summary>
     internal System.IO.MemoryStream BugReportBody { get; set; }
 

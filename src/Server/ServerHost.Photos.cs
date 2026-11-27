@@ -8,7 +8,8 @@ namespace Anomaly.Server;
 // client.dm_photo_requests); after the tick the host sends each as a PhotoRequest. The client answers with the PNG in PhotoPart messages,
 // in order, as a bug report's parts come; the whole image goes to the world (PhotoSeam.Develop), which checks it, keeps it as a runtime
 // resource (every client is sent it once, version 79) and makes it the picture's image. A refused image is logged and leaves the picture
-// blank; a part that breaks the order is a strike.
+// blank; a part that breaks the order, or an image that answers no request of the client (a late answer to its own expired one aside), is
+// a strike.
 public sealed partial class ServerHost
 {
     private void SendPhotoRequests(Session s)
@@ -50,7 +51,14 @@ public sealed partial class ServerHost
             else
             {
                 s.PhotosRefused++;
-                _err.WriteLine("warning: the photo " + part.Id + " of " + s.Ckey + " (" + png.Length + " bytes) was refused: " + refused);
+                // an image for no request of this client is its violation (an honest client answers each request it was sent once): a
+                // strike, so a flood of them ends in a kick; a late answer to its own expired request is not. Both are logged once a
+                // session, so neither floods the log.
+                bool noRequest = refused == PhotoSeam.NoRequest;
+                if (!(noRequest || refused == PhotoSeam.Late) || s.PhotoRefusalsLogged.Add(refused))
+                    _err.WriteLine("warning: the photo " + part.Id + " of " + s.Ckey + " (" + png.Length + " bytes) was refused: " + refused);
+                if (noRequest)
+                    Strike(s, "a photo that answers no request");
             }
         }
     }

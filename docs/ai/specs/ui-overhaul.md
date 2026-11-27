@@ -1824,3 +1824,58 @@ was looser than tg):
   storage screen entries that calls tg's procs.
 - The move to the floor is tg's drop key: a cuffed player can drop, as in tg. A worn storage comes off by tg's drag
   of it onto the hand (tg's click on a worn bag opens it).
+
+### Slice 4B-1 as built and reviewed (2026-11-27; uncommitted until the contributor signs off both halves)
+
+Two fix rounds; the gate clean after them; stress-tested: 933,000 random steps on the Core rig with every item
+checked after each step (exactly once, stacks conserved, nothing in limbo, nobody else's inventory changed), 600,000
+fuzzed messages, a 3,000-tick real server with hostile clients (no leak in 426 Storages messages), change
+detection (no rebuilds while idle, a resend within a tick for every kind of change), cost 0.15 ms a tick idle for
+50 players with full storages. The wire: Storages is message 33, InventoryMove action kind 29, InventoryOpen 30
+(protocol 99; `protocol.md` section 98); DV692 holds the rule and every difference from tg.
+
+### Slice 4B-2: settled design (the client half)
+
+Human HUD, cursor mode (Tab or the inventory key), as slice 4A.
+- The right column: from 64% of the width (plus the column gap) to the vitals column's left edge, from the top
+  line the chat column starts at down to 8 above the bottom row. It lists the carried storages the server sends,
+  top to bottom in the message's order, each as a panel: a header (the storage's picture at the size of an item
+  picture, its name, and at the right its room as tg counts it, "14 / 21") and under it a grid of cells of the
+  bar's size and look (tg's blank slot sprite, section 16), 4 apart, as many to a row as fit, one cell for every
+  slot tg gives the storage (the designer's choice), the items in tg's order from the first cell, a stack's count
+  as on the bar. 12 between panels. Behind each panel a plain dark backing at half strength, so the cells read
+  over a bright room; the column itself has none.
+- The belt has no panel of its own while its items fit the bar's seven cells; a belt with more slots than seven
+  gets a panel for its slots from the eighth on, titled with the belt's name. A locked storage is a header with
+  "Locked" in place of the room and no cells. A storage whose contents tg hides gets no panel.
+- When the panels are taller than the column, the mouse wheel over the column scrolls them, with a thin bar at
+  the column's right edge; the scroll place is kept while Tab stays on and starts at the top on each opening.
+- Pressing Tab (or the inventory key) to show the inventory sends the "inventory opened" notice once; cursor mode
+  that comes on by itself (typing in the chat, a window) does not.
+- tg's own storage window is not shown for a storage the column lists (each thing once): opening one of them by
+  tg's click turns the Tab inventory on, where it is. Any other container keeps tg's window (slice 4C).
+- A pointer on an item in a panel shows its name as a tooltip, as tg's entries do.
+- Dragging (press on an item, move, release), with the item's picture following the pointer as cursor mode's
+  drags do, and a light rim on the cell under the pointer:
+  - from: an item in a hand box, in a belt cell of the bar, in a pocket or ID cell, in a worn slot's cell, in a
+    storage panel's cell;
+  - onto a hand box: to that hand; onto a belt cell: into the belt at that cell; onto a pocket or ID cell or a
+    worn slot's cell: onto that slot; onto a storage panel's cell: into that storage at that cell (an empty cell:
+    simply into it); onto a panel's header or backing: into that storage; each is one move request, and the
+    server answers it with tg's rules;
+  - onto the own sprite: an item from the ACTIVE hand is used on oneself at the part under the pointer, as a click
+    on the sprite with it; any other item: nothing;
+  - onto the floor in the view (a turf, or nothing): the item is dropped (the move to the floor); onto a thing in
+    the view: for an item from a hand, what the drag did before this slice (tg's drag of it onto that thing); for
+    any other item: nothing;
+  - released where it was pressed, or outside all of these: nothing.
+- A refused move: the item's cell blinks its rim red, as a refused key on the bar does; tg's message comes in the
+  chat as tg sends it.
+- The quick transfer, a rebindable action of its own (default Ctrl+left click) that works on inventory items
+  under Tab: on an item in a storage panel, a bar cell or a worn slot: to the active hand; on an item in a hand
+  box: into the backpack (the back storage; with none: refused). On those items it takes the place of tg's own
+  Ctrl-click, which is offered in the held-right-button wheel on the item where the wheel can be opened there
+  ("Ctrl-click"); if it cannot, that is reported and decided before the keys slice.
+- A click (no drag) on an item in a storage panel takes it to the active hand as tg's click on it in tg's storage
+  window does (the move to the active hand); a click on an empty cell or a panel with an item in the active hand
+  puts it in (the move into that storage, at that cell). Shift+click examines, as on tg's entries.

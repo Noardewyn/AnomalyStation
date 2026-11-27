@@ -3,9 +3,9 @@ using Anomaly.Protocol;
 namespace Anomaly.Client.Shared;
 
 // ui-overhaul.md section 12, slice 4B-2: the Tab inventory's right column, the storage panels. Engine-free: no Godot API here (it is compiled into
-// tests/Anomaly.Server.Tests too). The panels are the client's own drawing of the server's Storages message (DV692); their cells are ours (negative
+// tests/Anomaly.Server.Tests too). The panels are the client's own drawing of the server's Storages message (DV696); their cells are ours (negative
 // ids, LiveHud.IsOurs), never sent to the server as screen entries.
-// DEVIATION(DV690): the panels are not tg's storage screen (tg shows one storage at a time); every carried storage is shown at once.
+// DEVIATION(DV694): the panels are not tg's storage screen (tg shows one storage at a time); every carried storage is shown at once.
 
 /// <summary>
 /// One storage panel of the right column: the storage (its entity), its header's title and room, and its cells, each with the item it shows (an empty
@@ -96,7 +96,7 @@ public static class StorageColumn
             for (int i = 0; i < s.Items.Count; i++)
             {
                 if (s.Place != StoragePlace.Belt || onBar == null || !System.Linq.Enumerable.Contains(onBar, s.Items[i].Entity))
-                    // the belt's wish is a bar cell (DV689, DV692): its panel's cells, which are off the bar, wish for none
+                    // the belt's wish is a bar cell (DV693, DV696): its panel's cells, which are off the bar, wish for none
                     items.Add((s.Items[i], s.Place == StoragePlace.Belt ? 0 : i + 1));
             }
             int slots = s.Place == StoragePlace.Belt ? s.Slots - HotbarMessage.BeltCells : s.Slots;

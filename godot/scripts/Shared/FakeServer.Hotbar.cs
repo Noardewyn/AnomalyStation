@@ -5,7 +5,7 @@ using Anomaly.Protocol;
 namespace Anomaly.Client.Shared;
 
 // Engine-free: no Godot API here (it is compiled into tests/Anomaly.Server.Tests too).
-// The FakeServer's belt hotbar (ui-overhaul.md section 10, slice 3A, DV689; on with FakeServerOptions.Inventory): the ten cells of the real server
+// The FakeServer's belt hotbar (ui-overhaul.md section 10, slice 3A, DV693; on with FakeServerOptions.Inventory): the ten cells of the real server
 // (1 to 7 a worn belt's contents, 8 and 9 the pockets, 10 the ID slot) and the five rules of a press, in the fake's simple model (a belt holds seven
 // items that are no storage; a pocket takes any item that is no storage; the ID slot takes an ID card). It sends the Hotbar message the real server
 // sends for the same state. The dev command "toolbelt" puts on a toolbelt of tg's seven tools, a pen in the left pocket and an ID card in the ID slot

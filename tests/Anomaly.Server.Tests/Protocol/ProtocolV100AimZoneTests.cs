@@ -3,13 +3,13 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Protocol;
 
 /// <summary>
-/// Protocol version 99 (package T, slice T4a, Codec.V99.cs): a click's and a throw's aim zone gains the eyes (7), the mouth (8) and the groin (9),
+/// Protocol version 100 (package T, slice T4a, Codec.V100.cs): a click's and a throw's aim zone gains the eyes (7), the mouth (8) and the groin (9),
 /// the modifiers byte's spare bit 3 its high bit: <c>zone = ((mods &gt;&gt; 4) &amp; 7) | (mods &amp; 8)</c>. Every byte of version 97 keeps its meaning.
 /// </summary>
-public class ProtocolV99AimZoneTests
+public class ProtocolV100AimZoneTests
 {
     [Fact]
-    public void TheVersionIs99OrLater() => Assert.True(ProtocolVersion.Current >= 99);
+    public void TheVersionIs100OrLater() => Assert.True(ProtocolVersion.Current >= 100);
 
     [Fact]
     public void TheZonesAreTgsDollsPreciseZonesAfterTheSixLimbs()
@@ -59,7 +59,7 @@ public class ProtocolV99AimZoneTests
         }
     }
 
-    // Corrected by slice T4b (version 99 also): a hover on an entity now carries a zone (ProtocolV99HoverZoneTests); what stays is that a hover has no
+    // Corrected by slice T4b (version 100 also): a hover on an entity now carries a zone (ProtocolV100HoverZoneTests); what stays is that a hover has no
     // modifiers byte, so a byte after its target is no zone of the modifiers' layout: 0x78 is refused as a zone of 120.
     [Fact]
     public void AHoverCarriesNoModifiersByte()

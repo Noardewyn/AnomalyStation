@@ -55,7 +55,7 @@ public partial class GameScene
     private readonly InventoryNotice _inventoryNotice = new(); // slice 4B-2: the "inventory opened" notice, once per opening
     private (long Item, double At) _actedOn; // slice 4B-2: what the player last clicked or used in hand (a listed storage opening by it)
     private long _closedListed; // slice 4B-2: tg's close button of the listed storage last closed unseen
-    // DV691: the first-person drag of oneself (a press on the own body held until the release); whether the own body can be shown at all
+    // DV695: the first-person drag of oneself (a press on the own body held until the release); whether the own body can be shown at all
     private readonly SelfDrag _selfDrag = new();
     private bool _ownBodyShowable;
     private TextureRect _dragIcon;
@@ -218,14 +218,14 @@ public partial class GameScene
 
     // ui-overhaul.md section 5: Godot sends no key release for keys let go while the window has no focus (Input.release_pressed_events clears the
     // key state only), so a lost focus drops a lone Ctrl's or Shift's waiting action
-    // (DV691: and a held drag of oneself ends, nothing sent: its release would never come)
+    // (DV695: and a held drag of oneself ends, nothing sent: its release would never come)
     private void OnFocusLost()
     {
         _modifierTap.Drop();
         _selfDrag.Cancel();
     }
 
-    // DV691: something other than the view takes the mouse: the emote wheel, a radial (the context one or the server's), the dev menu, a text field
+    // DV695: something other than the view takes the mouse: the emote wheel, a radial (the context one or the server's), the dev menu, a text field
     private bool SelfDragOverlay => _emoteWheel.IsOpen || _radialModel.Phase != RadialPhase.Closed || DevMenuHasMouse || TextFieldTyping;
 
     // The hints that belong to what is hovered now (the answer to an older hover is dropped).
@@ -287,7 +287,7 @@ public partial class GameScene
         if (target.Kind == TargetKind.Entity && _feed.Replica.TryGet(target.Id, out ReplicaEntity e) && !string.IsNullOrEmpty(e.State.Name))
             return e.State.Name;
         if (target.Kind == TargetKind.Ceiling)
-            return Anomaly.Core.DmShim.I18n.T("Ceiling"); // the server names a ceiling only in reach (DV687)
+            return Anomaly.Core.DmShim.I18n.T("Ceiling"); // the server names a ceiling only in reach (DV691)
         if (target.Kind != TargetKind.Turf)
             return string.Empty;
         // Until the cell's hints arrive: what kind of turf it is (a wall was named "floor" before, the owner's play test 2026-10-14).
@@ -363,7 +363,7 @@ public partial class GameScene
         // in cursor mode the pointer aims at the world as BYOND's and Space Station 14's mouse does (the HUD under it first).
         bool thirdPerson = _rig.Mode == CameraMode.Orbit && _session.Predicting && camera != null;
         bool panels = PanelsOpen;
-        // DV691: the view lost (a window, death, a stun that lays the body down, a body swap), something else taking the mouse, or the left
+        // DV695: the view lost (a window, death, a stun that lays the body down, a body swap), something else taking the mouse, or the left
         // button let go where the release never reached OnSelfDragReleased: the drag of oneself ends, nothing sent
         if (_selfDrag.Lost(_feed.OwnEntity, firstPerson, _mouse.CursorMode, panels, _ownBodyShowable, SelfDragOverlay, Input.IsMouseButtonPressed(MouseButton.Left)))
             _selfDrag.Cancel();
@@ -426,7 +426,7 @@ public partial class GameScene
         // The hover: a thing or a cell under the crosshair (tg's screentip names a turf too: its hints carry the wall's or floor's name; while
         // throwing, a cell's hint is the throw).
         ClickTarget hover = _hit.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling ? _target : ClickTarget.None;
-        // version 99 also (slice T4b): the hover on a mob carries the body zone looked at (the cached zone map), so the hints name what a click does;
+        // version 100 also (slice T4b): the hover on a mob carries the body zone looked at (the cached zone map), so the hints name what a click does;
         // not in cursor mode, where tg's zone selector holds the player's choice
         if (PlaySession.HoverCarriesZone(hover, _mouse.CursorMode))
             hover = hover with { Aim = _entities.AimZoneAt(hover.Id, hover.IconX, hover.IconY, hover.Picture) };
@@ -436,7 +436,7 @@ public partial class GameScene
             hover = ClickTarget.Of(_hudPicker.PickScreen(GetViewport().GetMousePosition().X, GetViewport().GetMousePosition().Y));
         _session.Hover(hover, now);
         _hudHover = hover.Kind == TargetKind.Screen ? hover : default;
-        _crosshair.Visible = (firstPerson || thirdPerson) && !PanelsOpen && !_mouse.CursorMode && !_selfDrag.Holding; // DV691: the drag mark replaces it
+        _crosshair.Visible = (firstPerson || thirdPerson) && !PanelsOpen && !_mouse.CursorMode && !_selfDrag.Holding; // DV695: the drag mark replaces it
         _crosshair.Set(_hit.Kind == TargetKind.Entity, reach);
         GunSightMessage sight = _shotGunSight ?? _feed.GunSight; // DV96: the shooter's crosshair while a gun is held (a shot scenario's own, below)
         _crosshair.SetGun(sight.Gun, sight.ConeDegrees, _rig.FovDegrees);
@@ -552,7 +552,7 @@ public partial class GameScene
         string name = null;
         List<PromptLine> prompts = NoPrompts;
         if (_selfDrag.Holding)
-            // DV691: while dragging oneself, only the name of a thing in reach under the crosshair (DV687), no action lines
+            // DV695: while dragging oneself, only the name of a thing in reach under the crosshair (DV691), no action lines
             name = SelfDrag.PromptName(_target, aiming ? KeyChips.PromptName(HintsFor(_target), _feed is not FakeFeed, TargetName(_target)) : null);
         else if (aiming && _target.IsSet && _target.Kind != TargetKind.Screen && _radialModel.Phase != RadialPhase.Open)
         {
@@ -725,7 +725,7 @@ public partial class GameScene
             return;
         }
         if (_selfDrag.Holding && SelfDragOverlay)
-            _selfDrag.Cancel(); // DV691: an overlay that takes this button ends the drag of oneself before it does, nothing sent
+            _selfDrag.Cancel(); // DV695: an overlay that takes this button ends the drag of oneself before it does, nothing sent
         if (OnEmoteWheelMouse(button))
             return; // M9 slice B: the emote wheel's own
         if (wheel && _mouse.CursorMode && _hudLayer.ScrollColumn(button.Position.X, button.Position.Y, button.ButtonIndex == MouseButton.WheelUp ? -1 : 1))
@@ -758,7 +758,7 @@ public partial class GameScene
             return; // D282: a panel has the pointer (SyncMouse captures it again when the panel closes)
         if (_selfDrag.Holding && button.ButtonIndex == MouseButton.Right)
         {
-            _selfDrag.Cancel(); // DV691: the right button drops the drag of oneself, and is nothing more
+            _selfDrag.Cancel(); // DV695: the right button drops the drag of oneself, and is nothing more
             return;
         }
         string name = button.ButtonIndex switch
@@ -823,7 +823,7 @@ public partial class GameScene
                     ClickAtCrosshair(ClickButton.Left, modifiers); // nothing under the pointer: as before
                 break;
             case PlayAction.PrimaryClick when button.ButtonIndex == MouseButton.Left && _selfDrag.Press(_target, _feed.OwnEntity, _mouse.CursorMode, modifiers, App.NowSeconds):
-                // DV691: a plain press on the own body sends nothing (no MouseDown either, so no full auto or held use): the release decides
+                // DV695: a plain press on the own body sends nothing (no MouseDown either, so no full auto or held use): the release decides
                 break;
             case PlayAction.PrimaryClick:
                 // version 34: BYOND's MouseDown before the press's click (tg's full auto takes the press and drops the click)
@@ -935,8 +935,8 @@ public partial class GameScene
         }
     }
 
-    // DV691: the first-person drag of oneself let go: on the own body the click with the press's zone, on a thing the drop of the own mob onto it
-    // (unless the server's answer to the hover says it is out of reach, DV687), on anything else nothing.
+    // DV695: the first-person drag of oneself let go: on the own body the click with the press's zone, on a thing the drop of the own mob onto it
+    // (unless the server's answer to the hover says it is out of reach, DV691), on anything else nothing.
     private void OnSelfDragReleased()
     {
         bool outOfReach = HintsFor(_target)?.Name is { Length: 0 };
@@ -972,7 +972,7 @@ public partial class GameScene
                 SendClick(release.Over, ClickButton.Left, ClickModifiers.None);
                 break;
             case InvSendKind.Examine:
-                // tg's Shift+click on a stored item: the server takes it for an item its own carried storages show (DV692)
+                // tg's Shift+click on a stored item: the server takes it for an item its own carried storages show (DV696)
                 SendClick(new ClickTarget(TargetKind.Screen, send.Item, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.Shift);
                 break;
             case InvSendKind.Refused:
@@ -1009,7 +1009,7 @@ public partial class GameScene
     {
         if (_dragIcon == null)
             return;
-        // DV691: the first-person drag of oneself draws the own body's icon at the crosshair, as cursor mode draws the dragged thing at the pointer
+        // DV695: the first-person drag of oneself draws the own body's icon at the crosshair, as cursor mode draws the dragged thing at the pointer
         bool self = _selfDrag.Holding && !_mouse.CursorMode;
         if (!self && (!_drag.Dragging || !_mouse.CursorMode))
         {
@@ -1306,7 +1306,7 @@ public partial class GameScene
                 _session.Keybinding(KeybindingCode.Scoreboard); // version 93 (DV585): the deathmatch scoreboard, while held
                 break;
             case >= PlayAction.Hotbar1 and <= PlayAction.Hotbar10:
-                _session.HotbarPress(HotbarModel.CellOf(action.Value)); // ui-overhaul.md section 10 (DV689): the server decides; nothing predicted
+                _session.HotbarPress(HotbarModel.CellOf(action.Value)); // ui-overhaul.md section 10 (DV693): the server decides; nothing predicted
                 break;
             case >= PlayAction.ActionButton1 and <= PlayAction.ActionButton9:
                 // the owner (2026-10-29): tg's click on the shown action button of that number
@@ -1456,7 +1456,7 @@ public partial class GameScene
         _radialSticky = false;
         _drag.Cancel(); // version 17: a cursor-mode drag ends with cursor mode
         (_dragFrom, _pressQuick) = (default, false);
-        _selfDrag.Cancel(); // DV691: and the first-person drag of oneself ends when cursor mode starts (Tab, a window), with nothing sent
+        _selfDrag.Cancel(); // DV695: and the first-person drag of oneself ends when cursor mode starts (Tab, a window), with nothing sent
         if (_dragIcon != null)
             _dragIcon.Visible = false;
     }

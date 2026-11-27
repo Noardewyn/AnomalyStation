@@ -69,6 +69,7 @@ public sealed class GameClient : IWorldFeed, IDisposable
         BuildPreview = BuildPreviewMessage.None; // version 70: the next join sends its own
         GunSight = GunSightMessage.None; // version 92: and its own gun sight, whose hits are not new ones
         _gunSightSeen = false;
+        _photoRequests.Clear(); // version 99: an old round's pictures are not rendered
         _replica.Spawned += e => Spawned?.Invoke(e);
         _replica.Despawned += e => Despawned?.Invoke(e);
     }
@@ -184,7 +185,7 @@ public sealed class GameClient : IWorldFeed, IDisposable
     public int HotbarRefusedCell => _replica.HotbarRefusedCell;
 
     /// <inheritdoc/>
-    public StoragesMessage Storages => _replica.Storages; // version 99 also (DV692): the replica takes the message (ReplicaWorld.V99Storages.cs)
+    public StoragesMessage Storages => _replica.Storages; // version 100 also (DV696): the replica takes the message (ReplicaWorld.V100Storages.cs)
 
     /// <inheritdoc/>
     public int StoragesRefusals => _replica.StoragesRefusals;
@@ -276,6 +277,23 @@ public sealed class GameClient : IWorldFeed, IDisposable
             _transport.Send(Channel.State, part);
     }
 
+    // Version 99 (DV685): the pictures the server asked for, oldest first (at most a few: the camera's cooldown paces them)
+    private readonly Queue<PhotoRequestMessage> _photoRequests = new();
+
+    /// <summary>Protocol version 99: the photo requests received.</summary>
+    public int PhotoRequestsReceived { get; private set; }
+
+    public bool TryTakePhotoRequest(out PhotoRequestMessage request) => _photoRequests.TryDequeue(out request);
+
+    public void SendPhoto(uint id, byte[] png)
+    {
+        if (_phase != FeedPhase.Playing || png == null || png.Length < 1 || png.Length > Limits.MaxPhotoBytes)
+            return;
+        // in parts the server takes, as a bug report's (8 fragments at most a message)
+        foreach (byte[] part in Codec.EncodePhotoParts(id, png))
+            _transport.Send(Channel.State, part);
+    }
+
     public void Disconnect()
     {
         if (_phase == FeedPhase.Closed || _phase == FeedPhase.Idle)
@@ -359,8 +377,8 @@ public sealed class GameClient : IWorldFeed, IDisposable
             case MessageId.RadioChannels: // version 40: the replica keeps the prefixes and raises RadioChannelsChanged (RadioChannelsReceived)
             case MessageId.Motion: // version 42: the capsule mobs' positions on the unreliable channel
             case MessageId.HeldMotion: // version 54: the replica raises HeldMotionReceived (the first-person gun moves, Hud/ViewModel)
-            case MessageId.Hotbar: // version 99 also (DV689): the replica keeps the own hotbar and counts its refusals
-            case MessageId.Storages: // version 99 also (DV692): the replica keeps the own carried storages and counts the refused moves
+            case MessageId.Hotbar: // version 100 also (DV693): the replica keeps the own hotbar and counts its refusals
+            case MessageId.Storages: // version 100 also (DV696): the replica keeps the own carried storages and counts the refused moves
                 if (_phase == FeedPhase.BetweenRounds)
                     break; // D306: the old world's last messages
                 try
@@ -464,6 +482,17 @@ public sealed class GameClient : IWorldFeed, IDisposable
                     Anomaly.Client.Shared.Icons.RuntimeImages.Add(runtime.Path, runtime.Png);
                 else
                     Fail($"protocol error: bad RuntimeResource ({error})");
+                break;
+
+            case MessageId.PhotoRequest: // version 99 (DV685): the camera took a picture this client renders
+                if (Codec.TryDecode(message, out PhotoRequestMessage photo, out error))
+                {
+                    PhotoRequestsReceived++;
+                    if (_photoRequests.Count < 8)
+                        _photoRequests.Enqueue(photo);
+                }
+                else
+                    Fail($"protocol error: bad PhotoRequest ({error})");
                 break;
 
             case MessageId.GunSight: // version 92 (DV96): the own gun's cone and the own shots' hits, for the crosshair

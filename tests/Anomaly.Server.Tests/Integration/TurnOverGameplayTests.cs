@@ -14,7 +14,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// Package T, slice T4c (DV686, protocol 99 also): the radial's Turn over, through a real server and two clients. The server offers it on a lying
+/// Package T, slice T4c (DV690, protocol 100 also): the radial's Turn over, through a real server and two clients. The server offers it on a lying
 /// carbon next to the player; the pick starts tg's do_after of 1.5 seconds with tg's start line, then the side flips, tg's end line is said and the
 /// posture byte every client receives carries it; interrupted, nothing changes and nothing more is said; a crafted pick changes nothing; the side is
 /// forgotten when the body gets up; a shot reads the side the clients draw; and a turn replays to the same world.

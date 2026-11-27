@@ -11,9 +11,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// ui-overhaul.md section 10, slice 3A (DV689): the belt hotbar through a real server and a headless client. Alice wears a toolbelt of seven tools; her
+/// ui-overhaul.md section 10, slice 3A (DV693): the belt hotbar through a real server and a headless client. Alice wears a toolbelt of seven tools; her
 /// client's number keys send presses (PlaySession.HotbarPress), the server moves the items with tg's procs and sends her the ten cells and the held
-/// names (protocol 99's Hotbar), and her client keeps them (HotbarModel) with the last refused press. Presses from a ghost or a cyborg do nothing, and a
+/// names (protocol 100's Hotbar), and her client keeps them (HotbarModel) with the last refused press. Presses from a ghost or a cyborg do nothing, and a
 /// flood of presses is held by the action rate limit with no item duplicated or lost.
 /// </summary>
 public class HotbarGameplayTests

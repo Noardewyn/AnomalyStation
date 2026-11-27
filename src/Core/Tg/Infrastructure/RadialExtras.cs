@@ -41,7 +41,7 @@ public enum RadialExtra : byte
     /// <summary>DV640: oneself into an open closet: tg's step onto its tile and the hand's close from there (<see cref="ClimbIn.StepInto"/>).</summary>
     StepIn = 9,
 
-    /// <summary>DV686 (package T, slice T4c): a lying carbon turned face up or face down (not in tg: <c>mob_living.radial_turn_over</c>, a do_after).</summary>
+    /// <summary>DV690 (package T, slice T4c): a lying carbon turned face up or face down (not in tg: <c>mob_living.radial_turn_over</c>, a do_after).</summary>
     TurnOver = 10,
 
     /// <summary>
@@ -61,7 +61,7 @@ public static class RadialExtras
     /// (a thing he can buckle himself to, as tg's <c>is_user_buckle_possible</c> of a drag), Unbuckle (a thing with someone buckled to it,
     /// his active hand empty), Climb in or Climb on (a thing whose tg drop of him would take him, DV639, or an open closet, DV640), Climb (a climbable tg's drag would start climbing), Pull (a thing tg lets him pull) or Stop pulling (the thing he pulls), and Strip (a human whose strip menu
     /// tg's drag of him onto oneself would open: <c>should_strip</c> and <c>can_perform_action</c>), Offer item (slice E: a living mob tg's
-    /// <c>give</c> would offer his held item to, <see cref="CanOffer"/>), and Turn over (DV686: a lying carbon). Only for a movable on a turf next to
+    /// <c>give</c> would offer his held item to, <see cref="CanOffer"/>), and Turn over (DV690: a lying carbon). Only for a movable on a turf next to
     /// him (tg's <c>Adjacent</c>); none for a mob he would buckle to (tg's grabs, M9) or for himself. Called in the tick (the hover).
     /// </summary>
     public static List<(RadialExtra Kind, string Label)> Of(mob user, atom target)
@@ -99,7 +99,7 @@ public static class RadialExtras
             entries.Add((RadialExtra.Strip, I18n.T("Strip")));
         if (thing is mob_living taker && CanOffer(living, taker)) // DEVIATION(DV139): slice E's Offer item, the give key's
             entries.Add((RadialExtra.Offer, OfferLabel));
-        if (thing is mob_living lying && lying.dm_can_be_turned_over) // DEVIATION(DV686)
+        if (thing is mob_living lying && lying.dm_can_be_turned_over) // DEVIATION(DV690)
             entries.Add((RadialExtra.TurnOver, I18n.T("Turn over")));
         return entries;
     }
@@ -130,7 +130,7 @@ public static class RadialExtras
                 else if (kind == RadialExtra.Offer)
                     Waiting.Detach(((mob_living)user).give((mob_living)target)); // DV139: tg's give, which checks everything again
                 else
-                    Waiting.Detach(((mob_living)target).radial_turn_over(user)); // DV686
+                    Waiting.Detach(((mob_living)target).radial_turn_over(user)); // DV690
             }
             finally
             {

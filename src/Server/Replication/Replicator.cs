@@ -96,7 +96,7 @@ public sealed partial class Replicator : IReplicator
     private readonly List<Candidate> _candidates = new();
     private readonly List<long> _pendingTurfs = new();
     private readonly HashSet<long> _appearanceHinted = new(); // ids named by an appearance hint in the last BuildDelta (the screen objects' check)
-    private readonly HashSet<long> _hinted = new(); // version 99 also (DV692): ids named by any hint (a move, a look, a name) in the last BuildDelta (the carried storages' check)
+    private readonly HashSet<long> _hinted = new(); // version 100 also (DV696): ids named by any hint (a move, a look, a name) in the last BuildDelta (the carried storages' check)
     private readonly HashSet<long> _maptextHinted = new(); // version 18: ids whose maptext (version 29: or filters) changed since the last BuildDelta (joins _appearanceHinted for the screen objects and the game plane only)
     private bool _mapChanged = true;
     private long _watermark;
@@ -2135,8 +2135,8 @@ public sealed partial class Replicator : IReplicator
             UpdateGamePlane(owner, player, tick, full); // version 29
             UpdateVision(player, full); // version 31
             UpdateRadioChannels(owner, player, full); // version 40
-            UpdateHotbar(player, tick, full); // version 99 also (DV689), before the tables' new rows are taken: its pictures are among them
-            UpdateStorages(owner, player, tick, full); // version 99 also (DV692), the same
+            UpdateHotbar(player, tick, full); // version 100 also (DV693), before the tables' new rows are taken: its pictures are among them
+            UpdateStorages(owner, player, tick, full); // version 100 also (DV696), the same
 
             // The private tables' new entries (all of them in a join: the tables start afresh).
             AppearanceTables t = Tables;

@@ -98,6 +98,7 @@ public partial class GameScene : Node3D
         return _feed.Replica.IsOpaque(x, y, _ownZ);
     }
     private CameraRig _rig;
+    private Anomaly.Client.Render.PhotoCamera _photoCamera;
     private PlaySession _session;
     private PlayOptions _options;
     private HudLayer _hudLayer;
@@ -190,6 +191,8 @@ public partial class GameScene : Node3D
         _map = GetNode<MapRenderer>("Map");
         _entities = GetNode<EntityLayer>("Entities");
         _rig = GetNode<CameraRig>("Rig");
+        _photoCamera = new Anomaly.Client.Render.PhotoCamera { Name = "PhotoCamera" }; // DV685: the pictures tg's camera takes
+        AddChild(_photoCamera);
         // The map draws the tiles and the static props itself (M3 P6, scope 2i); the entity layer keeps the mobs and whatever moves.
         // Both take their pictures from tg's icons through one set of textures.
         var textures = new AppearanceTextures();
@@ -553,6 +556,8 @@ public partial class GameScene : Node3D
         using (Dev.FrameProbe.Scope("GameScene/session.Frame"))
             _session.Frame(now, moveKeys, facing, controlling);
         ApplyMapLook();
+        while (_feed.TryTakePhotoRequest(out PhotoRequestMessage photo)) // DV685: a picture this client's camera took, rendered from the own eye
+            _photoCamera.Take(photo, _rig.Camera, _feed.SendPhoto);
         Starfield.SetSun(EditorOn ? EditorSunAzimuth(_feed.Replica?.SunAzimuth ?? float.NaN) : _feed.Replica?.SunAzimuth ?? float.NaN, dt); // tg's SSsun, moved once a minute
         bool ashen = _feed.Replica?.IsNoParallax(_ownZ) == true; // D305: Lavaland's own sky (the own or the watched mob's level, last frame's)
         Starfield.SetAshen(ashen);
@@ -758,7 +763,7 @@ public partial class GameScene : Node3D
         _entities.OwnBodyInView = _rig.Camera != null && LookDown.ShowsOwnBody(_rig.Pitch, _rig.FovDegrees, _rig.Camera.Near, _rig.EyeUp, _rig.Mode == CameraMode.FirstPerson,
             onTurf, ghost, observing, PostureBits.IsLying(pose.Posture), PostureBits.IsLimp(pose.Posture), onTurf && body.IsExosuit(), _scopeZoom >= 1.01f);
         _ownBodyShowable = LookDown.CanShowOwnBody(_rig.Mode == CameraMode.FirstPerson, onTurf, ghost, observing, PostureBits.IsLying(pose.Posture),
-            PostureBits.IsLimp(pose.Posture), onTurf && body.IsExosuit(), _scopeZoom >= 1.01f); // DV691: a held drag of oneself ends when the body cannot be shown
+            PostureBits.IsLimp(pose.Posture), onTurf && body.IsExosuit(), _scopeZoom >= 1.01f); // DV695: a held drag of oneself ends when the body cannot be shown
         using (Dev.FrameProbe.Scope("GameScene/entities.Update"))
             _entities.Update(_session.RenderTick, now, observing ? eye : own, observing || (_rig.Mode == CameraMode.FirstPerson && !ghost), _names);
 
@@ -858,7 +863,7 @@ public partial class GameScene : Node3D
         UpdateEditor();
         _hudLayer.RenderTick = _session.RenderTick; // M4v slice 4: the screen objects' flicks and animate() chains play at the entities' render tick
         _hudLayer.CursorMode = _mouse.CursorMode; // ui-overhaul.md 6: tg's zone selector shows only while the cursor is free
-        _hudLayer.SelfDrag = _selfDrag.Holding; // DV691: the hint strip reads "Yourself" while the own body is dragged
+        _hudLayer.SelfDrag = _selfDrag.Holding; // DV695: the hint strip reads "Yourself" while the own body is dragged
         _hudLayer.SelfDragPicture = _selfDrag.HintPicture(_feed.Replica); // with the own body's picture, as the drag mark shows it
         _hudLayer.Hotbar = _session.Hotbar; // ui-overhaul.md section 10: the bar's cells
         _hudLayer.Storages = _session.Storages; // slice 4B-2: the right column's panels

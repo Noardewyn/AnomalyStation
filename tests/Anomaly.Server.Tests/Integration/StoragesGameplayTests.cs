@@ -12,8 +12,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// ui-overhaul.md section 12, slice 4B-1 (DV692): the Tab inventory's server half through a real server and headless clients. Alice wears a backpack, a
-/// toolbelt and a box in a pocket; her client receives the storages with their contents (protocol 99's Storages, StoragesModel), sends moves
+/// ui-overhaul.md section 12, slice 4B-1 (DV696): the Tab inventory's server half through a real server and headless clients. Alice wears a backpack, a
+/// toolbelt and a box in a pocket; her client receives the storages with their contents (protocol 100's Storages, StoragesModel), sends moves
 /// (PlaySession.InventoryMove) that the server does with tg's procs, and the Tab notice (PlaySession.InventoryOpened) whose rustle Bob, next to her,
 /// hears once a second. Bob never receives a Storages message about Alice; Alice's changes when an item leaves her bag or pocket another way.
 /// </summary>

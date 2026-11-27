@@ -139,11 +139,17 @@ public sealed class AppearanceEntry
     /// <summary>Version 25: BYOND <c>render_target</c>, a string (a filter's render source names it), or none. One starting with <c>*</c> is not drawn itself.</summary>
     public TableRef RenderTarget { get; set; }
 
+    /// <summary>
+    /// Version 99 (DV687): BYOND <c>particles</c>, the particle set the atom emits (tg's particle holders: a cigarette's smoke), as a string
+    /// table entry holding the set's vars as JSON (docs/ai/specs/protocol.md section 95), or none.
+    /// </summary>
+    public TableRef Particles { get; set; }
+
     /// <summary>BYOND's default <c>maptext_width</c> and <c>maptext_height</c>: one icon (32 pixels).</summary>
     public const short DefaultMaptextSize = 32;
 }
 
-/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte; all eight bits are used (version 99).</summary>
+/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte; all eight bits are used (version 100).</summary>
 public static class PostureBits
 {
     /// <summary>Bit 0: lying (tg <c>LYING_DOWN</c>).</summary>
@@ -171,12 +177,12 @@ public static class PostureBits
     public const byte Buckled = 32;
 
     /// <summary>
-    /// Bit 6 (version 99, slice T4c, DV686): someone turned the lying body over, so its side up is fixed (<see cref="FaceUp"/>) for every viewer.
+    /// Bit 6 (version 100, slice T4c, DV690): someone turned the lying body over, so its side up is fixed (<see cref="FaceUp"/>) for every viewer.
     /// Set only while lying; the server forgets the side when the body stands up.
     /// </summary>
     public const byte SideFixed = 64;
 
-    /// <summary>Bit 7 (version 99, slice T4c, DV686): with <see cref="SideFixed"/>, the turned body lies face up (its front is drawn); without, back up.</summary>
+    /// <summary>Bit 7 (version 100, slice T4c, DV690): with <see cref="SideFixed"/>, the turned body lies face up (its front is drawn); without, back up.</summary>
     public const byte FaceUp = 128;
 
     /// <summary>
@@ -492,17 +498,17 @@ public enum ActionKind : byte
     /// </summary>
     Loaded = 27,
     /// <summary>
-    /// Version 99 (DV689, ui-overhaul.md section 10): a press of hotbar cell <see cref="ActionMessage.HotbarCell"/> (1 to 10: 1 to 7 the belt,
+    /// Version 100 (DV693, ui-overhaul.md section 10): a press of hotbar cell <see cref="ActionMessage.HotbarCell"/> (1 to 10: 1 to 7 the belt,
     /// 8 and 9 the pockets, 10 the ID slot), untargeted. The server does what the cell's rules say with tg's procs, or tells the client it refused.
     /// </summary>
     HotbarPress = 28,
     /// <summary>
-    /// Version 99 also (DV692, ui-overhaul.md section 12, slice 4B): move <see cref="ActionMessage.MoveItem"/>, an item of the own inventory, to
+    /// Version 100 also (DV696, ui-overhaul.md section 12, slice 4B): move <see cref="ActionMessage.MoveItem"/>, an item of the own inventory, to
     /// <see cref="ActionMessage.MoveTo"/> (a carried storage <see cref="ActionMessage.MoveStorage"/> at a wished cell, a worn slot, a hand or the floor;
     /// <see cref="ActionMessage.MoveIndex"/>), untargeted. The server checks every field and does the move with tg's procs, or refuses it.
     /// </summary>
     InventoryMove = 29,
-    /// <summary>Version 99 also (DV692): the Tab inventory was opened; the server plays tg's opening of the back storage (its rustle), no fields.</summary>
+    /// <summary>Version 100 also (DV696): the Tab inventory was opened; the server plays tg's opening of the back storage (its rustle), no fields.</summary>
     InventoryOpen = 30,
 }
 
@@ -583,7 +589,7 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
     /// <summary>Version 4: tg's <c>icon-y</c>, 1 to 32 (0: absent): north (or up on a billboard) is y.</summary>
     public byte IconY { get; init; }
 
-    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte (version 99: bit 3 its high bit); version 99 also: the zone a hover on an entity looks at, a byte after its target; None otherwise.</summary>
+    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte (version 100: bit 3 its high bit); version 100 also: the zone a hover on an entity looks at, a byte after its target; None otherwise.</summary>
     public AimZone AimZone { get; init; }
 
     /// <summary>Version 4: the keybinding of a <see cref="ActionKind.Keybinding"/> (<see cref="KeybindingCode"/>), else None.</summary>
@@ -642,20 +648,20 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
     /// <summary>Version 38: a <see cref="ActionKind.Say"/> of type "thinking": tg's <c>payload["visible"]</c>; false otherwise.</summary>
     public bool SayVisible { get; init; }
 
-    /// <summary>Version 99 also (DV689): the cell of a <see cref="ActionKind.HotbarPress"/>, 1 to <see cref="HotbarMessage.CellCount"/>; 0 for every other kind.</summary>
+    /// <summary>Version 100 also (DV693): the cell of a <see cref="ActionKind.HotbarPress"/>, 1 to <see cref="HotbarMessage.CellCount"/>; 0 for every other kind.</summary>
     public int HotbarCell { get; init; }
 
-    /// <summary>Version 99 also (DV692): the item an <see cref="ActionKind.InventoryMove"/> moves (an entity id, above 0); 0 for every other kind.</summary>
+    /// <summary>Version 100 also (DV696): the item an <see cref="ActionKind.InventoryMove"/> moves (an entity id, above 0); 0 for every other kind.</summary>
     public long MoveItem { get; init; }
 
-    /// <summary>Version 99 also: where an <see cref="ActionKind.InventoryMove"/> puts its item; <see cref="InventoryTarget.None"/> for every other kind.</summary>
+    /// <summary>Version 100 also: where an <see cref="ActionKind.InventoryMove"/> puts its item; <see cref="InventoryTarget.None"/> for every other kind.</summary>
     public InventoryTarget MoveTo { get; init; }
 
-    /// <summary>Version 99 also: the storage (an entity id, above 0) of a move to <see cref="InventoryTarget.Storage"/>, else 0.</summary>
+    /// <summary>Version 100 also: the storage (an entity id, above 0) of a move to <see cref="InventoryTarget.Storage"/>, else 0.</summary>
     public long MoveStorage { get; init; }
 
     /// <summary>
-    /// Version 99 also: a move's index: the wished cell of a storage (1 to <see cref="Limits.MaxStorageItems"/>, 0 for none), tg's slot id of a worn slot
+    /// Version 100 also: a move's index: the wished cell of a storage (1 to <see cref="Limits.MaxStorageItems"/>, 0 for none), tg's slot id of a worn slot
     /// (<see cref="InventorySlots.Worn"/>), tg's held index of a hand (1 to <see cref="Limits.MaxStorageHands"/>); 0 for the floor and every other kind.
     /// </summary>
     public int MoveIndex { get; init; }

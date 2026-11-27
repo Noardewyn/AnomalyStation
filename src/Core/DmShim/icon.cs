@@ -144,6 +144,12 @@ public class icon
         MapColors(red, 0f, 0f, 0f, green, 0f, 0f, 0f, blue, 0f, 0f, 0f);
     }
 
+    /// <summary>
+    /// DM <c>icon.GrayScale()</c> (BYOND ref <c>/icon/proc/GrayScale</c>): the icon in grey, BYOND's
+    /// <c>MapColors(0.3, 0.3, 0.3, 0.59, 0.59, 0.59, 0.11, 0.11, 0.11)</c> (tg's photocopier's grey copies of a photo).
+    /// </summary>
+    public void GrayScale() => MapColors(0.3f, 0.3f, 0.3f, 0.59f, 0.59f, 0.59f, 0.11f, 0.11f, 0.11f);
+
     /// <summary>M10x slice D4: the <see cref="dm_ops"/> function that marks a <c>Crop</c>; its operand is the upper right corner, its position the lower left.</summary>
     public const int CropFunction = 102;
 

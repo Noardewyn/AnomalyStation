@@ -92,9 +92,9 @@ public partial class turf_closed_wall_metal_foam_base : turf_closed_wall
     }
 }
 
-// tg: code/game/turfs/closed/wall/concrete_walls.dm:2
-[DmPath("/turf/closed/wall/concrete"), DmGeneratedOnly, DmInert]
-public partial class turf_closed_wall_concrete : turf_closed_wall
+// tg: code/game/turfs/closed/wall/concrete_walls.dm:2 (the var block of a hand-written class)
+[DmPath("/turf/closed/wall/concrete")]
+public partial class turf_closed_wall_concrete
 {
     public float time_to_harden = 600; // tg: code/game/turfs/closed/wall/concrete_walls.dm:22
     public float harden_lvl = 1; // tg: code/game/turfs/closed/wall/concrete_walls.dm:25
@@ -121,9 +121,9 @@ public partial class turf_closed_wall_concrete : turf_closed_wall
     }
 }
 
-// tg: code/game/turfs/closed/wall/concrete_walls.dm:98
-[DmPath("/turf/closed/wall/concrete/reinforced"), DmGeneratedOnly, DmInert]
-public partial class turf_closed_wall_concrete_reinforced : turf_closed_wall_concrete
+// tg: code/game/turfs/closed/wall/concrete_walls.dm:98 (the var block of a hand-written class)
+[DmPath("/turf/closed/wall/concrete/reinforced")]
+public partial class turf_closed_wall_concrete_reinforced
 {
     // tg: code/game/turfs/closed/wall/concrete_walls.dm:98
     public turf_closed_wall_concrete_reinforced()
@@ -188,9 +188,9 @@ public partial class turf_closed_wall_material_meat_airless : turf_closed_wall_m
     }
 }
 
-// tg: code/game/turfs/closed/wall/mineral_walls.dm:2
-[DmPath("/turf/closed/wall/mineral"), DmGeneratedOnly]
-public partial class turf_closed_wall_mineral : turf_closed_wall
+// tg: code/game/turfs/closed/wall/mineral_walls.dm:2 (the var block of a hand-written class)
+[DmPath("/turf/closed/wall/mineral")]
+public partial class turf_closed_wall_mineral
 {
     // tg: code/game/turfs/closed/wall/mineral_walls.dm:2
     public turf_closed_wall_mineral()

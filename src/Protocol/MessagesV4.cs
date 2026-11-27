@@ -152,7 +152,7 @@ public static class HudGroup
 /// <summary>
 /// The body zone a click aims at (the owner's play test 2026-10-09, DV30): the body part of a carbon's picture under the
 /// crosshair, which the server selects as tg's <c>zone_selected</c> before the click. Bits 4-6 of a click's modifiers byte, and since
-/// version 99 bit 3 as the zone's high bit (<c>((mods &gt;&gt; 4) &amp; 7) | (mods &amp; 8)</c>), so every byte of version 97 keeps its meaning.
+/// version 100 bit 3 as the zone's high bit (<c>((mods &gt;&gt; 4) &amp; 7) | (mods &amp; 8)</c>), so every byte of version 97 keeps its meaning.
 /// </summary>
 public enum AimZone : byte
 {
@@ -164,13 +164,13 @@ public enum AimZone : byte
     LeftLeg = 5,
     RightLeg = 6,
 
-    /// <summary>Version 99 (package T, slice T4a): tg's <c>BODY_ZONE_PRECISE_EYES</c>, the eyes of the head looked at.</summary>
+    /// <summary>Version 100 (package T, slice T4a): tg's <c>BODY_ZONE_PRECISE_EYES</c>, the eyes of the head looked at.</summary>
     Eyes = 7,
 
-    /// <summary>Version 99: tg's <c>BODY_ZONE_PRECISE_MOUTH</c>, the mouth of the head looked at.</summary>
+    /// <summary>Version 100: tg's <c>BODY_ZONE_PRECISE_MOUTH</c>, the mouth of the head looked at.</summary>
     Mouth = 8,
 
-    /// <summary>Version 99: tg's <c>BODY_ZONE_PRECISE_GROIN</c>, the lowest rows of the chest looked at.</summary>
+    /// <summary>Version 100: tg's <c>BODY_ZONE_PRECISE_GROIN</c>, the lowest rows of the chest looked at.</summary>
     Groin = 9,
 
     /// <summary>The largest valid zone; a decoder refuses any other.</summary>

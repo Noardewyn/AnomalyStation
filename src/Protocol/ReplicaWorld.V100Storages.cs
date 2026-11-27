@@ -1,6 +1,6 @@
 namespace Anomaly.Protocol;
 
-// Version 99 also (MessagesV99Storages.cs, protocol.md section 98; DV692): the own carried storages. The replica keeps the last state (its refusal
+// Version 100 also (MessagesV100Storages.cs, protocol.md section 100; DV696): the own carried storages. The replica keeps the last state (its refusal
 // field cleared) and counts the refusals, so every reader of the State channel (the game client, the fake feed, the test rigs, the bots) takes it.
 
 public sealed partial class ReplicaWorld

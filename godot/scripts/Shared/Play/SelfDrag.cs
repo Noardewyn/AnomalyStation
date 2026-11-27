@@ -17,7 +17,7 @@ public enum SelfDragOutcome : byte
 }
 
 /// <summary>
-/// DEVIATION(DV691): the first-person drag of oneself (ui-overhaul.md section 17). Engine-free (compiled into tests/Anomaly.Server.Tests too).
+/// DEVIATION(DV695): the first-person drag of oneself (ui-overhaul.md section 17). Engine-free (compiled into tests/Anomaly.Server.Tests too).
 /// In the captured view a plain left press with the crosshair on the own body (looking down, <see cref="LookDown.PickExclude"/>) sends nothing
 /// and is held; the player turns to an object and lets go there: the drop of the own mob onto it, as cursor mode's drag sends; let go on the own
 /// body it is the click on oneself, sent then with the press's zone; let go on anything else nothing. Only the own body starts it; a press with a
@@ -72,7 +72,7 @@ public sealed class SelfDrag
     /// <summary>
     /// The button came up with the crosshair on <paramref name="over"/>: on the own body the click on oneself (<paramref name="release"/>'s
     /// source and over are the press's target), on another thing not known to be out of reach (<paramref name="outOfReach"/>: the server's
-    /// answer to the hover, DV687) the drop of the own mob onto it (tg's own reach rule decides it then), on anything else nothing.
+    /// answer to the hover, DV691) the drop of the own mob onto it (tg's own reach rule decides it then), on anything else nothing.
     /// </summary>
     public SelfDragOutcome Release(in ClickTarget over, long ownEntity, bool outOfReach, double now, out DragRelease release)
     {
@@ -113,7 +113,7 @@ public sealed class SelfDrag
 
     /// <summary>
     /// The prompt's name while the drag is held: a thing under the crosshair named as the prompt names it (<paramref name="promptName"/>,
-    /// <see cref="KeyChips.PromptName"/>: none out of reach, DV687), no action lines; none for a cell or nothing.
+    /// <see cref="KeyChips.PromptName"/>: none out of reach, DV691), no action lines; none for a cell or nothing.
     /// </summary>
     public static string PromptName(in ClickTarget over, string promptName)
         => over.Kind == TargetKind.Entity && !string.IsNullOrEmpty(promptName) ? promptName : null;

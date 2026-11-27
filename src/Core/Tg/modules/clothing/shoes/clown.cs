@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps J2 (D298): the clown shoes: the squeak, the waddle, the mood and the pockets; the fishing element is a Deferred leaf.
+// Gaps J2 (D298): the clown shoes: the squeak, the waddle, the mood, the pockets and the fishing difficulty element.
 // Syndicate N3 (D316): the combat clown shoes and the mk-honk combat shoes of the clown operatives.
 
 // tg: code/modules/clothing/shoes/clown.dm:1

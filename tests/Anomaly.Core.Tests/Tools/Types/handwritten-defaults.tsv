@@ -1207,6 +1207,7 @@
 /datum/admin_rank	include_rights	decl	code/modules/admin/admin_ranks.dm:15	{"K":"num","N":0}
 /datum/admin_rank	exclude_rights	decl	code/modules/admin/admin_ranks.dm:17	{"K":"num","N":0}
 /datum/admin_rank	can_edit_rights	decl	code/modules/admin/admin_ranks.dm:19	{"K":"num","N":0}
+/datum/greyscale_modify_menu	user	decl	code/modules/admin/greyscale_modify_menu.dm:7	{"K":"null","N":0}
 /datum/admin_help	id	decl	code/modules/admin/verbs/adminhelp.dm:171	{"K":"null","N":0}
 /datum/reagent	name	decl	code/modules/reagents/chemistry/reagents.dm:6	{"K":"str","N":0,"S":""}
 /datum/reagent	material	decl	code/modules/reagents/chemistry/reagents.dm:46	{"K":"null","N":0}

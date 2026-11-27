@@ -75,8 +75,8 @@ public enum CommandKind : byte
 /// <param name="DragTime">Version 17: the drag's length in deciseconds (at most 255).</param>
 /// <param name="Aim">Version 34: the camera's aim of a click or a mouse action (DV94), null for none.</param>
 /// <param name="WaitsForLoad">Version 97 (DV597): a Join of a client that loads the world first (<see cref="Session.AwaitingLoad"/>).</param>
-/// <remarks>Version 99 also (DV689): a <see cref="ActionKind.HotbarPress"/> carries its cell (1 to 10) in <c>Target</c>, so the command log keeps it.
-/// Version 99 also (DV692): an <see cref="ActionKind.InventoryMove"/> carries its item in <c>Target</c>, its target kind in <c>TurfX</c>, its index in
+/// <remarks>Version 100 also (DV693): a <see cref="ActionKind.HotbarPress"/> carries its cell (1 to 10) in <c>Target</c>, so the command log keeps it.
+/// Version 100 also (DV696): an <see cref="ActionKind.InventoryMove"/> carries its item in <c>Target</c>, its target kind in <c>TurfX</c>, its index in
 /// <c>TurfY</c> and its storage in <c>RadialMenu</c>, for the same reason.</remarks>
 public readonly record struct QueuedCommand(long ApplyTick, int Session, uint Seq, CommandKind Kind, string Text = null, HeldDirs Dirs = HeldDirs.None,
     Anomaly.Core.Motion.MotionInput Motion = default, ActionKind Action = ActionKind.None, long Target = 0, ClickButton Button = ClickButton.None, ClickModifiers Modifiers = ClickModifiers.None,

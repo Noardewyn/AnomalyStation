@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file but the persistence and the shown image (gaps J3, D298). The var blocks are generated.
+// The whole file but the persistence (gaps J3, D298); the shown picture is the photographer's client's render (DV685). The var blocks are generated.
 
 /*
  * Photo
@@ -144,6 +144,18 @@ public partial class obj_item_photo : obj_item
             to_chat(user, span_warning(I18n.T("[] seems to be blank...", this)));
             return;
         }
-        Dm.Deferred("code/modules/photography/photos/photo.dm:107", "show: the browser window with the picture's image (no image: camera_get_icon)");
+        string width_height = "width";
+        if (picture.psize_y > picture.psize_x)
+        {
+            // if we're a tall picture, swap our focus to height to stay in frame
+            width_height = "height";
+        }
+        ClientSeam.BrowseRsc(user, picture.picture_image, "tmp_photo.png"); // user << browse_rsc(picture.picture_image, "tmp_photo.png")
+        ClientSeam.Browse(user, Dm.text("<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>[]</title></head>", name)
+            + "<body style='overflow:hidden;margin:0;text-align:center'>"
+            + Dm.text("<img src='tmp_photo.png' []='480' style='image-rendering:pixelated' />", width_height)
+            + (Dm.truthy(scribble) ? Dm.text("<br>Written on the back:<br><i>[]</i>", scribble) : "")
+            + "</body></html>", Dm.text("window=photo_showing;size=[]", Dm.truthy(scribble) ? "480x580" : "480x480"));
+        // onclose(user, "[name]"): the window's close callback (browse()'s onclose, not ported: the Browser window closes by itself)
     }
 }

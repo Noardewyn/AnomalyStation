@@ -140,7 +140,7 @@ public static class KeyChips
     }
 
     /// <summary>
-    /// DV687: the name the prompt shows beside the crosshair, null for none. <paramref name="answer"/> is the server's answer for the target
+    /// DV691: the name the prompt shows beside the crosshair, null for none. <paramref name="answer"/> is the server's answer for the target
     /// (<see cref="AnswerFor"/>), <paramref name="ownName"/> the client's name for it. Until the answer comes, a real server's player sees nothing
     /// (the thing may be out of reach); the fake server, which answers few hovers, shows the client's name. A zero-length name is the server's
     /// "out of reach": bare. A null name is tg's "no screentip" (every floor): the client's name.
@@ -149,7 +149,7 @@ public static class KeyChips
         => answer == null ? (realServer ? null : ownName) : answer.Name is { Length: 0 } ? "" : ownName;
 
     /// <summary>
-    /// The thing's name the server gave, null for none: tg's "no screentip" (null) and DV687's "out of reach" (zero-length) give none, so the
+    /// The thing's name the server gave, null for none: tg's "no screentip" (null) and DV691's "out of reach" (zero-length) give none, so the
     /// radial's title and the dev tools fall back to the client's own name; only the prompt goes bare (<see cref="PromptName"/>).
     /// </summary>
     public static string ServerName(ContextHintsMessage answer) => string.IsNullOrEmpty(answer?.Name) ? null : answer.Name;

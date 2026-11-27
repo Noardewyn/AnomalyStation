@@ -116,7 +116,7 @@ public static partial class Codec
 
     // [u8 id = 10] [varuint frameSeq] [u8 kind] then by kind:
     //   Click (4):      [u8 target kind 1..3] [target] [u8 button] [u8 modifiers] [u8 icon-x 0..32] [u8 icon-y 0..32]
-    //   Hover (7):      [u8 target kind 1..3] [target] [version 99: u8 aim zone 1..9 on an entity, absent for none (Codec.V99.cs)]
+    //   Hover (7):      [u8 target kind 1..3] [target] [version 100: u8 aim zone 1..9 on an entity, absent for none (Codec.V100.cs)]
     //                   target: Entity and Screen [varuint id >= 1]; Turf [u8 x 1..255] [u8 y 1..255] [varuint z 1..16]
     //   DevGasProbe (8, version 5): [target: a turf]
     //   Unhover (9, version 14): nothing
@@ -128,13 +128,13 @@ public static partial class Codec
     //   MouseDown (15), MouseDrag (16), MouseUp (17) (version 34), MouseWheel (21, version 70: the button 1 up, 2 down):
     //                   [u8 target kind 0..3] [target unless 0] [u8 button 1..3]
     //                   [u8 modifiers: shift 1, ctrl 2, alt 4, bit 7 aim] [u8 icon-x 0..32] [u8 icon-y 0..32] [aim if bit 7]
-    //   a Click's modifiers byte bits 4-6 are its aim zone (DV30); version 99: bit 3 is the zone's high bit (Codec.V99.cs)
+    //   a Click's modifiers byte bits 4-6 are its aim zone (DV30); version 100: bit 3 is the zone's high bit (Codec.V100.cs)
     //   version 34: a Click's modifiers byte bit 7 says an aim follows its icon-y (Codec.V34.cs:
     //                   [varint east] [varint north] [u16 up mm] [u16 yaw] [i16 pitch -16384..16384])
     //   Keybinding (6): [u8 code 1..13] [u8 key up 0|1]
     //   Emote (19, version 39): [str(32) emote key: a-z, 0-9, _]
     //   DevCommand (5): [str(200) text]
-    //   HotbarPress (28, version 99): [u8 cell 1..10]; InventoryMove (29, version 99): Codec.V99Storages.cs
+    //   HotbarPress (28, version 100): [u8 cell 1..10]; InventoryMove (29, version 100): Codec.V100Storages.cs
     //   others:         nothing
     // (docs/ai/specs/protocol.md section 14.1). A version-3 click (target kind None, a target above 0) is written as an
     // entity click: ActionMessage.EffectiveTargetKind.
@@ -181,10 +181,10 @@ public static partial class Codec
                 WriteUiAction(ref w, message);
                 break;
             case ActionKind.InventoryMove:
-                WriteInventoryMove(ref w, message); // version 99 also (DV692, Codec.V99Storages.cs)
+                WriteInventoryMove(ref w, message); // version 100 also (DV696, Codec.V100Storages.cs)
                 break;
             case ActionKind.HotbarPress:
-                // version 99 also (DV689): the cell, 1 to 10
+                // version 100 also (DV693): the cell, 1 to 10
                 if (message.HotbarCell < 1 || message.HotbarCell > HotbarMessage.CellCount)
                     throw Bad("a hotbar press of cell " + message.HotbarCell);
                 w.WriteByte((byte)message.HotbarCell);
@@ -225,7 +225,7 @@ public static partial class Codec
                 WriteTarget(ref w, targetKind, message.Target, message.TurfX, message.TurfY, message.TurfZ, "a click or hover");
                 if (message.Kind == ActionKind.Hover)
                 {
-                    WriteHoverZone(ref w, message.AimZone, targetKind); // version 99 (slice T4b)
+                    WriteHoverZone(ref w, message.AimZone, targetKind); // version 100 (slice T4b)
                     break;
                 }
                 if (message.Button < ClickButton.Left || message.Button > ClickButton.Middle)
@@ -239,7 +239,7 @@ public static partial class Codec
                 if (message.AimZone > AimZone.Last)
                     throw Bad("a click with an unknown aim zone");
                 w.WriteByte((byte)message.Button);
-                w.WriteByte((byte)((byte)message.Modifiers | ZoneBits(message.AimZone) | (message.Aim.HasValue ? ModifierAimBit : 0))); // version 99: bit 3 the zone's high bit
+                w.WriteByte((byte)((byte)message.Modifiers | ZoneBits(message.AimZone) | (message.Aim.HasValue ? ModifierAimBit : 0))); // version 100: bit 3 the zone's high bit
                 w.WriteByte(message.IconX);
                 w.WriteByte(message.IconY);
                 if (message.Aim.HasValue)
@@ -371,10 +371,10 @@ public static partial class Codec
                     ReadUiAction(ref r, kind, out uiWindow, out uiAction, out uiParams);
                     break;
                 case ActionKind.InventoryMove:
-                    ReadInventoryMove(ref r, out moveItem, out moveTo, out moveStorage, out moveIndex); // version 99 also (DV692)
+                    ReadInventoryMove(ref r, out moveItem, out moveTo, out moveStorage, out moveIndex); // version 100 also (DV696)
                     break;
                 case ActionKind.HotbarPress:
-                    hotbarCell = r.ReadByte(); // version 99 also (DV689)
+                    hotbarCell = r.ReadByte(); // version 100 also (DV693)
                     if (hotbarCell < 1 || hotbarCell > HotbarMessage.CellCount)
                         throw Bad("a hotbar press of cell " + hotbarCell);
                     break;
@@ -416,7 +416,7 @@ public static partial class Codec
                     ReadTarget(ref r, out targetKind, out target, out turfX, out turfY, out turfZ, "a click or hover");
                     if (kind == ActionKind.Hover)
                     {
-                        aimZone = ReadHoverZone(ref r, targetKind); // version 99 (slice T4b)
+                        aimZone = ReadHoverZone(ref r, targetKind); // version 100 (slice T4b)
                         break;
                     }
                     byte buttonByte = r.ReadByte();
@@ -424,7 +424,7 @@ public static partial class Codec
                         throw Bad("a click with an unknown button");
                     button = (ClickButton)buttonByte;
                     byte mods = r.ReadByte();
-                    // version 99: bit 3 is the zone's high bit (Codec.V99.cs), no longer an unknown modifier
+                    // version 100: bit 3 is the zone's high bit (Codec.V100.cs), no longer an unknown modifier
                     int zone = ZoneOfModifiers(mods);
                     if (zone > (byte)AimZone.Last)
                         throw Bad("a click with an unknown aim zone");
@@ -1146,7 +1146,8 @@ public static partial class Codec
     private const uint PresMaptext = 1u << 15; // version 18
     private const uint PresFilters = 1u << 16; // version 25
     private const uint PresRenderTarget = 1u << 17; // version 25
-    private const uint PresAll = (1u << 18) - 1;
+    private const uint PresParticles = 1u << 18; // version 99
+    private const uint PresAll = (1u << 19) - 1;
 
     private const uint DefaultRgba = 0xFFFFFFFF;
 
@@ -1158,6 +1159,7 @@ public static partial class Codec
     //   filters (version 25): [count 1..16] { [u8 kind 1..4] [u8 fields: bit 0 x y, 1 size, 2 rgba, 3 matrix, 4 flags, 5 icon,
     //     6 icon state, 7 render source] x, y: f32; size: f32; rgba: u32; matrix: 20 x f32; flags: u8; icon, state, source: tableref }*
     //   renderTarget (version 25): tableref (a string)
+    //   particles (version 99): tableref (a string, the particle set's JSON)
     // A field is present exactly when it is not its default (none, 0, white, 255, +0.0).
     private static void WriteAppearance(ref WireWriter w, AppearanceEntry e, bool isPrivate, uint ownIndex)
     {
@@ -1180,6 +1182,7 @@ public static partial class Codec
         if (!e.Maptext.IsNone) presence |= PresMaptext;
         if (e.Filters is { Count: > 0 }) presence |= PresFilters;
         if (!e.RenderTarget.IsNone) presence |= PresRenderTarget;
+        if (!e.Particles.IsNone) presence |= PresParticles;
         w.WriteVarUInt(presence);
         const string what = "an appearance entry";
         if ((presence & PresIcon) != 0)
@@ -1256,6 +1259,8 @@ public static partial class Codec
 
         if ((presence & PresRenderTarget) != 0)
             WritePlainRef(ref w, e.RenderTarget, isPrivate, Limits.MaxStringTableEntries, what + "'s render target");
+        if ((presence & PresParticles) != 0)
+            WritePlainRef(ref w, e.Particles, isPrivate, Limits.MaxStringTableEntries, what + "'s particles");
     }
 
     // Version 26: the fields of a filter, a varuint mask (protocol.md section 35.1).
@@ -1554,6 +1559,13 @@ public static partial class Codec
             e.RenderTarget = ReadPlainRef(ref r, isPrivate, Limits.MaxStringTableEntries, what + "'s render target");
             if (e.RenderTarget.IsNone)
                 throw Bad(what + "'s render target is present and names none");
+        }
+
+        if ((presence & PresParticles) != 0)
+        {
+            e.Particles = ReadPlainRef(ref r, isPrivate, Limits.MaxStringTableEntries, what + "'s particles");
+            if (e.Particles.IsNone)
+                throw Bad(what + "'s particles are present and name none");
         }
 
         return e;

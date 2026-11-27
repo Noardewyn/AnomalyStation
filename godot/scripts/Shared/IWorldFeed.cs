@@ -166,22 +166,22 @@ public interface IWorldFeed
     /// <summary>Protocol version 92 (DV96): how many times the own shots' hit count changed since the join (each change is a hit marker).</summary>
     int GunSightHits => 0;
 
-    /// <summary>Protocol version 99 also (DV689): the own hotbar the server last sent (its refusal field cleared), <see cref="HotbarMessage.None"/> before the first.</summary>
+    /// <summary>Protocol version 100 also (DV693): the own hotbar the server last sent (its refusal field cleared), <see cref="HotbarMessage.None"/> before the first.</summary>
     HotbarMessage Hotbar => HotbarMessage.None;
 
-    /// <summary>Protocol version 99 also (DV689): how many refused presses the server reported since the join (each is a blink of <see cref="HotbarRefusedCell"/>).</summary>
+    /// <summary>Protocol version 100 also (DV693): how many refused presses the server reported since the join (each is a blink of <see cref="HotbarRefusedCell"/>).</summary>
     int HotbarRefusals => 0;
 
-    /// <summary>Protocol version 99 also (DV689): the cell (1 to 10) of the last refused press, 0 before the first.</summary>
+    /// <summary>Protocol version 100 also (DV693): the cell (1 to 10) of the last refused press, 0 before the first.</summary>
     int HotbarRefusedCell => 0;
 
-    /// <summary>Protocol version 99 also (DV692): the own carried storages the server last sent (the refusal cleared), <see cref="StoragesMessage.None"/> before the first.</summary>
+    /// <summary>Protocol version 100 also (DV696): the own carried storages the server last sent (the refusal cleared), <see cref="StoragesMessage.None"/> before the first.</summary>
     StoragesMessage Storages => StoragesMessage.None;
 
-    /// <summary>Protocol version 99 also (DV692): how many refused inventory moves the server reported since the join.</summary>
+    /// <summary>Protocol version 100 also (DV696): how many refused inventory moves the server reported since the join.</summary>
     int StoragesRefusals => 0;
 
-    /// <summary>Protocol version 99 also (DV692): the item (its entity) of the last refused move, 0 before the first.</summary>
+    /// <summary>Protocol version 100 also (DV696): the item (its entity) of the last refused move, 0 before the first.</summary>
     long StoragesRefusedItem => 0;
 
     /// <summary>The transport's round trip in milliseconds.</summary>
@@ -212,6 +212,18 @@ public interface IWorldFeed
 
     /// <summary>Protocol version 53: sends the Esc menu's bug report on the State channel; a no-op unless playing (and in a fake world).</summary>
     void SendBugReport(BugReportMessage report)
+    {
+    }
+
+    /// <summary>Protocol version 99 (DV685): takes the oldest picture the server asked this client to render, false when none waits.</summary>
+    bool TryTakePhotoRequest(out PhotoRequestMessage request)
+    {
+        request = null;
+        return false;
+    }
+
+    /// <summary>Protocol version 99: sends a rendered picture's PNG for the request <paramref name="id"/> on the State channel; a no-op unless playing.</summary>
+    void SendPhoto(uint id, byte[] png)
     {
     }
 }

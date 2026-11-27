@@ -11,7 +11,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// Package T, slice T4b (protocol 99 also): the hover carries the body zone looked at. Through a real server and clients: the server selects it as tg's
+/// Package T, slice T4b (protocol 100 also): the hover carries the body zone looked at. Through a real server and clients: the server selects it as tg's
 /// <c>zone_selected</c> without tg's log (<c>set_selected_zone(..., should_log = FALSE)</c>) before tg's hover, so the hints of the same mob follow the
 /// look (carbon_context's Headpat on the head, Hug on the chest); a zone on a thing that is no carbon changes nothing; while any of tg's do-afters runs
 /// for the looker the zone stays (the gun at the mouth keeps the mouth and fires), a click still sets it, and the look applies again after; a burst of
@@ -89,7 +89,7 @@ public class HoverZoneGameplayTests
             Assert.Equal(BODY_ZONE_PRECISE_EYES, In(w, () => aliceMob.zone_selected));
             Assert.Equal("Headpat", LeftClickLabel(LastHintsOn(hints, bobMob)));
 
-            // the same zone again: nothing is sent, until the repeat (DV687: PlaySession.RepeatHoverInterval after the last hover) sends it again
+            // the same zone again: nothing is sent, until the repeat (DV691: PlaySession.RepeatHoverInterval after the last hover) sends it again
             Assert.False(alice.Session.Hover(On(bobMob, AimZone.Eyes), w.Now));
             Assert.False(alice.Session.Hover(On(bobMob, AimZone.Eyes) with { IconY = 22 }, w.Now + 0.1));
             Assert.True(alice.Session.Hover(On(bobMob, AimZone.Eyes) with { IconY = 22 }, w.Now + 1));

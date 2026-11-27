@@ -12,7 +12,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// ui-overhaul.md section 12, slice 4B-2 (DV692): tg's Shift+click on an item the Tab inventory's panels show examines it, as a Shift+click on tg's
+/// ui-overhaul.md section 12, slice 4B-2 (DV696): tg's Shift+click on an item the Tab inventory's panels show examines it, as a Shift+click on tg's
 /// storage screen does. Through a real server and raw headless clients: Alice's own stored screwdriver examines (tg's examine box reaches her); the
 /// wrench in Bob's backpack, the pen in her locked lockbox and the crayon in a box inside her backpack (two levels deep) do not; a plain, Ctrl, Alt,
 /// right or middle click on her own stored item, and a Shift+click naming it as a world entity, are refused as before.

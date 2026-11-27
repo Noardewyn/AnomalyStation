@@ -1432,9 +1432,9 @@ public partial class obj_structure_sign_painting_library_private : obj_structure
     }
 }
 
-// tg: code/modules/photography/photos/frame.dm:66
-[DmPath("/obj/structure/sign/picture_frame"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_sign_picture_frame : obj_structure_sign
+// tg: code/modules/photography/photos/frame.dm:66 (the var block of a hand-written class)
+[DmPath("/obj/structure/sign/picture_frame")]
+public partial class obj_structure_sign_picture_frame
 {
     public obj_item_photo framed; // tg: code/modules/photography/photos/frame.dm:72
     public object persistence_id; // tg: code/modules/photography/photos/frame.dm:73
@@ -1460,7 +1460,7 @@ public partial class obj_structure_sign_picture_frame : obj_structure_sign
 }
 
 // tg: code/modules/photography/photos/frame.dm:184
-[DmPath("/obj/structure/sign/picture_frame/showroom"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/showroom"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_showroom : obj_structure_sign_picture_frame
 {
     // tg: code/modules/photography/photos/frame.dm:184
@@ -1473,7 +1473,7 @@ public partial class obj_structure_sign_picture_frame_showroom : obj_structure_s
 }
 
 // tg: code/modules/photography/photos/frame.dm:249
-[DmPath("/obj/structure/sign/picture_frame/showroom/one"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/showroom/one"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_showroom_one : obj_structure_sign_picture_frame_showroom
 {
     // tg: code/modules/photography/photos/frame.dm:249
@@ -1484,7 +1484,7 @@ public partial class obj_structure_sign_picture_frame_showroom_one : obj_structu
 }
 
 // tg: code/modules/photography/photos/frame.dm:252
-[DmPath("/obj/structure/sign/picture_frame/showroom/two"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/showroom/two"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_showroom_two : obj_structure_sign_picture_frame_showroom
 {
     // tg: code/modules/photography/photos/frame.dm:252
@@ -1495,7 +1495,7 @@ public partial class obj_structure_sign_picture_frame_showroom_two : obj_structu
 }
 
 // tg: code/modules/photography/photos/frame.dm:255
-[DmPath("/obj/structure/sign/picture_frame/showroom/three"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/showroom/three"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_showroom_three : obj_structure_sign_picture_frame_showroom
 {
     // tg: code/modules/photography/photos/frame.dm:255
@@ -1506,7 +1506,7 @@ public partial class obj_structure_sign_picture_frame_showroom_three : obj_struc
 }
 
 // tg: code/modules/photography/photos/frame.dm:258
-[DmPath("/obj/structure/sign/picture_frame/showroom/four"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/showroom/four"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_showroom_four : obj_structure_sign_picture_frame_showroom
 {
     // tg: code/modules/photography/photos/frame.dm:258
@@ -1516,9 +1516,9 @@ public partial class obj_structure_sign_picture_frame_showroom_four : obj_struct
     }
 }
 
-// tg: code/modules/photography/photos/frame.dm:190
-[DmPath("/obj/structure/sign/picture_frame/portrait"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_sign_picture_frame_portrait : obj_structure_sign_picture_frame
+// tg: code/modules/photography/photos/frame.dm:190 (the var block of a hand-written class)
+[DmPath("/obj/structure/sign/picture_frame/portrait")]
+public partial class obj_structure_sign_picture_frame_portrait
 {
     public object portrait_name; // tg: code/modules/photography/photos/frame.dm:193
     public object portrait_state; // tg: code/modules/photography/photos/frame.dm:194
@@ -1533,9 +1533,9 @@ public partial class obj_structure_sign_picture_frame_portrait : obj_structure_s
     }
 }
 
-// tg: code/modules/photography/photos/frame.dm:274
-[DmPath("/obj/structure/sign/picture_frame/portrait/bar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_sign_picture_frame_portrait_bar : obj_structure_sign_picture_frame_portrait
+// tg: code/modules/photography/photos/frame.dm:274 (the var block of a hand-written class)
+[DmPath("/obj/structure/sign/picture_frame/portrait/bar")]
+public partial class obj_structure_sign_picture_frame_portrait_bar
 {
     // tg: code/modules/photography/photos/frame.dm:274
     public obj_structure_sign_picture_frame_portrait_bar()
@@ -1545,11 +1545,11 @@ public partial class obj_structure_sign_picture_frame_portrait_bar : obj_structu
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/obj/structure/sign/picture_frame/hall_of_fame"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/hall_of_fame"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_hall_of_fame : obj_structure_sign_picture_frame { }
 
 // tg: code/modules/photography/photos/frame.dm:262
-[DmPath("/obj/structure/sign/picture_frame/hall_of_fame/one"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/hall_of_fame/one"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_hall_of_fame_one : obj_structure_sign_picture_frame_hall_of_fame
 {
     // tg: code/modules/photography/photos/frame.dm:262
@@ -1560,7 +1560,7 @@ public partial class obj_structure_sign_picture_frame_hall_of_fame_one : obj_str
 }
 
 // tg: code/modules/photography/photos/frame.dm:265
-[DmPath("/obj/structure/sign/picture_frame/hall_of_fame/two"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/hall_of_fame/two"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_hall_of_fame_two : obj_structure_sign_picture_frame_hall_of_fame
 {
     // tg: code/modules/photography/photos/frame.dm:265
@@ -1571,7 +1571,7 @@ public partial class obj_structure_sign_picture_frame_hall_of_fame_two : obj_str
 }
 
 // tg: code/modules/photography/photos/frame.dm:268
-[DmPath("/obj/structure/sign/picture_frame/hall_of_fame/three"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/hall_of_fame/three"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_hall_of_fame_three : obj_structure_sign_picture_frame_hall_of_fame
 {
     // tg: code/modules/photography/photos/frame.dm:268
@@ -1582,7 +1582,7 @@ public partial class obj_structure_sign_picture_frame_hall_of_fame_three : obj_s
 }
 
 // tg: code/modules/photography/photos/frame.dm:271
-[DmPath("/obj/structure/sign/picture_frame/hall_of_fame/four"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/picture_frame/hall_of_fame/four"), DmGeneratedOnly]
 public partial class obj_structure_sign_picture_frame_hall_of_fame_four : obj_structure_sign_picture_frame_hall_of_fame
 {
     // tg: code/modules/photography/photos/frame.dm:271

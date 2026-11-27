@@ -43,10 +43,8 @@
 /turf/closed/wall	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /turf/closed/wall	attack_tk	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall	blob_act	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
-/turf/closed/wall	attack_hulk	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall	narsie_act	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall	rust_turf	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
-/turf/closed/wall/r_wall	hulk_recoil	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall/r_wall	rust_turf	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/open/floor	blob_act	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/open/floor	attack_paw	M10+	deferred	attacks by animals, monkeys and aliens (simple and xeno mobs, after the core version)
@@ -100,7 +98,6 @@
 /obj/machinery/portable_atmospherics	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /obj/machinery/portable_atmospherics/canister	get_save_vars	M10+	deferred	admin variable editing and map saving
 /obj/machinery/portable_atmospherics/canister	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
-/obj/machinery/portable_atmospherics/canister	recolor	M10+	deferred	the greyscale colour menu (tgui)
 
 ## P1 (M4a): the click and item chain, screentips, examine, the inert guard
 # M4a P1 (docs/ai/specs/m4a-ownership.md): rows for the types P1 makes live with procs of a later milestone.
@@ -327,7 +324,6 @@
 /obj/docking_port/mobile/emergency	ShuttleDBStuff	M10+	deferred	the round's shuttle name in the database (the statistics, M10+)
 /obj/docking_port/mobile/arrivals	admin_fly_shuttle	M10+	deferred	the admins' fly-shuttle verb (admin tools, after M10)
 /obj/docking_port/mobile/arrivals	vv_edit_var	M10+	deferred	the admins' var editing of the arrivals shuttle (admin tools, after M10)
-/turf/closed/wall/mineral	hulk_recoil	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall/mineral/titanium	rust_turf	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /obj/machinery/computer/communications	send_cross_comms_message	M10+	deferred	the cross-server messages (no other server is configured)
 /obj/machinery/computer/communications	Topic	M10+	deferred	the admins' cross-server message links (admin tools, M10+)
@@ -382,11 +378,9 @@
 
 ## Gaps G2 (D291): the floors with their own procs, the mineral rocks, the plastitanium walls
 /turf/open/floor/carpet	narsie_act	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
-/turf/closed/mineral	attack_hulk	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/mineral	blob_act	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/open/misc	blob_act	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall/mineral/plastitanium	rust_turf	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
-/turf/closed/wall/mineral/plastitanium	hulk_recoil	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 
 ## Gaps G4 (D291): the memories
 /datum/memory	serialize_list	M10+	deferred	the datum serialization (the persistence of engravings and the logs; /datum/serialize_list is not translated, datum.cs)
@@ -427,7 +421,6 @@
 /datum/controller/subsystem/pathfinder	render_path_images	M10+	deferred	the path debugger's arrows (admin tooling)
 /datum/controller/subsystem/pathfinder	render_path_images_full	M10+	deferred	the path debugger's arrows (admin tooling)
 /mob/living/basic	vv_edit_var	M10+	deferred	admin variable editing
-/mob/living/basic	attack_hulk	M10+	deferred	hulks (genetics) and no live ancestor declares the slot yet
 /mob/living/basic	blob_act	M10+	deferred	the blob antagonist
 /mob/living/basic/mimic/copy	animate_atom_living	M10+	deferred	the staff of animation (magic projectiles)
 
@@ -614,7 +607,6 @@
 ## Exosuits (the owner, 2026-11-07): what the port leaves to systems not ported yet; not-translated.md
 /obj/vehicle/sealed/mecha	ninjadrain_act	M10+	deferred	the ninja's drain (the ninja, not ported)
 /obj/vehicle/sealed/mecha	ninjadrain_charge	M10+	deferred	the ninja's drain (the ninja, not ported)
-/obj/vehicle/sealed/mecha	attack_hulk	M10+	deferred	hulks (not ported)
 /obj/vehicle/sealed/mecha	attack_ai	M10+	deferred	an AI's control of an exosuit (the AI, not ported)
 /obj/vehicle/sealed/mecha	transfer_ai	M10+	deferred	an AI's control of an exosuit (the AI, not ported)
 /obj/vehicle/sealed/mecha	ai_enter_mech	M10+	deferred	an AI's control of an exosuit (the AI, not ported)
@@ -630,7 +622,6 @@
 /obj/item/syndicrate_key	add_item_context	M10+	deferred	the context tips (not now, by the owner: D264)
 
 ## Syndicate G4d (D316): the sentry gun, the portable turrets; not-translated.md section 137.
-/obj/machinery/porta_turret_cover	attack_hulk	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 
 
 
@@ -757,3 +748,9 @@
 ## The MetaStation leftovers' machines (gaps MT2)
 /obj/machinery/pdapainter	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /obj/item/modular_computer/laptop	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
+
+## The MetaStation leftovers' photography (gaps MT3)
+/obj/machinery/photobooth	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
+
+## The MetaStation leftovers' small mechanics (gaps MT5)
+/turf/closed/wall/concrete/reinforced	rust_turf	M10+	deferred	antagonist, engine, mech and other parity-tier interactions

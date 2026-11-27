@@ -250,7 +250,7 @@ in its place, so a client that went silent stops instead of walking on until its
 ```
 [u8 id = 10] [varuint frameSeq] [u8 kind]  then by kind:
     Click (4):        [u8 target kind] [target] [u8 button] [u8 modifiers] [u8 icon-x] [u8 icon-y]
-    Hover (7):        [u8 target kind] [target] [u8 aim zone 1..9, an entity's only, absent for none]   (version 99, section 95)
+    Hover (7):        [u8 target kind] [target] [u8 aim zone 1..9, an entity's only, absent for none]   (version 100, section 97)
     Drop (13):        [u8 target kind] [target] [u8 target kind] [over] [u8 button] [u8 modifiers] [u8 icon-x] [u8 icon-y] [u8 drag time]   (version 17, section 26)
     Keybinding (6):   [u8 code] [u8 key up]
     DevCommand (5):   [str(200) text]
@@ -263,7 +263,7 @@ the frame was already applied. `kind` 1 to 7 (anything else is `BadValue`). The 
 are version 4's (section 14.1; version 2 and 3 clicked `[varuint target] [u8 button] [u8 modifiers]`). A click needs a `button` of
 1 left, 2 right or 3 middle and `modifiers` within `shift = 1, ctrl = 2, alt = 4` (bit 3 and bit 7 zero); bits 4-6 of the
 modifiers byte are the body zone a click on an entity aims at (`AimZone`: 0 none, 1 head, 2 chest, 3 left arm, 4 right arm,
-5 left leg, 6 right leg; DV30; version 99 adds 7 eyes, 8 mouth, 9 groin with bit 3 as the zone's high bit, section 94), which the server selects as tg's `zone_selected` before a click on a carbon; the server checks that the target exists, is
+5 left leg, 6 right leg; DV30; version 100 adds 7 eyes, 8 mouth, 9 groin with bit 3 as the zone's high bit, section 96), which the server selects as tg's `zone_selected` before a click on a carbon; the server checks that the target exists, is
 visible to the player and is in view (section 14.1), and reach is tg's own (`Adjacent`, `ClickOn`). A dev command carries a non-null
 text of at most 200 bytes, for the server's `DEV_COMMANDS` option. Every other field must be absent or zero. At most
 `Limits.MaxActionMessageBytes` (248 since version 15, section 24) bytes, within the 256 of an inbound message.
@@ -795,7 +795,7 @@ tree keep working.
 
 ```
 Click (kind 4):      [u8 target kind] [target] [u8 button] [u8 modifiers] [u8 icon-x] [u8 icon-y]
-Hover (kind 7):      [u8 target kind] [target] [version 99: u8 aim zone 1..9 on an entity, absent for none (section 95)]
+Hover (kind 7):      [u8 target kind] [target] [version 100: u8 aim zone 1..9 on an entity, absent for none (section 97)]
 Keybinding (kind 6): [u8 code] [u8 key up]
 target:              Entity (1) and Screen (3): [varuint id >= 1]       Turf (2): [u8 x 1..255] [u8 y 1..255] [varuint z 1..80]
 ```
@@ -853,7 +853,7 @@ the hovering session: tg's `on_mouse_enter` (once per tick, `SSmouse_entered`) c
 (`ScreentipRouter`, installed when the first player joins) encodes the message into the viewer's session and `SendChat` sends it
 after the tick (the newest 8 are kept for a slow link). Cap `MaxContextHintsMessageBytes` (959).
 
-Out of reach (DV687, the designer 2026-11-26; still protocol 99, no new field): a message for a world target (an entity, a turf, a ceiling
+Out of reach (DV691, the designer 2026-11-26; still protocol 100, no new field): a message for a world target (an entity, a turf, a ceiling
 cell) with a **zero-length name** (not null) and no hints means "out of reach": the player's mob cannot reach the target by tg's test of a
 click (`IsReachableBy` with the held item's reach; the ceiling's own range for a ceiling cell), and the client shows no prompt at all, not even
 its own name for the thing; nor does it show anything for a world target before the answer for that target has arrived. A null name keeps
@@ -3251,22 +3251,60 @@ recipes with reagent ingredients and the chemical reactions' recipe guides: abou
 
 Tests: `M5/CraftingTests` (core: the cooking tab's encoded window within the caps), `Protocol/` (server).
 
-## 94. Version 99 (package T, slice T4a: the eyes, the mouth and the groin by look)
+## 94. Version 99 (DV685, the owner, 2026-11-26: photos)
+
+`PhotoRequest` (server to client, State channel, id 32, after the tick's Delta): `[varuint photo id >= 1] [varint x] [varint y]
+[varint z] [u8 tiles x 1..15] [u8 tiles y 1..15] [u16 width 1..1024] [u16 height 1..1024]`. tg's camera took a picture of tile
+(x, y, z), framing tiles x by tiles y tiles; the photographer's client renders one frame from its own eye toward the tile's middle at half
+the wall height (`PhotoPose`: a field of view that fits the frame's width at that distance, 30 to 90 degrees; a shot of its own tile looks
+along its view, 30 degrees down), at most width by height pixels, with what its own camera draws (no HUD), and answers with the PNG.
+
+`PhotoPart` (client to server, State channel, id 33): `[varuint photo id >= 1] [varuint total 1..MaxPhotoBytes (512 KiB)]
+[varuint offset < total] [varuint length 1..4096, offset + length <= total] [bytes]`: the PNG in parts sent in order from offset 0, as the
+bug report's (section 57; the server takes no client message over 8 fragments). A part out of order is a strike. The whole PNG goes to the
+world (`PhotoSeam.Develop`), which takes it only as the answer to a request it sent that client, within 10 seconds, once, when its own PNG
+decoder reads it and it is 16 pixels to the requested size on each side; otherwise the server logs the refusal and the picture stays blank.
+A client whose PNG is over the cap shrinks it by a quarter until it fits. The server keeps the client's bytes as a runtime resource
+(`rsc/MD5.png`), which every client is sent once as a `RuntimeResource` (section 79's message; `Limits.MaxRuntimeResourceBytes` is now
+512 KiB) before the picture's look names it.
+
+The photo window is tg's `browse()` page: `browse_rsc(picture_image, "tmp_photo.png")` makes the page's `<img src='tmp_photo.png'>`
+the image's resource, and the client's Html node draws an `<img>` whose source is a runtime image or an icon recipe (`HtmlImages`).
+
+Tests: `Protocol/ProtocolV99PhotoTests` (server), `Gaps/PhotographyTests` (core), `Client/Play/PhotoClientTests` (the pose and the
+page's pictures).
+
+## 95. Version 99, also (DV687, DV688: particles and the flame flicker)
+
+An appearance entry (section 3) gains the presence bit 18, `particles`: a table string (the public or the session's private table),
+the JSON of the atom's BYOND particle set (`Anomaly.Server.Replication.ParticleSets`): `icon` (the file), `states` (each icon state and
+its weight), `color` (`#rrggbbaa`), the numbers `width`, `height`, `count`, `spawning`, `lifespan`, `fade`, `fadein`, `friction`,
+`rotation`, `spin`, and the vectors `position`, `velocity`, `gravity`, `drift`, `scale`, `grow` (an array of up to three numbers, or
+one number for all axes). A var that is unset or a generator is left out; a set whose JSON passes 1024 bytes is not sent. tg keeps a
+particle set on a particle holder in its parent's vis_contents, so it arrives as an overlay entry of the parent's picture. The client
+(`ParticleSet`, `Render/ParticleEmitter.cs`) draws it at the picture's middle, BYOND's ticks read as deciseconds and its pixels as tg
+pixels of a 2 m tile.
+
+A light state's flags byte (section 13) gains bit 1, the flicker: the light flickers as a flame (tg's `fire_flicker_middleman`: a
+lighter, a welder, a flare, the life candle; DV688). The client multiplies the lamp's energy by tg's alpha loop (`FlameFlicker`). A flags
+byte with a bit past 1 is refused.
+
+## 96. Version 100 (package T, slice T4a: the eyes, the mouth and the groin by look)
 
 A Click's, a Throw's and a PutDown's modifiers byte: `[shift 1, ctrl 2, alt 4] [bit 3: the zone's high bit] [bits 4-6: the zone's low bits]
 [bit 7: an aim follows]`, the zone `((mods >> 4) & 7) | (mods & 8)`: `AimZone` gains 7 eyes, 8 mouth and 9 groin (tg's
-`BODY_ZONE_PRECISE_EYES`, `_MOUTH`, `_GROIN`); 10 to 15 are refused (`BadValue`). Every byte of version 98 (bit 3 zero, a zone of 0 to 6) keeps
-its meaning, so an older recording replays as it was. A mouse action carries no zone (its bit 3 stays refused); a hover's zone came with slice T4b in the same version (section 95).
+`BODY_ZONE_PRECISE_EYES`, `_MOUTH`, `_GROIN`); 10 to 15 are refused (`BadValue`). Every byte of version 99 (bit 3 zero, a zone of 0 to 6) keeps
+its meaning, so an older recording replays as it was. A mouse action carries no zone (its bit 3 stays refused); a hover's zone came with slice T4b in the same version (section 97).
 The server checks the zone again (`ValidAction`, 0 to 9) and selects it through tg's zone selector before the click or throw on a carbon, as any
 other zone (DV30). Examples: `0x71` shift and the eyes, `0x09` shift and the mouth, `0x98` an aim and the groin, `0x29` refused (zone 10).
 
-Tests: `Protocol/ProtocolV99AimZoneTests`, `Protocol/CodecV2Tests` (server), `Integration/BodyZoneRegionTests`, `Integration/MeleeAimTests`,
+Tests: `Protocol/ProtocolV100AimZoneTests`, `Protocol/CodecV2Tests` (server), `Integration/BodyZoneRegionTests`, `Integration/MeleeAimTests`,
 `Integration/PreciseZoneReplayTests`.
 
-## 95. Version 99, also (package T, slice T4b: the hover's zone)
+## 97. Version 100, also (package T, slice T4b: the hover's zone)
 
 A **Hover** on an entity may end with `[u8 aim zone 1..9]` after its target: the body zone the crosshair is on (`ActionMessage.AimZone`, the
-values of section 94). A hover without a zone has no such byte, so its bytes are version 98's and an older recording replays as it was. A zone
+values of section 96). A hover without a zone has no such byte, so its bytes are version 99's and an older recording replays as it was. A zone
 byte of 0 or above 9, a zone after a turf, ceiling or screen target, and any byte after the zone are refused (`BadValue`, `TrailingBytes`).
 Examples: `0A 05 07 01 2C` a hover on entity 44 (no zone), `0A 05 07 01 2C 01` the same with the head, `0A 05 07 01 2C 09` the groin,
 `0A 05 07 02 0C C8 03 01` refused (a zone on a turf).
@@ -3279,14 +3317,14 @@ tg's do-afters runs for the looker (DV30), when the server keeps the skipped hov
 end (`ServerHost.CatchUpLooks`). In cursor mode the client's hovers carry no zone (`PlaySession.HoverCarriesZone`). The hover keeps its rate limit (`ActionLimits.Hover`, one applied a tick). The command log keeps
 the zone as an action's zone field, as a click's.
 
-Tests: `Protocol/ProtocolV99HoverZoneTests`, `Protocol/ProtocolV99AimZoneTests`, `Protocol/CodecV2Tests` (server),
+Tests: `Protocol/ProtocolV100HoverZoneTests`, `Protocol/ProtocolV100AimZoneTests`, `Protocol/CodecV2Tests` (server),
 `Integration/HoverZoneGameplayTests`.
 
-## 96. Version 99, also (package T, slice T4c: a lying body's side, the radial's Turn over)
+## 98. Version 100, also (package T, slice T4c: a lying body's side, the radial's Turn over)
 
 The posture byte (`NetField.Posture`, `PostureBits`) uses its two spare bits: bit 6 (64, `SideFixed`) says someone turned the lying body over
-(DV686), bit 7 (128, `FaceUp`) with it says it lies face up, without it back up. They are set only while the body lies; the server forgets the side
-when the body gets up. A decoder refuses bit 6 without bit 0 (a side on a standing body) and bit 7 without bit 6; every byte of version 98 (bits
+(DV690), bit 7 (128, `FaceUp`) with it says it lies face up, without it back up. They are set only while the body lies; the server forgets the side
+when the body gets up. A decoder refuses bit 6 without bit 0 (a side on a standing body) and bit 7 without bit 6; every byte of version 99 (bits
 6 and 7 clear) keeps its meaning. Examples: `0x43` lying at 90 degrees and turned back up, `0xC3` the same turned face up, `0x40` and `0x83`
 refused. `PostureBits.TurnedFaceUp` reads the side (null when not turned). The byte is sent again when the side changes (the turn is an appearance
 hint of the mob, so a mob with no capsule is read too).
@@ -3299,13 +3337,13 @@ The radial's **Turn over** is a context hint of the Extra action (section 83) wi
 that label. The server's entry is `RadialExtra.TurnOver` (10), which is not on the wire: the label is. It is offered on a lying carbon on a turf next
 to the player, never on himself; the pick takes the click bucket as every ContextPick.
 
-Tests: `Protocol/ProtocolV99TurnOverTests`, `Protocol/CodecV2Tests`, `Client/Render/TurnOverLyingDirTests` (server), `Integration/TurnOverGameplayTests`,
+Tests: `Protocol/ProtocolV100TurnOverTests`, `Protocol/CodecV2Tests`, `Client/Render/TurnOverLyingDirTests` (server), `Integration/TurnOverGameplayTests`,
 `Integration/BodyZoneRegionTests`.
 
-## 97. Version 99, also (ui-overhaul.md section 10, slice 3A, DV689: the belt hotbar)
+## 99. Version 100, also (ui-overhaul.md section 10, slice 3A, DV693: the belt hotbar)
 
-**Hotbar** (server to client, State channel, id 32, after the tick's Delta or a join's Snapshot, when it changed or a press was refused;
-`MessagesV99Hotbar.cs`, `Codec.V99Hotbar.cs`): the own human's ten hotbar cells, 1 to 7 the worn belt's contents, 8 and 9 the left and right pocket,
+**Hotbar** (server to client, State channel, id 34, after the tick's Delta or a join's Snapshot, when it changed or a press was refused;
+`MessagesV100Hotbar.cs`, `Codec.V100Hotbar.cs`): the own human's ten hotbar cells, 1 to 7 the worn belt's contents, 8 and 9 the left and right pocket,
 10 the ID slot, and the names of the items in the own hands.
 
 ```
@@ -3321,7 +3359,7 @@ At most `Limits.MaxHotbarBytes` (1 + 1 + 10 x (1 + 5 + 10) + 2 x 130 + 1 = 423 b
 `01 0B F5 03`. The picture is the
 item drawn alone, the private row a slot's `ScreenChild` uses (`AppearanceTables.InternVisChild`), interned before the Delta's tables are taken,
 so the Delta or Snapshot before the message carries it. Only a human has a bar (tg's quick-equip keys' `ishuman`): every other mob's message is
-`HotbarMessage.None`, 15 bytes: the id 32, the flags byte 0, ten state bytes 0, two none names (a 0 byte each) and the refused byte 0. Without the bar no cell holds anything and there are no
+`HotbarMessage.None`, 15 bytes: the id 34, the flags byte 0, ten state bytes 0, two none names (a 0 byte each) and the refused byte 0. Without the bar no cell holds anything and there are no
 names or refusal; without a belt (a belt-slot item with a storage) cells 1 to 7 are empty; an empty cell has no picture; a name is never empty.
 Anything else is refused at both ends (`BadValue`). The refused cell is an event: the press of that cell this tick did nothing (the client's
 blink of slice 3B); the next message carries 0 again. The server reads the cells after the tick (`Replicator.Hotbar.cs`, `BeltHotbar.Peek`)
@@ -3339,13 +3377,13 @@ The cells are the port's state on the mob (`mob_living_carbon_human.dm_hotbar`),
 (`ServerHost.TrackHotbars`, a replay's too) and before each press, so items that come into the belt take the lowest free cell in the order they
 came.
 
-Tests: `Protocol/ProtocolV99HotbarTests`, `Protocol/WireTests` (server), `UiOverhaul/BeltHotbarTests` (core), `Integration/HotbarGameplayTests`,
+Tests: `Protocol/ProtocolV100HotbarTests`, `Protocol/WireTests` (server), `UiOverhaul/BeltHotbarTests` (core), `Integration/HotbarGameplayTests`,
 `Client/Play/HotbarClientTests`.
 
-## 98. Version 99, also (ui-overhaul.md section 12, slice 4B-1, DV692: the Tab inventory's storages and moves)
+## 100. Version 100, also (ui-overhaul.md section 12, slice 4B-1, DV696: the Tab inventory's storages and moves)
 
-**Storages** (server to client, State channel, id 33, after the tick's Delta or a join's Snapshot, when it changed or a move was refused; to the
-owning session only; `MessagesV99Storages.cs`, `Codec.V99Storages.cs`): the storages the own human carries, in the Tab inventory's order (the back's,
+**Storages** (server to client, State channel, id 35, after the tick's Delta or a join's Snapshot, when it changed or a move was refused; to the
+owning session only; `MessagesV100Storages.cs`, `Codec.V100Storages.cs`): the storages the own human carries, in the Tab inventory's order (the back's,
 the belt's, one in the suit-storage slot, the left pocket's, the right pocket's, the ID slot's, then those held, by held index), each with its items
 in tg's order.
 
@@ -3365,7 +3403,7 @@ flag. An item's count is a stack's amount, 0 for an item that is no stack. A nam
 empty. The picture is the item drawn alone, the private row a slot's `ScreenChild` uses (`AppearanceTables.InternVisChild`), interned before the
 Delta's tables are taken, so the Delta or Snapshot before the message carries it. Every entity (a storage's or an item's) appears once; the places
 are strictly in order, a place other than a hand once, hands by increasing index; anything else is refused at both ends (`BadValue`, a long name
-`BadString`, too many entries `CountTooLarge`). Every mob that is not a human sends the empty message: `21 00 00`, 3 bytes. The refused item is an
+`BadString`, too many entries `CountTooLarge`). Every mob that is not a human sends the empty message: `23 00 00`, 3 bytes. The refused item is an
 event: the server's last move of that item, named by this client and its own, did not reach its target (dead or unable to act, tg refused it, the item's
 earlier move or a hotbar press still moving it, or a worn item that came off into the hand and the target then refused); the next message carries 0 again.
 
@@ -3376,19 +3414,19 @@ named one of the storages or items last sent; it sends it when it differs from t
 backpack filled to tg's limit with pens, with a toolbelt and a box: 294 bytes (`StoragesGameplayTests`); the bound is `Limits.MaxStoragesBytes`.
 
 **InventoryMove** (client to server, an Action of kind 29, `ActionKind.InventoryMove`): `[varuint item >= 1] [u8 target]` after the kind, then by the
-target: `1` a storage `[varuint storage >= 1] [u8 cell 0..64, 0 for none]` (into the worn belt the cell is a bar cell, 1 to 7, which the item takes on the bar once it is in the belt, DV689; a belt cell over 7 does nothing, and tg's order in the belt is left to tg); `2` a worn slot `[varuint tg slot id]`, one of
+target: `1` a storage `[varuint storage >= 1] [u8 cell 0..64, 0 for none]` (into the worn belt the cell is a bar cell, 1 to 7, which the item takes on the bar once it is in the belt, DV693; a belt cell over 7 does nothing, and tg's order in the belt is left to tg); `2` a worn slot `[varuint tg slot id]`, one of
 `InventorySlots.Worn` (the suit, the uniform, the gloves, the eyes, the ears, the mask, the head, the feet, the ID, the belt, the back, the neck, suit
 storage, the two pockets: one bit each); `3` a hand `[u8 held index 1..8]`; `4` the floor, nothing. No target and no other field
 (`ActionMessage.MoveItem`, `MoveTo`, `MoveStorage`, `MoveIndex`; the fields on another kind are refused). The server checks the fields again
 (`ValidAction`), takes the request from the overall action bucket and the click bucket (`ActionLimits.Click`, as a drop), and in the command phase
 runs `CarriedStorages.Move` with usr the player's mob: nothing (and no refusal reported) unless the client's mob is a human, the item is one it
 holds, wears in one of those slots or sees in one of its listed storages, the storage is one of its listed storages, the hand is one it has; then
-the move through the steps a player's hands take in tg (DV692), or a refusal counted. The command log keeps the item in the action's target field, the target kind in `TurfX`, the
+the move through the steps a player's hands take in tg (DV696), or a refusal counted. The command log keeps the item in the action's target field, the target kind in `TurfX`, the
 index in `TurfY` and the storage in `RadialMenu` (`QueuedCommand`). Examples: `0A 09 1D 05 04` item 5 to the floor in frame 9,
 `0A 09 1D 05 01 64 03` item 5 into storage 100 at cell 3; `0A 09 1D 05 01 64 41` (cell 65), `0A 09 1D 05 02 03` (two slots), `0A 09 1D 05 03 09`
 (hand 9) and `0A 09 1D 05 05` (an unknown target) refused.
 
-**A Shift+click on a stored item** (slice 4B-2, DV692): a Click (version 2's Action) with the left button, Shift alone and a `Screen` target naming an
+**A Shift+click on a stored item** (slice 4B-2, DV696): a Click (version 2's Action) with the left button, Shift alone and a `Screen` target naming an
 item the sender's own carried storages show now (`CarriedStorages.ShowsItem`: directly in one of its listed storages, among the first 64, the storage
 neither locked nor hidden) is taken although that item is no screen entry, and runs tg's Click with it (`ClickOn` -> `ShiftClickOn` -> `examinate`),
 as a Shift+click on tg's storage screen would; the screen-loc param is empty. Every other click naming a stored item (another button, any other
@@ -3396,7 +3434,7 @@ modifier, an `Entity` target, an item of anyone else's storage, of a locked or h
 bucket applies as to every click (`ServerHost.TryStoredExamine`). Tests: `Integration/StorageExamineGameplayTests`.
 
 **InventoryOpen** (client to server, an Action of kind 30, `ActionKind.InventoryOpen`): no fields (`0A 09 1E`). It takes the overall and the
-keybinding buckets (a key); the server runs `CarriedStorages.Opened`: tg's opening of the carried storages without its screen, at most once a second (the back storage's checks, its `on_found` pass, rustle and animation; the `on_found` pass of each other listed storage; DV692).
+keybinding buckets (a key); the server runs `CarriedStorages.Opened`: tg's opening of the carried storages without its screen, at most once a second (the back storage's checks, its `on_found` pass, rustle and animation; the `on_found` pass of each other listed storage; DV696).
 
-Tests: `Protocol/ProtocolV99StoragesTests`, `Protocol/CodecTests`, `Protocol/WireTests` (server), `UiOverhaul/CarriedStoragesTests` (core),
+Tests: `Protocol/ProtocolV100StoragesTests`, `Protocol/CodecTests`, `Protocol/WireTests` (server), `UiOverhaul/CarriedStoragesTests` (core),
 `Integration/StoragesGameplayTests`, `Integration/StoragesHostileTests`, `Client/Play/StoragesClientTests`.

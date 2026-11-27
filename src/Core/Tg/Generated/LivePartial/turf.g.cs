@@ -41,15 +41,6 @@ public partial class turf_closed_wall
         return DmTask<object>.FromResult(default);
     }
 
-    // tg: code/game/turfs/closed/walls.dm:156
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section P4
-    [DmGeneratedStub]
-    public override DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
-    {
-        Dm.Deferred("code/game/turfs/closed/walls.dm:156", "attack_hulk: antagonist, engine, mech and other parity-tier interactions (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
     // tg: code/game/turfs/closed/walls.dm:278
     // STUB(M10+): docs/ai/specs/live-partial.txt, section P4
     [DmGeneratedStub]
@@ -69,16 +60,16 @@ public partial class turf_closed_wall
     }
 }
 
-// tg: code/game/turfs/closed/wall/mineral_walls.dm:2
-public partial class turf_closed_wall_mineral
+// tg: code/game/turfs/closed/wall/concrete_walls.dm:98
+public partial class turf_closed_wall_concrete_reinforced
 {
-    // tg: code/game/turfs/closed/wall/mineral_walls.dm:189
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M10
+    // tg: code/game/turfs/closed/wall/concrete_walls.dm:118
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
     [DmGeneratedStub]
-    public override DmTask hulk_recoil(obj_item_bodypart arm = null, mob_living_carbon_human hulkman = null, float? damage = null)
+    public override DmTask<object> rust_turf(float? magic = null)
     {
-        Dm.Deferred("code/game/turfs/closed/wall/mineral_walls.dm:189", "hulk_recoil: antagonist, engine, mech and other parity-tier interactions (M10+)");
-        return DmTask.CompletedTask;
+        Dm.Deferred("code/game/turfs/closed/wall/concrete_walls.dm:118", "rust_turf: antagonist, engine, mech and other parity-tier interactions (M10+)");
+        return DmTask<object>.FromResult(default);
     }
 }
 
@@ -106,29 +97,11 @@ public partial class turf_closed_wall_mineral_plastitanium
         Dm.Deferred("code/game/turfs/closed/wall/mineral_walls.dm:399", "rust_turf: antagonist, engine, mech and other parity-tier interactions (M10+)");
         return DmTask<object>.FromResult(default);
     }
-
-    // tg: code/game/turfs/closed/wall/mineral_walls.dm:411
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public override DmTask hulk_recoil(obj_item_bodypart arm = null, mob_living_carbon_human hulkman = null, float? damage = null)
-    {
-        Dm.Deferred("code/game/turfs/closed/wall/mineral_walls.dm:411", "hulk_recoil: antagonist, engine, mech and other parity-tier interactions (M10+)");
-        return DmTask.CompletedTask;
-    }
 }
 
 // tg: code/game/turfs/closed/wall/reinf_walls.dm:2
 public partial class turf_closed_wall_r_wall
 {
-    // tg: code/game/turfs/closed/wall/reinf_walls.dm:47
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section P4
-    [DmGeneratedStub]
-    public override DmTask hulk_recoil(obj_item_bodypart arm = null, mob_living_carbon_human hulkman = null, float? damage = null)
-    {
-        Dm.Deferred("code/game/turfs/closed/wall/reinf_walls.dm:47", "hulk_recoil: antagonist, engine, mech and other parity-tier interactions (M10+)");
-        return DmTask.CompletedTask;
-    }
-
     // tg: code/game/turfs/closed/wall/reinf_walls.dm:232
     // STUB(M10+): docs/ai/specs/live-partial.txt, section P4
     [DmGeneratedStub]
@@ -142,15 +115,6 @@ public partial class turf_closed_wall_r_wall
 // tg: code/game/turfs/closed/minerals.dm:7
 public partial class turf_closed_mineral
 {
-    // tg: code/game/turfs/closed/minerals.dm:322
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public override DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
-    {
-        Dm.Deferred("code/game/turfs/closed/minerals.dm:322", "attack_hulk: antagonist, engine, mech and other parity-tier interactions (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
     // tg: code/game/turfs/closed/minerals.dm:352
     // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]

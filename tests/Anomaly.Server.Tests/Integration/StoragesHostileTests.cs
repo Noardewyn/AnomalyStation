@@ -11,7 +11,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// ui-overhaul.md section 12, slice 4B-1 (DV692), security: hostile raw clients (no game client, bytes as they like) send inventory moves for another
+/// ui-overhaul.md section 12, slice 4B-1 (DV696), security: hostile raw clients (no game client, bytes as they like) send inventory moves for another
 /// player's item, into another player's bag, for an item on the floor out of reach, for things that are no items, with every field at its extremes, a
 /// thousand in one tick and while dead. Nothing changes, no Storages message names anything of another player's, nothing is refused aloud for a
 /// request that is not the sender's to make, and the server does not throw.

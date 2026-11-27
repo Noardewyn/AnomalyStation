@@ -641,9 +641,9 @@ public partial class turf_open_floor_catwalk_floor_airless : turf_open_floor_cat
     }
 }
 
-// tg: code/game/turfs/open/floor/concrete_floor.dm:2
-[DmPath("/turf/open/floor/concrete"), DmGeneratedOnly, DmInert]
-public partial class turf_open_floor_concrete : turf_open_floor
+// tg: code/game/turfs/open/floor/concrete_floor.dm:2 (the var block of a hand-written class)
+[DmPath("/turf/open/floor/concrete")]
+public partial class turf_open_floor_concrete
 {
     public float smash_time = 30; // tg: code/game/turfs/open/floor/concrete_floor.dm:16
     public float time_to_harden = 600; // tg: code/game/turfs/open/floor/concrete_floor.dm:18
@@ -678,7 +678,7 @@ public partial class turf_open_floor_concrete : turf_open_floor
 }
 
 // tg: code/game/turfs/open/floor/concrete_floor.dm:148
-[DmPath("/turf/open/floor/concrete/slab_1"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/floor/concrete/slab_1"), DmGeneratedOnly]
 public partial class turf_open_floor_concrete_slab_1 : turf_open_floor_concrete
 {
     // tg: code/game/turfs/open/floor/concrete_floor.dm:148
@@ -690,7 +690,7 @@ public partial class turf_open_floor_concrete_slab_1 : turf_open_floor_concrete
 }
 
 // tg: code/game/turfs/open/floor/concrete_floor.dm:152
-[DmPath("/turf/open/floor/concrete/slab_2"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/floor/concrete/slab_2"), DmGeneratedOnly]
 public partial class turf_open_floor_concrete_slab_2 : turf_open_floor_concrete
 {
     // tg: code/game/turfs/open/floor/concrete_floor.dm:152
@@ -702,7 +702,7 @@ public partial class turf_open_floor_concrete_slab_2 : turf_open_floor_concrete
 }
 
 // tg: code/game/turfs/open/floor/concrete_floor.dm:156
-[DmPath("/turf/open/floor/concrete/slab_3"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/floor/concrete/slab_3"), DmGeneratedOnly]
 public partial class turf_open_floor_concrete_slab_3 : turf_open_floor_concrete
 {
     // tg: code/game/turfs/open/floor/concrete_floor.dm:156
@@ -714,7 +714,7 @@ public partial class turf_open_floor_concrete_slab_3 : turf_open_floor_concrete
 }
 
 // tg: code/game/turfs/open/floor/concrete_floor.dm:160
-[DmPath("/turf/open/floor/concrete/slab_4"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/floor/concrete/slab_4"), DmGeneratedOnly]
 public partial class turf_open_floor_concrete_slab_4 : turf_open_floor_concrete
 {
     // tg: code/game/turfs/open/floor/concrete_floor.dm:160
@@ -726,7 +726,7 @@ public partial class turf_open_floor_concrete_slab_4 : turf_open_floor_concrete
 }
 
 // tg: code/game/turfs/open/floor/concrete_floor.dm:164
-[DmPath("/turf/open/floor/concrete/tiles"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/floor/concrete/tiles"), DmGeneratedOnly]
 public partial class turf_open_floor_concrete_tiles : turf_open_floor_concrete
 {
     // tg: code/game/turfs/open/floor/concrete_floor.dm:164
@@ -738,7 +738,7 @@ public partial class turf_open_floor_concrete_tiles : turf_open_floor_concrete
 }
 
 // tg: code/game/turfs/open/floor/concrete_floor.dm:168
-[DmPath("/turf/open/floor/concrete/reinforced"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/floor/concrete/reinforced"), DmGeneratedOnly]
 public partial class turf_open_floor_concrete_reinforced : turf_open_floor_concrete
 {
     // tg: code/game/turfs/open/floor/concrete_floor.dm:168
@@ -767,7 +767,7 @@ public partial class turf_open_floor_concrete_reinforced : turf_open_floor_concr
 }
 
 // tg: code/game/turfs/open/floor/concrete_floor.dm:184
-[DmPath("/turf/open/floor/concrete/pavement"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/floor/concrete/pavement"), DmGeneratedOnly]
 public partial class turf_open_floor_concrete_pavement : turf_open_floor_concrete
 {
     // tg: code/game/turfs/open/floor/concrete_floor.dm:184

@@ -565,7 +565,7 @@ proc	/	findname	code/modules/mob/mob_helpers.dm:237	msg	yes	full	global
 proc	/	finish_equip_mob	code/datums/elements/strippable.dm:297	item,source,user	yes	full	global
 proc	/	finish_unequip_mob	code/datums/elements/strippable.dm:309	item,source,user	yes	full	global
 proc	/	fire_curse_hand	code/modules/antagonists/heretic/knowledge/sacrifice_knowledge/sacrifice_buff.dm:101	victim,forced_turf,range,projectile_type	yes	full	global
-proc	/	fire_flicker_middleman	code/modules/lighting/light_middleman.dm:125	middleman	no	-	global
+proc	/	fire_flicker_middleman	code/modules/lighting/light_middleman.dm:125	middleman	yes	full	global
 proc	/	firing_squad	code/modules/admin/verbs/adminfun.dm:297	target,source_turf,body_zone,wound_bonus,damage	no	-	global
 proc	/	first_day_of_month	code/__HELPERS/time.dm:74	year,month	yes	full	global
 proc	/	first_name	code/__HELPERS/names.dm:379	given_name	yes	full	global
@@ -2892,7 +2892,7 @@ proc	/datum/controller/global_vars	InitGlobalconscious_state	code/modules/tgui/s
 proc	/datum/controller/global_vars	InitGlobalcontained_state	code/modules/tgui/states/contained.dm:12		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobaldeep_inventory_state	code/modules/tgui/states/deep_inventory.dm:13		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobaldefault_state	code/modules/tgui/states/default.dm:13		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalgreyscale_menu_state	code/modules/tgui/states/greyscale_menu.dm:7		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalgreyscale_menu_state	code/modules/tgui/states/greyscale_menu.dm:7		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalhands_state	code/modules/tgui/states/hands.dm:12		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalhold_or_view_state	code/modules/tgui/states/hold_or_view.dm:7		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalhuman_adjacent_state	code/modules/tgui/states/human_adjacent.dm:13		yes	full	proc root
@@ -33379,22 +33379,22 @@ proc	/datum/force_event	ui_interact	code/modules/admin/force_event.dm:16	user,ui
 proc	/datum/force_event	ui_state	code/modules/admin/force_event.dm:22	user	no	-	proc
 proc	/datum/force_event	ui_static_data	code/modules/admin/force_event.dm:25	user	no	-	proc
 proc	/datum/force_event	ui_act	code/modules/admin/force_event.dm:70	action,params,ui,state	no	-	proc
-type	/datum/greyscale_modify_menu	/datum	code/modules/admin/greyscale_modify_menu.dm:5	inert	datum_greyscale_modify_menu	0	0
-proc	/datum/greyscale_modify_menu	New	code/modules/admin/greyscale_modify_menu.dm:42	target,user,allowed_configs,apply_callback,starting_icon_state,starting_config,starting_colors,unlocked	no	-	proc
-proc	/datum/greyscale_modify_menu	Destroy	code/modules/admin/greyscale_modify_menu.dm:83		no	-	proc
-proc	/datum/greyscale_modify_menu	ui_state	code/modules/admin/greyscale_modify_menu.dm:90	user	no	-	proc
-proc	/datum/greyscale_modify_menu	ui_close	code/modules/admin/greyscale_modify_menu.dm:93		no	-	proc
-proc	/datum/greyscale_modify_menu	ui_interact	code/modules/admin/greyscale_modify_menu.dm:96	user,ui	no	-	proc
-proc	/datum/greyscale_modify_menu	ui_data	code/modules/admin/greyscale_modify_menu.dm:102	user	no	-	proc
-proc	/datum/greyscale_modify_menu	ui_act	code/modules/admin/greyscale_modify_menu.dm:123	action,params,ui,state	no	-	proc
-proc	/datum/greyscale_modify_menu	ReadColorsFromString	code/modules/admin/greyscale_modify_menu.dm:243	colorString	no	-	proc root
-proc	/datum/greyscale_modify_menu	randomize_color	code/modules/admin/greyscale_modify_menu.dm:264	color_index	no	-	proc root
-proc	/datum/greyscale_modify_menu	change_config	code/modules/admin/greyscale_modify_menu.dm:270	new_config	no	-	proc root
-proc	/datum/greyscale_modify_menu	queue_refresh	code/modules/admin/greyscale_modify_menu.dm:276		no	-	proc root
-proc	/datum/greyscale_modify_menu	refresh_preview	code/modules/admin/greyscale_modify_menu.dm:281		no	-	proc root
-proc	/datum/greyscale_modify_menu	Unlock	code/modules/admin/greyscale_modify_menu.dm:330		no	-	proc root
-proc	/datum/greyscale_modify_menu	DefaultApply	code/modules/admin/greyscale_modify_menu.dm:334		no	-	proc root
-proc	/datum/greyscale_modify_menu	SetupConfigOwner	code/modules/admin/greyscale_modify_menu.dm:339		no	-	proc root
+type	/datum/greyscale_modify_menu	/datum	code/modules/admin/greyscale_modify_menu.dm:5	live	datum_greyscale_modify_menu	1	0
+proc	/datum/greyscale_modify_menu	New	code/modules/admin/greyscale_modify_menu.dm:42	target,user,allowed_configs,apply_callback,starting_icon_state,starting_config,starting_colors,unlocked	yes	full	proc
+proc	/datum/greyscale_modify_menu	Destroy	code/modules/admin/greyscale_modify_menu.dm:83		yes	full	proc
+proc	/datum/greyscale_modify_menu	ui_state	code/modules/admin/greyscale_modify_menu.dm:90	user	yes	full	proc
+proc	/datum/greyscale_modify_menu	ui_close	code/modules/admin/greyscale_modify_menu.dm:93		yes	full	proc
+proc	/datum/greyscale_modify_menu	ui_interact	code/modules/admin/greyscale_modify_menu.dm:96	user,ui	yes	full	proc
+proc	/datum/greyscale_modify_menu	ui_data	code/modules/admin/greyscale_modify_menu.dm:102	user	yes	full	proc
+proc	/datum/greyscale_modify_menu	ui_act	code/modules/admin/greyscale_modify_menu.dm:123	action,params,ui,state	yes	full	proc
+proc	/datum/greyscale_modify_menu	ReadColorsFromString	code/modules/admin/greyscale_modify_menu.dm:243	colorString	yes	full	proc root
+proc	/datum/greyscale_modify_menu	randomize_color	code/modules/admin/greyscale_modify_menu.dm:264	color_index	yes	full	proc root
+proc	/datum/greyscale_modify_menu	change_config	code/modules/admin/greyscale_modify_menu.dm:270	new_config	yes	full	proc root
+proc	/datum/greyscale_modify_menu	queue_refresh	code/modules/admin/greyscale_modify_menu.dm:276		yes	full	proc root
+proc	/datum/greyscale_modify_menu	refresh_preview	code/modules/admin/greyscale_modify_menu.dm:281		yes	full	proc root
+proc	/datum/greyscale_modify_menu	Unlock	code/modules/admin/greyscale_modify_menu.dm:330		yes	full	proc root
+proc	/datum/greyscale_modify_menu	DefaultApply	code/modules/admin/greyscale_modify_menu.dm:334		yes	full	proc root
+proc	/datum/greyscale_modify_menu	SetupConfigOwner	code/modules/admin/greyscale_modify_menu.dm:339		yes	full	proc root
 type	/datum/greyscale_modify_menu/spray_paint	/datum/greyscale_modify_menu	code/modules/admin/greyscale_modify_menu.dm:354	inert	datum_greyscale_modify_menu_spray_paint	0	0
 proc	/datum/greyscale_modify_menu/spray_paint	New	code/modules/admin/greyscale_modify_menu.dm:356	target,user,allowed_configs,apply_callback,starting_icon_state,starting_config,starting_colors,used_spraycan	no	-	proc
 proc	/datum/greyscale_modify_menu/spray_paint	ui_status	code/modules/admin/greyscale_modify_menu.dm:360	user,state	no	-	proc
@@ -35983,13 +35983,13 @@ proc	/datum/reagent/cement	expose_mob	code/modules/reagents/chemistry/reagents/o
 proc	/datum/reagent/cement	on_mob_life	code/modules/reagents/chemistry/reagents/other_reagents.dm:3656	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
 type	/datum/reagent/cement/hexement	/datum/reagent/cement	code/modules/reagents/chemistry/reagents/other_reagents.dm:3671	live	datum_reagent_cement_hexement	0	0
 type	/datum/reagent/cement/pavement	/datum/reagent/cement	code/modules/reagents/chemistry/reagents/other_reagents.dm:3679	live	datum_reagent_cement_pavement	0	0
-type	/datum/reagent/concrete	/datum/reagent	code/modules/reagents/chemistry/reagents/other_reagents.dm:3686	inert	datum_reagent_concrete	0	0
-proc	/datum/reagent/concrete	expose_atom	code/modules/reagents/chemistry/reagents/other_reagents.dm:3697	exposed_atom,reac_volume,methods	no	-	proc
-proc	/datum/reagent/concrete	pour_amount	code/modules/reagents/chemistry/reagents/other_reagents.dm:3709	target,user	no	-	proc root
-proc	/datum/reagent/concrete	concify_girder	code/modules/reagents/chemistry/reagents/other_reagents.dm:3716	exposed_obj,volume	no	-	proc root
-proc	/datum/reagent/concrete	concify_catwalk	code/modules/reagents/chemistry/reagents/other_reagents.dm:3729	catwalk,volume	no	-	proc root
-type	/datum/reagent/concrete/hexacrete	/datum/reagent/concrete	code/modules/reagents/chemistry/reagents/other_reagents.dm:3739	inert	datum_reagent_concrete_hexacrete	0	0
-type	/datum/reagent/concrete/pavement	/datum/reagent/concrete	code/modules/reagents/chemistry/reagents/other_reagents.dm:3746	inert	datum_reagent_concrete_pavement	0	0
+type	/datum/reagent/concrete	/datum/reagent	code/modules/reagents/chemistry/reagents/other_reagents.dm:3686	live	datum_reagent_concrete	1	0
+proc	/datum/reagent/concrete	expose_atom	code/modules/reagents/chemistry/reagents/other_reagents.dm:3697	exposed_atom,reac_volume,methods	yes	full	proc
+proc	/datum/reagent/concrete	pour_amount	code/modules/reagents/chemistry/reagents/other_reagents.dm:3709	target,user	yes	full	proc root
+proc	/datum/reagent/concrete	concify_girder	code/modules/reagents/chemistry/reagents/other_reagents.dm:3716	exposed_obj,volume	yes	full	proc root
+proc	/datum/reagent/concrete	concify_catwalk	code/modules/reagents/chemistry/reagents/other_reagents.dm:3729	catwalk,volume	yes	full	proc root
+type	/datum/reagent/concrete/hexacrete	/datum/reagent/concrete	code/modules/reagents/chemistry/reagents/other_reagents.dm:3739	live	datum_reagent_concrete_hexacrete	0	0
+type	/datum/reagent/concrete/pavement	/datum/reagent/concrete	code/modules/reagents/chemistry/reagents/other_reagents.dm:3746	live	datum_reagent_concrete_pavement	0	0
 type	/datum/reagent/concrete_mix	/datum/reagent	code/modules/reagents/chemistry/reagents/other_reagents.dm:3752	live	datum_reagent_concrete_mix	0	0
 type	/datum/reagent/thermite	/datum/reagent	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:3	live	datum_reagent_thermite	1	0
 proc	/datum/reagent/thermite	expose_turf	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:10	exposed_turf,reac_volume	yes	full	proc
@@ -43746,11 +43746,11 @@ proc	/datum/book_info	return_copy	code/modules/library/book_info.dm:60		yes	full
 proc	/datum/book_info	copy_into	code/modules/library/book_info.dm:65	copycat	yes	full	proc root
 proc	/datum/book_info	compare	code/modules/library/book_info.dm:71	cmp_with	yes	full	proc root
 type	/datum/borrowbook	/datum	code/modules/library/lib_machines.dm:252	live	datum_borrowbook	0	0
-type	/datum/light_middleman	/datum	code/modules/lighting/light_middleman.dm:7	inert	datum_light_middleman	0	0
-proc	/datum/light_middleman	New	code/modules/lighting/light_middleman.dm:20	parent,unique_string	no	-	proc
-proc	/datum/light_middleman	Destroy	code/modules/lighting/light_middleman.dm:37	force	no	-	proc
-proc	/datum/light_middleman	being_overriding_light	code/modules/lighting/light_middleman.dm:45	unique_string	no	-	proc root
-proc	/datum/light_middleman	stop_overriding_light	code/modules/lighting/light_middleman.dm:55		no	-	proc root
+type	/datum/light_middleman	/datum	code/modules/lighting/light_middleman.dm:7	inert	datum_light_middleman	1	0
+proc	/datum/light_middleman	New	code/modules/lighting/light_middleman.dm:20	parent,unique_string	yes	full	proc
+proc	/datum/light_middleman	Destroy	code/modules/lighting/light_middleman.dm:37	force	yes	full	proc
+proc	/datum/light_middleman	being_overriding_light	code/modules/lighting/light_middleman.dm:45	unique_string	yes	full	proc root
+proc	/datum/light_middleman	stop_overriding_light	code/modules/lighting/light_middleman.dm:55		yes	full	proc root
 proc	/datum/light_middleman	light_applied	code/modules/lighting/light_middleman.dm:68	source,visible_mask,cone,light_holder	no	-	proc root
 proc	/datum/light_middleman	light_removed	code/modules/lighting/light_middleman.dm:115	source,light_holder	no	-	proc root
 type	/datum/lighting_corner	/datum	code/modules/lighting/lighting_corner.dm:6	base	datum_lighting_corner	1	0
@@ -46533,7 +46533,7 @@ proc	/datum/paper_field	to_list	code/modules/paperwork/paper.dm:905		yes	full	pr
 type	/datum/picture	/datum	code/modules/photography/_pictures.dm:2	live	datum_picture	1	0
 proc	/datum/picture	New	code/modules/photography/_pictures.dm:23	name,desc,mobs_spotted,dead_spotted,names,image,icon,size_x,size_y,bp,caption_,autogenerate_icon,can_see_ghosts,author_ckey_	yes	full	proc
 proc	/datum/picture	get_small_icon	code/modules/photography/_pictures.dm:56	iconstate	yes	full	proc root
-proc	/datum/picture	regenerate_small_icon	code/modules/photography/_pictures.dm:61	iconstate	yes	deferred	proc root
+proc	/datum/picture	regenerate_small_icon	code/modules/photography/_pictures.dm:61	iconstate	yes	full	proc root
 proc	/datum/picture	serialize_list	code/modules/photography/_pictures.dm:70	options,semvers	stub	deferred	proc
 proc	/datum/picture	deserialize_list	code/modules/photography/_pictures.dm:85	input,options	stub	deferred	proc
 proc	/datum/picture	log_to_file	code/modules/photography/_pictures.dm:172		stub	deferred	proc root
@@ -48330,8 +48330,8 @@ type	/datum/ui_state/deep_inventory_state	/datum/ui_state	code/modules/tgui/stat
 proc	/datum/ui_state/deep_inventory_state	can_use_topic	code/modules/tgui/states/deep_inventory.dm:15	src_object,user	yes	full	proc
 type	/datum/ui_state/default	/datum/ui_state	code/modules/tgui/states/default.dm:15	live	datum_ui_state_default	1	0
 proc	/datum/ui_state/default	can_use_topic	code/modules/tgui/states/default.dm:15	src_object,user	yes	full	proc
-type	/datum/ui_state/greyscale_menu_state	/datum/ui_state	code/modules/tgui/states/greyscale_menu.dm:9	inert	datum_ui_state_greyscale_menu_state	0	0
-proc	/datum/ui_state/greyscale_menu_state	can_use_topic	code/modules/tgui/states/greyscale_menu.dm:9	src_object,user	no	-	proc
+type	/datum/ui_state/greyscale_menu_state	/datum/ui_state	code/modules/tgui/states/greyscale_menu.dm:9	live	datum_ui_state_greyscale_menu_state	1	0
+proc	/datum/ui_state/greyscale_menu_state	can_use_topic	code/modules/tgui/states/greyscale_menu.dm:9	src_object,user	yes	full	proc
 type	/datum/ui_state/hands_state	/datum/ui_state	code/modules/tgui/states/hands.dm:14	live	datum_ui_state_hands_state	1	0
 proc	/datum/ui_state/hands_state	can_use_topic	code/modules/tgui/states/hands.dm:14	src_object,user	yes	full	proc
 type	/datum/ui_state/hold_or_view_state	/datum/ui_state	code/modules/tgui/states/hold_or_view.dm:9	live	datum_ui_state_hold_or_view_state	1	0
@@ -51935,7 +51935,7 @@ proc	/mob/living	attack_hand	code/modules/mob/living/living_defense.dm:506	user,
 proc	/mob/living	attack_paw	code/modules/mob/living/living_defense.dm:516	user,modifiers	yes	full	proc
 proc	/mob/living	attack_larva	code/modules/mob/living/living_defense.dm:550	L,modifiers	yes	full	proc
 proc	/mob/living	attack_alien	code/modules/mob/living/living_defense.dm:578	user,modifiers	yes	full	proc
-proc	/mob/living	attack_hulk	code/modules/mob/living/living_defense.dm:600	user	no	-	proc
+proc	/mob/living	attack_hulk	code/modules/mob/living/living_defense.dm:600	user	yes	full	proc
 proc	/mob/living	ex_act	code/modules/mob/living/living_defense.dm:607	severity,target,origin	yes	full	proc
 proc	/mob/living	acid_act	code/modules/mob/living/living_defense.dm:612	acidpwr,acid_volume	yes	full	proc
 proc	/mob/living	electrocute_act	code/modules/mob/living/living_defense.dm:617	shock_damage,source,siemens_coeff,flags	yes	full	proc root
@@ -52621,7 +52621,7 @@ proc	/mob/living/carbon/human	bullet_act	code/modules/mob/living/carbon/human/hu
 proc	/mob/living/carbon/human	check_reflect	code/modules/mob/living/carbon/human/human_defense.dm:67	def_zone	yes	full	proc root
 proc	/mob/living/carbon/human	check_block	code/modules/mob/living/carbon/human/human_defense.dm:79	hit_by,damage,attack_text,attack_type,armour_penetration,damage_type	no	-	proc
 proc	/mob/living/carbon/human	grippedby	code/modules/mob/living/carbon/human/human_defense.dm:100	user,instant	yes	full	proc
-proc	/mob/living/carbon/human	attack_hulk	code/modules/mob/living/carbon/human/human_defense.dm:105	user	no	-	proc
+proc	/mob/living/carbon/human	attack_hulk	code/modules/mob/living/carbon/human/human_defense.dm:105	user	yes	full	proc
 proc	/mob/living/carbon/human	attack_hand	code/modules/mob/living/carbon/human/human_defense.dm:119	user,modifiers	yes	full	proc
 proc	/mob/living/carbon/human	disarm_precollide	code/modules/mob/living/carbon/human/human_defense.dm:127	source,shover,target,weapon	yes	full	proc root
 proc	/mob/living/carbon/human	disarm_collision	code/modules/mob/living/carbon/human/human_defense.dm:131	source,shover,target,shove_flags,weapon	yes	full	proc root
@@ -53550,7 +53550,7 @@ proc	/mob/living/basic	hop_on_nearby_turf	code/modules/mob/living/basic/basic.dm
 proc	/mob/living/basic	mutate	code/modules/mob/living/basic/basic.dm:319		yes	full	proc root
 proc	/mob/living/basic	attack_hand	code/modules/mob/living/basic/basic_defense.dm:1	user,modifiers	yes	full	proc
 proc	/mob/living/basic	get_shoving_message	code/modules/mob/living/basic/basic_defense.dm:42	shover,weapon,shove_flags	yes	full	proc
-proc	/mob/living/basic	attack_hulk	code/modules/mob/living/basic/basic_defense.dm:55	user	stub	deferred	proc
+proc	/mob/living/basic	attack_hulk	code/modules/mob/living/basic/basic_defense.dm:55	user	yes	full	proc
 proc	/mob/living/basic	attack_paw	code/modules/mob/living/basic/basic_defense.dm:65	user,modifiers	yes	full	proc
 proc	/mob/living/basic	attack_alien	code/modules/mob/living/basic/basic_defense.dm:78	user,modifiers	yes	full	proc
 proc	/mob/living/basic	attack_larva	code/modules/mob/living/basic/basic_defense.dm:97	attacking_larva,modifiers	yes	full	proc
@@ -56580,7 +56580,7 @@ proc	/obj	unbuckle_mob	code/game/objects/buckling.dm:144	buckled_mob,force,can_f
 proc	/obj	hitby	code/game/objects/obj_defense.dm:2	hit_by,skipcatch,hitpush,blocked,throwingdatum	yes	full	proc
 proc	/obj	ex_act	code/game/objects/obj_defense.dm:10	severity,target	yes	full	proc
 proc	/obj	bullet_act	code/game/objects/obj_defense.dm:30	hitting_projectile,def_zone,piercing_hit,blocked	yes	full	proc
-proc	/obj	attack_hulk	code/game/objects/obj_defense.dm:53	user	no	-	proc
+proc	/obj	attack_hulk	code/game/objects/obj_defense.dm:53	user	yes	full	proc
 proc	/obj	blob_act	code/game/objects/obj_defense.dm:63	B	yes	full	proc
 proc	/obj	attack_alien	code/game/objects/obj_defense.dm:68	user,modifiers	yes	full	proc
 proc	/obj	attack_animal	code/game/objects/obj_defense.dm:72	user,modifiers	yes	full	proc
@@ -56742,7 +56742,7 @@ proc	/obj/item	get_dismember_sound	code/game/objects/items.dm:952		yes	full	proc
 proc	/obj/item	open_flame	code/game/objects/items.dm:959	flame_heat,mob_slots	yes	full	proc root
 proc	/obj/item	ignition_effect	code/game/objects/items.dm:969	A,user	yes	full	proc root
 proc	/obj/item	hitby	code/game/objects/items.dm:975	AM,skipcatch,hitpush,blocked,throwingdatum	yes	full	proc
-proc	/obj/item	attack_hulk	code/game/objects/items.dm:978	user	no	-	proc
+proc	/obj/item	attack_hulk	code/game/objects/items.dm:978	user	yes	full	proc
 proc	/obj/item	attack_animal	code/game/objects/items.dm:981	user,modifiers	yes	full	proc
 proc	/obj/item	burn	code/game/objects/items.dm:986		yes	full	proc
 proc	/obj/item	acid_melt	code/game/objects/items.dm:996		yes	full	proc
@@ -62113,11 +62113,11 @@ proc	/obj/item/assembly/control	add_context	code/modules/assembly/doorcontrol.dm
 proc	/obj/item/assembly/control	examine	code/modules/assembly/doorcontrol.dm:28	user	yes	full	proc
 proc	/obj/item/assembly/control	multitool_act	code/modules/assembly/doorcontrol.dm:42	user	yes	full	proc
 proc	/obj/item/assembly/control	interact_with_atom	code/modules/assembly/doorcontrol.dm:52	interacting_with,user,modifiers	yes	full	proc
-type	/obj/item/assembly/control/photobooth_control	/obj/item/assembly/control	code/game/machinery/photobooth.dm:194	inert	obj_item_assembly_control_photobooth_control	0	0
-proc	/obj/item/assembly/control/photobooth_control	Initialize	code/game/machinery/photobooth.dm:199	mapload	no	-	proc
-proc	/obj/item/assembly/control/photobooth_control	LateInitialize	code/game/machinery/photobooth.dm:203		no	-	proc
-proc	/obj/item/assembly/control/photobooth_control	find_machine	code/game/machinery/photobooth.dm:207		no	-	proc root
-proc	/obj/item/assembly/control/photobooth_control	activate	code/game/machinery/photobooth.dm:215	activator	no	-	proc
+type	/obj/item/assembly/control/photobooth_control	/obj/item/assembly/control	code/game/machinery/photobooth.dm:194	live	obj_item_assembly_control_photobooth_control	1	0
+proc	/obj/item/assembly/control/photobooth_control	Initialize	code/game/machinery/photobooth.dm:199	mapload	yes	full	proc
+proc	/obj/item/assembly/control/photobooth_control	LateInitialize	code/game/machinery/photobooth.dm:203		yes	full	proc
+proc	/obj/item/assembly/control/photobooth_control	find_machine	code/game/machinery/photobooth.dm:207		yes	full	proc root
+proc	/obj/item/assembly/control/photobooth_control	activate	code/game/machinery/photobooth.dm:215	activator	yes	full	proc
 type	/obj/item/assembly/control/showtime	/obj/item/assembly/control	code/game/machinery/computer/telescreen.dm:532	live	obj_item_assembly_control_showtime	1	0
 proc	/obj/item/assembly/control/showtime	activate	code/game/machinery/computer/telescreen.dm:555		yes	full	proc
 type	/obj/item/assembly/control/blast_door	/obj/item/assembly/control	code/modules/assembly/doorcontrol.dm:63	live	obj_item_assembly_control_blast_door	1	0
@@ -68550,7 +68550,7 @@ proc	/obj/item/reagent_containers/cup	examine	code/modules/reagents/reagent_cont
 proc	/obj/item/reagent_containers/cup	checkLiked	code/modules/reagents/reagent_containers/cups/_cup.dm:88	fraction,eater	yes	full	proc root
 proc	/obj/item/reagent_containers/cup	try_drink	code/modules/reagents/reagent_containers/cups/_cup.dm:114	target_mob,user	yes	full	proc root
 proc	/obj/item/reagent_containers/cup	interact_with_atom	code/modules/reagents/reagent_containers/cups/_cup.dm:176	target,user,modifiers	yes	full	proc
-proc	/obj/item/reagent_containers/cup	pour_concrete	code/modules/reagents/reagent_containers/cups/_cup.dm:199	target,user	yes	partial	proc root
+proc	/obj/item/reagent_containers/cup	pour_concrete	code/modules/reagents/reagent_containers/cups/_cup.dm:199	target,user	yes	full	proc root
 proc	/obj/item/reagent_containers/cup	interact_with_atom_secondary	code/modules/reagents/reagent_containers/cups/_cup.dm:225	target,user,modifiers	yes	full	proc
 proc	/obj/item/reagent_containers/cup	item_interaction	code/modules/reagents/reagent_containers/cups/_cup.dm:237	user,tool,modifiers	yes	full	proc
 proc	/obj/item/reagent_containers/cup	on_accidental_consumption	code/modules/reagents/reagent_containers/cups/_cup.dm:304	M,user,source_item,discover_after	yes	full	proc
@@ -70330,13 +70330,13 @@ proc	/obj/item/wallframe/airalarm	try_build	code/modules/atmospherics/machinery/
 type	/obj/item/wallframe/fish	/obj/item/wallframe	code/modules/fishing/fish_mount.dm:2	live	obj_item_wallframe_fish	1	0
 proc	/obj/item/wallframe/fish	after_attach	code/modules/fishing/fish_mount.dm:12	mount	yes	full	proc
 type	/obj/item/wallframe/ticket_machine	/obj/item/wallframe	code/modules/paperwork/ticketmachine.dm:74	live	obj_item_wallframe_ticket_machine	0	0
-type	/obj/item/wallframe/picture	/obj/item/wallframe	code/modules/photography/photos/frame.dm:4	inert	obj_item_wallframe_picture	0	0
-proc	/obj/item/wallframe/picture	item_interaction	code/modules/photography/photos/frame.dm:15	user,tool,modifiers	no	-	proc
-proc	/obj/item/wallframe/picture	attack_hand	code/modules/photography/photos/frame.dm:28	user,modifiers	no	-	proc
-proc	/obj/item/wallframe/picture	attack_self	code/modules/photography/photos/frame.dm:40	user	no	-	proc
-proc	/obj/item/wallframe/picture	examine	code/modules/photography/photos/frame.dm:43	user	no	-	proc
-proc	/obj/item/wallframe/picture	update_overlays	code/modules/photography/photos/frame.dm:50		no	-	proc
-proc	/obj/item/wallframe/picture	after_attach	code/modules/photography/photos/frame.dm:55	O	no	-	proc
+type	/obj/item/wallframe/picture	/obj/item/wallframe	code/modules/photography/photos/frame.dm:4	live	obj_item_wallframe_picture	1	0
+proc	/obj/item/wallframe/picture	item_interaction	code/modules/photography/photos/frame.dm:15	user,tool,modifiers	yes	full	proc
+proc	/obj/item/wallframe/picture	attack_hand	code/modules/photography/photos/frame.dm:28	user,modifiers	yes	full	proc
+proc	/obj/item/wallframe/picture	attack_self	code/modules/photography/photos/frame.dm:40	user	yes	full	proc
+proc	/obj/item/wallframe/picture	examine	code/modules/photography/photos/frame.dm:43	user	yes	full	proc
+proc	/obj/item/wallframe/picture	update_overlays	code/modules/photography/photos/frame.dm:50		yes	full	proc
+proc	/obj/item/wallframe/picture	after_attach	code/modules/photography/photos/frame.dm:55	O	yes	full	proc
 type	/obj/item/wallframe/light_fixture	/obj/item/wallframe	code/modules/power/lighting/light_wallframes.dm:2	live	obj_item_wallframe_light_fixture	1	0
 proc	/obj/item/wallframe/light_fixture	find_support_structure	code/modules/power/lighting/light_wallframes.dm:9	structure	yes	full	proc
 proc	/obj/item/wallframe/light_fixture	try_build	code/modules/power/lighting/light_wallframes.dm:12	support,user	yes	full	proc
@@ -74956,7 +74956,7 @@ proc	/obj/item/cigarette	equipped	code/game/objects/items/cigarettes.dm:293	equi
 proc	/obj/item/cigarette	dropped	code/game/objects/items/cigarettes.dm:303	dropee	yes	full	proc
 proc	/obj/item/cigarette	on_forcesay	code/game/objects/items/cigarettes.dm:315	source,major	yes	full	proc root
 proc	/obj/item/cigarette	on_mob_dir_change	code/game/objects/items/cigarettes.dm:322	source,old_dir,new_dir	yes	full	proc root
-proc	/obj/item/cigarette	update_particle_position	code/game/objects/items/cigarettes.dm:328	to_edit,new_dir	yes	deferred	proc root
+proc	/obj/item/cigarette	update_particle_position	code/game/objects/items/cigarettes.dm:328	to_edit,new_dir	yes	full	proc root
 proc	/obj/item/cigarette	suicide_act	code/game/objects/items/cigarettes.dm:343	user	yes	full	proc
 proc	/obj/item/cigarette	item_interaction	code/game/objects/items/cigarettes.dm:347	user,tool,modifiers	yes	full	proc
 proc	/obj/item/cigarette	attempt_light	code/game/objects/items/cigarettes.dm:350	user,tool,text_override	yes	full	proc root
@@ -74975,8 +74975,8 @@ proc	/obj/item/cigarette	put_out	code/game/objects/items/cigarettes.dm:604	user,
 proc	/obj/item/cigarette	attack	code/game/objects/items/cigarettes.dm:620	target_mob,user	yes	full	proc
 proc	/obj/item/cigarette	fire_act	code/game/objects/items/cigarettes.dm:638	exposed_temperature,exposed_volume	yes	full	proc
 proc	/obj/item/cigarette	get_temperature	code/game/objects/items/cigarettes.dm:641		yes	full	proc
-proc	/obj/item/cigarette	make_mob_smoke	code/game/objects/items/cigarettes.dm:644	smoker	yes	deferred	proc root
-proc	/obj/item/cigarette	make_cig_smoke	code/game/objects/items/cigarettes.dm:649		yes	deferred	proc root
+proc	/obj/item/cigarette	make_mob_smoke	code/game/objects/items/cigarettes.dm:644	smoker	yes	full	proc root
+proc	/obj/item/cigarette	make_cig_smoke	code/game/objects/items/cigarettes.dm:649		yes	full	proc root
 type	/obj/item/cigarette/space_cigarette	/obj/item/cigarette	code/game/objects/items/cigarettes.dm:656	live	obj_item_cigarette_space_cigarette	0	0
 type	/obj/item/cigarette/dromedary	/obj/item/cigarette	code/game/objects/items/cigarettes.dm:662	live	obj_item_cigarette_dromedary	0	0
 type	/obj/item/cigarette/uplift	/obj/item/cigarette	code/game/objects/items/cigarettes.dm:666	live	obj_item_cigarette_uplift	0	0
@@ -75620,7 +75620,7 @@ proc	/obj/item/lighter	Initialize	code/game/objects/items/lighter.dm:44	mapload	
 proc	/obj/item/lighter	Destroy	code/game/objects/items/lighter.dm:63	force	yes	full	proc
 proc	/obj/item/lighter	grind_results	code/game/objects/items/lighter.dm:68		yes	full	proc
 proc	/obj/item/lighter	examine	code/game/objects/items/lighter.dm:71	user	yes	full	proc
-proc	/obj/item/lighter	light_updated	code/game/objects/items/lighter.dm:78	source	yes	deferred	proc root
+proc	/obj/item/lighter	light_updated	code/game/objects/items/lighter.dm:78	source	yes	full	proc root
 proc	/obj/item/lighter	on_intercepted_bullet	code/game/objects/items/lighter.dm:83	victim,bullet	yes	full	proc root
 proc	/obj/item/lighter	cyborg_unequip	code/game/objects/items/lighter.dm:91	user	yes	full	proc
 proc	/obj/item/lighter	suicide_act	code/game/objects/items/lighter.dm:96	user	yes	full	proc
@@ -76780,7 +76780,7 @@ proc	/obj/item/flashlight/flare	Destroy	code/game/objects/items/devices/flashlig
 proc	/obj/item/flashlight/flare	afterattack	code/game/objects/items/devices/flashlight.dm:502	target,user,click_parameters	yes	full	proc
 proc	/obj/item/flashlight/flare	toggle_light	code/game/objects/items/devices/flashlight.dm:510		yes	full	proc
 proc	/obj/item/flashlight/flare	turn_off	code/game/objects/items/devices/flashlight.dm:523		yes	full	proc root
-proc	/obj/item/flashlight/flare	light_updated	code/game/objects/items/devices/flashlight.dm:533	source	yes	deferred	proc root
+proc	/obj/item/flashlight/flare	light_updated	code/game/objects/items/devices/flashlight.dm:533	source	yes	full	proc root
 proc	/obj/item/flashlight/flare	extinguish	code/game/objects/items/devices/flashlight.dm:537		yes	full	proc
 proc	/obj/item/flashlight/flare	update_brightness	code/game/objects/items/devices/flashlight.dm:542		yes	full	proc
 proc	/obj/item/flashlight/flare	process	code/game/objects/items/devices/flashlight.dm:547	seconds_per_tick	yes	full	proc
@@ -79091,7 +79091,7 @@ proc	/obj/item/weldingtool	item_interaction	code/game/objects/items/tools/engine
 proc	/obj/item/weldingtool	cyborg_unequip	code/game/objects/items/tools/engineering/weldingtool.dm:132	user	yes	full	proc
 proc	/obj/item/weldingtool	use_tool	code/game/objects/items/tools/engineering/weldingtool.dm:137	target,user,delay,amount,volume,extra_checks	yes	full	proc
 proc	/obj/item/weldingtool	interact_with_atom	code/game/objects/items/tools/engineering/weldingtool.dm:145	interacting_with,user,modifiers	yes	full	proc
-proc	/obj/item/weldingtool	light_updated	code/game/objects/items/tools/engineering/weldingtool.dm:158	source	yes	deferred	proc root
+proc	/obj/item/weldingtool	light_updated	code/game/objects/items/tools/engineering/weldingtool.dm:158	source	yes	full	proc root
 proc	/obj/item/weldingtool	try_heal_loop	code/game/objects/items/tools/engineering/weldingtool.dm:162	interacting_with,user,repeating	yes	skeleton	proc root
 proc	/obj/item/weldingtool	afterattack	code/game/objects/items/tools/engineering/weldingtool.dm:187	target,user,modifiers,attack_modifiers	yes	full	proc
 proc	/obj/item/weldingtool	attack_self	code/game/objects/items/tools/engineering/weldingtool.dm:200	user	yes	full	proc
@@ -83789,7 +83789,7 @@ proc	/obj/machinery	interact	code/game/machinery/_machinery.dm:707	user	yes	full
 proc	/obj/machinery	ui_act	code/game/machinery/_machinery.dm:711	action,params,ui,state	yes	full	proc
 proc	/obj/machinery	Topic	code/game/machinery/_machinery.dm:720	href,href_list	no	-	proc
 proc	/obj/machinery	attack_paw	code/game/machinery/_machinery.dm:732	user,modifiers	yes	full	proc
-proc	/obj/machinery	attack_hulk	code/game/machinery/_machinery.dm:755	user	no	-	proc
+proc	/obj/machinery	attack_hulk	code/game/machinery/_machinery.dm:755	user	yes	full	proc
 proc	/obj/machinery	attack_robot	code/game/machinery/_machinery.dm:762	user	yes	full	proc
 proc	/obj/machinery	attack_ai	code/game/machinery/_machinery.dm:781	user	yes	full	proc
 proc	/obj/machinery	attackby	code/game/machinery/_machinery.dm:793	weapon,user,modifiers,attack_modifiers	yes	full	proc
@@ -87028,9 +87028,9 @@ type	/obj/machinery/button/curtain	/obj/machinery/button	code/game/machinery/but
 proc	/obj/machinery/button/curtain	setup_device	code/game/machinery/buttons.dm:499	mapload	yes	full	proc
 type	/obj/machinery/button/crematorium	/obj/machinery/button	code/game/machinery/buttons.dm:506	live	obj_machinery_button_crematorium	0	1
 type	/obj/machinery/button/crematorium/indestructible	/obj/machinery/button/crematorium	code/game/machinery/buttons.dm:515	live	obj_machinery_button_crematorium_indestructible	0	0
-type	/obj/machinery/button/photobooth	/obj/machinery/button	code/game/machinery/photobooth.dm:171	inert	obj_machinery_button_photobooth	0	1
-proc	/obj/machinery/button/photobooth	Initialize	code/game/machinery/photobooth.dm:177	mapload	no	-	proc
-proc	/obj/machinery/button/photobooth	multitool_act	code/game/machinery/photobooth.dm:183	user,tool	no	-	proc
+type	/obj/machinery/button/photobooth	/obj/machinery/button	code/game/machinery/photobooth.dm:171	live	obj_machinery_button_photobooth	1	1
+proc	/obj/machinery/button/photobooth	Initialize	code/game/machinery/photobooth.dm:177	mapload	yes	full	proc
+proc	/obj/machinery/button/photobooth	multitool_act	code/game/machinery/photobooth.dm:183	user,tool	yes	full	proc
 type	/obj/machinery/button/showtime	/obj/machinery/button	code/game/machinery/computer/telescreen.dm:519	live	obj_machinery_button_showtime	1	0
 proc	/obj/machinery/button/showtime	Initialize	code/game/machinery/computer/telescreen.dm:525	mapload	yes	full	proc
 type	/obj/machinery/button/ticket_machine	/obj/machinery/button	code/modules/paperwork/ticketmachine.dm:99	live	obj_machinery_button_ticket_machine	1	1
@@ -87759,23 +87759,23 @@ type	/obj/machinery/pdapainter/medbay	/obj/machinery/pdapainter	code/game/machin
 type	/obj/machinery/pdapainter/research	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:379	live	obj_machinery_pdapainter_research	0	1
 type	/obj/machinery/pdapainter/engineering	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:384	live	obj_machinery_pdapainter_engineering	0	1
 type	/obj/machinery/pdapainter/supply	/obj/machinery/pdapainter	code/game/machinery/PDApainter.dm:389	live	obj_machinery_pdapainter_supply	0	1
-type	/obj/machinery/photobooth	/obj/machinery	code/game/machinery/photobooth.dm:8	inert	obj_machinery_photobooth	0	1
-proc	/obj/machinery/photobooth	Initialize	code/game/machinery/photobooth.dm:43	mapload	no	-	proc
-proc	/obj/machinery/photobooth	interact	code/game/machinery/photobooth.dm:47	user,modifiers	no	-	proc
-proc	/obj/machinery/photobooth	attack_hand_secondary	code/game/machinery/photobooth.dm:57	user,modifiers	no	-	proc
-proc	/obj/machinery/photobooth	add_context	code/game/machinery/photobooth.dm:69	source,context,held_item,user	no	-	proc
-proc	/obj/machinery/photobooth	close_machine	code/game/machinery/photobooth.dm:79	user,density_to_set	no	-	proc
-proc	/obj/machinery/photobooth	open_machine	code/game/machinery/photobooth.dm:86	drop,density_to_set	no	-	proc
-proc	/obj/machinery/photobooth	update_icon_state	code/game/machinery/photobooth.dm:90		no	-	proc
-proc	/obj/machinery/photobooth	update_overlays	code/game/machinery/photobooth.dm:99		no	-	proc
-proc	/obj/machinery/photobooth	screwdriver_act	code/game/machinery/photobooth.dm:104	user,tool	no	-	proc
-proc	/obj/machinery/photobooth	crowbar_act	code/game/machinery/photobooth.dm:107	user,tool	no	-	proc
-proc	/obj/machinery/photobooth	emag_act	code/game/machinery/photobooth.dm:110	user,emag_card	no	-	proc
-proc	/obj/machinery/photobooth	start_taking_pictures	code/game/machinery/photobooth.dm:123		no	-	proc root
-proc	/obj/machinery/photobooth	finish_taking_pictures	code/game/machinery/photobooth.dm:152		no	-	proc root
-proc	/obj/machinery/photobooth	flash	code/game/machinery/photobooth.dm:161		no	-	proc root
-proc	/obj/machinery/photobooth	flash_end	code/game/machinery/photobooth.dm:166		no	-	proc root
-type	/obj/machinery/photobooth/security	/obj/machinery/photobooth	code/game/machinery/photobooth.dm:35	inert	obj_machinery_photobooth_security	0	1
+type	/obj/machinery/photobooth	/obj/machinery	code/game/machinery/photobooth.dm:8	live	obj_machinery_photobooth	1	1
+proc	/obj/machinery/photobooth	Initialize	code/game/machinery/photobooth.dm:43	mapload	yes	full	proc
+proc	/obj/machinery/photobooth	interact	code/game/machinery/photobooth.dm:47	user,modifiers	yes	full	proc
+proc	/obj/machinery/photobooth	attack_hand_secondary	code/game/machinery/photobooth.dm:57	user,modifiers	yes	full	proc
+proc	/obj/machinery/photobooth	add_context	code/game/machinery/photobooth.dm:69	source,context,held_item,user	stub	deferred	proc
+proc	/obj/machinery/photobooth	close_machine	code/game/machinery/photobooth.dm:79	user,density_to_set	yes	full	proc
+proc	/obj/machinery/photobooth	open_machine	code/game/machinery/photobooth.dm:86	drop,density_to_set	yes	full	proc
+proc	/obj/machinery/photobooth	update_icon_state	code/game/machinery/photobooth.dm:90		yes	full	proc
+proc	/obj/machinery/photobooth	update_overlays	code/game/machinery/photobooth.dm:99		yes	full	proc
+proc	/obj/machinery/photobooth	screwdriver_act	code/game/machinery/photobooth.dm:104	user,tool	yes	full	proc
+proc	/obj/machinery/photobooth	crowbar_act	code/game/machinery/photobooth.dm:107	user,tool	yes	full	proc
+proc	/obj/machinery/photobooth	emag_act	code/game/machinery/photobooth.dm:110	user,emag_card	yes	full	proc
+proc	/obj/machinery/photobooth	start_taking_pictures	code/game/machinery/photobooth.dm:123		yes	full	proc root
+proc	/obj/machinery/photobooth	finish_taking_pictures	code/game/machinery/photobooth.dm:152		yes	full	proc root
+proc	/obj/machinery/photobooth	flash	code/game/machinery/photobooth.dm:161		yes	full	proc root
+proc	/obj/machinery/photobooth	flash_end	code/game/machinery/photobooth.dm:166		yes	full	proc root
+type	/obj/machinery/photobooth/security	/obj/machinery/photobooth	code/game/machinery/photobooth.dm:35	live	obj_machinery_photobooth_security	0	1
 type	/obj/machinery/prisongate	/obj/machinery	code/game/machinery/prisongate.dm:7	live	obj_machinery_prisongate	1	0
 proc	/obj/machinery/prisongate	power_change	code/game/machinery/prisongate.dm:34		yes	full	proc
 proc	/obj/machinery/prisongate	CanAllowThrough	code/game/machinery/prisongate.dm:49	gate_toucher,border_dir	yes	full	proc
@@ -90933,7 +90933,7 @@ proc	/obj/machinery/porta_turret_cover	item_interaction	code/game/machinery/port
 proc	/obj/machinery/porta_turret_cover	attacked_by	code/game/machinery/porta_turret/portable_turret_cover.dm:76	I,user,modifiers,attack_modifiers	yes	full	proc
 proc	/obj/machinery/porta_turret_cover	attack_alien	code/game/machinery/porta_turret/portable_turret_cover.dm:79	user,modifiers	yes	full	proc
 proc	/obj/machinery/porta_turret_cover	attack_animal	code/game/machinery/porta_turret/portable_turret_cover.dm:82	user,modifiers	yes	full	proc
-proc	/obj/machinery/porta_turret_cover	attack_hulk	code/game/machinery/porta_turret/portable_turret_cover.dm:85	user	stub	deferred	proc
+proc	/obj/machinery/porta_turret_cover	attack_hulk	code/game/machinery/porta_turret/portable_turret_cover.dm:85	user	yes	full	proc
 proc	/obj/machinery/porta_turret_cover	emag_act	code/game/machinery/porta_turret/portable_turret_cover.dm:88	user,emag_card	yes	full	proc
 type	/obj/machinery/satellite	/obj/machinery	code/game/machinery/satellite/satellite.dm:2	live	obj_machinery_satellite	1	0
 proc	/obj/machinery/satellite	Initialize	code/game/machinery/satellite/satellite.dm:17	mapload	yes	full	proc
@@ -91810,7 +91810,7 @@ proc	/obj/machinery/portable_atmospherics/canister	toggle_valve	code/modules/atm
 proc	/obj/machinery/portable_atmospherics/canister	toggle_shielding	code/modules/atmospherics/machinery/portable/canister.dm:739	user,wire_pulsed	yes	full	proc root
 proc	/obj/machinery/portable_atmospherics/canister	eject_tank	code/modules/atmospherics/machinery/portable/canister.dm:747	user,wire_pulsed	yes	full	proc root
 proc	/obj/machinery/portable_atmospherics/canister	toggle_reaction_suppression	code/modules/atmospherics/machinery/portable/canister.dm:757	user,wire_pulsed	yes	full	proc root
-proc	/obj/machinery/portable_atmospherics/canister	recolor	code/modules/atmospherics/machinery/portable/canister.dm:767	menu	stub	deferred	proc root
+proc	/obj/machinery/portable_atmospherics/canister	recolor	code/modules/atmospherics/machinery/portable/canister.dm:767	menu	yes	full	proc root
 proc	/obj/machinery/portable_atmospherics/canister	unregister_holding	code/modules/atmospherics/machinery/portable/canister.dm:770		yes	full	proc
 proc	/obj/machinery/portable_atmospherics/canister	take_atmos_damage	code/modules/atmospherics/machinery/portable/canister.dm:774		yes	full	proc
 type	/obj/machinery/portable_atmospherics/canister/air	/obj/machinery/portable_atmospherics/canister	code/modules/atmospherics/machinery/portable/canister.dm:125	live	obj_machinery_portable_atmospherics_canister_air	1	1
@@ -94258,7 +94258,7 @@ proc	/obj/effect	take_damage	code/game/objects/effects/effects.dm:21	damage_amou
 proc	/obj/effect	fire_act	code/game/objects/effects/effects.dm:24	exposed_temperature,exposed_volume	yes	full	proc
 proc	/obj/effect	acid_act	code/game/objects/effects/effects.dm:27		yes	full	proc
 proc	/obj/effect	blob_act	code/game/objects/effects/effects.dm:30	B	no	-	proc
-proc	/obj/effect	attack_hulk	code/game/objects/effects/effects.dm:33	user	no	-	proc
+proc	/obj/effect	attack_hulk	code/game/objects/effects/effects.dm:33	user	yes	full	proc
 proc	/obj/effect	experience_pressure_difference	code/game/objects/effects/effects.dm:36		yes	full	proc
 proc	/obj/effect	ex_act	code/game/objects/effects/effects.dm:39	severity,target	yes	full	proc
 proc	/obj/effect	singularity_act	code/game/objects/effects/effects.dm:42		yes	full	proc
@@ -101968,40 +101968,40 @@ type	/obj/structure/sign/painting/large/library_private	/obj/structure/sign/pain
 type	/obj/structure/sign/painting/library	/obj/structure/sign/painting	code/modules/art/paintings.dm:883	live	obj_structure_sign_painting_library	0	1
 type	/obj/structure/sign/painting/library_secure	/obj/structure/sign/painting	code/modules/art/paintings.dm:889	live	obj_structure_sign_painting_library_secure	0	1
 type	/obj/structure/sign/painting/library_private	/obj/structure/sign/painting	code/modules/art/paintings.dm:895	live	obj_structure_sign_painting_library_private	0	1
-type	/obj/structure/sign/picture_frame	/obj/structure/sign	code/modules/photography/photos/frame.dm:66	inert	obj_structure_sign_picture_frame	0	1
-proc	/obj/structure/sign/picture_frame	Initialize	code/modules/photography/photos/frame.dm:77	mapload	no	-	proc
-proc	/obj/structure/sign/picture_frame	Destroy	code/modules/photography/photos/frame.dm:83		no	-	proc
-proc	/obj/structure/sign/picture_frame	get_photo_id	code/modules/photography/photos/frame.dm:87		no	-	proc root
-proc	/obj/structure/sign/picture_frame	persistence_load	code/modules/photography/photos/frame.dm:92		no	-	proc root
-proc	/obj/structure/sign/picture_frame	load_from_id	code/modules/photography/photos/frame.dm:97	id	no	-	proc root
-proc	/obj/structure/sign/picture_frame	set_and_save_framed	code/modules/photography/photos/frame.dm:108	photo	no	-	proc root
-proc	/obj/structure/sign/picture_frame	examine	code/modules/photography/photos/frame.dm:116	user	no	-	proc
-proc	/obj/structure/sign/picture_frame	try_deconstruct	code/modules/photography/photos/frame.dm:122	user,tool	no	-	proc root
-proc	/obj/structure/sign/picture_frame	screwdriver_act	code/modules/photography/photos/frame.dm:132	user,tool	no	-	proc
-proc	/obj/structure/sign/picture_frame	wrench_act	code/modules/photography/photos/frame.dm:135	user,tool	no	-	proc
-proc	/obj/structure/sign/picture_frame	wirecutter_act	code/modules/photography/photos/frame.dm:138	user,tool	no	-	proc
-proc	/obj/structure/sign/picture_frame	item_interaction	code/modules/photography/photos/frame.dm:149	user,tool,modifiers	no	-	proc
-proc	/obj/structure/sign/picture_frame	attack_hand	code/modules/photography/photos/frame.dm:161	user,modifiers	no	-	proc
-proc	/obj/structure/sign/picture_frame	update_overlays	code/modules/photography/photos/frame.dm:168		no	-	proc
-proc	/obj/structure/sign/picture_frame	atom_deconstruct	code/modules/photography/photos/frame.dm:173	disassembled	no	-	proc
-type	/obj/structure/sign/picture_frame/showroom	/obj/structure/sign/picture_frame	code/modules/photography/photos/frame.dm:184	inert	obj_structure_sign_picture_frame_showroom	0	1
-type	/obj/structure/sign/picture_frame/showroom/one	/obj/structure/sign/picture_frame/showroom	code/modules/photography/photos/frame.dm:249	inert	obj_structure_sign_picture_frame_showroom_one	0	1
-type	/obj/structure/sign/picture_frame/showroom/two	/obj/structure/sign/picture_frame/showroom	code/modules/photography/photos/frame.dm:252	inert	obj_structure_sign_picture_frame_showroom_two	0	1
-type	/obj/structure/sign/picture_frame/showroom/three	/obj/structure/sign/picture_frame/showroom	code/modules/photography/photos/frame.dm:255	inert	obj_structure_sign_picture_frame_showroom_three	0	1
-type	/obj/structure/sign/picture_frame/showroom/four	/obj/structure/sign/picture_frame/showroom	code/modules/photography/photos/frame.dm:258	inert	obj_structure_sign_picture_frame_showroom_four	0	1
-type	/obj/structure/sign/picture_frame/portrait	/obj/structure/sign/picture_frame	code/modules/photography/photos/frame.dm:190	inert	obj_structure_sign_picture_frame_portrait	0	1
-proc	/obj/structure/sign/picture_frame/portrait	Initialize	code/modules/photography/photos/frame.dm:197	mapload	no	-	proc
-proc	/obj/structure/sign/picture_frame/portrait	update_name	code/modules/photography/photos/frame.dm:221	updates	no	-	proc
-proc	/obj/structure/sign/picture_frame/portrait	update_icon_state	code/modules/photography/photos/frame.dm:228	updates	no	-	proc
-proc	/obj/structure/sign/picture_frame/portrait	update_desc	code/modules/photography/photos/frame.dm:235	updates	no	-	proc
-proc	/obj/structure/sign/picture_frame/portrait	examine_more	code/modules/photography/photos/frame.dm:242	user	no	-	proc
-type	/obj/structure/sign/picture_frame/portrait/bar	/obj/structure/sign/picture_frame/portrait	code/modules/photography/photos/frame.dm:274	inert	obj_structure_sign_picture_frame_portrait_bar	0	1
-proc	/obj/structure/sign/picture_frame/portrait/bar	Initialize	code/modules/photography/photos/frame.dm:277	mapload	no	-	proc
-type	/obj/structure/sign/picture_frame/hall_of_fame	/obj/structure/sign/picture_frame	(implied by a subtype's path)	inert	obj_structure_sign_picture_frame_hall_of_fame	0	0
-type	/obj/structure/sign/picture_frame/hall_of_fame/one	/obj/structure/sign/picture_frame/hall_of_fame	code/modules/photography/photos/frame.dm:262	inert	obj_structure_sign_picture_frame_hall_of_fame_one	0	0
-type	/obj/structure/sign/picture_frame/hall_of_fame/two	/obj/structure/sign/picture_frame/hall_of_fame	code/modules/photography/photos/frame.dm:265	inert	obj_structure_sign_picture_frame_hall_of_fame_two	0	0
-type	/obj/structure/sign/picture_frame/hall_of_fame/three	/obj/structure/sign/picture_frame/hall_of_fame	code/modules/photography/photos/frame.dm:268	inert	obj_structure_sign_picture_frame_hall_of_fame_three	0	0
-type	/obj/structure/sign/picture_frame/hall_of_fame/four	/obj/structure/sign/picture_frame/hall_of_fame	code/modules/photography/photos/frame.dm:271	inert	obj_structure_sign_picture_frame_hall_of_fame_four	0	0
+type	/obj/structure/sign/picture_frame	/obj/structure/sign	code/modules/photography/photos/frame.dm:66	live	obj_structure_sign_picture_frame	1	1
+proc	/obj/structure/sign/picture_frame	Initialize	code/modules/photography/photos/frame.dm:77	mapload	yes	full	proc
+proc	/obj/structure/sign/picture_frame	Destroy	code/modules/photography/photos/frame.dm:83		yes	full	proc
+proc	/obj/structure/sign/picture_frame	get_photo_id	code/modules/photography/photos/frame.dm:87		yes	full	proc root
+proc	/obj/structure/sign/picture_frame	persistence_load	code/modules/photography/photos/frame.dm:92		yes	deferred	proc root
+proc	/obj/structure/sign/picture_frame	load_from_id	code/modules/photography/photos/frame.dm:97	id	yes	deferred	proc root
+proc	/obj/structure/sign/picture_frame	set_and_save_framed	code/modules/photography/photos/frame.dm:108	photo	yes	deferred	proc root
+proc	/obj/structure/sign/picture_frame	examine	code/modules/photography/photos/frame.dm:116	user	yes	full	proc
+proc	/obj/structure/sign/picture_frame	try_deconstruct	code/modules/photography/photos/frame.dm:122	user,tool	yes	full	proc root
+proc	/obj/structure/sign/picture_frame	screwdriver_act	code/modules/photography/photos/frame.dm:132	user,tool	yes	full	proc
+proc	/obj/structure/sign/picture_frame	wrench_act	code/modules/photography/photos/frame.dm:135	user,tool	yes	full	proc
+proc	/obj/structure/sign/picture_frame	wirecutter_act	code/modules/photography/photos/frame.dm:138	user,tool	yes	full	proc
+proc	/obj/structure/sign/picture_frame	item_interaction	code/modules/photography/photos/frame.dm:149	user,tool,modifiers	yes	full	proc
+proc	/obj/structure/sign/picture_frame	attack_hand	code/modules/photography/photos/frame.dm:161	user,modifiers	yes	full	proc
+proc	/obj/structure/sign/picture_frame	update_overlays	code/modules/photography/photos/frame.dm:168		yes	full	proc
+proc	/obj/structure/sign/picture_frame	atom_deconstruct	code/modules/photography/photos/frame.dm:173	disassembled	yes	full	proc
+type	/obj/structure/sign/picture_frame/showroom	/obj/structure/sign/picture_frame	code/modules/photography/photos/frame.dm:184	live	obj_structure_sign_picture_frame_showroom	0	1
+type	/obj/structure/sign/picture_frame/showroom/one	/obj/structure/sign/picture_frame/showroom	code/modules/photography/photos/frame.dm:249	live	obj_structure_sign_picture_frame_showroom_one	0	1
+type	/obj/structure/sign/picture_frame/showroom/two	/obj/structure/sign/picture_frame/showroom	code/modules/photography/photos/frame.dm:252	live	obj_structure_sign_picture_frame_showroom_two	0	1
+type	/obj/structure/sign/picture_frame/showroom/three	/obj/structure/sign/picture_frame/showroom	code/modules/photography/photos/frame.dm:255	live	obj_structure_sign_picture_frame_showroom_three	0	1
+type	/obj/structure/sign/picture_frame/showroom/four	/obj/structure/sign/picture_frame/showroom	code/modules/photography/photos/frame.dm:258	live	obj_structure_sign_picture_frame_showroom_four	0	1
+type	/obj/structure/sign/picture_frame/portrait	/obj/structure/sign/picture_frame	code/modules/photography/photos/frame.dm:190	live	obj_structure_sign_picture_frame_portrait	1	1
+proc	/obj/structure/sign/picture_frame/portrait	Initialize	code/modules/photography/photos/frame.dm:197	mapload	yes	full	proc
+proc	/obj/structure/sign/picture_frame/portrait	update_name	code/modules/photography/photos/frame.dm:221	updates	yes	full	proc
+proc	/obj/structure/sign/picture_frame/portrait	update_icon_state	code/modules/photography/photos/frame.dm:228	updates	yes	full	proc
+proc	/obj/structure/sign/picture_frame/portrait	update_desc	code/modules/photography/photos/frame.dm:235	updates	yes	full	proc
+proc	/obj/structure/sign/picture_frame/portrait	examine_more	code/modules/photography/photos/frame.dm:242	user	yes	full	proc
+type	/obj/structure/sign/picture_frame/portrait/bar	/obj/structure/sign/picture_frame/portrait	code/modules/photography/photos/frame.dm:274	live	obj_structure_sign_picture_frame_portrait_bar	1	1
+proc	/obj/structure/sign/picture_frame/portrait/bar	Initialize	code/modules/photography/photos/frame.dm:277	mapload	yes	full	proc
+type	/obj/structure/sign/picture_frame/hall_of_fame	/obj/structure/sign/picture_frame	(implied by a subtype's path)	live	obj_structure_sign_picture_frame_hall_of_fame	0	0
+type	/obj/structure/sign/picture_frame/hall_of_fame/one	/obj/structure/sign/picture_frame/hall_of_fame	code/modules/photography/photos/frame.dm:262	live	obj_structure_sign_picture_frame_hall_of_fame_one	0	0
+type	/obj/structure/sign/picture_frame/hall_of_fame/two	/obj/structure/sign/picture_frame/hall_of_fame	code/modules/photography/photos/frame.dm:265	live	obj_structure_sign_picture_frame_hall_of_fame_two	0	0
+type	/obj/structure/sign/picture_frame/hall_of_fame/three	/obj/structure/sign/picture_frame/hall_of_fame	code/modules/photography/photos/frame.dm:268	live	obj_structure_sign_picture_frame_hall_of_fame_three	0	0
+type	/obj/structure/sign/picture_frame/hall_of_fame/four	/obj/structure/sign/picture_frame/hall_of_fame	code/modules/photography/photos/frame.dm:271	live	obj_structure_sign_picture_frame_hall_of_fame_four	0	0
 type	/obj/structure/spider	/obj/structure	code/game/objects/effects/spiderwebs.dm:4	live	obj_structure_spider	1	0
 proc	/obj/structure/spider	Initialize	code/game/objects/effects/spiderwebs.dm:11	mapload	yes	full	proc
 proc	/obj/structure/spider	play_attack_sound	code/game/objects/effects/spiderwebs.dm:16	damage_amount,damage_type,damage_flag	yes	full	proc
@@ -103621,7 +103621,7 @@ proc	/obj/structure/life_candle	attack_hand	code/game/objects/structures/life_ca
 proc	/obj/structure/life_candle	update_icon_state	code/game/objects/structures/life_candle.dm:70		yes	full	proc
 proc	/obj/structure/life_candle	examine	code/game/objects/structures/life_candle.dm:74	user	yes	full	proc
 proc	/obj/structure/life_candle	process	code/game/objects/structures/life_candle.dm:81		yes	full	proc
-proc	/obj/structure/life_candle	light_updated	code/game/objects/structures/life_candle.dm:91	source	yes	deferred	proc root
+proc	/obj/structure/life_candle	light_updated	code/game/objects/structures/life_candle.dm:91	source	yes	full	proc root
 proc	/obj/structure/life_candle	respawn	code/game/objects/structures/life_candle.dm:95	mind	yes	full	proc root
 type	/obj/structure/loom	/obj/structure	code/game/objects/structures/loom.dm:3	live	obj_structure_loom	1	0
 proc	/obj/structure/loom	Initialize	code/game/objects/structures/loom.dm:11	mapload	yes	full	proc
@@ -107338,7 +107338,7 @@ proc	/obj/vehicle/sealed/mecha	attack_paw	code/modules/vehicles/mecha/mecha_defe
 proc	/obj/vehicle/sealed/mecha	attack_alien	code/modules/vehicles/mecha/mecha_defense.dm:73	user,modifiers	yes	full	proc
 proc	/obj/vehicle/sealed/mecha	attack_animal	code/modules/vehicles/mecha/mecha_defense.dm:78	user,modifiers	yes	full	proc
 proc	/obj/vehicle/sealed/mecha	hulk_damage	code/modules/vehicles/mecha/mecha_defense.dm:96		yes	full	proc
-proc	/obj/vehicle/sealed/mecha	attack_hulk	code/modules/vehicles/mecha/mecha_defense.dm:99	user	stub	deferred	proc
+proc	/obj/vehicle/sealed/mecha	attack_hulk	code/modules/vehicles/mecha/mecha_defense.dm:99	user	yes	full	proc
 proc	/obj/vehicle/sealed/mecha	blob_act	code/modules/vehicles/mecha/mecha_defense.dm:105	B	yes	full	proc
 proc	/obj/vehicle/sealed/mecha	attack_tk	code/modules/vehicles/mecha/mecha_defense.dm:109		yes	full	proc
 proc	/obj/vehicle/sealed/mecha	hitby	code/modules/vehicles/mecha/mecha_defense.dm:112	AM,skipcatch,hitpush,blocked,throwingdatum	yes	full	proc
@@ -108240,8 +108240,8 @@ proc	/turf/closed/wall	devastate_wall	code/game/turfs/closed/walls.dm:118		yes	f
 proc	/turf/closed/wall	ex_act	code/game/turfs/closed/walls.dm:123	severity,target	yes	full	proc
 proc	/turf/closed/wall	blob_act	code/game/turfs/closed/walls.dm:146	B	stub	deferred	proc
 proc	/turf/closed/wall	attack_paw	code/game/turfs/closed/walls.dm:152	user,modifiers	yes	full	proc
-proc	/turf/closed/wall	attack_hulk	code/game/turfs/closed/walls.dm:156	user	stub	deferred	proc
-proc	/turf/closed/wall	hulk_recoil	code/game/turfs/closed/walls.dm:187	arm,hulkman,damage	yes	skeleton	proc root
+proc	/turf/closed/wall	attack_hulk	code/game/turfs/closed/walls.dm:156	user	yes	full	proc
+proc	/turf/closed/wall	hulk_recoil	code/game/turfs/closed/walls.dm:187	arm,hulkman,damage	yes	full	proc root
 proc	/turf/closed/wall	attack_hand	code/game/turfs/closed/walls.dm:193	user,modifiers	yes	full	proc
 proc	/turf/closed/wall	item_interaction	code/game/turfs/closed/walls.dm:202	user,tool,modifiers	yes	full	proc
 proc	/turf/closed/wall	try_clean	code/game/turfs/closed/walls.dm:215	W,user	yes	full	proc root
@@ -108264,19 +108264,19 @@ proc	/turf/closed/wall	mech_melee_attack	code/modules/vehicles/mecha/mech_melee_
 type	/turf/closed/wall/smooth	/turf/closed/wall	code/__HELPERS/icon_smoothing.dm:474	live	turf_closed_wall_smooth	0	0
 type	/turf/closed/wall/bathhouse	/turf/closed/wall	code/game/area/areas/ruins/icemoon.dm:15	live	turf_closed_wall_bathhouse	0	0
 type	/turf/closed/wall/metal_foam_base	/turf/closed/wall	code/game/turfs/closed/walls.dm:339	live	turf_closed_wall_metal_foam_base	0	0
-type	/turf/closed/wall/concrete	/turf/closed/wall	code/game/turfs/closed/wall/concrete_walls.dm:2	inert	turf_closed_wall_concrete	0	0
-proc	/turf/closed/wall/concrete	Initialize	code/game/turfs/closed/wall/concrete_walls.dm:27	mapload	no	-	proc
-proc	/turf/closed/wall/concrete	deconstruction_hints	code/game/turfs/closed/wall/concrete_walls.dm:31	user	no	-	proc
-proc	/turf/closed/wall/concrete	try_clean	code/game/turfs/closed/wall/concrete_walls.dm:43	W,user	no	-	proc
-proc	/turf/closed/wall/concrete	try_decon	code/game/turfs/closed/wall/concrete_walls.dm:47	I,user	no	-	proc
-proc	/turf/closed/wall/concrete	break_wall	code/game/turfs/closed/wall/concrete_walls.dm:65		no	-	proc
-proc	/turf/closed/wall/concrete	update_icon	code/game/turfs/closed/wall/concrete_walls.dm:70	updates	no	-	proc
-proc	/turf/closed/wall/concrete	check_harden	code/game/turfs/closed/wall/concrete_walls.dm:84		no	-	proc root
-proc	/turf/closed/wall/concrete	process	code/game/turfs/closed/wall/concrete_walls.dm:90	seconds_per_tick	no	-	proc
-type	/turf/closed/wall/concrete/reinforced	/turf/closed/wall/concrete	code/game/turfs/closed/wall/concrete_walls.dm:98	inert	turf_closed_wall_concrete_reinforced	0	0
-proc	/turf/closed/wall/concrete/reinforced	rcd_vals	code/game/turfs/closed/wall/concrete_walls.dm:112		no	-	proc
-proc	/turf/closed/wall/concrete/reinforced	rcd_act	code/game/turfs/closed/wall/concrete_walls.dm:115		no	-	proc
-proc	/turf/closed/wall/concrete/reinforced	rust_turf	code/game/turfs/closed/wall/concrete_walls.dm:118	magic	no	-	proc
+type	/turf/closed/wall/concrete	/turf/closed/wall	code/game/turfs/closed/wall/concrete_walls.dm:2	live	turf_closed_wall_concrete	1	0
+proc	/turf/closed/wall/concrete	Initialize	code/game/turfs/closed/wall/concrete_walls.dm:27	mapload	yes	full	proc
+proc	/turf/closed/wall/concrete	deconstruction_hints	code/game/turfs/closed/wall/concrete_walls.dm:31	user	yes	full	proc
+proc	/turf/closed/wall/concrete	try_clean	code/game/turfs/closed/wall/concrete_walls.dm:43	W,user	yes	full	proc
+proc	/turf/closed/wall/concrete	try_decon	code/game/turfs/closed/wall/concrete_walls.dm:47	I,user	yes	full	proc
+proc	/turf/closed/wall/concrete	break_wall	code/game/turfs/closed/wall/concrete_walls.dm:65		yes	full	proc
+proc	/turf/closed/wall/concrete	update_icon	code/game/turfs/closed/wall/concrete_walls.dm:70	updates	yes	full	proc
+proc	/turf/closed/wall/concrete	check_harden	code/game/turfs/closed/wall/concrete_walls.dm:84		yes	full	proc root
+proc	/turf/closed/wall/concrete	process	code/game/turfs/closed/wall/concrete_walls.dm:90	seconds_per_tick	yes	full	proc
+type	/turf/closed/wall/concrete/reinforced	/turf/closed/wall/concrete	code/game/turfs/closed/wall/concrete_walls.dm:98	live	turf_closed_wall_concrete_reinforced	1	0
+proc	/turf/closed/wall/concrete/reinforced	rcd_vals	code/game/turfs/closed/wall/concrete_walls.dm:112		yes	full	proc
+proc	/turf/closed/wall/concrete/reinforced	rcd_act	code/game/turfs/closed/wall/concrete_walls.dm:115		yes	full	proc
+proc	/turf/closed/wall/concrete/reinforced	rust_turf	code/game/turfs/closed/wall/concrete_walls.dm:118	magic	stub	deferred	proc
 type	/turf/closed/wall/material	/turf/closed/wall	code/game/turfs/closed/wall/material_walls.dm:2	inert	turf_closed_wall_material	0	0
 proc	/turf/closed/wall/material	break_wall	code/game/turfs/closed/wall/material_walls.dm:14		no	-	proc
 proc	/turf/closed/wall/material	devastate_wall	code/game/turfs/closed/wall/material_walls.dm:20		no	-	proc
@@ -108284,8 +108284,8 @@ proc	/turf/closed/wall/material	finalize_material_effects	code/game/turfs/closed
 type	/turf/closed/wall/material/meat	/turf/closed/wall/material	code/game/turfs/closed/wall/misc_walls.dm:116	inert	turf_closed_wall_material_meat	0	0
 proc	/turf/closed/wall/material/meat	Initialize	code/game/turfs/closed/wall/misc_walls.dm:121	mapload	no	-	proc
 type	/turf/closed/wall/material/meat/airless	/turf/closed/wall/material/meat	code/game/turfs/closed/wall/misc_walls.dm:126	inert	turf_closed_wall_material_meat_airless	0	0
-type	/turf/closed/wall/mineral	/turf/closed/wall	code/game/turfs/closed/wall/mineral_walls.dm:2	live	turf_closed_wall_mineral	0	1
-proc	/turf/closed/wall/mineral	hulk_recoil	code/game/turfs/closed/wall/mineral_walls.dm:189	arm,hulkman,damage	stub	deferred	proc
+type	/turf/closed/wall/mineral	/turf/closed/wall	code/game/turfs/closed/wall/mineral_walls.dm:2	live	turf_closed_wall_mineral	1	1
+proc	/turf/closed/wall/mineral	hulk_recoil	code/game/turfs/closed/wall/mineral_walls.dm:189	arm,hulkman,damage	yes	full	proc
 type	/turf/closed/wall/mineral/gold	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:13	live	turf_closed_wall_mineral_gold	0	0
 type	/turf/closed/wall/mineral/silver	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:27	live	turf_closed_wall_mineral_silver	0	0
 type	/turf/closed/wall/mineral/diamond	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:40	inert	turf_closed_wall_mineral_diamond	0	0
@@ -108319,7 +108319,7 @@ proc	/turf/closed/wall/mineral/titanium/interior	copyTurf	code/game/turfs/closed
 type	/turf/closed/wall/mineral/plastitanium	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:316	live	turf_closed_wall_mineral_plastitanium	1	1
 proc	/turf/closed/wall/mineral/plastitanium	rust_turf	code/game/turfs/closed/wall/mineral_walls.dm:383	magic	stub	deferred	proc
 proc	/turf/closed/wall/mineral/plastitanium	rust_turf	code/game/turfs/closed/wall/mineral_walls.dm:399	magic	stub	deferred	proc
-proc	/turf/closed/wall/mineral/plastitanium	hulk_recoil	code/game/turfs/closed/wall/mineral_walls.dm:411	arm,hulkman,damage	stub	deferred	proc
+proc	/turf/closed/wall/mineral/plastitanium	hulk_recoil	code/game/turfs/closed/wall/mineral_walls.dm:411	arm,hulkman,damage	yes	full	proc
 proc	/turf/closed/wall/mineral/plastitanium	copyTurf	code/game/turfs/closed/wall/mineral_walls.dm:414	copy_to_turf,copy_air,flags	yes	full	proc
 type	/turf/closed/wall/mineral/plastitanium/wall_fill	/turf/closed/wall/mineral/plastitanium	code/game/turfs/closed/wall/mineral_walls.dm:331	live	turf_closed_wall_mineral_plastitanium_wall_fill	0	0
 type	/turf/closed/wall/mineral/plastitanium/darkpod	/turf/closed/wall/mineral/plastitanium	code/game/turfs/closed/wall/mineral_walls.dm:335	live	turf_closed_wall_mineral_plastitanium_darkpod	0	0
@@ -108346,7 +108346,7 @@ proc	/turf/closed/wall/heretic_rust	Initialize	code/game/turfs/closed/wall/misc_
 type	/turf/closed/wall/r_wall	/turf/closed/wall	code/game/turfs/closed/wall/reinf_walls.dm:2	live	turf_closed_wall_r_wall	1	1
 proc	/turf/closed/wall/r_wall	deconstruction_hints	code/game/turfs/closed/wall/reinf_walls.dm:26	user	yes	full	proc
 proc	/turf/closed/wall/r_wall	devastate_wall	code/game/turfs/closed/wall/reinf_walls.dm:43		yes	full	proc
-proc	/turf/closed/wall/r_wall	hulk_recoil	code/game/turfs/closed/wall/reinf_walls.dm:47	arm,hulkman,damage	stub	deferred	proc
+proc	/turf/closed/wall/r_wall	hulk_recoil	code/game/turfs/closed/wall/reinf_walls.dm:47	arm,hulkman,damage	yes	full	proc
 proc	/turf/closed/wall/r_wall	try_decon	code/game/turfs/closed/wall/reinf_walls.dm:50	W,user,T	yes	full	proc
 proc	/turf/closed/wall/r_wall	update_icon	code/game/turfs/closed/wall/reinf_walls.dm:193	updates	yes	full	proc
 proc	/turf/closed/wall/r_wall	update_icon_state	code/game/turfs/closed/wall/reinf_walls.dm:205		yes	full	proc
@@ -108471,7 +108471,7 @@ proc	/turf/closed/mineral	attack_robot	code/game/turfs/closed/minerals.dm:274	us
 proc	/turf/closed/mineral	gets_drilled	code/game/turfs/closed/minerals.dm:278	user,exp_multiplier	yes	full	proc root
 proc	/turf/closed/mineral	drill_aoe	code/game/turfs/closed/minerals.dm:309	user,exp_multiplier	yes	full	proc root
 proc	/turf/closed/mineral	attack_alien	code/game/turfs/closed/minerals.dm:316	user,modifiers	yes	full	proc
-proc	/turf/closed/mineral	attack_hulk	code/game/turfs/closed/minerals.dm:322	H	stub	deferred	proc
+proc	/turf/closed/mineral	attack_hulk	code/game/turfs/closed/minerals.dm:322	H	yes	full	proc
 proc	/turf/closed/mineral	acid_melt	code/game/turfs/closed/minerals.dm:330		yes	full	proc
 proc	/turf/closed/mineral	ex_act	code/game/turfs/closed/minerals.dm:333	severity,target	yes	full	proc
 proc	/turf/closed/mineral	blob_act	code/game/turfs/closed/minerals.dm:352	B	stub	deferred	proc
@@ -108755,27 +108755,27 @@ type	/turf/open/floor/catwalk_floor/titanium/airless	/turf/open/floor/catwalk_fl
 type	/turf/open/floor/catwalk_floor/iron_smooth	/turf/open/floor/catwalk_floor	code/game/turfs/open/floor/catwalk_plating.dm:94	live	turf_open_floor_catwalk_floor_iron_smooth	0	0
 type	/turf/open/floor/catwalk_floor/iron_smooth/airless	/turf/open/floor/catwalk_floor/iron_smooth	code/game/turfs/open/floor/catwalk_plating.dm:119	live	turf_open_floor_catwalk_floor_iron_smooth_airless	0	0
 type	/turf/open/floor/catwalk_floor/airless	/turf/open/floor/catwalk_floor	code/game/turfs/open/floor/catwalk_plating.dm:101	live	turf_open_floor_catwalk_floor_airless	0	0
-type	/turf/open/floor/concrete	/turf/open/floor	code/game/turfs/open/floor/concrete_floor.dm:2	inert	turf_open_floor_concrete	0	0
-proc	/turf/open/floor/concrete	Initialize	code/game/turfs/open/floor/concrete_floor.dm:33	mapload	no	-	proc
-proc	/turf/open/floor/concrete	broken_states	code/game/turfs/open/floor/concrete_floor.dm:40		no	-	proc
-proc	/turf/open/floor/concrete	examine	code/game/turfs/open/floor/concrete_floor.dm:43	user	no	-	proc
-proc	/turf/open/floor/concrete	add_footprint	code/game/turfs/open/floor/concrete_floor.dm:55	walker,movement_direction	no	-	proc
-proc	/turf/open/floor/concrete	clear_footprints	code/game/turfs/open/floor/concrete_floor.dm:59		no	-	proc
-proc	/turf/open/floor/concrete	attackby	code/game/turfs/open/floor/concrete_floor.dm:65	I,user,modifiers	no	-	proc
-proc	/turf/open/floor/concrete	try_replace_tile	code/game/turfs/open/floor/concrete_floor.dm:80	T,user,modifiers	no	-	proc
-proc	/turf/open/floor/concrete	pry_tile	code/game/turfs/open/floor/concrete_floor.dm:83	I,user,silent	no	-	proc
-proc	/turf/open/floor/concrete	update_icon	code/game/turfs/open/floor/concrete_floor.dm:86	updates	no	-	proc
-proc	/turf/open/floor/concrete	check_harden	code/game/turfs/open/floor/concrete_floor.dm:100		no	-	proc root
-proc	/turf/open/floor/concrete	process	code/game/turfs/open/floor/concrete_floor.dm:106	seconds_per_tick	no	-	proc
-proc	/turf/open/floor/concrete	handle_shape	code/game/turfs/open/floor/concrete_floor.dm:113	user	no	-	proc root
-proc	/turf/open/floor/concrete	check_menu	code/game/turfs/open/floor/concrete_floor.dm:140	user	no	-	proc root
-type	/turf/open/floor/concrete/slab_1	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:148	inert	turf_open_floor_concrete_slab_1	0	0
-type	/turf/open/floor/concrete/slab_2	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:152	inert	turf_open_floor_concrete_slab_2	0	0
-type	/turf/open/floor/concrete/slab_3	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:156	inert	turf_open_floor_concrete_slab_3	0	0
-type	/turf/open/floor/concrete/slab_4	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:160	inert	turf_open_floor_concrete_slab_4	0	0
-type	/turf/open/floor/concrete/tiles	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:164	inert	turf_open_floor_concrete_tiles	0	0
-type	/turf/open/floor/concrete/reinforced	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:168	inert	turf_open_floor_concrete_reinforced	0	0
-type	/turf/open/floor/concrete/pavement	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:184	inert	turf_open_floor_concrete_pavement	0	0
+type	/turf/open/floor/concrete	/turf/open/floor	code/game/turfs/open/floor/concrete_floor.dm:2	live	turf_open_floor_concrete	1	0
+proc	/turf/open/floor/concrete	Initialize	code/game/turfs/open/floor/concrete_floor.dm:33	mapload	yes	full	proc
+proc	/turf/open/floor/concrete	broken_states	code/game/turfs/open/floor/concrete_floor.dm:40		yes	full	proc
+proc	/turf/open/floor/concrete	examine	code/game/turfs/open/floor/concrete_floor.dm:43	user	yes	full	proc
+proc	/turf/open/floor/concrete	add_footprint	code/game/turfs/open/floor/concrete_floor.dm:55	walker,movement_direction	yes	full	proc
+proc	/turf/open/floor/concrete	clear_footprints	code/game/turfs/open/floor/concrete_floor.dm:59		yes	full	proc
+proc	/turf/open/floor/concrete	attackby	code/game/turfs/open/floor/concrete_floor.dm:65	I,user,modifiers	yes	full	proc
+proc	/turf/open/floor/concrete	try_replace_tile	code/game/turfs/open/floor/concrete_floor.dm:80	T,user,modifiers	yes	full	proc
+proc	/turf/open/floor/concrete	pry_tile	code/game/turfs/open/floor/concrete_floor.dm:83	I,user,silent	yes	full	proc
+proc	/turf/open/floor/concrete	update_icon	code/game/turfs/open/floor/concrete_floor.dm:86	updates	yes	full	proc
+proc	/turf/open/floor/concrete	check_harden	code/game/turfs/open/floor/concrete_floor.dm:100		yes	full	proc root
+proc	/turf/open/floor/concrete	process	code/game/turfs/open/floor/concrete_floor.dm:106	seconds_per_tick	yes	full	proc
+proc	/turf/open/floor/concrete	handle_shape	code/game/turfs/open/floor/concrete_floor.dm:113	user	yes	full	proc root
+proc	/turf/open/floor/concrete	check_menu	code/game/turfs/open/floor/concrete_floor.dm:140	user	yes	full	proc root
+type	/turf/open/floor/concrete/slab_1	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:148	live	turf_open_floor_concrete_slab_1	0	0
+type	/turf/open/floor/concrete/slab_2	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:152	live	turf_open_floor_concrete_slab_2	0	0
+type	/turf/open/floor/concrete/slab_3	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:156	live	turf_open_floor_concrete_slab_3	0	0
+type	/turf/open/floor/concrete/slab_4	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:160	live	turf_open_floor_concrete_slab_4	0	0
+type	/turf/open/floor/concrete/tiles	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:164	live	turf_open_floor_concrete_tiles	0	0
+type	/turf/open/floor/concrete/reinforced	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:168	live	turf_open_floor_concrete_reinforced	0	0
+type	/turf/open/floor/concrete/pavement	/turf/open/floor/concrete	code/game/turfs/open/floor/concrete_floor.dm:184	live	turf_open_floor_concrete_pavement	0	0
 type	/turf/open/floor/wood	/turf/open/floor	code/game/turfs/open/floor/fancy_floor.dm:12	live	turf_open_floor_wood	1	1
 proc	/turf/open/floor/wood	broken_states	code/game/turfs/open/floor/fancy_floor.dm:22		yes	full	proc
 proc	/turf/open/floor/wood	examine	code/game/turfs/open/floor/fancy_floor.dm:25	user	yes	full	proc
@@ -111584,7 +111584,7 @@ type	/generator	/datum	code/__HELPERS/generators.dm:13	none	-	0	0
 proc	/generator	RandList	code/__HELPERS/generators.dm:13		no	-	proc root
 type	/icon	/datum	code/__HELPERS/icons.dm:206	base	icon	0	0
 proc	/icon	ChangeOpacity	code/__HELPERS/icons.dm:206	opacity	no	-	proc root
-proc	/icon	GrayScale	code/__HELPERS/icons.dm:210		no	-	proc root
+proc	/icon	GrayScale	code/__HELPERS/icons.dm:210		yes	full	proc root
 proc	/icon	ColorTone	code/__HELPERS/icons.dm:213	tone	no	-	proc root
 proc	/icon	MinColors	code/__HELPERS/icons.dm:231	icon	no	-	proc root
 proc	/icon	MaxColors	code/__HELPERS/icons.dm:238	icon	no	-	proc root

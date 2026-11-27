@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M4a P3: the PopulateContents of Meta's containers in this file (D133), translated with the help of m4/p3w/popgen2.py
-// (the pure `new /path(src)` bodies, their loops, prob and switch). Gaps SR1 (D333): the toolbox's init (its fishing difficulty
-// element is a deferred leaf with fishing) and the compact toolbox; the super fishing toolbox with its master hooks and lines, the
+// (the pure `new /path(src)` bodies, their loops, prob and switch). Gaps SR1 (D333): the toolbox's init (with its fishing difficulty
+// element) and the compact toolbox; the super fishing toolbox with its master hooks and lines, the
 // omni-baits, the fish feed, the aquarium kit and the fish analyzer.
 
 // tg: code/game/objects/items/storage/toolboxes/fishing.dm:18

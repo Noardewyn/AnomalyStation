@@ -189,7 +189,7 @@ public class CodecV2Tests
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(0).Byte(1).Byte(0).Byte(0).Byte(0)), // a click on target 0
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(0).Byte(0).Byte(0).Byte(0)), // button none
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(4).Byte(0).Byte(0).Byte(0)),
-                     Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(0x28).Byte(0).Byte(0)), // zone 10 (version 99: bit 3 alone, 0x08, is the mouth)
+                     Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(0x28).Byte(0).Byte(0)), // zone 10 (version 100: bit 3 alone, 0x08, is the mouth)
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(1UL << 63).Byte(1).Byte(0).Byte(0).Byte(0)),
                      Craft(r => r.VarUInt(1).Byte(4).VarUInt(5).Byte(1).Byte(0)), // a version-3 click: no target kind
                      Craft(r => r.VarUInt(1).Byte(5).Byte(0)), // a null command
@@ -371,7 +371,7 @@ public class CodecV2Tests
         Assert.Equal(new byte[] { 10, 5, 4, 1, 7, 1, 0x11, 16, 27 }, bytes);
         Assert.True(Codec.TryDecode(bytes, out ActionMessage decoded, out ProtocolError error), error.ToString());
         Assert.Equal(click, decoded);
-        // version 99 (slice T4a): zone 7 is the eyes, and bit 3 is no modifier but the zone's high bit (0x09: shift, zone 8, the mouth)
+        // version 100 (slice T4a): zone 7 is the eyes, and bit 3 is no modifier but the zone's high bit (0x09: shift, zone 8, the mouth)
         bytes[6] = 0x71;
         Assert.True(Codec.TryDecode(bytes, out decoded, out error), error.ToString());
         Assert.Equal((ClickModifiers.Shift, AimZone.Eyes), (decoded.Modifiers, decoded.AimZone));
@@ -382,7 +382,7 @@ public class CodecV2Tests
         Assert.False(Codec.TryDecode(bytes, out ActionMessage _, out _));
         bytes[6] = 0x79; // zone 15
         Assert.False(Codec.TryDecode(bytes, out ActionMessage _, out _));
-        // corrected by slice T4b (version 99 also): a hover on an entity carries a zone now; a turf hover's zone is still refused, as is one on a keybinding
+        // corrected by slice T4b (version 100 also): a hover on an entity carries a zone now; a turf hover's zone is still refused, as is one on a keybinding
         Assert.ThrowsAny<Exception>(() => Codec.Encode(new ActionMessage(5, ActionKind.Hover, 0, ClickButton.None, ClickModifiers.None, null) { TargetKind = TargetKind.Turf, TurfX = 3, TurfY = 3, TurfZ = 1, AimZone = AimZone.Head }));
         Assert.ThrowsAny<Exception>(() => Codec.Encode(new ActionMessage(5, ActionKind.Keybinding, 0, ClickButton.None, ClickModifiers.None, null) { Keybinding = KeybindingCode.SwapHands, AimZone = AimZone.Head }));
     }
@@ -637,7 +637,7 @@ public class CodecV2Tests
         foreach (EntityState bad in new[]
                  {
                      capsule with { PosX = 0 }, capsule with { PosX = 127 }, capsule with { PosY = 256 * 255 + 128 }, capsule with { PosX = -5 },
-                     // version 99 (DV686) defines bits 6 and 7, so 255 is a valid byte now; a turned side on a standing body or face up without a fixed side is not
+                     // version 100 (DV690) defines bits 6 and 7, so 255 is a valid byte now; a turned side on a standing body or face up without a fixed side is not
                      capsule with { PosX = 70000 }, Msg.State(1) with { Posture = 64 }, Msg.State(1) with { Posture = 128 | 1 }, Msg.State(1) with { Posture = 254 },
                      Msg.State(1) with { Appearance = new TableRef(1, true) }, Msg.State(1) with { Appearance = TableRef.Public((uint)Limits.MaxAppearanceTableEntries + 1) },
                  })
@@ -666,7 +666,7 @@ public class CodecV2Tests
                      Entity(r => r.VarUInt(6).Byte(0).VarUInt(0)), // moved 6 ticks ago at tick 5
                      Entity(r => r.VarUInt(0).Byte(4).VarUInt(0)), // an undefined record flag
                      Entity(r => r.VarUInt(0).Byte(2).Byte(0).VarUInt(0)), // a posture flagged and 0
-                     // version 99 (DV686) defines bits 6 and 7, so 65 (lying, turned face down) is valid now; these two are not
+                     // version 100 (DV690) defines bits 6 and 7, so 65 (lying, turned face down) is valid now; these two are not
                      Entity(r => r.VarUInt(0).Byte(2).Byte(129).VarUInt(0)), // face up without a fixed side
                      Entity(r => r.VarUInt(0).Byte(2).Byte(64).VarUInt(0)), // a turned side on a standing body
                      Entity(r => r.VarUInt(0).Byte(1).Bytes(0, 0, 0, 1).Byte(0).VarUInt(0)), // a position in tile 0

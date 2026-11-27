@@ -286,7 +286,7 @@ public static class ReplicatedFields
         var opinion = (DmList)a.get_light_offset();
         ox += Dm.num(opinion[1]);
         oy += Dm.num(opinion[2]);
-        return Light(range, power, a.light_color, Dm.truthy(a.light_on), angle, a.light_dir, height, ox, oy, system);
+        return Light(range, power, a.light_color, Dm.truthy(a.light_on), angle, a.light_dir, height, ox, oy, system) with { Flicker = a.dm_light_flicker }; // version 99: DV688's flame
     }
 
     /// <summary>
@@ -307,7 +307,7 @@ public static class ReplicatedFields
             oy = -(dy + centring) / 32f;
         }
         bool on = Dm.truthy(light.currently_displaying) && light.current_holder == holder;
-        return Light(range, source.light_power, source.light_color, on, 360f, 0f, LIGHTING_HEIGHT, ox, oy, source.light_system);
+        return Light(range, source.light_power, source.light_color, on, 360f, 0f, LIGHTING_HEIGHT, ox, oy, source.light_system) with { Flicker = source.dm_light_flicker };
     }
 
     // The overlay light component of an atom whose light it shows on itself (tg's GET_PARENT is the atom and the holder too).
@@ -477,7 +477,7 @@ public static class ReplicatedFields
         int quarter = float.IsFinite(angle) ? (int)(angle / 90f) : 0;
         return PostureBits.Encode(lying, lying ? quarter * 90 : 0, limp: Dm.num(mob.stat) != 0, // stat 0 is conscious (tg has no define for it);
             incorporeal: mob.incorporeal_move != 0, buckled: mob.buckled is not null and not mob_living,
-            turnedFaceUp: mob.dm_turned_face_up); // version 99 (DV686): the side the radial's Turn over put it on
+            turnedFaceUp: mob.dm_turned_face_up); // version 100 (DV690): the side the radial's Turn over put it on
     }
 
     /// <summary>

@@ -1,8 +1,8 @@
 namespace Anomaly.Protocol;
 
-// Version 99 also (MessagesV99Hotbar.cs, docs/ai/specs/protocol.md section 97; ui-overhaul.md section 10, slice 3A, DV689):
+// Version 100 also (MessagesV100Hotbar.cs, docs/ai/specs/protocol.md section 99; ui-overhaul.md section 10, slice 3A, DV693):
 //
-//   Hotbar (server to client, State): [u8 id = 32] [u8 flags: bit 0 the bar (a human), bit 1 a belt worn; bits 2-7 zero]
+//   Hotbar (server to client, State): [u8 id = 34] [u8 flags: bit 0 the bar (a human), bit 1 a belt worn; bits 2-7 zero]
 //     ten cells, cell 1 first: { [u8 state: 0 empty, 1 holding, 2 out] ([tableref picture (may be none)] [varuint item entity >= 1] unless empty) }
 //     [str(1..128) left hand's item name, or none] [str(1..128) right hand's] [u8 refused cell 0..10]
 //   without the bar every cell is empty, no belt, no names and no refusal; without a belt cells 1 to 7 are empty.

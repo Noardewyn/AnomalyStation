@@ -363,6 +363,7 @@ public static class TguiInterfaces
         ["ExodroneConsole"] = ExodroneConsole.Render, // the exploration drone control console
         ["AdventureBrowser"] = AdventureBrowser.Render, // the admins' adventure manager
         ["PaintingMachine"] = PaintingMachine.Render, // the PDA & ID painter
+        ["GreyscaleModifyMenu"] = GreyscaleModifyMenu.Render, // the GAGS colour menu (a canister's recolour, a vendor's colourable product)
         ["PipeDispenser"] = PipeDispenser.Render, // the pipe, disposal pipe and transit tube dispensers
         ["Gateway"] = Gateway.Render, // the gateway control console
     };

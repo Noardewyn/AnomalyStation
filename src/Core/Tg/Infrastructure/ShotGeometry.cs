@@ -727,7 +727,7 @@ public static class ShotGeometry
 
     /// <summary>
     /// The frame a lying <paramref name="target"/> shows a viewer at (<paramref name="viewerX"/>, <paramref name="viewerY"/>), from its own state as the
-    /// replicator sends it in the posture byte: limp, lying buckled to an object (slice T4c) and the side it was turned to (DV686).
+    /// replicator sends it in the posture byte: limp, lying buckled to an object (slice T4c) and the side it was turned to (DV690).
     /// </summary>
     public static byte LyingFrame(mob_living target, byte yaw, double mobX, double mobY, double viewerX, double viewerY)
         => ChooseLyingDir(yaw, mobX, mobY, viewerX, viewerY, IsLimp(target), target.dm_lies_buckled, target.dm_turned_face_up);
@@ -819,7 +819,7 @@ public static class ShotGeometry
     }
 
     /// <summary>
-    /// The client's <c>BillboardMath.ChooseLyingDir</c>: a body turned over shows the side it was turned to (DV686, <paramref name="turnedFaceUp"/>), one
+    /// The client's <c>BillboardMath.ChooseLyingDir</c>: a body turned over shows the side it was turned to (DV690, <paramref name="turnedFaceUp"/>), one
     /// lying buckled to an object its front (slice T4c), from every side; otherwise a conscious body lies face down (its back, north), a limp one by the
     /// viewer's side.
     /// </summary>

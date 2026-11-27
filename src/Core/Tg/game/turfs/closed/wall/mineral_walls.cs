@@ -10,9 +10,21 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL (M10 slice G3, D272): the shuttles' titanium walls, live so that they smooth (their copy keeps its turn when a
-// shuttle moves); hulks and rust (M10+) are live-partial stubs. Gaps G2 (D291): the plastitanium walls and their pod variants
+// shuttle moves); rust (M10+) is a live-partial stub. The MetaStation leftovers: the hulk's recoil off the mineral and plastitanium walls
+// (the inert diamond, uranium and snow walls wait with their walls). Gaps G2 (D291): the plastitanium walls and their pod variants
 // (they deconstruct as every wall, to plastitanium sheets); the explosive one keeps its bomb core and stays inert. The other
 // mineral walls wait for their own procs.
+
+// tg: code/game/turfs/closed/wall/mineral_walls.dm:1
+public partial class turf_closed_wall_mineral : turf_closed_wall
+{
+    // tg: code/game/turfs/closed/wall/mineral_walls.dm:189
+    public override async DmTask hulk_recoil(obj_item_bodypart arm = null, mob_living_carbon_human hulkman = null, float? damage = null)
+    {
+        damage ??= 0;
+        await base.hulk_recoil(arm, hulkman, damage); //No recoil damage, wood is weak
+    }
+}
 
 // tg: code/game/turfs/closed/wall/mineral_walls.dm:266
 public partial class turf_closed_wall_mineral_titanium : turf_closed_wall_mineral
@@ -43,6 +55,13 @@ public partial class turf_closed_wall_mineral_titanium_interior : turf_closed_wa
 // tg: code/game/turfs/closed/wall/mineral_walls.dm:316
 public partial class turf_closed_wall_mineral_plastitanium : turf_closed_wall_mineral
 {
+    // tg: code/game/turfs/closed/wall/mineral_walls.dm:411
+    public override async DmTask hulk_recoil(obj_item_bodypart arm = null, mob_living_carbon_human hulkman = null, float? damage = null)
+    {
+        damage ??= 41;
+        await base.hulk_recoil(arm, hulkman, damage);
+    }
+
     // tg: code/game/turfs/closed/wall/mineral_walls.dm:414
     public override async DmTask<object> copyTurf(turf copy_to_turf = null, float? copy_air = null, object flags = null)
     {

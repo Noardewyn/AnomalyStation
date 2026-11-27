@@ -12,8 +12,8 @@ namespace Anomaly.Core.Tg;
 // M3 P4: the wall's init and its Bumped/Exited signals. M5 slice 4: its construction and destruction (atom_destruction,
 // dismantle_wall, break_wall, devastate_wall, the hand, paw and telekinesis clicks, item_interaction with try_clean, try_decon
 // and try_build_support, add_dent, the wrench's corner adjustment). M5x slice 1: ex_act (explosions); slice 5: the singularity's pull. Still generated live-partial stubs (docs/ai/specs/live-partial.txt,
-// P4): examine and the context tips (M9), leaning (M9), hulks, blobs, cult, rust,
-// drills and mechs (M10+). E13: rcd_vals and rcd_act (the RCD). Silicons SI1c: acid_melt. The var block is generated.
+// P4): examine and the context tips (M9), leaning (M9), blobs, cult, rust,
+// drills and mechs (M10+). The MetaStation leftovers: the hulk's punch (attack_hulk, hulk_recoil). E13: rcd_vals and rcd_act (the RCD). Silicons SI1c: acid_melt. The var block is generated.
 
 // tg: code/game/turfs/closed/walls.dm:1
 public partial class turf_closed_wall : turf_closed
@@ -184,10 +184,48 @@ public partial class turf_closed_wall : turf_closed
         return await attack_hand(user, modifiers);
     }
 
+    // tg: code/game/turfs/closed/walls.dm:156
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
+    {
+        await base.attack_hulk(user, __extra);
+        obj_item_bodypart arm = user.hand_bodyparts?[user.active_hand_index] as obj_item_bodypart;
+        if (arm == null)
+            return null;
+        if (Dm.truthy(arm.bodypart_disabled))
+            return null;
+        if (prob(hardness))
+        {
+            playsound(this, Dm.resource("sound/effects/meteorimpact.ogg"), 100, TRUE);
+            await user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!"), forced: "hulk");
+            await hulk_recoil(arm, user);
+            await dismantle_wall(1);
+        }
+        else
+        {
+            playsound(this, Dm.resource("sound/effects/bang.ogg"), 50, TRUE);
+            add_dent(WALL_DENT_HIT);
+            user.visible_message(span_danger(I18n.T("[] smashes \\the []!", user, this)),
+                        span_danger(I18n.T("You smash \\the []!", this)),
+                        span_hear(I18n.T("You hear a booming smash!")));
+        }
+        return TRUE;
+    }
+
+    /**
+     *Deals damage back to the hulk's arm.
+     *
+     *When a hulk manages to break a wall using their hulk smash, this deals back damage to the arm used.
+     *This is in its own proc just to be easily overridden by other wall types. Default will likely cause a
+     *critical bone wound in at least three punches.
+     */
     // tg: code/game/turfs/closed/walls.dm:187
     public virtual async DmTask hulk_recoil(obj_item_bodypart arm = null, mob_living_carbon_human hulkman = null, float? damage = null)
     {
-        Dm.NotTranslated("code/game/turfs/closed/walls.dm:187", "hulk_recoil: hulk attacks (M10+)");
+        damage ??= 20;
+        datum_mutation_hulk smasher = Dm.locate<datum_mutation_hulk>(hulkman.dna.mutations);
+        if (smasher == null || !Dm.truthy(damage) || Dm.truthy(smasher.no_recoil)) //sanity check but also snow and wood walls deal no recoil damage, so no arm breaky. Also, if our type of hulk doesn't cause recoil damage, return.
+            return;
+        await hulkman.apply_damage(damage, BRUTE, arm, wound_bonus: 0); //enough damage to regularly result in at least a breakage.
     }
 
     // tg: code/game/turfs/closed/walls.dm:193

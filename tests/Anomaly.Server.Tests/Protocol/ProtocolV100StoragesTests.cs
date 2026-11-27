@@ -3,11 +3,11 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Protocol;
 
 /// <summary>
-/// Protocol version 99 also (ui-overhaul.md section 12, slice 4B-1, DV692; MessagesV99Storages.cs, Codec.V99Storages.cs): the Storages message, the own
+/// Protocol version 100 also (ui-overhaul.md section 12, slice 4B-1, DV696; MessagesV100Storages.cs, Codec.V100Storages.cs): the Storages message, the own
 /// human's carried storages and their items, every bound refused at both ends; the InventoryMove action, an item and a target in range and nothing else;
 /// the InventoryOpen action, no fields.
 /// </summary>
-public class ProtocolV99StoragesTests
+public class ProtocolV100StoragesTests
 {
     private static StorageItem Item(long entity, string name = "wrench", int count = 0) => new(entity, name, new TableRef((uint)entity, true), count);
 
@@ -64,7 +64,7 @@ public class ProtocolV99StoragesTests
         Assert.Equal(Sample(), read.WithoutRefusal());
         Assert.NotEqual(Sample(), read);
         Assert.Equal(StoragesMessage.None, RoundTrip(StoragesMessage.None));
-        Assert.Equal(new byte[] { 33, 0, 0 }, Codec.Encode(StoragesMessage.None)); // protocol.md section 98
+        Assert.Equal(new byte[] { 35, 0, 0 }, Codec.Encode(StoragesMessage.None)); // protocol.md section 100
         Assert.Equal(MessageId.Storages, (MessageId)Codec.Encode(sample)[0]);
     }
 
@@ -144,10 +144,10 @@ public class ProtocolV99StoragesTests
     [Fact]
     public void EveryBoundIsRefusedByTheDecoder()
     {
-        // [33] [count 1] [entity 1] [place 1] [name: len+1, bytes] [slots] [used] [limit] [flags] [item count] ... [refused]
+        // [35] [count 1] [entity 1] [place 1] [name: len+1, bytes] [slots] [used] [limit] [flags] [item count] ... [refused]
         StoragesMessage one = With(new CarriedStorage { Entity = 1, Place = StoragePlace.Back, Name = "bag", Slots = 7, Used = 1, Limit = 14, Items = new[] { Item(2, "pen") } });
         byte[] bytes = Codec.Encode(one);
-        Assert.Equal(new byte[] { 33, 1, 1, 1, 4, (byte)'b', (byte)'a', (byte)'g', 7, 1, 14, 0, 1, 2, 4, (byte)'p', (byte)'e', (byte)'n', 5, 0, 0 }, bytes);
+        Assert.Equal(new byte[] { 35, 1, 1, 1, 4, (byte)'b', (byte)'a', (byte)'g', 7, 1, 14, 0, 1, 2, 4, (byte)'p', (byte)'e', (byte)'n', 5, 0, 0 }, bytes);
         Assert.True(Codec.TryDecode(bytes, out StoragesMessage _, out _));
         void Refused(int at, byte value, string why)
         {
@@ -177,7 +177,7 @@ public class ProtocolV99StoragesTests
         byte[] over = longBytes[..4].Concat(new byte[] { 0x82, 0x01 }).Concat(Enumerable.Repeat((byte)'x', Limits.MaxStorageNameBytes + 1)).Concat(longBytes[(6 + Limits.MaxStorageNameBytes)..]).ToArray();
         Assert.False(Codec.TryDecode(over, out StoragesMessage _, out error));
         Assert.Equal(ProtocolError.BadString, error);
-        // the old shape: the version-99 hotbar's id-less sibling with no refused item at the end, a truncation, a trailing byte
+        // the old shape: the version-100 hotbar's id-less sibling with no refused item at the end, a truncation, a trailing byte
         Assert.False(Codec.TryDecode(bytes[..^1], out StoragesMessage _, out error));
         Assert.Equal(ProtocolError.Truncated, error);
         Assert.False(Codec.TryDecode(bytes.Append((byte)0).ToArray(), out StoragesMessage _, out error));
@@ -206,7 +206,7 @@ public class ProtocolV99StoragesTests
             Assert.True(Codec.TryDecode(encoded, out ActionMessage back, out ProtocolError error), move + ": " + error);
             Assert.Equal(move, back);
         }
-        Assert.Equal(new byte[] { 10, 9, 29, 5, 4 }, Codec.Encode(Move(5, InventoryTarget.Floor))); // protocol.md section 98
+        Assert.Equal(new byte[] { 10, 9, 29, 5, 4 }, Codec.Encode(Move(5, InventoryTarget.Floor))); // protocol.md section 100
         Assert.Equal(new byte[] { 10, 9, 29, 5, 1, 100, 3 }, Codec.Encode(Move(5, InventoryTarget.Storage, 100, 3)));
         // every field at a bad value
         var bad = new[]

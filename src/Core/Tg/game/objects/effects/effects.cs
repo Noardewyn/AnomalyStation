@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // SKELETON: holds the [DmPath] of a type that the wave-4 var blocks and signatures name (rules 2.3: the earliest .dme file that declares it), written by the W4.0 contracts; only the type is declared, and the file is translated with its module.
 // M4b slice 1 (the air that moves): /obj/effect/experience_pressure_difference (:36), so the space wind leaves effects
 // where they are. M4b slice 3 (fire): /obj/effect/fire_act (:24), so fire leaves effects alone. M5x slice 1 (explosions):
-// /obj/effect/ex_act (:39), so a blast leaves effects alone.
+// /obj/effect/ex_act (:39), so a blast leaves effects alone. The MetaStation leftovers: attack_hulk (:33), a hulk does not punch effects.
 
 // tg: code/game/objects/effects/effects.dm:4
 [DmPath("/obj/effect")]
@@ -26,6 +26,12 @@ public partial class obj_effect : obj
 
     // tg: code/game/objects/effects/effects.dm:27
     public override async DmTask<object> acid_act(object acidpwr = null, object acid_volume = null, params object[] __extra)
+    {
+        return FALSE;
+    }
+
+    // tg: code/game/objects/effects/effects.dm:33
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
     {
         return FALSE;
     }

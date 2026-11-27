@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Silicons SI2 (D326): the statues, the chisel (the service cyborg's), the carving block and the custom statue, whole but two leaves: the
-// chisel shaping a concrete floor (concrete floors are not translated: nothing on Meta places or makes them) and the sculptors'
+// Silicons SI2 (D326): the statues, the chisel (the service cyborg's), the carving block and the custom statue, whole but one leaf (the
+// chisel shaping a wet concrete floor came with the concrete, the MetaStation leftovers): the sculptors'
 // personality moods (personalities are not ported, as elephantgraveyard.cs). The drake's and dragonman's glowing eyes are emissive
 // overlays (DV12: not created). The var blocks are generated (D111).
 
@@ -188,11 +188,9 @@ public partial class obj_item_chisel : obj_item
             return ITEM_INTERACT_SUCCESS;
         }
 
-        else if (interacting_with is turf_open_floor_concrete)
+        else if (interacting_with is turf_open_floor_concrete concrete_floor)
         {
-            // return concrete_floor.handle_shape(user): concrete floors are not translated (nothing on Meta places or makes them)
-            Dm.Deferred("code/modules/art/statues.dm:380", "interact_with_atom: shaping a concrete floor (concrete_floor.dm is not translated)");
-            return NONE;
+            return await concrete_floor.handle_shape(user);
         }
 
         return NONE;

@@ -12,7 +12,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// DV688: an alien is drawn as one icon, so the client sends no zone for a click, a throw or a hover on it. A click or a throw on it while the
+/// DV692: an alien is drawn as one icon, so the client sends no zone for a click, a throw or a hover on it. A click or a throw on it while the
 /// zone selected names a part it lacks (a human's leg looked at before, on a larva) counts as aimed at the chest, where tg's
 /// <c>aimed_limb_missing</c> refused the hit; a zone it has (a larva's head, an adult's leg) stands as tg would use it. A hover never changes the
 /// zone, and a zoneless click on a human or on a thing that is no carbon leaves it alone.

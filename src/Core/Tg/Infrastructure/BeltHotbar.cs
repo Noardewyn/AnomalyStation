@@ -6,14 +6,14 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// DEVIATION(DV689): the belt hotbar (ui-overhaul.md section 10, package 3). Not in tg: a human's ten hotbar cells,
+// DEVIATION(DV693): the belt hotbar (ui-overhaul.md section 10, package 3). Not in tg: a human's ten hotbar cells,
 // 1 to 7 the worn belt's contents, 8 and 9 the left and right pocket, 10 (the key 0) the ID slot. A press of a cell takes its item into the
 // active hand, puts it back, swaps it with an item taken from another cell, or stores the held item in an empty cell, every move by tg's own
 // procs as tg's quick-equip keys make them (human/inventory.dm smart_equip_targeted: the belt's storage datum's attempt_insert and the stored
 // item's on_found and attack_hand; the slot's equip_to_slot_if_possible), and a worn item into a hand as tg's drag of it onto the hand does
 // (inventory.dm putItemFromInventoryInHandIfPossible), so tg's checks, sounds, delays and messages apply. Which belt item is in which cell is the
 // port's own state on the mob (dm_hotbar), brought up to date in the command phase and before every press, and read by the replicator for the
-// client's cells (protocol version 99, Hotbar).
+// client's cells (protocol version 100, Hotbar).
 
 /// <summary>What a hotbar cell shows (ui-overhaul.md section 10).</summary>
 public enum HotbarState : byte
@@ -28,7 +28,7 @@ public enum HotbarState : byte
     Out = 2,
 }
 
-/// <summary>A human's ten hotbar cells and which item is in each (DV689).</summary>
+/// <summary>A human's ten hotbar cells and which item is in each (DV693).</summary>
 public sealed class BeltHotbar
 {
     /// <summary>The cells: 1 to 7 the belt, 8 and 9 the pockets, 10 the ID slot.</summary>
@@ -134,7 +134,7 @@ public sealed class BeltHotbar
     }
 
     /// <summary>
-    /// DV689, DV692 (ui-overhaul.md section 12, slice 4B-2): an item moved into the worn belt with the wish for bar cell <paramref name="cell"/> (1 to
+    /// DV693, DV696 (ui-overhaul.md section 12, slice 4B-2): an item moved into the worn belt with the wish for bar cell <paramref name="cell"/> (1 to
     /// 7) takes that cell once it is in the belt: an empty cell simply; a cell holding another belt item swaps with the moved item's own cell when it had
     /// one (an item out from a cell in a hand keeps that cell until it is back); an item new to the bar takes the cell and the item that was there
     /// the lowest free one, or, with none free (a belt of more than seven), goes off the bar. A wish for the cell it already has, an item not in the
@@ -186,7 +186,7 @@ public sealed class BeltHotbar
     }
 
     /// <summary>
-    /// A press of cell <paramref name="cell"/> from <paramref name="player"/>'s client (protocol version 99's HotbarPress): only a connected client's
+    /// A press of cell <paramref name="cell"/> from <paramref name="player"/>'s client (protocol version 100's HotbarPress): only a connected client's
     /// own human mob, a cell of 1 to 10; anything else does nothing. Runs detached with usr the mob, as BYOND runs a verb.
     /// </summary>
     public static void Press(client player, int cell)
@@ -216,7 +216,7 @@ public sealed class BeltHotbar
     {
         BeltHotbar bar = Of(user);
         bar.Reconcile(user);
-        // DV692: a press and an inventory move (CarriedStorages) never move the same item at once
+        // DV696: a press and an inventory move (CarriedStorages) never move the same item at once
         obj_item cellItem = bar.ItemOf(cell), held = user.get_active_held_item() as obj_item;
         if (CarriedStorages.Claim(user, cellItem, held))
         {
@@ -357,7 +357,7 @@ public sealed class BeltHotbar
     }
 
     /// <summary>
-    /// DV692: an item an inventory move took from the worn belt's storage <paramref name="from"/> into a hand keeps its cell, out, as a press of the
+    /// DV696: an item an inventory move took from the worn belt's storage <paramref name="from"/> into a hand keeps its cell, out, as a press of the
     /// cell would have left it (the same key puts it back); a move anywhere else frees the cell at the next <see cref="Reconcile"/>.
     /// </summary>
     public static void TakenFromBar(mob_living_carbon_human user, obj_item item, datum_storage from)
@@ -413,6 +413,6 @@ public sealed class BeltHotbar
 
 public partial class mob_living_carbon_human
 {
-    /// <summary>DV689: the belt hotbar's cells (<see cref="BeltHotbar"/>), made at the mob's first command phase or press.</summary>
+    /// <summary>DV693: the belt hotbar's cells (<see cref="BeltHotbar"/>), made at the mob's first command phase or press.</summary>
     public BeltHotbar dm_hotbar;
 }

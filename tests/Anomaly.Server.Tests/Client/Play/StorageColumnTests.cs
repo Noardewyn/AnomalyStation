@@ -140,8 +140,8 @@ public class StorageColumnTests
         Assert.Equal(new long[] { 101, 102, 103, 104, 105 }, bag.Cells.Take(5).Select(c => c.Entity));
         Assert.All(bag.Cells.Skip(5), c => Assert.Equal(0, c.Entity)); // the empty slots, drop targets
         Assert.Equal(new[] { 1, 2, 3, 4, 5 }.Concat(Enumerable.Repeat(0, 16)), bag.Wishes);
-        // the belt: titled with its name, its room the whole belt's, the two items no bar cell shows; a wish into the belt names a bar cell (DV689,
-        // DV692), so its panel's cells, which are off the bar, wish for none
+        // the belt: titled with its name, its room the whole belt's, the two items no bar cell shows; a wish into the belt names a bar cell (DV693,
+        // DV696), so its panel's cells, which are off the bar, wish for none
         StoragePanel belt = panels[1];
         Assert.Equal(("toolbelt", "18 / 21", 2), (belt.Title, belt.Room, belt.Cells.Length));
         Assert.Equal(new long[] { 208, 209 }, belt.Cells.Select(c => c.Entity));

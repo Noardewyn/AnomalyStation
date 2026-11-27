@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tests.UiOverhaul;
 
 /// <summary>
-/// ui-overhaul.md section 12, slice 4B-1 (DV692): the Tab inventory's carried storages (<see cref="CarriedStorages.List"/>) and the moves of a client
+/// ui-overhaul.md section 12, slice 4B-1 (DV696): the Tab inventory's carried storages (<see cref="CarriedStorages.List"/>) and the moves of a client
 /// (<see cref="CarriedStorages.Move"/>), in a booted toy room with one joined player, Alice, in a jumpsuit. Every move is tg's own: a storage's
 /// attempt_insert and remove_single, a slot's mob_can_equip and equip_to_slot, put_in_hand, dropItemToGround; after each the item is in exactly one
 /// place and tg's own refusal is shown as tg words it.
@@ -969,7 +969,7 @@ public class CarriedStoragesTests
     }
 }
 
-/// <summary>A stored test item for DV692's recovery after a runtime: when armed its pickup() throws, and so does a move into a mob it is already in.</summary>
+/// <summary>A stored test item for DV696's recovery after a runtime: when armed its pickup() throws, and so does a move into a mob it is already in.</summary>
 [DmPath("/obj/item/test_carried_thrower")]
 public class obj_item_test_carried_thrower : obj_item
 {

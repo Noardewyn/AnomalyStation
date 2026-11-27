@@ -8,10 +8,10 @@ using static Anomaly.Core.DmShim.Dm;
 
 namespace Anomaly.Core.Tg;
 
-// SKELETON: completed with the presentation work that needs particle sets (M3 appearance or later). Written by the M2
-// contracts step because the /obj/item var block names /particles/smoke/burning/small (burning_particles, items.dm:7);
-// only the type is declared. Open for that work: BYOND's vars of /particles (width, height, count, spawning, icon,
-// position, ...) and whether a particle set is a builtin value type without a world id (translation-rules.md 3.7).
+// Written by the M2 contracts step because the /obj/item var block names /particles/smoke/burning/small (burning_particles,
+// items.dm:7). The MetaStation leftovers (protocol version 99, DV687): BYOND's vars of a particle set, which tg's /particles
+// subtypes set and the appearance replicator sends with an atom's particles for the client to draw (BYOND ref /particles). A
+// generator value (generator()) is not made (the converter defers it), so a set whose var is one draws that var's default.
 [DmPath("/particles")]
 public partial class particles : datum
 {
@@ -37,4 +37,64 @@ public partial class particles : datum
     /// <c>set_particle_position</c> (particle_holder.dm:72), the Spinesthetics chip's smoking head; the particles are not drawn.
     /// </summary>
     public object position;
+
+    /// <summary>BYOND <c>width</c>: the size of the particles' image in pixels, around the atom's centre (100 by default).</summary>
+    public object width = 100;
+
+    /// <summary>BYOND <c>height</c> (100 by default).</summary>
+    public object height = 100;
+
+    /// <summary>BYOND <c>count</c>: the most particles alive at once (100 by default).</summary>
+    public object count = 100;
+
+    /// <summary>BYOND <c>bound1</c>: the lower corner (a vector) past which a particle dies.</summary>
+    public object bound1;
+
+    /// <summary>BYOND <c>bound2</c>: the upper corner.</summary>
+    public object bound2;
+
+    /// <summary>BYOND <c>gradient</c>: the colour gradient a particle's colour runs along (a list).</summary>
+    public object gradient;
+
+    /// <summary>BYOND <c>transform</c>: the particles' transform.</summary>
+    public object transform;
+
+    /// <summary>BYOND <c>lifespan</c>: how long a particle lives, in ticks.</summary>
+    public object lifespan;
+
+    /// <summary>BYOND <c>fade</c>: the ticks a particle fades out over at the end of its life.</summary>
+    public object fade;
+
+    /// <summary>BYOND <c>fadein</c>: the ticks a particle fades in over at its start.</summary>
+    public object fadein;
+
+    /// <summary>BYOND <c>icon</c>: the particles' icon.</summary>
+    public object icon;
+
+    /// <summary>BYOND <c>icon_state</c>: the icon state, or a weighted list of states a particle picks from.</summary>
+    public object icon_state;
+
+    /// <summary>BYOND <c>color_change</c>: how fast a particle's colour moves along the gradient.</summary>
+    public object color_change;
+
+    /// <summary>BYOND <c>velocity</c>: a particle's starting velocity in pixels a tick (a vector).</summary>
+    public object velocity;
+
+    /// <summary>BYOND <c>scale</c>: a particle's starting scale (a number or a vector).</summary>
+    public object scale;
+
+    /// <summary>BYOND <c>grow</c>: the scale a particle gains each tick (a number or a vector).</summary>
+    public object grow;
+
+    /// <summary>BYOND <c>rotation</c>: a particle's starting rotation in degrees.</summary>
+    public object rotation;
+
+    /// <summary>BYOND <c>spin</c>: the degrees a particle turns each tick.</summary>
+    public object spin;
+
+    /// <summary>BYOND <c>friction</c>: the share of its velocity a particle loses each tick (0 to 1).</summary>
+    public object friction;
+
+    /// <summary>BYOND <c>drift</c>: the random velocity a particle gains each tick (a vector).</summary>
+    public object drift;
 }

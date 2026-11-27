@@ -1,6 +1,6 @@
 namespace Anomaly.Protocol;
 
-// Version 99 also (MessagesV99Hotbar.cs, protocol.md section 97; DV689): the own hotbar. The replica keeps the last state (its refusal field cleared) and
+// Version 100 also (MessagesV100Hotbar.cs, protocol.md section 99; DV693): the own hotbar. The replica keeps the last state (its refusal field cleared) and
 // counts the refusals, so every reader of the State channel (the game client, the fake feed, the test rigs, the bots) takes the message.
 
 public sealed partial class ReplicaWorld

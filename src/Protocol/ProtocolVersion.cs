@@ -198,18 +198,22 @@ public static class ProtocolVersion
     /// loads the world behind its loading screen before its new player is late-joined.
     /// Version 98: a <see cref="UiWindowMessage"/> may be <see cref="Limits.MaxUiWindowBytes"/> 1 MiB long (256 KiB before) and a UI payload
     /// may hold <see cref="Limits.MaxUiValues"/> 65536 values (32768 before), as tg's crafting window sends every cooking recipe at once.
-    /// Version 99 (package T, slice T4a, DV30; Codec.V99.cs): a click's and a throw's aim zone gains <see cref="AimZone.Eyes"/>,
+    /// Version 99 (DV685; MessagesV99.cs): the PhotoRequest and PhotoPart messages, a photo rendered by the photographer's
+    /// client and sent to the server, which gives it to every client as a RuntimeResource; <see cref="Limits.MaxRuntimeResourceBytes"/> is 512 KiB.
+    /// Version 99, also (DV687, DV688; docs/ai/specs/protocol.md section 95): an appearance's particles (BYOND particles, a particle set's vars as
+    /// JSON: a cigarette's smoke) and a light's flicker bit (a flame's light, tg's fire_flicker_middleman).
+    /// Version 100 (package T, slice T4a, DV30; Codec.V100.cs): a click's and a throw's aim zone gains <see cref="AimZone.Eyes"/>,
     /// <see cref="AimZone.Mouth"/> and <see cref="AimZone.Groin"/>, the modifiers byte's spare bit 3 its high bit.
-    /// Version 99 also (package T, slice T4b, DV30): a hover on an entity may end with the zone looked at (one byte, 1 to 9), which the server
+    /// Version 100 also (package T, slice T4b, DV30): a hover on an entity may end with the zone looked at (one byte, 1 to 9), which the server
     /// selects without logging before tg's hover, so the hints name what a click there does.
-    /// Version 99 also (package T, slice T4c, DV686): the posture byte's bits 6 and 7 (<see cref="PostureBits.SideFixed"/>,
+    /// Version 100 also (package T, slice T4c, DV690): the posture byte's bits 6 and 7 (<see cref="PostureBits.SideFixed"/>,
     /// <see cref="PostureBits.FaceUp"/>), the side a lying body was turned to from the radial's Turn over (a ContextPick of that label).
-    /// Version 99 also (ui-overhaul.md section 10, slice 3A, DV689; MessagesV99Hotbar.cs): the Hotbar message, the own human's ten hotbar cells
+    /// Version 100 also (ui-overhaul.md section 10, slice 3A, DV693; MessagesV100Hotbar.cs): the Hotbar message, the own human's ten hotbar cells
     /// and the held items' names, and the <see cref="ActionKind.HotbarPress"/> action, a press of one cell.
-    /// Version 99 also (ui-overhaul.md section 12, slice 4B-1, DV692; MessagesV99Storages.cs): the Storages message, the storages the own human
+    /// Version 100 also (ui-overhaul.md section 12, slice 4B-1, DV696; MessagesV100Storages.cs): the Storages message, the storages the own human
     /// carries and their items, and the <see cref="ActionKind.InventoryMove"/> action (one item to a storage, a worn slot, a hand or the floor) and
     /// the <see cref="ActionKind.InventoryOpen"/> action (tg's opening rustle of the back storage).
-    public const ushort Current = 99;
+    public const ushort Current = 100;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

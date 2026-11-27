@@ -4,7 +4,7 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Client.Play;
 
 /// <summary>
-/// ui-overhaul.md section 12, slice 4B-1 (DV692) on the client: the carried storages from the server's message as the replica keeps them
+/// ui-overhaul.md section 12, slice 4B-1 (DV696) on the client: the carried storages from the server's message as the replica keeps them
 /// (<see cref="StoragesModel"/>, the Godot-free model the next slice draws), the last refused move dated once, and the moves and the Tab notice the play
 /// session sends (<see cref="PlaySession.InventoryMove"/>, <see cref="PlaySession.InventoryOpened"/>), fields out of range never sent.
 /// </summary>

@@ -32,30 +32,30 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `a67c16a` | Package T, slices T0 and T1: a person is hit on the body alone |
 | `5d1449c` | Package T, slice T2: the leg in front, shots, effects pass clicks |
 | `5a5c4a8` | Spec only |
-| `f1a2ee1` | Package T, slice T4a: eyes, mouth and groin by look; tg's gun in the mouth (protocol 99 since the merge; built as "95") |
-| `77f593f` | Package T, slice T4b: the prompt follows the part looked at (protocol 99 since the merge) |
-| `3398a80` | Package T, slice T4c: a patient lies face up, "Turn over", the input-script step `radial=LABEL` (protocol 99 since the merge; signed off by the contributor 2026-11-26) |
+| `f1a2ee1` | Package T, slice T4a: eyes, mouth and groin by look; tg's gun in the mouth (protocol 100 since the merge; built as "95") |
+| `77f593f` | Package T, slice T4b: the prompt follows the part looked at (protocol 100 since the merge) |
+| `3398a80` | Package T, slice T4c: a patient lies face up, "Turn over", the input-script step `radial=LABEL` (protocol 100 since the merge; signed off by the contributor 2026-11-26) |
 | `d48b027` | Package T, slice T5a: looking down shows the own body (client only; section 8, "T5a as built") |
 | `a98d5ee` | Package T, slices T5b and T5c: the own body is a target, the doll's eyes, mouth and grasp (client only; section 8, "T5b and T5c as built") |
 | `6a3e649` | Package 2, slice C: the hands either side of the hotbar gap, the bottom slots in the gap, the held-item card (client only; section 6, "Slice C as built") |
 | `e3af6b3` | Package 2, slice D: the vitals column at the right edge, alerts as chips, the hint strip over the hands, the swap key cap, the red cuffed hand (client only; section 6, "Slice D as built") |
-| `b258604` | The prompt beside the crosshair only for a thing within reach (server and client, no wire change, DV687; section 9, one known fault accepted by the contributor) |
+| `b258604` | The prompt beside the crosshair only for a thing within reach (server and client, no wire change, DV691; section 9, one known fault accepted by the contributor) |
 | `fc882c5` | Package 2, slice E: the vitals without a box, tg's combat toggle in the corner, the key-duplicating buttons hidden, keys for crafting, language and navigate, "Offer item" in the wheel (server and client, no wire change, DV139; section 6, "Slice E as built") |
 | `52bcb78` | Package T, slice T5's numbers: the look-down pivot 0.25 m and the limit 135 degrees (client only; section 8, "T5's numbers changed") |
-| `5a42a6d` | Merge of `origin/main` (release 1.14.0, upstream's protocol 95 to 97): this branch's wire changes became protocol 98 then (99 today), its new deviations DV599 to DV601 then (DV685 click through, DV686 Turn over and DV687 the prompt only in reach today); signed off by the contributor 2026-11-26 |
+| `5a42a6d` | Merge of `origin/main` (release 1.14.0, upstream's protocol 95 to 97): this branch's wire changes became protocol 98 then (100 today), its new deviations DV599 to DV601 then (DV689 click through, DV690 Turn over and DV691 the prompt only in reach today); signed off by the contributor 2026-11-26 |
 | `6449390` | Chip pictures fitted to their art (client only; section 11) |
-| `b475196` | A hit on an alien aimed at a body part it lacks lands on its chest (server; DV688; found by the merge's stress test) |
+| `b475196` | A hit on an alien aimed at a body part it lacks lands on its chest (server; DV692; found by the merge's stress test) |
 | `f6a5677` | Code comments of this branch: what and why, not who asked or when (upstream's new rule) |
-| `7e4f032` | Package 3: the belt hotbar, ten cells on the number keys, action buttons on Shift+digits (server and client, protocol 99, DV689; section 10; signed off by the contributor 2026-11-27) |
+| `7e4f032` | Package 3: the belt hotbar, ten cells on the number keys, action buttons on Shift+digits (server and client, protocol 100, DV693; section 10; signed off by the contributor 2026-11-27) |
 | `11e5c15` | The chat window above the bar, see-through at rest, input shown only while typing (client only; section 13) |
-| `a951ee7` | Package 4, slice 4A: under Tab the chat column, the character with its worn slots, clicks on the sprite, the overlay closing on damage (client only; DV690; section 12) |
+| `a951ee7` | Package 4, slice 4A: under Tab the chat column, the character with its worn slots, clicks on the sprite, the overlay closing on damage (client only; DV694; section 12) |
 | `4012739` | tg's own slot sprites on the hands, the bar and the worn slots (client only; section 16) |
-| `336a2929` | Merge of `origin/main` (release 1.15.0, upstream's protocol 98): this branch's wire changes are protocol 99, its deviations DV685 to DV690 (were DV599 to DV604); `RadialExtra.TurnOver` 10 and `Offer` 11 beside upstream's `StepIn` 9; signed off by the contributor 2026-11-27 |
-| `1e37154c` | First person: dragging oneself onto an object by looking down; DEVIATION markers and dated comments cleaned (client only; DV691; section 17) |
+| `336a2929` | Merge of `origin/main` (release 1.15.0, upstream's protocol 98): this branch's wire changes are protocol 100, its deviations DV689 to DV694 (were DV599 to DV604); `RadialExtra.TurnOver` 10 and `Offer` 11 beside upstream's `StepIn` 9; signed off by the contributor 2026-11-27 |
+| `1e37154c` | First person: dragging oneself onto an object by looking down; DEVIATION markers and dated comments cleaned (client only; DV695; section 17) |
 
 The numbers in this table are today's. Commit messages carry the numbers of their time: this branch's wire changes
 were built as protocol 95, became 98 in the merge of release 1.14.0 and 99 in the merge of release 1.15.0; its
-deviations were DV599 to DV604 until the merge of 1.15.0 and are DV685 to DV690 since. "Since the merge" in a row
+deviations were DV599 to DV604 until the merge of 1.15.0 and are DV689 to DV694 since. "Since the merge" in a row
 means since both.
 
 The branch follows `origin/main` (https://github.com/Noardewyn/AnomalyStation): fetch at the start of a session and
@@ -63,7 +63,7 @@ before any wire or server work, and merge upstream in before building on it; ups
 and ours are renumbered after them. Upstream's `CLAUDE.md` now forbids code comments that say who asked for something
 or when; builders write what the code does and why, with plain `DEVIATION(DVnnn)` and decision references.
 
-Protocol version 99 (ours; built as "95", "98" after the merge of 1.14.0, 99 since the merge of 1.15.0) is not released: slices T4a, T4b and T4c and the hotbar
+Protocol version 100 (ours; built as "95", "98" after the merge of 1.14.0, 99 since the merge of 1.15.0) is not released: slices T4a, T4b and T4c and the hotbar
 ride one release by the owner (`tools/release.sh`); until then the build warns `ANOMVER01` and
 `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
@@ -91,8 +91,8 @@ seconds not bringing the HUD back.
 
 
 To tell the owner (the contributor does this; `DECISIONS.md` is not edited by us): the protocol changes of version
-99; that the lying-body rule of the play test of 2026-10-13 is narrowed for bodies buckled to an object (DV573) and
-"Turn over" is new (DV686); tg's `handle_suicide` is translated; the earlier decisions revised for the interface
+100; that the lying-body rule of the play test of 2026-10-13 is narrowed for bodies buckled to an object (DV573) and
+"Turn over" is new (DV690); tg's `handle_suicide` is translated; the earlier decisions revised for the interface
 (section 1).
 
 ## 1. What was agreed, and what it changes
@@ -875,7 +875,7 @@ tied to a deliberate input instead of the look.
 
 ### T4a as built (2026-11-24)
 
-Protocol 99 (built as 95; renumbered in the merge with origin/main). Playtested against the real server: from the front the eyes, the mouth and the groin select tg's
+Protocol 100 (built as 95; renumbered in the merge with origin/main). Playtested against the real server: from the front the eyes, the mouth and the groin select tg's
 precise zones on exactly the pixels of tg's doll (read from the zone selector's picture and from a penlight's two
 answers); from each side they sit on the three columns at the front of the face; from behind there are none; a
 bar-stool sitter's and a giant's follow the drawn face; a screwdriver on the eyes is tg's eye stab; a help click on
@@ -981,7 +981,7 @@ cannot work today.
 
 ### T4b as built (2026-11-24)
 
-Still protocol 99 (built as 95) (a second wire change inside the unreleased version, as version 89 did): a hover on an entity may
+Still protocol 100 (built as 95) (a second wire change inside the unreleased version, as version 89 did): a hover on an entity may
 carry the zone as one byte after the target; a hover without one keeps its old bytes. Beyond the design above:
 - the server remembers the last look it skipped during a do-after and applies it, with fresh hints, in the tick the
   mob's last do-after ends; any later hover, unhover, click or throw clears what was remembered;
@@ -1280,9 +1280,9 @@ Settled by the designer (2026-11-26), the three points of the row above:
 Three fix rounds were used up with one fault open, and the change was parked in a stash on top of `a98d5ee`. The
 contributor accepted that fault as a known limit on 2026-11-26 ("just accept it and make a note"). The stash was
 then applied onto the head after package 2's slice D (no conflicts, every hunk as reviewed), verified and committed
-as it is, with the fault recorded below and in DV687.
+as it is, with the fault recorded below and in DV691.
 
-As built (server and client, no wire change; DV687 and protocol.md 14.2 have the full text):
+As built (server and client, no wire change; DV691 and protocol.md 14.2 have the full text):
 - The server answers a hover of a thing its sender cannot reach (tg's `IsReachableBy` with the held item's reach)
   with a zero-length name and no hints; the client then shows a bare crosshair. Gated: every living mob acting from
   where it stands, whatever its state. Not gated: a ghost, the AI, a cyborg with no module out, the hunter while it
@@ -1688,7 +1688,7 @@ Settled design (client only; built right after slice 4A, since both touch the sa
 ### Slice 4A as built: for the contributor to raise with the owner
 
 - D53 and D131 describe the inventory as a native window with a doll; slice 4A replaces that window with the
-  character panel under Tab (DV690). The layout of that window and its key (the owner's, 2026-10-30) goes with it.
+  character panel under Tab (DV694). The layout of that window and its key (the owner's, 2026-10-30) goes with it.
 - D224 and D226 let an item be dragged onto the body's slot on the doll. Dragging onto the health doll and onto the
   worn slots' cells still works; a drag onto the Tab inventory's own sprite does nothing until slice 4B.
 - Where the design was silent, built so: the cells above and below the sprite are 12 from it; the panel is centred
@@ -1728,7 +1728,7 @@ What the player gets:
   action of a carried item is reached from the right-click wheel.
 - Tooltips and the hint strip name the item under the pointer in a panel as they do for the bar.
 
-The wire (protocol 99, unreleased, so no new version number), for 4B-1:
+The wire (protocol 100, unreleased, so no new version number), for 4B-1:
 - To the owning player only, when it changes: the list of carried storages in the order above, each with its
   entity, where it is carried, its name, tg's slot count and room (used and limit), a locked flag, and its items in
   tg's order (entity, name, and what the client needs to draw it and its count, as the hotbar message does for the
@@ -1796,7 +1796,7 @@ the health doll onto a table still work. Not driven: throw mode aimed at oneself
 while buckled, a real loss of window focus, a body swap (unit tests only).
 
 For the contributor to tell the owner: D224 says the mouse drags things in cursor mode; this widens it to first
-person for the own body only (DV691). A click on oneself now lands when the button comes up.
+person for the own body only (DV695). A click on oneself now lands when the button comes up.
 
 Note for testers: scripted clients share the one OS pointer, so cursor-mode drags must be driven one client at a
 time (a second scripted client moves the pointer under the first).
@@ -1819,7 +1819,7 @@ was looser than tg):
   to moves and not to the keys.
 - Storages whose contents tg hides (a cigarette pack) are listed without items and get no panel in the client.
 - For the contributor to tell the owner: D226 lists "hands full" among a drag's refusals (moves out of a storage
-  need no hand: DV692); D40 (no hidden data sent): the owner of a body receives the contents of every storage they
+  need no hand: DV696); D40 (no hidden data sent): the owner of a body receives the contents of every storage they
   carry at all times, locked and hidden ones withheld; D131 and D225: the move request is a path beside tg's
   storage screen entries that calls tg's procs.
 - The move to the floor is tg's drop key: a cuffed player can drop, as in tg. A worn storage comes off by tg's drag
@@ -1831,8 +1831,8 @@ Two fix rounds; the gate clean after them; stress-tested: 933,000 random steps o
 checked after each step (exactly once, stacks conserved, nothing in limbo, nobody else's inventory changed), 600,000
 fuzzed messages, a 3,000-tick real server with hostile clients (no leak in 426 Storages messages), change
 detection (no rebuilds while idle, a resend within a tick for every kind of change), cost 0.15 ms a tick idle for
-50 players with full storages. The wire: Storages is message 33, InventoryMove action kind 29, InventoryOpen 30
-(protocol 99; `protocol.md` section 98); DV692 holds the rule and every difference from tg.
+50 players with full storages. The wire: Storages is message 35, InventoryMove action kind 29, InventoryOpen 30
+(protocol 100; `protocol.md` section 100); DV696 holds the rule and every difference from tg.
 
 ### Slice 4B-2: settled design (the client half)
 

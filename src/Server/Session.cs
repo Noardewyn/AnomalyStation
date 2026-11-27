@@ -133,6 +133,21 @@ public sealed class Session
     /// <summary>MotionInput messages and actions dropped by the token buckets (all time).</summary>
     public int RateLimited { get; internal set; }
 
+    /// <summary>Version 99 (DV685): the photo being received (its PNG's parts so far), or null; <see cref="PhotoId"/> names its request.</summary>
+    internal System.IO.MemoryStream PhotoBody { get; set; }
+
+    internal uint PhotoId { get; set; }
+
+    internal int PhotoTotal { get; set; }
+
+    /// <summary>Version 99: photo requests sent to this client.</summary>
+    public int PhotoRequestsSent { get; set; }
+
+    /// <summary>Version 99: the client's photos the world took, and the ones it refused (the tests read them).</summary>
+    public int PhotosTaken { get; set; }
+
+    public int PhotosRefused { get; set; }
+
     /// <summary>Version 53: the bug report being received (its parts so far), or null; true in <see cref="BugReportRefused"/> while a refused one's parts still come.</summary>
     internal System.IO.MemoryStream BugReportBody { get; set; }
 
@@ -292,11 +307,11 @@ public sealed class Session
     internal uint LastFrameSeq;
     internal ushort LastYaw;
 
-    // Version 99 also (slice T4b, world half): the last hover whose zone was skipped while a do-after ran for the mob, applied once it has
+    // Version 100 also (slice T4b, world half): the last hover whose zone was skipped while a do-after ran for the mob, applied once it has
     // none left (ServerHost.CatchUpLooks); set and cleared only by applied commands and the world, so a replay holds the same.
     internal QueuedCommand? FrozenLook;
 
-    // DEVIATION(DV687): the world thing the applied hover named when the mob could not reach it (ServerHost.NoteReach, before tg's hover); the
+    // DEVIATION(DV691): the world thing the applied hover named when the mob could not reach it (ServerHost.NoteReach, before tg's hover); the
     // screentip router, which tg calls for that hover later in the tick (SSmouse_entered's fire), sends its hints empty and clears this. Null
     // when it was in reach, a screen target, or the mob's clicks are not gated by reach.
     internal Anomaly.Core.Tg.atom HoverOutOfReach;

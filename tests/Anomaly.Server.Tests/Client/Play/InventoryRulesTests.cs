@@ -156,7 +156,7 @@ public class InventoryRulesTests
         Assert.Equal(new InvPlace(InvKind.Hand, 0, 2), Of(Screen(2)));
         Assert.Equal(new InvPlace(InvKind.Slot, 300, (int)LeftPocket), Of(Screen(300)));
         Assert.Equal(new InvPlace(InvKind.Slot, 900, (int)Gloves), Of(Screen(4)));
-        // a belt cell: its item on the bar, the worn belt, and the bar cell as the wish (DV689, DV692); with no belt worn no wish
+        // a belt cell: its item on the bar, the worn belt, and the bar cell as the wish (DV693, DV696); with no belt worn no wish
         Assert.Equal(new InvPlace(InvKind.Belt, 203, 3, 200, 3), Of(Screen(LiveHud.BeltCellId(3))));
         Assert.Equal(new InvPlace(InvKind.Belt, 0, 6, 0, 0), InventoryRules.Resolve(Screen(LiveHud.BeltCellId(6)), screen, panels, 0, new long[7]));
         // the panels: the backpack's second cell, the belt's panel's first (the eighth item, its place 8), a header, an empty cell, a cell past the panels

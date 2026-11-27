@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.Defines;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// Package T, slice T4a (protocol 99): a click aimed at the eyes, the mouth or the groin is recorded in the command log with its zone (a plain byte,
+/// Package T, slice T4a (protocol 100): a click aimed at the eyes, the mouth or the groin is recorded in the command log with its zone (a plain byte,
 /// 7 to 9) and replayed into a fresh world to the same state, where tg's selected zone is that precise zone again (D31).
 /// </summary>
 public class PreciseZoneReplayTests

@@ -1,12 +1,12 @@
 namespace Anomaly.Protocol;
 
-// Protocol version 99 also (ui-overhaul.md section 10, package 3, slice 3A, DV689; docs/ai/specs/protocol.md section 97; the codec: Codec.V99Hotbar.cs).
+// Protocol version 100 also (ui-overhaul.md section 10, package 3, slice 3A, DV693; docs/ai/specs/protocol.md section 99; the codec: Codec.V100Hotbar.cs).
 // - Hotbar (server to client, State channel, after the tick's Delta, when it changed or a press was refused): the own human's ten hotbar cells
 //   (1 to 7 the worn belt's contents, 8 and 9 the left and right pocket, 10 the ID slot), each empty, holding its item or out (its item in a hand,
 //   taken from the cell), with the item's picture as the HUD draws a slot's item; whether a belt is worn; the names of the items in the own hands.
 // - HotbarPress (client to server, an Action of kind 28): a press of one cell (ActionMessage.HotbarCell, MessagesV2.cs).
 
-/// <summary>Version 99: what a hotbar cell shows.</summary>
+/// <summary>Version 100: what a hotbar cell shows.</summary>
 public enum HotbarCellState : byte
 {
     /// <summary>No item in the cell and none out from it.</summary>
@@ -20,7 +20,7 @@ public enum HotbarCellState : byte
 }
 
 /// <summary>
-/// Version 99: one hotbar cell: its state, its item's picture (the item drawn alone, as a slot's <see cref="ScreenChild"/>; none for an empty cell, or an
+/// Version 100: one hotbar cell: its state, its item's picture (the item drawn alone, as a slot's <see cref="ScreenChild"/>; none for an empty cell, or an
 /// item that shows nothing) and its item (<see cref="Entity"/>: the id a move names; in the belt, the pocket or the ID slot, or out in a hand; 0 for an
 /// empty cell).
 /// </summary>
@@ -31,7 +31,7 @@ public readonly record struct HotbarCell(HotbarCellState State, TableRef Appeara
 }
 
 /// <summary>
-/// Version 99: the own hotbar (DV689). Only a human has one (<see cref="Bar"/>, tg's human HUD); every other mob's message is <see cref="None"/>.
+/// Version 100: the own hotbar (DV693). Only a human has one (<see cref="Bar"/>, tg's human HUD); every other mob's message is <see cref="None"/>.
 /// <see cref="RefusedCell"/> is an event, not state: the press of that cell (1 to 10) did nothing this tick (0: none).
 /// </summary>
 public sealed class HotbarMessage : IEquatable<HotbarMessage>

@@ -9,7 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (gaps J3, D298): the picture and its small icon; the logging and persistence of pictures on the disk are rows (no image to log). The var blocks are generated.
+// PARTIAL (gaps J3, D298): the picture, its small icon and its copies; its image is the photographer's client's render (DV685, PhotoSeam). The logging and
+// persistence of pictures on the disk are rows (D332). The var blocks are generated.
 
 // tg: code/modules/photography/_pictures.dm:2
 public partial class datum_picture : datum
@@ -54,10 +55,10 @@ public partial class datum_picture : datum
             picture_image = image as icon;
         if (icon_ != null)
             picture_icon = icon_ as icon;
-        if (psize_x != null)
-            psize_x = size_x == null ? null : Dm.num(size_x);
-        if (psize_y != null)
-            psize_y = size_y == null ? null : Dm.num(size_y);
+        if (size_x != null)
+            psize_x = Dm.num(size_x);
+        if (size_y != null)
+            psize_y = Dm.num(size_y);
         if (bp != null)
             has_blueprints = Dm.num(bp);
         if (caption_ != null)
@@ -82,11 +83,14 @@ public partial class datum_picture : datum
     {
         if (picture_image == null)
             return;
-        Dm.Deferred("code/modules/photography/_pictures.dm:65", "regenerate_small_icon: the photo's small picture (no image: camera_get_icon)");
+        icon small_img = Dm.icon(picture_image);
+        icon ic = Dm.icon("icons/obj/art/camera.dmi", Dm.truthy(iconstate) ? iconstate : "photo");
+        small_img.Scale(8, 8);
+        ic.Blend(small_img, ICON_OVERLAY, 13, 13);
+        picture_icon = ic;
     }
 
-    // tg: code/modules/photography/_pictures.dm:195  (gaps S3: the photocopier's copies; the image and icon are null until the camera's
-    // picture exists, so their copy, greyscale and crop do not run)
+    // tg: code/modules/photography/_pictures.dm:195  (gaps S3: the photocopier's copies)
     public virtual object Copy(float? greyscale = null, float? cropx = null, float? cropy = null)
     {
         greyscale ??= FALSE;
@@ -96,15 +100,22 @@ public partial class datum_picture : datum
         P.picture_name = picture_name;
         P.picture_desc = picture_desc;
         if (picture_image != null)
-            Dm.Deferred("code/modules/photography/_pictures.dm:200", "Copy: P.picture_image = icon(picture_image), the image's copy (the picture has no image: camera_get_icon)");
+            P.picture_image = Dm.icon(picture_image); //Copy, not reference.
         if (picture_icon != null)
-            Dm.Deferred("code/modules/photography/_pictures.dm:202", "Copy: P.picture_icon = icon(picture_icon), the icon's copy (no image)");
+            P.picture_icon = Dm.icon(picture_icon);
         P.psize_x = psize_x - cropx * 2;
         P.psize_y = psize_y - cropy * 2;
         P.has_blueprints = has_blueprints;
-        // greyscale: picture_image.GrayScale() and picture_icon.GrayScale() on the copies (no image)
+        if (Dm.truthy(greyscale))
+        {
+            P.picture_image?.GrayScale();
+            P.picture_icon?.GrayScale();
+        }
         if (Dm.truthy(cropx) || Dm.truthy(cropy))
+        {
+            P.picture_image?.Crop(cropx, cropy, psize_x - cropx, psize_y - cropy);
             P.regenerate_small_icon();
+        }
         return P;
     }
 }

@@ -2301,6 +2301,19 @@ public partial class obj_machinery_pdapainter
     }
 }
 
+// tg: code/game/machinery/photobooth.dm:8
+public partial class obj_machinery_photobooth
+{
+    // tg: code/game/machinery/photobooth.dm:69
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/game/machinery/photobooth.dm:69", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
+        return default;
+    }
+}
+
 // tg: code/game/machinery/recycler.dm:4
 public partial class obj_machinery_recycler
 {
@@ -2514,19 +2527,6 @@ public partial class obj_machinery_atmospherics_components_trinary_mixer
     }
 }
 
-// tg: code/game/machinery/porta_turret/portable_turret_cover.dm:7
-public partial class obj_machinery_porta_turret_cover
-{
-    // tg: code/game/machinery/porta_turret/portable_turret_cover.dm:85
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public override DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
-    {
-        Dm.Deferred("code/game/machinery/porta_turret/portable_turret_cover.dm:85", "attack_hulk: antagonist, engine, mech and other parity-tier interactions (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
 // tg: code/modules/mining/machine_silo.dm:27
 public partial class obj_machinery_ore_silo
 {
@@ -2638,15 +2638,6 @@ public partial class obj_machinery_portable_atmospherics_canister
     {
         Dm.Deferred("code/modules/atmospherics/machinery/portable/canister.dm:88", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
         return default;
-    }
-
-    // tg: code/modules/atmospherics/machinery/portable/canister.dm:767
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public virtual DmTask recolor(datum_greyscale_modify_menu menu = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/portable/canister.dm:767", "recolor: the greyscale colour menu (tgui) (M10+)");
-        return DmTask.CompletedTask;
     }
 }
 
@@ -3408,15 +3399,6 @@ public partial class obj_vehicle_sealed_mecha
     {
         Dm.Deferred("code/modules/mod/modules/modules_ninja.dm:471", "ninjadrain_charge: the ninja's drain (the ninja, not ported) (M10+)");
         return DmTask.CompletedTask;
-    }
-
-    // tg: code/modules/vehicles/mecha/mecha_defense.dm:99
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Exosuits
-    [DmGeneratedStub]
-    public override DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/vehicles/mecha/mecha_defense.dm:99", "attack_hulk: hulks (not ported) (M10+)");
-        return DmTask<object>.FromResult(default);
     }
 
     // tg: code/modules/vehicles/mecha/mecha_ai_interaction.dm:1

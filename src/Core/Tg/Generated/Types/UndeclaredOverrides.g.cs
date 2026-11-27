@@ -10,7 +10,7 @@ namespace Anomaly.Core.Tg;
 
 /// <summary>
 /// The tg definitions of the interaction chain's guarded procs (<see cref="InertSeam.GuardedProcs"/>) at types whose C#
-/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 388 rows over 227 types.
+/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 380 rows over 223 types.
 /// <see cref="InertSeam.HasUndeclaredOverride"/> walks a runtime class up to the class whose C# method would run.
 /// </summary>
 internal static partial class UndeclaredOverrides
@@ -159,9 +159,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_nuke_core_supermatter_sliver), "item_interaction"), // /obj/item/nuke_core/supermatter_sliver (tg: code/game/objects/items/tools/theft_tools.dm:182)
         (typeof(obj_item_nuke_core_supermatter_sliver), "pickup"), // /obj/item/nuke_core/supermatter_sliver (tg: code/game/objects/items/tools/theft_tools.dm:227)
         (typeof(obj_item_nuke_core_supermatter_sliver), "throw_impact"), // /obj/item/nuke_core/supermatter_sliver (tg: code/game/objects/items/tools/theft_tools.dm:204)
-        (typeof(obj_item_wallframe_picture), "attack_hand"), // /obj/item/wallframe/picture (tg: code/modules/photography/photos/frame.dm:28)
-        (typeof(obj_item_wallframe_picture), "attack_self"), // /obj/item/wallframe/picture (tg: code/modules/photography/photos/frame.dm:40)
-        (typeof(obj_item_wallframe_picture), "item_interaction"), // /obj/item/wallframe/picture (tg: code/modules/photography/photos/frame.dm:15)
         (typeof(obj_item_circuitboard_machine_dish_drive), "attack_self"), // /obj/item/circuitboard/machine/dish_drive (tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1302)
         (typeof(obj_item_circuitboard_machine_dish_drive), "click_alt"), // /obj/item/circuitboard/machine/dish_drive (tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1306)
         (typeof(obj_item_organ_brain), "attack"), // /obj/item/organ/brain (tg: code/modules/mob/living/brain/brain_item.dm:295)
@@ -295,7 +292,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_machinery_dish_drive), "item_interaction"), // /obj/machinery/dish_drive (tg: code/game/machinery/dish_drive.dm:89)
         (typeof(obj_machinery_fat_sucker), "click_alt"), // /obj/machinery/fat_sucker (tg: code/game/machinery/fat_sucker.dm:100)
         (typeof(obj_machinery_flatpacker), "click_ctrl"), // /obj/machinery/flatpacker (tg: code/game/machinery/flatpacker.dm:397)
-        (typeof(obj_machinery_photobooth), "attack_hand_secondary"), // /obj/machinery/photobooth (tg: code/game/machinery/photobooth.dm:57)
         (typeof(obj_machinery_scanner_gate_luxury_shuttle), "item_interaction"), // /obj/machinery/scanner_gate/luxury_shuttle (tg: code/modules/shuttle/misc/special.dm:252)
         (typeof(obj_machinery_sleeper), "click_alt"), // /obj/machinery/sleeper (tg: code/game/machinery/sleepers.dm:152)
         (typeof(obj_machinery_sleeper), "mouse_drop_receive"), // /obj/machinery/sleeper (tg: code/game/machinery/sleepers.dm:118)
@@ -346,9 +342,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_structure_emergency_shield_cult_barrier), "attack_hand"), // /obj/structure/emergency_shield/cult/barrier (tg: code/game/machinery/shieldgen.dm:108)
         (typeof(obj_structure_fluff_balloon_nuke), "atom_destruction"), // /obj/structure/fluff/balloon_nuke (tg: code/modules/mapfluff/ruins/objects_and_mobs/museum.dm:66)
         (typeof(obj_structure_sign_poster_contraband_fake_bombable), "ex_act"), // /obj/structure/sign/poster/contraband/fake_bombable (tg: code/game/objects/effects/posters/contraband.dm:676)
-        (typeof(obj_structure_sign_picture_frame), "atom_deconstruct"), // /obj/structure/sign/picture_frame (tg: code/modules/photography/photos/frame.dm:173)
-        (typeof(obj_structure_sign_picture_frame), "attack_hand"), // /obj/structure/sign/picture_frame (tg: code/modules/photography/photos/frame.dm:161)
-        (typeof(obj_structure_sign_picture_frame), "item_interaction"), // /obj/structure/sign/picture_frame (tg: code/modules/photography/photos/frame.dm:149)
         (typeof(obj_structure_checkoutmachine), "item_interaction"), // /obj/structure/checkoutmachine (tg: code/game/objects/items/crab17.dm:84)
         (typeof(obj_structure_destructible_cult_item_dispenser), "attack_hand"), // /obj/structure/destructible/cult/item_dispenser (tg: code/modules/antagonists/cult/cult_structures.dm:108)
         (typeof(obj_structure_destructible_eldritch_crucible), "atom_deconstruct"), // /obj/structure/destructible/eldritch_crucible (tg: code/modules/antagonists/heretic/structures/mawed_crucible.dm:37)
@@ -414,6 +407,5 @@ internal static partial class UndeclaredOverrides
         (typeof(turf_closed_wall_mineral_uranium), "attackby"), // /turf/closed/wall/mineral/uranium (tg: code/game/turfs/closed/wall/mineral_walls.dm:134)
         (typeof(turf_closed_indestructible_hoteldoor), "attack_hand"), // /turf/closed/indestructible/hoteldoor (tg: code/modules/mapfluff/ruins/spaceruin_code/hilbertshotel.dm:366)
         (typeof(turf_closed_indestructible_hoteldoor), "click_alt"), // /turf/closed/indestructible/hoteldoor (tg: code/modules/mapfluff/ruins/spaceruin_code/hilbertshotel.dm:385)
-        (typeof(turf_open_floor_concrete), "attackby"), // /turf/open/floor/concrete (tg: code/game/turfs/open/floor/concrete_floor.dm:65)
     };
 }

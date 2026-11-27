@@ -7,7 +7,7 @@ namespace Anomaly.Client.Shared;
 // tests/Anomaly.Server.Tests too). BYOND's client turns a press into a drag once the mouse moves with the button held (OpenDream's
 // MouseInputSystem: 3 screen pixels) and calls MouseDrop on the release over the thing under the mouse; a press and a release without
 // that move is a click. The game scene feeds the cursor mode's (Tab) left button and pointer moves into this model; the captured view's
-// only drag is of the own body (SelfDrag, DV691).
+// only drag is of the own body (SelfDrag, DV695).
 
 /// <summary>What a release does (<see cref="DragModel.Release"/>).</summary>
 public enum DragOutcome : byte

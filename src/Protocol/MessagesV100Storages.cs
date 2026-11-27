@@ -1,6 +1,6 @@
 namespace Anomaly.Protocol;
 
-// Protocol version 99 also (ui-overhaul.md section 12, slice 4B-1, DV692; docs/ai/specs/protocol.md section 98; the codec: Codec.V99Storages.cs).
+// Protocol version 100 also (ui-overhaul.md section 12, slice 4B-1, DV696; docs/ai/specs/protocol.md section 100; the codec: Codec.V100Storages.cs).
 // - Storages (server to client, State channel, after the tick's Delta, when it changed or a move was refused): the storages the own human carries,
 //   in the Tab inventory's order (the back's, the belt's, a storage in the suit-storage slot, the pockets and the ID slot, then one held in a hand),
 //   each with where it is carried, its name, tg's slot count, its room as tg counts it, whether tg keeps it locked, and its items in tg's order.
@@ -8,7 +8,7 @@ namespace Anomaly.Protocol;
 //   hand or the floor (ActionMessage.MoveItem, MoveTo, MoveStorage, MoveIndex, MessagesV2.cs).
 // - InventoryOpen (client to server, an Action of kind 30): the Tab inventory was opened (tg's rustle of the back storage), no fields.
 
-/// <summary>Version 99: where a carried storage is (<see cref="CarriedStorage.Place"/>), in the Tab inventory's order.</summary>
+/// <summary>Version 100: where a carried storage is (<see cref="CarriedStorage.Place"/>), in the Tab inventory's order.</summary>
 public enum StoragePlace : byte
 {
     /// <summary>The back slot (tg's <c>ITEM_SLOT_BACK</c>): the backpack.</summary>
@@ -33,7 +33,7 @@ public enum StoragePlace : byte
     Hand = 7,
 }
 
-/// <summary>Version 99: what an inventory move puts its item into (<see cref="ActionMessage.MoveTo"/>).</summary>
+/// <summary>Version 100: what an inventory move puts its item into (<see cref="ActionMessage.MoveTo"/>).</summary>
 public enum InventoryTarget : byte
 {
     /// <summary>None: every action that is not an inventory move.</summary>
@@ -52,7 +52,7 @@ public enum InventoryTarget : byte
     Floor = 4,
 }
 
-/// <summary>Version 99: tg's worn slot ids an inventory move may name (<c>__DEFINES/inventory.dm</c>'s <c>ITEM_SLOT_*</c> bits).</summary>
+/// <summary>Version 100: tg's worn slot ids an inventory move may name (<c>__DEFINES/inventory.dm</c>'s <c>ITEM_SLOT_*</c> bits).</summary>
 public static class InventorySlots
 {
     /// <summary>
@@ -65,10 +65,10 @@ public static class InventorySlots
     public static bool IsWorn(long slot) => slot > 0 && (slot & (slot - 1)) == 0 && (slot & Worn) != 0;
 }
 
-/// <summary>Version 99: one item in a carried storage: its entity (the id a move names), its name, its picture (as a slot's item is drawn) and a stack's count (0 for an item that is no stack).</summary>
+/// <summary>Version 100: one item in a carried storage: its entity (the id a move names), its name, its picture (as a slot's item is drawn) and a stack's count (0 for an item that is no stack).</summary>
 public readonly record struct StorageItem(long Entity, string Name, TableRef Appearance, int Count);
 
-/// <summary>Version 99: one carried storage of a <see cref="StoragesMessage"/>.</summary>
+/// <summary>Version 100: one carried storage of a <see cref="StoragesMessage"/>.</summary>
 public sealed class CarriedStorage : IEquatable<CarriedStorage>
 {
     private static readonly StorageItem[] NoItems = Array.Empty<StorageItem>();
@@ -130,7 +130,7 @@ public sealed class CarriedStorage : IEquatable<CarriedStorage>
 }
 
 /// <summary>
-/// Version 99: the storages the own human carries (DV692), in the Tab inventory's order. Every mob that is not a human sends <see cref="None"/> (no
+/// Version 100: the storages the own human carries (DV696), in the Tab inventory's order. Every mob that is not a human sends <see cref="None"/> (no
 /// storages). <see cref="RefusedItem"/> is an event, not state: the move of that item the server took this tick did nothing (0: none).
 /// </summary>
 public sealed class StoragesMessage : IEquatable<StoragesMessage>

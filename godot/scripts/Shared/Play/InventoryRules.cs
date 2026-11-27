@@ -4,8 +4,8 @@ namespace Anomaly.Client.Shared;
 
 // ui-overhaul.md section 12, slice 4B-2: what the Tab inventory sends for a drag, a click and the quick transfer. Engine-free: no Godot API here (it
 // is compiled into tests/Anomaly.Server.Tests too). The client decides nothing about whether a move is allowed: it names the item and the target in
-// one InventoryMove (protocol 99, DV692) and shows what the server answers.
-// DEVIATION(DV690): drags between the inventory's places are moves, not tg's MouseDrop of its screen objects; the quick transfer takes Ctrl+click.
+// one InventoryMove (protocol 100, DV696) and shows what the server answers.
+// DEVIATION(DV694): drags between the inventory's places are moves, not tg's MouseDrop of its screen objects; the quick transfer takes Ctrl+click.
 
 /// <summary>What a place under the pointer is (<see cref="InvPlace"/>).</summary>
 public enum InvKind : byte
@@ -113,7 +113,7 @@ public static class InventoryRules
         if (LiveHud.BeltCellOf(target) is int cell and > 0)
         {
             long item = beltItems != null && cell <= beltItems.Count ? beltItems[cell - 1] : 0;
-            // DV689, DV692: into the worn belt the wish is the bar's cell (the server gives the item that cell)
+            // DV693, DV696: into the worn belt the wish is the bar's cell (the server gives the item that cell)
             return new InvPlace(InvKind.Belt, item, cell, belt, belt == 0 ? 0 : cell);
         }
         if (StorageColumn.Decode(id, out int panel, out int at))
@@ -321,8 +321,8 @@ public static class InventoryRules
 }
 
 /// <summary>
-/// The "inventory opened" notice (protocol 99's InventoryOpen): sent once per turning the Tab inventory on with Tab or the inventory key, and no more
-/// often than the server takes it (<see cref="Seconds"/>: the server's own limit, once a second, DV692).
+/// The "inventory opened" notice (protocol 100's InventoryOpen): sent once per turning the Tab inventory on with Tab or the inventory key, and no more
+/// often than the server takes it (<see cref="Seconds"/>: the server's own limit, once a second, DV696).
 /// </summary>
 public sealed class InventoryNotice
 {

@@ -13,7 +13,7 @@ namespace Anomaly.Core.Tg;
 // mining outpost's dock) are live: a pickaxe (or any mining tool) digs them out in four seconds to the turf under them (bumping
 // into one with a pickaxe does not: DV354), weak rocks and fist miners dig by hand, explosions drill them by their hardness, and
 // their ore drops. Lavaland L1 (D304) adds the ore veins and the random rocks (below). Not here (live-partial rows): the cyborgs',
-// hulks', blobs' and mechs' digging (the aliens' since gaps X5) (acid's melting is ported: silicons SI1c); the mining skill's speed and
+// blobs' and mechs' digging (the aliens' since gaps X5, the hulks' with the MetaStation leftovers) (acid's melting is ported: silicons SI1c); the mining skill's speed and
 // experience came with gaps SL1 (D333). The jungle's
 // random rock and the biome-replacing rock keep their own procs and stay inert.
 
@@ -1258,5 +1258,35 @@ public partial class turf_closed_mineral : turf_closed
         if (Dm.truthy(await do_after(user, tool_mine_speed, target: this)))
             await gets_drilled(user);
         return null;
+    }
+}
+
+// tg: code/game/turfs/closed/minerals.dm:322  (interleaved types, rules 1.9; the MetaStation leftovers: a hulk punching through rock)
+public partial class turf_closed_mineral : turf_closed
+{
+    // tg: code/game/turfs/closed/minerals.dm:322
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human H = null, params object[] __extra)
+    {
+        await base.attack_hulk(H, __extra);
+        // tg's do_after sleeps inside the hulk's on_attack_hand, a signal handler: DM hands that caller the null of the sleep (it
+        // returns NONE and the punch goes on as a plain one) while the dig carries on. The same here, without sleeping in the handler.
+        Waiting.Detach(hulk_dig(H));
+        return null;
+    }
+
+    // tg: code/game/turfs/closed/minerals.dm:324  (the rest of attack_hulk after its sleep)
+    private async DmTask hulk_dig(mob_living_carbon_human H)
+    {
+        float cell_x = x, cell_y = y, cell_z = z;
+        if (Dm.truthy(await do_after(H, tool_mine_speed * 1.25f, target: this)))
+        {
+            // TURF-IDENTITY: tg's src after the sleep is the turf now at this place (the same as the mining tool's above)
+            turf_closed_mineral src = locate(cell_x, cell_y, cell_z) as turf_closed_mineral;
+            if (src == null)
+                return;
+            playsound(src, Dm.resource("sound/effects/meteorimpact.ogg"), 100, TRUE);
+            await H.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!"), forced: "hulk");
+            await src.gets_drilled(H);
+        }
     }
 }

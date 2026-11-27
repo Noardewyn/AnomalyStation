@@ -6,7 +6,7 @@ namespace Anomaly.Client.Shared;
 // ui-overhaul.md section 12, slice 4A: the Tab inventory on the human HUD. Engine-free: no Godot API here (it is compiled into
 // tests/Anomaly.Server.Tests too). Under Tab the chat window is docked as the left column, and the middle column holds the character panel: the own
 // sprite facing the viewer with tg's worn slots round it by body position. The slots are tg's own screen entries re-placed; the sprite is ours.
-// DEVIATION(DV690): the character panel is not tg's (its native inventory panel is gone); the sprite takes clicks as the health doll does.
+// DEVIATION(DV694): the character panel is not tg's (its native inventory panel is gone); the sprite takes clicks as the health doll does.
 
 /// <summary>Where the Tab inventory's parts go this frame, screen pixels (<see cref="TabInventory.Layout"/>).</summary>
 /// <param name="Chat">The chat window's docked place (the left column); empty where it has no room.</param>

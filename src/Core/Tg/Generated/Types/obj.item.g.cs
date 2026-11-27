@@ -425,9 +425,9 @@ public partial class obj_item_assembly_control
     }
 }
 
-// tg: code/game/machinery/photobooth.dm:194
-[DmPath("/obj/item/assembly/control/photobooth_control"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_control_photobooth_control : obj_item_assembly_control
+// tg: code/game/machinery/photobooth.dm:194 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/control/photobooth_control")]
+public partial class obj_item_assembly_control_photobooth_control
 {
     public datum_weakref booth_machine_ref; // tg: code/game/machinery/photobooth.dm:197
 

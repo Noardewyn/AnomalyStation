@@ -4,7 +4,7 @@ using Anomaly.Protocol;
 
 namespace Anomaly.Server.Replication;
 
-// Version 99 also (DV692, ui-overhaul.md section 12, slice 4B-1; protocol.md section 98): the storages the own human carries, read after the tick from
+// Version 100 also (DV696, ui-overhaul.md section 12, slice 4B-1; protocol.md section 100): the storages the own human carries, read after the tick from
 // that session's own mob (CarriedStorages.List) and sent to that session only, when they change, when a move was refused, and in a join. The message
 // is not rebuilt every tick: a cheap print of what tg's state says (the storages, their numbers and flags, their items' ids, weights and stack
 // counts) is taken each tick, and the message (names and pictures interned) is built only when the print changed or a hint of the tick named one of

@@ -3,11 +3,11 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Protocol;
 
 /// <summary>
-/// Protocol version 99 also (package T, slice T4b, Codec.V99.cs; docs/ai/specs/protocol.md section 95): a hover on an entity may end with the zone
+/// Protocol version 100 also (package T, slice T4b, Codec.V100.cs; docs/ai/specs/protocol.md section 97): a hover on an entity may end with the zone
 /// looked at, one byte of 1 to 9 after its target. A hover without a zone is the bytes of version 97. A zone of 0 or above the groin, a zone after a
 /// turf, a ceiling or a screen target, and any byte after the zone are refused.
 /// </summary>
-public class ProtocolV99HoverZoneTests
+public class ProtocolV100HoverZoneTests
 {
     private static ActionMessage Hover(TargetKind kind, long id, AimZone zone = AimZone.None, int x = 0, int y = 0, int z = 0)
         => new(5, ActionKind.Hover, id, ClickButton.None, ClickModifiers.None, null) { TargetKind = kind, TurfX = x, TurfY = y, TurfZ = z, AimZone = zone };

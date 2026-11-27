@@ -11,7 +11,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// DV687: the prompt beside the crosshair shows only when the player can reach the thing looked at. Through a real server
+/// DV691: the prompt beside the crosshair shows only when the player can reach the thing looked at. Through a real server
 /// and client: the answer to a hover on a world thing the mob cannot reach by tg's own test of a click (ClickOn's <c>IsReachableBy</c> with the held
 /// item's reach) is the empty message (a zero-length name, no hints); in reach it is tg's screentip as before. The next tile, a table's corner and a
 /// spear's reach of two are in reach; three tiles, a directional window and a wall corner are not; a ghost, a screen target and the ceiling's own

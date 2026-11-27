@@ -348,8 +348,23 @@ public partial class obj_item_cigarette : obj_item
     // tg: code/game/objects/items/cigarettes.dm:328
     public virtual void update_particle_position(obj_effect_abstract_particle_holder to_edit = null, object new_dir = null)
     {
-        // the holder is never made (make_cig_smoke, make_mob_smoke), so nothing reaches this
-        Dm.Deferred("code/game/objects/items/cigarettes.dm:340", "update_particle_position: to_edit.set_particle_position (the smoke particles: the particle holder is not ported)");
+        new_dir ??= (loc as atom)?.dir;
+        float dir = Dm.num(new_dir);
+        float new_x = 0;
+        object new_layer = Dm.initial(to_edit, nameof(layer));
+        if (Dm.truthy(Dm.bitand(dir, NORTH)))
+        {
+            new_x = 4;
+            new_layer = BELOW_MOB_LAYER;
+        }
+        else if (Dm.truthy(Dm.bitand(dir, SOUTH)))
+            new_x = -4;
+        else if (Dm.truthy(Dm.bitand(dir, EAST)))
+            new_x = 8;
+        else if (Dm.truthy(Dm.bitand(dir, WEST)))
+            new_x = -8;
+        to_edit.set_particle_position(new_x, 8, 0);
+        to_edit.layer = Dm.num(new_layer);
     }
 
     // tg: code/game/objects/items/cigarettes.dm:343
@@ -599,8 +614,10 @@ public partial class obj_item_cigarette : obj_item
         if (!isturf(smoker.loc))
             return;
 
-        // new /obj/effect/abstract/particle_holder(smoker.loc, /particles/smoke/cig/big), update_particle_position, QDEL_IN: the big puff
-        Dm.Deferred("code/game/objects/items/cigarettes.dm:533", "long_exhale: the big puff's particle holder (the smoke particles: the particle holder is not ported)");
+        var big_smoke = Dm.@new<obj_effect_abstract_particle_holder>(smoker.loc, typeof(particles_smoke_cig_big));
+        update_particle_position(big_smoke, smoker.dir);
+        float lifespan = Dm.num(((particles)big_smoke.particles).lifespan);
+        _addtimer(Dm.@new<datum_callback>(GLOBAL_PROC, "/proc/" + nameof(GlobalProcs.qdel), lifespan > GC_FILTER_QUEUE ? WEAKREF(big_smoke) : big_smoke), lifespan, file: "code/game/objects/items/cigarettes.dm", line: 535); // QDEL_IN
     }
 
     /// Called when a mob gets smoke blown in their face.
@@ -770,16 +787,17 @@ public partial class obj_item_cigarette : obj_item
     // tg: code/game/objects/items/cigarettes.dm:644
     public virtual object make_mob_smoke(mob_living smoker = null)
     {
-        // mob_smoke = new(smoker, /particles/smoke/cig); update_particle_position(mob_smoke, smoker.dir)
-        Dm.Deferred("code/game/objects/items/cigarettes.dm:645", "make_mob_smoke: the smoke rising from the smoker (the particle holder is not ported; the client's particles, D142 row)");
+        mob_smoke = Dm.@new<obj_effect_abstract_particle_holder>(smoker, typeof(particles_smoke_cig));
+        update_particle_position(mob_smoke, smoker.dir);
         return mob_smoke;
     }
 
     // tg: code/game/objects/items/cigarettes.dm:649
     public virtual object make_cig_smoke()
     {
-        // cig_smoke = new(src, /particles/smoke/cig); cig_smoke.particles?.scale *= 1.5
-        Dm.Deferred("code/game/objects/items/cigarettes.dm:650", "make_cig_smoke: the smoke rising from the cigarette (the particle holder is not ported; the client's particles, D142 row)");
+        cig_smoke = Dm.@new<obj_effect_abstract_particle_holder>(this, typeof(particles_smoke_cig));
+        if (cig_smoke.particles is particles set)
+            set.scale = Dm.mul(set.scale, 1.5f);
         return cig_smoke;
     }
 }

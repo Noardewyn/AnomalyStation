@@ -119,6 +119,18 @@ public partial class obj_vehicle_sealed_mecha : obj_vehicle_sealed
     // tg: code/modules/vehicles/mecha/mecha_defense.dm:96
     public override object hulk_damage() => 15;
 
+    // tg: code/modules/vehicles/mecha/mecha_defense.dm:99
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
+    {
+        object dot = await base.attack_hulk(user, __extra);
+        if (Dm.truthy(dot))
+        {
+            log_message(Dm.text("Attack by hulk. Attacker - [].", user), LOG_MECHA, color: "red");
+            log_combat(user, this, "punched", "hulk powers");
+        }
+        return dot;
+    }
+
     // tg: code/modules/vehicles/mecha/mecha_defense.dm:78
     public override async DmTask<object> attack_animal(mob user__mob = null, DmList modifiers = null)
     {

@@ -876,8 +876,8 @@ public partial class datum_wound_burn_flesh : datum_wound_burn
 }
 
 // Gaps RG3 (D339): the rest of the file. The diseases' reagents (the vaccines, the transformation toxins, the spores, Agent-S,
-// Tranquility) came with VI1's diseases (wired in gaps train 12), romerol (the zombies) and the concrete (its walls and floors are not ported) stay with
-// their rows in not-translated.md section 226; the moods are MS1's (live since gaps train 11). Space lube and growth serum fed to a
+// Tranquility) came with VI1's diseases (wired in gaps train 12), romerol (the zombies) stays with
+// its row in not-translated.md section 226 (the concrete, poured into its walls and floors, came with the MetaStation leftovers); the moods are MS1's (live since gaps train 11). Space lube and growth serum fed to a
 // fish came with the fish.
 
 // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:80 (gaps VI1's diseases, wired in gaps train 12)
@@ -3207,4 +3207,65 @@ public sealed partial class TgState
     internal DmList datum_reagent_ants__ant_screams;
     // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3299  /datum/reagent/ants/expose_obj's var/static/list/accepted_types
     internal DmList datum_reagent_ants__expose_obj__accepted_types;
+}
+
+// tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3686  (interleaved, rules 1.9; the MetaStation leftovers: concrete)
+public partial class datum_reagent_concrete : datum_reagent
+{
+    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3697
+    public override async DmTask<object> expose_atom(atom exposed_atom = null, object reac_volume = null, float? methods = null)
+    {
+        object dot = await base.expose_atom(exposed_atom, reac_volume, methods);
+        // VAPOR (foam, spray), TOUCH (splashing) allowed, SMOKE_MACHINE (TOUCH|INHALE) not allowed
+        float m = methods ?? 0;
+        if (!(Dm.bitand(m, Dm.bitor(TOUCH, INHALE)) == TOUCH) && !Dm.truthy(Dm.bitand(m, VAPOR)))
+            return dot;
+        Type girder_type = Dm.initial(wall_type, nameof(turf_closed_wall.girder_type)) as Type;
+        if (istype(exposed_atom, girder_type))
+            return await concify_girder(exposed_atom as obj, Dm.num(volume));
+        if (istype(exposed_atom, typeof(turf_open_floor_catwalk_floor)))
+            return await concify_catwalk(exposed_atom as turf_open_floor_catwalk_floor, Dm.num(volume));
+        return dot;
+    }
+
+    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3708
+    public virtual object pour_amount(atom target = null, mob user = null)
+    {
+        if (istype(target, Dm.initial(wall_type, nameof(turf_closed_wall.girder_type)) as Type))
+            return units_per_wall;
+        else if (istype(target, typeof(turf_open_floor_catwalk_floor)))
+            return units_per_floor;
+        return 0;
+    }
+
+    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3715
+    public virtual async DmTask<object> concify_girder(obj exposed_obj = null, float volume = 0)
+    {
+        if (volume < units_per_wall)
+            return FALSE;
+        if (get_turf(exposed_obj) is not turf_open wall_turf)
+            return FALSE;
+        turf_closed_wall_concrete wall = await wall_turf.place_on_top(wall_type) as turf_closed_wall_concrete;
+        exposed_obj.transfer_fingerprints_to(wall);
+        wall.harden_lvl = 0;
+        wall.check_harden();
+        qdel(exposed_obj);
+        return TRUE;
+    }
+
+    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3728
+    public virtual async DmTask<object> concify_catwalk(turf_open_floor_catwalk_floor catwalk = null, float volume = 0)
+    {
+        if (volume < units_per_floor)
+            return FALSE;
+        float cell_x = catwalk.x, cell_y = catwalk.y, cell_z = catwalk.z;
+        await catwalk.make_plating();
+        // TURF-IDENTITY: tg's plating is the turf make_plating left at the catwalk's place (the port's old turf is off the map)
+        if (locate(cell_x, cell_y, cell_z) is not turf_open_floor plating)
+            return FALSE;
+        turf_open_floor_concrete concrete_floor = await plating.place_on_top(floor_type, flags: CHANGETURF_INHERIT_AIR) as turf_open_floor_concrete;
+        concrete_floor.harden_lvl = 0;
+        concrete_floor.check_harden();
+        return TRUE;
+    }
 }

@@ -650,8 +650,11 @@ public static class Limits
     /// <summary>Version 78: a verb's path (<c>/mob/living/silicon/ai/verb/pick_icon</c>) and an action running it.</summary>
     public const int MaxVerbPathBytes = 128;
 
-    /// <summary>Version 79 (silicons SI4d): the largest runtime resource, a PNG the world made (tg's biggest canvas, 45 x 27, is a few KiB).</summary>
-    public const int MaxRuntimeResourceBytes = 64 * 1024;
+    /// <summary>
+    /// Version 79 (silicons SI4d): the largest runtime resource, a PNG the world made (tg's biggest canvas, 45 x 27, is a few KiB). Version 99: a
+    /// photo (<see cref="MaxPhotoBytes"/>; it was 64 KiB).
+    /// </summary>
+    public const int MaxRuntimeResourceBytes = MaxPhotoBytes;
 
     /// <summary>Version 84: the weathers of a <see cref="WeatherMessage"/> (tg runs one or two on a level at once).</summary>
     public const int MaxWeatherLayers = 16;
@@ -662,29 +665,46 @@ public static class Limits
     /// <summary>Version 92: a <see cref="GunSightMessage"/>: the id, the gun flag, the cone and the hits.</summary>
     public const int MaxGunSightBytes = 1 + 1 + 4 + 1;
 
-    /// <summary>Version 99 (DV689): the most UTF-8 bytes of a held item's name in a <see cref="HotbarMessage"/>.</summary>
+    /// <summary>Version 99: the most tiles a <see cref="PhotoRequestMessage"/> frames on a side (tg's widest camera aperture is 7).</summary>
+    public const int MaxPhotoTiles = 15;
+
+    /// <summary>Version 99: the most pixels on a side of a photo.</summary>
+    public const int MaxPhotoSide = 1024;
+
+    /// <summary>Version 99: the largest <see cref="PhotoRequestMessage"/> (the id, three tiles of up to 5 bytes each, the frame and the size).</summary>
+    public const int MaxPhotoRequestBytes = 1 + 5 + 3 * 5 + 2 + 4;
+
+    /// <summary>Version 99: the most bytes of a photo's PNG (a 448 x 448 render of the widest aperture fits).</summary>
+    public const int MaxPhotoBytes = 512 * 1024;
+
+    /// <summary>Version 99: the most PNG bytes of one <see cref="PhotoPart"/>.</summary>
+    public const int MaxPhotoPartBytes = 4096;
+
+    /// <summary>Version 99: the largest <see cref="PhotoPart"/> message (the id, the total, the offset and the part's length of up to 5 bytes each, and the part).</summary>
+    public const int MaxPhotoPartMessageBytes = 1 + 4 * 5 + MaxPhotoPartBytes;
+    /// <summary>Version 100 (DV693): the most UTF-8 bytes of a held item's name in a <see cref="HotbarMessage"/>.</summary>
     public const int MaxHotbarNameBytes = 128;
 
-    /// <summary>Version 99: a <see cref="HotbarMessage"/>: the id, the flags, ten cells (a state, an appearance and an item's entity each), two names and the refused cell.</summary>
+    /// <summary>Version 100: a <see cref="HotbarMessage"/>: the id, the flags, ten cells (a state, an appearance and an item's entity each), two names and the refused cell.</summary>
     public const int MaxHotbarBytes = 1 + 1 + HotbarMessage.CellCount * (1 + 5 + 10) + 2 * (2 + MaxHotbarNameBytes) + 1;
 
-    /// <summary>Version 99 also (DV692): the carried storages of a <see cref="StoragesMessage"/>.</summary>
+    /// <summary>Version 100 also (DV696): the carried storages of a <see cref="StoragesMessage"/>.</summary>
     public const int MaxStorages = 8;
 
-    /// <summary>Version 99 also: the items of one <see cref="CarriedStorage"/> (a storage that holds more sends the first ones, <see cref="CarriedStorage.Cut"/>); also the highest cell an inventory move may wish for.</summary>
+    /// <summary>Version 100 also: the items of one <see cref="CarriedStorage"/> (a storage that holds more sends the first ones, <see cref="CarriedStorage.Cut"/>); also the highest cell an inventory move may wish for.</summary>
     public const int MaxStorageItems = 64;
 
-    /// <summary>Version 99 also: the cap of a storage's slots, room and limit and of a stack's count (a bigger number is sent as the cap).</summary>
+    /// <summary>Version 100 also: the cap of a storage's slots, room and limit and of a stack's count (a bigger number is sent as the cap).</summary>
     public const int MaxStorageNumber = 65535;
 
-    /// <summary>Version 99 also: the highest held index a <see cref="CarriedStorage"/> or an inventory move names.</summary>
+    /// <summary>Version 100 also: the highest held index a <see cref="CarriedStorage"/> or an inventory move names.</summary>
     public const int MaxStorageHands = 8;
 
-    /// <summary>Version 99 also: the most UTF-8 bytes of a storage's or an item's name in a <see cref="StoragesMessage"/> (the hotbar's cap).</summary>
+    /// <summary>Version 100 also: the most UTF-8 bytes of a storage's or an item's name in a <see cref="StoragesMessage"/> (the hotbar's cap).</summary>
     public const int MaxStorageNameBytes = MaxHotbarNameBytes;
 
     /// <summary>
-    /// Version 99 also: a <see cref="StoragesMessage"/>: the id, the count, each storage (an entity, the place and a hand, a name, the slots, the room and
+    /// Version 100 also: a <see cref="StoragesMessage"/>: the id, the count, each storage (an entity, the place and a hand, a name, the slots, the room and
     /// the limit, the flags, the item count and its items: an entity, a name, a picture and a count each) and the refused item.
     /// </summary>
     public const int MaxStoragesBytes = 1 + 1 + MaxStorages * (10 + 1 + 1 + 2 + MaxStorageNameBytes + 3 * 3 + 1 + 1 + MaxStorageItems * (10 + 2 + MaxStorageNameBytes + 5 + 3)) + 10;

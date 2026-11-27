@@ -190,10 +190,10 @@ void fragment() {
     /// <summary>Whether the cursor is free (cursor mode, Tab): tg's zone selector is shown then only (<see cref="LiveHud.Shown"/>). Set by the scene each frame.</summary>
     public bool CursorMode { get; set; }
 
-    /// <summary>DV691: whether the own body is being dragged in first person: the hint strip reads "Yourself" and "Release on an object". Set by the scene each frame.</summary>
+    /// <summary>DV695: whether the own body is being dragged in first person: the hint strip reads "Yourself" and "Release on an object". Set by the scene each frame.</summary>
     public bool SelfDrag { get; set; }
 
-    /// <summary>DV691: the picture in the hint strip's square while the own body is dragged (<c>SelfDrag.HintPicture</c>). Set by the scene each frame.</summary>
+    /// <summary>DV695: the picture in the hint strip's square while the own body is dragged (<c>SelfDrag.HintPicture</c>). Set by the scene each frame.</summary>
     public TableRef SelfDragPicture { get; set; }
 
     /// <summary>Whether the HUD is the human HUD (tg's inventory toggle is on the screen): the hands, the slots and the Tab inventory are ours.</summary>
@@ -601,7 +601,7 @@ void fragment() {
         _view.ShowAlerts(_chips);
         bool leftActive = active != null && active == left, rightActive = active != null && active == right;
         // package 3: the held item's name leads the hint strip (the server's names of the items in the own hands)
-        // DV691: while the own body is dragged the strip names it, with or without a held item
+        // DV695: while the own body is dragged the strip names it, with or without a held item
         bool selfDrag = SelfDrag && !CursorMode;
         string heldName = selfDrag ? Shared.SelfDrag.HintName : leftActive ? Hotbar?.LeftHand : rightActive ? Hotbar?.RightHand : null;
         float named = 0f, hint = human ? HintNatural(UiTokens.Unit(metrics), heldName, selfDrag, out named) : 0f;
@@ -649,7 +649,7 @@ void fragment() {
         Pictures(_hands.Hint.Width > 0f && !selfDrag ? active : null, hintSquare, scene.HintPictures);
         if (selfDrag && _hands.Hint.Width > 0f && !SelfDragPicture.IsNone && _textures.TryCompose(_replica, SelfDragPicture, 2, _lastNow, out ComposedAppearance own))
         {
-            // DV691: the own body's picture in the square, fitted as a held item's picture is
+            // DV695: the own body's picture in the square, fitted as a held item's picture is
             HudRect at = LiveHud.ChildPicture(hintSquare, own.PixelWidth, own.PixelHeight, own.OriginX, own.OriginY, 0, 0);
             scene.HintPictures.Add(new LiveHudView.Picture(own.Texture, new Rect2(at.Left, at.Top, at.Width, at.Height)));
         }

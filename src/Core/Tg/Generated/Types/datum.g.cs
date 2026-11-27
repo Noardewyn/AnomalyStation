@@ -28055,12 +28055,11 @@ public partial class datum_event_logger : datum
 [DmPath("/datum/force_event"), DmGeneratedOnly, DmInert]
 public partial class datum_force_event : datum { }
 
-// tg: code/modules/admin/greyscale_modify_menu.dm:5
-[DmPath("/datum/greyscale_modify_menu"), DmGeneratedOnly, DmInert]
-public partial class datum_greyscale_modify_menu : datum
+// tg: code/modules/admin/greyscale_modify_menu.dm:5 (the vars the hand-written class does not declare)
+[DmPath("/datum/greyscale_modify_menu")]
+public partial class datum_greyscale_modify_menu
 {
     public datum target; // tg: code/modules/admin/greyscale_modify_menu.dm:5
-    public client user; // tg: code/modules/admin/greyscale_modify_menu.dm:7
     public DmList allowed_configs; // tg: code/modules/admin/greyscale_modify_menu.dm:10
     public datum_callback apply_callback; // tg: code/modules/admin/greyscale_modify_menu.dm:13
     public datum_greyscale_config config; // tg: code/modules/admin/greyscale_modify_menu.dm:16
@@ -47016,9 +47015,9 @@ public partial class datum_borrowbook : datum
     public object duedate; // tg: code/modules/library/lib_machines.dm:255
 }
 
-// tg: code/modules/lighting/light_middleman.dm:7
-[DmPath("/datum/light_middleman"), DmGeneratedOnly, DmInert]
-public partial class datum_light_middleman : datum
+// tg: code/modules/lighting/light_middleman.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/light_middleman"), DmInert]
+public partial class datum_light_middleman
 {
     public atom_movable parent; // tg: code/modules/lighting/light_middleman.dm:7
     public atom_movable light_holder; // tg: code/modules/lighting/light_middleman.dm:9
@@ -55939,9 +55938,9 @@ public partial class datum_ui_state_admin_state
 [DmPath("/datum/ui_state/book")]
 public partial class datum_ui_state_book { }
 
-// tg: code/modules/tgui/states/greyscale_menu.dm:9
-[DmPath("/datum/ui_state/greyscale_menu_state"), DmGeneratedOnly, DmInert]
-public partial class datum_ui_state_greyscale_menu_state : datum_ui_state { }
+// tg: code/modules/tgui/states/greyscale_menu.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/ui_state/greyscale_menu_state")]
+public partial class datum_ui_state_greyscale_menu_state { }
 
 // tg: code/modules/tgui/states/hold_or_view.dm:9 (the var block of a hand-written class)
 [DmPath("/datum/ui_state/hold_or_view_state")]
@@ -57193,28 +57192,28 @@ public partial class particles_unusual_effect : particles
     // tg: code/datums/components/unusual_effect.dm:3
     public particles_unusual_effect()
     {
-        // GAP(types): icon = 'icons/effects/particles/pollen.dmi' (code/datums/components/unusual_effect.dm:3): no C# member declares icon
-        // GAP(types): icon_state = "pollen" (code/datums/components/unusual_effect.dm:4): no C# member declares icon_state
-        // GAP(types): width = 100 (code/datums/components/unusual_effect.dm:5): no C# member declares width
-        // GAP(types): height = 100 (code/datums/components/unusual_effect.dm:6): no C# member declares height
-        // GAP(types): count = 1000 (code/datums/components/unusual_effect.dm:7): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/pollen.dmi");
+        icon_state = "pollen";
+        width = 100;
+        height = 100;
+        count = 1000;
         spawning = 4;
-        // GAP(types): lifespan = 7 (code/datums/components/unusual_effect.dm:9): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/datums/components/unusual_effect.dm:10): no C# member declares fade
-        // GAP(types): grow = -0.01 (code/datums/components/unusual_effect.dm:11): no C# member declares grow
-        // GAP(types): rotation = 30 (code/datums/components/unusual_effect.dm:17): no C# member declares rotation
+        lifespan = 7;
+        fade = 10;
+        grow = -0.01f;
+        rotation = 30;
     }
 
     // tg: code/datums/components/unusual_effect.dm:12
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): velocity = list(0, 0) (code/datums/components/unusual_effect.dm:12): no C# member declares velocity
+        velocity = Dm.list(0, 0); // tg: code/datums/components/unusual_effect.dm:12
         Dm.Deferred("code/datums/components/unusual_effect.dm:13", "/particles/unusual_effect.position = generator()(\"circle\", 0, 16, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(0, -0.2), list(0, 0.2)) (code/datums/components/unusual_effect.dm:14): no C# member declares drift
+        Dm.Deferred("code/datums/components/unusual_effect.dm:14", "/particles/unusual_effect.drift = generator()(\"vector\", list(0, -0.2), list(0, 0.2)): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0.95f); // tg: code/datums/components/unusual_effect.dm:15
-        // GAP(types): scale = generator()("vector", list(0.3, 0.3), list(1, 1), 1) (code/datums/components/unusual_effect.dm:16): no C# member declares scale
-        // GAP(types): spin = generator()("num", -20, 20) (code/datums/components/unusual_effect.dm:18): no C# member declares spin
+        Dm.Deferred("code/datums/components/unusual_effect.dm:16", "/particles/unusual_effect.scale = generator()(\"vector\", list(0.3, 0.3), list(1, 1), 1): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/datums/components/unusual_effect.dm:18", "/particles/unusual_effect.spin = generator()(\"num\", -20, 20): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57230,12 +57229,12 @@ public partial class particles_weather
     public particles_weather()
     {
         spawning = 0;
-        // GAP(types): width = 800 (code/datums/weather/particle_weather.dm:132): no C# member declares width
-        // GAP(types): height = 800 (code/datums/weather/particle_weather.dm:133): no C# member declares height
-        // GAP(types): count = 8000 (code/datums/weather/particle_weather.dm:134): no C# member declares count
-        // GAP(types): lifespan = 300 (code/datums/weather/particle_weather.dm:136): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/datums/weather/particle_weather.dm:137): no C# member declares fade
-        // GAP(types): fadein = 5 (code/datums/weather/particle_weather.dm:138): no C# member declares fadein
+        width = 800;
+        height = 800;
+        count = 8000;
+        lifespan = 300;
+        fade = 10;
+        fadein = 5;
     }
 }
 
@@ -57248,8 +57247,8 @@ public partial class particles_weather_ash_storm
     // tg: code/datums/weather/weather_types/ash_storm.dm:39
     public particles_weather_ash_storm()
     {
-        // GAP(types): icon = 'icons/effects/particles/smoke.dmi' (code/datums/weather/weather_types/ash_storm.dm:39): no C# member declares icon
-        // GAP(types): friction = 0.3 (code/datums/weather/weather_types/ash_storm.dm:45): no C# member declares friction
+        icon = Dm.resource("icons/effects/particles/smoke.dmi");
+        friction = 0.3f;
         min_spawn = 20;
         max_spawn = 400;
         wind_strength = 16;
@@ -57259,12 +57258,12 @@ public partial class particles_weather_ash_storm
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("chill_1" = 4, "chill_2" = 3, "chill_3" = 2) (code/datums/weather/weather_types/ash_storm.dm:40): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("chill_1", 4), Dm.kv("chill_2", 3), Dm.kv("chill_3", 2)); // tg: code/datums/weather/weather_types/ash_storm.dm:40
         Dm.Deferred("code/datums/weather/weather_types/ash_storm.dm:41", "/particles/weather/ash_storm.position = generator()(\"box\", list(-510, -256, 0), list(400, 512, 0)): initializer not generated (generator(): not generated)");
-        // GAP(types): grow = list(-0.01, -0.01) (code/datums/weather/weather_types/ash_storm.dm:42): no C# member declares grow
+        grow = Dm.list(-0.01f, -0.01f); // tg: code/datums/weather/weather_types/ash_storm.dm:42
         gravity = Dm.list(0, -7, 0.5f); // tg: code/datums/weather/weather_types/ash_storm.dm:43
-        // GAP(types): drift = generator()("box", list(-1, -1, 0), list(1, 0, 0)) (code/datums/weather/weather_types/ash_storm.dm:44): no C# member declares drift
-        // GAP(types): spin = generator()("num", -5, 5, 1) (code/datums/weather/weather_types/ash_storm.dm:49): no C# member declares spin
+        Dm.Deferred("code/datums/weather/weather_types/ash_storm.dm:44", "/particles/weather/ash_storm.drift = generator()(\"box\", list(-1, -1, 0), list(1, 0, 0)): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/datums/weather/weather_types/ash_storm.dm:49", "/particles/weather/ash_storm.spin = generator()(\"num\", -5, 5, 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57275,7 +57274,7 @@ public partial class particles_weather_ash_storm_embers : particles_weather_ash_
     // tg: code/datums/weather/weather_types/ash_storm.dm:61
     public particles_weather_ash_storm_embers()
     {
-        // GAP(types): icon = 'icons/effects/particles/generic.dmi' (code/datums/weather/weather_types/ash_storm.dm:61): no C# member declares icon
+        icon = Dm.resource("icons/effects/particles/generic.dmi");
         color = "#FAA019";
         min_spawn = 10;
         max_spawn = 80;
@@ -57285,7 +57284,7 @@ public partial class particles_weather_ash_storm_embers : particles_weather_ash_
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("dot" = 4, "cross" = 2, "curl" = 1) (code/datums/weather/weather_types/ash_storm.dm:62): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("dot", 4), Dm.kv("cross", 2), Dm.kv("curl", 1)); // tg: code/datums/weather/weather_types/ash_storm.dm:62
     }
 }
 
@@ -57324,14 +57323,14 @@ public partial class particles_weather_rain_storm : particles_weather
     // tg: code/datums/weather/weather_types/rain_storm.dm:79
     public particles_weather_rain_storm()
     {
-        // GAP(types): icon = 'icons/effects/particles/generic.dmi' (code/datums/weather/weather_types/rain_storm.dm:79): no C# member declares icon
-        // GAP(types): icon_state = "drop" (code/datums/weather/weather_types/rain_storm.dm:80): no C# member declares icon_state
+        icon = Dm.resource("icons/effects/particles/generic.dmi");
+        icon_state = "drop";
         color = "#ccffff";
-        // GAP(types): friction = 0.3 (code/datums/weather/weather_types/rain_storm.dm:86): no C# member declares friction
+        friction = 0.3f;
         min_spawn = 50;
         max_spawn = 300;
         wind_strength = 5;
-        // GAP(types): spin = 0 (code/datums/weather/weather_types/rain_storm.dm:90): no C# member declares spin
+        spin = 0;
     }
 
     // tg: code/datums/weather/weather_types/rain_storm.dm:82
@@ -57339,9 +57338,9 @@ public partial class particles_weather_rain_storm : particles_weather
     {
         base.dm_init_vars();
         Dm.Deferred("code/datums/weather/weather_types/rain_storm.dm:82", "/particles/weather/rain_storm.position = generator()(\"box\", list(-510, -256, 0), list(400, 512, 0)): initializer not generated (generator(): not generated)");
-        // GAP(types): grow = list(-0.01, -0.01) (code/datums/weather/weather_types/rain_storm.dm:83): no C# member declares grow
+        grow = Dm.list(-0.01f, -0.01f); // tg: code/datums/weather/weather_types/rain_storm.dm:83
         gravity = Dm.list(0, -10, 0.5f); // tg: code/datums/weather/weather_types/rain_storm.dm:84
-        // GAP(types): drift = generator()("circle", 0, 1) (code/datums/weather/weather_types/rain_storm.dm:85): no C# member declares drift
+        Dm.Deferred("code/datums/weather/weather_types/rain_storm.dm:85", "/particles/weather/rain_storm.drift = generator()(\"circle\", 0, 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57352,25 +57351,25 @@ public partial class particles_acid : particles
     // tg: code/game/objects/effects/particles/acid.dm:3
     public particles_acid()
     {
-        // GAP(types): icon = 'icons/effects/particles/goop.dmi' (code/game/objects/effects/particles/acid.dm:3): no C# member declares icon
-        // GAP(types): width = 100 (code/game/objects/effects/particles/acid.dm:5): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/acid.dm:6): no C# member declares height
-        // GAP(types): count = 100 (code/game/objects/effects/particles/acid.dm:7): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/goop.dmi");
+        width = 100;
+        height = 100;
+        count = 100;
         spawning = 0.5f;
         color = "#00ea2b80";
-        // GAP(types): lifespan = 15 (code/game/objects/effects/particles/acid.dm:10): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/acid.dm:11): no C# member declares fade
-        // GAP(types): grow = -0.025 (code/game/objects/effects/particles/acid.dm:12): no C# member declares grow
+        lifespan = 15;
+        fade = 10;
+        grow = -0.025f;
     }
 
     // tg: code/game/objects/effects/particles/acid.dm:4
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("goop_1" = 6, "goop_2" = 2, "goop_3" = 1) (code/game/objects/effects/particles/acid.dm:4): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("goop_1", 6), Dm.kv("goop_2", 2), Dm.kv("goop_3", 1)); // tg: code/game/objects/effects/particles/acid.dm:4
         gravity = Dm.list(0, 0.15f); // tg: code/game/objects/effects/particles/acid.dm:13
         Dm.Deferred("code/game/objects/effects/particles/acid.dm:14", "/particles/acid.position = generator()(\"sphere\", 0, 16, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): spin = generator()("num", -15, 15, 1) (code/game/objects/effects/particles/acid.dm:15): no C# member declares spin
+        Dm.Deferred("code/game/objects/effects/particles/acid.dm:15", "/particles/acid.spin = generator()(\"num\", -15, 15, 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57381,23 +57380,23 @@ public partial class particles_acid_toxic : particles_acid
     // tg: code/game/objects/effects/particles/acid.dm:18
     public particles_acid_toxic()
     {
-        // GAP(types): count = 1000 (code/game/objects/effects/particles/acid.dm:18): no C# member declares count
+        count = 1000;
         spawning = 4;
         color = "#34ff19a1";
-        // GAP(types): lifespan = null (code/game/objects/effects/particles/acid.dm:21): no C# member declares lifespan
-        // GAP(types): grow = -0.08 (code/game/objects/effects/particles/acid.dm:22): no C# member declares grow
-        // GAP(types): rotation = 25 (code/game/objects/effects/particles/acid.dm:27): no C# member declares rotation
+        lifespan = null;
+        grow = -0.08f;
+        rotation = 25;
     }
 
     // tg: code/game/objects/effects/particles/acid.dm:23
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): velocity = list(0, 1, 0) (code/game/objects/effects/particles/acid.dm:23): no C# member declares velocity
+        velocity = Dm.list(0, 1, 0); // tg: code/game/objects/effects/particles/acid.dm:23
         Dm.Deferred("code/game/objects/effects/particles/acid.dm:24", "/particles/acid/toxic.position = generator()(\"circle\", 0, 16, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(0, -0.2), list(0, 0.2)) (code/game/objects/effects/particles/acid.dm:25): no C# member declares drift
+        Dm.Deferred("code/game/objects/effects/particles/acid.dm:25", "/particles/acid/toxic.drift = generator()(\"vector\", list(0, -0.2), list(0, 0.2)): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0); // tg: code/game/objects/effects/particles/acid.dm:26
-        // GAP(types): spin = generator()("num", -20, 20) (code/game/objects/effects/particles/acid.dm:28): no C# member declares spin
+        Dm.Deferred("code/game/objects/effects/particles/acid.dm:28", "/particles/acid/toxic.spin = generator()(\"num\", -20, 20): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57408,28 +57407,28 @@ public partial class particles_brimdust : particles
     // tg: code/game/objects/effects/particles/brimdust.dm:2
     public particles_brimdust()
     {
-        // GAP(types): icon = 'icons/effects/particles/generic.dmi' (code/game/objects/effects/particles/brimdust.dm:2): no C# member declares icon
-        // GAP(types): icon_state = "cross" (code/game/objects/effects/particles/brimdust.dm:3): no C# member declares icon_state
-        // GAP(types): width = 100 (code/game/objects/effects/particles/brimdust.dm:4): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/brimdust.dm:5): no C# member declares height
-        // GAP(types): count = 1000 (code/game/objects/effects/particles/brimdust.dm:6): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/generic.dmi");
+        icon_state = "cross";
+        width = 100;
+        height = 100;
+        count = 1000;
         color = "#88304e";
         spawning = 3;
-        // GAP(types): lifespan = 7 (code/game/objects/effects/particles/brimdust.dm:9): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/brimdust.dm:10): no C# member declares fade
-        // GAP(types): rotation = 30 (code/game/objects/effects/particles/brimdust.dm:16): no C# member declares rotation
+        lifespan = 7;
+        fade = 10;
+        rotation = 30;
     }
 
     // tg: code/game/objects/effects/particles/brimdust.dm:11
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): velocity = list(0, 0) (code/game/objects/effects/particles/brimdust.dm:11): no C# member declares velocity
+        velocity = Dm.list(0, 0); // tg: code/game/objects/effects/particles/brimdust.dm:11
         Dm.Deferred("code/game/objects/effects/particles/brimdust.dm:12", "/particles/brimdust.position = generator()(\"circle\", 0, 16, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(-0.2, 0), list(0.2, 0)) (code/game/objects/effects/particles/brimdust.dm:13): no C# member declares drift
+        Dm.Deferred("code/game/objects/effects/particles/brimdust.dm:13", "/particles/brimdust.drift = generator()(\"vector\", list(-0.2, 0), list(0.2, 0)): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, -0.5f); // tg: code/game/objects/effects/particles/brimdust.dm:14
-        // GAP(types): scale = generator()("vector", list(0.3, 0.3), list(1, 1), 1) (code/game/objects/effects/particles/brimdust.dm:15): no C# member declares scale
-        // GAP(types): spin = generator()("num", -20, 20) (code/game/objects/effects/particles/brimdust.dm:17): no C# member declares spin
+        Dm.Deferred("code/game/objects/effects/particles/brimdust.dm:15", "/particles/brimdust.scale = generator()(\"vector\", list(0.3, 0.3), list(1, 1), 1): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/game/objects/effects/particles/brimdust.dm:17", "/particles/brimdust.spin = generator()(\"num\", -20, 20): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57440,24 +57439,24 @@ public partial class particles_echo : particles
     // tg: code/game/objects/effects/particles/echo.dm:3
     public particles_echo()
     {
-        // GAP(types): icon = 'icons/effects/particles/echo.dmi' (code/game/objects/effects/particles/echo.dm:3): no C# member declares icon
-        // GAP(types): width = 480 (code/game/objects/effects/particles/echo.dm:5): no C# member declares width
-        // GAP(types): height = 480 (code/game/objects/effects/particles/echo.dm:6): no C# member declares height
-        // GAP(types): count = 1000 (code/game/objects/effects/particles/echo.dm:7): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/echo.dmi");
+        width = 480;
+        height = 480;
+        count = 1000;
         spawning = 0.5f;
-        // GAP(types): lifespan = 20 (code/game/objects/effects/particles/echo.dm:9): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/echo.dm:10): no C# member declares fade
+        lifespan = 20;
+        fade = 10;
     }
 
     // tg: code/game/objects/effects/particles/echo.dm:4
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("echo1" = 1, "echo2" = 1, "echo3" = 2) (code/game/objects/effects/particles/echo.dm:4): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("echo1", 1), Dm.kv("echo2", 1), Dm.kv("echo3", 2)); // tg: code/game/objects/effects/particles/echo.dm:4
         gravity = Dm.list(0, -0.1f); // tg: code/game/objects/effects/particles/echo.dm:11
         Dm.Deferred("code/game/objects/effects/particles/echo.dm:12", "/particles/echo.position = generator()(\"box\", list(-240, -240), list(240, 240), 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(-0.1, 0), list(0.1, 0)) (code/game/objects/effects/particles/echo.dm:13): no C# member declares drift
-        // GAP(types): rotation = generator()("num", 0, 360, 1) (code/game/objects/effects/particles/echo.dm:14): no C# member declares rotation
+        Dm.Deferred("code/game/objects/effects/particles/echo.dm:13", "/particles/echo.drift = generator()(\"vector\", list(-0.1, 0), list(0.1, 0)): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/game/objects/effects/particles/echo.dm:14", "/particles/echo.rotation = generator()(\"num\", 0, 360, 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57468,28 +57467,28 @@ public partial class particles_bonfire : particles
     // tg: code/game/objects/effects/particles/fire.dm:3
     public particles_bonfire()
     {
-        // GAP(types): icon = 'icons/effects/particles/bonfire.dmi' (code/game/objects/effects/particles/fire.dm:3): no C# member declares icon
-        // GAP(types): icon_state = "bonfire" (code/game/objects/effects/particles/fire.dm:4): no C# member declares icon_state
-        // GAP(types): width = 100 (code/game/objects/effects/particles/fire.dm:5): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/fire.dm:6): no C# member declares height
-        // GAP(types): count = 1000 (code/game/objects/effects/particles/fire.dm:7): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/bonfire.dmi");
+        icon_state = "bonfire";
+        width = 100;
+        height = 100;
+        count = 1000;
         spawning = 4;
-        // GAP(types): lifespan = 7 (code/game/objects/effects/particles/fire.dm:9): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/fire.dm:10): no C# member declares fade
-        // GAP(types): grow = -0.01 (code/game/objects/effects/particles/fire.dm:11): no C# member declares grow
-        // GAP(types): rotation = 30 (code/game/objects/effects/particles/fire.dm:17): no C# member declares rotation
+        lifespan = 7;
+        fade = 10;
+        grow = -0.01f;
+        rotation = 30;
     }
 
     // tg: code/game/objects/effects/particles/fire.dm:12
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): velocity = list(0, 0) (code/game/objects/effects/particles/fire.dm:12): no C# member declares velocity
+        velocity = Dm.list(0, 0); // tg: code/game/objects/effects/particles/fire.dm:12
         Dm.Deferred("code/game/objects/effects/particles/fire.dm:13", "/particles/bonfire.position = generator()(\"circle\", 0, 16, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(0, -0.2), list(0, 0.2)) (code/game/objects/effects/particles/fire.dm:14): no C# member declares drift
+        Dm.Deferred("code/game/objects/effects/particles/fire.dm:14", "/particles/bonfire.drift = generator()(\"vector\", list(0, -0.2), list(0, 0.2)): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0.95f); // tg: code/game/objects/effects/particles/fire.dm:15
-        // GAP(types): scale = generator()("vector", list(0.3, 0.3), list(1, 1), 1) (code/game/objects/effects/particles/fire.dm:16): no C# member declares scale
-        // GAP(types): spin = generator()("num", -20, 20) (code/game/objects/effects/particles/fire.dm:18): no C# member declares spin
+        Dm.Deferred("code/game/objects/effects/particles/fire.dm:16", "/particles/bonfire.scale = generator()(\"vector\", list(0.3, 0.3), list(1, 1), 1): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/game/objects/effects/particles/fire.dm:18", "/particles/bonfire.spin = generator()(\"num\", -20, 20): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57500,27 +57499,27 @@ public partial class particles_embers : particles
     // tg: code/game/objects/effects/particles/fire.dm:21
     public particles_embers()
     {
-        // GAP(types): icon = 'icons/effects/particles/generic.dmi' (code/game/objects/effects/particles/fire.dm:21): no C# member declares icon
-        // GAP(types): width = 64 (code/game/objects/effects/particles/fire.dm:23): no C# member declares width
-        // GAP(types): height = 96 (code/game/objects/effects/particles/fire.dm:24): no C# member declares height
-        // GAP(types): count = 500 (code/game/objects/effects/particles/fire.dm:25): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/generic.dmi");
+        width = 64;
+        height = 96;
+        count = 500;
         spawning = 5;
-        // GAP(types): lifespan = 30 (code/game/objects/effects/particles/fire.dm:27): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/fire.dm:28): no C# member declares fade
+        lifespan = 30;
+        fade = 10;
         color = 0;
-        // GAP(types): color_change = 0.05 (code/game/objects/effects/particles/fire.dm:30): no C# member declares color_change
+        color_change = 0.05f;
     }
 
     // tg: code/game/objects/effects/particles/fire.dm:22
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("dot" = 4, "cross" = 1, "curl" = 1) (code/game/objects/effects/particles/fire.dm:22): no C# member declares icon_state
-        // GAP(types): gradient = list("#FBAF4D", "#FCE6B6", "#FD481C") (code/game/objects/effects/particles/fire.dm:31): no C# member declares gradient
+        icon_state = Dm.list(Dm.kv("dot", 4), Dm.kv("cross", 1), Dm.kv("curl", 1)); // tg: code/game/objects/effects/particles/fire.dm:22
+        gradient = Dm.list("#FBAF4D", "#FCE6B6", "#FD481C"); // tg: code/game/objects/effects/particles/fire.dm:31
         Dm.Deferred("code/game/objects/effects/particles/fire.dm:32", "/particles/embers.position = generator()(\"box\", list(-12, -16, 0), list(12, 16, 0), 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(-0.1, 0), list(0.1, 0.025), 0) (code/game/objects/effects/particles/fire.dm:33): no C# member declares drift
-        // GAP(types): spin = generator()("num", -15, 15, 1) (code/game/objects/effects/particles/fire.dm:34): no C# member declares spin
-        // GAP(types): scale = generator()("vector", list(0.5, 0.5), list(2, 2), 1) (code/game/objects/effects/particles/fire.dm:35): no C# member declares scale
+        Dm.Deferred("code/game/objects/effects/particles/fire.dm:33", "/particles/embers.drift = generator()(\"vector\", list(-0.1, 0), list(0.1, 0.025), 0): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/game/objects/effects/particles/fire.dm:34", "/particles/embers.spin = generator()(\"num\", -15, 15, 1): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/game/objects/effects/particles/fire.dm:35", "/particles/embers.scale = generator()(\"vector\", list(0.5, 0.5), list(2, 2), 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57542,23 +57541,23 @@ public partial class particles_embers_spark : particles_embers
     // tg: code/game/objects/effects/particles/fire.dm:41
     public particles_embers_spark()
     {
-        // GAP(types): count = 3 (code/game/objects/effects/particles/fire.dm:41): no C# member declares count
+        count = 3;
         spawning = 2;
-        // GAP(types): lifespan = 15 (code/game/objects/effects/particles/fire.dm:44): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/fire.dm:45): no C# member declares fade
-        // GAP(types): fadein = 1 (code/game/objects/effects/particles/fire.dm:46): no C# member declares fadein
-        // GAP(types): grow = -0.1 (code/game/objects/effects/particles/fire.dm:47): no C# member declares grow
+        lifespan = 15;
+        fade = 10;
+        fadein = 1;
+        grow = -0.1f;
     }
 
     // tg: code/game/objects/effects/particles/fire.dm:43
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): gradient = list("#FBAF4D", "#FCE6B6", "#FFFFFF") (code/game/objects/effects/particles/fire.dm:43): no C# member declares gradient
-        // GAP(types): velocity = generator()("circle", 3, 3, 3) (code/game/objects/effects/particles/fire.dm:48): no C# member declares velocity
+        gradient = Dm.list("#FBAF4D", "#FCE6B6", "#FFFFFF"); // tg: code/game/objects/effects/particles/fire.dm:43
+        Dm.Deferred("code/game/objects/effects/particles/fire.dm:48", "/particles/embers/spark.velocity = generator()(\"circle\", 3, 3, 3): initializer not generated (generator(): not generated)");
         Dm.Deferred("code/game/objects/effects/particles/fire.dm:49", "/particles/embers/spark.position = generator()(\"sphere\", 0, 0, 2): initializer not generated (generator(): not generated)");
-        // GAP(types): scale = generator()("vector", list(0.5, 0.5), list(1, 1), 1) (code/game/objects/effects/particles/fire.dm:50): no C# member declares scale
-        // GAP(types): drift = list(0) (code/game/objects/effects/particles/fire.dm:51): no C# member declares drift
+        Dm.Deferred("code/game/objects/effects/particles/fire.dm:50", "/particles/embers/spark.scale = generator()(\"vector\", list(0.5, 0.5), list(1, 1), 1): initializer not generated (generator(): not generated)");
+        drift = Dm.list(0); // tg: code/game/objects/effects/particles/fire.dm:51
     }
 }
 
@@ -57569,7 +57568,7 @@ public partial class particles_embers_spark_severe : particles_embers_spark
     // tg: code/game/objects/effects/particles/fire.dm:54
     public particles_embers_spark_severe()
     {
-        // GAP(types): count = 10 (code/game/objects/effects/particles/fire.dm:54): no C# member declares count
+        count = 10;
         spawning = 5;
     }
 
@@ -57577,7 +57576,7 @@ public partial class particles_embers_spark_severe : particles_embers_spark
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): gradient = list("#FCE6B6", "#FFFFFF") (code/game/objects/effects/particles/fire.dm:56): no C# member declares gradient
+        gradient = Dm.list("#FCE6B6", "#FFFFFF"); // tg: code/game/objects/effects/particles/fire.dm:56
     }
 }
 
@@ -57588,21 +57587,21 @@ public partial class particles_stink : particles
     // tg: code/game/objects/effects/particles/food.dm:3
     public particles_stink()
     {
-        // GAP(types): icon = 'icons/effects/particles/stink.dmi' (code/game/objects/effects/particles/food.dm:3): no C# member declares icon
+        icon = Dm.resource("icons/effects/particles/stink.dmi");
         color = "#0BDA51";
-        // GAP(types): width = 100 (code/game/objects/effects/particles/food.dm:6): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/food.dm:7): no C# member declares height
-        // GAP(types): count = 25 (code/game/objects/effects/particles/food.dm:8): no C# member declares count
+        width = 100;
+        height = 100;
+        count = 25;
         spawning = 0.25f;
-        // GAP(types): lifespan = 10 (code/game/objects/effects/particles/food.dm:10): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/food.dm:11): no C# member declares fade
+        lifespan = 10;
+        fade = 10;
     }
 
     // tg: code/game/objects/effects/particles/food.dm:4
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("stink_1" = 1, "stink_2" = 2, "stink_3" = 2) (code/game/objects/effects/particles/food.dm:4): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("stink_1", 1), Dm.kv("stink_2", 2), Dm.kv("stink_3", 2)); // tg: code/game/objects/effects/particles/food.dm:4
         Dm.Deferred("code/game/objects/effects/particles/food.dm:12", "/particles/stink.position = generator()(\"circle\", 0, 16, 0): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0.25f); // tg: code/game/objects/effects/particles/food.dm:13
     }
@@ -57615,15 +57614,15 @@ public partial class particles_grav_field_down : particles
     // tg: code/game/objects/effects/particles/gravity.dm:2
     public particles_grav_field_down()
     {
-        // GAP(types): icon = 'icons/effects/particles/generic.dmi' (code/game/objects/effects/particles/gravity.dm:2): no C# member declares icon
-        // GAP(types): icon_state = "cross" (code/game/objects/effects/particles/gravity.dm:3): no C# member declares icon_state
-        // GAP(types): width = 100 (code/game/objects/effects/particles/gravity.dm:4): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/gravity.dm:5): no C# member declares height
-        // GAP(types): count = 5 (code/game/objects/effects/particles/gravity.dm:6): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/generic.dmi");
+        icon_state = "cross";
+        width = 100;
+        height = 100;
+        count = 5;
         spawning = 1;
-        // GAP(types): lifespan = 6 (code/game/objects/effects/particles/gravity.dm:8): no C# member declares lifespan
-        // GAP(types): fade = 5 (code/game/objects/effects/particles/gravity.dm:9): no C# member declares fade
-        // GAP(types): fadein = 2 (code/game/objects/effects/particles/gravity.dm:10): no C# member declares fadein
+        lifespan = 6;
+        fade = 5;
+        fadein = 2;
         color = "#FF0000";
     }
 
@@ -57655,15 +57654,15 @@ public partial class particles_grav_field_up : particles
     // tg: code/game/objects/effects/particles/gravity.dm:19
     public particles_grav_field_up()
     {
-        // GAP(types): icon = 'icons/effects/particles/generic.dmi' (code/game/objects/effects/particles/gravity.dm:19): no C# member declares icon
-        // GAP(types): icon_state = "cross" (code/game/objects/effects/particles/gravity.dm:20): no C# member declares icon_state
-        // GAP(types): width = 100 (code/game/objects/effects/particles/gravity.dm:21): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/gravity.dm:22): no C# member declares height
-        // GAP(types): count = 5 (code/game/objects/effects/particles/gravity.dm:23): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/generic.dmi");
+        icon_state = "cross";
+        width = 100;
+        height = 100;
+        count = 5;
         spawning = 1;
-        // GAP(types): lifespan = 6 (code/game/objects/effects/particles/gravity.dm:25): no C# member declares lifespan
-        // GAP(types): fade = 5 (code/game/objects/effects/particles/gravity.dm:26): no C# member declares fade
-        // GAP(types): fadein = 2 (code/game/objects/effects/particles/gravity.dm:27): no C# member declares fadein
+        lifespan = 6;
+        fade = 5;
+        fadein = 2;
         color = "#0077ff";
     }
 
@@ -57683,15 +57682,15 @@ public partial class particles_grav_field_float : particles
     // tg: code/game/objects/effects/particles/gravity.dm:33
     public particles_grav_field_float()
     {
-        // GAP(types): icon = 'icons/effects/particles/generic.dmi' (code/game/objects/effects/particles/gravity.dm:33): no C# member declares icon
-        // GAP(types): icon_state = "cross" (code/game/objects/effects/particles/gravity.dm:34): no C# member declares icon_state
-        // GAP(types): width = 100 (code/game/objects/effects/particles/gravity.dm:35): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/gravity.dm:36): no C# member declares height
-        // GAP(types): count = 5 (code/game/objects/effects/particles/gravity.dm:37): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/generic.dmi");
+        icon_state = "cross";
+        width = 100;
+        height = 100;
+        count = 5;
         spawning = 1;
-        // GAP(types): lifespan = 6 (code/game/objects/effects/particles/gravity.dm:39): no C# member declares lifespan
-        // GAP(types): fade = 5 (code/game/objects/effects/particles/gravity.dm:40): no C# member declares fade
-        // GAP(types): fadein = 2 (code/game/objects/effects/particles/gravity.dm:41): no C# member declares fadein
+        lifespan = 6;
+        fade = 5;
+        fadein = 2;
         color = "#FFFF00";
     }
 
@@ -57700,7 +57699,7 @@ public partial class particles_grav_field_float : particles
     {
         base.dm_init_vars();
         Dm.Deferred("code/game/objects/effects/particles/gravity.dm:42", "/particles/grav_field_float.position = generator()(\"circle\", 0, 16, 0): initializer not generated (generator(): not generated)");
-        // GAP(types): velocity = generator()("vector", list(2, 0), list(-2, 0), 0) (code/game/objects/effects/particles/gravity.dm:43): no C# member declares velocity
+        Dm.Deferred("code/game/objects/effects/particles/gravity.dm:43", "/particles/grav_field_float.velocity = generator()(\"vector\", list(2, 0), list(-2, 0), 0): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57711,24 +57710,24 @@ public partial class particles_musical_notes : particles
     // tg: code/game/objects/effects/particles/note_particles.dm:3
     public particles_musical_notes()
     {
-        // GAP(types): icon = 'icons/effects/particles/notes/note.dmi' (code/game/objects/effects/particles/note_particles.dm:3): no C# member declares icon
-        // GAP(types): width = 100 (code/game/objects/effects/particles/note_particles.dm:14): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/note_particles.dm:15): no C# member declares height
-        // GAP(types): count = 250 (code/game/objects/effects/particles/note_particles.dm:16): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/notes/note.dmi");
+        width = 100;
+        height = 100;
+        count = 250;
         spawning = 0.6f;
-        // GAP(types): lifespan = 7 (code/game/objects/effects/particles/note_particles.dm:18): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/note_particles.dm:19): no C# member declares fade
-        // GAP(types): grow = -0.01 (code/game/objects/effects/particles/note_particles.dm:20): no C# member declares grow
+        lifespan = 7;
+        fade = 10;
+        grow = -0.01f;
     }
 
     // tg: code/game/objects/effects/particles/note_particles.dm:4
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("note_1" = 1, "note_2" = 1, "note_3" = 1, "note_4" = 1, "note_5" = 1, "n... (code/game/objects/effects/particles/note_particles.dm:4): no C# member declares icon_state
-        // GAP(types): velocity = list(0, 0) (code/game/objects/effects/particles/note_particles.dm:21): no C# member declares velocity
+        icon_state = Dm.list(Dm.kv("note_1", 1), Dm.kv("note_2", 1), Dm.kv("note_3", 1), Dm.kv("note_4", 1), Dm.kv("note_5", 1), Dm.kv("note_6", 1), Dm.kv("note_7", 1), Dm.kv("note_8", 1)); // tg: code/game/objects/effects/particles/note_particles.dm:4
+        velocity = Dm.list(0, 0); // tg: code/game/objects/effects/particles/note_particles.dm:21
         Dm.Deferred("code/game/objects/effects/particles/note_particles.dm:22", "/particles/musical_notes.position = generator()(\"circle\", 0, 16, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(0, -0.2), list(0, 0.2)) (code/game/objects/effects/particles/note_particles.dm:23): no C# member declares drift
+        Dm.Deferred("code/game/objects/effects/particles/note_particles.dm:23", "/particles/musical_notes.drift = generator()(\"vector\", list(0, -0.2), list(0, 0.2)): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0.95f); // tg: code/game/objects/effects/particles/note_particles.dm:24
     }
 }
@@ -57740,14 +57739,14 @@ public partial class particles_musical_notes_holy : particles_musical_notes
     // tg: code/game/objects/effects/particles/note_particles.dm:27
     public particles_musical_notes_holy()
     {
-        // GAP(types): icon = 'icons/effects/particles/notes/note_holy.dmi' (code/game/objects/effects/particles/note_particles.dm:27): no C# member declares icon
+        icon = Dm.resource("icons/effects/particles/notes/note_holy.dmi");
     }
 
     // tg: code/game/objects/effects/particles/note_particles.dm:28
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("holy_1" = 1, "holy_2" = 1, "holy_3" = 1, "holy_4" = 1, "holy_5" = 1, "h... (code/game/objects/effects/particles/note_particles.dm:28): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("holy_1", 1), Dm.kv("holy_2", 1), Dm.kv("holy_3", 1), Dm.kv("holy_4", 1), Dm.kv("holy_5", 1), Dm.kv("holy_6", 1), Dm.kv("holy_7", 1), Dm.kv("holy_8", 1), Dm.kv("holy_9", 4)); // tg: code/game/objects/effects/particles/note_particles.dm:28
     }
 }
 
@@ -57758,14 +57757,14 @@ public partial class particles_musical_notes_nullwave : particles_musical_notes
     // tg: code/game/objects/effects/particles/note_particles.dm:41
     public particles_musical_notes_nullwave()
     {
-        // GAP(types): icon = 'icons/effects/particles/notes/note_null.dmi' (code/game/objects/effects/particles/note_particles.dm:41): no C# member declares icon
+        icon = Dm.resource("icons/effects/particles/notes/note_null.dmi");
     }
 
     // tg: code/game/objects/effects/particles/note_particles.dm:42
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("null_1" = 1, "null_2" = 1, "null_3" = 1, "null_4" = 1, "null_5" = 1, "n... (code/game/objects/effects/particles/note_particles.dm:42): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("null_1", 1), Dm.kv("null_2", 1), Dm.kv("null_3", 1), Dm.kv("null_4", 1), Dm.kv("null_5", 1), Dm.kv("null_6", 1), Dm.kv("null_7", 1), Dm.kv("null_8", 1), Dm.kv("null_9", 2), Dm.kv("null_10", 2)); // tg: code/game/objects/effects/particles/note_particles.dm:42
     }
 }
 
@@ -57776,14 +57775,14 @@ public partial class particles_musical_notes_harm : particles_musical_notes
     // tg: code/game/objects/effects/particles/note_particles.dm:56
     public particles_musical_notes_harm()
     {
-        // GAP(types): icon = 'icons/effects/particles/notes/note_harm.dmi' (code/game/objects/effects/particles/note_particles.dm:56): no C# member declares icon
+        icon = Dm.resource("icons/effects/particles/notes/note_harm.dmi");
     }
 
     // tg: code/game/objects/effects/particles/note_particles.dm:57
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("harm_1" = 1, "harm_2" = 1, "harm_3" = 1, "harm_4" = 1, "harm_5" = 1, "h... (code/game/objects/effects/particles/note_particles.dm:57): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("harm_1", 1), Dm.kv("harm_2", 1), Dm.kv("harm_3", 1), Dm.kv("harm_4", 1), Dm.kv("harm_5", 1), Dm.kv("harm_6", 1), Dm.kv("harm_7", 1), Dm.kv("harm_8", 1), Dm.kv("harm_9", 2), Dm.kv("harm_10", 2)); // tg: code/game/objects/effects/particles/note_particles.dm:57
     }
 }
 
@@ -57794,14 +57793,14 @@ public partial class particles_musical_notes_sleepy : particles_musical_notes
     // tg: code/game/objects/effects/particles/note_particles.dm:71
     public particles_musical_notes_sleepy()
     {
-        // GAP(types): icon = 'icons/effects/particles/notes/note_sleepy.dmi' (code/game/objects/effects/particles/note_particles.dm:71): no C# member declares icon
+        icon = Dm.resource("icons/effects/particles/notes/note_sleepy.dmi");
     }
 
     // tg: code/game/objects/effects/particles/note_particles.dm:72
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("sleepy_1" = 1, "sleepy_2" = 1, "sleepy_3" = 1, "sleepy_4" = 1, "sleepy_... (code/game/objects/effects/particles/note_particles.dm:72): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("sleepy_1", 1), Dm.kv("sleepy_2", 1), Dm.kv("sleepy_3", 1), Dm.kv("sleepy_4", 1), Dm.kv("sleepy_5", 1), Dm.kv("sleepy_6", 1), Dm.kv("sleepy_7", 1), Dm.kv("sleepy_8", 1), Dm.kv("sleepy_9", 2), Dm.kv("sleepy_10", 2)); // tg: code/game/objects/effects/particles/note_particles.dm:72
     }
 }
 
@@ -57812,14 +57811,14 @@ public partial class particles_musical_notes_light : particles_musical_notes
     // tg: code/game/objects/effects/particles/note_particles.dm:86
     public particles_musical_notes_light()
     {
-        // GAP(types): icon = 'icons/effects/particles/notes/note_light.dmi' (code/game/objects/effects/particles/note_particles.dm:86): no C# member declares icon
+        icon = Dm.resource("icons/effects/particles/notes/note_light.dmi");
     }
 
     // tg: code/game/objects/effects/particles/note_particles.dm:87
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("power_1" = 1, "power_2" = 1, "power_3" = 1, "power_4" = 1, "power_5" = ... (code/game/objects/effects/particles/note_particles.dm:87): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("power_1", 1), Dm.kv("power_2", 1), Dm.kv("power_3", 1), Dm.kv("power_4", 1), Dm.kv("power_5", 1), Dm.kv("power_6", 1), Dm.kv("power_7", 1), Dm.kv("power_8", 1), Dm.kv("power_9", 2), Dm.kv("power_10", 2)); // tg: code/game/objects/effects/particles/note_particles.dm:87
     }
 }
 
@@ -57830,28 +57829,28 @@ public partial class particles_pollen : particles
     // tg: code/game/objects/effects/particles/plant.dm:3
     public particles_pollen()
     {
-        // GAP(types): icon = 'icons/effects/particles/pollen.dmi' (code/game/objects/effects/particles/plant.dm:3): no C# member declares icon
-        // GAP(types): icon_state = "pollen" (code/game/objects/effects/particles/plant.dm:4): no C# member declares icon_state
-        // GAP(types): width = 100 (code/game/objects/effects/particles/plant.dm:5): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/plant.dm:6): no C# member declares height
-        // GAP(types): count = 1000 (code/game/objects/effects/particles/plant.dm:7): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/pollen.dmi");
+        icon_state = "pollen";
+        width = 100;
+        height = 100;
+        count = 1000;
         spawning = 4;
-        // GAP(types): lifespan = 7 (code/game/objects/effects/particles/plant.dm:9): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/plant.dm:10): no C# member declares fade
-        // GAP(types): grow = -0.01 (code/game/objects/effects/particles/plant.dm:11): no C# member declares grow
-        // GAP(types): rotation = 30 (code/game/objects/effects/particles/plant.dm:17): no C# member declares rotation
+        lifespan = 7;
+        fade = 10;
+        grow = -0.01f;
+        rotation = 30;
     }
 
     // tg: code/game/objects/effects/particles/plant.dm:12
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): velocity = list(0, 0) (code/game/objects/effects/particles/plant.dm:12): no C# member declares velocity
+        velocity = Dm.list(0, 0); // tg: code/game/objects/effects/particles/plant.dm:12
         Dm.Deferred("code/game/objects/effects/particles/plant.dm:13", "/particles/pollen.position = generator()(\"circle\", 0, 16, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(0, -0.2), list(0, 0.2)) (code/game/objects/effects/particles/plant.dm:14): no C# member declares drift
+        Dm.Deferred("code/game/objects/effects/particles/plant.dm:14", "/particles/pollen.drift = generator()(\"vector\", list(0, -0.2), list(0, 0.2)): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0.95f); // tg: code/game/objects/effects/particles/plant.dm:15
-        // GAP(types): scale = generator()("vector", list(0.3, 0.3), list(1, 1), 1) (code/game/objects/effects/particles/plant.dm:16): no C# member declares scale
-        // GAP(types): spin = generator()("num", -20, 20) (code/game/objects/effects/particles/plant.dm:18): no C# member declares spin
+        Dm.Deferred("code/game/objects/effects/particles/plant.dm:16", "/particles/pollen.scale = generator()(\"vector\", list(0.3, 0.3), list(1, 1), 1): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/game/objects/effects/particles/plant.dm:18", "/particles/pollen.spin = generator()(\"num\", -20, 20): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -57873,12 +57872,12 @@ public partial class particles_pollen_mushroom : particles_pollen
     // tg: code/game/objects/effects/particles/plant.dm:26
     public particles_pollen_mushroom()
     {
-        // GAP(types): icon = 'icons/effects/particles/pollen.dmi' (code/game/objects/effects/particles/plant.dm:26): no C# member declares icon
-        // GAP(types): icon_state = "pollen" (code/game/objects/effects/particles/plant.dm:27): no C# member declares icon_state
-        // GAP(types): width = 75 (code/game/objects/effects/particles/plant.dm:28): no C# member declares width
-        // GAP(types): height = 75 (code/game/objects/effects/particles/plant.dm:29): no C# member declares height
+        icon = Dm.resource("icons/effects/particles/pollen.dmi");
+        icon_state = "pollen";
+        width = 75;
+        height = 75;
         spawning = 6;
-        // GAP(types): fade = 7 (code/game/objects/effects/particles/plant.dm:31): no C# member declares fade
+        fade = 7;
         color = "#b89d44";
     }
 }
@@ -57890,26 +57889,26 @@ public partial class particles_slime : particles
     // tg: code/game/objects/effects/particles/slime.dm:3
     public particles_slime()
     {
-        // GAP(types): icon = 'icons/effects/particles/goop.dmi' (code/game/objects/effects/particles/slime.dm:3): no C# member declares icon
-        // GAP(types): width = 100 (code/game/objects/effects/particles/slime.dm:5): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/slime.dm:6): no C# member declares height
-        // GAP(types): count = 100 (code/game/objects/effects/particles/slime.dm:7): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/goop.dmi");
+        width = 100;
+        height = 100;
+        count = 100;
         spawning = 0.5f;
         color = "#707070a0";
-        // GAP(types): lifespan = 15 (code/game/objects/effects/particles/slime.dm:10): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/slime.dm:11): no C# member declares fade
-        // GAP(types): grow = -0.025 (code/game/objects/effects/particles/slime.dm:12): no C# member declares grow
+        lifespan = 15;
+        fade = 10;
+        grow = -0.025f;
     }
 
     // tg: code/game/objects/effects/particles/slime.dm:4
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("goop_1" = 6, "goop_2" = 2, "goop_3" = 1) (code/game/objects/effects/particles/slime.dm:4): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("goop_1", 6), Dm.kv("goop_2", 2), Dm.kv("goop_3", 1)); // tg: code/game/objects/effects/particles/slime.dm:4
         gravity = Dm.list(0, -0.05f); // tg: code/game/objects/effects/particles/slime.dm:13
         Dm.Deferred("code/game/objects/effects/particles/slime.dm:14", "/particles/slime.position = generator()(\"box\", list(-8, -16, 0), list(8, 16, 0), 1): initializer not generated (generator(): not generated)");
-        // GAP(types): spin = generator()("num", -15, 15, 1) (code/game/objects/effects/particles/slime.dm:15): no C# member declares spin
-        // GAP(types): scale = list(0.75, 0.75) (code/game/objects/effects/particles/slime.dm:16): no C# member declares scale
+        Dm.Deferred("code/game/objects/effects/particles/slime.dm:15", "/particles/slime.spin = generator()(\"num\", -15, 15, 1): initializer not generated (generator(): not generated)");
+        scale = Dm.list(0.75f, 0.75f); // tg: code/game/objects/effects/particles/slime.dm:16
     }
 }
 
@@ -57920,14 +57919,14 @@ public partial class particles_slime_rainbow : particles_slime
     // tg: code/game/objects/effects/particles/slime.dm:21
     public particles_slime_rainbow()
     {
-        // GAP(types): color_change = 0.2 (code/game/objects/effects/particles/slime.dm:21): no C# member declares color_change
+        color_change = 0.2f;
     }
 
     // tg: code/game/objects/effects/particles/slime.dm:20
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): gradient = list(0, "#f00a", 3, "#0ffa", 6, "#f00a", "loop", "space" = 2) (code/game/objects/effects/particles/slime.dm:20): no C# member declares gradient
+        gradient = Dm.list(0, "#f00a", 3, "#0ffa", 6, "#f00a", "loop", Dm.kv("space", 2)); // tg: code/game/objects/effects/particles/slime.dm:20
         Dm.Deferred("code/game/objects/effects/particles/slime.dm:22", "/particles/slime/rainbow.color = generator()(\"num\", 0, 6, 0): initializer not generated (generator(): not generated)");
     }
 }
@@ -57938,25 +57937,25 @@ public partial class particles_smoke
     // tg: code/game/objects/effects/particles/smoke.dm:3
     public particles_smoke()
     {
-        // GAP(types): icon = 'icons/effects/particles/smoke.dmi' (code/game/objects/effects/particles/smoke.dm:3): no C# member declares icon
-        // GAP(types): width = 100 (code/game/objects/effects/particles/smoke.dm:5): no C# member declares width
-        // GAP(types): height = 100 (code/game/objects/effects/particles/smoke.dm:6): no C# member declares height
-        // GAP(types): count = 1000 (code/game/objects/effects/particles/smoke.dm:7): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/smoke.dmi");
+        width = 100;
+        height = 100;
+        count = 1000;
         spawning = 4;
-        // GAP(types): lifespan = 15 (code/game/objects/effects/particles/smoke.dm:9): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/smoke.dm:10): no C# member declares fade
-        // GAP(types): friction = 0.2 (code/game/objects/effects/particles/smoke.dm:14): no C# member declares friction
-        // GAP(types): grow = 0.05 (code/game/objects/effects/particles/smoke.dm:16): no C# member declares grow
+        lifespan = 15;
+        fade = 10;
+        friction = 0.2f;
+        grow = 0.05f;
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:4
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("smoke_1" = 1, "smoke_2" = 1, "smoke_3" = 2) (code/game/objects/effects/particles/smoke.dm:4): no C# member declares icon_state
-        // GAP(types): velocity = list(0, 0.4, 0) (code/game/objects/effects/particles/smoke.dm:11): no C# member declares velocity
+        icon_state = Dm.list(Dm.kv("smoke_1", 1), Dm.kv("smoke_2", 1), Dm.kv("smoke_3", 2)); // tg: code/game/objects/effects/particles/smoke.dm:4
+        velocity = Dm.list(0, 0.4f, 0); // tg: code/game/objects/effects/particles/smoke.dm:11
         position = Dm.list(6, 0, 0); // tg: code/game/objects/effects/particles/smoke.dm:12
-        // GAP(types): drift = generator()("sphere", 0, 2, 1) (code/game/objects/effects/particles/smoke.dm:13): no C# member declares drift
+        Dm.Deferred("code/game/objects/effects/particles/smoke.dm:13", "/particles/smoke.drift = generator()(\"sphere\", 0, 2, 1): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0.95f); // tg: code/game/objects/effects/particles/smoke.dm:15
     }
 }
@@ -57985,8 +57984,8 @@ public partial class particles_smoke_burning_small
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): scale = list(0.8, 0.8) (code/game/objects/effects/particles/smoke.dm:23): no C# member declares scale
-        // GAP(types): velocity = list(0, 0.4, 0) (code/game/objects/effects/particles/smoke.dm:24): no C# member declares velocity
+        scale = Dm.list(0.8f, 0.8f); // tg: code/game/objects/effects/particles/smoke.dm:23
+        velocity = Dm.list(0, 0.4f, 0); // tg: code/game/objects/effects/particles/smoke.dm:24
     }
 }
 
@@ -57997,14 +57996,14 @@ public partial class particles_smoke_steam : particles_smoke
     // tg: code/game/objects/effects/particles/smoke.dm:28
     public particles_smoke_steam()
     {
-        // GAP(types): fade = 15 (code/game/objects/effects/particles/smoke.dm:28): no C# member declares fade
+        fade = 15;
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:27
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("steam_1" = 1, "steam_2" = 1, "steam_3" = 2) (code/game/objects/effects/particles/smoke.dm:27): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("steam_1", 1), Dm.kv("steam_2", 1), Dm.kv("steam_3", 2)); // tg: code/game/objects/effects/particles/smoke.dm:27
     }
 }
 
@@ -58015,8 +58014,8 @@ public partial class particles_smoke_steam_guardian : particles_smoke_steam
     // tg: code/game/objects/effects/particles/smoke.dm:32
     public particles_smoke_steam_guardian()
     {
-        // GAP(types): fadein = 5 (code/game/objects/effects/particles/smoke.dm:32): no C# member declares fadein
-        // GAP(types): height = 200 (code/game/objects/effects/particles/smoke.dm:33): no C# member declares height
+        fadein = 5;
+        height = 200;
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:31
@@ -58035,14 +58034,14 @@ public partial class particles_smoke_steam_mild : particles_smoke_steam
     public particles_smoke_steam_mild()
     {
         spawning = 1;
-        // GAP(types): friction = 0.25 (code/game/objects/effects/particles/smoke.dm:38): no C# member declares friction
+        friction = 0.25f;
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:37
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): velocity = list(0, 0.3, 0) (code/game/objects/effects/particles/smoke.dm:37): no C# member declares velocity
+        velocity = Dm.list(0, 0.3f, 0); // tg: code/game/objects/effects/particles/smoke.dm:37
     }
 }
 
@@ -58060,8 +58059,8 @@ public partial class particles_smoke_steam_bad : particles_smoke_steam
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("steam_1" = 1, "smoke_1" = 1, "smoke_2" = 1, "smoke_3" = 1) (code/game/objects/effects/particles/smoke.dm:41): no C# member declares icon_state
-        // GAP(types): velocity = list(0, 0.25, 0) (code/game/objects/effects/particles/smoke.dm:43): no C# member declares velocity
+        icon_state = Dm.list(Dm.kv("steam_1", 1), Dm.kv("smoke_1", 1), Dm.kv("smoke_2", 1), Dm.kv("smoke_3", 1)); // tg: code/game/objects/effects/particles/smoke.dm:41
+        velocity = Dm.list(0, 0.25f, 0); // tg: code/game/objects/effects/particles/smoke.dm:43
     }
 }
 
@@ -58072,16 +58071,16 @@ public partial class particles_smoke_steam_mald : particles_smoke_steam
     // tg: code/game/objects/effects/particles/smoke.dm:48
     public particles_smoke_steam_mald()
     {
-        // GAP(types): lifespan = 10 (code/game/objects/effects/particles/smoke.dm:48): no C# member declares lifespan
-        // GAP(types): fade = 5 (code/game/objects/effects/particles/smoke.dm:49): no C# member declares fade
+        lifespan = 10;
+        fade = 5;
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:46
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("steam_1" = 1, "steam_2" = 1, "steam_3" = 2) (code/game/objects/effects/particles/smoke.dm:46): no C# member declares icon_state
-        // GAP(types): velocity = list(0, 0.25, 0) (code/game/objects/effects/particles/smoke.dm:47): no C# member declares velocity
+        icon_state = Dm.list(Dm.kv("steam_1", 1), Dm.kv("steam_2", 1), Dm.kv("steam_3", 2)); // tg: code/game/objects/effects/particles/smoke.dm:46
+        velocity = Dm.list(0, 0.25f, 0); // tg: code/game/objects/effects/particles/smoke.dm:47
         position = Dm.list(-1, 12, 0); // tg: code/game/objects/effects/particles/smoke.dm:50
     }
 }
@@ -58093,13 +58092,13 @@ public partial class particles_smoke_cig : particles_smoke
     // tg: code/game/objects/effects/particles/smoke.dm:54
     public particles_smoke_cig()
     {
-        // GAP(types): count = 1 (code/game/objects/effects/particles/smoke.dm:54): no C# member declares count
+        count = 1;
         spawning = 0.05f;
-        // GAP(types): lifespan = 7.5 (code/game/objects/effects/particles/smoke.dm:58): no C# member declares lifespan
-        // GAP(types): fade = 7.5 (code/game/objects/effects/particles/smoke.dm:59): no C# member declares fade
-        // GAP(types): scale = 0.5 (code/game/objects/effects/particles/smoke.dm:61): no C# member declares scale
-        // GAP(types): grow = 0.01 (code/game/objects/effects/particles/smoke.dm:62): no C# member declares grow
-        // GAP(types): friction = 0.5 (code/game/objects/effects/particles/smoke.dm:63): no C# member declares friction
+        lifespan = 7.5f;
+        fade = 7.5f;
+        scale = 0.5f;
+        grow = 0.01f;
+        friction = 0.5f;
         color = "#d0d0d09d";
     }
 
@@ -58107,10 +58106,10 @@ public partial class particles_smoke_cig : particles_smoke
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("steam_1" = 2, "steam_2" = 1, "steam_3" = 1) (code/game/objects/effects/particles/smoke.dm:53): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("steam_1", 2), Dm.kv("steam_2", 1), Dm.kv("steam_3", 1)); // tg: code/game/objects/effects/particles/smoke.dm:53
         position = Dm.list(-6, -2, 0); // tg: code/game/objects/effects/particles/smoke.dm:56
         gravity = Dm.list(0, 0.75f, 0); // tg: code/game/objects/effects/particles/smoke.dm:57
-        // GAP(types): velocity = list(0, 0.2, 0) (code/game/objects/effects/particles/smoke.dm:60): no C# member declares velocity
+        velocity = Dm.list(0, 0.2f, 0); // tg: code/game/objects/effects/particles/smoke.dm:60
     }
 }
 
@@ -58121,21 +58120,21 @@ public partial class particles_smoke_cig_big : particles_smoke_cig
     // tg: code/game/objects/effects/particles/smoke.dm:70
     public particles_smoke_cig_big()
     {
-        // GAP(types): lifespan = 10 (code/game/objects/effects/particles/smoke.dm:70): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/game/objects/effects/particles/smoke.dm:71): no C# member declares fade
-        // GAP(types): grow = 0.1 (code/game/objects/effects/particles/smoke.dm:72): no C# member declares grow
-        // GAP(types): scale = 0.75 (code/game/objects/effects/particles/smoke.dm:73): no C# member declares scale
+        lifespan = 10;
+        fade = 10;
+        grow = 0.1f;
+        scale = 0.75f;
         spawning = 1;
-        // GAP(types): friction = 0.75 (code/game/objects/effects/particles/smoke.dm:75): no C# member declares friction
+        friction = 0.75f;
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:67
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("steam_1" = 1, "steam_2" = 2, "steam_3" = 2) (code/game/objects/effects/particles/smoke.dm:67): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("steam_1", 1), Dm.kv("steam_2", 2), Dm.kv("steam_3", 2)); // tg: code/game/objects/effects/particles/smoke.dm:67
         gravity = Dm.list(0, 0.5f, 0); // tg: code/game/objects/effects/particles/smoke.dm:68
-        // GAP(types): velocity = list(0, 0.1, 0) (code/game/objects/effects/particles/smoke.dm:69): no C# member declares velocity
+        velocity = Dm.list(0, 0.1f, 0); // tg: code/game/objects/effects/particles/smoke.dm:69
     }
 }
 
@@ -58146,20 +58145,20 @@ public partial class particles_smoke_ash : particles_smoke
     // tg: code/game/objects/effects/particles/smoke.dm:79
     public particles_smoke_ash()
     {
-        // GAP(types): count = 500 (code/game/objects/effects/particles/smoke.dm:79): no C# member declares count
+        count = 500;
         spawning = 1;
-        // GAP(types): lifespan = 10 (code/game/objects/effects/particles/smoke.dm:81): no C# member declares lifespan
-        // GAP(types): fade = 2 (code/game/objects/effects/particles/smoke.dm:82): no C# member declares fade
-        // GAP(types): fadein = 7 (code/game/objects/effects/particles/smoke.dm:83): no C# member declares fadein
+        lifespan = 10;
+        fade = 2;
+        fadein = 7;
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:78
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("ash_1" = 2, "ash_2" = 2, "ash_3" = 1, "smoke_1" = 3, "smoke_2" = 2) (code/game/objects/effects/particles/smoke.dm:78): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("ash_1", 2), Dm.kv("ash_2", 2), Dm.kv("ash_3", 1), Dm.kv("smoke_1", 3), Dm.kv("smoke_2", 2)); // tg: code/game/objects/effects/particles/smoke.dm:78
         Dm.Deferred("code/game/objects/effects/particles/smoke.dm:84", "/particles/smoke/ash.position = generator()(\"vector\", list(-3, 5, 0), list(3, 6.5, 0), 1): initializer not generated (generator(): not generated)");
-        // GAP(types): velocity = generator()("vector", list(-0.1, 0.4, 0), list(0.1, 0.5, 0), 1) (code/game/objects/effects/particles/smoke.dm:85): no C# member declares velocity
+        Dm.Deferred("code/game/objects/effects/particles/smoke.dm:85", "/particles/smoke/ash.velocity = generator()(\"vector\", list(-0.1, 0.4, 0), list(0.1, 0.5, 0), 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -58170,11 +58169,11 @@ public partial class particles_smoke_cyborg : particles_smoke
     // tg: code/game/objects/effects/particles/smoke.dm:101
     public particles_smoke_cyborg()
     {
-        // GAP(types): count = 5 (code/game/objects/effects/particles/smoke.dm:101): no C# member declares count
+        count = 5;
         spawning = 1;
-        // GAP(types): lifespan = 10 (code/game/objects/effects/particles/smoke.dm:103): no C# member declares lifespan
-        // GAP(types): fade = 18 (code/game/objects/effects/particles/smoke.dm:104): no C# member declares fade
-        // GAP(types): grow = 0.1 (code/game/objects/effects/particles/smoke.dm:107): no C# member declares grow
+        lifespan = 10;
+        fade = 18;
+        grow = 0.1f;
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:105
@@ -58182,7 +58181,7 @@ public partial class particles_smoke_cyborg : particles_smoke
     {
         base.dm_init_vars();
         position = Dm.list(0, 0, 0); // tg: code/game/objects/effects/particles/smoke.dm:105
-        // GAP(types): scale = list(0.5, 0.5) (code/game/objects/effects/particles/smoke.dm:106): no C# member declares scale
+        scale = Dm.list(0.5f, 0.5f); // tg: code/game/objects/effects/particles/smoke.dm:106
     }
 }
 
@@ -58193,8 +58192,8 @@ public partial class particles_smoke_cyborg_heavy_damage : particles_smoke_cybor
     // tg: code/game/objects/effects/particles/smoke.dm:110
     public particles_smoke_cyborg_heavy_damage()
     {
-        // GAP(types): lifespan = 8 (code/game/objects/effects/particles/smoke.dm:110): no C# member declares lifespan
-        // GAP(types): fade = 8 (code/game/objects/effects/particles/smoke.dm:111): no C# member declares fade
+        lifespan = 8;
+        fade = 8;
     }
 }
 
@@ -58205,8 +58204,8 @@ public partial class particles_smoke_bee_smoke : particles_smoke
     // tg: code/modules/hydroponics/beekeeping/bee_smoker.dm:116
     public particles_smoke_bee_smoke()
     {
-        // GAP(types): lifespan = 4 (code/modules/hydroponics/beekeeping/bee_smoker.dm:116): no C# member declares lifespan
-        // GAP(types): fade = 2 (code/modules/hydroponics/beekeeping/bee_smoker.dm:119): no C# member declares fade
+        lifespan = 4;
+        fade = 2;
     }
 
     // tg: code/modules/hydroponics/beekeeping/bee_smoker.dm:117
@@ -58214,7 +58213,7 @@ public partial class particles_smoke_bee_smoke : particles_smoke
     {
         base.dm_init_vars();
         position = Dm.list(-12, 7, 0); // tg: code/modules/hydroponics/beekeeping/bee_smoker.dm:117
-        // GAP(types): velocity = list(0, 0.15, 0) (code/modules/hydroponics/beekeeping/bee_smoker.dm:118): no C# member declares velocity
+        velocity = Dm.list(0, 0.15f, 0); // tg: code/modules/hydroponics/beekeeping/bee_smoker.dm:118
     }
 }
 
@@ -58225,14 +58224,14 @@ public partial class particles_fog : particles
     // tg: code/game/objects/effects/particles/smoke.dm:88
     public particles_fog()
     {
-        // GAP(types): icon = 'icons/effects/particles/smoke.dmi' (code/game/objects/effects/particles/smoke.dm:88): no C# member declares icon
+        icon = Dm.resource("icons/effects/particles/smoke.dmi");
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:89
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("chill_1" = 2, "chill_2" = 2, "chill_3" = 1) (code/game/objects/effects/particles/smoke.dm:89): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("chill_1", 2), Dm.kv("chill_2", 2), Dm.kv("chill_3", 1)); // tg: code/game/objects/effects/particles/smoke.dm:89
     }
 }
 
@@ -58243,12 +58242,12 @@ public partial class particles_fog_breath : particles_fog
     // tg: code/game/objects/effects/particles/smoke.dm:92
     public particles_fog_breath()
     {
-        // GAP(types): count = 1 (code/game/objects/effects/particles/smoke.dm:92): no C# member declares count
+        count = 1;
         spawning = 1;
-        // GAP(types): lifespan = 10 (code/game/objects/effects/particles/smoke.dm:94): no C# member declares lifespan
-        // GAP(types): fade = 5 (code/game/objects/effects/particles/smoke.dm:95): no C# member declares fade
-        // GAP(types): grow = 0.05 (code/game/objects/effects/particles/smoke.dm:96): no C# member declares grow
-        // GAP(types): spin = 2 (code/game/objects/effects/particles/smoke.dm:97): no C# member declares spin
+        lifespan = 10;
+        fade = 5;
+        grow = 0.05f;
+        spin = 2;
         color = "#fcffff77";
     }
 }
@@ -58260,26 +58259,26 @@ public partial class particles_hotspring_steam : particles
     // tg: code/game/objects/effects/particles/smoke.dm:114
     public particles_hotspring_steam()
     {
-        // GAP(types): icon = 'icons/effects/particles/smoke.dmi' (code/game/objects/effects/particles/smoke.dm:114): no C# member declares icon
+        icon = Dm.resource("icons/effects/particles/smoke.dmi");
         color = "#FFFFFF8A";
-        // GAP(types): count = 5 (code/game/objects/effects/particles/smoke.dm:123): no C# member declares count
+        count = 5;
         spawning = 0.3f;
-        // GAP(types): lifespan = 30 (code/game/objects/effects/particles/smoke.dm:125): no C# member declares lifespan
-        // GAP(types): fade = 12 (code/game/objects/effects/particles/smoke.dm:126): no C# member declares fade
-        // GAP(types): fadein = 4 (code/game/objects/effects/particles/smoke.dm:127): no C# member declares fadein
-        // GAP(types): friction = 0.3 (code/game/objects/effects/particles/smoke.dm:133): no C# member declares friction
-        // GAP(types): grow = 0.037 (code/game/objects/effects/particles/smoke.dm:134): no C# member declares grow
+        lifespan = 30;
+        fade = 12;
+        fadein = 4;
+        friction = 0.3f;
+        grow = 0.037f;
     }
 
     // tg: code/game/objects/effects/particles/smoke.dm:115
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("steam_cloud_1" = 1, "steam_cloud_2" = 1, "steam_cloud_3" = 1, "steam_cl... (code/game/objects/effects/particles/smoke.dm:115): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("steam_cloud_1", 1), Dm.kv("steam_cloud_2", 1), Dm.kv("steam_cloud_3", 1), Dm.kv("steam_cloud_4", 1), Dm.kv("steam_cloud_5", 1)); // tg: code/game/objects/effects/particles/smoke.dm:115
         Dm.Deferred("code/game/objects/effects/particles/smoke.dm:128", "/particles/hotspring_steam.position = generator()(\"box\", list(-17, -15, 0), list(24, 15, 0), 1): initializer not generated (generator(): not generated)");
-        // GAP(types): scale = generator()("vector", list(0.9, 0.9), list(1.1, 1.1), 1) (code/game/objects/effects/particles/smoke.dm:129): no C# member declares scale
-        // GAP(types): drift = generator()("sphere", -0.01, 0.01, 0) (code/game/objects/effects/particles/smoke.dm:130): no C# member declares drift
-        // GAP(types): spin = generator()("num", -2, 2, 1) (code/game/objects/effects/particles/smoke.dm:131): no C# member declares spin
+        Dm.Deferred("code/game/objects/effects/particles/smoke.dm:129", "/particles/hotspring_steam.scale = generator()(\"vector\", list(0.9, 0.9), list(1.1, 1.1), 1): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/game/objects/effects/particles/smoke.dm:130", "/particles/hotspring_steam.drift = generator()(\"sphere\", -0.01, 0.01, 0): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/game/objects/effects/particles/smoke.dm:131", "/particles/hotspring_steam.spin = generator()(\"num\", -2, 2, 1): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0.05f, 0.28f); // tg: code/game/objects/effects/particles/smoke.dm:132
     }
 }
@@ -58291,13 +58290,13 @@ public partial class particles_droplets : particles
     // tg: code/game/objects/effects/particles/water.dm:3
     public particles_droplets()
     {
-        // GAP(types): icon = 'icons/effects/particles/generic.dmi' (code/game/objects/effects/particles/water.dm:3): no C# member declares icon
-        // GAP(types): width = 32 (code/game/objects/effects/particles/water.dm:5): no C# member declares width
-        // GAP(types): height = 36 (code/game/objects/effects/particles/water.dm:6): no C# member declares height
-        // GAP(types): count = 5 (code/game/objects/effects/particles/water.dm:7): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/generic.dmi");
+        width = 32;
+        height = 36;
+        count = 5;
         spawning = 0.2f;
-        // GAP(types): lifespan = 10 (code/game/objects/effects/particles/water.dm:9): no C# member declares lifespan
-        // GAP(types): fade = 5 (code/game/objects/effects/particles/water.dm:10): no C# member declares fade
+        lifespan = 10;
+        fade = 5;
         color = "#549EFF";
     }
 
@@ -58305,9 +58304,9 @@ public partial class particles_droplets : particles
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("dot" = 2, "drop" = 1) (code/game/objects/effects/particles/water.dm:4): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("dot", 2), Dm.kv("drop", 1)); // tg: code/game/objects/effects/particles/water.dm:4
         Dm.Deferred("code/game/objects/effects/particles/water.dm:12", "/particles/droplets.position = generator()(\"box\", list(-9, -9, 0), list(9, 18, 0), 1): initializer not generated (generator(): not generated)");
-        // GAP(types): scale = generator()("vector", list(0.9, 0.9), list(1.1, 1.1), 1) (code/game/objects/effects/particles/water.dm:13): no C# member declares scale
+        Dm.Deferred("code/game/objects/effects/particles/water.dm:13", "/particles/droplets.scale = generator()(\"vector\", list(0.9, 0.9), list(1.1, 1.1), 1): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, -0.9f); // tg: code/game/objects/effects/particles/water.dm:14
     }
 }
@@ -58319,14 +58318,14 @@ public partial class particles_crimson_curse : particles
     // tg: code/modules/antagonists/heretic/items/crimson_cleaver.dm:417
     public particles_crimson_curse()
     {
-        // GAP(types): icon = 'icons/effects/particles/echo.dmi' (code/modules/antagonists/heretic/items/crimson_cleaver.dm:417): no C# member declares icon
-        // GAP(types): width = 40 (code/modules/antagonists/heretic/items/crimson_cleaver.dm:419): no C# member declares width
-        // GAP(types): height = 80 (code/modules/antagonists/heretic/items/crimson_cleaver.dm:420): no C# member declares height
-        // GAP(types): count = 100 (code/modules/antagonists/heretic/items/crimson_cleaver.dm:421): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/echo.dmi");
+        width = 40;
+        height = 80;
+        count = 100;
         spawning = 1;
-        // GAP(types): lifespan = 15 (code/modules/antagonists/heretic/items/crimson_cleaver.dm:423): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/modules/antagonists/heretic/items/crimson_cleaver.dm:424): no C# member declares fade
-        // GAP(types): friction = 0.5 (code/modules/antagonists/heretic/items/crimson_cleaver.dm:425): no C# member declares friction
+        lifespan = 15;
+        fade = 10;
+        friction = 0.5f;
         color = "#D00000";
     }
 
@@ -58334,9 +58333,9 @@ public partial class particles_crimson_curse : particles
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("echo1" = 3, "echo2" = 1, "echo3" = 1) (code/modules/antagonists/heretic/items/crimson_cleaver.dm:418): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("echo1", 3), Dm.kv("echo2", 1), Dm.kv("echo3", 1)); // tg: code/modules/antagonists/heretic/items/crimson_cleaver.dm:418
         Dm.Deferred("code/modules/antagonists/heretic/items/crimson_cleaver.dm:426", "/particles/crimson_curse.position = generator()(\"sphere\", 12, 12, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(-1, 1), list(1, 1), 1) (code/modules/antagonists/heretic/items/crimson_cleaver.dm:427): no C# member declares drift
+        Dm.Deferred("code/modules/antagonists/heretic/items/crimson_cleaver.dm:427", "/particles/crimson_curse.drift = generator()(\"vector\", list(-1, 1), list(1, 1), 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -58347,25 +58346,25 @@ public partial class particles_void_wall : particles
     // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:2
     public particles_void_wall()
     {
-        // GAP(types): icon = 'icons/effects/particles/voidwalker.dmi' (code/modules/antagonists/voidwalker/voidwalker_particles.dm:2): no C# member declares icon
-        // GAP(types): width = 100 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:4): no C# member declares width
-        // GAP(types): height = 300 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:5): no C# member declares height
-        // GAP(types): count = 1000 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:6): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/voidwalker.dmi");
+        width = 100;
+        height = 300;
+        count = 1000;
         spawning = 3;
-        // GAP(types): lifespan = 15 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:8): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:9): no C# member declares fade
-        // GAP(types): friction = 0.2 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:13): no C# member declares friction
-        // GAP(types): grow = 0.05 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:15): no C# member declares grow
+        lifespan = 15;
+        fade = 10;
+        friction = 0.2f;
+        grow = 0.05f;
     }
 
     // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:3
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("kidnap_1" = 1, "kidnap_2" = 1, "kidnap_3" = 2) (code/modules/antagonists/voidwalker/voidwalker_particles.dm:3): no C# member declares icon_state
-        // GAP(types): velocity = list(0, 0.4, 0) (code/modules/antagonists/voidwalker/voidwalker_particles.dm:10): no C# member declares velocity
+        icon_state = Dm.list(Dm.kv("kidnap_1", 1), Dm.kv("kidnap_2", 1), Dm.kv("kidnap_3", 2)); // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:3
+        velocity = Dm.list(0, 0.4f, 0); // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:10
         Dm.Deferred("code/modules/antagonists/voidwalker/voidwalker_particles.dm:11", "/particles/void_wall.position = generator()(\"sphere\", 12, 12, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("sphere", 0, 1, 1) (code/modules/antagonists/voidwalker/voidwalker_particles.dm:12): no C# member declares drift
+        Dm.Deferred("code/modules/antagonists/voidwalker/voidwalker_particles.dm:12", "/particles/void_wall.drift = generator()(\"sphere\", 0, 1, 1): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0.1f); // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:14
     }
 }
@@ -58377,24 +58376,24 @@ public partial class particles_void_vomit : particles
     // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:18
     public particles_void_vomit()
     {
-        // GAP(types): icon = 'icons/effects/particles/voidwalker.dmi' (code/modules/antagonists/voidwalker/voidwalker_particles.dm:18): no C# member declares icon
-        // GAP(types): width = 100 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:20): no C# member declares width
-        // GAP(types): height = 300 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:21): no C# member declares height
-        // GAP(types): count = 100 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:22): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/voidwalker.dmi");
+        width = 100;
+        height = 300;
+        count = 100;
         spawning = 1;
-        // GAP(types): lifespan = 30 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:24): no C# member declares lifespan
-        // GAP(types): fade = 20 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:25): no C# member declares fade
-        // GAP(types): friction = 0.1 (code/modules/antagonists/voidwalker/voidwalker_particles.dm:29): no C# member declares friction
+        lifespan = 30;
+        fade = 20;
+        friction = 0.1f;
     }
 
     // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:19
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("void_1" = 1, "void_2" = 5) (code/modules/antagonists/voidwalker/voidwalker_particles.dm:19): no C# member declares icon_state
-        // GAP(types): velocity = list(0, 0.1, 0) (code/modules/antagonists/voidwalker/voidwalker_particles.dm:26): no C# member declares velocity
+        icon_state = Dm.list(Dm.kv("void_1", 1), Dm.kv("void_2", 5)); // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:19
+        velocity = Dm.list(0, 0.1f, 0); // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:26
         Dm.Deferred("code/modules/antagonists/voidwalker/voidwalker_particles.dm:27", "/particles/void_vomit.position = generator()(\"sphere\", 6, 6, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("sphere", 0, 0.05, 1) (code/modules/antagonists/voidwalker/voidwalker_particles.dm:28): no C# member declares drift
+        Dm.Deferred("code/modules/antagonists/voidwalker/voidwalker_particles.dm:28", "/particles/void_vomit.drift = generator()(\"sphere\", 0, 0.05, 1): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0.5f); // tg: code/modules/antagonists/voidwalker/voidwalker_particles.dm:30
     }
 }
@@ -58406,15 +58405,15 @@ public partial class particles_void_window : particles
     // tg: code/modules/antagonists/voidwalker/voidwalker_window.dm:18
     public particles_void_window()
     {
-        // GAP(types): icon = 'icons/effects/particles/goop.dmi' (code/modules/antagonists/voidwalker/voidwalker_window.dm:18): no C# member declares icon
-        // GAP(types): width = 100 (code/modules/antagonists/voidwalker/voidwalker_window.dm:20): no C# member declares width
-        // GAP(types): height = 100 (code/modules/antagonists/voidwalker/voidwalker_window.dm:21): no C# member declares height
-        // GAP(types): count = 100 (code/modules/antagonists/voidwalker/voidwalker_window.dm:22): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/goop.dmi");
+        width = 100;
+        height = 100;
+        count = 100;
         spawning = 2;
-        // GAP(types): lifespan = 20 (code/modules/antagonists/voidwalker/voidwalker_window.dm:24): no C# member declares lifespan
-        // GAP(types): fade = 40 (code/modules/antagonists/voidwalker/voidwalker_window.dm:25): no C# member declares fade
-        // GAP(types): friction = 0.5 (code/modules/antagonists/voidwalker/voidwalker_window.dm:30): no C# member declares friction
-        // GAP(types): grow = 0.05 (code/modules/antagonists/voidwalker/voidwalker_window.dm:32): no C# member declares grow
+        lifespan = 20;
+        fade = 40;
+        friction = 0.5f;
+        grow = 0.05f;
         color = "#26114d9d";
     }
 
@@ -58422,13 +58421,13 @@ public partial class particles_void_window : particles
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("goop_1" = 6, "goop_2" = 2, "goop_3" = 1) (code/modules/antagonists/voidwalker/voidwalker_window.dm:19): no C# member declares icon_state
-        // GAP(types): velocity = list(0, 0.2, 0) (code/modules/antagonists/voidwalker/voidwalker_window.dm:26): no C# member declares velocity
+        icon_state = Dm.list(Dm.kv("goop_1", 6), Dm.kv("goop_2", 2), Dm.kv("goop_3", 1)); // tg: code/modules/antagonists/voidwalker/voidwalker_window.dm:19
+        velocity = Dm.list(0, 0.2f, 0); // tg: code/modules/antagonists/voidwalker/voidwalker_window.dm:26
         Dm.Deferred("code/modules/antagonists/voidwalker/voidwalker_window.dm:27", "/particles/void_window.position = generator()(\"box\", list(-8, -16, 0), list(8, 16, 0), 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("box", list(-8, -16, 0), list(8, 16, 0), 1) (code/modules/antagonists/voidwalker/voidwalker_window.dm:28): no C# member declares drift
-        // GAP(types): spin = generator()("num", -5, 5, 1) (code/modules/antagonists/voidwalker/voidwalker_window.dm:29): no C# member declares spin
+        Dm.Deferred("code/modules/antagonists/voidwalker/voidwalker_window.dm:28", "/particles/void_window.drift = generator()(\"box\", list(-8, -16, 0), list(8, 16, 0), 1): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/modules/antagonists/voidwalker/voidwalker_window.dm:29", "/particles/void_window.spin = generator()(\"num\", -5, 5, 1): initializer not generated (generator(): not generated)");
         gravity = Dm.list(0, 0); // tg: code/modules/antagonists/voidwalker/voidwalker_window.dm:31
-        // GAP(types): scale = list(0.75, 0.85) (code/modules/antagonists/voidwalker/voidwalker_window.dm:34): no C# member declares scale
+        scale = Dm.list(0.75f, 0.85f); // tg: code/modules/antagonists/voidwalker/voidwalker_window.dm:34
     }
 }
 
@@ -58439,14 +58438,14 @@ public partial class particles_teleport_flux : particles
     // tg: code/modules/antagonists/wizard/equipment/teleport_rod.dm:226
     public particles_teleport_flux()
     {
-        // GAP(types): icon = 'icons/effects/particles/echo.dmi' (code/modules/antagonists/wizard/equipment/teleport_rod.dm:226): no C# member declares icon
-        // GAP(types): width = 40 (code/modules/antagonists/wizard/equipment/teleport_rod.dm:228): no C# member declares width
-        // GAP(types): height = 80 (code/modules/antagonists/wizard/equipment/teleport_rod.dm:229): no C# member declares height
-        // GAP(types): count = 1000 (code/modules/antagonists/wizard/equipment/teleport_rod.dm:230): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/echo.dmi");
+        width = 40;
+        height = 80;
+        count = 1000;
         spawning = 3;
-        // GAP(types): lifespan = 10 (code/modules/antagonists/wizard/equipment/teleport_rod.dm:232): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/modules/antagonists/wizard/equipment/teleport_rod.dm:233): no C# member declares fade
-        // GAP(types): friction = 0.5 (code/modules/antagonists/wizard/equipment/teleport_rod.dm:234): no C# member declares friction
+        lifespan = 10;
+        fade = 10;
+        friction = 0.5f;
         color = "#FF00FF";
     }
 
@@ -58454,9 +58453,9 @@ public partial class particles_teleport_flux : particles
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("echo1" = 3, "echo2" = 1, "echo3" = 1) (code/modules/antagonists/wizard/equipment/teleport_rod.dm:227): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("echo1", 3), Dm.kv("echo2", 1), Dm.kv("echo3", 1)); // tg: code/modules/antagonists/wizard/equipment/teleport_rod.dm:227
         Dm.Deferred("code/modules/antagonists/wizard/equipment/teleport_rod.dm:235", "/particles/teleport_flux.position = generator()(\"sphere\", 12, 12, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(-1, 1), list(1, 1), 1) (code/modules/antagonists/wizard/equipment/teleport_rod.dm:236): no C# member declares drift
+        Dm.Deferred("code/modules/antagonists/wizard/equipment/teleport_rod.dm:236", "/particles/teleport_flux.drift = generator()(\"vector\", list(-1, 1), list(1, 1), 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -58468,8 +58467,8 @@ public partial class particles_teleport_flux_small : particles_teleport_flux
     public particles_teleport_flux_small()
     {
         spawning = 1.5f;
-        // GAP(types): scale = 0.75 (code/modules/antagonists/wizard/equipment/teleport_rod.dm:241): no C# member declares scale
-        // GAP(types): lifespan = 5 (code/modules/antagonists/wizard/equipment/teleport_rod.dm:242): no C# member declares lifespan
+        scale = 0.75f;
+        lifespan = 5;
     }
 
     // tg: code/modules/antagonists/wizard/equipment/teleport_rod.dm:243
@@ -58477,7 +58476,7 @@ public partial class particles_teleport_flux_small : particles_teleport_flux
     {
         base.dm_init_vars();
         Dm.Deferred("code/modules/antagonists/wizard/equipment/teleport_rod.dm:243", "/particles/teleport_flux/small.position = generator()(\"sphere\", 4, 12, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): drift = generator()("vector", list(-1, 1), list(1, 2), 1) (code/modules/antagonists/wizard/equipment/teleport_rod.dm:244): no C# member declares drift
+        Dm.Deferred("code/modules/antagonists/wizard/equipment/teleport_rod.dm:244", "/particles/teleport_flux/small.drift = generator()(\"vector\", list(-1, 1), list(1, 2), 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -58488,26 +58487,26 @@ public partial class particles_bile : particles
     // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:250
     public particles_bile()
     {
-        // GAP(types): icon = 'icons/effects/particles/goop.dmi' (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:250): no C# member declares icon
-        // GAP(types): width = 100 (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:252): no C# member declares width
-        // GAP(types): height = 100 (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:253): no C# member declares height
-        // GAP(types): count = 10 (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:254): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/goop.dmi");
+        width = 100;
+        height = 100;
+        count = 10;
         spawning = 10;
         color = "#00ea2b80";
-        // GAP(types): lifespan = 15 (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:257): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:258): no C# member declares fade
-        // GAP(types): grow = -0.025 (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:259): no C# member declares grow
+        lifespan = 15;
+        fade = 10;
+        grow = -0.025f;
     }
 
     // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:251
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): icon_state = list("goop_1" = 6, "goop_2" = 2, "goop_3" = 1) (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:251): no C# member declares icon_state
+        icon_state = Dm.list(Dm.kv("goop_1", 6), Dm.kv("goop_2", 2), Dm.kv("goop_3", 1)); // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:251
         gravity = Dm.list(0, 0.15f); // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:260
         Dm.Deferred("code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:261", "/particles/bile.position = generator()(\"sphere\", 0, 8, 1): initializer not generated (generator(): not generated)");
-        // GAP(types): spin = generator()("num", -15, 15, 1) (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:262): no C# member declares spin
-        // GAP(types): velocity = generator()("box", list(-2, 2), list(2, 4), 1) (code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:263): no C# member declares velocity
+        Dm.Deferred("code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:262", "/particles/bile.spin = generator()(\"num\", -15, 15, 1): initializer not generated (generator(): not generated)");
+        Dm.Deferred("code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:263", "/particles/bile.velocity = generator()(\"box\", list(-2, 2), list(2, 4), 1): initializer not generated (generator(): not generated)");
     }
 }
 
@@ -58518,22 +58517,22 @@ public partial class particles_micromissile_impact : particles
     // tg: code/modules/mod/modules/modules_supply.dm:785
     public particles_micromissile_impact()
     {
-        // GAP(types): icon = 'icons/effects/particles/generic.dmi' (code/modules/mod/modules/modules_supply.dm:785): no C# member declares icon
-        // GAP(types): icon_state = "cross" (code/modules/mod/modules/modules_supply.dm:786): no C# member declares icon_state
-        // GAP(types): width = 100 (code/modules/mod/modules/modules_supply.dm:787): no C# member declares width
-        // GAP(types): height = 100 (code/modules/mod/modules/modules_supply.dm:788): no C# member declares height
-        // GAP(types): count = 10 (code/modules/mod/modules/modules_supply.dm:789): no C# member declares count
+        icon = Dm.resource("icons/effects/particles/generic.dmi");
+        icon_state = "cross";
+        width = 100;
+        height = 100;
+        count = 10;
         spawning = 10;
         color = "#00AADC";
-        // GAP(types): lifespan = 10 (code/modules/mod/modules/modules_supply.dm:792): no C# member declares lifespan
-        // GAP(types): fade = 10 (code/modules/mod/modules/modules_supply.dm:793): no C# member declares fade
+        lifespan = 10;
+        fade = 10;
     }
 
     // tg: code/modules/mod/modules/modules_supply.dm:794
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
-        // GAP(types): spin = generator()("num", -20, 20) (code/modules/mod/modules/modules_supply.dm:794): no C# member declares spin
+        Dm.Deferred("code/modules/mod/modules/modules_supply.dm:794", "/particles/micromissile_impact.spin = generator()(\"num\", -20, 20): initializer not generated (generator(): not generated)");
     }
 }
 

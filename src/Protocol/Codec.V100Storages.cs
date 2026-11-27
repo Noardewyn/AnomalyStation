@@ -1,8 +1,8 @@
 namespace Anomaly.Protocol;
 
-// Version 99 also (MessagesV99Storages.cs, docs/ai/specs/protocol.md section 98; ui-overhaul.md section 12, slice 4B-1, DV692):
+// Version 100 also (MessagesV100Storages.cs, docs/ai/specs/protocol.md section 100; ui-overhaul.md section 12, slice 4B-1, DV696):
 //
-//   Storages (server to client, State): [u8 id = 33] [varuint count 0..8] then each carried storage, in the order of their places (and hands):
+//   Storages (server to client, State): [u8 id = 35] [varuint count 0..8] then each carried storage, in the order of their places (and hands):
 //     [varuint entity >= 1] [u8 place 1..7] ([u8 hand 1..8] when the place is 7, a hand) [str(1..128) name]
 //     [varuint slots 0..65535] [varuint used 0..65535] [varuint limit 0..65535] [u8 flags: bit 0 locked, bit 1 hidden, bit 2 cut; bits 3-7 zero]
 //     [varuint item count 0..64] then each item: [varuint entity >= 1] [str(1..128) name] [tableref picture (may be none)] [varuint count 0..65535]

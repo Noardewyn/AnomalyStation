@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps package S2: the whole file; the client's window is godot/scripts/Shared/Tgui/Interfaces/Vending.cs. Deferred leaf: select_colors's
-// greyscale colour menu (/datum/greyscale_modify_menu, the GAGS editor, is not ported).
+// Gaps package S2: the whole file; the client's window is godot/scripts/Shared/Tgui/Interfaces/Vending.cs. The colourable
+// products' colour menu (select_colors, /datum/greyscale_modify_menu) came with the MetaStation leftovers.
 
 // tg: code/modules/vending/vendor/_vending.dm:37
 public partial class obj_machinery_vending
@@ -226,9 +226,23 @@ public partial class obj_machinery_vending
                 object config = Dm.initial(fake_atom, (atom p) => p.greyscale_config);
                 if (!Dm.truthy(config))
                     return FALSE;
-                // the allowed configs (the item's worn and inhand configs) and new /datum/greyscale_modify_menu(src, ui.user, allowed_configs,
-                // CALLBACK(src, PROC_REF(_vend_greyscale), params, ui.user), ...).ui_interact(ui.user)
-                Dm.Deferred("code/modules/vending/vendor/ui_data.dm:156", "ui_act: select_colors, the greyscale colour menu of a colourable product (/datum/greyscale_modify_menu, the GAGS editor, is not ported)");
+                DmList allowed_configs = Dm.list(Dm.text("[]", config));
+                if (ispath(fake_atom, typeof(obj_item)))
+                {
+                    object item = fake_atom;
+                    if (Dm.truthy(Dm.initial(item, (obj_item p) => p.greyscale_config_worn)))
+                        allowed_configs.Add(Dm.text("[]", Dm.initial(item, (obj_item p) => p.greyscale_config_worn)));
+                    if (Dm.truthy(Dm.initial(item, (obj_item p) => p.greyscale_config_inhand_left)))
+                        allowed_configs.Add(Dm.text("[]", Dm.initial(item, (obj_item p) => p.greyscale_config_inhand_left)));
+                    if (Dm.truthy(Dm.initial(item, (obj_item p) => p.greyscale_config_inhand_right)))
+                        allowed_configs.Add(Dm.text("[]", Dm.initial(item, (obj_item p) => p.greyscale_config_inhand_right)));
+                }
+                var menu = Dm.@new<datum_greyscale_modify_menu>(
+                    this, ui.user, allowed_configs, Dm.@new<datum_callback>(this, nameof(_vend_greyscale), @params, ui.user),
+                    Dm.initial(fake_atom, (atom p) => p.icon_state), // starting_icon_state
+                    Dm.initial(fake_atom, (atom p) => p.greyscale_config), // starting_config
+                    Dm.initial(fake_atom, (atom p) => p.greyscale_colors)); // starting_colors
+                await menu.ui_interact(ui.user as mob);
                 return TRUE;
             }
         }

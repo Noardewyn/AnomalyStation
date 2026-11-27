@@ -205,7 +205,7 @@ public class LiteNetSocketTests
     {
         using var host = new Host();
         using var peer = new Peer();
-        peer.Connect(host, version: 99);
+        peer.Connect(host, version: ProtocolVersion.Current + 1);
         Pump(host, peer, () => peer.Ended.Count == 1, "the rejection");
         Assert.Equal(TransportDisconnectKind.Rejected, peer.Ended[0].Kind);
         Assert.Equal(DisconnectReason.WrongVersion, Info(peer.Ended[0]).Reason);

@@ -3,10 +3,10 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Protocol;
 
 /// <summary>
-/// Protocol version 99 also (ui-overhaul.md section 10, slice 3A, DV689; MessagesV99Hotbar.cs, Codec.V99Hotbar.cs): the Hotbar message, the own human's ten
+/// Protocol version 100 also (ui-overhaul.md section 10, slice 3A, DV693; MessagesV100Hotbar.cs, Codec.V100Hotbar.cs): the Hotbar message, the own human's ten
 /// cells and the held items' names, and the HotbarPress action, a cell of 1 to 10 and nothing else.
 /// </summary>
-public class ProtocolV99HotbarTests
+public class ProtocolV100HotbarTests
 {
     private static HotbarMessage Sample(byte refused = 0)
     {
@@ -42,7 +42,7 @@ public class ProtocolV99HotbarTests
         Assert.Equal(new long[] { 501, 0, 200000, 0, 0, 0, 502, 7, 0, 1 }, read.Cells.Select(c => c.Entity));
         Assert.Equal(read.Cells[0].Appearance, read.Cells[6].Appearance); // one picture, two items
         // a cell's bytes: the state, the picture, the item: cell 1 holding private picture 5 (0B), item 501 (F5 03)
-        Assert.Equal(new byte[] { 32, 3, 1, 0x0B, 0xF5, 0x03, 0 }, Codec.Encode(sample)[..7]);
+        Assert.Equal(new byte[] { 34, 3, 1, 0x0B, 0xF5, 0x03, 0 }, Codec.Encode(sample)[..7]);
         Assert.NotEqual(Sample(), new HotbarMessage { Bar = true, BeltWorn = true, Cells = Sample().Cells.Select((c, i) => i == 6 ? c with { Entity = 501 } : c).ToArray(), LeftHand = "wrench" });
         Assert.Equal("wrench", read.LeftHand);
         Assert.Null(read.RightHand);
@@ -50,7 +50,7 @@ public class ProtocolV99HotbarTests
         Assert.Equal(Sample(), read.WithoutRefusal());
         Assert.NotEqual(Sample(), read);
         Assert.Equal(HotbarMessage.None, RoundTrip(HotbarMessage.None));
-        Assert.Equal(new byte[] { 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, Codec.Encode(HotbarMessage.None)); // protocol.md section 97
+        Assert.Equal(new byte[] { 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, Codec.Encode(HotbarMessage.None)); // protocol.md section 99
         Assert.Equal(MessageId.Hotbar, (MessageId)Codec.Encode(sample)[0]);
     }
 
@@ -139,7 +139,7 @@ public class ProtocolV99HotbarTests
     [Fact]
     public void AHotbarPressCarriesItsCellAndNothingElse()
     {
-        Assert.True(ActionKinds.Last >= ActionKind.HotbarPress); // version 99 also adds InventoryMove and InventoryOpen after it
+        Assert.True(ActionKinds.Last >= ActionKind.HotbarPress); // version 100 also adds InventoryMove and InventoryOpen after it
         for (int cell = 1; cell <= HotbarMessage.CellCount; cell++)
         {
             var press = new ActionMessage(7, ActionKind.HotbarPress, 0, ClickButton.None, ClickModifiers.None, null) { HotbarCell = cell };

@@ -5,7 +5,7 @@ using Anomaly.Server.Tests.Protocol;
 namespace Anomaly.Server.Tests.Client.Play;
 
 /// <summary>
-/// DV691 (ui-overhaul.md section 17): the first-person drag of oneself. A plain left press with the crosshair on the own body sends nothing
+/// DV695 (ui-overhaul.md section 17): the first-person drag of oneself. A plain left press with the crosshair on the own body sends nothing
 /// and is held; the release on a thing drops the own mob onto it, on the own body is the click on oneself with the press's zone, on a cell,
 /// nothing or a thing out of reach is nothing. Any other press, a modified press and cursor mode keep the click on the press. Tab, a lost
 /// view and the right button drop the held drag.
@@ -180,7 +180,7 @@ public class SelfDragTests
     public void ThePromptNamesOnlyAThingInReach()
     {
         Assert.Equal("table", SelfDrag.PromptName(Table, "table"));
-        Assert.Null(SelfDrag.PromptName(Table, "")); // DV687: the server's out of reach
+        Assert.Null(SelfDrag.PromptName(Table, "")); // DV691: the server's out of reach
         Assert.Null(SelfDrag.PromptName(Table, null)); // no answer yet
         Assert.Null(SelfDrag.PromptName(Floor, "floor")); // a cell takes no drop
         Assert.Null(SelfDrag.PromptName(ClickTarget.None, "x"));

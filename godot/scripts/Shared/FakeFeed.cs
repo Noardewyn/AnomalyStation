@@ -60,7 +60,7 @@ public sealed class FakeFeed : IWorldFeed
     }
 
     /// <inheritdoc/>
-    public HotbarMessage Hotbar => _replica.Hotbar; // version 99 also (DV689): the replica takes the message (ReplicaWorld.V99.cs)
+    public HotbarMessage Hotbar => _replica.Hotbar; // version 100 also (DV693): the replica takes the message (ReplicaWorld.V100.cs)
 
     /// <inheritdoc/>
     public int HotbarRefusals => _replica.HotbarRefusals;
@@ -69,7 +69,7 @@ public sealed class FakeFeed : IWorldFeed
     public int HotbarRefusedCell => _replica.HotbarRefusedCell;
 
     /// <inheritdoc/>
-    public StoragesMessage Storages => _replica.Storages; // version 99 also (DV692): the replica takes the message (ReplicaWorld.V99Storages.cs)
+    public StoragesMessage Storages => _replica.Storages; // version 100 also (DV696): the replica takes the message (ReplicaWorld.V100Storages.cs)
 
     /// <inheritdoc/>
     public int StoragesRefusals => _replica.StoragesRefusals;

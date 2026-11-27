@@ -5,7 +5,7 @@ namespace Anomaly.Client.Shared;
 // Engine-free: no Godot API here (it is compiled into tests/Anomaly.Server.Tests too).
 
 /// <summary>
-/// ui-overhaul.md section 12, slice 4B-1 (DV692, protocol version 99's Storages): the client's copy of the storages the own human carries, as the server
+/// ui-overhaul.md section 12, slice 4B-1 (DV696, protocol version 100's Storages): the client's copy of the storages the own human carries, as the server
 /// last sent them (in the Tab inventory's order, each with its place, name, slots, room, flags and items), and the last refused move with when it came
 /// (for the next slice's red blink). Nothing is predicted: a move is sent and the server's next message says what it did.
 /// </summary>

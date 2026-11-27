@@ -8,9 +8,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// DEVIATION(DV692): the Tab inventory's server side (ui-overhaul.md section 12, slice 4B-1). tg shows one storage at a time (active_storage); the
+// DEVIATION(DV696): the Tab inventory's server side (ui-overhaul.md section 12, slice 4B-1). tg shows one storage at a time (active_storage); the
 // port lists every storage a human carries (the back's, the belt's, one in the suit-storage slot, the pockets and the ID slot, then one held in a
-// hand) for the owner's client (protocol version 99's Storages, read by the replicator), and moves one item of the own inventory at a time between a
+// hand) for the owner's client (protocol version 100's Storages, read by the replicator), and moves one item of the own inventory at a time between a
 // hand, a worn slot, those storages and the floor through the steps a player's hands take in tg, so that tg's special cases apply: a worn item comes
 // off by tg's own click with the empty active hand (or tg's drag of a worn storage onto it) and then goes on from that hand; a held item goes where
 // tg's click on a storage, a slot or a hand puts it; a stored item is reached (on_found), picked as tg picks (attempt_pickup's checks) and taken out
@@ -18,7 +18,7 @@ namespace Anomaly.Core.Tg;
 // goes straight on to its target) and between the hands: tg carries the item in a hand from one click to the next. A target that refuses an item
 // already taken out sends it back where it was. The Tab notice opens the carried storages as tg's open_storage does, without tg's screen.
 
-/// <summary>Where a carried storage is (the Tab inventory's order; protocol version 99's <c>StoragePlace</c> has the same numbers).</summary>
+/// <summary>Where a carried storage is (the Tab inventory's order; protocol version 100's <c>StoragePlace</c> has the same numbers).</summary>
 public enum CarriedPlace : byte
 {
     Back = 1,
@@ -30,7 +30,7 @@ public enum CarriedPlace : byte
     Hand = 7,
 }
 
-/// <summary>What an inventory move puts its item into (protocol version 99's <c>InventoryTarget</c> has the same numbers).</summary>
+/// <summary>What an inventory move puts its item into (protocol version 100's <c>InventoryTarget</c> has the same numbers).</summary>
 public enum MoveTarget : byte
 {
     None = 0,
@@ -40,10 +40,10 @@ public enum MoveTarget : byte
     Floor = 4,
 }
 
-/// <summary>A human's carried storages and the inventory moves of its client (DV692).</summary>
+/// <summary>A human's carried storages and the inventory moves of its client (DV696).</summary>
 public sealed class CarriedStorages
 {
-    /// <summary>The most storages listed (protocol version 99's <c>Limits.MaxStorages</c>).</summary>
+    /// <summary>The most storages listed (protocol version 100's <c>Limits.MaxStorages</c>).</summary>
     public const int MaxStorages = 8;
 
     /// <summary>The most items listed of one storage, the first ones in tg's order (<c>Limits.MaxStorageItems</c>); also the highest cell wished for.</summary>
@@ -201,7 +201,7 @@ public sealed class CarriedStorages
     // ---- the moves ----
 
     /// <summary>
-    /// A move from <paramref name="player"/>'s client (protocol version 99's InventoryMove): the item of world id <paramref name="itemId"/> to
+    /// A move from <paramref name="player"/>'s client (protocol version 100's InventoryMove): the item of world id <paramref name="itemId"/> to
     /// <paramref name="to"/> (the storage of world id <paramref name="storageId"/> at cell <paramref name="index"/>, 0 for none; tg's slot id; a held
     /// index; the floor). Only a connected client's own human; an item it holds, wears or sees in a listed storage; a target of its own and in range.
     /// Anything else does nothing and is not reported. Runs detached with usr the mob, as BYOND runs a verb.
@@ -235,7 +235,7 @@ public sealed class CarriedStorages
             return;
         CarriedStorages state = Of(user);
         bool done = false;
-        // DV689, DV692: into the worn belt the wish is the bar's cell: tg's insert takes the item as without one (tg's order in the belt is left to
+        // DV693, DV696: into the worn belt the wish is the bar's cell: tg's insert takes the item as without one (tg's order in the belt is left to
         // tg), then the bar gives it that cell (BeltHotbar.PlaceInCell); an item already in the belt only changes cell
         int barCell = 0;
         if (to == MoveTarget.Storage && index > 0 && user.belt is obj_item belt && belt.dm_id == storageId)
@@ -337,7 +337,7 @@ public sealed class CarriedStorages
                     if (carried.Item.dm_id == storageId)
                     {
                         storage = carried.Storage;
-                        // DV689, DV692: the worn belt's wish is a bar cell (1 to 7), not a place in tg's contents
+                        // DV693, DV696: the worn belt's wish is a bar cell (1 to 7), not a place in tg's contents
                         return carried.Place != CarriedPlace.Belt || index <= BeltHotbar.BeltCells;
                     }
                 }
@@ -755,7 +755,7 @@ public sealed class CarriedStorages
     // ---- the Tab notice ----
 
     /// <summary>
-    /// The Tab notice from <paramref name="player"/>'s client (protocol version 99's InventoryOpen): the carried storages are opened as tg opens a
+    /// The Tab notice from <paramref name="player"/>'s client (protocol version 100's InventoryOpen): the carried storages are opened as tg opens a
     /// storage, without its screen, at most once every <see cref="OpenInterval"/>. Only a connected client's own human.
     /// </summary>
     public static void Opened(client player)
@@ -835,6 +835,6 @@ public sealed class CarriedStorages
 
 public partial class mob_living_carbon_human
 {
-    /// <summary>DV692: the Tab inventory's moves and refusals (<see cref="CarriedStorages"/>), made at the mob's first move, press or notice.</summary>
+    /// <summary>DV696: the Tab inventory's moves and refusals (<see cref="CarriedStorages"/>), made at the mob's first move, press or notice.</summary>
     public CarriedStorages dm_carried;
 }

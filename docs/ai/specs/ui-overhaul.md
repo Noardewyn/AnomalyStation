@@ -1800,3 +1800,25 @@ person for the own body only (DV691). A click on oneself now lands when the butt
 
 Note for testers: scripted clients share the one OS pointer, so cursor-mode drags must be driven one client at a
 time (a second scripted client moves the pointer under the first).
+
+### Slice 4B-1 after review (2026-11-27): the design narrowed toward tg
+
+Settled by the manager from the review of the server half (the contributor is told; tg's rules win where the design
+was looser than tg):
+- A move goes through the steps a player's hands would take in tg, so that tg's special cases apply: a stored item
+  leaves through its storage's own removal (a trash bag's delay, an evidence bag's size); a WORN item comes off
+  through tg's own click with the active hand, which must be empty (tg's rule), and goes on from that hand to the
+  target, staying in the hand if the target refuses. So "no free hand" holds for moves out of a storage and
+  between hands only, not for taking off what is worn. An item tg will not let go of this way (an unwarped tinfoil
+  hat, untied shoes) stays on.
+- Hand-only items (a slap, a kiss) can only be dropped, as in tg.
+- Opening by Tab is opening the bag in tg's sense: tg's checks and tg's `on_found` pass run, so an armed mousetrap
+  in the bag, or in another listed storage, snaps on Tab as when it is opened by hand.
+- A belt item moved to a hand keeps its cell on the bar reserved, as its number key does. The number keys and the
+  moves share one rule for when the body can act (hands blocked and a mech stop both); tg's click cooldown applies
+  to moves and not to the keys.
+- Storages whose contents tg hides (a cigarette pack) are listed without items and get no panel in the client.
+- For the contributor to tell the owner: D226 lists "hands full" among a drag's refusals (moves out of a storage
+  need no hand: DV692); D40 (no hidden data sent): the owner of a body receives the contents of every storage they
+  carry at all times, locked and hidden ones withheld; D131 and D225: the move request is a path beside tg's
+  storage screen entries that calls tg's procs.

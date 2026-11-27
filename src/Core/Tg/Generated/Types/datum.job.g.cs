@@ -2334,9 +2334,9 @@ public partial class datum_job_cargo_gorilla
     }
 }
 
-// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:2
-[DmPath("/datum/job/human_ai"), DmGeneratedOnly, DmInert]
-public partial class datum_job_human_ai : datum_job
+// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/job/human_ai")]
+public partial class datum_job_human_ai
 {
     // tg: code/modules/jobs/job_types/station_trait/human_ai.dm:2
     public datum_job_human_ai()
@@ -2415,9 +2415,9 @@ public partial class datum_job_pun_pun
     }
 }
 
-// tg: code/modules/jobs/job_types/station_trait/veteran_advisor.dm:2
-[DmPath("/datum/job/veteran_advisor"), DmGeneratedOnly, DmInert]
-public partial class datum_job_veteran_advisor : datum_job
+// tg: code/modules/jobs/job_types/station_trait/veteran_advisor.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/job/veteran_advisor")]
+public partial class datum_job_veteran_advisor
 {
     // tg: code/modules/jobs/job_types/station_trait/veteran_advisor.dm:2
     public datum_job_veteran_advisor()

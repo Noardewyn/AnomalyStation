@@ -3256,9 +3256,9 @@ public partial class datum_outfit_job_bridge_assistant : datum_outfit_job
     }
 }
 
-// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:92
-[DmPath("/datum/outfit/job/human_ai"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_job_human_ai : datum_outfit_job
+// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:92 (the var block of a hand-written class)
+[DmPath("/datum/outfit/job/human_ai")]
+public partial class datum_outfit_job_human_ai
 {
     // tg: code/modules/jobs/job_types/station_trait/human_ai.dm:92
     public datum_outfit_job_human_ai()

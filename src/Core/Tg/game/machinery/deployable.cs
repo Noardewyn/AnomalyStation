@@ -9,9 +9,10 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (the M5 leftovers, 2026-10-16): the barricade base, the wooden barricade and the crude plank barricade that
-// can_barricade builds (and the wood recipes' "wooden barricade"). The sandbags (gaps J5) and the barrier grenade with the security
-// barrier it raises (gaps SE1) came later; the folded heavy machine gun stays inert with the deployable turret (structures/deployable_turret.dm). The var blocks are generated.
+// The whole file. The barricade base, the wooden barricade and the crude plank barricade that can_barricade builds (and the wood
+// recipes' "wooden barricade") came with the M5 leftovers (2026-10-16); the sandbags (gaps J5), the barrier grenade with the security
+// barrier it raises (gaps SE1), and the folded heavy machine gun with the deployable turret (structures/deployable_turret.dm) later.
+// The var blocks are generated.
 
 //Barricades/cover
 
@@ -215,5 +216,17 @@ public partial class obj_item_grenade_barrier : obj_item_grenade
     {
         toggle_mode(user);
         return null;
+    }
+}
+
+// tg: code/game/machinery/deployable.dm:205
+public partial class obj_item_deployable_turret_folded : obj_item
+{
+    // tg: code/game/machinery/deployable.dm:215
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_deployable), 5 * SECONDS, typeof(obj_machinery_deployable_turret_hmg)));
+        return dot;
     }
 }

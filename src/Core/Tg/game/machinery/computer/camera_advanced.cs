@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (syndicate N1c, D316: the base of the infiltrator's navigation computer, and the syndicate's advanced camera console on its
 // bridge): the console, its camera eye and its action buttons, the circuits' USB port with its two circuit components (the eye's
 // position, the target intercept) and the action buttons a plugged circuit's equipment action components add. Not translated: the
-// AI's and a cyborg's clicks (silicons), the abductor's and the human AI's consoles (their own types, inert). The camera chunks a
+// AI's and a cyborg's clicks (silicons), the abductor's console (its own type, inert); the human AI's console came with its job. The camera chunks a
 // plain console's eye asks for come with the AI's freelook (silicons SI4): until then SScameras sees no turf, so the eye starts at a
 // camera of its networks and sees past the cameras' reach. DEVIATION(DV349): the client's view size is left alone (supress,
 // unsupress). The var blocks are generated (D111).
@@ -345,6 +345,24 @@ public partial class datum_action_innate_camera_multiz_down : datum_action_innat
         else
             to_chat(owner, span_notice(I18n.T("You can't move downwards!")));
         return null;
+    }
+}
+
+// The human AI's console, unpacked from its pod in the AI satellite's chamber (station_trait/human_ai.dm:171): a screwdriver packs it
+// back into the pod
+// tg: code/game/machinery/computer/camera_advanced.dm:282
+public partial class obj_machinery_computer_camera_advanced_human_ai : obj_machinery_computer_camera_advanced
+{
+    // tg: code/game/machinery/computer/camera_advanced.dm:282
+    public override async DmTask<object> screwdriver_act(mob_living user = null, obj_item tool = null)
+    {
+        balloon_alert(user, I18n.T("repackaging..."));
+        if (!Dm.truthy(await do_after(user, 5 * SECONDS, this)))
+            return ITEM_INTERACT_BLOCKING;
+        tool.play_tool_sound(this, 40);
+        Dm.@new<obj_item_secure_camera_console_pod>(get_turf(this));
+        qdel(this);
+        return ITEM_INTERACT_SUCCESS;
     }
 }
 

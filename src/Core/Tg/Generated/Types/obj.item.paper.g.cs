@@ -3660,9 +3660,9 @@ public partial class obj_item_paper_lures_instructions : obj_item_paper
     }
 }
 
-// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:138
-[DmPath("/obj/item/paper/default_lawset_list"), DmGeneratedOnly, DmInert]
-public partial class obj_item_paper_default_lawset_list : obj_item_paper
+// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:138 (the var block of a hand-written class)
+[DmPath("/obj/item/paper/default_lawset_list")]
+public partial class obj_item_paper_default_lawset_list
 {
     // tg: code/modules/jobs/job_types/station_trait/human_ai.dm:138
     public obj_item_paper_default_lawset_list()

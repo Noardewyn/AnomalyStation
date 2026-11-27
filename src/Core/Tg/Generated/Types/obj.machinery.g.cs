@@ -9353,9 +9353,9 @@ public partial class obj_machinery_trading_card_button_health
     }
 }
 
-// tg: code/game/objects/structures/deployable_turret.dm:5
-[DmPath("/obj/machinery/deployable_turret"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_deployable_turret : obj_machinery
+// tg: code/game/objects/structures/deployable_turret.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/machinery/deployable_turret")]
+public partial class obj_machinery_deployable_turret
 {
     public float view_range = 2.5f; // tg: code/game/objects/structures/deployable_turret.dm:15
     public float cooldown = 0; // tg: code/game/objects/structures/deployable_turret.dm:16
@@ -9390,9 +9390,9 @@ public partial class obj_machinery_deployable_turret : obj_machinery
     }
 }
 
-// tg: code/game/objects/structures/deployable_turret.dm:204
-[DmPath("/obj/machinery/deployable_turret/ultimate"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_deployable_turret_ultimate : obj_machinery_deployable_turret
+// tg: code/game/objects/structures/deployable_turret.dm:204 (the var block of a hand-written class)
+[DmPath("/obj/machinery/deployable_turret/ultimate")]
+public partial class obj_machinery_deployable_turret_ultimate
 {
     // tg: code/game/objects/structures/deployable_turret.dm:204
     public obj_machinery_deployable_turret_ultimate()
@@ -9403,7 +9403,7 @@ public partial class obj_machinery_deployable_turret_ultimate : obj_machinery_de
 }
 
 // tg: code/game/objects/structures/deployable_turret.dm:215
-[DmPath("/obj/machinery/deployable_turret/hmg"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/deployable_turret/hmg"), DmGeneratedOnly]
 public partial class obj_machinery_deployable_turret_hmg : obj_machinery_deployable_turret
 {
     // tg: code/game/objects/structures/deployable_turret.dm:215
@@ -9426,7 +9426,7 @@ public partial class obj_machinery_deployable_turret_hmg : obj_machinery_deploya
 }
 
 // tg: code/modules/awaymissions/mission_code/heretic/naval_cannon.dm:2
-[DmPath("/obj/machinery/deployable_turret/naval_cannon"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/deployable_turret/naval_cannon"), DmGeneratedOnly]
 public partial class obj_machinery_deployable_turret_naval_cannon : obj_machinery_deployable_turret
 {
     // tg: code/modules/awaymissions/mission_code/heretic/naval_cannon.dm:2

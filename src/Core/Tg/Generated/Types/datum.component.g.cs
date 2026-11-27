@@ -1526,12 +1526,12 @@ public partial class datum_component_dejavu_wizard
     }
 }
 
-// tg: code/datums/components/deployable.dm:14
-[DmPath("/datum/component/deployable"), DmGeneratedOnly, DmInert]
-public partial class datum_component_deployable : datum_component
+// tg: code/datums/components/deployable.dm:14 (the var block of a hand-written class)
+[DmPath("/datum/component/deployable")]
+public partial class datum_component_deployable
 {
     public object deploy_time; // tg: code/datums/components/deployable.dm:14
-    public obj thing_to_be_deployed; // tg: code/datums/components/deployable.dm:16
+    public Type thing_to_be_deployed; // tg: code/datums/components/deployable.dm:16
     public object multiple_deployments; // tg: code/datums/components/deployable.dm:18
     public object deployments; // tg: code/datums/components/deployable.dm:20
     public object add_description_hint; // tg: code/datums/components/deployable.dm:22

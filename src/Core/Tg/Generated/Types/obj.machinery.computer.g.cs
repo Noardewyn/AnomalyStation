@@ -2983,9 +2983,9 @@ public partial class obj_machinery_computer_camera_advanced_abductor : obj_machi
     }
 }
 
-// tg: code/game/machinery/computer/camera_advanced.dm:282
-[DmPath("/obj/machinery/computer/camera_advanced/human_ai"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_camera_advanced_human_ai : obj_machinery_computer_camera_advanced { }
+// tg: code/game/machinery/computer/camera_advanced.dm:282 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/camera_advanced/human_ai")]
+public partial class obj_machinery_computer_camera_advanced_human_ai { }
 
 // tg: code/game/objects/structures/construction_console/construction_console.dm:11 (the var block of a hand-written class)
 [DmPath("/obj/machinery/computer/camera_advanced/base_construction")]

@@ -194,8 +194,6 @@ public partial class datum_controller_subsystem_processing_station : datum_contr
     {
         (typeof(datum_station_trait_nebula_hostile_radiation), typeof(datum_controller_subsystem_radioactive_nebula)), // the radioactive nebula and its shielders
         (typeof(datum_station_trait_pet_day), typeof(datum_pet_customization)), // the pet customization
-        (typeof(datum_station_trait_job_veteran_advisor), typeof(datum_job_veteran_advisor)), // the station trait jobs not ported yet
-        (typeof(datum_station_trait_job_human_ai), typeof(datum_job_human_ai)),
     });
 
     /// Whether <paramref name="trait_typepath"/> is one of <see cref="TraitsWaitingForTheirSystem"/> whose system is still inert.

@@ -240,6 +240,8 @@ internal sealed partial class Generator
         // record's experiment list and text2path.
         "/datum/scientific_paper:experiment_path",
         "/datum/scientific_paper:partner_path",
+        // The deployable component's deployed object is the typepath its Initialize takes (deployable.dm:35), declared var/obj.
+        "/datum/component/deployable:thing_to_be_deployed",
     };
 
     /// <summary>Vars whose number default (FALSE, 0) later holds a stoppable timer's id, which is a text (addtimer with TIMER_STOPPABLE,

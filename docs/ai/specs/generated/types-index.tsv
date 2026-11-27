@@ -11129,9 +11129,9 @@ type	/datum/outfit/job/assistant/breath_mask	/datum/outfit/job/assistant	code/mo
 type	/datum/outfit/job/assistant/hitchhiker	/datum/outfit/job/assistant	code/modules/shuttle/shuttle_events/humans.dm:79	live	datum_outfit_job_assistant_hitchhiker	0	0
 type	/datum/outfit/job/chaplain	/datum/outfit/job	code/modules/jobs/job_types/chaplain/chaplain.dm:118	live	datum_outfit_job_chaplain	0	0
 type	/datum/outfit/job/bridge_assistant	/datum/outfit/job	code/modules/jobs/job_types/station_trait/bridge_assistant.dm:65	live	datum_outfit_job_bridge_assistant	0	0
-type	/datum/outfit/job/human_ai	/datum/outfit/job	code/modules/jobs/job_types/station_trait/human_ai.dm:92	inert	datum_outfit_job_human_ai	0	0
-proc	/datum/outfit/job/human_ai	pre_equip	code/modules/jobs/job_types/station_trait/human_ai.dm:114	equipped,visuals_only	no	-	proc
-proc	/datum/outfit/job/human_ai	post_equip	code/modules/jobs/job_types/station_trait/human_ai.dm:126	equipped,visuals_only	no	-	proc
+type	/datum/outfit/job/human_ai	/datum/outfit/job	code/modules/jobs/job_types/station_trait/human_ai.dm:92	live	datum_outfit_job_human_ai	1	0
+proc	/datum/outfit/job/human_ai	pre_equip	code/modules/jobs/job_types/station_trait/human_ai.dm:114	equipped,visuals_only	yes	full	proc
+proc	/datum/outfit/job/human_ai	post_equip	code/modules/jobs/job_types/station_trait/human_ai.dm:126	equipped,visuals_only	yes	full	proc
 type	/datum/outfit/job/pun_pun	/datum/outfit/job	code/modules/jobs/job_types/station_trait/pun_pun.dm:43	live	datum_outfit_job_pun_pun	0	0
 type	/datum/outfit/job/veteran_advisor	/datum/outfit/job	code/modules/jobs/job_types/station_trait/veteran_advisor.dm:62	live	datum_outfit_job_veteran_advisor	0	0
 type	/datum/outfit/academy_knight	/datum/outfit	code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:83	live	datum_outfit_academy_knight	0	0
@@ -18417,11 +18417,11 @@ type	/datum/component/dejavu/timeline	/datum/component/dejavu	code/datums/compon
 proc	/datum/component/dejavu/timeline	rewind	code/datums/components/dejavu.dm:139		yes	full	proc
 type	/datum/component/dejavu/wizard	/datum/component/dejavu	code/datums/components/dejavu.dm:144	live	datum_component_dejavu_wizard	1	0
 proc	/datum/component/dejavu/wizard	rewind	code/datums/components/dejavu.dm:146		yes	full	proc
-type	/datum/component/deployable	/datum/component	code/datums/components/deployable.dm:14	inert	datum_component_deployable	0	0
-proc	/datum/component/deployable	Initialize	code/datums/components/deployable.dm:29	deploy_time,thing_to_be_deployed,multiple_deployments,deployments,add_description_hint,direction_setting	no	-	proc
-proc	/datum/component/deployable	examine	code/datums/components/deployable.dm:48	source,user,examine_list	no	-	proc root
-proc	/datum/component/deployable	on_attack_hand	code/datums/components/deployable.dm:52	source,user,location,direction	no	-	proc root
-proc	/datum/component/deployable	deploy	code/datums/components/deployable.dm:56	source,user,location,direction	no	-	proc root
+type	/datum/component/deployable	/datum/component	code/datums/components/deployable.dm:14	live	datum_component_deployable	1	0
+proc	/datum/component/deployable	Initialize	code/datums/components/deployable.dm:29	deploy_time,thing_to_be_deployed,multiple_deployments,deployments,add_description_hint,direction_setting	yes	full	proc
+proc	/datum/component/deployable	examine	code/datums/components/deployable.dm:48	source,user,examine_list	yes	full	proc root
+proc	/datum/component/deployable	on_attack_hand	code/datums/components/deployable.dm:52	source,user,location,direction	yes	full	proc root
+proc	/datum/component/deployable	deploy	code/datums/components/deployable.dm:56	source,user,location,direction	yes	full	proc root
 type	/datum/component/digitigrade_limb	/datum/component	code/datums/components/digitigrade_limb.dm:4	live	datum_component_digitigrade_limb	1	0
 proc	/datum/component/digitigrade_limb	Initialize	code/datums/components/digitigrade_limb.dm:11	squashed_id,free_id	yes	full	proc
 proc	/datum/component/digitigrade_limb	Destroy	code/datums/components/digitigrade_limb.dm:29		yes	full	proc
@@ -25786,8 +25786,8 @@ type	/datum/id_trim/job/shaft_miner	/datum/id_trim/job	code/datums/id_trim/jobs.
 type	/datum/id_trim/job/shaft_miner/spare	/datum/id_trim/job/shaft_miner	code/datums/id_trim/jobs.dm:1271	live	datum_id_trim_job_shaft_miner_spare	0	0
 type	/datum/id_trim/job/station_engineer	/datum/id_trim/job	code/datums/id_trim/jobs.dm:1282	live	datum_id_trim_job_station_engineer	0	0
 type	/datum/id_trim/job/station_engineer/gunner	/datum/id_trim/job/station_engineer	code/datums/id_trim/ruins.dm:104	live	datum_id_trim_job_station_engineer_gunner	0	0
-type	/datum/id_trim/job/veteran_advisor	/datum/id_trim/job	code/datums/id_trim/jobs.dm:1313	inert	datum_id_trim_job_veteran_advisor	0	0
-proc	/datum/id_trim/job/veteran_advisor	refresh_trim_access	code/datums/id_trim/jobs.dm:1335		no	-	proc
+type	/datum/id_trim/job/veteran_advisor	/datum/id_trim/job	code/datums/id_trim/jobs.dm:1313	live	datum_id_trim_job_veteran_advisor	1	0
+proc	/datum/id_trim/job/veteran_advisor	refresh_trim_access	code/datums/id_trim/jobs.dm:1335		yes	full	proc
 type	/datum/id_trim/job/warden	/datum/id_trim/job	code/datums/id_trim/jobs.dm:1346	inert	datum_id_trim_job_warden	0	0
 proc	/datum/id_trim/job/warden	refresh_trim_access	code/datums/id_trim/jobs.dm:1376		no	-	proc
 type	/datum/id_trim/job/human_ai	/datum/id_trim/job	code/datums/id_trim/jobs.dm:1390	live	datum_id_trim_job_human_ai	0	0
@@ -38786,18 +38786,18 @@ type	/datum/job/cargo_gorilla	/datum/job	code/modules/jobs/job_types/station_tra
 proc	/datum/job/cargo_gorilla	get_roundstart_spawn_point	code/modules/jobs/job_types/station_trait/cargo_gorilla.dm:21		yes	full	proc
 proc	/datum/job/cargo_gorilla	get_spawn_mob	code/modules/jobs/job_types/station_trait/cargo_gorilla.dm:26	player_client,spawn_point	yes	full	proc
 proc	/datum/job/cargo_gorilla	after_spawn	code/modules/jobs/job_types/station_trait/cargo_gorilla.dm:33	spawned,player_client	yes	full	proc
-type	/datum/job/human_ai	/datum/job	code/modules/jobs/job_types/station_trait/human_ai.dm:2	inert	datum_job_human_ai	0	0
-proc	/datum/job/human_ai	get_roundstart_spawn_point	code/modules/jobs/job_types/station_trait/human_ai.dm:45		no	-	proc
-proc	/datum/job/human_ai	get_latejoin_spawn_point	code/modules/jobs/job_types/station_trait/human_ai.dm:48		no	-	proc
-proc	/datum/job/human_ai	special_check_latejoin	code/modules/jobs/job_types/station_trait/human_ai.dm:77	latejoin_client	no	-	proc
-proc	/datum/job/human_ai	announce_job	code/modules/jobs/job_types/station_trait/human_ai.dm:83	joining_mob	no	-	proc
-proc	/datum/job/human_ai	get_radio_information	code/modules/jobs/job_types/station_trait/human_ai.dm:88		no	-	proc
+type	/datum/job/human_ai	/datum/job	code/modules/jobs/job_types/station_trait/human_ai.dm:2	live	datum_job_human_ai	1	0
+proc	/datum/job/human_ai	get_roundstart_spawn_point	code/modules/jobs/job_types/station_trait/human_ai.dm:45		yes	full	proc
+proc	/datum/job/human_ai	get_latejoin_spawn_point	code/modules/jobs/job_types/station_trait/human_ai.dm:48		yes	full	proc
+proc	/datum/job/human_ai	special_check_latejoin	code/modules/jobs/job_types/station_trait/human_ai.dm:77	latejoin_client	yes	full	proc
+proc	/datum/job/human_ai	announce_job	code/modules/jobs/job_types/station_trait/human_ai.dm:83	joining_mob	yes	full	proc
+proc	/datum/job/human_ai	get_radio_information	code/modules/jobs/job_types/station_trait/human_ai.dm:88		yes	full	proc
 type	/datum/job/pun_pun	/datum/job	code/modules/jobs/job_types/station_trait/pun_pun.dm:3	live	datum_job_pun_pun	1	0
 proc	/datum/job/pun_pun	get_spawn_mob	code/modules/jobs/job_types/station_trait/pun_pun.dm:30	player_client,spawn_point	yes	full	proc
 proc	/datum/job/pun_pun	after_spawn	code/modules/jobs/job_types/station_trait/pun_pun.dm:38	monkey,player_client	yes	full	proc
-type	/datum/job/veteran_advisor	/datum/job	code/modules/jobs/job_types/station_trait/veteran_advisor.dm:2	inert	datum_job_veteran_advisor	0	0
-proc	/datum/job/veteran_advisor	get_default_roundstart_spawn_point	code/modules/jobs/job_types/station_trait/veteran_advisor.dm:40		no	-	proc
-proc	/datum/job/veteran_advisor	after_spawn	code/modules/jobs/job_types/station_trait/veteran_advisor.dm:54	spawned,player_client	no	-	proc
+type	/datum/job/veteran_advisor	/datum/job	code/modules/jobs/job_types/station_trait/veteran_advisor.dm:2	live	datum_job_veteran_advisor	1	0
+proc	/datum/job/veteran_advisor	get_default_roundstart_spawn_point	code/modules/jobs/job_types/station_trait/veteran_advisor.dm:40		yes	full	proc
+proc	/datum/job/veteran_advisor	after_spawn	code/modules/jobs/job_types/station_trait/veteran_advisor.dm:54	spawned,player_client	yes	full	proc
 type	/datum/job/recovered_crew	/datum/job	code/modules/lost_crew/character/job_datums.dm:2	live	datum_job_recovered_crew	0	0
 type	/datum/job/recovered_crew/doctor	/datum/job/recovered_crew	code/modules/lost_crew/character/job_datums.dm:6	live	datum_job_recovered_crew_doctor	0	0
 type	/datum/job/recovered_crew/engineer	/datum/job/recovered_crew	code/modules/lost_crew/character/job_datums.dm:10	live	datum_job_recovered_crew_engineer	0	0
@@ -60796,9 +60796,9 @@ type	/obj/item/paper/requisition	/obj/item/paper	code/modules/cargo/order.dm:19	
 type	/obj/item/paper/valentine	/obj/item/paper	code/modules/events/holiday/vday.dm:126	live	obj_item_paper_valentine	1	0
 proc	/obj/item/paper/valentine	Initialize	code/modules/events/holiday/vday.dm:132	mapload	yes	full	proc
 type	/obj/item/paper/lures_instructions	/obj/item/paper	code/modules/fishing/fishing_equipment.dm:569	live	obj_item_paper_lures_instructions	0	0
-type	/obj/item/paper/default_lawset_list	/obj/item/paper	code/modules/jobs/job_types/station_trait/human_ai.dm:138	inert	obj_item_paper_default_lawset_list	0	0
-proc	/obj/item/paper/default_lawset_list	Initialize	code/modules/jobs/job_types/station_trait/human_ai.dm:141	mapload	no	-	proc
-proc	/obj/item/paper/default_lawset_list	LateInitialize	code/modules/jobs/job_types/station_trait/human_ai.dm:145		no	-	proc
+type	/obj/item/paper/default_lawset_list	/obj/item/paper	code/modules/jobs/job_types/station_trait/human_ai.dm:138	live	obj_item_paper_default_lawset_list	1	0
+proc	/obj/item/paper/default_lawset_list	Initialize	code/modules/jobs/job_types/station_trait/human_ai.dm:141	mapload	yes	full	proc
+proc	/obj/item/paper/default_lawset_list	LateInitialize	code/modules/jobs/job_types/station_trait/human_ai.dm:145		yes	full	proc
 type	/obj/item/paper/ruins	/obj/item/paper	(implied by a subtype's path)	live	obj_item_paper_ruins	0	0
 type	/obj/item/paper/ruins/derelict_sulaco	/obj/item/paper/ruins	(implied by a subtype's path)	live	obj_item_paper_ruins_derelict_sulaco	0	0
 type	/obj/item/paper/ruins/derelict_sulaco/birthday	/obj/item/paper/ruins/derelict_sulaco	code/modules/mapfluff/ruins/spaceruin_code/derelict_sulaco.dm:9	live	obj_item_paper_ruins_derelict_sulaco_birthday	0	0
@@ -70573,8 +70573,8 @@ proc	/obj/item/grenade/gluon	detonate	code/game/objects/items/grenades/syndiemin
 type	/obj/item/grenade/mirage	/obj/item/grenade	code/modules/mod/modules/modules_security.dm:289	live	obj_item_grenade_mirage	1	0
 proc	/obj/item/grenade/mirage	arm_grenade	code/modules/mod/modules/modules_security.dm:297	user,delayoverride,msg,volume	yes	full	proc
 proc	/obj/item/grenade/mirage	detonate	code/modules/mod/modules/modules_security.dm:301	lanced_by	yes	full	proc
-type	/obj/item/deployable_turret_folded	/obj/item	code/game/machinery/deployable.dm:206	inert	obj_item_deployable_turret_folded	0	0
-proc	/obj/item/deployable_turret_folded	Initialize	code/game/machinery/deployable.dm:215	mapload	no	-	proc
+type	/obj/item/deployable_turret_folded	/obj/item	code/game/machinery/deployable.dm:206	live	obj_item_deployable_turret_folded	1	0
+proc	/obj/item/deployable_turret_folded	Initialize	code/game/machinery/deployable.dm:215	mapload	yes	full	proc
 type	/obj/item/electronics	/obj/item	code/game/objects/items/wall_mounted.dm:127	live	obj_item_electronics	1	1
 proc	/obj/item/electronics	grind_results	code/game/objects/items/wall_mounted.dm:141		yes	full	proc
 type	/obj/item/electronics/firealarm	/obj/item/electronics	code/game/machinery/firealarm.dm:2	live	obj_item_electronics_firealarm	0	1
@@ -79490,14 +79490,14 @@ proc	/obj/item/bedsheet/gondola	worn_overlays	code/game/objects/structures/bedsh
 type	/obj/item/bedsheet/cosmos	/obj/item/bedsheet	code/game/objects/structures/bedsheet_bin.dm:405	live	obj_item_bedsheet_cosmos	0	0
 type	/obj/item/bedsheet/cosmos/double	/obj/item/bedsheet/cosmos	code/game/objects/structures/bedsheet_bin.dm:571	live	obj_item_bedsheet_cosmos_double	0	0
 type	/obj/item/bedsheet/double	/obj/item/bedsheet	code/game/objects/structures/bedsheet_bin.dm:414	live	obj_item_bedsheet_double	0	0
-type	/obj/item/gun_control	/obj/item	code/game/objects/structures/deployable_turret.dm:230	inert	obj_item_gun_control	0	0
-proc	/obj/item/gun_control	Initialize	code/game/objects/structures/deployable_turret.dm:238	mapload	no	-	proc
-proc	/obj/item/gun_control	Destroy	code/game/objects/structures/deployable_turret.dm:245		no	-	proc
-proc	/obj/item/gun_control	CanItemAutoclick	code/game/objects/structures/deployable_turret.dm:249		no	-	proc
-proc	/obj/item/gun_control	attack_atom	code/game/objects/structures/deployable_turret.dm:252	attacked_obj,user,modifiers,attack_modifiers	no	-	proc
-proc	/obj/item/gun_control	attack	code/game/objects/structures/deployable_turret.dm:256	target_mob,user,modifiers,attack_modifiers	no	-	proc
-proc	/obj/item/gun_control	ranged_interact_with_atom	code/game/objects/structures/deployable_turret.dm:262	interacting_with,user,modifiers	no	-	proc
-proc	/obj/item/gun_control	interact_with_atom	code/game/objects/structures/deployable_turret.dm:271	interacting_with,user,modifiers	no	-	proc
+type	/obj/item/gun_control	/obj/item	code/game/objects/structures/deployable_turret.dm:230	live	obj_item_gun_control	1	0
+proc	/obj/item/gun_control	Initialize	code/game/objects/structures/deployable_turret.dm:238	mapload	yes	full	proc
+proc	/obj/item/gun_control	Destroy	code/game/objects/structures/deployable_turret.dm:245		yes	full	proc
+proc	/obj/item/gun_control	CanItemAutoclick	code/game/objects/structures/deployable_turret.dm:249		yes	full	proc
+proc	/obj/item/gun_control	attack_atom	code/game/objects/structures/deployable_turret.dm:252	attacked_obj,user,modifiers,attack_modifiers	yes	full	proc
+proc	/obj/item/gun_control	attack	code/game/objects/structures/deployable_turret.dm:256	target_mob,user,modifiers,attack_modifiers	yes	full	proc
+proc	/obj/item/gun_control	ranged_interact_with_atom	code/game/objects/structures/deployable_turret.dm:262	interacting_with,user,modifiers	yes	full	proc
+proc	/obj/item/gun_control	interact_with_atom	code/game/objects/structures/deployable_turret.dm:271	interacting_with,user,modifiers	yes	full	proc
 type	/obj/item/key	/obj/item	code/modules/vehicles/vehicle_key.dm:2	live	obj_item_key	1	1
 proc	/obj/item/key	manual_suicide	code/modules/vehicles/vehicle_key.dm:75	user	yes	full	proc root
 type	/obj/item/key/displaycase	/obj/item/key	code/game/objects/structures/displaycase.dm:488	live	obj_item_key_displaycase	0	0
@@ -81731,8 +81731,8 @@ proc	/obj/item/vorpalscythe	pre_attack	code/modules/jobs/job_types/chaplain/chap
 proc	/obj/item/vorpalscythe	attack_secondary	code/modules/jobs/job_types/chaplain/chaplain_vorpal_scythe.dm:102	victim,user,params	no	-	proc
 proc	/obj/item/vorpalscythe	scythe_empowerment	code/modules/jobs/job_types/chaplain/chaplain_vorpal_scythe.dm:172	potential_empowerment	no	-	proc root
 proc	/obj/item/vorpalscythe	scythe_empowerment_end	code/modules/jobs/job_types/chaplain/chaplain_vorpal_scythe.dm:184		no	-	proc root
-type	/obj/item/secure_camera_console_pod	/obj/item	code/modules/jobs/job_types/station_trait/human_ai.dm:163	inert	obj_item_secure_camera_console_pod	0	0
-proc	/obj/item/secure_camera_console_pod	attack_self	code/modules/jobs/job_types/station_trait/human_ai.dm:171	user,modifiers	no	-	proc
+type	/obj/item/secure_camera_console_pod	/obj/item	code/modules/jobs/job_types/station_trait/human_ai.dm:163	live	obj_item_secure_camera_console_pod	1	0
+proc	/obj/item/secure_camera_console_pod	attack_self	code/modules/jobs/job_types/station_trait/human_ai.dm:171	user,modifiers	yes	full	proc
 type	/obj/item/language_manual	/obj/item	code/modules/language/_language_manuals.dm:2	live	obj_item_language_manual	1	0
 proc	/obj/item/language_manual	attack_self	code/modules/language/_language_manuals.dm:11	user	yes	full	proc
 proc	/obj/item/language_manual	attack	code/modules/language/_language_manuals.dm:27	M,user	yes	full	proc
@@ -86002,8 +86002,8 @@ proc	/obj/machinery/computer/camera_advanced/abductor	Destroy	code/modules/antag
 proc	/obj/machinery/computer/camera_advanced/abductor	CreateEye	code/modules/antagonists/abductor/machinery/camera.dm:23		no	-	proc
 proc	/obj/machinery/computer/camera_advanced/abductor	GrantActions	code/modules/antagonists/abductor/machinery/camera.dm:31	user	no	-	proc
 proc	/obj/machinery/computer/camera_advanced/abductor	IsScientist	code/modules/antagonists/abductor/machinery/camera.dm:42	H	no	-	proc root
-type	/obj/machinery/computer/camera_advanced/human_ai	/obj/machinery/computer/camera_advanced	code/game/machinery/computer/camera_advanced.dm:282	inert	obj_machinery_computer_camera_advanced_human_ai	0	0
-proc	/obj/machinery/computer/camera_advanced/human_ai	screwdriver_act	code/game/machinery/computer/camera_advanced.dm:282	user,tool	no	-	proc
+type	/obj/machinery/computer/camera_advanced/human_ai	/obj/machinery/computer/camera_advanced	code/game/machinery/computer/camera_advanced.dm:282	live	obj_machinery_computer_camera_advanced_human_ai	1	0
+proc	/obj/machinery/computer/camera_advanced/human_ai	screwdriver_act	code/game/machinery/computer/camera_advanced.dm:282	user,tool	yes	full	proc
 type	/obj/machinery/computer/camera_advanced/base_construction	/obj/machinery/computer/camera_advanced	code/game/objects/structures/construction_console/construction_console.dm:11	live	obj_machinery_computer_camera_advanced_base_construction	1	1
 proc	/obj/machinery/computer/camera_advanced/base_construction	Initialize	code/game/objects/structures/construction_console/construction_console.dm:29	mapload	yes	full	proc
 proc	/obj/machinery/computer/camera_advanced/base_construction	populate_actions_list	code/game/objects/structures/construction_console/construction_console.dm:43		yes	full	proc root
@@ -91154,22 +91154,22 @@ type	/obj/machinery/trading_card_button/health	/obj/machinery/trading_card_butto
 proc	/obj/machinery/trading_card_button/health	setup_global	code/game/objects/items/tcg/tcg_machines.dm:374		yes	full	proc
 proc	/obj/machinery/trading_card_button/health	setup_radial	code/game/objects/items/tcg/tcg_machines.dm:377		yes	full	proc
 proc	/obj/machinery/trading_card_button/health	handle_choice	code/game/objects/items/tcg/tcg_machines.dm:385	choice,user	yes	full	proc
-type	/obj/machinery/deployable_turret	/obj/machinery	code/game/objects/structures/deployable_turret.dm:5	inert	obj_machinery_deployable_turret	0	0
-proc	/obj/machinery/deployable_turret	Initialize	code/game/objects/structures/deployable_turret.dm:42	mapload	no	-	proc
-proc	/obj/machinery/deployable_turret	Destroy	code/game/objects/structures/deployable_turret.dm:47		no	-	proc
-proc	/obj/machinery/deployable_turret	wrench_act	code/game/objects/structures/deployable_turret.dm:53	user,used_wrench	no	-	proc
-proc	/obj/machinery/deployable_turret	unbuckle_mob	code/game/objects/structures/deployable_turret.dm:72	buckled_mob,force,can_fall	no	-	proc
-proc	/obj/machinery/deployable_turret	user_buckle_mob	code/game/objects/structures/deployable_turret.dm:87	M,user,check_loc	no	-	proc
-proc	/obj/machinery/deployable_turret	process	code/game/objects/structures/deployable_turret.dm:112		no	-	proc
-proc	/obj/machinery/deployable_turret	update_positioning	code/game/objects/structures/deployable_turret.dm:116		no	-	proc root
-proc	/obj/machinery/deployable_turret	direction_track	code/game/objects/structures/deployable_turret.dm:131	user,targeted	no	-	proc root
-proc	/obj/machinery/deployable_turret	checkfire	code/game/objects/structures/deployable_turret.dm:170	targeted_atom,user	no	-	proc root
-proc	/obj/machinery/deployable_turret	volley	code/game/objects/structures/deployable_turret.dm:184	user	no	-	proc root
-proc	/obj/machinery/deployable_turret	fire_helper	code/game/objects/structures/deployable_turret.dm:189	user	no	-	proc root
-type	/obj/machinery/deployable_turret/ultimate	/obj/machinery/deployable_turret	code/game/objects/structures/deployable_turret.dm:204	inert	obj_machinery_deployable_turret_ultimate	0	0
-proc	/obj/machinery/deployable_turret/ultimate	checkfire	code/game/objects/structures/deployable_turret.dm:207	targeted_atom,user	no	-	proc
-type	/obj/machinery/deployable_turret/hmg	/obj/machinery/deployable_turret	code/game/objects/structures/deployable_turret.dm:215	inert	obj_machinery_deployable_turret_hmg	0	0
-type	/obj/machinery/deployable_turret/naval_cannon	/obj/machinery/deployable_turret	code/modules/awaymissions/mission_code/heretic/naval_cannon.dm:2	inert	obj_machinery_deployable_turret_naval_cannon	0	0
+type	/obj/machinery/deployable_turret	/obj/machinery	code/game/objects/structures/deployable_turret.dm:5	live	obj_machinery_deployable_turret	1	0
+proc	/obj/machinery/deployable_turret	Initialize	code/game/objects/structures/deployable_turret.dm:42	mapload	yes	full	proc
+proc	/obj/machinery/deployable_turret	Destroy	code/game/objects/structures/deployable_turret.dm:47		yes	full	proc
+proc	/obj/machinery/deployable_turret	wrench_act	code/game/objects/structures/deployable_turret.dm:53	user,used_wrench	yes	full	proc
+proc	/obj/machinery/deployable_turret	unbuckle_mob	code/game/objects/structures/deployable_turret.dm:72	buckled_mob,force,can_fall	yes	full	proc
+proc	/obj/machinery/deployable_turret	user_buckle_mob	code/game/objects/structures/deployable_turret.dm:87	M,user,check_loc	yes	full	proc
+proc	/obj/machinery/deployable_turret	process	code/game/objects/structures/deployable_turret.dm:112		yes	full	proc
+proc	/obj/machinery/deployable_turret	update_positioning	code/game/objects/structures/deployable_turret.dm:116		yes	full	proc root
+proc	/obj/machinery/deployable_turret	direction_track	code/game/objects/structures/deployable_turret.dm:131	user,targeted	yes	full	proc root
+proc	/obj/machinery/deployable_turret	checkfire	code/game/objects/structures/deployable_turret.dm:170	targeted_atom,user	yes	full	proc root
+proc	/obj/machinery/deployable_turret	volley	code/game/objects/structures/deployable_turret.dm:184	user	yes	full	proc root
+proc	/obj/machinery/deployable_turret	fire_helper	code/game/objects/structures/deployable_turret.dm:189	user	yes	full	proc root
+type	/obj/machinery/deployable_turret/ultimate	/obj/machinery/deployable_turret	code/game/objects/structures/deployable_turret.dm:204	live	obj_machinery_deployable_turret_ultimate	1	0
+proc	/obj/machinery/deployable_turret/ultimate	checkfire	code/game/objects/structures/deployable_turret.dm:207	targeted_atom,user	yes	full	proc
+type	/obj/machinery/deployable_turret/hmg	/obj/machinery/deployable_turret	code/game/objects/structures/deployable_turret.dm:215	live	obj_machinery_deployable_turret_hmg	0	0
+type	/obj/machinery/deployable_turret/naval_cannon	/obj/machinery/deployable_turret	code/modules/awaymissions/mission_code/heretic/naval_cannon.dm:2	live	obj_machinery_deployable_turret_naval_cannon	0	0
 type	/obj/machinery/shower	/obj/machinery	code/game/objects/structures/shower.dm:30	live	obj_machinery_shower	1	1
 proc	/obj/machinery/shower	Initialize	code/game/objects/structures/shower.dm:63	mapload,ndir,has_water_reclaimer	yes	full	proc
 proc	/obj/machinery/shower	examine	code/game/objects/structures/shower.dm:97	user	yes	full	proc

@@ -5619,9 +5619,9 @@ public partial class obj_item_defibrillator_compact_combat_loaded_nanotrasen : o
 [DmPath("/obj/item/defibrillator/loaded")]
 public partial class obj_item_defibrillator_loaded { }
 
-// tg: code/game/machinery/deployable.dm:206
-[DmPath("/obj/item/deployable_turret_folded"), DmGeneratedOnly, DmInert]
-public partial class obj_item_deployable_turret_folded : obj_item
+// tg: code/game/machinery/deployable.dm:206 (the var block of a hand-written class)
+[DmPath("/obj/item/deployable_turret_folded")]
+public partial class obj_item_deployable_turret_folded
 {
     // tg: code/game/machinery/deployable.dm:206
     public obj_item_deployable_turret_folded()
@@ -28749,9 +28749,9 @@ public partial class obj_item_throwing_star_toy : obj_item_throwing_star
     }
 }
 
-// tg: code/game/objects/structures/deployable_turret.dm:230
-[DmPath("/obj/item/gun_control"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gun_control : obj_item
+// tg: code/game/objects/structures/deployable_turret.dm:230 (the var block of a hand-written class)
+[DmPath("/obj/item/gun_control")]
+public partial class obj_item_gun_control
 {
     public obj_machinery_deployable_turret turret; // tg: code/game/objects/structures/deployable_turret.dm:236
 
@@ -37576,9 +37576,9 @@ public partial class obj_item_vorpalscythe : obj_item
     }
 }
 
-// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:163
-[DmPath("/obj/item/secure_camera_console_pod"), DmGeneratedOnly, DmInert]
-public partial class obj_item_secure_camera_console_pod : obj_item
+// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:163 (the var block of a hand-written class)
+[DmPath("/obj/item/secure_camera_console_pod")]
+public partial class obj_item_secure_camera_console_pod
 {
     // tg: code/modules/jobs/job_types/station_trait/human_ai.dm:163
     public obj_item_secure_camera_console_pod()

@@ -3895,9 +3895,9 @@ public partial class obj_projectile_flaming_slash
     }
 }
 
-// tg: code/game/objects/items/weaponry/melee/soulscythe.dm:274
-[DmPath("/obj/projectile/soulscythe"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_soulscythe : obj_projectile
+// tg: code/game/objects/items/weaponry/melee/soulscythe.dm:274 (the var block of a hand-written class)
+[DmPath("/obj/projectile/soulscythe")]
+public partial class obj_projectile_soulscythe
 {
     // tg: code/game/objects/items/weaponry/melee/soulscythe.dm:274
     public obj_projectile_soulscythe()
@@ -5487,9 +5487,9 @@ public partial class obj_projectile_globule : obj_projectile
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/colossus.dm:183
-[DmPath("/obj/projectile/colossus"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_colossus : obj_projectile
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/colossus.dm:183 (the var block of a hand-written class)
+[DmPath("/obj/projectile/colossus")]
+public partial class obj_projectile_colossus
 {
     public float explode_hit_objects = 1; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/colossus.dm:191
 
@@ -5507,9 +5507,9 @@ public partial class obj_projectile_colossus : obj_projectile
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:197
-[DmPath("/obj/projectile/colossus/frost_orb"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_colossus_frost_orb : obj_projectile_colossus
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:197 (the var block of a hand-written class)
+[DmPath("/obj/projectile/colossus/frost_orb")]
+public partial class obj_projectile_colossus_frost_orb
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:197
     public obj_projectile_colossus_frost_orb()
@@ -5526,7 +5526,7 @@ public partial class obj_projectile_colossus_frost_orb : obj_projectile_colossus
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:212
-[DmPath("/obj/projectile/colossus/snowball"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/projectile/colossus/snowball"), DmGeneratedOnly]
 public partial class obj_projectile_colossus_snowball : obj_projectile_colossus
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:212
@@ -5543,9 +5543,9 @@ public partial class obj_projectile_colossus_snowball : obj_projectile_colossus
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:222
-[DmPath("/obj/projectile/colossus/ice_blast"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_colossus_ice_blast : obj_projectile_colossus
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:222 (the var block of a hand-written class)
+[DmPath("/obj/projectile/colossus/ice_blast")]
+public partial class obj_projectile_colossus_ice_blast
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:222
     public obj_projectile_colossus_ice_blast()
@@ -5560,9 +5560,9 @@ public partial class obj_projectile_colossus_ice_blast : obj_projectile_colossus
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:200
-[DmPath("/obj/projectile/colossus/wendigo_shockwave"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_colossus_wendigo_shockwave : obj_projectile_colossus
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:200 (the var block of a hand-written class)
+[DmPath("/obj/projectile/colossus/wendigo_shockwave")]
+public partial class obj_projectile_colossus_wendigo_shockwave
 {
     public float wave_speed = 0.5f; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:204
     public float pixel_moves = 0; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:206
@@ -5576,7 +5576,7 @@ public partial class obj_projectile_colossus_wendigo_shockwave : obj_projectile_
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:209
-[DmPath("/obj/projectile/colossus/wendigo_shockwave/spiral"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/projectile/colossus/wendigo_shockwave/spiral"), DmGeneratedOnly]
 public partial class obj_projectile_colossus_wendigo_shockwave_spiral : obj_projectile_colossus_wendigo_shockwave
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:209
@@ -5587,7 +5587,7 @@ public partial class obj_projectile_colossus_wendigo_shockwave_spiral : obj_proj
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:212
-[DmPath("/obj/projectile/colossus/wendigo_shockwave/wave"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/projectile/colossus/wendigo_shockwave/wave"), DmGeneratedOnly]
 public partial class obj_projectile_colossus_wendigo_shockwave_wave : obj_projectile_colossus_wendigo_shockwave
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:212
@@ -5599,7 +5599,7 @@ public partial class obj_projectile_colossus_wendigo_shockwave_wave : obj_projec
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:216
-[DmPath("/obj/projectile/colossus/wendigo_shockwave/wave/alternate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/projectile/colossus/wendigo_shockwave/wave/alternate"), DmGeneratedOnly]
 public partial class obj_projectile_colossus_wendigo_shockwave_wave_alternate : obj_projectile_colossus_wendigo_shockwave_wave
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:216

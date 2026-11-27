@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The file's corpses: a bitrunner's and a cyber police officer's corpse spawn gutted (the wendigo's victims, the psyker zombies' fallen
-// police). The domain itself is var-only; its megafauna waits for Lavaland's mobs (not-translated.md).
+// police). The domain itself is var-only.
 
 // tg: code/modules/bitrunning/virtual_domain/domains/wendigo.dm:11
 public partial class obj_effect_mob_spawn_corpse_human_bitrunner : obj_effect_mob_spawn_corpse_human

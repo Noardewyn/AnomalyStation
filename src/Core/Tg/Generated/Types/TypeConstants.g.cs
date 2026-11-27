@@ -142,6 +142,8 @@ public static partial class TypeOrder
 
     // A method, not a const: a const string would be stored twice in the assembly.
     private static string EncodedConstants() => """
+#AIStatus
+21541	f1
 #absorption_capacity
 29040	n
 29043	i5
@@ -5583,6 +5585,9 @@ public static partial class TypeOrder
 34607	f0.1
 #beam_icon
 1025	sblood
+#beam_range
+871	f10
+21551	f5
 #bedsheet_type
 31839	ssingle
 31841	sdouble
@@ -7951,6 +7956,8 @@ public static partial class TypeOrder
 26867	f1.5
 26871	f1.25
 26872	f0.5
+#burst_range
+21551	f3
 #burst_size
 23994	f1
 24016	f2
@@ -38652,6 +38659,8 @@ public static partial class TypeOrder
 2648	sRed Glow
 30817	sneutral
 34619	sai_off
+#enrage_time
+21544	f70
 #equip_sound
 21606	rsound/items/equip/glove_equip.ogg
 21626	rsound/items/equip/glove_equip.ogg
@@ -74804,6 +74813,15 @@ public static partial class TypeOrder
 29021	f10
 29023	f15
 29024	f3
+#minimum_distance
+2291	n
+4991	f0
+5080	f20
+5201	f2
+5202	f0
+21542	f1
+21544	f5
+21552	f5
 #minimum_value_override
 9309	i0
 9310	i0
@@ -75646,6 +75664,21 @@ public static partial class TypeOrder
 44045	f1E+31
 44046	f1E+31
 44047	f1E+31
+#move_to_delay
+21542	f3
+21544	f5
+21546	f5
+21547	f10
+21548	f20
+21549	f5
+21551	f10
+21558	f6
+21565	f5
+21566	f5
+21567	f10
+21569	f3
+21570	f2
+21571	f10
 #movement_type
 5071	n
 21306	f8
@@ -111445,6 +111478,10 @@ public static partial class TypeOrder
 28425	n
 28426	n
 30046	n
+#retreat_distance
+21542	n
+21544	i5
+21552	i5
 #righthand_file
 21600	ricons/mob/inhands/clothing/gloves_righthand.dmi
 21691	ricons/mob/inhands/clothing/hats_righthand.dmi
@@ -112057,6 +112094,10 @@ public static partial class TypeOrder
 19879	sGastric Lavage (Stomach Pump)
 19880	sNutrient Processor Purge (Stomach Pump)
 19881	sPteroplasty (Wing Repair)
+#robust_searching
+21542	f0
+21543	f1
+21564	f1
 #rods_amount
 42590	f2
 42591	f1
@@ -112452,6 +112493,8 @@ public static partial class TypeOrder
 10170	soperative_alias
 10171	shacker_alias
 10172	sloadout_list
+#search_objects
+21542	f0
 #sechud_icon
 8975	ricons/mob/huds/hud.dmi
 #sechud_icon_state
@@ -114839,6 +114882,8 @@ public static partial class TypeOrder
 4393	f3
 4421	f0
 4422	f3
+#stomp_range
+21558	f1
 #storage_override
 14648	n
 14848	y/obj/item/folder
@@ -115358,6 +115403,8 @@ public static partial class TypeOrder
 #tastes
 12928	n
 24417	n
+#taunt_chance
+21542	f0
 #telepathy_span
 1096	snotice
 1100	srevennotice
@@ -119354,6 +119401,17 @@ public static partial class TypeOrder
 38155	f16
 38161	f56
 44049	f60
+#vision_range
+4954	i9
+5124	n
+21542	f9
+21543	f5
+21546	f9
+21548	f18
+21552	f13
+21558	f9
+21563	f2
+21564	f6
 #visual
 19189	n
 29625	f1

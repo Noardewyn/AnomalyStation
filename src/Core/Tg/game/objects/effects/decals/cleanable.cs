@@ -12,9 +12,9 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (M3 I1a): the cleanable decal's life cycle (Initialize with the random icon state and the merge of a second decal
 // of its type, Destroy, washing, the reagent holder's lazy creation), so that the mapped dirt, cobwebs and other messes are
 // live; the beauty element since gaps MS1. Not here: the reagents a decal carries into its holder and merges (reagents, M8),
-// diseases (M8); scooping, the bloodcrawl check and the combat-mode attack are generated live-partial stubs
-// (docs/ai/specs/live-partial.txt, ## I1). spawn_unique_cleanable (M4b: welding fuel from the fire extender makes a fuel
-// pool); spawn_glitter (a /turf proc of this file; gaps ST3, the glittery crates). The var block is generated (D111).
+// diseases (M8); scooping and the combat-mode attack are generated live-partial stubs (docs/ai/specs/live-partial.txt, ## I1);
+// the bloodcrawl check came with Bubblegum, who warps through blood. spawn_unique_cleanable (M4b: welding fuel from the fire
+// extender makes a fuel pool); spawn_glitter (a /turf proc of this file; gaps ST3, the glittery crates). The var block is generated (D111).
 
 // tg: code/game/objects/effects/decals/cleanable.dm:1
 [DmPath("/obj/effect/decal/cleanable")]
@@ -164,5 +164,26 @@ public partial class turf : atom
     {
         obj_effect_decal_cleanable_glitter new_glitter = spawn_unique_cleanable(typeof(obj_effect_decal_cleanable_glitter)) as obj_effect_decal_cleanable_glitter;
         new_glitter.color = pick_weight(glitter_colors);
+    }
+}
+
+// tg: code/game/objects/effects/decals/cleanable.dm:115 (Bubblegum's blood warp and blood attacks)
+public partial class obj_effect_decal_cleanable : obj_effect_decal
+{
+    /// Checks if this decal can be bloodcrawled in
+    // tg: code/game/objects/effects/decals/cleanable.dm:116
+    public virtual object can_bloodcrawl_in()
+    {
+        if (decal_reagent == typeof(datum_reagent_blood) || Dm.truthy((reagents as datum_reagents)?.has_reagent(typeof(datum_reagent_blood))))
+            return TRUE;
+
+        DmList blood_DNA = GET_ATOM_BLOOD_DECALS(this);
+        foreach (object blood_key in Dm.each(blood_DNA))
+        {
+            datum_blood_type blood_type = blood_DNA[blood_key] as datum_blood_type;
+            if (blood_type.reagent_type == typeof(datum_reagent_blood))
+                return TRUE;
+        }
+        return null;
     }
 }

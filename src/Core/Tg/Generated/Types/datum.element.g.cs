@@ -1337,9 +1337,9 @@ public partial class datum_element_item_scaling
     }
 }
 
-// tg: code/datums/elements/kill_achievement.dm:3
-[DmPath("/datum/element/kill_achievement"), DmGeneratedOnly, DmInert]
-public partial class datum_element_kill_achievement : datum_element
+// tg: code/datums/elements/kill_achievement.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/kill_achievement")]
+public partial class datum_element_kill_achievement
 {
     public DmList achievement_types; // tg: code/datums/elements/kill_achievement.dm:6
     public Type crusher_achievement_type; // tg: code/datums/elements/kill_achievement.dm:8
@@ -1364,9 +1364,9 @@ public partial class datum_element_kneecapping { }
 [DmPath("/datum/element/kneejerk")]
 public partial class datum_element_kneejerk { }
 
-// tg: code/datums/elements/knockback.dm:7
-[DmPath("/datum/element/knockback"), DmGeneratedOnly, DmInert]
-public partial class datum_element_knockback : datum_element
+// tg: code/datums/elements/knockback.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/element/knockback")]
+public partial class datum_element_knockback
 {
     public object throw_distance; // tg: code/datums/elements/knockback.dm:7
     public object throw_anchored; // tg: code/datums/elements/knockback.dm:9
@@ -1826,9 +1826,9 @@ public partial class datum_element_projectile_drop
     }
 }
 
-// tg: code/datums/elements/projectile_shield.dm:2
-[DmPath("/datum/element/projectile_shield"), DmGeneratedOnly, DmInert]
-public partial class datum_element_projectile_shield : datum_element { }
+// tg: code/datums/elements/projectile_shield.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/element/projectile_shield")]
+public partial class datum_element_projectile_shield { }
 
 // tg: code/datums/elements/prosthetic_icon.dm:3 (the var block of a hand-written class)
 [DmPath("/datum/element/prosthetic_icon")]
@@ -2506,9 +2506,9 @@ public partial class datum_element_waddling { }
 [DmPath("/datum/element/wall_engraver")]
 public partial class datum_element_wall_engraver { }
 
-// tg: code/datums/elements/wall_smasher.dm:7
-[DmPath("/datum/element/wall_smasher"), DmGeneratedOnly, DmInert]
-public partial class datum_element_wall_smasher : datum_element
+// tg: code/datums/elements/wall_smasher.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/element/wall_smasher")]
+public partial class datum_element_wall_smasher
 {
     public object strength_flag; // tg: code/datums/elements/wall_smasher.dm:10
 

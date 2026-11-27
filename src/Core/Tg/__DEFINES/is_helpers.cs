@@ -322,6 +322,12 @@ public static partial class GlobalProcs
         return A is mob_living_simple_animal;
     }
 
+    // tg: code/__DEFINES/is_helpers.dm:222
+    public static bool ishostile(object A)
+    {
+        return A is mob_living_simple_animal_hostile;
+    }
+
     // tg: code/__DEFINES/is_helpers.dm:285  (M4b: a reagent transfer into an organ)
     public static bool isorgan(object A)
     {

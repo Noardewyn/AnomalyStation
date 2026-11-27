@@ -2411,9 +2411,9 @@ public partial class obj_item_melee_rune_carver : obj_item_melee
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:70
-[DmPath("/obj/item/melee/ghost_sword"), DmGeneratedOnly, DmInert]
-public partial class obj_item_melee_ghost_sword : obj_item_melee
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:70 (the var block of a hand-written class)
+[DmPath("/obj/item/melee/ghost_sword")]
+public partial class obj_item_melee_ghost_sword
 {
     public DmList spirits; // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:88
     public DmList alt_continuous; // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:89
@@ -2452,9 +2452,9 @@ public partial class obj_item_melee_ghost_sword : obj_item_melee
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/blood_drunk.dm:4
-[DmPath("/obj/item/melee/cleaving_saw"), DmGeneratedOnly, DmInert]
-public partial class obj_item_melee_cleaving_saw : obj_item_melee
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/blood_drunk.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/melee/cleaving_saw")]
+public partial class obj_item_melee_cleaving_saw
 {
     public DmList nemesis_factions; // tg: code/modules/mining/lavaland/mining_loot/megafauna/blood_drunk.dm:23
     public float faction_bonus_force = 30; // tg: code/modules/mining/lavaland/mining_loot/megafauna/blood_drunk.dm:25
@@ -2495,7 +2495,7 @@ public partial class obj_item_melee_cleaving_saw : obj_item_melee
 }
 
 // tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_objects.dm:3
-[DmPath("/obj/item/melee/cleaving_saw/miner"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/melee/cleaving_saw/miner"), DmGeneratedOnly]
 public partial class obj_item_melee_cleaving_saw_miner : obj_item_melee_cleaving_saw
 {
     // tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_objects.dm:3

@@ -32,9 +32,9 @@ public partial class obj_structure
     }
 }
 
-// tg: code/datums/actions/mobs/create_legion_turrets.dm:33
-[DmPath("/obj/structure/legionturret"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_legionturret : obj_structure
+// tg: code/datums/actions/mobs/create_legion_turrets.dm:33 (the var block of a hand-written class)
+[DmPath("/obj/structure/legionturret")]
+public partial class obj_structure_legionturret
 {
     public Type projectile_type = typeof(obj_projectile_beam_legion); // tg: code/datums/actions/mobs/create_legion_turrets.dm:48
     public float initial_firing_time = 18; // tg: code/datums/actions/mobs/create_legion_turrets.dm:50
@@ -15795,9 +15795,9 @@ public partial class obj_structure_cursed_money : obj_structure
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:3
-[DmPath("/obj/structure/necropolis_gate"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_necropolis_gate : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/structure/necropolis_gate")]
+public partial class obj_structure_necropolis_gate
 {
     public float? open = 0; // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:20
     public float changing_openness = 0; // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:21
@@ -15829,7 +15829,7 @@ public partial class obj_structure_necropolis_gate : obj_structure
 }
 
 // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:145
-[DmPath("/obj/structure/necropolis_gate/locked"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/necropolis_gate/locked"), DmGeneratedOnly]
 public partial class obj_structure_necropolis_gate_locked : obj_structure_necropolis_gate
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:145
@@ -15839,9 +15839,9 @@ public partial class obj_structure_necropolis_gate_locked : obj_structure_necrop
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:149
-[DmPath("/obj/structure/necropolis_gate/legion_gate"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_necropolis_gate_legion_gate : obj_structure_necropolis_gate
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:149 (the var block of a hand-written class)
+[DmPath("/obj/structure/necropolis_gate/legion_gate")]
+public partial class obj_structure_necropolis_gate_legion_gate
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:149
     public obj_structure_necropolis_gate_legion_gate()
@@ -15851,9 +15851,9 @@ public partial class obj_structure_necropolis_gate_legion_gate : obj_structure_n
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:83
-[DmPath("/obj/structure/opacity_blocker"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_opacity_blocker : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:83 (the var block of a hand-written class)
+[DmPath("/obj/structure/opacity_blocker")]
+public partial class obj_structure_opacity_blocker
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:83
     public obj_structure_opacity_blocker()
@@ -15869,9 +15869,9 @@ public partial class obj_structure_opacity_blocker : obj_structure
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:223
-[DmPath("/obj/structure/necropolis_arch"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_necropolis_arch : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:223 (the var block of a hand-written class)
+[DmPath("/obj/structure/necropolis_arch")]
+public partial class obj_structure_necropolis_arch
 {
     public float? open = 0; // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:234
 
@@ -16546,9 +16546,9 @@ public partial class obj_structure_candela_beacon
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing.dm:207
-[DmPath("/obj/structure/thing_boss_phase_depleter"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_thing_boss_phase_depleter : obj_structure
+// tg: code/modules/mob/living/basic/boss/thing/thing.dm:207 (the var block of a hand-written class)
+[DmPath("/obj/structure/thing_boss_phase_depleter")]
+public partial class obj_structure_thing_boss_phase_depleter
 {
     public float functional = 1; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:215
     public datum_weakref boss_weakref; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:217
@@ -16566,9 +16566,9 @@ public partial class obj_structure_thing_boss_phase_depleter : obj_structure
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing.dm:297
-[DmPath("/obj/structure/aggro_gate"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aggro_gate : obj_structure
+// tg: code/modules/mob/living/basic/boss/thing/thing.dm:297 (the var block of a hand-written class)
+[DmPath("/obj/structure/aggro_gate")]
+public partial class obj_structure_aggro_gate
 {
     public string queue_id = "the_thing_depleter"; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:308
     public string target_bb_key = "Current Target"; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:310
@@ -16589,9 +16589,9 @@ public partial class obj_structure_aggro_gate : obj_structure
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:2
-[DmPath("/obj/structure/thing_boss_spike"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_thing_boss_spike : obj_structure
+// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/thing_boss_spike")]
+public partial class obj_structure_thing_boss_spike
 {
     public float expiry_time = 100; // tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:9
 
@@ -16688,9 +16688,9 @@ public partial class obj_structure_gel_cocoon : obj_structure
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:280
-[DmPath("/obj/structure/frost_miner_prism"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_frost_miner_prism : obj_structure
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:280 (the var block of a hand-written class)
+[DmPath("/obj/structure/frost_miner_prism")]
+public partial class obj_structure_frost_miner_prism
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:280
     public obj_structure_frost_miner_prism()

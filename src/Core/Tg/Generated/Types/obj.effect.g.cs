@@ -2841,7 +2841,7 @@ public partial class obj_effect_portal_anom : obj_effect_portal
 [DmPath("/obj/effect/portal/permanent")]
 public partial class obj_effect_portal_permanent
 {
-    public Type id; // tg: code/game/objects/effects/portals.dm:190
+    public object id; // tg: code/game/objects/effects/portals.dm:190
 
     // tg: code/game/objects/effects/portals.dm:186
     public obj_effect_portal_permanent()
@@ -6716,9 +6716,9 @@ public partial class obj_effect_immortality_talisman_void : obj_effect_immortali
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:110
-[DmPath("/obj/effect/thing_acid"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_thing_acid : obj_effect
+// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:110 (the var block of a hand-written class)
+[DmPath("/obj/effect/thing_acid")]
+public partial class obj_effect_thing_acid
 {
     public float duration_time = 50; // tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:117
 
@@ -6870,9 +6870,9 @@ public partial class obj_effect_goliath_tentacle_broodmother : obj_effect_goliat
 [DmPath("/obj/effect/goliath_tentacle/broodmother/patch"), DmGeneratedOnly, DmInert]
 public partial class obj_effect_goliath_tentacle_broodmother_patch : obj_effect_goliath_tentacle_broodmother { }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:760
-[DmPath("/obj/effect/hierophant"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_hierophant : obj_effect
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:760 (the var block of a hand-written class)
+[DmPath("/obj/effect/hierophant")]
+public partial class obj_effect_hierophant
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:760
     public obj_effect_hierophant()

@@ -830,10 +830,11 @@ public partial class obj_item_slimepotion_sentience : obj_item_slimepotion
         await dumb_mob.mind.enslave_mind_to_creator(user as mob_living);
         dumb_mob.SEND_SIGNAL(COMSIG_SIMPLEMOB_SENTIENCEPOTION, Dm.list(dumb_mob, user));
 
-        // if(isanimal(dumb_mob)) smart_animal.sentience_act(): the simple animals are not ported, and their compare_sentience_type
-        // is not live, so a simple animal never gets here (the potion calls it "invalid creature!" above)
         if (isanimal(dumb_mob))
-            Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:806", "on_poll_concluded: smart_animal.sentience_act() (the simple animals are not ported)");
+        {
+            mob_living_simple_animal smart_animal = dumb_mob as mob_living_simple_animal;
+            smart_animal.sentience_act();
+        }
 
         await dumb_mob.mind.add_antag_datum(typeof(datum_antagonist_sentient_creature));
         balloon_alert(user, I18n.T("success"));

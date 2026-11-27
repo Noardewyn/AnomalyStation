@@ -19388,9 +19388,9 @@ public partial class obj_item_food_bubblegum_happiness : obj_item_food_bubblegum
     }
 }
 
-// tg: code/modules/food_and_drinks/food/sweets.dm:233
-[DmPath("/obj/item/food/bubblegum/bubblegum"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_bubblegum_bubblegum : obj_item_food_bubblegum
+// tg: code/modules/food_and_drinks/food/sweets.dm:233 (the var block of a hand-written class)
+[DmPath("/obj/item/food/bubblegum/bubblegum")]
+public partial class obj_item_food_bubblegum_bubblegum
 {
     // tg: code/modules/food_and_drinks/food/sweets.dm:233
     public obj_item_food_bubblegum_bubblegum()

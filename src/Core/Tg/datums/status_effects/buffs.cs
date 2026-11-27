@@ -12,7 +12,8 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (syndicate G4c, D316): His Grace's effect and its alert; silicons SI2 (D326) the Synthpax immunity; gaps B1 (D327) the desensitization of the combat PTSD and the obsession; gaps K1
 // (D327) the changeling's Fleshmend; gaps X5 the alien nest's sustenance; gaps MO1 (D333) the MODsuit jump jet's anti-gravity; gaps SL1
 // (D333) the exercised effect of a workout (its mood event since gaps MS1); gaps RG1
-// (D339) the garibaldi's revolutionary resilience; the regenerative core's tendrils; the other buffs come with their systems.
+// (D339) the garibaldi's revolutionary resilience; the regenerative core's tendrils; the blood-drunk eye's blooddrunk; the bottle
+// of mayhem's frenzy; the other buffs come with their systems.
 
 //Largely beneficial effects go here, even if they have drawbacks.
 
@@ -534,3 +535,83 @@ public partial class datum_status_effect_shadow_regeneration : datum_status_effe
         await owner.heal_overall_damage(brute: 1, burn: 1, required_bodytype: BODYTYPE_ORGANIC);
     }
 }
+
+// tg: code/datums/status_effects/buffs.dm:95 (the blood-drunk miner's eye: its crusher trophy's mark detonation)
+public partial class datum_status_effect_blooddrunk : datum_status_effect
+{
+    // tg: code/datums/status_effects/buffs.dm:106
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        owner.add_movespeed_mod_immunities(id, typeof(datum_movespeed_modifier_damage_slowdown));
+        MODIFY_PHYSIOLOGY(owner, BRUTE, 0.1f);
+        MODIFY_PHYSIOLOGY(owner, BURN, 0.1f);
+        MODIFY_PHYSIOLOGY(owner, TOX, 0.1f);
+        MODIFY_PHYSIOLOGY(owner, OXY, 0.1f);
+        MODIFY_PHYSIOLOGY(owner, STAMINA, 0.1f);
+        await owner.add_stun_absorption(source: id, priority: 4);
+        owner.playsound_local(get_turf(owner), Dm.resource("sound/effects/singlebeat.ogg"), 40, 1, use_reverb: FALSE);
+        return TRUE;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:117  (tg restores the pressure coefficient, not the stamina one it lowered: kept)
+    public override async DmTask<object> on_remove()
+    {
+        MODIFY_PHYSIOLOGY(owner, BRUTE, 10);
+        MODIFY_PHYSIOLOGY(owner, BURN, 10);
+        MODIFY_PHYSIOLOGY(owner, TOX, 10);
+        MODIFY_PHYSIOLOGY(owner, OXY, 10);
+        MODIFY_PHYSIOLOGY(owner, PHYS_COEFF_PRESSURE, 10);
+        owner.remove_movespeed_mod_immunities(id, typeof(datum_movespeed_modifier_damage_slowdown));
+        owner.remove_stun_absorption(id);
+        return null;
+    }
+}
+
+// tg: code/datums/status_effects/buffs.dm:423
+public partial class datum_status_effect_mayhem : datum_status_effect
+{
+    // tg: code/datums/status_effects/buffs.dm:430
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        await base.on_apply(__extra);
+        to_chat(owner, Dm.text("<span class='reallybig redtext'>[]</span>", I18n.T("RIP AND TEAR")));
+        Dm.output_to(owner, sound(Dm.resource("sound/effects/hallucinations/veryfar_noise.ogg"))); // SEND_SOUND (DIRECT_OUTPUT, rules 12)
+        await owner.cause_hallucination(
+            typeof(datum_hallucination_delusion_preset_demon),
+            Dm.text("[] status effect", id),
+            Dm.named("duration", duration),
+            Dm.named("affects_us", FALSE),
+            Dm.named("affects_others", TRUE),
+            Dm.named("skip_nearby", FALSE),
+            Dm.named("play_wabbajack", FALSE));
+
+        await owner.drop_all_held_items();
+
+        if (iscarbon(owner))
+        {
+            chainsaw = Dm.@new<obj_item_chainsaw_doomslayer>(get_turf(owner));
+            ADD_TRAIT(chainsaw, TRAIT_NODROP, TRAIT_STATUS_EFFECT(id));
+            await owner.put_in_hands(chainsaw, forced: TRUE);
+            await chainsaw.attack_self(owner);
+            await (owner.reagents as datum_reagents).add_reagent(typeof(datum_reagent_medicine_adminordrazine), 25);
+        }
+
+        owner.log_message("entered a blood frenzy", LOG_ATTACK);
+        to_chat(owner, span_narsiesmall(I18n.T("KILL, KILL, KILL! YOU HAVE NO ALLIES ANYMORE, NO TEAM MATES OR ALLEGIANCES! KILL THEM ALL!")));
+
+        object colour = owner.add_client_colour(typeof(datum_client_colour_bloodlust), REF(this));
+        _addtimer(Dm.@new<datum_callback>(GLOBAL_PROC, "/proc/" + nameof(GlobalProcs.qdel), 1.1f * SECONDS > GC_FILTER_QUEUE ? WEAKREF(colour as datum) : colour), 1.1f * SECONDS, file: "code/datums/status_effects/buffs.dm", line: 456); // QDEL_IN(colour, 1.1 SECONDS)
+        return TRUE;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:460
+    public override async DmTask<object> on_remove()
+    {
+        await base.on_remove();
+        to_chat(owner, span_notice(I18n.T("Your bloodlust seeps back into the bog of your subconscious and you regain self control.")));
+        owner.log_message("exited a blood frenzy", LOG_ATTACK);
+        QDEL_NULL(ref chainsaw);
+        return null;
+    }
+}
+

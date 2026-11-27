@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M10 slice G3 (D272): the whole file but the types the port does not have live (the mech bay's recharge port, the auxiliary base's
-// console, the megafauna and the boss mobs, the navigation beacons: their stubs stay deferred; the ladders came with multi-z, D325) and the achievement of a crushed
+// console, the navigation beacons: their stubs stay deferred; the ladders came with multi-z, D325) and the achievement of a crushed
 // vehicle's rider (the awards are not ported). The [DmPath] of /obj/docking_port/stationary is here: this is the earliest .dme
 // file that declares it (rules 2.3).
 
@@ -537,6 +537,30 @@ public partial class mob_living : mob
             await Paralyze(knockdown);
         }
         await base.lateShuttleMove(oldT, movement_force, move_dir);
+    }
+}
+
+// tg: code/modules/shuttle/mobile_port/shuttle_move_callbacks.dm:345
+public partial class mob_living_simple_animal_hostile_megafauna : mob_living_simple_animal_hostile
+{
+    // tg: code/modules/shuttle/mobile_port/shuttle_move_callbacks.dm:345
+    public override async DmTask<object> onShuttleMove(turf newT = null, turf oldT = null, DmList movement_force = null, object move_dir = null, obj_docking_port_stationary old_dock = null, obj_docking_port_mobile moving_dock = null)
+    {
+        object dot = await base.onShuttleMove(newT, oldT, movement_force, move_dir, old_dock, moving_dock);
+        message_admins(Dm.text("Megafauna [] [] moved via shuttle from [] to []", this, ADMIN_FLW(this), ADMIN_COORDJMP(oldT), ADMIN_COORDJMP(loc as atom)));
+        return dot;
+    }
+}
+
+// tg: code/modules/shuttle/mobile_port/shuttle_move_callbacks.dm:349
+public partial class mob_living_basic_boss : mob_living_basic
+{
+    // tg: code/modules/shuttle/mobile_port/shuttle_move_callbacks.dm:349
+    public override async DmTask<object> onShuttleMove(turf newT = null, turf oldT = null, DmList movement_force = null, object move_dir = null, obj_docking_port_stationary old_dock = null, obj_docking_port_mobile moving_dock = null)
+    {
+        object dot = await base.onShuttleMove(newT, oldT, movement_force, move_dir, old_dock, moving_dock);
+        message_admins(Dm.text("Megafauna [] [] moved via shuttle from [] to []", this, ADMIN_FLW(this), ADMIN_COORDJMP(oldT), ADMIN_COORDJMP(loc as atom)));
+        return dot;
     }
 }
 

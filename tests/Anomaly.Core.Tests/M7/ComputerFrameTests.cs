@@ -87,7 +87,8 @@ public class ComputerFrameTests
         Assert.Equal(dir, r.In(() => Dm.num(frame.dir)));
         Assert.Same(board, r.In(() => frame.circuit_value));
         Assert.Same(board, r.In(() => Dm.each(frame.contents).Single()));
-        Assert.Contains(r.Sounds.Heard, h => h.File == "sound/items/tools/screwdriver.ogg");
+        // the screwdriver's usesound is a pick of its two (screwdriver.dm:25)
+        Assert.Contains(r.Sounds.Heard, h => h.File is "sound/items/tools/screwdriver.ogg" or "sound/items/tools/screwdriver2.ogg");
 
         // ---- 2. Down: the crowbar pries out the glass (2 glass sheets), the wirecutter the cable (5), the screwdriver
         //         unsecures the board, the crowbar takes it out

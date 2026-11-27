@@ -3056,15 +3056,6 @@ public partial class obj_effect_decal_cleanable
         return DmTask<object>.FromResult(default);
     }
 
-    // tg: code/game/objects/effects/decals/cleanable.dm:116
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section I1
-    [DmGeneratedStub]
-    public virtual object can_bloodcrawl_in()
-    {
-        Dm.NotTranslated("code/game/objects/effects/decals/cleanable.dm:116", "can_bloodcrawl_in: the slaughter demon's bloodcrawl check (blood M8, antagonists M10+) (M10+)");
-        return default;
-    }
-
     // tg: code/game/objects/effects/decals/cleanable.dm:126
     // STUB(M8): docs/ai/specs/live-partial.txt, section I1
     [DmGeneratedStub]

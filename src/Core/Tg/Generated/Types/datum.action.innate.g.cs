@@ -39,9 +39,9 @@ public partial class datum_action_innate_augury : datum_action_innate
     }
 }
 
-// tg: code/datums/dash_weapon.dm:3
-[DmPath("/datum/action/innate/dash"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_dash : datum_action_innate
+// tg: code/datums/dash_weapon.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/dash")]
+public partial class datum_action_innate_dash
 {
     public float current_charges = 1; // tg: code/datums/dash_weapon.dm:8
     public float max_charges = 1; // tg: code/datums/dash_weapon.dm:10
@@ -97,9 +97,9 @@ public partial class datum_action_innate_dash_ninja : datum_action_innate_dash
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:248
-[DmPath("/datum/action/innate/dash/hierophant"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_dash_hierophant : datum_action_innate_dash
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:248 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/dash/hierophant")]
+public partial class datum_action_innate_dash_hierophant
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:248
     public datum_action_innate_dash_hierophant()
@@ -1428,9 +1428,9 @@ public partial class datum_action_innate_mafia_panel
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:2
-[DmPath("/datum/action/innate/brain_undeployment"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_brain_undeployment : datum_action_innate
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/brain_undeployment")]
+public partial class datum_action_innate_brain_undeployment
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:2
     public datum_action_innate_brain_undeployment()
@@ -1834,9 +1834,9 @@ public partial class datum_action_innate_undeployment
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/_megafauna.dm:198
-[DmPath("/datum/action/innate/megafauna_attack"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_megafauna_attack : datum_action_innate
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/_megafauna.dm:198 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/megafauna_attack")]
+public partial class datum_action_innate_megafauna_attack
 {
     public object chosen_message; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/_megafauna.dm:201
     public float chosen_attack_num = 0; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/_megafauna.dm:202
@@ -1851,7 +1851,7 @@ public partial class datum_action_innate_megafauna_attack : datum_action_innate
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:112
-[DmPath("/datum/action/innate/megafauna_attack/blink"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/megafauna_attack/blink"), DmGeneratedOnly]
 public partial class datum_action_innate_megafauna_attack_blink : datum_action_innate_megafauna_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:112
@@ -1866,7 +1866,7 @@ public partial class datum_action_innate_megafauna_attack_blink : datum_action_i
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:119
-[DmPath("/datum/action/innate/megafauna_attack/chaser_swarm"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/megafauna_attack/chaser_swarm"), DmGeneratedOnly]
 public partial class datum_action_innate_megafauna_attack_chaser_swarm : datum_action_innate_megafauna_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:119
@@ -1881,7 +1881,7 @@ public partial class datum_action_innate_megafauna_attack_chaser_swarm : datum_a
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:126
-[DmPath("/datum/action/innate/megafauna_attack/cross_blasts"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/megafauna_attack/cross_blasts"), DmGeneratedOnly]
 public partial class datum_action_innate_megafauna_attack_cross_blasts : datum_action_innate_megafauna_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:126
@@ -1896,7 +1896,7 @@ public partial class datum_action_innate_megafauna_attack_cross_blasts : datum_a
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:133
-[DmPath("/datum/action/innate/megafauna_attack/blink_spam"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/megafauna_attack/blink_spam"), DmGeneratedOnly]
 public partial class datum_action_innate_megafauna_attack_blink_spam : datum_action_innate_megafauna_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:133

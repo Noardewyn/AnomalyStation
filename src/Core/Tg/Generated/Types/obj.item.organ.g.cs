@@ -1328,9 +1328,9 @@ public partial class obj_item_organ_brain_cybernetic
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:16
-[DmPath("/obj/item/organ/brain/cybernetic/ai"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_cybernetic_ai : obj_item_organ_brain_cybernetic
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:16 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/cybernetic/ai")]
+public partial class obj_item_organ_brain_cybernetic_ai
 {
     public mob_living_silicon_ai mainframe; // tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:20
     public mob_living_silicon_ai connected_ai; // tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:22
@@ -5764,9 +5764,9 @@ public partial class obj_item_organ_vocal_cords
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:4
-[DmPath("/obj/item/organ/vocal_cords/colossus"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_vocal_cords_colossus : obj_item_organ_vocal_cords
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/vocal_cords/colossus")]
+public partial class obj_item_organ_vocal_cords_colossus
 {
     public float next_command = 0; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:8
     public float cooldown_mod = 1; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:9

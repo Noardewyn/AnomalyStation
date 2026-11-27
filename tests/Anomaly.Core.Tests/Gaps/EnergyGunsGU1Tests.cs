@@ -164,7 +164,9 @@ public class EnergyGunsGU1Tests
         var gun = Arm<obj_item_gun_energy_pulse>(r, bob);
         Assert.Equal(typeof(obj_item_ammo_casing_energy_laser_pulse), r.In(() => gun.ammo_type[1]?.GetType()));
         Assert.True(Pull(r, bob, gun, dummy), "the pulse rifle did not fire");
-        r.Step(Second);
+        // read the burn as the beam lands: the dummy's Life starts healing it a few ticks later
+        for (int t = 0; t < Second && Burn(r, dummy) == 0; t++)
+            r.Step();
         Assert.Equal(50f, Burn(r, dummy), 0.01);
 
         // what the beam's on_hit does to a wall and a structure: they go to SSexplosions' heavy lists (EXPLODE_HEAVY)

@@ -17,7 +17,7 @@ namespace Anomaly.Core.Tg;
 // gravitational anomaly's detonation); E13: the RCD family's constructing effect (:518); syndicate X2: the decoys (:236-262); gaps R1: the
 // bluespace artillery's splash (:173); gaps B1: the bluespace fissure (:310, the bluespace prophet's streams); gaps OD2: the focus ring (:823, the
 // House Edge's wind-up); gaps MO2: the sonar ping (:613, the MOD active sonar's pings, DV541); the Lavaland fauna: the withering spawn (:720, the despawn
-// of the hivelord's and the legion's minions). The other visuals of the file come with their mechanics.
+// of the hivelord's and the legion's minions); the megafauna: the cleaving saw's bleed and its burst (:456-480). The other visuals of the file come with their mechanics.
 
 // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:691
 [DmPath("/obj/effect/temp_visual/block")]
@@ -556,3 +556,30 @@ public partial class obj_effect_temp_visual_despawn_effect : obj_effect_temp_vis
         return base.Initialize(mapload, __extra);
     }
 }
+
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:456
+public partial class obj_effect_temp_visual_bleed : obj_effect_temp_visual
+{
+    // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:463
+    [DmParams("mapload", "size_calc_target")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        atom size_calc_target = Dm.arg(__extra, 0) as atom;
+        object dot = base.Initialize(mapload, __extra);
+        object size_matrix = Dm.matrix();
+        if (size_calc_target != null)
+        {
+            layer = Dm.num(size_calc_target.layer) + 0.01f;
+            size_matrix = Dm.mul(Dm.matrix(), Dm.num(size_calc_target.get_visual_height()) / ICON_SIZE_Y);
+            transform = size_matrix; //scale the bleed overlay's size based on the target's icon size
+        }
+        object M = transform;
+        if (Dm.truthy(shrink))
+            M = Dm.mul(size_matrix, 0.1f);
+        else
+            M = Dm.mul(size_matrix, 2);
+        animate(this, Dm.named("alpha", 20), Dm.named("transform", M), Dm.named("time", duration), Dm.named("flags", ANIMATION_PARALLEL));
+        return dot;
+    }
+}
+

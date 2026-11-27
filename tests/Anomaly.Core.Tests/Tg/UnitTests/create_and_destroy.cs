@@ -88,6 +88,9 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         GLOB.InitGloballizard_names_female();
         GLOB.InitGlobalmoth_first();
         GLOB.InitGlobalmoth_last();
+        // the Thing's ruin machines (its phase depleters, the aggro gates) queue their links on SSqueuelinks, which tg's MC always makes
+        if (SSqueuelinks == null)
+            Dm.@new<datum_controller_subsystem_queuelinks>();
         // M6 slice 5: a gib spawner's gibs streak along tg's move_to loop (blood.dm:610), on SSmovement, which tg's MC always creates
         if (SSmovement == null)
             Dm.@new<datum_controller_subsystem_movement>();

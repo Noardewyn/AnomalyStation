@@ -642,9 +642,9 @@ public partial class obj_effect_decal_cleanable_blood_gibs_old
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:376
-[DmPath("/obj/effect/decal/cleanable/blood/gibs/bubblegum"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_blood_gibs_bubblegum : obj_effect_decal_cleanable_blood_gibs
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:376 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/blood/gibs/bubblegum")]
+public partial class obj_effect_decal_cleanable_blood_gibs_bubblegum
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:376
     public obj_effect_decal_cleanable_blood_gibs_bubblegum()
@@ -961,9 +961,9 @@ public partial class obj_effect_decal_cleanable_blood_innards : obj_effect_decal
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:370
-[DmPath("/obj/effect/decal/cleanable/blood/bubblegum"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_blood_bubblegum : obj_effect_decal_cleanable_blood
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:370 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/blood/bubblegum")]
+public partial class obj_effect_decal_cleanable_blood_bubblegum
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:370
     public obj_effect_decal_cleanable_blood_bubblegum()

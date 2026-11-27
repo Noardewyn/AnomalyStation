@@ -905,9 +905,9 @@ public partial class obj_item_clothing_shoes_winterboots_ice_boots_eva : obj_ite
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:40
-[DmPath("/obj/item/clothing/shoes/winterboots/ice_boots/ice_trail"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_shoes_winterboots_ice_boots_ice_trail : obj_item_clothing_shoes_winterboots_ice_boots
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:40 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/shoes/winterboots/ice_boots/ice_trail")]
+public partial class obj_item_clothing_shoes_winterboots_ice_boots_ice_trail
 {
     public float on = 0; // tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:43
     public Type change_turf = typeof(turf_open_misc_ice_icemoon_no_planet_atmos); // tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:44

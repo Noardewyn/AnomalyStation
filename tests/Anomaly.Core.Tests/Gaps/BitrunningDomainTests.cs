@@ -121,10 +121,10 @@ public class BitrunningDomainTests
         return glitch;
     }
 
-    // tg's virtual domains the port hosts; the six megafauna domains wait for Lavaland's mobs, the island brawl needs a room of its own
+    // tg's virtual domains the port hosts; the island brawl needs a room of its own
     public static IEnumerable<object[]> Domains() => new[]
     {
-        "abductor_ship", "beach_bar", "breeze_bay", "clown_planet", "fredingtonfastingbear", "heretic_hunt", "meta_central", "pipedream",
+        "abductor_ship", "ash_drake", "beach_bar", "blood_drunk_miner", "bubblegum", "colossus", "hierophant", "wendigo", "breeze_bay", "clown_planet", "fredingtonfastingbear", "heretic_hunt", "meta_central", "pipedream",
         "pirates", "psyker_shuffle", "psyker_zombies", "stairs_and_cliffs", "syndicate_assault", "vaporwave", "xeno_nest",
     }.Select(k => new object[] { k });
 
@@ -169,15 +169,20 @@ public class BitrunningDomainTests
         // the converted map's own mobs: none lost on the way
         int expected = key switch
         {
-            "xeno_nest" => 6, "psyker_zombies" => 16, "psyker_shuffle" => 5, "clown_planet" => 4, "heretic_hunt" => 9, "meta_central" => 1, _ => 0,
+            "xeno_nest" => 6, "psyker_zombies" => 16, "psyker_shuffle" => 5, "clown_planet" => 4, "heretic_hunt" => 9, "meta_central" => 1,
+            "ash_drake" or "bubblegum" or "colossus" or "hierophant" or "wendigo" or "blood_drunk_miner" => 1, _ => 0,
         };
         Type kind = key switch
         {
             "xeno_nest" => typeof(mob_living_basic_alien), "psyker_zombies" => typeof(mob_living_basic_zombie), "psyker_shuffle" => typeof(mob_living_basic_mimic_crate),
             "clown_planet" => typeof(mob_living_basic_clown), "heretic_hunt" => typeof(mob_living_basic_fake_crewman), "meta_central" => typeof(mob_living_basic_revolutionary),
+            "blood_drunk_miner" => typeof(mob_living_basic_boss), "ash_drake" or "bubblegum" or "colossus" or "hierophant" or "wendigo" => typeof(mob_living_simple_animal_hostile_megafauna),
             _ => typeof(mob_living),
         };
         Assert.True(mobs.Count(m => kind.IsInstanceOfType(m)) >= expected, key + ": " + mobs.Count(m => kind.IsInstanceOfType(m)) + " " + kind.Name);
+        // a domain's megafauna is made virtual as it loads: half its health within 600-1300 (virtual_megafauna.dm:3)
+        Assert.All(mobs.Where(m => m is mob_living_simple_animal_hostile_megafauna or mob_living_basic_boss),
+            m => Assert.True(d.R.In(() => Dm.num(m.maxHealth)) is >= 600 and <= 1300, key + ": " + m.GetType().Name + " is not virtual"));
         AssertNoRuntimes(d);
         d.R.In(() => d.Server.reset(fast: TRUE));
         d.R.Step(Second);

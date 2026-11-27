@@ -13787,9 +13787,9 @@ public partial class obj_machinery_brm
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:85
-[DmPath("/obj/machinery/anomalous_crystal"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_anomalous_crystal : obj_machinery
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:85 (the var block of a hand-written class)
+[DmPath("/obj/machinery/anomalous_crystal")]
+public partial class obj_machinery_anomalous_crystal
 {
     public string observer_desc = "Anomalous crystals have descriptions that only observers can see. But this one hasn't been changed from the default."; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:87
     public object activation_method; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:95
@@ -13823,9 +13823,9 @@ public partial class obj_machinery_anomalous_crystal : obj_machinery
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:182
-[DmPath("/obj/machinery/anomalous_crystal/honk"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_anomalous_crystal_honk : obj_machinery_anomalous_crystal
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:182 (the var block of a hand-written class)
+[DmPath("/obj/machinery/anomalous_crystal/honk")]
+public partial class obj_machinery_anomalous_crystal_honk
 {
     public DmList clowned_mob_refs; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:187
 
@@ -13846,9 +13846,9 @@ public partial class obj_machinery_anomalous_crystal_honk : obj_machinery_anomal
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:222
-[DmPath("/obj/machinery/anomalous_crystal/theme_warp"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_anomalous_crystal_theme_warp : obj_machinery_anomalous_crystal
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:222 (the var block of a hand-written class)
+[DmPath("/obj/machinery/anomalous_crystal/theme_warp")]
+public partial class obj_machinery_anomalous_crystal_theme_warp
 {
     public datum_dimension_theme terrain_theme; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:227
     public DmList converted_areas; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:229
@@ -13870,9 +13870,9 @@ public partial class obj_machinery_anomalous_crystal_theme_warp : obj_machinery_
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:253
-[DmPath("/obj/machinery/anomalous_crystal/emitter"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_anomalous_crystal_emitter : obj_machinery_anomalous_crystal
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:253 (the var block of a hand-written class)
+[DmPath("/obj/machinery/anomalous_crystal/emitter")]
+public partial class obj_machinery_anomalous_crystal_emitter
 {
     public Type generated_projectile = typeof(obj_projectile_colossus); // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:256
 
@@ -13885,9 +13885,9 @@ public partial class obj_machinery_anomalous_crystal_emitter : obj_machinery_ano
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:269
-[DmPath("/obj/machinery/anomalous_crystal/dark_reprise"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_anomalous_crystal_dark_reprise : obj_machinery_anomalous_crystal
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:269 (the var block of a hand-written class)
+[DmPath("/obj/machinery/anomalous_crystal/dark_reprise")]
+public partial class obj_machinery_anomalous_crystal_dark_reprise
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:269
     public obj_machinery_anomalous_crystal_dark_reprise()
@@ -13899,9 +13899,9 @@ public partial class obj_machinery_anomalous_crystal_dark_reprise : obj_machiner
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:301
-[DmPath("/obj/machinery/anomalous_crystal/helpers"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_anomalous_crystal_helpers : obj_machinery_anomalous_crystal
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:301 (the var block of a hand-written class)
+[DmPath("/obj/machinery/anomalous_crystal/helpers")]
+public partial class obj_machinery_anomalous_crystal_helpers
 {
     public float ready_to_deploy = 0; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:305
 
@@ -13915,9 +13915,9 @@ public partial class obj_machinery_anomalous_crystal_helpers : obj_machinery_ano
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:330
-[DmPath("/obj/machinery/anomalous_crystal/possessor"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_anomalous_crystal_possessor : obj_machinery_anomalous_crystal
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:330 (the var block of a hand-written class)
+[DmPath("/obj/machinery/anomalous_crystal/possessor")]
+public partial class obj_machinery_anomalous_crystal_possessor
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:330
     public obj_machinery_anomalous_crystal_possessor()

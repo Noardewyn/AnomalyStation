@@ -1457,9 +1457,9 @@ public partial class mob_living_simple_animal_hostile_megafauna_bubblegum
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:320
-[DmPath("/mob/living/simple_animal/hostile/megafauna/bubblegum/hallucination"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_megafauna_bubblegum_hallucination : mob_living_simple_animal_hostile_megafauna_bubblegum
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:320 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/megafauna/bubblegum/hallucination")]
+public partial class mob_living_simple_animal_hostile_megafauna_bubblegum_hallucination
 {
     public object move_through_mob; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:333
 
@@ -1488,9 +1488,9 @@ public partial class mob_living_simple_animal_hostile_megafauna_bubblegum_halluc
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/clockwork_knight.dm:10
-[DmPath("/mob/living/simple_animal/hostile/megafauna/clockwork_defender"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_megafauna_clockwork_defender : mob_living_simple_animal_hostile_megafauna
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/clockwork_knight.dm:10 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/megafauna/clockwork_defender")]
+public partial class mob_living_simple_animal_hostile_megafauna_clockwork_defender
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/clockwork_knight.dm:10
     public mob_living_simple_animal_hostile_megafauna_clockwork_defender()
@@ -1594,9 +1594,9 @@ public partial class mob_living_simple_animal_hostile_megafauna_colossus
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:11
-[DmPath("/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_megafauna_demonic_frost_miner : mob_living_simple_animal_hostile_megafauna
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:11 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner")]
+public partial class mob_living_simple_animal_hostile_megafauna_demonic_frost_miner
 {
     public float enraged = 0; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:48
     public float enraging = 0; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:50
@@ -1717,9 +1717,9 @@ public partial class mob_living_simple_animal_hostile_megafauna_dragon
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:336
-[DmPath("/mob/living/simple_animal/hostile/megafauna/dragon/lesser"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_megafauna_dragon_lesser : mob_living_simple_animal_hostile_megafauna_dragon
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:336 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/megafauna/dragon/lesser")]
+public partial class mob_living_simple_animal_hostile_megafauna_dragon_lesser
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:336
     public mob_living_simple_animal_hostile_megafauna_dragon_lesser()
@@ -1748,9 +1748,9 @@ public partial class mob_living_simple_animal_hostile_megafauna_dragon_lesser : 
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:38
-[DmPath("/mob/living/simple_animal/hostile/megafauna/hierophant"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_megafauna_hierophant : mob_living_simple_animal_hostile_megafauna
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:38 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/megafauna/hierophant")]
+public partial class mob_living_simple_animal_hostile_megafauna_hierophant
 {
     public float burst_range = 3; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:77
     public float beam_range = 5; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:79
@@ -1815,9 +1815,9 @@ public partial class mob_living_simple_animal_hostile_megafauna_hierophant : mob
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:25
-[DmPath("/mob/living/simple_animal/hostile/megafauna/legion"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_megafauna_legion : mob_living_simple_animal_hostile_megafauna
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:25 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/megafauna/legion")]
+public partial class mob_living_simple_animal_hostile_megafauna_legion
 {
     public float? size = 3; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:59
     public datum_action_cooldown_mob_cooldown_create_legion_skull create_legion_skull; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:61
@@ -1873,7 +1873,7 @@ public partial class mob_living_simple_animal_hostile_megafauna_legion : mob_liv
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:86
-[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/medium"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/medium"), DmGeneratedOnly]
 public partial class mob_living_simple_animal_hostile_megafauna_legion_medium : mob_living_simple_animal_hostile_megafauna_legion
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:86
@@ -1888,7 +1888,7 @@ public partial class mob_living_simple_animal_hostile_megafauna_legion_medium : 
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:93
-[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/medium/left"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/medium/left"), DmGeneratedOnly]
 public partial class mob_living_simple_animal_hostile_megafauna_legion_medium_left : mob_living_simple_animal_hostile_megafauna_legion_medium
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:93
@@ -1899,7 +1899,7 @@ public partial class mob_living_simple_animal_hostile_megafauna_legion_medium_le
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:96
-[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/medium/eye"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/medium/eye"), DmGeneratedOnly]
 public partial class mob_living_simple_animal_hostile_megafauna_legion_medium_eye : mob_living_simple_animal_hostile_megafauna_legion_medium
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:96
@@ -1910,7 +1910,7 @@ public partial class mob_living_simple_animal_hostile_megafauna_legion_medium_ey
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:99
-[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/medium/right"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/medium/right"), DmGeneratedOnly]
 public partial class mob_living_simple_animal_hostile_megafauna_legion_medium_right : mob_living_simple_animal_hostile_megafauna_legion_medium
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:99
@@ -1920,9 +1920,9 @@ public partial class mob_living_simple_animal_hostile_megafauna_legion_medium_ri
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:102
-[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/small"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_megafauna_legion_small : mob_living_simple_animal_hostile_megafauna_legion
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:102 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/megafauna/legion/small")]
+public partial class mob_living_simple_animal_hostile_megafauna_legion_small
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/legion.dm:102
     public mob_living_simple_animal_hostile_megafauna_legion_small()
@@ -1936,9 +1936,9 @@ public partial class mob_living_simple_animal_hostile_megafauna_legion_small : m
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:10
-[DmPath("/mob/living/simple_animal/hostile/megafauna/wendigo"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_megafauna_wendigo : mob_living_simple_animal_hostile_megafauna
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:10 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/megafauna/wendigo")]
+public partial class mob_living_simple_animal_hostile_megafauna_wendigo
 {
     public turf starting; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:50
     public float stomp_range = 1; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:52
@@ -2003,9 +2003,9 @@ public partial class mob_living_simple_animal_hostile_megafauna_wendigo : mob_li
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:225
-[DmPath("/mob/living/simple_animal/hostile/megafauna/wendigo/noportal"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_megafauna_wendigo_noportal : mob_living_simple_animal_hostile_megafauna_wendigo { }
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/wendigo.dm:225 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/megafauna/wendigo/noportal")]
+public partial class mob_living_simple_animal_hostile_megafauna_wendigo_noportal { }
 
 // tg: code/modules/mob/living/simple_animal/hostile/ooze.dm:3
 [DmPath("/mob/living/simple_animal/hostile/ooze"), DmGeneratedOnly, DmInert]

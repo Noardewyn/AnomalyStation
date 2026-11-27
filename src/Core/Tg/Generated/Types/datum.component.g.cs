@@ -368,9 +368,9 @@ public partial class datum_component_basic_inhands
     public DmList cached_overlays; // tg: code/datums/components/basic_inhands.dm:12
 }
 
-// tg: code/datums/components/basic_mob_attack_telegraph.dm:6
-[DmPath("/datum/component/basic_mob_attack_telegraph"), DmGeneratedOnly, DmInert]
-public partial class datum_component_basic_mob_attack_telegraph : datum_component
+// tg: code/datums/components/basic_mob_attack_telegraph.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/component/basic_mob_attack_telegraph")]
+public partial class datum_component_basic_mob_attack_telegraph
 {
     public object telegraph_duration; // tg: code/datums/components/basic_mob_attack_telegraph.dm:6
     public mutable_appearance target_overlay; // tg: code/datums/components/basic_mob_attack_telegraph.dm:8
@@ -503,9 +503,9 @@ public partial class datum_component_boomerang
     public object examine_message; // tg: code/datums/components/boomerang.dm:15
 }
 
-// tg: code/datums/components/boss_music.dm:6
-[DmPath("/datum/component/boss_music"), DmGeneratedOnly, DmInert]
-public partial class datum_component_boss_music : datum_component
+// tg: code/datums/components/boss_music.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/component/boss_music")]
+public partial class datum_component_boss_music
 {
     public object boss_track; // tg: code/datums/components/boss_music.dm:6
     public object track_duration; // tg: code/datums/components/boss_music.dm:8
@@ -609,9 +609,9 @@ public partial class datum_component_butchering_recycler { }
 [DmPath("/datum/component/butchering/mecha"), DmGeneratedOnly, DmInert]
 public partial class datum_component_butchering_mecha : datum_component_butchering { }
 
-// tg: code/datums/components/butchering.dm:558
-[DmPath("/datum/component/butchering/wearable"), DmGeneratedOnly, DmInert]
-public partial class datum_component_butchering_wearable : datum_component_butchering { }
+// tg: code/datums/components/butchering.dm:558 (the var block of a hand-written class)
+[DmPath("/datum/component/butchering/wearable")]
+public partial class datum_component_butchering_wearable { }
 
 // tg: code/datums/components/callouts.dm:7
 [DmPath("/datum/component/callouts"), DmGeneratedOnly, DmInert]

@@ -2047,9 +2047,9 @@ public partial class obj_structure_closet_crate_necropolis_tendril_demonic : obj
     }
 }
 
-// tg: code/modules/mining/lavaland/necropolis_chests.dm:49
-[DmPath("/obj/structure/closet/crate/necropolis/dragon"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_necropolis_dragon : obj_structure_closet_crate_necropolis
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:49 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/necropolis/dragon")]
+public partial class obj_structure_closet_crate_necropolis_dragon
 {
     // tg: code/modules/mining/lavaland/necropolis_chests.dm:49
     public obj_structure_closet_crate_necropolis_dragon()
@@ -2058,9 +2058,9 @@ public partial class obj_structure_closet_crate_necropolis_dragon : obj_structur
     }
 }
 
-// tg: code/modules/mining/lavaland/necropolis_chests.dm:64
-[DmPath("/obj/structure/closet/crate/necropolis/dragon/crusher"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_necropolis_dragon_crusher : obj_structure_closet_crate_necropolis_dragon
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:64 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/necropolis/dragon/crusher")]
+public partial class obj_structure_closet_crate_necropolis_dragon_crusher
 {
     // tg: code/modules/mining/lavaland/necropolis_chests.dm:64
     public obj_structure_closet_crate_necropolis_dragon_crusher()
@@ -2069,9 +2069,9 @@ public partial class obj_structure_closet_crate_necropolis_dragon_crusher : obj_
     }
 }
 
-// tg: code/modules/mining/lavaland/necropolis_chests.dm:71
-[DmPath("/obj/structure/closet/crate/necropolis/bubblegum"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_necropolis_bubblegum : obj_structure_closet_crate_necropolis
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:71 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/necropolis/bubblegum")]
+public partial class obj_structure_closet_crate_necropolis_bubblegum
 {
     // tg: code/modules/mining/lavaland/necropolis_chests.dm:71
     public obj_structure_closet_crate_necropolis_bubblegum()
@@ -2086,9 +2086,9 @@ public partial class obj_structure_closet_crate_necropolis_bubblegum : obj_struc
     }
 }
 
-// tg: code/modules/mining/lavaland/necropolis_chests.dm:89
-[DmPath("/obj/structure/closet/crate/necropolis/bubblegum/crusher"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_necropolis_bubblegum_crusher : obj_structure_closet_crate_necropolis_bubblegum
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:89 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/necropolis/bubblegum/crusher")]
+public partial class obj_structure_closet_crate_necropolis_bubblegum_crusher
 {
     // tg: code/modules/mining/lavaland/necropolis_chests.dm:89
     public obj_structure_closet_crate_necropolis_bubblegum_crusher()
@@ -2097,9 +2097,9 @@ public partial class obj_structure_closet_crate_necropolis_bubblegum_crusher : o
     }
 }
 
-// tg: code/modules/mining/lavaland/necropolis_chests.dm:96
-[DmPath("/obj/structure/closet/crate/necropolis/colossus"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_necropolis_colossus : obj_structure_closet_crate_necropolis
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:96 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/necropolis/colossus")]
+public partial class obj_structure_closet_crate_necropolis_colossus
 {
     // tg: code/modules/mining/lavaland/necropolis_chests.dm:96
     public obj_structure_closet_crate_necropolis_colossus()
@@ -2108,9 +2108,9 @@ public partial class obj_structure_closet_crate_necropolis_colossus : obj_struct
     }
 }
 
-// tg: code/modules/mining/lavaland/necropolis_chests.dm:111
-[DmPath("/obj/structure/closet/crate/necropolis/colossus/crusher"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_necropolis_colossus_crusher : obj_structure_closet_crate_necropolis_colossus
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:111 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/necropolis/colossus/crusher")]
+public partial class obj_structure_closet_crate_necropolis_colossus_crusher
 {
     // tg: code/modules/mining/lavaland/necropolis_chests.dm:111
     public obj_structure_closet_crate_necropolis_colossus_crusher()
@@ -4621,9 +4621,9 @@ public partial class obj_structure_closet_abductor : obj_structure_closet
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:364
-[DmPath("/obj/structure/closet/stasis"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_stasis : obj_structure_closet
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:364 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/stasis")]
+public partial class obj_structure_closet_stasis
 {
     public mob_living holder_animal; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:373
 

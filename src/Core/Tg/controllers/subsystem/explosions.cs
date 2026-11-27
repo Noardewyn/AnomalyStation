@@ -613,7 +613,8 @@ public partial class datum_controller_subsystem_explosions : datum_controller_su
             lowturf = Dm.list();
             foreach (object thing in Dm.each(low_turf))
             {
-                turf turf_thing = thing as turf;
+                // TURF-IDENTITY: tg's entry names the cell; an earlier entry for it (two bolts on one wall) may have changed its turf
+                turf turf_thing = turf.dm_identity(thing as turf) as turf;
                 await EX_ACT(turf_thing, EXPLODE_LIGHT);
             }
             cost_lowturf = MC_AVERAGE(cost_lowturf, TICK_DELTA_TO_MS(TICK_USAGE_REAL() - timer));
@@ -623,7 +624,8 @@ public partial class datum_controller_subsystem_explosions : datum_controller_su
             medturf = Dm.list();
             foreach (object thing in Dm.each(med_turf))
             {
-                turf turf_thing = thing as turf;
+                // TURF-IDENTITY: tg's entry names the cell; an earlier entry for it (two bolts on one wall) may have changed its turf
+                turf turf_thing = turf.dm_identity(thing as turf) as turf;
                 await EX_ACT(turf_thing, EXPLODE_HEAVY);
             }
             cost_medturf = MC_AVERAGE(cost_medturf, TICK_DELTA_TO_MS(TICK_USAGE_REAL() - timer));
@@ -633,7 +635,8 @@ public partial class datum_controller_subsystem_explosions : datum_controller_su
             highturf = Dm.list();
             foreach (object thing in Dm.each(high_turf))
             {
-                turf turf_thing = thing as turf;
+                // TURF-IDENTITY: tg's entry names the cell; an earlier entry for it (two bolts on one wall) may have changed its turf
+                turf turf_thing = turf.dm_identity(thing as turf) as turf;
                 await EX_ACT(turf_thing, EXPLODE_DEVASTATE);
             }
             cost_highturf = MC_AVERAGE(cost_highturf, TICK_DELTA_TO_MS(TICK_USAGE_REAL() - timer));

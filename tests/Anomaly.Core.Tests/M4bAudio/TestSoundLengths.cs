@@ -44,6 +44,13 @@ internal static class TestSoundLengths
         ["sound/machines/cryo/cryo_8.ogg"] = 50f,
         ["sound/machines/cryo/cryo_9.ogg"] = 50f,
         ["sound/machines/cryo/cryo_10.ogg"] = 50.0019f,
+        // /datum/component/boss_music (boss_music.dm:44): the hierophant's, the blood-drunk and frost miners' themes
+        ["sound/music/boss/hiero_boss.ogg"] = 1560f,
+        ["sound/music/boss/bdm_boss.ogg"] = 1664f,
+        // /datum/looping_sound/chainsaw (item_sounds.dm:37): the chainsaw running, Bubblegum's bottle of mayhem's among them
+        ["sound/items/weapons/chainsaw_start.ogg"] = 10.0045f,
+        ["sound/items/weapons/chainsaw_loop.ogg"] = 9.9921f,
+        ["sound/items/weapons/chainsaw_stop.ogg"] = 13.741f,
         // /datum/emote/living/scream (living/emote.dm:435): the scream's sound token (M9 slice B)
         ["sound/mobs/humanoids/human/scream/femalescream_1.ogg"] = 20.0873f,
         ["sound/mobs/humanoids/human/scream/femalescream_2.ogg"] = 21.9088f,

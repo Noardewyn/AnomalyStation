@@ -294,3 +294,55 @@ public sealed partial class TgState
 {
     internal DmList datum_component_butchering__butcher_spots;
 }
+
+// tg: code/datums/components/butchering.dm:556
+public partial class datum_component_butchering_wearable : datum_component_butchering
+{
+    // tg: code/datums/components/butchering.dm:558
+    public override async DmTask RegisterWithParent()
+    {
+        await base.RegisterWithParent();
+        RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, nameof(worn_enable_butchering));
+        RegisterSignal(parent, COMSIG_ITEM_DROPPED, nameof(worn_disable_butchering));
+    }
+
+    // tg: code/datums/components/butchering.dm:563
+    public override async DmTask UnregisterFromParent(params object[] __extra)
+    {
+        await base.UnregisterFromParent(__extra);
+        UnregisterSignal(parent, Dm.list(
+            COMSIG_ITEM_EQUIPPED,
+            COMSIG_ITEM_DROPPED));
+    }
+
+    /// Same as enable_butchering but for worn items
+    // tg: code/datums/components/butchering.dm:571
+    [SignalHandler]
+    public virtual void worn_enable_butchering(obj_item source = null, mob user = null, object slot = null)
+    {
+        //check if the item is being not worn
+        if (!Dm.truthy(Dm.bitand(slot, source.slot_flags)))
+            return;
+        butchering_enabled = TRUE;
+        RegisterSignal(user, COMSIG_LIVING_UNARMED_ATTACK, nameof(butcher_target));
+    }
+
+    /// Same as disable_butchering but for worn items
+    // tg: code/datums/components/butchering.dm:580
+    [SignalHandler]
+    public virtual void worn_disable_butchering(obj_item source = null, mob user = null)
+    {
+        butchering_enabled = FALSE;
+        UnregisterSignal(user, COMSIG_LIVING_UNARMED_ATTACK);
+    }
+
+    // tg: code/datums/components/butchering.dm:585
+    [SignalHandler]
+    public virtual object butcher_target(mob user = null, atom target = null, object proximity = null)
+    {
+        if (!isliving(target))
+            return NONE;
+        return on_item_attack(parent as obj_item, target as mob_living, user as mob_living);
+    }
+}
+

@@ -768,9 +768,9 @@ public partial class datum_status_effect_wish_granters_gift : datum_status_effec
     }
 }
 
-// tg: code/datums/status_effects/buffs.dm:96
-[DmPath("/datum/status_effect/blooddrunk"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_blooddrunk : datum_status_effect
+// tg: code/datums/status_effects/buffs.dm:96 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/blooddrunk")]
+public partial class datum_status_effect_blooddrunk
 {
     // tg: code/datums/status_effects/buffs.dm:96
     public datum_status_effect_blooddrunk()
@@ -874,9 +874,9 @@ public partial class datum_status_effect_lightningorb : datum_status_effect
     }
 }
 
-// tg: code/datums/status_effects/buffs.dm:424
-[DmPath("/datum/status_effect/mayhem"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_mayhem : datum_status_effect
+// tg: code/datums/status_effects/buffs.dm:424 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/mayhem")]
+public partial class datum_status_effect_mayhem
 {
     public obj_item_chainsaw_doomslayer chainsaw; // tg: code/datums/status_effects/buffs.dm:428
 
@@ -1235,9 +1235,9 @@ public partial class datum_status_effect_stacking_saline_glucose_dilution
     }
 }
 
-// tg: code/datums/status_effects/debuffs/debuffs.dm:522
-[DmPath("/datum/status_effect/stacking/saw_bleed"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stacking_saw_bleed : datum_status_effect_stacking
+// tg: code/datums/status_effects/debuffs/debuffs.dm:522 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stacking/saw_bleed")]
+public partial class datum_status_effect_stacking_saw_bleed
 {
     public float bleed_damage = 200; // tg: code/datums/status_effects/debuffs/debuffs.dm:529
 
@@ -1255,7 +1255,7 @@ public partial class datum_status_effect_stacking_saw_bleed : datum_status_effec
 }
 
 // tg: code/datums/status_effects/debuffs/debuffs.dm:542
-[DmPath("/datum/status_effect/stacking/saw_bleed/bloodletting"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/status_effect/stacking/saw_bleed/bloodletting"), DmGeneratedOnly]
 public partial class datum_status_effect_stacking_saw_bleed_bloodletting : datum_status_effect_stacking_saw_bleed
 {
     // tg: code/datums/status_effects/debuffs/debuffs.dm:542
@@ -4944,9 +4944,9 @@ public partial class datum_status_effect_dagger_stun : datum_status_effect
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/_blood_drunk_miner.dm:186
-[DmPath("/datum/status_effect/saw_slashes_slowdown"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_saw_slashes_slowdown : datum_status_effect
+// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/_blood_drunk_miner.dm:186 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/saw_slashes_slowdown")]
+public partial class datum_status_effect_saw_slashes_slowdown
 {
     // tg: code/modules/mob/living/basic/boss/blood_drunk_miner/_blood_drunk_miner.dm:186
     public datum_status_effect_saw_slashes_slowdown()

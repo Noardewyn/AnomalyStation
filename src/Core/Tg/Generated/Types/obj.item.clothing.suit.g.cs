@@ -1427,9 +1427,9 @@ public partial class obj_item_clothing_suit_hooded_cloak_godslayer : obj_item_cl
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:19
-[DmPath("/obj/item/clothing/suit/hooded/cloak/drake"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_cloak_drake : obj_item_clothing_suit_hooded_cloak
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:19 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/cloak/drake")]
+public partial class obj_item_clothing_suit_hooded_cloak_drake
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:19
     public obj_item_clothing_suit_hooded_cloak_drake()
@@ -1481,9 +1481,9 @@ public partial class obj_item_clothing_suit_hooded_berserker : obj_item_clothing
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:28
-[DmPath("/obj/item/clothing/suit/hooded/hostile_environment"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_hostile_environment : obj_item_clothing_suit_hooded
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:28 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/hostile_environment")]
+public partial class obj_item_clothing_suit_hooded_hostile_environment
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:28
     public obj_item_clothing_suit_hooded_hostile_environment()

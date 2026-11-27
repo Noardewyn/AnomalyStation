@@ -1298,9 +1298,9 @@ public partial class datum_action_minimap_nuclear : datum_action_minimap
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:415
-[DmPath("/datum/action/exit_possession"), DmGeneratedOnly, DmInert]
-public partial class datum_action_exit_possession : datum_action
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:415 (the var block of a hand-written class)
+[DmPath("/datum/action/exit_possession")]
+public partial class datum_action_exit_possession
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:415
     public datum_action_exit_possession()

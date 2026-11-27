@@ -615,6 +615,9 @@ public class MobLifecycleTests
             GLOB.InitGloballizard_names_female();
             GLOB.InitGlobalmoth_first();
             GLOB.InitGlobalmoth_last();
+            // the Thing's ruin machines (its phase depleters, the aggro gates) queue their links on SSqueuelinks, which tg's MC always makes
+            if (SSqueuelinks == null)
+                Dm.@new<datum_controller_subsystem_queuelinks>();
             // silicons SI3: the printers' auto-unlocking techwebs (the lathe's, the smelter's, the biogenerator's) register with SSresearch
             // and read its design table; tg's MC always makes it
             if (SSresearch == null)

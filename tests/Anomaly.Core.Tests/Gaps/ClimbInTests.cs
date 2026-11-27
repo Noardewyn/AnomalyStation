@@ -244,7 +244,8 @@ public class ClimbInTests
 
     private static turf Rock(AudioRoom r, int x, int y)
     {
-        r.In(() => Waiting.NoSleep(locate(x, y, 1).ChangeTurf(typeof(turf_closed_mineral))));
+        // over an asteroid floor, as the mapped rock lies: dug out, it leaves ground, not the room's space (no gravity there ends the sphere)
+        r.In(() => Waiting.NoSleep(locate(x, y, 1).ChangeTurf(typeof(turf_closed_mineral), Dm.list(typeof(turf_open_misc_asteroid)))));
         r.Step(2);
         return r.In(() => locate(x, y, 1));
     }

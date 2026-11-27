@@ -1543,9 +1543,9 @@ public partial class datum_controller_subsystem_mouse_entered
     }
 }
 
-// tg: code/controllers/subsystem/npcpool.dm:2
-[DmPath("/datum/controller/subsystem/npcpool"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_npcpool : datum_controller_subsystem
+// tg: code/controllers/subsystem/npcpool.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/npcpool")]
+public partial class datum_controller_subsystem_npcpool
 {
     public DmList currentrun; // tg: code/controllers/subsystem/npcpool.dm:7
 

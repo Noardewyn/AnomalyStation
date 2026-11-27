@@ -214,6 +214,9 @@ internal sealed partial class Generator
         // (_raptor.dm:91); the raptor food element's speed modifier is a number. Both names are typepaths elsewhere in tg.
         "/mob/living/basic/raptor:raptor_color",
         "/datum/element/raptor_food:speed_modifier",
+        // The permanent portal's id is the text name that links a pair (portals.dm:190; the wendigo's exit is "wendigo arena exit");
+        // the name is a typepath elsewhere in tg.
+        "/obj/effect/portal/permanent:id",
     };
 
     /// <summary>Typed vars that hold typepaths read from a list (rules 3.2, "typepaths read from a list": <c>Type</c>), which the V3

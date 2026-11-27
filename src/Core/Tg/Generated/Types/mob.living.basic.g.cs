@@ -3623,9 +3623,9 @@ public partial class mob_living_basic_netguardian
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/boss.dm:5
-[DmPath("/mob/living/basic/boss"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_boss : mob_living_basic
+// tg: code/modules/mob/living/basic/boss/boss.dm:5 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/boss")]
+public partial class mob_living_basic_boss
 {
     public object gps_name; // tg: code/modules/mob/living/basic/boss/boss.dm:23
     public DmList crusher_loot; // tg: code/modules/mob/living/basic/boss/boss.dm:26
@@ -3664,9 +3664,9 @@ public partial class mob_living_basic_boss : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/_blood_drunk_miner.dm:13
-[DmPath("/mob/living/basic/boss/blood_drunk_miner"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_boss_blood_drunk_miner : mob_living_basic_boss
+// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/_blood_drunk_miner.dm:13 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/boss/blood_drunk_miner")]
+public partial class mob_living_basic_boss_blood_drunk_miner
 {
     public obj_item_melee_cleaving_saw_miner miner_saw; // tg: code/modules/mob/living/basic/boss/blood_drunk_miner/_blood_drunk_miner.dm:50
     public float rapid_melee_hits = 5; // tg: code/modules/mob/living/basic/boss/blood_drunk_miner/_blood_drunk_miner.dm:52
@@ -3711,17 +3711,17 @@ public partial class mob_living_basic_boss_blood_drunk_miner : mob_living_basic_
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_subtypes.dm:6
-[DmPath("/mob/living/basic/boss/blood_drunk_miner/guidance"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_boss_blood_drunk_miner_guidance : mob_living_basic_boss_blood_drunk_miner { }
+// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_subtypes.dm:6 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/boss/blood_drunk_miner/guidance")]
+public partial class mob_living_basic_boss_blood_drunk_miner_guidance { }
 
-// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_subtypes.dm:14
-[DmPath("/mob/living/basic/boss/blood_drunk_miner/hunter"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_boss_blood_drunk_miner_hunter : mob_living_basic_boss_blood_drunk_miner { }
+// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_subtypes.dm:14 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/boss/blood_drunk_miner/hunter")]
+public partial class mob_living_basic_boss_blood_drunk_miner_hunter { }
 
-// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_subtypes.dm:24
-[DmPath("/mob/living/basic/boss/blood_drunk_miner/doom"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_boss_blood_drunk_miner_doom : mob_living_basic_boss_blood_drunk_miner
+// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_subtypes.dm:24 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/boss/blood_drunk_miner/doom")]
+public partial class mob_living_basic_boss_blood_drunk_miner_doom
 {
     // tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_subtypes.dm:24
     public mob_living_basic_boss_blood_drunk_miner_doom()
@@ -3734,9 +3734,9 @@ public partial class mob_living_basic_boss_blood_drunk_miner_doom : mob_living_b
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing.dm:4
-[DmPath("/mob/living/basic/boss/thing"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_boss_thing : mob_living_basic_boss
+// tg: code/modules/mob/living/basic/boss/thing/thing.dm:4 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/boss/thing")]
+public partial class mob_living_basic_boss_thing
 {
     public float phase = 1; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:37
     public float phase_invul_time = 100; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:39
@@ -3782,9 +3782,9 @@ public partial class mob_living_basic_boss_thing : mob_living_basic_boss
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing.dm:200
-[DmPath("/mob/living/basic/boss/thing/with_ruin_loot"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_boss_thing_with_ruin_loot : mob_living_basic_boss_thing { }
+// tg: code/modules/mob/living/basic/boss/thing/thing.dm:200 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/boss/thing/with_ruin_loot")]
+public partial class mob_living_basic_boss_thing_with_ruin_loot { }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:104 (the var block of a hand-written class)
 [DmPath("/mob/living/basic/fake_crewman")]

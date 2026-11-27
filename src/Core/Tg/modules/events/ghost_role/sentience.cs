@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Gaps E4 (D327): the whole file: a ghost who volunteers becomes a mindless animal or bot on the station (the pets and farm animals
-// first), able to speak and understand the crew's languages; the admins' station-wide version wakes as many as there are ghosts. The simple
-// animals are not ported (the basic mobs replace them), so their branch is a deferred leaf. The var blocks are generated (D111).
+// first), able to speak and understand the crew's languages; the admins' station-wide version wakes as many as there are ghosts. The var blocks
+// are generated (D111).
 
 public partial class datum_controller_global_vars
 {
@@ -77,7 +77,8 @@ public partial class datum_round_event_ghost_role_sentience : datum_round_event_
         var hi_pri = Dm.list();
         var low_pri = Dm.list();
 
-        // for(var/mob/living/simple_animal/check_mob in GLOB.alive_mob_list): the simple animals are not ported (none lives)
+        foreach (mob_living_simple_animal check_mob in Dm.each<mob_living_simple_animal>(GLOB.alive_mob_list))
+            set_mob_priority(check_mob, hi_pri, low_pri);
         foreach (mob_living_basic check_mob in Dm.each<mob_living_basic>(GLOB.alive_mob_list))
             set_mob_priority(check_mob, hi_pri, low_pri);
 
@@ -104,7 +105,11 @@ public partial class datum_round_event_ghost_role_sentience : datum_round_event_
             selected.grant_all_languages(UNDERSTOOD_LANGUAGE, grant_omnitongue: FALSE, source: LANGUAGE_ATOM);
 
             if (isanimal(selected))
-                Dm.Deferred("code/modules/events/ghost_role/sentience.dm:82", "spawn_role: a simple animal's sentience_act and del_on_death (the simple animals are not ported)");
+            {
+                var animal_selected = (mob_living_simple_animal)selected;
+                animal_selected.sentience_act();
+                animal_selected.del_on_death = FALSE;
+            }
             else if (isbasicmob(selected))
             {
                 var animal_selected = (mob_living_basic)selected;

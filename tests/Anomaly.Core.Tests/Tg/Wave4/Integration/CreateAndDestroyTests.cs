@@ -113,6 +113,9 @@ public class CreateAndDestroyTests
             Dm.@new<datum_controller_subsystem_processing_plumbing>();
             // syndicate N1a: a nuke reads the security level in its Initialize (_nuclear_bomb.dm:66)
             Dm.@new<datum_controller_subsystem_security_level>();
+            // the Thing's ruin machines (its phase depleters, the aggro gates) queue their links on SSqueuelinks, which tg's MC always makes
+            if (SSqueuelinks == null)
+                Dm.@new<datum_controller_subsystem_queuelinks>();
             // silicons SI3: the printers' auto-unlocking techwebs (the lathe's, the smelter's, the biogenerator's) register with SSresearch and
             // read its design table; tg's MC always makes it
             if (SSresearch == null)

@@ -66,7 +66,6 @@
 # I1a: the decal base and the cleanable decals (effects/decals/decal.dm, cleanable.dm)
 /obj/effect/decal	blob_act	M10+	deferred	a blob covering the decal deletes it (the blob, M10+)
 /obj/effect/decal/cleanable	item_interaction	M8	deferred	scooping the decal's reagents into a cup (hands M4a, reagents M8)
-/obj/effect/decal/cleanable	can_bloodcrawl_in	M10+	not_translated	the slaughter demon's bloodcrawl check (blood M8, antagonists M10+)
 /obj/effect/decal/cleanable	attackby	M8	deferred	a hit with an item on a mess (cleaning, with the chemistry of mops and sprays)
 
 ## R4 (M3): the station's gravity generator (the owner's first walk on the real server)

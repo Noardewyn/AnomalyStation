@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // PARTIAL: only the M2 subset translated (M2 P1, the living core): /datum/status_effect/incapacitating and its stun,
 // knockdown, immobilized, paralyzed, incapacitated, unconscious and sleeping subtypes, knocked_out and
 // GLOB.unconscious_appearances, with the file-local defines; M8 slice E: convulsing; M8y slice B: stasis; the other debuffs of the file come
-// with their systems. Syndicate G4c: his_wrath. Gaps P3: spasms, dna_melt, go_away (with deletes_mob) and freezing_blast. Gaps E1a: teleport_madness. Gaps E4: fake_virus. Gaps B1: discoordinated (the discoordination trauma). Gaps MS1: gonbola_pacify (the gonbola's peace and its moodlet). Gaps GU1: designated_target (the .38 flare round's mark). Gaps RG2: necropolis_curse with apply_necropolis_curse and the curse's temp visual. The kinetic crusher's mark (crusher_mark, its detonation and the backstab).
+// with their systems. Syndicate G4c: his_wrath. Gaps P3: spasms, dna_melt, go_away (with deletes_mob) and freezing_blast. Gaps E1a: teleport_madness. Gaps E4: fake_virus. Gaps B1: discoordinated (the discoordination trauma). Gaps MS1: gonbola_pacify (the gonbola's peace and its moodlet). Gaps GU1: designated_target (the .38 flare round's mark). Gaps RG2: necropolis_curse with apply_necropolis_curse and the curse's temp visual. The kinetic crusher's mark (crusher_mark, its detonation and the backstab). The cleaving saw's saw_bleed and its bloodletting kind.
 
 // tg: code/datums/status_effects/debuffs/debuffs.dm:2  #define HEALING_SLEEP_DEFAULT 0.2 (file-local, #undef at the end): a private const of
 // /datum/status_effect/incapacitating/sleeping below; HEALING_SLEEP_ORGAN_MULTIPLIER (:4) and SLEEP_QUALITY_WORKOUT_MULTIPLER
@@ -1584,3 +1584,24 @@ public partial class datum_status_effect_crusher_mark : datum_status_effect
             owner.remove_status_effect(this);
     }
 }
+
+// tg: code/datums/status_effects/debuffs/debuffs.dm:521
+public partial class datum_status_effect_stacking_saw_bleed : datum_status_effect_stacking
+{
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:531
+    public override void fadeout_effect()
+    {
+        Dm.@new<obj_effect_temp_visual_bleed>(get_turf(owner));
+    }
+
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:534
+    public override void threshold_cross_effect()
+    {
+        Dm.@new<obj_effect_temp_visual_bleed_explode>(get_turf(owner));
+        playsound(owner, SFX_DESECRATION, 100, TRUE, -1);
+        foreach (object splatter_dir in Dm.each(GLOB.alldirs))
+            Waiting.NoSleep(owner.create_splatter(splatter_dir));
+        Waiting.NoSleep(owner.adjust_brute_loss(bleed_damage));
+    }
+}
+

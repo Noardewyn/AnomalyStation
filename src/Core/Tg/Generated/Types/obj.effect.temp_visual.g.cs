@@ -69,9 +69,9 @@ public partial class obj_effect_temp_visual_dragon_swoop_legionnaire : obj_effec
     }
 }
 
-// tg: code/datums/actions/mobs/lava_swoop.dm:204
-[DmPath("/obj/effect/temp_visual/dragon_flight"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dragon_flight : obj_effect_temp_visual
+// tg: code/datums/actions/mobs/lava_swoop.dm:204 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dragon_flight")]
+public partial class obj_effect_temp_visual_dragon_flight
 {
     // tg: code/datums/actions/mobs/lava_swoop.dm:204
     public obj_effect_temp_visual_dragon_flight()
@@ -85,9 +85,9 @@ public partial class obj_effect_temp_visual_dragon_flight : obj_effect_temp_visu
     }
 }
 
-// tg: code/datums/actions/mobs/lava_swoop.dm:228
-[DmPath("/obj/effect/temp_visual/dragon_flight/end"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dragon_flight_end : obj_effect_temp_visual_dragon_flight
+// tg: code/datums/actions/mobs/lava_swoop.dm:228 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dragon_flight/end")]
+public partial class obj_effect_temp_visual_dragon_flight_end
 {
     // tg: code/datums/actions/mobs/lava_swoop.dm:228
     public obj_effect_temp_visual_dragon_flight_end()
@@ -1316,9 +1316,9 @@ public partial class obj_effect_temp_visual_dir_setting_cloak_walk : obj_effect_
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_objects.dm:12
-[DmPath("/obj/effect/temp_visual/dir_setting/miner_death"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dir_setting_miner_death : obj_effect_temp_visual_dir_setting
+// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_objects.dm:12 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dir_setting/miner_death")]
+public partial class obj_effect_temp_visual_dir_setting_miner_death
 {
     // tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_objects.dm:12
     public obj_effect_temp_visual_dir_setting_miner_death()
@@ -2035,9 +2035,9 @@ public partial class obj_effect_temp_visual_annoyed : obj_effect_temp_visual
     }
 }
 
-// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:457
-[DmPath("/obj/effect/temp_visual/bleed"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_bleed : obj_effect_temp_visual
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:457 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/bleed")]
+public partial class obj_effect_temp_visual_bleed
 {
     public float? shrink = 1; // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:461
 
@@ -2052,7 +2052,7 @@ public partial class obj_effect_temp_visual_bleed : obj_effect_temp_visual
 }
 
 // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:478
-[DmPath("/obj/effect/temp_visual/bleed/explode"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/bleed/explode"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_bleed_explode : obj_effect_temp_visual_bleed
 {
     // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:478
@@ -3170,9 +3170,9 @@ public partial class obj_effect_temp_visual_dust_animation_filter
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:90
-[DmPath("/obj/effect/temp_visual/incoming_thing_acid"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_incoming_thing_acid : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:90 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/incoming_thing_acid")]
+public partial class obj_effect_temp_visual_incoming_thing_acid
 {
     // tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:90
     public obj_effect_temp_visual_incoming_thing_acid()
@@ -3801,9 +3801,9 @@ public partial class obj_effect_temp_visual_bubblegum_hands_leftsmack : obj_effe
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/colossus.dm:164
-[DmPath("/obj/effect/temp_visual/at_shield"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_at_shield : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/colossus.dm:164 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/at_shield")]
+public partial class obj_effect_temp_visual_at_shield
 {
     public object target; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/colossus.dm:175
 
@@ -3824,9 +3824,9 @@ public partial class obj_effect_temp_visual_at_shield : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:225
-[DmPath("/obj/effect/temp_visual/lava_warning"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_lava_warning : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:225 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/lava_warning")]
+public partial class obj_effect_temp_visual_lava_warning
 {
     public mob owner; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:230
 
@@ -3876,9 +3876,9 @@ public partial class obj_effect_temp_visual_lava_safe : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:288
-[DmPath("/obj/effect/temp_visual/fireball"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_fireball : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:288 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/fireball")]
+public partial class obj_effect_temp_visual_fireball
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:288
     public obj_effect_temp_visual_fireball()
@@ -3895,9 +3895,9 @@ public partial class obj_effect_temp_visual_fireball : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:303
-[DmPath("/obj/effect/temp_visual/target"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_target : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:303 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/target")]
+public partial class obj_effect_temp_visual_target
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:303
     public obj_effect_temp_visual_target()
@@ -3926,9 +3926,9 @@ public partial class obj_effect_temp_visual_hierophant
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:534
-[DmPath("/obj/effect/temp_visual/hierophant/squares"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_squares : obj_effect_temp_visual_hierophant
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:534 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/squares")]
+public partial class obj_effect_temp_visual_hierophant_squares
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:534
     public obj_effect_temp_visual_hierophant_squares()
@@ -3940,9 +3940,9 @@ public partial class obj_effect_temp_visual_hierophant_squares : obj_effect_temp
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:546
-[DmPath("/obj/effect/temp_visual/hierophant/wall"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_wall : obj_effect_temp_visual_hierophant
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:546 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/wall")]
+public partial class obj_effect_temp_visual_hierophant_wall
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:546
     public obj_effect_temp_visual_hierophant_wall()
@@ -3959,9 +3959,9 @@ public partial class obj_effect_temp_visual_hierophant_wall : obj_effect_temp_vi
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:581
-[DmPath("/obj/effect/temp_visual/hierophant/chaser"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_chaser : obj_effect_temp_visual_hierophant
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:581 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/chaser")]
+public partial class obj_effect_temp_visual_hierophant_chaser
 {
     public mob_living target; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:582
     public turf targetturf; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:583
@@ -4061,9 +4061,9 @@ public partial class obj_effect_temp_visual_hierophant_blast : obj_effect_temp_v
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:674
-[DmPath("/obj/effect/temp_visual/hierophant/blast/damaging"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_blast_damaging : obj_effect_temp_visual_hierophant_blast
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:674 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/blast/damaging")]
+public partial class obj_effect_temp_visual_hierophant_blast_damaging
 {
     public float? damage = 10; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:674
     public float monster_damage_boost = 1; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:675
@@ -4080,7 +4080,7 @@ public partial class obj_effect_temp_visual_hierophant_blast_damaging : obj_effe
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:177
-[DmPath("/obj/effect/temp_visual/hierophant/blast/damaging/pandora"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/hierophant/blast/damaging/pandora"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_hierophant_blast_damaging_pandora : obj_effect_temp_visual_hierophant_blast_damaging
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:177
@@ -4091,9 +4091,9 @@ public partial class obj_effect_temp_visual_hierophant_blast_damaging_pandora : 
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:747
-[DmPath("/obj/effect/temp_visual/hierophant/blast/visual"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_blast_visual : obj_effect_temp_visual_hierophant_blast
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:747 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/blast/visual")]
+public partial class obj_effect_temp_visual_hierophant_blast_visual
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:747
     public obj_effect_temp_visual_hierophant_blast_visual()

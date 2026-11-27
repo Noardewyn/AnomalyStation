@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// M8 slice B: the whole file (the saline glucose dilution stacks), but the stack overlay of an effect with an overlay_file, which
-// sizes itself by get_cached_height (the atom HUDs, M8 slice F; no M8 stacking effect has one). The var block is generated.
+// M8 slice B: the whole file (the saline glucose dilution stacks); the stack overlay of an effect with an overlay_file came with the
+// cleaving saw's bleed (the megafauna). The var block is generated.
 
 // tg: code/datums/status_effects/stacking_effect.dm:4
 public partial class datum_status_effect_stacking : datum_status_effect
@@ -107,9 +107,12 @@ public partial class datum_status_effect_stacking : datum_status_effect
             return FALSE;
         if (!Dm.truthy(overlay_file) || !Dm.truthy(overlay_state))
             return await base.on_apply(__extra);
-        // status_overlay = mutable_appearance(overlay_file, "[overlay_state][stacks]") sized by owner.get_cached_height() (the atom
-        // HUDs' /atom proc, game/data_huds.dm, M8 slice F); no M8 stacking effect has an overlay_file
-        Dm.NotTranslated("code/datums/status_effects/stacking_effect.dm:88", "on_apply: the stack overlay (get_cached_height: the atom HUDs, M8 slice F)");
+        status_overlay = mutable_appearance(overlay_file, Dm.text("[][]", overlay_state, stacks)) as mutable_appearance;
+        float icon_height = Dm.num(owner.get_cached_height());
+        status_overlay.pixel_w = -owner.pixel_x;
+        status_overlay.pixel_z = FLOOR(icon_height * 0.25f, 1);
+        status_overlay.transform = Dm.mul(Dm.matrix(), icon_height / ICON_SIZE_Y); //scale the status's overlay size based on the target's icon size
+        owner.add_overlay(status_overlay);
         return await base.on_apply(__extra);
     }
 

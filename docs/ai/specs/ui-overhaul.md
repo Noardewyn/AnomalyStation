@@ -1899,3 +1899,24 @@ Human HUD, cursor mode (Tab or the inventory key), as slice 4A.
   told why, besides the blink.
 - tg's own Ctrl-click on a carried item has no way in under Tab until the keys slice builds the wheel entry for
   it (the wheel opens only on things in the view today): for the contributor to know.
+
+### Slice 4B-2 as built and reviewed (2026-11-27; uncommitted until the contributor signs off both halves)
+
+Two fix rounds; the gate clean after them. Stress-tested: 251,540 layouts of the column (every screen and scale,
+up to eight storages: nothing outside the column drawn or picked, no overlap), 109 million checks of the drag,
+click and quick-transfer rules, 102,880 random steps on the bar's cells with heavy gravity in a third (no two
+cells ever name one item; an item out in a hand keeps its cell).
+Played on a real server, one client at a time: the column at 1080p and 720p, 100% and 125%; a backpack item to a
+hand and to the floor; onto a belt cell that is empty, occupied (swap, or the occupant displaced) and reserved for
+an item out in a hand (not taken); a full belt ("no room!"); a belt item into the backpack; gloves and a mask onto
+their slots; a wrench onto the head (tg's refusal); a worn hat off into the empty hand; a bruise pack onto the own
+sprite; a click, Shift+click and Ctrl+click from each place; "no backpack!"; Ctrl+Alt and Ctrl+Shift not a quick
+transfer; tg's own slot clicks, the doll's grasp and the number keys unchanged; Tab off, the backpack dropped and
+death in the middle of a drag (nothing sent, no error); the scroll and its reset; the mousetrap on Tab; the
+notice at most once a second; a cyborg and a ghost (no column, the old drags); columns a few pixels wide (no
+error). Not driven in that run: drags onto a table from a panel or a worn backpack (the builder showed the worn
+backpack emptied onto a table), Pull and examine on things in the view under Tab, the first-person drag of
+oneself after this slice, another client taking an item in the middle of a drag, a crate's tg window beside the
+column, coming back to a human body, resizing the window with Tab on.
+Seen and not from this slice: the "Cursor mode" hint overlaps the version title at 1280 wide and at 150%; the
+hover hint can sit over the right hand box at 1280x720 125%.

@@ -320,9 +320,9 @@ public partial class datum_brain_trauma_special_axedoration
     }
 }
 
-// tg: code/modules/religion/burdened/burdened_trauma.dm:3
-[DmPath("/datum/brain_trauma/special/burdened"), DmGeneratedOnly, DmInert]
-public partial class datum_brain_trauma_special_burdened : datum_brain_trauma_special
+// tg: code/modules/religion/burdened/burdened_trauma.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/brain_trauma/special/burdened")]
+public partial class datum_brain_trauma_special_burdened
 {
     public float burden_level = 0; // tg: code/modules/religion/burdened/burdened_trauma.dm:14
 
@@ -339,9 +339,9 @@ public partial class datum_brain_trauma_special_burdened : datum_brain_trauma_sp
     }
 }
 
-// tg: code/modules/religion/honorbound/honorbound_trauma.dm:6
-[DmPath("/datum/brain_trauma/special/honorbound"), DmGeneratedOnly, DmInert]
-public partial class datum_brain_trauma_special_honorbound : datum_brain_trauma_special
+// tg: code/modules/religion/honorbound/honorbound_trauma.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/brain_trauma/special/honorbound")]
+public partial class datum_brain_trauma_special_honorbound
 {
     public DmList guilty; // tg: code/modules/religion/honorbound/honorbound_trauma.dm:17
 

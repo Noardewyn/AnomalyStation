@@ -18272,9 +18272,9 @@ public partial class obj_structure_disposaloutlet
     }
 }
 
-// tg: code/modules/religion/religion_structures.dm:2
-[DmPath("/obj/structure/altar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_altar : obj_structure
+// tg: code/modules/religion/religion_structures.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/altar")]
+public partial class obj_structure_altar
 {
     public float lit_candles = 1; // tg: code/modules/religion/religion_structures.dm:13
     public object emissive_icon_state; // tg: code/modules/religion/religion_structures.dm:15
@@ -18295,9 +18295,9 @@ public partial class obj_structure_altar : obj_structure
     }
 }
 
-// tg: code/modules/religion/religion_structures.dm:48
-[DmPath("/obj/structure/altar/of_gods"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_altar_of_gods : obj_structure_altar
+// tg: code/modules/religion/religion_structures.dm:48 (the var block of a hand-written class)
+[DmPath("/obj/structure/altar/of_gods")]
+public partial class obj_structure_altar_of_gods
 {
     public datum_religion_sect sect_to_altar; // tg: code/modules/religion/religion_structures.dm:51
 

@@ -29,6 +29,15 @@ public static class TgStrings
         "strings/chav_replacement.json", "strings/elvis_replacement.json", "strings/heckacious.json",
         "strings/medieval_replacement.json", "strings/ork_replacement.json"); // declared before Files, whose initializer adds them
 
+    /// <summary>
+    /// The dreams' words (flufftext/dreaming.dm through GLOB.dream_strings, adjectives, adverbs, ing_verbs and verbs): every sleeping
+    /// carbon dreams on the sleeping status effect's tick, and a random dream picks from these lists, so every world where a mob
+    /// sleeps needs them. They are in <see cref="Files"/> already; none of them names a mob.
+    /// </summary>
+    public static readonly ImmutableArray<string> DreamFiles = ImmutableArray.Create(
+        "strings/dreamstrings.txt", "strings/names/adjectives.txt", "strings/names/adverbs.txt", "strings/names/ing_verbs.txt",
+        "strings/names/verbs.txt");
+
     /// <summary>The paths, relative to the clone's root, of the files the translated world start and strings() read.</summary>
     public static readonly ImmutableArray<string> Files = ImmutableArray.Create(
     

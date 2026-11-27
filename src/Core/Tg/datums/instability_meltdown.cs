@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The whole file (gaps P3, D327): the meltdowns of a body whose DNA lost all stability. The effects that need a mechanic the port has
-// not got yet are recorded leaves (not-translated section 165): the corgi, crab and psyker transformations, the paraplegic's
+// not got yet are recorded leaves (not-translated section 165): the corgi and crab transformations, the paraplegic's
 // wheelchair (its trauma came with gaps B1; the decloning and gastrolosis diseases came with gaps VI1), the slime mutation toxin, the skeleton species and the
 // staff of animation's mimic (the petrified statue came with gaps ST5). The var blocks are
 // generated (D111).
@@ -279,8 +279,6 @@ public partial class datum_instability_meltdown_fatal_psyker : datum_instability
     // tg: code/datums/instability_meltdown.dm:163
     public override async DmTask meltdown(mob_living_carbon_human victim = null)
     {
-        await DmTask.CompletedTask;
-        // victim.slow_psykerize()
-        Dm.Deferred("code/datums/instability_meltdown.dm:164", "psyker meltdown: slow_psykerize (the psykers)");
+        await victim.slow_psykerize();
     }
 }

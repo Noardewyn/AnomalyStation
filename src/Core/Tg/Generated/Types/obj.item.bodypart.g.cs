@@ -9,9 +9,9 @@ using Anomaly.Core.Kernel;
 
 namespace Anomaly.Core.Tg;
 
-// tg: code/modules/religion/burdened/psyker.dm:40
-[DmPath("/obj/item/bodypart/head/psyker"), DmGeneratedOnly, DmInert]
-public partial class obj_item_bodypart_head_psyker : obj_item_bodypart_head
+// tg: code/modules/religion/burdened/psyker.dm:40 (the var block of a hand-written class)
+[DmPath("/obj/item/bodypart/head/psyker")]
+public partial class obj_item_bodypart_head_psyker
 {
     // tg: code/modules/religion/burdened/psyker.dm:40
     public obj_item_bodypart_head_psyker()

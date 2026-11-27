@@ -1557,9 +1557,9 @@ public partial class obj_item_organ_brain_primate
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:2
-[DmPath("/obj/item/organ/brain/psyker"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_psyker : obj_item_organ_brain
+// tg: code/modules/religion/burdened/psyker.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/psyker")]
+public partial class obj_item_organ_brain_psyker
 {
     public datum_weakref echolocation_component; // tg: code/modules/religion/burdened/psyker.dm:14
     public datum_weakref antimagic_component; // tg: code/modules/religion/burdened/psyker.dm:16
@@ -2194,9 +2194,9 @@ public partial class obj_item_organ_heart_evolved_sacred
     }
 }
 
-// tg: code/modules/religion/dreams/banish_nightmare.dm:77
-[DmPath("/obj/item/organ/heart/evolved/sacred/dreamer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_heart_evolved_sacred_dreamer : obj_item_organ_heart_evolved_sacred
+// tg: code/modules/religion/dreams/banish_nightmare.dm:77 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/heart/evolved/sacred/dreamer")]
+public partial class obj_item_organ_heart_evolved_sacred_dreamer
 {
     public float charges = 3; // tg: code/modules/religion/dreams/banish_nightmare.dm:81
 

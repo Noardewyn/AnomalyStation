@@ -31,6 +31,7 @@ How to read a row:
 
 Share of tg's procs declared in each area of `code/` (translated or stubbed), recounted 2026-11-25 by
 `tools/checklist/refresh-port-checklist.py`. All of `code/`: 48,936/65,645 (74%). An area at 100% can still have leaves in
+`tools/checklist/refresh-port-checklist.py`. All of `code/`: 48,404/65,645 (73%). An area at 100% can still have leaves in
 `not-translated.md`; the rows below say what of it runs.
 
 | State | Areas (procs declared / tg procs) |
@@ -97,7 +98,7 @@ Already ported: the ticker, the lobby and the round start, late join, the emerge
 
 ---
 
-## 3. Antagonists (`modules/antagonists` 876/3,715; `/datum/antagonist` 43/142)
+## 3. Antagonists (`modules/antagonists` 908/3,715; `/datum/antagonist` 44/142)
 
 Each row means the antagonist with its datum, team, objectives, powers, items, HUD icon and info window.
 
@@ -106,7 +107,7 @@ Each row means the antagonist with its datum, team, objectives, powers, items, H
 - [ ] Heretic: paths, influences, rituals, the 116 knowledges, ascension, lunatics, summons, the arena (win: AntagInfoHeretic)
 - [x] Blood brothers (win: AntagInfoBrother) (syndicate X4: the conversion by flash, the team's objectives and name; the preference picture waits for the ethereal and moth species)
 - [x] Malfunctioning AI: modules and the doomsday device (silicons SI8; win: AntagInfoMalf, MalfunctionModulePicker, AiVoiceChanger; mech domination waits for the mechs)
-- [ ] Wizard: spellbook (88 entries; win: Spellbook), 226 spells (`modules/spells` 126/426), apprentice (win: ApprenticeContract), the wizard's shuttle and den, imps, wizard events (win: AntagInfoWizard, AntagInfoDemon)
+- [ ] Wizard: spellbook (88 entries; win: Spellbook), 226 spells (`modules/spells` 142/426), apprentice (win: ApprenticeContract), the wizard's shuttle and den, imps, wizard events (win: AntagInfoWizard, AntagInfoDemon)
 - [ ] Blood cult: runes, the cult's magic, constructs and shades, soulstones, Nar'Sie and the summoning, the cult's structures
 - [x] Revolution: head revolutionaries, conversion by flash, the enemy of the state, the revolution's end (win: AntagInfoRevolution) (gaps V1; the drinks that read revolutionaries since gaps RG1: the cuba libre heals them, grenadine weakens them, the garibaldi's resilience; the death moodlet comes with the moods)
 - [x] Nuclear operatives: the team, the nuke and the disk, the war declaration, the syndicate base and shuttle, reinforcements, clown operatives, the lone operative (the nuke and the disk: syndicate N1a; the team, the leader, the outfits, the base, the infiltrator, the reinforcements and the roundstart ruleset: N1b; the war declaration, the infiltrator's navigation computer, the lone operative and the midround nukies: N1c; the arsenal's guns: N2a; the bags, kits and pinatas: N2b; the reinforcements and the assault pod: N2c; the clown operatives, their gear and rulesets: N3a; the bananium nuke's clowning of the station with the fear and phobia system: N3b; done but the MODsuits and the silicons, booked)
@@ -153,7 +154,7 @@ captaincy (D274), outfits 222/513, ID trims 152/159, the moods (gaps MS1), scree
 - [x] Nutrition and hunger (M9x, gaps S1): eating, feeding, drinking, the nutrition HUD, starvation and fat, vomit; the drinks' and food reagents' own effects and drunkenness (gaps RG1). Left: the drinking glasses, mugs and bar bottles (the broken bottle's `SwapColor`), golem food, the allergies (quirks)
 - [x] Addictions (`/datum/addiction` 8/8 live; gaps RG2): the mind's addiction points from a drug's metabolism, the addiction past its gain threshold, the three withdrawal stages of the opioids, stimulants, alcohol, hallucinogens, maintenance drugs, medicines and nicotine with their effects (the stimulants' slowness and wooziness, the maintenance drugs' night vision and beard, the medicines' fake alerts and health doll), the addiction lost under its loss threshold, a full heal's cure and naloxone's resilience. Left (not-translated 225): the withdrawal moodlets (the moods), the hallucinogen withdrawal's plane filters in the client
 - [x] Moods and sanity (`/datum/mood_event` 404/404 live; gaps MS1, D339): the mood datum of every human, the mood events with their timeouts (hugs, meals, drinks, drugs, deaths seen, hunger, area beauty, art, games, pets and the rest), SSmood's sanity drain and recovery with the slowdown, the action speed, the hallucinations and the insanity, the mood face on the HUD with its sanity colour and `print_mood` on its click, the hunger rate and sleep quality by sanity. Left (`not-translated.md` section 227): the quirks' and personalities' moods (owner: not now), the antagonists' moods with their antagonists, the moods of systems not ported (the chapel, recreation, fishing, the diseases, Lavaland, the gizmo)
-- [x] Brain traumas (83/87 live; gaps B1): mild, severe and special traumas, phobias, the magical traumas, hypnosis, split personality, the imaginary friend, the obsession with the obsessed antagonist, the voice of god; the brain's random roll and the cures. Left: the religions' burdened and honorbound traumas and the voidwalker's (with their systems), the friend's picture faces south (DV440), the trauma calls of the systems not ported (quirks, heretics, wizards, reagents, not-translated 185)
+- [x] Brain traumas (85/87 live; gaps B1; the religions' two, gaps CH1): mild, severe and special traumas, phobias, the magical traumas, hypnosis, split personality, the imaginary friend, the obsession with the obsessed antagonist, the voice of god; the brain's random roll and the cures. Left: the voidwalker's trauma (with its system; the religions' burdened and honorbound traumas came with gaps CH1), the friend's picture faces south (DV440), the trauma calls of the systems not ported (quirks, heretics, wizards, reagents, not-translated 185)
 - [x] Genetics: DNA, genes and the 92 mutations (all live), genetic powers, injectors (done, syndicate G4a: the DNA injectors and the DNA syringe gun), the DNA console and scanner (Meta 3 and 3; win: DnaConsole), the chromosomes, genetic damage (gaps P3)
 - [x] The DNA infuser (Meta 1; `game/machinery/dna_infuser` 174/174; win: InfuserBook): the infuser, its entries and book, the organ sets of the carp, fish, fly, fox, goliath, gondola, rat, roach and stoat with their set bonuses, and the other species' organs it grows (the moth's wings and antennae, the lizard's horns, frills, snout and tongue, the cat's ears and tail, the penguin's ears, the podperson's organs; gaps P3b)
 - [x] Diseases and virology (`/datum/disease` 47/52 live; gaps VI1): advance diseases and symptoms, cures, the PanD.E.M.I.C. (Meta 1; win: Pandemic), SSdisease, the outbreak events, the infective, rot and germ components. Left (not-translated.md section 228): the asthma attack (the quirks), the morph and jellypeople forms, the wizard's spells of wizarditis
@@ -236,7 +237,7 @@ hallucinations, cryo cells, stasis beds, IV drips, buckling.
 - [x] **Bar**: the drinks' effects, drunkenness and the cocktails' job, healing and special effects (done, gaps RG1); drinks and glassware (done, gaps H3: the glass styles, the drinking and shot glasses, the bottles, cans, the mauna mug and the organ jar; Meta 41), the bar sign (done, gaps H3; Meta 1), the jukebox and the radiant dance machine (done, gaps H3; win: Jukebox; not mapped), shakers (Meta 5; live), condiments (`/obj/item/reagent_containers/condiment` 46/46; Meta 19), the coffee maker (Meta 1; done, gaps H2), the fermenting barrel (Meta 1; `/obj/structure/fermenting_barrel` 3/3), Pun Pun (section 7, done)
 - [x] **Botany** (`modules/hydroponics` 529/529, gaps P2; the botanical encyclopedia waits for S4): hydroponics trays and soil (Meta 39), 158 seed types with plant genes and mutations, growing, weeds, pests and harvesting, the seed extractor (Meta 4; win: SeedExtractor), the biogenerator (Meta 4; win: Biogenerator), plant analyzers (Meta 7; win: PlantAnalyzer), cultivators (9), hatchets (4), shovels and spades (4), secateurs, plant bags, watering cans (9), fertilizers and the nutrient vendor, beehives and bees, the botanical encyclopedia (win: NtosBotanicalEncyclopedia)
 - [x] **Janitor** (gaps H4; the other ridden vehicles' riding waits for the vehicles): the mop and bucket (Meta 6+3), the janitorial cart (Meta 1) and the janicart with its key and upgrades (Meta 1), the advanced mop, the wet floor signs, soap (1), rags (8), the push broom (2), plungers (2), cleaning decals, trash bags; the light replacer and holosigns are live; soap (done, syndicate G3b)
-- [ ] **Chapel** (`modules/religion` 0/283): the religion choice, bibles (Meta 3) and blessing, holy water, the null rod and its 33 forms (Meta 1), the 10 sects and the altar of the gods (Meta 1), the soulstone (Meta 1), sparring (win: SparringContract), the chapel's mass driver (Meta 1)
+- [ ] **Chapel** (`modules/religion` 283/283): the religion choice, bibles (Meta 3) and blessing, holy water, the null rod and its 33 forms (Meta 1), the 10 sects and the altar of the gods (Meta 1; win: ReligiousTool), the rites, the sects' traumas and the dreams, the soulstone (Meta 1; win: AntagInfoShade), sparring (win: SparringContract) (the sects, altar, rites, soulstone and sparring: done, gaps CH1; the psyker's echolocation waits for an owner decision), the chapel's mass driver (Meta 1; gaps OR1)
 - [ ] **Library and curator** (`modules/library` 161/228): books (Meta 58), bookcases (Meta 15; done with the library subsystem, gaps ST2), the library console and the book management consoles (Meta 1+2; win: LibraryConsole, LibraryVisitor, LibraryAdmin), the library scanner (Meta 1; win: LibraryScanner), the bookbinder (Meta 1), the tgui books (the DSM, the IDC, the infuser book; Meta 8; win: DSMBook, IDCBook, InfuserBook), display and trophy cases (Meta 9; win: Trophycase, Vendatray; done, gaps ST2)
 - [ ] **Theatre**: the clown's and the mime's kit and powers (mime spells, the invisible wall), costumes (the costume spawners), the theatre's curtains (Meta 8; done with the curtain button, gaps ST2)
 - [x] **Washing and household** (gaps H1; the toilet's fish and the puddle's tadpoles wait for the fishing): sinks (Meta 32), showers (Meta 31), toilets (14) and urinals (5), puddles (3), washing machines (Meta 4), bedsheets (13) and their bins (2) (done, syndicate G3c), dressers (6), mirrors (13) and razors (3) for hair and beards
@@ -404,7 +405,7 @@ ruins, the CentCom level and the transit and reserved levels. The port runs the 
 
 Already ported (M10 I, D275): kick, local bans and notes in SQLite, the dev commands.
 
-- [ ] Admin verbs (`modules/admin` 177/1,643): the player panel, view variables, the spawn panel (win: SpawnPanel, SpawnSearch), secrets (win: Secrets), smites, forcing events (win: ForceEvent), the dynamic panel (Check Antagonists, the traitor panel, the team panel and the combo HUD: syndicate A1), the outfit manager and editor and select equipment (win: OutfitManager, OutfitEditor, SelectEquipment), command reports (win: CommandReport), the admin PDA and fax (win: AdminPDA, AdminFax), the law and borg panels (win: Lawpanel, BorgPanel), the beaker panel (win: BeakerPanel), the skill panel (done, gaps SL1: the console's skill-panel; win: SkillPanel), Assume and Give Direct Control (done, D346: the dev possess, unpossess and givecontrol, the Player tab's Possess section and tool), the sentience balloon, ghost pool protection, the trophy and painting panels, the CentCom pod launcher (win: CentcomPodLauncher), the shuttle manipulator (win: ShuttleManipulator), the admin verb panel (win: AdminVerbPanel), the policy panel (win: Policypanel)
+- [ ] Admin verbs (`modules/admin` 178/1,643): the player panel, view variables, the spawn panel (win: SpawnPanel, SpawnSearch), secrets (win: Secrets), smites, forcing events (win: ForceEvent), the dynamic panel (Check Antagonists, the traitor panel, the team panel and the combo HUD: syndicate A1), the outfit manager and editor and select equipment (win: OutfitManager, OutfitEditor, SelectEquipment), command reports (win: CommandReport), the admin PDA and fax (win: AdminPDA, AdminFax), the law and borg panels (win: Lawpanel, BorgPanel), the beaker panel (win: BeakerPanel), the skill panel (done, gaps SL1: the console's skill-panel; win: SkillPanel), Assume and Give Direct Control (done, D346: the dev possess, unpossess and givecontrol, the Player tab's Possess section and tool), the sentience balloon, ghost pool protection, the trophy and painting panels, the CentCom pod launcher (win: CentcomPodLauncher), the shuttle manipulator (win: ShuttleManipulator), the admin verb panel (win: AdminVerbPanel), the policy panel (win: Policypanel)
 - [x] Admin help tickets and admin PMs (win: Adminhelp; M10x G6, 1.0.6-pre-alpha)
 - [ ] The player ticket history (win: PlayerTicketHistory, the database), prayers and the requests to CentCom and the Syndicate (win: RequestManager), new players' interviews (win: Interview, InterviewManager)
 - [ ] Debug windows: appearance and plane debuggers, filterrific, the particle editor, the color matrix editor, the light controller and spawner, the MC overview and dependency debug, the timer and atmos control panels, the AI behaviour tree viewer, the log viewer, the event logger, the sprite auditor, the color blind tester, the matrix math tester
@@ -472,6 +473,7 @@ Well-known SS13 mechanics that are not in tg any more; nothing to port. Checked 
 ## 13. Index of the tgui windows not drawn yet
 
 396 of tg's 444 windows (the client drew 48 when this index was made); 269 of the 396 are ticked now. One row per
+396 of tg's 444 windows (the client drew 48 when this index was made); 271 of the 396 are ticked now. One row per
 396 of tg's 444 windows (the client drew 48 when this index was made); 267 of the 396 are ticked now. One row per
 396 of tg's 444 windows (the client drew 48 when this index was made); 264 of the 396 are ticked now. One row per
 window, grouped by where its mechanic sits above; tick it when the client draws it (a registration in TguiWindows.cs), in the
@@ -492,7 +494,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] Supermatter (E2)
 - [x] Tank (E3)
 
-### The round and antagonists (sections 2, 3): 47 (25 drawn)
+### The round and antagonists (sections 2, 3): 47 (26 drawn)
 
 - [ ] AbductorConsole
 - [ ] Achievements
@@ -513,7 +515,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] AntagInfoRevolution (gaps V1)
 - [x] AntagInfoSentient (syndicate G3c)
 - [ ] AntagInfoSeparatist
-- [ ] AntagInfoShade
+- [x] AntagInfoShade (gaps CH1)
 - [ ] AntagInfoSpy
 - [ ] AntagInfoSunwalker
 - [x] AntagInfoTraitor (syndicate A2)
@@ -647,7 +649,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] Techweb (gaps RD2)
 - [x] TransferValve (syndicate G4b)
 
-### Service (5.4): 33 (14 drawn)
+### Service (5.4): 33 (16 drawn)
 
 - [ ] Aquarium
 - [ ] BattleArcade
@@ -671,13 +673,13 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [ ] OrionGame
 - [ ] PaintingMachine
 - [x] PlantAnalyzer (gaps P2)
-- [ ] ReligiousTool
+- [x] ReligiousTool (gaps CH1)
 - [ ] Roulette
 - [x] SeedExtractor (gaps P2)
 - [x] SeedTable (gaps P2)
 - [ ] SlotMachine
 - [x] SmartVend
-- [ ] SparringContract
+- [x] SparringContract (gaps CH1)
 - [x] TrainingMachine (gaps ST4)
 - [x] Trophycase (gaps ST2)
 - [x] Vendatray (gaps ST2)

@@ -1753,9 +1753,9 @@ public partial class datum_status_effect_replace_sound
     }
 }
 
-// tg: code/datums/status_effects/song_effects.dm:3
-[DmPath("/datum/status_effect/song"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_song : datum_status_effect
+// tg: code/datums/status_effects/song_effects.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/song")]
+public partial class datum_status_effect_song
 {
     public string aura_desc = "useless, buggy"; // tg: code/datums/status_effects/song_effects.dm:5
 
@@ -1767,9 +1767,9 @@ public partial class datum_status_effect_song : datum_status_effect
     }
 }
 
-// tg: code/datums/status_effects/song_effects.dm:21
-[DmPath("/datum/status_effect/song/antimagic"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_song_antimagic : datum_status_effect_song
+// tg: code/datums/status_effects/song_effects.dm:21 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/song/antimagic")]
+public partial class datum_status_effect_song_antimagic
 {
     // tg: code/datums/status_effects/song_effects.dm:21
     public datum_status_effect_song_antimagic()
@@ -1781,9 +1781,9 @@ public partial class datum_status_effect_song_antimagic : datum_status_effect_so
     }
 }
 
-// tg: code/datums/status_effects/song_effects.dm:39
-[DmPath("/datum/status_effect/song/light"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_song_light : datum_status_effect_song
+// tg: code/datums/status_effects/song_effects.dm:39 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/song/light")]
+public partial class datum_status_effect_song_light
 {
     public obj_effect_dummy_lighting_obj_moblight mob_light_obj; // tg: code/datums/status_effects/song_effects.dm:44
 
@@ -1797,9 +1797,9 @@ public partial class datum_status_effect_song_light : datum_status_effect_song
     }
 }
 
-// tg: code/datums/status_effects/song_effects.dm:54
-[DmPath("/datum/status_effect/song/light_song"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_song_light_song : datum_status_effect_song { }
+// tg: code/datums/status_effects/song_effects.dm:54 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/song/light_song")]
+public partial class datum_status_effect_song_light_song { }
 
 // tg: code/datums/status_effects/wound_effects.dm:10 (the var block of a hand-written class)
 [DmPath("/datum/status_effect/determined")]
@@ -5293,9 +5293,9 @@ public partial class datum_status_effect_tased
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:285
-[DmPath("/datum/status_effect/psychic_projection"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_psychic_projection : datum_status_effect
+// tg: code/modules/religion/burdened/psyker.dm:285 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/psychic_projection")]
+public partial class datum_status_effect_psychic_projection
 {
     public float times_dry_fired = 0; // tg: code/modules/religion/burdened/psyker.dm:290
     public float firing_delay = 0; // tg: code/modules/religion/burdened/psyker.dm:292
@@ -5310,9 +5310,9 @@ public partial class datum_status_effect_psychic_projection : datum_status_effec
     }
 }
 
-// tg: code/modules/religion/dreams/dream_projection.dm:53
-[DmPath("/datum/status_effect/dream_projection"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_dream_projection : datum_status_effect
+// tg: code/modules/religion/dreams/dream_projection.dm:53 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/dream_projection")]
+public partial class datum_status_effect_dream_projection
 {
     public mob_living_carbon_human target; // tg: code/modules/religion/dreams/dream_projection.dm:59
     public mob_eye_imaginary_friend_dream_projection projection; // tg: code/modules/religion/dreams/dream_projection.dm:61
@@ -5327,9 +5327,9 @@ public partial class datum_status_effect_dream_projection : datum_status_effect
     }
 }
 
-// tg: code/modules/religion/dreams/dream_protection.dm:30
-[DmPath("/datum/status_effect/dream_protection"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_dream_protection : datum_status_effect
+// tg: code/modules/religion/dreams/dream_protection.dm:30 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/dream_protection")]
+public partial class datum_status_effect_dream_protection
 {
     public float damage_mod = 0.75f; // tg: code/modules/religion/dreams/dream_protection.dm:35
     public float has_filter = 0; // tg: code/modules/religion/dreams/dream_protection.dm:37
@@ -5344,9 +5344,9 @@ public partial class datum_status_effect_dream_protection : datum_status_effect
     }
 }
 
-// tg: code/modules/religion/dreams/dream_protection.dm:91
-[DmPath("/datum/status_effect/dream_protection/temporary"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_dream_protection_temporary : datum_status_effect_dream_protection
+// tg: code/modules/religion/dreams/dream_protection.dm:91 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/dream_protection/temporary")]
+public partial class datum_status_effect_dream_protection_temporary
 {
     // tg: code/modules/religion/dreams/dream_protection.dm:91
     public datum_status_effect_dream_protection_temporary()
@@ -5357,9 +5357,9 @@ public partial class datum_status_effect_dream_protection_temporary : datum_stat
     }
 }
 
-// tg: code/modules/religion/dreams/dream_protection.dm:110
-[DmPath("/datum/status_effect/dream_protection/deceased"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_dream_protection_deceased : datum_status_effect_dream_protection
+// tg: code/modules/religion/dreams/dream_protection.dm:110 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/dream_protection/deceased")]
+public partial class datum_status_effect_dream_protection_deceased
 {
     // tg: code/modules/religion/dreams/dream_protection.dm:110
     public datum_status_effect_dream_protection_deceased()
@@ -5369,9 +5369,9 @@ public partial class datum_status_effect_dream_protection_deceased : datum_statu
     }
 }
 
-// tg: code/modules/religion/dreams/slumber_party.dm:26
-[DmPath("/datum/status_effect/slumber_party"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_slumber_party : datum_status_effect
+// tg: code/modules/religion/dreams/slumber_party.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/slumber_party")]
+public partial class datum_status_effect_slumber_party
 {
     public DmList shared_dream; // tg: code/modules/religion/dreams/slumber_party.dm:30
     public float healing = 2; // tg: code/modules/religion/dreams/slumber_party.dm:32

@@ -31556,9 +31556,9 @@ public partial class obj_item_runic_vendor_scepter : obj_item
     }
 }
 
-// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:2
-[DmPath("/obj/item/soulstone"), DmGeneratedOnly, DmInert]
-public partial class obj_item_soulstone : obj_item
+// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/soulstone")]
+public partial class obj_item_soulstone
 {
     public object base_name; // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:13
     public float one_use = 0; // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:15
@@ -31584,7 +31584,7 @@ public partial class obj_item_soulstone : obj_item
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:590
-[DmPath("/obj/item/soulstone/anybody"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody : obj_item_soulstone
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:590
@@ -31595,7 +31595,7 @@ public partial class obj_item_soulstone_anybody : obj_item_soulstone
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:615
-[DmPath("/obj/item/soulstone/anybody/revolver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody/revolver"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody_revolver : obj_item_soulstone_anybody
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:615
@@ -31607,7 +31607,7 @@ public partial class obj_item_soulstone_anybody_revolver : obj_item_soulstone_an
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:619
-[DmPath("/obj/item/soulstone/anybody/purified"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody/purified"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody_purified : obj_item_soulstone_anybody
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:619
@@ -31619,7 +31619,7 @@ public partial class obj_item_soulstone_anybody_purified : obj_item_soulstone_an
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:627
-[DmPath("/obj/item/soulstone/anybody/chaplain"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody/chaplain"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody_chaplain : obj_item_soulstone_anybody
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:627
@@ -31631,9 +31631,9 @@ public partial class obj_item_soulstone_anybody_chaplain : obj_item_soulstone_an
     }
 }
 
-// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:632
-[DmPath("/obj/item/soulstone/anybody/chaplain/sparring"), DmGeneratedOnly, DmInert]
-public partial class obj_item_soulstone_anybody_chaplain_sparring : obj_item_soulstone_anybody_chaplain
+// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:632 (the var block of a hand-written class)
+[DmPath("/obj/item/soulstone/anybody/chaplain/sparring")]
+public partial class obj_item_soulstone_anybody_chaplain_sparring
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:632
     public obj_item_soulstone_anybody_chaplain_sparring()
@@ -31646,7 +31646,7 @@ public partial class obj_item_soulstone_anybody_chaplain_sparring : obj_item_sou
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:644
-[DmPath("/obj/item/soulstone/anybody/mining"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody/mining"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody_mining : obj_item_soulstone_anybody
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:644
@@ -31657,7 +31657,7 @@ public partial class obj_item_soulstone_anybody_mining : obj_item_soulstone_anyb
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:607
-[DmPath("/obj/item/soulstone/mystic"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/mystic"), DmGeneratedOnly]
 public partial class obj_item_soulstone_mystic : obj_item_soulstone
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:607
@@ -37044,9 +37044,9 @@ public partial class obj_item_instrument_violin_golden : obj_item_instrument_vio
     }
 }
 
-// tg: code/modules/religion/festival/festival_violin.dm:2
-[DmPath("/obj/item/instrument/violin/festival"), DmGeneratedOnly, DmInert]
-public partial class obj_item_instrument_violin_festival : obj_item_instrument_violin
+// tg: code/modules/religion/festival/festival_violin.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/instrument/violin/festival")]
+public partial class obj_item_instrument_violin_festival
 {
     // tg: code/modules/religion/festival/festival_violin.dm:2
     public obj_item_instrument_violin_festival()
@@ -43779,9 +43779,9 @@ public partial class obj_item_sales_tagger
     }
 }
 
-// tg: code/modules/religion/religion_structures.dm:105
-[DmPath("/obj/item/ritual_totem"), DmGeneratedOnly, DmInert]
-public partial class obj_item_ritual_totem : obj_item
+// tg: code/modules/religion/religion_structures.dm:105 (the var block of a hand-written class)
+[DmPath("/obj/item/ritual_totem")]
+public partial class obj_item_ritual_totem
 {
     // tg: code/modules/religion/religion_structures.dm:105
     public obj_item_ritual_totem()
@@ -43804,9 +43804,9 @@ public partial class obj_item_ritual_totem : obj_item
     }
 }
 
-// tg: code/modules/religion/sparring/ceremonial_gear.dm:3
-[DmPath("/obj/item/ceremonial_blade"), DmGeneratedOnly, DmInert]
-public partial class obj_item_ceremonial_blade : obj_item
+// tg: code/modules/religion/sparring/ceremonial_gear.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/ceremonial_blade")]
+public partial class obj_item_ceremonial_blade
 {
     public DmList alt_continuous; // tg: code/modules/religion/sparring/ceremonial_gear.dm:32
     public DmList alt_simple; // tg: code/modules/religion/sparring/ceremonial_gear.dm:33
@@ -43851,9 +43851,9 @@ public partial class obj_item_ceremonial_blade : obj_item
     }
 }
 
-// tg: code/modules/religion/sparring/sparring_contract.dm:2
-[DmPath("/obj/item/sparring_contract"), DmGeneratedOnly, DmInert]
-public partial class obj_item_sparring_contract : obj_item
+// tg: code/modules/religion/sparring/sparring_contract.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/sparring_contract")]
+public partial class obj_item_sparring_contract
 {
     public float weapons_condition = 3; // tg: code/modules/religion/sparring/sparring_contract.dm:11
     public Type arena_condition = typeof(area_station_service_chapel); // tg: code/modules/religion/sparring/sparring_contract.dm:13

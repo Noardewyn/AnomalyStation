@@ -593,10 +593,8 @@ public partial class datum_status_effect_incapacitating_sleeping : datum_status_
 
         if (iscarbon(owner))
         {
-            // tg: :326-328  var/mob/living/carbon/carbon_owner = owner; carbon_owner.handle_dreams()
-            // GAP(M2 P2): /mob/living/carbon/proc/handle_dreams (modules/mob/living/carbon/life.dm) is not declared; dreams are
-            // chat text (M9).
-            Dm.Deferred("code/datums/status_effects/debuffs/debuffs.dm:328", "sleeping tick: carbon_owner.handle_dreams(), the dream texts (dreams, M10+)");
+            mob_living_carbon carbon_owner = owner as mob_living_carbon;
+            carbon_owner.handle_dreams();
         }
 
         if (prob(8) && owner.health > owner.crit_threshold)

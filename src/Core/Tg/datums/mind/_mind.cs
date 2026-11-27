@@ -296,7 +296,10 @@ public partial class datum_mind : datum
             current._SendSignal(COMSIG_MOB_MIND_SET_HOLY_ROLE, Dm.list(current, new_holy_role));
         //the signal stops tracking when losing holy roles, but since we're gaining it, give us our HUDs if we're becoming holy.
         if (!was_holy && Dm.truthy(holy_role))
-            Dm.Deferred("code/datums/mind/_mind.dm:338", "set_holy_role: the blessed_aware HUD's check_hud over GLOB.active_alternate_appearances (the blessed tiles' overlay, modules/religion)");
+        {
+            foreach (datum_atom_hud_alternate_appearance_basic_blessed_aware blessed_hud in Dm.each<datum_atom_hud_alternate_appearance_basic_blessed_aware>(GLOB.active_alternate_appearances))
+                blessed_hud.check_hud(current);
+        }
     }
 }
 

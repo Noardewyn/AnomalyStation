@@ -4951,9 +4951,9 @@ public partial class datum_action_cooldown_spell_pointed_wizard_mimic
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:248
-[DmPath("/datum/action/cooldown/spell/pointed/psychic_projection"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_pointed_psychic_projection : datum_action_cooldown_spell_pointed
+// tg: code/modules/religion/burdened/psyker.dm:248 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/pointed/psychic_projection")]
+public partial class datum_action_cooldown_spell_pointed_psychic_projection
 {
     public float projection_duration = 100; // tg: code/modules/religion/burdened/psyker.dm:261
 
@@ -4975,9 +4975,9 @@ public partial class datum_action_cooldown_spell_pointed_psychic_projection : da
     }
 }
 
-// tg: code/modules/religion/honorbound/honorbound_trauma.dm:223
-[DmPath("/datum/action/cooldown/spell/pointed/declare_evil"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_pointed_declare_evil : datum_action_cooldown_spell_pointed
+// tg: code/modules/religion/honorbound/honorbound_trauma.dm:223 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/pointed/declare_evil")]
+public partial class datum_action_cooldown_spell_pointed_declare_evil
 {
     public float required_favor = 150; // tg: code/modules/religion/honorbound/honorbound_trauma.dm:239
     public datum_brain_trauma_special_honorbound honor_trauma; // tg: code/modules/religion/honorbound/honorbound_trauma.dm:241
@@ -7150,9 +7150,9 @@ public partial class datum_action_cooldown_spell_list_target_telepathy_revenant 
     }
 }
 
-// tg: code/modules/spells/spell_types/charged/_charged.dm:8
-[DmPath("/datum/action/cooldown/spell/charged"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_charged : datum_action_cooldown_spell
+// tg: code/modules/spells/spell_types/charged/_charged.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/charged")]
+public partial class datum_action_cooldown_spell_charged
 {
     public object channel_message; // tg: code/modules/spells/spell_types/charged/_charged.dm:11
     public float currently_channeling = 0; // tg: code/modules/spells/spell_types/charged/_charged.dm:13
@@ -7171,9 +7171,9 @@ public partial class datum_action_cooldown_spell_charged : datum_action_cooldown
     }
 }
 
-// tg: code/modules/spells/spell_types/charged/_charged.dm:116
-[DmPath("/datum/action/cooldown/spell/charged/beam"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_charged_beam : datum_action_cooldown_spell_charged
+// tg: code/modules/spells/spell_types/charged/_charged.dm:116 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/charged/beam")]
+public partial class datum_action_cooldown_spell_charged_beam
 {
     public float target_radius = 5; // tg: code/modules/spells/spell_types/charged/_charged.dm:116
     public float max_beam_bounces = 1; // tg: code/modules/spells/spell_types/charged/_charged.dm:118
@@ -7236,9 +7236,9 @@ public partial class datum_action_cooldown_spell_charged_beam_tesla : datum_acti
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:330
-[DmPath("/datum/action/cooldown/spell/charged/psychic_booster"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_charged_psychic_booster : datum_action_cooldown_spell_charged
+// tg: code/modules/religion/burdened/psyker.dm:330 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/charged/psychic_booster")]
+public partial class datum_action_cooldown_spell_charged_psychic_booster
 {
     public float boosted = 0; // tg: code/modules/religion/burdened/psyker.dm:345
     public float effect_time = 100; // tg: code/modules/religion/burdened/psyker.dm:347
@@ -7675,9 +7675,9 @@ public partial class datum_action_cooldown_spell_teleport_area_teleport_wizard_s
     }
 }
 
-// tg: code/modules/spells/spell_types/self/forcewall.dm:2
-[DmPath("/datum/action/cooldown/spell/forcewall"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_forcewall : datum_action_cooldown_spell
+// tg: code/modules/spells/spell_types/self/forcewall.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/forcewall")]
+public partial class datum_action_cooldown_spell_forcewall
 {
     public Type wall_type = typeof(obj_effect_forcefield_wizard); // tg: code/modules/spells/spell_types/self/forcewall.dm:16
 
@@ -7697,9 +7697,9 @@ public partial class datum_action_cooldown_spell_forcewall : datum_action_cooldo
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:390
-[DmPath("/datum/action/cooldown/spell/forcewall/psychic_wall"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_forcewall_psychic_wall : datum_action_cooldown_spell_forcewall
+// tg: code/modules/religion/burdened/psyker.dm:390 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/forcewall/psychic_wall")]
+public partial class datum_action_cooldown_spell_forcewall_psychic_wall
 {
     // tg: code/modules/religion/burdened/psyker.dm:390
     public datum_action_cooldown_spell_forcewall_psychic_wall()
@@ -7718,7 +7718,7 @@ public partial class datum_action_cooldown_spell_forcewall_psychic_wall : datum_
 }
 
 // tg: code/modules/spells/spell_types/self/forcewall.dm:32
-[DmPath("/datum/action/cooldown/spell/forcewall/cult"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/spell/forcewall/cult"), DmGeneratedOnly]
 public partial class datum_action_cooldown_spell_forcewall_cult : datum_action_cooldown_spell_forcewall
 {
     // tg: code/modules/spells/spell_types/self/forcewall.dm:32
@@ -7737,7 +7737,7 @@ public partial class datum_action_cooldown_spell_forcewall_cult : datum_action_c
 }
 
 // tg: code/modules/spells/spell_types/self/forcewall.dm:46
-[DmPath("/datum/action/cooldown/spell/forcewall/mime"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/spell/forcewall/mime"), DmGeneratedOnly]
 public partial class datum_action_cooldown_spell_forcewall_mime : datum_action_cooldown_spell_forcewall
 {
     // tg: code/modules/spells/spell_types/self/forcewall.dm:46

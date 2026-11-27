@@ -808,6 +808,19 @@ public partial class datum_picture
     }
 }
 
+// tg: code/modules/religion/religion_sects.dm:536
+public partial class datum_religion_sect_dreams
+{
+    // tg: code/modules/religion/religion_sects.dm:660
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override DmTask<object> vv_edit_var(object var_name = null, object var_value = null)
+    {
+        Dm.Deferred("code/modules/religion/religion_sects.dm:660", "vv_edit_var: the admin's variable editor (admin tooling) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+}
+
 // tg: code/modules/research/techweb/_techweb.dm:11
 public partial class datum_techweb
 {

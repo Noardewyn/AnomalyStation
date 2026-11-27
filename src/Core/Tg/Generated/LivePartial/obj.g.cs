@@ -1587,6 +1587,37 @@ public partial class obj_item_grown_log
     }
 }
 
+// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:2
+public partial class obj_item_soulstone
+{
+    // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:120
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public virtual DmTask<object> corrupt()
+    {
+        Dm.NotTranslated("code/modules/antagonists/wizard/equipment/soulstone.dm:120", "corrupt: the cult's corruption of a soulstone and its shade (the cult, D333) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+
+    // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:380
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public virtual DmTask<object> transfer_to_construct(obj_structure_constructshell shell = null, mob user = null)
+    {
+        Dm.NotTranslated("code/modules/antagonists/wizard/equipment/soulstone.dm:380", "transfer_to_construct: a shade put into a construct shell becomes a construct (the cult's and the wizard's constructs, D333) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+
+    // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:394
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public virtual DmTask<object> check_menu(mob user = null, obj_structure_constructshell shell = null)
+    {
+        Dm.NotTranslated("code/modules/antagonists/wizard/equipment/soulstone.dm:394", "check_menu: the construct shell's radial menu check (the cult's and the wizard's constructs, D333) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+}
+
 // tg: code/modules/cargo/universal_scanner.dm:4
 public partial class obj_item_universal_scanner
 {

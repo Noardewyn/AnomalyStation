@@ -13,8 +13,7 @@ namespace Anomaly.Core.Tg;
 // (rules 10.6: TgState fields). The rust-g calls (the sound lengths of precache_sounds, cache_sounds and get_sound_length)
 // are the engine part's rustg_sound_length_list and rustg_call_sound_len (Builtin/rust_g.builtin.cs, rules 13), which read
 // the host's table of sound lengths (Infrastructure/SoundLengths.cs; the server fills it from the sound tool's index).
-// find_all_available_sounds' pathwalk over BYOND's resource folder is a deferred leaf (the sound tool's index lists the
-// files, M4b slice 2).
+// find_all_available_sounds' pathwalk over BYOND's resource folder walks the host's sound index instead (SoundLengths.Paths).
 
 // tg: code/controllers/subsystem/sounds.dm:3 SUBSYSTEM_DEF(sounds)
 public partial class datum_controller_subsystem_sounds : datum_controller_subsystem
@@ -94,10 +93,22 @@ public partial class datum_controller_subsystem_sounds : datum_controller_subsys
     public virtual void find_all_available_sounds()
     {
         all_sounds = Dm.list();
-        // tg: :110  all_sounds = pathwalk("sound/", byond_sound_extensions): BYOND's resource folder; the port has none (the
-        // client loads the files itself; the sound tool's index lists them, M4b slice 2). The list's only reader is the dream's
-        // random sound (flufftext/dreaming.dm:190, sleep and dreams, M9), which can fill it from the host's sound table then.
-        Dm.Deferred("code/controllers/subsystem/sounds.dm:110", "find_all_available_sounds: pathwalk(\"sound/\", byond_sound_extensions), the files of BYOND's resource folder: all_sounds stays empty (its only reader, the dream's random sound, is M10+)");
+        // tg: :110  all_sounds = pathwalk("sound/", byond_sound_extensions): BYOND's resource folder; the port has none on the
+        // server, so the walk lists the files of the host's sound index (SoundLengths.Paths, the files under sound/ the index
+        // knows) with the same extension filter, in the index's order.
+        foreach (string path in SoundLengths.Paths())
+        {
+            if (!path.StartsWith("sound/", System.StringComparison.Ordinal))
+                continue;
+            foreach (object allowed_extension in Dm.each(byond_sound_extensions))
+            {
+                if (path.EndsWith(allowed_extension as string, System.StringComparison.Ordinal))
+                {
+                    Dm.append(ref all_sounds, path);
+                    break;
+                }
+            }
+        }
     }
 
     /// Removes a channel from using list.

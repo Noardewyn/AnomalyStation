@@ -1853,6 +1853,8 @@
 /datum/ntnet_conversation	id	decl	code/modules/modular_computers/file_system/programs/chatroom/conversation.dm:14	{"K":"null","N":0}
 /datum/paper_field	field_index	decl	code/modules/paperwork/paper.dm:891	{"K":"num","N":-1}
 /datum/equilibrium	reaction	decl	code/modules/reagents/chemistry/equilibrium.dm:15	{"K":"null","N":0}
+/datum/sparring_match	chaplain	decl	code/modules/religion/sparring/sparring_datum.dm:3	{"K":"null","N":0}
+/datum/sparring_match	arena_condition	decl	code/modules/religion/sparring/sparring_datum.dm:9	{"K":"null","N":0}
 /datum/tgui_window	id	decl	code/modules/tgui/tgui_window.dm:7	{"K":"null","N":0}
 /datum/tgui_alert	choice	decl	code/modules/tgui_input/alert.dm:57	{"K":"null","N":0}
 /datum/tgui_color_picker	choice	decl	code/modules/tgui_input/color.dm:43	{"K":"null","N":0}

@@ -2932,9 +2932,9 @@ public partial class obj_projectile_bullet_c38_iceblox
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:231
-[DmPath("/obj/projectile/bullet/c38/holy"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_bullet_c38_holy : obj_projectile_bullet_c38
+// tg: code/modules/religion/burdened/psyker.dm:231 (the var block of a hand-written class)
+[DmPath("/obj/projectile/bullet/c38/holy")]
+public partial class obj_projectile_bullet_c38_holy
 {
     // tg: code/modules/religion/burdened/psyker.dm:231
     public obj_projectile_bullet_c38_holy()

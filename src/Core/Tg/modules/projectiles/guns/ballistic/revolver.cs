@@ -428,7 +428,16 @@ public partial class obj_item_gun_ballistic_revolver_russian_soul : obj_item_gun
         await base.shoot_self(user, affecting);
         if (Dm.eq(affecting, BODY_ZONE_HEAD))
         {
-            Dm.NotTranslated("code/modules/projectiles/guns/ballistic/revolver.dm:389", "shoot_self: the soul captured into /obj/item/soulstone/anybody/revolver (capture_soul; the cult's soulstones are not translated, D333)");
+            obj_item_soulstone_anybody_revolver stone = Dm.@new<obj_item_soulstone_anybody_revolver>(user.drop_location());
+            if (!Dm.truthy(await stone.capture_soul(user, forced: TRUE))) //Something went wrong
+            {
+                qdel(stone);
+                return;
+            }
+            user.visible_message(
+                span_danger(I18n.T("[]'s soul is captured by \\the []!", user, this)),
+                span_userdanger(I18n.T("You've lost the gamble! Your soul is forfeit!")),
+                visible_message_flags: ALWAYS_SHOW_SELF_MESSAGE);
             return;
         }
 

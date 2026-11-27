@@ -446,9 +446,9 @@ public partial class mob_eye_imaginary_friend_hivemind
     }
 }
 
-// tg: code/modules/religion/dreams/dream_projection.dm:155
-[DmPath("/mob/eye/imaginary_friend/dream_projection"), DmGeneratedOnly, DmInert]
-public partial class mob_eye_imaginary_friend_dream_projection : mob_eye_imaginary_friend
+// tg: code/modules/religion/dreams/dream_projection.dm:155 (the var block of a hand-written class)
+[DmPath("/mob/eye/imaginary_friend/dream_projection")]
+public partial class mob_eye_imaginary_friend_dream_projection
 {
     // tg: code/modules/religion/dreams/dream_projection.dm:155
     public mob_eye_imaginary_friend_dream_projection()

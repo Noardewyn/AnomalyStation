@@ -1779,9 +1779,9 @@ public partial class datum_antagonist_separatist : datum_antagonist
     }
 }
 
-// tg: code/modules/antagonists/shade/shade_minion.dm:8
-[DmPath("/datum/antagonist/shade_minion"), DmGeneratedOnly, DmInert]
-public partial class datum_antagonist_shade_minion : datum_antagonist
+// tg: code/modules/antagonists/shade/shade_minion.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/antagonist/shade_minion")]
+public partial class datum_antagonist_shade_minion
 {
     public string master_name = "nobody?"; // tg: code/modules/antagonists/shade/shade_minion.dm:15
 

@@ -2278,9 +2278,9 @@ public partial class datum_action_innate_proto_emitter_firing
     }
 }
 
-// tg: code/modules/religion/dreams/dream_projection.dm:180
-[DmPath("/datum/action/innate/stop_projection"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_stop_projection : datum_action_innate
+// tg: code/modules/religion/dreams/dream_projection.dm:180 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/stop_projection")]
+public partial class datum_action_innate_stop_projection
 {
     // tg: code/modules/religion/dreams/dream_projection.dm:180
     public datum_action_innate_stop_projection()

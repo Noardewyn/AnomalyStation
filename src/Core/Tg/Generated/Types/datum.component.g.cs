@@ -3337,9 +3337,9 @@ public partial class datum_component_regenerator
     public datum_callback regen_check; // tg: code/datums/components/regenerator.dm:29
 }
 
-// tg: code/datums/components/religious_tool.dm:7
-[DmPath("/datum/component/religious_tool"), DmGeneratedOnly, DmInert]
-public partial class datum_component_religious_tool : datum_component
+// tg: code/datums/components/religious_tool.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/component/religious_tool")]
+public partial class datum_component_religious_tool
 {
     public datum_religion_sect easy_access_sect; // tg: code/datums/components/religious_tool.dm:9
     public float selecting_sect = 0; // tg: code/datums/components/religious_tool.dm:11
@@ -3461,9 +3461,9 @@ public partial class datum_component_seclite_attachable
     }
 }
 
-// tg: code/datums/components/sect_nullrod_bonus.dm:8
-[DmPath("/datum/component/sect_nullrod_bonus"), DmGeneratedOnly, DmInert]
-public partial class datum_component_sect_nullrod_bonus : datum_component
+// tg: code/datums/components/sect_nullrod_bonus.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/component/sect_nullrod_bonus")]
+public partial class datum_component_sect_nullrod_bonus
 {
     public DmList bonus_rites; // tg: code/datums/components/sect_nullrod_bonus.dm:8
     public float bonus_applied = 0; // tg: code/datums/components/sect_nullrod_bonus.dm:10
@@ -3780,9 +3780,9 @@ public partial class datum_component_slippery_item
     public object last_fall; // tg: code/datums/components/slippery_item.dm:12
 }
 
-// tg: code/datums/components/smooth_tunes.dm:5
-[DmPath("/datum/component/smooth_tunes"), DmGeneratedOnly, DmInert]
-public partial class datum_component_smooth_tunes : datum_component
+// tg: code/datums/components/smooth_tunes.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/component/smooth_tunes")]
+public partial class datum_component_smooth_tunes
 {
     public datum_religion_rites_song_tuner linked_songtuner_rite; // tg: code/datums/components/smooth_tunes.dm:5
     public datum_song linked_song; // tg: code/datums/components/smooth_tunes.dm:7
@@ -3815,9 +3815,9 @@ public partial class datum_component_soul_stealer : datum_component
     }
 }
 
-// tg: code/datums/components/soulstoned.dm:3
-[DmPath("/datum/component/soulstoned"), DmGeneratedOnly, DmInert]
-public partial class datum_component_soulstoned : datum_component
+// tg: code/datums/components/soulstoned.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/soulstoned")]
+public partial class datum_component_soulstoned
 {
     public atom_movable container; // tg: code/datums/components/soulstoned.dm:3
 }
@@ -4494,9 +4494,9 @@ public partial class datum_component_udder
     public datum_callback on_milk_callback; // tg: code/datums/components/udder.dm:10
 }
 
-// tg: code/datums/components/unbreakable.dm:2
-[DmPath("/datum/component/unbreakable"), DmGeneratedOnly, DmInert]
-public partial class datum_component_unbreakable : datum_component
+// tg: code/datums/components/unbreakable.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/component/unbreakable")]
+public partial class datum_component_unbreakable
 {
     public float surge_cooldown = 0; // tg: code/datums/components/unbreakable.dm:2
 }

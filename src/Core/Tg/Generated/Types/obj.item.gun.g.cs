@@ -986,9 +986,9 @@ public partial class obj_item_gun_ballistic_revolver_peashooter : obj_item_gun_b
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:127
-[DmPath("/obj/item/gun/ballistic/revolver/chaplain"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gun_ballistic_revolver_chaplain : obj_item_gun_ballistic_revolver
+// tg: code/modules/religion/burdened/psyker.dm:127 (the var block of a hand-written class)
+[DmPath("/obj/item/gun/ballistic/revolver/chaplain")]
+public partial class obj_item_gun_ballistic_revolver_chaplain
 {
     public float needs_burden = 1; // tg: code/modules/religion/burdened/psyker.dm:138
 

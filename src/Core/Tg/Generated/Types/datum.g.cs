@@ -30364,9 +30364,9 @@ public partial class datum_heretic_knowledge_tree_column_void : datum_heretic_kn
     }
 }
 
-// tg: code/modules/flufftext/dreaming.dm:90
-[DmPath("/datum/dream"), DmGeneratedOnly, DmInert]
-public partial class datum_dream : datum
+// tg: code/modules/flufftext/dreaming.dm:90 (the var block of a hand-written class)
+[DmPath("/datum/dream")]
+public partial class datum_dream
 {
     public float weight = 0; // tg: code/modules/flufftext/dreaming.dm:90
     public float sleep_until_finished = 0; // tg: code/modules/flufftext/dreaming.dm:93
@@ -30394,9 +30394,9 @@ public partial class datum_dream_heretic : datum_dream
     }
 }
 
-// tg: code/modules/flufftext/dreaming.dm:110
-[DmPath("/datum/dream/random"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_random : datum_dream
+// tg: code/modules/flufftext/dreaming.dm:110 (the var block of a hand-written class)
+[DmPath("/datum/dream/random")]
+public partial class datum_dream_random
 {
     // tg: code/modules/flufftext/dreaming.dm:110
     public datum_dream_random()
@@ -30405,9 +30405,9 @@ public partial class datum_dream_random : datum_dream
     }
 }
 
-// tg: code/modules/religion/dreams/dream_portent.dm:361
-[DmPath("/datum/dream/random/vague_portent"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_random_vague_portent : datum_dream_random
+// tg: code/modules/religion/dreams/dream_portent.dm:361 (the var block of a hand-written class)
+[DmPath("/datum/dream/random/vague_portent")]
+public partial class datum_dream_random_vague_portent
 {
     // tg: code/modules/religion/dreams/dream_portent.dm:361
     public datum_dream_random_vague_portent()
@@ -30417,9 +30417,9 @@ public partial class datum_dream_random_vague_portent : datum_dream_random
     }
 }
 
-// tg: code/modules/flufftext/dreaming.dm:166
-[DmPath("/datum/dream/hear_something"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_hear_something : datum_dream
+// tg: code/modules/flufftext/dreaming.dm:166 (the var block of a hand-written class)
+[DmPath("/datum/dream/hear_something")]
+public partial class datum_dream_hear_something
 {
     public object reserved_sound_channel; // tg: code/modules/flufftext/dreaming.dm:168
 
@@ -30430,9 +30430,9 @@ public partial class datum_dream_hear_something : datum_dream
     }
 }
 
-// tg: code/modules/religion/dreams/dream_portent.dm:94
-[DmPath("/datum/dream/specific_portent"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_specific_portent : datum_dream
+// tg: code/modules/religion/dreams/dream_portent.dm:94 (the var block of a hand-written class)
+[DmPath("/datum/dream/specific_portent")]
+public partial class datum_dream_specific_portent
 {
     // tg: code/modules/religion/dreams/dream_portent.dm:94
     public datum_dream_specific_portent()
@@ -30442,9 +30442,9 @@ public partial class datum_dream_specific_portent : datum_dream
     }
 }
 
-// tg: code/modules/religion/dreams/slumber_party.dm:103
-[DmPath("/datum/dream/shared"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_shared : datum_dream
+// tg: code/modules/religion/dreams/slumber_party.dm:103 (the var block of a hand-written class)
+[DmPath("/datum/dream/shared")]
+public partial class datum_dream_shared
 {
     public DmList generated_dream; // tg: code/modules/religion/dreams/slumber_party.dm:105
 
@@ -51060,9 +51060,9 @@ public partial class datum_addiction_nicotine
     }
 }
 
-// tg: code/modules/religion/rites.dm:3
-[DmPath("/datum/religion_rites"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites : datum
+// tg: code/modules/religion/rites.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites")]
+public partial class datum_religion_rites
 {
     public string name = "religious rite"; // tg: code/modules/religion/rites.dm:3
     public string desc = "immm gonna rooon"; // tg: code/modules/religion/rites.dm:5
@@ -51073,9 +51073,9 @@ public partial class datum_religion_rites : datum
     public float rite_flags = 1; // tg: code/modules/religion/rites.dm:16
 }
 
-// tg: code/modules/religion/deaconize.dm:7
-[DmPath("/datum/religion_rites/deaconize"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_deaconize : datum_religion_rites
+// tg: code/modules/religion/deaconize.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/deaconize")]
+public partial class datum_religion_rites_deaconize
 {
     public mob_living_carbon_human potential_deacon; // tg: code/modules/religion/deaconize.dm:22
 
@@ -51097,9 +51097,9 @@ public partial class datum_religion_rites_deaconize : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/dreams/deaconize_dreamer.dm:2
-[DmPath("/datum/religion_rites/deaconize/dreamers"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_deaconize_dreamers : datum_religion_rites_deaconize
+// tg: code/modules/religion/dreams/deaconize_dreamer.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/deaconize/dreamers")]
+public partial class datum_religion_rites_deaconize_dreamers
 {
     // tg: code/modules/religion/dreams/deaconize_dreamer.dm:2
     public datum_religion_rites_deaconize_dreamers()
@@ -51109,9 +51109,9 @@ public partial class datum_religion_rites_deaconize_dreamers : datum_religion_ri
     }
 }
 
-// tg: code/modules/religion/honorbound/honorbound_rites.dm:119
-[DmPath("/datum/religion_rites/deaconize/crusader"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_deaconize_crusader : datum_religion_rites_deaconize
+// tg: code/modules/religion/honorbound/honorbound_rites.dm:119 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/deaconize/crusader")]
+public partial class datum_religion_rites_deaconize_crusader
 {
     // tg: code/modules/religion/honorbound/honorbound_rites.dm:119
     public datum_religion_rites_deaconize_crusader()
@@ -51131,9 +51131,9 @@ public partial class datum_religion_rites_deaconize_crusader : datum_religion_ri
     }
 }
 
-// tg: code/modules/religion/rites.dm:81
-[DmPath("/datum/religion_rites/synthconversion"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_synthconversion : datum_religion_rites
+// tg: code/modules/religion/rites.dm:81 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/synthconversion")]
+public partial class datum_religion_rites_synthconversion
 {
     // tg: code/modules/religion/rites.dm:81
     public datum_religion_rites_synthconversion()
@@ -51153,9 +51153,9 @@ public partial class datum_religion_rites_synthconversion : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:130
-[DmPath("/datum/religion_rites/machine_blessing"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_machine_blessing : datum_religion_rites
+// tg: code/modules/religion/rites.dm:130 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/machine_blessing")]
+public partial class datum_religion_rites_machine_blessing
 {
     // tg: code/modules/religion/rites.dm:130
     public datum_religion_rites_machine_blessing()
@@ -51175,9 +51175,9 @@ public partial class datum_religion_rites_machine_blessing : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/rites.dm:182
-[DmPath("/datum/religion_rites/greed"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_greed : datum_religion_rites
+// tg: code/modules/religion/rites.dm:182 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/greed")]
+public partial class datum_religion_rites_greed
 {
     public float money_cost = 0; // tg: code/modules/religion/rites.dm:184
 
@@ -51189,9 +51189,9 @@ public partial class datum_religion_rites_greed : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:205
-[DmPath("/datum/religion_rites/greed/vendatray"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_greed_vendatray : datum_religion_rites_greed
+// tg: code/modules/religion/rites.dm:205 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/greed/vendatray")]
+public partial class datum_religion_rites_greed_vendatray
 {
     // tg: code/modules/religion/rites.dm:205
     public datum_religion_rites_greed_vendatray()
@@ -51203,9 +51203,9 @@ public partial class datum_religion_rites_greed_vendatray : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:218
-[DmPath("/datum/religion_rites/greed/custom_vending"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_greed_custom_vending : datum_religion_rites_greed
+// tg: code/modules/religion/rites.dm:218 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/greed/custom_vending")]
+public partial class datum_religion_rites_greed_custom_vending
 {
     // tg: code/modules/religion/rites.dm:218
     public datum_religion_rites_greed_custom_vending()
@@ -51217,9 +51217,9 @@ public partial class datum_religion_rites_greed_custom_vending : datum_religion_
     }
 }
 
-// tg: code/modules/religion/rites.dm:233
-[DmPath("/datum/religion_rites/maint_adaptation"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_maint_adaptation : datum_religion_rites
+// tg: code/modules/religion/rites.dm:233 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/maint_adaptation")]
+public partial class datum_religion_rites_maint_adaptation
 {
     // tg: code/modules/religion/rites.dm:233
     public datum_religion_rites_maint_adaptation()
@@ -51239,9 +51239,9 @@ public partial class datum_religion_rites_maint_adaptation : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/rites.dm:267
-[DmPath("/datum/religion_rites/adapted_eyes"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_adapted_eyes : datum_religion_rites
+// tg: code/modules/religion/rites.dm:267 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/adapted_eyes")]
+public partial class datum_religion_rites_adapted_eyes
 {
     // tg: code/modules/religion/rites.dm:267
     public datum_religion_rites_adapted_eyes()
@@ -51254,9 +51254,9 @@ public partial class datum_religion_rites_adapted_eyes : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:296
-[DmPath("/datum/religion_rites/adapted_food"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_adapted_food : datum_religion_rites
+// tg: code/modules/religion/rites.dm:296 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/adapted_food")]
+public partial class datum_religion_rites_adapted_food
 {
     public obj_item_food mold_target; // tg: code/modules/religion/rites.dm:302
 
@@ -51271,9 +51271,9 @@ public partial class datum_religion_rites_adapted_food : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:327
-[DmPath("/datum/religion_rites/ritual_totem"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_ritual_totem : datum_religion_rites
+// tg: code/modules/religion/rites.dm:327 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/ritual_totem")]
+public partial class datum_religion_rites_ritual_totem
 {
     public obj_item_stack_sheet_mineral_wood converted; // tg: code/modules/religion/rites.dm:332
 
@@ -51287,9 +51287,9 @@ public partial class datum_religion_rites_ritual_totem : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:359
-[DmPath("/datum/religion_rites/sparring_contract"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_sparring_contract : datum_religion_rites
+// tg: code/modules/religion/rites.dm:359 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/sparring_contract")]
+public partial class datum_religion_rites_sparring_contract
 {
     public obj_item_paper contract_target; // tg: code/modules/religion/rites.dm:363
 
@@ -51302,9 +51302,9 @@ public partial class datum_religion_rites_sparring_contract : datum_religion_rit
     }
 }
 
-// tg: code/modules/religion/rites.dm:393
-[DmPath("/datum/religion_rites/declare_arena"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_declare_arena : datum_religion_rites
+// tg: code/modules/religion/rites.dm:393 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/declare_arena")]
+public partial class datum_religion_rites_declare_arena
 {
     public area area_instance; // tg: code/modules/religion/rites.dm:399
 
@@ -51326,9 +51326,9 @@ public partial class datum_religion_rites_declare_arena : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:420
-[DmPath("/datum/religion_rites/ceremonial_weapon"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_ceremonial_weapon : datum_religion_rites
+// tg: code/modules/religion/rites.dm:420 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/ceremonial_weapon")]
+public partial class datum_religion_rites_ceremonial_weapon
 {
     public obj_item_stack_sheet converted; // tg: code/modules/religion/rites.dm:426
 
@@ -51343,9 +51343,9 @@ public partial class datum_religion_rites_ceremonial_weapon : datum_religion_rit
     }
 }
 
-// tg: code/modules/religion/rites.dm:466
-[DmPath("/datum/religion_rites/unbreakable"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_unbreakable : datum_religion_rites
+// tg: code/modules/religion/rites.dm:466 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/unbreakable")]
+public partial class datum_religion_rites_unbreakable
 {
     // tg: code/modules/religion/rites.dm:466
     public datum_religion_rites_unbreakable()
@@ -51358,9 +51358,9 @@ public partial class datum_religion_rites_unbreakable : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:486
-[DmPath("/datum/religion_rites/tenacious"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_tenacious : datum_religion_rites
+// tg: code/modules/religion/rites.dm:486 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/tenacious")]
+public partial class datum_religion_rites_tenacious
 {
     // tg: code/modules/religion/rites.dm:486
     public datum_religion_rites_tenacious()
@@ -51373,9 +51373,9 @@ public partial class datum_religion_rites_tenacious : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:92
-[DmPath("/datum/religion_rites/nullrod_transformation"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_nullrod_transformation : datum_religion_rites
+// tg: code/modules/religion/burdened/psyker.dm:92 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/nullrod_transformation")]
+public partial class datum_religion_rites_nullrod_transformation
 {
     public obj_item_nullrod transformation_target; // tg: code/modules/religion/burdened/psyker.dm:96
 
@@ -51388,9 +51388,9 @@ public partial class datum_religion_rites_nullrod_transformation : datum_religio
     }
 }
 
-// tg: code/modules/religion/dreams/banish_nightmare.dm:2
-[DmPath("/datum/religion_rites/banish_nightmare"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_banish_nightmare : datum_religion_rites
+// tg: code/modules/religion/dreams/banish_nightmare.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/banish_nightmare")]
+public partial class datum_religion_rites_banish_nightmare
 {
     // tg: code/modules/religion/dreams/banish_nightmare.dm:2
     public datum_religion_rites_banish_nightmare()
@@ -51402,9 +51402,9 @@ public partial class datum_religion_rites_banish_nightmare : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/dreams/dream_portent.dm:2
-[DmPath("/datum/religion_rites/dream_portent"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_dream_portent : datum_religion_rites
+// tg: code/modules/religion/dreams/dream_portent.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/dream_portent")]
+public partial class datum_religion_rites_dream_portent
 {
     // tg: code/modules/religion/dreams/dream_portent.dm:2
     public datum_religion_rites_dream_portent()
@@ -51417,9 +51417,9 @@ public partial class datum_religion_rites_dream_portent : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/dreams/dream_projection.dm:2
-[DmPath("/datum/religion_rites/dream_projection"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_dream_projection : datum_religion_rites
+// tg: code/modules/religion/dreams/dream_projection.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/dream_projection")]
+public partial class datum_religion_rites_dream_projection
 {
     // tg: code/modules/religion/dreams/dream_projection.dm:2
     public datum_religion_rites_dream_projection()
@@ -51431,9 +51431,9 @@ public partial class datum_religion_rites_dream_projection : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/dreams/dream_protection.dm:2
-[DmPath("/datum/religion_rites/dream_protection"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_dream_protection : datum_religion_rites
+// tg: code/modules/religion/dreams/dream_protection.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/dream_protection")]
+public partial class datum_religion_rites_dream_protection
 {
     // tg: code/modules/religion/dreams/dream_protection.dm:2
     public datum_religion_rites_dream_protection()
@@ -51446,9 +51446,9 @@ public partial class datum_religion_rites_dream_protection : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/dreams/slumber_party.dm:2
-[DmPath("/datum/religion_rites/slumber_party"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_slumber_party : datum_religion_rites
+// tg: code/modules/religion/dreams/slumber_party.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/slumber_party")]
+public partial class datum_religion_rites_slumber_party
 {
     // tg: code/modules/religion/dreams/slumber_party.dm:2
     public datum_religion_rites_slumber_party()
@@ -51461,9 +51461,9 @@ public partial class datum_religion_rites_slumber_party : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:2
-[DmPath("/datum/religion_rites/holy_violin"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_holy_violin : datum_religion_rites
+// tg: code/modules/religion/festival/instrument_rites.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/holy_violin")]
+public partial class datum_religion_rites_holy_violin
 {
     // tg: code/modules/religion/festival/instrument_rites.dm:2
     public datum_religion_rites_holy_violin()
@@ -51483,9 +51483,9 @@ public partial class datum_religion_rites_holy_violin : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:17
-[DmPath("/datum/religion_rites/portable_song_tuning"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_portable_song_tuning : datum_religion_rites
+// tg: code/modules/religion/festival/instrument_rites.dm:17 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/portable_song_tuning")]
+public partial class datum_religion_rites_portable_song_tuning
 {
     public obj_item_instrument instrument_target; // tg: code/modules/religion/festival/instrument_rites.dm:24
 
@@ -51507,9 +51507,9 @@ public partial class datum_religion_rites_portable_song_tuning : datum_religion_
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:57
-[DmPath("/datum/religion_rites/song_tuner"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner : datum_religion_rites
+// tg: code/modules/religion/festival/instrument_rites.dm:57 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner")]
+public partial class datum_religion_rites_song_tuner
 {
     public float repeats_okay = 1; // tg: code/modules/religion/festival/instrument_rites.dm:63
     public string song_invocation_message = "beep borp you forgot to fill in a variable report to git hub"; // tg: code/modules/religion/festival/instrument_rites.dm:65
@@ -51528,9 +51528,9 @@ public partial class datum_religion_rites_song_tuner : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:111
-[DmPath("/datum/religion_rites/song_tuner/evangelism"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_evangelism : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:111 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/evangelism")]
+public partial class datum_religion_rites_song_tuner_evangelism
 {
     // tg: code/modules/religion/festival/instrument_rites.dm:111
     public datum_religion_rites_song_tuner_evangelism()
@@ -51545,9 +51545,9 @@ public partial class datum_religion_rites_song_tuner_evangelism : datum_religion
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:129
-[DmPath("/datum/religion_rites/song_tuner/light"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_light : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:129 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/light")]
+public partial class datum_religion_rites_song_tuner_light
 {
     public obj_effect_dummy_lighting_obj_moblight performer_light_obj; // tg: code/modules/religion/festival/instrument_rites.dm:138
 
@@ -51565,9 +51565,9 @@ public partial class datum_religion_rites_song_tuner_light : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:151
-[DmPath("/datum/religion_rites/song_tuner/nullwave"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_nullwave : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:151 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/nullwave")]
+public partial class datum_religion_rites_song_tuner_nullwave
 {
     // tg: code/modules/religion/festival/instrument_rites.dm:151
     public datum_religion_rites_song_tuner_nullwave()
@@ -51582,9 +51582,9 @@ public partial class datum_religion_rites_song_tuner_nullwave : datum_religion_r
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:163
-[DmPath("/datum/religion_rites/song_tuner/pain"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_pain : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:163 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/pain")]
+public partial class datum_religion_rites_song_tuner_pain
 {
     // tg: code/modules/religion/festival/instrument_rites.dm:163
     public datum_religion_rites_song_tuner_pain()
@@ -51599,9 +51599,9 @@ public partial class datum_religion_rites_song_tuner_pain : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:183
-[DmPath("/datum/religion_rites/song_tuner/lullaby"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_lullaby : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:183 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/lullaby")]
+public partial class datum_religion_rites_song_tuner_lullaby
 {
     public DmList listener_counter; // tg: code/modules/religion/festival/instrument_rites.dm:192
 
@@ -51626,9 +51626,9 @@ public partial class datum_religion_rites_song_tuner_lullaby : datum_religion_ri
     }
 }
 
-// tg: code/modules/religion/honorbound/honorbound_rites.dm:3
-[DmPath("/datum/religion_rites/forgive"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_forgive : datum_religion_rites
+// tg: code/modules/religion/honorbound/honorbound_rites.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/forgive")]
+public partial class datum_religion_rites_forgive
 {
     public mob_living who; // tg: code/modules/religion/honorbound/honorbound_rites.dm:6
 
@@ -51641,9 +51641,9 @@ public partial class datum_religion_rites_forgive : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/honorbound/honorbound_rites.dm:36
-[DmPath("/datum/religion_rites/summon_rules"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_summon_rules : datum_religion_rites
+// tg: code/modules/religion/honorbound/honorbound_rites.dm:36 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/summon_rules")]
+public partial class datum_religion_rites_summon_rules
 {
     public obj_item_paper writ_target; // tg: code/modules/religion/honorbound/honorbound_rites.dm:40
 
@@ -51656,9 +51656,9 @@ public partial class datum_religion_rites_summon_rules : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/pyre/pyre_rites.dm:10
-[DmPath("/datum/religion_rites/fireproof"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_fireproof : datum_religion_rites
+// tg: code/modules/religion/pyre/pyre_rites.dm:10 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/fireproof")]
+public partial class datum_religion_rites_fireproof
 {
     public obj_item_clothing chosen_clothing; // tg: code/modules/religion/pyre/pyre_rites.dm:19
 
@@ -51680,9 +51680,9 @@ public partial class datum_religion_rites_fireproof : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/pyre/pyre_rites.dm:45
-[DmPath("/datum/religion_rites/burning_sacrifice"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_burning_sacrifice : datum_religion_rites
+// tg: code/modules/religion/pyre/pyre_rites.dm:45 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/burning_sacrifice")]
+public partial class datum_religion_rites_burning_sacrifice
 {
     public mob_living_carbon chosen_sacrifice; // tg: code/modules/religion/pyre/pyre_rites.dm:54
 
@@ -51703,9 +51703,9 @@ public partial class datum_religion_rites_burning_sacrifice : datum_religion_rit
     }
 }
 
-// tg: code/modules/religion/pyre/pyre_rites.dm:102
-[DmPath("/datum/religion_rites/infinite_candle"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_infinite_candle : datum_religion_rites
+// tg: code/modules/religion/pyre/pyre_rites.dm:102 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/infinite_candle")]
+public partial class datum_religion_rites_infinite_candle
 {
     // tg: code/modules/religion/pyre/pyre_rites.dm:102
     public datum_religion_rites_infinite_candle()
@@ -51718,9 +51718,9 @@ public partial class datum_religion_rites_infinite_candle : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/pyre/pyre_rites.dm:117
-[DmPath("/datum/religion_rites/blazing_star"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_blazing_star : datum_religion_rites
+// tg: code/modules/religion/pyre/pyre_rites.dm:117 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/blazing_star")]
+public partial class datum_religion_rites_blazing_star
 {
     public obj_item_ammo_casing_arrow_holy enchant_target; // tg: code/modules/religion/pyre/pyre_rites.dm:128
 
@@ -51742,9 +51742,9 @@ public partial class datum_religion_rites_blazing_star : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:12
-[DmPath("/datum/religion_sect"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect : datum
+// tg: code/modules/religion/religion_sects.dm:12 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect")]
+public partial class datum_religion_sect
 {
     public string name = "Religious Sect Base Type"; // tg: code/modules/religion/religion_sects.dm:12
     public string quote = "Hail Coderbus! Coderbus #1! Fuck the playerbase!"; // tg: code/modules/religion/religion_sects.dm:14
@@ -51774,7 +51774,7 @@ public partial class datum_religion_sect : datum
 }
 
 // tg: code/modules/religion/religion_sects.dm:152
-[DmPath("/datum/religion_sect/puritanism"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/religion_sect/puritanism"), DmGeneratedOnly]
 public partial class datum_religion_sect_puritanism : datum_religion_sect
 {
     // tg: code/modules/religion/religion_sects.dm:152
@@ -51787,9 +51787,9 @@ public partial class datum_religion_sect_puritanism : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:160
-[DmPath("/datum/religion_sect/mechanical"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_mechanical : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:160 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/mechanical")]
+public partial class datum_religion_sect_mechanical
 {
     // tg: code/modules/religion/religion_sects.dm:160
     public datum_religion_sect_mechanical()
@@ -51812,9 +51812,9 @@ public partial class datum_religion_sect_mechanical : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:235
-[DmPath("/datum/religion_sect/pyre"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_pyre : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:235 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/pyre")]
+public partial class datum_religion_sect_pyre
 {
     // tg: code/modules/religion/religion_sects.dm:235
     public datum_religion_sect_pyre()
@@ -51837,9 +51837,9 @@ public partial class datum_religion_sect_pyre : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:267
-[DmPath("/datum/religion_sect/greed"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_greed : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:267 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/greed")]
+public partial class datum_religion_sect_greed
 {
     // tg: code/modules/religion/religion_sects.dm:267
     public datum_religion_sect_greed()
@@ -51860,9 +51860,9 @@ public partial class datum_religion_sect_greed : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:316
-[DmPath("/datum/religion_sect/burden"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_burden : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:316 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/burden")]
+public partial class datum_religion_sect_burden
 {
     // tg: code/modules/religion/religion_sects.dm:316
     public datum_religion_sect_burden()
@@ -51885,9 +51885,9 @@ public partial class datum_religion_sect_burden : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:419
-[DmPath("/datum/religion_sect/honorbound"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_honorbound : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:419 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/honorbound")]
+public partial class datum_religion_sect_honorbound
 {
     // tg: code/modules/religion/religion_sects.dm:419
     public datum_religion_sect_honorbound()
@@ -51908,9 +51908,9 @@ public partial class datum_religion_sect_honorbound : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:443
-[DmPath("/datum/religion_sect/maintenance"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_maintenance : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:443 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/maintenance")]
+public partial class datum_religion_sect_maintenance
 {
     // tg: code/modules/religion/religion_sects.dm:443
     public datum_religion_sect_maintenance()
@@ -51932,9 +51932,9 @@ public partial class datum_religion_sect_maintenance : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:485
-[DmPath("/datum/religion_sect/spar"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_spar : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:485 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/spar")]
+public partial class datum_religion_sect_spar
 {
     public obj_item_sparring_contract existing_contract; // tg: code/modules/religion/religion_sects.dm:499
     public DmList arenas; // tg: code/modules/religion/religion_sects.dm:501
@@ -51962,9 +51962,9 @@ public partial class datum_religion_sect_spar : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:514
-[DmPath("/datum/religion_sect/music"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_music : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:514 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/music")]
+public partial class datum_religion_sect_music
 {
     // tg: code/modules/religion/religion_sects.dm:514
     public datum_religion_sect_music()
@@ -51986,9 +51986,9 @@ public partial class datum_religion_sect_music : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:536
-[DmPath("/datum/religion_sect/dreams"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_dreams : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:536 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/dreams")]
+public partial class datum_religion_sect_dreams
 {
     public float dream_protection = 0; // tg: code/modules/religion/religion_sects.dm:555
     public float deacon_count = 0; // tg: code/modules/religion/religion_sects.dm:557
@@ -52019,14 +52019,12 @@ public partial class datum_religion_sect_dreams : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/sparring/sparring_datum.dm:3
-[DmPath("/datum/sparring_match"), DmGeneratedOnly, DmInert]
-public partial class datum_sparring_match : datum
+// tg: code/modules/religion/sparring/sparring_datum.dm:3 (the vars the hand-written class does not declare)
+[DmPath("/datum/sparring_match")]
+public partial class datum_sparring_match
 {
-    public Type chaplain; // tg: code/modules/religion/sparring/sparring_datum.dm:3
     public mob_living_carbon_human opponent; // tg: code/modules/religion/sparring/sparring_datum.dm:5
     public object weapons_condition; // tg: code/modules/religion/sparring/sparring_datum.dm:7
-    public Type arena_condition; // tg: code/modules/religion/sparring/sparring_datum.dm:9
     public object stakes_condition; // tg: code/modules/religion/sparring/sparring_datum.dm:11
     public float chaplain_violations_allowed = 2; // tg: code/modules/religion/sparring/sparring_datum.dm:13
     public float opponent_violations_allowed = 2; // tg: code/modules/religion/sparring/sparring_datum.dm:15

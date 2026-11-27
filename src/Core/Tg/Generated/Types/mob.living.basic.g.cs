@@ -6517,9 +6517,9 @@ public partial class mob_living_basic_clown_banana
     }
 }
 
-// tg: code/modules/mob/living/basic/cult/shade.dm:2
-[DmPath("/mob/living/basic/shade"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_shade : mob_living_basic
+// tg: code/modules/mob/living/basic/cult/shade.dm:2 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/shade")]
+public partial class mob_living_basic_shade
 {
     public string theme = "cult"; // tg: code/modules/mob/living/basic/cult/shade.dm:34
 

@@ -11,8 +11,8 @@ namespace Anomaly.Core.Tg;
 
 // Translated whole for M4a (P2) but the procs that stay for their milestones (change_number_of_hands M10, the wizard's extra
 // hands; the
-// stripping and gibbing helpers unequip_everything, gather_belongings, drop_everything, get_all_cells: M9, M6; get_all_gear came with
-// the gaps package G1's loot panel) and the stack merge of put_in_hands (stacks, M5).
+// stripping and gibbing helpers gather_belongings, drop_everything, get_all_cells: M9, M6; get_all_gear came with
+// the gaps package G1's loot panel, unequip_everything with the chapel's soulstone) and the stack merge of put_in_hands (stacks, M5).
 
 // tg: code/modules/mob/inventory.dm:5
 public partial class mob : atom_movable
@@ -859,8 +859,21 @@ public partial class mob_living : mob
     // tg: code/modules/mob/inventory.dm:486
     public virtual async DmTask<object> unequip_everything()
     {
-        Dm.NotTranslated("code/modules/mob/inventory.dm:486", "unequip_everything: stripping a mob of everything (gibbing and admin undress, M6 and M10+)");
-        return default;
+        DmList items = Dm.list();
+        Dm.combine(ref items, get_equipped_items(INCLUDE_POCKETS));
+        // In case something isn't actually unequipped somehow
+        DmList dropped_items = Dm.list();
+        foreach (object I in Dm.each(items))
+        {
+            object return_val = await dropItemToGround(I as obj_item);
+            if (!isitem(return_val))
+                continue;
+            Dm.combine(ref dropped_items, return_val);
+        }
+        object held = await drop_all_held_items();
+        if (islist(held))
+            Dm.combine(ref dropped_items, held);
+        return dropped_items;
     }
 }
 

@@ -6,10 +6,10 @@ in section 12; they will most likely not be ported.
 
 Sources:
 - tg's snapshot `1d99bd7f` (2026-10-04) in `../tgstation/`;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-25): 46,051 tg types, of them 38,806
-  live and 7,235 inert; 65,645 tg procs, of them 47,301 translated (72%) and 417 stubbed;
+- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-25): 46,051 tg types, of them 38,927
+  live and 7,114 inert; 65,645 tg procs, of them 47,581 translated (72%) and 417 stubbed;
 - MetaStation's map (`_maps/map_files/MetaStation/MetaStation.dmm`): how many of each type it places;
-- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 312 of tg's 444 interfaces;
+- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 314 of tg's 444 interfaces;
 - `docs/ROADMAP.md`, `docs/ai/DECISIONS.md`, `docs/ai/specs/not-translated.md` for what is planned, deferred or cut by the owner.
 
 How to read a row:
@@ -30,14 +30,14 @@ How to read a row:
 ## 0. Overview by tg area
 
 Share of tg's procs declared in each area of `code/` (translated or stubbed), recounted 2026-11-25 by
-`tools/checklist/refresh-port-checklist.py`. All of `code/`: 47,718/65,645 (72%). An area at 100% can still have leaves in
+`tools/checklist/refresh-port-checklist.py`. All of `code/`: 47,998/65,645 (73%). An area at 100% can still have leaves in
 `not-translated.md`; the rows below say what of it runs.
 
 | State | Areas (procs declared / tg procs) |
 |---|---|
 | Done (100%) | art 98/98, brain traumas 216/216, detective work 36/36, dna 104/104, dna infuser 174/174, economy 45/45, experisci 127/127, forensics 37/37, grenades 141/141, hallucination 236/236, holiday 110/110, hydroponics 529/529, instruments 97/97, lost crew 38/38, mafia 124/124, materials 197/197, meteors 78/78, mutations 235/235, newscaster 71/71, paperwork 407/407, plumbing 148/148, porta turrets 105/105, power 994/994, rcd 182/182, recycling (disposal pipes) 232/232, robot items 198/198, security levels 20/20, silicons 528/528, skills 13/13, station goals 94/94, telecomms 123/123, transit tubes 74/74, water structures 60/60, weather 66/66, wounds 182/182 |
-| Mostly ported (70-99%) | transport 366/368, station traits 136/138, language 64/65, pai 121/123, bitrunning 272/277, manufactorio 95/97, wiremod 1,037/1,063, memory 183/188, diseases 299/308, items 1,239/1,280, cards 59/61, atmospherics 1,139/1,178, movespeed and actionspeed 27/28, devices 698/724, structures 1,333/1,383, reagents 1,958/2,041, uplink 55/58, doors 352/372, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, tgui 134/144, AI modules 66/71, MODsuits 817/882, storage 199/217, weaponry 387/426, AI controllers 752/853, modular computers 657/751, martial arts 143/164, wires 170/195, cargo 346/398, tools 224/259, stacks 338/398, machinery 1,440/1,715, lobby menu 26/31, mapping 324/393, implants 131/160, clothing 960/1,173, food and drinks 793/969, projectiles 943/1,153, effects 699/876, turfs 607/761, computers 404/525, status effects 574/755, carbon 893/1,182, `__HELPERS` 815/1,108, vehicles and mechs 639/876, jobs 183/251, `_onclick` 675/935, photography 75/106, library 161/228, events 398/564 |
-| Partly (2-69%) | mining 659/947, subsystems 1,098/1,578, elements 829/1,200, shuttles 274/401, components 2,395/3,579, vending 97/148, basic mobs 1,779/2,756, actions 147/246, basketball 29/51, client 367/737, mob spawners 52/116, keybindings 28/71, research 322/993, spells 123/426, holodeck 16/65, antagonists 876/3,715, species (`carbon/human/species_types`) 55/273, admin 177/1,643, simple animals 47/448, awaymissions 13/136, admin verbs 85/975, mapfluff 23/268, quirks 10/287 |
+| Mostly ported (70-99%) | transport 366/368, station traits 136/138, language 64/65, pai 121/123, bitrunning 272/277, manufactorio 95/97, wiremod 1,037/1,063, memory 183/188, diseases 299/308, items 1,239/1,280, cards 59/61, atmospherics 1,139/1,178, movespeed and actionspeed 27/28, devices 698/724, structures 1,333/1,383, reagents 1,958/2,041, uplink 55/58, doors 352/372, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, tgui 134/144, AI modules 66/71, MODsuits 817/882, storage 199/217, weaponry 387/426, AI controllers 756/853, modular computers 663/751, martial arts 143/164, wires 170/195, cargo 346/398, tools 224/259, stacks 338/398, machinery 1,440/1,715, lobby menu 26/31, mapping 324/393, implants 131/160, clothing 960/1,173, food and drinks 793/969, projectiles 943/1,153, effects 699/876, turfs 607/761, computers 404/525, status effects 574/755, carbon 893/1,182, `__HELPERS` 815/1,108, vehicles and mechs 639/876, jobs 183/251, `_onclick` 675/935, basic mobs 1,975/2,756, photography 75/106, library 161/228, events 398/564 |
+| Partly (2-69%) | mining 662/947, elements 838/1,200, subsystems 1,098/1,578, shuttles 274/401, components 2,443/3,579, vending 97/148, actions 157/246, basketball 29/51, client 367/737, mob spawners 52/116, keybindings 28/71, research 322/993, spells 126/426, holodeck 16/65, antagonists 876/3,715, species (`carbon/human/species_types`) 55/273, admin 177/1,643, simple animals 47/448, awaymissions 13/136, admin verbs 85/975, mapfluff 23/268, quirks 10/287 |
 | Not started (0-1%) | explorer drones 3/207, achievements 1/72, fishing 10/787, minimap 1/127, buildmode 0/102, CTF 0/101, deathmatch 0/113, religion 0/283, TCG 0/67, tutorials 0/48 |
 
 ---
@@ -57,7 +57,7 @@ Live mechanics that still miss a window, a leaf or a piece the owner put off.
 - [x] Memory panel (gaps G4: the 54 memories and the HUD button; win: MemoryPanel; DV191 retired by gaps S3: the captain's code folder). Left: the tattoo kit and the engravings (with the art), the memories of callers not yet live
 - [x] Floors with their own procs (gaps G2; the engine floor family, 35 types, Meta 496 tiles: engineering E4): wood (Meta 480), carpet (223), grass (68), large, circuit, the reinforced plating (`plating/reinforced`) and others (Meta's 24 floor types, 1,045 tiles); volcanic mineral turfs (9), plastitanium walls (5). Left inert, none on Meta: the tram's high-traction floor, the rusted and meat platings, the random, ore, gibtonite and biome rocks, the explosive plastitanium wall, snow, ice and lavaland floors
 - [x] Meta's untranslated mapping helpers and spawners (gaps G3; the dead body placer's cadavers came with gaps OG1; left: the holidays wait for `check_holidays`) (ROADMAP 3, M4 follow-up): request console helpers (Meta 64), mail sorting, `dead_body_placer`, Ian's birthday and new year, `turn_off_lights_with_lightswitch`, xmas trees, costumes, maintenance MOD, `round_default_module`
-- [ ] The deferred leaves of ported mechanics: `not-translated.md` (227 sections; the sites tagged M10+) and `live-partial.txt` (414 lines); each names its milestone
+- [ ] The deferred leaves of ported mechanics: `not-translated.md` (228 sections; the sites tagged M10+) and `live-partial.txt` (414 lines); each names its milestone
 - [ ] Owner-deferred pieces of ported milestones: screentips (M9 G, owner; the object examines and `examine_more` are done, D288: X1, X2, X3); chat icons, icon2html (owner: later); the fireman carry and piggyback (M9 F, owner); leaning on walls, the table slam and the table flip (done, gaps L1); the hand-item emotes' leftovers
 - [x] M10x's slices (D281, D282, `docs/ai/specs/lobby.md`; done, released in 1.1.0-pre-alpha): G the Esc menu, bug reports and tg's admin help, D the character's looks, E the preview, I the closing; not now (owner): tg's server game preferences (stashed, D282), the Quirks, Loadout and Personality tabs, the polls (the Antagonists tab: syndicate A3, D316)
 - [x] M9x station life (D228, D249): eating, drinking and hunger with the nutrition HUD (done, gaps S1), vending machines (done, gaps S2: free until the economy, DV225), paper, pens, clipboards and the hand labeler (done, gaps S3), the PDA's job apps (done, gaps S4; the cargo apps, the budget orders, shipping and bounty board: gaps P4)
@@ -106,7 +106,7 @@ Each row means the antagonist with its datum, team, objectives, powers, items, H
 - [ ] Heretic: paths, influences, rituals, the 116 knowledges, ascension, lunatics, summons, the arena (win: AntagInfoHeretic)
 - [x] Blood brothers (win: AntagInfoBrother) (syndicate X4: the conversion by flash, the team's objectives and name; the preference picture waits for the ethereal and moth species)
 - [x] Malfunctioning AI: modules and the doomsday device (silicons SI8; win: AntagInfoMalf, MalfunctionModulePicker, AiVoiceChanger; mech domination waits for the mechs)
-- [ ] Wizard: spellbook (88 entries; win: Spellbook), 226 spells (`modules/spells` 123/426), apprentice (win: ApprenticeContract), the wizard's shuttle and den, imps, wizard events (win: AntagInfoWizard, AntagInfoDemon)
+- [ ] Wizard: spellbook (88 entries; win: Spellbook), 226 spells (`modules/spells` 126/426), apprentice (win: ApprenticeContract), the wizard's shuttle and den, imps, wizard events (win: AntagInfoWizard, AntagInfoDemon)
 - [ ] Blood cult: runes, the cult's magic, constructs and shades, soulstones, Nar'Sie and the summoning, the cult's structures
 - [x] Revolution: head revolutionaries, conversion by flash, the enemy of the state, the revolution's end (win: AntagInfoRevolution) (gaps V1; the drinks that read revolutionaries since gaps RG1: the cuba libre heals them, grenadine weakens them, the garibaldi's resilience; the death moodlet comes with the moods)
 - [x] Nuclear operatives: the team, the nuke and the disk, the war declaration, the syndicate base and shuttle, reinforcements, clown operatives, the lone operative (the nuke and the disk: syndicate N1a; the team, the leader, the outfits, the base, the infiltrator, the reinforcements and the roundstart ruleset: N1b; the war declaration, the infiltrator's navigation computer, the lone operative and the midround nukies: N1c; the arsenal's guns: N2a; the bags, kits and pinatas: N2b; the reinforcements and the assault pod: N2c; the clown operatives, their gear and rulesets: N3a; the bananium nuke's clowning of the station with the fear and phobia system: N3b; done but the MODsuits and the silicons, booked)
@@ -230,7 +230,8 @@ hallucinations, cryo cells, stasis beds, IV drips, buckling.
 
 ### 5.4 Service
 
-- [ ] **Food and eating** (`modules/food_and_drinks` 793/969): 1,285 food types (`/obj/item/food` 1,152/1,285 live; gaps S1, and gaps H2: the food subtypes' cooking procs, the donuts, fish fillets, cans and pizzas), eating (done, gaps S1), the grown produce (`/obj/item/food/grown` 153/154, gaps P2), food quality and moodlets (the moodlets done, gaps MS1), the crafting recipes (`/datum/crafting_recipe` 1,124/1,288 live) that make food
+- [ ] **Food and eating** (`modules/food_and_drinks` 793/969): 1,285 food types (`/obj/item/food` 1,154/1,285 live; gaps S1, and gaps H2: the food subtypes' cooking procs, the donuts, fish fillets, cans and pizzas), eating (done, gaps S1), the grown produce (`/obj/item/food/grown` 153/154, gaps P2), food quality and moodlets (the moodlets done, gaps MS1), the crafting recipes (`/datum/crafting_recipe` 1,124/1,288 live) that make food
+- [ ] **Food and eating** (`modules/food_and_drinks` 793/969): 1,285 food types (`/obj/item/food` 1,154/1,285 live; gaps S1, and gaps H2: the food subtypes' cooking procs, the donuts, fish fillets, cans and pizzas), eating (done, gaps S1), the grown produce (`/obj/item/food/grown` 153/154, gaps P2), food quality and moodlets (the moodlets done, gaps MS1), the crafting recipes (`/datum/crafting_recipe` 1,124/1,288 live) that make food
 - [x] **Kitchen machines** (gaps H2): microwaves (4/4 types live; Meta 2), the oven and range (Meta 3), the griddle (Meta 2), grills and stoves, the deep fryer (Meta 1), the food processor (Meta 2), the gibber (Meta 1) and the meat spike (Meta 2 and a frame), the ice cream vat (Meta 1), the food cart (Meta 1), smartfridges and drying racks (Meta 14; win: SmartVend), the cook's order console (Meta 1; win: ProduceConsole), kitchen tools (knives, rolling pins, plates, trays)
 - [ ] The restaurant: robot customers, the restaurant portals (Meta 2) and their holosigns (Meta 2)
 - [x] **Bar**: the drinks' effects, drunkenness and the cocktails' job, healing and special effects (done, gaps RG1); drinks and glassware (done, gaps H3: the glass styles, the drinking and shot glasses, the bottles, cans, the mauna mug and the organ jar; Meta 41), the bar sign (done, gaps H3; Meta 1), the jukebox and the radiant dance machine (done, gaps H3; win: Jukebox; not mapped), shakers (Meta 5; live), condiments (`/obj/item/reagent_containers/condiment` 46/46; Meta 19), the coffee maker (Meta 1; done, gaps H2), the fermenting barrel (Meta 1; `/obj/structure/fermenting_barrel` 3/3), Pun Pun (section 7, done)
@@ -255,7 +256,7 @@ hallucinations, cryo cells, stasis beds, IV drips, buckling.
 - [x] **Disposals and the recycler** (the units, chutes and outlets with D325; the recycler gaps H1): disposal units (Meta 54), delivery chutes (11) and outlets (14) (win: DisposalUnit), the recycler (Meta 1)
 - [x] **Conveyors** (D317): conveyor belts and switches (Meta 42+6), the belt stack and the switch assembly, the switch's wires; a player's ride predicted (DV347); the switch's circuit component on its USB port (gaps CI3)
 - [x] **Economy** (`modules/economy` 45/45, `subsystem/economy` 14/14; gaps P4a): bank accounts and NT Pay (win: NtosPay), paychecks and the departmental budgets with their cards, cash (space cash done, syndicate G3b), holochips, coins and poker chips, the payment component, the accounting console and the bank machine (Meta 1+1; win: AccountingConsole, BankMachine), holopay (win: HoloPay), the ticket machine (Meta 1; gaps S3), the stock market and its events (gaps P4b). Left: the materials market console (P4d), the newscaster's earnings report (SI6b)
-- [x] **Mining on the station** (`modules/mining` 659/947): the ore redemption machine (Meta 1; win: OreRedemptionMachine), the stacking machine and its console (Meta 1+1; win: StackingConsole), the mining equipment vendor, ores (`/obj/item/stack/ore` 19/19) and the other materials' sheets, pickaxes, drills, shovels, the kinetic accelerator and crusher, the mining scanner, ore boxes and containers (win: OreBox, OreContainer), survival capsules, the boulder retrieval matrix and the boulder refineries (Meta 1+2), marker beacons (Meta 57), the GPS (Meta 4; win: Gps) The miners' own tools are live (gaps J6, D298), as are the machines (`/obj/machinery/mineral` 12/12, the boulder machines `/obj/machinery/bouldertech` 3/3, OD3's Lavaland odds). The survival capsules and their shelters (4/6; done, gaps LV1, with the shelters' fittings, the jaunter, the grapple gun, the Kheiral cuffs, the vent pointer, the explorer and goliath gear, the mine carts and rails, the networked fulton packs). The kinetic crusher (`/obj/item/kinetic_crusher` 2/2) with its trophies and the monster organs are live (gaps LV2). Left: the fishing capsules (fishing, `not-translated.md` section 234).
+- [x] **Mining on the station** (`modules/mining` 662/947): the ore redemption machine (Meta 1; win: OreRedemptionMachine), the stacking machine and its console (Meta 1+1; win: StackingConsole), the mining equipment vendor, ores (`/obj/item/stack/ore` 19/19) and the other materials' sheets, pickaxes, drills, shovels, the kinetic accelerator and crusher, the mining scanner, ore boxes and containers (win: OreBox, OreContainer), survival capsules, the boulder retrieval matrix and the boulder refineries (Meta 1+2), marker beacons (Meta 57), the GPS (Meta 4; win: Gps) The miners' own tools are live (gaps J6, D298), as are the machines (`/obj/machinery/mineral` 12/12, the boulder machines `/obj/machinery/bouldertech` 3/3, OD3's Lavaland odds). The survival capsules and their shelters (4/6; done, gaps LV1, with the shelters' fittings, the jaunter, the grapple gun, the Kheiral cuffs, the vent pointer, the explorer and goliath gear, the mine carts and rails, the networked fulton packs). The kinetic crusher (`/obj/item/kinetic_crusher` 2/2) with its trophies and the monster organs are live (gaps LV2). Left: the fishing capsules (fishing, `not-translated.md` section 234).
 - [x] **The mining shuttle** (its consoles Meta 3; done, gaps LV1: its trips to Lavaland's mining base and the public mining dock through transit, with tg's timings, ripples and closing airlocks, the head revolutionary's warning and the exile's lock; win: ShuttleConsole) and Lavaland (section 10)
 - [x] **The labor camp**: the gulag teleporter and its console (Meta 1+1; win: GulagTeleporterConsole), the item reclaimer (Meta 1; win: GulagItemReclaimer), points and the claim console (win: LaborClaimConsole), the prison's plate press and produceporter (gaps LC1; the claim console and stacker: Lavaland L2b)
 - [x] The labor shuttle's flight (Meta 1; done, gaps LV1): the prisoners' trip to the labour camp and the guards' call back
@@ -321,7 +322,7 @@ soulscythe, with their antagonists still to come). The holoparasites (guardians,
 - [x] Vermin: mice (chewing cables), cockroaches, rats (gaps C4; left: `not-translated.md` section 110)
 - [x] Space fauna: carp (13 types) and other space mobs (gaps C4: carp, bears and snakes live; the ruin and gateway fauna, the gorilla and the deer with gaps C6; those of an antagonist or event wait for it)
 - [x] Farm animals: chickens and eggs, cows and milk, goats, pigs, sheep, rabbits; butchering (`butchering` component inert) and riding (`riding` component inert) (gaps C4; the gorilla and the deer with C6)
-- [ ] Lavaland's fauna (`/mob/living/basic/mining` 29/48), its megafauna and elites, raptors and ranching (24 types; win: RaptorDex, NtosRaptorDex): gaps LV2-LV5 (D353). Done, gaps LV2: the goliaths, watchers, legions with their skulls and infested corpses, hivelords, basilisks, brimdemons, bileworms, lobstrosities and the node drone, spawned by the biomes and respawned in ash storms, the monster organs and the kinetic crusher with the fauna's trophies; left (`not-translated.md` section 235): the goldgrubs, gutlunchers, raptors, mooks and the ice moon's mobs (LV3), the megafauna and their trophies (LV4), the tendrils and elites (LV5)
+- [ ] Lavaland's fauna (`/mob/living/basic/mining` 47/48), its megafauna and elites, raptors and ranching (24 types; win: RaptorDex, NtosRaptorDex): gaps LV2-LV5 (D353). Done, gaps LV2: the goliaths, watchers, legions with their skulls and infested corpses, hivelords, basilisks, brimdemons, bileworms, lobstrosities and the node drone, spawned by the biomes and respawned in ash storms, the monster organs and the kinetic crusher with the fauna's trophies; done, gaps LV3: the goldgrubs, gutlunchers, raptors with the ranching (the colours, breeding, eggs, growth, the riding minigame's taming, the troughs, the RaptorDex and NtosRaptorDex windows), the mooks and the ice moon's ice demons, ice whelps, polar bears and wolves, with their crusher trophies; left (`not-translated.md` sections 235, 236): the megafauna and their trophies (LV4), the tendrils and elites (LV5), the ruins that place the mobs (LV6), the riding minigame's first-person arrows (an owner question)
 - [ ] Hostile creatures of events and antagonists (spiders, xenos (the player xenomorphs done, gaps X5; the AI-controlled basic aliens are 9/18 live), blob minions, hivebots, gorillas, bears, clowns, skeletons, zombies, statues, demons): with their events and antagonists
 
 ---
@@ -374,7 +375,7 @@ holosigns.
 In tg a MetaStation round also loads Lavaland (its mining level: Meta's map config names no other), space levels with
 ruins, the CentCom level and the transit and reserved levels. The port runs the station level only (D90: one level).
 
-- [ ] Lavaland: the mining level and its base (reached by the mining, labour and public mining shuttles and the auxiliary base's drop, with the miners' shelters: done, gaps LV1), lava and chasms (`chasm` component inert), ash storms, the necropolis and tendrils with their loot, the fauna, megafauna and elites (the mobs and tendrils: gaps LV2-LV5, D353; the common fauna, the monster organs and the kinetic crusher done, gaps LV2), ash walkers and the lavaland ruins (gaps LV6, D355) (the ash flora and the elephant graveyard's parts: done, gaps OD3: the bone statues, the wasteland's earth and very strong rock, the oil well, the filled graves)
+- [ ] Lavaland: the mining level and its base (reached by the mining, labour and public mining shuttles and the auxiliary base's drop, with the miners' shelters: done, gaps LV1), lava and chasms (`chasm` component inert), ash storms, the necropolis and tendrils with their loot, the fauna, megafauna and elites (the mobs and tendrils: gaps LV2-LV5, D353; the common fauna, the monster organs and the kinetic crusher done, gaps LV2; the goldgrubs, gutlunchers, raptors with the mining base's ranch and mooks done, gaps LV3), ash walkers and the lavaland ruins (gaps LV6, D355) (the ash flora and the elephant graveyard's parts: done, gaps OD3: the bone statues, the wasteland's earth and very strong rock, the oil well, the filled graves)
 - [ ] Space levels with ruins (the level, its edges and the seeding: gaps SH1, D354): their templates are data (live 168/169), their content is not; derelicts and the whiteship (Meta's config names a Meta whiteship)
 - [ ] Space levels with ruins: their templates are data (live 168/169), their content is not; derelicts and the whiteship (Meta's config names a Meta whiteship)
 - [ ] The CentCom level: where the shuttles arrive, the admin rooms, the Thunderdome, the syndicate and wizard bases
@@ -392,7 +393,7 @@ ruins, the CentCom level and the transit and reserved levels. The port runs the 
 - [ ] The tgui windows the client does not draw: 396 of tg's 444; the full index is section 13
 - [ ] The HUDs of other mobs (`/datum/hud`: pAI (done, silicons SI6), alien and larva (done, gaps X5), blob overmind, revenant, guardian and dextrous (done, syndicate X2), soulscythe); the human and ghost HUDs are live (the robot's: silicons SI2, the AI's: SI4)
 - [ ] The remaining screen alerts (`/atom/movable/screen/alert` 184/201 live)
-- [ ] Action buttons: item actions (`/datum/action/item_action` 108/125 live); spells (226), innate actions (`/datum/action/innate` 69/162) and vehicle actions (`/datum/action/vehicle` 30/43) come with their owners
+- [ ] Action buttons: item actions (`/datum/action/item_action` 108/125 live); spells (226), innate actions (`/datum/action/innate` 70/162) and vehicle actions (`/datum/action/vehicle` 30/43) come with their owners
 - [ ] tg's stat panel (the Status tab: round time, the shuttle's ETA, the security level; the MC and admin tabs): the client has only the command verbs' tabs (silicons SI4's Commands window)
 - [x] tg's escape menu: an Esc menu with tg's items in the client's own style (D282; M10x G3-G6, 1.0.4-pre-alpha to 1.0.6-pre-alpha)
 - [ ] Hotkeys help (win: HotkeysHelp); tg's keybindings (`/datum/keybinding` 31/86 live; the client's Settings window has a Keybindings tab, D282)
@@ -431,7 +432,7 @@ removed them. Short notes only, no checkboxes; move a row into the main list if 
 
 - The tram and transport (`modules/transport` 366/368): TramStation's tram, its controls, crossing signals and plaques, the tram malfunction event; elevators and lift indicators (win: TramControl, TramController, ElevatorPanel, CrossingSignal, TramPlaque).
 - Multi-z: stairs (0/8), ladders (0/5), open space and falling between levels. MetaStation is one level; IceBoxStation and TramStation are not.
-- IceBoxStation's Icemoon: the icy mining level that replaces Lavaland there, its structures (`structures/icemoon` 0/6), snow storms, the ice wilderness and its fauna.
+- IceBoxStation's Icemoon: the icy mining level that replaces Lavaland there, its structures (`structures/icemoon` 0/6), snow storms, the ice wilderness and its fauna (the ice demons, ice whelps, polar bears and wolves are live since gaps LV3; the level is not loaded).
 
 ### 12.2 In tg's code but not mapped on MetaStation
 
@@ -471,7 +472,8 @@ Well-known SS13 mechanics that are not in tg any more; nothing to port. Checked 
 
 ## 13. Index of the tgui windows not drawn yet
 
-396 of tg's 444 windows (the client drew 48 when this index was made); 266 of the 396 are ticked now. One row per
+396 of tg's 444 windows (the client drew 48 when this index was made); 268 of the 396 are ticked now. One row per
+396 of tg's 444 windows (the client drew 48 when this index was made); 267 of the 396 are ticked now. One row per
 396 of tg's 444 windows (the client drew 48 when this index was made); 264 of the 396 are ticked now. One row per
 window, grouped by where its mechanic sits above; tick it when the client draws it (a registration in TguiWindows.cs), in the
 package that draws it. Windows of section 12 are listed for completeness.
@@ -833,11 +835,11 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [ ] RestockTracker
 - [x] SyndicateContractor (syndicate X1a)
 
-### Beyond the station: shuttles and Lavaland (10): 5 (2 drawn)
+### Beyond the station: shuttles and Lavaland (10): 5 (4 drawn)
 
 - [x] EmergencyShuttleConsole
-- [ ] NtosRaptorDex
-- [ ] RaptorDex
+- [x] NtosRaptorDex (gaps LV3)
+- [x] RaptorDex (gaps LV3)
 - [ ] ShuttleBlueprints
 - [x] ShuttleConsole
 

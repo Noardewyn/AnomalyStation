@@ -907,7 +907,7 @@ proc	/	init_preference_entries	code/modules/client/preferences/_preference.dm:54
 proc	/	init_preference_entries_by_key	code/modules/client/preferences/_preference.dm:60		yes	full	global
 proc	/	init_print_types	code/modules/modular_computers/file_system/programs/file_browser.dm:3		no	-	global
 proc	/	init_prisoner_crimes	code/modules/client/preferences/prisoner_crime.dm:24		yes	full	global
-proc	/	init_raptor_colors	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:3		no	-	global
+proc	/	init_raptor_colors	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:3		yes	full	global
 proc	/	init_scan_conditions	code/modules/explorer_drone/scanner_array.dm:10		no	-	global
 proc	/	init_slime_auto_activate_reaction_list	code/modules/research/xenobiology/xenobiology.dm:118		no	-	global
 proc	/	init_sm_gas	code/modules/power/supermatter/supermatter_gas.dm:1		yes	full	global
@@ -1809,7 +1809,7 @@ proc	/datum/controller/global_vars	InitGlobalnormal_employers	code/__DEFINES/ant
 proc	/datum/controller/global_vars	InitGlobalai_employers	code/__DEFINES/antagonists.dm:254		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalhuman_invader_antagonists	code/__DEFINES/antagonists.dm:338		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalnonoverlaying_gases	code/__DEFINES/atmospherics/atmos_helpers.dm:56		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalgutlunch_count	code/__DEFINES/basic_mobs.dm:41		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalgutlunch_count	code/__DEFINES/basic_mobs.dm:41		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalcustomized_pets	code/__DEFINES/basic_mobs.dm:44		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalblend_names	code/__DEFINES/blend_modes.dm:29		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalcable_colors	code/__DEFINES/colors.dm:510		yes	full	proc root
@@ -2795,10 +2795,10 @@ proc	/datum/controller/global_vars	InitGlobalcommand_strings	code/modules/mob/li
 proc	/datum/controller/global_vars	InitGlobalchicken_count	code/modules/mob/living/basic/farm_animals/chicken/chicken.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalstrippable_gorilla_items	code/modules/mob/living/basic/farm_animals/gorilla/gorilla.dm:6		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalguardian_radial_images	code/modules/mob/living/basic/guardian/guardian_creator.dm:1		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalmook_commands	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:2		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalraptor_inherit_traits	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:1		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalraptor_population	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:8		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalraptor_colors	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:1		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalmook_commands	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:2		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalraptor_inherit_traits	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:1		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalraptor_population	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:8		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalraptor_colors	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:1		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobaltendrils	code/modules/mob/living/basic/lavaland/tendril/tendril.dm:5		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalstrippable_corgi_items	code/modules/mob/living/basic/pets/dog/strippable_items.dm:3		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalstrippable_parrot_items	code/modules/mob/living/basic/pets/parrot/_parrot.dm:3		yes	full	proc root
@@ -5616,8 +5616,8 @@ type	/datum/action/innate/seek_master/heretic	/datum/action/innate/seek_master	c
 proc	/datum/action/innate/seek_master/heretic	New	code/modules/mob/living/basic/cult/constructs/harvester.dm:236	Target	no	-	proc
 type	/datum/action/innate/seek_prey	/datum/action/innate	code/modules/mob/living/basic/cult/constructs/harvester.dm:101	inert	datum_action_innate_seek_prey	0	0
 proc	/datum/action/innate/seek_prey	Activate	code/modules/mob/living/basic/cult/constructs/harvester.dm:110		no	-	proc
-type	/datum/action/innate/raptor_wings	/datum/action/innate	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:330	inert	datum_action_innate_raptor_wings	0	0
-proc	/datum/action/innate/raptor_wings	Activate	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:337		no	-	proc
+type	/datum/action/innate/raptor_wings	/datum/action/innate	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:330	live	datum_action_innate_raptor_wings	1	0
+proc	/datum/action/innate/raptor_wings	Activate	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:337		yes	full	proc
 type	/datum/action/innate/deliver_gondola_package	/datum/action/innate	code/modules/mob/living/basic/pets/gondolas/gondolapod.dm:67	inert	datum_action_innate_deliver_gondola_package	0	0
 proc	/datum/action/innate/deliver_gondola_package	Trigger	code/modules/mob/living/basic/pets/gondolas/gondolapod.dm:73	clicker,trigger_flags	no	-	proc
 type	/datum/action/innate/check_gondola_contents	/datum/action/innate	code/modules/mob/living/basic/pets/gondolas/gondolapod.dm:87	inert	datum_action_innate_check_gondola_contents	0	0
@@ -5909,27 +5909,27 @@ proc	/datum/action/cooldown/mob_cooldown/defensive_mode	Activate	code/datums/act
 proc	/datum/action/cooldown/mob_cooldown/defensive_mode	activate_defence	code/datums/actions/mobs/defensive_mode.dm:28	owner_mob	no	-	proc root
 proc	/datum/action/cooldown/mob_cooldown/defensive_mode	offence	code/datums/actions/mobs/defensive_mode.dm:36	owner_mob	no	-	proc root
 proc	/datum/action/cooldown/mob_cooldown/defensive_mode	defence	code/datums/actions/mobs/defensive_mode.dm:45	owner_mob	no	-	proc root
-type	/datum/action/cooldown/mob_cooldown/fire_breath	/datum/action/cooldown/mob_cooldown	code/datums/actions/mobs/fire_breath.dm:2	inert	datum_action_cooldown_mob_cooldown_fire_breath	0	0
-proc	/datum/action/cooldown/mob_cooldown/fire_breath	Activate	code/datums/actions/mobs/fire_breath.dm:22	target_atom	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/fire_breath	attack_sequence	code/datums/actions/mobs/fire_breath.dm:30	target	no	-	proc root
-proc	/datum/action/cooldown/mob_cooldown/fire_breath	fire_line	code/datums/actions/mobs/fire_breath.dm:35	target,offset	no	-	proc root
-proc	/datum/action/cooldown/mob_cooldown/fire_breath	progressive_fire_line	code/datums/actions/mobs/fire_breath.dm:43	burn_turfs	no	-	proc root
-proc	/datum/action/cooldown/mob_cooldown/fire_breath	burn_turf	code/datums/actions/mobs/fire_breath.dm:55	fire_turf,hit_list,source	no	-	proc root
-proc	/datum/action/cooldown/mob_cooldown/fire_breath	on_burn_mob	code/datums/actions/mobs/fire_breath.dm:74	barbecued,source	no	-	proc root
-type	/datum/action/cooldown/mob_cooldown/fire_breath/cone	/datum/action/cooldown/mob_cooldown/fire_breath	code/datums/actions/mobs/fire_breath.dm:84	inert	datum_action_cooldown_mob_cooldown_fire_breath_cone	0	0
-proc	/datum/action/cooldown/mob_cooldown/fire_breath/cone	attack_sequence	code/datums/actions/mobs/fire_breath.dm:89	target	no	-	proc
-type	/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire	/datum/action/cooldown/mob_cooldown/fire_breath	code/datums/actions/mobs/fire_breath.dm:96	inert	datum_action_cooldown_mob_cooldown_fire_breath_mass_fire	0	0
-proc	/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire	Activate	code/datums/actions/mobs/fire_breath.dm:109	target_atom	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire	attack_sequence	code/datums/actions/mobs/fire_breath.dm:113	target	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire	fire_spin	code/datums/actions/mobs/fire_breath.dm:121	target,spin_count	no	-	proc root
-type	/datum/action/cooldown/mob_cooldown/fire_breath/ice	/datum/action/cooldown/mob_cooldown/fire_breath	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:3	inert	datum_action_cooldown_mob_cooldown_fire_breath_ice	0	0
-proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice	New	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:21	Target,original	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice	attack_sequence	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:26	target	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice	attack_forecast	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:31		no	-	proc root
-proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice	breath_attack	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:43		no	-	proc root
-type	/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption	/datum/action/cooldown/mob_cooldown/fire_breath/ice	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:50	inert	datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption	0	0
-proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption	breath_attack	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:61		no	-	proc
-type	/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption/fire	/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:81	inert	datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption_fire	0	0
+type	/datum/action/cooldown/mob_cooldown/fire_breath	/datum/action/cooldown/mob_cooldown	code/datums/actions/mobs/fire_breath.dm:2	live	datum_action_cooldown_mob_cooldown_fire_breath	1	0
+proc	/datum/action/cooldown/mob_cooldown/fire_breath	Activate	code/datums/actions/mobs/fire_breath.dm:22	target_atom	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/fire_breath	attack_sequence	code/datums/actions/mobs/fire_breath.dm:30	target	yes	full	proc root
+proc	/datum/action/cooldown/mob_cooldown/fire_breath	fire_line	code/datums/actions/mobs/fire_breath.dm:35	target,offset	yes	full	proc root
+proc	/datum/action/cooldown/mob_cooldown/fire_breath	progressive_fire_line	code/datums/actions/mobs/fire_breath.dm:43	burn_turfs	yes	full	proc root
+proc	/datum/action/cooldown/mob_cooldown/fire_breath	burn_turf	code/datums/actions/mobs/fire_breath.dm:55	fire_turf,hit_list,source	yes	full	proc root
+proc	/datum/action/cooldown/mob_cooldown/fire_breath	on_burn_mob	code/datums/actions/mobs/fire_breath.dm:74	barbecued,source	yes	full	proc root
+type	/datum/action/cooldown/mob_cooldown/fire_breath/cone	/datum/action/cooldown/mob_cooldown/fire_breath	code/datums/actions/mobs/fire_breath.dm:84	live	datum_action_cooldown_mob_cooldown_fire_breath_cone	1	0
+proc	/datum/action/cooldown/mob_cooldown/fire_breath/cone	attack_sequence	code/datums/actions/mobs/fire_breath.dm:89	target	yes	full	proc
+type	/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire	/datum/action/cooldown/mob_cooldown/fire_breath	code/datums/actions/mobs/fire_breath.dm:96	live	datum_action_cooldown_mob_cooldown_fire_breath_mass_fire	1	0
+proc	/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire	Activate	code/datums/actions/mobs/fire_breath.dm:109	target_atom	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire	attack_sequence	code/datums/actions/mobs/fire_breath.dm:113	target	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire	fire_spin	code/datums/actions/mobs/fire_breath.dm:121	target,spin_count	yes	full	proc root
+type	/datum/action/cooldown/mob_cooldown/fire_breath/ice	/datum/action/cooldown/mob_cooldown/fire_breath	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:3	live	datum_action_cooldown_mob_cooldown_fire_breath_ice	1	0
+proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice	New	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:21	Target,original	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice	attack_sequence	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:26	target	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice	attack_forecast	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:31		yes	full	proc root
+proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice	breath_attack	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:43		yes	full	proc root
+type	/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption	/datum/action/cooldown/mob_cooldown/fire_breath/ice	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:50	live	datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption	1	0
+proc	/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption	breath_attack	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:61		yes	full	proc
+type	/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption/fire	/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:81	live	datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption_fire	0	0
 type	/datum/action/cooldown/mob_cooldown/fire_breath/carp	/datum/action/cooldown/mob_cooldown/fire_breath	code/modules/mob/living/basic/space_fauna/space_dragon/dragon_breath.dm:3	inert	datum_action_cooldown_mob_cooldown_fire_breath_carp	0	0
 proc	/datum/action/cooldown/mob_cooldown/fire_breath/carp	on_burn_mob	code/modules/mob/living/basic/space_fauna/space_dragon/dragon_breath.dm:10	barbecued,source	no	-	proc
 type	/datum/action/cooldown/mob_cooldown/ground_slam	/datum/action/cooldown/mob_cooldown	code/datums/actions/mobs/ground_slam.dm:2	inert	datum_action_cooldown_mob_cooldown_ground_slam	0	0
@@ -6217,12 +6217,12 @@ proc	/datum/action/cooldown/mob_cooldown/guardian_bluespace_beacon	on_beacon_del
 proc	/datum/action/cooldown/mob_cooldown/guardian_bluespace_beacon	try_teleporting	code/modules/mob/living/basic/guardian/guardian_types/support.dm:104	source,target	yes	full	proc root
 proc	/datum/action/cooldown/mob_cooldown/guardian_bluespace_beacon	can_teleport	code/modules/mob/living/basic/guardian/guardian_types/support.dm:114	source,target	yes	full	proc root
 proc	/datum/action/cooldown/mob_cooldown/guardian_bluespace_beacon	perform_teleport	code/modules/mob/living/basic/guardian/guardian_types/support.dm:137	source,target	yes	full	proc root
-type	/datum/action/cooldown/mob_cooldown/ice_demon_teleport	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:11	inert	datum_action_cooldown_mob_cooldown_ice_demon_teleport	0	0
-proc	/datum/action/cooldown/mob_cooldown/ice_demon_teleport	Activate	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:19	target_atom	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/ice_demon_teleport	teleport_to_turf	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:28	target	no	-	proc root
-type	/datum/action/cooldown/mob_cooldown/slippery_ice_floors	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:33	inert	datum_action_cooldown_mob_cooldown_slippery_ice_floors	0	0
-proc	/datum/action/cooldown/mob_cooldown/slippery_ice_floors	Activate	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:44	target_atom	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/slippery_ice_floors	spawn_icy_floors	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:51	list_of_turfs	no	-	proc root
+type	/datum/action/cooldown/mob_cooldown/ice_demon_teleport	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:11	live	datum_action_cooldown_mob_cooldown_ice_demon_teleport	1	0
+proc	/datum/action/cooldown/mob_cooldown/ice_demon_teleport	Activate	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:19	target_atom	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/ice_demon_teleport	teleport_to_turf	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:28	target	yes	full	proc root
+type	/datum/action/cooldown/mob_cooldown/slippery_ice_floors	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:33	live	datum_action_cooldown_mob_cooldown_slippery_ice_floors	1	0
+proc	/datum/action/cooldown/mob_cooldown/slippery_ice_floors	Activate	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:44	target_atom	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/slippery_ice_floors	spawn_icy_floors	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:51	list_of_turfs	yes	full	proc root
 type	/datum/action/cooldown/mob_cooldown/blood_rain	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/jungle/leaper/leaper_abilities.dm:112	inert	datum_action_cooldown_mob_cooldown_blood_rain	0	0
 proc	/datum/action/cooldown/mob_cooldown/blood_rain	Activate	code/modules/mob/living/basic/jungle/leaper/leaper_abilities.dm:126	firer,target	no	-	proc
 proc	/datum/action/cooldown/mob_cooldown/blood_rain	fire_droplets	code/modules/mob/living/basic/jungle/leaper/leaper_abilities.dm:144	possible_turfs	no	-	proc root
@@ -6262,13 +6262,13 @@ proc	/datum/action/cooldown/mob_cooldown/brimbeam	on_owner_attacked	code/modules
 proc	/datum/action/cooldown/mob_cooldown/brimbeam	beam_charge_check	code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:76		yes	full	proc root
 proc	/datum/action/cooldown/mob_cooldown/brimbeam	fire_laser	code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:80		yes	full	proc root
 proc	/datum/action/cooldown/mob_cooldown/brimbeam	extinguish_laser	code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:113		yes	full	proc root
-type	/datum/action/cooldown/mob_cooldown/spit_ore	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:2	inert	datum_action_cooldown_mob_cooldown_spit_ore	0	0
-proc	/datum/action/cooldown/mob_cooldown/spit_ore	IsAvailable	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:7	feedback	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/spit_ore	Activate	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:19		no	-	proc
-type	/datum/action/cooldown/mob_cooldown/burrow	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:26	inert	datum_action_cooldown_mob_cooldown_burrow	0	0
-proc	/datum/action/cooldown/mob_cooldown/burrow	IsAvailable	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:31	feedback	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/burrow	Activate	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:44		no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/burrow	health_check	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:75	health	no	-	proc root
+type	/datum/action/cooldown/mob_cooldown/spit_ore	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:2	live	datum_action_cooldown_mob_cooldown_spit_ore	1	0
+proc	/datum/action/cooldown/mob_cooldown/spit_ore	IsAvailable	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:7	feedback	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/spit_ore	Activate	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:19		yes	full	proc
+type	/datum/action/cooldown/mob_cooldown/burrow	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:26	live	datum_action_cooldown_mob_cooldown_burrow	1	0
+proc	/datum/action/cooldown/mob_cooldown/burrow	IsAvailable	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:31	feedback	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/burrow	Activate	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:44		yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/burrow	health_check	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:75	health	yes	full	proc root
 type	/datum/action/cooldown/mob_cooldown/goliath_tentacles	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:3	live	datum_action_cooldown_mob_cooldown_goliath_tentacles	1	0
 proc	/datum/action/cooldown/mob_cooldown/goliath_tentacles	PreActivate	code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:16	target	yes	full	proc
 proc	/datum/action/cooldown/mob_cooldown/goliath_tentacles	Activate	code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:22	target	yes	full	proc
@@ -6287,18 +6287,18 @@ type	/datum/action/cooldown/mob_cooldown/skull_launcher	/datum/action/cooldown/m
 proc	/datum/action/cooldown/mob_cooldown/skull_launcher	IsAvailable	code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:20	feedback	yes	full	proc
 proc	/datum/action/cooldown/mob_cooldown/skull_launcher	Activate	code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:29	target	yes	full	proc
 proc	/datum/action/cooldown/mob_cooldown/skull_launcher	spawn_skull	code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:63	spawn_location,target	yes	full	proc root
-type	/datum/action/cooldown/mob_cooldown/mook_ability	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:3	inert	datum_action_cooldown_mob_cooldown_mook_ability	0	0
-proc	/datum/action/cooldown/mob_cooldown/mook_ability	Grant	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:5	grant_to	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/mook_ability	IsAvailable	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:11	feedback	no	-	proc
-type	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	/datum/action/cooldown/mob_cooldown/mook_ability	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:28	inert	datum_action_cooldown_mob_cooldown_mook_ability_mook_leap	0	0
-proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	Activate	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:39	target	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	launch_towards_target	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:53	target	no	-	proc root
-proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	attack_combo	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:80	target	no	-	proc root
-proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	attack_target	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:87	target	no	-	proc root
-type	/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump	/datum/action/cooldown/mob_cooldown/mook_ability	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:94	inert	datum_action_cooldown_mob_cooldown_mook_ability_mook_jump	0	0
-proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump	Activate	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:100	target	no	-	proc
-proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump	jump_to_turf	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:117	target	no	-	proc root
-proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump	land_on_turf	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:126	target	no	-	proc root
+type	/datum/action/cooldown/mob_cooldown/mook_ability	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:3	live	datum_action_cooldown_mob_cooldown_mook_ability	1	0
+proc	/datum/action/cooldown/mob_cooldown/mook_ability	Grant	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:5	grant_to	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/mook_ability	IsAvailable	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:11	feedback	yes	full	proc
+type	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	/datum/action/cooldown/mob_cooldown/mook_ability	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:28	live	datum_action_cooldown_mob_cooldown_mook_ability_mook_leap	1	0
+proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	Activate	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:39	target	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	launch_towards_target	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:53	target	yes	full	proc root
+proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	attack_combo	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:80	target	yes	full	proc root
+proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap	attack_target	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:87	target	yes	full	proc root
+type	/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump	/datum/action/cooldown/mob_cooldown/mook_ability	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:94	live	datum_action_cooldown_mob_cooldown_mook_ability_mook_jump	1	0
+proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump	Activate	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:100	target	yes	full	proc
+proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump	jump_to_turf	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:117	target	yes	full	proc root
+proc	/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump	land_on_turf	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:126	target	yes	full	proc root
 type	/datum/action/cooldown/mob_cooldown/tendril_chaser	/datum/action/cooldown/mob_cooldown	code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:158	inert	datum_action_cooldown_mob_cooldown_tendril_chaser	0	0
 proc	/datum/action/cooldown/mob_cooldown/tendril_chaser	Grant	code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:172	granted_to	no	-	proc
 proc	/datum/action/cooldown/mob_cooldown/tendril_chaser	Remove	code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:178	removed_from	no	-	proc
@@ -6492,12 +6492,12 @@ type	/datum/action/cooldown/spell/conjure/cosmic_expansion	/datum/action/cooldow
 proc	/datum/action/cooldown/spell/conjure/cosmic_expansion	cast	code/modules/antagonists/heretic/magic/cosmic_expansion.dm:30	cast_on	no	-	proc
 proc	/datum/action/cooldown/spell/conjure/cosmic_expansion	get_turfs	code/modules/antagonists/heretic/magic/cosmic_expansion.dm:41	target_turf	no	-	proc root
 proc	/datum/action/cooldown/spell/conjure/cosmic_expansion	post_summon	code/modules/antagonists/heretic/magic/cosmic_expansion.dm:48	summoned_object,cast_on	no	-	proc
-type	/datum/action/cooldown/spell/conjure/limit_summons	/datum/action/cooldown/spell/conjure	code/modules/spells/spell_types/conjure/_conjure.dm:74	inert	datum_action_cooldown_spell_conjure_limit_summons	0	0
-proc	/datum/action/cooldown/spell/conjure/limit_summons	can_cast_spell	code/modules/spells/spell_types/conjure/_conjure.dm:78	feedback	no	-	proc
-proc	/datum/action/cooldown/spell/conjure/limit_summons	post_summon	code/modules/spells/spell_types/conjure/_conjure.dm:86	summoned_object,cast_on	no	-	proc
-proc	/datum/action/cooldown/spell/conjure/limit_summons	delete_copy	code/modules/spells/spell_types/conjure/_conjure.dm:90	source	no	-	proc root
-type	/datum/action/cooldown/spell/conjure/limit_summons/create_afterimages	/datum/action/cooldown/spell/conjure/limit_summons	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:83	inert	datum_action_cooldown_spell_conjure_limit_summons_create_afterimages	0	0
-proc	/datum/action/cooldown/spell/conjure/limit_summons/create_afterimages	post_summon	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:94	summoned_object,cast_on	no	-	proc
+type	/datum/action/cooldown/spell/conjure/limit_summons	/datum/action/cooldown/spell/conjure	code/modules/spells/spell_types/conjure/_conjure.dm:74	live	datum_action_cooldown_spell_conjure_limit_summons	1	0
+proc	/datum/action/cooldown/spell/conjure/limit_summons	can_cast_spell	code/modules/spells/spell_types/conjure/_conjure.dm:78	feedback	yes	full	proc
+proc	/datum/action/cooldown/spell/conjure/limit_summons	post_summon	code/modules/spells/spell_types/conjure/_conjure.dm:86	summoned_object,cast_on	yes	full	proc
+proc	/datum/action/cooldown/spell/conjure/limit_summons	delete_copy	code/modules/spells/spell_types/conjure/_conjure.dm:90	source	yes	full	proc root
+type	/datum/action/cooldown/spell/conjure/limit_summons/create_afterimages	/datum/action/cooldown/spell/conjure/limit_summons	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:83	live	datum_action_cooldown_spell_conjure_limit_summons_create_afterimages	1	0
+proc	/datum/action/cooldown/spell/conjure/limit_summons/create_afterimages	post_summon	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:94	summoned_object,cast_on	yes	full	proc
 type	/datum/action/cooldown/spell/conjure/limit_summons/create_suicide_toads	/datum/action/cooldown/spell/conjure/limit_summons	code/modules/mob/living/basic/jungle/leaper/leaper_abilities.dm:235	inert	datum_action_cooldown_spell_conjure_limit_summons_create_suicide_toads	0	0
 proc	/datum/action/cooldown/spell/conjure/limit_summons/create_suicide_toads	post_summon	code/modules/mob/living/basic/jungle/leaper/leaper_abilities.dm:247	summoned_object,cast_on	no	-	proc
 type	/datum/action/cooldown/spell/conjure/revive_rune	/datum/action/cooldown/spell/conjure	code/modules/mob/living/basic/pets/pet_cult/pet_cult_abilities.dm:2	live	datum_action_cooldown_spell_conjure_revive_rune	0	0
@@ -15309,8 +15309,8 @@ type	/datum/bt_node/ai_behavior/hunt_target/interact_with_target	/datum/bt_node/
 proc	/datum/bt_node/ai_behavior/hunt_target/interact_with_target	perform	code/datums/ai/generic_behaviors/hunt_target.dm:54	seconds_per_tick,controller	yes	full	proc
 proc	/datum/bt_node/ai_behavior/hunt_target/interact_with_target	perform_async	code/datums/ai/generic_behaviors/hunt_target.dm:66	controller	yes	full	proc
 proc	/datum/bt_node/ai_behavior/hunt_target/interact_with_target	target_caught	code/datums/ai/generic_behaviors/hunt_target.dm:72	hunter,hunted	yes	full	proc
-type	/datum/bt_node/ai_behavior/hunt_target/interact_with_target/food_trough	/datum/bt_node/ai_behavior/hunt_target/interact_with_target	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:63	inert	datum_bt_node_ai_behavior_hunt_target_interact_with_target_food_trough	0	0
-proc	/datum/bt_node/ai_behavior/hunt_target/interact_with_target/food_trough	finish_action	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:66	controller,succeeded	no	-	proc
+type	/datum/bt_node/ai_behavior/hunt_target/interact_with_target/food_trough	/datum/bt_node/ai_behavior/hunt_target/interact_with_target	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:63	live	datum_bt_node_ai_behavior_hunt_target_interact_with_target_food_trough	1	0
+proc	/datum/bt_node/ai_behavior/hunt_target/interact_with_target/food_trough	finish_action	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:66	controller,succeeded	yes	full	proc
 type	/datum/bt_node/ai_behavior/hunt_target/interact_with_target/slime	/datum/bt_node/ai_behavior/hunt_target/interact_with_target	code/modules/mob/living/basic/slime/ai/behaviours.dm:3	live	datum_bt_node_ai_behavior_hunt_target_interact_with_target_slime	1	0
 proc	/datum/bt_node/ai_behavior/hunt_target/interact_with_target/slime	target_caught	code/modules/mob/living/basic/slime/ai/behaviours.dm:3	hunter,hunted	yes	full	proc
 proc	/datum/bt_node/ai_behavior/hunt_target/interact_with_target/slime	finish_action	code/modules/mob/living/basic/slime/ai/behaviours.dm:18	controller,succeeded	yes	full	proc
@@ -15362,8 +15362,8 @@ proc	/datum/bt_node/ai_behavior/maintain_distance/cover_minimum_distance	retreat
 type	/datum/bt_node/ai_behavior/find_mineral_wall	/datum/bt_node/ai_behavior	code/datums/ai/generic_behaviors/mine_walls.dm:3	live	datum_bt_node_ai_behavior_find_mineral_wall	1	0
 proc	/datum/bt_node/ai_behavior/find_mineral_wall	perform	code/datums/ai/generic_behaviors/mine_walls.dm:7	seconds_per_tick,controller	yes	full	proc
 proc	/datum/bt_node/ai_behavior/find_mineral_wall	check_if_mineable	code/datums/ai/generic_behaviors/mine_walls.dm:17	controller,target_wall	yes	full	proc root
-type	/datum/bt_node/ai_behavior/find_mineral_wall/mook	/datum/bt_node/ai_behavior/find_mineral_wall	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:17	inert	datum_bt_node_ai_behavior_find_mineral_wall_mook	0	0
-proc	/datum/bt_node/ai_behavior/find_mineral_wall/mook	check_if_mineable	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:17	controller,target_wall	no	-	proc
+type	/datum/bt_node/ai_behavior/find_mineral_wall/mook	/datum/bt_node/ai_behavior/find_mineral_wall	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:17	live	datum_bt_node_ai_behavior_find_mineral_wall_mook	1	0
+proc	/datum/bt_node/ai_behavior/find_mineral_wall/mook	check_if_mineable	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:17	controller,target_wall	yes	full	proc
 type	/datum/bt_node/ai_behavior/find_mineral_wall/minebot	/datum/bt_node/ai_behavior/find_mineral_wall	code/modules/mob/living/basic/minebots/minebot_ai.dm:33	inert	datum_bt_node_ai_behavior_find_mineral_wall_minebot	0	0
 proc	/datum/bt_node/ai_behavior/find_mineral_wall/minebot	check_if_mineable	code/modules/mob/living/basic/minebots/minebot_ai.dm:33	controller,target_wall	no	-	proc
 type	/datum/bt_node/ai_behavior/mine_wall	/datum/bt_node/ai_behavior	code/datums/ai/generic_behaviors/mine_walls.dm:35	live	datum_bt_node_ai_behavior_mine_wall	1	0
@@ -15572,37 +15572,37 @@ proc	/datum/bt_node/ai_behavior/deer_rest	finish_action	code/modules/mob/living/
 type	/datum/bt_node/ai_behavior/deer_play	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/farm_animals/deer/deer_ai.dm:81	live	datum_bt_node_ai_behavior_deer_play	1	0
 proc	/datum/bt_node/ai_behavior/deer_play	perform	code/modules/mob/living/basic/farm_animals/deer/deer_ai.dm:83	seconds_per_tick,controller	yes	full	proc
 proc	/datum/bt_node/ai_behavior/deer_play	finish_action	code/modules/mob/living/basic/farm_animals/deer/deer_ai.dm:93	controller,succeeded	yes	full	proc
-type	/datum/bt_node/ai_behavior/dig_away_from_danger	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:54	inert	datum_bt_node_ai_behavior_dig_away_from_danger	0	0
-proc	/datum/bt_node/ai_behavior/dig_away_from_danger	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:54	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/burrow_through_ground	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:85	inert	datum_bt_node_ai_behavior_burrow_through_ground	0	0
-proc	/datum/bt_node/ai_behavior/burrow_through_ground	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:87	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/find_ore	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:117	inert	datum_bt_node_ai_behavior_find_ore	0	0
-proc	/datum/bt_node/ai_behavior/find_ore	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:120	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/find_boulder	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:137	inert	datum_bt_node_ai_behavior_find_boulder	0	0
-proc	/datum/bt_node/ai_behavior/find_boulder	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:139	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/find_ore_vent	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:153	inert	datum_bt_node_ai_behavior_find_ore_vent	0	0
-proc	/datum/bt_node/ai_behavior/find_ore_vent	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:155	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/find_grub_egg	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:178	inert	datum_bt_node_ai_behavior_find_grub_egg	0	0
-proc	/datum/bt_node/ai_behavior/find_grub_egg	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:180	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/grub_eat	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:195	inert	datum_bt_node_ai_behavior_grub_eat	0	0
-proc	/datum/bt_node/ai_behavior/grub_eat	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:198	seconds_per_tick,controller	no	-	proc
-proc	/datum/bt_node/ai_behavior/grub_eat	finish_action	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:207	controller,succeeded	no	-	proc
+type	/datum/bt_node/ai_behavior/dig_away_from_danger	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:54	live	datum_bt_node_ai_behavior_dig_away_from_danger	1	0
+proc	/datum/bt_node/ai_behavior/dig_away_from_danger	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:54	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/burrow_through_ground	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:85	live	datum_bt_node_ai_behavior_burrow_through_ground	1	0
+proc	/datum/bt_node/ai_behavior/burrow_through_ground	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:87	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/find_ore	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:117	live	datum_bt_node_ai_behavior_find_ore	1	0
+proc	/datum/bt_node/ai_behavior/find_ore	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:120	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/find_boulder	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:137	live	datum_bt_node_ai_behavior_find_boulder	1	0
+proc	/datum/bt_node/ai_behavior/find_boulder	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:139	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/find_ore_vent	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:153	live	datum_bt_node_ai_behavior_find_ore_vent	1	0
+proc	/datum/bt_node/ai_behavior/find_ore_vent	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:155	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/find_grub_egg	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:178	live	datum_bt_node_ai_behavior_find_grub_egg	1	0
+proc	/datum/bt_node/ai_behavior/find_grub_egg	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:180	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/grub_eat	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:195	live	datum_bt_node_ai_behavior_grub_eat	1	0
+proc	/datum/bt_node/ai_behavior/grub_eat	perform	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:198	seconds_per_tick,controller	yes	full	proc
+proc	/datum/bt_node/ai_behavior/grub_eat	finish_action	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:207	controller,succeeded	yes	full	proc
 type	/datum/bt_node/ai_behavior/goliath_find_diggable_turf	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:31	live	datum_bt_node_ai_behavior_goliath_find_diggable_turf	1	0
 proc	/datum/bt_node/ai_behavior/goliath_find_diggable_turf	perform	code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:35	seconds_per_tick,controller	yes	full	proc
 type	/datum/bt_node/ai_behavior/goliath_dig	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:46	live	datum_bt_node_ai_behavior_goliath_dig	1	0
 proc	/datum/bt_node/ai_behavior/goliath_dig	perform	code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:49	seconds_per_tick,controller	yes	full	proc
 proc	/datum/bt_node/ai_behavior/goliath_dig	finish_action	code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:57	controller,succeeded	yes	full	proc
-type	/datum/bt_node/ai_behavior/befriend_ashwalkers	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:73	inert	datum_bt_node_ai_behavior_befriend_ashwalkers	0	0
-proc	/datum/bt_node/ai_behavior/befriend_ashwalkers	perform	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:75	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/find_parent	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:89	inert	datum_bt_node_ai_behavior_find_parent	0	0
-proc	/datum/bt_node/ai_behavior/find_parent	perform	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:92	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/find_village	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:5	inert	datum_bt_node_ai_behavior_find_village	0	0
-proc	/datum/bt_node/ai_behavior/find_village	perform	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:7	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/calculate_wander_destination	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:26	inert	datum_bt_node_ai_behavior_calculate_wander_destination	0	0
-proc	/datum/bt_node/ai_behavior/calculate_wander_destination	perform	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:31	seconds_per_tick,controller	no	-	proc
-proc	/datum/bt_node/ai_behavior/calculate_wander_destination	_get_furthest_turf	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:64	source,angle,anchor	no	-	proc root
-type	/datum/bt_node/ai_behavior/find_deposit_position	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:77	inert	datum_bt_node_ai_behavior_find_deposit_position	0	0
-proc	/datum/bt_node/ai_behavior/find_deposit_position	perform	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:81	seconds_per_tick,controller	no	-	proc
+type	/datum/bt_node/ai_behavior/befriend_ashwalkers	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:73	live	datum_bt_node_ai_behavior_befriend_ashwalkers	1	0
+proc	/datum/bt_node/ai_behavior/befriend_ashwalkers	perform	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:75	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/find_parent	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:89	live	datum_bt_node_ai_behavior_find_parent	1	0
+proc	/datum/bt_node/ai_behavior/find_parent	perform	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:92	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/find_village	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:5	live	datum_bt_node_ai_behavior_find_village	1	0
+proc	/datum/bt_node/ai_behavior/find_village	perform	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:7	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/calculate_wander_destination	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:26	live	datum_bt_node_ai_behavior_calculate_wander_destination	1	0
+proc	/datum/bt_node/ai_behavior/calculate_wander_destination	perform	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:31	seconds_per_tick,controller	yes	full	proc
+proc	/datum/bt_node/ai_behavior/calculate_wander_destination	_get_furthest_turf	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:64	source,angle,anchor	yes	full	proc root
+type	/datum/bt_node/ai_behavior/find_deposit_position	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:77	live	datum_bt_node_ai_behavior_find_deposit_position	1	0
+proc	/datum/bt_node/ai_behavior/find_deposit_position	perform	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:81	seconds_per_tick,controller	yes	full	proc
 type	/datum/bt_node/ai_behavior/minebot_mine_turf	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/minebots/minebot_ai.dm:43	inert	datum_bt_node_ai_behavior_minebot_mine_turf	0	0
 proc	/datum/bt_node/ai_behavior/minebot_mine_turf	perform	code/modules/mob/living/basic/minebots/minebot_ai.dm:46	seconds_per_tick,controller	no	-	proc
 proc	/datum/bt_node/ai_behavior/minebot_mine_turf	check_obstacles_in_path	code/modules/mob/living/basic/minebots/minebot_ai.dm:58	controller,target	no	-	proc root
@@ -15947,10 +15947,10 @@ type	/datum/bt_node/decorator/vending_is_tilted	/datum/bt_node/decorator	code/da
 proc	/datum/bt_node/decorator/vending_is_tilted	check_condition	code/datums/ai/objects/vending_machines/vending_machine_behaviors.dm:2	controller	yes	full	proc
 type	/datum/bt_node/decorator/bileworm_should_resurface	/datum/bt_node/decorator	code/modules/mob/living/basic/lavaland/bileworm/bileworm_ai.dm:17	live	datum_bt_node_decorator_bileworm_should_resurface	1	0
 proc	/datum/bt_node/decorator/bileworm_should_resurface	check_condition	code/modules/mob/living/basic/lavaland/bileworm/bileworm_ai.dm:19	controller	yes	full	proc
-type	/datum/bt_node/decorator/mook_has_flee_reason	/datum/bt_node/decorator	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:100	inert	datum_bt_node_decorator_mook_has_flee_reason	0	0
-proc	/datum/bt_node/decorator/mook_has_flee_reason	register_observe_signals	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:100	pawn	no	-	proc
-proc	/datum/bt_node/decorator/mook_has_flee_reason	unregister_observe_signals	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:108	pawn	no	-	proc
-proc	/datum/bt_node/decorator/mook_has_flee_reason	check_condition	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:115	controller	no	-	proc
+type	/datum/bt_node/decorator/mook_has_flee_reason	/datum/bt_node/decorator	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:100	live	datum_bt_node_decorator_mook_has_flee_reason	1	0
+proc	/datum/bt_node/decorator/mook_has_flee_reason	register_observe_signals	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:100	pawn	yes	full	proc
+proc	/datum/bt_node/decorator/mook_has_flee_reason	unregister_observe_signals	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:108	pawn	yes	full	proc
+proc	/datum/bt_node/decorator/mook_has_flee_reason	check_condition	code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:115	controller	yes	full	proc
 type	/datum/bt_node/decorator/cat_holding_food	/datum/bt_node/decorator	code/modules/mob/living/basic/pets/cat/cat_bt.dm:6	live	datum_bt_node_decorator_cat_holding_food	1	0
 proc	/datum/bt_node/decorator/cat_holding_food	check_condition	code/modules/mob/living/basic/pets/cat/cat_bt.dm:6	controller	yes	full	proc
 type	/datum/bt_node/decorator/slime_wants_to_eat	/datum/bt_node/decorator	code/modules/mob/living/basic/slime/ai/slime_bt.dm:40	live	datum_bt_node_decorator_slime_wants_to_eat	1	0
@@ -16337,14 +16337,14 @@ type	/datum/ai_controller/basic_controller/lobstrosity/juvenile/capricious	/datu
 type	/datum/ai_controller/basic_controller/mook	/datum/ai_controller/basic_controller	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:8	live	datum_ai_controller_basic_controller_mook	0	0
 type	/datum/ai_controller/basic_controller/mook/bard	/datum/ai_controller/basic_controller/mook	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:32	live	datum_ai_controller_basic_controller_mook_bard	0	0
 type	/datum/ai_controller/basic_controller/mook/support	/datum/ai_controller/basic_controller/mook	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:43	live	datum_ai_controller_basic_controller_mook_support	0	0
-type	/datum/ai_controller/basic_controller/mook/tribal_chief	/datum/ai_controller/basic_controller/mook	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:53	inert	datum_ai_controller_basic_controller_mook_tribal_chief	0	0
-proc	/datum/ai_controller/basic_controller/mook/tribal_chief	New	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:59	new_pawn	no	-	proc
+type	/datum/ai_controller/basic_controller/mook/tribal_chief	/datum/ai_controller/basic_controller/mook	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:53	live	datum_ai_controller_basic_controller_mook_tribal_chief	1	0
+proc	/datum/ai_controller/basic_controller/mook/tribal_chief	New	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:59	new_pawn	yes	full	proc
 type	/datum/ai_controller/basic_controller/node_drone	/datum/ai_controller/basic_controller	code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:128	live	datum_ai_controller_basic_controller_node_drone	0	0
-type	/datum/ai_controller/basic_controller/raptor	/datum/ai_controller/basic_controller	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:2	inert	datum_ai_controller_basic_controller_raptor	0	0
-proc	/datum/ai_controller/basic_controller/raptor	TryPossessPawn	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:40	new_pawn	no	-	proc
-proc	/datum/ai_controller/basic_controller/raptor	on_cowardly_set	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:47	source	no	-	proc root
-proc	/datum/ai_controller/basic_controller/raptor	on_cowardly_clear	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:51	source	no	-	proc root
-type	/datum/ai_controller/basic_controller/raptor/aggressive	/datum/ai_controller/basic_controller/raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:23	inert	datum_ai_controller_basic_controller_raptor_aggressive	0	0
+type	/datum/ai_controller/basic_controller/raptor	/datum/ai_controller/basic_controller	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:2	live	datum_ai_controller_basic_controller_raptor	1	0
+proc	/datum/ai_controller/basic_controller/raptor	TryPossessPawn	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:40	new_pawn	yes	full	proc
+proc	/datum/ai_controller/basic_controller/raptor	on_cowardly_set	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:47	source	yes	full	proc root
+proc	/datum/ai_controller/basic_controller/raptor	on_cowardly_clear	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:51	source	yes	full	proc root
+type	/datum/ai_controller/basic_controller/raptor/aggressive	/datum/ai_controller/basic_controller/raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:23	live	datum_ai_controller_basic_controller_raptor_aggressive	0	0
 type	/datum/ai_controller/basic_controller/baby_raptor	/datum/ai_controller/basic_controller	code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:56	live	datum_ai_controller_basic_controller_baby_raptor	0	0
 type	/datum/ai_controller/basic_controller/tendril	/datum/ai_controller/basic_controller	code/modules/mob/living/basic/lavaland/tendril/tendril_ai.dm:2	live	datum_ai_controller_basic_controller_tendril	0	0
 type	/datum/ai_controller/basic_controller/watcher	/datum/ai_controller/basic_controller	code/modules/mob/living/basic/lavaland/watcher/watcher_ai.dm:2	live	datum_ai_controller_basic_controller_watcher	0	0
@@ -16748,8 +16748,8 @@ type	/datum/targeting_strategy/accessible_cable	/datum/targeting_strategy	code/d
 proc	/datum/targeting_strategy/accessible_cable	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/accessible_cable.dm:4	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/ally_mob	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/ally_mob.dm:4	live	datum_targeting_strategy_ally_mob	1	0
 proc	/datum/targeting_strategy/ally_mob	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/ally_mob.dm:4	living_mob,target,vision_range,controller	yes	full	proc
-type	/datum/targeting_strategy/healthy_raptor_baby	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/baby_raptor.dm:4	inert	datum_targeting_strategy_healthy_raptor_baby	0	0
-proc	/datum/targeting_strategy/healthy_raptor_baby	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/baby_raptor.dm:4	living_mob,target,vision_range,controller	no	-	proc
+type	/datum/targeting_strategy/healthy_raptor_baby	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/baby_raptor.dm:4	live	datum_targeting_strategy_healthy_raptor_baby	1	0
+proc	/datum/targeting_strategy/healthy_raptor_baby	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/baby_raptor.dm:4	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/basic	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/basic_targeting_strategy.dm:3	live	datum_targeting_strategy_basic	1	0
 proc	/datum/targeting_strategy/basic	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/basic_targeting_strategy.dm:19	living_mob,the_target,vision_range,controller	yes	full	proc
 proc	/datum/targeting_strategy/basic	find_hidden_mobs	code/datums/ai/basic_mobs/targeting_strategies/basic_targeting_strategy.dm:92	living_mob,target	yes	full	proc
@@ -16796,8 +16796,8 @@ proc	/datum/targeting_strategy/basic/bee	is_valid_target	code/modules/mob/living
 type	/datum/targeting_strategy/basic/bileworm	/datum/targeting_strategy/basic	code/modules/mob/living/basic/lavaland/bileworm/bileworm_ai.dm:12	live	datum_targeting_strategy_basic_bileworm	0	0
 type	/datum/targeting_strategy/basic/legion	/datum/targeting_strategy/basic	code/modules/mob/living/basic/lavaland/legion/legion_ai.dm:26	live	datum_targeting_strategy_basic_legion	1	0
 proc	/datum/targeting_strategy/basic/legion	faction_check	code/modules/mob/living/basic/lavaland/legion/legion_ai.dm:28	controller,living_mob,the_target	yes	full	proc
-type	/datum/targeting_strategy/basic/mook	/datum/targeting_strategy/basic	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:21	inert	datum_targeting_strategy_basic_mook	0	0
-proc	/datum/targeting_strategy/basic/mook	faction_check	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:24	controller,living_mob,the_target	no	-	proc
+type	/datum/targeting_strategy/basic/mook	/datum/targeting_strategy/basic	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:21	live	datum_targeting_strategy_basic_mook	1	0
+proc	/datum/targeting_strategy/basic/mook	faction_check	code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:24	controller,living_mob,the_target	yes	full	proc
 type	/datum/targeting_strategy/basic/cultist	/datum/targeting_strategy/basic	code/modules/mob/living/basic/pets/pet_cult/pet_cult_ai.dm:22	inert	datum_targeting_strategy_basic_cultist	0	0
 proc	/datum/targeting_strategy/basic/cultist	faction_check	code/modules/mob/living/basic/pets/pet_cult/pet_cult_ai.dm:24	controller,living_mob,the_target	no	-	proc
 type	/datum/targeting_strategy/basic/mushroom	/datum/targeting_strategy/basic	code/modules/mob/living/basic/space_fauna/mushroom.dm:67	live	datum_targeting_strategy_basic_mushroom	1	0
@@ -16862,8 +16862,8 @@ type	/datum/targeting_strategy/injured_mob	/datum/targeting_strategy	code/datums
 proc	/datum/targeting_strategy/injured_mob	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/injured_mob.dm:4	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/injured_mob/not_self	/datum/targeting_strategy/injured_mob	code/datums/ai/basic_mobs/targeting_strategies/injured_mob.dm:16	live	datum_targeting_strategy_injured_mob_not_self	1	0
 proc	/datum/targeting_strategy/injured_mob/not_self	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/injured_mob.dm:16	living_mob,target,vision_range,controller	yes	full	proc
-type	/datum/targeting_strategy/injured_mob/not_self/injured_raptor	/datum/targeting_strategy/injured_mob/not_self	code/datums/ai/basic_mobs/targeting_strategies/injured_raptor.dm:3	inert	datum_targeting_strategy_injured_mob_not_self_injured_raptor	0	0
-proc	/datum/targeting_strategy/injured_mob/not_self/injured_raptor	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/injured_raptor.dm:3	living_mob,target,vision_range,controller	no	-	proc
+type	/datum/targeting_strategy/injured_mob/not_self/injured_raptor	/datum/targeting_strategy/injured_mob/not_self	code/datums/ai/basic_mobs/targeting_strategies/injured_raptor.dm:3	live	datum_targeting_strategy_injured_mob_not_self_injured_raptor	1	0
+proc	/datum/targeting_strategy/injured_mob/not_self/injured_raptor	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/injured_raptor.dm:3	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/legged_conscious_human	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/legged_conscious_human.dm:4	live	datum_targeting_strategy_legged_conscious_human	1	0
 proc	/datum/targeting_strategy/legged_conscious_human	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/legged_conscious_human.dm:4	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/living_not_dead	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/living_not_dead.dm:5	live	datum_targeting_strategy_living_not_dead	1	0
@@ -16876,8 +16876,8 @@ type	/datum/targeting_strategy/playable_synthesizer	/datum/targeting_strategy	co
 proc	/datum/targeting_strategy/playable_synthesizer	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/playable_synthesizer.dm:4	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/pollinatable_hydro	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/pollinatable_hydro.dm:4	live	datum_targeting_strategy_pollinatable_hydro	1	0
 proc	/datum/targeting_strategy/pollinatable_hydro	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/pollinatable_hydro.dm:4	living_mob,target,vision_range,controller	yes	full	proc
-type	/datum/targeting_strategy/raptor_trough	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/raptor_trough.dm:4	inert	datum_targeting_strategy_raptor_trough	0	0
-proc	/datum/targeting_strategy/raptor_trough	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/raptor_trough.dm:4	living_mob,trough,vision_range,controller	no	-	proc
+type	/datum/targeting_strategy/raptor_trough	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/raptor_trough.dm:4	live	datum_targeting_strategy_raptor_trough	1	0
+proc	/datum/targeting_strategy/raptor_trough	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/raptor_trough.dm:4	living_mob,trough,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/slime_food	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/slime_food.dm:5	live	datum_targeting_strategy_slime_food	1	0
 proc	/datum/targeting_strategy/slime_food	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/slime_food.dm:5	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/sniffable_hydro	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/sniffable_hydro.dm:4	inert	datum_targeting_strategy_sniffable_hydro	0	0
@@ -16892,8 +16892,8 @@ type	/datum/targeting_strategy/unbroken_light	/datum/targeting_strategy	code/dat
 proc	/datum/targeting_strategy/unbroken_light	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/unbroken_light.dm:4	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/uncarried_egg	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/uncarried_egg.dm:4	live	datum_targeting_strategy_uncarried_egg	1	0
 proc	/datum/targeting_strategy/uncarried_egg	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/uncarried_egg.dm:4	living_mob,target,vision_range,controller	yes	full	proc
-type	/datum/targeting_strategy/unlit_bonfire	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/unlit_bonfire.dm:4	inert	datum_targeting_strategy_unlit_bonfire	0	0
-proc	/datum/targeting_strategy/unlit_bonfire	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/unlit_bonfire.dm:4	living_mob,target,vision_range,controller	no	-	proc
+type	/datum/targeting_strategy/unlit_bonfire	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/unlit_bonfire.dm:4	live	datum_targeting_strategy_unlit_bonfire	1	0
+proc	/datum/targeting_strategy/unlit_bonfire	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/unlit_bonfire.dm:4	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/valid_cat_home	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/valid_cat_home.dm:4	live	datum_targeting_strategy_valid_cat_home	1	0
 proc	/datum/targeting_strategy/valid_cat_home	is_valid_target	code/datums/ai/basic_mobs/targeting_strategies/valid_cat_home.dm:4	living_mob,target,vision_range,controller	yes	full	proc
 type	/datum/targeting_strategy/valid_kitten	/datum/targeting_strategy	code/datums/ai/basic_mobs/targeting_strategies/valid_kitten.dm:5	live	datum_targeting_strategy_valid_kitten	1	0
@@ -17613,12 +17613,12 @@ proc	/datum/component/ai_target_timer	lost_target	code/datums/components/ai_has_
 proc	/datum/component/ai_target_timer	finalise_losing_target	code/datums/components/ai_has_target_timer.dm:62		yes	full	proc root
 proc	/datum/component/ai_target_timer	store_current_time	code/datums/components/ai_has_target_timer.dm:73		yes	full	proc root
 proc	/datum/component/ai_target_timer	process	code/datums/components/ai_has_target_timer.dm:77	seconds_per_tick	yes	full	proc
-type	/datum/component/ai_listen_to_weather	/datum/component	code/datums/components/ai_listen_to_weather.dm:6	inert	datum_component_ai_listen_to_weather	0	0
-proc	/datum/component/ai_listen_to_weather	Initialize	code/datums/components/ai_listen_to_weather.dm:10	weather_type,weather_key	no	-	proc
-proc	/datum/component/ai_listen_to_weather	RegisterWithParent	code/datums/components/ai_listen_to_weather.dm:16		no	-	proc
-proc	/datum/component/ai_listen_to_weather	UnregisterFromParent	code/datums/components/ai_listen_to_weather.dm:20		no	-	proc
-proc	/datum/component/ai_listen_to_weather	storm_start	code/datums/components/ai_listen_to_weather.dm:23		no	-	proc root
-proc	/datum/component/ai_listen_to_weather	storm_end	code/datums/components/ai_listen_to_weather.dm:32		no	-	proc root
+type	/datum/component/ai_listen_to_weather	/datum/component	code/datums/components/ai_listen_to_weather.dm:6	live	datum_component_ai_listen_to_weather	1	0
+proc	/datum/component/ai_listen_to_weather	Initialize	code/datums/components/ai_listen_to_weather.dm:10	weather_type,weather_key	yes	full	proc
+proc	/datum/component/ai_listen_to_weather	RegisterWithParent	code/datums/components/ai_listen_to_weather.dm:16		yes	full	proc
+proc	/datum/component/ai_listen_to_weather	UnregisterFromParent	code/datums/components/ai_listen_to_weather.dm:20		yes	full	proc
+proc	/datum/component/ai_listen_to_weather	storm_start	code/datums/components/ai_listen_to_weather.dm:23		yes	full	proc root
+proc	/datum/component/ai_listen_to_weather	storm_end	code/datums/components/ai_listen_to_weather.dm:32		yes	full	proc root
 type	/datum/component/ai_retaliate_advanced	/datum/component	code/datums/components/ai_retaliate_advanced.dm:8	live	datum_component_ai_retaliate_advanced	1	0
 proc	/datum/component/ai_retaliate_advanced	Initialize	code/datums/components/ai_retaliate_advanced.dm:10	post_retaliate_callback	yes	full	proc
 proc	/datum/component/ai_retaliate_advanced	Destroy	code/datums/components/ai_retaliate_advanced.dm:19	force	yes	full	proc
@@ -19014,12 +19014,12 @@ proc	/datum/component/jetpack	should_trigger	code/datums/components/jetpack.dm:1
 proc	/datum/component/jetpack	pre_move_react	code/datums/components/jetpack.dm:171	source	yes	full	proc root
 proc	/datum/component/jetpack	on_input_block	code/datums/components/jetpack.dm:175	source	yes	full	proc root
 proc	/datum/component/jetpack	on_pushoff	code/datums/components/jetpack.dm:186	source,movement_dir,continuous_move,backup	yes	full	proc root
-type	/datum/component/joint_damage	/datum/component	code/datums/components/joint_damage.dm:6	inert	datum_component_joint_damage	0	0
-proc	/datum/component/joint_damage	Initialize	code/datums/components/joint_damage.dm:10	overlord_mob	no	-	proc
-proc	/datum/component/joint_damage	RegisterWithParent	code/datums/components/joint_damage.dm:18		no	-	proc
-proc	/datum/component/joint_damage	UnregisterFromParent	code/datums/components/joint_damage.dm:22		no	-	proc
-proc	/datum/component/joint_damage	Destroy	code/datums/components/joint_damage.dm:25		no	-	proc
-proc	/datum/component/joint_damage	damage_overlord	code/datums/components/joint_damage.dm:29	source	no	-	proc root
+type	/datum/component/joint_damage	/datum/component	code/datums/components/joint_damage.dm:6	live	datum_component_joint_damage	1	0
+proc	/datum/component/joint_damage	Initialize	code/datums/components/joint_damage.dm:10	overlord_mob	yes	full	proc
+proc	/datum/component/joint_damage	RegisterWithParent	code/datums/components/joint_damage.dm:18		yes	full	proc
+proc	/datum/component/joint_damage	UnregisterFromParent	code/datums/components/joint_damage.dm:22		yes	full	proc
+proc	/datum/component/joint_damage	Destroy	code/datums/components/joint_damage.dm:25		yes	full	proc
+proc	/datum/component/joint_damage	damage_overlord	code/datums/components/joint_damage.dm:29	source	yes	full	proc root
 type	/datum/component/jousting	/datum/component	code/datums/components/jousting.dm:12	live	datum_component_jousting	1	0
 proc	/datum/component/jousting	Initialize	code/datums/components/jousting.dm:29	damage_boost_per_tile,knockdown_chance_per_tile,knockdown_time,max_tile_charge,min_tile_charge	yes	full	proc
 proc	/datum/component/jousting	UnregisterFromParent	code/datums/components/jousting.dm:50		yes	full	proc
@@ -19505,14 +19505,14 @@ proc	/datum/component/pricetag	UnregisterFromParent	code/datums/components/price
 proc	/datum/component/pricetag	InheritComponent	code/datums/components/pricetag.dm:63	new_comp,i_am_original,pay_to_account,profit_ratio,delete_on_unwrap	yes	full	proc
 proc	/datum/component/pricetag	on_parent_unwrap	code/datums/components/pricetag.dm:80	source	yes	full	proc root
 proc	/datum/component/pricetag	on_parent_sold	code/datums/components/pricetag.dm:93	source,export,report,item_value	yes	full	proc root
-type	/datum/component/proficient_miner	/datum/component	code/datums/components/proficient_miner.dm:4	inert	datum_component_proficient_miner	0	0
-proc	/datum/component/proficient_miner	Initialize	code/datums/components/proficient_miner.dm:10	mining_speed,pass_driver	no	-	proc
-proc	/datum/component/proficient_miner	RegisterWithParent	code/datums/components/proficient_miner.dm:16		no	-	proc
-proc	/datum/component/proficient_miner	UnregisterFromParent	code/datums/components/proficient_miner.dm:20		no	-	proc
-proc	/datum/component/proficient_miner	on_unarmed_attack	code/datums/components/proficient_miner.dm:23	source,target,proximity,modifiers	no	-	proc root
-proc	/datum/component/proficient_miner	on_bump	code/datums/components/proficient_miner.dm:30	source,target	no	-	proc root
-proc	/datum/component/proficient_miner	try_mine	code/datums/components/proficient_miner.dm:37	source,target	no	-	proc root
-proc	/datum/component/proficient_miner	slow_mine	code/datums/components/proficient_miner.dm:65	user,mineral_wall	no	-	proc root
+type	/datum/component/proficient_miner	/datum/component	code/datums/components/proficient_miner.dm:4	live	datum_component_proficient_miner	1	0
+proc	/datum/component/proficient_miner	Initialize	code/datums/components/proficient_miner.dm:10	mining_speed,pass_driver	yes	full	proc
+proc	/datum/component/proficient_miner	RegisterWithParent	code/datums/components/proficient_miner.dm:16		yes	full	proc
+proc	/datum/component/proficient_miner	UnregisterFromParent	code/datums/components/proficient_miner.dm:20		yes	full	proc
+proc	/datum/component/proficient_miner	on_unarmed_attack	code/datums/components/proficient_miner.dm:23	source,target,proximity,modifiers	yes	full	proc root
+proc	/datum/component/proficient_miner	on_bump	code/datums/components/proficient_miner.dm:30	source,target	yes	full	proc root
+proc	/datum/component/proficient_miner	try_mine	code/datums/components/proficient_miner.dm:37	source,target	yes	full	proc root
+proc	/datum/component/proficient_miner	slow_mine	code/datums/components/proficient_miner.dm:65	user,mineral_wall	yes	full	proc root
 type	/datum/component/profound_fisher	/datum/component	code/datums/components/profound_fisher.dm:4	inert	datum_component_profound_fisher	0	0
 proc	/datum/component/profound_fisher	Initialize	code/datums/components/profound_fisher.dm:8	our_rod,delete_rod_when_deleted	no	-	proc
 proc	/datum/component/profound_fisher	on_requesting_context_from_item	code/datums/components/profound_fisher.dm:33	source,context,held_item,user	no	-	proc root
@@ -21004,31 +21004,31 @@ type	/datum/component/riding/creature/guardian	/datum/component/riding/creature	
 proc	/datum/component/riding/creature/guardian	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:605	pass_index,offsetter	yes	full	proc
 proc	/datum/component/riding/creature/guardian	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:613		yes	full	proc
 proc	/datum/component/riding/creature/guardian	ride_check	code/datums/components/riding/riding_mob.dm:621	user,consequences	yes	full	proc
-type	/datum/component/riding/creature/goldgrub	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:628	inert	datum_component_riding_creature_goldgrub	0	0
-proc	/datum/component/riding/creature/goldgrub	Initialize	code/datums/components/riding/riding_mob.dm:630	riding_mob,force,ride_check_flags	no	-	proc
-proc	/datum/component/riding/creature/goldgrub	Destroy	code/datums/components/riding/riding_mob.dm:636	force	no	-	proc
-proc	/datum/component/riding/creature/goldgrub	on_mined	code/datums/components/riding/riding_mob.dm:641	source,rock,user	no	-	proc root
-proc	/datum/component/riding/creature/goldgrub	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:646	pass_index,offsetter	no	-	proc
-proc	/datum/component/riding/creature/goldgrub	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:654		no	-	proc
+type	/datum/component/riding/creature/goldgrub	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:628	live	datum_component_riding_creature_goldgrub	1	0
+proc	/datum/component/riding/creature/goldgrub	Initialize	code/datums/components/riding/riding_mob.dm:630	riding_mob,force,ride_check_flags	yes	full	proc
+proc	/datum/component/riding/creature/goldgrub	Destroy	code/datums/components/riding/riding_mob.dm:636	force	yes	full	proc
+proc	/datum/component/riding/creature/goldgrub	on_mined	code/datums/components/riding/riding_mob.dm:641	source,rock,user	yes	full	proc root
+proc	/datum/component/riding/creature/goldgrub	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:646	pass_index,offsetter	yes	full	proc
+proc	/datum/component/riding/creature/goldgrub	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:654		yes	full	proc
 type	/datum/component/riding/creature/leaper	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:663	inert	datum_component_riding_creature_leaper	0	0
 proc	/datum/component/riding/creature/leaper	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:667	pass_index,offsetter	no	-	proc
 proc	/datum/component/riding/creature/leaper	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:675		no	-	proc
 proc	/datum/component/riding/creature/leaper	Initialize	code/datums/components/riding/riding_mob.dm:682	riding_mob,force,ride_check_flags	no	-	proc
 proc	/datum/component/riding/creature/leaper	attack_pointed	code/datums/components/riding/riding_mob.dm:686	rider,pointed,point	no	-	proc root
-type	/datum/component/riding/creature/raptor	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:700	inert	datum_component_riding_creature_raptor	0	0
-proc	/datum/component/riding/creature/raptor	Initialize	code/datums/components/riding/riding_mob.dm:704	riding_mob,force,ride_check_flags	no	-	proc
-proc	/datum/component/riding/creature/raptor	on_bullet_hit	code/datums/components/riding/riding_mob.dm:709	target,hit_projectile	no	-	proc root
-proc	/datum/component/riding/creature/raptor	on_attacked	code/datums/components/riding/riding_mob.dm:715	source,damage_dealt,damagetype,def_zone,blocked,wound_bonus,exposed_wound_bonus,sharpness,attack_direction,attacking_item	no	-	proc root
-proc	/datum/component/riding/creature/raptor	freak_out	code/datums/components/riding/riding_mob.dm:721		no	-	proc root
-proc	/datum/component/riding/creature/raptor	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:730	pass_index,offsetter	no	-	proc
-proc	/datum/component/riding/creature/raptor	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:738		no	-	proc
-type	/datum/component/riding/creature/raptor/combat	/datum/component/riding/creature/raptor	code/datums/components/riding/riding_mob.dm:747	inert	datum_component_riding_creature_raptor_combat	0	0
-type	/datum/component/riding/creature/raptor/healer	/datum/component/riding/creature/raptor	code/datums/components/riding/riding_mob.dm:749	inert	datum_component_riding_creature_raptor_healer	0	0
-proc	/datum/component/riding/creature/raptor/healer	vehicle_mob_buckle	code/datums/components/riding/riding_mob.dm:749	ridden,rider,force	no	-	proc
-proc	/datum/component/riding/creature/raptor/healer	vehicle_mob_unbuckle	code/datums/components/riding/riding_mob.dm:753	formerly_ridden,former_rider,force	no	-	proc
-proc	/datum/component/riding/creature/raptor/healer	on_buckled_stat_change	code/datums/components/riding/riding_mob.dm:757	source,new_stat,old_stat	no	-	proc root
-type	/datum/component/riding/creature/raptor/small	/datum/component/riding/creature/raptor	code/datums/components/riding/riding_mob.dm:781	inert	datum_component_riding_creature_raptor_small	0	0
-proc	/datum/component/riding/creature/raptor/small	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:781	pass_index,offsetter	no	-	proc
+type	/datum/component/riding/creature/raptor	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:700	live	datum_component_riding_creature_raptor	1	0
+proc	/datum/component/riding/creature/raptor	Initialize	code/datums/components/riding/riding_mob.dm:704	riding_mob,force,ride_check_flags	yes	full	proc
+proc	/datum/component/riding/creature/raptor	on_bullet_hit	code/datums/components/riding/riding_mob.dm:709	target,hit_projectile	yes	full	proc root
+proc	/datum/component/riding/creature/raptor	on_attacked	code/datums/components/riding/riding_mob.dm:715	source,damage_dealt,damagetype,def_zone,blocked,wound_bonus,exposed_wound_bonus,sharpness,attack_direction,attacking_item	yes	full	proc root
+proc	/datum/component/riding/creature/raptor	freak_out	code/datums/components/riding/riding_mob.dm:721		yes	full	proc root
+proc	/datum/component/riding/creature/raptor	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:730	pass_index,offsetter	yes	full	proc
+proc	/datum/component/riding/creature/raptor	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:738		yes	full	proc
+type	/datum/component/riding/creature/raptor/combat	/datum/component/riding/creature/raptor	code/datums/components/riding/riding_mob.dm:747	live	datum_component_riding_creature_raptor_combat	0	0
+type	/datum/component/riding/creature/raptor/healer	/datum/component/riding/creature/raptor	code/datums/components/riding/riding_mob.dm:749	live	datum_component_riding_creature_raptor_healer	1	0
+proc	/datum/component/riding/creature/raptor/healer	vehicle_mob_buckle	code/datums/components/riding/riding_mob.dm:749	ridden,rider,force	yes	full	proc
+proc	/datum/component/riding/creature/raptor/healer	vehicle_mob_unbuckle	code/datums/components/riding/riding_mob.dm:753	formerly_ridden,former_rider,force	yes	full	proc
+proc	/datum/component/riding/creature/raptor/healer	on_buckled_stat_change	code/datums/components/riding/riding_mob.dm:757	source,new_stat,old_stat	yes	full	proc root
+type	/datum/component/riding/creature/raptor/small	/datum/component/riding/creature/raptor	code/datums/components/riding/riding_mob.dm:781	live	datum_component_riding_creature_raptor_small	1	0
+proc	/datum/component/riding/creature/raptor/small	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:781	pass_index,offsetter	yes	full	proc
 type	/datum/component/riding/creature/spider	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:790	live	datum_component_riding_creature_spider	1	0
 proc	/datum/component/riding/creature/spider	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:793	pass_index,offsetter	yes	full	proc
 proc	/datum/component/riding/creature/spider	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:801		yes	full	proc
@@ -21038,8 +21038,8 @@ proc	/datum/component/riding/creature/ed_bot	get_parent_offsets_and_layers	code/
 proc	/datum/component/riding/creature/ed_bot	ride_check	code/datums/components/riding/riding_mob.dm:831	rider,consequences	no	-	proc
 type	/datum/component/riding/creature/ed_bot/nukie	/datum/component/riding/creature/ed_bot	code/datums/components/riding/riding_mob.dm:842	inert	datum_component_riding_creature_ed_bot_nukie	0	0
 proc	/datum/component/riding/creature/ed_bot/nukie	ride_check	code/datums/components/riding/riding_mob.dm:842	rider,consequences	no	-	proc
-type	/datum/component/riding/creature/wolf	/datum/component/riding/creature	code/modules/mob/living/basic/icemoon/wolf/wolf_extras.dm:12	inert	datum_component_riding_creature_wolf	0	0
-proc	/datum/component/riding/creature/wolf	get_rider_offsets_and_layers	code/modules/mob/living/basic/icemoon/wolf/wolf_extras.dm:12	pass_index,offsetter	no	-	proc
+type	/datum/component/riding/creature/wolf	/datum/component/riding/creature	code/modules/mob/living/basic/icemoon/wolf/wolf_extras.dm:12	live	datum_component_riding_creature_wolf	1	0
+proc	/datum/component/riding/creature/wolf	get_rider_offsets_and_layers	code/modules/mob/living/basic/icemoon/wolf/wolf_extras.dm:12	pass_index,offsetter	yes	full	proc
 type	/datum/component/riding/leaper	/datum/component/riding	code/datums/components/riding/riding_mob.dm:695	inert	datum_component_riding_leaper	0	0
 proc	/datum/component/riding/leaper	handle_unbuckle	code/datums/components/riding/riding_mob.dm:695	rider	no	-	proc
 type	/datum/component/riding/vehicle	/datum/component/riding	code/datums/components/riding/riding_vehicle.dm:3	live	datum_component_riding_vehicle	1	0
@@ -23227,8 +23227,8 @@ type	/datum/pet_command/breed	/datum/pet_command	code/datums/components/pet_comm
 proc	/datum/pet_command/breed	set_command_target	code/datums/components/pet_commands/pet_commands_basic.dm:194	parent,target	yes	full	proc
 proc	/datum/pet_command/breed	execute_action	code/datums/components/pet_commands/pet_commands_basic.dm:208	controller	yes	full	proc
 proc	/datum/pet_command/breed	retrieve_command_text	code/datums/components/pet_commands/pet_commands_basic.dm:211	living_pet,target	yes	full	proc
-type	/datum/pet_command/breed/gutlunch	/datum/pet_command/breed	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:55	inert	datum_pet_command_breed_gutlunch	0	0
-proc	/datum/pet_command/breed/gutlunch	set_command_target	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:55	parent,target	no	-	proc
+type	/datum/pet_command/breed/gutlunch	/datum/pet_command/breed	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:55	live	datum_pet_command_breed_gutlunch	1	0
+proc	/datum/pet_command/breed/gutlunch	set_command_target	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:55	parent,target	yes	full	proc
 type	/datum/pet_command/use_ability	/datum/pet_command	code/datums/components/pet_commands/pet_commands_basic.dm:219	live	datum_pet_command_use_ability	1	0
 proc	/datum/pet_command/use_ability	execute_action	code/datums/components/pet_commands/pet_commands_basic.dm:230	controller	yes	full	proc
 proc	/datum/pet_command/use_ability	retrieve_command_text	code/datums/components/pet_commands/pet_commands_basic.dm:240	living_pet,target	yes	full	proc
@@ -23280,13 +23280,13 @@ proc	/datum/pet_command/beehive/exit	check_beehive_conditions	code/modules/mob/l
 type	/datum/pet_command/scatter	/datum/pet_command	code/modules/mob/living/basic/farm_animals/bee/bee_ai_behavior.dm:101	live	datum_pet_command_scatter	1	0
 proc	/datum/pet_command/scatter	set_command_active	code/modules/mob/living/basic/farm_animals/bee/bee_ai_behavior.dm:105	parent,commander	yes	full	proc
 proc	/datum/pet_command/scatter	execute_action	code/modules/mob/living/basic/farm_animals/bee/bee_ai_behavior.dm:109	controller	yes	full	proc
-type	/datum/pet_command/grub_spit	/datum/pet_command	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:26	inert	datum_pet_command_grub_spit	0	0
-proc	/datum/pet_command/grub_spit	execute_action	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:32	controller	no	-	proc
-proc	/datum/pet_command/grub_spit	retrieve_command_text	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:40	living_pet,target	no	-	proc
-type	/datum/pet_command/mine_walls	/datum/pet_command	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:31	inert	datum_pet_command_mine_walls	0	0
-proc	/datum/pet_command/mine_walls	try_activate_command	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:36	commander,radial_command	no	-	proc
-proc	/datum/pet_command/mine_walls	execute_action	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:46	controller	no	-	proc
-proc	/datum/pet_command/mine_walls	retrieve_command_text	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:49	living_pet,target	no	-	proc
+type	/datum/pet_command/grub_spit	/datum/pet_command	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:26	live	datum_pet_command_grub_spit	1	0
+proc	/datum/pet_command/grub_spit	execute_action	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:32	controller	yes	full	proc
+proc	/datum/pet_command/grub_spit	retrieve_command_text	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:40	living_pet,target	yes	full	proc
+type	/datum/pet_command/mine_walls	/datum/pet_command	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:31	live	datum_pet_command_mine_walls	1	0
+proc	/datum/pet_command/mine_walls	try_activate_command	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:36	commander,radial_command	yes	full	proc
+proc	/datum/pet_command/mine_walls	execute_action	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:46	controller	yes	full	proc
+proc	/datum/pet_command/mine_walls	retrieve_command_text	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:49	living_pet,target	yes	full	proc
 type	/datum/pet_command/automate_mining	/datum/pet_command	code/modules/mob/living/basic/minebots/minebot_ai.dm:177	inert	datum_pet_command_automate_mining	0	0
 proc	/datum/pet_command/automate_mining	valid_callout_target	code/modules/mob/living/basic/minebots/minebot_ai.dm:183	speaker,callout,target	no	-	proc
 proc	/datum/pet_command/automate_mining	retrieve_command_text	code/modules/mob/living/basic/minebots/minebot_ai.dm:186	living_pet,target	no	-	proc
@@ -23308,23 +23308,23 @@ proc	/datum/ductnet	New	code/datums/components/plumbing/ductnet.dm:10	parent	yes
 proc	/datum/ductnet	Destroy	code/datums/components/plumbing/ductnet.dm:16	force	yes	full	proc
 proc	/datum/ductnet	add_plumber	code/datums/components/plumbing/ductnet.dm:25	plumbing,dir	yes	full	proc root
 proc	/datum/ductnet	remove_plumber	code/datums/components/plumbing/ductnet.dm:37	plumbing	yes	full	proc root
-type	/datum/riding_minigame	/datum	code/datums/components/riding/riding_minigame.dm:11	inert	datum_riding_minigame	0	0
-proc	/datum/riding_minigame	New	code/datums/components/riding/riding_minigame.dm:43	ridden,rider	no	-	proc
-proc	/datum/riding_minigame	set_difficulty	code/datums/components/riding/riding_minigame.dm:61	ridden,rider	no	-	proc root
-proc	/datum/riding_minigame	generate_visuals	code/datums/components/riding/riding_minigame.dm:67		no	-	proc root
-proc	/datum/riding_minigame	generate_heart_counter	code/datums/components/riding/riding_minigame.dm:87		no	-	proc root
-proc	/datum/riding_minigame	process	code/datums/components/riding/riding_minigame.dm:98		no	-	proc
-proc	/datum/riding_minigame	generate_arrow	code/datums/components/riding/riding_minigame.dm:109		no	-	proc root
-proc	/datum/riding_minigame	get_arrow_height	code/datums/components/riding/riding_minigame.dm:135	text_direction	no	-	proc root
-proc	/datum/riding_minigame	add_active_arrow	code/datums/components/riding/riding_minigame.dm:139	arrow,direction	no	-	proc root
-proc	/datum/riding_minigame	remove_active_arrow	code/datums/components/riding/riding_minigame.dm:159	arrow,direction	no	-	proc root
-proc	/datum/riding_minigame	on_arrow_delete	code/datums/components/riding/riding_minigame.dm:165	source	no	-	proc root
-proc	/datum/riding_minigame	on_ridden_moved	code/datums/components/riding/riding_minigame.dm:173	source,new_loc,direction	no	-	proc root
-proc	/datum/riding_minigame	increment_counter	code/datums/components/riding/riding_minigame.dm:202		no	-	proc root
-proc	/datum/riding_minigame	increment_failure	code/datums/components/riding/riding_minigame.dm:211		no	-	proc root
-proc	/datum/riding_minigame	lose_minigame	code/datums/components/riding/riding_minigame.dm:217		no	-	proc root
-proc	/datum/riding_minigame	win_minigame	code/datums/components/riding/riding_minigame.dm:232		no	-	proc root
-proc	/datum/riding_minigame	Destroy	code/datums/components/riding/riding_minigame.dm:242		no	-	proc
+type	/datum/riding_minigame	/datum	code/datums/components/riding/riding_minigame.dm:11	live	datum_riding_minigame	1	0
+proc	/datum/riding_minigame	New	code/datums/components/riding/riding_minigame.dm:43	ridden,rider	yes	full	proc
+proc	/datum/riding_minigame	set_difficulty	code/datums/components/riding/riding_minigame.dm:61	ridden,rider	yes	full	proc root
+proc	/datum/riding_minigame	generate_visuals	code/datums/components/riding/riding_minigame.dm:67		yes	full	proc root
+proc	/datum/riding_minigame	generate_heart_counter	code/datums/components/riding/riding_minigame.dm:87		yes	full	proc root
+proc	/datum/riding_minigame	process	code/datums/components/riding/riding_minigame.dm:98		yes	full	proc
+proc	/datum/riding_minigame	generate_arrow	code/datums/components/riding/riding_minigame.dm:109		yes	full	proc root
+proc	/datum/riding_minigame	get_arrow_height	code/datums/components/riding/riding_minigame.dm:135	text_direction	yes	full	proc root
+proc	/datum/riding_minigame	add_active_arrow	code/datums/components/riding/riding_minigame.dm:139	arrow,direction	yes	full	proc root
+proc	/datum/riding_minigame	remove_active_arrow	code/datums/components/riding/riding_minigame.dm:159	arrow,direction	yes	full	proc root
+proc	/datum/riding_minigame	on_arrow_delete	code/datums/components/riding/riding_minigame.dm:165	source	yes	full	proc root
+proc	/datum/riding_minigame	on_ridden_moved	code/datums/components/riding/riding_minigame.dm:173	source,new_loc,direction	yes	full	proc root
+proc	/datum/riding_minigame	increment_counter	code/datums/components/riding/riding_minigame.dm:202		yes	full	proc root
+proc	/datum/riding_minigame	increment_failure	code/datums/components/riding/riding_minigame.dm:211		yes	full	proc root
+proc	/datum/riding_minigame	lose_minigame	code/datums/components/riding/riding_minigame.dm:217		yes	full	proc root
+proc	/datum/riding_minigame	win_minigame	code/datums/components/riding/riding_minigame.dm:232		yes	full	proc root
+proc	/datum/riding_minigame	Destroy	code/datums/components/riding/riding_minigame.dm:242		yes	full	proc
 type	/datum/symptom	/datum	code/datums/diseases/advance/symptoms/symptoms.dm:4	live	datum_symptom	1	0
 proc	/datum/symptom	New	code/datums/diseases/advance/symptoms/symptoms.dm:49		yes	full	proc
 proc	/datum/symptom	Start	code/datums/diseases/advance/symptoms/symptoms.dm:58	advanced_disease	yes	full	proc root
@@ -23877,9 +23877,9 @@ proc	/datum/element/cleaning	Attach	code/datums/elements/cleaning.dm:3	target	ye
 proc	/datum/element/cleaning	Detach	code/datums/elements/cleaning.dm:9	target	yes	full	proc
 proc	/datum/element/cleaning	clean	code/datums/elements/cleaning.dm:13	source	yes	full	proc root
 proc	/datum/element/cleaning	Detach	code/datums/elements/clever_girl.dm:9	target	yes	full	proc
-type	/datum/element/clever_girl	/datum/element	code/datums/elements/clever_girl.dm:3	inert	datum_element_clever_girl	0	0
-proc	/datum/element/clever_girl	Attach	code/datums/elements/clever_girl.dm:3	target	no	-	proc
-proc	/datum/element/clever_girl	on_open_door	code/datums/elements/clever_girl.dm:13	source,forced	no	-	proc root
+type	/datum/element/clever_girl	/datum/element	code/datums/elements/clever_girl.dm:3	live	datum_element_clever_girl	1	0
+proc	/datum/element/clever_girl	Attach	code/datums/elements/clever_girl.dm:3	target	yes	full	proc
+proc	/datum/element/clever_girl	on_open_door	code/datums/elements/clever_girl.dm:13	source,forced	yes	full	proc root
 type	/datum/element/cliff_walking	/datum/element	code/datums/elements/cliff_walker.dm:4	live	datum_element_cliff_walking	1	0
 proc	/datum/element/cliff_walking	Attach	code/datums/elements/cliff_walker.dm:4	target,climb_time,climb_stun	yes	full	proc
 proc	/datum/element/cliff_walking	Detach	code/datums/elements/cliff_walker.dm:15	source	yes	full	proc
@@ -24439,10 +24439,10 @@ proc	/datum/element/orbit_twitcher	process	code/datums/elements/orbit_twitcher.d
 proc	/datum/element/orbit_twitcher	orbit_begin	code/datums/elements/orbit_twitcher.dm:38	source,orbiter	yes	full	proc root
 proc	/datum/element/orbit_twitcher	orbit_stop	code/datums/elements/orbit_twitcher.dm:45	source,orbiter	yes	full	proc root
 proc	/datum/element/orbit_twitcher	OnTargetDelete	code/datums/elements/orbit_twitcher.dm:53	source	yes	full	proc
-type	/datum/element/ore_collecting	/datum/element	code/datums/elements/ore_collecting.dm:7	inert	datum_element_ore_collecting	0	0
-proc	/datum/element/ore_collecting	Attach	code/datums/elements/ore_collecting.dm:7	target	no	-	proc
-proc	/datum/element/ore_collecting	Detach	code/datums/elements/ore_collecting.dm:14	target	no	-	proc
-proc	/datum/element/ore_collecting	collect_ore	code/datums/elements/ore_collecting.dm:18	source,target	no	-	proc root
+type	/datum/element/ore_collecting	/datum/element	code/datums/elements/ore_collecting.dm:7	live	datum_element_ore_collecting	1	0
+proc	/datum/element/ore_collecting	Attach	code/datums/elements/ore_collecting.dm:7	target	yes	full	proc
+proc	/datum/element/ore_collecting	Detach	code/datums/elements/ore_collecting.dm:14	target	yes	full	proc
+proc	/datum/element/ore_collecting	collect_ore	code/datums/elements/ore_collecting.dm:18	source,target	yes	full	proc root
 type	/datum/element/organ_set_bonus	/datum/element	code/datums/elements/organ_set_bonus.dm:7	live	datum_element_organ_set_bonus	1	0
 proc	/datum/element/organ_set_bonus	Attach	code/datums/elements/organ_set_bonus.dm:12	target,bonus_type	yes	full	proc
 proc	/datum/element/organ_set_bonus	Detach	code/datums/elements/organ_set_bonus.dm:21	target	yes	full	proc
@@ -24543,11 +24543,11 @@ proc	/datum/element/ranged_armour	Attach	code/datums/elements/ranged_armour.dm:1
 proc	/datum/element/ranged_armour	Detach	code/datums/elements/ranged_armour.dm:38	target	yes	full	proc
 proc	/datum/element/ranged_armour	pre_bullet_impact	code/datums/elements/ranged_armour.dm:43	parent,bullet	yes	full	proc root
 proc	/datum/element/ranged_armour	pre_thrown_impact	code/datums/elements/ranged_armour.dm:54	parent,hit_atom,throwingdatum	yes	full	proc root
-type	/datum/element/raptor_food	/datum/element	code/datums/elements/raptor_food.dm:3	inert	datum_element_raptor_food	0	0
-proc	/datum/element/raptor_food	Attach	code/datums/elements/raptor_food.dm:22	target,attack_modifier,health_modifier,speed_modifier,ability_modifier,growth_modifier,personality_traits,color_chances	no	-	proc
-proc	/datum/element/raptor_food	Detach	code/datums/elements/raptor_food.dm:36	source	no	-	proc
-proc	/datum/element/raptor_food	on_examine_more	code/datums/elements/raptor_food.dm:40	source,examiner,examine_list	no	-	proc root
-proc	/datum/element/raptor_food	on_eaten	code/datums/elements/raptor_food.dm:65	source,eater,feeder	no	-	proc root
+type	/datum/element/raptor_food	/datum/element	code/datums/elements/raptor_food.dm:3	live	datum_element_raptor_food	1	0
+proc	/datum/element/raptor_food	Attach	code/datums/elements/raptor_food.dm:22	target,attack_modifier,health_modifier,speed_modifier,ability_modifier,growth_modifier,personality_traits,color_chances	yes	full	proc
+proc	/datum/element/raptor_food	Detach	code/datums/elements/raptor_food.dm:36	source	yes	full	proc
+proc	/datum/element/raptor_food	on_examine_more	code/datums/elements/raptor_food.dm:40	source,examiner,examine_list	yes	full	proc root
+proc	/datum/element/raptor_food	on_eaten	code/datums/elements/raptor_food.dm:65	source,eater,feeder	yes	full	proc root
 type	/datum/element/reagent_scoopable_atom	/datum/element	code/datums/elements/reagent_scoopable_atom.dm:2	inert	datum_element_reagent_scoopable_atom	0	0
 proc	/datum/element/reagent_scoopable_atom	Attach	code/datums/elements/reagent_scoopable_atom.dm:6	target,reagent_to_extract	no	-	proc
 proc	/datum/element/reagent_scoopable_atom	Detach	code/datums/elements/reagent_scoopable_atom.dm:16	source	no	-	proc
@@ -30970,8 +30970,8 @@ proc	/datum/storage/rped	attempt_insert	code/datums/storage/subtypes/others/rped
 proc	/datum/storage/rped	mass_empty	code/datums/storage/subtypes/others/rped.dm:93	source,user	yes	full	proc
 type	/datum/storage/rped/bluespace	/datum/storage/rped	code/datums/storage/subtypes/others/rped.dm:117	live	datum_storage_rped_bluespace	0	0
 type	/datum/storage/rped/compact	/datum/storage/rped	code/datums/storage/subtypes/others/rped.dm:122	live	datum_storage_rped_compact	0	0
-type	/datum/storage/raptor_storage	/datum/storage	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:323	inert	datum_storage_raptor_storage	0	0
-proc	/datum/storage/raptor_storage	on_mousedropped_onto	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:326	source,dropping,user	no	-	proc
+type	/datum/storage/raptor_storage	/datum/storage	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:323	live	datum_storage_raptor_storage	1	0
+proc	/datum/storage/raptor_storage	on_mousedropped_onto	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:326	source,dropping,user	yes	full	proc
 type	/datum/storage/photo_album	/datum/storage	code/modules/photography/photos/album.dm:61	live	datum_storage_photo_album	1	0
 proc	/datum/storage/photo_album	New	code/modules/photography/photos/album.dm:64	parent,max_slots,max_specific_storage,max_total_storage	yes	full	proc
 proc	/datum/storage/photo_album	save_everything	code/modules/photography/photos/album.dm:73		yes	deferred	proc root
@@ -45817,37 +45817,37 @@ proc	/datum/guardian_fluff	get_fluff_string	code/modules/mob/living/basic/guardi
 type	/datum/guardian_fluff/tech	/datum/guardian_fluff	code/modules/mob/living/basic/guardian/guardian_fluff.dm:65	live	datum_guardian_fluff_tech	0	0
 type	/datum/guardian_fluff/miner	/datum/guardian_fluff	code/modules/mob/living/basic/guardian/guardian_fluff.dm:86	live	datum_guardian_fluff_miner	0	0
 type	/datum/guardian_fluff/carp	/datum/guardian_fluff	code/modules/mob/living/basic/guardian/guardian_fluff.dm:105	live	datum_guardian_fluff_carp	0	0
-type	/datum/gutlunch_inherited_stats	/datum	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:4	inert	datum_gutlunch_inherited_stats	0	0
-proc	/datum/gutlunch_inherited_stats	New	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:10	parent	no	-	proc
-type	/datum/raptor_color	/datum	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:11	inert	datum_raptor_color	0	0
-proc	/datum/raptor_color	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:33	raptor	no	-	proc root
-proc	/datum/raptor_color	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:38	raptor	no	-	proc root
-proc	/datum/raptor_color	setup_young	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:53	raptor	no	-	proc root
-proc	/datum/raptor_color	setup_baby	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:64	raptor	no	-	proc root
-proc	/datum/raptor_color	setup_appearance	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:75	raptor	no	-	proc root
-type	/datum/raptor_color/red	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:84	inert	datum_raptor_color_red	0	0
-proc	/datum/raptor_color/red	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:99	raptor	no	-	proc
-type	/datum/raptor_color/purple	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:104	inert	datum_raptor_color_purple	0	0
-proc	/datum/raptor_color/purple	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:113	raptor	no	-	proc
-proc	/datum/raptor_color/purple	on_pre_buckle	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:118	source,potential_rider,force,ride_check_flags	no	-	proc root
-proc	/datum/raptor_color/purple	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:130	raptor	no	-	proc
-proc	/datum/raptor_color/purple	setup_young	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:148	raptor	no	-	proc
-type	/datum/raptor_color/green	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:347	inert	datum_raptor_color_green	0	0
-proc	/datum/raptor_color/green	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:357	raptor	no	-	proc
-type	/datum/raptor_color/white	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:366	inert	datum_raptor_color_white	0	0
-proc	/datum/raptor_color/white	setup_young	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:374	raptor	no	-	proc
-proc	/datum/raptor_color/white	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:384	raptor	no	-	proc
-proc	/datum/raptor_color/white	heal_checks	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:397	healer,target	no	-	proc root
-proc	/datum/raptor_color/white	heal_multiplier	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:405	healer,target	no	-	proc root
-type	/datum/raptor_color/yellow	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:412	inert	datum_raptor_color_yellow	0	0
-type	/datum/raptor_color/blue	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:422	inert	datum_raptor_color_blue	0	0
-proc	/datum/raptor_color/blue	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:430	raptor	no	-	proc
-type	/datum/raptor_color/black	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:435	inert	datum_raptor_color_black	0	0
-proc	/datum/raptor_color/black	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:446	raptor	no	-	proc
-proc	/datum/raptor_color/black	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:450	raptor	no	-	proc
-type	/datum/raptor_inheritance	/datum	code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:3	inert	datum_raptor_inheritance	0	0
-proc	/datum/raptor_inheritance	New	code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:23	owner	no	-	proc
-proc	/datum/raptor_inheritance	set_parents	code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:34	mother,father	no	-	proc root
+type	/datum/gutlunch_inherited_stats	/datum	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:4	live	datum_gutlunch_inherited_stats	1	0
+proc	/datum/gutlunch_inherited_stats	New	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:10	parent	yes	full	proc
+type	/datum/raptor_color	/datum	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:11	live	datum_raptor_color	1	0
+proc	/datum/raptor_color	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:33	raptor	yes	full	proc root
+proc	/datum/raptor_color	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:38	raptor	yes	full	proc root
+proc	/datum/raptor_color	setup_young	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:53	raptor	yes	full	proc root
+proc	/datum/raptor_color	setup_baby	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:64	raptor	yes	full	proc root
+proc	/datum/raptor_color	setup_appearance	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:75	raptor	yes	full	proc root
+type	/datum/raptor_color/red	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:84	live	datum_raptor_color_red	1	0
+proc	/datum/raptor_color/red	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:99	raptor	yes	full	proc
+type	/datum/raptor_color/purple	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:104	live	datum_raptor_color_purple	1	0
+proc	/datum/raptor_color/purple	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:113	raptor	yes	full	proc
+proc	/datum/raptor_color/purple	on_pre_buckle	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:118	source,potential_rider,force,ride_check_flags	yes	full	proc root
+proc	/datum/raptor_color/purple	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:130	raptor	yes	full	proc
+proc	/datum/raptor_color/purple	setup_young	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:148	raptor	yes	full	proc
+type	/datum/raptor_color/green	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:347	live	datum_raptor_color_green	1	0
+proc	/datum/raptor_color/green	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:357	raptor	yes	full	proc
+type	/datum/raptor_color/white	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:366	live	datum_raptor_color_white	1	0
+proc	/datum/raptor_color/white	setup_young	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:374	raptor	yes	full	proc
+proc	/datum/raptor_color/white	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:384	raptor	yes	full	proc
+proc	/datum/raptor_color/white	heal_checks	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:397	healer,target	yes	full	proc root
+proc	/datum/raptor_color/white	heal_multiplier	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:405	healer,target	yes	full	proc root
+type	/datum/raptor_color/yellow	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:412	live	datum_raptor_color_yellow	0	0
+type	/datum/raptor_color/blue	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:422	live	datum_raptor_color_blue	1	0
+proc	/datum/raptor_color/blue	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:430	raptor	yes	full	proc
+type	/datum/raptor_color/black	/datum/raptor_color	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:435	live	datum_raptor_color_black	1	0
+proc	/datum/raptor_color/black	setup_raptor	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:446	raptor	yes	full	proc
+proc	/datum/raptor_color/black	setup_adult	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:450	raptor	yes	full	proc
+type	/datum/raptor_inheritance	/datum	code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:3	live	datum_raptor_inheritance	1	0
+proc	/datum/raptor_inheritance	New	code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:23	owner	yes	full	proc
+proc	/datum/raptor_inheritance	set_parents	code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:34	mother,father	yes	full	proc root
 type	/datum/pet_customization	/datum	code/modules/mob/living/basic/pets/pet_designer.dm:35	inert	datum_pet_customization	0	0
 proc	/datum/pet_customization	New	code/modules/mob/living/basic/pets/pet_designer.dm:68	player_client	no	-	proc
 proc	/datum/pet_customization	setup_pet_carriers	code/modules/mob/living/basic/pets/pet_designer.dm:75		no	-	proc root
@@ -46211,13 +46211,13 @@ proc	/datum/computer_file/program/radar/fission360	find_atom	code/modules/modula
 proc	/datum/computer_file/program/radar/fission360	scan	code/modules/modular_computers/file_system/programs/radar.dm:354		yes	full	proc
 proc	/datum/computer_file/program/radar/fission360	on_examine	code/modules/modular_computers/file_system/programs/radar.dm:382	source,user	yes	full	proc
 proc	/datum/computer_file/program/radar/fission360	on_nuke_armed	code/modules/modular_computers/file_system/programs/radar.dm:394	source,bomb	yes	full	proc root
-type	/datum/computer_file/program/raptordex	/datum/computer_file/program	code/modules/modular_computers/file_system/programs/raptordex.dm:2	inert	datum_computer_file_program_raptordex	0	0
-proc	/datum/computer_file/program/raptordex	tap	code/modules/modular_computers/file_system/programs/raptordex.dm:14	tapped_atom,user,modifiers	no	-	proc
-proc	/datum/computer_file/program/raptordex	ui_data	code/modules/modular_computers/file_system/programs/raptordex.dm:62	user	no	-	proc
-proc	/datum/computer_file/program/raptordex	on_made_active_program	code/modules/modular_computers/file_system/programs/raptordex.dm:65	user	no	-	proc
-proc	/datum/computer_file/program/raptordex	background_program	code/modules/modular_computers/file_system/programs/raptordex.dm:69	user	no	-	proc
-proc	/datum/computer_file/program/raptordex	kill_program	code/modules/modular_computers/file_system/programs/raptordex.dm:73	user	no	-	proc
-proc	/datum/computer_file/program/raptordex	add_item_context	code/modules/modular_computers/file_system/programs/raptordex.dm:77	source,context,target,user	no	-	proc root
+type	/datum/computer_file/program/raptordex	/datum/computer_file/program	code/modules/modular_computers/file_system/programs/raptordex.dm:2	live	datum_computer_file_program_raptordex	1	0
+proc	/datum/computer_file/program/raptordex	tap	code/modules/modular_computers/file_system/programs/raptordex.dm:14	tapped_atom,user,modifiers	yes	full	proc
+proc	/datum/computer_file/program/raptordex	ui_data	code/modules/modular_computers/file_system/programs/raptordex.dm:62	user	yes	full	proc
+proc	/datum/computer_file/program/raptordex	on_made_active_program	code/modules/modular_computers/file_system/programs/raptordex.dm:65	user	yes	full	proc
+proc	/datum/computer_file/program/raptordex	background_program	code/modules/modular_computers/file_system/programs/raptordex.dm:69	user	yes	full	proc
+proc	/datum/computer_file/program/raptordex	kill_program	code/modules/modular_computers/file_system/programs/raptordex.dm:73	user	yes	full	proc
+proc	/datum/computer_file/program/raptordex	add_item_context	code/modules/modular_computers/file_system/programs/raptordex.dm:77	source,context,target,user	yes	full	proc root
 type	/datum/computer_file/program/records	/datum/computer_file/program	code/modules/modular_computers/file_system/programs/records.dm:2	live	datum_computer_file_program_records	1	0
 proc	/datum/computer_file/program/records	GetRecordsReadable	code/modules/modular_computers/file_system/programs/records.dm:34		yes	full	proc root
 proc	/datum/computer_file/program/records	ui_static_data	code/modules/modular_computers/file_system/programs/records.dm:71	user	yes	full	proc
@@ -54359,27 +54359,27 @@ proc	/mob/living/basic/mining/legion/lesser	assign_abilities	code/modules/mob/li
 proc	/mob/living/basic/mining/legion/lesser	get_loot_list	code/modules/mob/living/basic/lavaland/legion/legion_monkey.dm:29		yes	full	proc
 type	/mob/living/basic/mining/legion/lesser/snow	/mob/living/basic/mining/legion/lesser	code/modules/mob/living/basic/lavaland/legion/legion_monkey.dm:34	live	mob_living_basic_mining_legion_lesser_snow	1	0
 proc	/mob/living/basic/mining/legion/lesser/snow	Initialize	code/modules/mob/living/basic/lavaland/legion/legion_monkey.dm:40	mapload	yes	full	proc
-type	/mob/living/basic/mining/ice_demon	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:2	inert	mob_living_basic_mining_ice_demon	0	0
-proc	/mob/living/basic/mining/ice_demon	Initialize	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:29	mapload	no	-	proc
-proc	/mob/living/basic/mining/ice_demon	death	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:47	gibbed	no	-	proc
-type	/mob/living/basic/mining/demon_afterimage	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:53	inert	mob_living_basic_mining_demon_afterimage	0	0
-proc	/mob/living/basic/mining/demon_afterimage	CanAStarPass	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:76	to_dir,pass_info	no	-	proc
-proc	/mob/living/basic/mining/demon_afterimage	Initialize	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:83	mapload	no	-	proc
-type	/mob/living/basic/mining/demon_afterimage/crusher	/mob/living/basic/mining/demon_afterimage	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:90	inert	mob_living_basic_mining_demon_afterimage_crusher	0	0
-type	/mob/living/basic/mining/ice_whelp	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:2	inert	mob_living_basic_mining_ice_whelp	0	0
-proc	/mob/living/basic/mining/ice_whelp	Initialize	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:44	mapload	no	-	proc
-proc	/mob/living/basic/mining/ice_whelp	early_melee_attack	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:51	target,modifiers,ignore_cooldown	no	-	proc
-proc	/mob/living/basic/mining/ice_whelp	create_sculpture	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:71	target	no	-	proc root
-proc	/mob/living/basic/mining/ice_whelp	cannibalize_victim	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:83	target	no	-	proc root
-type	/mob/living/basic/mining/ice_whelp/ash	/mob/living/basic/mining/ice_whelp	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:93	inert	mob_living_basic_mining_ice_whelp_ash	0	0
-type	/mob/living/basic/mining/polarbear	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/polar_bear/polar_bear.dm:3	inert	mob_living_basic_mining_polarbear	0	0
-proc	/mob/living/basic/mining/polarbear	Initialize	code/modules/mob/living/basic/icemoon/polar_bear/polar_bear.dm:42	mapload	no	-	proc
-type	/mob/living/basic/mining/polarbear/lesser	/mob/living/basic/mining/polarbear	code/modules/mob/living/basic/icemoon/polar_bear/polar_bear.dm:51	inert	mob_living_basic_mining_polarbear_lesser	0	0
-type	/mob/living/basic/mining/wolf	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:2	inert	mob_living_basic_mining_wolf	0	0
-proc	/mob/living/basic/mining/wolf	Initialize	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:55	mapload	no	-	proc
-proc	/mob/living/basic/mining/wolf	make_tameable	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:65		no	-	proc root
-proc	/mob/living/basic/mining/wolf	tamed	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:69	tamer,food	no	-	proc
-proc	/mob/living/basic/mining/wolf	befriend	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:82	new_friend	no	-	proc
+type	/mob/living/basic/mining/ice_demon	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:2	live	mob_living_basic_mining_ice_demon	1	0
+proc	/mob/living/basic/mining/ice_demon	Initialize	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:29	mapload	yes	full	proc
+proc	/mob/living/basic/mining/ice_demon	death	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:47	gibbed	yes	full	proc
+type	/mob/living/basic/mining/demon_afterimage	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:53	live	mob_living_basic_mining_demon_afterimage	1	0
+proc	/mob/living/basic/mining/demon_afterimage	CanAStarPass	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:76	to_dir,pass_info	yes	full	proc
+proc	/mob/living/basic/mining/demon_afterimage	Initialize	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:83	mapload	yes	full	proc
+type	/mob/living/basic/mining/demon_afterimage/crusher	/mob/living/basic/mining/demon_afterimage	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon.dm:90	live	mob_living_basic_mining_demon_afterimage_crusher	0	0
+type	/mob/living/basic/mining/ice_whelp	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:2	live	mob_living_basic_mining_ice_whelp	1	0
+proc	/mob/living/basic/mining/ice_whelp	Initialize	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:44	mapload	yes	full	proc
+proc	/mob/living/basic/mining/ice_whelp	early_melee_attack	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:51	target,modifiers,ignore_cooldown	yes	full	proc
+proc	/mob/living/basic/mining/ice_whelp	create_sculpture	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:71	target	yes	full	proc root
+proc	/mob/living/basic/mining/ice_whelp	cannibalize_victim	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:83	target	yes	full	proc root
+type	/mob/living/basic/mining/ice_whelp/ash	/mob/living/basic/mining/ice_whelp	code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp.dm:93	live	mob_living_basic_mining_ice_whelp_ash	0	0
+type	/mob/living/basic/mining/polarbear	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/polar_bear/polar_bear.dm:3	live	mob_living_basic_mining_polarbear	1	0
+proc	/mob/living/basic/mining/polarbear	Initialize	code/modules/mob/living/basic/icemoon/polar_bear/polar_bear.dm:42	mapload	yes	full	proc
+type	/mob/living/basic/mining/polarbear/lesser	/mob/living/basic/mining/polarbear	code/modules/mob/living/basic/icemoon/polar_bear/polar_bear.dm:51	live	mob_living_basic_mining_polarbear_lesser	0	0
+type	/mob/living/basic/mining/wolf	/mob/living/basic/mining	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:2	live	mob_living_basic_mining_wolf	1	0
+proc	/mob/living/basic/mining/wolf	Initialize	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:55	mapload	yes	full	proc
+proc	/mob/living/basic/mining/wolf	make_tameable	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:65		yes	full	proc root
+proc	/mob/living/basic/mining/wolf	tamed	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:69	tamer,food	yes	full	proc
+proc	/mob/living/basic/mining/wolf	befriend	code/modules/mob/living/basic/icemoon/wolf/wolf.dm:82	new_friend	yes	full	proc
 type	/mob/living/basic/mining/basilisk	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/basilisk/basilisk.dm:3	live	mob_living_basic_mining_basilisk	1	0
 proc	/mob/living/basic/mining/basilisk	Initialize	code/modules/mob/living/basic/lavaland/basilisk/basilisk.dm:30	mapload	yes	full	proc
 proc	/mob/living/basic/mining/basilisk	Destroy	code/modules/mob/living/basic/lavaland/basilisk/basilisk.dm:35		yes	full	proc
@@ -54399,21 +54399,21 @@ proc	/mob/living/basic/mining/brimdemon	Destroy	code/modules/mob/living/basic/la
 proc	/mob/living/basic/mining/brimdemon	RangedAttack	code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:52	target,modifiers	yes	full	proc
 proc	/mob/living/basic/mining/brimdemon	death	code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:55	gibbed	yes	full	proc
 proc	/mob/living/basic/mining/brimdemon	update_overlays	code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:62		yes	full	proc
-type	/mob/living/basic/mining/goldgrub	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:3	inert	mob_living_basic_mining_goldgrub	0	0
-proc	/mob/living/basic/mining/goldgrub	Initialize	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:44	mapload	no	-	proc
-proc	/mob/living/basic/mining/goldgrub	get_hud_x_offset	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:90		no	-	proc
-proc	/mob/living/basic/mining/goldgrub	block_bullets	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:93	source,hitting_projectile	no	-	proc root
-proc	/mob/living/basic/mining/goldgrub	barf_contents	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:106	gibbed	no	-	proc root
-proc	/mob/living/basic/mining/goldgrub	generate_loot	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:114		no	-	proc root
-proc	/mob/living/basic/mining/goldgrub	death	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:126	gibbed	no	-	proc
-proc	/mob/living/basic/mining/goldgrub	make_tameable	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:130	food_types	no	-	proc root
-proc	/mob/living/basic/mining/goldgrub	tamed	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:133	tamer,food	no	-	proc
-proc	/mob/living/basic/mining/goldgrub	make_egg_layer	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:139		no	-	proc root
-proc	/mob/living/basic/mining/goldgrub	update_overlays	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:150		no	-	proc
-proc	/mob/living/basic/mining/goldgrub	death	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:155	gibbed	no	-	proc
-type	/mob/living/basic/mining/goldgrub/baby	/mob/living/basic/mining/goldgrub	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:161	inert	mob_living_basic_mining_goldgrub_baby	0	0
-proc	/mob/living/basic/mining/goldgrub/baby	Initialize	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:177	mapload	no	-	proc
-proc	/mob/living/basic/mining/goldgrub/baby	ready_to_grow	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:190		no	-	proc root
+type	/mob/living/basic/mining/goldgrub	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:3	live	mob_living_basic_mining_goldgrub	1	0
+proc	/mob/living/basic/mining/goldgrub	Initialize	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:44	mapload	yes	full	proc
+proc	/mob/living/basic/mining/goldgrub	get_hud_x_offset	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:90		yes	full	proc
+proc	/mob/living/basic/mining/goldgrub	block_bullets	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:93	source,hitting_projectile	yes	full	proc root
+proc	/mob/living/basic/mining/goldgrub	barf_contents	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:106	gibbed	yes	full	proc root
+proc	/mob/living/basic/mining/goldgrub	generate_loot	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:114		yes	full	proc root
+proc	/mob/living/basic/mining/goldgrub	death	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:126	gibbed	yes	full	proc
+proc	/mob/living/basic/mining/goldgrub	make_tameable	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:130	food_types	yes	full	proc root
+proc	/mob/living/basic/mining/goldgrub	tamed	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:133	tamer,food	yes	full	proc
+proc	/mob/living/basic/mining/goldgrub	make_egg_layer	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:139		yes	full	proc root
+proc	/mob/living/basic/mining/goldgrub	update_overlays	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:150		yes	full	proc
+proc	/mob/living/basic/mining/goldgrub	death	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:155	gibbed	yes	full	proc
+type	/mob/living/basic/mining/goldgrub/baby	/mob/living/basic/mining/goldgrub	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:161	live	mob_living_basic_mining_goldgrub_baby	1	0
+proc	/mob/living/basic/mining/goldgrub/baby	Initialize	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:177	mapload	yes	full	proc
+proc	/mob/living/basic/mining/goldgrub/baby	ready_to_grow	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:190		yes	full	proc root
 type	/mob/living/basic/mining/goliath	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/goliath/goliath.dm:3	live	mob_living_basic_mining_goliath	1	0
 proc	/mob/living/basic/mining/goliath	Initialize	code/modules/mob/living/basic/lavaland/goliath/goliath.dm:50	mapload	yes	full	proc
 proc	/mob/living/basic/mining/goliath	Destroy	code/modules/mob/living/basic/lavaland/goliath/goliath.dm:82		yes	full	proc
@@ -54437,22 +54437,22 @@ type	/mob/living/basic/mining/goliath/ancient/immortal	/mob/living/basic/mining/
 proc	/mob/living/basic/mining/goliath/ancient/immortal	Life	code/modules/mob/living/basic/lavaland/goliath/goliath.dm:224	seconds_per_tick	yes	full	proc
 proc	/mob/living/basic/mining/goliath/ancient/immortal	Moved	code/modules/mob/living/basic/lavaland/goliath/goliath.dm:237	old_loc,movement_dir,forced,old_locs,momentum_change	yes	full	proc
 proc	/mob/living/basic/mining/goliath/ancient/immortal	cache_nearby_turfs	code/modules/mob/living/basic/lavaland/goliath/goliath.dm:244		yes	full	proc root
-type	/mob/living/basic/mining/gutlunch	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:7	inert	mob_living_basic_mining_gutlunch	0	0
-proc	/mob/living/basic/mining/gutlunch	Initialize	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:34	mapload	no	-	proc
-proc	/mob/living/basic/mining/gutlunch	Destroy	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:42		no	-	proc
-proc	/mob/living/basic/mining/gutlunch	early_melee_attack	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:46	target,modifiers,ignore_cooldown	no	-	proc
-proc	/mob/living/basic/mining/gutlunch	after_birth	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:59	baby,partner	no	-	proc root
-proc	/mob/living/basic/mining/gutlunch	roll_stats	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:66	input_attack,input_speed,input_health	no	-	proc root
-proc	/mob/living/basic/mining/gutlunch	add_breeding_component	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:73		no	-	proc root
-type	/mob/living/basic/mining/gutlunch/milk	/mob/living/basic/mining/gutlunch	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:88	inert	mob_living_basic_mining_gutlunch_milk	0	0
-proc	/mob/living/basic/mining/gutlunch/milk	Initialize	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:95	mapload	no	-	proc
-proc	/mob/living/basic/mining/gutlunch/milk	update_overlays	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:135	new_udder_volume,max_udder_volume	no	-	proc
-type	/mob/living/basic/mining/gutlunch/warrior	/mob/living/basic/mining/gutlunch	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:108	inert	mob_living_basic_mining_gutlunch_warrior	0	0
-proc	/mob/living/basic/mining/gutlunch/warrior	Initialize	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:129	mapload	no	-	proc
-type	/mob/living/basic/mining/gutlunch/grub	/mob/living/basic/mining/gutlunch	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:142	inert	mob_living_basic_mining_gutlunch_grub	0	0
-proc	/mob/living/basic/mining/gutlunch/grub	Initialize	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:151	mapload	no	-	proc
-proc	/mob/living/basic/mining/gutlunch/grub	ready_to_grow	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:164		no	-	proc root
-proc	/mob/living/basic/mining/gutlunch/grub	determine_growth_path	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:167		no	-	proc root
+type	/mob/living/basic/mining/gutlunch	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:7	live	mob_living_basic_mining_gutlunch	1	0
+proc	/mob/living/basic/mining/gutlunch	Initialize	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:34	mapload	yes	full	proc
+proc	/mob/living/basic/mining/gutlunch	Destroy	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:42		yes	full	proc
+proc	/mob/living/basic/mining/gutlunch	early_melee_attack	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:46	target,modifiers,ignore_cooldown	yes	full	proc
+proc	/mob/living/basic/mining/gutlunch	after_birth	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:59	baby,partner	yes	full	proc root
+proc	/mob/living/basic/mining/gutlunch	roll_stats	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:66	input_attack,input_speed,input_health	yes	full	proc root
+proc	/mob/living/basic/mining/gutlunch	add_breeding_component	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:73		yes	full	proc root
+type	/mob/living/basic/mining/gutlunch/milk	/mob/living/basic/mining/gutlunch	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:88	live	mob_living_basic_mining_gutlunch_milk	1	0
+proc	/mob/living/basic/mining/gutlunch/milk	Initialize	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:95	mapload	yes	full	proc
+proc	/mob/living/basic/mining/gutlunch/milk	update_overlays	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:135	new_udder_volume,max_udder_volume	yes	full	proc
+type	/mob/living/basic/mining/gutlunch/warrior	/mob/living/basic/mining/gutlunch	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:108	live	mob_living_basic_mining_gutlunch_warrior	1	0
+proc	/mob/living/basic/mining/gutlunch/warrior	Initialize	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:129	mapload	yes	full	proc
+type	/mob/living/basic/mining/gutlunch/grub	/mob/living/basic/mining/gutlunch	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:142	live	mob_living_basic_mining_gutlunch_grub	1	0
+proc	/mob/living/basic/mining/gutlunch/grub	Initialize	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:151	mapload	yes	full	proc
+proc	/mob/living/basic/mining/gutlunch/grub	ready_to_grow	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:164		yes	full	proc root
+proc	/mob/living/basic/mining/gutlunch/grub	determine_growth_path	code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers.dm:167		yes	full	proc root
 type	/mob/living/basic/mining/hivelord	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:3	live	mob_living_basic_mining_hivelord	1	0
 proc	/mob/living/basic/mining/hivelord	Initialize	code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:30	mapload	yes	full	proc
 proc	/mob/living/basic/mining/hivelord	Destroy	code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:40		yes	full	proc
@@ -54488,35 +54488,35 @@ proc	/mob/living/basic/mining/lobstrosity/juvenile	tamed	code/modules/mob/living
 proc	/mob/living/basic/mining/lobstrosity/juvenile	ready_to_grow	code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:230		yes	full	proc root
 proc	/mob/living/basic/mining/lobstrosity/juvenile	grow_up	code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:233		yes	full	proc root
 type	/mob/living/basic/mining/lobstrosity/juvenile/lava	/mob/living/basic/mining/lobstrosity/juvenile	code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:245	live	mob_living_basic_mining_lobstrosity_juvenile_lava	0	0
-type	/mob/living/basic/mining/mook	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/mook/mook.dm:4	inert	mob_living_basic_mining_mook	0	0
-proc	/mob/living/basic/mining/mook	Initialize	code/modules/mob/living/basic/lavaland/mook/mook.dm:50	mapload	no	-	proc
-proc	/mob/living/basic/mining/mook	get_innate_abilities	code/modules/mob/living/basic/lavaland/mook/mook.dm:73		no	-	proc root
-proc	/mob/living/basic/mining/mook	grant_healer_abilities	code/modules/mob/living/basic/lavaland/mook/mook.dm:79		no	-	proc root
-proc	/mob/living/basic/mining/mook	Entered	code/modules/mob/living/basic/lavaland/mook/mook.dm:88	mover	no	-	proc
-proc	/mob/living/basic/mining/mook	Exited	code/modules/mob/living/basic/lavaland/mook/mook.dm:96	mover	no	-	proc
-proc	/mob/living/basic/mining/mook	early_melee_attack	code/modules/mob/living/basic/lavaland/mook/mook.dm:103	target,modifiers,ignore_cooldown	no	-	proc
-proc	/mob/living/basic/mining/mook	attack_sequence	code/modules/mob/living/basic/lavaland/mook/mook.dm:109	target	no	-	proc root
-proc	/mob/living/basic/mining/mook	change_combatant_state	code/modules/mob/living/basic/lavaland/mook/mook.dm:126	state	no	-	proc root
-proc	/mob/living/basic/mining/mook	Destroy	code/modules/mob/living/basic/lavaland/mook/mook.dm:130		no	-	proc
-proc	/mob/living/basic/mining/mook	update_icon_state	code/modules/mob/living/basic/lavaland/mook/mook.dm:134		no	-	proc
-proc	/mob/living/basic/mining/mook	update_overlays	code/modules/mob/living/basic/lavaland/mook/mook.dm:148		no	-	proc
-proc	/mob/living/basic/mining/mook	throw_at	code/modules/mob/living/basic/lavaland/mook/mook.dm:158	target,range,speed,thrower,spin,diagonals_first,callback,force,gentle,quickstart,throw_type_path	no	-	proc
-proc	/mob/living/basic/mining/mook	throw_impact	code/modules/mob/living/basic/lavaland/mook/mook.dm:162	hit_atom,throwingdatum	no	-	proc
-proc	/mob/living/basic/mining/mook	CanAllowThrough	code/modules/mob/living/basic/lavaland/mook/mook.dm:166	mover,border_dir	no	-	proc
-proc	/mob/living/basic/mining/mook	drop_ore	code/modules/mob/living/basic/lavaland/mook/mook.dm:179	user	no	-	proc root
-proc	/mob/living/basic/mining/mook	death	code/modules/mob/living/basic/lavaland/mook/mook.dm:187		no	-	proc
-proc	/mob/living/basic/mining/mook	attack_intruder	code/modules/mob/living/basic/lavaland/mook/mook.dm:191	intruder	no	-	proc root
-type	/mob/living/basic/mining/mook/worker	/mob/living/basic/mining/mook	code/modules/mob/living/basic/lavaland/mook/mook.dm:199	inert	mob_living_basic_mining_mook_worker	0	0
-proc	/mob/living/basic/mining/mook/worker	Initialize	code/modules/mob/living/basic/lavaland/mook/mook.dm:206	mapload	no	-	proc
-proc	/mob/living/basic/mining/mook/worker	get_innate_abilities	code/modules/mob/living/basic/lavaland/mook/mook.dm:212		no	-	proc
-proc	/mob/living/basic/mining/mook/worker	attack_sequence	code/modules/mob/living/basic/lavaland/mook/mook.dm:224	target	no	-	proc
-proc	/mob/living/basic/mining/mook/worker	update_overlays	code/modules/mob/living/basic/lavaland/mook/mook.dm:235		no	-	proc
-type	/mob/living/basic/mining/mook/worker/bard	/mob/living/basic/mining/mook/worker	code/modules/mob/living/basic/lavaland/mook/mook.dm:247	inert	mob_living_basic_mining_mook_worker_bard	0	0
-proc	/mob/living/basic/mining/mook/worker/bard	Initialize	code/modules/mob/living/basic/lavaland/mook/mook.dm:257	mapload	no	-	proc
-proc	/mob/living/basic/mining/mook/worker/bard	Destroy	code/modules/mob/living/basic/lavaland/mook/mook.dm:265	force	no	-	proc
-type	/mob/living/basic/mining/mook/worker/tribal_chief	/mob/living/basic/mining/mook/worker	code/modules/mob/living/basic/lavaland/mook/mook.dm:270	inert	mob_living_basic_mining_mook_worker_tribal_chief	0	0
-proc	/mob/living/basic/mining/mook/worker/tribal_chief	Initialize	code/modules/mob/living/basic/lavaland/mook/mook.dm:286	mapload	no	-	proc
-proc	/mob/living/basic/mining/mook/worker/tribal_chief	update_overlays	code/modules/mob/living/basic/lavaland/mook/mook.dm:291		no	-	proc
+type	/mob/living/basic/mining/mook	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/mook/mook.dm:4	live	mob_living_basic_mining_mook	1	0
+proc	/mob/living/basic/mining/mook	Initialize	code/modules/mob/living/basic/lavaland/mook/mook.dm:50	mapload	yes	full	proc
+proc	/mob/living/basic/mining/mook	get_innate_abilities	code/modules/mob/living/basic/lavaland/mook/mook.dm:73		yes	full	proc root
+proc	/mob/living/basic/mining/mook	grant_healer_abilities	code/modules/mob/living/basic/lavaland/mook/mook.dm:79		yes	full	proc root
+proc	/mob/living/basic/mining/mook	Entered	code/modules/mob/living/basic/lavaland/mook/mook.dm:88	mover	yes	full	proc
+proc	/mob/living/basic/mining/mook	Exited	code/modules/mob/living/basic/lavaland/mook/mook.dm:96	mover	yes	full	proc
+proc	/mob/living/basic/mining/mook	early_melee_attack	code/modules/mob/living/basic/lavaland/mook/mook.dm:103	target,modifiers,ignore_cooldown	yes	full	proc
+proc	/mob/living/basic/mining/mook	attack_sequence	code/modules/mob/living/basic/lavaland/mook/mook.dm:109	target	yes	full	proc root
+proc	/mob/living/basic/mining/mook	change_combatant_state	code/modules/mob/living/basic/lavaland/mook/mook.dm:126	state	yes	full	proc root
+proc	/mob/living/basic/mining/mook	Destroy	code/modules/mob/living/basic/lavaland/mook/mook.dm:130		yes	full	proc
+proc	/mob/living/basic/mining/mook	update_icon_state	code/modules/mob/living/basic/lavaland/mook/mook.dm:134		yes	full	proc
+proc	/mob/living/basic/mining/mook	update_overlays	code/modules/mob/living/basic/lavaland/mook/mook.dm:148		yes	full	proc
+proc	/mob/living/basic/mining/mook	throw_at	code/modules/mob/living/basic/lavaland/mook/mook.dm:158	target,range,speed,thrower,spin,diagonals_first,callback,force,gentle,quickstart,throw_type_path	yes	full	proc
+proc	/mob/living/basic/mining/mook	throw_impact	code/modules/mob/living/basic/lavaland/mook/mook.dm:162	hit_atom,throwingdatum	yes	full	proc
+proc	/mob/living/basic/mining/mook	CanAllowThrough	code/modules/mob/living/basic/lavaland/mook/mook.dm:166	mover,border_dir	yes	full	proc
+proc	/mob/living/basic/mining/mook	drop_ore	code/modules/mob/living/basic/lavaland/mook/mook.dm:179	user	yes	full	proc root
+proc	/mob/living/basic/mining/mook	death	code/modules/mob/living/basic/lavaland/mook/mook.dm:187		yes	full	proc
+proc	/mob/living/basic/mining/mook	attack_intruder	code/modules/mob/living/basic/lavaland/mook/mook.dm:191	intruder	yes	full	proc root
+type	/mob/living/basic/mining/mook/worker	/mob/living/basic/mining/mook	code/modules/mob/living/basic/lavaland/mook/mook.dm:199	live	mob_living_basic_mining_mook_worker	1	0
+proc	/mob/living/basic/mining/mook/worker	Initialize	code/modules/mob/living/basic/lavaland/mook/mook.dm:206	mapload	yes	full	proc
+proc	/mob/living/basic/mining/mook/worker	get_innate_abilities	code/modules/mob/living/basic/lavaland/mook/mook.dm:212		yes	full	proc
+proc	/mob/living/basic/mining/mook/worker	attack_sequence	code/modules/mob/living/basic/lavaland/mook/mook.dm:224	target	yes	full	proc
+proc	/mob/living/basic/mining/mook/worker	update_overlays	code/modules/mob/living/basic/lavaland/mook/mook.dm:235		yes	full	proc
+type	/mob/living/basic/mining/mook/worker/bard	/mob/living/basic/mining/mook/worker	code/modules/mob/living/basic/lavaland/mook/mook.dm:247	live	mob_living_basic_mining_mook_worker_bard	1	0
+proc	/mob/living/basic/mining/mook/worker/bard	Initialize	code/modules/mob/living/basic/lavaland/mook/mook.dm:257	mapload	yes	full	proc
+proc	/mob/living/basic/mining/mook/worker/bard	Destroy	code/modules/mob/living/basic/lavaland/mook/mook.dm:265	force	yes	full	proc
+type	/mob/living/basic/mining/mook/worker/tribal_chief	/mob/living/basic/mining/mook/worker	code/modules/mob/living/basic/lavaland/mook/mook.dm:270	live	mob_living_basic_mining_mook_worker_tribal_chief	1	0
+proc	/mob/living/basic/mining/mook/worker/tribal_chief	Initialize	code/modules/mob/living/basic/lavaland/mook/mook.dm:286	mapload	yes	full	proc
+proc	/mob/living/basic/mining/mook/worker/tribal_chief	update_overlays	code/modules/mob/living/basic/lavaland/mook/mook.dm:291		yes	full	proc
 type	/mob/living/basic/mining/tendril	/mob/living/basic/mining	code/modules/mob/living/basic/lavaland/tendril/tendril.dm:8	inert	mob_living_basic_mining_tendril	0	0
 proc	/mob/living/basic/mining/tendril	Initialize	code/modules/mob/living/basic/lavaland/tendril/tendril.dm:49	mapload	no	-	proc
 proc	/mob/living/basic/mining/tendril	Destroy	code/modules/mob/living/basic/lavaland/tendril/tendril.dm:89		no	-	proc
@@ -55104,51 +55104,51 @@ proc	/mob/living/basic/node_drone	update_icon_state	code/modules/mob/living/basi
 proc	/mob/living/basic/node_drone	arrive	code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:83	parent_vent	yes	full	proc root
 proc	/mob/living/basic/node_drone	escape	code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:96	success	yes	full	proc root
 proc	/mob/living/basic/node_drone	pre_escape	code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:115	success	yes	full	proc root
-type	/mob/living/basic/raptor	/mob/living/basic	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:11	inert	mob_living_basic_raptor	0	0
-proc	/mob/living/basic/raptor	Initialize	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:84	mapload,color_type,passed_stats	no	-	proc
-proc	/mob/living/basic/raptor	Destroy	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:131		no	-	proc
-proc	/mob/living/basic/raptor	death	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:136	gibbed	no	-	proc
-proc	/mob/living/basic/raptor	buckle_mob	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:140	target,force,check_loc,buckle_mob_flags	no	-	proc
-proc	/mob/living/basic/raptor	get_hud_x_offset	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:145		no	-	proc
-proc	/mob/living/basic/raptor	examine	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:148	user	no	-	proc
-proc	/mob/living/basic/raptor	Life	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:165	seconds_per_tick	no	-	proc
-proc	/mob/living/basic/raptor	early_melee_attack	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:176	target,modifiers,ignore_cooldown	no	-	proc
-proc	/mob/living/basic/raptor	melee_attack	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:189	target,modifiers,ignore_cooldown	no	-	proc
-proc	/mob/living/basic/raptor	add_breeding_component	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:196		no	-	proc root
-proc	/mob/living/basic/raptor	add_happiness_component	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:207		no	-	proc root
-proc	/mob/living/basic/raptor	happiness_change	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:220	percent_value	no	-	proc root
-proc	/mob/living/basic/raptor	projectile_hit	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:226	hitting_projectile,def_zone,piercing_hit,blocked	no	-	proc
-proc	/mob/living/basic/raptor	egg_inherit	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:233	baby_egg,partner	no	-	proc root
-proc	/mob/living/basic/raptor	get_child_color	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:257	partner	no	-	proc root
-proc	/mob/living/basic/raptor	update_holdability	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:290	bool	no	-	proc root
-proc	/mob/living/basic/raptor	on_picked_up	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:299	source,user,holder	no	-	proc root
-proc	/mob/living/basic/raptor	on_pre_eat	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:310	source,potential_food,effect_mult	no	-	proc root
-proc	/mob/living/basic/raptor	on_eat	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:321	source,food,feeder	no	-	proc root
-proc	/mob/living/basic/raptor	change_growth_stage	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:347	new_stage,prev_stage	no	-	proc root
-proc	/mob/living/basic/raptor	update_blackboard	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:451		no	-	proc root
-type	/mob/living/basic/raptor/red	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:484	inert	mob_living_basic_raptor_red	0	0
-type	/mob/living/basic/raptor/purple	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:488	inert	mob_living_basic_raptor_purple	0	0
-type	/mob/living/basic/raptor/green	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:492	inert	mob_living_basic_raptor_green	0	0
-type	/mob/living/basic/raptor/white	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:496	inert	mob_living_basic_raptor_white	0	0
-type	/mob/living/basic/raptor/black	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:500	inert	mob_living_basic_raptor_black	0	0
-type	/mob/living/basic/raptor/yellow	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:504	inert	mob_living_basic_raptor_yellow	0	0
-type	/mob/living/basic/raptor/blue	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:508	inert	mob_living_basic_raptor_blue	0	0
-type	/mob/living/basic/raptor/young	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:512	inert	mob_living_basic_raptor_young	0	0
-type	/mob/living/basic/raptor/young/red	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:515	inert	mob_living_basic_raptor_young_red	0	0
-type	/mob/living/basic/raptor/young/purple	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:519	inert	mob_living_basic_raptor_young_purple	0	0
-type	/mob/living/basic/raptor/young/green	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:523	inert	mob_living_basic_raptor_young_green	0	0
-type	/mob/living/basic/raptor/young/white	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:527	inert	mob_living_basic_raptor_young_white	0	0
-type	/mob/living/basic/raptor/young/black	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:531	inert	mob_living_basic_raptor_young_black	0	0
-type	/mob/living/basic/raptor/young/yellow	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:535	inert	mob_living_basic_raptor_young_yellow	0	0
-type	/mob/living/basic/raptor/young/blue	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:539	inert	mob_living_basic_raptor_young_blue	0	0
-type	/mob/living/basic/raptor/baby	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:543	inert	mob_living_basic_raptor_baby	0	0
-type	/mob/living/basic/raptor/baby/red	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:547	inert	mob_living_basic_raptor_baby_red	0	0
-type	/mob/living/basic/raptor/baby/purple	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:551	inert	mob_living_basic_raptor_baby_purple	0	0
-type	/mob/living/basic/raptor/baby/green	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:555	inert	mob_living_basic_raptor_baby_green	0	0
-type	/mob/living/basic/raptor/baby/white	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:559	inert	mob_living_basic_raptor_baby_white	0	0
-type	/mob/living/basic/raptor/baby/black	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:563	inert	mob_living_basic_raptor_baby_black	0	0
-type	/mob/living/basic/raptor/baby/yellow	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:567	inert	mob_living_basic_raptor_baby_yellow	0	0
-type	/mob/living/basic/raptor/baby/blue	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:571	inert	mob_living_basic_raptor_baby_blue	0	0
+type	/mob/living/basic/raptor	/mob/living/basic	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:11	live	mob_living_basic_raptor	1	0
+proc	/mob/living/basic/raptor	Initialize	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:84	mapload,color_type,passed_stats	yes	full	proc
+proc	/mob/living/basic/raptor	Destroy	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:131		yes	full	proc
+proc	/mob/living/basic/raptor	death	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:136	gibbed	yes	full	proc
+proc	/mob/living/basic/raptor	buckle_mob	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:140	target,force,check_loc,buckle_mob_flags	yes	full	proc
+proc	/mob/living/basic/raptor	get_hud_x_offset	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:145		yes	full	proc
+proc	/mob/living/basic/raptor	examine	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:148	user	yes	full	proc
+proc	/mob/living/basic/raptor	Life	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:165	seconds_per_tick	yes	full	proc
+proc	/mob/living/basic/raptor	early_melee_attack	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:176	target,modifiers,ignore_cooldown	yes	full	proc
+proc	/mob/living/basic/raptor	melee_attack	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:189	target,modifiers,ignore_cooldown	yes	full	proc
+proc	/mob/living/basic/raptor	add_breeding_component	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:196		yes	full	proc root
+proc	/mob/living/basic/raptor	add_happiness_component	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:207		yes	full	proc root
+proc	/mob/living/basic/raptor	happiness_change	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:220	percent_value	yes	full	proc root
+proc	/mob/living/basic/raptor	projectile_hit	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:226	hitting_projectile,def_zone,piercing_hit,blocked	yes	full	proc
+proc	/mob/living/basic/raptor	egg_inherit	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:233	baby_egg,partner	yes	full	proc root
+proc	/mob/living/basic/raptor	get_child_color	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:257	partner	yes	full	proc root
+proc	/mob/living/basic/raptor	update_holdability	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:290	bool	yes	full	proc root
+proc	/mob/living/basic/raptor	on_picked_up	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:299	source,user,holder	yes	full	proc root
+proc	/mob/living/basic/raptor	on_pre_eat	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:310	source,potential_food,effect_mult	yes	full	proc root
+proc	/mob/living/basic/raptor	on_eat	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:321	source,food,feeder	yes	full	proc root
+proc	/mob/living/basic/raptor	change_growth_stage	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:347	new_stage,prev_stage	yes	full	proc root
+proc	/mob/living/basic/raptor	update_blackboard	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:451		yes	full	proc root
+type	/mob/living/basic/raptor/red	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:484	live	mob_living_basic_raptor_red	0	0
+type	/mob/living/basic/raptor/purple	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:488	live	mob_living_basic_raptor_purple	0	0
+type	/mob/living/basic/raptor/green	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:492	live	mob_living_basic_raptor_green	0	0
+type	/mob/living/basic/raptor/white	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:496	live	mob_living_basic_raptor_white	0	0
+type	/mob/living/basic/raptor/black	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:500	live	mob_living_basic_raptor_black	0	0
+type	/mob/living/basic/raptor/yellow	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:504	live	mob_living_basic_raptor_yellow	0	0
+type	/mob/living/basic/raptor/blue	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:508	live	mob_living_basic_raptor_blue	0	0
+type	/mob/living/basic/raptor/young	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:512	live	mob_living_basic_raptor_young	0	0
+type	/mob/living/basic/raptor/young/red	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:515	live	mob_living_basic_raptor_young_red	0	0
+type	/mob/living/basic/raptor/young/purple	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:519	live	mob_living_basic_raptor_young_purple	0	0
+type	/mob/living/basic/raptor/young/green	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:523	live	mob_living_basic_raptor_young_green	0	0
+type	/mob/living/basic/raptor/young/white	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:527	live	mob_living_basic_raptor_young_white	0	0
+type	/mob/living/basic/raptor/young/black	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:531	live	mob_living_basic_raptor_young_black	0	0
+type	/mob/living/basic/raptor/young/yellow	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:535	live	mob_living_basic_raptor_young_yellow	0	0
+type	/mob/living/basic/raptor/young/blue	/mob/living/basic/raptor/young	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:539	live	mob_living_basic_raptor_young_blue	0	0
+type	/mob/living/basic/raptor/baby	/mob/living/basic/raptor	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:543	live	mob_living_basic_raptor_baby	0	0
+type	/mob/living/basic/raptor/baby/red	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:547	live	mob_living_basic_raptor_baby_red	0	0
+type	/mob/living/basic/raptor/baby/purple	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:551	live	mob_living_basic_raptor_baby_purple	0	0
+type	/mob/living/basic/raptor/baby/green	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:555	live	mob_living_basic_raptor_baby_green	0	0
+type	/mob/living/basic/raptor/baby/white	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:559	live	mob_living_basic_raptor_baby_white	0	0
+type	/mob/living/basic/raptor/baby/black	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:563	live	mob_living_basic_raptor_baby_black	0	0
+type	/mob/living/basic/raptor/baby/yellow	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:567	live	mob_living_basic_raptor_baby_yellow	0	0
+type	/mob/living/basic/raptor/baby/blue	/mob/living/basic/raptor/baby	code/modules/mob/living/basic/lavaland/raptor/_raptor.dm:571	live	mob_living_basic_raptor_baby_blue	0	0
 type	/mob/living/basic/mining_drone	/mob/living/basic	code/modules/mob/living/basic/minebots/minebot.dm:2	inert	mob_living_basic_mining_drone	0	0
 proc	/mob/living/basic/mining_drone	Initialize	code/modules/mob/living/basic/minebots/minebot.dm:64	mapload	no	-	proc
 proc	/mob/living/basic/mining_drone	set_combat_mode	code/modules/mob/living/basic/minebots/minebot.dm:93	new_mode,silent,force	no	-	proc
@@ -63360,8 +63360,8 @@ type	/obj/item/food/egg/gland	/obj/item/food/egg	code/modules/food_and_drinks/fo
 proc	/obj/item/food/egg/gland	Initialize	code/modules/food_and_drinks/food/egg.dm:60	mapload	yes	full	proc
 type	/obj/item/food/egg/blue	/obj/item/food/egg	code/modules/food_and_drinks/food/egg.dm:150	live	obj_item_food_egg_blue	0	0
 type	/obj/item/food/egg/green	/obj/item/food/egg	code/modules/food_and_drinks/food/egg.dm:154	live	obj_item_food_egg_green	0	0
-type	/obj/item/food/egg/green/grub_egg	/obj/item/food/egg/green	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:194	inert	obj_item_food_egg_green_grub_egg	0	0
-proc	/obj/item/food/egg/green/grub_egg	Initialize	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:198	mapload	no	-	proc
+type	/obj/item/food/egg/green/grub_egg	/obj/item/food/egg/green	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:194	live	obj_item_food_egg_green_grub_egg	1	0
+proc	/obj/item/food/egg/green/grub_egg	Initialize	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:198	mapload	yes	full	proc
 type	/obj/item/food/egg/mime	/obj/item/food/egg	code/modules/food_and_drinks/food/egg.dm:158	live	obj_item_food_egg_mime	0	0
 type	/obj/item/food/egg/orange	/obj/item/food/egg	code/modules/food_and_drinks/food/egg.dm:162	live	obj_item_food_egg_orange	0	0
 type	/obj/item/food/egg/purple	/obj/item/food/egg	code/modules/food_and_drinks/food/egg.dm:166	live	obj_item_food_egg_purple	0	0
@@ -63379,11 +63379,11 @@ proc	/obj/item/food/egg/watcher	examine	code/modules/mapfluff/ruins/lavalandruin
 proc	/obj/item/food/egg/watcher	examine_more	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:46	user	no	-	proc
 proc	/obj/item/food/egg/watcher	on_stepped	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:55	egg,mover,old_loc,direction	no	-	proc root
 proc	/obj/item/food/egg/watcher	jiggle	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:72		no	-	proc root
-type	/obj/item/food/egg/raptor_egg	/obj/item/food/egg	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:2	inert	obj_item_food_egg_raptor_egg	0	0
-proc	/obj/item/food/egg/raptor_egg	Initialize	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:18	mapload	no	-	proc
-proc	/obj/item/food/egg/raptor_egg	Destroy	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:23		no	-	proc
-proc	/obj/item/food/egg/raptor_egg	examine	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:28	user	no	-	proc
-proc	/obj/item/food/egg/raptor_egg	process	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:33	seconds_per_tick	no	-	proc
+type	/obj/item/food/egg/raptor_egg	/obj/item/food/egg	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:2	live	obj_item_food_egg_raptor_egg	1	0
+proc	/obj/item/food/egg/raptor_egg	Initialize	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:18	mapload	yes	full	proc
+proc	/obj/item/food/egg/raptor_egg	Destroy	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:23		yes	full	proc
+proc	/obj/item/food/egg/raptor_egg	examine	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:28	user	yes	full	proc
+proc	/obj/item/food/egg/raptor_egg	process	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:33	seconds_per_tick	yes	full	proc
 type	/obj/item/food/friedegg	/obj/item/food	code/modules/food_and_drinks/food/egg.dm:204	live	obj_item_food_friedegg	0	0
 type	/obj/item/food/friedegg/spore	/obj/item/food/friedegg	code/modules/food_and_drinks/food/egg.dm:406	live	obj_item_food_friedegg_spore	0	0
 type	/obj/item/food/rawegg	/obj/item/food	code/modules/food_and_drinks/food/egg.dm:220	live	obj_item_food_rawegg	1	0
@@ -73297,17 +73297,17 @@ proc	/obj/item/mob_holder/drone	update_visuals	code/modules/mob/living/inhand_ho
 type	/obj/item/mob_holder/destructible	/obj/item/mob_holder	code/modules/mob/living/inhand_holder.dm:139	inert	obj_item_mob_holder_destructible	0	0
 proc	/obj/item/mob_holder/destructible	Destroy	code/modules/mob/living/inhand_holder.dm:139		no	-	proc
 proc	/obj/item/mob_holder/destructible	release	code/modules/mob/living/inhand_holder.dm:144	display_messages,delete_mob	no	-	proc
-type	/obj/item/mob_holder/purple_raptor	/obj/item/mob_holder	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:161	inert	obj_item_mob_holder_purple_raptor	0	0
-proc	/obj/item/mob_holder/purple_raptor	Initialize	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:170	mapload,held_mob,worn_state,head_icon,lh_icon,rh_icon,worn_slot_flags	no	-	proc
-proc	/obj/item/mob_holder/purple_raptor	Destroy	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:202		no	-	proc
-proc	/obj/item/mob_holder/purple_raptor	equipped	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:208	user,slot,initial	no	-	proc
-proc	/obj/item/mob_holder/purple_raptor	dropped	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:215	user,silent	no	-	proc
-proc	/obj/item/mob_holder/purple_raptor	on_weight_updated	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:225	source	no	-	proc root
-proc	/obj/item/mob_holder/purple_raptor	can_fly	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:235	silent	no	-	proc root
-proc	/obj/item/mob_holder/purple_raptor	check_flight	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:252		no	-	proc root
-proc	/obj/item/mob_holder/purple_raptor	toggle_wings	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:255	user	no	-	proc root
-proc	/obj/item/mob_holder/purple_raptor	chasm_react	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:307	user,chasm	no	-	proc root
-proc	/obj/item/mob_holder/purple_raptor	process	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:317	seconds_per_tick	no	-	proc
+type	/obj/item/mob_holder/purple_raptor	/obj/item/mob_holder	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:161	live	obj_item_mob_holder_purple_raptor	1	0
+proc	/obj/item/mob_holder/purple_raptor	Initialize	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:170	mapload,held_mob,worn_state,head_icon,lh_icon,rh_icon,worn_slot_flags	yes	full	proc
+proc	/obj/item/mob_holder/purple_raptor	Destroy	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:202		yes	full	proc
+proc	/obj/item/mob_holder/purple_raptor	equipped	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:208	user,slot,initial	yes	full	proc
+proc	/obj/item/mob_holder/purple_raptor	dropped	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:215	user,silent	yes	full	proc
+proc	/obj/item/mob_holder/purple_raptor	on_weight_updated	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:225	source	yes	full	proc root
+proc	/obj/item/mob_holder/purple_raptor	can_fly	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:235	silent	yes	full	proc root
+proc	/obj/item/mob_holder/purple_raptor	check_flight	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:252		yes	full	proc root
+proc	/obj/item/mob_holder/purple_raptor	toggle_wings	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:255	user	yes	full	proc root
+proc	/obj/item/mob_holder/purple_raptor	chasm_react	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:307	user,chasm	yes	full	proc root
+proc	/obj/item/mob_holder/purple_raptor	process	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:317	seconds_per_tick	yes	full	proc
 type	/obj/item/mob_holder/snail	/obj/item/mob_holder	code/modules/mob/living/basic/snails/snail.dm:120	live	obj_item_mob_holder_snail	1	0
 proc	/obj/item/mob_holder/snail	interact_with_atom	code/modules/mob/living/basic/snails/snail.dm:120	interacting_with,user,modifiers	yes	full	proc
 type	/obj/item/bounty_cube	/obj/item	code/game/machinery/civilian_bounty/bounty_cube.dm:7	live	obj_item_bounty_cube	1	0
@@ -82093,10 +82093,10 @@ proc	/obj/item/crusher_trophy/raptor_feather	on_projectile_fire	code/modules/min
 type	/obj/item/crusher_trophy/miner_eye	/obj/item/crusher_trophy	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:7	inert	obj_item_crusher_trophy_miner_eye	0	0
 proc	/obj/item/crusher_trophy/miner_eye	effect_desc	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:13		no	-	proc
 proc	/obj/item/crusher_trophy/miner_eye	on_mark_detonation	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:16	target,user,pkc	no	-	proc
-type	/obj/item/crusher_trophy/tail_spike	/obj/item/crusher_trophy	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:22	inert	obj_item_crusher_trophy_tail_spike	0	0
-proc	/obj/item/crusher_trophy/tail_spike	effect_desc	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:27		no	-	proc
-proc	/obj/item/crusher_trophy/tail_spike	on_mark_detonation	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:30	target,user,pkc	no	-	proc
-proc	/obj/item/crusher_trophy/tail_spike	pushback	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:40	target,user	no	-	proc root
+type	/obj/item/crusher_trophy/tail_spike	/obj/item/crusher_trophy	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:22	live	obj_item_crusher_trophy_tail_spike	1	0
+proc	/obj/item/crusher_trophy/tail_spike	effect_desc	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:27		yes	full	proc
+proc	/obj/item/crusher_trophy/tail_spike	on_mark_detonation	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:30	target,user,pkc	yes	full	proc
+proc	/obj/item/crusher_trophy/tail_spike	pushback	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:40	target,user	yes	full	proc root
 type	/obj/item/crusher_trophy/demon_claws	/obj/item/crusher_trophy	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:46	inert	obj_item_crusher_trophy_demon_claws	0	0
 proc	/obj/item/crusher_trophy/demon_claws	effect_desc	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:55		no	-	proc
 proc	/obj/item/crusher_trophy/demon_claws	add_to	code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:58	pkc,user	no	-	proc
@@ -82293,12 +82293,12 @@ proc	/obj/item/ore_sensor	equipped	code/modules/mob/living/basic/lavaland/brimde
 proc	/obj/item/ore_sensor	dropped	code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:32	user,silent	yes	full	proc
 proc	/obj/item/ore_sensor	process	code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:36	seconds_per_tick	yes	full	proc
 type	/obj/item/goliath_saddle	/obj/item	code/modules/mob/living/basic/lavaland/goliath/goliath.dm:252	live	obj_item_goliath_saddle	0	0
-type	/obj/item/raptor_dex	/obj/item	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:2	inert	obj_item_raptor_dex	0	0
-proc	/obj/item/raptor_dex	Initialize	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:10	mapload	no	-	proc
-proc	/obj/item/raptor_dex	ui_interact	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:14	user,ui	no	-	proc
-proc	/obj/item/raptor_dex	ui_data	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:20	user	no	-	proc
-proc	/obj/item/raptor_dex	interact_with_atom	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:23	attacked_atom,user	no	-	proc
-proc	/obj/item/raptor_dex	add_item_context	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:72	source,context,target,user	no	-	proc
+type	/obj/item/raptor_dex	/obj/item	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:2	live	obj_item_raptor_dex	1	0
+proc	/obj/item/raptor_dex	Initialize	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:10	mapload	yes	full	proc
+proc	/obj/item/raptor_dex	ui_interact	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:14	user,ui	yes	full	proc
+proc	/obj/item/raptor_dex	ui_data	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:20	user	yes	full	proc
+proc	/obj/item/raptor_dex	interact_with_atom	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:23	attacked_atom,user	yes	full	proc
+proc	/obj/item/raptor_dex	add_item_context	code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:72	source,context,target,user	yes	full	proc
 type	/obj/item/minebot_remote_control	/obj/item	code/modules/mob/living/basic/minebots/minebot_remote_control.dm:3	inert	obj_item_minebot_remote_control	0	0
 proc	/obj/item/minebot_remote_control	Moved	code/modules/mob/living/basic/minebots/minebot_remote_control.dm:15	old_loc,movement_dir,forced,old_locs,momentum_change	no	-	proc
 proc	/obj/item/minebot_remote_control	clear_priming	code/modules/mob/living/basic/minebots/minebot_remote_control.dm:19		no	-	proc root
@@ -94801,9 +94801,9 @@ proc	/obj/effect/temp_visual/dust_animation_filter	Initialize	code/modules/mob/l
 type	/obj/effect/temp_visual/incoming_thing_acid	/obj/effect/temp_visual	code/modules/mob/living/basic/boss/thing/thing_objects.dm:90	inert	obj_effect_temp_visual_incoming_thing_acid	0	0
 proc	/obj/effect/temp_visual/incoming_thing_acid	Initialize	code/modules/mob/living/basic/boss/thing/thing_objects.dm:100	mapload	no	-	proc
 proc	/obj/effect/temp_visual/incoming_thing_acid	make_acid	code/modules/mob/living/basic/boss/thing/thing_objects.dm:105		no	-	proc root
-type	/obj/effect/temp_visual/slippery_ice	/obj/effect/temp_visual	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:62	inert	obj_effect_temp_visual_slippery_ice	0	0
-proc	/obj/effect/temp_visual/slippery_ice	Initialize	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:73	mapload	no	-	proc
-proc	/obj/effect/temp_visual/slippery_ice	add_slippery_component	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:79		no	-	proc root
+type	/obj/effect/temp_visual/slippery_ice	/obj/effect/temp_visual	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:62	live	obj_effect_temp_visual_slippery_ice	1	0
+proc	/obj/effect/temp_visual/slippery_ice	Initialize	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:73	mapload	yes	full	proc
+proc	/obj/effect/temp_visual/slippery_ice	add_slippery_component	code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:79		yes	full	proc root
 type	/obj/effect/temp_visual/leaper_projectile_impact	/obj/effect/temp_visual	code/modules/mob/living/basic/jungle/leaper/leaper_abilities.dm:40	inert	obj_effect_temp_visual_leaper_projectile_impact	0	0
 proc	/obj/effect/temp_visual/leaper_projectile_impact	Initialize	code/modules/mob/living/basic/jungle/leaper/leaper_abilities.dm:46	mapload	no	-	proc
 type	/obj/effect/temp_visual/blood_drop_rising	/obj/effect/temp_visual	code/modules/mob/living/basic/jungle/leaper/leaper_abilities.dm:156	inert	obj_effect_temp_visual_blood_drop_rising	0	0
@@ -94826,8 +94826,8 @@ proc	/obj/effect/temp_visual/legion_skull_land	set_appearance	code/modules/mob/l
 type	/obj/effect/temp_visual/legion_brood_indicator	/obj/effect/temp_visual	code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:107	live	obj_effect_temp_visual_legion_brood_indicator	1	0
 proc	/obj/effect/temp_visual/legion_brood_indicator	Initialize	code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:114	mapload	yes	full	proc
 type	/obj/effect/temp_visual/mook_dust	/obj/effect/temp_visual	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:134	live	obj_effect_temp_visual_mook_dust	0	0
-type	/obj/effect/temp_visual/mook_dust/small	/obj/effect/temp_visual/mook_dust	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:148	inert	obj_effect_temp_visual_mook_dust_small	0	0
-proc	/obj/effect/temp_visual/mook_dust/small	Initialize	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:148	mapload	no	-	proc
+type	/obj/effect/temp_visual/mook_dust/small	/obj/effect/temp_visual/mook_dust	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:148	live	obj_effect_temp_visual_mook_dust_small	1	0
+proc	/obj/effect/temp_visual/mook_dust/small	Initialize	code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:148	mapload	yes	full	proc
 type	/obj/effect/temp_visual/spike_stab	/obj/effect/temp_visual	code/modules/mob/living/basic/lavaland/tendril/tendril.dm:160	live	obj_effect_temp_visual_spike_stab	0	0
 type	/obj/effect/temp_visual/emerging_ground_spike	/obj/effect/temp_visual	code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:37	inert	obj_effect_temp_visual_emerging_ground_spike	0	0
 proc	/obj/effect/temp_visual/emerging_ground_spike	Initialize	code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:61	mapload	no	-	proc
@@ -95687,8 +95687,8 @@ type	/obj/effect/dummy/phased_mob/spell_jaunt	/obj/effect/dummy/phased_mob	code/
 proc	/obj/effect/dummy/phased_mob/spell_jaunt	phased_check	code/modules/spells/spell_types/jaunt/ethereal_jaunt.dm:217	user,direction	no	-	proc
 type	/obj/effect/dummy/phased_mob/spell_jaunt/space	/obj/effect/dummy/phased_mob/spell_jaunt	code/modules/antagonists/heretic/magic/space_crawl.dm:148	inert	obj_effect_dummy_phased_mob_spell_jaunt_space	0	0
 type	/obj/effect/dummy/phased_mob/spell_jaunt/red	/obj/effect/dummy/phased_mob/spell_jaunt	code/modules/spells/spell_types/jaunt/ethereal_jaunt.dm:230	inert	obj_effect_dummy_phased_mob_spell_jaunt_red	0	0
-type	/obj/effect/dummy/phased_mob/grub_burrow	/obj/effect/dummy/phased_mob	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:81	inert	obj_effect_dummy_phased_mob_grub_burrow	0	0
-proc	/obj/effect/dummy/phased_mob/grub_burrow	phased_check	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:81	user,direction	no	-	proc
+type	/obj/effect/dummy/phased_mob/grub_burrow	/obj/effect/dummy/phased_mob	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:81	live	obj_effect_dummy_phased_mob_grub_burrow	1	0
+proc	/obj/effect/dummy/phased_mob/grub_burrow	phased_check	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:81	user,direction	yes	full	proc
 type	/obj/effect/dummy/phased_mob/chrono	/obj/effect/dummy/phased_mob	code/modules/mod/modules/modules_timeline.dm:199	live	obj_effect_dummy_phased_mob_chrono	0	0
 type	/obj/effect/dummy/phased_mob/blood	/obj/effect/dummy/phased_mob	code/modules/spells/spell_types/jaunt/bloodcrawl.dm:383	live	obj_effect_dummy_phased_mob_blood	0	0
 type	/obj/effect/dummy/phased_mob/shadow	/obj/effect/dummy/phased_mob	code/modules/spells/spell_types/jaunt/shadow_walk.dm:55	live	obj_effect_dummy_phased_mob_shadow	1	0
@@ -103862,15 +103862,15 @@ proc	/obj/structure/ore_container	Exited	code/game/objects/structures/ore_contai
 proc	/obj/structure/ore_container	ui_interact	code/game/objects/structures/ore_containers.dm:18	user,ui	yes	full	proc
 proc	/obj/structure/ore_container	ui_data	code/game/objects/structures/ore_containers.dm:25	user	yes	full	proc
 proc	/obj/structure/ore_container	ui_act	code/game/objects/structures/ore_containers.dm:37	action,params,ui,state	yes	full	proc
-type	/obj/structure/ore_container/food_trough	/obj/structure/ore_container	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:2	inert	obj_structure_ore_container_food_trough	0	0
-proc	/obj/structure/ore_container/food_trough	Entered	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:11	mover	no	-	proc
-proc	/obj/structure/ore_container/food_trough	Exited	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:19	mover	no	-	proc
-proc	/obj/structure/ore_container/food_trough	atom_deconstruct	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:25	disassembled	no	-	proc
-proc	/obj/structure/ore_container/food_trough	update_overlays	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:28		no	-	proc
-type	/obj/structure/ore_container/food_trough/gutlunch_trough	/obj/structure/ore_container/food_trough	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:40	inert	obj_structure_ore_container_food_trough_gutlunch_trough	0	0
-type	/obj/structure/ore_container/food_trough/raptor_trough	/obj/structure/ore_container/food_trough	code/modules/mob/living/basic/lavaland/raptor/raptor_food_trough.dm:2	inert	obj_structure_ore_container_food_trough_raptor_trough	0	0
-type	/obj/structure/ore_container/material_stand	/obj/structure/ore_container	code/modules/mob/living/basic/lavaland/mook/mook_village.dm:3	inert	obj_structure_ore_container_material_stand	0	0
-proc	/obj/structure/ore_container/material_stand	update_overlays	code/modules/mob/living/basic/lavaland/mook/mook_village.dm:14		no	-	proc
+type	/obj/structure/ore_container/food_trough	/obj/structure/ore_container	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:2	live	obj_structure_ore_container_food_trough	1	0
+proc	/obj/structure/ore_container/food_trough	Entered	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:11	mover	yes	full	proc
+proc	/obj/structure/ore_container/food_trough	Exited	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:19	mover	yes	full	proc
+proc	/obj/structure/ore_container/food_trough	atom_deconstruct	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:25	disassembled	yes	full	proc
+proc	/obj/structure/ore_container/food_trough	update_overlays	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:28		yes	full	proc
+type	/obj/structure/ore_container/food_trough/gutlunch_trough	/obj/structure/ore_container/food_trough	code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:40	live	obj_structure_ore_container_food_trough_gutlunch_trough	0	0
+type	/obj/structure/ore_container/food_trough/raptor_trough	/obj/structure/ore_container/food_trough	code/modules/mob/living/basic/lavaland/raptor/raptor_food_trough.dm:2	live	obj_structure_ore_container_food_trough_raptor_trough	0	0
+type	/obj/structure/ore_container/material_stand	/obj/structure/ore_container	code/modules/mob/living/basic/lavaland/mook/mook_village.dm:3	live	obj_structure_ore_container_material_stand	1	0
+proc	/obj/structure/ore_container/material_stand	update_overlays	code/modules/mob/living/basic/lavaland/mook/mook_village.dm:14		yes	full	proc
 type	/obj/structure/outfit_wardrobe	/obj/structure	code/game/objects/structures/outfit_wardrobe.dm:5	live	obj_structure_outfit_wardrobe	1	0
 proc	/obj/structure/outfit_wardrobe	attack_hand	code/game/objects/structures/outfit_wardrobe.dm:30	user,modifiers	yes	full	proc
 type	/obj/structure/statue	/obj/structure	code/modules/art/statues.dm:6	live	obj_structure_statue	1	1

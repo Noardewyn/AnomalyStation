@@ -532,9 +532,9 @@ public partial class datum_element_chewable
 [DmPath("/datum/element/cleaning")]
 public partial class datum_element_cleaning { }
 
-// tg: code/datums/elements/clever_girl.dm:3
-[DmPath("/datum/element/clever_girl"), DmGeneratedOnly, DmInert]
-public partial class datum_element_clever_girl : datum_element { }
+// tg: code/datums/elements/clever_girl.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/clever_girl")]
+public partial class datum_element_clever_girl { }
 
 // tg: code/datums/elements/cliff_walker.dm:4 (the var block of a hand-written class)
 [DmPath("/datum/element/cliff_walking")]
@@ -1669,9 +1669,9 @@ public partial class datum_element_orbit_twitcher
     }
 }
 
-// tg: code/datums/elements/ore_collecting.dm:7
-[DmPath("/datum/element/ore_collecting"), DmGeneratedOnly, DmInert]
-public partial class datum_element_ore_collecting : datum_element { }
+// tg: code/datums/elements/ore_collecting.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/element/ore_collecting")]
+public partial class datum_element_ore_collecting { }
 
 // tg: code/datums/elements/organ_set_bonus.dm:7 (the vars the hand-written class does not declare)
 [DmPath("/datum/element/organ_set_bonus")]
@@ -1908,13 +1908,13 @@ public partial class datum_element_ranged_armour
     }
 }
 
-// tg: code/datums/elements/raptor_food.dm:3
-[DmPath("/datum/element/raptor_food"), DmGeneratedOnly, DmInert]
-public partial class datum_element_raptor_food : datum_element
+// tg: code/datums/elements/raptor_food.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/raptor_food")]
+public partial class datum_element_raptor_food
 {
     public object attack_modifier; // tg: code/datums/elements/raptor_food.dm:6
     public object health_modifier; // tg: code/datums/elements/raptor_food.dm:8
-    public Type speed_modifier; // tg: code/datums/elements/raptor_food.dm:10
+    public object speed_modifier; // tg: code/datums/elements/raptor_food.dm:10
     public object ability_modifier; // tg: code/datums/elements/raptor_food.dm:13
     public object growth_modifier; // tg: code/datums/elements/raptor_food.dm:16
     public DmList personality_traits; // tg: code/datums/elements/raptor_food.dm:18

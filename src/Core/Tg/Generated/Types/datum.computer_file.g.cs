@@ -898,9 +898,9 @@ public partial class datum_computer_file_program_radar_fission360
     }
 }
 
-// tg: code/modules/modular_computers/file_system/programs/raptordex.dm:2
-[DmPath("/datum/computer_file/program/raptordex"), DmGeneratedOnly, DmInert]
-public partial class datum_computer_file_program_raptordex : datum_computer_file_program
+// tg: code/modules/modular_computers/file_system/programs/raptordex.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/computer_file/program/raptordex")]
+public partial class datum_computer_file_program_raptordex
 {
     public DmList scan_data; // tg: code/modules/modular_computers/file_system/programs/raptordex.dm:12
 

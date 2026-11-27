@@ -11,7 +11,9 @@ namespace Anomaly.Core.Tests.Gaps;
 
 /// <summary>
 /// Lavaland's generated caves on the converted MetaStation: the biomes spawned the common fauna (goliaths, legions, watchers,
-/// brimdemons, lobstrosities, bileworms), each live and with its respawner, and none of them throws over some ticks of hunting.
+/// brimdemons, lobstrosities, bileworms, goldgrubs and the raptors' spawners), each live and with its respawner, and none of
+/// them throws over some ticks of hunting. The mining base keeps its raptor ranch: the chicks and younglings, their troughs
+/// and the RaptorDexes. (The ice moon is not loaded with MetaStation, so its mobs are covered by IceMoonMobTests alone.)
 /// </summary>
 public class LavalandFaunaMetaTests : IClassFixture<MetaWorldFixture>
 {
@@ -35,6 +37,7 @@ public class LavalandFaunaMetaTests : IClassFixture<MetaWorldFixture>
         "basic/lavaland/mining", "basic/lavaland/goliath", "basic/lavaland/watcher", "basic/lavaland/legion", "basic/lavaland/hivelord",
         "basic/lavaland/basilisk", "basic/lavaland/brimdemon", "basic/lavaland/bileworm", "basic/lavaland/lobstrosity", "basic/lavaland/node_drone",
         "monster_organs", "kinetic_crusher", "mining_mob_respawner", "mapgen/biomes",
+        "basic/lavaland/goldgrub", "basic/lavaland/gutlunchers", "basic/lavaland/raptor", "basic/lavaland/mook", "riding_minigame", "raptordex",
     };
 
     [MetaFact]
@@ -58,6 +61,17 @@ public class LavalandFaunaMetaTests : IClassFixture<MetaWorldFixture>
             Assert.Equal(0, fauna.Count(m => !InertSeam.IsInert(m) && m.ai_controller == null && m is not mob_living_basic_mining_legion_brood));
             Assert.NotEmpty(respawners);
             Assert.All(respawners, s => Assert.DoesNotContain(SPAWN_MEGAFAUNA, Dm.each<object>(s.valid_mobs)));
+
+            Assert.Contains(fauna, m => m is mob_living_basic_mining_goldgrub);
+            var raptors = Dm.each<mob_living_basic_raptor>().Where(m => m.z > 0).ToList();
+            _output.WriteLine($"Raptors: {raptors.Count} ({string.Join(", ", raptors.GroupBy(m => m.growth_stage).Select(g => g.Key + " " + g.Count()))})");
+            Assert.NotEmpty(raptors);
+            Assert.DoesNotContain(raptors, m => InertSeam.IsInert(m) || m.ai_controller == null || m.raptor_color is not datum_raptor_color);
+            // the mining base's ranch (Lavaland.dmm): three younglings and a chick, four troughs and three RaptorDexes
+            Assert.Contains(raptors, m => m.growth_stage == RAPTOR_YOUNG);
+            Assert.Contains(raptors, m => m.growth_stage == RAPTOR_BABY);
+            Assert.Equal(4, Dm.each<obj_structure_ore_container_food_trough_raptor_trough>().Count(t => t.z > 0 && !InertSeam.IsInert(t)));
+            Assert.Equal(3, Dm.each<obj_item_raptor_dex>().Count(d => get_turf(d) != null && !InertSeam.IsInert(d)));
         }
         Step(100);
         var runtimes = _meta.Log.Runtimes.Skip(runtimesBefore).Where(e =>

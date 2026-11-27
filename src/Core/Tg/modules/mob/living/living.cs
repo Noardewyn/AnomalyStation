@@ -94,11 +94,8 @@ public partial class mob_living : mob
         medhud.add_atom_to_hud(this);
         datum_atom_hud_data_diagnostic diag_hud = GLOB.huds[DATA_HUD_DIAGNOSTIC] as datum_atom_hud_data_diagnostic;
         diag_hud.add_atom_to_hud(this);
-        // tg: :15  add_ally(src)
-        // GAP(lead, game/atoms_movable.cs): /atom/movable/proc/add_ally is Dm.NotTranslated there (factions and allies, the mob
-        // AI); the mob's own ref in its allies list is read only by AI targeting (a later milestone). Restore the call when it
-        // is translated.
-        Dm.Deferred("code/modules/mob/living/living.dm:15", "Initialize: add_ally(src), the mob's own entry in its allies list (factions and the mob AI, a later milestone)");
+        // tg: :15
+        add_ally(this);
         if (!Dm.truthy(pull_force))
         {
             // GAP(lead): remove_verb (__HELPERS/verbs.dm) and /mob/living/verb/pulled are verbs, the player command layer (rules 7.10, M9-M10).

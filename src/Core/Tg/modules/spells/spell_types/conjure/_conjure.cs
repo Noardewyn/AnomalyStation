@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The conjure base; /limit_summons stays inert with its spells (section 113) (gaps package C6).
+// The conjure base (gaps package C6) and /limit_summons, which the ice demon's afterimages use.
 
 // tg: code/modules/spells/spell_types/conjure/_conjure.dm:2
 public partial class datum_action_cooldown_spell_conjure : datum_action_cooldown_spell
@@ -82,5 +82,37 @@ public partial class datum_action_cooldown_spell_conjure : datum_action_cooldown
     // tg: code/modules/spells/spell_types/conjure/_conjure.dm:68
     public virtual async DmTask post_summon(atom summoned_object = null, atom cast_on = null)
     {
+    }
+}
+
+///limits the amount of summons
+// tg: code/modules/spells/spell_types/conjure/_conjure.dm:72
+public partial class datum_action_cooldown_spell_conjure_limit_summons : datum_action_cooldown_spell_conjure
+{
+    // tg: code/modules/spells/spell_types/conjure/_conjure.dm:78
+    public override async DmTask<object> can_cast_spell(float? feedback = null)
+    {
+        feedback ??= TRUE;
+        object dot = await base.can_cast_spell(feedback);
+        if (!Dm.truthy(dot))
+            return FALSE;
+        if (number_of_summons >= Dm.num(max_summons))
+            return FALSE;
+        return TRUE;
+    }
+
+    // tg: code/modules/spells/spell_types/conjure/_conjure.dm:86
+    public override async DmTask post_summon(atom summoned_object = null, atom cast_on = null)
+    {
+        RegisterSignals(summoned_object, Dm.list(COMSIG_QDELETING, COMSIG_LIVING_DEATH), nameof(delete_copy));
+        number_of_summons++;
+    }
+
+    // tg: code/modules/spells/spell_types/conjure/_conjure.dm:90
+    [SignalHandler]
+    public virtual void delete_copy(datum source = null)
+    {
+        UnregisterSignal(source, Dm.list(COMSIG_QDELETING, COMSIG_LIVING_DEATH));
+        number_of_summons--;
     }
 }

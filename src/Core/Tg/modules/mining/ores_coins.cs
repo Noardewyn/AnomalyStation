@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Gaps J6 (D298): the ores and gibtonite (lines 1-408); gaps P4a (D327): the coins (:515-end), money with the economy. The ore redemption machine's
-// on_orm_collection is translated, unreached until the machine. The sand's storm_hating and the raptors' and golems' food are inert
-// components (Lavaland's). Gaps AS1: the rig on gibtonite (an assembly holder with an igniter, attached and wrenched off).
+// on_orm_collection is translated, unreached until the machine. The sand's storm_hating and the golems' food are inert
+// components (Lavaland's); the raptors' food came with the raptors. Gaps AS1: the rig on gibtonite (an assembly holder with an igniter, attached and wrenched off).
 
 // tg: code/modules/mining/ores_coins.dm:6
 public partial class obj_item_stack_ore : obj_item_stack
@@ -216,8 +216,7 @@ public partial class obj_item_stack_ore_diamond : obj_item_stack_ore
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/raptor_food, ...): the raptors' food (the raptors, not ported)
-        Dm.Deferred("code/modules/mining/ores_coins.dm:290", "Initialize: AddElement(/datum/element/raptor_food): the raptors' food (the raptors, not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), Dm.named("speed_modifier", 0.05f), Dm.named("health_modifier", -1), Dm.named("color_chances", string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_yellow), 3))))));
         return dot;
     }
 }

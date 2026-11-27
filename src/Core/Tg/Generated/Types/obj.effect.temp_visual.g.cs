@@ -3189,9 +3189,9 @@ public partial class obj_effect_temp_visual_incoming_thing_acid : obj_effect_tem
     }
 }
 
-// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:62
-[DmPath("/obj/effect/temp_visual/slippery_ice"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_slippery_ice : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:62 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/slippery_ice")]
+public partial class obj_effect_temp_visual_slippery_ice
 {
     public float phase_in_period = 20; // tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:71
 
@@ -3402,9 +3402,9 @@ public partial class obj_effect_temp_visual_mook_dust : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:148
-[DmPath("/obj/effect/temp_visual/mook_dust/small"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_mook_dust_small : obj_effect_temp_visual_mook_dust { }
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:148 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/mook_dust/small")]
+public partial class obj_effect_temp_visual_mook_dust_small { }
 
 // tg: code/modules/mob/living/basic/lavaland/tendril/tendril.dm:160
 [DmPath("/obj/effect/temp_visual/spike_stab"), DmGeneratedOnly]

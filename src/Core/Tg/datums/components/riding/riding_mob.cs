@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The riding creature base and the animals' variants (gaps package C4), the charger holoparasite's (syndicate X2), the cyborg's (silicons SI2): the human, mulebot and ruin creatures' variants wait with their hosts (a row).
-// The goliath's variant comes with the Lavaland fauna.
+// The goliath's, goldgrub's, raptors' and wolf's variants come with the Lavaland and ice moon fauna.
 
 // For any mob that can be ridden
 // tg: code/datums/components/riding/riding_mob.dm:3
@@ -67,8 +67,10 @@ public partial class datum_component_riding_creature : datum_component_riding
         mob_living ridden = parent as mob_living;
         if (!Dm.truthy(require_minigame) || Dm.truthy(ridden.has_ally(rider)))
             return;
-        // Only raptors set require_minigame (their minigame is not ported: a row).
-        Dm.Deferred("code/datums/components/riding/riding_mob.dm:237", "handle_buckle: the riding minigame (riding_minigame.dm), raptors only");
+        ridden.Shake(pixelshiftx: 1, pixelshifty: 0, duration: 1 * SECONDS);
+        ridden.spin(spintime: 1 * SECONDS, speed: 1);
+        ridden.balloon_alert(rider, "tries to shake you off!");
+        Dm.@new<datum_riding_minigame>(ridden, rider);
     }
 
     /// Creatures need to be logged when being mounted
@@ -578,5 +580,177 @@ public partial class datum_component_riding_creature_goliath : datum_component_r
             Dm.kv(TEXT_SOUTH, Dm.list(0f, 0f, MOB_ABOVE_PIGGYBACK_LAYER)),
             Dm.kv(TEXT_EAST, Dm.list(0f, 0f, MOB_BELOW_PIGGYBACK_LAYER)),
             Dm.kv(TEXT_WEST, Dm.list(0f, 0f, MOB_BELOW_PIGGYBACK_LAYER)));
+    }
+}
+
+// tg: code/datums/components/riding/riding_mob.dm:628
+public partial class datum_component_riding_creature_goldgrub : datum_component_riding_creature
+{
+    // tg: code/datums/components/riding/riding_mob.dm:630
+    [DmParams("riding_mob", "force", "ride_check_flags")]
+    public override async DmTask<object> Initialize(params object[] __extra)
+    {
+        object dot = await base.Initialize(__extra);
+        mob_living_basic_mining_goldgrub goldgrub = parent as mob_living_basic_mining_goldgrub;
+        await goldgrub.add_movespeed_modifier(typeof(datum_movespeed_modifier_goldgrub_mount));
+        RegisterSignal(goldgrub, COMSIG_PROFICIENT_MINER_MINED, nameof(on_mined));
+        return dot;
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:636
+    public override object Destroy(float? force = null)
+    {
+        mob_living_basic_mining_goldgrub goldgrub = parent as mob_living_basic_mining_goldgrub;
+        goldgrub?.remove_movespeed_modifier(typeof(datum_movespeed_modifier_goldgrub_mount));
+        return base.Destroy(force);
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:641
+    [SignalHandler]
+    public virtual void on_mined(datum source = null, turf rock = null, mob_living user = null)
+    {
+        // Reset movement cooldown once you've dug a tile
+        vehicle_move_cooldown = 0; // COOLDOWN_RESET(src, vehicle_move_cooldown)
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:646
+    public override DmList get_rider_offsets_and_layers(object pass_index = null, mob offsetter = null)
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(0f, 3f)),
+            Dm.kv(TEXT_SOUTH, Dm.list(1f, 7f)),
+            Dm.kv(TEXT_EAST, Dm.list(-3f, 3f)),
+            Dm.kv(TEXT_WEST, Dm.list(3f, 3f)));
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:654
+    public override DmList get_parent_offsets_and_layers()
+    {
+        return creature_parent_offsets();
+    }
+}
+
+// tg: code/datums/components/riding/riding_mob.dm:700
+public partial class datum_component_riding_creature_raptor : datum_component_riding_creature
+{
+    // tg: code/datums/components/riding/riding_mob.dm:704
+    [DmParams("riding_mob", "force", "ride_check_flags")]
+    public override async DmTask<object> Initialize(params object[] __extra)
+    {
+        object dot = await base.Initialize(__extra);
+        RegisterSignal(parent, COMSIG_PROJECTILE_PREHIT, nameof(on_bullet_hit));
+        RegisterSignal(parent, COMSIG_MOB_AFTER_APPLY_DAMAGE, nameof(on_attacked));
+        return dot;
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:709
+    [SignalHandler]
+    public virtual void on_bullet_hit(atom target = null, obj_projectile hit_projectile = null)
+    {
+        if (Dm.eq(hit_projectile.armor_flag, ENERGY))
+            freak_out();
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:715
+    [SignalHandler]
+    public virtual void on_attacked(mob_living source = null, object damage_dealt = null, object damagetype = null, object def_zone = null, object blocked = null, object wound_bonus = null, object exposed_wound_bonus = null, object sharpness = null, object attack_direction = null, obj_item attacking_item = null)
+    {
+        if (Dm.eq(damagetype, STAMINA))
+            freak_out();
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:721
+    public virtual void freak_out()
+    {
+        mob_living living_parent = parent as mob_living;
+        if (Dm.truthy(lavaland_equipment_pressure_check(get_turf(living_parent))) || Dm.length(living_parent.buckled_mobs) == 0)
+            return;
+        living_parent.balloon_alert_to_viewers("freaks out!");
+        living_parent.spin(spintime: 2 * SECONDS, speed: 1);
+        foreach (mob_living buckled_mob in Dm.each<mob_living>(living_parent.buckled_mobs))
+            force_dismount(buckled_mob, throw_range: 2, gentle: TRUE);
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:730
+    public override DmList get_rider_offsets_and_layers(object pass_index = null, mob offsetter = null)
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(-1f, 7f)),
+            Dm.kv(TEXT_SOUTH, Dm.list(2f, 10f)),
+            Dm.kv(TEXT_EAST, Dm.list(0f, 7f)),
+            Dm.kv(TEXT_WEST, Dm.list(0f, 7f)));
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:738
+    public override DmList get_parent_offsets_and_layers()
+    {
+        return creature_parent_offsets();
+    }
+}
+
+// tg: code/datums/components/riding/riding_mob.dm:747 (combat: ai_behavior_while_ridden only, a var)
+
+// tg: code/datums/components/riding/riding_mob.dm:750
+public partial class datum_component_riding_creature_raptor_healer : datum_component_riding_creature_raptor
+{
+    // tg: code/datums/components/riding/riding_mob.dm:749
+    public override void vehicle_mob_buckle(datum source = null, mob_living rider = null, object force = null)
+    {
+        RegisterSignal(rider, COMSIG_MOB_STATCHANGE, nameof(on_buckled_stat_change));
+        base.vehicle_mob_buckle(source, rider, force);
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:753
+    public override void vehicle_mob_unbuckle(datum source = null, mob_living former_rider = null, object force = null)
+    {
+        UnregisterSignal(former_rider, COMSIG_MOB_STATCHANGE);
+        base.vehicle_mob_unbuckle(source, former_rider, force);
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:757
+    [SignalHandler]
+    public virtual void on_buckled_stat_change(mob_living source = null, object new_stat = null, object old_stat = null)
+    {
+        mob_living_basic_raptor raptor = source.buckled as mob_living_basic_raptor;
+        if (raptor == null) // what
+        {
+            UnregisterSignal(source, COMSIG_MOB_STATCHANGE);
+            return;
+        }
+
+        datum_ai_controller controller = raptor.ai_controller as datum_ai_controller;
+        // Heal the owner and flee whatever might've attacked them
+        if (Dm.eq(new_stat, STABLE) || Dm.eq(new_stat, DEAD) || !Dm.eq(old_stat, STABLE) || controller == null)
+        {
+            ADD_TRAIT(raptor, TRAIT_AI_PAUSED, REF(this));
+            return;
+        }
+
+        REMOVE_TRAIT(raptor, TRAIT_AI_PAUSED, REF(this));
+        // Rip bozo, but you're not our friend
+        if (Dm.@in(source, controller.blackboard[BB_FRIENDS_LIST]))
+            controller.set_blackboard_key(BB_INJURED_RAPTOR, source);
+
+        foreach (mob_living possible_hostile in Dm.each<mob_living>(view(5, raptor)))
+        {
+            if (IS_UNCONSCIOUS_OR_CRIT(possible_hostile) || possible_hostile.invisibility > raptor.see_invisible || Dm.truthy(source.faction_check_atom(possible_hostile)))
+                continue;
+            controller.set_blackboard_key(BB_BASIC_MOB_FLEE_TARGET, possible_hostile);
+            break;
+        }
+    }
+}
+
+// tg: code/datums/components/riding/riding_mob.dm:781
+public partial class datum_component_riding_creature_raptor_small : datum_component_riding_creature_raptor
+{
+    // tg: code/datums/components/riding/riding_mob.dm:781
+    public override DmList get_rider_offsets_and_layers(object pass_index = null, mob offsetter = null)
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(-1f, 5f)),
+            Dm.kv(TEXT_SOUTH, Dm.list(2f, 8f)),
+            Dm.kv(TEXT_EAST, Dm.list(0f, 5f)),
+            Dm.kv(TEXT_WEST, Dm.list(0f, 5f)));
     }
 }

@@ -14,7 +14,7 @@ namespace Anomaly.Core.Tg;
 // chilly pepper, the ice moon's fonarstolbe, vahrezjia, podsneyzka, inozhakust and plasma flower, the drake beet), with their
 // picked sprite, regrowth and light (the fire blossom and the plasma flower dim, the glowgrowth goes dark), the cactus's spines;
 // the produce scattered where it drops and the shavings ground to mushroom powder. The seeds, the star cactus, the mushroom bowl
-// and its recipe were live (hydroponics, gaps P2). Left: the raptors' food element (raptors are not ported) and the glowgrowth's
+// and its recipe were live (hydroponics, gaps P2). The raptors' food element came with the raptors. Left: the glowgrowth's
 // emissive glow (DV12), not-translated.md section 220. The var blocks are generated (D111).
 
 // tg: code/modules/mining/lavaland/ash_flora.dm:4
@@ -307,7 +307,7 @@ public partial class obj_item_food_grown_ash_flora_cactus_fruit : obj_item_food_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/mining/lavaland/ash_flora.dm:429", "Initialize: AddElement(/datum/element/raptor_food, growth_modifier = 0.1, ability_modifier = -0.05), the raptors' taste for the fruit (the raptors are not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), Dm.named("growth_modifier", 0.1f), Dm.named("ability_modifier", -0.05f)));
         return dot;
     }
 }
@@ -319,7 +319,7 @@ public partial class obj_item_food_grown_ash_flora_seraka : obj_item_food_grown_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/mining/lavaland/ash_flora.dm:442", "Initialize: AddElement(/datum/element/raptor_food, ability_modifier = 0.1), the raptors' taste for seraka (the raptors are not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), Dm.named("ability_modifier", 0.1f)));
         return dot;
     }
 }
@@ -332,7 +332,7 @@ public partial class obj_item_food_grown_ash_flora_fireblossom : obj_item_food_g
     {
         object dot = base.Initialize(mapload, __extra);
         // Fire flowers make fireproof raptors
-        Dm.Deferred("code/modules/mining/lavaland/ash_flora.dm:457", "Initialize: AddElement(/datum/element/raptor_food, color_chances = string_list(list(/datum/raptor_color/blue = 5))), the fireproof raptors (the raptors are not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), Dm.named("color_chances", string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_blue), 5))))));
         return dot;
     }
 }
@@ -345,7 +345,7 @@ public partial class obj_item_food_grown_ash_flora_plasma_flower : obj_item_food
     {
         object dot = base.Initialize(mapload, __extra);
         // Fire flowers make fireproof raptors
-        Dm.Deferred("code/modules/mining/lavaland/ash_flora.dm:506", "Initialize: AddElement(/datum/element/raptor_food, color_chances = string_list(list(/datum/raptor_color/blue = 5))), the fireproof raptors (the raptors are not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), Dm.named("color_chances", string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_blue), 5))))));
         return dot;
     }
 }

@@ -12405,9 +12405,9 @@ public partial class datum_pet_command_breed
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:55
-[DmPath("/datum/pet_command/breed/gutlunch"), DmGeneratedOnly, DmInert]
-public partial class datum_pet_command_breed_gutlunch : datum_pet_command_breed { }
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:55 (the var block of a hand-written class)
+[DmPath("/datum/pet_command/breed/gutlunch")]
+public partial class datum_pet_command_breed_gutlunch { }
 
 // tg: code/datums/components/pet_commands/pet_commands_basic.dm:219 (the var block of a hand-written class)
 [DmPath("/datum/pet_command/use_ability")]
@@ -12756,9 +12756,9 @@ public partial class datum_pet_command_scatter
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:26
-[DmPath("/datum/pet_command/grub_spit"), DmGeneratedOnly, DmInert]
-public partial class datum_pet_command_grub_spit : datum_pet_command
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/pet_command/grub_spit")]
+public partial class datum_pet_command_grub_spit
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:26
     public datum_pet_command_grub_spit()
@@ -12777,9 +12777,9 @@ public partial class datum_pet_command_grub_spit : datum_pet_command
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:31
-[DmPath("/datum/pet_command/mine_walls"), DmGeneratedOnly, DmInert]
-public partial class datum_pet_command_mine_walls : datum_pet_command
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:31 (the var block of a hand-written class)
+[DmPath("/datum/pet_command/mine_walls")]
+public partial class datum_pet_command_mine_walls
 {
     // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:31
     public datum_pet_command_mine_walls()
@@ -12900,9 +12900,9 @@ public partial class datum_ductnet
     public DmList demanders; // tg: code/datums/components/plumbing/ductnet.dm:8
 }
 
-// tg: code/datums/components/riding/riding_minigame.dm:11
-[DmPath("/datum/riding_minigame"), DmGeneratedOnly, DmInert]
-public partial class datum_riding_minigame : datum
+// tg: code/datums/components/riding/riding_minigame.dm:11 (the var block of a hand-written class)
+[DmPath("/datum/riding_minigame")]
+public partial class datum_riding_minigame
 {
     public datum_weakref host; // tg: code/datums/components/riding/riding_minigame.dm:11
     public datum_weakref mounter; // tg: code/datums/components/riding/riding_minigame.dm:13
@@ -49239,18 +49239,18 @@ public partial class datum_guardian_fluff_carp : datum_guardian_fluff
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:4
-[DmPath("/datum/gutlunch_inherited_stats"), DmGeneratedOnly, DmInert]
-public partial class datum_gutlunch_inherited_stats : datum
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/gutlunch_inherited_stats")]
+public partial class datum_gutlunch_inherited_stats
 {
     public object attack; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:4
     public object speed; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:6
     public object health; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:8
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:11
-[DmPath("/datum/raptor_color"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color : datum
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:11 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color")]
+public partial class datum_raptor_color
 {
     public string color = "error"; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:11
     public string description = "Report this!"; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:13
@@ -49272,9 +49272,9 @@ public partial class datum_raptor_color : datum
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:84
-[DmPath("/datum/raptor_color/red"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_red : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:84 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/red")]
+public partial class datum_raptor_color_red
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:84
     public datum_raptor_color_red()
@@ -49297,9 +49297,9 @@ public partial class datum_raptor_color_red : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:104
-[DmPath("/datum/raptor_color/purple"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_purple : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:104 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/purple")]
+public partial class datum_raptor_color_purple
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:104
     public datum_raptor_color_purple()
@@ -49318,9 +49318,9 @@ public partial class datum_raptor_color_purple : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:347
-[DmPath("/datum/raptor_color/green"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_green : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:347 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/green")]
+public partial class datum_raptor_color_green
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:347
     public datum_raptor_color_green()
@@ -49338,9 +49338,9 @@ public partial class datum_raptor_color_green : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:366
-[DmPath("/datum/raptor_color/white"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_white : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:366 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/white")]
+public partial class datum_raptor_color_white
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:366
     public datum_raptor_color_white()
@@ -49359,7 +49359,7 @@ public partial class datum_raptor_color_white : datum_raptor_color
 }
 
 // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:412
-[DmPath("/datum/raptor_color/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/raptor_color/yellow"), DmGeneratedOnly]
 public partial class datum_raptor_color_yellow : datum_raptor_color
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:412
@@ -49378,9 +49378,9 @@ public partial class datum_raptor_color_yellow : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:422
-[DmPath("/datum/raptor_color/blue"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_blue : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:422 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/blue")]
+public partial class datum_raptor_color_blue
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:422
     public datum_raptor_color_blue()
@@ -49398,9 +49398,9 @@ public partial class datum_raptor_color_blue : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:435
-[DmPath("/datum/raptor_color/black"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_black : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:435 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/black")]
+public partial class datum_raptor_color_black
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:435
     public datum_raptor_color_black()
@@ -49418,9 +49418,9 @@ public partial class datum_raptor_color_black : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:3
-[DmPath("/datum/raptor_inheritance"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_inheritance : datum
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/raptor_inheritance")]
+public partial class datum_raptor_inheritance
 {
     public DmList personality_traits; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:3
     public float? attack_modifier = 0; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:5

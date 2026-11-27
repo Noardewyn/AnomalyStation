@@ -285,6 +285,8 @@ public static class TguiInterfaces
         ["GulagItemReclaimer"] = GulagItemReclaimer.Render, // gaps LC1
         ["GulagTeleporterConsole"] = GulagTeleporterConsole.Render, // gaps LC1
         ["PrisonerManagement"] = PrisonerManagement.Render, // gaps LC1
+        ["RaptorDex"] = RaptorDex.Render, // Lavaland's raptors
+        ["NtosRaptorDex"] = NtosRaptorDex.Render, // Lavaland's raptors
         ["SeedExtractor"] = SeedExtractor.Render, // gaps package P2
         ["MedicalKiosk"] = MedicalKiosk.Render, // gaps MD1
         ["Biogenerator"] = Biogenerator.Render, // gaps package P2

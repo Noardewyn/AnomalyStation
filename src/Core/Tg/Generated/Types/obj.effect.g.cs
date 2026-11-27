@@ -1727,9 +1727,9 @@ public partial class obj_effect_dummy_phased_mob_spell_jaunt_red : obj_effect_du
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:81
-[DmPath("/obj/effect/dummy/phased_mob/grub_burrow"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_dummy_phased_mob_grub_burrow : obj_effect_dummy_phased_mob { }
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:81 (the var block of a hand-written class)
+[DmPath("/obj/effect/dummy/phased_mob/grub_burrow")]
+public partial class obj_effect_dummy_phased_mob_grub_burrow { }
 
 // tg: code/modules/mod/modules/modules_timeline.dm:199
 [DmPath("/obj/effect/dummy/phased_mob/chrono"), DmGeneratedOnly]

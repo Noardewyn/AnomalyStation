@@ -6199,9 +6199,9 @@ public partial class obj_item_mob_holder_drone { }
 [DmPath("/obj/item/mob_holder/destructible"), DmGeneratedOnly, DmInert]
 public partial class obj_item_mob_holder_destructible : obj_item_mob_holder { }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:161
-[DmPath("/obj/item/mob_holder/purple_raptor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mob_holder_purple_raptor : obj_item_mob_holder
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:161 (the var block of a hand-written class)
+[DmPath("/obj/item/mob_holder/purple_raptor")]
+public partial class obj_item_mob_holder_purple_raptor
 {
     public datum_action_innate_raptor_wings flight_action; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:161
     public float wings_open = 0; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:164
@@ -39949,9 +39949,9 @@ public partial class obj_item_crusher_trophy_miner_eye : obj_item_crusher_trophy
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:22
-[DmPath("/obj/item/crusher_trophy/tail_spike"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_tail_spike : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/tail_spike")]
+public partial class obj_item_crusher_trophy_tail_spike
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:22
     public obj_item_crusher_trophy_tail_spike()
@@ -40857,9 +40857,9 @@ public partial class obj_item_goliath_saddle : obj_item
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:2
-[DmPath("/obj/item/raptor_dex"), DmGeneratedOnly, DmInert]
-public partial class obj_item_raptor_dex : obj_item
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/raptor_dex")]
+public partial class obj_item_raptor_dex
 {
     public DmList scan_data; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:8
 

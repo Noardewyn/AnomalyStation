@@ -58,7 +58,7 @@ public partial class obj_item_food_meat_slab_bugmeat : obj_item_food_meat_slab
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), 2f, null, string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_green), 2f)))));
+        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), Dm.named("health_modifier", 2f), Dm.named("color_chances", string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_green), 2f))))));
         return dot;
     }
 }
@@ -453,9 +453,7 @@ public partial class obj_item_food_meat_slab_goliath : obj_item_food_meat_slab
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // tg names attack_modifier, speed_modifier and color_chances; the raptor food element is inert (the raptors are not ported) and
-        // declares no argument names, so they go by position (raptor_food.dm:22)
-        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), 0.5f, null, -0.05f, null, null, null, string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_red), 5)))));
+        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), Dm.named("attack_modifier", 0.5f), Dm.named("speed_modifier", -0.05f), Dm.named("color_chances", string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_red), 5))))));
         return dot;
     }
 
@@ -515,8 +513,7 @@ public partial class obj_item_food_meat_steak_goliath : obj_item_food_meat_steak
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // by position, as the goliath slab's (raptor_food.dm:22: the element is inert)
-        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), 1, null, -0.075f, null, null, null, string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_red), 7)))));
+        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), Dm.named("attack_modifier", 1), Dm.named("speed_modifier", -0.075f), Dm.named("color_chances", string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_red), 7))))));
         return dot;
     }
 }

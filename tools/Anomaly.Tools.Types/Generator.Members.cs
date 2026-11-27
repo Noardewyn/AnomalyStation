@@ -210,6 +210,10 @@ internal sealed partial class Generator
         // The lobstrosity's charge is the charge ability Initialize makes from its charge_type (lobstrosity.dm:56); the name is a
         // typepath elsewhere in tg.
         "/mob/living/basic/mining/lobstrosity:charge",
+        // A raptor's colour is the colour's typepath in its subtypes until Initialize puts the colour singleton there
+        // (_raptor.dm:91); the raptor food element's speed modifier is a number. Both names are typepaths elsewhere in tg.
+        "/mob/living/basic/raptor:raptor_color",
+        "/datum/element/raptor_food:speed_modifier",
     };
 
     /// <summary>Typed vars that hold typepaths read from a list (rules 3.2, "typepaths read from a list": <c>Type</c>), which the V3

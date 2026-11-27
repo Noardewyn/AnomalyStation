@@ -5445,6 +5445,18 @@ public static partial class TypeOrder
 42271	sbronze airlock
 42274	salien airlock
 42275	spod airlock
+#base_pixel_w
+21194	f-8
+21324	f-20
+24248	f-8
+32628	f-16
+32654	f-16
+32659	f-16
+32670	f-18
+32680	f-16
+32684	f-16
+37331	f-64
+37332	f-32
 #baseturfs
 44052	y/turf/open/floor/plating
 44059	y/turf/open/floor/material/meat
@@ -9148,6 +9160,16 @@ public static partial class TypeOrder
 26768	f0
 26820	f0
 26849	f0
+#can_breed
+21020	f1
+21025	f0
+21051	f1
+21055	f0
+21179	f1
+21182	f0
+21324	f1
+21497	f1
+21498	f0
 #can_buckle
 20959	f1
 33831	f1
@@ -15606,6 +15628,8 @@ public static partial class TypeOrder
 31335	f20
 31336	f0
 31338	f0
+#could_be_held
+21324	f0
 #crafted_food_buff
 24417	n
 24802	y/datum/status_effect/food/trait/waddle
@@ -74787,6 +74811,83 @@ public static partial class TypeOrder
 23995	f0
 24027	f0
 24062	f25
+#mob_size
+20948	f1
+20950	f3
+20957	f3
+20976	f0
+20987	f1
+20992	f3
+21015	f1
+21017	f4
+21018	f1
+21025	f1
+21041	f1
+21051	f1
+21055	f1
+21064	f0
+21066	f1
+21068	f2
+21130	f4
+21131	f4
+21150	f3
+21184	f1
+21188	f2
+21194	f4
+21198	f4
+21205	f3
+21207	f3
+21213	f3
+21222	f3
+21235	f3
+21246	f3
+21256	f3
+21261	f1
+21265	f0
+21270	f0
+21272	f1
+21302	f0
+21305	f4
+21311	f4
+21318	f3
+21319	f3
+21320	f3
+21322	f1
+21323	f3
+21324	f3
+21357	f3
+21358	f4
+21362	f1
+21363	f4
+21365	f4
+21379	f0
+21381	f1
+21384	f1
+21388	f0
+21416	f3
+21418	f1
+21438	f0
+21439	f1
+21442	f3
+21446	f0
+21470	f0
+21484	f3
+21496	f1
+21497	f1
+21498	f1
+21499	f0
+21501	f0
+21502	f0
+21505	f1
+21511	f0
+21518	f1
+21522	f0
+21528	f0
+21529	f0
+21538	f1
+21543	f4
+21560	f3
+21563	f3
 #mob_throw_hit_sound
 29061	rsound/misc/moist_impact.ogg
 31835	rsound/items/weapons/pierce.ogg
@@ -114073,6 +114174,11 @@ public static partial class TypeOrder
 31798	f1
 32001	f1
 32191	f1
+#spawn_chance
+1503	f5
+6369	n
+19143	f33
+19150	f1
 #spawn_positions
 14531	f0
 14532	f3

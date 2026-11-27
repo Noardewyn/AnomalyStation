@@ -6603,9 +6603,9 @@ public partial class obj_item_food_egg_green : obj_item_food_egg
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:194
-[DmPath("/obj/item/food/egg/green/grub_egg"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_egg_green_grub_egg : obj_item_food_egg_green
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:194 (the var block of a hand-written class)
+[DmPath("/obj/item/food/egg/green/grub_egg")]
+public partial class obj_item_food_egg_green_grub_egg
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:194
     public obj_item_food_egg_green_grub_egg()
@@ -6738,9 +6738,9 @@ public partial class obj_item_food_egg_watcher : obj_item_food_egg
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:2
-[DmPath("/obj/item/food/egg/raptor_egg"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_egg_raptor_egg : obj_item_food_egg
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/food/egg/raptor_egg")]
+public partial class obj_item_food_egg_raptor_egg
 {
     public Type child_color = typeof(datum_raptor_color); // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:8
     public datum_raptor_inheritance inherited_stats; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:10

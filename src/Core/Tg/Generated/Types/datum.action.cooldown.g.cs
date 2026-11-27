@@ -435,9 +435,9 @@ public partial class datum_action_cooldown_mob_cooldown_defensive_mode : datum_a
     }
 }
 
-// tg: code/datums/actions/mobs/fire_breath.dm:2
-[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_fire_breath : datum_action_cooldown_mob_cooldown
+// tg: code/datums/actions/mobs/fire_breath.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath")]
+public partial class datum_action_cooldown_mob_cooldown_fire_breath
 {
     public float fire_range = 15; // tg: code/datums/actions/mobs/fire_breath.dm:8
     public object fire_sound = Dm.resource("sound/effects/magic/fireball.ogg"); // tg: code/datums/actions/mobs/fire_breath.dm:10
@@ -458,9 +458,9 @@ public partial class datum_action_cooldown_mob_cooldown_fire_breath : datum_acti
     }
 }
 
-// tg: code/datums/actions/mobs/fire_breath.dm:84
-[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/cone"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_fire_breath_cone : datum_action_cooldown_mob_cooldown_fire_breath
+// tg: code/datums/actions/mobs/fire_breath.dm:84 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/cone")]
+public partial class datum_action_cooldown_mob_cooldown_fire_breath_cone
 {
     public DmList angles; // tg: code/datums/actions/mobs/fire_breath.dm:87
 
@@ -479,9 +479,9 @@ public partial class datum_action_cooldown_mob_cooldown_fire_breath_cone : datum
     }
 }
 
-// tg: code/datums/actions/mobs/fire_breath.dm:96
-[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_fire_breath_mass_fire : datum_action_cooldown_mob_cooldown_fire_breath
+// tg: code/datums/actions/mobs/fire_breath.dm:96 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/mass_fire")]
+public partial class datum_action_cooldown_mob_cooldown_fire_breath_mass_fire
 {
     public float sectors = 12; // tg: code/datums/actions/mobs/fire_breath.dm:103
     public float breath_delay = 25; // tg: code/datums/actions/mobs/fire_breath.dm:105
@@ -499,9 +499,9 @@ public partial class datum_action_cooldown_mob_cooldown_fire_breath_mass_fire : 
     }
 }
 
-// tg: code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:3
-[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/ice"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_fire_breath_ice : datum_action_cooldown_mob_cooldown_fire_breath
+// tg: code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/ice")]
+public partial class datum_action_cooldown_mob_cooldown_fire_breath_ice
 {
     public float forecast_delay = 6; // tg: code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:13
     public turf target_turf; // tg: code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:15
@@ -523,9 +523,9 @@ public partial class datum_action_cooldown_mob_cooldown_fire_breath_ice : datum_
     }
 }
 
-// tg: code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:50
-[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption : datum_action_cooldown_mob_cooldown_fire_breath_ice
+// tg: code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:50 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption")]
+public partial class datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption
 {
     // tg: code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:50
     public datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption()
@@ -544,7 +544,7 @@ public partial class datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption
 }
 
 // tg: code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:81
-[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption/fire"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/mob_cooldown/fire_breath/ice/eruption/fire"), DmGeneratedOnly]
 public partial class datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption_fire : datum_action_cooldown_mob_cooldown_fire_breath_ice_eruption
 {
     // tg: code/modules/mob/living/basic/icemoon/ice_whelp/ice_whelp_abilities.dm:81
@@ -2195,9 +2195,9 @@ public partial class datum_action_cooldown_mob_cooldown_guardian_bluespace_beaco
     }
 }
 
-// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:11
-[DmPath("/datum/action/cooldown/mob_cooldown/ice_demon_teleport"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_ice_demon_teleport : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:11 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/ice_demon_teleport")]
+public partial class datum_action_cooldown_mob_cooldown_ice_demon_teleport
 {
     public float time_delay = 5; // tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:17
 
@@ -2212,9 +2212,9 @@ public partial class datum_action_cooldown_mob_cooldown_ice_demon_teleport : dat
     }
 }
 
-// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:33
-[DmPath("/datum/action/cooldown/mob_cooldown/slippery_ice_floors"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_slippery_ice_floors : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:33 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/slippery_ice_floors")]
+public partial class datum_action_cooldown_mob_cooldown_slippery_ice_floors
 {
     public float? radius = 1; // tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:40
     public float spread_duration = 2; // tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:42
@@ -2401,9 +2401,9 @@ public partial class datum_action_cooldown_mob_cooldown_brimbeam
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:2
-[DmPath("/datum/action/cooldown/mob_cooldown/spit_ore"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_spit_ore : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/spit_ore")]
+public partial class datum_action_cooldown_mob_cooldown_spit_ore
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:2
     public datum_action_cooldown_mob_cooldown_spit_ore()
@@ -2415,9 +2415,9 @@ public partial class datum_action_cooldown_mob_cooldown_spit_ore : datum_action_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:26
-[DmPath("/datum/action/cooldown/mob_cooldown/burrow"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_burrow : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/burrow")]
+public partial class datum_action_cooldown_mob_cooldown_burrow
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:26
     public datum_action_cooldown_mob_cooldown_burrow()
@@ -2541,16 +2541,16 @@ public partial class datum_action_cooldown_mob_cooldown_skull_launcher
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:3
-[DmPath("/datum/action/cooldown/mob_cooldown/mook_ability"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_mook_ability : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/mook_ability")]
+public partial class datum_action_cooldown_mob_cooldown_mook_ability
 {
     public float is_mook = 0; // tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:3
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:28
-[DmPath("/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_mook_ability_mook_leap : datum_action_cooldown_mob_cooldown_mook_ability
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:28 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/mook_ability/mook_leap")]
+public partial class datum_action_cooldown_mob_cooldown_mook_ability_mook_leap
 {
     public float wind_up_time = 20; // tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:33
     public float attack_interval = 4; // tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:35
@@ -2566,9 +2566,9 @@ public partial class datum_action_cooldown_mob_cooldown_mook_ability_mook_leap :
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:94
-[DmPath("/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_mook_ability_mook_jump : datum_action_cooldown_mob_cooldown_mook_ability
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:94 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/mook_ability/mook_jump")]
+public partial class datum_action_cooldown_mob_cooldown_mook_ability_mook_jump
 {
     // tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:94
     public datum_action_cooldown_mob_cooldown_mook_ability_mook_jump()
@@ -3462,17 +3462,17 @@ public partial class datum_action_cooldown_spell_conjure_cosmic_expansion : datu
     }
 }
 
-// tg: code/modules/spells/spell_types/conjure/_conjure.dm:74
-[DmPath("/datum/action/cooldown/spell/conjure/limit_summons"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_conjure_limit_summons : datum_action_cooldown_spell_conjure
+// tg: code/modules/spells/spell_types/conjure/_conjure.dm:74 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/conjure/limit_summons")]
+public partial class datum_action_cooldown_spell_conjure_limit_summons
 {
     public object max_summons; // tg: code/modules/spells/spell_types/conjure/_conjure.dm:74
     public float number_of_summons = 0; // tg: code/modules/spells/spell_types/conjure/_conjure.dm:76
 }
 
-// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:83
-[DmPath("/datum/action/cooldown/spell/conjure/limit_summons/create_afterimages"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_conjure_limit_summons_create_afterimages : datum_action_cooldown_spell_conjure_limit_summons
+// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:83 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/conjure/limit_summons/create_afterimages")]
+public partial class datum_action_cooldown_spell_conjure_limit_summons_create_afterimages
 {
     // tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:83
     public datum_action_cooldown_spell_conjure_limit_summons_create_afterimages()

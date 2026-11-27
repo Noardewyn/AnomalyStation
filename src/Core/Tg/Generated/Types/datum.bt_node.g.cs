@@ -1068,9 +1068,9 @@ public partial class datum_bt_node_ai_behavior_hunt_target_interact_with_target
     public float behavior_combat_mode = 1; // tg: code/datums/ai/generic_behaviors/hunt_target.dm:52
 }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:63
-[DmPath("/datum/bt_node/ai_behavior/hunt_target/interact_with_target/food_trough"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_hunt_target_interact_with_target_food_trough : datum_bt_node_ai_behavior_hunt_target_interact_with_target
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:63 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/hunt_target/interact_with_target/food_trough")]
+public partial class datum_bt_node_ai_behavior_hunt_target_interact_with_target_food_trough
 {
     // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:63
     public datum_bt_node_ai_behavior_hunt_target_interact_with_target_food_trough()
@@ -1279,9 +1279,9 @@ public partial class datum_bt_node_ai_behavior_find_mineral_wall
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:17
-[DmPath("/datum/bt_node/ai_behavior/find_mineral_wall/mook"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_find_mineral_wall_mook : datum_bt_node_ai_behavior_find_mineral_wall { }
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:17 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/find_mineral_wall/mook")]
+public partial class datum_bt_node_ai_behavior_find_mineral_wall_mook { }
 
 // tg: code/modules/mob/living/basic/minebots/minebot_ai.dm:33
 [DmPath("/datum/bt_node/ai_behavior/find_mineral_wall/minebot"), DmGeneratedOnly, DmInert]
@@ -2117,13 +2117,13 @@ public partial class datum_bt_node_ai_behavior_deer_play
     public string friend_key = "deer_playfriend"; // tg: code/modules/mob/living/basic/farm_animals/deer/deer_ai.dm:81
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:54
-[DmPath("/datum/bt_node/ai_behavior/dig_away_from_danger"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_dig_away_from_danger : datum_bt_node_ai_behavior { }
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:54 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/dig_away_from_danger")]
+public partial class datum_bt_node_ai_behavior_dig_away_from_danger { }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:85
-[DmPath("/datum/bt_node/ai_behavior/burrow_through_ground"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_burrow_through_ground : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:85 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/burrow_through_ground")]
+public partial class datum_bt_node_ai_behavior_burrow_through_ground
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:85
     public datum_bt_node_ai_behavior_burrow_through_ground()
@@ -2132,9 +2132,9 @@ public partial class datum_bt_node_ai_behavior_burrow_through_ground : datum_bt_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:117
-[DmPath("/datum/bt_node/ai_behavior/find_ore"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_find_ore : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:117 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/find_ore")]
+public partial class datum_bt_node_ai_behavior_find_ore
 {
     public float? range = 9; // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:118
 
@@ -2145,9 +2145,9 @@ public partial class datum_bt_node_ai_behavior_find_ore : datum_bt_node_ai_behav
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:137
-[DmPath("/datum/bt_node/ai_behavior/find_boulder"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_find_boulder : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:137 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/find_boulder")]
+public partial class datum_bt_node_ai_behavior_find_boulder
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:137
     public datum_bt_node_ai_behavior_find_boulder()
@@ -2156,9 +2156,9 @@ public partial class datum_bt_node_ai_behavior_find_boulder : datum_bt_node_ai_b
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:153
-[DmPath("/datum/bt_node/ai_behavior/find_ore_vent"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_find_ore_vent : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:153 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/find_ore_vent")]
+public partial class datum_bt_node_ai_behavior_find_ore_vent
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:153
     public datum_bt_node_ai_behavior_find_ore_vent()
@@ -2167,9 +2167,9 @@ public partial class datum_bt_node_ai_behavior_find_ore_vent : datum_bt_node_ai_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:178
-[DmPath("/datum/bt_node/ai_behavior/find_grub_egg"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_find_grub_egg : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:178 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/find_grub_egg")]
+public partial class datum_bt_node_ai_behavior_find_grub_egg
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:178
     public datum_bt_node_ai_behavior_find_grub_egg()
@@ -2178,9 +2178,9 @@ public partial class datum_bt_node_ai_behavior_find_grub_egg : datum_bt_node_ai_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:195
-[DmPath("/datum/bt_node/ai_behavior/grub_eat"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_grub_eat : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:195 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/grub_eat")]
+public partial class datum_bt_node_ai_behavior_grub_eat
 {
     public object target_key; // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:195
 
@@ -2218,9 +2218,9 @@ public partial class datum_bt_node_ai_behavior_goliath_dig
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:73
-[DmPath("/datum/bt_node/ai_behavior/befriend_ashwalkers"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_befriend_ashwalkers : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:73 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/befriend_ashwalkers")]
+public partial class datum_bt_node_ai_behavior_befriend_ashwalkers
 {
     // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:73
     public datum_bt_node_ai_behavior_befriend_ashwalkers()
@@ -2229,33 +2229,33 @@ public partial class datum_bt_node_ai_behavior_befriend_ashwalkers : datum_bt_no
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:89
-[DmPath("/datum/bt_node/ai_behavior/find_parent"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_find_parent : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:89 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/find_parent")]
+public partial class datum_bt_node_ai_behavior_find_parent
 {
     public object mom_types_key; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:89
     public object found_mom_key; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:90
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:5
-[DmPath("/datum/bt_node/ai_behavior/find_village"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_find_village : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/find_village")]
+public partial class datum_bt_node_ai_behavior_find_village
 {
     public string target_key = "home_village"; // tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:5
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:26
-[DmPath("/datum/bt_node/ai_behavior/calculate_wander_destination"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_calculate_wander_destination : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/calculate_wander_destination")]
+public partial class datum_bt_node_ai_behavior_calculate_wander_destination
 {
     public string anchor_key = "home_village"; // tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:26
     public string destination_key = "BB_wander_destination"; // tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:27
     public float wander_distance = 9; // tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:29
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:77
-[DmPath("/datum/bt_node/ai_behavior/find_deposit_position"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_find_deposit_position : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:77 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/find_deposit_position")]
+public partial class datum_bt_node_ai_behavior_find_deposit_position
 {
     public string stand_key = "material_stand_target"; // tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:77
     public string destination_key = "BB_deposit_position"; // tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:79
@@ -3108,9 +3108,9 @@ public partial class datum_bt_node_decorator_bileworm_should_resurface
     public string target_key = "Current Target"; // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_ai.dm:17
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:100
-[DmPath("/datum/bt_node/decorator/mook_has_flee_reason"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_decorator_mook_has_flee_reason : datum_bt_node_decorator { }
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_bt.dm:100 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/decorator/mook_has_flee_reason")]
+public partial class datum_bt_node_decorator_mook_has_flee_reason { }
 
 // tg: code/modules/mob/living/basic/pets/cat/cat_bt.dm:6 (the var block of a hand-written class)
 [DmPath("/datum/bt_node/decorator/cat_holding_food")]

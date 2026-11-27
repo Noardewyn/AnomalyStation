@@ -1495,9 +1495,9 @@ public partial class datum_action_innate_seek_prey : datum_action_innate
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:330
-[DmPath("/datum/action/innate/raptor_wings"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_raptor_wings : datum_action_innate
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:330 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/raptor_wings")]
+public partial class datum_action_innate_raptor_wings
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:330
     public datum_action_innate_raptor_wings()

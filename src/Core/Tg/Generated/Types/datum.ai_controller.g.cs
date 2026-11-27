@@ -1977,9 +1977,9 @@ public partial class datum_ai_controller_basic_controller_mook_support : datum_a
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:53
-[DmPath("/datum/ai_controller/basic_controller/mook/tribal_chief"), DmGeneratedOnly, DmInert]
-public partial class datum_ai_controller_basic_controller_mook_tribal_chief : datum_ai_controller_basic_controller_mook
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:53 (the var block of a hand-written class)
+[DmPath("/datum/ai_controller/basic_controller/mook/tribal_chief")]
+public partial class datum_ai_controller_basic_controller_mook_tribal_chief
 {
     // tg: code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:53
     public datum_ai_controller_basic_controller_mook_tribal_chief()
@@ -2015,9 +2015,9 @@ public partial class datum_ai_controller_basic_controller_node_drone : datum_ai_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:2
-[DmPath("/datum/ai_controller/basic_controller/raptor"), DmGeneratedOnly, DmInert]
-public partial class datum_ai_controller_basic_controller_raptor : datum_ai_controller_basic_controller
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/ai_controller/basic_controller/raptor")]
+public partial class datum_ai_controller_basic_controller_raptor
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:2
     public datum_ai_controller_basic_controller_raptor()
@@ -2035,7 +2035,7 @@ public partial class datum_ai_controller_basic_controller_raptor : datum_ai_cont
 }
 
 // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:23
-[DmPath("/datum/ai_controller/basic_controller/raptor/aggressive"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/ai_controller/basic_controller/raptor/aggressive"), DmGeneratedOnly]
 public partial class datum_ai_controller_basic_controller_raptor_aggressive : datum_ai_controller_basic_controller_raptor
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_ai_controller.dm:23

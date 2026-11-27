@@ -2021,9 +2021,9 @@ public partial class datum_storage_rped_compact : datum_storage_rped
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:323
-[DmPath("/datum/storage/raptor_storage"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_raptor_storage : datum_storage
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:323 (the var block of a hand-written class)
+[DmPath("/datum/storage/raptor_storage")]
+public partial class datum_storage_raptor_storage
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:323
     public datum_storage_raptor_storage()

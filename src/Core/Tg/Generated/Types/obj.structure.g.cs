@@ -7574,9 +7574,9 @@ public partial class obj_structure_noticeboard_staff : obj_structure_noticeboard
 [DmPath("/obj/structure/ore_container")]
 public partial class obj_structure_ore_container { }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:2
-[DmPath("/obj/structure/ore_container/food_trough"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_ore_container_food_trough : obj_structure_ore_container
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/ore_container/food_trough")]
+public partial class obj_structure_ore_container_food_trough
 {
     public DmList list_of_materials; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:5
     public DmList x_offsets; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:7
@@ -7600,7 +7600,7 @@ public partial class obj_structure_ore_container_food_trough : obj_structure_ore
 }
 
 // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:40
-[DmPath("/obj/structure/ore_container/food_trough/gutlunch_trough"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/ore_container/food_trough/gutlunch_trough"), DmGeneratedOnly]
 public partial class obj_structure_ore_container_food_trough_gutlunch_trough : obj_structure_ore_container_food_trough
 {
     // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:40
@@ -7622,7 +7622,7 @@ public partial class obj_structure_ore_container_food_trough_gutlunch_trough : o
 }
 
 // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_food_trough.dm:2
-[DmPath("/obj/structure/ore_container/food_trough/raptor_trough"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/ore_container/food_trough/raptor_trough"), DmGeneratedOnly]
 public partial class obj_structure_ore_container_food_trough_raptor_trough : obj_structure_ore_container_food_trough
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_food_trough.dm:2
@@ -7644,9 +7644,9 @@ public partial class obj_structure_ore_container_food_trough_raptor_trough : obj
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_village.dm:3
-[DmPath("/obj/structure/ore_container/material_stand"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_ore_container_material_stand : obj_structure_ore_container
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_village.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/structure/ore_container/material_stand")]
+public partial class obj_structure_ore_container_material_stand
 {
     // tg: code/modules/mob/living/basic/lavaland/mook/mook_village.dm:3
     public obj_structure_ore_container_material_stand()

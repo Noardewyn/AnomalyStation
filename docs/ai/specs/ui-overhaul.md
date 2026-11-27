@@ -51,6 +51,7 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `a951ee7` | Package 4, slice 4A: under Tab the chat column, the character with its worn slots, clicks on the sprite, the overlay closing on damage (client only; DV690; section 12) |
 | `4012739` | tg's own slot sprites on the hands, the bar and the worn slots (client only; section 16) |
 | `336a2929` | Merge of `origin/main` (release 1.15.0, upstream's protocol 98): this branch's wire changes are protocol 99, its deviations DV685 to DV690 (were DV599 to DV604); `RadialExtra.TurnOver` 10 and `Offer` 11 beside upstream's `StepIn` 9; signed off by the contributor 2026-11-27 |
+| `1e37154c` | First person: dragging oneself onto an object by looking down; DEVIATION markers and dated comments cleaned (client only; DV691; section 17) |
 
 The numbers in this table are today's. Commit messages carry the numbers of their time: this branch's wire changes
 were built as protocol 95, became 98 in the merge of release 1.14.0 and 99 in the merge of release 1.15.0; its
@@ -1782,3 +1783,20 @@ Settled design (client only; the server already takes the drop of the sender's o
 - Tab pressed, the view lost (a window, death, a stun that drops the body from view) or the right button pressed
   while holding: the drag is dropped and nothing is sent.
 - The Tab inventory's own sprite is not a drag source (section 12, slice 4B's added points).
+
+### Section 17 as built (2026-11-27, `1e37154c`)
+
+Played on a real server in first person, never pressing Tab: the own body onto a table, a rack (climb), a chair
+(sit), a bed (lie), a disposal bin (climb in), a table on the diagonal tile; one tile too far, the floor and a wall
+send nothing; a plain click on oneself still checks oneself and an item treats the part pressed; ten quick clicks
+are all sent; lying down, dying, the chat key, the emote wheel, the right button, Tab and leaving first person end
+the hold with nothing sent and the next clicks work; combat mode gives one attack; a held gun does not fire from
+the hold; handcuffed the climb still happens (tg's rule). Under Tab the drags from the own body in view and from
+the health doll onto a table still work. Not driven: throw mode aimed at oneself, a release on another object
+while buckled, a real loss of window focus, a body swap (unit tests only).
+
+For the contributor to tell the owner: D224 says the mouse drags things in cursor mode; this widens it to first
+person for the own body only (DV691). A click on oneself now lands when the button comes up.
+
+Note for testers: scripted clients share the one OS pointer, so cursor-mode drags must be driven one client at a
+time (a second scripted client moves the pointer under the first).

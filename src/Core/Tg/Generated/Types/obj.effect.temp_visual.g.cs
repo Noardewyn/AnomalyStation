@@ -57,9 +57,9 @@ public partial class obj_effect_temp_visual_dragon_swoop_bubblegum : obj_effect_
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:305
-[DmPath("/obj/effect/temp_visual/dragon_swoop/legionnaire"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dragon_swoop_legionnaire : obj_effect_temp_visual_dragon_swoop
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:305 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dragon_swoop/legionnaire")]
+public partial class obj_effect_temp_visual_dragon_swoop_legionnaire
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:305
     public obj_effect_temp_visual_dragon_swoop_legionnaire()
@@ -1370,9 +1370,9 @@ public partial class obj_effect_temp_visual_effect_trail_burrowed_tentacle
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:218
-[DmPath("/obj/effect/temp_visual/effect_trail/tendril_chaser"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_effect_trail_tendril_chaser : obj_effect_temp_visual_effect_trail
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:218 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/effect_trail/tendril_chaser")]
+public partial class obj_effect_temp_visual_effect_trail_tendril_chaser
 {
     public float area_spawn = 0; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:222
 
@@ -1386,7 +1386,7 @@ public partial class obj_effect_temp_visual_effect_trail_tendril_chaser : obj_ef
 }
 
 // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:225
-[DmPath("/obj/effect/temp_visual/effect_trail/tendril_chaser/wide_area"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/effect_trail/tendril_chaser/wide_area"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_effect_trail_tendril_chaser_wide_area : obj_effect_temp_visual_effect_trail_tendril_chaser
 {
     // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:225
@@ -2064,9 +2064,9 @@ public partial class obj_effect_temp_visual_bleed_explode : obj_effect_temp_visu
     }
 }
 
-// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:483
-[DmPath("/obj/effect/temp_visual/warp_cube"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_warp_cube : obj_effect_temp_visual
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:483 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/warp_cube")]
+public partial class obj_effect_temp_visual_warp_cube
 {
     public float outgoing = 1; // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:484
 
@@ -3042,9 +3042,9 @@ public partial class obj_effect_temp_visual_resonance_crush
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:3
-[DmPath("/obj/effect/temp_visual/dagger_slash"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dagger_slash : obj_effect_temp_visual
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dagger_slash")]
+public partial class obj_effect_temp_visual_dagger_slash
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:3
     public obj_effect_temp_visual_dagger_slash()
@@ -3093,13 +3093,13 @@ public partial class obj_effect_temp_visual_dagger_engraved : obj_effect_temp_vi
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:89
-[DmPath("/obj/effect/temp_visual/dagger_engraved/launch"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dagger_engraved_launch : obj_effect_temp_visual_dagger_engraved { }
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:89 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dagger_engraved/launch")]
+public partial class obj_effect_temp_visual_dagger_engraved_launch { }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:123
-[DmPath("/obj/effect/temp_visual/dagger_engraved/crystals"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dagger_engraved_crystals : obj_effect_temp_visual_dagger_engraved
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:123 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dagger_engraved/crystals")]
+public partial class obj_effect_temp_visual_dagger_engraved_crystals
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:123
     public obj_effect_temp_visual_dagger_engraved_crystals()
@@ -3109,9 +3109,9 @@ public partial class obj_effect_temp_visual_dagger_engraved_crystals : obj_effec
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:143
-[DmPath("/obj/effect/temp_visual/wisp_explosion"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_wisp_explosion : obj_effect_temp_visual
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:143 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/wisp_explosion")]
+public partial class obj_effect_temp_visual_wisp_explosion
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:143
     public obj_effect_temp_visual_wisp_explosion()
@@ -3126,9 +3126,9 @@ public partial class obj_effect_temp_visual_wisp_explosion : obj_effect_temp_vis
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:157
-[DmPath("/obj/effect/temp_visual/dagger_crystal"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dagger_crystal : obj_effect_temp_visual
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:157 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dagger_crystal")]
+public partial class obj_effect_temp_visual_dagger_crystal
 {
     public float applied_damage = 50; // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:164
 
@@ -3419,9 +3419,9 @@ public partial class obj_effect_temp_visual_spike_stab : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:37
-[DmPath("/obj/effect/temp_visual/emerging_ground_spike"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_emerging_ground_spike : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:37 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/emerging_ground_spike")]
+public partial class obj_effect_temp_visual_emerging_ground_spike
 {
     public float harm_delay = 3; // tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:43
     public float position_variance = 8; // tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:45
@@ -3447,9 +3447,9 @@ public partial class obj_effect_temp_visual_emerging_ground_spike : obj_effect_t
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:246
-[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_emerging_ground_spike_tendril : obj_effect_temp_visual_emerging_ground_spike
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:246 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril")]
+public partial class obj_effect_temp_visual_emerging_ground_spike_tendril
 {
     public float hit_loser = 0; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:256
     public float hit_entry = 3.5f; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:258
@@ -3474,7 +3474,7 @@ public partial class obj_effect_temp_visual_emerging_ground_spike_tendril : obj_
 }
 
 // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:280
-[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril/single"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril/single"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_emerging_ground_spike_tendril_single : obj_effect_temp_visual_emerging_ground_spike_tendril
 {
     // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:280
@@ -3488,9 +3488,9 @@ public partial class obj_effect_temp_visual_emerging_ground_spike_tendril_single
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:289
-[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril/chaser"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_emerging_ground_spike_tendril_chaser : obj_effect_temp_visual_emerging_ground_spike_tendril
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:289 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril/chaser")]
+public partial class obj_effect_temp_visual_emerging_ground_spike_tendril_chaser
 {
     public obj_effect_temp_visual_effect_trail_tendril_chaser spawner; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:289
 }
@@ -4107,9 +4107,9 @@ public partial class obj_effect_temp_visual_hierophant_blast_visual
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:403
-[DmPath("/obj/effect/temp_visual/elite_tumor_wall"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_elite_tumor_wall : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:403 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/elite_tumor_wall")]
+public partial class obj_effect_temp_visual_elite_tumor_wall
 {
     public datum_weakref activator_ref; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:416
     public datum_weakref ourelite_ref; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:417

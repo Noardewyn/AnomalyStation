@@ -4121,9 +4121,9 @@ public partial class atom_movable_screen_alert_unpossess_object : atom_movable_s
     }
 }
 
-// tg: code/datums/components/aura_healing.dm:158
-[DmPath("/atom/movable/screen/alert/aura_healing"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_aura_healing : atom_movable_screen_alert
+// tg: code/datums/components/aura_healing.dm:158 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/aura_healing")]
+public partial class atom_movable_screen_alert_aura_healing
 {
     // tg: code/datums/components/aura_healing.dm:158
     public atom_movable_screen_alert_aura_healing()

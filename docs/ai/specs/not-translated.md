@@ -2767,7 +2767,7 @@ inert:
 | `devices/taperecorder.dm` | the paperwork implant's tape recorder (inert with the recorders) | the paperwork implant | with the tape recorder | (inert) |
 | `research/anomaly/anomaly_core.dm` | the gravity anomaly core that upgrades a Herculean spine into an Atlas (the cores are inert research items; the spine's check is translated) | a core on a spine | research | (inert) |
 | `research/designs/medical_designs.dm:418-713` | the implants' research designs (data) with no techweb, protolathe or exosuit fabricator: on the station the implants come from the CMO's autosurgeon (the medical HUD), the cyber implants box, the medkits' and lockers' autosurgeons and admin spawns | printing an implant | research | (data) |
-| `mining_loot/cursed_katana.dm:9`, `chaplain/chaplain_vorpal_scythe.dm:9` | the cursed katana's and the vorpal scythe's arm shards (subtypes of the toolkit with procs of their own; inert with the katana and the null rod's scythe) | lavaland loot, the chaplain's menu | with their packages | (inert) |
+| `chaplain/chaplain_vorpal_scythe.dm:9` | the vorpal scythe's arm shard (a subtype of the toolkit with procs of its own; inert with the null rod's scythe; the cursed katana's shard is live since gaps LV5) | the chaplain's menu | with its package | (inert) |
 | the toolkits' `emag_act` | translated, unreachable: the emag is inert | an emag on a paperwork or toolset implant | the emag | `cyberimp/augments_arms.cs` |
 | `datums/elements/organ_set_bonus.dm` users | the infused organs' set bonuses (carp, goliath, gondola, rat are var-only and live; the organs that add them wait for the DNA infuser) | an infused organ | P3 | `datums/elements/organ_set_bonus.cs` |
 
@@ -3072,7 +3072,6 @@ Psychotic Brawling with the violent psychosis (`special.dm:244-267`) and the mar
 | `impure_medicine_reagents.dm:965-1010` | the Monkey Dust (the inverse bath salts, with the primal instincts trauma, live since gaps B1), the Jungle Arts' only source | a monkey on Monkey Dust | the impure reagents | (generated) |
 | `plasma_fist.dm:100`, `:109`, `:129` | the attacker's purple screen flash (`flash_color`, the client colours), the Apotheosis' plasmaman body (the species is not ported), the explosion's cause (the port's `explosion()` takes an atom, the art is a datum: the log names no cause) | the Plasma Fist; the Apotheosis | the client colours; the plasmaman | `plasma_fist.cs` |
 | `species_types/mushpeople.dm` | the mushroom people, who grow the odd mushroom (the Mushroom Punch's source) | a mushroom person | the species | (generated) |
-| `mining_loot/clothing.dm:94-140` | the concussive gauntlets (hunter boxing and the rock smash) | lavaland loot | the lavaland loot | (generated) |
 | `storage/toolboxes/weapons.dm:211-214`, `uplink_items/nukeops.dm:224` | the nuclear operatives' CQC equipment case (the gun cases are not ported): its uplink entry stays hidden | a nuclear operative's uplink | syndicate N2 | (generated) |
 | `costume.dm:509` | the gi's spray can recolouring (`gags_recolorable`) | a spray can on the gi | the recolouring | `under/costume.cs` |
 | `datums/martial/_martial.dm:308-311` | the table smash: translated, but nothing sends `COMSIG_LIVING_TABLE_SLAMMING` or `COMSIG_LIVING_TABLE_LIMB_SLAMMING` yet (the table slams) | a martial artist's table slam | the table slams | `_martial.cs` |
@@ -3469,7 +3468,6 @@ every mutation type (DV25 left it). The DNA infuser and its organ sets are their
 | `hulk.dm:97-251` | the hulk's tail swing (`check_swing`, `setup_swing`, `swing_loop`, `finish_swing`): based on Goonstation's wrestling swing, not taken (D80); declared with not-translated bodies and never registered | — | — (D80) | `datums/mutations/hulk.cs` |
 | `touch/_touch.dm:311` | the spicy handshake achievement (`Dm.Deferred` leaf) | a shock touch on a handshake | the achievements (M10) | `modules/spells/spell_types/touch/_touch.cs` |
 | `spiderwebs.dm:137-end`, `spider_abilities/web.dm:81-end` | the spiders' other webs and web abilities | the spiders | with the spiders | `game/objects/effects/spiderwebs.cs`, `.../spider_abilities/web.cs` |
-| `mining_loot/equipment.dm` but `:167-226` | Lavaland's mining loot (the void magnet's hole in reality is translated) | Lavaland's tendrils | with Lavaland's loot | `modules/mining/lavaland/mining_loot/equipment.cs` |
 | `quirks/negative_quirks/allergic.dm:25-end` | the medicine allergy quirk (only `GLOB.allergy_reagent_blacklist` is translated) | a quirk chosen | the quirks (M10) | `datums/quirks/negative_quirks/allergic.cs` |
 | `asset_cache/assets/genetics.dm` | the asset datum (the client draws the GIFs itself, DV44) | the console's window | — (DV44) | `game/machinery/computer/dna_console.cs` |
 
@@ -4030,7 +4028,7 @@ Translated whole: `structures/janitor.dm`, `suits/wetfloor.dm`, `vehicles/ridden
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `riding/riding_vehicle.dm:110-541` (but `:355-377`, the secway's, gaps SE1) | the other vehicles' riding (the ATV, scooters, skateboards and hoverboards, wheelchairs, the speedbike, the lavaboat and the dragon boat, the bone bike, the lasso's goliath, the stake...) | riding those vehicles | with the vehicles (`modules/vehicles`) | `datums/components/riding/riding_vehicle.cs` |
+| `riding/riding_vehicle.dm:110-541` (but `:355-377`, the secway's, gaps SE1, and `:143-171`, the lava and dragon boats', gaps LV5) | the other vehicles' riding (the ATV, scooters, skateboards and hoverboards, wheelchairs, the speedbike, the bone bike, the lasso's goliath, the stake...) | riding those vehicles | with the vehicles (`modules/vehicles`) | `datums/components/riding/riding_vehicle.cs` |
 | `janitor.dm:121`, `:125`, `:127` | the cart's examine lines' chat icons (`icon2html`): the 3D client's chat is text | examining a loaded cart | the chat icons | `game/objects/structures/janitor.cs` |
 
 
@@ -4361,7 +4359,7 @@ bedsheets and their bin, the syndicate crate's key and the tram plate stay live-
 | `billboard.dm:16`, `containers.dm:17` | the see-through fade of the billboards and the shipping containers for a top-down viewer behind them (DV499, `Dm.Deferred`) | a player behind a billboard or a container | never (the first-person view, DV499) | `game/objects/structures/billboard.cs`, `containers.cs` |
 | `life_candle.dm:36`, `:93` | the life candle's light middleman (its flame's flicker, `fire_flicker_middleman`) | a lit life candle | never (client lighting, D24), as the welder's and the lighter's | `game/objects/structures/life_candle.cs` |
 | `items.dm:1904`, `bodypart/*.dm` `animate_atom_living`; `staff.dm`, `wand.dm`, `wand_animate.dm`, `wand_rebel.dm` | an item's, a gun's and a bodypart's own `animate_atom_living` (a mimic of the item, the wands' and staffs' animation); a structure and a petrified statue come alive (`structures.dm:71`, `petrified_statue.dm:92`) | the staff of animation, the wands, a DNA meltdown's vomited organ | the wizard (antagonists) and the magic projectiles | (generated stubs, `datums/instability_meltdown.cs`) |
-| `structures/cannons/` (`cannon.dm`, `cannonballs.dm`, `mounted_guns/mounted_gun.dm`), `deployable_turret.dm`, `spawner.dm`, `icemoon/cave_entrance.dm`, `lavaland/geyser.dm` (but its plunger, live), `divine.dm`, `hivebot.dm` | the off-station structures: the pirates' cannons and their balls, the mounted guns (the pirates' and the Ice Box's), the deployable turrets, the mob spawners (Lavaland's and Ice Box's tendrils, the syndicate's and the ruins'), Ice Box's cave entrances, Lavaland's geysers (the plumbing pump's sources), the religion's sacrificial altar and sect structures, the hivebot beacon | the pirates, the ruins, Lavaland and Ice Box, the chaplain's sects | the antagonists, the ruins, Lavaland, the religions | (inert) |
+| `structures/cannons/` (`cannon.dm`, `cannonballs.dm`, `mounted_guns/mounted_gun.dm`), `deployable_turret.dm`, `spawner.dm:253-297` (the cult's eldritch gateway), `lavaland/geyser.dm` (but its plunger, live), `divine.dm`, `hivebot.dm` | the off-station structures: the pirates' cannons and their balls, the mounted guns (the pirates' and the Ice Box's), the deployable turrets, the cult's proteon gateway (the other mob spawners and Ice Box's cave entrances are live since gaps LV5), Lavaland's geysers (the plumbing pump's sources), the religion's sacrificial altar and sect structures, the hivebot beacon | the pirates, the ruins, Lavaland and Ice Box, the chaplain's sects | the antagonists, the ruins, Lavaland, the religions | (inert) |
 
 ## 214. The stacks' leftovers (gaps SK1, D333)
 
@@ -4581,7 +4579,7 @@ fitness (`calculate_fitness`, `compare_fitness`); Pwr Game (`drink_reagents.dm:6
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `granters/magic/barnyard.dm:24`, `blind.dm:16`, `charge.dm:17`, `fireball.dm:16`, `forcewall.dm:16`, `knock.dm:16`, `mindswap.dm:18`, `:33`, `summon_cheese.dm:23`, `summon_item.dm:16`; `_spell_granter.dm:63`, `:81` | the wizard's spellbooks (their recoils, the mindswap book's ending, the random books' picks): their spells are inert | a wizard's spellbook | with the wizard (an antagonist, D333) | (inert) |
+| `granters/magic/barnyard.dm:24`, `blind.dm:16`, `charge.dm:17`, `fireball.dm:16`, `forcewall.dm:16`, `knock.dm:16`, `mindswap.dm:18`, `:33`, `summon_cheese.dm:23`; `_spell_granter.dm:63`, `:81` | the wizard's spellbooks (their recoils, the mindswap book's ending, the random books' picks): their spells are inert | a wizard's spellbook | with the wizard (an antagonist, D333) | (inert) |
 | `playtime_reward_cloak.dm:9`, `:15` | the veteran cloak's game preference (`/datum/preference/toggle/playtime_reward_cloak`) | the game preferences | the preferences (owner-deferred, D333) | `modules/client/preferences/playtime_reward_cloak.cs` |
 | `acrobatics.dm:138-143` | the Spinesthetics chip's smoking head: the particle holder is made and placed as tg's, the client draws no BYOND particles (as the cigarettes' smoke) | a flip past the chip's charges | particles (M10+) | `generic_skillchips/acrobatics.cs` |
 | `swimming_tile.dm:96`, `:99`, `:152` | swimming's athletics (the stamina drain and the experience) | a swimmer | with the swimming element (not ported) | (not ported) |
@@ -4770,7 +4768,6 @@ moodless hugger is DV555. Left:
 | `jobs/job_types/chaplain/chaplain_vorpal_scythe.dm` | the vorpal scythe's moods (the sects', rites' and sparring moods came with gaps CH1) | a chaplain | the chapel (gaps CH1, D339) | (not translated) |
 | `machinery/computer/arcade/_arcade.dm`, `machinery/roulette_machine.dm`, `machinery/slotmachine.dm`, `game/turfs/open/water.dm:293-318` (the hot spring, inert) | the arcade cabinets', roulette's and slot machines' moods, the hot spring's | playing them; a hot spring | recreation (gaps RC1, D339) | (not translated) |
 | `components/aquarium.dm`, `fishing/fishing_minigame.dm`, `fishing/sources/_fish_source.dm`, `sources/subtypes/rifts.dm`, `fishing/fish/_fish.dm` | the fishing and aquarium moods (the fish petting and released events are live) | fishing | fishing (gaps FI1-3, D339) | (not translated) |
-| `mining_mobs/elites/pandora.dm` | Pandora's mood (the legion's, the tumour's and the regenerative core's are live since gaps LV2) | lavaland | the elites (gaps LV5, D353) | (not translated) |
 | `clothing/neck/pearl.dm`, `clothing/suits/reactive_armour.dm`, `status_effects/debuffs/choke.dm`, `elements/art.dm:70-86` (the commoner's art, inert) | the pearl necklace's, the reactive armour's, the choking's and the proletarian art's moods | wearing them; choking on food | with their systems | (not translated) |
 | `modules/mob/living/living.dm:2248` | the View Variables dropdown's "Add Mood Event" (VV is admin tooling; the admin procs it calls are translated) | an admin | the admin tools | `modules/mob/living/living.cs` |
 | `carbon/life.dm:322-391` | the smells' and the chemical euphoria's moods of a carbon breathing without a species' lungs (`check_breath` of carbons, section 1; the lungs give them to humans) | a monkey or alien breathing | with the carbon `check_breath` | `modules/mob/living/carbon/life.cs` |
@@ -5048,7 +5045,6 @@ removes stale parriers from the wrong list; the floor-loving element balloons on
 SSprocessing even when it started on the fast one. Left:
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `basic/lavaland/tendril/`, the necropolis, the elites | the tendrils the biomes place (inert: they spawn nothing and do not collapse) and the elites' tumor | Lavaland's caves | gaps LV5 (D353) | (inert) |
 | `crafting/melee_weapon.dm:351` (`crusher_trophy/brimdemon_fang`) | the brimdemon fang's recipe asks for brimdust and is left out with every recipe needing a reagent (section 11's `global_lists.dm:20` row) | the crafting menu | M8 (chemistry) | `__HELPERS/global_lists.cs` |
 | `mining_corpses.dm` | the golem, moth, plasmaman and skeleton species a legion-infested corpse may take are inert: the corpse keeps its species type with its inert procs | a legion's corpse | the species | `modules/mob_spawn/corpses/mining_corpses.cs` |
 | `explorer_gear.dm:203` | the bone armour's drake mesh on the chest (`equipment_bodypart_texture` is not ported) | the bone armour worn | M10+ | `modules/mining/equipment/explorer_gear.cs` |
@@ -5111,7 +5107,7 @@ after it appears; `clever_girl`'s `Detach` is declared on `/datum/element/cleani
 unregisters its door signal. Left:
 | `riding_minigame.dm:44-61`, `:112-137` | the riding minigame's arrows and hearts are `client.images` on the rider (`ABOVE_HUD_PLANE`), which the first-person client does not draw on one's own body (DV110), and its arrows name the world's directions while first-person movement is view-relative (D101): the minigame runs as tg's (a rider who steers the arrows' way tames the raptor, one who misses is thrown) but the rider sees neither the arrows nor the hearts | mounting a wild adult raptor | an owner decision: how first person shows the minigame (asked) | `datums/components/riding/riding_minigame.cs` |
 | `lavaland_surface_mookvillage.dmm`, `lavaland_surface_ash_walker1.dmm`, `lavaland_surface_shuttle_wreckage.dmm` | the ruins that place mooks with their village's stands and landmark, the ash walkers' gutlunchers and troughs, the wreckage's fauna: the mobs and structures are live, the ruins are not loaded | Lavaland's ruins | gaps LV6 | (not loaded) |
-| `datums/mapgen/Cavegens/IcemoonCaves.dm`, `game/objects/structures/icemoon/cave_entrance.dm`, `_maps/RandomRuins/IceRuins/` (the lodge, the abandoned homestead, the plasma facility, the frozen comms, outpost 31) | the ice moon's caves, its cave entrances and demonic portals (on the inert `/obj/structure/spawner`, the tendrils' base) and its ruins: the ice moon is not loaded with MetaStation, so its mobs spawn only where a live site places them | the ice moon | the ice moon's map (lavaland.md); the spawners with the tendrils (gaps LV5) | (not loaded) |
+| `datums/mapgen/Cavegens/IcemoonCaves.dm`, `_maps/RandomRuins/IceRuins/` (the lodge, the abandoned homestead, the plasma facility, the frozen comms, outpost 31) | the ice moon's caves, which place its cave entrances and demonic portals (live since gaps LV5), and its ruins: the ice moon is not loaded with MetaStation, so its mobs spawn only where a live site places them | the ice moon | the ice moon's map (lavaland.md) | (not loaded) |
 | `_maps/RandomRuins/SpaceRuins/abandonedzoo.dmm`, `dragoontomb.dmm`, `shuttles/emergency/emergency_ark.dmm`, `emergency_dep_sup.dmm` | the space ruins and the emergency shuttles that carry raptors, gutlunchers, polar bears or wolves | the space level, those shuttles | gaps SH1 | (not loaded) |
 | `ice_demon.dm:49` | the ice demon's 5% raw bluespace core stays an inert item | an ice demon's death | the anomaly cores (gaps OR1) | `basic/icemoon/ice_demon/ice_demon.cs` |
 | `polar_bear.dm:46` | the polar bear's swab (`swabable`, inert) | a swab | cytology (gaps XB1-2) | `basic/icemoon/polar_bear/polar_bear.cs` |
@@ -5154,9 +5150,6 @@ turf lists (two colossus bolts on one wall in a tick); a hotspot made on a wall 
 | `_megafauna.dm:69`, `boss.dm:44` | the see-through of a big mob (`seethrough_mob`: a client image trick for large sprites) stays inert | always | M10+ (the client) | (inert) |
 | `mining_loot/megafauna/ash_drake.dm:43`, `:53` | the drake armour's and helm's drake mesh on the body (`equipment_bodypart_texture`) | the drake armour worn | M10+ | `mining_loot/megafauna/ash_drake.cs` |
 | `mining_loot/megafauna/ash_drake.dm` (dragon's blood), `mining_loot/megafauna/wendigo.dm:16` | the dragon and polar bear shapeshifts (`spell/shapeshift/`) are granted inert; the skeleton species the blood may give is inert | drinking the blood | the wizard's spells, the species | (inert) |
-| `necropolis_chests.dm`, `mining_loot/` but the megafauna's, `cain_and_abel/` | the tendril and puzzle chests, the skeleton key and the colossus chest's Cain and Abel (inert); the legion's 20% tendril crate opens empty | a necropolis chest | gaps LV5 (D353) | `mining/lavaland/necropolis_chests.cs` |
-| `trophies_megafauna.dm` | the broodmother's tongue and the legionnaire's spine (the elites' trophies) | an elite's death | gaps LV5 (D353) | `kinetic_crusher/trophies_megafauna.cs` |
-| `simple_animal/hostile/mining_mobs/` | the `asteroid` base and the elites stand on the live base but stay inert | Lavaland's tumors | gaps LV5 (D353) | (inert) |
 | `simple_animal/hostile/ooze.dm` | the gelatinous and grape oozes (the only other legacy hostile mobs) stay inert | a vat growing | the cytology (vat growing) | (inert) |
 | `_maps/map_files/IceBoxStation`, the ice moon's ruins | the wendigo's, the frost miner's, the clockwork defender's and the Thing's arenas: the ice moon is not loaded, so they live only where something spawns them | the ice moon | the ice moon (not loaded) | (not loaded) |
 | `lavaland_surface_hierophant.dmm`, the blood-drunk miners' ruins | the hierophant's arena and the blood-drunk miners come with Lavaland's ruins | Lavaland's ruins | gaps LV6 (D355) | (not loaded) |
@@ -5224,3 +5217,39 @@ of a random sound. Left:
 | `religion_sects.dm:660` (`/datum/religion_sect/dreams/vv_edit_var`) | the admin's variable editor of the dream sect | an admin | admin tooling | (live-partial) |
 | `rites.dm:226` | the greed sect's custom vendor rite spawns `/obj/machinery/vending/custom/greed`, which stays inert | the greed sect's rite | the custom vendor's package | (inert) |
 | the chapel's 3D models | the altar of the gods in its sects' colours, the ritual totem, the ceremonial blade, the scrolls, the chaplain's revolver, the festival violin, the psyker head and brain, the soulstones, the shade (required-models.md) | always | the models | `godot/assets/models/models.json` |
+
+## 238. The tendrils, the necropolis and the elites (gaps LV5, D339, D353)
+Translated whole: the necropolis tendril (`basic/lavaland/tendril/`: the mob with its rooting, which clears the rock about it and
+turns the ash to necropolis floor, its heartbeat quickening with its wounds, its death into its chest with the floor going back; its
+lash, its chasers and their wide kind, its cross spikes and its stab with their telegraphs; its AI and tree were live), the base of
+its spikes (`meteor_heart/chasing_spikes.dm:36-91`, the emerging ground spike), `necropolis_chests.dm` whole (the tendril chest's
+skeleton-key lock and the mining loot table, the demonic chest, the puzzle chest, the skeleton key), `mining_loot/` but the
+megafauna's (`berserker.dm`, `clothing.dm`, `consumables.dm`, `cursed_katana.dm`, `equipment.dm`, `eye_of_god.dm`, `godslayer.dm`),
+`cain_and_abel/` whole, the elites (`simple_animal/hostile/mining_mobs/mining_mobs.dm`, `elites/` whole: the elite base with its
+attack actions, the pulsing tumor with its activation, ghost poll, arena walls, fight checks, the regenerative core's boost, its
+loss and win; the goliath broodmother, the herald with its mirror and cloak, the legionnaire with its head and bonfire, pandora with
+its hope; the tumor shard), the elites' crusher trophies (`trophies_megafauna.dm` is whole now), `structures/spawner.dm` but the
+cult's gateway (the monster nests: the base with its holotag, the syndicate, skeleton, clown and mining nests, the netherworld link,
+the sentient spawner) and `icemoon/cave_entrance.dm` whole (the ice moon's cave entrances and demonic portals, the collapsing
+portal's loot), `vehicles/lavaboat.dm` whole with the boats' riding (`riding_vehicle.dm:143-171`), the instant summons spell and its
+book (`spell_types/self/summonitem.dm`, `granters/magic/summon_item.dm`), the alien welder's refuelling (`weldingtool.dm:390`). With
+them: SSaura and the aura healing component with its alert, the combo attacks component, the berserk mode action, the Hippocratic
+oath (`buffs.dm`), the warp cube's flash (`temporary_visuals/miscellaneous.dm:482`), `cure_curse_of_babel`
+(`spells/spell_types/tower_of_babel.dm`), `unequip_everything` (`mob/inventory.dm:486`, a dusting that drops its items), and the shim's
+`matrix.Interpolate` (dm-conformance). The tendrils the cave generator
+and the biomes place are live, so is the legion's 20% tendril chest, and the necropolis chests now hold their loot. tg's tendril
+in this snapshot is a mob: it spawns no fauna (it calls the fauna about it to its aid, `call_reinforcements`, live since gaps LV2)
+and does not collapse into a chasm (the collapse is the ash walkers' nest's, gaps LV6); the ice moon's demonic portal is the
+spawner that collapses into a chest or a tumor. Kept as tg has them: the chaser ability deletes its trail's weak references, not
+the trails (`QDEL_LIST` on `WEAKREF`s), so its trails run on after a cross spike; the concussive gauntlets' bump passes no proximity,
+so only the punch mines; the aura healing's `self_heal` is never read; the broodmother calls `spawn_children` with no target, so its
+babies come without one. Left:
+| `tendril.dm:98` | the tendril score and the tendril exterminator achievement of the killers in view | a tendril's death | the achievements (D332, owner-deferred) | `basic/lavaland/tendril/tendril.cs` |
+| `tendril.dm:120` | the tendril's emissive and bloom overlays (DV12) | always | DV12 | `basic/lavaland/tendril/tendril.cs` |
+| `elites/elite.dm:34` | the elites' see-through (`seethrough_mob`, inert: a client image trick for large sprites, as the megafauna's) | always | M10+ (the client) | (inert) |
+| `spawners/random/mining_loot.dm:10`, `:37`, `necropolis_chests.dm:126` | the soul stone of the loot table and the puzzle chest (`soulstone/anybody/mining`, `antagonists/wizard/equipment/soulstone.dm`) is an inert item | a necropolis chest | the wizard and the cult (antagonist-only, D333) | (inert) |
+| `spawners/random/mining_loot.dm:36` | the demonic loot's wolf coat (`spell_types/shapeshift/wolf.dm`): its shapeshift is the wizard's spells' | a demonic chest | the wizard's spells | (inert) |
+| `necropolis_chests.dm:130` | the puzzle chest's prison cube (`lavalandruin_code/puzzle.dm:318`, inert) | the puzzle ruin's chest | gaps LV6 | (inert) |
+| `_maps/RandomRuins/LavaRuins/lavaland_surface_elite_tumor.dmm`, the necropolis ruins | the elite tumor's and the tendrils' ruins: the tumor and the mobs are live, the ruins are not loaded | Lavaland's ruins | gaps LV6 | (not loaded) |
+| `structures/spawner.dm:253-297` | the cult's eldritch gateway (the proteon spawner) | a cult rune | the cult (antagonist-only, D333) | (inert) |
+| the tendrils', elites' and loot's 3D models | the tendril, the nests, the tumor, the four elites, the boats and the loot keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |

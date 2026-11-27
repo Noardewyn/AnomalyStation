@@ -4762,9 +4762,9 @@ public partial class obj_item_clothing_head_hooded_cloakhood_drake
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/berserker.dm:51
-[DmPath("/obj/item/clothing/head/hooded/berserker"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_hooded_berserker : obj_item_clothing_head_hooded
+// tg: code/modules/mining/lavaland/mining_loot/berserker.dm:51 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/hooded/berserker")]
+public partial class obj_item_clothing_head_hooded_berserker
 {
     public float berserk_charge = 0; // tg: code/modules/mining/lavaland/mining_loot/berserker.dm:69
     public float berserk_active = 0; // tg: code/modules/mining/lavaland/mining_loot/berserker.dm:71

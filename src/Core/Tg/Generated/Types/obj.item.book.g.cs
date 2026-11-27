@@ -924,9 +924,9 @@ public partial class obj_item_book_granter_action_spell_summon_cheese : obj_item
     }
 }
 
-// tg: code/game/objects/items/granters/magic/summon_item.dm:2
-[DmPath("/obj/item/book/granter/action/spell/summonitem"), DmGeneratedOnly, DmInert]
-public partial class obj_item_book_granter_action_spell_summonitem : obj_item_book_granter_action_spell
+// tg: code/game/objects/items/granters/magic/summon_item.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/book/granter/action/spell/summonitem")]
+public partial class obj_item_book_granter_action_spell_summonitem
 {
     // tg: code/game/objects/items/granters/magic/summon_item.dm:2
     public obj_item_book_granter_action_spell_summonitem()

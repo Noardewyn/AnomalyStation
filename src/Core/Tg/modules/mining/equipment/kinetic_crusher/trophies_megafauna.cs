@@ -9,8 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: the megafauna's trophies; the elites' broodmother tongue and legionnaire spine come with the elites. The var blocks are
-// generated.
+// The whole file. The var blocks are generated.
 
 /*!
  * Contains crusher trophies you can obtain from megafauna
@@ -263,8 +262,96 @@ public partial class obj_item_crusher_trophy_wendigo_horn : obj_item_crusher_tro
     }
 }
 
+// Goliath Broodmother
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:192
+public partial class obj_item_crusher_trophy_broodmother_tongue : obj_item_crusher_trophy
+{
+    // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:203
+    public override string effect_desc()
+    {
+        return I18n.T("mark detonation to have a <b>[]%</b> chance to summon a patch of goliath tentacles at the target's location", bonus_value);
+    }
+
+    // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:206
+    public override async DmTask<object> on_mark_detonation(mob_living target = null, mob_living user = null, obj_item_kinetic_crusher pkc = null)
+    {
+        object dot = await base.on_mark_detonation(target, user, pkc);
+        if (prob(bonus_value) && target.stat != DEAD)
+            Dm.@new<obj_effect_goliath_tentacle_broodmother_patch>(get_turf(target), user);
+        return dot;
+    }
+
+    // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:211
+    public override async DmTask<object> attack_self(mob user = null, object modifiers = null, params object[] __extra)
+    {
+        if (!isliving(user))
+            return null;
+        mob_living living_user = user as mob_living;
+        if (Dm.num(use_time) > world.time)
+        {
+            to_chat(living_user, I18n.T("<b>The tongue looks dried out. You'll need to wait longer to use it again.</b>"));
+            return null;
+        }
+        else if (HAS_TRAIT(living_user, TRAIT_LAVA_IMMUNE))
+        {
+            to_chat(living_user, I18n.T("<b>You stare at the tongue. You don't think this is any use to you.</b>"));
+            return null;
+        }
+        ADD_TRAIT(living_user, TRAIT_LAVA_IMMUNE, type);
+        to_chat(living_user, I18n.T("<b>You squeeze the tongue, and some transluscent liquid shoots out all over you.</b>"));
+        _addtimer(TRAIT_CALLBACK_REMOVE(user, TRAIT_LAVA_IMMUNE, type), 10 * SECONDS, file: "code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm", line: 224);
+        use_time = world.time + 60 * SECONDS;
+        await DmTask.CompletedTask;
+        return null;
+    }
+}
+
+// Legionnaire
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:227
+public partial class obj_item_crusher_trophy_legionnaire_spine : obj_item_crusher_trophy
+{
+    // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:238
+    public override string effect_desc()
+    {
+        return I18n.T("mark detonation to have a <b>[]%</b> chance to summon a loyal legion skull", bonus_value);
+    }
+
+    // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:241
+    public override async DmTask<object> on_mark_detonation(mob_living target = null, mob_living user = null, obj_item_kinetic_crusher pkc = null)
+    {
+        object dot = await base.on_mark_detonation(target, user, pkc);
+        if (!prob(bonus_value) || target.stat == DEAD)
+            return dot;
+        mob_living_basic_mining_legion_brood minion = Dm.@new<mob_living_basic_mining_legion_brood>(user.loc);
+        minion.assign_creator(user);
+        (minion.ai_controller as datum_ai_controller).set_blackboard_key(BB_CURRENT_TARGET, target);
+        return dot;
+    }
+
+    // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:249
+    public override async DmTask<object> attack_self(mob user = null, object modifiers = null, params object[] __extra)
+    {
+        if (!isliving(user))
+            return null;
+        mob_living LivingUser = user as mob_living;
+        if (Dm.num(next_use_time) > world.time)
+        {
+            LivingUser.visible_message(span_warning(I18n.T("[] shakes the [], but nothing happens...", LivingUser, this)));
+            to_chat(LivingUser, I18n.T("<b>You need to wait longer to use this again.</b>"));
+            return null;
+        }
+        LivingUser.visible_message(span_boldwarning(I18n.T("[] shakes the [] and summons a legion skull!", LivingUser, this)));
+
+        mob_living_basic_mining_legion_brood minion = Dm.@new<mob_living_basic_mining_legion_brood>(LivingUser.loc);
+        minion.assign_creator(LivingUser);
+        next_use_time = world.time + 4 * SECONDS;
+        await DmTask.CompletedTask;
+        return null;
+    }
+}
+
 //The Thing
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:265
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:264
 public partial class obj_item_crusher_trophy_flesh_glob : obj_item_crusher_trophy
 {
     /// the order in which we heal damage

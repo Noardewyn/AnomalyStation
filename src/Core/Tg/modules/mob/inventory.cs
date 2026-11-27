@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // Translated whole for M4a (P2) but the procs that stay for their milestones (change_number_of_hands M10, the wizard's extra
 // hands; the
 // stripping and gibbing helpers gather_belongings, drop_everything, get_all_cells: M9, M6; get_all_gear came with
-// the gaps package G1's loot panel, unequip_everything with the chapel's soulstone) and the stack merge of put_in_hands (stacks, M5).
+// the gaps package G1's loot panel, unequip_everything with the chapel's soulstone and the memento mori's dusting) and the stack merge of put_in_hands (stacks, M5).
 
 // tg: code/modules/mob/inventory.dm:5
 public partial class mob : atom_movable

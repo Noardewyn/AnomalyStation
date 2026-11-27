@@ -1641,9 +1641,9 @@ public partial class obj_item_clothing_gloves_butchering : obj_item_clothing_glo
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:95
-[DmPath("/obj/item/clothing/gloves/gauntlets"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_gloves_gauntlets : obj_item_clothing_gloves
+// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:95 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/gloves/gauntlets")]
+public partial class obj_item_clothing_gloves_gauntlets
 {
     // tg: code/modules/mining/lavaland/mining_loot/clothing.dm:95
     public obj_item_clothing_gloves_gauntlets()

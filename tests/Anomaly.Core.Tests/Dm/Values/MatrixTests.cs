@@ -87,4 +87,25 @@ public class MatrixTests
         V.Error(() => Dm.add(m, 1f));
         V.Error(() => Dm.div(m, (object)0f));
     }
+
+    [Fact]
+    public void InterpolateDecomposesBothMatricesAndBlendsTheirScaleRotationAndTranslation()
+    {
+        // BYOND ref /matrix/proc/Interpolate: "the matrices are decomposed into scale, rotation and translation" and blended
+        // apart; a new matrix is returned and src is left alone.
+        matrix from = Dm.matrix();
+        matrix halfTurned = from.Interpolate(Dm.matrix(90, Dm.MATRIX_ROTATE), 0.5f);
+        Components(halfTurned, Dm.matrix(45, Dm.MATRIX_ROTATE).a, Dm.matrix(45, Dm.MATRIX_ROTATE).b, 0, Dm.matrix(45, Dm.MATRIX_ROTATE).d, Dm.matrix(45, Dm.MATRIX_ROTATE).e, 0);
+        Components(from, 1, 0, 0, 0, 1, 0);
+        Components(Dm.matrix(1, Dm.MATRIX_SCALE).Interpolate(Dm.matrix(3, 5, Dm.MATRIX_SCALE), 0.5f), 2, 0, 0, 0, 3, 0);
+        Components(Dm.matrix().Interpolate(Dm.matrix(4, -8, Dm.MATRIX_TRANSLATE), 0.25f), 1, 0, 1, 0, 1, -2);
+        // the ends are the matrices themselves
+        matrix scaledTurned = Dm.matrix(2, Dm.MATRIX_SCALE).Turn(30);
+        matrix end = Dm.matrix().Interpolate(scaledTurned, 1);
+        Components(end, scaledTurned.a, scaledTurned.b, scaledTurned.c, scaledTurned.d, scaledTurned.e, scaledTurned.f);
+        // the rotation goes the short way round: from 170 to -170 through 180, not through 0
+        matrix across = Dm.matrix(170, Dm.MATRIX_ROTATE).Interpolate(Dm.matrix(-170, Dm.MATRIX_ROTATE), 0.5f);
+        Components(across, -1, 0, 0, 0, -1, 0);
+        V.Error(() => Dm.matrix().Interpolate(null, 0.5f));
+    }
 }

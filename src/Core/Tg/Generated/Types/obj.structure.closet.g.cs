@@ -2020,9 +2020,9 @@ public partial class obj_structure_closet_crate_necropolis : obj_structure_close
     }
 }
 
-// tg: code/modules/mining/lavaland/necropolis_chests.dm:14
-[DmPath("/obj/structure/closet/crate/necropolis/tendril"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_necropolis_tendril : obj_structure_closet_crate_necropolis
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:14 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/necropolis/tendril")]
+public partial class obj_structure_closet_crate_necropolis_tendril
 {
     public float spawned_loot = 0; // tg: code/modules/mining/lavaland/necropolis_chests.dm:17
     public Type loot_to_spawn = typeof(obj_effect_spawner_random_mining_loot); // tg: code/modules/mining/lavaland/necropolis_chests.dm:19
@@ -2036,7 +2036,7 @@ public partial class obj_structure_closet_crate_necropolis_tendril : obj_structu
 }
 
 // tg: code/modules/mining/lavaland/necropolis_chests.dm:45
-[DmPath("/obj/structure/closet/crate/necropolis/tendril/demonic"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/closet/crate/necropolis/tendril/demonic"), DmGeneratedOnly]
 public partial class obj_structure_closet_crate_necropolis_tendril_demonic : obj_structure_closet_crate_necropolis_tendril
 {
     // tg: code/modules/mining/lavaland/necropolis_chests.dm:45
@@ -2119,9 +2119,9 @@ public partial class obj_structure_closet_crate_necropolis_colossus_crusher
     }
 }
 
-// tg: code/modules/mining/lavaland/necropolis_chests.dm:120
-[DmPath("/obj/structure/closet/crate/necropolis/puzzle"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_necropolis_puzzle : obj_structure_closet_crate_necropolis
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:120 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/necropolis/puzzle")]
+public partial class obj_structure_closet_crate_necropolis_puzzle
 {
     // tg: code/modules/mining/lavaland/necropolis_chests.dm:120
     public obj_structure_closet_crate_necropolis_puzzle()

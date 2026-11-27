@@ -85,9 +85,9 @@ public partial class datum_action_item_action_zoom_lock_action : datum_action_it
     }
 }
 
-// tg: code/datums/actions/items/beserk.dm:2
-[DmPath("/datum/action/item_action/berserk_mode"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_berserk_mode : datum_action_item_action
+// tg: code/datums/actions/items/beserk.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/berserk_mode")]
+public partial class datum_action_item_action_berserk_mode
 {
     // tg: code/datums/actions/items/beserk.dm:2
     public datum_action_item_action_berserk_mode()
@@ -207,9 +207,9 @@ public partial class datum_action_item_action_hands_free_moth_googles : datum_ac
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:80
-[DmPath("/datum/action/item_action/hands_free/memento_mori"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_hands_free_memento_mori : datum_action_item_action_hands_free
+// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:80 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/hands_free/memento_mori")]
+public partial class datum_action_item_action_hands_free_memento_mori
 {
     // tg: code/modules/mining/lavaland/mining_loot/clothing.dm:80
     public datum_action_item_action_hands_free_memento_mori()

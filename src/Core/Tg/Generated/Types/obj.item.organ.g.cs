@@ -4783,9 +4783,9 @@ public partial class obj_item_organ_cyberimp_arm_toolkit
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:9
-[DmPath("/obj/item/organ/cyberimp/arm/toolkit/shard"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_cyberimp_arm_toolkit_shard : obj_item_organ_cyberimp_arm_toolkit
+// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/cyberimp/arm/toolkit/shard")]
+public partial class obj_item_organ_cyberimp_arm_toolkit_shard
 {
     // tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:9
     public obj_item_organ_cyberimp_arm_toolkit_shard()
@@ -4827,9 +4827,9 @@ public partial class obj_item_organ_cyberimp_arm_toolkit_shard_scythe : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:31
-[DmPath("/obj/item/organ/cyberimp/arm/toolkit/shard/katana"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_cyberimp_arm_toolkit_shard_katana : obj_item_organ_cyberimp_arm_toolkit_shard
+// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:31 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/cyberimp/arm/toolkit/shard/katana")]
+public partial class obj_item_organ_cyberimp_arm_toolkit_shard_katana
 {
     // tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:31
     public obj_item_organ_cyberimp_arm_toolkit_shard_katana()

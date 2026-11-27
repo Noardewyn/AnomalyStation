@@ -847,9 +847,9 @@ public partial class obj_item_clothing_accessory_kheiral_cuffs
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:182
-[DmPath("/obj/item/clothing/accessory/pandora_hope"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_accessory_pandora_hope : obj_item_clothing_accessory
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:182 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/accessory/pandora_hope")]
+public partial class obj_item_clothing_accessory_pandora_hope
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:182
     public obj_item_clothing_accessory_pandora_hope()

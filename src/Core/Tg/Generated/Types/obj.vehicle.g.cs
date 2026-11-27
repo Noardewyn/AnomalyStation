@@ -1205,9 +1205,9 @@ public partial class obj_vehicle_ridden_bicycle : obj_vehicle_ridden
     }
 }
 
-// tg: code/modules/vehicles/lavaboat.dm:3
-[DmPath("/obj/vehicle/ridden/lavaboat"), DmGeneratedOnly, DmInert]
-public partial class obj_vehicle_ridden_lavaboat : obj_vehicle_ridden
+// tg: code/modules/vehicles/lavaboat.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/vehicle/ridden/lavaboat")]
+public partial class obj_vehicle_ridden_lavaboat
 {
     // tg: code/modules/vehicles/lavaboat.dm:3
     public obj_vehicle_ridden_lavaboat()
@@ -1225,7 +1225,7 @@ public partial class obj_vehicle_ridden_lavaboat : obj_vehicle_ridden
 }
 
 // tg: code/modules/vehicles/lavaboat.dm:66
-[DmPath("/obj/vehicle/ridden/lavaboat/plasma"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/vehicle/ridden/lavaboat/plasma"), DmGeneratedOnly]
 public partial class obj_vehicle_ridden_lavaboat_plasma : obj_vehicle_ridden_lavaboat
 {
     // tg: code/modules/vehicles/lavaboat.dm:66
@@ -1240,9 +1240,9 @@ public partial class obj_vehicle_ridden_lavaboat_plasma : obj_vehicle_ridden_lav
     }
 }
 
-// tg: code/modules/vehicles/lavaboat.dm:101
-[DmPath("/obj/vehicle/ridden/lavaboat/dragon"), DmGeneratedOnly, DmInert]
-public partial class obj_vehicle_ridden_lavaboat_dragon : obj_vehicle_ridden_lavaboat
+// tg: code/modules/vehicles/lavaboat.dm:101 (the var block of a hand-written class)
+[DmPath("/obj/vehicle/ridden/lavaboat/dragon")]
+public partial class obj_vehicle_ridden_lavaboat_dragon
 {
     // tg: code/modules/vehicles/lavaboat.dm:101
     public obj_vehicle_ridden_lavaboat_dragon()

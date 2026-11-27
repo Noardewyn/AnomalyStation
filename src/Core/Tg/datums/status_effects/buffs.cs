@@ -13,7 +13,7 @@ namespace Anomaly.Core.Tg;
 // (D327) the changeling's Fleshmend; gaps X5 the alien nest's sustenance; gaps MO1 (D333) the MODsuit jump jet's anti-gravity; gaps SL1
 // (D333) the exercised effect of a workout (its mood event since gaps MS1); gaps RG1
 // (D339) the garibaldi's revolutionary resilience; the regenerative core's tendrils; the blood-drunk eye's blooddrunk; the bottle
-// of mayhem's frenzy; the other buffs come with their systems.
+// of mayhem's frenzy; the Rod of Asclepius' hippocratic oath; the other buffs come with their systems.
 
 //Largely beneficial effects go here, even if they have drawbacks.
 
@@ -615,3 +615,127 @@ public partial class datum_status_effect_mayhem : datum_status_effect
     }
 }
 
+
+//Hippocratic Oath: Applied when the Rod of Asclepius is activated.
+// tg: code/datums/status_effects/buffs.dm:268
+public partial class datum_status_effect_hippocratic_oath : datum_status_effect
+{
+    // tg: code/datums/status_effects/buffs.dm:279
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        // tg: code/datums/status_effects/buffs.dm:280 (var/static/list/organ_healing)
+        DmList organ_healing = TgState.Current.datum_status_effect_hippocratic_oath__on_apply__organ_healing ??= Dm.list(
+            Dm.kv(ORGAN_SLOT_BRAIN, 1.4f));
+
+        aura_healing = await owner.AddComponent(
+            typeof(datum_component_aura_healing),
+            Dm.named("range", 7),
+            Dm.named("brute_heal", 1.4f),
+            Dm.named("burn_heal", 1.4f),
+            Dm.named("toxin_heal", 1.4f),
+            Dm.named("suffocation_heal", 1.4f),
+            Dm.named("stamina_heal", 1.4f),
+            Dm.named("simple_heal", 1.4f),
+            Dm.named("organ_healing", organ_healing),
+            Dm.named("healing_color", "#375637")) as datum_component_aura_healing;
+
+        //Makes the user passive, it's in their oath not to harm!
+        owner.add_traits(Dm.list(TRAIT_PACIFISM, TRAIT_HIPPOCRATIC_OATH, TRAIT_MEDICAL_HUD), HIPPOCRATIC_OATH_TRAIT);
+        return await base.on_apply(__extra);
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:301
+    public override async DmTask<object> on_remove()
+    {
+        QDEL_NULL(ref aura_healing);
+        owner.remove_traits(Dm.list(TRAIT_PACIFISM, TRAIT_HIPPOCRATIC_OATH, TRAIT_MEDICAL_HUD), HIPPOCRATIC_OATH_TRAIT);
+        await DmTask.CompletedTask;
+        return null;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:305
+    public override object get_examine_text(mob examiner = null)
+    {
+        return span_notice(I18n.T("[] seem[] to have an aura of healing and helpfulness about [].", owner.p_They(), owner.p_s(), owner.p_them()));
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:308
+    public override async DmTask<object> tick(object seconds_between_ticks = null)
+    {
+        float sbt = Dm.num(seconds_between_ticks);
+        if (owner.stat == DEAD)
+        {
+            if (deathTick < 4)
+                deathTick += 1;
+            else
+                await consume_owner();
+        }
+        else
+        {
+            if (iscarbon(owner))
+            {
+                mob_living_carbon itemUser = owner as mob_living_carbon;
+                obj_item heldItem = itemUser.get_item_for_held_index(hand) as obj_item;
+                if (heldItem == null || heldItem.type != typeof(obj_item_rod_of_asclepius)) //Checks to make sure the rod is still in their hand
+                {
+                    obj_item_rod_of_asclepius newRod = Dm.@new<obj_item_rod_of_asclepius>(itemUser.loc);
+                    newRod.activated__proc();
+                    if (!Dm.truthy(itemUser.has_hand_for_held_index(hand)))
+                    {
+                        //If user does not have the corresponding hand anymore, give them one and return the rod to their hand
+                        string zone = IS_LEFT_INDEX(Dm.num(hand)) ? BODY_ZONE_L_ARM : BODY_ZONE_R_ARM;
+                        if (Dm.truthy(await itemUser.regenerate_limb(zone, null)))
+                            await itemUser.put_in_hand(newRod, hand, forced: TRUE);
+                        else
+                        {
+                            await consume_owner(); //we can't regrow, abort abort
+                            return null;
+                        }
+                        to_chat(itemUser, span_notice(I18n.T("Your arm suddenly grows back with the Rod of Asclepius still attached!")));
+                    }
+                    else
+                    {
+                        //Otherwise get rid of whatever else is in their hand and return the rod to said hand
+                        await itemUser.put_in_hand(newRod, hand, forced: TRUE);
+                        to_chat(itemUser, span_notice(I18n.T("The Rod of Asclepius suddenly grows back out of your arm!")));
+                    }
+                }
+                //Because a servant of medicines stops at nothing to help others, lets keep them on their toes and give them an additional boost.
+                if (Dm.num(itemUser.health) < Dm.num(itemUser.maxHealth))
+                    Dm.@new<obj_effect_temp_visual_heal>(get_turf(itemUser), "#375637");
+                float need_mob_update = FALSE;
+                need_mob_update += Dm.num(await itemUser.adjust_brute_loss(-0.6f * sbt, updating_health: FALSE));
+                need_mob_update += Dm.num(await itemUser.adjust_fire_loss(-0.6f * sbt, updating_health: FALSE));
+                need_mob_update += Dm.num(await itemUser.adjust_tox_loss(-0.6f * sbt, updating_health: FALSE, forced: TRUE)); //Because Slime People are people too
+                need_mob_update += Dm.num(await itemUser.adjust_oxy_loss(-0.6f * sbt, updating_health: FALSE));
+                need_mob_update += Dm.num(await itemUser.adjust_stamina_loss(-3 * sbt, updating_stamina: FALSE));
+                need_mob_update += Dm.num(await itemUser.adjust_organ_loss(ORGAN_SLOT_BRAIN, -0.6f * sbt));
+                if (Dm.truthy(need_mob_update))
+                    await itemUser.updatehealth();
+            }
+        }
+        return null;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:347
+    public virtual async DmTask consume_owner()
+    {
+        owner.visible_message(span_notice(I18n.T("[]'s soul is absorbed into the rod, relieving the previous snake of its duty.", owner)));
+        DmList chems = Dm.list(typeof(datum_reagent_medicine_sal_acid), typeof(datum_reagent_medicine_c2_convermol), typeof(datum_reagent_medicine_oxandrolone));
+        mob_living_basic_snake spawned = Dm.@new<mob_living_basic_snake>(owner.loc, pick(chems));
+        spawned.name = I18n.T("Asclepius's Snake");
+        spawned.real_name = I18n.T("Asclepius's Snake");
+        spawned.desc = I18n.T("A mystical snake previously trapped upon the Rod of Asclepius, now freed of its burden. Unlike the average snake, its bites contain chemicals with minor healing properties.");
+        Dm.@new<obj_effect_decal_cleanable_ash>(owner.loc);
+        Dm.@new<obj_item_rod_of_asclepius>(owner.loc);
+        owner.investigate_log("has been consumed by the Rod of Asclepius.", INVESTIGATE_DEATHS);
+        qdel(owner);
+        await DmTask.CompletedTask;
+    }
+}
+
+public sealed partial class TgState
+{
+    // tg: code/datums/status_effects/buffs.dm:280 (var/static/list/organ_healing)
+    internal DmList datum_status_effect_hippocratic_oath__on_apply__organ_healing;
+}

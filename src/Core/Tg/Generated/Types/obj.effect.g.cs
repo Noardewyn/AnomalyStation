@@ -4372,9 +4372,9 @@ public partial class obj_effect_appearance_clone_closet_item : obj_effect_appear
     }
 }
 
-// tg: code/game/objects/structures/icemoon/cave_entrance.dm:115
-[DmPath("/obj/effect/collapsing_demonic_portal"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_collapsing_demonic_portal : obj_effect
+// tg: code/game/objects/structures/icemoon/cave_entrance.dm:115 (the var block of a hand-written class)
+[DmPath("/obj/effect/collapsing_demonic_portal")]
+public partial class obj_effect_collapsing_demonic_portal
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:115
     public obj_effect_collapsing_demonic_portal()
@@ -6655,9 +6655,9 @@ public partial class obj_effect_extraction_holder
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:71
-[DmPath("/obj/effect/wisp"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_wisp : obj_effect
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:71 (the var block of a hand-written class)
+[DmPath("/obj/effect/wisp")]
+public partial class obj_effect_wisp
 {
     // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:71
     public obj_effect_wisp()
@@ -6866,9 +6866,9 @@ public partial class obj_effect_goliath_tentacle_broodmother : obj_effect_goliat
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:233
-[DmPath("/obj/effect/goliath_tentacle/broodmother/patch"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_goliath_tentacle_broodmother_patch : obj_effect_goliath_tentacle_broodmother { }
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:233 (the var block of a hand-written class)
+[DmPath("/obj/effect/goliath_tentacle/broodmother/patch")]
+public partial class obj_effect_goliath_tentacle_broodmother_patch { }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:760 (the var block of a hand-written class)
 [DmPath("/obj/effect/hierophant")]

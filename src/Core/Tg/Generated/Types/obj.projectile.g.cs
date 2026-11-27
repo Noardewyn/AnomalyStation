@@ -5071,9 +5071,9 @@ public partial class obj_projectile_bileworm_acid
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:33
-[DmPath("/obj/projectile/dagger"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_dagger : obj_projectile
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:33 (the var block of a hand-written class)
+[DmPath("/obj/projectile/dagger")]
+public partial class obj_projectile_dagger
 {
     public Type effect_left = typeof(obj_effect_temp_visual_dagger_engraved); // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:45
 
@@ -5095,7 +5095,7 @@ public partial class obj_projectile_dagger : obj_projectile
 }
 
 // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:58
-[DmPath("/obj/projectile/dagger/crystal"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/projectile/dagger/crystal"), DmGeneratedOnly]
 public partial class obj_projectile_dagger_crystal : obj_projectile_dagger
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:58
@@ -5105,9 +5105,9 @@ public partial class obj_projectile_dagger_crystal : obj_projectile_dagger
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:61
-[DmPath("/obj/projectile/dagger/launch"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_dagger_launch : obj_projectile_dagger
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:61 (the var block of a hand-written class)
+[DmPath("/obj/projectile/dagger/launch")]
+public partial class obj_projectile_dagger_launch
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:61
     public obj_projectile_dagger_launch()
@@ -5116,9 +5116,9 @@ public partial class obj_projectile_dagger_launch : obj_projectile_dagger
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:194
-[DmPath("/obj/projectile/dagger_wisp"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_dagger_wisp : obj_projectile
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:194 (the var block of a hand-written class)
+[DmPath("/obj/projectile/dagger_wisp")]
+public partial class obj_projectile_dagger_wisp
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:194
     public obj_projectile_dagger_wisp()
@@ -5408,9 +5408,9 @@ public partial class obj_projectile_basilisk_hot : obj_projectile
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:55
-[DmPath("/obj/projectile/tentacle_lash"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_tentacle_lash : obj_projectile
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:55 (the var block of a hand-written class)
+[DmPath("/obj/projectile/tentacle_lash")]
+public partial class obj_projectile_tentacle_lash
 {
     public datum_beam tentacle_beam; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:66
     public float reel_in = 1; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:68
@@ -5435,7 +5435,7 @@ public partial class obj_projectile_tentacle_lash : obj_projectile
 }
 
 // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:77
-[DmPath("/obj/projectile/tentacle_lash/stab"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/projectile/tentacle_lash/stab"), DmGeneratedOnly]
 public partial class obj_projectile_tentacle_lash_stab : obj_projectile_tentacle_lash
 {
     // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:77
@@ -5609,9 +5609,9 @@ public partial class obj_projectile_colossus_wendigo_shockwave_wave_alternate : 
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:228
-[DmPath("/obj/projectile/herald"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_herald : obj_projectile
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:228 (the var block of a hand-written class)
+[DmPath("/obj/projectile/herald")]
+public partial class obj_projectile_herald
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:228
     public obj_projectile_herald()
@@ -5626,9 +5626,9 @@ public partial class obj_projectile_herald : obj_projectile
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:252
-[DmPath("/obj/projectile/herald/teleshot"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_herald_teleshot : obj_projectile_herald
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:252 (the var block of a hand-written class)
+[DmPath("/obj/projectile/herald/teleshot")]
+public partial class obj_projectile_herald_teleshot
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:252
     public obj_projectile_herald_teleshot()

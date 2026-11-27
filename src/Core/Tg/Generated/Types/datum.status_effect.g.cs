@@ -702,9 +702,9 @@ public partial class datum_status_effect_agent_pinpointer_changeling
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/eye_of_god.dm:99
-[DmPath("/datum/status_effect/agent_pinpointer/scan"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_agent_pinpointer_scan : datum_status_effect_agent_pinpointer
+// tg: code/modules/mining/lavaland/mining_loot/eye_of_god.dm:99 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/agent_pinpointer/scan")]
+public partial class datum_status_effect_agent_pinpointer_scan
 {
     // tg: code/modules/mining/lavaland/mining_loot/eye_of_god.dm:99
     public datum_status_effect_agent_pinpointer_scan()
@@ -811,9 +811,9 @@ public partial class datum_status_effect_exercised
     }
 }
 
-// tg: code/datums/status_effects/buffs.dm:269
-[DmPath("/datum/status_effect/hippocratic_oath"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_hippocratic_oath : datum_status_effect
+// tg: code/datums/status_effects/buffs.dm:269 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/hippocratic_oath")]
+public partial class datum_status_effect_hippocratic_oath
 {
     public datum_component_aura_healing aura_healing; // tg: code/datums/status_effects/buffs.dm:275
     public object hand; // tg: code/datums/status_effects/buffs.dm:276
@@ -4914,9 +4914,9 @@ public partial class datum_status_effect_lobster_rush_extended
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_status_effects.dm:3
-[DmPath("/datum/status_effect/dagger_swinging"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_dagger_swinging : datum_status_effect
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_status_effects.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/dagger_swinging")]
+public partial class datum_status_effect_dagger_swinging
 {
     public float base_damage = 5; // tg: code/modules/mining/lavaland/cain_and_abel/dagger_status_effects.dm:8
 
@@ -4930,9 +4930,9 @@ public partial class datum_status_effect_dagger_swinging : datum_status_effect
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_status_effects.dm:74
-[DmPath("/datum/status_effect/dagger_stun"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_dagger_stun : datum_status_effect
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_status_effects.dm:74 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/dagger_stun")]
+public partial class datum_status_effect_dagger_stun
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_status_effects.dm:74
     public datum_status_effect_dagger_stun()

@@ -5243,9 +5243,9 @@ public partial class mob_living_basic_mining_mook_worker_tribal_chief
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril.dm:8
-[DmPath("/mob/living/basic/mining/tendril"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_tendril : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril.dm:8 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/tendril")]
+public partial class mob_living_basic_mining_tendril
 {
     public datum_looping_sound_heartbeat soundloop; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril.dm:43
     public datum_action_cooldown_mob_cooldown_projectile_attack_tendril_melee tendril_melee; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril.dm:45

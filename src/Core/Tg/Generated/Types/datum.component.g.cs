@@ -284,9 +284,9 @@ public partial class datum_component_atom_mounted
     public atom hanging_support_atom; // tg: code/datums/components/atom_mounted.dm:4
 }
 
-// tg: code/datums/components/aura_healing.dm:9
-[DmPath("/datum/component/aura_healing"), DmGeneratedOnly, DmInert]
-public partial class datum_component_aura_healing : datum_component
+// tg: code/datums/components/aura_healing.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/component/aura_healing")]
+public partial class datum_component_aura_healing
 {
     public float? range = 5; // tg: code/datums/components/aura_healing.dm:9
     public float requires_visibility = 1; // tg: code/datums/components/aura_healing.dm:12
@@ -762,9 +762,9 @@ public partial class datum_component_codeword_hearing
     public object span_class; // tg: code/datums/components/codeword_hearing.dm:17
 }
 
-// tg: code/datums/components/combo_attacks.dm:3
-[DmPath("/datum/component/combo_attacks"), DmGeneratedOnly, DmInert]
-public partial class datum_component_combo_attacks : datum_component
+// tg: code/datums/components/combo_attacks.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/combo_attacks")]
+public partial class datum_component_combo_attacks
 {
     public object max_combo_length; // tg: code/datums/components/combo_attacks.dm:3
     public object examine_message; // tg: code/datums/components/combo_attacks.dm:5
@@ -5392,9 +5392,9 @@ public partial class datum_component_riding_vehicle_bicycle : datum_component_ri
     }
 }
 
-// tg: code/datums/components/riding/riding_vehicle.dm:144
-[DmPath("/datum/component/riding/vehicle/lavaboat"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_vehicle_lavaboat : datum_component_riding_vehicle
+// tg: code/datums/components/riding/riding_vehicle.dm:144 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/vehicle/lavaboat")]
+public partial class datum_component_riding_vehicle_lavaboat
 {
     public DmList allowed_turfs; // tg: code/datums/components/riding/riding_vehicle.dm:147
 
@@ -5413,9 +5413,9 @@ public partial class datum_component_riding_vehicle_lavaboat : datum_component_r
     }
 }
 
-// tg: code/datums/components/riding/riding_vehicle.dm:162
-[DmPath("/datum/component/riding/vehicle/lavaboat/dragonboat"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_vehicle_lavaboat_dragonboat : datum_component_riding_vehicle_lavaboat
+// tg: code/datums/components/riding/riding_vehicle.dm:162 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/vehicle/lavaboat/dragonboat")]
+public partial class datum_component_riding_vehicle_lavaboat_dragonboat
 {
     // tg: code/datums/components/riding/riding_vehicle.dm:162
     public datum_component_riding_vehicle_lavaboat_dragonboat()

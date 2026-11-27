@@ -2112,9 +2112,9 @@ public partial class mob_living_simple_animal_hostile_ooze_grapes : mob_living_s
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/mining_mobs.dm:3
-[DmPath("/mob/living/simple_animal/hostile/asteroid"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_asteroid : mob_living_simple_animal_hostile
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/mining_mobs.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/asteroid")]
+public partial class mob_living_simple_animal_hostile_asteroid
 {
     public string throw_message = "bounces off of"; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/mining_mobs.dm:17
     public float from_spawner = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/mining_mobs.dm:19
@@ -2152,9 +2152,9 @@ public partial class mob_living_simple_animal_hostile_asteroid : mob_living_simp
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:10
-[DmPath("/mob/living/simple_animal/hostile/asteroid/elite"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_asteroid_elite : mob_living_simple_animal_hostile_asteroid
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:10 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/asteroid/elite")]
+public partial class mob_living_simple_animal_hostile_asteroid_elite
 {
     public float chosen_attack = 1; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:26
     public DmList attack_action_types; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:27
@@ -2190,9 +2190,9 @@ public partial class mob_living_simple_animal_hostile_asteroid_elite : mob_livin
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:20
-[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/broodmother"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_asteroid_elite_broodmother : mob_living_simple_animal_hostile_asteroid_elite
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:20 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/broodmother")]
+public partial class mob_living_simple_animal_hostile_asteroid_elite_broodmother
 {
     public float random_tentacle = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:53
     public DmList children_list; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:54
@@ -2238,9 +2238,9 @@ public partial class mob_living_simple_animal_hostile_asteroid_elite_broodmother
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:184
-[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_asteroid_elite_broodmother_child : mob_living_simple_animal_hostile_asteroid_elite
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:184 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child")]
+public partial class mob_living_simple_animal_hostile_asteroid_elite_broodmother_child
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:184
     public mob_living_simple_animal_hostile_asteroid_elite_broodmother_child()
@@ -2278,9 +2278,9 @@ public partial class mob_living_simple_animal_hostile_asteroid_elite_broodmother
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:20
-[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/herald"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_asteroid_elite_herald : mob_living_simple_animal_hostile_asteroid_elite
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:20 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/herald")]
+public partial class mob_living_simple_animal_hostile_asteroid_elite_herald
 {
     public mob_living_simple_animal_hostile_asteroid_elite_herald_mirror my_mirror; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:54
     public float is_mirror = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:55
@@ -2325,9 +2325,9 @@ public partial class mob_living_simple_animal_hostile_asteroid_elite_herald : mo
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:202
-[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/herald/mirror"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_asteroid_elite_herald_mirror : mob_living_simple_animal_hostile_asteroid_elite_herald
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:202 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/herald/mirror")]
+public partial class mob_living_simple_animal_hostile_asteroid_elite_herald_mirror
 {
     public mob_living_simple_animal_hostile_asteroid_elite_herald my_master; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:215
 
@@ -2350,9 +2350,9 @@ public partial class mob_living_simple_animal_hostile_asteroid_elite_herald_mirr
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:20
-[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/legionnaire"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_asteroid_elite_legionnaire : mob_living_simple_animal_hostile_asteroid_elite
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:20 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/legionnaire")]
+public partial class mob_living_simple_animal_hostile_asteroid_elite_legionnaire
 {
     public mob_living_simple_animal_hostile_asteroid_elite_legionnairehead myhead; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:50
     public obj_structure_legionnaire_bonfire mypile; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:51
@@ -2396,9 +2396,9 @@ public partial class mob_living_simple_animal_hostile_asteroid_elite_legionnaire
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:238
-[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/legionnairehead"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_asteroid_elite_legionnairehead : mob_living_simple_animal_hostile_asteroid_elite
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:238 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/legionnairehead")]
+public partial class mob_living_simple_animal_hostile_asteroid_elite_legionnairehead
 {
     public mob_living_simple_animal_hostile_asteroid_elite_legionnaire body; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:260
 
@@ -2436,9 +2436,9 @@ public partial class mob_living_simple_animal_hostile_asteroid_elite_legionnaire
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:20
-[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/pandora"), DmGeneratedOnly, DmInert]
-public partial class mob_living_simple_animal_hostile_asteroid_elite_pandora : mob_living_simple_animal_hostile_asteroid_elite
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:20 (the var block of a hand-written class)
+[DmPath("/mob/living/simple_animal/hostile/asteroid/elite/pandora")]
+public partial class mob_living_simple_animal_hostile_asteroid_elite_pandora
 {
     public float sing_shot_length = 8; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:49
     public float? cooldown_time = 20; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:50

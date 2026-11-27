@@ -3277,9 +3277,9 @@ public partial class datum_thrownthing
     public float? blocked = 0; // tg: code/controllers/subsystem/throwing.dm:93
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:100
-[DmPath("/datum/thrownthing/dagger_launch"), DmGeneratedOnly, DmInert]
-public partial class datum_thrownthing_dagger_launch : datum_thrownthing { }
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:100 (the var block of a hand-written class)
+[DmPath("/datum/thrownthing/dagger_launch")]
+public partial class datum_thrownthing_dagger_launch { }
 
 // tg: code/controllers/subsystem/tts.dm:522
 [DmPath("/datum/tts_request"), DmGeneratedOnly, DmInert]
@@ -48951,9 +48951,9 @@ public partial class datum_candela_item_handler
     public datum_beam beam_visual; // tg: code/modules/mining/equipment/candela_network/candela_item_handler.dm:23
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:218
-[DmPath("/datum/abel_wisp_frame"), DmGeneratedOnly, DmInert]
-public partial class datum_abel_wisp_frame : datum
+// tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:218 (the var block of a hand-written class)
+[DmPath("/datum/abel_wisp_frame")]
+public partial class datum_abel_wisp_frame
 {
     public float? x = 0; // tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:218
     public float? y = 0; // tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:219

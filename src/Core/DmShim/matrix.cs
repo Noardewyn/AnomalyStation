@@ -5,9 +5,8 @@ namespace Anomaly.Core.DmShim;
 /// <c>a b c / d e f</c>, mapping a point as <c>x' = a*x + b*y + c</c>, <c>y' = d*x + e*y + f</c>; created by
 /// <c>matrix(...)</c> and used as <c>atom.transform</c>. A builtin value type: no world id, never registered. Owner:
 /// values. The procs keep their DM names (<c>M.Turn(90)</c>, as the list procs do on <see cref="DmList"/>) and, like
-/// BYOND's, change the matrix itself and return it; the operators are <c>Dm.add</c>, <c>Dm.sub</c>, <c>Dm.mul</c>,
-/// <c>Dm.div</c>, <c>Dm.equiv</c> and the compound assignments. <c>Interpolate</c> is not implemented yet (BYOND
-/// decomposes the matrices first; no M0 code needs it).
+/// BYOND's, change the matrix itself and return it (but <c>Interpolate</c>, which returns a new one); the operators are
+/// <c>Dm.add</c>, <c>Dm.sub</c>, <c>Dm.mul</c>, <c>Dm.div</c>, <c>Dm.equiv</c> and the compound assignments.
 /// </summary>
 [DmPath("/matrix")]
 public class matrix
@@ -131,6 +130,37 @@ public class matrix
         e -= Matrix2.e;
         f -= Matrix2.f;
         return this;
+    }
+
+    /// <summary>
+    /// DM <c>M.Interpolate(Matrix2, t)</c> (BYOND ref <c>/matrix/proc/Interpolate</c>): a new matrix between src (t = 0)
+    /// and Matrix2 (t = 1). As BYOND does, each matrix is decomposed into its scale, rotation and translation, which are
+    /// interpolated apart (the rotation the short way round, a half turn clockwise) and composed again in that order;
+    /// src is not changed.
+    /// </summary>
+    public matrix Interpolate(matrix Matrix2, float t)
+    {
+        if (Matrix2 == null) throw new DmRuntimeException("matrix.Interpolate() needs a matrix");
+        (double sx1, double sy1, double r1) = Decompose(this);
+        (double sx2, double sy2, double r2) = Decompose(Matrix2);
+        double dr = r2 - r1;
+        while (dr > 180) dr -= 360;
+        while (dr <= -180) dr += 360;
+        if (dr == -180) dr = 180;
+        matrix result = new matrix();
+        result.Scale((float)(sx1 + (sx2 - sx1) * t), (float)(sy1 + (sy2 - sy1) * t));
+        result.Turn((float)(r1 + dr * t));
+        result.Translate(c + (Matrix2.c - c) * t, f + (Matrix2.f - f) * t);
+        return result;
+    }
+
+    // The scale along x and y and the clockwise rotation in degrees of a matrix built as Scale, then Turn (Interpolate).
+    private static (double sx, double sy, double angle) Decompose(matrix m)
+    {
+        double sx = Math.Sqrt((double)m.a * m.a + (double)m.d * m.d);
+        double sy = Math.Sqrt((double)m.b * m.b + (double)m.e * m.e);
+        double angle = sx == 0 ? 0 : Math.Atan2(-m.d, m.a) * 180.0 / Math.PI;
+        return (sx, sy, angle);
     }
 
     internal matrix Copy() => new matrix(a, b, c, d, e, f);

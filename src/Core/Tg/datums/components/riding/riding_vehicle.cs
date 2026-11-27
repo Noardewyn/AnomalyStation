@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL (gaps H4, the janitor): the ridden vehicle's riding base (the key check, the rider's condition, the move and its cooldown)
-// and the janicart's, the secway's (gaps SE1). The other vehicles' variants (the ATV, scooters and skateboards, the wheelchairs, the speedbike,
-// the lavaboat, the bone bike, the stake...) come with their vehicles. The var blocks are generated (D111).
+// and the janicart's, the secway's (gaps SE1), the lava boat's and the dragon boat's. The other vehicles' variants (the ATV, scooters and skateboards, the wheelchairs, the speedbike,
+// the bone bike, the stake...) come with their vehicles. The var blocks are generated (D111).
 
 // For any /obj/vehicle's that can be ridden
 // tg: code/datums/components/riding/riding_vehicle.dm:1
@@ -171,6 +171,43 @@ public partial class datum_component_riding_vehicle : datum_component_riding
             return null;
         update_parent_layer_and_offsets(movable_parent.dir);
         return TRUE;
+    }
+}
+
+// tg: code/datums/components/riding/riding_vehicle.dm:143
+public partial class datum_component_riding_vehicle_lavaboat : datum_component_riding_vehicle
+{
+    // tg: code/datums/components/riding/riding_vehicle.dm:149
+    [DmParams("riding_mob", "force", "ride_check_flags", "potion_boost")]
+    public override async DmTask<object> Initialize(params object[] __extra)
+    {
+        object dot = await base.Initialize(__extra);
+        allowed_turf_typecache = typecacheof(allowed_turfs) as DmList;
+        return dot;
+    }
+
+    // tg: code/datums/components/riding/riding_vehicle.dm:153
+    public override DmList get_parent_offsets_and_layers()
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(0f, 0f, ABOVE_MOB_LAYER)),
+            Dm.kv(TEXT_SOUTH, Dm.list(0f, 0f, ABOVE_MOB_LAYER)),
+            Dm.kv(TEXT_EAST, Dm.list(0f, 0f, ABOVE_MOB_LAYER)),
+            Dm.kv(TEXT_WEST, Dm.list(0f, 0f, ABOVE_MOB_LAYER)));
+    }
+}
+
+// tg: code/datums/components/riding/riding_vehicle.dm:161
+public partial class datum_component_riding_vehicle_lavaboat_dragonboat : datum_component_riding_vehicle_lavaboat
+{
+    // tg: code/datums/components/riding/riding_vehicle.dm:165
+    public override DmList get_rider_offsets_and_layers(object pass_index = null, mob offsetter = null)
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(1f, 2f)),
+            Dm.kv(TEXT_SOUTH, Dm.list(1f, 2f)),
+            Dm.kv(TEXT_EAST, Dm.list(1f, 2f)),
+            Dm.kv(TEXT_WEST, Dm.list(1f, 2f)));
     }
 }
 

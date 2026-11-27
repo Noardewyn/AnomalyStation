@@ -512,9 +512,9 @@ public partial class datum_controller_subsystem_processing_antag_hud
     }
 }
 
-// tg: code/controllers/subsystem/processing/aura.dm:3
-[DmPath("/datum/controller/subsystem/processing/aura"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_processing_aura : datum_controller_subsystem_processing
+// tg: code/controllers/subsystem/processing/aura.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/processing/aura")]
+public partial class datum_controller_subsystem_processing_aura
 {
     // tg: code/controllers/subsystem/processing/aura.dm:3
     public datum_controller_subsystem_processing_aura()

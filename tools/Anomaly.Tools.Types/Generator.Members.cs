@@ -217,6 +217,8 @@ internal sealed partial class Generator
         // The permanent portal's id is the text name that links a pair (portals.dm:190; the wendigo's exit is "wendigo arena exit");
         // the name is a typepath elsewhere in tg.
         "/obj/effect/portal/permanent:id",
+        // The elite tumor's activator is the human who touched it (elite.dm:139); the name is a typepath elsewhere in tg.
+        "/obj/structure/elite_tumor:activator",
     };
 
     /// <summary>Typed vars that hold typepaths read from a list (rules 3.2, "typepaths read from a list": <c>Type</c>), which the V3

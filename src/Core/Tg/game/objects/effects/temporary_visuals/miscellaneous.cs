@@ -17,7 +17,7 @@ namespace Anomaly.Core.Tg;
 // gravitational anomaly's detonation); E13: the RCD family's constructing effect (:518); syndicate X2: the decoys (:236-262); gaps R1: the
 // bluespace artillery's splash (:173); gaps B1: the bluespace fissure (:310, the bluespace prophet's streams); gaps OD2: the focus ring (:823, the
 // House Edge's wind-up); gaps MO2: the sonar ping (:613, the MOD active sonar's pings, DV541); the Lavaland fauna: the withering spawn (:720, the despawn
-// of the hivelord's and the legion's minions); the megafauna: the cleaving saw's bleed and its burst (:456-480). The other visuals of the file come with their mechanics.
+// of the hivelord's and the legion's minions); the megafauna: the cleaving saw's bleed and its burst (:456-480); the tendrils' loot: the warp cube's flash (:483). The other visuals of the file come with their mechanics.
 
 // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:691
 [DmPath("/obj/effect/temp_visual/block")]
@@ -583,3 +583,47 @@ public partial class obj_effect_temp_visual_bleed : obj_effect_temp_visual
     }
 }
 
+
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:482
+public partial class obj_effect_temp_visual_warp_cube : obj_effect_temp_visual
+{
+    // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:486
+    [DmParams("mapload", "teleporting_atom", "warp_color", "new_outgoing")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        atom teleporting_atom = Dm.arg<atom>(__extra, 0);
+        object warp_color = Dm.arg(__extra, 1);
+        object new_outgoing = Dm.arg(__extra, 2);
+        object dot = base.Initialize(mapload, __extra);
+        if (teleporting_atom != null)
+        {
+            outgoing = Dm.num(new_outgoing);
+            appearance = teleporting_atom.appearance;
+            Waiting.NoSleep(setDir(teleporting_atom.dir));
+            if (Dm.truthy(warp_color))
+            {
+                color = Dm.list(warp_color, warp_color, warp_color, Dm.list(0, 0, 0));
+                Waiting.NoSleep(set_light(1.4f, 1, warp_color));
+            }
+            mouse_opacity = MOUSE_OPACITY_TRANSPARENT;
+            matrix skew = transform as matrix;
+            skew = skew.Turn(180);
+            skew = skew.Interpolate(transform as matrix, 0.5f);
+            if (!Dm.truthy(outgoing))
+            {
+                transform = Dm.mul(skew, 2);
+                skew = teleporting_atom.transform as matrix;
+                alpha = 0;
+                animate(this, Dm.named("alpha", teleporting_atom.alpha), Dm.named("transform", skew), Dm.named("time", duration));
+            }
+            else
+            {
+                skew = Dm.mul(skew, 2) as matrix;
+                animate(this, Dm.named("alpha", 0), Dm.named("transform", skew), Dm.named("time", duration));
+            }
+        }
+        else
+            return INITIALIZE_HINT_QDEL;
+        return dot;
+    }
+}

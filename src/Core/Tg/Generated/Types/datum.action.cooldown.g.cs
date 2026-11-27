@@ -1152,9 +1152,9 @@ public partial class datum_action_cooldown_mob_cooldown_projectile_attack_leaper
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:3
-[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/tendril_lash"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_projectile_attack_tendril_lash : datum_action_cooldown_mob_cooldown_projectile_attack
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/tendril_lash")]
+public partial class datum_action_cooldown_mob_cooldown_projectile_attack_tendril_lash
 {
     // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:3
     public datum_action_cooldown_mob_cooldown_projectile_attack_tendril_lash()
@@ -1173,9 +1173,9 @@ public partial class datum_action_cooldown_mob_cooldown_projectile_attack_tendri
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:386
-[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/tendril_melee"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_projectile_attack_tendril_melee : datum_action_cooldown_mob_cooldown_projectile_attack
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:386 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/tendril_melee")]
+public partial class datum_action_cooldown_mob_cooldown_projectile_attack_tendril_melee
 {
     // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:386
     public datum_action_cooldown_mob_cooldown_projectile_attack_tendril_melee()
@@ -2581,9 +2581,9 @@ public partial class datum_action_cooldown_mob_cooldown_mook_ability_mook_jump
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:158
-[DmPath("/datum/action/cooldown/mob_cooldown/tendril_chaser"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_tendril_chaser : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:158 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/tendril_chaser")]
+public partial class datum_action_cooldown_mob_cooldown_tendril_chaser
 {
     public DmList active_chasers; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:168
     public float wide_chaser_threshold = 0.6f; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:170
@@ -2603,9 +2603,9 @@ public partial class datum_action_cooldown_mob_cooldown_tendril_chaser : datum_a
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:313
-[DmPath("/datum/action/cooldown/mob_cooldown/tendril_cross_spikes"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_tendril_cross_spikes : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:313 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/tendril_cross_spikes")]
+public partial class datum_action_cooldown_mob_cooldown_tendril_cross_spikes
 {
     public float spike_range = 7; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:324
     public float health_threshold = 0.3f; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:326
@@ -4865,9 +4865,9 @@ public partial class datum_action_cooldown_spell_pointed_percept_hallucination :
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/eye_of_god.dm:43
-[DmPath("/datum/action/cooldown/spell/pointed/scan"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_pointed_scan : datum_action_cooldown_spell_pointed
+// tg: code/modules/mining/lavaland/mining_loot/eye_of_god.dm:43 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/pointed/scan")]
+public partial class datum_action_cooldown_spell_pointed_scan
 {
     // tg: code/modules/mining/lavaland/mining_loot/eye_of_god.dm:43
     public datum_action_cooldown_spell_pointed_scan()
@@ -8045,9 +8045,9 @@ public partial class datum_action_cooldown_spell_timestop : datum_action_cooldow
     }
 }
 
-// tg: code/modules/spells/spell_types/self/summonitem.dm:2
-[DmPath("/datum/action/cooldown/spell/summonitem"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_summonitem : datum_action_cooldown_spell
+// tg: code/modules/spells/spell_types/self/summonitem.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/summonitem")]
+public partial class datum_action_cooldown_spell_summonitem
 {
     public obj marked_item; // tg: code/modules/spells/spell_types/self/summonitem.dm:16
 
@@ -8066,9 +8066,9 @@ public partial class datum_action_cooldown_spell_summonitem : datum_action_coold
     }
 }
 
-// tg: code/modules/spells/spell_types/self/summonitem.dm:180
-[DmPath("/datum/action/cooldown/spell/summonitem/abductor"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_summonitem_abductor : datum_action_cooldown_spell_summonitem
+// tg: code/modules/spells/spell_types/self/summonitem.dm:180 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/summonitem/abductor")]
+public partial class datum_action_cooldown_spell_summonitem_abductor
 {
     // tg: code/modules/spells/spell_types/self/summonitem.dm:180
     public datum_action_cooldown_spell_summonitem_abductor()
@@ -8580,9 +8580,9 @@ public partial class datum_action_cooldown_monster_core_action_adrenal_boost : d
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_abilities.dm:2
-[DmPath("/datum/action/cooldown/dagger_swing"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_dagger_swing : datum_action_cooldown
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_abilities.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/dagger_swing")]
+public partial class datum_action_cooldown_dagger_swing
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_abilities.dm:2
     public datum_action_cooldown_dagger_swing()

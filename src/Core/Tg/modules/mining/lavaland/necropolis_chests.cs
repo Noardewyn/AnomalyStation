@@ -9,8 +9,40 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: only the megafauna's chests (the dragon, bubblegum and colossus chests with their crusher kinds); the tendril's and
-// the puzzle chests and the skeleton key come with the tendrils. The var blocks are generated.
+// The whole file. The var blocks are generated.
+
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:13
+public partial class obj_structure_closet_crate_necropolis_tendril : obj_structure_closet_crate_necropolis
+{
+    // tg: code/modules/mining/lavaland/necropolis_chests.dm:21
+    public override async DmTask<object> item_interaction(mob_living user = null, obj_item tool = null, DmList modifiers = null, params object[] __extra)
+    {
+        if (!(tool is obj_item_skeleton_key) || Dm.truthy(spawned_loot))
+            return await base.item_interaction(user, tool, modifiers, __extra);
+        Dm.@new(loot_to_spawn, this);
+
+        spawned_loot = TRUE;
+        qdel(tool);
+        to_chat(user, span_notice(I18n.T("You disable the magic lock, revealing the loot.")));
+        return ITEM_INTERACT_SUCCESS;
+    }
+
+    // tg: code/modules/mining/lavaland/necropolis_chests.dm:31
+    public override async DmTask<object> before_open(mob_living user = null, object force = null)
+    {
+        object dot = await base.before_open(user, force);
+        if (!Dm.truthy(dot))
+            return FALSE;
+
+        if (!Dm.truthy(broken) && !Dm.truthy(force) && !Dm.truthy(spawned_loot))
+        {
+            balloon_alert(user, "its locked!");
+            return FALSE;
+        }
+
+        return TRUE;
+    }
+}
 
 //Megafauna chests
 
@@ -99,5 +131,24 @@ public partial class obj_structure_closet_crate_necropolis_colossus_crusher : ob
     {
         await base.PopulateContents(__extra);
         Dm.@new<obj_item_crusher_trophy_blaster_tubes>(this);
+    }
+}
+
+//Other chests and minor stuff
+
+// tg: code/modules/mining/lavaland/necropolis_chests.dm:119
+public partial class obj_structure_closet_crate_necropolis_puzzle : obj_structure_closet_crate_necropolis
+{
+    // tg: code/modules/mining/lavaland/necropolis_chests.dm:122
+    public override async DmTask PopulateContents(params object[] __extra)
+    {
+        float loot = rand(1, 3);
+        if (loot == 1)
+            Dm.@new<obj_item_soulstone_anybody_mining>(this);
+        else if (loot == 2)
+            Dm.@new<obj_item_wisp_lantern>(this);
+        else if (loot == 3)
+            Dm.@new<obj_item_prisoncube>(this);
+        await DmTask.CompletedTask;
     }
 }

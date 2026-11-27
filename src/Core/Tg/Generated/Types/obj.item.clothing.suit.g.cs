@@ -1400,9 +1400,9 @@ public partial class obj_item_clothing_suit_hooded_cloak_goliath
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/godslayer.dm:2
-[DmPath("/obj/item/clothing/suit/hooded/cloak/godslayer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_cloak_godslayer : obj_item_clothing_suit_hooded_cloak
+// tg: code/modules/mining/lavaland/mining_loot/godslayer.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/cloak/godslayer")]
+public partial class obj_item_clothing_suit_hooded_cloak_godslayer
 {
     public float heal_amount = 500; // tg: code/modules/mining/lavaland/mining_loot/godslayer.dm:16
     public float effect_cooldown_time = 6000; // tg: code/modules/mining/lavaland/mining_loot/godslayer.dm:18
@@ -1456,9 +1456,9 @@ public partial class obj_item_clothing_suit_hooded_cloak_drake
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/berserker.dm:8
-[DmPath("/obj/item/clothing/suit/hooded/berserker"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_berserker : obj_item_clothing_suit_hooded
+// tg: code/modules/mining/lavaland/mining_loot/berserker.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/berserker")]
+public partial class obj_item_clothing_suit_hooded_berserker
 {
     // tg: code/modules/mining/lavaland/mining_loot/berserker.dm:8
     public obj_item_clothing_suit_hooded_berserker()

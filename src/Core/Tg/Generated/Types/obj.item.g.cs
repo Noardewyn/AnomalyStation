@@ -26854,9 +26854,9 @@ public partial class obj_item_weldingtool_mini_empty : obj_item_weldingtool_mini
     }
 }
 
-// tg: code/game/objects/items/tools/engineering/weldingtool.dm:379
-[DmPath("/obj/item/weldingtool/abductor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_weldingtool_abductor : obj_item_weldingtool
+// tg: code/game/objects/items/tools/engineering/weldingtool.dm:379 (the var block of a hand-written class)
+[DmPath("/obj/item/weldingtool/abductor")]
+public partial class obj_item_weldingtool_abductor
 {
     // tg: code/game/objects/items/tools/engineering/weldingtool.dm:379
     public obj_item_weldingtool_abductor()
@@ -40041,9 +40041,9 @@ public partial class obj_item_crusher_trophy_wendigo_horn
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:193
-[DmPath("/obj/item/crusher_trophy/broodmother_tongue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_broodmother_tongue : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:193 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/broodmother_tongue")]
+public partial class obj_item_crusher_trophy_broodmother_tongue
 {
     public object use_time; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:201
 
@@ -40060,9 +40060,9 @@ public partial class obj_item_crusher_trophy_broodmother_tongue : obj_item_crush
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:228
-[DmPath("/obj/item/crusher_trophy/legionnaire_spine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_legionnaire_spine : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:228 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/legionnaire_spine")]
+public partial class obj_item_crusher_trophy_legionnaire_spine
 {
     public object next_use_time; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:236
 
@@ -40162,9 +40162,9 @@ public partial class obj_item_skeleton_key : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:5
-[DmPath("/obj/item/cain_and_abel"), DmGeneratedOnly, DmInert]
-public partial class obj_item_cain_and_abel : obj_item
+// tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/item/cain_and_abel")]
+public partial class obj_item_cain_and_abel
 {
     public float combo_count = 0; // tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:28
     public float max_combo = 6; // tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:30
@@ -40209,9 +40209,9 @@ public partial class obj_item_cain_and_abel : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:26
-[DmPath("/obj/item/wisp_lantern"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wisp_lantern : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:26 (the var block of a hand-written class)
+[DmPath("/obj/item/wisp_lantern")]
+public partial class obj_item_wisp_lantern
 {
     public obj_effect_wisp wisp; // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:33
 
@@ -40228,9 +40228,9 @@ public partial class obj_item_wisp_lantern : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:110
-[DmPath("/obj/item/jacobs_ladder"), DmGeneratedOnly, DmInert]
-public partial class obj_item_jacobs_ladder : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:110 (the var block of a hand-written class)
+[DmPath("/obj/item/jacobs_ladder")]
+public partial class obj_item_jacobs_ladder
 {
     // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:110
     public obj_item_jacobs_ladder()
@@ -40242,9 +40242,9 @@ public partial class obj_item_jacobs_ladder : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:136
-[DmPath("/obj/item/book_of_babel"), DmGeneratedOnly, DmInert]
-public partial class obj_item_book_of_babel : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:136 (the var block of a hand-written class)
+[DmPath("/obj/item/book_of_babel")]
+public partial class obj_item_book_of_babel
 {
     // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:136
     public obj_item_book_of_babel()
@@ -40257,9 +40257,9 @@ public partial class obj_item_book_of_babel : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:48
-[DmPath("/obj/item/cursed_katana"), DmGeneratedOnly, DmInert]
-public partial class obj_item_cursed_katana : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:48 (the var block of a hand-written class)
+[DmPath("/obj/item/cursed_katana")]
+public partial class obj_item_cursed_katana
 {
     public float shattered = 0; // tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:67
     public float drew_blood = 0; // tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:68
@@ -40298,9 +40298,9 @@ public partial class obj_item_cursed_katana : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:3
-[DmPath("/obj/item/rod_of_asclepius"), DmGeneratedOnly, DmInert]
-public partial class obj_item_rod_of_asclepius : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/rod_of_asclepius")]
+public partial class obj_item_rod_of_asclepius
 {
     public float? activated = 0; // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:11
 
@@ -40318,9 +40318,9 @@ public partial class obj_item_rod_of_asclepius : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:75
-[DmPath("/obj/item/warp_cube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_warp_cube : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:75 (the var block of a hand-written class)
+[DmPath("/obj/item/warp_cube")]
+public partial class obj_item_warp_cube
 {
     public string teleport_color = "#3FBAFD"; // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:79
     public obj_item_warp_cube linked; // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:80
@@ -40336,9 +40336,9 @@ public partial class obj_item_warp_cube : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:125
-[DmPath("/obj/item/warp_cube/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_warp_cube_red : obj_item_warp_cube
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:125 (the var block of a hand-written class)
+[DmPath("/obj/item/warp_cube/red")]
+public partial class obj_item_warp_cube_red
 {
     // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:125
     public obj_item_warp_cube_red()
@@ -40350,9 +40350,9 @@ public partial class obj_item_warp_cube_red : obj_item_warp_cube
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:144
-[DmPath("/obj/item/immortality_talisman"), DmGeneratedOnly, DmInert]
-public partial class obj_item_immortality_talisman : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:144 (the var block of a hand-written class)
+[DmPath("/obj/item/immortality_talisman")]
+public partial class obj_item_immortality_talisman
 {
     public float cooldown = 0; // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:150
 
@@ -40391,13 +40391,13 @@ public partial class obj_item_shared_storage : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:241
-[DmPath("/obj/item/shared_storage/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_shared_storage_red : obj_item_shared_storage { }
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:241 (the var block of a hand-written class)
+[DmPath("/obj/item/shared_storage/red")]
+public partial class obj_item_shared_storage_red { }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:248
-[DmPath("/obj/item/shared_storage/blue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_shared_storage_blue : obj_item_shared_storage { }
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:248 (the var block of a hand-written class)
+[DmPath("/obj/item/shared_storage/blue")]
+public partial class obj_item_shared_storage_blue { }
 
 // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:4 (the var block of a hand-written class)
 [DmPath("/obj/item/drake_remains")]
@@ -41990,9 +41990,9 @@ public partial class obj_item_clockwork_alloy : obj_item
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:367
-[DmPath("/obj/item/tumor_shard"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tumor_shard : obj_item
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:367 (the var block of a hand-written class)
+[DmPath("/obj/item/tumor_shard")]
+public partial class obj_item_tumor_shard
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:367
     public obj_item_tumor_shard()
@@ -45912,9 +45912,9 @@ public partial class obj_item_oar : obj_item
     }
 }
 
-// tg: code/modules/vehicles/lavaboat.dm:80
-[DmPath("/obj/item/ship_in_a_bottle"), DmGeneratedOnly, DmInert]
-public partial class obj_item_ship_in_a_bottle : obj_item
+// tg: code/modules/vehicles/lavaboat.dm:80 (the var block of a hand-written class)
+[DmPath("/obj/item/ship_in_a_bottle")]
+public partial class obj_item_ship_in_a_bottle
 {
     // tg: code/modules/vehicles/lavaboat.dm:80
     public obj_item_ship_in_a_bottle()

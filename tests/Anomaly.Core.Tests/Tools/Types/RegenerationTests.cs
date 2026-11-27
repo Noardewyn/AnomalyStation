@@ -26,12 +26,17 @@ public class RegenerationTests
         };
         foreach (string a in new[]
         {
-            "run", "-c", "Release", "--project", Path.Combine(repo, "tools", "Anomaly.Tools.Types"), "--",
+            "run", "-c", "Release", "--property:UseSharedCompilation=false", "--project", Path.Combine(repo, "tools", "Anomaly.Tools.Types"), "--",
             "--tg", TgClone.Root, "--opendream", OpenDreamClone.Root, "--out", repo, "--check",
             "--scratch", scratch,
         })
             psi.ArgumentList.Add(a);
         psi.Environment["ANOMALY_OPENDREAM"] = OpenDreamClone.Root;
+        // No build process may outlive the run: a reused MSBuild node or the compiler server that `dotnet run` starts inherits
+        // the redirected output pipes, so reading them to the end waited until that process idled out (10-15 minutes at no CPU,
+        // which looked like a hung test).
+        psi.Environment["MSBUILDDISABLENODEREUSE"] = "1";
+        psi.Environment["DOTNET_CLI_USE_MSBUILD_SERVER"] = "0";
         string output;
         int exitCode;
         try

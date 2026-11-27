@@ -9836,9 +9836,9 @@ public partial class obj_structure_showerframe
     }
 }
 
-// tg: code/game/objects/structures/spawner.dm:2
-[DmPath("/obj/structure/spawner"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner : obj_structure
+// tg: code/game/objects/structures/spawner.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner")]
+public partial class obj_structure_spawner
 {
     public float max_mobs = 5; // tg: code/game/objects/structures/spawner.dm:13
     public float spawn_time = 300; // tg: code/game/objects/structures/spawner.dm:14
@@ -9874,7 +9874,7 @@ public partial class obj_structure_spawner : obj_structure
 }
 
 // tg: code/game/objects/structures/spawner.dm:86
-[DmPath("/obj/structure/spawner/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/syndicate"), DmGeneratedOnly]
 public partial class obj_structure_spawner_syndicate : obj_structure_spawner
 {
     // tg: code/game/objects/structures/spawner.dm:86
@@ -9898,7 +9898,7 @@ public partial class obj_structure_spawner_syndicate : obj_structure_spawner
 }
 
 // tg: code/game/objects/structures/spawner.dm:96
-[DmPath("/obj/structure/spawner/skeleton"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/skeleton"), DmGeneratedOnly]
 public partial class obj_structure_spawner_skeleton : obj_structure_spawner
 {
     // tg: code/game/objects/structures/spawner.dm:96
@@ -9926,7 +9926,7 @@ public partial class obj_structure_spawner_skeleton : obj_structure_spawner
 }
 
 // tg: code/game/objects/structures/spawner.dm:110
-[DmPath("/obj/structure/spawner/clown"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/clown"), DmGeneratedOnly]
 public partial class obj_structure_spawner_clown : obj_structure_spawner
 {
     // tg: code/game/objects/structures/spawner.dm:110
@@ -9954,7 +9954,7 @@ public partial class obj_structure_spawner_clown : obj_structure_spawner
 }
 
 // tg: code/game/objects/structures/spawner.dm:135
-[DmPath("/obj/structure/spawner/mining"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining : obj_structure_spawner
 {
     // tg: code/game/objects/structures/spawner.dm:135
@@ -9979,7 +9979,7 @@ public partial class obj_structure_spawner_mining : obj_structure_spawner
 }
 
 // tg: code/game/objects/structures/spawner.dm:152
-[DmPath("/obj/structure/spawner/mining/goldgrub"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/goldgrub"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_goldgrub : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:152
@@ -9999,7 +9999,7 @@ public partial class obj_structure_spawner_mining_goldgrub : obj_structure_spawn
 }
 
 // tg: code/game/objects/structures/spawner.dm:158
-[DmPath("/obj/structure/spawner/mining/goliath"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/goliath"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_goliath : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:158
@@ -10019,7 +10019,7 @@ public partial class obj_structure_spawner_mining_goliath : obj_structure_spawne
 }
 
 // tg: code/game/objects/structures/spawner.dm:164
-[DmPath("/obj/structure/spawner/mining/hivelord"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/hivelord"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_hivelord : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:164
@@ -10039,7 +10039,7 @@ public partial class obj_structure_spawner_mining_hivelord : obj_structure_spawn
 }
 
 // tg: code/game/objects/structures/spawner.dm:170
-[DmPath("/obj/structure/spawner/mining/basilisk"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/basilisk"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_basilisk : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:170
@@ -10059,7 +10059,7 @@ public partial class obj_structure_spawner_mining_basilisk : obj_structure_spawn
 }
 
 // tg: code/game/objects/structures/spawner.dm:176
-[DmPath("/obj/structure/spawner/mining/wumborian"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/wumborian"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_wumborian : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:176
@@ -10078,9 +10078,9 @@ public partial class obj_structure_spawner_mining_wumborian : obj_structure_spaw
     }
 }
 
-// tg: code/game/objects/structures/spawner.dm:182
-[DmPath("/obj/structure/spawner/nether"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_nether : obj_structure_spawner
+// tg: code/game/objects/structures/spawner.dm:182 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/nether")]
+public partial class obj_structure_spawner_nether
 {
     // tg: code/game/objects/structures/spawner.dm:182
     public obj_structure_spawner_nether()
@@ -10107,9 +10107,9 @@ public partial class obj_structure_spawner_nether : obj_structure_spawner
     }
 }
 
-// tg: code/game/objects/structures/spawner.dm:229
-[DmPath("/obj/structure/spawner/sentient"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_sentient : obj_structure_spawner
+// tg: code/game/objects/structures/spawner.dm:229 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/sentient")]
+public partial class obj_structure_spawner_sentient
 {
     public string role_name = "A sentient mob"; // tg: code/game/objects/structures/spawner.dm:229
     public string assumed_control_message = "You are a sentient mob from a badly coded spawner"; // tg: code/game/objects/structures/spawner.dm:230
@@ -10146,9 +10146,9 @@ public partial class obj_structure_spawner_sentient_proteon_spawner : obj_struct
     }
 }
 
-// tg: code/game/objects/structures/icemoon/cave_entrance.dm:13
-[DmPath("/obj/structure/spawner/ice_moon"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_ice_moon : obj_structure_spawner
+// tg: code/game/objects/structures/icemoon/cave_entrance.dm:13 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/ice_moon")]
+public partial class obj_structure_spawner_ice_moon
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:13
     public obj_structure_spawner_ice_moon()
@@ -10175,9 +10175,9 @@ public partial class obj_structure_spawner_ice_moon : obj_structure_spawner
     }
 }
 
-// tg: code/game/objects/structures/icemoon/cave_entrance.dm:67
-[DmPath("/obj/structure/spawner/ice_moon/polarbear"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_ice_moon_polarbear : obj_structure_spawner_ice_moon
+// tg: code/game/objects/structures/icemoon/cave_entrance.dm:67 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/ice_moon/polarbear")]
+public partial class obj_structure_spawner_ice_moon_polarbear
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:67
     public obj_structure_spawner_ice_moon_polarbear()
@@ -10195,9 +10195,9 @@ public partial class obj_structure_spawner_ice_moon_polarbear : obj_structure_sp
     }
 }
 
-// tg: code/game/objects/structures/icemoon/cave_entrance.dm:79
-[DmPath("/obj/structure/spawner/ice_moon/demonic_portal"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_ice_moon_demonic_portal : obj_structure_spawner_ice_moon
+// tg: code/game/objects/structures/icemoon/cave_entrance.dm:79 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/ice_moon/demonic_portal")]
+public partial class obj_structure_spawner_ice_moon_demonic_portal
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:79
     public obj_structure_spawner_ice_moon_demonic_portal()
@@ -10220,7 +10220,7 @@ public partial class obj_structure_spawner_ice_moon_demonic_portal : obj_structu
 }
 
 // tg: code/game/objects/structures/icemoon/cave_entrance.dm:107
-[DmPath("/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp"), DmGeneratedOnly]
 public partial class obj_structure_spawner_ice_moon_demonic_portal_ice_whelp : obj_structure_spawner_ice_moon_demonic_portal
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:108
@@ -10238,7 +10238,7 @@ public partial class obj_structure_spawner_ice_moon_demonic_portal_ice_whelp : o
 }
 
 // tg: code/game/objects/structures/icemoon/cave_entrance.dm:111
-[DmPath("/obj/structure/spawner/ice_moon/demonic_portal/snowlegion"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/ice_moon/demonic_portal/snowlegion"), DmGeneratedOnly]
 public partial class obj_structure_spawner_ice_moon_demonic_portal_snowlegion : obj_structure_spawner_ice_moon_demonic_portal
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:112
@@ -16705,14 +16705,14 @@ public partial class obj_structure_frost_miner_prism
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:124
-[DmPath("/obj/structure/elite_tumor"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_elite_tumor : obj_structure
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:124 (the var block of a hand-written class)
+[DmPath("/obj/structure/elite_tumor")]
+public partial class obj_structure_elite_tumor
 {
     public float activity = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:136
     public float boosted = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:137
     public float times_won = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:138
-    public Type activator; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:139
+    public mob_living_carbon_human activator; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:139
     public mob_living_simple_animal_hostile_asteroid_elite mychild; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:140
     public DmList potentialspawns; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:142
 
@@ -16741,9 +16741,9 @@ public partial class obj_structure_elite_tumor : obj_structure
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:269
-[DmPath("/obj/structure/legionnaire_bonfire"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_legionnaire_bonfire : obj_structure
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:269 (the var block of a hand-written class)
+[DmPath("/obj/structure/legionnaire_bonfire")]
+public partial class obj_structure_legionnaire_bonfire
 {
     public mob_living_simple_animal_hostile_asteroid_elite_legionnaire myowner; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:279
 

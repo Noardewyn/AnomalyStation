@@ -1657,3 +1657,21 @@ Human HUD only, in cursor mode (Tab; the inventory key I does the same as Tab). 
 - The overlay closes by itself when the player takes damage: cursor mode turns off, unless the player is typing in
   a text field or a window that needs the pointer is open.
 - Nothing of this is drawn in first person.
+
+## 16. tg's own slot sprites on the bottom row (asked for by the designer, 2026-11-27)
+
+"sidenote, can you use the og hand slot sprites and pocket slot sprites in the hotbar, scale them acordingly".
+
+Settled design (client only; built right after slice 4A, since both touch the same drawing code):
+- The two hand boxes are drawn with tg's own hand slot pictures from the HUD style (left and right hand, with tg's
+  own overlay on the active hand and tg's own blocked and cuff marks), scaled to the box (72 active, 56 inactive),
+  in place of the native fill. The size difference stays. The native amber border of the active hand goes, since
+  tg's active overlay shows it; the red border of a cuffed or missing hand stays over tg's mark (the designer chose
+  it in slice D). The swap key cap stays in the inactive hand's corner.
+- The pocket cells (8, 9) and the ID cell (0) are drawn with tg's own slot pictures (the pocket and ID slot art of
+  the HUD style), scaled to the cell, in place of the native fill and rim.
+- So that the bar is of one style, the seven belt cells use tg's plain slot picture of the same HUD style (the
+  blank slot template), scaled the same way. To confirm from screenshots.
+- On top of tg's picture, as now: the key cap, the item's picture, a stack's count; the states keep their meaning
+  (out: the item at a third; refused: a red rim over the cell; no belt: the belt cells at half opacity).
+- The worn slots round the character under Tab (slice 4A) use tg's slot pictures too.

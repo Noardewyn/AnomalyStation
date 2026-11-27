@@ -897,8 +897,8 @@ public sealed partial class ServerHost
             return;
         }
         // DEVIATION(DV30), version 98 also (slice T4b): the zone looked at on a carbon becomes tg's zone_selected before tg's hover, so the
-        // screentip is built from it (carbon_context's Headpat, Hug, Pull tail). Not while any of tg's do-afters runs for the mob (the
-        // designer, 2026-11-24): a surgery step or the gun at the mouth keeps the zone it started with, and the look is applied once the
+        // screentip is built from it (carbon_context's Headpat, Hug, Pull tail). Not while any of tg's do-afters runs for the mob:
+        // a surgery step or the gun at the mouth keeps the zone it started with, and the look is applied once the
         // do-afters are over (CatchUpLooks); a click still sets it (ApplyClick). tg's MouseEntered of the same atom runs on_mouse_enter
         // again, so a zone change on the same mob rebuilds the hints too.
         if (command.AimZone != AimZone.None && command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob looker)
@@ -913,7 +913,7 @@ public sealed partial class ServerHost
         s.HoversApplied++;
     }
 
-    // DEVIATION(DV601): tg's screentip shows at any distance; the designer (2026-11-26) wants the prompt only where a click would reach, so the
+    // DEVIATION(DV601): tg's screentip shows at any distance; here the prompt shows only where a click would reach, so the
     // router sends a world thing's hints empty when the mob cannot reach it by tg's own test of a click (ClickOn's IsReachableBy with the held
     // item's reach, click.dm:171). tg's MouseEntered still runs, so the hover's own effects (dm_mouse_over, the aimed turf, MouseExited) stay.
     private static void NoteReach(Session s, atom target, TargetKind kind)

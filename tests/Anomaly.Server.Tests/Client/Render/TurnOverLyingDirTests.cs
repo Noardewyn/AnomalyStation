@@ -8,7 +8,7 @@ namespace Anomaly.Server.Tests.Client.Render;
 /// <summary>
 /// Package T, slice T4c (DV573, DV600): which side of a lying body is drawn. One rule on the client (<c>BillboardMath.ChooseLyingDir</c>) and its
 /// mirror for the server's shots (<c>ShotGeometry.ChooseLyingDir</c>): a turned body shows the side it was turned to, one lying buckled to an object
-/// its front, from every side; otherwise the owner's rule of 2026-10-13 (conscious: its back; limp: by the viewer's side).
+/// its front, from every side; otherwise the floor rule (conscious: its back; limp: by the viewer's side).
 /// </summary>
 public class TurnOverLyingDirTests
 {
@@ -68,7 +68,7 @@ public class TurnOverLyingDirTests
     public void A_still_icon_stays_south_and_the_old_callers_rule_is_unchanged()
     {
         Assert.Equal(ByondDir.South, BillboardMath.ChooseLyingDir(0, 10, 10, 10, 5, 1, limp: false, buckled: false, turnedFaceUp: false));
-        // without the two new inputs (a body on the floor no one turned): the owner's rule as before
+        // without the two new inputs (a body on the floor no one turned): the floor rule as before
         Assert.Equal(ByondDir.North, BillboardMath.ChooseLyingDir(0, 10, 10, 10, 15, 4, limp: false));
         Assert.Equal(ByondDir.South, BillboardMath.ChooseLyingDir(0, 10, 10, 10, 15, 4, limp: true));
         Assert.Equal(ByondDir.North, BillboardMath.ChooseLyingDir(0, 10, 10, 10, 5, 4, limp: true));

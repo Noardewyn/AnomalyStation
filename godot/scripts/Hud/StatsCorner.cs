@@ -24,7 +24,7 @@ public partial class StatsCorner : Control
     /// <summary>Screen pixels per reference pixel of the chip (<see cref="UiTokens.Unit"/>), set by the scene with <see cref="TextScale"/>.</summary>
     public float Unit { get; set; } = 1f;
 
-    /// <summary>The owner (2026-11-01): how opaque the corner's three texts (the version tag, these lines, the prompts) are (PlayOptions.HudTextOpacity).</summary>
+    /// <summary>How opaque the corner's three texts (the version tag, these lines, the prompts) are (PlayOptions.HudTextOpacity).</summary>
     public static float TextAlpha { get; set; } = 0.6f;
 
     private int Px(float px) => Math.Max(1, (int)Math.Round(px * TextScale));

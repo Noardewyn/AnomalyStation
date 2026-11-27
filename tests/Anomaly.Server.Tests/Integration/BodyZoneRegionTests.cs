@@ -201,7 +201,7 @@ public class BodyZoneRegionTests(ITestOutputHelper output)
     }
 
     /// <summary>
-    /// Slice T4c (the contributor, 2026-11-24; narrows the owner's rule of 2026-10-13): a conscious patient lying buckled to an operating table or a
+    /// Slice T4c (narrows the floor rule: conscious, back up; limp, by the viewer's side): a conscious patient lying buckled to an operating table or a
     /// bed is drawn face up from every side, the frame the client chooses from the replicated posture, so its eyes and mouth are there to aim at.
     /// </summary>
     [Theory]
@@ -230,7 +230,7 @@ public class BodyZoneRegionTests(ITestOutputHelper output)
     }
 
     /// <summary>
-    /// Slice T4c (DV600): a conscious body on the floor keeps the owner's rule, back up with no eyes and no mouth from every side; turned over from
+    /// Slice T4c (DV600): a conscious body on the floor keeps the floor rule, back up with no eyes and no mouth from every side; turned over from
     /// the radial it shows its face from every side; turned again, its back.
     /// </summary>
     [Fact]

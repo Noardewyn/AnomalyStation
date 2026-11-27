@@ -76,7 +76,7 @@ public enum PlayAction : byte
     DropItem,
 
     /// <summary>
-    /// [Ctrl+Q, SS14's ThrowItemInHand; R before] The owner (2026-11-13, D328): throws the held thing at once where the crosshair points (tg's hold throw mode for that one click). It
+    /// [Ctrl+Q, SS14's ThrowItemInHand; R before] D328: throws the held thing at once where the crosshair points (tg's hold throw mode for that one click). It
     /// was tg's <c>/datum/keybinding/living/toggle_throw_mode</c> (M4a, D124); the HUD's throw button and the held <see cref="HoldThrow"/> still turn
     /// throw mode on. The name stays, so saved key layouts keep their key.
     /// </summary>
@@ -98,12 +98,12 @@ public enum PlayAction : byte
     CursorMode,
 
     /// <summary>
-    /// M4a (the owner, 2026-10-09): examine what is under the crosshair: tg's shift-click (<c>ShiftClickOn</c>, examinate) [Shift+left click,
+    /// M4a: examine what is under the crosshair: tg's shift-click (<c>ShiftClickOn</c>, examinate) [Shift+left click,
     /// SS14's ExamineEntity; V before]. Bound to a mouse button, it is that button's press as a left click with Shift (GameScene.OnMouseButton).
     /// </summary>
     Examine,
 
-    /// <summary>D137 (the owner, 2026-10-13): the window fullscreen or windowed [F11, SS14's ToggleFullscreen; F12 before].</summary>
+    /// <summary>D137: the window fullscreen or windowed [F11, SS14's ToggleFullscreen; F12 before].</summary>
     Fullscreen,
 
     /// <summary>Pulling (protocol version 20): tg's <c>/datum/keybinding/mob/stop_pulling</c> [H, SS14's ReleasePulledObject, and Delete, as in tg].</summary>
@@ -184,7 +184,7 @@ public enum PlayAction : byte
     /// </summary>
     MoveDownLevel,
 
-    /// <summary>The owner (2026-11-11): hides or shows the whole interface (the console's <c>ui toggle</c>) [Shift+F4, SS14's HideUI; F6 before].</summary>
+    /// <summary>Hides or shows the whole interface (the console's <c>ui toggle</c>) [Shift+F4, SS14's HideUI; F6 before].</summary>
     HideInterface,
 
     /// <summary>
@@ -845,7 +845,7 @@ public sealed class PlayOptions
     public const int MinWindowScale = 50, MaxWindowScale = 300, WindowScaleStep = 10;
 
     /// <summary>
-    /// The owner (2026-10-16): the window scale after Ctrl with <paramref name="key"/> (an engine key name) from <paramref name="now"/>: = or the
+    /// The window scale after Ctrl with <paramref name="key"/> (an engine key name) from <paramref name="now"/>: = or the
     /// keypad's + grow it a step, - or the keypad's - shrink it, 0 or the keypad's 0 resets it to 100; -1 for any other key (GameScene.WindowScaleKey).
     /// </summary>
     public static int WindowScaleAfterKey(string key, int now) => key switch

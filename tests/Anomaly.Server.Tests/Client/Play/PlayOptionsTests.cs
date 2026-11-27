@@ -277,7 +277,7 @@ public class PlayOptionsTests
     [Fact]
     public void TheStatsCornerIsOnByDefaultAndSaved()
     {
-        // D138: the FPS and the server's numbers at the top right, F3 (SS14's ShowDebugMonitors; F4 before) or the dev menu; on by default (the owner, 2026-10-18)
+        // D138: the FPS and the server's numbers at the top right, F3 (SS14's ShowDebugMonitors; F4 before) or the dev menu; on by default
         var options = new PlayOptions();
         Assert.True(options.ShowStats);
         Assert.Contains("show_stats=true", options.ToText());

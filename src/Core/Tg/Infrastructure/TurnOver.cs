@@ -7,7 +7,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// DEVIATION(DV600): the radial's Turn over (package T, slice T4c; the contributor, 2026-11-24). Not in tg: someone next to a lying carbon turns it
+// DEVIATION(DV600): the radial's Turn over (package T, slice T4c). Not in tg: someone next to a lying carbon turns it
 // face up or face down, a timed action of tg's do_after (1.5 seconds, tg's progress bar and interruptions), so the eyes and the mouth of a conscious
 // lying person can be aimed at by looking. The side is the port's own state on the mob (dm_turned_side, as DV96's dm_shots_landed), sent in the
 // posture byte (PostureBits.SideFixed and FaceUp) and read by the frame choice of the clients and of the server's shots (ShotGeometry.ChooseLyingDir).

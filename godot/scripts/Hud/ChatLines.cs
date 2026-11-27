@@ -5,7 +5,7 @@ namespace Anomaly.Client.Hud;
 
 /// <summary>
 /// M4a P7 (D128, interaction.md 9): the feedback until M9, one overlay: tg's last chat lines at the lower left (<see cref="ChatFeed"/>), a balloon alert under the crosshair
-/// (<see cref="BalloonModel"/>), tg's progress bars at the top middle, labelled, or an item's under its action button (the owner, 2026-10-18: over its target or under the crosshair it covered the mobs and items in the middle of the view; <see cref="ProgressBarLayout"/>), and the hovered thing's
+/// (<see cref="BalloonModel"/>), tg's progress bars at the top middle, labelled, or an item's under its action button (over its target or under the crosshair it covered the mobs and items in the middle of the view; <see cref="ProgressBarLayout"/>), and the hovered thing's
 /// name with its prompts (a key chip and the server's hint each, <see cref="KeyChips.Prompts"/>) at the crosshair's lower right (ui-overhaul.md section 6; the top right
 /// before). The scene fills the fields each frame.
 /// </summary>

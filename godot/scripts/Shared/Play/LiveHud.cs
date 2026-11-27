@@ -6,7 +6,7 @@ namespace Anomaly.Client.Shared;
 
 // Owner: ui-overhaul.md section 6 (package 2, slices B to E). Engine-free: no Godot API here (it is compiled into tests/Anomaly.Server.Tests too).
 // The server still computes tg's screen entries and a click still goes to them (D107 as revised by ui-overhaul.md section 1); the client
-// re-places some of them. The doll only shows injuries: targeting is where the player looks (the owner, 2026-11-24), so tg's zone selector
+// re-places some of them. The doll only shows injuries: targeting is where the player looks, so tg's zone selector
 // shows only while the cursor is free. Slice E: on the human HUD the vitals stand bare at the right edge, tg's combat toggle is in the corner
 // and tg's buttons that a key does are neither drawn nor clicked.
 
@@ -367,7 +367,7 @@ public static class LiveHud
     /// <summary>
     /// Whether an entry of <paramref name="role"/> drawn as a chip (<see cref="Placed"/> gave <see cref="LiveHudRole.Alert"/>) gets one now: tg's
     /// alerts always; the status indicators while tg draws something (<see cref="IndicatorShown"/>), and the stamina indicator only while stamina
-    /// is down (slice E, the designer, 2026-11-26): not at tg's <c>stamina_full</c> (living.dm:1458-1470, which tg sets after its first update with
+    /// is down (slice E): not at tg's <c>stamina_full</c> (living.dm:1458-1470, which tg sets after its first update with
     /// nothing lost), only at <c>stamina_1</c> to <c>stamina_5</c>, <c>stamina_crit</c> and <c>stamina_dead</c>. At tg's places (another HUD, the
     /// reduced arrangement) tg's entry is drawn in every state, as tg draws it.
     /// </summary>
@@ -547,7 +547,7 @@ public static class LiveHud
     private static readonly ScreenLocSpec BottomRow = ScreenLoc.TryParse("EAST-2:26,SOUTH+1:24", out ScreenLocSpec spec) ? spec : default;
 
     /// <summary>
-    /// The vitals. On the human HUD (<paramref name="human"/>; slice E, the designer, 2026-11-26): the full stack (<see cref="VitalsColumn"/>: the
+    /// The vitals. On the human HUD (<paramref name="human"/>; slice E): the full stack (<see cref="VitalsColumn"/>: the
     /// doll, tg's health indicator and mood face, bare against the screen's right edge over tg's combat toggle) wherever it fits at this screen and
     /// scale; else the reduced arrangement, the doll alone, its right edge <see cref="UiTokens.DollPanelGap"/> left of tg's right-hand column (the
     /// tiles at <c>EAST-1</c>, where tg's status indicators then stay), centred vertically and kept above tg's bottom-right buttons and under the
@@ -582,7 +582,7 @@ public static class LiveHud
     private static readonly ScreenLocSpec SleepLoc = Loc("EAST-1:28,SOUTH+1:41");
 
     /// <summary>
-    /// The full vitals stack (slice E, the designer, 2026-11-26), or null where it does not fit: three pictures, no box, centred on one vertical axis
+    /// The full vitals stack (slice E), or null where it does not fit: three pictures, no box, centred on one vertical axis
     /// (<see cref="Axis"/>) placed so that the widest, the doll's square, touches the screen's right edge (tg's pictures carry their own transparent
     /// margin), the others centred on it at whole pixels, <see cref="UiTokens.VitalsMargin"/> apart, top to bottom the doll at
     /// its whole-pixel scale S and tg's health indicator and mood face at S - 1 (at least 1), anchored at the bottom: the mood face's bottom
@@ -628,7 +628,7 @@ public static class LiveHud
         _ => null,
     };
 
-    // ---- the held-item hint strip above the hands (the designer, 2026-11-26) ----
+    // ---- the held-item hint strip above the hands ----
 
     /// <summary>
     /// The side of the hint strip's item picture at a strip <paramref name="height"/> screen pixels high: the held item's 32 x 32 icon at the
@@ -723,7 +723,7 @@ public static class LiveHud
     /// </summary>
     public const int MaxChips = 12;
 
-    // ---- slice D: tg's alerts as chips by the vitals, above them or left of them (the designer, 2026-11-26) ----
+    // ---- slice D: tg's alerts as chips by the vitals, above them or left of them ----
 
     /// <summary>
     /// Where an alert stands in tg's order: its index in tg's column (alert.dm get_ui_alert_placement, read from the screen_loc tg gave it; alert 1
@@ -735,7 +735,7 @@ public static class LiveHud
     /// Whether the alert chips stand above the doll at this screen and scale: when five chips at full size (<see cref="UiTokens.AlertChip"/>,
     /// <see cref="UiTokens.AlertChipGap"/> apart, <see cref="UiTokens.AlertStackGap"/> over the doll) fit between the doll's top and the version
     /// tag and the ping and FPS chip (<see cref="UiTokens.CardTopRoom"/>); else they stand left of the vitals. It never depends on how
-    /// many alerts show, so no chip moves to the other place when one comes or goes (the designer, 2026-11-26).
+    /// many alerts show, so no chip moves to the other place when one comes or goes.
     /// </summary>
     public static bool AlertsAbove(in HudMetrics metrics, in LiveHudLayout layout)
     {
@@ -840,7 +840,7 @@ public static class LiveHud
     }
 
     /// <summary>
-    /// Section 11 (the designer, 2026-11-26, revised the same day): how a chip shows the visible art <paramref name="art"/> (tg pixels, its left
+    /// Section 11: how a chip shows the visible art <paramref name="art"/> (tg pixels, its left
     /// and top from the top left corner of tg's 32 x 32 icon square): scaled uniformly, by any factor, so that its larger side fills the chip
     /// less <see cref="UiTokens.AlertChipArtMargin"/> on each side exactly, and centred in the chip both ways. <c>Picture</c> is where the art
     /// lands on the screen: at whole pixels, its smaller side rounded (the aspect kept within a pixel), always inside the chip.
@@ -937,7 +937,7 @@ public static class LiveHud
     /// The look a screen entry drawn in the role <paramref name="placed"/> (<see cref="Placed"/>) shows of its animate() chain: in a chip
     /// (<see cref="LiveHudRole.Alert"/>: tg's alerts and the status indicators on the human HUD) without moving, so its picture always stays in
     /// <see cref="AlertPicture"/> (tg throws a new alert in 32 pixels to the right, alert.dm:65-66, which would draw it over the doll beside the
-    /// empty chip); nothing replaces that slide. Slice E (the designer, 2026-11-26): the hunger bar's chip (<paramref name="role"/>
+    /// empty chip); nothing replaces that slide. Slice E: the hunger bar's chip (<paramref name="role"/>
     /// <see cref="LiveHudRole.Hunger"/>) is drawn at full opacity, not with tg's fade (screen_objects.dm:1237-1247, a second): the chip comes and
     /// goes with the fade's target, which is the entry's own alpha (animate() sets it at once, as BYOND does; <see cref="ChipShown"/>). At tg's
     /// places the look is tg's.

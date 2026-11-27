@@ -232,7 +232,7 @@ public static class UiTokens
     /// <summary>... and its lighter fill, so that tg's mark over it reads at a glance.</summary>
     public const uint HandMarkedBack = 0x5A6470D9;
 
-    // ---- the held-item hint strip over the hands (LiveHud.HintBy; the designer, 2026-11-26): slice D's combat pill's height, dark fill and rounded ends ----
+    // ---- the held-item hint strip over the hands (LiveHud.HintBy): slice D's combat pill's height, dark fill and rounded ends ----
 
     /// <summary>The strip's height.</summary>
     public const float HintHeight = 32f;
@@ -261,12 +261,12 @@ public static class UiTokens
     /// </summary>
     public const float CardTopRoom = 32f + 8f + StatusChipHeight + ScreenMargin;
 
-    // ---- the full vitals stack on the human HUD (LiveHud.VitalsColumn; slice E, the designer, 2026-11-26) ----
+    // ---- the full vitals stack on the human HUD (LiveHud.VitalsColumn; slice E) ----
 
     /// <summary>The gap between two pictures of the stack, and between the mood face and tg's combat toggle under it.</summary>
     public const float VitalsMargin = 8f;
 
-    // ---- tg's alerts as a stack of chips by the vitals (LiveHud.AlertStack; the designer, 2026-11-26) ----
+    // ---- tg's alerts as a stack of chips by the vitals (LiveHud.AlertStack) ----
 
     /// <summary>An alert chip's side: a square holding tg's alert picture.</summary>
     public const float AlertChip = 40f;

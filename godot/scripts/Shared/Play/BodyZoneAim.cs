@@ -140,7 +140,7 @@ public static class BodyZoneAim
     }
 
     /// <summary>
-    /// Slice T5c (the contributor, 2026-11-24: "Add eyes and mouth to the health doll"): the doll's <paramref name="limb"/> (<see cref="DollZoneAt"/>)
+    /// Slice T5c (the eyes and the mouth on the health doll): the doll's <paramref name="limb"/> (<see cref="DollZoneAt"/>)
     /// at tg's (<paramref name="iconX"/>, <paramref name="iconY"/>) refined on the head by tg's own pixels of the zone selector (screen_objects.dm,
     /// <c>get_zone_at</c>): the eyes rows 25 to 27, columns 15 to 17, and columns 14 and 18 on row 26; the mouth rows 23 and 24, columns 15 to 17.
     /// For an item used on the doll and its hover pictures; the ctrl-click grasp takes the limb itself (tg's <c>get_bodypart</c> has no eyes or mouth).

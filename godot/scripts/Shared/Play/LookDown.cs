@@ -1,7 +1,7 @@
 namespace Anomaly.Client.Shared;
 
 // Engine-free: no Godot API here (it is compiled into tests/Anomaly.Server.Tests too).
-// UI overhaul slice T5a (the contributor, 2026-11-24; docs/ai/specs/ui-overhaul.md section 8, "T5 design, corrected by the contributor"):
+// UI overhaul slice T5a (docs/ai/specs/ui-overhaul.md section 8, the corrected T5 design):
 // looking down at one's own body in first person. The eye turns about the neck, so looking down moves it forward and down; the pitch goes
 // past straight down so the view looks back at the body, one continuous turn about the camera's own right axis. Past 90 degrees the
 // camera's forward points backward on the ground, so the way the player faces is taken from the view's right (the yaw), never from its forward.
@@ -12,7 +12,7 @@ public static class LookDown
     /// <summary>How far under a standing human's eye (at a level look) the point it turns about is, metres: the neck.</summary>
     public const double PivotMetres = 0.25;
 
-    /// <summary>How far the first-person view turns down, degrees below level: past straight down, back at the own body (the contributor, 2026-11-26).</summary>
+    /// <summary>How far the first-person view turns down, degrees below level: past straight down, back at the own body.</summary>
     public const double MaxDownDegrees = 135;
 
     /// <summary>How far the view turns up, degrees above level; and how far the other cameras (free, orbit, the map editor's) turn down.</summary>
@@ -82,7 +82,7 @@ public static class LookDown
         => firstPerson && onTurf && !ghost && !observing && !lying && !limp && !exosuit && !scoped && -pitch >= BodyFrom(fovDegrees, nearMetres, eyeMetres);
 
     /// <summary>
-    /// Slice T5b (the contributor, 2026-11-24: "your body should count as a target when you're looking at it, same as targeting other people"): the
+    /// Slice T5b (the own body is a target while it is looked at, as other people are): the
     /// entity the world picks leave out: the own mob <paramref name="ownEntity"/>, except while its body is drawn for its own eye
     /// (<paramref name="bodyShown"/>, <see cref="ShowsOwnBody"/>), when it is hit on its body parts as anyone else is (0: nothing left out).
     /// </summary>

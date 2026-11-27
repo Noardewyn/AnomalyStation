@@ -82,7 +82,7 @@ public partial class GameScene
             return false;
         if (ChatWindowOpen)
         {
-            // the owner (2026-10-26): the chat window stays open while playing; the speech keys type into it, on their channel (ui-overhaul.md 5)
+            // the chat window stays open while playing; the speech keys type into it, on their channel (ui-overhaul.md 5)
             _chatWindow.FocusInput(channel);
             GetViewport().SetInputAsHandled();
             return true;

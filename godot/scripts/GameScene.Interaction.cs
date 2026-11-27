@@ -487,7 +487,7 @@ public partial class GameScene
         _chatLines.PromptReach = pointerAim ? KeyChips.PointerReach : _crosshair.Extent;
         // beside the crosshair they end before the vitals and their chips, their text cut (the free pointer's block keeps its own room)
         _chatLines.PromptRightEdge = pointerAim || _hudLayer == null ? float.PositiveInfinity : _hudLayer.PanelLeftEdge;
-        _chatLines.TextScale = metrics.TextScale; // scales with the HUD (the owner, 2026-10-18)
+        _chatLines.TextScale = metrics.TextScale; // scales with the HUD
         _chatLines.ChatScale = _options.ChatLinesScale; // and its chat lines by their own share (the owner, 2026-11-19)
         _chatLines.Lines = ChatWindowOpen ? new List<ChatLine>() : _chat.Visible(now); // D252: the feed is hidden while the chat window is open
         _chatLines.Balloon = _balloon.Current(now, out float alpha);

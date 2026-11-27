@@ -1469,7 +1469,7 @@ public partial class GameScene : Node3D
         yield return string.Create(c, $"seq sent {_feed.LastSentSeq} acked {_feed.LastAppliedSeq}");
     }
 
-    // the owner (2026-10-28): the prediction in brief in the debug HUD's (F3) corner (the dev menu's Stats tab has it all, PredictionLines)
+    // the prediction in brief in the debug HUD's (F3) corner (the dev menu's Stats tab has it all, PredictionLines)
     private string PredictionLine(CultureInfo c)
     {
         OwnPrediction p = _session.Prediction;

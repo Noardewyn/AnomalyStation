@@ -147,11 +147,7 @@ public partial class datum_reagent_water : datum_reagent
             return dot;
 
         foreach (mob_living_basic_slime exposed_slime in Dm.each<mob_living_basic_slime>(open_turf))
-        {
-            // exposed_slime.apply_water(): a slime hurt by water (/mob/living/basic/slime is not translated; xenobiology,
-            // M10)
-            Dm.NotTranslated("code/modules/reagents/chemistry/reagents/other_reagents.dm:145", "expose_turf: exposed_slime.apply_water() (slimes, xenobiology, M10+)");
-        }
+            await exposed_slime.apply_water();
 
         float cool_temp = cooling_temperature;
 

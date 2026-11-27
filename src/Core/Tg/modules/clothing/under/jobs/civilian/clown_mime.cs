@@ -17,7 +17,7 @@ public partial class obj_item_clothing_under_rank_civilian_clown : obj_item_clot
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_squeak), Dm.list(Dm.kv(Dm.resource("sound/items/bikehorn.ogg"), 1)), 50, Dm.named("falloff_exponent", 20))); //die off quick please
-        Dm.Deferred("code/modules/clothing/under/jobs/civilian/clown_mime.dm:41", "Initialize: AddElement(/datum/element/swabable, CELL_LINE_TABLE_CLOWN, ...): the cell lines (the sample swab, not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_CLOWN, CELL_VIRUS_TABLE_GENERIC, rand(2, 3), 0));
         return dot;
     }
 }

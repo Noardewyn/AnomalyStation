@@ -38706,9 +38706,9 @@ public partial class obj_item_abstracthotelstorage : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:3
-[DmPath("/obj/item/petri_dish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_petri_dish : obj_item
+// tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/petri_dish")]
+public partial class obj_item_petri_dish
 {
     public datum_biological_sample sample; // tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:10
 
@@ -38730,9 +38730,9 @@ public partial class obj_item_petri_dish : obj_item
     }
 }
 
-// tg: code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:2
-[DmPath("/obj/item/petri_dish/oldstation"), DmGeneratedOnly, DmInert]
-public partial class obj_item_petri_dish_oldstation : obj_item_petri_dish
+// tg: code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/petri_dish/oldstation")]
+public partial class obj_item_petri_dish_oldstation
 {
     // tg: code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:2
     public obj_item_petri_dish_oldstation()
@@ -38742,9 +38742,9 @@ public partial class obj_item_petri_dish_oldstation : obj_item_petri_dish
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:59
-[DmPath("/obj/item/petri_dish/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_petri_dish_random : obj_item_petri_dish
+// tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:59 (the var block of a hand-written class)
+[DmPath("/obj/item/petri_dish/random")]
+public partial class obj_item_petri_dish_random
 {
     // tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:59
     public obj_item_petri_dish_random()
@@ -41014,13 +41014,13 @@ public partial class obj_item_slimepotion_sentience_nuclear_dangerous_horse : ob
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:695
-[DmPath("/obj/item/slimepotion/slime"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime : obj_item_slimepotion { }
+// tg: code/modules/research/xenobiology/xenobiology.dm:695 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime")]
+public partial class obj_item_slimepotion_slime { }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:709
-[DmPath("/obj/item/slimepotion/slime/docility"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_docility : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/xenobiology.dm:709 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/docility")]
+public partial class obj_item_slimepotion_slime_docility
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:709
     public obj_item_slimepotion_slime_docility()
@@ -41031,9 +41031,9 @@ public partial class obj_item_slimepotion_slime_docility : obj_item_slimepotion_
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:890
-[DmPath("/obj/item/slimepotion/slime/steroid"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_steroid : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/xenobiology.dm:890 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/steroid")]
+public partial class obj_item_slimepotion_slime_steroid
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:890
     public obj_item_slimepotion_slime_steroid()
@@ -41044,9 +41044,9 @@ public partial class obj_item_slimepotion_slime_steroid : obj_item_slimepotion_s
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:916
-[DmPath("/obj/item/slimepotion/slime/stabilizer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_stabilizer : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/xenobiology.dm:916 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/stabilizer")]
+public partial class obj_item_slimepotion_slime_stabilizer
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:916
     public obj_item_slimepotion_slime_stabilizer()
@@ -41057,9 +41057,9 @@ public partial class obj_item_slimepotion_slime_stabilizer : obj_item_slimepotio
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:934
-[DmPath("/obj/item/slimepotion/slime/mutator"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_mutator : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/xenobiology.dm:934 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/mutator")]
+public partial class obj_item_slimepotion_slime_mutator
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:934
     public obj_item_slimepotion_slime_mutator()
@@ -41083,9 +41083,9 @@ public partial class obj_item_slimepotion_slime_chargedstabilizer : obj_item_sli
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:834
-[DmPath("/obj/item/slimepotion/transference"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_transference : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:834 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/transference")]
+public partial class obj_item_slimepotion_transference
 {
     public float prompted = 0; // tg: code/modules/research/xenobiology/xenobiology.dm:837
     public float animal_type = 1; // tg: code/modules/research/xenobiology/xenobiology.dm:838
@@ -41125,9 +41125,9 @@ public partial class obj_item_slimepotion_enhancer_max : obj_item_slimepotion_en
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:956
-[DmPath("/obj/item/slimepotion/speed"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_speed : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:956 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/speed")]
+public partial class obj_item_slimepotion_speed
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:956
     public obj_item_slimepotion_speed()
@@ -41138,9 +41138,9 @@ public partial class obj_item_slimepotion_speed : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:996
-[DmPath("/obj/item/slimepotion/fireproof"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_fireproof : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:996 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/fireproof")]
+public partial class obj_item_slimepotion_fireproof
 {
     public float uses = 3; // tg: code/modules/research/xenobiology/xenobiology.dm:1000
 
@@ -41154,9 +41154,9 @@ public partial class obj_item_slimepotion_fireproof : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:1029
-[DmPath("/obj/item/slimepotion/genderchange"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_genderchange : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:1029 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/genderchange")]
+public partial class obj_item_slimepotion_genderchange
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:1029
     public obj_item_slimepotion_genderchange()
@@ -41182,9 +41182,9 @@ public partial class obj_item_slimepotion_renaming
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:1104
-[DmPath("/obj/item/slimepotion/slimeradio"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slimeradio : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:1104 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slimeradio")]
+public partial class obj_item_slimepotion_slimeradio
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:1104
     public obj_item_slimepotion_slimeradio()
@@ -44979,9 +44979,9 @@ public partial class obj_item_autoslime : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:3
-[DmPath("/obj/item/biopsy_tool"), DmGeneratedOnly, DmInert]
-public partial class obj_item_biopsy_tool : obj_item
+// tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/biopsy_tool")]
+public partial class obj_item_biopsy_tool
 {
     public float can_swap_objects = 0; // tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:11
 
@@ -45005,7 +45005,7 @@ public partial class obj_item_biopsy_tool : obj_item
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:25
-[DmPath("/obj/item/biopsy_tool/organ"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/biopsy_tool/organ"), DmGeneratedOnly]
 public partial class obj_item_biopsy_tool_organ : obj_item_biopsy_tool
 {
     // tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:25
@@ -45019,9 +45019,9 @@ public partial class obj_item_biopsy_tool_organ : obj_item_biopsy_tool
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/swab.dm:3
-[DmPath("/obj/item/swab"), DmGeneratedOnly, DmInert]
-public partial class obj_item_swab : obj_item
+// tg: code/modules/research/xenobiology/vatgrowing/swab.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/swab")]
+public partial class obj_item_swab
 {
     // tg: code/modules/research/xenobiology/vatgrowing/swab.dm:3
     public obj_item_swab()

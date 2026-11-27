@@ -23,7 +23,11 @@ public class MeasurementsV4Tests
     public void AnOpenBackpackAndARunningProgressBarCostWhatTheDocumentationSays()
     {
         V2Run run = V2Run.Quiet();
-        SessionView me = run.Connect("Me", NewHuman(run, 4, 4));
+        mob_living_carbon_human body = NewHuman(run, 4, 4);
+        // a human starts at a random nutrition: a fed one's mood and hunger icons change in a measured Delta, so Me starts between
+        // hungry and fed, where they hold still
+        run.In(() => { Anomaly.Core.Kernel.Waiting.NoSleep(body.set_nutrition((NUTRITION_LEVEL_HUNGRY + NUTRITION_LEVEL_FED) / 2)); });
+        SessionView me = run.Connect("Me", body);
         for (int i = 0; i < 3; i++) run.Step();
         int quiet = me.Bytes[^1].Length;
 

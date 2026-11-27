@@ -196,6 +196,7 @@ public class DeathAndRecoveryTests
         var human = room.Human(4, 4);
         room.In(() =>
         {
+            room.World.Rng.Reseed(606, 1); // the brute's wound rolls, pinned: a bleeding cut would take blood before the revive
             MedRoom.Apply(human, 100, BRUTE, BODY_ZONE_CHEST);
             Waiting.NoSleep(human.adjust_tox_loss(200, forced: TRUE));
             Assert.Equal(DEAD, human.stat);

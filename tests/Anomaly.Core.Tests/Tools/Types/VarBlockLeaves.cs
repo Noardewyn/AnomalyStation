@@ -58,6 +58,8 @@ internal static class VarBlockLeaves
         [typeof(obj_item_flatpack)] = "BAD_INIT_DIDNT_INIT",
         // gaps BR1: made without the domain it was completed in, the decrypted curiosity returns INITIALIZE_HINT_QDEL before its ..() (lockbox.dm:337-339)
         [typeof(obj_item_storage_lockbox_bitrunning_decrypted)] = "BAD_INIT_DIDNT_INIT",
+        // the slime console's eye, made without its console, does the same through its parent (remote.dm:35)
+        [typeof(mob_eye_camera_remote_xenobio)] = "BAD_INIT_DIDNT_INIT",
     };
 
     /// <summary>The runtimes that are tg's own stack traces of a type, and the text that names them.</summary>

@@ -9,9 +9,233 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (syndicate G3c, D316): the slime potion base and the intelligence potions (sentience, the syndicate one and the
-// dangerous pony potion of the uplink's pony box). The slime extracts, the other potions and the xenobiology console wait for
-// the xenobiology lab. The var blocks are generated (D111).
+// The whole file but the extracts' activation by a luminescent jellyperson (`activate` of each colour: the jellypeople species is not
+// ported; live-partial stubs). The slime potion base and the intelligence potions came first (syndicate G3c, D316: the sentience, the
+// syndicate one and the dangerous pony potion of the uplink's pony box); xenobiology added the slime extracts, the other potions and
+// the slime steroid. The crossbreeds that a slime's crossed core grows into are xenobiology's crossbreeding, not ported yet. The var
+// blocks are generated (D111).
+
+/// Slime Extracts ///
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:3
+public partial class obj_item_slime_extract : obj_item
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:24
+    public override async DmTask<object> grind_results()
+    {
+        return Dm.truthy(can_grind) ? Dm.list(Dm.kv(typeof(datum_reagent_toxin_slimejelly), 20)) : Dm.list();
+    }
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:27
+    public override async DmTask<object> examine(mob user = null, params object[] __extra)
+    {
+        DmList dot = await base.examine(user, __extra) as DmList;
+        if (extract_uses > 1)
+            Dm.append(ref dot, I18n.T("It has [] uses remaining.", extract_uses));
+        return dot;
+    }
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:32
+    public override async DmTask<object> item_interaction(mob_living user = null, obj_item tool = null, DmList modifiers = null, params object[] __extra)
+    {
+        if (!(tool is obj_item_slimepotion_enhancer))
+            return NONE;
+        if (extract_uses >= 5 || Dm.truthy(recurring))
+        {
+            to_chat(user, span_warning(I18n.T("You cannot enhance this extract further!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (tool is obj_item_slimepotion_enhancer_max)
+        {
+            to_chat(user, span_notice(I18n.T("You dump the maximizer on the slime extract. It can now be used a total of 5 times!")));
+            extract_uses = 5;
+        }
+        else
+        {
+            to_chat(user, span_notice(I18n.T("You apply the enhancer to the slime extract. It may now be reused one more time.")));
+            extract_uses++;
+        }
+        qdel(tool);
+        return ITEM_INTERACT_SUCCESS;
+    }
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:47
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        create_reagents(100, Dm.bitor(Dm.bitor(INJECTABLE, DRAWABLE), SEALED_CONTAINER));
+        return dot;
+    }
+
+    /**
+    * Effect when activated by a Luminescent.
+    *
+    * This proc is called whenever a Luminescent consumes a slime extract. Each one is separated into major and minor effects depending on the extract. Cooldown is measured in deciseconds.
+    *
+    * * arg1 - The mob absorbing the slime extract.
+    * * arg2 - The valid species for the absorbtion. Should always be a Luminescent unless something very major has changed.
+    * * arg3 - Whether or not the activation is major or minor. Major activations have large, complex effects, minor are simple.
+    */
+    // tg: code/modules/research/xenobiology/xenobiology.dm:60
+    public virtual async DmTask<object> activate(mob_living_carbon_human user = null, datum_species_jelly_luminescent species = null, object activation_type = null)
+    {
+        to_chat(user, span_warning(I18n.T("Nothing happened... This slime extract cannot be activated this way.")));
+        return FALSE;
+    }
+
+    /**
+    * Core-crossing: Feeding adult slimes extracts to obtain a much more powerful, single extract.
+    *
+    * By using a valid core on a living adult slime, then feeding it nine more of the same type, you can mutate it into more useful items. Not every slime type has an implemented core cross.
+    */
+    // tg: code/modules/research/xenobiology/xenobiology.dm:69
+    public override async DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
+    {
+        mob_living_basic_slime target_slime = interacting_with as mob_living_basic_slime;
+        if (!(target_slime is mob_living_basic_slime))
+            return NONE;
+
+        if (IS_UNCONSCIOUS_OR_CRIT(target_slime))
+        {
+            to_chat(user, span_warning(I18n.T("The slime is dead!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (target_slime.life_stage != SLIME_LIFE_STAGE_ADULT)
+        {
+            to_chat(user, span_warning(I18n.T("The slime must be an adult to cross its core!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (Dm.truthy(target_slime.crossbreed_modification) && !Dm.eq(target_slime.crossbreed_modification, crossbreed_modification))
+        {
+            to_chat(user, span_warning(I18n.T("The slime is already being crossed with a different extract!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        if (!Dm.truthy(target_slime.crossbreed_modification))
+            target_slime.crossbreed_modification = crossbreed_modification;
+
+        target_slime.applied_crossbreed_amount++;
+        qdel(this);
+        to_chat(user, span_notice(I18n.T("You feed the slime [], []", this, target_slime.applied_crossbreed_amount == 1 ? I18n.T("starting to mutate its core.") : I18n.T("further mutating its core."))));
+        playsound(target_slime, "sound/effects/blob/attackblob.ogg", 50, TRUE);
+
+        if (target_slime.applied_crossbreed_amount >= SLIME_EXTRACT_CROSSING_REQUIRED)
+            target_slime.spawn_corecross();
+        return ITEM_INTERACT_SUCCESS;
+    }
+
+    /**
+    * Effect when activated by selfsustaining crossbreed or rainbow slime
+    *
+    * * arg1 - The reaction being triggered. If null, a random reaction is picked
+    */
+    // tg: code/modules/research/xenobiology/xenobiology.dm:101
+    public virtual async DmTask auto_activate_reaction(datum_chemical_reaction_slime slime_reaction = null)
+    {
+        if (QDELETED(this))
+            return;
+
+        if (slime_reaction == null)
+        {
+            DmList slime_reactions = GLOB.slime_extract_auto_activate_reactions[type] as DmList;
+            if (slime_reactions == null)
+                return;
+            slime_reaction = pick(slime_reactions) as datum_chemical_reaction_slime;
+        }
+
+        DmList required_reagents = slime_reaction.required_reagents;
+        foreach (object chem in Dm.each(required_reagents))
+            await ((datum_reagents)reagents).add_reagent(chem, required_reagents[chem]);
+    }
+}
+
+/// An assoc list of slime extracts to their allowed recipes
+// tg: code/modules/research/xenobiology/xenobiology.dm:116  GLOBAL_LIST_INIT(slime_extract_auto_activate_reactions, init_slime_auto_activate_reaction_list())
+public partial class datum_controller_global_vars
+{
+    public DmList slime_extract_auto_activate_reactions;
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:116  (GLOBAL_MANAGED(slime_extract_auto_activate_reactions, ...), __DEFINES/__globals.dm:5)
+    public virtual void InitGlobalslime_extract_auto_activate_reactions()
+    {
+        slime_extract_auto_activate_reactions = init_slime_auto_activate_reaction_list();
+    }
+}
+
+public static partial class GlobalProcs
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:118
+    public static DmList init_slime_auto_activate_reaction_list()
+    {
+        DmList recipe_list = Dm.list();
+
+        // Only reactions with these reagent requirements are allowed to auto_activate
+        DmList auto_activate_reagent_whistlist = Dm.list(
+            typeof(datum_reagent_toxin_plasma),
+            typeof(datum_reagent_water),
+            typeof(datum_reagent_blood),
+            typeof(datum_reagent_water_holywater),
+            typeof(datum_reagent_uranium),
+            typeof(datum_reagent_uranium_radium),
+            typeof(datum_reagent_toxin_slimejelly)
+        );
+
+        DmList slime_extract_paths = subtypesof(typeof(obj_item_slime_extract));
+        foreach (Type slime_reaction in Dm.each_cast<Type>(subtypesof(typeof(datum_chemical_reaction_slime))))
+        {
+            Type recipe_extract_type = Dm.initial(slime_reaction, (datum_chemical_reaction_slime p) => p.required_container);
+            if (!Dm.@in(recipe_extract_type, slime_extract_paths))
+                continue;
+
+            bool skip = false;
+            // A var read off a typepath is its initial(); the reagent list is runtime-initialized and reads null there (as in
+            // OpenDream), so tg's whitelist filters nothing and every extract reaction is kept (tg's behaviour, kept)
+            foreach (object chem in Dm.each(Dm.initial(slime_reaction, (datum_chemical_reaction_slime p) => p.required_reagents)))
+            {
+                if (!Dm.@in(chem, auto_activate_reagent_whistlist))
+                {
+                    skip = true;
+                    break;
+                }
+            }
+            if (skip)
+                continue;
+
+            DmList recipes = recipe_list[recipe_extract_type] as DmList;
+            if (!Dm.truthy(recipes))
+            {
+                recipes = Dm.list();
+                recipe_list[recipe_extract_type] = recipes;
+            }
+            recipes.Add(Dm.@new(slime_reaction));
+        }
+
+        return recipe_list;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:541
+public partial class obj_item_slime_extract_adamantine : obj_item_slime_extract
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:541
+    public virtual void reset_armor(mob_living_carbon_human user = null)
+    {
+        REMOVE_TRAIT(user, TRAIT_ADAMANTINE_EXTRACT_ARMOR, ADAMANTINE_EXTRACT_TRAIT);
+        user.damage_resistance -= 25;
+    }
+}
+
+////Slime-derived potions///
+
+/**
+* #Slime potions
+*
+* Feed slimes potions either by hand or using the slime console.
+*
+* Slime potions either augment the slime's behavior, its extract output, or its intelligence. These all come either from extract effects or cross cores.
+* A few of the more powerful ones can modify someone's equipment or gender.
+* New ones should probably be accessible only through cross cores as all the normal core types already have uses. Rule of thumb is 'stronger effects go in cross cores'.
+*/
 
 // Gaps SP2c (D349): the slime extract's activate(), the hook of the luminescent's extract actions, and the 22 colour extracts'
 // activate() overrides (the effects of the integrated extract). The rest of the extracts (grinding, reactions) wait for the
@@ -747,6 +971,68 @@ public partial class obj_item_slimepotion : obj_item
     }
 }
 
+// tg: code/modules/research/xenobiology/xenobiology.dm:695
+public partial class obj_item_slimepotion_slime : obj_item_slimepotion
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:695
+    public override async DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
+    {
+        object dot = await base.interact_with_atom(interacting_with, user, modifiers);
+        if (Dm.truthy(Dm.bitand(dot, ITEM_INTERACT_ANY_BLOCKER)))
+            return dot;
+        if (isslime(interacting_with))
+            return await interact_with_slime((mob_living_basic_slime)interacting_with, user, modifiers);
+        else
+        {
+            to_chat(user, span_warning(I18n.T("It appears [] must be given directly to a slime to absorb.", this)));
+            return NONE;
+        }
+    }
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:705
+    public virtual async DmTask<object> interact_with_slime(mob_living_basic_slime interacting_slime = null, mob_living user = null, DmList modifiers = null)
+    {
+        return null;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:708
+public partial class obj_item_slimepotion_slime_docility : obj_item_slimepotion_slime
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:713
+    public override async DmTask<object> interact_with_slime(mob_living_basic_slime interacting_slime = null, mob_living user = null, DmList modifiers = null)
+    {
+        if (IS_UNCONSCIOUS_OR_CRIT(interacting_slime))
+        {
+            to_chat(user, span_warning(I18n.T("The slime is dead!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        // tg tests the return of clear_blackboard_key, which returns nothing: the rabid branch never runs and a docility potion
+        // always pacifies (tg's behaviour, kept)
+        (interacting_slime.ai_controller as datum_ai_controller)?.clear_blackboard_key(BB_SLIME_RABID);
+        object cleared = null;
+        if (Dm.truthy(cleared)) //Stops being rabid, but doesn't become truly docile.
+        {
+            to_chat(interacting_slime, span_warning(I18n.T("You absorb the potion, and your rabid hunger finally settles to a normal desire to feed.")));
+            to_chat(user, span_notice(I18n.T("You feed the slime the potion, calming its rabid rage.")));
+            interacting_slime.set_default_behaviour();
+            qdel(this);
+            return ITEM_INTERACT_SUCCESS;
+        }
+        interacting_slime.set_pacified_behaviour();
+        to_chat(interacting_slime, span_warning(I18n.T("You absorb the potion and feel your intense desire to feed melt away.")));
+        to_chat(user, span_notice(I18n.T("You feed the slime the potion, removing its hunger and calming it.")));
+        object newname = await sanitize_name(await tgui_input_text(user, I18n.T("Would you like to give the slime a name?"), I18n.T("Name your new pet"), I18n.T("Pet Slime"), MAX_NAME_LEN));
+
+        if (!Dm.truthy(newname))
+            newname = I18n.T("Pet Slime");
+        interacting_slime.name = Dm.str(newname);
+        interacting_slime.real_name = Dm.str(newname);
+        qdel(this);
+        return ITEM_INTERACT_SUCCESS;
+    }
+}
+
 // tg: code/modules/research/xenobiology/xenobiology.dm:736
 public partial class obj_item_slimepotion_sentience : obj_item_slimepotion
 {
@@ -902,5 +1188,374 @@ public partial class obj_item_slimepotion_sentience_nuclear : obj_item_slimepoti
         // var/obj/item/implant/implanter = SSwardrobe.provide_type(/obj/item/implant/tacmap/nuclear/cayenne, src);
         // implanter.implant(src, null, TRUE): the nuclear operatives' tactical map implant (N1); tg implants it into the potion itself
         Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:826", "after_success: the tactical map implant /obj/item/implant/tacmap/nuclear/cayenne (the nuclear operatives' minimap, N1)");
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:833
+public partial class obj_item_slimepotion_transference : obj_item_slimepotion
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:840
+    public override async DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
+    {
+        object dot = await base.interact_with_atom(interacting_with, user, modifiers);
+        if (Dm.truthy(Dm.bitand(dot, ITEM_INTERACT_ANY_BLOCKER)))
+            return dot;
+        if (!isliving(interacting_with))
+            return NONE;
+        mob_living switchy_mob = (mob_living)interacting_with;
+        if (Dm.truthy(prompted))
+            return ITEM_INTERACT_BLOCKING;
+        if (Dm.truthy(switchy_mob.ckey)) //much like sentience, these will not work on something that is already player controlled
+        {
+            balloon_alert(user, I18n.T("already sentient!"));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (IS_UNCONSCIOUS_OR_CRIT(switchy_mob))
+        {
+            balloon_alert(user, I18n.T("it's dead!"));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (!Dm.truthy(switchy_mob.compare_sentience_type(animal_type)))
+        {
+            balloon_alert(user, I18n.T("invalid creature!"));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        object job_banned = is_banned_from(user.ckey, ROLE_MIND_TRANSFER);
+        if (QDELETED(this) || QDELETED(switchy_mob) || QDELETED(user))
+            return ITEM_INTERACT_BLOCKING;
+
+        if (Dm.truthy(job_banned))
+        {
+            balloon_alert(user, I18n.T("you're banned!"));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        await user.do_attack_animation(interacting_with);
+        prompted = 1;
+        if (!Dm.eq(await tgui_alert(usr, I18n.T("This will permanently transfer your consciousness to []. Are you sure you want to do this?", switchy_mob), null, Dm.list(I18n.T("Yes"), I18n.T("No"))), I18n.T("Yes")))
+        {
+            prompted = 0;
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        to_chat(user, span_notice(I18n.T("You drink the potion then place your hands on []...", switchy_mob)));
+
+        await user.mind.transfer_to(switchy_mob);
+        switchy_mob.SEND_SIGNAL(COMSIG_SIMPLEMOB_TRANSFERPOTION, Dm.list(switchy_mob, user));
+        // SET_FACTION_AND_ALLIES_FROM(switchy_mob, user) (__DEFINES/mobfactions.dm:119), inline
+        switchy_mob.set_faction(user.get_faction());
+        switchy_mob.set_allies(LAZYLISTDUPLICATE(user.allies));
+        switchy_mob.copy_languages(user, LANGUAGE_MIND);
+        await user.death();
+        to_chat(switchy_mob, span_notice(I18n.T("In a quick flash, you feel your consciousness flow into []!", switchy_mob)));
+        to_chat(switchy_mob, span_warning(I18n.T("You are now []. Your allegiances, alliances, and role is still the same as it was prior to consciousness transfer!", switchy_mob)));
+        switchy_mob.name = Dm.text("[]", user.real_name);
+        qdel(this);
+        if (isanimal(switchy_mob))
+        {
+            mob_living_simple_animal switchy_animal = switchy_mob as mob_living_simple_animal;
+            switchy_animal.sentience_act();
+        }
+        return ITEM_INTERACT_SUCCESS;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:889
+public partial class obj_item_slimepotion_slime_steroid : obj_item_slimepotion_slime
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:894
+    public override async DmTask<object> interact_with_slime(mob_living_basic_slime interacting_slime = null, mob_living user = null, DmList modifiers = null)
+    {
+        if (interacting_slime.life_stage == SLIME_LIFE_STAGE_ADULT) //Can't steroidify adults
+        {
+            to_chat(user, span_warning(I18n.T("Only baby slimes can use the steroid!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (IS_UNCONSCIOUS_OR_CRIT(interacting_slime))
+        {
+            to_chat(user, span_warning(I18n.T("The slime is dead!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (interacting_slime.cores >= 5)
+        {
+            to_chat(user, span_warning(I18n.T("The slime already has the maximum amount of extract!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        to_chat(user, span_notice(I18n.T("You feed the slime the steroid. It will now produce one more extract.")));
+        interacting_slime.cores++;
+        qdel(this);
+        return ITEM_INTERACT_SUCCESS;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:915
+public partial class obj_item_slimepotion_slime_stabilizer : obj_item_slimepotion_slime
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:920
+    public override async DmTask<object> interact_with_slime(mob_living_basic_slime interacting_slime = null, mob_living user = null, DmList modifiers = null)
+    {
+        if (IS_UNCONSCIOUS_OR_CRIT(interacting_slime))
+        {
+            to_chat(user, span_warning(I18n.T("The slime is dead!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (interacting_slime.mutation_chance == 0)
+        {
+            to_chat(user, span_warning(I18n.T("The slime already has no chance of mutating!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        to_chat(user, span_notice(I18n.T("You feed the slime the stabilizer. It is now less likely to mutate.")));
+        interacting_slime.mutation_chance = clamp(interacting_slime.mutation_chance - 15, 0, 100);
+        qdel(this);
+        return ITEM_INTERACT_SUCCESS;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:933
+public partial class obj_item_slimepotion_slime_mutator : obj_item_slimepotion_slime
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:938
+    public override async DmTask<object> interact_with_slime(mob_living_basic_slime interacting_slime = null, mob_living user = null, DmList modifiers = null)
+    {
+        if (IS_UNCONSCIOUS_OR_CRIT(interacting_slime))
+        {
+            to_chat(user, span_warning(I18n.T("The slime is dead!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (Dm.truthy(interacting_slime.mutator_used))
+        {
+            to_chat(user, span_warning(I18n.T("This slime has already consumed a mutator, any more would be far too unstable!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        if (interacting_slime.mutation_chance == 100)
+        {
+            to_chat(user, span_warning(I18n.T("The slime is already guaranteed to mutate!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        to_chat(user, span_notice(I18n.T("You feed the slime the mutator. It is now more likely to mutate.")));
+        interacting_slime.mutation_chance = clamp(interacting_slime.mutation_chance + 12, 0, 100);
+        interacting_slime.mutator_used = TRUE;
+        qdel(this);
+        return ITEM_INTERACT_SUCCESS;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:955
+public partial class obj_item_slimepotion_speed : obj_item_slimepotion
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:960
+    public override async DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
+    {
+        object dot = await base.interact_with_atom(interacting_with, user, modifiers);
+        if (Dm.truthy(Dm.bitand(dot, ITEM_INTERACT_ANY_BLOCKER)))
+            return dot;
+        if (!isobj(interacting_with))
+        {
+            to_chat(user, span_warning(I18n.T("The potion can only be used on objects!")));
+            return NONE;
+        }
+
+        if (HAS_TRAIT(interacting_with, TRAIT_SPEED_POTIONED))
+        {
+            to_chat(user, span_warning(I18n.T("[] can't be made any faster!", interacting_with)));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        if (isitem(interacting_with))
+        {
+            obj_item apply_to = (obj_item)interacting_with;
+            if (apply_to.slowdown <= 0 || Dm.truthy(Dm.bitand(apply_to.item_flags, IMMUTABLE_SLOW)) || HAS_TRAIT(apply_to, TRAIT_NO_SPEED_POTION))
+            {
+                if (interacting_with.atom_storage != null)
+                    return NONE; // lets us put the potion in the bag
+                to_chat(user, span_warning(I18n.T("[] can't be made any faster!", apply_to)));
+                return ITEM_INTERACT_BLOCKING;
+            }
+        }
+
+        if (Dm.truthy(Dm.bitand(interacting_with.SEND_SIGNAL(COMSIG_SPEED_POTION_APPLIED, Dm.list(interacting_with, this, user)), SPEED_POTION_STOP)))
+            return ITEM_INTERACT_SUCCESS;
+
+        if (isitem(interacting_with))
+        {
+            obj_item apply_to = (obj_item)interacting_with;
+            apply_to.slowdown = 0;
+        }
+
+        to_chat(user, span_notice(I18n.T("You slather the red gunk over the [], making it faster.", interacting_with)));
+        await interacting_with.remove_atom_colour(WASHABLE_COLOUR_PRIORITY);
+        await interacting_with.add_atom_colour(color_transition_filter(COLOR_RED, SATURATION_OVERRIDE), FIXED_COLOUR_PRIORITY);
+        ((obj)interacting_with).drag_slowdown = 0;
+        ADD_TRAIT(interacting_with, TRAIT_SPEED_POTIONED, SLIME_POTION_TRAIT);
+        qdel(this);
+        return ITEM_INTERACT_SUCCESS;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:995
+public partial class obj_item_slimepotion_fireproof : obj_item_slimepotion
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:1002
+    public override async DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
+    {
+        object dot = await base.interact_with_atom(interacting_with, user, modifiers);
+        if (Dm.truthy(Dm.bitand(dot, ITEM_INTERACT_ANY_BLOCKER)))
+            return dot;
+        if (uses <= 0)
+        {
+            qdel(this);
+            return ITEM_INTERACT_BLOCKING;
+        }
+        obj_item_clothing clothing = interacting_with as obj_item_clothing;
+        if (!(clothing is obj_item_clothing))
+        {
+            to_chat(user, span_warning(I18n.T("The potion can only be used on clothing!")));
+            return NONE;
+        }
+        if (Dm.num(clothing.max_heat_protection_temperature) >= FIRE_IMMUNITY_MAX_TEMP_PROTECT)
+        {
+            to_chat(user, span_warning(I18n.T("The [] is already fireproof!", clothing)));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        to_chat(user, span_notice(I18n.T("You slather the blue gunk over the [], fireproofing it.", clothing)));
+        clothing.name = Dm.text("fireproofed []", clothing.name);
+        await clothing.remove_atom_colour(WASHABLE_COLOUR_PRIORITY);
+        await clothing.add_atom_colour(color_transition_filter(COLOR_NAVY, SATURATION_OVERRIDE), FIXED_COLOUR_PRIORITY);
+        clothing.max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT;
+        clothing.heat_protection = clothing.body_parts_covered;
+        clothing.resistance_flags = Dm.bitor(clothing.resistance_flags, FIRE_PROOF);
+        uses--;
+        if (uses <= 0)
+            qdel(this);
+        return ITEM_INTERACT_BLOCKING;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:1028
+public partial class obj_item_slimepotion_genderchange : obj_item_slimepotion
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:1033
+    public override async DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
+    {
+        object dot = await base.interact_with_atom(interacting_with, user, modifiers);
+        if (Dm.truthy(Dm.bitand(dot, ITEM_INTERACT_ANY_BLOCKER)))
+            return dot;
+        if (!isliving(interacting_with))
+            return NONE;
+        mob_living living_mob = (mob_living)interacting_with;
+        if (living_mob.stat == DEAD)
+        {
+            to_chat(user, span_warning(I18n.T("The potion can only be used on living things!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        if (!Dm.eq(living_mob.gender, MALE) && !Dm.eq(living_mob.gender, FEMALE))
+        {
+            to_chat(user, span_warning(I18n.T("The potion can only be used on gendered things!")));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        if (living_mob.mind != null)
+        {
+            if (!Dm.truthy(await do_after(user, delay: 5 * SECONDS, target: living_mob)))
+            {
+                balloon_alert(user, I18n.T("interrupted!"));
+                return ITEM_INTERACT_BLOCKING;
+            }
+        }
+
+        if (Dm.eq(living_mob.gender, MALE))
+        {
+            living_mob.gender = FEMALE;
+            living_mob.visible_message(span_boldnotice(I18n.T("[] suddenly looks more feminine!", living_mob)), span_boldwarning(I18n.T("You suddenly feel more feminine!")));
+        }
+        else
+        {
+            living_mob.gender = MALE;
+            living_mob.visible_message(span_boldnotice(I18n.T("[] suddenly looks more masculine!", living_mob)), span_boldwarning(I18n.T("You suddenly feel more masculine!")));
+        }
+        await living_mob.regenerate_icons();
+        qdel(this);
+        return ITEM_INTERACT_SUCCESS;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:1063
+public partial class obj_item_slimepotion_renaming : obj_item_slimepotion
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:1070
+    public override async DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
+    {
+        object dot = await base.interact_with_atom(interacting_with, user, modifiers);
+        if (Dm.truthy(Dm.bitand(dot, ITEM_INTERACT_ANY_BLOCKER)))
+            return dot;
+        if (!isliving(interacting_with))
+            return NONE;
+        mob_living renaming_mob = (mob_living)interacting_with;
+        if (Dm.truthy(being_used))
+            return ITEM_INTERACT_BLOCKING;
+        if (!Dm.truthy(renaming_mob.ckey)) //only works on animals that aren't player controlled
+        {
+            to_chat(user, span_warning(I18n.T("[] is not self aware, and cannot pick its own name.", renaming_mob)));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        being_used = TRUE;
+
+        to_chat(user, span_notice(I18n.T("You offer [] to []...", this, user)));
+
+        object new_name = await sanitize_name(await tgui_input_text(renaming_mob, I18n.T("What would you like your name to be?"), I18n.T("Input a name"), renaming_mob.real_name, MAX_NAME_LEN));
+
+        if (!Dm.truthy(new_name) || QDELETED(this) || QDELETED(renaming_mob) || Dm.eq(new_name, renaming_mob.real_name) || !Dm.truthy(await renaming_mob.Adjacent(user)))
+        {
+            being_used = FALSE;
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        renaming_mob.visible_message(span_notice(I18n.T("[] has a new name, [].", span_name(Dm.text("[]", renaming_mob)), span_name(Dm.text("[]", new_name)))), span_notice(I18n.T("Your old name of [] fades away, and your new name [] anchors itself in your mind.", span_name(Dm.text("[]", renaming_mob.real_name)), span_name(Dm.text("[]", new_name)))));
+        message_admins(Dm.text("[] used [] on [], letting them rename themselves into [].", ADMIN_LOOKUPFLW(user), this, ADMIN_LOOKUPFLW(renaming_mob), new_name));
+        user.log_message(Dm.text("used [] on [], letting them rename themselves into [].", this, key_name(renaming_mob), new_name), LOG_GAME);
+
+        // pass null as first arg to not update records or ID/PDA
+        await renaming_mob.fully_replace_character_name(null, new_name, log_new_name: TRUE);
+
+        qdel(this);
+        return ITEM_INTERACT_SUCCESS;
+    }
+}
+
+// tg: code/modules/research/xenobiology/xenobiology.dm:1103
+public partial class obj_item_slimepotion_slimeradio : obj_item_slimepotion
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:1108
+    public override async DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
+    {
+        object dot = await base.interact_with_atom(interacting_with, user, modifiers);
+        if (Dm.truthy(Dm.bitand(dot, ITEM_INTERACT_ANY_BLOCKER)))
+            return dot;
+        if (!isliving(interacting_with))
+            return NONE;
+        if (!isanimal_or_basicmob(interacting_with))
+        {
+            to_chat(user, span_warning(I18n.T("[] is too complex for the potion!", interacting_with)));
+            return ITEM_INTERACT_BLOCKING;
+        }
+        mob_living radio_head = (mob_living)interacting_with;
+        if (IS_UNCONSCIOUS_OR_CRIT(radio_head))
+        {
+            to_chat(user, span_warning(I18n.T("[] is dead!", radio_head)));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        to_chat(user, span_notice(I18n.T("You feed the potion to [].", radio_head)));
+        to_chat(radio_head, span_notice(I18n.T("Your mind tingles as you are fed the potion. You can hear radio waves now!")));
+        obj_item_implant_radio_slime imp = Dm.@new<obj_item_implant_radio_slime>(this);
+        await imp.implant(radio_head, user);
+        qdel(this);
+        return ITEM_INTERACT_SUCCESS;
     }
 }

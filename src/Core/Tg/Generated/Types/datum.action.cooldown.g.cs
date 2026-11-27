@@ -8598,9 +8598,9 @@ public partial class datum_action_cooldown_dagger_swing : datum_action_cooldown
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:493
-[DmPath("/datum/action/cooldown/regurgitate"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_regurgitate : datum_action_cooldown
+// tg: code/modules/mob/living/basic/clown/clown.dm:493 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/regurgitate")]
+public partial class datum_action_cooldown_regurgitate
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:493
     public datum_action_cooldown_regurgitate()
@@ -8616,9 +8616,9 @@ public partial class datum_action_cooldown_regurgitate : datum_action_cooldown
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:585
-[DmPath("/datum/action/cooldown/rustle"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_rustle : datum_action_cooldown
+// tg: code/modules/mob/living/basic/clown/clown.dm:585 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/rustle")]
+public partial class datum_action_cooldown_rustle
 {
     public Type banana_type = typeof(obj_item_grown_bananapeel); // tg: code/modules/mob/living/basic/clown/clown.dm:593
     public float peel_amount = 3; // tg: code/modules/mob/living/basic/clown/clown.dm:595
@@ -8636,9 +8636,9 @@ public partial class datum_action_cooldown_rustle : datum_action_cooldown
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:616
-[DmPath("/datum/action/cooldown/exquisite_bunch"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_exquisite_bunch : datum_action_cooldown
+// tg: code/modules/mob/living/basic/clown/clown.dm:616 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/exquisite_bunch")]
+public partial class datum_action_cooldown_exquisite_bunch
 {
     public float activating = 0; // tg: code/modules/mob/living/basic/clown/clown.dm:624
 
@@ -8655,9 +8655,9 @@ public partial class datum_action_cooldown_exquisite_bunch : datum_action_cooldo
     }
 }
 
-// tg: code/modules/mob/living/basic/cytology/vatbeast.dm:77
-[DmPath("/datum/action/cooldown/tentacle_slap"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_tentacle_slap : datum_action_cooldown
+// tg: code/modules/mob/living/basic/cytology/vatbeast.dm:77 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/tentacle_slap")]
+public partial class datum_action_cooldown_tentacle_slap
 {
     // tg: code/modules/mob/living/basic/cytology/vatbeast.dm:77
     public datum_action_cooldown_tentacle_slap()

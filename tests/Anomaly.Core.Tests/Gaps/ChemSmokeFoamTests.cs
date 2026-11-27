@@ -172,12 +172,12 @@ public class ChemSmokeFoamTests
     [Fact]
     public void EveryLiveReactionIsIndexedAndACocktailMixes()
     {
-        // The owner (2026-11-03): every live reaction reacts, the var-only drinks and mixes too; an inert one (a slime extract's; the
-        // food's are live since gaps H2) waits.
+        // The owner (2026-11-03): every live reaction reacts, the var-only drinks and mixes too; an inert one would wait (the food's are
+        // live since gaps H2, the slime extracts' since xenobiology).
         var (r, _) = Room(8105);
         Assert.True(r.In(() => Dm.truthy(GLOB.chemical_reactions_list[typeof(datum_chemical_reaction_drink_screwdriver)])));
         Assert.True(r.In(() => Dm.truthy(GLOB.chemical_reactions_list[typeof(datum_chemical_reaction_food_tofu)])));
-        Assert.False(r.In(() => Dm.truthy(GLOB.chemical_reactions_list[typeof(datum_chemical_reaction_slime_slimespawn)])));
+        Assert.True(r.In(() => Dm.truthy(GLOB.chemical_reactions_list[typeof(datum_chemical_reaction_slime_slimespawn)])));
         int indexed = r.In(() => (int)Dm.num(length(GLOB.chemical_reactions_list)));
         int liveWithReagents = r.In(() => Dm.each<Type>(subtypesof(typeof(datum_chemical_reaction)))
             .Count(type => !InertSeam.IsInertType(type) && Dm.truthy(length((Dm.@new(type) as datum_chemical_reaction).required_reagents))));

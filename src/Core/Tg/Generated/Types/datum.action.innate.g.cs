@@ -2290,9 +2290,9 @@ public partial class datum_action_innate_stop_projection : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:354
-[DmPath("/datum/action/innate/slime_place"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_slime_place : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:354 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/slime_place")]
+public partial class datum_action_innate_slime_place
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:354
     public datum_action_innate_slime_place()
@@ -2303,9 +2303,9 @@ public partial class datum_action_innate_slime_place : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:371
-[DmPath("/datum/action/innate/slime_pick_up"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_slime_pick_up : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:371 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/slime_pick_up")]
+public partial class datum_action_innate_slime_pick_up
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:371
     public datum_action_innate_slime_pick_up()
@@ -2316,9 +2316,9 @@ public partial class datum_action_innate_slime_pick_up : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:390
-[DmPath("/datum/action/innate/feed_slime"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_feed_slime : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:390 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/feed_slime")]
+public partial class datum_action_innate_feed_slime
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:390
     public datum_action_innate_feed_slime()
@@ -2329,9 +2329,9 @@ public partial class datum_action_innate_feed_slime : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:408
-[DmPath("/datum/action/innate/monkey_recycle"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_monkey_recycle : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:408 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/monkey_recycle")]
+public partial class datum_action_innate_monkey_recycle
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:408
     public datum_action_innate_monkey_recycle()
@@ -2342,9 +2342,9 @@ public partial class datum_action_innate_monkey_recycle : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:425
-[DmPath("/datum/action/innate/slime_scan"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_slime_scan : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:425 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/slime_scan")]
+public partial class datum_action_innate_slime_scan
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:425
     public datum_action_innate_slime_scan()
@@ -2355,9 +2355,9 @@ public partial class datum_action_innate_slime_scan : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:443
-[DmPath("/datum/action/innate/feed_potion"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_feed_potion : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:443 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/feed_potion")]
+public partial class datum_action_innate_feed_potion
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:443
     public datum_action_innate_feed_potion()
@@ -2368,9 +2368,9 @@ public partial class datum_action_innate_feed_potion : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:471
-[DmPath("/datum/action/innate/hotkey_help"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_hotkey_help : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:471 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/hotkey_help")]
+public partial class datum_action_innate_hotkey_help
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:471
     public datum_action_innate_hotkey_help()

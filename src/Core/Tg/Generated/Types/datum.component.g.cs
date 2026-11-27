@@ -4123,9 +4123,9 @@ public partial class datum_component_supermatter_crystal
     public datum_callback consume_callback; // tg: code/datums/components/supermatter_crystal.dm:6
 }
 
-// tg: code/datums/components/swabbing.dm:8
-[DmPath("/datum/component/swabbing"), DmGeneratedOnly, DmInert]
-public partial class datum_component_swabbing : datum_component
+// tg: code/datums/components/swabbing.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/component/swabbing")]
+public partial class datum_component_swabbing
 {
     public DmList swabbed_items; // tg: code/datums/components/swabbing.dm:8
     public object can_swab_objs; // tg: code/datums/components/swabbing.dm:10
@@ -5200,9 +5200,9 @@ public partial class datum_component_riding_creature_megacarp
     }
 }
 
-// tg: code/datums/components/riding/riding_mob.dm:497
-[DmPath("/datum/component/riding/creature/vatbeast"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_vatbeast : datum_component_riding_creature
+// tg: code/datums/components/riding/riding_mob.dm:497 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/vatbeast")]
+public partial class datum_component_riding_creature_vatbeast
 {
     // tg: code/datums/components/riding/riding_mob.dm:497
     public datum_component_riding_creature_vatbeast()
@@ -5249,9 +5249,9 @@ public partial class datum_component_riding_creature_goliath_deathmatch : datum_
     }
 }
 
-// tg: code/datums/components/riding/riding_mob.dm:586
-[DmPath("/datum/component/riding/creature/glutton"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_glutton : datum_component_riding_creature { }
+// tg: code/datums/components/riding/riding_mob.dm:586 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/glutton")]
+public partial class datum_component_riding_creature_glutton { }
 
 // tg: code/datums/components/riding/riding_mob.dm:603 (the var block of a hand-written class)
 [DmPath("/datum/component/riding/creature/guardian")]

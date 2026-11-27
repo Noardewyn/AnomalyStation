@@ -6232,9 +6232,9 @@ public partial class mob_living_basic_clown_fleshclown
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:174
-[DmPath("/mob/living/basic/clown/longface"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_clown_longface : mob_living_basic_clown
+// tg: code/modules/mob/living/basic/clown/clown.dm:174 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/clown/longface")]
+public partial class mob_living_basic_clown_longface
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:174
     public mob_living_basic_clown_longface()
@@ -6450,9 +6450,9 @@ public partial class mob_living_basic_clown_mutant : mob_living_basic_clown
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:381
-[DmPath("/mob/living/basic/clown/mutant/glutton"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_clown_mutant_glutton : mob_living_basic_clown_mutant
+// tg: code/modules/mob/living/basic/clown/clown.dm:381 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/clown/mutant/glutton")]
+public partial class mob_living_basic_clown_mutant_glutton
 {
     public float foods_eaten = 0; // tg: code/modules/mob/living/basic/clown/clown.dm:394
     public DmList prank_pouch; // tg: code/modules/mob/living/basic/clown/clown.dm:410
@@ -6486,9 +6486,9 @@ public partial class mob_living_basic_clown_mutant_glutton : mob_living_basic_cl
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:548
-[DmPath("/mob/living/basic/clown/banana"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_clown_banana : mob_living_basic_clown
+// tg: code/modules/mob/living/basic/clown/clown.dm:548 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/clown/banana")]
+public partial class mob_living_basic_clown_banana
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:548
     public mob_living_basic_clown_banana()
@@ -6991,9 +6991,9 @@ public partial class mob_living_basic_construct_wraith_mystic : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/cytology/vatbeast.dm:3
-[DmPath("/mob/living/basic/vatbeast"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_vatbeast : mob_living_basic
+// tg: code/modules/mob/living/basic/cytology/vatbeast.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/vatbeast")]
+public partial class mob_living_basic_vatbeast
 {
     // tg: code/modules/mob/living/basic/cytology/vatbeast.dm:3
     public mob_living_basic_vatbeast()

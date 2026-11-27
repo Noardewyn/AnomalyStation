@@ -6335,7 +6335,7 @@ public partial class atom_movable_screen_slime_power
 }
 
 // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1391 (the var block of a hand-written class)
-[DmPath("/atom/movable/screen/xenobio_console"), DmInert]
+[DmPath("/atom/movable/screen/xenobio_console")]
 public partial class atom_movable_screen_xenobio_console
 {
     public atom_movable_screen_xenobio_potion potion_hud; // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1394

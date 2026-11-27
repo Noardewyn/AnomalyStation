@@ -3502,9 +3502,9 @@ public partial class obj_machinery_computer_camera_advanced_shuttle_docker_custo
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:29
-[DmPath("/obj/machinery/computer/camera_advanced/xenobio"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_camera_advanced_xenobio : obj_machinery_computer_camera_advanced
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:29 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/camera_advanced/xenobio")]
+public partial class obj_machinery_computer_camera_advanced_xenobio
 {
     public datum_weakref connected_recycler_ref; // tg: code/modules/research/xenobiology/xenobio_camera.dm:41
     public DmList stored_slimes; // tg: code/modules/research/xenobiology/xenobio_camera.dm:43

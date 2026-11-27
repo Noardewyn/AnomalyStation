@@ -2091,6 +2091,19 @@ public partial class obj_machinery_computer
     }
 }
 
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:29
+public partial class obj_machinery_computer_camera_advanced_xenobio
+{
+    // tg: code/modules/research/xenobiology/xenobio_camera.dm:79
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/modules/research/xenobiology/xenobio_camera.dm:79", "add_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
+        return default;
+    }
+}
+
 // tg: code/game/machinery/computer/communications.dm:11
 public partial class obj_machinery_computer_communications
 {

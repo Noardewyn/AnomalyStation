@@ -909,7 +909,7 @@ proc	/	init_print_types	code/modules/modular_computers/file_system/programs/file
 proc	/	init_prisoner_crimes	code/modules/client/preferences/prisoner_crime.dm:24		yes	full	global
 proc	/	init_raptor_colors	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:3		yes	full	global
 proc	/	init_scan_conditions	code/modules/explorer_drone/scanner_array.dm:10		no	-	global
-proc	/	init_slime_auto_activate_reaction_list	code/modules/research/xenobiology/xenobiology.dm:118		no	-	global
+proc	/	init_slime_auto_activate_reaction_list	code/modules/research/xenobiology/xenobiology.dm:118		yes	full	global
 proc	/	init_sm_gas	code/modules/power/supermatter/supermatter_gas.dm:1		yes	full	global
 proc	/	init_smites	code/_globalvars/admin.dm:5		no	-	global
 proc	/	init_special_list_names	code/_globalvars/admin.dm:22		no	-	global
@@ -2288,9 +2288,9 @@ proc	/datum/controller/global_vars	InitGlobaltypecache_general_bad_hostile_attac
 proc	/datum/controller/global_vars	InitGlobaltypecache_general_bad_things_to_easily_move	code/_globalvars/lists/typecache.dm:53		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalwiremod_basic_types	code/_globalvars/lists/wiremod.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalwiremod_fundamental_types	code/_globalvars/lists/wiremod.dm:12		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalcell_line_tables	code/_globalvars/lists/xenobiology.dm:4		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalcell_virus_tables	code/_globalvars/lists/xenobiology.dm:132		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalxeno_sample_colors	code/_globalvars/lists/xenobiology.dm:138		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalcell_line_tables	code/_globalvars/lists/xenobiology.dm:4		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalcell_virus_tables	code/_globalvars/lists/xenobiology.dm:132		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalxeno_sample_colors	code/_globalvars/lists/xenobiology.dm:138		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalactive_turfs_startlist	code/_globalvars/logging.dm:1		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalround_id	code/_globalvars/logging.dm:3		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalround_id	code/_globalvars/logging.dm:4		yes	full	proc root
@@ -2866,7 +2866,7 @@ proc	/datum/controller/global_vars	InitGlobalgizmo_words	code/modules/research/g
 proc	/datum/controller/global_vars	InitGlobalstock_part_datums_per_object	code/modules/research/stock_parts/stock_part_datum.dm:37		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalstock_part_datums	code/modules/research/stock_parts/stock_part_datum.dm:40		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalautounlock_techwebs	code/modules/research/techweb/techweb_types.dm:41		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalslime_extract_auto_activate_reactions	code/modules/research/xenobiology/xenobiology.dm:116		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalslime_extract_auto_activate_reactions	code/modules/research/xenobiology/xenobiology.dm:116		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalkeycard_events	code/modules/security_levels/keycard_authentication.dm:1		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalemergency_access	code/modules/security_levels/keycard_authentication.dm:167		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalblacklisted_cargo_types	code/modules/shuttle/mobile_port/variants/supply.dm:1		yes	full	proc root
@@ -5741,20 +5741,20 @@ type	/datum/action/innate/proto_emitter/firing	/datum/action/innate/proto_emitte
 proc	/datum/action/innate/proto_emitter/firing	Activate	code/modules/power/singularity/emitter.dm:531		yes	full	proc
 type	/datum/action/innate/stop_projection	/datum/action/innate	code/modules/religion/dreams/dream_projection.dm:180	inert	datum_action_innate_stop_projection	0	0
 proc	/datum/action/innate/stop_projection	Activate	code/modules/religion/dreams/dream_projection.dm:183		no	-	proc
-type	/datum/action/innate/slime_place	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:354	inert	datum_action_innate_slime_place	0	0
-proc	/datum/action/innate/slime_place	Activate	code/modules/research/xenobiology/xenobio_camera.dm:358		no	-	proc
-type	/datum/action/innate/slime_pick_up	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:371	inert	datum_action_innate_slime_pick_up	0	0
-proc	/datum/action/innate/slime_pick_up	Activate	code/modules/research/xenobiology/xenobio_camera.dm:375		no	-	proc
-type	/datum/action/innate/feed_slime	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:390	inert	datum_action_innate_feed_slime	0	0
-proc	/datum/action/innate/feed_slime	Activate	code/modules/research/xenobiology/xenobio_camera.dm:394		no	-	proc
-type	/datum/action/innate/monkey_recycle	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:408	inert	datum_action_innate_monkey_recycle	0	0
-proc	/datum/action/innate/monkey_recycle	Activate	code/modules/research/xenobiology/xenobio_camera.dm:412		no	-	proc
-type	/datum/action/innate/slime_scan	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:425	inert	datum_action_innate_slime_scan	0	0
-proc	/datum/action/innate/slime_scan	Activate	code/modules/research/xenobiology/xenobio_camera.dm:429		no	-	proc
-type	/datum/action/innate/feed_potion	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:443	inert	datum_action_innate_feed_potion	0	0
-proc	/datum/action/innate/feed_potion	Activate	code/modules/research/xenobiology/xenobio_camera.dm:447		no	-	proc
-type	/datum/action/innate/hotkey_help	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:471	inert	datum_action_innate_hotkey_help	0	0
-proc	/datum/action/innate/hotkey_help	Activate	code/modules/research/xenobiology/xenobio_camera.dm:475		no	-	proc
+type	/datum/action/innate/slime_place	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:354	live	datum_action_innate_slime_place	1	0
+proc	/datum/action/innate/slime_place	Activate	code/modules/research/xenobiology/xenobio_camera.dm:358		yes	full	proc
+type	/datum/action/innate/slime_pick_up	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:371	live	datum_action_innate_slime_pick_up	1	0
+proc	/datum/action/innate/slime_pick_up	Activate	code/modules/research/xenobiology/xenobio_camera.dm:375		yes	full	proc
+type	/datum/action/innate/feed_slime	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:390	live	datum_action_innate_feed_slime	1	0
+proc	/datum/action/innate/feed_slime	Activate	code/modules/research/xenobiology/xenobio_camera.dm:394		yes	full	proc
+type	/datum/action/innate/monkey_recycle	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:408	live	datum_action_innate_monkey_recycle	1	0
+proc	/datum/action/innate/monkey_recycle	Activate	code/modules/research/xenobiology/xenobio_camera.dm:412		yes	full	proc
+type	/datum/action/innate/slime_scan	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:425	live	datum_action_innate_slime_scan	1	0
+proc	/datum/action/innate/slime_scan	Activate	code/modules/research/xenobiology/xenobio_camera.dm:429		yes	full	proc
+type	/datum/action/innate/feed_potion	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:443	live	datum_action_innate_feed_potion	1	0
+proc	/datum/action/innate/feed_potion	Activate	code/modules/research/xenobiology/xenobio_camera.dm:447		yes	full	proc
+type	/datum/action/innate/hotkey_help	/datum/action/innate	code/modules/research/xenobiology/xenobio_camera.dm:471	live	datum_action_innate_hotkey_help	1	0
+proc	/datum/action/innate/hotkey_help	Activate	code/modules/research/xenobiology/xenobio_camera.dm:475		yes	full	proc
 type	/datum/action/innate/shuttledocker_rotate	/datum/action/innate	code/modules/shuttle/shuttle_consoles/navigation_computer.dm:408	live	datum_action_innate_shuttledocker_rotate	1	0
 proc	/datum/action/innate/shuttledocker_rotate	Activate	code/modules/shuttle/shuttle_consoles/navigation_computer.dm:412		yes	full	proc
 type	/datum/action/innate/shuttledocker_place	/datum/action/innate	code/modules/shuttle/shuttle_consoles/navigation_computer.dm:420	live	datum_action_innate_shuttledocker_place	1	0
@@ -7401,22 +7401,22 @@ type	/datum/action/cooldown/monster_core_action/regenerative_core	/datum/action/
 type	/datum/action/cooldown/monster_core_action/adrenal_boost	/datum/action/cooldown/monster_core_action	code/modules/mining/equipment/monster_organs/rush_gland.dm:117	live	datum_action_cooldown_monster_core_action_adrenal_boost	0	0
 type	/datum/action/cooldown/dagger_swing	/datum/action/cooldown	code/modules/mining/lavaland/cain_and_abel/dagger_abilities.dm:2	inert	datum_action_cooldown_dagger_swing	0	0
 proc	/datum/action/cooldown/dagger_swing	Activate	code/modules/mining/lavaland/cain_and_abel/dagger_abilities.dm:11	target_atom	no	-	proc
-type	/datum/action/cooldown/regurgitate	/datum/action/cooldown	code/modules/mob/living/basic/clown/clown.dm:493	inert	datum_action_cooldown_regurgitate	0	0
-proc	/datum/action/cooldown/regurgitate	set_click_ability	code/modules/mob/living/basic/clown/clown.dm:502	on_who	no	-	proc
-proc	/datum/action/cooldown/regurgitate	unset_click_ability	code/modules/mob/living/basic/clown/clown.dm:511	on_who,refund_cooldown	no	-	proc
-proc	/datum/action/cooldown/regurgitate	IsAvailable	code/modules/mob/living/basic/clown/clown.dm:521	feedback	no	-	proc
-proc	/datum/action/cooldown/regurgitate	Activate	code/modules/mob/living/basic/clown/clown.dm:529	spit_at	no	-	proc
-type	/datum/action/cooldown/rustle	/datum/action/cooldown	code/modules/mob/living/basic/clown/clown.dm:585	inert	datum_action_cooldown_rustle	0	0
-proc	/datum/action/cooldown/rustle	Activate	code/modules/mob/living/basic/clown/clown.dm:597	target	no	-	proc
-type	/datum/action/cooldown/exquisite_bunch	/datum/action/cooldown	code/modules/mob/living/basic/clown/clown.dm:616	inert	datum_action_cooldown_exquisite_bunch	0	0
-proc	/datum/action/cooldown/exquisite_bunch	Trigger	code/modules/mob/living/basic/clown/clown.dm:626	clicker,trigger_flags,target	no	-	proc
-proc	/datum/action/cooldown/exquisite_bunch	Activate	code/modules/mob/living/basic/clown/clown.dm:648	target	no	-	proc
-type	/datum/action/cooldown/tentacle_slap	/datum/action/cooldown	code/modules/mob/living/basic/cytology/vatbeast.dm:77	inert	datum_action_cooldown_tentacle_slap	0	0
-proc	/datum/action/cooldown/tentacle_slap	update_button_name	code/modules/mob/living/basic/cytology/vatbeast.dm:88	button,force	no	-	proc
-proc	/datum/action/cooldown/tentacle_slap	set_click_ability	code/modules/mob/living/basic/cytology/vatbeast.dm:97	on_who	no	-	proc
-proc	/datum/action/cooldown/tentacle_slap	unset_click_ability	code/modules/mob/living/basic/cytology/vatbeast.dm:103	on_who,refund_cooldown	no	-	proc
-proc	/datum/action/cooldown/tentacle_slap	InterceptClickOn	code/modules/mob/living/basic/cytology/vatbeast.dm:110	clicker,params,target	no	-	proc
-proc	/datum/action/cooldown/tentacle_slap	Activate	code/modules/mob/living/basic/cytology/vatbeast.dm:131	to_slap	no	-	proc
+type	/datum/action/cooldown/regurgitate	/datum/action/cooldown	code/modules/mob/living/basic/clown/clown.dm:493	live	datum_action_cooldown_regurgitate	1	0
+proc	/datum/action/cooldown/regurgitate	set_click_ability	code/modules/mob/living/basic/clown/clown.dm:502	on_who	yes	full	proc
+proc	/datum/action/cooldown/regurgitate	unset_click_ability	code/modules/mob/living/basic/clown/clown.dm:511	on_who,refund_cooldown	yes	full	proc
+proc	/datum/action/cooldown/regurgitate	IsAvailable	code/modules/mob/living/basic/clown/clown.dm:521	feedback	yes	full	proc
+proc	/datum/action/cooldown/regurgitate	Activate	code/modules/mob/living/basic/clown/clown.dm:529	spit_at	yes	full	proc
+type	/datum/action/cooldown/rustle	/datum/action/cooldown	code/modules/mob/living/basic/clown/clown.dm:585	live	datum_action_cooldown_rustle	1	0
+proc	/datum/action/cooldown/rustle	Activate	code/modules/mob/living/basic/clown/clown.dm:597	target	yes	full	proc
+type	/datum/action/cooldown/exquisite_bunch	/datum/action/cooldown	code/modules/mob/living/basic/clown/clown.dm:616	live	datum_action_cooldown_exquisite_bunch	1	0
+proc	/datum/action/cooldown/exquisite_bunch	Trigger	code/modules/mob/living/basic/clown/clown.dm:626	clicker,trigger_flags,target	yes	full	proc
+proc	/datum/action/cooldown/exquisite_bunch	Activate	code/modules/mob/living/basic/clown/clown.dm:648	target	yes	full	proc
+type	/datum/action/cooldown/tentacle_slap	/datum/action/cooldown	code/modules/mob/living/basic/cytology/vatbeast.dm:77	live	datum_action_cooldown_tentacle_slap	1	0
+proc	/datum/action/cooldown/tentacle_slap	update_button_name	code/modules/mob/living/basic/cytology/vatbeast.dm:88	button,force	yes	full	proc
+proc	/datum/action/cooldown/tentacle_slap	set_click_ability	code/modules/mob/living/basic/cytology/vatbeast.dm:97	on_who	yes	full	proc
+proc	/datum/action/cooldown/tentacle_slap	unset_click_ability	code/modules/mob/living/basic/cytology/vatbeast.dm:103	on_who,refund_cooldown	yes	full	proc
+proc	/datum/action/cooldown/tentacle_slap	InterceptClickOn	code/modules/mob/living/basic/cytology/vatbeast.dm:110	clicker,params,target	yes	full	proc
+proc	/datum/action/cooldown/tentacle_slap	Activate	code/modules/mob/living/basic/cytology/vatbeast.dm:131	to_slap	yes	full	proc
 type	/datum/action/cooldown/recall_stargazer	/datum/action/cooldown	code/modules/mob/living/basic/heretic/star_gazer.dm:143	inert	datum_action_cooldown_recall_stargazer	0	0
 proc	/datum/action/cooldown/recall_stargazer	Activate	code/modules/mob/living/basic/heretic/star_gazer.dm:152	target	no	-	proc
 type	/datum/action/cooldown/fugu_expand	/datum/action/cooldown	code/modules/mob/living/basic/space_fauna/wumborian_fugu/inflation.dm:7	live	datum_action_cooldown_fugu_expand	1	0
@@ -13634,13 +13634,13 @@ proc	/datum/status_effect/tower_of_babel/magical	on_apply	code/datums/status_eff
 proc	/datum/status_effect/tower_of_babel/magical	on_remove	code/datums/status_effects/debuffs/tower_of_babel.dm:49		yes	full	proc
 type	/datum/status_effect/tox_vomit	/datum/status_effect	code/datums/status_effects/debuffs/tox_vomit.dm:3	base	datum_status_effect_tox_vomit	1	0
 proc	/datum/status_effect/tox_vomit	tick	code/datums/status_effects/debuffs/tox_vomit.dm:9	seconds_between_ticks	yes	full	proc
-type	/datum/status_effect/slime_food	/datum/status_effect	code/datums/status_effects/debuffs/slime/slime_food.dm:3	inert	datum_status_effect_slime_food	0	0
-proc	/datum/status_effect/slime_food	on_creation	code/datums/status_effects/debuffs/slime/slime_food.dm:8	new_owner,feeder,befriend_chance	no	-	proc
-proc	/datum/status_effect/slime_food	on_apply	code/datums/status_effects/debuffs/slime/slime_food.dm:13		no	-	proc
-proc	/datum/status_effect/slime_food	on_remove	code/datums/status_effects/debuffs/slime/slime_food.dm:26		no	-	proc
-proc	/datum/status_effect/slime_food	on_feeder_deleted	code/datums/status_effects/debuffs/slime/slime_food.dm:30	source	no	-	proc root
-proc	/datum/status_effect/slime_food	on_examine	code/datums/status_effects/debuffs/slime/slime_food.dm:38	source,user,examine_list	no	-	proc root
-proc	/datum/status_effect/slime_food	on_drained	code/datums/status_effects/debuffs/slime/slime_food.dm:50	source,draining_slime	no	-	proc root
+type	/datum/status_effect/slime_food	/datum/status_effect	code/datums/status_effects/debuffs/slime/slime_food.dm:3	live	datum_status_effect_slime_food	1	0
+proc	/datum/status_effect/slime_food	on_creation	code/datums/status_effects/debuffs/slime/slime_food.dm:8	new_owner,feeder,befriend_chance	yes	full	proc
+proc	/datum/status_effect/slime_food	on_apply	code/datums/status_effects/debuffs/slime/slime_food.dm:13		yes	full	proc
+proc	/datum/status_effect/slime_food	on_remove	code/datums/status_effects/debuffs/slime/slime_food.dm:26		yes	full	proc
+proc	/datum/status_effect/slime_food	on_feeder_deleted	code/datums/status_effects/debuffs/slime/slime_food.dm:30	source	yes	full	proc root
+proc	/datum/status_effect/slime_food	on_examine	code/datums/status_effects/debuffs/slime/slime_food.dm:38	source,user,examine_list	yes	full	proc root
+proc	/datum/status_effect/slime_food	on_drained	code/datums/status_effects/debuffs/slime/slime_food.dm:50	source,draining_slime	yes	full	proc root
 type	/datum/status_effect/slime_leech	/datum/status_effect	code/datums/status_effects/debuffs/slime/slime_leech.dm:8	live	datum_status_effect_slime_leech	1	0
 proc	/datum/status_effect/slime_leech	on_creation	code/datums/status_effects/debuffs/slime/slime_leech.dm:12	new_owner,our_slime	yes	full	proc
 proc	/datum/status_effect/slime_leech	on_apply	code/datums/status_effects/debuffs/slime/slime_leech.dm:16		yes	full	proc
@@ -20241,15 +20241,15 @@ proc	/datum/component/supermatter_crystal	on_z_impact	code/datums/components/sup
 proc	/datum/component/supermatter_crystal	dust_mob	code/datums/components/supermatter_crystal.dm:270	source,nom,vis_msg,mob_msg,cause	yes	full	proc root
 proc	/datum/component/supermatter_crystal	consume	code/datums/components/supermatter_crystal.dm:286	source,consumed_object	yes	full	proc root
 proc	/datum/component/supermatter_crystal	consume_returns	code/datums/components/supermatter_crystal.dm:369	matter_increase,damage_increase	yes	full	proc root
-type	/datum/component/swabbing	/datum/component	code/datums/components/swabbing.dm:8	inert	datum_component_swabbing	0	0
-proc	/datum/component/swabbing	Initialize	code/datums/components/swabbing.dm:20	can_swab_objs,can_swab_turfs,can_swab_mobs,update_icons,update_overlays,swab_time,max_items	no	-	proc
-proc	/datum/component/swabbing	Destroy	code/datums/components/swabbing.dm:35	force	no	-	proc
-proc	/datum/component/swabbing	examine	code/datums/components/swabbing.dm:44	source,user,examine_list	no	-	proc root
-proc	/datum/component/swabbing	try_to_swab	code/datums/components/swabbing.dm:56	source,target,user,modifiers	no	-	proc root
-proc	/datum/component/swabbing	async_try_to_swab	code/datums/components/swabbing.dm:102	target,user	no	-	proc root
-proc	/datum/component/swabbing	can_swab	code/datums/components/swabbing.dm:118	target	no	-	proc root
-proc	/datum/component/swabbing	handle_overlays	code/datums/components/swabbing.dm:127	source,overlays	no	-	proc root
-proc	/datum/component/swabbing	handle_icon	code/datums/components/swabbing.dm:132	source	no	-	proc root
+type	/datum/component/swabbing	/datum/component	code/datums/components/swabbing.dm:8	live	datum_component_swabbing	1	0
+proc	/datum/component/swabbing	Initialize	code/datums/components/swabbing.dm:20	can_swab_objs,can_swab_turfs,can_swab_mobs,update_icons,update_overlays,swab_time,max_items	yes	full	proc
+proc	/datum/component/swabbing	Destroy	code/datums/components/swabbing.dm:35	force	yes	full	proc
+proc	/datum/component/swabbing	examine	code/datums/components/swabbing.dm:44	source,user,examine_list	yes	full	proc root
+proc	/datum/component/swabbing	try_to_swab	code/datums/components/swabbing.dm:56	source,target,user,modifiers	yes	full	proc root
+proc	/datum/component/swabbing	async_try_to_swab	code/datums/components/swabbing.dm:102	target,user	yes	full	proc root
+proc	/datum/component/swabbing	can_swab	code/datums/components/swabbing.dm:118	target	yes	full	proc root
+proc	/datum/component/swabbing	handle_overlays	code/datums/components/swabbing.dm:127	source,overlays	yes	full	proc root
+proc	/datum/component/swabbing	handle_icon	code/datums/components/swabbing.dm:132	source	yes	full	proc root
 type	/datum/component/swarming	/datum/component	code/datums/components/swarming.dm:2	live	datum_component_swarming	1	0
 proc	/datum/component/swarming	Initialize	code/datums/components/swarming.dm:13	max_x,max_y	yes	full	proc
 proc	/datum/component/swarming	Destroy	code/datums/components/swarming.dm:21		yes	full	proc
@@ -20988,18 +20988,18 @@ proc	/datum/component/riding/creature/carp	get_parent_offsets_and_layers	code/da
 type	/datum/component/riding/creature/megacarp	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:478	live	datum_component_riding_creature_megacarp	1	0
 proc	/datum/component/riding/creature/megacarp	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:480	pass_index,offsetter	yes	full	proc
 proc	/datum/component/riding/creature/megacarp	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:488		yes	full	proc
-type	/datum/component/riding/creature/vatbeast	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:497	inert	datum_component_riding_creature_vatbeast	0	0
-proc	/datum/component/riding/creature/vatbeast	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:500	pass_index,offsetter	no	-	proc
-proc	/datum/component/riding/creature/vatbeast	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:508		no	-	proc
+type	/datum/component/riding/creature/vatbeast	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:497	live	datum_component_riding_creature_vatbeast	1	0
+proc	/datum/component/riding/creature/vatbeast	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:500	pass_index,offsetter	yes	full	proc
+proc	/datum/component/riding/creature/vatbeast	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:508		yes	full	proc
 type	/datum/component/riding/creature/goliath	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:517	live	datum_component_riding_creature_goliath	1	0
 proc	/datum/component/riding/creature/goliath	driver_move	code/datums/components/riding/riding_mob.dm:537	movable_parent,user,direction	yes	full	proc
 proc	/datum/component/riding/creature/goliath	get_move_delay	code/datums/components/riding/riding_mob.dm:549	living_parent,user,direction	yes	full	proc
 proc	/datum/component/riding/creature/goliath	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:568	pass_index,offsetter	yes	full	proc
 proc	/datum/component/riding/creature/goliath	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:576		yes	full	proc
 type	/datum/component/riding/creature/goliath/deathmatch	/datum/component/riding/creature/goliath	code/datums/components/riding/riding_mob.dm:535	live	datum_component_riding_creature_goliath_deathmatch	0	0
-type	/datum/component/riding/creature/glutton	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:586	inert	datum_component_riding_creature_glutton	0	0
-proc	/datum/component/riding/creature/glutton	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:586	pass_index,offsetter	no	-	proc
-proc	/datum/component/riding/creature/glutton	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:594		no	-	proc
+type	/datum/component/riding/creature/glutton	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:586	live	datum_component_riding_creature_glutton	1	0
+proc	/datum/component/riding/creature/glutton	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:586	pass_index,offsetter	yes	full	proc
+proc	/datum/component/riding/creature/glutton	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:594		yes	full	proc
 type	/datum/component/riding/creature/guardian	/datum/component/riding/creature	code/datums/components/riding/riding_mob.dm:603	live	datum_component_riding_creature_guardian	1	0
 proc	/datum/component/riding/creature/guardian	get_rider_offsets_and_layers	code/datums/components/riding/riding_mob.dm:605	pass_index,offsetter	yes	full	proc
 proc	/datum/component/riding/creature/guardian	get_parent_offsets_and_layers	code/datums/components/riding/riding_mob.dm:613		yes	full	proc
@@ -23954,10 +23954,10 @@ proc	/datum/element/curse_announcement	announce	code/datums/elements/curse_annou
 type	/datum/element/cursed	/datum/element	code/datums/elements/cursed.dm:8	inert	datum_element_cursed	0	0
 proc	/datum/element/cursed	Attach	code/datums/elements/cursed.dm:8	target,slot	no	-	proc
 proc	/datum/element/cursed	Detach	code/datums/elements/cursed.dm:19	source	no	-	proc
-type	/datum/element/damage_threshold	/datum/element	code/datums/elements/damage_threshold.dm:5	inert	datum_element_damage_threshold	0	0
-proc	/datum/element/damage_threshold	Attach	code/datums/elements/damage_threshold.dm:10	target,threshold	no	-	proc
-proc	/datum/element/damage_threshold	Detach	code/datums/elements/damage_threshold.dm:20	source	no	-	proc
-proc	/datum/element/damage_threshold	check_block	code/datums/elements/damage_threshold.dm:24	source,hitby,damage,attack_text,attack_type,armour_penetration,damage_type,attack_flag	no	-	proc root
+type	/datum/element/damage_threshold	/datum/element	code/datums/elements/damage_threshold.dm:5	live	datum_element_damage_threshold	1	0
+proc	/datum/element/damage_threshold	Attach	code/datums/elements/damage_threshold.dm:10	target,threshold	yes	full	proc
+proc	/datum/element/damage_threshold	Detach	code/datums/elements/damage_threshold.dm:20	source	yes	full	proc
+proc	/datum/element/damage_threshold	check_block	code/datums/elements/damage_threshold.dm:24	source,hitby,damage,attack_text,attack_type,armour_penetration,damage_type,attack_flag	yes	full	proc root
 type	/datum/element/dangerous_organ_removal	/datum/element	code/datums/elements/dangerous_surgical_removal.dm:8	live	datum_element_dangerous_organ_removal	1	0
 proc	/datum/element/dangerous_organ_removal	Attach	code/datums/elements/dangerous_surgical_removal.dm:14	target,surgical	yes	full	proc
 proc	/datum/element/dangerous_organ_removal	Detach	code/datums/elements/dangerous_surgical_removal.dm:26	source	yes	full	proc
@@ -24719,11 +24719,11 @@ proc	/datum/element/surgery_aid	Detach	code/datums/elements/surgery_aid.dm:20	ta
 proc	/datum/element/surgery_aid	on_context	code/datums/elements/surgery_aid.dm:24	source,context,target,user	yes	full	proc root
 proc	/datum/element/surgery_aid	on_item_interaction	code/datums/elements/surgery_aid.dm:39	source,user,target	yes	full	proc root
 proc	/datum/element/surgery_aid	surgery_prep	code/datums/elements/surgery_aid.dm:50	target_mob,surgeon,body_zone	yes	full	proc root
-type	/datum/element/swabable	/datum/element	code/datums/elements/swabbable.dm:7	inert	datum_element_swabable	0	0
-proc	/datum/element/swabable	Attach	code/datums/elements/swabbable.dm:19	target,cell_line_define,virus_define,cell_line_amount,virus_chance	no	-	proc
-proc	/datum/element/swabable	Detach	code/datums/elements/swabbable.dm:32	source	no	-	proc
-proc	/datum/element/swabable	GetSwabbed	code/datums/elements/swabbable.dm:39	source,mutable_results	no	-	proc root
-proc	/datum/element/swabable	GenerateSample	code/datums/elements/swabbable.dm:47		no	-	proc root
+type	/datum/element/swabable	/datum/element	code/datums/elements/swabbable.dm:7	live	datum_element_swabable	1	0
+proc	/datum/element/swabable	Attach	code/datums/elements/swabbable.dm:19	target,cell_line_define,virus_define,cell_line_amount,virus_chance	yes	full	proc
+proc	/datum/element/swabable	Detach	code/datums/elements/swabbable.dm:32	source	yes	full	proc
+proc	/datum/element/swabable	GetSwabbed	code/datums/elements/swabbable.dm:39	source,mutable_results	yes	full	proc root
+proc	/datum/element/swabable	GenerateSample	code/datums/elements/swabbable.dm:47		yes	full	proc root
 type	/datum/element/swimming_tile	/datum/element	code/datums/elements/swimming_tile.dm:3	inert	datum_element_swimming_tile	0	0
 proc	/datum/element/swimming_tile	Destroy	code/datums/elements/swimming_tile.dm:17	force	no	-	proc
 proc	/datum/element/swimming_tile	Attach	code/datums/elements/swimming_tile.dm:21	target,stamina_entry_cost,ticking_stamina_cost,ticking_oxy_damage,exhaust_swimmer_prob	no	-	proc
@@ -35632,7 +35632,7 @@ proc	/datum/reagent/vaccine	on_merge	code/modules/reagents/chemistry/reagents/ot
 type	/datum/reagent/vaccine/fungal_tb	/datum/reagent/vaccine	code/modules/reagents/chemistry/reagents/other_reagents.dm:102	live	datum_reagent_vaccine_fungal_tb	1	0
 proc	/datum/reagent/vaccine/fungal_tb	New	code/modules/reagents/chemistry/reagents/other_reagents.dm:104	data	yes	full	proc
 type	/datum/reagent/water	/datum/reagent	code/modules/reagents/chemistry/reagents/other_reagents.dm:115	live	datum_reagent_water	1	0
-proc	/datum/reagent/water	expose_turf	code/modules/reagents/chemistry/reagents/other_reagents.dm:138	exposed_turf,reac_volume	yes	partial	proc
+proc	/datum/reagent/water	expose_turf	code/modules/reagents/chemistry/reagents/other_reagents.dm:138	exposed_turf,reac_volume	yes	full	proc
 proc	/datum/reagent/water	expose_obj	code/modules/reagents/chemistry/reagents/other_reagents.dm:168	exposed_obj,reac_volume,methods,show_message	yes	partial	proc
 proc	/datum/reagent/water	expose_mob	code/modules/reagents/chemistry/reagents/other_reagents.dm:197	exposed_mob,methods,reac_volume	yes	full	proc
 proc	/datum/reagent/water	on_mob_life	code/modules/reagents/chemistry/reagents/other_reagents.dm:229	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
@@ -42055,116 +42055,116 @@ proc	/datum/chemical_reaction/prefactor_b	reaction_step	code/modules/reagents/ch
 proc	/datum/chemical_reaction/prefactor_b	overheated	code/modules/reagents/chemistry/recipes/reaction_agents.dm:89	holder,equilibrium,step_volume_added	yes	full	proc
 proc	/datum/chemical_reaction/prefactor_b	overly_impure	code/modules/reagents/chemistry/recipes/reaction_agents.dm:95	holder,equilibrium,step_volume_added	yes	full	proc
 type	/datum/chemical_reaction/prefactor_b/speed_agent	/datum/chemical_reaction/prefactor_b	code/modules/reagents/chemistry/recipes/reaction_agents.dm:117	live	datum_chemical_reaction_prefactor_b_speed_agent	0	0
-type	/datum/chemical_reaction/slime	/datum/chemical_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:3	inert	datum_chemical_reaction_slime	0	0
-proc	/datum/chemical_reaction/slime	pre_reaction_other_checks	code/modules/reagents/chemistry/recipes/slime_extracts.dm:7	holder	no	-	proc
-proc	/datum/chemical_reaction/slime	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:14	holder,reaction,created_volume	no	-	proc
-proc	/datum/chemical_reaction/slime	use_slime_core	code/modules/reagents/chemistry/recipes/slime_extracts.dm:17	holder	no	-	proc root
-proc	/datum/chemical_reaction/slime	delete_extract	code/modules/reagents/chemistry/recipes/slime_extracts.dm:22	holder	no	-	proc root
-type	/datum/chemical_reaction/slime/slimespawn	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:29	inert	datum_chemical_reaction_slime_slimespawn	0	0
-proc	/datum/chemical_reaction/slime/slimespawn	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:32	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimeinaprov	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:38	inert	datum_chemical_reaction_slime_slimeinaprov	0	0
-type	/datum/chemical_reaction/slime/slimemonkey	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:43	inert	datum_chemical_reaction_slime_slimemonkey	0	0
-proc	/datum/chemical_reaction/slime/slimemonkey	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:46	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimemutate	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:53	inert	datum_chemical_reaction_slime_slimemutate	0	0
-type	/datum/chemical_reaction/slime/slimehuman	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:58	inert	datum_chemical_reaction_slime_slimehuman	0	0
-type	/datum/chemical_reaction/slime/slimelizard	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:63	inert	datum_chemical_reaction_slime_slimelizard	0	0
-type	/datum/chemical_reaction/slime/slimefelinid	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:68	inert	datum_chemical_reaction_slime_slimefelinid	0	0
-type	/datum/chemical_reaction/slime/slimemoth	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:73	inert	datum_chemical_reaction_slime_slimemoth	0	0
-type	/datum/chemical_reaction/slime/slimeethereal	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:78	inert	datum_chemical_reaction_slime_slimeethereal	0	0
-type	/datum/chemical_reaction/slime/slimemetal	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:84	inert	datum_chemical_reaction_slime_slimemetal	0	0
-proc	/datum/chemical_reaction/slime/slimemetal	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:87	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimeglass	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:94	inert	datum_chemical_reaction_slime_slimeglass	0	0
-proc	/datum/chemical_reaction/slime/slimeglass	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:97	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimemobspawn	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:105	inert	datum_chemical_reaction_slime_slimemobspawn	0	0
-proc	/datum/chemical_reaction/slime/slimemobspawn	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:110	holder,reaction,created_volume	no	-	proc
-proc	/datum/chemical_reaction/slime/slimemobspawn	summon_mobs	code/modules/reagents/chemistry/recipes/slime_extracts.dm:118	holder,T	no	-	proc root
-type	/datum/chemical_reaction/slime/slimemobspawn/lesser	/datum/chemical_reaction/slime/slimemobspawn	code/modules/reagents/chemistry/recipes/slime_extracts.dm:123	inert	datum_chemical_reaction_slime_slimemobspawn_lesser	0	0
-proc	/datum/chemical_reaction/slime/slimemobspawn/lesser	summon_mobs	code/modules/reagents/chemistry/recipes/slime_extracts.dm:125	holder,T	no	-	proc
-type	/datum/chemical_reaction/slime/slimemobspawn/friendly	/datum/chemical_reaction/slime/slimemobspawn	code/modules/reagents/chemistry/recipes/slime_extracts.dm:130	inert	datum_chemical_reaction_slime_slimemobspawn_friendly	0	0
-proc	/datum/chemical_reaction/slime/slimemobspawn/friendly	summon_mobs	code/modules/reagents/chemistry/recipes/slime_extracts.dm:132	holder,T	no	-	proc
-type	/datum/chemical_reaction/slime/slimemobspawn/spider	/datum/chemical_reaction/slime/slimemobspawn	code/modules/reagents/chemistry/recipes/slime_extracts.dm:137	inert	datum_chemical_reaction_slime_slimemobspawn_spider	0	0
-proc	/datum/chemical_reaction/slime/slimemobspawn/spider	summon_mobs	code/modules/reagents/chemistry/recipes/slime_extracts.dm:140	holder,T	no	-	proc
-type	/datum/chemical_reaction/slime/slimebork	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:147	inert	datum_chemical_reaction_slime_slimebork	0	0
-proc	/datum/chemical_reaction/slime/slimebork	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:150	holder,reaction,created_volume	no	-	proc
-proc	/datum/chemical_reaction/slime/slimebork	getbork	code/modules/reagents/chemistry/recipes/slime_extracts.dm:172		no	-	proc root
-type	/datum/chemical_reaction/slime/slimebork/drinks	/datum/chemical_reaction/slime/slimebork	code/modules/reagents/chemistry/recipes/slime_extracts.dm:176	inert	datum_chemical_reaction_slime_slimebork_drinks	0	0
-proc	/datum/chemical_reaction/slime/slimebork/drinks	getbork	code/modules/reagents/chemistry/recipes/slime_extracts.dm:178		no	-	proc
-type	/datum/chemical_reaction/slime/slimefrost	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:183	inert	datum_chemical_reaction_slime_slimefrost	0	0
-type	/datum/chemical_reaction/slime/slimestabilizer	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:188	inert	datum_chemical_reaction_slime_slimestabilizer	0	0
-proc	/datum/chemical_reaction/slime/slimestabilizer	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:191	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimefoam	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:196	inert	datum_chemical_reaction_slime_slimefoam	0	0
-proc	/datum/chemical_reaction/slime/slimefoam	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:199	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimefreeze	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:204	inert	datum_chemical_reaction_slime_slimefreeze	0	0
-proc	/datum/chemical_reaction/slime/slimefreeze	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:208	holder,reaction,created_volume	no	-	proc
-proc	/datum/chemical_reaction/slime/slimefreeze	freeze	code/modules/reagents/chemistry/recipes/slime_extracts.dm:217	holder	no	-	proc root
-type	/datum/chemical_reaction/slime/slimefireproof	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:225	inert	datum_chemical_reaction_slime_slimefireproof	0	0
-proc	/datum/chemical_reaction/slime/slimefireproof	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:228	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimecasp	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:234	inert	datum_chemical_reaction_slime_slimecasp	0	0
-type	/datum/chemical_reaction/slime/slimefire	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:239	inert	datum_chemical_reaction_slime_slimefire	0	0
-proc	/datum/chemical_reaction/slime/slimefire	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:243	holder,reaction,created_volume	no	-	proc
-proc	/datum/chemical_reaction/slime/slimefire	slime_burn	code/modules/reagents/chemistry/recipes/slime_extracts.dm:252	holder	no	-	proc root
-type	/datum/chemical_reaction/slime/slimesmoke	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:260	inert	datum_chemical_reaction_slime_slimesmoke	0	0
-type	/datum/chemical_reaction/slime/slimeoverload	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:266	inert	datum_chemical_reaction_slime_slimeoverload	0	0
-proc	/datum/chemical_reaction/slime/slimeoverload	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:270	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimecell	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:280	inert	datum_chemical_reaction_slime_slimecell	0	0
-proc	/datum/chemical_reaction/slime/slimecell	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:283	holder,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimeglow	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:288	inert	datum_chemical_reaction_slime_slimeglow	0	0
-proc	/datum/chemical_reaction/slime/slimeglow	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:291	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimepsteroid	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:299	inert	datum_chemical_reaction_slime_slimepsteroid	0	0
-proc	/datum/chemical_reaction/slime/slimepsteroid	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:302	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimeregen	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:307	inert	datum_chemical_reaction_slime_slimeregen	0	0
-type	/datum/chemical_reaction/slime/slimeplasma	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:313	inert	datum_chemical_reaction_slime_slimeplasma	0	0
-proc	/datum/chemical_reaction/slime/slimeplasma	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:316	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimemutator	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:322	inert	datum_chemical_reaction_slime_slimemutator	0	0
-proc	/datum/chemical_reaction/slime/slimemutator	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:325	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimebloodlust	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:330	inert	datum_chemical_reaction_slime_slimebloodlust	0	0
-proc	/datum/chemical_reaction/slime/slimebloodlust	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:334	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimespeed	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:346	inert	datum_chemical_reaction_slime_slimespeed	0	0
-proc	/datum/chemical_reaction/slime/slimespeed	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:349	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/docility	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:355	inert	datum_chemical_reaction_slime_docility	0	0
-proc	/datum/chemical_reaction/slime/docility	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:358	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/gender	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:363	inert	datum_chemical_reaction_slime_gender	0	0
-proc	/datum/chemical_reaction/slime/gender	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:366	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimemutate2	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:372	inert	datum_chemical_reaction_slime_slimemutate2	0	0
-type	/datum/chemical_reaction/slime/slimeexplosion	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:378	inert	datum_chemical_reaction_slime_slimeexplosion	0	0
-proc	/datum/chemical_reaction/slime/slimeexplosion	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:383	holder,reaction,created_volume	no	-	proc
-proc	/datum/chemical_reaction/slime/slimeexplosion	boom	code/modules/reagents/chemistry/recipes/slime_extracts.dm:400	holder	no	-	proc root
-type	/datum/chemical_reaction/slime/slimeoil	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:406	inert	datum_chemical_reaction_slime_slimeoil	0	0
-type	/datum/chemical_reaction/slime/slimepotion2	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:412	inert	datum_chemical_reaction_slime_slimepotion2	0	0
-proc	/datum/chemical_reaction/slime/slimepotion2	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:415	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/renaming	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:420	inert	datum_chemical_reaction_slime_renaming	0	0
-proc	/datum/chemical_reaction/slime/renaming	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:423	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/adamantine	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:430	inert	datum_chemical_reaction_slime_adamantine	0	0
-proc	/datum/chemical_reaction/slime/adamantine	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:433	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimefloor2	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:439	inert	datum_chemical_reaction_slime_slimefloor2	0	0
-proc	/datum/chemical_reaction/slime/slimefloor2	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:442	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimecrystal	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:448	inert	datum_chemical_reaction_slime_slimecrystal	0	0
-proc	/datum/chemical_reaction/slime/slimecrystal	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:451	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimeradio	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:457	inert	datum_chemical_reaction_slime_slimeradio	0	0
-proc	/datum/chemical_reaction/slime/slimeradio	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:460	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimepsteroid2	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:466	inert	datum_chemical_reaction_slime_slimepsteroid2	0	0
-proc	/datum/chemical_reaction/slime/slimepsteroid2	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:469	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slime_territory	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:474	inert	datum_chemical_reaction_slime_slime_territory	0	0
-proc	/datum/chemical_reaction/slime/slime_territory	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:477	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimestop	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:483	inert	datum_chemical_reaction_slime_slimestop	0	0
-proc	/datum/chemical_reaction/slime/slimestop	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:486	holder,reaction,created_volume	no	-	proc
-proc	/datum/chemical_reaction/slime/slimestop	slime_stop	code/modules/reagents/chemistry/recipes/slime_extracts.dm:489	holder	no	-	proc root
-type	/datum/chemical_reaction/slime/slimecamera	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:501	inert	datum_chemical_reaction_slime_slimecamera	0	0
-proc	/datum/chemical_reaction/slime/slimecamera	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:504	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimefloor	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:510	inert	datum_chemical_reaction_slime_slimefloor	0	0
-proc	/datum/chemical_reaction/slime/slimefloor	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:513	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimepaint	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:519	inert	datum_chemical_reaction_slime_slimepaint	0	0
-proc	/datum/chemical_reaction/slime/slimepaint	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:522	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimecrayon	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:528	inert	datum_chemical_reaction_slime_slimecrayon	0	0
-proc	/datum/chemical_reaction/slime/slimecrayon	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:531	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slime_rng	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:538	inert	datum_chemical_reaction_slime_slime_rng	0	0
-proc	/datum/chemical_reaction/slime/slime_rng	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:541	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slimebomb	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:554	inert	datum_chemical_reaction_slime_slimebomb	0	0
-proc	/datum/chemical_reaction/slime/slimebomb	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:557	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/slime_transfer	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:575	inert	datum_chemical_reaction_slime_slime_transfer	0	0
-proc	/datum/chemical_reaction/slime/slime_transfer	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:578	holder,reaction,created_volume	no	-	proc
-type	/datum/chemical_reaction/slime/flight_potion	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:583	inert	datum_chemical_reaction_slime_flight_potion	0	0
-proc	/datum/chemical_reaction/slime/flight_potion	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:586	holder,reaction,created_volume	no	-	proc
+type	/datum/chemical_reaction/slime	/datum/chemical_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:3	live	datum_chemical_reaction_slime	1	0
+proc	/datum/chemical_reaction/slime	pre_reaction_other_checks	code/modules/reagents/chemistry/recipes/slime_extracts.dm:7	holder	yes	full	proc
+proc	/datum/chemical_reaction/slime	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:14	holder,reaction,created_volume	yes	full	proc
+proc	/datum/chemical_reaction/slime	use_slime_core	code/modules/reagents/chemistry/recipes/slime_extracts.dm:17	holder	yes	full	proc root
+proc	/datum/chemical_reaction/slime	delete_extract	code/modules/reagents/chemistry/recipes/slime_extracts.dm:22	holder	yes	full	proc root
+type	/datum/chemical_reaction/slime/slimespawn	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:29	live	datum_chemical_reaction_slime_slimespawn	1	0
+proc	/datum/chemical_reaction/slime/slimespawn	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:32	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimeinaprov	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:38	live	datum_chemical_reaction_slime_slimeinaprov	0	0
+type	/datum/chemical_reaction/slime/slimemonkey	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:43	live	datum_chemical_reaction_slime_slimemonkey	1	0
+proc	/datum/chemical_reaction/slime/slimemonkey	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:46	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimemutate	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:53	live	datum_chemical_reaction_slime_slimemutate	0	0
+type	/datum/chemical_reaction/slime/slimehuman	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:58	live	datum_chemical_reaction_slime_slimehuman	0	0
+type	/datum/chemical_reaction/slime/slimelizard	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:63	live	datum_chemical_reaction_slime_slimelizard	0	0
+type	/datum/chemical_reaction/slime/slimefelinid	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:68	live	datum_chemical_reaction_slime_slimefelinid	0	0
+type	/datum/chemical_reaction/slime/slimemoth	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:73	live	datum_chemical_reaction_slime_slimemoth	0	0
+type	/datum/chemical_reaction/slime/slimeethereal	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:78	live	datum_chemical_reaction_slime_slimeethereal	0	0
+type	/datum/chemical_reaction/slime/slimemetal	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:84	live	datum_chemical_reaction_slime_slimemetal	1	0
+proc	/datum/chemical_reaction/slime/slimemetal	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:87	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimeglass	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:94	live	datum_chemical_reaction_slime_slimeglass	1	0
+proc	/datum/chemical_reaction/slime/slimeglass	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:97	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimemobspawn	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:105	live	datum_chemical_reaction_slime_slimemobspawn	1	0
+proc	/datum/chemical_reaction/slime/slimemobspawn	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:110	holder,reaction,created_volume	yes	full	proc
+proc	/datum/chemical_reaction/slime/slimemobspawn	summon_mobs	code/modules/reagents/chemistry/recipes/slime_extracts.dm:118	holder,T	yes	full	proc root
+type	/datum/chemical_reaction/slime/slimemobspawn/lesser	/datum/chemical_reaction/slime/slimemobspawn	code/modules/reagents/chemistry/recipes/slime_extracts.dm:123	live	datum_chemical_reaction_slime_slimemobspawn_lesser	1	0
+proc	/datum/chemical_reaction/slime/slimemobspawn/lesser	summon_mobs	code/modules/reagents/chemistry/recipes/slime_extracts.dm:125	holder,T	yes	full	proc
+type	/datum/chemical_reaction/slime/slimemobspawn/friendly	/datum/chemical_reaction/slime/slimemobspawn	code/modules/reagents/chemistry/recipes/slime_extracts.dm:130	live	datum_chemical_reaction_slime_slimemobspawn_friendly	1	0
+proc	/datum/chemical_reaction/slime/slimemobspawn/friendly	summon_mobs	code/modules/reagents/chemistry/recipes/slime_extracts.dm:132	holder,T	yes	full	proc
+type	/datum/chemical_reaction/slime/slimemobspawn/spider	/datum/chemical_reaction/slime/slimemobspawn	code/modules/reagents/chemistry/recipes/slime_extracts.dm:137	live	datum_chemical_reaction_slime_slimemobspawn_spider	1	0
+proc	/datum/chemical_reaction/slime/slimemobspawn/spider	summon_mobs	code/modules/reagents/chemistry/recipes/slime_extracts.dm:140	holder,T	yes	full	proc
+type	/datum/chemical_reaction/slime/slimebork	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:147	live	datum_chemical_reaction_slime_slimebork	1	0
+proc	/datum/chemical_reaction/slime/slimebork	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:150	holder,reaction,created_volume	yes	full	proc
+proc	/datum/chemical_reaction/slime/slimebork	getbork	code/modules/reagents/chemistry/recipes/slime_extracts.dm:172		yes	full	proc root
+type	/datum/chemical_reaction/slime/slimebork/drinks	/datum/chemical_reaction/slime/slimebork	code/modules/reagents/chemistry/recipes/slime_extracts.dm:176	live	datum_chemical_reaction_slime_slimebork_drinks	1	0
+proc	/datum/chemical_reaction/slime/slimebork/drinks	getbork	code/modules/reagents/chemistry/recipes/slime_extracts.dm:178		yes	full	proc
+type	/datum/chemical_reaction/slime/slimefrost	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:183	live	datum_chemical_reaction_slime_slimefrost	0	0
+type	/datum/chemical_reaction/slime/slimestabilizer	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:188	live	datum_chemical_reaction_slime_slimestabilizer	1	0
+proc	/datum/chemical_reaction/slime/slimestabilizer	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:191	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimefoam	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:196	live	datum_chemical_reaction_slime_slimefoam	1	0
+proc	/datum/chemical_reaction/slime/slimefoam	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:199	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimefreeze	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:204	live	datum_chemical_reaction_slime_slimefreeze	1	0
+proc	/datum/chemical_reaction/slime/slimefreeze	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:208	holder,reaction,created_volume	yes	full	proc
+proc	/datum/chemical_reaction/slime/slimefreeze	freeze	code/modules/reagents/chemistry/recipes/slime_extracts.dm:217	holder	yes	full	proc root
+type	/datum/chemical_reaction/slime/slimefireproof	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:225	live	datum_chemical_reaction_slime_slimefireproof	1	0
+proc	/datum/chemical_reaction/slime/slimefireproof	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:228	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimecasp	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:234	live	datum_chemical_reaction_slime_slimecasp	0	0
+type	/datum/chemical_reaction/slime/slimefire	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:239	live	datum_chemical_reaction_slime_slimefire	1	0
+proc	/datum/chemical_reaction/slime/slimefire	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:243	holder,reaction,created_volume	yes	full	proc
+proc	/datum/chemical_reaction/slime/slimefire	slime_burn	code/modules/reagents/chemistry/recipes/slime_extracts.dm:252	holder	yes	full	proc root
+type	/datum/chemical_reaction/slime/slimesmoke	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:260	live	datum_chemical_reaction_slime_slimesmoke	0	0
+type	/datum/chemical_reaction/slime/slimeoverload	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:266	live	datum_chemical_reaction_slime_slimeoverload	1	0
+proc	/datum/chemical_reaction/slime/slimeoverload	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:270	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimecell	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:280	live	datum_chemical_reaction_slime_slimecell	1	0
+proc	/datum/chemical_reaction/slime/slimecell	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:283	holder,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimeglow	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:288	live	datum_chemical_reaction_slime_slimeglow	1	0
+proc	/datum/chemical_reaction/slime/slimeglow	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:291	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimepsteroid	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:299	live	datum_chemical_reaction_slime_slimepsteroid	1	0
+proc	/datum/chemical_reaction/slime/slimepsteroid	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:302	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimeregen	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:307	live	datum_chemical_reaction_slime_slimeregen	0	0
+type	/datum/chemical_reaction/slime/slimeplasma	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:313	live	datum_chemical_reaction_slime_slimeplasma	1	0
+proc	/datum/chemical_reaction/slime/slimeplasma	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:316	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimemutator	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:322	live	datum_chemical_reaction_slime_slimemutator	1	0
+proc	/datum/chemical_reaction/slime/slimemutator	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:325	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimebloodlust	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:330	live	datum_chemical_reaction_slime_slimebloodlust	1	0
+proc	/datum/chemical_reaction/slime/slimebloodlust	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:334	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimespeed	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:346	live	datum_chemical_reaction_slime_slimespeed	1	0
+proc	/datum/chemical_reaction/slime/slimespeed	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:349	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/docility	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:355	live	datum_chemical_reaction_slime_docility	1	0
+proc	/datum/chemical_reaction/slime/docility	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:358	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/gender	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:363	live	datum_chemical_reaction_slime_gender	1	0
+proc	/datum/chemical_reaction/slime/gender	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:366	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimemutate2	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:372	live	datum_chemical_reaction_slime_slimemutate2	0	0
+type	/datum/chemical_reaction/slime/slimeexplosion	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:378	live	datum_chemical_reaction_slime_slimeexplosion	1	0
+proc	/datum/chemical_reaction/slime/slimeexplosion	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:383	holder,reaction,created_volume	yes	full	proc
+proc	/datum/chemical_reaction/slime/slimeexplosion	boom	code/modules/reagents/chemistry/recipes/slime_extracts.dm:400	holder	yes	full	proc root
+type	/datum/chemical_reaction/slime/slimeoil	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:406	live	datum_chemical_reaction_slime_slimeoil	0	0
+type	/datum/chemical_reaction/slime/slimepotion2	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:412	live	datum_chemical_reaction_slime_slimepotion2	1	0
+proc	/datum/chemical_reaction/slime/slimepotion2	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:415	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/renaming	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:420	live	datum_chemical_reaction_slime_renaming	1	0
+proc	/datum/chemical_reaction/slime/renaming	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:423	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/adamantine	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:430	live	datum_chemical_reaction_slime_adamantine	1	0
+proc	/datum/chemical_reaction/slime/adamantine	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:433	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimefloor2	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:439	live	datum_chemical_reaction_slime_slimefloor2	1	0
+proc	/datum/chemical_reaction/slime/slimefloor2	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:442	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimecrystal	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:448	live	datum_chemical_reaction_slime_slimecrystal	1	0
+proc	/datum/chemical_reaction/slime/slimecrystal	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:451	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimeradio	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:457	live	datum_chemical_reaction_slime_slimeradio	1	0
+proc	/datum/chemical_reaction/slime/slimeradio	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:460	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimepsteroid2	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:466	live	datum_chemical_reaction_slime_slimepsteroid2	1	0
+proc	/datum/chemical_reaction/slime/slimepsteroid2	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:469	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slime_territory	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:474	live	datum_chemical_reaction_slime_slime_territory	1	0
+proc	/datum/chemical_reaction/slime/slime_territory	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:477	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimestop	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:483	live	datum_chemical_reaction_slime_slimestop	1	0
+proc	/datum/chemical_reaction/slime/slimestop	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:486	holder,reaction,created_volume	yes	full	proc
+proc	/datum/chemical_reaction/slime/slimestop	slime_stop	code/modules/reagents/chemistry/recipes/slime_extracts.dm:489	holder	yes	full	proc root
+type	/datum/chemical_reaction/slime/slimecamera	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:501	live	datum_chemical_reaction_slime_slimecamera	1	0
+proc	/datum/chemical_reaction/slime/slimecamera	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:504	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimefloor	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:510	live	datum_chemical_reaction_slime_slimefloor	1	0
+proc	/datum/chemical_reaction/slime/slimefloor	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:513	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimepaint	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:519	live	datum_chemical_reaction_slime_slimepaint	1	0
+proc	/datum/chemical_reaction/slime/slimepaint	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:522	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimecrayon	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:528	live	datum_chemical_reaction_slime_slimecrayon	1	0
+proc	/datum/chemical_reaction/slime/slimecrayon	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:531	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slime_rng	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:538	live	datum_chemical_reaction_slime_slime_rng	1	0
+proc	/datum/chemical_reaction/slime/slime_rng	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:541	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slimebomb	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:554	live	datum_chemical_reaction_slime_slimebomb	1	0
+proc	/datum/chemical_reaction/slime/slimebomb	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:557	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/slime_transfer	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:575	live	datum_chemical_reaction_slime_slime_transfer	1	0
+proc	/datum/chemical_reaction/slime/slime_transfer	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:578	holder,reaction,created_volume	yes	full	proc
+type	/datum/chemical_reaction/slime/flight_potion	/datum/chemical_reaction/slime	code/modules/reagents/chemistry/recipes/slime_extracts.dm:583	live	datum_chemical_reaction_slime_flight_potion	1	0
+proc	/datum/chemical_reaction/slime/flight_potion	on_reaction	code/modules/reagents/chemistry/recipes/slime_extracts.dm:586	holder,reaction,created_volume	yes	full	proc
 type	/datum/chemical_reaction/randomized	/datum/chemical_reaction	code/modules/reagents/chemistry/recipes/special.dm:7	live	datum_chemical_reaction_randomized	1	0
 proc	/datum/chemical_reaction/randomized	New	code/modules/reagents/chemistry/recipes/special.dm:41	recipe_data	yes	full	proc
 proc	/datum/chemical_reaction/randomized	load_recipe	code/modules/reagents/chemistry/recipes/special.dm:51	recipe_data	yes	full	proc root
@@ -47392,84 +47392,84 @@ proc	/datum/techweb_node/syndicate_basic	register_uplink_items	code/modules/rese
 type	/datum/techweb_node/unregulated_bluespace	/datum/techweb_node	code/modules/research/techweb/nodes/syndicate_nodes.dm:38	live	datum_techweb_node_unregulated_bluespace	0	0
 type	/datum/saved_bodypart	/datum	code/modules/research/xenobiology/crossbreeding/_misc.dm:17	live	datum_saved_bodypart	1	0
 proc	/datum/saved_bodypart	New	code/modules/research/xenobiology/crossbreeding/_misc.dm:22	part	yes	full	proc
-type	/datum/micro_organism	/datum	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:4	inert	datum_micro_organism	0	0
-proc	/datum/micro_organism	get_details	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:9	show_details	no	-	proc root
-type	/datum/micro_organism/cell_line	/datum/micro_organism	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:15	inert	datum_micro_organism_cell_line	0	0
-proc	/datum/micro_organism/cell_line	handle_growth	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:36	vat	no	-	proc root
-proc	/datum/micro_organism/cell_line	try_eat	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:45	reagents	no	-	proc root
-proc	/datum/micro_organism/cell_line	calculate_growth	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:54	reagents,biological_sample	no	-	proc root
-proc	/datum/micro_organism/cell_line	finish_growing	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:79	vat	no	-	proc root
-proc	/datum/micro_organism/cell_line	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:86	vat	no	-	proc root
-proc	/datum/micro_organism/cell_line	get_details	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:103	show_details	no	-	proc
-proc	/datum/micro_organism/cell_line	return_reagent_text	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:111	prefix_text,reagentlist	no	-	proc root
-proc	/datum/micro_organism/cell_line	mutate_color	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:121	beautiful_mutant	no	-	proc root
-type	/datum/micro_organism/cell_line/mouse	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:8	inert	datum_micro_organism_cell_line_mouse	0	0
-type	/datum/micro_organism/cell_line/chicken	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:32	inert	datum_micro_organism_cell_line_chicken	0	0
-type	/datum/micro_organism/cell_line/cow	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:50	inert	datum_micro_organism_cell_line_cow	0	0
-type	/datum/micro_organism/cell_line/moonicorn	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:69	inert	datum_micro_organism_cell_line_moonicorn	0	0
-type	/datum/micro_organism/cell_line/goat	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:94	inert	datum_micro_organism_cell_line_goat	0	0
-type	/datum/micro_organism/cell_line/sheep	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:116	inert	datum_micro_organism_cell_line_sheep	0	0
-type	/datum/micro_organism/cell_line/pig	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:138	inert	datum_micro_organism_cell_line_pig	0	0
-type	/datum/micro_organism/cell_line/cat	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:159	inert	datum_micro_organism_cell_line_cat	0	0
-type	/datum/micro_organism/cell_line/corgi	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:180	inert	datum_micro_organism_cell_line_corgi	0	0
-type	/datum/micro_organism/cell_line/pug	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:199	inert	datum_micro_organism_cell_line_pug	0	0
-type	/datum/micro_organism/cell_line/fox	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:217	inert	datum_micro_organism_cell_line_fox	0	0
-type	/datum/micro_organism/cell_line/stoat	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:239	inert	datum_micro_organism_cell_line_stoat	0	0
-type	/datum/micro_organism/cell_line/rabbit	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:262	inert	datum_micro_organism_cell_line_rabbit	0	0
-type	/datum/micro_organism/cell_line/mothroach	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:284	inert	datum_micro_organism_cell_line_mothroach	0	0
-type	/datum/micro_organism/cell_line/bear	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:303	inert	datum_micro_organism_cell_line_bear	0	0
-type	/datum/micro_organism/cell_line/carp	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:324	inert	datum_micro_organism_cell_line_carp	0	0
-type	/datum/micro_organism/cell_line/megacarp	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:343	inert	datum_micro_organism_cell_line_megacarp	0	0
-type	/datum/micro_organism/cell_line/penguin	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:363	inert	datum_micro_organism_cell_line_penguin	0	0
-type	/datum/micro_organism/cell_line/snake	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:382	inert	datum_micro_organism_cell_line_snake	0	0
-type	/datum/micro_organism/cell_line/lizard	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:400	inert	datum_micro_organism_cell_line_lizard	0	0
-type	/datum/micro_organism/cell_line/slime	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:428	inert	datum_micro_organism_cell_line_slime	0	0
-type	/datum/micro_organism/cell_line/blob_spore	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:446	inert	datum_micro_organism_cell_line_blob_spore	0	0
-type	/datum/micro_organism/cell_line/blobbernaut	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:466	inert	datum_micro_organism_cell_line_blobbernaut	0	0
-type	/datum/micro_organism/cell_line/gelatinous_cube	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:485	inert	datum_micro_organism_cell_line_gelatinous_cube	0	0
-type	/datum/micro_organism/cell_line/sholean_grapes	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:510	inert	datum_micro_organism_cell_line_sholean_grapes	0	0
-type	/datum/micro_organism/cell_line/cockroach	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:540	inert	datum_micro_organism_cell_line_cockroach	0	0
-type	/datum/micro_organism/cell_line/glockroach	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:559	inert	datum_micro_organism_cell_line_glockroach	0	0
-type	/datum/micro_organism/cell_line/hauberoach	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:581	inert	datum_micro_organism_cell_line_hauberoach	0	0
-type	/datum/micro_organism/cell_line/pine	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:603	inert	datum_micro_organism_cell_line_pine	0	0
-type	/datum/micro_organism/cell_line/vat_beast	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:624	inert	datum_micro_organism_cell_line_vat_beast	0	0
-proc	/datum/micro_organism/cell_line/vat_beast	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:651	vat	no	-	proc
-type	/datum/micro_organism/cell_line/netherworld	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:657	inert	datum_micro_organism_cell_line_netherworld	0	0
-proc	/datum/micro_organism/cell_line/netherworld	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:678	vat	no	-	proc
-type	/datum/micro_organism/cell_line/clown	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:684	inert	datum_micro_organism_cell_line_clown	0	0
-proc	/datum/micro_organism/cell_line/clown	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:684	vat	no	-	proc
-proc	/datum/micro_organism/cell_line/clown	New	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:692		no	-	proc
-type	/datum/micro_organism/cell_line/clown/bananaclown	/datum/micro_organism/cell_line/clown	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:698	inert	datum_micro_organism_cell_line_clown_bananaclown	0	0
-type	/datum/micro_organism/cell_line/clown/glutton	/datum/micro_organism/cell_line/clown	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:721	inert	datum_micro_organism_cell_line_clown_glutton	0	0
-type	/datum/micro_organism/cell_line/clown/longclown	/datum/micro_organism/cell_line/clown	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:747	inert	datum_micro_organism_cell_line_clown_longclown	0	0
-type	/datum/micro_organism/cell_line/frog	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:770	inert	datum_micro_organism_cell_line_frog	0	0
-type	/datum/micro_organism/cell_line/axolotl	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:791	inert	datum_micro_organism_cell_line_axolotl	0	0
-type	/datum/micro_organism/cell_line/walking_mushroom	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:814	inert	datum_micro_organism_cell_line_walking_mushroom	0	0
-type	/datum/micro_organism/cell_line/queen_bee	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:839	inert	datum_micro_organism_cell_line_queen_bee	0	0
-proc	/datum/micro_organism/cell_line/queen_bee	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:863	vat	no	-	proc
-type	/datum/micro_organism/cell_line/butterfly	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:874	inert	datum_micro_organism_cell_line_butterfly	0	0
-type	/datum/micro_organism/cell_line/mega_arachnid	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:897	inert	datum_micro_organism_cell_line_mega_arachnid	0	0
-type	/datum/micro_organism/cell_line/snail	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:923	inert	datum_micro_organism_cell_line_snail	0	0
-type	/datum/micro_organism/cell_line/organs	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:3	inert	datum_micro_organism_cell_line_organs	0	0
-proc	/datum/micro_organism/cell_line/organs	mutate_color	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:7	beautiful_mutant	no	-	proc
-type	/datum/micro_organism/cell_line/organs/heart	/datum/micro_organism/cell_line/organs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:16	inert	datum_micro_organism_cell_line_organs_heart	0	0
-type	/datum/micro_organism/cell_line/organs/heart/evolved	/datum/micro_organism/cell_line/organs/heart	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:33	inert	datum_micro_organism_cell_line_organs_heart_evolved	0	0
-type	/datum/micro_organism/cell_line/organs/heart/sacred	/datum/micro_organism/cell_line/organs/heart	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:47	inert	datum_micro_organism_cell_line_organs_heart_sacred	0	0
-type	/datum/micro_organism/cell_line/organs/heart/corrupt	/datum/micro_organism/cell_line/organs/heart	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:61	inert	datum_micro_organism_cell_line_organs_heart_corrupt	0	0
-type	/datum/micro_organism/cell_line/organs/lungs	/datum/micro_organism/cell_line/organs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:78	inert	datum_micro_organism_cell_line_organs_lungs	0	0
-type	/datum/micro_organism/cell_line/organs/lungs/evolved	/datum/micro_organism/cell_line/organs/lungs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:95	inert	datum_micro_organism_cell_line_organs_lungs_evolved	0	0
-type	/datum/micro_organism/cell_line/organs/liver	/datum/micro_organism/cell_line/organs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:109	inert	datum_micro_organism_cell_line_organs_liver	0	0
-type	/datum/micro_organism/cell_line/organs/liver/evolved	/datum/micro_organism/cell_line/organs/liver	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:126	inert	datum_micro_organism_cell_line_organs_liver_evolved	0	0
-type	/datum/micro_organism/cell_line/organs/liver/bloody	/datum/micro_organism/cell_line/organs/liver	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:140	inert	datum_micro_organism_cell_line_organs_liver_bloody	0	0
-type	/datum/micro_organism/cell_line/organs/liver/distillery	/datum/micro_organism/cell_line/organs/liver	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:153	inert	datum_micro_organism_cell_line_organs_liver_distillery	0	0
-type	/datum/micro_organism/cell_line/organs/stomach	/datum/micro_organism/cell_line/organs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:169	inert	datum_micro_organism_cell_line_organs_stomach	0	0
-type	/datum/micro_organism/cell_line/organs/stomach/evolved	/datum/micro_organism/cell_line/organs/stomach	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:186	inert	datum_micro_organism_cell_line_organs_stomach_evolved	0	0
-type	/datum/micro_organism/virus	/datum/micro_organism	code/modules/research/xenobiology/vatgrowing/samples/viruses/_virus.dm:3	inert	datum_micro_organism_virus	0	0
-type	/datum/biological_sample	/datum	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:4	inert	datum_biological_sample	0	0
-proc	/datum/biological_sample	GenerateSample	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:11	cell_line_define,virus_define,cell_line_amount,virus_chance	no	-	proc root
-proc	/datum/biological_sample	Merge	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:26	other_sample	no	-	proc root
-proc	/datum/biological_sample	handle_growth	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:34	vat	no	-	proc root
-proc	/datum/biological_sample	reset_sample	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:39		no	-	proc root
+type	/datum/micro_organism	/datum	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:4	live	datum_micro_organism	1	0
+proc	/datum/micro_organism	get_details	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:9	show_details	yes	full	proc root
+type	/datum/micro_organism/cell_line	/datum/micro_organism	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:15	live	datum_micro_organism_cell_line	1	0
+proc	/datum/micro_organism/cell_line	handle_growth	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:36	vat	yes	full	proc root
+proc	/datum/micro_organism/cell_line	try_eat	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:45	reagents	yes	full	proc root
+proc	/datum/micro_organism/cell_line	calculate_growth	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:54	reagents,biological_sample	yes	full	proc root
+proc	/datum/micro_organism/cell_line	finish_growing	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:79	vat	yes	full	proc root
+proc	/datum/micro_organism/cell_line	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:86	vat	yes	full	proc root
+proc	/datum/micro_organism/cell_line	get_details	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:103	show_details	yes	full	proc
+proc	/datum/micro_organism/cell_line	return_reagent_text	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:111	prefix_text,reagentlist	yes	full	proc root
+proc	/datum/micro_organism/cell_line	mutate_color	code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:121	beautiful_mutant	yes	full	proc root
+type	/datum/micro_organism/cell_line/mouse	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:8	live	datum_micro_organism_cell_line_mouse	0	0
+type	/datum/micro_organism/cell_line/chicken	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:32	live	datum_micro_organism_cell_line_chicken	0	0
+type	/datum/micro_organism/cell_line/cow	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:50	live	datum_micro_organism_cell_line_cow	0	0
+type	/datum/micro_organism/cell_line/moonicorn	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:69	live	datum_micro_organism_cell_line_moonicorn	0	0
+type	/datum/micro_organism/cell_line/goat	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:94	live	datum_micro_organism_cell_line_goat	0	0
+type	/datum/micro_organism/cell_line/sheep	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:116	live	datum_micro_organism_cell_line_sheep	0	0
+type	/datum/micro_organism/cell_line/pig	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:138	live	datum_micro_organism_cell_line_pig	0	0
+type	/datum/micro_organism/cell_line/cat	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:159	live	datum_micro_organism_cell_line_cat	0	0
+type	/datum/micro_organism/cell_line/corgi	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:180	live	datum_micro_organism_cell_line_corgi	0	0
+type	/datum/micro_organism/cell_line/pug	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:199	live	datum_micro_organism_cell_line_pug	0	0
+type	/datum/micro_organism/cell_line/fox	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:217	live	datum_micro_organism_cell_line_fox	0	0
+type	/datum/micro_organism/cell_line/stoat	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:239	live	datum_micro_organism_cell_line_stoat	0	0
+type	/datum/micro_organism/cell_line/rabbit	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:262	live	datum_micro_organism_cell_line_rabbit	0	0
+type	/datum/micro_organism/cell_line/mothroach	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:284	live	datum_micro_organism_cell_line_mothroach	0	0
+type	/datum/micro_organism/cell_line/bear	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:303	live	datum_micro_organism_cell_line_bear	0	0
+type	/datum/micro_organism/cell_line/carp	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:324	live	datum_micro_organism_cell_line_carp	0	0
+type	/datum/micro_organism/cell_line/megacarp	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:343	live	datum_micro_organism_cell_line_megacarp	0	0
+type	/datum/micro_organism/cell_line/penguin	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:363	live	datum_micro_organism_cell_line_penguin	0	0
+type	/datum/micro_organism/cell_line/snake	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:382	live	datum_micro_organism_cell_line_snake	0	0
+type	/datum/micro_organism/cell_line/lizard	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:400	live	datum_micro_organism_cell_line_lizard	0	0
+type	/datum/micro_organism/cell_line/slime	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:428	live	datum_micro_organism_cell_line_slime	0	0
+type	/datum/micro_organism/cell_line/blob_spore	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:446	live	datum_micro_organism_cell_line_blob_spore	0	0
+type	/datum/micro_organism/cell_line/blobbernaut	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:466	live	datum_micro_organism_cell_line_blobbernaut	0	0
+type	/datum/micro_organism/cell_line/gelatinous_cube	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:485	live	datum_micro_organism_cell_line_gelatinous_cube	0	0
+type	/datum/micro_organism/cell_line/sholean_grapes	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:510	live	datum_micro_organism_cell_line_sholean_grapes	0	0
+type	/datum/micro_organism/cell_line/cockroach	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:540	live	datum_micro_organism_cell_line_cockroach	0	0
+type	/datum/micro_organism/cell_line/glockroach	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:559	live	datum_micro_organism_cell_line_glockroach	0	0
+type	/datum/micro_organism/cell_line/hauberoach	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:581	live	datum_micro_organism_cell_line_hauberoach	0	0
+type	/datum/micro_organism/cell_line/pine	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:603	live	datum_micro_organism_cell_line_pine	0	0
+type	/datum/micro_organism/cell_line/vat_beast	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:624	live	datum_micro_organism_cell_line_vat_beast	1	0
+proc	/datum/micro_organism/cell_line/vat_beast	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:651	vat	yes	full	proc
+type	/datum/micro_organism/cell_line/netherworld	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:657	live	datum_micro_organism_cell_line_netherworld	1	0
+proc	/datum/micro_organism/cell_line/netherworld	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:678	vat	yes	full	proc
+type	/datum/micro_organism/cell_line/clown	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:684	live	datum_micro_organism_cell_line_clown	1	0
+proc	/datum/micro_organism/cell_line/clown	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:684	vat	yes	full	proc
+proc	/datum/micro_organism/cell_line/clown	New	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:692		yes	full	proc
+type	/datum/micro_organism/cell_line/clown/bananaclown	/datum/micro_organism/cell_line/clown	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:698	live	datum_micro_organism_cell_line_clown_bananaclown	0	0
+type	/datum/micro_organism/cell_line/clown/glutton	/datum/micro_organism/cell_line/clown	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:721	live	datum_micro_organism_cell_line_clown_glutton	0	0
+type	/datum/micro_organism/cell_line/clown/longclown	/datum/micro_organism/cell_line/clown	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:747	live	datum_micro_organism_cell_line_clown_longclown	0	0
+type	/datum/micro_organism/cell_line/frog	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:770	live	datum_micro_organism_cell_line_frog	0	0
+type	/datum/micro_organism/cell_line/axolotl	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:791	live	datum_micro_organism_cell_line_axolotl	0	0
+type	/datum/micro_organism/cell_line/walking_mushroom	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:814	live	datum_micro_organism_cell_line_walking_mushroom	0	0
+type	/datum/micro_organism/cell_line/queen_bee	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:839	live	datum_micro_organism_cell_line_queen_bee	1	0
+proc	/datum/micro_organism/cell_line/queen_bee	succeed_growing	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:863	vat	yes	full	proc
+type	/datum/micro_organism/cell_line/butterfly	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:874	live	datum_micro_organism_cell_line_butterfly	0	0
+type	/datum/micro_organism/cell_line/mega_arachnid	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:897	live	datum_micro_organism_cell_line_mega_arachnid	0	0
+type	/datum/micro_organism/cell_line/snail	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:923	live	datum_micro_organism_cell_line_snail	0	0
+type	/datum/micro_organism/cell_line/organs	/datum/micro_organism/cell_line	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:3	live	datum_micro_organism_cell_line_organs	1	0
+proc	/datum/micro_organism/cell_line/organs	mutate_color	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:7	beautiful_mutant	yes	full	proc
+type	/datum/micro_organism/cell_line/organs/heart	/datum/micro_organism/cell_line/organs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:16	live	datum_micro_organism_cell_line_organs_heart	0	0
+type	/datum/micro_organism/cell_line/organs/heart/evolved	/datum/micro_organism/cell_line/organs/heart	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:33	live	datum_micro_organism_cell_line_organs_heart_evolved	0	0
+type	/datum/micro_organism/cell_line/organs/heart/sacred	/datum/micro_organism/cell_line/organs/heart	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:47	live	datum_micro_organism_cell_line_organs_heart_sacred	0	0
+type	/datum/micro_organism/cell_line/organs/heart/corrupt	/datum/micro_organism/cell_line/organs/heart	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:61	live	datum_micro_organism_cell_line_organs_heart_corrupt	0	0
+type	/datum/micro_organism/cell_line/organs/lungs	/datum/micro_organism/cell_line/organs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:78	live	datum_micro_organism_cell_line_organs_lungs	0	0
+type	/datum/micro_organism/cell_line/organs/lungs/evolved	/datum/micro_organism/cell_line/organs/lungs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:95	live	datum_micro_organism_cell_line_organs_lungs_evolved	0	0
+type	/datum/micro_organism/cell_line/organs/liver	/datum/micro_organism/cell_line/organs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:109	live	datum_micro_organism_cell_line_organs_liver	0	0
+type	/datum/micro_organism/cell_line/organs/liver/evolved	/datum/micro_organism/cell_line/organs/liver	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:126	live	datum_micro_organism_cell_line_organs_liver_evolved	0	0
+type	/datum/micro_organism/cell_line/organs/liver/bloody	/datum/micro_organism/cell_line/organs/liver	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:140	live	datum_micro_organism_cell_line_organs_liver_bloody	0	0
+type	/datum/micro_organism/cell_line/organs/liver/distillery	/datum/micro_organism/cell_line/organs/liver	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:153	live	datum_micro_organism_cell_line_organs_liver_distillery	0	0
+type	/datum/micro_organism/cell_line/organs/stomach	/datum/micro_organism/cell_line/organs	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:169	live	datum_micro_organism_cell_line_organs_stomach	0	0
+type	/datum/micro_organism/cell_line/organs/stomach/evolved	/datum/micro_organism/cell_line/organs/stomach	code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:186	live	datum_micro_organism_cell_line_organs_stomach_evolved	0	0
+type	/datum/micro_organism/virus	/datum/micro_organism	code/modules/research/xenobiology/vatgrowing/samples/viruses/_virus.dm:3	live	datum_micro_organism_virus	0	0
+type	/datum/biological_sample	/datum	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:4	live	datum_biological_sample	1	0
+proc	/datum/biological_sample	GenerateSample	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:11	cell_line_define,virus_define,cell_line_amount,virus_chance	yes	full	proc root
+proc	/datum/biological_sample	Merge	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:26	other_sample	yes	full	proc root
+proc	/datum/biological_sample	handle_growth	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:34	vat	yes	full	proc root
+proc	/datum/biological_sample	reset_sample	code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:39		yes	full	proc root
 type	/datum/security_level	/datum	code/modules/security_levels/security_level_datums.dm:11	live	datum_security_level	1	0
 proc	/datum/security_level	New	code/modules/security_levels/security_level_datums.dm:41		yes	full	proc
 type	/datum/security_level/green	/datum/security_level	code/modules/security_levels/security_level_datums.dm:54	live	datum_security_level_green	0	0
@@ -50796,16 +50796,16 @@ proc	/atom/movable/screen/slime_power	Click	code/_onclick/hud/screen_objects/scr
 proc	/atom/movable/screen/slime_power	Initialize	code/_onclick/hud/screen_objects/screen_objects.dm:1371	mapload,hud_owner	no	-	proc
 proc	/atom/movable/screen/slime_power	update_icon_state	code/_onclick/hud/screen_objects/screen_objects.dm:1375		no	-	proc
 proc	/atom/movable/screen/slime_power	update_maptext	code/_onclick/hud/screen_objects/screen_objects.dm:1382		yes	skeleton	proc root
-type	/atom/movable/screen/xenobio_console	/atom/movable/screen	code/_onclick/hud/screen_objects/screen_objects.dm:1391	inert	atom_movable_screen_xenobio_console	1	0
-proc	/atom/movable/screen/xenobio_console	Initialize	code/_onclick/hud/screen_objects/screen_objects.dm:1397	mapload,hud_owner	no	-	proc
-proc	/atom/movable/screen/xenobio_console	on_update_hud	code/_onclick/hud/screen_objects/screen_objects.dm:1407	slimes,monkeys,max_slimes	yes	skeleton	proc root
-proc	/atom/movable/screen/xenobio_console	update_potion	code/_onclick/hud/screen_objects/screen_objects.dm:1413	potion	yes	skeleton	proc root
-proc	/atom/movable/screen/xenobio_console	Destroy	code/_onclick/hud/screen_objects/screen_objects.dm:1422		no	-	proc
+type	/atom/movable/screen/xenobio_console	/atom/movable/screen	code/_onclick/hud/screen_objects/screen_objects.dm:1391	live	atom_movable_screen_xenobio_console	1	0
+proc	/atom/movable/screen/xenobio_console	Initialize	code/_onclick/hud/screen_objects/screen_objects.dm:1397	mapload,hud_owner	yes	full	proc
+proc	/atom/movable/screen/xenobio_console	on_update_hud	code/_onclick/hud/screen_objects/screen_objects.dm:1407	slimes,monkeys,max_slimes	yes	full	proc root
+proc	/atom/movable/screen/xenobio_console	update_potion	code/_onclick/hud/screen_objects/screen_objects.dm:1413	potion	yes	full	proc root
+proc	/atom/movable/screen/xenobio_console	Destroy	code/_onclick/hud/screen_objects/screen_objects.dm:1422		yes	full	proc
 type	/atom/movable/screen/xenobio_potion	/atom/movable/screen	code/_onclick/hud/screen_objects/screen_objects.dm:1430	live	atom_movable_screen_xenobio_potion	1	0
-proc	/atom/movable/screen/xenobio_potion	eject_pot	code/_onclick/hud/screen_objects/screen_objects.dm:1436	potion	yes	skeleton	proc root
-proc	/atom/movable/screen/xenobio_potion	add_pot	code/_onclick/hud/screen_objects/screen_objects.dm:1441	potion	yes	skeleton	proc root
-proc	/atom/movable/screen/xenobio_potion	swap_pot	code/_onclick/hud/screen_objects/screen_objects.dm:1453	potion	yes	skeleton	proc root
-proc	/atom/movable/screen/xenobio_potion	swap_pot_icon	code/_onclick/hud/screen_objects/screen_objects.dm:1458	pot	yes	skeleton	proc root
+proc	/atom/movable/screen/xenobio_potion	eject_pot	code/_onclick/hud/screen_objects/screen_objects.dm:1436	potion	yes	full	proc root
+proc	/atom/movable/screen/xenobio_potion	add_pot	code/_onclick/hud/screen_objects/screen_objects.dm:1441	potion	yes	full	proc root
+proc	/atom/movable/screen/xenobio_potion	swap_pot	code/_onclick/hud/screen_objects/screen_objects.dm:1453	potion	yes	full	proc root
+proc	/atom/movable/screen/xenobio_potion	swap_pot_icon	code/_onclick/hud/screen_objects/screen_objects.dm:1458	pot	yes	full	proc root
 type	/atom/movable/screen/screentip	/atom/movable/screen	code/_onclick/hud/screen_objects/screentip.dm:2	base	atom_movable_screen_screentip	1	0
 proc	/atom/movable/screen/screentip	Initialize	code/_onclick/hud/screen_objects/screentip.dm:11	mapload,hud_owner	yes	full	proc
 proc	/atom/movable/screen/screentip	update_view	code/_onclick/hud/screen_objects/screentip.dm:15	source	yes	partial	proc root
@@ -54677,24 +54677,24 @@ type	/mob/living/basic/clown/honkling	/mob/living/basic/clown	code/modules/mob/l
 proc	/mob/living/basic/clown/honkling	Initialize	code/modules/mob/living/basic/clown/clown.dm:118	mapload	yes	full	proc
 type	/mob/living/basic/clown/fleshclown	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:131	live	mob_living_basic_clown_fleshclown	1	0
 proc	/mob/living/basic/clown/fleshclown	Initialize	code/modules/mob/living/basic/clown/clown.dm:169	mapload	yes	full	proc
-type	/mob/living/basic/clown/longface	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:174	inert	mob_living_basic_clown_longface	0	0
-proc	/mob/living/basic/clown/longface	Initialize	code/modules/mob/living/basic/clown/clown.dm:204	mapload	no	-	proc
+type	/mob/living/basic/clown/longface	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:174	live	mob_living_basic_clown_longface	1	0
+proc	/mob/living/basic/clown/longface	Initialize	code/modules/mob/living/basic/clown/clown.dm:204	mapload	yes	full	proc
 type	/mob/living/basic/clown/clownhulk	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:209	live	mob_living_basic_clown_clownhulk	0	0
 type	/mob/living/basic/clown/clownhulk/chlown	/mob/living/basic/clown/clownhulk	code/modules/mob/living/basic/clown/clown.dm:245	live	mob_living_basic_clown_clownhulk_chlown	0	0
 type	/mob/living/basic/clown/clownhulk/honkmunculus	/mob/living/basic/clown/clownhulk	code/modules/mob/living/basic/clown/clown.dm:275	live	mob_living_basic_clown_clownhulk_honkmunculus	1	0
 proc	/mob/living/basic/clown/clownhulk/honkmunculus	Initialize	code/modules/mob/living/basic/clown/clown.dm:300	mapload	yes	full	proc
 type	/mob/living/basic/clown/clownhulk/destroyer	/mob/living/basic/clown/clownhulk	code/modules/mob/living/basic/clown/clown.dm:313	live	mob_living_basic_clown_clownhulk_destroyer	0	0
 type	/mob/living/basic/clown/mutant	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:344	live	mob_living_basic_clown_mutant	0	0
-type	/mob/living/basic/clown/mutant/glutton	/mob/living/basic/clown/mutant	code/modules/mob/living/basic/clown/clown.dm:381	inert	mob_living_basic_clown_mutant_glutton	0	0
-proc	/mob/living/basic/clown/mutant/glutton	Initialize	code/modules/mob/living/basic/clown/clown.dm:412	mapload	no	-	proc
-proc	/mob/living/basic/clown/mutant/glutton	item_interaction	code/modules/mob/living/basic/clown/clown.dm:423	user,tool,modifiers	no	-	proc
-proc	/mob/living/basic/clown/mutant/glutton	resolve_unarmed_attack	code/modules/mob/living/basic/clown/clown.dm:429	attack_target,modifiers	no	-	proc
-proc	/mob/living/basic/clown/mutant/glutton	check_edible	code/modules/mob/living/basic/clown/clown.dm:435	potential_food	no	-	proc root
-proc	/mob/living/basic/clown/mutant/glutton	eat_atom	code/modules/mob/living/basic/clown/clown.dm:450	eaten_atom	no	-	proc root
-proc	/mob/living/basic/clown/mutant/glutton	tamed	code/modules/mob/living/basic/clown/clown.dm:482	tamer,food	no	-	proc
-proc	/mob/living/basic/clown/mutant/glutton	Exited	code/modules/mob/living/basic/clown/clown.dm:487	gone,direction	no	-	proc
-type	/mob/living/basic/clown/banana	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:548	inert	mob_living_basic_clown_banana	0	0
-proc	/mob/living/basic/clown/banana	Initialize	code/modules/mob/living/basic/clown/clown.dm:573	mapload	no	-	proc
+type	/mob/living/basic/clown/mutant/glutton	/mob/living/basic/clown/mutant	code/modules/mob/living/basic/clown/clown.dm:381	live	mob_living_basic_clown_mutant_glutton	1	0
+proc	/mob/living/basic/clown/mutant/glutton	Initialize	code/modules/mob/living/basic/clown/clown.dm:412	mapload	yes	full	proc
+proc	/mob/living/basic/clown/mutant/glutton	item_interaction	code/modules/mob/living/basic/clown/clown.dm:423	user,tool,modifiers	yes	full	proc
+proc	/mob/living/basic/clown/mutant/glutton	resolve_unarmed_attack	code/modules/mob/living/basic/clown/clown.dm:429	attack_target,modifiers	yes	full	proc
+proc	/mob/living/basic/clown/mutant/glutton	check_edible	code/modules/mob/living/basic/clown/clown.dm:435	potential_food	yes	full	proc root
+proc	/mob/living/basic/clown/mutant/glutton	eat_atom	code/modules/mob/living/basic/clown/clown.dm:450	eaten_atom	yes	full	proc root
+proc	/mob/living/basic/clown/mutant/glutton	tamed	code/modules/mob/living/basic/clown/clown.dm:482	tamer,food	yes	full	proc
+proc	/mob/living/basic/clown/mutant/glutton	Exited	code/modules/mob/living/basic/clown/clown.dm:487	gone,direction	yes	full	proc
+type	/mob/living/basic/clown/banana	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:548	live	mob_living_basic_clown_banana	1	0
+proc	/mob/living/basic/clown/banana	Initialize	code/modules/mob/living/basic/clown/clown.dm:573	mapload	yes	full	proc
 type	/mob/living/basic/shade	/mob/living/basic	code/modules/mob/living/basic/cult/shade.dm:2	inert	mob_living_basic_shade	0	0
 proc	/mob/living/basic/shade	Initialize	code/modules/mob/living/basic/cult/shade.dm:43	mapload	no	-	proc
 proc	/mob/living/basic/shade	update_icon_state	code/modules/mob/living/basic/cult/shade.dm:54		no	-	proc
@@ -54746,11 +54746,11 @@ type	/mob/living/basic/construct/wraith/hostile	/mob/living/basic/construct/wrai
 type	/mob/living/basic/construct/wraith/angelic	/mob/living/basic/construct/wraith	code/modules/mob/living/basic/cult/constructs/wraith.dm:36	inert	mob_living_basic_construct_wraith_angelic	0	0
 proc	/mob/living/basic/construct/wraith/angelic	Initialize	code/modules/mob/living/basic/cult/constructs/wraith.dm:43	mapload	no	-	proc
 type	/mob/living/basic/construct/wraith/mystic	/mob/living/basic/construct/wraith	code/modules/mob/living/basic/cult/constructs/wraith.dm:48	inert	mob_living_basic_construct_wraith_mystic	0	0
-type	/mob/living/basic/vatbeast	/mob/living/basic	code/modules/mob/living/basic/cytology/vatbeast.dm:3	inert	mob_living_basic_vatbeast	0	0
-proc	/mob/living/basic/vatbeast	Initialize	code/modules/mob/living/basic/cytology/vatbeast.dm:39	mapload	no	-	proc
-proc	/mob/living/basic/vatbeast	tamed	code/modules/mob/living/basic/cytology/vatbeast.dm:53	tamer,food	no	-	proc
-proc	/mob/living/basic/vatbeast	add_cell_sample	code/modules/mob/living/basic/cytology/vatbeast.dm:59		no	-	proc root
-proc	/mob/living/basic/vatbeast	get_bloodtype	code/modules/mob/living/basic/cytology/vatbeast.dm:62		no	-	proc
+type	/mob/living/basic/vatbeast	/mob/living/basic	code/modules/mob/living/basic/cytology/vatbeast.dm:3	live	mob_living_basic_vatbeast	1	0
+proc	/mob/living/basic/vatbeast	Initialize	code/modules/mob/living/basic/cytology/vatbeast.dm:39	mapload	yes	full	proc
+proc	/mob/living/basic/vatbeast	tamed	code/modules/mob/living/basic/cytology/vatbeast.dm:53	tamer,food	yes	full	proc
+proc	/mob/living/basic/vatbeast	add_cell_sample	code/modules/mob/living/basic/cytology/vatbeast.dm:59		yes	full	proc root
+proc	/mob/living/basic/vatbeast	get_bloodtype	code/modules/mob/living/basic/cytology/vatbeast.dm:62		yes	full	proc
 type	/mob/living/basic/pig	/mob/living/basic	code/modules/mob/living/basic/farm_animals/pig.dm:3	live	mob_living_basic_pig	1	0
 proc	/mob/living/basic/pig	Initialize	code/modules/mob/living/basic/farm_animals/pig.dm:43	mapload	yes	full	proc
 proc	/mob/living/basic/pig	make_tameable	code/modules/mob/living/basic/farm_animals/pig.dm:52		yes	full	proc root
@@ -56485,10 +56485,10 @@ type	/mob/eye/camera/remote/base_construction	/mob/eye/camera/remote	code/game/o
 proc	/mob/eye/camera/remote/base_construction	Initialize	code/game/objects/structures/construction_console/construction_console.dm:109	mapload,console_link	yes	full	proc
 proc	/mob/eye/camera/remote/base_construction	setLoc	code/game/objects/structures/construction_console/construction_console.dm:116	destination,force_update	yes	full	proc
 proc	/mob/eye/camera/remote/base_construction	relaymove	code/game/objects/structures/construction_console/construction_console.dm:122	user,direction	yes	full	proc
-type	/mob/eye/camera/remote/xenobio	/mob/eye/camera/remote	code/modules/research/xenobiology/xenobio_camera.dm:3	inert	mob_eye_camera_remote_xenobio	0	0
-proc	/mob/eye/camera/remote/xenobio	Initialize	code/modules/research/xenobiology/xenobio_camera.dm:6	mapload	no	-	proc
-proc	/mob/eye/camera/remote/xenobio	setLoc	code/modules/research/xenobiology/xenobio_camera.dm:11	destination,force_update	no	-	proc
-proc	/mob/eye/camera/remote/xenobio	can_z_move	code/modules/research/xenobiology/xenobio_camera.dm:17	direction,start,destination,z_move_flags,rider	no	-	proc
+type	/mob/eye/camera/remote/xenobio	/mob/eye/camera/remote	code/modules/research/xenobiology/xenobio_camera.dm:3	live	mob_eye_camera_remote_xenobio	1	0
+proc	/mob/eye/camera/remote/xenobio	Initialize	code/modules/research/xenobiology/xenobio_camera.dm:6	mapload	yes	full	proc
+proc	/mob/eye/camera/remote/xenobio	setLoc	code/modules/research/xenobiology/xenobio_camera.dm:11	destination,force_update	yes	full	proc
+proc	/mob/eye/camera/remote/xenobio	can_z_move	code/modules/research/xenobiology/xenobio_camera.dm:17	direction,start,destination,z_move_flags,rider	yes	full	proc
 type	/mob/eye/camera/remote/shuttle_docker	/mob/eye/camera/remote	code/modules/shuttle/shuttle_consoles/navigation_computer.dm:376	live	mob_eye_camera_remote_shuttle_docker	1	0
 proc	/mob/eye/camera/remote/shuttle_docker	setLoc	code/modules/shuttle/shuttle_consoles/navigation_computer.dm:386	destination,force_update	yes	full	proc
 proc	/mob/eye/camera/remote/shuttle_docker	allow_z_transition	code/modules/shuttle/shuttle_consoles/navigation_computer.dm:391	from,into	yes	full	proc
@@ -81876,17 +81876,17 @@ type	/obj/item/abstracthotelstorage	/obj/item	code/modules/mapfluff/ruins/spacer
 proc	/obj/item/abstracthotelstorage	Entered	code/modules/mapfluff/ruins/spaceruin_code/hilbertshotel.dm:544	arrived,old_loc,old_locs	no	-	proc
 proc	/obj/item/abstracthotelstorage	Destroy	code/modules/mapfluff/ruins/spaceruin_code/hilbertshotel.dm:553	force	no	-	proc
 proc	/obj/item/abstracthotelstorage	Exited	code/modules/mapfluff/ruins/spaceruin_code/hilbertshotel.dm:557	gone,direction	no	-	proc
-type	/obj/item/petri_dish	/obj/item	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:3	inert	obj_item_petri_dish	0	0
-proc	/obj/item/petri_dish	Destroy	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:12		no	-	proc
-proc	/obj/item/petri_dish	vv_edit_var	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:16	vname,vval	no	-	proc
-proc	/obj/item/petri_dish	examine	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:21	user	no	-	proc
-proc	/obj/item/petri_dish	wash	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:30	clean_types	no	-	proc
-proc	/obj/item/petri_dish	update_overlays	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:35		no	-	proc
-proc	/obj/item/petri_dish	deposit_sample	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:46	user,deposited_sample	no	-	proc root
-type	/obj/item/petri_dish/oldstation	/obj/item/petri_dish	code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:2	inert	obj_item_petri_dish_oldstation	0	0
-proc	/obj/item/petri_dish/oldstation	Initialize	code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:5	mapload	no	-	proc
-type	/obj/item/petri_dish/random	/obj/item/petri_dish	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:59	inert	obj_item_petri_dish_random	0	0
-proc	/obj/item/petri_dish/random	Initialize	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:61	mapload	no	-	proc
+type	/obj/item/petri_dish	/obj/item	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:3	live	obj_item_petri_dish	1	0
+proc	/obj/item/petri_dish	Destroy	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:12		yes	full	proc
+proc	/obj/item/petri_dish	vv_edit_var	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:16	vname,vval	yes	full	proc
+proc	/obj/item/petri_dish	examine	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:21	user	yes	full	proc
+proc	/obj/item/petri_dish	wash	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:30	clean_types	yes	full	proc
+proc	/obj/item/petri_dish	update_overlays	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:35		yes	full	proc
+proc	/obj/item/petri_dish	deposit_sample	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:46	user,deposited_sample	yes	full	proc root
+type	/obj/item/petri_dish/oldstation	/obj/item/petri_dish	code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:2	live	obj_item_petri_dish_oldstation	1	0
+proc	/obj/item/petri_dish/oldstation	Initialize	code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:5	mapload	yes	full	proc
+type	/obj/item/petri_dish/random	/obj/item/petri_dish	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:59	live	obj_item_petri_dish_random	1	0
+proc	/obj/item/petri_dish/random	Initialize	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:61	mapload	yes	full	proc
 type	/obj/item/assault_pod	/obj/item	code/modules/shuttle/mobile_port/variants/assault_pod.dm:18	live	obj_item_assault_pod	1	1
 proc	/obj/item/assault_pod	attack_self	code/modules/shuttle/mobile_port/variants/assault_pod.dm:34	user	yes	full	proc
 type	/obj/item/assault_pod/mining	/obj/item/assault_pod	code/modules/mining/aux_base.dm:258	live	obj_item_assault_pod_mining	1	1
@@ -82328,21 +82328,21 @@ proc	/obj/item/slimepotion/sentience/mining	after_success	code/modules/mob/livin
 type	/obj/item/slimepotion/sentience/nuclear	/obj/item/slimepotion/sentience	code/modules/research/xenobiology/xenobiology.dm:818	live	obj_item_slimepotion_sentience_nuclear	1	0
 proc	/obj/item/slimepotion/sentience/nuclear	after_success	code/modules/research/xenobiology/xenobiology.dm:821	user,smart_mob	yes	full	proc
 type	/obj/item/slimepotion/sentience/nuclear/dangerous_horse	/obj/item/slimepotion/sentience/nuclear	code/modules/research/xenobiology/xenobiology.dm:829	live	obj_item_slimepotion_sentience_nuclear_dangerous_horse	0	0
-type	/obj/item/slimepotion/slime	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:695	inert	obj_item_slimepotion_slime	0	0
-proc	/obj/item/slimepotion/slime	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:695	interacting_with,user,modifiers	no	-	proc
-proc	/obj/item/slimepotion/slime	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:705	interacting_slime,user,modifiers	no	-	proc root
-type	/obj/item/slimepotion/slime/docility	/obj/item/slimepotion/slime	code/modules/research/xenobiology/xenobiology.dm:709	inert	obj_item_slimepotion_slime_docility	0	0
-proc	/obj/item/slimepotion/slime/docility	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:713	interacting_slime,user,modifiers	no	-	proc
-type	/obj/item/slimepotion/slime/steroid	/obj/item/slimepotion/slime	code/modules/research/xenobiology/xenobiology.dm:890	inert	obj_item_slimepotion_slime_steroid	0	0
-proc	/obj/item/slimepotion/slime/steroid	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:894	interacting_slime,user,modifiers	no	-	proc
-type	/obj/item/slimepotion/slime/stabilizer	/obj/item/slimepotion/slime	code/modules/research/xenobiology/xenobiology.dm:916	inert	obj_item_slimepotion_slime_stabilizer	0	0
-proc	/obj/item/slimepotion/slime/stabilizer	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:920	interacting_slime,user,modifiers	no	-	proc
-type	/obj/item/slimepotion/slime/mutator	/obj/item/slimepotion/slime	code/modules/research/xenobiology/xenobiology.dm:934	inert	obj_item_slimepotion_slime_mutator	0	0
-proc	/obj/item/slimepotion/slime/mutator	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:938	interacting_slime,user,modifiers	no	-	proc
+type	/obj/item/slimepotion/slime	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:695	live	obj_item_slimepotion_slime	1	0
+proc	/obj/item/slimepotion/slime	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:695	interacting_with,user,modifiers	yes	full	proc
+proc	/obj/item/slimepotion/slime	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:705	interacting_slime,user,modifiers	yes	full	proc root
+type	/obj/item/slimepotion/slime/docility	/obj/item/slimepotion/slime	code/modules/research/xenobiology/xenobiology.dm:709	live	obj_item_slimepotion_slime_docility	1	0
+proc	/obj/item/slimepotion/slime/docility	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:713	interacting_slime,user,modifiers	yes	full	proc
+type	/obj/item/slimepotion/slime/steroid	/obj/item/slimepotion/slime	code/modules/research/xenobiology/xenobiology.dm:890	live	obj_item_slimepotion_slime_steroid	1	0
+proc	/obj/item/slimepotion/slime/steroid	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:894	interacting_slime,user,modifiers	yes	full	proc
+type	/obj/item/slimepotion/slime/stabilizer	/obj/item/slimepotion/slime	code/modules/research/xenobiology/xenobiology.dm:916	live	obj_item_slimepotion_slime_stabilizer	1	0
+proc	/obj/item/slimepotion/slime/stabilizer	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:920	interacting_slime,user,modifiers	yes	full	proc
+type	/obj/item/slimepotion/slime/mutator	/obj/item/slimepotion/slime	code/modules/research/xenobiology/xenobiology.dm:934	live	obj_item_slimepotion_slime_mutator	1	0
+proc	/obj/item/slimepotion/slime/mutator	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:938	interacting_slime,user,modifiers	yes	full	proc
 type	/obj/item/slimepotion/slime/chargedstabilizer	/obj/item/slimepotion/slime	code/modules/research/xenobiology/crossbreeding/_potions.dm:214	inert	obj_item_slimepotion_slime_chargedstabilizer	0	0
 proc	/obj/item/slimepotion/slime/chargedstabilizer	interact_with_slime	code/modules/research/xenobiology/crossbreeding/_potions.dm:218	interacting_slime,user,modifiers	no	-	proc
-type	/obj/item/slimepotion/transference	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:834	inert	obj_item_slimepotion_transference	0	0
-proc	/obj/item/slimepotion/transference	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:840	interacting_with,user,modifiers	no	-	proc
+type	/obj/item/slimepotion/transference	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:834	live	obj_item_slimepotion_transference	1	0
+proc	/obj/item/slimepotion/transference	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:840	interacting_with,user,modifiers	yes	full	proc
 type	/obj/item/slimepotion/enhancer	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:911	live	obj_item_slimepotion_enhancer	0	0
 type	/obj/item/slimepotion/enhancer/max	/obj/item/slimepotion/enhancer	code/modules/research/xenobiology/crossbreeding/_potions.dm:145	live	obj_item_slimepotion_enhancer_max	0	0
 type	/obj/item/slimepotion/speed	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:956	inert	obj_item_slimepotion_speed	0	0
@@ -83470,13 +83470,13 @@ type	/obj/item/autoslime	/obj/item	code/modules/research/xenobiology/crossbreedi
 proc	/obj/item/autoslime	Initialize	code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:31	mapload	no	-	proc
 proc	/obj/item/autoslime	attack_self	code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:34	user	no	-	proc
 proc	/obj/item/autoslime	examine	code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:64	user	no	-	proc
-type	/obj/item/biopsy_tool	/obj/item	code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:3	inert	obj_item_biopsy_tool	0	1
-proc	/obj/item/biopsy_tool	Initialize	code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:14	mapload	no	-	proc
-proc	/obj/item/biopsy_tool	update_swab_icon	code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:18	swabbed_items	no	-	proc root
-type	/obj/item/biopsy_tool/organ	/obj/item/biopsy_tool	code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:25	inert	obj_item_biopsy_tool_organ	0	0
-type	/obj/item/swab	/obj/item	code/modules/research/xenobiology/vatgrowing/swab.dm:3	inert	obj_item_swab	0	0
-proc	/obj/item/swab	Initialize	code/modules/research/xenobiology/vatgrowing/swab.dm:11	mapload	no	-	proc
-proc	/obj/item/swab	update_swab_icon	code/modules/research/xenobiology/vatgrowing/swab.dm:15	overlays,swabbed_items	no	-	proc root
+type	/obj/item/biopsy_tool	/obj/item	code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:3	live	obj_item_biopsy_tool	1	1
+proc	/obj/item/biopsy_tool	Initialize	code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:14	mapload	yes	full	proc
+proc	/obj/item/biopsy_tool	update_swab_icon	code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:18	swabbed_items	yes	full	proc root
+type	/obj/item/biopsy_tool/organ	/obj/item/biopsy_tool	code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:25	live	obj_item_biopsy_tool_organ	0	0
+type	/obj/item/swab	/obj/item	code/modules/research/xenobiology/vatgrowing/swab.dm:3	live	obj_item_swab	1	0
+proc	/obj/item/swab	Initialize	code/modules/research/xenobiology/vatgrowing/swab.dm:11	mapload	yes	full	proc
+proc	/obj/item/swab	update_swab_icon	code/modules/research/xenobiology/vatgrowing/swab.dm:15	overlays,swabbed_items	yes	full	proc root
 type	/obj/item/shuttle_remote	/obj/item	code/modules/shuttle/misc/shuttle_remote.dm:2	inert	obj_item_shuttle_remote	0	0
 proc	/obj/item/shuttle_remote	add_context	code/modules/shuttle/misc/shuttle_remote.dm:19	source,context,held_item,user	no	-	proc
 proc	/obj/item/shuttle_remote	examine	code/modules/shuttle/misc/shuttle_remote.dm:26	user	no	-	proc
@@ -86080,43 +86080,43 @@ proc	/obj/machinery/computer/camera_advanced/shuttle_docker/custom	placeLandingS
 proc	/obj/machinery/computer/camera_advanced/shuttle_docker/custom	checkLandingTurf	code/modules/shuttle/mobile_port/variants/custom/custom_consoles.dm:155	T,overlappers	no	-	proc
 proc	/obj/machinery/computer/camera_advanced/shuttle_docker/custom	attack_hand	code/modules/shuttle/mobile_port/variants/custom/custom_consoles.dm:166	user	no	-	proc
 proc	/obj/machinery/computer/camera_advanced/shuttle_docker/custom	linkShuttle	code/modules/shuttle/mobile_port/variants/custom/custom_consoles.dm:172	new_id	no	-	proc root
-type	/obj/machinery/computer/camera_advanced/xenobio	/obj/machinery/computer/camera_advanced	code/modules/research/xenobiology/xenobio_camera.dm:29	inert	obj_machinery_computer_camera_advanced_xenobio	0	1
-proc	/obj/machinery/computer/camera_advanced/xenobio	Initialize	code/modules/research/xenobiology/xenobio_camera.dm:51	mapload	no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	post_machine_initialize	code/modules/research/xenobiology/xenobio_camera.dm:64		no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	Destroy	code/modules/research/xenobiology/xenobio_camera.dm:71		no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	add_context	code/modules/research/xenobiology/xenobio_camera.dm:79	source,context,held_item,user	no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	Exited	code/modules/research/xenobiology/xenobio_camera.dm:95	gone,direction	no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	CreateEye	code/modules/research/xenobiology/xenobio_camera.dm:102		no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	GrantActions	code/modules/research/xenobiology/xenobio_camera.dm:107	user	no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	remove_eye_control	code/modules/research/xenobiology/xenobio_camera.dm:117	user	no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	item_interaction	code/modules/research/xenobiology/xenobio_camera.dm:126	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	slimepotion_act	code/modules/research/xenobiology/xenobio_camera.dm:140	user,used_potion	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	monkeycube_act	code/modules/research/xenobiology/xenobio_camera.dm:158	user,used_cube	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	storage_act	code/modules/research/xenobiology/xenobio_camera.dm:168	user,tool	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	multitool_act	code/modules/research/xenobiology/xenobio_camera.dm:185	user,tool	no	-	proc
-proc	/obj/machinery/computer/camera_advanced/xenobio	validate_turf	code/modules/research/xenobiology/xenobio_camera.dm:200	user,target_turf	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	slime_place	code/modules/research/xenobiology/xenobio_camera.dm:214	target_turf,user	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	slime_pickup	code/modules/research/xenobiology/xenobio_camera.dm:235	user,target_slime	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	feed_slime	code/modules/research/xenobiology/xenobio_camera.dm:264	user,target_turf	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	can_recycle_monkeys	code/modules/research/xenobiology/xenobio_camera.dm:290	user,target_atom	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	can_recycle_target_monkey	code/modules/research/xenobiology/xenobio_camera.dm:301	target_human,user	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	try_recycle_monkeys_on_turf	code/modules/research/xenobiology/xenobio_camera.dm:314	user,target_turf	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	try_recycle_target_monkey	code/modules/research/xenobiology/xenobio_camera.dm:328	user,target_human,silence_errors	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	recycle_monkey	code/modules/research/xenobiology/xenobio_camera.dm:338	target_monkey,user	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	user_alt_click	code/modules/research/xenobiology/xenobio_camera.dm:489	user,target	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	alt_click_slime	code/modules/research/xenobiology/xenobio_camera.dm:498	user,target_slime	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	user_shift_click	code/modules/research/xenobiology/xenobio_camera.dm:514	user,target	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	shift_click_slime	code/modules/research/xenobiology/xenobio_camera.dm:526	user,target_slime	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	shift_click_turf	code/modules/research/xenobiology/xenobio_camera.dm:533	user,target_turf	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	user_ctrl_click	code/modules/research/xenobiology/xenobio_camera.dm:540	user,target	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	ctrl_click_turf	code/modules/research/xenobiology/xenobio_camera.dm:555	user,target_turf	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	ctrl_click_monkey	code/modules/research/xenobiology/xenobio_camera.dm:566	user,target_human	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	ctrl_click_slime	code/modules/research/xenobiology/xenobio_camera.dm:573	user,target_slime	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	suck_up	code/modules/research/xenobiology/xenobio_camera.dm:580	target_mob	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	spit_out	code/modules/research/xenobiology/xenobio_camera.dm:593	mobs_to_spit,target_turf	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	spit_atom	code/modules/research/xenobiology/xenobio_camera.dm:608	target_atom,target_turf	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	handle_xeno_sounds	code/modules/research/xenobiology/xenobio_camera.dm:621	target_turf,spitting	no	-	proc root
-proc	/obj/machinery/computer/camera_advanced/xenobio	handle_shatter_sound	code/modules/research/xenobiology/xenobio_camera.dm:628	target_turf	no	-	proc root
+type	/obj/machinery/computer/camera_advanced/xenobio	/obj/machinery/computer/camera_advanced	code/modules/research/xenobiology/xenobio_camera.dm:29	live	obj_machinery_computer_camera_advanced_xenobio	1	1
+proc	/obj/machinery/computer/camera_advanced/xenobio	Initialize	code/modules/research/xenobiology/xenobio_camera.dm:51	mapload	yes	full	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	post_machine_initialize	code/modules/research/xenobiology/xenobio_camera.dm:64		yes	full	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	Destroy	code/modules/research/xenobiology/xenobio_camera.dm:71		yes	full	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	add_context	code/modules/research/xenobiology/xenobio_camera.dm:79	source,context,held_item,user	stub	deferred	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	Exited	code/modules/research/xenobiology/xenobio_camera.dm:95	gone,direction	yes	full	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	CreateEye	code/modules/research/xenobiology/xenobio_camera.dm:102		yes	full	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	GrantActions	code/modules/research/xenobiology/xenobio_camera.dm:107	user	yes	full	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	remove_eye_control	code/modules/research/xenobiology/xenobio_camera.dm:117	user	yes	full	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	item_interaction	code/modules/research/xenobiology/xenobio_camera.dm:126	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	slimepotion_act	code/modules/research/xenobiology/xenobio_camera.dm:140	user,used_potion	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	monkeycube_act	code/modules/research/xenobiology/xenobio_camera.dm:158	user,used_cube	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	storage_act	code/modules/research/xenobiology/xenobio_camera.dm:168	user,tool	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	multitool_act	code/modules/research/xenobiology/xenobio_camera.dm:185	user,tool	yes	full	proc
+proc	/obj/machinery/computer/camera_advanced/xenobio	validate_turf	code/modules/research/xenobiology/xenobio_camera.dm:200	user,target_turf	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	slime_place	code/modules/research/xenobiology/xenobio_camera.dm:214	target_turf,user	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	slime_pickup	code/modules/research/xenobiology/xenobio_camera.dm:235	user,target_slime	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	feed_slime	code/modules/research/xenobiology/xenobio_camera.dm:264	user,target_turf	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	can_recycle_monkeys	code/modules/research/xenobiology/xenobio_camera.dm:290	user,target_atom	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	can_recycle_target_monkey	code/modules/research/xenobiology/xenobio_camera.dm:301	target_human,user	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	try_recycle_monkeys_on_turf	code/modules/research/xenobiology/xenobio_camera.dm:314	user,target_turf	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	try_recycle_target_monkey	code/modules/research/xenobiology/xenobio_camera.dm:328	user,target_human,silence_errors	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	recycle_monkey	code/modules/research/xenobiology/xenobio_camera.dm:338	target_monkey,user	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	user_alt_click	code/modules/research/xenobiology/xenobio_camera.dm:489	user,target	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	alt_click_slime	code/modules/research/xenobiology/xenobio_camera.dm:498	user,target_slime	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	user_shift_click	code/modules/research/xenobiology/xenobio_camera.dm:514	user,target	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	shift_click_slime	code/modules/research/xenobiology/xenobio_camera.dm:526	user,target_slime	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	shift_click_turf	code/modules/research/xenobiology/xenobio_camera.dm:533	user,target_turf	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	user_ctrl_click	code/modules/research/xenobiology/xenobio_camera.dm:540	user,target	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	ctrl_click_turf	code/modules/research/xenobiology/xenobio_camera.dm:555	user,target_turf	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	ctrl_click_monkey	code/modules/research/xenobiology/xenobio_camera.dm:566	user,target_human	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	ctrl_click_slime	code/modules/research/xenobiology/xenobio_camera.dm:573	user,target_slime	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	suck_up	code/modules/research/xenobiology/xenobio_camera.dm:580	target_mob	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	spit_out	code/modules/research/xenobiology/xenobio_camera.dm:593	mobs_to_spit,target_turf	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	spit_atom	code/modules/research/xenobiology/xenobio_camera.dm:608	target_atom,target_turf	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	handle_xeno_sounds	code/modules/research/xenobiology/xenobio_camera.dm:621	target_turf,spitting	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced/xenobio	handle_shatter_sound	code/modules/research/xenobiology/xenobio_camera.dm:628	target_turf	yes	full	proc root
 type	/obj/machinery/computer/communications	/obj/machinery/computer	code/game/machinery/computer/communications.dm:11	live	obj_machinery_computer_communications	1	1
 proc	/obj/machinery/computer/communications	Initialize	code/game/machinery/computer/communications.dm:90	mapload	yes	full	proc
 proc	/obj/machinery/computer/communications	authenticated_as_non_silicon_captain	code/game/machinery/computer/communications.dm:98	user	yes	full	proc root
@@ -94013,27 +94013,27 @@ proc	/obj/machinery/doppler_array	update_doppler_light	code/modules/research/ord
 proc	/obj/machinery/doppler_array	ui_interact	code/modules/research/ordnance/doppler_array.dm:248	user,ui	no	-	proc
 proc	/obj/machinery/doppler_array	ui_data	code/modules/research/ordnance/doppler_array.dm:254	user	no	-	proc
 proc	/obj/machinery/doppler_array	ui_act	code/modules/research/ordnance/doppler_array.dm:287	action,params,ui,state	no	-	proc
-type	/obj/machinery/vatgrower	/obj/machinery	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:3	inert	obj_machinery_vatgrower	0	1
-proc	/obj/machinery/vatgrower	Initialize	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:21	mapload	no	-	proc
-proc	/obj/machinery/vatgrower	create_reagents	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:40	max_vol,flags	no	-	proc
-proc	/obj/machinery/vatgrower	process	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:45	seconds_per_tick	no	-	proc
-proc	/obj/machinery/vatgrower	item_interaction	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:57	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/vatgrower	screwdriver_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:62	user,tool	no	-	proc
-proc	/obj/machinery/vatgrower	crowbar_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:65	user,tool	no	-	proc
-proc	/obj/machinery/vatgrower	wrench_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:68	user,tool	no	-	proc
-proc	/obj/machinery/vatgrower	attack_hand	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:73	user,modifiers	no	-	proc
-proc	/obj/machinery/vatgrower	attack_hand_secondary	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:82	user,modifiers	no	-	proc
-proc	/obj/machinery/vatgrower	deposit_sample	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:98	user,petri	no	-	proc root
-proc	/obj/machinery/vatgrower	examine	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:117	user	no	-	proc
-proc	/obj/machinery/vatgrower	on_reagent_change	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:127	holder	no	-	proc root
-proc	/obj/machinery/vatgrower	update_overlays	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:132		no	-	proc
-proc	/obj/machinery/vatgrower	emag_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:157	user,emag_card	no	-	proc
-proc	/obj/machinery/vatgrower	on_sample_growth_completed	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:166		no	-	proc root
-type	/obj/machinery/vatgrower/small	/obj/machinery/vatgrower	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:176	inert	obj_machinery_vatgrower_small	0	0
-proc	/obj/machinery/vatgrower/small	emag_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:189	user,emag_card	no	-	proc
-proc	/obj/machinery/vatgrower/small	deposit_sample	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:192	user,petri	no	-	proc
-proc	/obj/machinery/vatgrower/small	on_sample_deposited	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:200	sample,thing	no	-	proc root
-type	/obj/machinery/vatgrower/small/unanchored	/obj/machinery/vatgrower/small	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:211	inert	obj_machinery_vatgrower_small_unanchored	0	0
+type	/obj/machinery/vatgrower	/obj/machinery	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:3	live	obj_machinery_vatgrower	1	1
+proc	/obj/machinery/vatgrower	Initialize	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:21	mapload	yes	full	proc
+proc	/obj/machinery/vatgrower	create_reagents	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:40	max_vol,flags	yes	full	proc
+proc	/obj/machinery/vatgrower	process	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:45	seconds_per_tick	yes	full	proc
+proc	/obj/machinery/vatgrower	item_interaction	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:57	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/vatgrower	screwdriver_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:62	user,tool	yes	full	proc
+proc	/obj/machinery/vatgrower	crowbar_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:65	user,tool	yes	full	proc
+proc	/obj/machinery/vatgrower	wrench_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:68	user,tool	yes	full	proc
+proc	/obj/machinery/vatgrower	attack_hand	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:73	user,modifiers	yes	full	proc
+proc	/obj/machinery/vatgrower	attack_hand_secondary	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:82	user,modifiers	yes	full	proc
+proc	/obj/machinery/vatgrower	deposit_sample	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:98	user,petri	yes	full	proc root
+proc	/obj/machinery/vatgrower	examine	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:117	user	yes	full	proc
+proc	/obj/machinery/vatgrower	on_reagent_change	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:127	holder	yes	full	proc root
+proc	/obj/machinery/vatgrower	update_overlays	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:132		yes	full	proc
+proc	/obj/machinery/vatgrower	emag_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:157	user,emag_card	yes	full	proc
+proc	/obj/machinery/vatgrower	on_sample_growth_completed	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:166		yes	full	proc root
+type	/obj/machinery/vatgrower/small	/obj/machinery/vatgrower	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:176	live	obj_machinery_vatgrower_small	1	0
+proc	/obj/machinery/vatgrower/small	emag_act	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:189	user,emag_card	yes	full	proc
+proc	/obj/machinery/vatgrower/small	deposit_sample	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:192	user,petri	yes	full	proc
+proc	/obj/machinery/vatgrower/small	on_sample_deposited	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:200	sample,thing	yes	full	proc root
+type	/obj/machinery/vatgrower/small/unanchored	/obj/machinery/vatgrower/small	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:211	live	obj_machinery_vatgrower_small_unanchored	0	0
 type	/obj/machinery/keycard_auth	/obj/machinery	code/modules/security_levels/keycard_authentication.dm:10	live	obj_machinery_keycard_auth	1	1
 proc	/obj/machinery/keycard_auth	Initialize	code/modules/security_levels/keycard_authentication.dm:26	mapload	yes	full	proc
 proc	/obj/machinery/keycard_auth	Destroy	code/modules/security_levels/keycard_authentication.dm:32		yes	full	proc
@@ -95112,12 +95112,12 @@ proc	/obj/effect/abstract/gazer_beam_filling	Initialize	code/modules/mob/living/
 proc	/obj/effect/abstract/gazer_beam_filling	pull_victims	code/modules/mob/living/basic/heretic/star_gazer.dm:298		no	-	proc root
 type	/obj/effect/abstract/gazer_beamend	/obj/effect/abstract	code/modules/mob/living/basic/heretic/star_gazer.dm:310	inert	obj_effect_abstract_gazer_beamend	0	0
 proc	/obj/effect/abstract/gazer_beamend	Initialize	code/modules/mob/living/basic/heretic/star_gazer.dm:312	mapload,origin	no	-	proc
-type	/obj/effect/abstract/sucked_atom	/obj/effect/abstract	code/modules/research/xenobiology/xenobio_camera.dm:633	inert	obj_effect_abstract_sucked_atom	0	0
-proc	/obj/effect/abstract/sucked_atom	Initialize	code/modules/research/xenobiology/xenobio_camera.dm:638	mapload,copying,sucking,shatter	no	-	proc
-proc	/obj/effect/abstract/sucked_atom	suck_up	code/modules/research/xenobiology/xenobio_camera.dm:653		no	-	proc root
-proc	/obj/effect/abstract/sucked_atom	shoot_out	code/modules/research/xenobiology/xenobio_camera.dm:659	shatter	no	-	proc root
-type	/obj/effect/abstract/xenosuction	/obj/effect/abstract	code/modules/research/xenobiology/xenobio_camera.dm:670	inert	obj_effect_abstract_xenosuction	0	0
-proc	/obj/effect/abstract/xenosuction	Initialize	code/modules/research/xenobiology/xenobio_camera.dm:678	mapload	no	-	proc
+type	/obj/effect/abstract/sucked_atom	/obj/effect/abstract	code/modules/research/xenobiology/xenobio_camera.dm:633	live	obj_effect_abstract_sucked_atom	1	0
+proc	/obj/effect/abstract/sucked_atom	Initialize	code/modules/research/xenobiology/xenobio_camera.dm:638	mapload,copying,sucking,shatter	yes	full	proc
+proc	/obj/effect/abstract/sucked_atom	suck_up	code/modules/research/xenobiology/xenobio_camera.dm:653		yes	full	proc root
+proc	/obj/effect/abstract/sucked_atom	shoot_out	code/modules/research/xenobiology/xenobio_camera.dm:659	shatter	yes	full	proc root
+type	/obj/effect/abstract/xenosuction	/obj/effect/abstract	code/modules/research/xenobiology/xenobio_camera.dm:670	live	obj_effect_abstract_xenosuction	1	0
+proc	/obj/effect/abstract/xenosuction	Initialize	code/modules/research/xenobiology/xenobio_camera.dm:678	mapload	yes	full	proc
 type	/obj/effect/abstract/ripple	/obj/effect/abstract	code/modules/shuttle/misc/ripple.dm:2	live	obj_effect_abstract_ripple	1	0
 proc	/obj/effect/abstract/ripple	Initialize	code/modules/shuttle/misc/ripple.dm:15	mapload,time_left	yes	full	proc
 proc	/obj/effect/abstract/ripple	stop_animation	code/modules/shuttle/misc/ripple.dm:20		yes	full	proc root
@@ -106221,17 +106221,17 @@ proc	/obj/structure/light_prism	attack_hand	code/modules/research/xenobiology/cr
 type	/obj/structure/ice_stasis	/obj/structure	code/modules/research/xenobiology/crossbreeding/_misc.dm:127	live	obj_structure_ice_stasis	1	0
 proc	/obj/structure/ice_stasis	Initialize	code/modules/research/xenobiology/crossbreeding/_misc.dm:143	mapload	yes	full	proc
 proc	/obj/structure/ice_stasis	Destroy	code/modules/research/xenobiology/crossbreeding/_misc.dm:147		yes	full	proc
-type	/obj/structure/microscope	/obj/structure	code/modules/research/xenobiology/vatgrowing/microscope.dm:2	inert	obj_structure_microscope	0	1
-proc	/obj/structure/microscope	Initialize	code/modules/research/xenobiology/vatgrowing/microscope.dm:10	mapload	no	-	proc
-proc	/obj/structure/microscope	item_interaction	code/modules/research/xenobiology/vatgrowing/microscope.dm:20	user,tool,modifiers	no	-	proc
-proc	/obj/structure/microscope	attack_hand_secondary	code/modules/research/xenobiology/vatgrowing/microscope.dm:25	user,modifiers	no	-	proc
-proc	/obj/structure/microscope	ui_interact	code/modules/research/xenobiology/vatgrowing/microscope.dm:30	user,ui	no	-	proc
-proc	/obj/structure/microscope	ui_static_data	code/modules/research/xenobiology/vatgrowing/microscope.dm:36	user	no	-	proc
-proc	/obj/structure/microscope	get_reagent_list	code/modules/research/xenobiology/vatgrowing/microscope.dm:77	reagents	no	-	proc root
-proc	/obj/structure/microscope	ui_act	code/modules/research/xenobiology/vatgrowing/microscope.dm:84	action,params,ui	no	-	proc
-proc	/obj/structure/microscope	add_dish	code/modules/research/xenobiology/vatgrowing/microscope.dm:96	user,new_dish	no	-	proc root
-proc	/obj/structure/microscope	remove_dish	code/modules/research/xenobiology/vatgrowing/microscope.dm:114	user	no	-	proc root
-type	/obj/structure/microscope/unanchored	/obj/structure/microscope	code/modules/research/xenobiology/vatgrowing/microscope.dm:125	inert	obj_structure_microscope_unanchored	0	0
+type	/obj/structure/microscope	/obj/structure	code/modules/research/xenobiology/vatgrowing/microscope.dm:2	live	obj_structure_microscope	1	1
+proc	/obj/structure/microscope	Initialize	code/modules/research/xenobiology/vatgrowing/microscope.dm:10	mapload	yes	full	proc
+proc	/obj/structure/microscope	item_interaction	code/modules/research/xenobiology/vatgrowing/microscope.dm:20	user,tool,modifiers	yes	full	proc
+proc	/obj/structure/microscope	attack_hand_secondary	code/modules/research/xenobiology/vatgrowing/microscope.dm:25	user,modifiers	yes	full	proc
+proc	/obj/structure/microscope	ui_interact	code/modules/research/xenobiology/vatgrowing/microscope.dm:30	user,ui	yes	full	proc
+proc	/obj/structure/microscope	ui_static_data	code/modules/research/xenobiology/vatgrowing/microscope.dm:36	user	yes	full	proc
+proc	/obj/structure/microscope	get_reagent_list	code/modules/research/xenobiology/vatgrowing/microscope.dm:77	reagents	yes	full	proc root
+proc	/obj/structure/microscope	ui_act	code/modules/research/xenobiology/vatgrowing/microscope.dm:84	action,params,ui	yes	full	proc
+proc	/obj/structure/microscope	add_dish	code/modules/research/xenobiology/vatgrowing/microscope.dm:96	user,new_dish	yes	full	proc root
+proc	/obj/structure/microscope	remove_dish	code/modules/research/xenobiology/vatgrowing/microscope.dm:114	user	yes	full	proc root
+type	/obj/structure/microscope/unanchored	/obj/structure/microscope	code/modules/research/xenobiology/vatgrowing/microscope.dm:125	live	obj_structure_microscope_unanchored	0	0
 type	/obj/structure/filler	/obj/structure	code/modules/station_goals/bsa.dm:265	live	obj_structure_filler	1	0
 proc	/obj/structure/filler	ex_act	code/modules/station_goals/bsa.dm:271		yes	full	proc
 type	/obj/structure/ethereal_crystal	/obj/structure	code/modules/surgery/organs/internal/heart/heart_ethereal.dm:166	live	obj_structure_ethereal_crystal	1	0

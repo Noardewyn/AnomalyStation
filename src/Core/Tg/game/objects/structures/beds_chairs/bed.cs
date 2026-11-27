@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // M8y slice A (D218, D223): the whole file: the bed (its elevation, the patient lying at buckle_lying by the headrest's side,
 // the lay-down messages), the medical bed (brakes, the raised mattress with a patient), the emergency medical bed folded into
 // the roller bed item and deployed from it, the silicon dock, the dog beds, the dirty mattress and the double bed. Marked
-// leaves: the emissive brakes (DV12) and the dirty mattress's swabable cell lines (cytology, not-translated.md section 61).
+// leaves: the emissive brakes (DV12).
 // The var blocks are generated.
 
 /* Beds... get your mind out of the gutter, they're for sleeping!
@@ -448,7 +448,7 @@ public partial class obj_structure_bed_maint : obj_structure_bed
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/game/objects/structures/beds_chairs/bed.dm:381", "Initialize: AddElement(/datum/element/swabable, CELL_LINE_TABLE_MOLD, CELL_VIRUS_TABLE_GENERIC, rand(2,4), 25): the cell lines of a dirty mattress (cytology, M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_MOLD, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 25));
         return dot;
     }
 }

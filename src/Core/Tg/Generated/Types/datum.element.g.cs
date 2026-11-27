@@ -659,9 +659,9 @@ public partial class datum_element_curse_announcement : datum_element
 [DmPath("/datum/element/cursed"), DmGeneratedOnly, DmInert]
 public partial class datum_element_cursed : datum_element { }
 
-// tg: code/datums/elements/damage_threshold.dm:5
-[DmPath("/datum/element/damage_threshold"), DmGeneratedOnly, DmInert]
-public partial class datum_element_damage_threshold : datum_element
+// tg: code/datums/elements/damage_threshold.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/element/damage_threshold")]
+public partial class datum_element_damage_threshold
 {
     public float force_threshold = -1; // tg: code/datums/elements/damage_threshold.dm:8
 
@@ -2270,9 +2270,9 @@ public partial class datum_element_surgery_aid
     }
 }
 
-// tg: code/datums/elements/swabbable.dm:7
-[DmPath("/datum/element/swabable"), DmGeneratedOnly, DmInert]
-public partial class datum_element_swabable : datum_element
+// tg: code/datums/elements/swabbable.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/element/swabable")]
+public partial class datum_element_swabable
 {
     public object cell_line_define; // tg: code/datums/elements/swabbable.dm:10
     public object virus_define; // tg: code/datums/elements/swabbable.dm:12

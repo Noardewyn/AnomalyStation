@@ -53785,17 +53785,17 @@ public partial class datum_saved_bodypart
     public object burn_dam; // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:20
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:4
-[DmPath("/datum/micro_organism"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism : datum
+// tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism")]
+public partial class datum_micro_organism
 {
     public string name = "Unknown fluids"; // tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:4
     public string desc = "White fluid that tastes like salty coins and milk"; // tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:6
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:15
-[DmPath("/datum/micro_organism/cell_line"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line : datum_micro_organism
+// tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:15 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line")]
+public partial class datum_micro_organism_cell_line
 {
     public float growth = 0; // tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:15
     public DmList required_reagents; // tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:17
@@ -53810,7 +53810,7 @@ public partial class datum_micro_organism_cell_line : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:8
-[DmPath("/datum/micro_organism/cell_line/mouse"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/mouse"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_mouse : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:8
@@ -53834,7 +53834,7 @@ public partial class datum_micro_organism_cell_line_mouse : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:32
-[DmPath("/datum/micro_organism/cell_line/chicken"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/chicken"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_chicken : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:32
@@ -53857,7 +53857,7 @@ public partial class datum_micro_organism_cell_line_chicken : datum_micro_organi
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:50
-[DmPath("/datum/micro_organism/cell_line/cow"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/cow"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_cow : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:50
@@ -53879,7 +53879,7 @@ public partial class datum_micro_organism_cell_line_cow : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:69
-[DmPath("/datum/micro_organism/cell_line/moonicorn"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/moonicorn"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_moonicorn : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:69
@@ -53901,7 +53901,7 @@ public partial class datum_micro_organism_cell_line_moonicorn : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:94
-[DmPath("/datum/micro_organism/cell_line/goat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/goat"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_goat : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:94
@@ -53923,7 +53923,7 @@ public partial class datum_micro_organism_cell_line_goat : datum_micro_organism_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:116
-[DmPath("/datum/micro_organism/cell_line/sheep"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/sheep"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_sheep : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:116
@@ -53945,7 +53945,7 @@ public partial class datum_micro_organism_cell_line_sheep : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:138
-[DmPath("/datum/micro_organism/cell_line/pig"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/pig"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_pig : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:138
@@ -53967,7 +53967,7 @@ public partial class datum_micro_organism_cell_line_pig : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:159
-[DmPath("/datum/micro_organism/cell_line/cat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/cat"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_cat : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:159
@@ -53989,7 +53989,7 @@ public partial class datum_micro_organism_cell_line_cat : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:180
-[DmPath("/datum/micro_organism/cell_line/corgi"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/corgi"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_corgi : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:180
@@ -54011,7 +54011,7 @@ public partial class datum_micro_organism_cell_line_corgi : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:199
-[DmPath("/datum/micro_organism/cell_line/pug"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/pug"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_pug : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:199
@@ -54033,7 +54033,7 @@ public partial class datum_micro_organism_cell_line_pug : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:217
-[DmPath("/datum/micro_organism/cell_line/fox"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/fox"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_fox : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:217
@@ -54055,7 +54055,7 @@ public partial class datum_micro_organism_cell_line_fox : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:239
-[DmPath("/datum/micro_organism/cell_line/stoat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/stoat"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_stoat : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:239
@@ -54077,7 +54077,7 @@ public partial class datum_micro_organism_cell_line_stoat : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:262
-[DmPath("/datum/micro_organism/cell_line/rabbit"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/rabbit"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_rabbit : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:262
@@ -54099,7 +54099,7 @@ public partial class datum_micro_organism_cell_line_rabbit : datum_micro_organis
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:284
-[DmPath("/datum/micro_organism/cell_line/mothroach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/mothroach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_mothroach : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:284
@@ -54121,7 +54121,7 @@ public partial class datum_micro_organism_cell_line_mothroach : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:303
-[DmPath("/datum/micro_organism/cell_line/bear"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/bear"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_bear : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:303
@@ -54143,7 +54143,7 @@ public partial class datum_micro_organism_cell_line_bear : datum_micro_organism_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:324
-[DmPath("/datum/micro_organism/cell_line/carp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/carp"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_carp : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:324
@@ -54165,7 +54165,7 @@ public partial class datum_micro_organism_cell_line_carp : datum_micro_organism_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:343
-[DmPath("/datum/micro_organism/cell_line/megacarp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/megacarp"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_megacarp : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:343
@@ -54187,7 +54187,7 @@ public partial class datum_micro_organism_cell_line_megacarp : datum_micro_organ
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:363
-[DmPath("/datum/micro_organism/cell_line/penguin"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/penguin"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_penguin : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:363
@@ -54209,7 +54209,7 @@ public partial class datum_micro_organism_cell_line_penguin : datum_micro_organi
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:382
-[DmPath("/datum/micro_organism/cell_line/snake"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/snake"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_snake : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:382
@@ -54230,7 +54230,7 @@ public partial class datum_micro_organism_cell_line_snake : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:400
-[DmPath("/datum/micro_organism/cell_line/lizard"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/lizard"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_lizard : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:400
@@ -54251,7 +54251,7 @@ public partial class datum_micro_organism_cell_line_lizard : datum_micro_organis
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:428
-[DmPath("/datum/micro_organism/cell_line/slime"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/slime"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_slime : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:428
@@ -54273,7 +54273,7 @@ public partial class datum_micro_organism_cell_line_slime : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:446
-[DmPath("/datum/micro_organism/cell_line/blob_spore"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/blob_spore"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_blob_spore : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:446
@@ -54295,7 +54295,7 @@ public partial class datum_micro_organism_cell_line_blob_spore : datum_micro_org
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:466
-[DmPath("/datum/micro_organism/cell_line/blobbernaut"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/blobbernaut"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_blobbernaut : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:466
@@ -54317,7 +54317,7 @@ public partial class datum_micro_organism_cell_line_blobbernaut : datum_micro_or
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:485
-[DmPath("/datum/micro_organism/cell_line/gelatinous_cube"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/gelatinous_cube"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_gelatinous_cube : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:485
@@ -54339,7 +54339,7 @@ public partial class datum_micro_organism_cell_line_gelatinous_cube : datum_micr
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:510
-[DmPath("/datum/micro_organism/cell_line/sholean_grapes"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/sholean_grapes"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_sholean_grapes : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:510
@@ -54361,7 +54361,7 @@ public partial class datum_micro_organism_cell_line_sholean_grapes : datum_micro
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:540
-[DmPath("/datum/micro_organism/cell_line/cockroach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/cockroach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_cockroach : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:540
@@ -54384,7 +54384,7 @@ public partial class datum_micro_organism_cell_line_cockroach : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:559
-[DmPath("/datum/micro_organism/cell_line/glockroach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/glockroach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_glockroach : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:559
@@ -54407,7 +54407,7 @@ public partial class datum_micro_organism_cell_line_glockroach : datum_micro_org
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:581
-[DmPath("/datum/micro_organism/cell_line/hauberoach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/hauberoach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_hauberoach : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:581
@@ -54430,7 +54430,7 @@ public partial class datum_micro_organism_cell_line_hauberoach : datum_micro_org
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:603
-[DmPath("/datum/micro_organism/cell_line/pine"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/pine"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_pine : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:603
@@ -54451,9 +54451,9 @@ public partial class datum_micro_organism_cell_line_pine : datum_micro_organism_
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:624
-[DmPath("/datum/micro_organism/cell_line/vat_beast"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_vat_beast : datum_micro_organism_cell_line
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:624 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/vat_beast")]
+public partial class datum_micro_organism_cell_line_vat_beast
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:624
     public datum_micro_organism_cell_line_vat_beast()
@@ -54473,9 +54473,9 @@ public partial class datum_micro_organism_cell_line_vat_beast : datum_micro_orga
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:657
-[DmPath("/datum/micro_organism/cell_line/netherworld"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_netherworld : datum_micro_organism_cell_line
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:657 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/netherworld")]
+public partial class datum_micro_organism_cell_line_netherworld
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:657
     public datum_micro_organism_cell_line_netherworld()
@@ -54494,12 +54494,12 @@ public partial class datum_micro_organism_cell_line_netherworld : datum_micro_or
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:684
-[DmPath("/datum/micro_organism/cell_line/clown"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_clown : datum_micro_organism_cell_line { }
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:684 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/clown")]
+public partial class datum_micro_organism_cell_line_clown { }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:698
-[DmPath("/datum/micro_organism/cell_line/clown/bananaclown"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/clown/bananaclown"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_clown_bananaclown : datum_micro_organism_cell_line_clown
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:698
@@ -54520,7 +54520,7 @@ public partial class datum_micro_organism_cell_line_clown_bananaclown : datum_mi
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:721
-[DmPath("/datum/micro_organism/cell_line/clown/glutton"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/clown/glutton"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_clown_glutton : datum_micro_organism_cell_line_clown
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:721
@@ -54541,7 +54541,7 @@ public partial class datum_micro_organism_cell_line_clown_glutton : datum_micro_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:747
-[DmPath("/datum/micro_organism/cell_line/clown/longclown"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/clown/longclown"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_clown_longclown : datum_micro_organism_cell_line_clown
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:747
@@ -54562,7 +54562,7 @@ public partial class datum_micro_organism_cell_line_clown_longclown : datum_micr
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:770
-[DmPath("/datum/micro_organism/cell_line/frog"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/frog"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_frog : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:770
@@ -54584,7 +54584,7 @@ public partial class datum_micro_organism_cell_line_frog : datum_micro_organism_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:791
-[DmPath("/datum/micro_organism/cell_line/axolotl"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/axolotl"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_axolotl : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:791
@@ -54606,7 +54606,7 @@ public partial class datum_micro_organism_cell_line_axolotl : datum_micro_organi
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:814
-[DmPath("/datum/micro_organism/cell_line/walking_mushroom"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/walking_mushroom"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_walking_mushroom : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:814
@@ -54627,9 +54627,9 @@ public partial class datum_micro_organism_cell_line_walking_mushroom : datum_mic
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:839
-[DmPath("/datum/micro_organism/cell_line/queen_bee"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_queen_bee : datum_micro_organism_cell_line
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:839 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/queen_bee")]
+public partial class datum_micro_organism_cell_line_queen_bee
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:839
     public datum_micro_organism_cell_line_queen_bee()
@@ -54650,7 +54650,7 @@ public partial class datum_micro_organism_cell_line_queen_bee : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:874
-[DmPath("/datum/micro_organism/cell_line/butterfly"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/butterfly"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_butterfly : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:874
@@ -54673,7 +54673,7 @@ public partial class datum_micro_organism_cell_line_butterfly : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:897
-[DmPath("/datum/micro_organism/cell_line/mega_arachnid"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/mega_arachnid"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_mega_arachnid : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:897
@@ -54694,7 +54694,7 @@ public partial class datum_micro_organism_cell_line_mega_arachnid : datum_micro_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:923
-[DmPath("/datum/micro_organism/cell_line/snail"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/snail"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_snail : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:923
@@ -54715,9 +54715,9 @@ public partial class datum_micro_organism_cell_line_snail : datum_micro_organism
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:3
-[DmPath("/datum/micro_organism/cell_line/organs"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_organs : datum_micro_organism_cell_line
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/organs")]
+public partial class datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:3
     public datum_micro_organism_cell_line_organs()
@@ -54729,7 +54729,7 @@ public partial class datum_micro_organism_cell_line_organs : datum_micro_organis
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:16
-[DmPath("/datum/micro_organism/cell_line/organs/heart"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/heart"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_heart : datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:16
@@ -54750,7 +54750,7 @@ public partial class datum_micro_organism_cell_line_organs_heart : datum_micro_o
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:33
-[DmPath("/datum/micro_organism/cell_line/organs/heart/evolved"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/heart/evolved"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_heart_evolved : datum_micro_organism_cell_line_organs_heart
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:33
@@ -54770,7 +54770,7 @@ public partial class datum_micro_organism_cell_line_organs_heart_evolved : datum
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:47
-[DmPath("/datum/micro_organism/cell_line/organs/heart/sacred"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/heart/sacred"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_heart_sacred : datum_micro_organism_cell_line_organs_heart
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:47
@@ -54791,7 +54791,7 @@ public partial class datum_micro_organism_cell_line_organs_heart_sacred : datum_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:61
-[DmPath("/datum/micro_organism/cell_line/organs/heart/corrupt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/heart/corrupt"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_heart_corrupt : datum_micro_organism_cell_line_organs_heart
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:61
@@ -54812,7 +54812,7 @@ public partial class datum_micro_organism_cell_line_organs_heart_corrupt : datum
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:78
-[DmPath("/datum/micro_organism/cell_line/organs/lungs"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/lungs"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_lungs : datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:78
@@ -54833,7 +54833,7 @@ public partial class datum_micro_organism_cell_line_organs_lungs : datum_micro_o
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:95
-[DmPath("/datum/micro_organism/cell_line/organs/lungs/evolved"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/lungs/evolved"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_lungs_evolved : datum_micro_organism_cell_line_organs_lungs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:95
@@ -54853,7 +54853,7 @@ public partial class datum_micro_organism_cell_line_organs_lungs_evolved : datum
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:109
-[DmPath("/datum/micro_organism/cell_line/organs/liver"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/liver"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_liver : datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:109
@@ -54874,7 +54874,7 @@ public partial class datum_micro_organism_cell_line_organs_liver : datum_micro_o
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:126
-[DmPath("/datum/micro_organism/cell_line/organs/liver/evolved"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/liver/evolved"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_liver_evolved : datum_micro_organism_cell_line_organs_liver
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:126
@@ -54894,7 +54894,7 @@ public partial class datum_micro_organism_cell_line_organs_liver_evolved : datum
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:140
-[DmPath("/datum/micro_organism/cell_line/organs/liver/bloody"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/liver/bloody"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_liver_bloody : datum_micro_organism_cell_line_organs_liver
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:140
@@ -54914,7 +54914,7 @@ public partial class datum_micro_organism_cell_line_organs_liver_bloody : datum_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:153
-[DmPath("/datum/micro_organism/cell_line/organs/liver/distillery"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/liver/distillery"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_liver_distillery : datum_micro_organism_cell_line_organs_liver
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:153
@@ -54935,7 +54935,7 @@ public partial class datum_micro_organism_cell_line_organs_liver_distillery : da
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:169
-[DmPath("/datum/micro_organism/cell_line/organs/stomach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/stomach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_stomach : datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:169
@@ -54956,7 +54956,7 @@ public partial class datum_micro_organism_cell_line_organs_stomach : datum_micro
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:186
-[DmPath("/datum/micro_organism/cell_line/organs/stomach/evolved"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/stomach/evolved"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_stomach_evolved : datum_micro_organism_cell_line_organs_stomach
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:186
@@ -54976,7 +54976,7 @@ public partial class datum_micro_organism_cell_line_organs_stomach_evolved : dat
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/viruses/_virus.dm:3
-[DmPath("/datum/micro_organism/virus"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/virus"), DmGeneratedOnly]
 public partial class datum_micro_organism_virus : datum_micro_organism
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/viruses/_virus.dm:3
@@ -54986,9 +54986,9 @@ public partial class datum_micro_organism_virus : datum_micro_organism
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:4
-[DmPath("/datum/biological_sample"), DmGeneratedOnly, DmInert]
-public partial class datum_biological_sample : datum
+// tg: code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/biological_sample")]
+public partial class datum_biological_sample
 {
     public DmList micro_organisms; // tg: code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:4
     public float sample_layers = 1; // tg: code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:6

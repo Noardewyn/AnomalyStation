@@ -3455,9 +3455,9 @@ public partial class datum_status_effect_tower_of_babel_magical
     }
 }
 
-// tg: code/datums/status_effects/debuffs/slime/slime_food.dm:3
-[DmPath("/datum/status_effect/slime_food"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_slime_food : datum_status_effect
+// tg: code/datums/status_effects/debuffs/slime/slime_food.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/slime_food")]
+public partial class datum_status_effect_slime_food
 {
     public float befriend_chance = 30; // tg: code/datums/status_effects/debuffs/slime/slime_food.dm:5
     public mob_living_carbon_human feeder; // tg: code/datums/status_effects/debuffs/slime/slime_food.dm:6

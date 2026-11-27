@@ -16051,9 +16051,9 @@ public partial class obj_machinery_doppler_array : obj_machinery
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/vatgrower.dm:3
-[DmPath("/obj/machinery/vatgrower"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_vatgrower : obj_machinery
+// tg: code/modules/research/xenobiology/vatgrowing/vatgrower.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/machinery/vatgrower")]
+public partial class obj_machinery_vatgrower
 {
     public float reagent_volume = 300; // tg: code/modules/research/xenobiology/vatgrowing/vatgrower.dm:12
     public float reagent_flags = 60; // tg: code/modules/research/xenobiology/vatgrowing/vatgrower.dm:13
@@ -16075,9 +16075,9 @@ public partial class obj_machinery_vatgrower : obj_machinery
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/vatgrower.dm:176
-[DmPath("/obj/machinery/vatgrower/small"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_vatgrower_small : obj_machinery_vatgrower
+// tg: code/modules/research/xenobiology/vatgrowing/vatgrower.dm:176 (the var block of a hand-written class)
+[DmPath("/obj/machinery/vatgrower/small")]
+public partial class obj_machinery_vatgrower_small
 {
     // tg: code/modules/research/xenobiology/vatgrowing/vatgrower.dm:176
     public obj_machinery_vatgrower_small()
@@ -16096,7 +16096,7 @@ public partial class obj_machinery_vatgrower_small : obj_machinery_vatgrower
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/vatgrower.dm:211
-[DmPath("/obj/machinery/vatgrower/small/unanchored"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/vatgrower/small/unanchored"), DmGeneratedOnly]
 public partial class obj_machinery_vatgrower_small_unanchored : obj_machinery_vatgrower_small
 {
     // tg: code/modules/research/xenobiology/vatgrowing/vatgrower.dm:211

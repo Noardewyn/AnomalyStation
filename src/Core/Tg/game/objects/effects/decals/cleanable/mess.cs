@@ -220,7 +220,7 @@ public partial class obj_effect_decal_cleanable_vomit_old : obj_effect_decal_cle
         if (Dm.eq(dot, INITIALIZE_HINT_QDEL))
             return dot;
         icon_state += "-old";
-        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 10)); // inert until the cell lines (cytology)
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 10));
         return dot;
     }
 }

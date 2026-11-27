@@ -182,6 +182,7 @@ public static class TguiInterfaces
         ["Experimentor"] = Experimentor.Render, // gaps RD4
         ["InfuserBook"] = InfuserBook.Render, // gaps P3b
         ["MinigamesMenu"] = MinigamesMenu.Render, // gaps S4d
+        ["Microscope"] = Microscope.Render, // cytology's microscope
         ["NtosRadar"] = NtosRadar.Render, // syndicate N1b
         ["NtosRadarSyndicate"] = NtosRadar.RenderSyndicate, // syndicate N1b: the Fission360
         ["NtosFileManager"] = NtosFileManager.Render, // M9 slice E

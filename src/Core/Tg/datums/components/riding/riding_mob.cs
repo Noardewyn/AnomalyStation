@@ -10,7 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The riding creature base and the animals' variants (gaps package C4), the charger holoparasite's (syndicate X2), the cyborg's (silicons SI2): the human, mulebot and ruin creatures' variants wait with their hosts (a row).
-// The goliath's, goldgrub's, raptors' and wolf's variants come with the Lavaland and ice moon fauna.
+// The goliath's, goldgrub's, raptors' and wolf's variants come with the Lavaland and ice moon fauna; the vatbeast's and the
+// banana glutton's with cytology.
 
 // For any mob that can be ridden
 // tg: code/datums/components/riding/riding_mob.dm:3
@@ -516,6 +517,50 @@ public partial class datum_component_riding_creature_guardian : datum_component_
         if (charger == null)
             return base.ride_check(rider, consequences);
         return Dm.num(charger.summoner == rider);
+    }
+}
+
+// tg: code/datums/components/riding/riding_mob.dm:496
+public partial class datum_component_riding_creature_vatbeast : datum_component_riding_creature
+{
+    // tg: code/datums/components/riding/riding_mob.dm:500
+    public override DmList get_rider_offsets_and_layers(object pass_index = null, mob offsetter = null)
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(0f, 15f)),
+            Dm.kv(TEXT_SOUTH, Dm.list(0f, 15f)),
+            Dm.kv(TEXT_EAST, Dm.list(-10f, 15f)),
+            Dm.kv(TEXT_WEST, Dm.list(10f, 15f)));
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:508
+    public override DmList get_parent_offsets_and_layers()
+    {
+        return creature_parent_offsets();
+    }
+}
+
+// tg: code/datums/components/riding/riding_mob.dm:584
+public partial class datum_component_riding_creature_glutton : datum_component_riding_creature
+{
+    // tg: code/datums/components/riding/riding_mob.dm:586
+    public override DmList get_rider_offsets_and_layers(object pass_index = null, mob offsetter = null)
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(0f, 24f)),
+            Dm.kv(TEXT_SOUTH, Dm.list(0f, 24f)),
+            Dm.kv(TEXT_EAST, Dm.list(-16f, 24f)),
+            Dm.kv(TEXT_WEST, Dm.list(16f, 24f)));
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:594
+    public override DmList get_parent_offsets_and_layers()
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(0f, 0f, MOB_BELOW_PIGGYBACK_LAYER)),
+            Dm.kv(TEXT_SOUTH, Dm.list(0f, 0f, MOB_ABOVE_PIGGYBACK_LAYER)),
+            Dm.kv(TEXT_EAST, Dm.list(0f, 0f, MOB_ABOVE_PIGGYBACK_LAYER)),
+            Dm.kv(TEXT_WEST, Dm.list(0f, 0f, MOB_ABOVE_PIGGYBACK_LAYER)));
     }
 }
 

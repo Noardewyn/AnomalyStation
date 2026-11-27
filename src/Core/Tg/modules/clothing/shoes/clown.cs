@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps J2 (D298): the clown shoes: the squeak, the waddle, the mood and the pockets; the swab and fishing elements are Deferred leaves.
+// Gaps J2 (D298): the clown shoes: the squeak, the waddle, the mood and the pockets; the fishing element is a Deferred leaf.
 // Syndicate N3 (D316): the combat clown shoes and the mk-honk combat shoes of the clown operatives.
 
 // tg: code/modules/clothing/shoes/clown.dm:1
@@ -22,7 +22,7 @@ public partial class obj_item_clothing_shoes_clown_shoes : obj_item_clothing_sho
 
         Waiting.NoSleep(create_storage(storage_type: typeof(datum_storage_pockets_shoes_clown)));
         Waiting.NoSleep(LoadComponent(typeof(datum_component_squeak), squeak_sound, 50, Dm.named("falloff_exponent", 20))); //die off quick please
-        Dm.Deferred("code/modules/clothing/shoes/clown.dm:15", "Initialize: AddElement(/datum/element/swabable, CELL_LINE_TABLE_CLOWN, ...): the cell lines (the sample swab, not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_CLOWN, CELL_VIRUS_TABLE_GENERIC, rand(2, 3), 0));
         Dm.Deferred("code/modules/clothing/shoes/clown.dm:16", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 3): fishing");
         Dm.Deferred("code/modules/clothing/shoes/clown.dm:17", "Initialize: AddElement(/datum/element/ignites_matches): the matches (J3, smoking)");
         return dot;

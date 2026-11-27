@@ -304,18 +304,9 @@ public partial class mob_eye_camera_remote_base_construction
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:3
-[DmPath("/mob/eye/camera/remote/xenobio"), DmGeneratedOnly, DmInert]
-public partial class mob_eye_camera_remote_xenobio : mob_eye_camera_remote
-{
-    public Type allowed_area; // tg: code/modules/research/xenobiology/xenobio_camera.dm:4
-
-    // tg: code/modules/research/xenobiology/xenobio_camera.dm:3
-    public mob_eye_camera_remote_xenobio()
-    {
-        visible_to_user = 1;
-    }
-}
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:3 (the vars the hand-written class does not declare)
+[DmPath("/mob/eye/camera/remote/xenobio")]
+public partial class mob_eye_camera_remote_xenobio { }
 
 // tg: code/modules/shuttle/shuttle_consoles/navigation_computer.dm:376 (the var block of a hand-written class)
 [DmPath("/mob/eye/camera/remote/shuttle_docker")]

@@ -1,13 +1,15 @@
 // Translated from tgstation (snapshot 1d99bd7f): code/__HELPERS/randoms.dm
 // Original copyright and license: tgstation, AGPL-3.0 (code). See ../tgstation/LICENSE.
 using Anomaly.Core.DmShim;
+using Anomaly.Core.Kernel;
 using static Anomaly.Core.DmShim.Dm;
 using static Anomaly.Core.Tg.Builtins;
 using static Anomaly.Core.Tg.Defines;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (syndicate G4a, D316): random_nukecode, for the red pill junk mail; ion_num (silicons SI1, D326).
+// PARTIAL (syndicate G4a, D316): random_nukecode, for the red pill junk mail; ion_num (silicons SI1, D326); get_random_food and
+// get_random_drink (the silver slime extract's food and drinks).
 
 public static partial class GlobalProcs
 {

@@ -18343,9 +18343,9 @@ public partial class obj_structure_ice_stasis
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:2
-[DmPath("/obj/structure/microscope"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_microscope : obj_structure
+// tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/microscope")]
+public partial class obj_structure_microscope
 {
     public obj_item_petri_dish current_dish; // tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:8
 
@@ -18367,7 +18367,7 @@ public partial class obj_structure_microscope : obj_structure
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:125
-[DmPath("/obj/structure/microscope/unanchored"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/microscope/unanchored"), DmGeneratedOnly]
 public partial class obj_structure_microscope_unanchored : obj_structure_microscope
 {
     // tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:125

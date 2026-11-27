@@ -300,7 +300,7 @@ public partial class obj_item_clothing_mask_gas_clown_hat : obj_item_clothing_ma
             Dm.kv("The Madman", image(icon: icon, icon_state: "joker")),
             Dm.kv("The Rainbow Color", image(icon: icon, icon_state: "rainbow")),
             Dm.kv("The Dealer", image(icon: icon, icon_state: "cards")));
-        Dm.Deferred("code/modules/clothing/masks/gasmask.dm:333", "Initialize: AddElement(/datum/element/swabable, CELL_LINE_TABLE_CLOWN, ...): the cell lines (the sample swab, not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_CLOWN, CELL_VIRUS_TABLE_GENERIC, rand(2, 3), 0));
         return dot;
     }
 

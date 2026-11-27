@@ -451,7 +451,7 @@ public partial class obj_structure_closet_crate_trashcart : obj_structure_closet
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2, 3), 15)); // inert until the cell lines (cytology)
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2, 3), 15));
         Waiting.NoSleep(AddElement(typeof(datum_element_noisy_movement)));
         return dot;
     }

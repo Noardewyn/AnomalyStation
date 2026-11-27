@@ -12,8 +12,8 @@ namespace Anomaly.Core.Tg;
 // The whole file (engineering E14): the station blueprints, the cyborgs' schematics, the golems' land claim and the cerulean prints,
 // with tg's Blueprints window: create or expand an area from a sealed room (__HELPERS/areas.dm create_area), rename the area, the
 // shuttle docking toggle, the wire colour legend (GLOB.wire_color_directory) and the structural view (the roundstart images of the
-// pipes, cables and disposal pipes around the viewer in their client.images, turf.dm add_blueprints). Only the cerulean prints'
-// HSL colour filter on the renamed area's turfs is deferred (xenobiology). The var block is generated.
+// pipes, cables and disposal pipes around the viewer in their client.images, turf.dm add_blueprints). The cerulean prints'
+// HSL colour filter on the renamed area's turfs came with xenobiology. The var block is generated.
 
 /**
  * Blueprints
@@ -295,8 +295,15 @@ public partial class obj_item_blueprints_slime : obj_item_blueprints
     {
         object dot = await base.edit_area(user);
         area area = get_area(this) as area;
-        // :249-253: the turfs of the area lose their washable colour and take color_transition_filter("#2956B2") at FIXED_COLOUR_PRIORITY
-        Dm.Deferred("code/game/objects/items/blueprints.dm:249", "edit_area: the cerulean prints' HSL colour filter on the area's turfs (color_transition_filter; xenobiology)");
+        object turf_matrix = color_transition_filter("#2956B2");
+        foreach (object zlevel_turfs in Dm.each(area.get_zlevel_turf_lists()))
+        {
+            foreach (turf area_turf in Dm.each_cast<turf>(zlevel_turfs))
+            {
+                await area_turf.remove_atom_colour(WASHABLE_COLOUR_PRIORITY);
+                await area_turf.add_atom_colour(turf_matrix, FIXED_COLOUR_PRIORITY);
+            }
+        }
         Dm.combine(ref area.area_flags, XENOBIOLOGY_COMPATIBLE);
         qdel(this);
         return dot;

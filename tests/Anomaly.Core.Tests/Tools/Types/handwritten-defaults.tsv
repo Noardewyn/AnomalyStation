@@ -2677,6 +2677,8 @@
 /mob/living/basic/parrot	mob_size	override	code/modules/mob/living/basic/pets/parrot/_parrot.dm:38	{"K":"num","N":1}
 /mob/living/basic/parrot	gold_core_spawnable	override	code/modules/mob/living/basic/pets/parrot/_parrot.dm:39	{"K":"num","N":2}
 /mob/living/basic/parrot	ai_controller	override	code/modules/mob/living/basic/pets/parrot/_parrot.dm:41	{"K":"type","N":0,"S":"/datum/ai_controller/basic_controller/parrot"}
+/mob/eye/camera/remote/xenobio	allowed_area	decl	code/modules/research/xenobiology/xenobio_camera.dm:4	{"K":"null","N":0}
+/mob/eye/camera/remote/xenobio	visible_to_user	override	code/modules/research/xenobiology/xenobio_camera.dm:3	{"K":"num","N":1}
 /obj	obj_flags	decl	code/game/objects/objs.dm:6	{"K":"num","N":2}
 /obj	desc_controls	decl	code/game/objects/objs.dm:9	{"K":"null","N":0}
 /obj	no_damage_feedback	decl	code/game/objects/objs.dm:12	{"K":"str","N":0,"S":"without leaving a mark"}

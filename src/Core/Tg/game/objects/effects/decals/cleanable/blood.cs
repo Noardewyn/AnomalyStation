@@ -12,8 +12,7 @@ namespace Anomaly.Core.Tg;
 // M6 slice 1 (blood in the world): the blood decal (its blood DNA and colour, its drying on SSblood_drying and the drying
 // colour, its merging, stepping into it), the old blood, the splatter and the splatter over a window, the wheel tracks, the
 // trail holder and its trail pieces, the drip, the footprints and the hit splatter that flies from a wound; M6 slice 5
-// (gibbing): the gibs and the old gibs (:514-665). Not here: the rot of dried gibs and the swabs of old gibs (diseases and
-// cytology, M8), the reagents of a
+// (gibbing): the gibs and the old gibs (:514-665). Not here: the rot of dried gibs (diseases), the reagents of a
 // decal (lazy_init_reagents fills a holder whose add_reagent is M8's, the cleanable base's deferred leaf), the emissive
 // glow of glowing blood (lighting, D24). The splattered-with-blood mood since gaps MS1. The var blocks are generated (D111).
 
@@ -1060,9 +1059,7 @@ public partial class obj_effect_decal_cleanable_blood_gibs_old : obj_effect_deca
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(setDir(pick(GLOB.cardinals)));
-        // AddElement(/datum/element/swabable, CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2,4), 10): the cell lines
-        // a swab takes from old gibs (cytology, M8)
-        Dm.Deferred("code/game/objects/effects/decals/cleanable/blood.dm:664", "Initialize: AddElement(/datum/element/swabable), the cell lines of old gibs (cytology, M8)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 10));
         return dot;
     }
 }

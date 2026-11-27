@@ -1514,9 +1514,9 @@ public partial class obj_effect_abstract_gazer_beamend : obj_effect_abstract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:633
-[DmPath("/obj/effect/abstract/sucked_atom"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_abstract_sucked_atom : obj_effect_abstract
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:633 (the var block of a hand-written class)
+[DmPath("/obj/effect/abstract/sucked_atom")]
+public partial class obj_effect_abstract_sucked_atom
 {
     public float mob_initial_alpha = 255; // tg: code/modules/research/xenobiology/xenobio_camera.dm:636
 
@@ -1528,9 +1528,9 @@ public partial class obj_effect_abstract_sucked_atom : obj_effect_abstract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:670
-[DmPath("/obj/effect/abstract/xenosuction"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_abstract_xenosuction : obj_effect_abstract
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:670 (the var block of a hand-written class)
+[DmPath("/obj/effect/abstract/xenosuction")]
+public partial class obj_effect_abstract_xenosuction
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:670
     public obj_effect_abstract_xenosuction()

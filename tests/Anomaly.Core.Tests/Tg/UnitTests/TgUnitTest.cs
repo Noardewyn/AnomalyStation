@@ -220,6 +220,14 @@ public abstract class TgUnitTest
             // the library's consoles look for the database at Initialize (lib_machines.dm:173, SSdbcore.Connect); tg's MC always creates it
             if (SSdbcore == null)
                 Dm.@new<datum_controller_subsystem_dbcore>();
+            // the trading cards and packs read the sets SStrading_card_game loads at boot (tcg.dm:21, :389), which tg's MC always loads
+            if (SStrading_card_game == null)
+            {
+                if (Anomaly.Core.Tests.Tools.TgClone.Root != null)
+                    TgStrings.Mount(DmWorldState.Of(World.Current).Files, Anomaly.Core.Tests.Tools.TgClone.Root, TgStrings.CardFiles);
+                Dm.@new<datum_controller_subsystem_trading_card_game>();
+                Waiting.NoSleep(SStrading_card_game.Initialize());
+            }
 
             // var/datum/unit_test/test = new test_path
             New();

@@ -1307,9 +1307,9 @@ public partial class area_station_maintenance_solars_starboard_fore : area_stati
     }
 }
 
-// tg: code/game/area/areas/holodeck.dm:2
-[DmPath("/area/station/holodeck"), DmGeneratedOnly, DmInert]
-public partial class area_station_holodeck : area_station
+// tg: code/game/area/areas/holodeck.dm:2 (the var block of a hand-written class)
+[DmPath("/area/station/holodeck")]
+public partial class area_station_holodeck
 {
     public obj_machinery_computer_holodeck linked; // tg: code/game/area/areas/holodeck.dm:11
     public float restricted = 0; // tg: code/game/area/areas/holodeck.dm:12
@@ -1328,7 +1328,7 @@ public partial class area_station_holodeck : area_station
 }
 
 // tg: code/game/area/areas/holodeck.dm:50
-[DmPath("/area/station/holodeck/rec_center"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/holodeck/rec_center"), DmGeneratedOnly]
 public partial class area_station_holodeck_rec_center : area_station_holodeck
 {
     // tg: code/game/area/areas/holodeck.dm:50
@@ -1339,7 +1339,7 @@ public partial class area_station_holodeck_rec_center : area_station_holodeck
 }
 
 // tg: code/game/area/areas/holodeck.dm:54
-[DmPath("/area/station/holodeck/rec_center/offstation_one"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/holodeck/rec_center/offstation_one"), DmGeneratedOnly]
 public partial class area_station_holodeck_rec_center_offstation_one : area_station_holodeck_rec_center
 {
     // tg: code/game/area/areas/holodeck.dm:54

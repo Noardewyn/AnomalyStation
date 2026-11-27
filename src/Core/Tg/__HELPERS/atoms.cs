@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // PARTIAL: only pass (logging and chat, wave 3: the logger's recursive_jsonify calls it), get_nested_locs (the movable
 // Entered and Exited call it, package D, wave 4), get_all_contents (a living mob's DirectAccess, every click; M2
 // integration), get_all_contents_type (get_contents_custom_materials, atom_materials.dm; M5 slice 2) and get_oversized_icon_offsets (the progress bar of a do_after; M2 integration) and get (the item attack chain's telekinesis
-// check, item_attack.dm; M4a P1) and contains (tgui's ui states; M5 slice 3) and spiral_range (empulse's range; M7 EMP) and can_see (the gas analyzer's reach; M7 slice T3) and urange (a stage six singularity's fire; the M7 delamination slice) and generate_items_inside (the medkits; M8 slice C) and get_cardinal_dir (gaps P3b: the tendril hammer's knockback) and is_source_facing_target (gaps ST2: the basketball's steal) translated; the other atom
+// check, item_attack.dm; M4a P1) and contains (tgui's ui states; M5 slice 3) and spiral_range (empulse's range; M7 EMP) and can_see (the gas analyzer's reach; M7 slice T3) and urange (a stage six singularity's fire; the M7 delamination slice) and generate_items_inside (the medkits; M8 slice C) and get_cardinal_dir (gaps P3b: the tendril hammer's knockback) and is_source_facing_target (gaps ST2: the basketball's steal) and random_step (the slot machine's coins) translated; the other atom
 // helpers come with their first callers.
 
 // tg: code/__HELPERS/atoms.dm:2
@@ -196,6 +196,22 @@ public partial class atom : datum
 // tg: code/__HELPERS/atoms.dm:312 (global procs; generate_items_inside, :306, is above)
 public static partial class GlobalProcs
 {
+    ///Forces the atom to take a step in a random direction
+    // tg: code/__HELPERS/atoms.dm:134  (the slot machine's and the roulette's coins)
+    public static async DmTask random_step(atom_movable moving_atom = null, object steps = null, object chance = null)
+    {
+        float initial_chance = Dm.num(chance);
+        float steps__1 = Dm.num(steps);
+        float chance__1 = Dm.num(chance);
+        while (steps__1 > 0)
+        {
+            if (prob(chance__1))
+                await step(moving_atom, Dm.num(pick(GLOB.alldirs)));
+            chance__1 = max(chance__1 - (initial_chance / steps__1), 0);
+            steps__1--;
+        }
+    }
+
     // tg: code/__HELPERS/atoms.dm:312
     public static object get(object loc = null, Type type = null)
     {

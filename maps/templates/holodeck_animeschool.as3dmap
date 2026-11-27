@@ -1,0 +1,35 @@
+anomaly-map 1
+source _maps/templates/holodeck_animeschool.dmm tg 1d99bd7f
+size 9 10 1
+chunk 32
+default /turf/open/floor/holofloor | /area/template_noop
+
+[chunk 1 1 1]
+5,10: /obj/structure/chair{pixel_y = -2} | /turf/open/floor/holofloor | /area/template_noop
+4,9: /obj/structure/table/wood | /obj/item/folder | /obj/item/melee/baton/telescopic | /turf/open/floor/holofloor | /area/template_noop
+5,9: /obj/structure/table/wood | /obj/item/toy/crayon/white | /turf/open/floor/holofloor | /area/template_noop
+6,9: /obj/structure/table/wood | /obj/item/food/grown/apple | /turf/open/floor/holofloor | /area/template_noop
+2,7: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku/teal | /turf/open/floor/holofloor | /area/template_noop
+4,7: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku | /turf/open/floor/holofloor | /area/template_noop
+6,7: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku/teal | /turf/open/floor/holofloor | /area/template_noop
+8,7: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku/teal | /turf/open/floor/holofloor | /area/template_noop
+2,6: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+4,6: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+6,6: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+8,6: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+2,5: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku | /obj/item/storage/belt/sheath/katana/toy | /turf/open/floor/holofloor | /area/template_noop
+4,5: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku/tan | /turf/open/floor/holofloor | /area/template_noop
+6,5: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku/red | /turf/open/floor/holofloor | /area/template_noop
+8,5: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku/teal | /turf/open/floor/holofloor | /area/template_noop
+2,4: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+4,4: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+6,4: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+8,4: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+2,3: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku | /turf/open/floor/holofloor | /area/template_noop
+4,3: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku/red | /turf/open/floor/holofloor | /area/template_noop
+6,3: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku | /turf/open/floor/holofloor | /area/template_noop
+8,3: /obj/structure/table | /obj/item/paper | /obj/item/pen | /obj/item/clothing/under/costume/seifuku/tan | /turf/open/floor/holofloor | /area/template_noop
+2,2: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+4,2: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+6,2: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+8,2: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop

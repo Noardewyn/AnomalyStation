@@ -4061,9 +4061,9 @@ public partial class obj_machinery_requests_console_directional_west : obj_machi
     }
 }
 
-// tg: code/game/machinery/roulette_machine.dm:22
-[DmPath("/obj/machinery/roulette"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_roulette : obj_machinery
+// tg: code/game/machinery/roulette_machine.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/machinery/roulette")]
+public partial class obj_machinery_roulette
 {
     public float chosen_bet_amount = 10; // tg: code/game/machinery/roulette_machine.dm:35
     public string chosen_bet_type = "0"; // tg: code/game/machinery/roulette_machine.dm:36
@@ -9284,9 +9284,9 @@ public partial class obj_machinery_implantchair_brainwash
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg_machines.dm:9
-[DmPath("/obj/machinery/trading_card_holder"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_trading_card_holder : obj_machinery
+// tg: code/game/objects/items/tcg/tcg_machines.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/machinery/trading_card_holder")]
+public partial class obj_machinery_trading_card_holder
 {
     public obj_item_tcgcard current_card; // tg: code/game/objects/items/tcg/tcg_machines.dm:16
     public datum_card card_template; // tg: code/game/objects/items/tcg/tcg_machines.dm:18
@@ -9307,7 +9307,7 @@ public partial class obj_machinery_trading_card_holder : obj_machinery
 }
 
 // tg: code/game/objects/items/tcg/tcg_machines.dm:129
-[DmPath("/obj/machinery/trading_card_holder/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/trading_card_holder/red"), DmGeneratedOnly]
 public partial class obj_machinery_trading_card_holder_red : obj_machinery_trading_card_holder
 {
     // tg: code/game/objects/items/tcg/tcg_machines.dm:129
@@ -9318,9 +9318,9 @@ public partial class obj_machinery_trading_card_holder_red : obj_machinery_tradi
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg_machines.dm:290
-[DmPath("/obj/machinery/trading_card_button"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_trading_card_button : obj_machinery
+// tg: code/game/objects/items/tcg/tcg_machines.dm:290 (the var block of a hand-written class)
+[DmPath("/obj/machinery/trading_card_button")]
+public partial class obj_machinery_trading_card_button
 {
     public obj_effect_trading_card_panel display_panel_ref; // tg: code/game/objects/items/tcg/tcg_machines.dm:297
     public Type display_panel_type = typeof(obj_effect_trading_card_panel); // tg: code/game/objects/items/tcg/tcg_machines.dm:299
@@ -9338,9 +9338,9 @@ public partial class obj_machinery_trading_card_button : obj_machinery
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg_machines.dm:365
-[DmPath("/obj/machinery/trading_card_button/health"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_trading_card_button_health : obj_machinery_trading_card_button
+// tg: code/game/objects/items/tcg/tcg_machines.dm:365 (the var block of a hand-written class)
+[DmPath("/obj/machinery/trading_card_button/health")]
+public partial class obj_machinery_trading_card_button_health
 {
     // tg: code/game/objects/items/tcg/tcg_machines.dm:365
     public obj_machinery_trading_card_button_health()
@@ -12457,9 +12457,9 @@ public partial class obj_machinery_restaurant_portal_bar : obj_machinery_restaur
     }
 }
 
-// tg: code/modules/holodeck/items.dm:76
-[DmPath("/obj/machinery/readybutton"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_readybutton : obj_machinery
+// tg: code/modules/holodeck/items.dm:76 (the var block of a hand-written class)
+[DmPath("/obj/machinery/readybutton")]
+public partial class obj_machinery_readybutton
 {
     public float ready = 0; // tg: code/modules/holodeck/items.dm:80
     public area currentarea; // tg: code/modules/holodeck/items.dm:81
@@ -12510,9 +12510,9 @@ public partial class obj_machinery_conveyor
     }
 }
 
-// tg: code/modules/holodeck/items.dm:154
-[DmPath("/obj/machinery/conveyor/holodeck"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_conveyor_holodeck : obj_machinery_conveyor { }
+// tg: code/modules/holodeck/items.dm:154 (the var block of a hand-written class)
+[DmPath("/obj/machinery/conveyor/holodeck")]
+public partial class obj_machinery_conveyor_holodeck { }
 
 // tg: code/modules/recycling/conveyor.dm:102
 [DmPath("/obj/machinery/conveyor/centcom_auto"), DmGeneratedOnly]

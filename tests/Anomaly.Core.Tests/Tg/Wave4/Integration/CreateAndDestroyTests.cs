@@ -126,6 +126,14 @@ public class CreateAndDestroyTests
             // the library's consoles look for the database at Initialize (lib_machines.dm:173, SSdbcore.Connect), which tg's MC always makes
             if (SSdbcore == null)
                 Dm.@new<datum_controller_subsystem_dbcore>();
+            // the trading cards and packs read the sets SStrading_card_game loads at boot (tcg.dm:21, :389), which tg's MC always loads
+            if (SStrading_card_game == null)
+            {
+                if (Anomaly.Core.Tests.Tools.TgClone.Root != null)
+                    TgStrings.Mount(DmWorldState.Of(World.Current).Files, Anomaly.Core.Tests.Tools.TgClone.Root, TgStrings.CardFiles);
+                Dm.@new<datum_controller_subsystem_trading_card_game>();
+                Waiting.NoSleep(SStrading_card_game.Initialize());
+            }
             // silicons SI3: the printers' auto-unlocking techwebs (the lathe's, the smelter's, the biogenerator's) register with SSresearch and
             // read its design table; tg's MC always makes it
             if (SSresearch == null)

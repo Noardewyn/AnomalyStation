@@ -1238,7 +1238,7 @@ proc	/	random_human_blood_type	code/__HELPERS/mobs.dm:10		yes	full	global
 proc	/	random_nukecode	code/__HELPERS/randoms.dm:30		yes	full	global
 proc	/	random_short_color	code/__HELPERS/text.dm:453		yes	full	global
 proc	/	random_socks	code/__HELPERS/mobs.dm:93		yes	full	global
-proc	/	random_step	code/__HELPERS/atoms.dm:134	moving_atom,steps,chance	no	-	global
+proc	/	random_step	code/__HELPERS/atoms.dm:134	moving_atom,steps,chance	yes	full	global
 proc	/	random_string	code/__HELPERS/text.dm:443	length,characters	yes	full	global
 proc	/	random_undershirt	code/__HELPERS/mobs.dm:82	gender	yes	full	global
 proc	/	random_underwear	code/__HELPERS/mobs.dm:71	gender	yes	full	global
@@ -2531,10 +2531,10 @@ proc	/datum/controller/global_vars	InitGlobaltelecrystal_recipes	code/game/objec
 proc	/datum/controller/global_vars	InitGlobaltile_reskin_lists	code/game/objects/items/stacks/tiles/tile_reskinning.dm:11		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobaltile_dir_lists	code/game/objects/items/stacks/tiles/tile_reskinning.dm:13		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalwall_reskin_lists	code/game/objects/items/stacks/wall_filling.dm:66		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobaltcgcard_radial_choices	code/game/objects/items/tcg/tcg.dm:75		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobaltcgcard_machine_radial_choices	code/game/objects/items/tcg/tcg_machines.dm:50		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobaltcgcard_mana_bar_radial_choices	code/game/objects/items/tcg/tcg_machines.dm:306		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobaltcgcard_health_bar_radial_choices	code/game/objects/items/tcg/tcg_machines.dm:372		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobaltcgcard_radial_choices	code/game/objects/items/tcg/tcg.dm:75		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobaltcgcard_machine_radial_choices	code/game/objects/items/tcg/tcg_machines.dm:50		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobaltcgcard_mana_bar_radial_choices	code/game/objects/items/tcg/tcg_machines.dm:306		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobaltcgcard_health_bar_radial_choices	code/game/objects/items/tcg/tcg_machines.dm:372		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalpaintable_decals	code/game/objects/items/tools/engineering/painter/paintable_decals.dm:264		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalintento_players	code/game/objects/items/toys.dm:1605		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalbridge_axe	code/game/objects/items/weaponry/melee/fireaxe.dm:1		yes	full	proc root
@@ -2724,7 +2724,7 @@ proc	/datum/controller/global_vars	InitGlobalsafe_peanut_types	code/modules/food
 proc	/datum/controller/global_vars	InitGlobaloilfry_blacklisted_items	code/modules/food_and_drinks/machinery/deep_fryer.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalmonkey_recyclers	code/modules/food_and_drinks/machinery/monkeyrecycler.dm:1		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalholiday_mail	code/modules/holiday/holidays.dm:2		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobaltypecache_holodeck_linked_floorcheck_ok	code/modules/holodeck/computer.dm:30		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobaltypecache_holodeck_linked_floorcheck_ok	code/modules/holodeck/computer.dm:30		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalinterviews	code/modules/interview/interview_manager.dm:1		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalexp_to_update	code/modules/jobs/job_exp.dm:1		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalexp_to_update	code/modules/jobs/job_exp.dm:2		no	-	proc root
@@ -3619,7 +3619,7 @@ proc	/datum/controller/subsystem/mapping	get_reservation_from_turf	code/controll
 proc	/datum/controller/subsystem/mapping	add_nuke_threat	code/controllers/subsystem/mapping.dm:354	nuke	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	remove_nuke_threat	code/controllers/subsystem/mapping.dm:358	nuke	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	check_nuke_threats	code/controllers/subsystem/mapping.dm:362		yes	full	proc root
-proc	/datum/controller/subsystem/mapping	determine_fake_sale	code/controllers/subsystem/mapping.dm:371		yes	deferred	proc root
+proc	/datum/controller/subsystem/mapping	determine_fake_sale	code/controllers/subsystem/mapping.dm:371		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	Recover	code/controllers/subsystem/mapping.dm:378		no	-	proc
 proc	/datum/controller/subsystem/mapping	LoadGroup	code/controllers/subsystem/mapping.dm:403	errorList,name,path,files,traits,default_traits,silent,height_autosetup	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	loadWorld	code/controllers/subsystem/mapping.dm:462		yes	full	proc root
@@ -3630,7 +3630,7 @@ proc	/datum/controller/subsystem/mapping	preloadTemplates	code/controllers/subsy
 proc	/datum/controller/subsystem/mapping	preloadRuinTemplates	code/controllers/subsystem/mapping.dm:543		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	preloadShuttleTemplates	code/controllers/subsystem/mapping.dm:568		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	preloadShelterTemplates	code/controllers/subsystem/mapping.dm:583		yes	full	proc root
-proc	/datum/controller/subsystem/mapping	preloadHolodeckTemplates	code/controllers/subsystem/mapping.dm:593		yes	deferred	proc root
+proc	/datum/controller/subsystem/mapping	preloadHolodeckTemplates	code/controllers/subsystem/mapping.dm:593		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	add_reservation_zlevel	code/controllers/subsystem/mapping.dm:640	for_shuttles	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	request_turf_block_reservation	code/controllers/subsystem/mapping.dm:645	width,height,z_size,z_reservation,reservation_type,turf_type_override	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	initialize_reserved_level	code/controllers/subsystem/mapping.dm:678	z	yes	full	proc root
@@ -3988,22 +3988,22 @@ proc	/datum/controller/subsystem/sun	Initialize	code/controllers/subsystem/sun.d
 proc	/datum/controller/subsystem/sun	fire	code/controllers/subsystem/sun.dm:16	resumed	yes	full	proc
 proc	/datum/controller/subsystem/sun	complete_movement	code/controllers/subsystem/sun.dm:25		yes	full	proc root
 proc	/datum/controller/subsystem/sun	vv_edit_var	code/controllers/subsystem/sun.dm:28	var_name,var_value	stub	deferred	proc
-type	/datum/controller/subsystem/trading_card_game	/datum/controller/subsystem	code/controllers/subsystem/tcgsetup.dm:2	inert	datum_controller_subsystem_trading_card_game	0	0
-proc	/datum/controller/subsystem/trading_card_game	New	code/controllers/subsystem/tcgsetup.dm:1		no	-	proc
-proc	/datum/controller/subsystem/trading_card_game	Initialize	code/controllers/subsystem/tcgsetup.dm:22		no	-	proc
-proc	/datum/controller/subsystem/trading_card_game	loadAllCardFiles	code/controllers/subsystem/tcgsetup.dm:27		no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	clearCards	code/controllers/subsystem/tcgsetup.dm:35		no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	reloadAllCardFiles	code/controllers/subsystem/tcgsetup.dm:41		no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	loadKeywordFile	code/controllers/subsystem/tcgsetup.dm:47	filename,directory	no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	styleKeywords	code/controllers/subsystem/tcgsetup.dm:56		no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	resolve_keywords	code/controllers/subsystem/tcgsetup.dm:63	search_through	no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	loadCardFile	code/controllers/subsystem/tcgsetup.dm:83	filename,directory	no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	get_rarity_table	code/controllers/subsystem/tcgsetup.dm:103	type,sample_table	no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	get_guarenteed_rarity_table	code/controllers/subsystem/tcgsetup.dm:112	type,sample_table	no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	printAllCards	code/controllers/subsystem/tcgsetup.dm:118		no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	check_cardpacks	code/controllers/subsystem/tcgsetup.dm:126	card_pack_list	no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	check_card_datums	code/controllers/subsystem/tcgsetup.dm:151		no	-	proc root
-proc	/datum/controller/subsystem/trading_card_game	check_card_distribution	code/controllers/subsystem/tcgsetup.dm:173	cardPack,batchSize,batchCount,guaranteed	no	-	proc root
+type	/datum/controller/subsystem/trading_card_game	/datum/controller/subsystem	code/controllers/subsystem/tcgsetup.dm:2	live	datum_controller_subsystem_trading_card_game	1	0
+proc	/datum/controller/subsystem/trading_card_game	New	code/controllers/subsystem/tcgsetup.dm:1		yes	full	proc
+proc	/datum/controller/subsystem/trading_card_game	Initialize	code/controllers/subsystem/tcgsetup.dm:22		yes	full	proc
+proc	/datum/controller/subsystem/trading_card_game	loadAllCardFiles	code/controllers/subsystem/tcgsetup.dm:27		yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	clearCards	code/controllers/subsystem/tcgsetup.dm:35		yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	reloadAllCardFiles	code/controllers/subsystem/tcgsetup.dm:41		yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	loadKeywordFile	code/controllers/subsystem/tcgsetup.dm:47	filename,directory	yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	styleKeywords	code/controllers/subsystem/tcgsetup.dm:56		yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	resolve_keywords	code/controllers/subsystem/tcgsetup.dm:63	search_through	yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	loadCardFile	code/controllers/subsystem/tcgsetup.dm:83	filename,directory	yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	get_rarity_table	code/controllers/subsystem/tcgsetup.dm:103	type,sample_table	yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	get_guarenteed_rarity_table	code/controllers/subsystem/tcgsetup.dm:112	type,sample_table	yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	printAllCards	code/controllers/subsystem/tcgsetup.dm:118		yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	check_cardpacks	code/controllers/subsystem/tcgsetup.dm:126	card_pack_list	yes	full	proc root
+proc	/datum/controller/subsystem/trading_card_game	check_card_datums	code/controllers/subsystem/tcgsetup.dm:151		yes	skeleton	proc root
+proc	/datum/controller/subsystem/trading_card_game	check_card_distribution	code/controllers/subsystem/tcgsetup.dm:173	cardPack,batchSize,batchCount,guaranteed	yes	full	proc root
 type	/datum/controller/subsystem/tgui	/datum/controller/subsystem	code/controllers/subsystem/tgui.dm:14	inert	datum_controller_subsystem_tgui	1	0
 proc	/datum/controller/subsystem/tgui	New	code/controllers/subsystem/tgui.dm:13		yes	full	proc
 proc	/datum/controller/subsystem/tgui	PreInit	code/controllers/subsystem/tgui.dm:27		yes	full	proc
@@ -11983,37 +11983,37 @@ type	/datum/map_template/ctf/downtown	/datum/map_template/ctf	code/modules/captu
 type	/datum/map_template/ctf/limbo	/datum/map_template/ctf	code/modules/capture_the_flag/ctf_map_loading.dm:83	live	datum_map_template_ctf_limbo	0	0
 type	/datum/map_template/ctf/cruiser	/datum/map_template/ctf	code/modules/capture_the_flag/ctf_map_loading.dm:89	live	datum_map_template_ctf_cruiser	0	0
 type	/datum/map_template/ctf/turbine	/datum/map_template/ctf	code/modules/capture_the_flag/ctf_map_loading.dm:94	live	datum_map_template_ctf_turbine	0	0
-type	/datum/map_template/holodeck	/datum/map_template	code/modules/holodeck/holodeck_map_templates.dm:4	inert	datum_map_template_holodeck	0	0
-proc	/datum/map_template/holodeck	update_blacklist	code/modules/holodeck/computer.dm:189	placement,input_blacklist	no	-	proc
-type	/datum/map_template/holodeck/offline	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:13	inert	datum_map_template_holodeck_offline	0	0
-type	/datum/map_template/holodeck/emptycourt	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:18	inert	datum_map_template_holodeck_emptycourt	0	0
-type	/datum/map_template/holodeck/dodgeball	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:23	inert	datum_map_template_holodeck_dodgeball	0	0
-type	/datum/map_template/holodeck/basketball	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:28	inert	datum_map_template_holodeck_basketball	0	0
-type	/datum/map_template/holodeck/thunderdome	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:33	inert	datum_map_template_holodeck_thunderdome	0	0
-type	/datum/map_template/holodeck/beach	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:38	inert	datum_map_template_holodeck_beach	0	0
-type	/datum/map_template/holodeck/lounge	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:43	inert	datum_map_template_holodeck_lounge	0	0
-type	/datum/map_template/holodeck/petpark	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:48	inert	datum_map_template_holodeck_petpark	0	0
-type	/datum/map_template/holodeck/firingrange	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:53	inert	datum_map_template_holodeck_firingrange	0	0
-type	/datum/map_template/holodeck/anime_school	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:58	inert	datum_map_template_holodeck_anime_school	0	0
-type	/datum/map_template/holodeck/chapelcourt	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:63	inert	datum_map_template_holodeck_chapelcourt	0	0
-type	/datum/map_template/holodeck/spacechess	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:68	inert	datum_map_template_holodeck_spacechess	0	0
-type	/datum/map_template/holodeck/spacecheckers	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:73	inert	datum_map_template_holodeck_spacecheckers	0	0
-type	/datum/map_template/holodeck/kobayashi	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:78	inert	datum_map_template_holodeck_kobayashi	0	0
-type	/datum/map_template/holodeck/winterwonderland	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:83	inert	datum_map_template_holodeck_winterwonderland	0	0
-type	/datum/map_template/holodeck/photobooth	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:88	inert	datum_map_template_holodeck_photobooth	0	0
-type	/datum/map_template/holodeck/skatepark	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:93	inert	datum_map_template_holodeck_skatepark	0	0
-type	/datum/map_template/holodeck/microwave	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:98	inert	datum_map_template_holodeck_microwave	0	0
-type	/datum/map_template/holodeck/baseball	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:103	inert	datum_map_template_holodeck_baseball	0	0
-type	/datum/map_template/holodeck/card_battle	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:108	inert	datum_map_template_holodeck_card_battle	0	0
-type	/datum/map_template/holodeck/fitness	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:113	inert	datum_map_template_holodeck_fitness	0	0
-type	/datum/map_template/holodeck/medicalsim	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:120	inert	datum_map_template_holodeck_medicalsim	0	0
-type	/datum/map_template/holodeck/thunderdome1218	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:126	inert	datum_map_template_holodeck_thunderdome1218	0	0
-type	/datum/map_template/holodeck/burntest	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:132	inert	datum_map_template_holodeck_burntest	0	0
-type	/datum/map_template/holodeck/wildlifesim	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:138	inert	datum_map_template_holodeck_wildlifesim	0	0
-type	/datum/map_template/holodeck/holdoutbunker	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:144	inert	datum_map_template_holodeck_holdoutbunker	0	0
-type	/datum/map_template/holodeck/anthophillia	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:150	inert	datum_map_template_holodeck_anthophillia	0	0
-type	/datum/map_template/holodeck/refuelingstation	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:156	inert	datum_map_template_holodeck_refuelingstation	0	0
-type	/datum/map_template/holodeck/prison	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:162	inert	datum_map_template_holodeck_prison	0	0
+type	/datum/map_template/holodeck	/datum/map_template	code/modules/holodeck/holodeck_map_templates.dm:4	live	datum_map_template_holodeck	1	0
+proc	/datum/map_template/holodeck	update_blacklist	code/modules/holodeck/computer.dm:189	placement,input_blacklist	yes	full	proc
+type	/datum/map_template/holodeck/offline	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:13	live	datum_map_template_holodeck_offline	0	0
+type	/datum/map_template/holodeck/emptycourt	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:18	live	datum_map_template_holodeck_emptycourt	0	0
+type	/datum/map_template/holodeck/dodgeball	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:23	live	datum_map_template_holodeck_dodgeball	0	0
+type	/datum/map_template/holodeck/basketball	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:28	live	datum_map_template_holodeck_basketball	0	0
+type	/datum/map_template/holodeck/thunderdome	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:33	live	datum_map_template_holodeck_thunderdome	0	0
+type	/datum/map_template/holodeck/beach	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:38	live	datum_map_template_holodeck_beach	0	0
+type	/datum/map_template/holodeck/lounge	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:43	live	datum_map_template_holodeck_lounge	0	0
+type	/datum/map_template/holodeck/petpark	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:48	live	datum_map_template_holodeck_petpark	0	0
+type	/datum/map_template/holodeck/firingrange	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:53	live	datum_map_template_holodeck_firingrange	0	0
+type	/datum/map_template/holodeck/anime_school	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:58	live	datum_map_template_holodeck_anime_school	0	0
+type	/datum/map_template/holodeck/chapelcourt	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:63	live	datum_map_template_holodeck_chapelcourt	0	0
+type	/datum/map_template/holodeck/spacechess	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:68	live	datum_map_template_holodeck_spacechess	0	0
+type	/datum/map_template/holodeck/spacecheckers	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:73	live	datum_map_template_holodeck_spacecheckers	0	0
+type	/datum/map_template/holodeck/kobayashi	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:78	live	datum_map_template_holodeck_kobayashi	0	0
+type	/datum/map_template/holodeck/winterwonderland	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:83	live	datum_map_template_holodeck_winterwonderland	0	0
+type	/datum/map_template/holodeck/photobooth	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:88	live	datum_map_template_holodeck_photobooth	0	0
+type	/datum/map_template/holodeck/skatepark	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:93	live	datum_map_template_holodeck_skatepark	0	0
+type	/datum/map_template/holodeck/microwave	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:98	live	datum_map_template_holodeck_microwave	0	0
+type	/datum/map_template/holodeck/baseball	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:103	live	datum_map_template_holodeck_baseball	0	0
+type	/datum/map_template/holodeck/card_battle	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:108	live	datum_map_template_holodeck_card_battle	0	0
+type	/datum/map_template/holodeck/fitness	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:113	live	datum_map_template_holodeck_fitness	0	0
+type	/datum/map_template/holodeck/medicalsim	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:120	live	datum_map_template_holodeck_medicalsim	0	0
+type	/datum/map_template/holodeck/thunderdome1218	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:126	live	datum_map_template_holodeck_thunderdome1218	0	0
+type	/datum/map_template/holodeck/burntest	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:132	live	datum_map_template_holodeck_burntest	0	0
+type	/datum/map_template/holodeck/wildlifesim	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:138	live	datum_map_template_holodeck_wildlifesim	0	0
+type	/datum/map_template/holodeck/holdoutbunker	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:144	live	datum_map_template_holodeck_holdoutbunker	0	0
+type	/datum/map_template/holodeck/anthophillia	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:150	live	datum_map_template_holodeck_anthophillia	0	0
+type	/datum/map_template/holodeck/refuelingstation	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:156	live	datum_map_template_holodeck_refuelingstation	0	0
+type	/datum/map_template/holodeck/prison	/datum/map_template/holodeck	code/modules/holodeck/holodeck_map_templates.dm:162	live	datum_map_template_holodeck_prison	0	0
 type	/datum/map_template/mafia	/datum/map_template	code/modules/mafia/map_pieces.dm:27	live	datum_map_template_mafia	1	0
 proc	/datum/map_template/mafia	New	code/modules/mafia/map_pieces.dm:35	path,rename,cache	yes	full	proc
 type	/datum/map_template/mafia/summerball	/datum/map_template/mafia	code/modules/mafia/map_pieces.dm:49	live	datum_map_template_mafia_summerball	0	0
@@ -30872,10 +30872,10 @@ proc	/datum/storage/bag_of_holding	attempt_insert	code/datums/storage/subtypes/o
 proc	/datum/storage/bag_of_holding	recursive_insertion	code/datums/storage/subtypes/others/bag_of_holding.dm:23	to_insert,user	yes	full	proc root
 proc	/datum/storage/bag_of_holding	confirm_recursive_insertion	code/datums/storage/subtypes/others/bag_of_holding.dm:27	to_insert,user	yes	full	proc root
 proc	/datum/storage/bag_of_holding	create_rift	code/datums/storage/subtypes/others/bag_of_holding.dm:39	inserted,user	yes	full	proc root
-type	/datum/storage/tcg	/datum/storage	code/datums/storage/subtypes/others/cards.dm:5	inert	datum_storage_tcg	0	0
-proc	/datum/storage/tcg	New	code/datums/storage/subtypes/others/cards.dm:9	parent,max_slots,max_specific_storage,max_total_storage	no	-	proc
-proc	/datum/storage/tcg	show_contents	code/datums/storage/subtypes/others/cards.dm:18	to_show	no	-	proc
-proc	/datum/storage/tcg	hide_contents	code/datums/storage/subtypes/others/cards.dm:32	to_hide	no	-	proc
+type	/datum/storage/tcg	/datum/storage	code/datums/storage/subtypes/others/cards.dm:5	live	datum_storage_tcg	1	0
+proc	/datum/storage/tcg	New	code/datums/storage/subtypes/others/cards.dm:9	parent,max_slots,max_specific_storage,max_total_storage	yes	full	proc
+proc	/datum/storage/tcg	show_contents	code/datums/storage/subtypes/others/cards.dm:18	to_show	yes	full	proc
+proc	/datum/storage/tcg	hide_contents	code/datums/storage/subtypes/others/cards.dm:32	to_hide	yes	full	proc
 type	/datum/storage/carpskin_bag	/datum/storage	code/datums/storage/subtypes/others/carpskin_bag.dm:2	inert	datum_storage_carpskin_bag	0	0
 proc	/datum/storage/carpskin_bag	New	code/datums/storage/subtypes/others/carpskin_bag.dm:6	parent,max_slots,max_specific_storage,max_total_storage,rustle_sound,remove_rustle_sound	no	-	proc
 proc	/datum/storage/carpskin_bag	process_numerical_display	code/datums/storage/subtypes/others/carpskin_bag.dm:18		no	-	proc
@@ -30952,8 +30952,8 @@ proc	/datum/storage/dice	New	code/datums/storage/subtypes/others/misc.dm:256	par
 type	/datum/storage/mail_counterfeit	/datum/storage	code/datums/storage/subtypes/others/misc.dm:262	live	datum_storage_mail_counterfeit	0	0
 type	/datum/storage/mail_counterfeit/advanced	/datum/storage/mail_counterfeit	code/datums/storage/subtypes/others/misc.dm:267	live	datum_storage_mail_counterfeit_advanced	0	0
 type	/datum/storage/mail_counterfeit/bluespace	/datum/storage/mail_counterfeit	code/datums/storage/subtypes/others/misc.dm:272	live	datum_storage_mail_counterfeit_bluespace	0	0
-type	/datum/storage/card_binder	/datum/storage	code/datums/storage/subtypes/others/misc.dm:278	inert	datum_storage_card_binder	0	0
-proc	/datum/storage/card_binder	New	code/datums/storage/subtypes/others/misc.dm:281	parent,max_slots,max_specific_storage,max_total_storage,rustle_sound,remove_rustle_sound	no	-	proc
+type	/datum/storage/card_binder	/datum/storage	code/datums/storage/subtypes/others/misc.dm:278	live	datum_storage_card_binder	1	0
+proc	/datum/storage/card_binder	New	code/datums/storage/subtypes/others/misc.dm:281	parent,max_slots,max_specific_storage,max_total_storage,rustle_sound,remove_rustle_sound	yes	full	proc
 type	/datum/storage/toiletbong	/datum/storage	code/datums/storage/subtypes/others/misc.dm:287	live	datum_storage_toiletbong	1	0
 proc	/datum/storage/toiletbong	New	code/datums/storage/subtypes/others/misc.dm:293	parent,max_slots,max_specific_storage,max_total_storage,rustle_sound,remove_rustle_sound	yes	full	proc
 type	/datum/storage/carved_book	/datum/storage	code/datums/storage/subtypes/others/misc.dm:299	live	datum_storage_carved_book	0	0
@@ -31300,12 +31300,12 @@ proc	/datum/wires/robot	on_pulse	code/datums/wires/robot.dm:32	wire,user	yes	ful
 proc	/datum/wires/robot	on_cut	code/datums/wires/robot.dm:72	wire,mend,source	yes	full	proc
 proc	/datum/wires/robot	can_reveal_wires	code/datums/wires/robot.dm:109	user	yes	full	proc
 proc	/datum/wires/robot	always_reveal_wire	code/datums/wires/robot.dm:115	color	yes	full	proc
-type	/datum/wires/roulette	/datum/wires	code/datums/wires/roulette.dm:2	inert	datum_wires_roulette	0	0
-proc	/datum/wires/roulette	New	code/datums/wires/roulette.dm:6	holder	no	-	proc
-proc	/datum/wires/roulette	interactable	code/datums/wires/roulette.dm:15	user	no	-	proc
-proc	/datum/wires/roulette	get_status	code/datums/wires/roulette.dm:23		no	-	proc
-proc	/datum/wires/roulette	on_pulse	code/datums/wires/roulette.dm:32	wire	no	-	proc
-proc	/datum/wires/roulette	on_cut	code/datums/wires/roulette.dm:52	wire,mend,source	no	-	proc
+type	/datum/wires/roulette	/datum/wires	code/datums/wires/roulette.dm:2	live	datum_wires_roulette	1	0
+proc	/datum/wires/roulette	New	code/datums/wires/roulette.dm:6	holder	yes	full	proc
+proc	/datum/wires/roulette	interactable	code/datums/wires/roulette.dm:15	user	yes	full	proc
+proc	/datum/wires/roulette	get_status	code/datums/wires/roulette.dm:23		yes	full	proc
+proc	/datum/wires/roulette	on_pulse	code/datums/wires/roulette.dm:32	wire	yes	full	proc
+proc	/datum/wires/roulette	on_cut	code/datums/wires/roulette.dm:52	wire,mend,source	yes	full	proc
 type	/datum/wires/scanner_gate	/datum/wires	code/datums/wires/scanner_gate.dm:2	live	datum_wires_scanner_gate	1	0
 proc	/datum/wires/scanner_gate	on_pulse	code/datums/wires/scanner_gate.dm:7	wire,user	yes	full	proc
 proc	/datum/wires/scanner_gate	get_status	code/datums/wires/scanner_gate.dm:18		yes	full	proc
@@ -32218,53 +32218,53 @@ type	/datum/battle_arcade_gear/tier_8/armor	/datum/battle_arcade_gear/tier_8	cod
 type	/datum/battle_arcade_gear/tier_9	/datum/battle_arcade_gear	code/game/machinery/computer/arcade/battle_gear.dm:116	live	datum_battle_arcade_gear_tier_9	0	0
 type	/datum/battle_arcade_gear/tier_9/weapon	/datum/battle_arcade_gear/tier_9	code/game/machinery/computer/arcade/battle_gear.dm:119	live	datum_battle_arcade_gear_tier_9_weapon	0	0
 type	/datum/battle_arcade_gear/tier_9/armor	/datum/battle_arcade_gear/tier_9	code/game/machinery/computer/arcade/battle_gear.dm:124	live	datum_battle_arcade_gear_tier_9_armor	0	0
-type	/datum/orion_event	/datum	code/game/machinery/computer/arcade/orion_event.dm:4	inert	datum_orion_event	0	0
-proc	/datum/orion_event	on_select	code/game/machinery/computer/arcade/orion_event.dm:29	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc root
-proc	/datum/orion_event	response	code/game/machinery/computer/arcade/orion_event.dm:42	game,choice	no	-	proc root
-proc	/datum/orion_event	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:55	game,gamer	no	-	proc root
-type	/datum/orion_event/engine_part	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:66	inert	datum_orion_event_engine_part	0	0
-proc	/datum/orion_event/engine_part	on_select	code/game/machinery/computer/arcade/orion_event.dm:75	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
-proc	/datum/orion_event/engine_part	response	code/game/machinery/computer/arcade/orion_event.dm:81	game,choice	no	-	proc
-type	/datum/orion_event/electronic_part	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:93	inert	datum_orion_event_electronic_part	0	0
-proc	/datum/orion_event/electronic_part	on_select	code/game/machinery/computer/arcade/orion_event.dm:101	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
-proc	/datum/orion_event/electronic_part	response	code/game/machinery/computer/arcade/orion_event.dm:107	game,choice	no	-	proc
-proc	/datum/orion_event/electronic_part	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:115	game,gamer	no	-	proc
-proc	/datum/orion_event/electronic_part	revert_random	code/game/machinery/computer/arcade/orion_event.dm:125	game,oldfood,oldfuel	no	-	proc root
-type	/datum/orion_event/hull_part	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:138	inert	datum_orion_event_hull_part	0	0
-proc	/datum/orion_event/hull_part	on_select	code/game/machinery/computer/arcade/orion_event.dm:145	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
-proc	/datum/orion_event/hull_part	response	code/game/machinery/computer/arcade/orion_event.dm:151	game,choice	no	-	proc
-proc	/datum/orion_event/hull_part	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:159	game,gamer	no	-	proc
-proc	/datum/orion_event/hull_part	fix_floor	code/game/machinery/computer/arcade/orion_event.dm:171	game	no	-	proc root
-type	/datum/orion_event/old_ship	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:181	inert	datum_orion_event_old_ship	0	0
-proc	/datum/orion_event/old_ship	response	code/game/machinery/computer/arcade/orion_event.dm:187	game,choice	no	-	proc
-proc	/datum/orion_event/old_ship	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:192	game,gamer	no	-	proc
-type	/datum/orion_event/exploring_derelict	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:201	inert	datum_orion_event_exploring_derelict	0	0
-proc	/datum/orion_event/exploring_derelict	on_select	code/game/machinery/computer/arcade/orion_event.dm:206	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
-proc	/datum/orion_event/exploring_derelict	response	code/game/machinery/computer/arcade/orion_event.dm:234	game,choice	no	-	proc
-type	/datum/orion_event/raiders	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:241	inert	datum_orion_event_raiders	0	0
-proc	/datum/orion_event/raiders	on_select	code/game/machinery/computer/arcade/orion_event.dm:245	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
-proc	/datum/orion_event/raiders	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:260	game,gamer	no	-	proc
-type	/datum/orion_event/illness	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:270	inert	datum_orion_event_illness	0	0
-proc	/datum/orion_event/illness	on_select	code/game/machinery/computer/arcade/orion_event.dm:275	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
-proc	/datum/orion_event/illness	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:280	game,gamer	no	-	proc
-type	/datum/orion_event/flux	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:301	inert	datum_orion_event_flux	0	0
-proc	/datum/orion_event/flux	response	code/game/machinery/computer/arcade/orion_event.dm:307	game,choice	no	-	proc
-proc	/datum/orion_event/flux	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:317	game,gamer	no	-	proc
-type	/datum/orion_event/changeling_infiltration	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:327	inert	datum_orion_event_changeling_infiltration	0	0
-proc	/datum/orion_event/changeling_infiltration	on_select	code/game/machinery/computer/arcade/orion_event.dm:331	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
-type	/datum/orion_event/changeling_attack	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:349	inert	datum_orion_event_changeling_attack	0	0
-proc	/datum/orion_event/changeling_attack	on_select	code/game/machinery/computer/arcade/orion_event.dm:352	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
-type	/datum/orion_event/black_hole	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:401	inert	datum_orion_event_black_hole	0	0
-proc	/datum/orion_event/black_hole	response	code/game/machinery/computer/arcade/orion_event.dm:408	game,choice	no	-	proc
-type	/datum/orion_event/black_hole_death	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:424	inert	datum_orion_event_black_hole_death	0	0
-proc	/datum/orion_event/black_hole_death	response	code/game/machinery/computer/arcade/orion_event.dm:431	game,choice	no	-	proc
-proc	/datum/orion_event/black_hole_death	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:435	game,gamer	no	-	proc
-type	/datum/orion_event/space_port	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:448	inert	datum_orion_event_space_port	0	0
-proc	/datum/orion_event/space_port	on_select	code/game/machinery/computer/arcade/orion_event.dm:455	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
-proc	/datum/orion_event/space_port	response	code/game/machinery/computer/arcade/orion_event.dm:480	game,choice	no	-	proc
-type	/datum/orion_event/space_port/tau_ceti	/datum/orion_event/space_port	code/game/machinery/computer/arcade/orion_event.dm:486	inert	datum_orion_event_space_port_tau_ceti	0	0
-type	/datum/orion_event/space_port_raid	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:495	inert	datum_orion_event_space_port_raid	0	0
-proc	/datum/orion_event/space_port_raid	on_select	code/game/machinery/computer/arcade/orion_event.dm:499	game,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc
+type	/datum/orion_event	/datum	code/game/machinery/computer/arcade/orion_event.dm:4	live	datum_orion_event	1	0
+proc	/datum/orion_event	on_select	code/game/machinery/computer/arcade/orion_event.dm:29	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc root
+proc	/datum/orion_event	response	code/game/machinery/computer/arcade/orion_event.dm:42	game,choice	yes	full	proc root
+proc	/datum/orion_event	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:55	game,gamer	yes	full	proc root
+type	/datum/orion_event/engine_part	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:66	live	datum_orion_event_engine_part	1	0
+proc	/datum/orion_event/engine_part	on_select	code/game/machinery/computer/arcade/orion_event.dm:75	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
+proc	/datum/orion_event/engine_part	response	code/game/machinery/computer/arcade/orion_event.dm:81	game,choice	yes	full	proc
+type	/datum/orion_event/electronic_part	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:93	live	datum_orion_event_electronic_part	1	0
+proc	/datum/orion_event/electronic_part	on_select	code/game/machinery/computer/arcade/orion_event.dm:101	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
+proc	/datum/orion_event/electronic_part	response	code/game/machinery/computer/arcade/orion_event.dm:107	game,choice	yes	full	proc
+proc	/datum/orion_event/electronic_part	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:115	game,gamer	yes	full	proc
+proc	/datum/orion_event/electronic_part	revert_random	code/game/machinery/computer/arcade/orion_event.dm:125	game,oldfood,oldfuel	yes	full	proc root
+type	/datum/orion_event/hull_part	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:138	live	datum_orion_event_hull_part	1	0
+proc	/datum/orion_event/hull_part	on_select	code/game/machinery/computer/arcade/orion_event.dm:145	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
+proc	/datum/orion_event/hull_part	response	code/game/machinery/computer/arcade/orion_event.dm:151	game,choice	yes	full	proc
+proc	/datum/orion_event/hull_part	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:159	game,gamer	yes	full	proc
+proc	/datum/orion_event/hull_part	fix_floor	code/game/machinery/computer/arcade/orion_event.dm:171	game	yes	full	proc root
+type	/datum/orion_event/old_ship	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:181	live	datum_orion_event_old_ship	1	0
+proc	/datum/orion_event/old_ship	response	code/game/machinery/computer/arcade/orion_event.dm:187	game,choice	yes	full	proc
+proc	/datum/orion_event/old_ship	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:192	game,gamer	yes	full	proc
+type	/datum/orion_event/exploring_derelict	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:201	live	datum_orion_event_exploring_derelict	1	0
+proc	/datum/orion_event/exploring_derelict	on_select	code/game/machinery/computer/arcade/orion_event.dm:206	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
+proc	/datum/orion_event/exploring_derelict	response	code/game/machinery/computer/arcade/orion_event.dm:234	game,choice	yes	full	proc
+type	/datum/orion_event/raiders	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:241	live	datum_orion_event_raiders	1	0
+proc	/datum/orion_event/raiders	on_select	code/game/machinery/computer/arcade/orion_event.dm:245	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
+proc	/datum/orion_event/raiders	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:260	game,gamer	yes	full	proc
+type	/datum/orion_event/illness	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:270	live	datum_orion_event_illness	1	0
+proc	/datum/orion_event/illness	on_select	code/game/machinery/computer/arcade/orion_event.dm:275	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
+proc	/datum/orion_event/illness	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:280	game,gamer	yes	full	proc
+type	/datum/orion_event/flux	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:301	live	datum_orion_event_flux	1	0
+proc	/datum/orion_event/flux	response	code/game/machinery/computer/arcade/orion_event.dm:307	game,choice	yes	full	proc
+proc	/datum/orion_event/flux	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:317	game,gamer	yes	full	proc
+type	/datum/orion_event/changeling_infiltration	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:327	live	datum_orion_event_changeling_infiltration	1	0
+proc	/datum/orion_event/changeling_infiltration	on_select	code/game/machinery/computer/arcade/orion_event.dm:331	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
+type	/datum/orion_event/changeling_attack	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:349	live	datum_orion_event_changeling_attack	1	0
+proc	/datum/orion_event/changeling_attack	on_select	code/game/machinery/computer/arcade/orion_event.dm:352	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
+type	/datum/orion_event/black_hole	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:401	live	datum_orion_event_black_hole	1	0
+proc	/datum/orion_event/black_hole	response	code/game/machinery/computer/arcade/orion_event.dm:408	game,choice	yes	full	proc
+type	/datum/orion_event/black_hole_death	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:424	live	datum_orion_event_black_hole_death	1	0
+proc	/datum/orion_event/black_hole_death	response	code/game/machinery/computer/arcade/orion_event.dm:431	game,choice	yes	full	proc
+proc	/datum/orion_event/black_hole_death	emag_effect	code/game/machinery/computer/arcade/orion_event.dm:435	game,gamer	yes	full	proc
+type	/datum/orion_event/space_port	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:448	live	datum_orion_event_space_port	1	0
+proc	/datum/orion_event/space_port	on_select	code/game/machinery/computer/arcade/orion_event.dm:455	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
+proc	/datum/orion_event/space_port	response	code/game/machinery/computer/arcade/orion_event.dm:480	game,choice	yes	full	proc
+type	/datum/orion_event/space_port/tau_ceti	/datum/orion_event/space_port	code/game/machinery/computer/arcade/orion_event.dm:486	live	datum_orion_event_space_port_tau_ceti	0	0
+type	/datum/orion_event/space_port_raid	/datum/orion_event	code/game/machinery/computer/arcade/orion_event.dm:495	live	datum_orion_event_space_port_raid	1	0
+proc	/datum/orion_event/space_port_raid	on_select	code/game/machinery/computer/arcade/orion_event.dm:499	game,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc
 type	/datum/orderable_item	/datum	code/game/machinery/computer/orders/order_items/order_datum.dm:4	live	datum_orderable_item	1	0
 proc	/datum/orderable_item	New	code/game/machinery/computer/orders/order_items/order_datum.dm:16		yes	full	proc
 proc	/datum/orderable_item	get_purchased_item	code/game/machinery/computer/orders/order_items/order_datum.dm:29	user,card	yes	full	proc root
@@ -66305,10 +66305,10 @@ proc	/obj/item/melee/energy/sword/bananium	make_less_slippery	code/modules/antag
 proc	/obj/item/melee/energy/sword/bananium	is_active	code/modules/antagonists/clown_ops/clown_weapons.dm:80		yes	full	proc root
 proc	/obj/item/melee/energy/sword/bananium	item_interaction	code/modules/antagonists/clown_ops/clown_weapons.dm:83	user,tool,modifiers	yes	full	proc
 proc	/obj/item/melee/energy/sword/bananium	suicide_act	code/modules/antagonists/clown_ops/clown_weapons.dm:95	user	yes	full	proc
-type	/obj/item/melee/energy/sword/holographic	/obj/item/melee/energy/sword	code/modules/holodeck/items.dm:11	inert	obj_item_melee_energy_sword_holographic	0	0
-proc	/obj/item/melee/energy/sword/holographic	Initialize	code/modules/holodeck/items.dm:24	mapload	no	-	proc
-type	/obj/item/melee/energy/sword/holographic/green	/obj/item/melee/energy/sword/holographic	code/modules/holodeck/items.dm:30	inert	obj_item_melee_energy_sword_holographic_green	0	0
-type	/obj/item/melee/energy/sword/holographic/red	/obj/item/melee/energy/sword/holographic	code/modules/holodeck/items.dm:33	inert	obj_item_melee_energy_sword_holographic_red	0	0
+type	/obj/item/melee/energy/sword/holographic	/obj/item/melee/energy/sword	code/modules/holodeck/items.dm:11	live	obj_item_melee_energy_sword_holographic	1	0
+proc	/obj/item/melee/energy/sword/holographic	Initialize	code/modules/holodeck/items.dm:24	mapload	yes	full	proc
+type	/obj/item/melee/energy/sword/holographic/green	/obj/item/melee/energy/sword/holographic	code/modules/holodeck/items.dm:30	live	obj_item_melee_energy_sword_holographic_green	0	0
+type	/obj/item/melee/energy/sword/holographic/red	/obj/item/melee/energy/sword/holographic	code/modules/holodeck/items.dm:33	live	obj_item_melee_energy_sword_holographic_red	0	0
 type	/obj/item/melee/energy/blade	/obj/item/melee/energy	code/game/objects/items/weaponry/melee/energy.dm:344	live	obj_item_melee_energy_blade	1	0
 proc	/obj/item/melee/energy/blade	Initialize	code/game/objects/items/weaponry/melee/energy.dm:367	mapload	yes	full	proc
 proc	/obj/item/melee/energy/blade	Destroy	code/game/objects/items/weaponry/melee/energy.dm:377		yes	full	proc
@@ -69942,8 +69942,8 @@ type	/obj/item/toy/xmas_cracker	/obj/item/toy	code/modules/events/holiday/xmas.d
 proc	/obj/item/toy/xmas_cracker	attack	code/modules/events/holiday/xmas.dm:10	target,user	yes	full	proc
 type	/obj/item/toy/hazard_warning	/obj/item/toy	code/modules/fishing/fishing_equipment.dm:898	live	obj_item_toy_hazard_warning	0	0
 type	/obj/item/toy/hazard_warning/plasma	/obj/item/toy/hazard_warning	code/modules/fishing/fishing_equipment.dm:908	live	obj_item_toy_hazard_warning_plasma	0	0
-type	/obj/item/toy/dodgeball	/obj/item/toy	code/modules/holodeck/items.dm:54	inert	obj_item_toy_dodgeball	0	0
-proc	/obj/item/toy/dodgeball	throw_impact	code/modules/holodeck/items.dm:61	hit_atom,throwingdatum	no	-	proc
+type	/obj/item/toy/dodgeball	/obj/item/toy	code/modules/holodeck/items.dm:54	live	obj_item_toy_dodgeball	1	0
+proc	/obj/item/toy/dodgeball	throw_impact	code/modules/holodeck/items.dm:61	hit_atom,throwingdatum	yes	full	proc
 type	/obj/item/stamp	/obj/item	code/modules/paperwork/stamps.dm:2	live	obj_item_stamp	1	1
 proc	/obj/item/stamp	suicide_act	code/modules/paperwork/stamps.dm:17	user	yes	full	proc
 proc	/obj/item/stamp	get_writing_implement_details	code/modules/paperwork/stamps.dm:22		yes	full	proc
@@ -72114,10 +72114,10 @@ type	/obj/item/circuitboard/computer/libraryconsole/bookconsole	/obj/item/circui
 type	/obj/item/circuitboard/computer/monastery_shuttle	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:288	live	obj_item_circuitboard_computer_monastery_shuttle	0	0
 type	/obj/item/circuitboard/computer/olddoor	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:293	live	obj_item_circuitboard_computer_olddoor	0	0
 type	/obj/item/circuitboard/computer/pod	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:298	live	obj_item_circuitboard_computer_pod	0	0
-type	/obj/item/circuitboard/computer/slot_machine	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:303	inert	obj_item_circuitboard_computer_slot_machine	0	0
-proc	/obj/item/circuitboard/computer/slot_machine	examine	code/game/objects/items/circuitboards/computer_circuitboards.dm:321	user	no	-	proc
-proc	/obj/item/circuitboard/computer/slot_machine	screwdriver_act	code/game/objects/items/circuitboards/computer_circuitboards.dm:330	user,tool	no	-	proc
-proc	/obj/item/circuitboard/computer/slot_machine	emag_act	code/game/objects/items/circuitboards/computer_circuitboards.dm:342	user,emag_card	no	-	proc
+type	/obj/item/circuitboard/computer/slot_machine	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:303	live	obj_item_circuitboard_computer_slot_machine	1	0
+proc	/obj/item/circuitboard/computer/slot_machine	examine	code/game/objects/items/circuitboards/computer_circuitboards.dm:321	user	yes	full	proc
+proc	/obj/item/circuitboard/computer/slot_machine	screwdriver_act	code/game/objects/items/circuitboards/computer_circuitboards.dm:330	user,tool	yes	full	proc
+proc	/obj/item/circuitboard/computer/slot_machine	emag_act	code/game/objects/items/circuitboards/computer_circuitboards.dm:342	user,emag_card	yes	full	proc
 type	/obj/item/circuitboard/computer/swfdoor	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:352	live	obj_item_circuitboard_computer_swfdoor	0	0
 type	/obj/item/circuitboard/computer/syndicate_shuttle	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:357	live	obj_item_circuitboard_computer_syndicate_shuttle	1	0
 proc	/obj/item/circuitboard/computer/syndicate_shuttle	Initialize	code/game/objects/items/circuitboards/computer_circuitboards.dm:364	mapload	yes	full	proc
@@ -72238,9 +72238,9 @@ proc	/obj/item/launchpad_remote	ui_act	code/game/machinery/launch_pad.dm:389	act
 type	/obj/item/producepad	/obj/item	code/game/machinery/prisonlabor.dm:224	live	obj_item_producepad	1	1
 proc	/obj/item/producepad	Initialize	code/game/machinery/prisonlabor.dm:231	mapload	yes	full	proc
 proc	/obj/item/producepad	Destroy	code/game/machinery/prisonlabor.dm:235	force	yes	full	proc
-type	/obj/item/roulette_wheel_beacon	/obj/item	code/game/machinery/roulette_machine.dm:452	inert	obj_item_roulette_wheel_beacon	0	0
-proc	/obj/item/roulette_wheel_beacon	attack_self	code/game/machinery/roulette_machine.dm:458		no	-	proc
-proc	/obj/item/roulette_wheel_beacon	launch_payload	code/game/machinery/roulette_machine.dm:465		no	-	proc root
+type	/obj/item/roulette_wheel_beacon	/obj/item	code/game/machinery/roulette_machine.dm:452	live	obj_item_roulette_wheel_beacon	1	0
+proc	/obj/item/roulette_wheel_beacon	attack_self	code/game/machinery/roulette_machine.dm:458		yes	full	proc
+proc	/obj/item/roulette_wheel_beacon	launch_payload	code/game/machinery/roulette_machine.dm:465		yes	full	proc root
 type	/obj/item/sbeacondrop	/obj/item	code/game/machinery/syndicatebeacon.dm:200	live	obj_item_sbeacondrop	1	0
 proc	/obj/item/sbeacondrop	attack_self	code/game/machinery/syndicatebeacon.dm:211	user	yes	full	proc
 type	/obj/item/sbeacondrop/no_escape	/obj/item/sbeacondrop	code/game/machinery/syndicatebeacon.dm:220	live	obj_item_sbeacondrop_no_escape	0	0
@@ -73320,10 +73320,10 @@ proc	/obj/item/bounty_cube/debug_cube	attack_self	code/game/machinery/civilian_b
 type	/obj/item/civ_bounty_beacon	/obj/item	code/game/machinery/civilian_bounty/bounty_machinery.dm:423	live	obj_item_civ_bounty_beacon	1	0
 proc	/obj/item/civ_bounty_beacon	attack_self	code/game/machinery/civilian_bounty/bounty_machinery.dm:429		yes	full	proc
 proc	/obj/item/civ_bounty_beacon	launch_payload	code/game/machinery/civilian_bounty/bounty_machinery.dm:433		yes	full	proc root
-type	/obj/item/orion_ship	/obj/item	code/game/machinery/computer/arcade/orion.dm:497	inert	obj_item_orion_ship	0	0
-proc	/obj/item/orion_ship	examine	code/game/machinery/computer/arcade/orion.dm:505	user	no	-	proc
-proc	/obj/item/orion_ship	attack_self	code/game/machinery/computer/arcade/orion.dm:514	user	no	-	proc
-proc	/obj/item/orion_ship	commit_explosion	code/game/machinery/computer/arcade/orion.dm:524	dialogue_level	no	-	proc root
+type	/obj/item/orion_ship	/obj/item	code/game/machinery/computer/arcade/orion.dm:497	live	obj_item_orion_ship	1	0
+proc	/obj/item/orion_ship	examine	code/game/machinery/computer/arcade/orion.dm:505	user	yes	full	proc
+proc	/obj/item/orion_ship	attack_self	code/game/machinery/computer/arcade/orion.dm:514	user	yes	full	proc
+proc	/obj/item/orion_ship	commit_explosion	code/game/machinery/computer/arcade/orion.dm:524	dialogue_level	yes	full	proc root
 type	/obj/item/air_sensor	/obj/item	code/game/machinery/computer/atmos_computers/_air_sensor.dm:166	live	obj_item_air_sensor	1	0
 proc	/obj/item/air_sensor	Initialize	code/game/machinery/computer/atmos_computers/_air_sensor.dm:172	mapload,inlet,outlet	yes	full	proc
 proc	/obj/item/air_sensor	add_context	code/game/machinery/computer/atmos_computers/_air_sensor.dm:176	source,context,held_item,user	stub	deferred	proc
@@ -78899,40 +78899,40 @@ proc	/obj/item/extinguisher/crafted	attack_self	code/game/objects/items/tools/ex
 type	/obj/item/extinguisher/advanced	/obj/item/extinguisher	code/game/objects/items/tools/extinguisher.dm:194	live	obj_item_extinguisher_advanced	0	0
 type	/obj/item/extinguisher/advanced/empty	/obj/item/extinguisher/advanced	code/game/objects/items/tools/extinguisher.dm:214	live	obj_item_extinguisher_advanced_empty	0	0
 type	/obj/item/extinguisher/anti	/obj/item/extinguisher	code/game/objects/items/tools/extinguisher.dm:389	live	obj_item_extinguisher_anti	0	0
-type	/obj/item/tcgcard	/obj/item	code/game/objects/items/tcg/tcg.dm:5	inert	obj_item_tcgcard	0	0
-proc	/obj/item/tcgcard	Initialize	code/game/objects/items/tcg/tcg.dm:21	mapload,datum_series,datum_id	no	-	proc
-proc	/obj/item/tcgcard	extract_datum	code/game/objects/items/tcg/tcg.dm:47		no	-	proc root
-proc	/obj/item/tcgcard	get_name_chaser	code/game/objects/items/tcg/tcg.dm:55	user,name_chaser	no	-	proc
-proc	/obj/item/tcgcard	get_cached_flat_icon	code/game/objects/items/tcg/tcg.dm:70		no	-	proc root
-proc	/obj/item/tcgcard	attack_hand	code/game/objects/items/tcg/tcg.dm:77	user,modifiers	no	-	proc
-proc	/obj/item/tcgcard	attack_self	code/game/objects/items/tcg/tcg.dm:100	user	no	-	proc
-proc	/obj/item/tcgcard	update_name	code/game/objects/items/tcg/tcg.dm:104	updates	no	-	proc
-proc	/obj/item/tcgcard	update_desc	code/game/objects/items/tcg/tcg.dm:112	updates	no	-	proc
-proc	/obj/item/tcgcard	update_icon_state	code/game/objects/items/tcg/tcg.dm:120		no	-	proc
-proc	/obj/item/tcgcard	item_interaction	code/game/objects/items/tcg/tcg.dm:131	user,tool,modifiers	no	-	proc
-proc	/obj/item/tcgcard	check_menu	code/game/objects/items/tcg/tcg.dm:155	user	no	-	proc root
-proc	/obj/item/tcgcard	tap_card	code/game/objects/items/tcg/tcg.dm:162	user	no	-	proc root
-proc	/obj/item/tcgcard	flip_card	code/game/objects/items/tcg/tcg.dm:171	user	no	-	proc root
-type	/obj/item/tcgcard_deck	/obj/item	code/game/objects/items/tcg/tcg.dm:189	inert	obj_item_tcgcard_deck	0	0
-proc	/obj/item/tcgcard_deck	Initialize	code/game/objects/items/tcg/tcg.dm:201	mapload	no	-	proc
-proc	/obj/item/tcgcard_deck	update_icon_state	code/game/objects/items/tcg/tcg.dm:206		no	-	proc
-proc	/obj/item/tcgcard_deck	examine	code/game/objects/items/tcg/tcg.dm:222	user	no	-	proc
-proc	/obj/item/tcgcard_deck	attack_hand	code/game/objects/items/tcg/tcg.dm:226	user,modifiers	no	-	proc
-proc	/obj/item/tcgcard_deck	Destroy	code/game/objects/items/tcg/tcg.dm:248		no	-	proc
-proc	/obj/item/tcgcard_deck	check_menu	code/game/objects/items/tcg/tcg.dm:254	user	no	-	proc root
-proc	/obj/item/tcgcard_deck	item_interaction	code/game/objects/items/tcg/tcg.dm:261	user,tool,modifiers	no	-	proc
-proc	/obj/item/tcgcard_deck	attack_self	code/game/objects/items/tcg/tcg.dm:272	user	no	-	proc
-proc	/obj/item/tcgcard_deck	draw_card	code/game/objects/items/tcg/tcg.dm:279	user	no	-	proc root
-proc	/obj/item/tcgcard_deck	shuffle_deck	code/game/objects/items/tcg/tcg.dm:299	user,visable	no	-	proc root
-proc	/obj/item/tcgcard_deck	flip_deck	code/game/objects/items/tcg/tcg.dm:313		no	-	proc root
-proc	/obj/item/tcgcard_deck	on_item_removed	code/game/objects/items/tcg/tcg.dm:326	storage_datum,thing,remove_to_loc,silent	no	-	proc root
-type	/obj/item/cardpack	/obj/item	code/game/objects/items/tcg/tcg.dm:339	inert	obj_item_cardpack	0	0
-proc	/obj/item/cardpack	Initialize	code/game/objects/items/tcg/tcg.dm:389	mapload	no	-	proc
-proc	/obj/item/cardpack	attack_self	code/game/objects/items/tcg/tcg.dm:395	user	no	-	proc
-proc	/obj/item/cardpack	buildCardListWithRarity	code/game/objects/items/tcg/tcg.dm:438	card_cnt,rarity_cnt	no	-	proc root
-proc	/obj/item/cardpack	returnCardsByRarity	code/game/objects/items/tcg/tcg.dm:446	cardCount,rarity_table	no	-	proc root
-type	/obj/item/cardpack/series_one	/obj/item/cardpack	code/game/objects/items/tcg/tcg.dm:370	inert	obj_item_cardpack_series_one	0	0
-type	/obj/item/cardpack/resin	/obj/item/cardpack	code/game/objects/items/tcg/tcg.dm:377	inert	obj_item_cardpack_resin	0	0
+type	/obj/item/tcgcard	/obj/item	code/game/objects/items/tcg/tcg.dm:5	live	obj_item_tcgcard	1	0
+proc	/obj/item/tcgcard	Initialize	code/game/objects/items/tcg/tcg.dm:21	mapload,datum_series,datum_id	yes	full	proc
+proc	/obj/item/tcgcard	extract_datum	code/game/objects/items/tcg/tcg.dm:47		yes	full	proc root
+proc	/obj/item/tcgcard	get_name_chaser	code/game/objects/items/tcg/tcg.dm:55	user,name_chaser	yes	full	proc
+proc	/obj/item/tcgcard	get_cached_flat_icon	code/game/objects/items/tcg/tcg.dm:70		yes	deferred	proc root
+proc	/obj/item/tcgcard	attack_hand	code/game/objects/items/tcg/tcg.dm:77	user,modifiers	yes	full	proc
+proc	/obj/item/tcgcard	attack_self	code/game/objects/items/tcg/tcg.dm:100	user	yes	full	proc
+proc	/obj/item/tcgcard	update_name	code/game/objects/items/tcg/tcg.dm:104	updates	yes	full	proc
+proc	/obj/item/tcgcard	update_desc	code/game/objects/items/tcg/tcg.dm:112	updates	yes	full	proc
+proc	/obj/item/tcgcard	update_icon_state	code/game/objects/items/tcg/tcg.dm:120		yes	full	proc
+proc	/obj/item/tcgcard	item_interaction	code/game/objects/items/tcg/tcg.dm:131	user,tool,modifiers	yes	full	proc
+proc	/obj/item/tcgcard	check_menu	code/game/objects/items/tcg/tcg.dm:155	user	yes	full	proc root
+proc	/obj/item/tcgcard	tap_card	code/game/objects/items/tcg/tcg.dm:162	user	yes	full	proc root
+proc	/obj/item/tcgcard	flip_card	code/game/objects/items/tcg/tcg.dm:171	user	yes	full	proc root
+type	/obj/item/tcgcard_deck	/obj/item	code/game/objects/items/tcg/tcg.dm:189	live	obj_item_tcgcard_deck	1	0
+proc	/obj/item/tcgcard_deck	Initialize	code/game/objects/items/tcg/tcg.dm:201	mapload	yes	full	proc
+proc	/obj/item/tcgcard_deck	update_icon_state	code/game/objects/items/tcg/tcg.dm:206		yes	full	proc
+proc	/obj/item/tcgcard_deck	examine	code/game/objects/items/tcg/tcg.dm:222	user	yes	full	proc
+proc	/obj/item/tcgcard_deck	attack_hand	code/game/objects/items/tcg/tcg.dm:226	user,modifiers	yes	full	proc
+proc	/obj/item/tcgcard_deck	Destroy	code/game/objects/items/tcg/tcg.dm:248		yes	full	proc
+proc	/obj/item/tcgcard_deck	check_menu	code/game/objects/items/tcg/tcg.dm:254	user	yes	full	proc root
+proc	/obj/item/tcgcard_deck	item_interaction	code/game/objects/items/tcg/tcg.dm:261	user,tool,modifiers	yes	full	proc
+proc	/obj/item/tcgcard_deck	attack_self	code/game/objects/items/tcg/tcg.dm:272	user	yes	full	proc
+proc	/obj/item/tcgcard_deck	draw_card	code/game/objects/items/tcg/tcg.dm:279	user	yes	full	proc root
+proc	/obj/item/tcgcard_deck	shuffle_deck	code/game/objects/items/tcg/tcg.dm:299	user,visable	yes	full	proc root
+proc	/obj/item/tcgcard_deck	flip_deck	code/game/objects/items/tcg/tcg.dm:313		yes	full	proc root
+proc	/obj/item/tcgcard_deck	on_item_removed	code/game/objects/items/tcg/tcg.dm:326	storage_datum,thing,remove_to_loc,silent	yes	full	proc root
+type	/obj/item/cardpack	/obj/item	code/game/objects/items/tcg/tcg.dm:339	live	obj_item_cardpack	1	0
+proc	/obj/item/cardpack	Initialize	code/game/objects/items/tcg/tcg.dm:389	mapload	yes	full	proc
+proc	/obj/item/cardpack	attack_self	code/game/objects/items/tcg/tcg.dm:395	user	yes	full	proc
+proc	/obj/item/cardpack	buildCardListWithRarity	code/game/objects/items/tcg/tcg.dm:438	card_cnt,rarity_cnt	yes	full	proc root
+proc	/obj/item/cardpack	returnCardsByRarity	code/game/objects/items/tcg/tcg.dm:446	cardCount,rarity_table	yes	full	proc root
+type	/obj/item/cardpack/series_one	/obj/item/cardpack	code/game/objects/items/tcg/tcg.dm:370	live	obj_item_cardpack_series_one	0	0
+type	/obj/item/cardpack/resin	/obj/item/cardpack	code/game/objects/items/tcg/tcg.dm:377	live	obj_item_cardpack_resin	0	0
 type	/obj/item/coin	/obj/item	code/modules/mining/ores_coins.dm:521	live	obj_item_coin	1	1
 proc	/obj/item/coin	Initialize	code/modules/mining/ores_coins.dm:541	mapload	yes	full	proc
 proc	/obj/item/coin	finalize_material_effects	code/modules/mining/ores_coins.dm:549	materials	yes	full	proc
@@ -85648,57 +85648,57 @@ proc	/obj/machinery/computer/bank_machine	ui_act	code/game/machinery/bank_machin
 proc	/obj/machinery/computer/bank_machine	on_changed_z_level	code/game/machinery/bank_machine.dm:127		yes	full	proc
 proc	/obj/machinery/computer/bank_machine	end_siphon	code/game/machinery/bank_machine.dm:133		yes	full	proc root
 proc	/obj/machinery/computer/bank_machine	start_siphon	code/game/machinery/bank_machine.dm:141	user	yes	full	proc root
-type	/obj/machinery/computer/slot_machine	/obj/machinery/computer	code/game/machinery/slotmachine.dm:23	inert	obj_machinery_computer_slot_machine	0	0
-proc	/obj/machinery/computer/slot_machine	Initialize	code/game/machinery/slotmachine.dm:80	mapload	no	-	proc
-proc	/obj/machinery/computer/slot_machine	Destroy	code/game/machinery/slotmachine.dm:104		no	-	proc
-proc	/obj/machinery/computer/slot_machine	make_machine_name	code/game/machinery/slotmachine.dm:110		no	-	proc root
-proc	/obj/machinery/computer/slot_machine	build_symbol_data	code/game/machinery/slotmachine.dm:116		no	-	proc root
-proc	/obj/machinery/computer/slot_machine	on_deconstruction	code/game/machinery/slotmachine.dm:124	disassembled	no	-	proc
-proc	/obj/machinery/computer/slot_machine	process	code/game/machinery/slotmachine.dm:128	seconds_per_tick	no	-	proc
-proc	/obj/machinery/computer/slot_machine	update_icon_state	code/game/machinery/slotmachine.dm:135		no	-	proc
-proc	/obj/machinery/computer/slot_machine	update_overlays	code/game/machinery/slotmachine.dm:142		no	-	proc
-proc	/obj/machinery/computer/slot_machine	item_interaction	code/game/machinery/slotmachine.dm:150	user,inserted,modifiers	no	-	proc
-proc	/obj/machinery/computer/slot_machine	multitool_act	code/game/machinery/slotmachine.dm:217	user,tool	no	-	proc
-proc	/obj/machinery/computer/slot_machine	emag_act	code/game/machinery/slotmachine.dm:230	user,emag_card	no	-	proc
-proc	/obj/machinery/computer/slot_machine	ui_assets	code/game/machinery/slotmachine.dm:240	user	no	-	proc
-proc	/obj/machinery/computer/slot_machine	ui_interact	code/game/machinery/slotmachine.dm:245	user,ui	no	-	proc
-proc	/obj/machinery/computer/slot_machine	ui_static_data	code/game/machinery/slotmachine.dm:252	user	no	-	proc
-proc	/obj/machinery/computer/slot_machine	ui_data	code/game/machinery/slotmachine.dm:262	user	no	-	proc
-proc	/obj/machinery/computer/slot_machine	ui_act	code/game/machinery/slotmachine.dm:280	action,params,ui,state	no	-	proc
-proc	/obj/machinery/computer/slot_machine	emp_act	code/game/machinery/slotmachine.dm:295	severity	no	-	proc
-proc	/obj/machinery/computer/slot_machine	has_funds_to_pay	code/game/machinery/slotmachine.dm:310	payout	no	-	proc root
-proc	/obj/machinery/computer/slot_machine	spin	code/game/machinery/slotmachine.dm:321	user	no	-	proc root
-proc	/obj/machinery/computer/slot_machine	finish_spinning	code/game/machinery/slotmachine.dm:367	user,the_name	no	-	proc root
-proc	/obj/machinery/computer/slot_machine	can_spin	code/game/machinery/slotmachine.dm:373	user	no	-	proc root
-proc	/obj/machinery/computer/slot_machine	randomize_reels	code/game/machinery/slotmachine.dm:389		no	-	proc root
-proc	/obj/machinery/computer/slot_machine	activate_trap	code/game/machinery/slotmachine.dm:396	user	no	-	proc root
-proc	/obj/machinery/computer/slot_machine	give_prizes	code/game/machinery/slotmachine.dm:415	usrname,user	no	-	proc root
-proc	/obj/machinery/computer/slot_machine	clear_winning	code/game/machinery/slotmachine.dm:476		no	-	proc root
-proc	/obj/machinery/computer/slot_machine	check_middle_row_all	code/game/machinery/slotmachine.dm:480	symbol_path	no	-	proc root
-proc	/obj/machinery/computer/slot_machine	get_lines	code/game/machinery/slotmachine.dm:488		no	-	proc root
-proc	/obj/machinery/computer/slot_machine	give_money	code/game/machinery/slotmachine.dm:508	amount	no	-	proc root
-proc	/obj/machinery/computer/slot_machine	give_payout	code/game/machinery/slotmachine.dm:518	amount	no	-	proc root
-proc	/obj/machinery/computer/slot_machine	dispense	code/game/machinery/slotmachine.dm:536	amount,cointype,throwit,target	no	-	proc root
-type	/obj/machinery/computer/slot_machine/command	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:558	inert	obj_machinery_computer_slot_machine_command	0	0
-proc	/obj/machinery/computer/slot_machine/command	Initialize	code/game/machinery/slotmachine.dm:572	mapload	no	-	proc
-type	/obj/machinery/computer/slot_machine/security	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:578	inert	obj_machinery_computer_slot_machine_security	0	0
-proc	/obj/machinery/computer/slot_machine/security	Initialize	code/game/machinery/slotmachine.dm:592	mapload	no	-	proc
-type	/obj/machinery/computer/slot_machine/medical	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:598	inert	obj_machinery_computer_slot_machine_medical	0	0
-proc	/obj/machinery/computer/slot_machine/medical	Initialize	code/game/machinery/slotmachine.dm:612	mapload	no	-	proc
-type	/obj/machinery/computer/slot_machine/engineering	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:618	inert	obj_machinery_computer_slot_machine_engineering	0	0
-proc	/obj/machinery/computer/slot_machine/engineering	Initialize	code/game/machinery/slotmachine.dm:632	mapload	no	-	proc
-type	/obj/machinery/computer/slot_machine/cargo	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:638	inert	obj_machinery_computer_slot_machine_cargo	0	0
-proc	/obj/machinery/computer/slot_machine/cargo	Initialize	code/game/machinery/slotmachine.dm:652	mapload	no	-	proc
-type	/obj/machinery/computer/slot_machine/service	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:658	inert	obj_machinery_computer_slot_machine_service	0	0
-proc	/obj/machinery/computer/slot_machine/service	Initialize	code/game/machinery/slotmachine.dm:672	mapload	no	-	proc
-type	/obj/machinery/computer/slot_machine/science	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:678	inert	obj_machinery_computer_slot_machine_science	0	0
-proc	/obj/machinery/computer/slot_machine/science	Initialize	code/game/machinery/slotmachine.dm:692	mapload	no	-	proc
-type	/obj/machinery/computer/slot_machine/clown	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:698	inert	obj_machinery_computer_slot_machine_clown	0	0
-proc	/obj/machinery/computer/slot_machine/clown	Initialize	code/game/machinery/slotmachine.dm:711	mapload	no	-	proc
-type	/obj/machinery/computer/slot_machine/mime	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:717	inert	obj_machinery_computer_slot_machine_mime	0	0
-proc	/obj/machinery/computer/slot_machine/mime	Initialize	code/game/machinery/slotmachine.dm:730	mapload	no	-	proc
-type	/obj/machinery/computer/slot_machine/syndicate	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:736	inert	obj_machinery_computer_slot_machine_syndicate	0	0
-proc	/obj/machinery/computer/slot_machine/syndicate	Initialize	code/game/machinery/slotmachine.dm:750	mapload	no	-	proc
+type	/obj/machinery/computer/slot_machine	/obj/machinery/computer	code/game/machinery/slotmachine.dm:23	live	obj_machinery_computer_slot_machine	1	0
+proc	/obj/machinery/computer/slot_machine	Initialize	code/game/machinery/slotmachine.dm:80	mapload	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	Destroy	code/game/machinery/slotmachine.dm:104		yes	full	proc
+proc	/obj/machinery/computer/slot_machine	make_machine_name	code/game/machinery/slotmachine.dm:110		yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	build_symbol_data	code/game/machinery/slotmachine.dm:116		yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	on_deconstruction	code/game/machinery/slotmachine.dm:124	disassembled	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	process	code/game/machinery/slotmachine.dm:128	seconds_per_tick	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	update_icon_state	code/game/machinery/slotmachine.dm:135		yes	full	proc
+proc	/obj/machinery/computer/slot_machine	update_overlays	code/game/machinery/slotmachine.dm:142		yes	full	proc
+proc	/obj/machinery/computer/slot_machine	item_interaction	code/game/machinery/slotmachine.dm:150	user,inserted,modifiers	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	multitool_act	code/game/machinery/slotmachine.dm:217	user,tool	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	emag_act	code/game/machinery/slotmachine.dm:230	user,emag_card	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	ui_assets	code/game/machinery/slotmachine.dm:240	user	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	ui_interact	code/game/machinery/slotmachine.dm:245	user,ui	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	ui_static_data	code/game/machinery/slotmachine.dm:252	user	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	ui_data	code/game/machinery/slotmachine.dm:262	user	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	ui_act	code/game/machinery/slotmachine.dm:280	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	emp_act	code/game/machinery/slotmachine.dm:295	severity	yes	full	proc
+proc	/obj/machinery/computer/slot_machine	has_funds_to_pay	code/game/machinery/slotmachine.dm:310	payout	yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	spin	code/game/machinery/slotmachine.dm:321	user	yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	finish_spinning	code/game/machinery/slotmachine.dm:367	user,the_name	yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	can_spin	code/game/machinery/slotmachine.dm:373	user	yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	randomize_reels	code/game/machinery/slotmachine.dm:389		yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	activate_trap	code/game/machinery/slotmachine.dm:396	user	yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	give_prizes	code/game/machinery/slotmachine.dm:415	usrname,user	yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	clear_winning	code/game/machinery/slotmachine.dm:476		yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	check_middle_row_all	code/game/machinery/slotmachine.dm:480	symbol_path	yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	get_lines	code/game/machinery/slotmachine.dm:488		yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	give_money	code/game/machinery/slotmachine.dm:508	amount	yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	give_payout	code/game/machinery/slotmachine.dm:518	amount	yes	full	proc root
+proc	/obj/machinery/computer/slot_machine	dispense	code/game/machinery/slotmachine.dm:536	amount,cointype,throwit,target	yes	full	proc root
+type	/obj/machinery/computer/slot_machine/command	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:558	live	obj_machinery_computer_slot_machine_command	1	0
+proc	/obj/machinery/computer/slot_machine/command	Initialize	code/game/machinery/slotmachine.dm:572	mapload	yes	full	proc
+type	/obj/machinery/computer/slot_machine/security	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:578	live	obj_machinery_computer_slot_machine_security	1	0
+proc	/obj/machinery/computer/slot_machine/security	Initialize	code/game/machinery/slotmachine.dm:592	mapload	yes	full	proc
+type	/obj/machinery/computer/slot_machine/medical	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:598	live	obj_machinery_computer_slot_machine_medical	1	0
+proc	/obj/machinery/computer/slot_machine/medical	Initialize	code/game/machinery/slotmachine.dm:612	mapload	yes	full	proc
+type	/obj/machinery/computer/slot_machine/engineering	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:618	live	obj_machinery_computer_slot_machine_engineering	1	0
+proc	/obj/machinery/computer/slot_machine/engineering	Initialize	code/game/machinery/slotmachine.dm:632	mapload	yes	full	proc
+type	/obj/machinery/computer/slot_machine/cargo	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:638	live	obj_machinery_computer_slot_machine_cargo	1	0
+proc	/obj/machinery/computer/slot_machine/cargo	Initialize	code/game/machinery/slotmachine.dm:652	mapload	yes	full	proc
+type	/obj/machinery/computer/slot_machine/service	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:658	live	obj_machinery_computer_slot_machine_service	1	0
+proc	/obj/machinery/computer/slot_machine/service	Initialize	code/game/machinery/slotmachine.dm:672	mapload	yes	full	proc
+type	/obj/machinery/computer/slot_machine/science	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:678	live	obj_machinery_computer_slot_machine_science	1	0
+proc	/obj/machinery/computer/slot_machine/science	Initialize	code/game/machinery/slotmachine.dm:692	mapload	yes	full	proc
+type	/obj/machinery/computer/slot_machine/clown	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:698	live	obj_machinery_computer_slot_machine_clown	1	0
+proc	/obj/machinery/computer/slot_machine/clown	Initialize	code/game/machinery/slotmachine.dm:711	mapload	yes	full	proc
+type	/obj/machinery/computer/slot_machine/mime	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:717	live	obj_machinery_computer_slot_machine_mime	1	0
+proc	/obj/machinery/computer/slot_machine/mime	Initialize	code/game/machinery/slotmachine.dm:730	mapload	yes	full	proc
+type	/obj/machinery/computer/slot_machine/syndicate	/obj/machinery/computer/slot_machine	code/game/machinery/slotmachine.dm:736	live	obj_machinery_computer_slot_machine_syndicate	1	0
+proc	/obj/machinery/computer/slot_machine/syndicate	Initialize	code/game/machinery/slotmachine.dm:750	mapload	yes	full	proc
 type	/obj/machinery/computer/piratepad_control	/obj/machinery/computer	code/modules/antagonists/pirate/pirate_shuttle_equipment.dm:223	live	obj_machinery_computer_piratepad_control	1	1
 proc	/obj/machinery/computer/piratepad_control	multitool_act	code/game/machinery/civilian_bounty/bounty_machinery.dm:53	user,I	yes	full	proc
 proc	/obj/machinery/computer/piratepad_control	Initialize	code/modules/antagonists/pirate/pirate_shuttle_equipment.dm:248	mapload	yes	full	proc
@@ -86326,59 +86326,59 @@ proc	/obj/machinery/computer/warrant	ui_act	code/game/machinery/computer/warrant
 proc	/obj/machinery/computer/warrant	pay_fine	code/game/machinery/computer/warrant.dm:81	user,params	yes	full	proc root
 proc	/obj/machinery/computer/warrant	print_finish	code/game/machinery/computer/warrant.dm:142	bounty	yes	full	proc root
 proc	/obj/machinery/computer/warrant	print_bounty	code/game/machinery/computer/warrant.dm:150	user,params	yes	full	proc root
-type	/obj/machinery/computer/arcade	/obj/machinery/computer	code/game/machinery/computer/arcade/_arcade.dm:2	inert	obj_machinery_computer_arcade	0	1
-proc	/obj/machinery/computer/arcade	item_interaction	code/game/machinery/computer/arcade/_arcade.dm:16	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/computer/arcade	screwdriver_act	code/game/machinery/computer/arcade/_arcade.dm:46	user,I	no	-	proc
-proc	/obj/machinery/computer/arcade	reset_cabinet	code/game/machinery/computer/arcade/_arcade.dm:53	user	no	-	proc root
-proc	/obj/machinery/computer/arcade	emp_act	code/game/machinery/computer/arcade/_arcade.dm:58	severity	no	-	proc
-proc	/obj/machinery/computer/arcade	prizevend	code/game/machinery/computer/arcade/_arcade.dm:79	user,prizes	no	-	proc root
-proc	/obj/machinery/computer/arcade	victory_tickets	code/game/machinery/computer/arcade/_arcade.dm:102	tickets,sound	no	-	proc root
-type	/obj/machinery/computer/arcade/amputation	/obj/machinery/computer/arcade	code/game/machinery/computer/arcade/amputation.dm:2	inert	obj_machinery_computer_arcade_amputation	0	0
-proc	/obj/machinery/computer/arcade/amputation	attack_tk	code/game/machinery/computer/arcade/amputation.dm:9	user	no	-	proc
-proc	/obj/machinery/computer/arcade/amputation	attack_hand	code/game/machinery/computer/arcade/amputation.dm:12	user,modifiers	no	-	proc
-proc	/obj/machinery/computer/arcade/amputation	do_they_still_have_that_hand	code/game/machinery/computer/arcade/amputation.dm:36	user,chopchop	no	-	proc root
-type	/obj/machinery/computer/arcade/amputation/festive	/obj/machinery/computer/arcade/amputation	code/game/machinery/computer/arcade/amputation.dm:43	inert	obj_machinery_computer_arcade_amputation_festive	0	0
-type	/obj/machinery/computer/arcade/battle	/obj/machinery/computer/arcade	code/game/machinery/computer/arcade/battle.dm:41	inert	obj_machinery_computer_arcade_battle	0	0
-proc	/obj/machinery/computer/arcade/battle	Initialize	code/game/machinery/computer/arcade/battle.dm:111	mapload,C	no	-	proc
-proc	/obj/machinery/computer/arcade/battle	emag_act	code/game/machinery/computer/arcade/battle.dm:123	user,emag_card	no	-	proc
-proc	/obj/machinery/computer/arcade/battle	reset_cabinet	code/game/machinery/computer/arcade/battle.dm:134	user	no	-	proc
-proc	/obj/machinery/computer/arcade/battle	make_boss_name_with_verb	code/game/machinery/computer/arcade/battle.dm:149	boss_verb	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	make_boss_name	code/game/machinery/computer/arcade/battle.dm:161	boss_name,boss_adjective	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	setup_new_opponent	code/game/machinery/computer/arcade/battle.dm:178	user,enemy_gets_first_move	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	on_battle_win	code/game/machinery/computer/arcade/battle.dm:213	user	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	lose_game	code/game/machinery/computer/arcade/battle.dm:247	user	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	user_take_damage	code/game/machinery/computer/arcade/battle.dm:258	user,base_damage_taken	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	process_player_attack	code/game/machinery/computer/arcade/battle.dm:275	user,attack_type	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	successful_counterattack	code/game/machinery/computer/arcade/battle.dm:301	user	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	process_enemy_turn	code/game/machinery/computer/arcade/battle.dm:312	user,defending_flags	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	perform_enemy_turn	code/game/machinery/computer/arcade/battle.dm:342	user,defending_flags	no	-	proc root
-proc	/obj/machinery/computer/arcade/battle	ui_data	code/game/machinery/computer/arcade/battle.dm:370	user	no	-	proc
-proc	/obj/machinery/computer/arcade/battle	ui_static_data	code/game/machinery/computer/arcade/battle.dm:405	user	no	-	proc
-proc	/obj/machinery/computer/arcade/battle	ui_assets	code/game/machinery/computer/arcade/battle.dm:420	user	no	-	proc
-proc	/obj/machinery/computer/arcade/battle	ui_interact	code/game/machinery/computer/arcade/battle.dm:425	user,ui	no	-	proc
-proc	/obj/machinery/computer/arcade/battle	ui_act	code/game/machinery/computer/arcade/battle.dm:433	action,params,ui,state	no	-	proc
-type	/obj/machinery/computer/arcade/orion_trail	/obj/machinery/computer/arcade	code/game/machinery/computer/arcade/orion.dm:4	inert	obj_machinery_computer_arcade_orion_trail	0	1
-proc	/obj/machinery/computer/arcade/orion_trail	Initialize	code/game/machinery/computer/arcade/orion.dm:34	mapload	no	-	proc
-proc	/obj/machinery/computer/arcade/orion_trail	setup_events	code/game/machinery/computer/arcade/orion.dm:44		no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	Destroy	code/game/machinery/computer/arcade/orion.dm:47		no	-	proc
-proc	/obj/machinery/computer/arcade/orion_trail	newgame	code/game/machinery/computer/arcade/orion.dm:81	player	no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	report_player	code/game/machinery/computer/arcade/orion.dm:105	gamer	no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	ui_interact	code/game/machinery/computer/arcade/orion.dm:136	user,ui	no	-	proc
-proc	/obj/machinery/computer/arcade/orion_trail	ui_assets	code/game/machinery/computer/arcade/orion.dm:143	user	no	-	proc
-proc	/obj/machinery/computer/arcade/orion_trail	ui_data	code/game/machinery/computer/arcade/orion.dm:148	user	no	-	proc
-proc	/obj/machinery/computer/arcade/orion_trail	ui_static_data	code/game/machinery/computer/arcade/orion.dm:173	user	no	-	proc
-proc	/obj/machinery/computer/arcade/orion_trail	ui_act	code/game/machinery/computer/arcade/orion.dm:180	action,params,ui,state	no	-	proc
-proc	/obj/machinery/computer/arcade/orion_trail	encounter_event	code/game/machinery/computer/arcade/orion.dm:321	path,gamer,gamer_skill,gamer_skill_level,gamer_skill_rands	no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	set_game_over	code/game/machinery/computer/arcade/orion.dm:335	user,given_reason	no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	death_reason	code/game/machinery/computer/arcade/orion.dm:341	gamer	no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	add_crewmember	code/game/machinery/computer/arcade/orion.dm:372	specific,update	no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	remove_crewmember	code/game/machinery/computer/arcade/orion.dm:390	specific,dont_remove,update	no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	execute_crewmember	code/game/machinery/computer/arcade/orion.dm:415	gamer,target	no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	new_settler_mood	code/game/machinery/computer/arcade/orion.dm:446		no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	win	code/game/machinery/computer/arcade/orion.dm:464	user	no	-	proc root
-proc	/obj/machinery/computer/arcade/orion_trail	emag_act	code/game/machinery/computer/arcade/orion.dm:478	user,emag_card	no	-	proc
-type	/obj/machinery/computer/arcade/orion_trail/kobayashi	/obj/machinery/computer/arcade/orion_trail	code/game/machinery/computer/arcade/orion.dm:52	inert	obj_machinery_computer_arcade_orion_trail_kobayashi	0	0
-proc	/obj/machinery/computer/arcade/orion_trail/kobayashi	setup_events	code/game/machinery/computer/arcade/orion.dm:75		no	-	proc
+type	/obj/machinery/computer/arcade	/obj/machinery/computer	code/game/machinery/computer/arcade/_arcade.dm:2	live	obj_machinery_computer_arcade	1	1
+proc	/obj/machinery/computer/arcade	item_interaction	code/game/machinery/computer/arcade/_arcade.dm:16	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/computer/arcade	screwdriver_act	code/game/machinery/computer/arcade/_arcade.dm:46	user,I	yes	full	proc
+proc	/obj/machinery/computer/arcade	reset_cabinet	code/game/machinery/computer/arcade/_arcade.dm:53	user	yes	full	proc root
+proc	/obj/machinery/computer/arcade	emp_act	code/game/machinery/computer/arcade/_arcade.dm:58	severity	yes	full	proc
+proc	/obj/machinery/computer/arcade	prizevend	code/game/machinery/computer/arcade/_arcade.dm:79	user,prizes	yes	full	proc root
+proc	/obj/machinery/computer/arcade	victory_tickets	code/game/machinery/computer/arcade/_arcade.dm:102	tickets,sound	yes	full	proc root
+type	/obj/machinery/computer/arcade/amputation	/obj/machinery/computer/arcade	code/game/machinery/computer/arcade/amputation.dm:2	live	obj_machinery_computer_arcade_amputation	1	0
+proc	/obj/machinery/computer/arcade/amputation	attack_tk	code/game/machinery/computer/arcade/amputation.dm:9	user	yes	full	proc
+proc	/obj/machinery/computer/arcade/amputation	attack_hand	code/game/machinery/computer/arcade/amputation.dm:12	user,modifiers	yes	full	proc
+proc	/obj/machinery/computer/arcade/amputation	do_they_still_have_that_hand	code/game/machinery/computer/arcade/amputation.dm:36	user,chopchop	yes	full	proc root
+type	/obj/machinery/computer/arcade/amputation/festive	/obj/machinery/computer/arcade/amputation	code/game/machinery/computer/arcade/amputation.dm:43	live	obj_machinery_computer_arcade_amputation_festive	0	0
+type	/obj/machinery/computer/arcade/battle	/obj/machinery/computer/arcade	code/game/machinery/computer/arcade/battle.dm:41	live	obj_machinery_computer_arcade_battle	1	0
+proc	/obj/machinery/computer/arcade/battle	Initialize	code/game/machinery/computer/arcade/battle.dm:111	mapload,C	yes	full	proc
+proc	/obj/machinery/computer/arcade/battle	emag_act	code/game/machinery/computer/arcade/battle.dm:123	user,emag_card	yes	full	proc
+proc	/obj/machinery/computer/arcade/battle	reset_cabinet	code/game/machinery/computer/arcade/battle.dm:134	user	yes	full	proc
+proc	/obj/machinery/computer/arcade/battle	make_boss_name_with_verb	code/game/machinery/computer/arcade/battle.dm:149	boss_verb	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	make_boss_name	code/game/machinery/computer/arcade/battle.dm:161	boss_name,boss_adjective	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	setup_new_opponent	code/game/machinery/computer/arcade/battle.dm:178	user,enemy_gets_first_move	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	on_battle_win	code/game/machinery/computer/arcade/battle.dm:213	user	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	lose_game	code/game/machinery/computer/arcade/battle.dm:247	user	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	user_take_damage	code/game/machinery/computer/arcade/battle.dm:258	user,base_damage_taken	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	process_player_attack	code/game/machinery/computer/arcade/battle.dm:275	user,attack_type	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	successful_counterattack	code/game/machinery/computer/arcade/battle.dm:301	user	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	process_enemy_turn	code/game/machinery/computer/arcade/battle.dm:312	user,defending_flags	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	perform_enemy_turn	code/game/machinery/computer/arcade/battle.dm:342	user,defending_flags	yes	full	proc root
+proc	/obj/machinery/computer/arcade/battle	ui_data	code/game/machinery/computer/arcade/battle.dm:370	user	yes	full	proc
+proc	/obj/machinery/computer/arcade/battle	ui_static_data	code/game/machinery/computer/arcade/battle.dm:405	user	yes	full	proc
+proc	/obj/machinery/computer/arcade/battle	ui_assets	code/game/machinery/computer/arcade/battle.dm:420	user	yes	full	proc
+proc	/obj/machinery/computer/arcade/battle	ui_interact	code/game/machinery/computer/arcade/battle.dm:425	user,ui	yes	full	proc
+proc	/obj/machinery/computer/arcade/battle	ui_act	code/game/machinery/computer/arcade/battle.dm:433	action,params,ui,state	yes	full	proc
+type	/obj/machinery/computer/arcade/orion_trail	/obj/machinery/computer/arcade	code/game/machinery/computer/arcade/orion.dm:4	live	obj_machinery_computer_arcade_orion_trail	1	1
+proc	/obj/machinery/computer/arcade/orion_trail	Initialize	code/game/machinery/computer/arcade/orion.dm:34	mapload	yes	full	proc
+proc	/obj/machinery/computer/arcade/orion_trail	setup_events	code/game/machinery/computer/arcade/orion.dm:44		yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	Destroy	code/game/machinery/computer/arcade/orion.dm:47		yes	full	proc
+proc	/obj/machinery/computer/arcade/orion_trail	newgame	code/game/machinery/computer/arcade/orion.dm:81	player	yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	report_player	code/game/machinery/computer/arcade/orion.dm:105	gamer	yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	ui_interact	code/game/machinery/computer/arcade/orion.dm:136	user,ui	yes	full	proc
+proc	/obj/machinery/computer/arcade/orion_trail	ui_assets	code/game/machinery/computer/arcade/orion.dm:143	user	yes	full	proc
+proc	/obj/machinery/computer/arcade/orion_trail	ui_data	code/game/machinery/computer/arcade/orion.dm:148	user	yes	full	proc
+proc	/obj/machinery/computer/arcade/orion_trail	ui_static_data	code/game/machinery/computer/arcade/orion.dm:173	user	yes	full	proc
+proc	/obj/machinery/computer/arcade/orion_trail	ui_act	code/game/machinery/computer/arcade/orion.dm:180	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/computer/arcade/orion_trail	encounter_event	code/game/machinery/computer/arcade/orion.dm:321	path,gamer,gamer_skill,gamer_skill_level,gamer_skill_rands	yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	set_game_over	code/game/machinery/computer/arcade/orion.dm:335	user,given_reason	yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	death_reason	code/game/machinery/computer/arcade/orion.dm:341	gamer	yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	add_crewmember	code/game/machinery/computer/arcade/orion.dm:372	specific,update	yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	remove_crewmember	code/game/machinery/computer/arcade/orion.dm:390	specific,dont_remove,update	yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	execute_crewmember	code/game/machinery/computer/arcade/orion.dm:415	gamer,target	yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	new_settler_mood	code/game/machinery/computer/arcade/orion.dm:446		yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	win	code/game/machinery/computer/arcade/orion.dm:464	user	yes	full	proc root
+proc	/obj/machinery/computer/arcade/orion_trail	emag_act	code/game/machinery/computer/arcade/orion.dm:478	user,emag_card	yes	full	proc
+type	/obj/machinery/computer/arcade/orion_trail/kobayashi	/obj/machinery/computer/arcade/orion_trail	code/game/machinery/computer/arcade/orion.dm:52	live	obj_machinery_computer_arcade_orion_trail_kobayashi	1	0
+proc	/obj/machinery/computer/arcade/orion_trail/kobayashi	setup_events	code/game/machinery/computer/arcade/orion.dm:75		yes	full	proc
 type	/obj/machinery/computer/atmos_control	/obj/machinery/computer	code/game/machinery/computer/atmos_computers/_atmos_control.dm:3	live	obj_machinery_computer_atmos_control	1	1
 proc	/obj/machinery/computer/atmos_control	post_machine_initialize	code/game/machinery/computer/atmos_computers/_atmos_control.dm:23		yes	full	proc
 proc	/obj/machinery/computer/atmos_control	scan	code/game/machinery/computer/atmos_computers/_atmos_control.dm:29		yes	full	proc root
@@ -86705,32 +86705,32 @@ proc	/obj/machinery/computer/exoscanner_control	start_deep_scan	code/modules/exp
 proc	/obj/machinery/computer/exoscanner_control	create_scan	code/modules/explorer_drone/scanner_array.dm:175	scan_type,target	no	-	proc root
 proc	/obj/machinery/computer/exoscanner_control	scan_failed	code/modules/explorer_drone/scanner_array.dm:181		no	-	proc root
 proc	/obj/machinery/computer/exoscanner_control	post_machine_initialize	code/modules/explorer_drone/scanner_array.dm:186		no	-	proc
-type	/obj/machinery/computer/holodeck	/obj/machinery/computer	code/modules/holodeck/computer.dm:33	inert	obj_machinery_computer_holodeck	0	1
-proc	/obj/machinery/computer/holodeck	post_machine_initialize	code/modules/holodeck/computer.dm:88		no	-	proc
-proc	/obj/machinery/computer/holodeck	generate_program_list	code/modules/holodeck/computer.dm:126		no	-	proc root
-proc	/obj/machinery/computer/holodeck	ui_interact	code/modules/holodeck/computer.dm:135	user,ui	no	-	proc
-proc	/obj/machinery/computer/holodeck	ui_data	code/modules/holodeck/computer.dm:142	user	no	-	proc
-proc	/obj/machinery/computer/holodeck	ui_act	code/modules/holodeck/computer.dm:153	action,params,ui,state	no	-	proc
-proc	/obj/machinery/computer/holodeck	load_program	code/modules/holodeck/computer.dm:196	map_id,force,add_delay	no	-	proc root
-proc	/obj/machinery/computer/holodeck	reset_to_default	code/modules/holodeck/computer.dm:244		no	-	proc root
-proc	/obj/machinery/computer/holodeck	clear_projection	code/modules/holodeck/computer.dm:256		no	-	proc root
-proc	/obj/machinery/computer/holodeck	finish_spawn	code/modules/holodeck/computer.dm:271		no	-	proc root
-proc	/obj/machinery/computer/holodeck	finalize_spawned	code/modules/holodeck/computer.dm:279	holo_atom	no	-	proc root
-proc	/obj/machinery/computer/holodeck	register_contents	code/modules/holodeck/computer.dm:316	storage	no	-	proc root
-proc	/obj/machinery/computer/holodeck	add_to_spawned	code/modules/holodeck/computer.dm:328	holo_atom	no	-	proc root
-proc	/obj/machinery/computer/holodeck	derez	code/modules/holodeck/computer.dm:336	holo_atom,silent,forced	no	-	proc root
-proc	/obj/machinery/computer/holodeck	remove_from_holo_lists	code/modules/holodeck/computer.dm:362	to_remove,_forced	no	-	proc root
-proc	/obj/machinery/computer/holodeck	process	code/modules/holodeck/computer.dm:367	seconds_per_tick	no	-	proc
-proc	/obj/machinery/computer/holodeck	toggle_power	code/modules/holodeck/computer.dm:399	toggleOn	no	-	proc root
-proc	/obj/machinery/computer/holodeck	power_change	code/modules/holodeck/computer.dm:412		no	-	proc
-proc	/obj/machinery/computer/holodeck	emergency_shutdown	code/modules/holodeck/computer.dm:417		no	-	proc root
-proc	/obj/machinery/computer/holodeck	floorcheck	code/modules/holodeck/computer.dm:423		no	-	proc root
-proc	/obj/machinery/computer/holodeck	nerf	code/modules/holodeck/computer.dm:431	nerf_this,is_loading	no	-	proc root
-proc	/obj/machinery/computer/holodeck	emag_act	code/modules/holodeck/computer.dm:439	user,emag_card	no	-	proc
-proc	/obj/machinery/computer/holodeck	emp_act	code/modules/holodeck/computer.dm:457	severity	no	-	proc
-proc	/obj/machinery/computer/holodeck	ex_act	code/modules/holodeck/computer.dm:463	severity,target	no	-	proc
-proc	/obj/machinery/computer/holodeck	Destroy	code/modules/holodeck/computer.dm:467		no	-	proc
-proc	/obj/machinery/computer/holodeck	blob_act	code/modules/holodeck/computer.dm:474	B	no	-	proc
+type	/obj/machinery/computer/holodeck	/obj/machinery/computer	code/modules/holodeck/computer.dm:33	live	obj_machinery_computer_holodeck	1	1
+proc	/obj/machinery/computer/holodeck	post_machine_initialize	code/modules/holodeck/computer.dm:88		yes	full	proc
+proc	/obj/machinery/computer/holodeck	generate_program_list	code/modules/holodeck/computer.dm:126		yes	full	proc root
+proc	/obj/machinery/computer/holodeck	ui_interact	code/modules/holodeck/computer.dm:135	user,ui	yes	full	proc
+proc	/obj/machinery/computer/holodeck	ui_data	code/modules/holodeck/computer.dm:142	user	yes	full	proc
+proc	/obj/machinery/computer/holodeck	ui_act	code/modules/holodeck/computer.dm:153	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/computer/holodeck	load_program	code/modules/holodeck/computer.dm:196	map_id,force,add_delay	yes	full	proc root
+proc	/obj/machinery/computer/holodeck	reset_to_default	code/modules/holodeck/computer.dm:244		yes	full	proc root
+proc	/obj/machinery/computer/holodeck	clear_projection	code/modules/holodeck/computer.dm:256		yes	full	proc root
+proc	/obj/machinery/computer/holodeck	finish_spawn	code/modules/holodeck/computer.dm:271		yes	full	proc root
+proc	/obj/machinery/computer/holodeck	finalize_spawned	code/modules/holodeck/computer.dm:279	holo_atom	yes	full	proc root
+proc	/obj/machinery/computer/holodeck	register_contents	code/modules/holodeck/computer.dm:316	storage	yes	full	proc root
+proc	/obj/machinery/computer/holodeck	add_to_spawned	code/modules/holodeck/computer.dm:328	holo_atom	yes	full	proc root
+proc	/obj/machinery/computer/holodeck	derez	code/modules/holodeck/computer.dm:336	holo_atom,silent,forced	yes	full	proc root
+proc	/obj/machinery/computer/holodeck	remove_from_holo_lists	code/modules/holodeck/computer.dm:362	to_remove,_forced	yes	full	proc root
+proc	/obj/machinery/computer/holodeck	process	code/modules/holodeck/computer.dm:367	seconds_per_tick	yes	full	proc
+proc	/obj/machinery/computer/holodeck	toggle_power	code/modules/holodeck/computer.dm:399	toggleOn	yes	full	proc root
+proc	/obj/machinery/computer/holodeck	power_change	code/modules/holodeck/computer.dm:412		yes	full	proc
+proc	/obj/machinery/computer/holodeck	emergency_shutdown	code/modules/holodeck/computer.dm:417		yes	full	proc root
+proc	/obj/machinery/computer/holodeck	floorcheck	code/modules/holodeck/computer.dm:423		yes	full	proc root
+proc	/obj/machinery/computer/holodeck	nerf	code/modules/holodeck/computer.dm:431	nerf_this,is_loading	yes	full	proc root
+proc	/obj/machinery/computer/holodeck	emag_act	code/modules/holodeck/computer.dm:439	user,emag_card	yes	full	proc
+proc	/obj/machinery/computer/holodeck	emp_act	code/modules/holodeck/computer.dm:457	severity	yes	full	proc
+proc	/obj/machinery/computer/holodeck	ex_act	code/modules/holodeck/computer.dm:463	severity,target	yes	full	proc
+proc	/obj/machinery/computer/holodeck	Destroy	code/modules/holodeck/computer.dm:467		yes	full	proc
+proc	/obj/machinery/computer/holodeck	blob_act	code/modules/holodeck/computer.dm:474	B	yes	full	proc
 type	/obj/machinery/computer/libraryconsole	/obj/machinery/computer	code/modules/library/lib_machines.dm:22	live	obj_machinery_computer_libraryconsole	1	1
 proc	/obj/machinery/computer/libraryconsole	Initialize	code/modules/library/lib_machines.dm:56	mapload	yes	full	proc
 proc	/obj/machinery/computer/libraryconsole	ui_interact	code/modules/library/lib_machines.dm:61	user,ui	yes	full	proc
@@ -87909,28 +87909,28 @@ type	/obj/machinery/requests_console/directional/north	/obj/machinery/requests_c
 type	/obj/machinery/requests_console/directional/south	/obj/machinery/requests_console/directional	code/game/machinery/requests_console.dm:539	live	obj_machinery_requests_console_directional_south	0	1
 type	/obj/machinery/requests_console/directional/east	/obj/machinery/requests_console/directional	code/game/machinery/requests_console.dm:539	live	obj_machinery_requests_console_directional_east	0	1
 type	/obj/machinery/requests_console/directional/west	/obj/machinery/requests_console/directional	code/game/machinery/requests_console.dm:539	live	obj_machinery_requests_console_directional_west	0	1
-type	/obj/machinery/roulette	/obj/machinery	code/game/machinery/roulette_machine.dm:22	inert	obj_machinery_roulette	0	0
-proc	/obj/machinery/roulette	Initialize	code/game/machinery/roulette_machine.dm:58	mapload	no	-	proc
-proc	/obj/machinery/roulette	Destroy	code/game/machinery/roulette_machine.dm:63		no	-	proc
-proc	/obj/machinery/roulette	atom_break	code/game/machinery/roulette_machine.dm:68	damage_flag	no	-	proc
-proc	/obj/machinery/roulette	ui_interact	code/game/machinery/roulette_machine.dm:72	user,ui	no	-	proc
-proc	/obj/machinery/roulette	ui_data	code/game/machinery/roulette_machine.dm:80	user	no	-	proc
-proc	/obj/machinery/roulette	ui_act	code/game/machinery/roulette_machine.dm:101	action,params,ui,state	no	-	proc
-proc	/obj/machinery/roulette	item_interaction	code/game/machinery/roulette_machine.dm:119	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/roulette	on_my_card_deleted	code/game/machinery/roulette_machine.dm:205	source	no	-	proc root
-proc	/obj/machinery/roulette	play	code/game/machinery/roulette_machine.dm:210	user,player_id,bet_type,bet_amount,potential_payout	no	-	proc root
-proc	/obj/machinery/roulette	finish_play_animation	code/game/machinery/roulette_machine.dm:237		no	-	proc root
-proc	/obj/machinery/roulette	finish_play	code/game/machinery/roulette_machine.dm:243	player_id,bet_type,bet_amount,potential_payout,rolled_number,user	no	-	proc root
-proc	/obj/machinery/roulette	dispense_prize	code/game/machinery/roulette_machine.dm:276	payout	no	-	proc root
-proc	/obj/machinery/roulette	drop_coin	code/game/machinery/roulette_machine.dm:300		no	-	proc root
-proc	/obj/machinery/roulette	prize_theft	code/game/machinery/roulette_machine.dm:330	percentage	no	-	proc root
-proc	/obj/machinery/roulette	check_win	code/game/machinery/roulette_machine.dm:339	bet_type,bet_amount,rolled_number	no	-	proc root
-proc	/obj/machinery/roulette	check_owner_funds	code/game/machinery/roulette_machine.dm:379	payout	no	-	proc root
-proc	/obj/machinery/roulette	update_overlays	code/game/machinery/roulette_machine.dm:386		no	-	proc
-proc	/obj/machinery/roulette	update_icon	code/game/machinery/roulette_machine.dm:394	updates,payout,color,rolled_number,is_winner	no	-	proc
-proc	/obj/machinery/roulette	handle_color_light	code/game/machinery/roulette_machine.dm:424	color	no	-	proc root
-proc	/obj/machinery/roulette	welder_act	code/game/machinery/roulette_machine.dm:431	user,I	no	-	proc
-proc	/obj/machinery/roulette	shock	code/game/machinery/roulette_machine.dm:446	shocking,chance,shock_source,siemens_coeff	no	-	proc
+type	/obj/machinery/roulette	/obj/machinery	code/game/machinery/roulette_machine.dm:22	live	obj_machinery_roulette	1	0
+proc	/obj/machinery/roulette	Initialize	code/game/machinery/roulette_machine.dm:58	mapload	yes	full	proc
+proc	/obj/machinery/roulette	Destroy	code/game/machinery/roulette_machine.dm:63		yes	full	proc
+proc	/obj/machinery/roulette	atom_break	code/game/machinery/roulette_machine.dm:68	damage_flag	yes	full	proc
+proc	/obj/machinery/roulette	ui_interact	code/game/machinery/roulette_machine.dm:72	user,ui	yes	full	proc
+proc	/obj/machinery/roulette	ui_data	code/game/machinery/roulette_machine.dm:80	user	yes	full	proc
+proc	/obj/machinery/roulette	ui_act	code/game/machinery/roulette_machine.dm:101	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/roulette	item_interaction	code/game/machinery/roulette_machine.dm:119	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/roulette	on_my_card_deleted	code/game/machinery/roulette_machine.dm:205	source	yes	full	proc root
+proc	/obj/machinery/roulette	play	code/game/machinery/roulette_machine.dm:210	user,player_id,bet_type,bet_amount,potential_payout	yes	full	proc root
+proc	/obj/machinery/roulette	finish_play_animation	code/game/machinery/roulette_machine.dm:237		yes	full	proc root
+proc	/obj/machinery/roulette	finish_play	code/game/machinery/roulette_machine.dm:243	player_id,bet_type,bet_amount,potential_payout,rolled_number,user	yes	full	proc root
+proc	/obj/machinery/roulette	dispense_prize	code/game/machinery/roulette_machine.dm:276	payout	yes	full	proc root
+proc	/obj/machinery/roulette	drop_coin	code/game/machinery/roulette_machine.dm:300		yes	full	proc root
+proc	/obj/machinery/roulette	prize_theft	code/game/machinery/roulette_machine.dm:330	percentage	yes	full	proc root
+proc	/obj/machinery/roulette	check_win	code/game/machinery/roulette_machine.dm:339	bet_type,bet_amount,rolled_number	yes	full	proc root
+proc	/obj/machinery/roulette	check_owner_funds	code/game/machinery/roulette_machine.dm:379	payout	yes	full	proc root
+proc	/obj/machinery/roulette	update_overlays	code/game/machinery/roulette_machine.dm:386		yes	full	proc
+proc	/obj/machinery/roulette	update_icon	code/game/machinery/roulette_machine.dm:394	updates,payout,color,rolled_number,is_winner	yes	full	proc
+proc	/obj/machinery/roulette	handle_color_light	code/game/machinery/roulette_machine.dm:424	color	yes	full	proc root
+proc	/obj/machinery/roulette	welder_act	code/game/machinery/roulette_machine.dm:431	user,I	yes	full	proc
+proc	/obj/machinery/roulette	shock	code/game/machinery/roulette_machine.dm:446	shocking,chance,shock_source,siemens_coeff	yes	full	proc
 type	/obj/machinery/scanner_gate	/obj/machinery	code/game/machinery/scanner_gate.dm:10	live	obj_machinery_scanner_gate	1	1
 proc	/obj/machinery/scanner_gate	Initialize	code/game/machinery/scanner_gate.dm:83	mapload	yes	full	proc
 proc	/obj/machinery/scanner_gate	Destroy	code/game/machinery/scanner_gate.dm:94	force	yes	full	proc
@@ -91134,26 +91134,26 @@ type	/obj/machinery/implantchair/genepurge	/obj/machinery/implantchair	code/game
 proc	/obj/machinery/implantchair/genepurge	implant_action	code/game/objects/items/implants/implantchair.dm:164	human,user	yes	full	proc
 type	/obj/machinery/implantchair/brainwash	/obj/machinery/implantchair	code/game/objects/items/implants/implantchair.dm:174	live	obj_machinery_implantchair_brainwash	1	0
 proc	/obj/machinery/implantchair/brainwash	implant_action	code/game/objects/items/implants/implantchair.dm:184	C,user	yes	partial	proc
-type	/obj/machinery/trading_card_holder	/obj/machinery	code/game/objects/items/tcg/tcg_machines.dm:9	inert	obj_machinery_trading_card_holder	0	0
-proc	/obj/machinery/trading_card_holder	item_interaction	code/game/objects/items/tcg/tcg_machines.dm:27	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/trading_card_holder	attack_hand	code/game/objects/items/tcg/tcg_machines.dm:52	user	no	-	proc
-proc	/obj/machinery/trading_card_holder	attack_hand_secondary	code/game/objects/items/tcg/tcg_machines.dm:92	user	no	-	proc
-proc	/obj/machinery/trading_card_holder	check_menu	code/game/objects/items/tcg/tcg_machines.dm:106	user	no	-	proc root
-proc	/obj/machinery/trading_card_holder	Destroy	code/game/objects/items/tcg/tcg_machines.dm:113		no	-	proc
-proc	/obj/machinery/trading_card_holder	examine	code/game/objects/items/tcg/tcg_machines.dm:118	user	no	-	proc
-type	/obj/machinery/trading_card_holder/red	/obj/machinery/trading_card_holder	code/game/objects/items/tcg/tcg_machines.dm:129	inert	obj_machinery_trading_card_holder_red	0	0
-type	/obj/machinery/trading_card_button	/obj/machinery	code/game/objects/items/tcg/tcg_machines.dm:290	inert	obj_machinery_trading_card_button	0	0
-proc	/obj/machinery/trading_card_button	Initialize	code/game/objects/items/tcg/tcg_machines.dm:308	mapload	no	-	proc
-proc	/obj/machinery/trading_card_button	Destroy	code/game/objects/items/tcg/tcg_machines.dm:312		no	-	proc
-proc	/obj/machinery/trading_card_button	attack_hand	code/game/objects/items/tcg/tcg_machines.dm:316	user	no	-	proc
-proc	/obj/machinery/trading_card_button	setup_global	code/game/objects/items/tcg/tcg_machines.dm:329		no	-	proc root
-proc	/obj/machinery/trading_card_button	setup_radial	code/game/objects/items/tcg/tcg_machines.dm:332		no	-	proc root
-proc	/obj/machinery/trading_card_button	handle_choice	code/game/objects/items/tcg/tcg_machines.dm:341	choice,user	no	-	proc root
-proc	/obj/machinery/trading_card_button	check_menu	code/game/objects/items/tcg/tcg_machines.dm:357	user	no	-	proc root
-type	/obj/machinery/trading_card_button/health	/obj/machinery/trading_card_button	code/game/objects/items/tcg/tcg_machines.dm:365	inert	obj_machinery_trading_card_button_health	0	0
-proc	/obj/machinery/trading_card_button/health	setup_global	code/game/objects/items/tcg/tcg_machines.dm:374		no	-	proc
-proc	/obj/machinery/trading_card_button/health	setup_radial	code/game/objects/items/tcg/tcg_machines.dm:377		no	-	proc
-proc	/obj/machinery/trading_card_button/health	handle_choice	code/game/objects/items/tcg/tcg_machines.dm:385	choice,user	no	-	proc
+type	/obj/machinery/trading_card_holder	/obj/machinery	code/game/objects/items/tcg/tcg_machines.dm:9	live	obj_machinery_trading_card_holder	1	0
+proc	/obj/machinery/trading_card_holder	item_interaction	code/game/objects/items/tcg/tcg_machines.dm:27	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/trading_card_holder	attack_hand	code/game/objects/items/tcg/tcg_machines.dm:52	user	yes	full	proc
+proc	/obj/machinery/trading_card_holder	attack_hand_secondary	code/game/objects/items/tcg/tcg_machines.dm:92	user	yes	full	proc
+proc	/obj/machinery/trading_card_holder	check_menu	code/game/objects/items/tcg/tcg_machines.dm:106	user	yes	full	proc root
+proc	/obj/machinery/trading_card_holder	Destroy	code/game/objects/items/tcg/tcg_machines.dm:113		yes	full	proc
+proc	/obj/machinery/trading_card_holder	examine	code/game/objects/items/tcg/tcg_machines.dm:118	user	yes	full	proc
+type	/obj/machinery/trading_card_holder/red	/obj/machinery/trading_card_holder	code/game/objects/items/tcg/tcg_machines.dm:129	live	obj_machinery_trading_card_holder_red	0	0
+type	/obj/machinery/trading_card_button	/obj/machinery	code/game/objects/items/tcg/tcg_machines.dm:290	live	obj_machinery_trading_card_button	1	0
+proc	/obj/machinery/trading_card_button	Initialize	code/game/objects/items/tcg/tcg_machines.dm:308	mapload	yes	full	proc
+proc	/obj/machinery/trading_card_button	Destroy	code/game/objects/items/tcg/tcg_machines.dm:312		yes	full	proc
+proc	/obj/machinery/trading_card_button	attack_hand	code/game/objects/items/tcg/tcg_machines.dm:316	user	yes	full	proc
+proc	/obj/machinery/trading_card_button	setup_global	code/game/objects/items/tcg/tcg_machines.dm:329		yes	full	proc root
+proc	/obj/machinery/trading_card_button	setup_radial	code/game/objects/items/tcg/tcg_machines.dm:332		yes	full	proc root
+proc	/obj/machinery/trading_card_button	handle_choice	code/game/objects/items/tcg/tcg_machines.dm:341	choice,user	yes	full	proc root
+proc	/obj/machinery/trading_card_button	check_menu	code/game/objects/items/tcg/tcg_machines.dm:357	user	yes	full	proc root
+type	/obj/machinery/trading_card_button/health	/obj/machinery/trading_card_button	code/game/objects/items/tcg/tcg_machines.dm:365	live	obj_machinery_trading_card_button_health	1	0
+proc	/obj/machinery/trading_card_button/health	setup_global	code/game/objects/items/tcg/tcg_machines.dm:374		yes	full	proc
+proc	/obj/machinery/trading_card_button/health	setup_radial	code/game/objects/items/tcg/tcg_machines.dm:377		yes	full	proc
+proc	/obj/machinery/trading_card_button/health	handle_choice	code/game/objects/items/tcg/tcg_machines.dm:385	choice,user	yes	full	proc
 type	/obj/machinery/deployable_turret	/obj/machinery	code/game/objects/structures/deployable_turret.dm:5	inert	obj_machinery_deployable_turret	0	0
 proc	/obj/machinery/deployable_turret	Initialize	code/game/objects/structures/deployable_turret.dm:42	mapload	no	-	proc
 proc	/obj/machinery/deployable_turret	Destroy	code/game/objects/structures/deployable_turret.dm:47		no	-	proc
@@ -92611,13 +92611,13 @@ proc	/obj/machinery/restaurant_portal	wrench_act	code/modules/food_and_drinks/re
 proc	/obj/machinery/restaurant_portal	add_context	code/modules/food_and_drinks/restaurant/_venue.dm:285	source,context,held_item,user	stub	deferred	proc
 type	/obj/machinery/restaurant_portal/restaurant	/obj/machinery/restaurant_portal	code/modules/food_and_drinks/restaurant/generic_venues.dm:58	live	obj_machinery_restaurant_portal_restaurant	0	1
 type	/obj/machinery/restaurant_portal/bar	/obj/machinery/restaurant_portal	code/modules/food_and_drinks/restaurant/generic_venues.dm:90	live	obj_machinery_restaurant_portal_bar	0	1
-type	/obj/machinery/readybutton	/obj/machinery	code/modules/holodeck/items.dm:76	inert	obj_machinery_readybutton	0	0
-proc	/obj/machinery/readybutton	attack_ai	code/modules/holodeck/items.dm:88	user	no	-	proc
-proc	/obj/machinery/readybutton	attack_paw	code/modules/holodeck/items.dm:92	user,modifiers	no	-	proc
-proc	/obj/machinery/readybutton	attackby	code/modules/holodeck/items.dm:96	W,user,modifiers,attack_modifiers	no	-	proc
-proc	/obj/machinery/readybutton	attack_hand	code/modules/holodeck/items.dm:99	user,modifiers	no	-	proc
-proc	/obj/machinery/readybutton	update_overlays	code/modules/holodeck/items.dm:132		no	-	proc
-proc	/obj/machinery/readybutton	begin_event	code/modules/holodeck/items.dm:139		no	-	proc root
+type	/obj/machinery/readybutton	/obj/machinery	code/modules/holodeck/items.dm:76	live	obj_machinery_readybutton	1	0
+proc	/obj/machinery/readybutton	attack_ai	code/modules/holodeck/items.dm:88	user	yes	full	proc
+proc	/obj/machinery/readybutton	attack_paw	code/modules/holodeck/items.dm:92	user,modifiers	yes	full	proc
+proc	/obj/machinery/readybutton	attackby	code/modules/holodeck/items.dm:96	W,user,modifiers,attack_modifiers	yes	full	proc
+proc	/obj/machinery/readybutton	attack_hand	code/modules/holodeck/items.dm:99	user,modifiers	yes	full	proc
+proc	/obj/machinery/readybutton	update_overlays	code/modules/holodeck/items.dm:132		yes	full	proc
+proc	/obj/machinery/readybutton	begin_event	code/modules/holodeck/items.dm:139		yes	full	proc root
 type	/obj/machinery/conveyor	/obj/machinery	code/modules/recycling/conveyor.dm:12	live	obj_machinery_conveyor	1	1
 proc	/obj/machinery/conveyor	Initialize	code/modules/recycling/conveyor.dm:48	mapload,new_dir,new_id	yes	full	proc
 proc	/obj/machinery/conveyor	examine	code/modules/recycling/conveyor.dm:73	user	yes	full	proc
@@ -92650,8 +92650,8 @@ proc	/obj/machinery/conveyor	power_change	code/modules/recycling/conveyor.dm:384
 proc	/obj/machinery/conveyor	process	code/modules/recycling/conveyor.dm:388		yes	full	proc
 proc	/obj/machinery/conveyor	update_cable	code/modules/recycling/conveyor.dm:407		yes	full	proc root
 proc	/obj/machinery/conveyor	get_powernet	code/modules/recycling/conveyor.dm:416		yes	full	proc root
-type	/obj/machinery/conveyor/holodeck	/obj/machinery/conveyor	code/modules/holodeck/items.dm:154	inert	obj_machinery_conveyor_holodeck	0	0
-proc	/obj/machinery/conveyor/holodeck	item_interaction	code/modules/holodeck/items.dm:154	user,tool,modifiers	no	-	proc
+type	/obj/machinery/conveyor/holodeck	/obj/machinery/conveyor	code/modules/holodeck/items.dm:154	live	obj_machinery_conveyor_holodeck	1	0
+proc	/obj/machinery/conveyor/holodeck	item_interaction	code/modules/holodeck/items.dm:154	user,tool,modifiers	yes	full	proc
 type	/obj/machinery/conveyor/centcom_auto	/obj/machinery/conveyor	code/modules/recycling/conveyor.dm:102	live	obj_machinery_conveyor_centcom_auto	0	0
 type	/obj/machinery/conveyor/inverted	/obj/machinery/conveyor	code/modules/recycling/conveyor.dm:105	live	obj_machinery_conveyor_inverted	1	1
 proc	/obj/machinery/conveyor/inverted	Initialize	code/modules/recycling/conveyor.dm:108	mapload	yes	full	proc
@@ -97476,11 +97476,11 @@ proc	/obj/effect/rcd_hologram	Initialize	code/game/objects/items/rcd/RCD.dm:64	m
 type	/obj/effect/resin_container	/obj/effect	code/game/objects/items/tanks/watertank.dm:350	live	obj_effect_resin_container	1	0
 proc	/obj/effect/resin_container	Smoke	code/game/objects/items/tanks/watertank.dm:358		yes	full	proc root
 proc	/obj/effect/resin_container	newtonian_move	code/game/objects/items/tanks/watertank.dm:364	inertia_angle,instant,start_delay,drift_force,controlled_cap	yes	full	proc
-type	/obj/effect/trading_card_panel	/obj/effect	code/game/objects/items/tcg/tcg_machines.dm:397	inert	obj_effect_trading_card_panel	0	0
-proc	/obj/effect/trading_card_panel	Initialize	code/game/objects/items/tcg/tcg_machines.dm:430	mapload	no	-	proc
-proc	/obj/effect/trading_card_panel	update_overlays	code/game/objects/items/tcg/tcg_machines.dm:434		no	-	proc
-proc	/obj/effect/trading_card_panel	examine	code/game/objects/items/tcg/tcg_machines.dm:449	user	no	-	proc
-type	/obj/effect/trading_card_panel/health	/obj/effect/trading_card_panel	code/game/objects/items/tcg/tcg_machines.dm:455	inert	obj_effect_trading_card_panel_health	0	0
+type	/obj/effect/trading_card_panel	/obj/effect	code/game/objects/items/tcg/tcg_machines.dm:397	live	obj_effect_trading_card_panel	1	0
+proc	/obj/effect/trading_card_panel	Initialize	code/game/objects/items/tcg/tcg_machines.dm:430	mapload	yes	full	proc
+proc	/obj/effect/trading_card_panel	update_overlays	code/game/objects/items/tcg/tcg_machines.dm:434		yes	full	proc
+proc	/obj/effect/trading_card_panel	examine	code/game/objects/items/tcg/tcg_machines.dm:449	user	yes	full	proc
+type	/obj/effect/trading_card_panel/health	/obj/effect/trading_card_panel	code/game/objects/items/tcg/tcg_machines.dm:455	live	obj_effect_trading_card_panel_health	0	0
 type	/obj/effect/mist	/obj/effect	code/game/objects/structures/shower.dm:414	live	obj_effect_mist	0	0
 type	/obj/effect/appearance_clone	/obj/effect	code/modules/photography/camera/camera_image_capturing.dm:3	inert	obj_effect_appearance_clone	0	0
 proc	/obj/effect/appearance_clone	New	code/modules/photography/camera/camera_image_capturing.dm:3	loc,our_atom	no	-	proc
@@ -98129,30 +98129,30 @@ proc	/obj/effect/fishing_float	follow_movable	code/modules/fishing/fishing_minig
 proc	/obj/effect/fishing_float	update_overlays	code/modules/fishing/fishing_minigame.dm:922		no	-	proc
 type	/obj/effect/food_cart_stand	/obj/effect	code/modules/food_and_drinks/machinery/food_cart.dm:135	live	obj_effect_food_cart_stand	0	0
 type	/obj/effect/plasma_image_holder	/obj/effect	code/modules/hallucination/fake_plasmaflood.dm:97	live	obj_effect_plasma_image_holder	0	0
-type	/obj/effect/holodeck_effect	/obj/effect	code/modules/holodeck/holo_effect.dm:8	inert	obj_effect_holodeck_effect	0	0
-proc	/obj/effect/holodeck_effect	activate	code/modules/holodeck/holo_effect.dm:12	HC	no	-	proc root
-proc	/obj/effect/holodeck_effect	deactivate	code/modules/holodeck/holo_effect.dm:15	HC	no	-	proc root
-proc	/obj/effect/holodeck_effect	tick	code/modules/holodeck/holo_effect.dm:20	HC	no	-	proc root
-proc	/obj/effect/holodeck_effect	safety	code/modules/holodeck/holo_effect.dm:23	active	no	-	proc root
-type	/obj/effect/holodeck_effect/cards	/obj/effect/holodeck_effect	code/modules/holodeck/holo_effect.dm:28	inert	obj_effect_holodeck_effect_cards	0	0
-proc	/obj/effect/holodeck_effect/cards	activate	code/modules/holodeck/holo_effect.dm:31	holodeck	no	-	proc
-type	/obj/effect/holodeck_effect/sparks	/obj/effect/holodeck_effect	code/modules/holodeck/holo_effect.dm:36	inert	obj_effect_holodeck_effect_sparks	0	0
-proc	/obj/effect/holodeck_effect/sparks	activate	code/modules/holodeck/holo_effect.dm:36	HC	no	-	proc
-type	/obj/effect/holodeck_effect/random_book	/obj/effect/holodeck_effect	code/modules/holodeck/holo_effect.dm:46	inert	obj_effect_holodeck_effect_random_book	0	0
-proc	/obj/effect/holodeck_effect/random_book	activate	code/modules/holodeck/holo_effect.dm:46	father_holodeck	no	-	proc
-type	/obj/effect/holodeck_effect/mobspawner	/obj/effect/holodeck_effect	code/modules/holodeck/holo_effect.dm:54	inert	obj_effect_holodeck_effect_mobspawner	0	0
-proc	/obj/effect/holodeck_effect/mobspawner	activate	code/modules/holodeck/holo_effect.dm:57	HC	no	-	proc
-proc	/obj/effect/holodeck_effect/mobspawner	deactivate	code/modules/holodeck/holo_effect.dm:82	HC	no	-	proc
-proc	/obj/effect/holodeck_effect/mobspawner	handle_mob_delete	code/modules/holodeck/holo_effect.dm:97	source	no	-	proc root
-type	/obj/effect/holodeck_effect/mobspawner/pet	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:103	inert	obj_effect_holodeck_effect_mobspawner_pet	0	0
-proc	/obj/effect/holodeck_effect/mobspawner/pet	Initialize	code/modules/holodeck/holo_effect.dm:103	mapload	no	-	proc
-type	/obj/effect/holodeck_effect/mobspawner/bee	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:122	inert	obj_effect_holodeck_effect_mobspawner_bee	0	0
-type	/obj/effect/holodeck_effect/mobspawner/monkey	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:125	inert	obj_effect_holodeck_effect_mobspawner_monkey	0	0
-type	/obj/effect/holodeck_effect/mobspawner/penguin	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:128	inert	obj_effect_holodeck_effect_mobspawner_penguin	0	0
-proc	/obj/effect/holodeck_effect/mobspawner/penguin	Initialize	code/modules/holodeck/holo_effect.dm:130	mapload	no	-	proc
-type	/obj/effect/holodeck_effect/mobspawner/penguin_baby	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:136	inert	obj_effect_holodeck_effect_mobspawner_penguin_baby	0	0
-type	/obj/effect/holodeck_effect/mobspawner/crab	/obj/effect/holodeck_effect/mobspawner	(implied by a subtype's path)	inert	obj_effect_holodeck_effect_mobspawner_crab	0	0
-type	/obj/effect/holodeck_effect/mobspawner/crab/jon	/obj/effect/holodeck_effect/mobspawner/crab	code/modules/holodeck/holo_effect.dm:139	inert	obj_effect_holodeck_effect_mobspawner_crab_jon	0	0
+type	/obj/effect/holodeck_effect	/obj/effect	code/modules/holodeck/holo_effect.dm:8	live	obj_effect_holodeck_effect	1	0
+proc	/obj/effect/holodeck_effect	activate	code/modules/holodeck/holo_effect.dm:12	HC	yes	full	proc root
+proc	/obj/effect/holodeck_effect	deactivate	code/modules/holodeck/holo_effect.dm:15	HC	yes	full	proc root
+proc	/obj/effect/holodeck_effect	tick	code/modules/holodeck/holo_effect.dm:20	HC	yes	full	proc root
+proc	/obj/effect/holodeck_effect	safety	code/modules/holodeck/holo_effect.dm:23	active	yes	full	proc root
+type	/obj/effect/holodeck_effect/cards	/obj/effect/holodeck_effect	code/modules/holodeck/holo_effect.dm:28	live	obj_effect_holodeck_effect_cards	1	0
+proc	/obj/effect/holodeck_effect/cards	activate	code/modules/holodeck/holo_effect.dm:31	holodeck	yes	full	proc
+type	/obj/effect/holodeck_effect/sparks	/obj/effect/holodeck_effect	code/modules/holodeck/holo_effect.dm:36	live	obj_effect_holodeck_effect_sparks	1	0
+proc	/obj/effect/holodeck_effect/sparks	activate	code/modules/holodeck/holo_effect.dm:36	HC	yes	full	proc
+type	/obj/effect/holodeck_effect/random_book	/obj/effect/holodeck_effect	code/modules/holodeck/holo_effect.dm:46	live	obj_effect_holodeck_effect_random_book	1	0
+proc	/obj/effect/holodeck_effect/random_book	activate	code/modules/holodeck/holo_effect.dm:46	father_holodeck	yes	full	proc
+type	/obj/effect/holodeck_effect/mobspawner	/obj/effect/holodeck_effect	code/modules/holodeck/holo_effect.dm:54	live	obj_effect_holodeck_effect_mobspawner	1	0
+proc	/obj/effect/holodeck_effect/mobspawner	activate	code/modules/holodeck/holo_effect.dm:57	HC	yes	full	proc
+proc	/obj/effect/holodeck_effect/mobspawner	deactivate	code/modules/holodeck/holo_effect.dm:82	HC	yes	full	proc
+proc	/obj/effect/holodeck_effect/mobspawner	handle_mob_delete	code/modules/holodeck/holo_effect.dm:97	source	yes	full	proc root
+type	/obj/effect/holodeck_effect/mobspawner/pet	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:103	live	obj_effect_holodeck_effect_mobspawner_pet	1	0
+proc	/obj/effect/holodeck_effect/mobspawner/pet	Initialize	code/modules/holodeck/holo_effect.dm:103	mapload	yes	full	proc
+type	/obj/effect/holodeck_effect/mobspawner/bee	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:122	live	obj_effect_holodeck_effect_mobspawner_bee	0	0
+type	/obj/effect/holodeck_effect/mobspawner/monkey	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:125	live	obj_effect_holodeck_effect_mobspawner_monkey	0	0
+type	/obj/effect/holodeck_effect/mobspawner/penguin	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:128	live	obj_effect_holodeck_effect_mobspawner_penguin	1	0
+proc	/obj/effect/holodeck_effect/mobspawner/penguin	Initialize	code/modules/holodeck/holo_effect.dm:130	mapload	yes	full	proc
+type	/obj/effect/holodeck_effect/mobspawner/penguin_baby	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:136	live	obj_effect_holodeck_effect_mobspawner_penguin_baby	0	0
+type	/obj/effect/holodeck_effect/mobspawner/crab	/obj/effect/holodeck_effect/mobspawner	(implied by a subtype's path)	live	obj_effect_holodeck_effect_mobspawner_crab	0	0
+type	/obj/effect/holodeck_effect/mobspawner/crab/jon	/obj/effect/holodeck_effect/mobspawner/crab	code/modules/holodeck/holo_effect.dm:139	live	obj_effect_holodeck_effect_mobspawner_crab_jon	0	0
 type	/obj/effect/sliding_puzzle	/obj/effect	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:2	live	obj_effect_sliding_puzzle	1	0
 proc	/obj/effect/sliding_puzzle	get_turf_for_id	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:16	id	yes	full	proc root
 proc	/obj/effect/sliding_puzzle	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:38	mapload	yes	full	proc
@@ -102178,19 +102178,19 @@ proc	/obj/structure/projected_forcefield	Initialize	code/game/objects/items/devi
 proc	/obj/structure/projected_forcefield	Destroy	code/game/objects/items/devices/forcefieldprojector.dm:125		yes	full	proc
 proc	/obj/structure/projected_forcefield	play_attack_sound	code/game/objects/items/devices/forcefieldprojector.dm:133	damage_amount,damage_type,damage_flag	yes	full	proc
 proc	/obj/structure/projected_forcefield	take_damage	code/game/objects/items/devices/forcefieldprojector.dm:136	damage_amount,damage_type,damage_flag,sound_effect,attack_dir	yes	full	proc
-type	/obj/structure/trading_card_summon	/obj/structure	code/game/objects/items/tcg/tcg_machines.dm:133	inert	obj_structure_trading_card_summon	0	0
-proc	/obj/structure/trading_card_summon	load_model	code/game/objects/items/tcg/tcg_machines.dm:167		no	-	proc root
-proc	/obj/structure/trading_card_summon	get_name_chaser	code/game/objects/items/tcg/tcg_machines.dm:182	user,name_chaser	no	-	proc
-proc	/obj/structure/trading_card_summon	update_overlays	code/game/objects/items/tcg/tcg_machines.dm:192		no	-	proc
-proc	/obj/structure/trading_card_summon	update_stats	code/game/objects/items/tcg/tcg_machines.dm:208	overlay,pos_y,stats,text_color,x_offset	no	-	proc root
-proc	/obj/structure/trading_card_summon	update_tapped	code/game/objects/items/tcg/tcg_machines.dm:222		no	-	proc root
-proc	/obj/structure/trading_card_summon	update_marked	code/game/objects/items/tcg/tcg_machines.dm:229		no	-	proc root
-proc	/obj/structure/trading_card_summon	modify_stats	code/game/objects/items/tcg/tcg_machines.dm:233	user	no	-	proc root
-proc	/obj/structure/trading_card_summon	Destroy	code/game/objects/items/tcg/tcg_machines.dm:246		no	-	proc
-type	/obj/structure/trading_card_summon/blank	/obj/structure/trading_card_summon	code/game/objects/items/tcg/tcg_machines.dm:252	inert	obj_structure_trading_card_summon_blank	0	0
-proc	/obj/structure/trading_card_summon/blank	load_model	code/game/objects/items/tcg/tcg_machines.dm:259		no	-	proc
-proc	/obj/structure/trading_card_summon/blank	get_name_chaser	code/game/objects/items/tcg/tcg_machines.dm:269	user,name_chaser	no	-	proc
-proc	/obj/structure/trading_card_summon/blank	modify_stats	code/game/objects/items/tcg/tcg_machines.dm:273	user	no	-	proc
+type	/obj/structure/trading_card_summon	/obj/structure	code/game/objects/items/tcg/tcg_machines.dm:133	live	obj_structure_trading_card_summon	1	0
+proc	/obj/structure/trading_card_summon	load_model	code/game/objects/items/tcg/tcg_machines.dm:167		yes	full	proc root
+proc	/obj/structure/trading_card_summon	get_name_chaser	code/game/objects/items/tcg/tcg_machines.dm:182	user,name_chaser	yes	full	proc
+proc	/obj/structure/trading_card_summon	update_overlays	code/game/objects/items/tcg/tcg_machines.dm:192		yes	full	proc
+proc	/obj/structure/trading_card_summon	update_stats	code/game/objects/items/tcg/tcg_machines.dm:208	overlay,pos_y,stats,text_color,x_offset	yes	full	proc root
+proc	/obj/structure/trading_card_summon	update_tapped	code/game/objects/items/tcg/tcg_machines.dm:222		yes	full	proc root
+proc	/obj/structure/trading_card_summon	update_marked	code/game/objects/items/tcg/tcg_machines.dm:229		yes	full	proc root
+proc	/obj/structure/trading_card_summon	modify_stats	code/game/objects/items/tcg/tcg_machines.dm:233	user	yes	full	proc root
+proc	/obj/structure/trading_card_summon	Destroy	code/game/objects/items/tcg/tcg_machines.dm:246		yes	full	proc
+type	/obj/structure/trading_card_summon/blank	/obj/structure/trading_card_summon	code/game/objects/items/tcg/tcg_machines.dm:252	live	obj_structure_trading_card_summon_blank	1	0
+proc	/obj/structure/trading_card_summon/blank	load_model	code/game/objects/items/tcg/tcg_machines.dm:259		yes	full	proc
+proc	/obj/structure/trading_card_summon/blank	get_name_chaser	code/game/objects/items/tcg/tcg_machines.dm:269	user,name_chaser	yes	full	proc
+proc	/obj/structure/trading_card_summon/blank	modify_stats	code/game/objects/items/tcg/tcg_machines.dm:273	user	yes	full	proc
 type	/obj/structure/bedsheetbin	/obj/structure	code/game/objects/structures/bedsheet_bin.dm:576	live	obj_structure_bedsheetbin	1	1
 proc	/obj/structure/bedsheetbin	Initialize	code/game/objects/structures/bedsheet_bin.dm:600	mapload	yes	full	proc
 proc	/obj/structure/bedsheetbin	examine	code/game/objects/structures/bedsheet_bin.dm:604	user	yes	full	proc
@@ -110009,12 +110009,12 @@ type	/area/station/maintenance/solars/port/fore	/area/station/maintenance/solars
 type	/area/station/maintenance/solars/starboard	/area/station/maintenance/solars	code/game/area/areas/station/solars.dm:95	live	area_station_maintenance_solars_starboard	0	1
 type	/area/station/maintenance/solars/starboard/aft	/area/station/maintenance/solars/starboard	code/game/area/areas/station/solars.dm:99	live	area_station_maintenance_solars_starboard_aft	0	1
 type	/area/station/maintenance/solars/starboard/fore	/area/station/maintenance/solars/starboard	code/game/area/areas/station/solars.dm:103	live	area_station_maintenance_solars_starboard_fore	0	1
-type	/area/station/holodeck	/area/station	code/game/area/areas/holodeck.dm:2	inert	area_station_holodeck	0	1
-proc	/area/station/holodeck	powered	code/game/area/areas/holodeck.dm:18	chan	no	-	proc
-proc	/area/station/holodeck	addStaticPower	code/game/area/areas/holodeck.dm:29	value,powerchannel	no	-	proc
-proc	/area/station/holodeck	use_energy	code/game/area/areas/holodeck.dm:36	amount,chan	no	-	proc
-type	/area/station/holodeck/rec_center	/area/station/holodeck	code/game/area/areas/holodeck.dm:50	inert	area_station_holodeck_rec_center	0	1
-type	/area/station/holodeck/rec_center/offstation_one	/area/station/holodeck/rec_center	code/game/area/areas/holodeck.dm:54	inert	area_station_holodeck_rec_center_offstation_one	0	0
+type	/area/station/holodeck	/area/station	code/game/area/areas/holodeck.dm:2	live	area_station_holodeck	1	1
+proc	/area/station/holodeck	powered	code/game/area/areas/holodeck.dm:18	chan	yes	full	proc
+proc	/area/station/holodeck	addStaticPower	code/game/area/areas/holodeck.dm:29	value,powerchannel	yes	full	proc
+proc	/area/station/holodeck	use_energy	code/game/area/areas/holodeck.dm:36	amount,chan	yes	full	proc
+type	/area/station/holodeck/rec_center	/area/station/holodeck	code/game/area/areas/holodeck.dm:50	live	area_station_holodeck_rec_center	0	1
+type	/area/station/holodeck/rec_center/offstation_one	/area/station/holodeck/rec_center	code/game/area/areas/holodeck.dm:54	live	area_station_holodeck_rec_center_offstation_one	0	0
 type	/area/station/ai	/area/station	code/game/area/areas/station/ai.dm:2	inert	area_station_ai	0	1
 proc	/area/station/ai	Initialize	code/game/area/areas/station/ai.dm:14	mapload	no	-	proc
 type	/area/station/ai/upload	/area/station/ai	code/game/area/areas/station/ai.dm:25	inert	area_station_ai_upload	0	1

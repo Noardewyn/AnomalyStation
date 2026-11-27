@@ -4912,9 +4912,9 @@ public partial class obj_item_circuitboard_computer_pod : obj_item_circuitboard_
     }
 }
 
-// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:303
-[DmPath("/obj/item/circuitboard/computer/slot_machine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_computer_slot_machine : obj_item_circuitboard_computer
+// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:303 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/computer/slot_machine")]
+public partial class obj_item_circuitboard_computer_slot_machine
 {
     // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:303
     public obj_item_circuitboard_computer_slot_machine()

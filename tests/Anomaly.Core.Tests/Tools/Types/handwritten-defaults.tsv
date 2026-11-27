@@ -1196,6 +1196,9 @@
 /datum/effect_system	abstract_type	override	code/game/objects/effects/effect_system/effect_system.dm:23	{"K":"type","N":0,"S":"/datum/effect_system"}
 /datum/overlay_info	icon	decl	code/game/objects/items/rcd/RTD.dm:106	{"K":"null","N":0}
 /datum/stack_recipe	category	decl	code/game/objects/items/stacks/stack_recipe.dm:27	{"K":"null","N":0}
+/datum/card	summoncost	decl	code/game/objects/items/tcg/tcg.dm:483	{"K":"num","N":-1}
+/datum/card	power	decl	code/game/objects/items/tcg/tcg.dm:485	{"K":"num","N":-1}
+/datum/card	resolve	decl	code/game/objects/items/tcg/tcg.dm:487	{"K":"num","N":-1}
 /datum/admins	fakekey	decl	code/modules/admin/holder2.dm:18	{"K":"null","N":0}
 /datum/admin_rank	name	decl	code/modules/admin/admin_ranks.dm:9	{"K":"str","N":0,"S":"NoRank"}
 /datum/admin_rank	source	decl	code/modules/admin/admin_ranks.dm:11	{"K":"null","N":0}

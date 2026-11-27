@@ -110,7 +110,7 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
         determine_fake_sale();
         require_area_resort();
         process_teleport_locs(); //Sets up the wizard teleport locations
-        preloadTemplates(); // M10 slice G2: the shuttles'; the survival capsules' shelters; the ruins (the holodeck's are deferred)
+        preloadTemplates(); // M10 slice G2: the shuttles'; the survival capsules' shelters; the holodeck's programs; the ruins
         // tg: :134-157  #ifndef SKIP_SPACE_LEVELS: the space ruin and empty levels, the wilderness and the away missions: D108 loads
         // the station level only (with CentCom and Lavaland)
         await setup_ruins();
@@ -436,9 +436,10 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
     // tg: code/controllers/subsystem/mapping.dm:371
     public virtual void determine_fake_sale()
     {
-        // tg: GLOB.arcade_prize_pool += the fake ice or fake space tile stack, by the station's ZTRAIT_NOPARALLAX: the arcade
-        // machines' prizes (M10+, the arcade is not translated)
-        Dm.Deferred("code/controllers/subsystem/mapping.dm:371", "determine_fake_sale: the arcade prize pool (the arcade machines are a later milestone)");
+        if (Dm.truthy(length(SSmapping.levels_by_all_traits(Dm.list(ZTRAIT_STATION, ZTRAIT_NOPARALLAX)))))
+            Dm.append(ref GLOB.arcade_prize_pool, typeof(obj_item_stack_tile_fakeice_loaded));
+        else
+            Dm.append(ref GLOB.arcade_prize_pool, typeof(obj_item_stack_tile_fakespace_loaded));
     }
 
     // tg: code/controllers/subsystem/mapping.dm:403
@@ -745,7 +746,15 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
     // tg: code/controllers/subsystem/mapping.dm:593
     public virtual void preloadHolodeckTemplates()
     {
-        Dm.Deferred("code/controllers/subsystem/mapping.dm:593", "preloadHolodeckTemplates: the holodeck (after M10)");
+        foreach (Type item in Dm.each<Type>(subtypesof(typeof(datum_map_template_holodeck))))
+        {
+            Type holodeck_type = item;
+            if (!Dm.truthy(Dm.initial(holodeck_type, (datum_map_template p) => p.mappath)))
+                continue;
+            var holo_template = (datum_map_template_holodeck)Dm.@new(holodeck_type);
+
+            holodeck_templates[holo_template.template_id] = holo_template;
+        }
     }
 }
 

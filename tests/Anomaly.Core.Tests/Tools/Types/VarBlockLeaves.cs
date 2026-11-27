@@ -35,6 +35,9 @@ internal static class VarBlockLeaves
         [typeof(obj_item_coin_mythril)] = "fantasy affixes",
         // Gaps SK1: the mythril sheet is live with its recipes, and its material reaches the same leaf
         [typeof(obj_item_stack_sheet_mineral_mythril)] = "fantasy affixes",
+        // The slot machine's first Initialize makes one of every coin to learn their values (slotmachine.dm:99-102), the mythril
+        // coin among them, and so reaches the same leaf; the machines made after it in the same world read the values it kept
+        [typeof(obj_machinery_computer_slot_machine)] = "fantasy affixes",
     };
 
     /// <summary>

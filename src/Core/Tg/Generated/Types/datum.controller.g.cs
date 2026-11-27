@@ -2276,9 +2276,9 @@ public partial class datum_controller_subsystem_sun
     }
 }
 
-// tg: code/controllers/subsystem/tcgsetup.dm:2
-[DmPath("/datum/controller/subsystem/trading_card_game"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_trading_card_game : datum_controller_subsystem
+// tg: code/controllers/subsystem/tcgsetup.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/trading_card_game")]
+public partial class datum_controller_subsystem_trading_card_game
 {
     public string card_directory = "strings/tcg"; // tg: code/controllers/subsystem/tcgsetup.dm:5
     public DmList card_files; // tg: code/controllers/subsystem/tcgsetup.dm:7

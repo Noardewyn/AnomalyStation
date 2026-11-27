@@ -1,0 +1,60 @@
+anomaly-map 1
+source _maps/templates/holodeck_kobayashi.dmm tg 1d99bd7f
+size 9 10 1
+chunk 32
+default /turf/open/floor/holofloor/plating | /area/template_noop
+
+[chunk 1 1 1]
+1,10: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+2,10: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+3,10: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+4,10: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/hyperspace | /area/template_noop
+5,10: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/hyperspace | /area/template_noop
+6,10: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/hyperspace | /area/template_noop
+7,10: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+8,10: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+9,10: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+1,9: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+2,9: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+3,9: /obj/structure/window/reinforced/spawner/directional/south | /obj/machinery/mass_driver{dir = 1; id = "trektorpedo2"; name = "photon torpedo tube"} | /obj/item/toy/minimeteor{desc = "A primitive long-range weapon, inferior to Nanotrasen's perfected bluespace artillery."; icon = 'icons/effects/effects.dmi'; icon_state = "impact_laser"; name = "photon torpedo"} | /turf/open/floor/holofloor/hyperspace | /area/template_noop
+4,9: /obj/structure/window/reinforced/spawner/directional/west | /obj/machinery/computer/arcade/orion_trail/kobayashi | /turf/open/floor/holofloor/plating | /area/template_noop
+5,9: /obj/machinery/button/massdriver/indestructible{id = "trektorpedo1"; name = "photon torpedo button"; pixel_x = -16; pixel_y = -5} | /obj/machinery/button/massdriver/indestructible{id = "trektorpedo2"; name = "photon torpedo button"; pixel_x = 16; pixel_y = -5} | /obj/machinery/computer/arcade/orion_trail/kobayashi | /turf/open/floor/holofloor/plating | /area/template_noop
+6,9: /obj/structure/window/reinforced/spawner/directional/east | /obj/machinery/computer/arcade/orion_trail/kobayashi | /turf/open/floor/holofloor/plating | /area/template_noop
+7,9: /obj/structure/window/reinforced/spawner/directional/south | /obj/machinery/mass_driver{dir = 1; id = "trektorpedo2"; name = "photon torpedo tube"} | /obj/item/toy/minimeteor{desc = "A primitive long-range weapon, inferior to Nanotrasen's perfected bluespace artillery."; icon = 'icons/effects/effects.dmi'; icon_state = "impact_laser"; name = "photon torpedo"} | /turf/open/floor/holofloor/hyperspace | /area/template_noop
+8,9: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+9,9: /turf/open/floor/holofloor/hyperspace | /area/template_noop
+1,8: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/hyperspace | /area/template_noop
+2,8: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/hyperspace | /area/template_noop
+3,8: /obj/structure/table/glass | /obj/item/gun/energy/e_gun/mini/practice_phaser | /obj/structure/window/reinforced/spawner/directional/west | /obj/machinery/recharger | /turf/open/floor/holofloor/plating | /area/template_noop
+5,8: /obj/structure/chair/office{dir = 1} | /turf/open/floor/holofloor/plating | /area/template_noop
+7,8: /obj/structure/table/glass | /obj/item/gun/energy/e_gun/mini/practice_phaser | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/holofloor/plating | /area/template_noop
+8,8: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/hyperspace | /area/template_noop
+9,8: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/hyperspace | /area/template_noop
+1,6: /obj/machinery/computer/station_alert{dir = 4} | /turf/open/floor/holofloor/plating | /area/template_noop
+2,6: /obj/structure/chair/office{dir = 8} | /turf/open/floor/holofloor/plating | /area/template_noop
+8,6: /obj/structure/chair/office{dir = 4} | /turf/open/floor/holofloor/plating | /area/template_noop
+9,6: /obj/machinery/computer/station_alert{dir = 8} | /turf/open/floor/holofloor/plating | /area/template_noop
+1,5: /obj/structure/window/reinforced/spawner/directional/south | /obj/machinery/computer/station_alert{dir = 4} | /turf/open/floor/holofloor/plating | /area/template_noop
+2,5: /obj/structure/chair/office{dir = 8} | /turf/open/floor/holofloor/plating | /area/template_noop
+5,5: /obj/structure/chair/comfy/beige{dir = 1} | /turf/open/floor/holofloor/plating | /area/template_noop
+6,5: /obj/structure/table | /turf/open/floor/holofloor/plating | /area/template_noop
+8,5: /obj/structure/chair/office{dir = 4} | /turf/open/floor/holofloor/plating | /area/template_noop
+9,5: /obj/machinery/computer/atmos_alert{dir = 8} | /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/plating | /area/template_noop
+4,4: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/plating | /area/template_noop
+5,4: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/plating | /area/template_noop
+6,4: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor/plating | /area/template_noop
+3,3: /obj/machinery/door/window/right/directional/south | /turf/open/floor/holofloor/plating | /area/template_noop
+4,3: /obj/structure/table | /obj/item/folder | /obj/item/pen/blue | /obj/structure/window/reinforced/spawner/directional/west | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+5,3: /obj/structure/table | /obj/item/folder | /obj/item/pen | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+6,3: /obj/structure/table | /obj/structure/window/reinforced/spawner/directional/east | /obj/item/folder | /obj/item/pen/red | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+7,3: /obj/machinery/door/window/left/directional/south | /turf/open/floor/holofloor/plating | /area/template_noop
+3,2: /obj/structure/window/reinforced/spawner/directional/west | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+4,2: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+5,2: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+6,2: /obj/structure/chair{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+7,2: /obj/structure/window/reinforced/spawner/directional/east | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+3,1: /obj/structure/rack | /obj/item/clothing/under/trek/medsci | /obj/item/clothing/under/trek/medsci | /obj/item/clothing/under/trek/command | /obj/structure/window/reinforced/spawner/directional/west | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+4,1: /obj/effect/turf_decal/tile/neutral/half/contrasted | /turf/open/floor/holofloor | /area/template_noop
+5,1: /obj/effect/turf_decal/tile/neutral/half/contrasted | /turf/open/floor/holofloor | /area/template_noop
+6,1: /obj/effect/turf_decal/tile/neutral/half/contrasted | /turf/open/floor/holofloor | /area/template_noop
+7,1: /obj/structure/rack | /obj/item/clothing/under/trek/engsec | /obj/item/clothing/under/trek/engsec | /obj/structure/window/reinforced/spawner/directional/east | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /turf/open/floor/holofloor | /area/template_noop

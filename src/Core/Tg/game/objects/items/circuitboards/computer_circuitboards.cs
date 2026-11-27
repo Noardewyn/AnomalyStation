@@ -14,7 +14,8 @@ namespace Anomaly.Core.Tg;
 // the boards with procs of their own (the syndicate shuttle's Destroy) stay inert. The var blocks are generated. The engineering
 // package E6 (D287): the atmospheric alert board's examine and its multitool mode switch. Gaps P4d (D298): the supply consoles'
 // boards (their receiver spectrum, emag and the console they configure). Gaps RD2 (D333): the R&D console's board. The library
-// console's board, switched between the visitor and the book management console with a screwdriver.
+// console's board, switched between the visitor and the book management console with a screwdriver. The slot machine's board and
+// its themes.
 
 // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:2
 public partial class obj_item_circuitboard_computer : obj_item_circuitboard
@@ -98,6 +99,77 @@ public partial class datum_controller_global_vars
         syndicate_shuttle_boards = Dm.list();
         Dm.append(ref gvars_datum_init_order, "syndicate_shuttle_boards");
     }
+}
+
+
+// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:302
+public partial class obj_item_circuitboard_computer_slot_machine : obj_item_circuitboard_computer
+{
+    /// List of pickable slot machines
+    // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:308
+    public static ref DmList slot_themes => ref TgState.Current.obj_item_circuitboard_computer_slot_machine__slot_themes;
+
+    // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:321
+    public override async DmTask<object> examine(mob user = null, params object[] __extra)
+    {
+        object dot = await base.examine(user, __extra);
+        object current_theme = I18n.T("Unknown");
+        foreach (object theme_name in Dm.each(slot_themes))
+        {
+            if (Dm.eq(slot_themes[theme_name], build_path))
+            {
+                current_theme = theme_name;
+                break;
+            }
+        }
+        Dm.append(ref dot, span_info(I18n.T("[] is set to the [] theme. You can use a screwdriver to reconfigure it.", this, current_theme)));
+        return dot;
+    }
+
+    // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:330
+    public override async DmTask<object> screwdriver_act(mob_living user = null, obj_item tool = null)
+    {
+        if (Dm.truthy(Dm.bitand(obj_flags, EMAGGED)))
+        {
+            balloon_alert(user, I18n.T("board mode is broken!"));
+            return FALSE;
+        }
+
+        object choice = await tgui_input_list(user, I18n.T("Choose a slot machine theme"), I18n.T("Theme Selection"), slot_themes);
+        if (choice == null)
+            return ITEM_INTERACT_BLOCKING;
+        build_path = slot_themes[choice] as Type;
+        to_chat(user, span_notice(I18n.T("You set the board to the [] theme.", choice)));
+        return ITEM_INTERACT_SUCCESS;
+    }
+
+    // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:342
+    public override async DmTask<object> emag_act(mob user = null, obj_item_card_emag emag_card = null, params object[] __extra)
+    {
+        if (Dm.truthy(Dm.bitand(obj_flags, EMAGGED)))
+            return FALSE;
+
+        obj_flags = Dm.bitor(obj_flags, EMAGGED);
+        build_path = typeof(obj_machinery_computer_slot_machine_syndicate);
+        balloon_alert(user, I18n.T("illegal slot machine loaded"));
+        return TRUE;
+    }
+}
+
+public sealed partial class TgState
+{
+    // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:308
+    internal DmList obj_item_circuitboard_computer_slot_machine__slot_themes = Dm.list(
+        Dm.kv("Default", typeof(obj_machinery_computer_slot_machine)),
+        Dm.kv("Command", typeof(obj_machinery_computer_slot_machine_command)),
+        Dm.kv("Security", typeof(obj_machinery_computer_slot_machine_security)),
+        Dm.kv("Medical", typeof(obj_machinery_computer_slot_machine_medical)),
+        Dm.kv("Engineering", typeof(obj_machinery_computer_slot_machine_engineering)),
+        Dm.kv("Cargo", typeof(obj_machinery_computer_slot_machine_cargo)),
+        Dm.kv("Service", typeof(obj_machinery_computer_slot_machine_service)),
+        Dm.kv("Science", typeof(obj_machinery_computer_slot_machine_science)),
+        Dm.kv("Clown", typeof(obj_machinery_computer_slot_machine_clown)),
+        Dm.kv("Mime", typeof(obj_machinery_computer_slot_machine_mime)));
 }
 
 // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:356

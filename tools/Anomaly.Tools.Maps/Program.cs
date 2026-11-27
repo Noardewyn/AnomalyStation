@@ -242,6 +242,9 @@ public static class Program
         // Lavaland's ruins (tg's /datum/map_template/ruin/lavaland prefix and suffix values, and the syndicate base's modules), at
         // maps/RandomRuins/<folder>/<name>.as3dmap, which SSmapping's seedRuins places over the caves
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(LavaRuins);
+        // The holodeck's programs (tg's /datum/map_template/holodeck mappaths) the holodeck console loads into its area, at
+        // maps/templates/<name>.as3dmap
+        if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(HolodeckPrograms);
         foreach (string template in templates)
         {
             string relative = "_maps/" + template;
@@ -364,6 +367,20 @@ public static class Program
         "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/mistake_unlikely.dmm",
         "RandomRuins/AnywhereRuins/golem_ship.dmm", "RandomRuins/AnywhereRuins/fountain_hall.dmm",
         "RandomRuins/AnywhereRuins/shoe_factory.dmm"];
+
+    /// <summary>
+    /// The holodeck's programs: every mappath of code/modules/holodeck/holodeck_map_templates.dm.
+    /// </summary>
+    internal static readonly string[] HolodeckPrograms = ["templates/holodeck_animeschool.dmm", "templates/holodeck_anthophillia.dmm",
+        "templates/holodeck_baseball.dmm", "templates/holodeck_basketball.dmm", "templates/holodeck_beach.dmm",
+        "templates/holodeck_burntest.dmm", "templates/holodeck_card_battle.dmm", "templates/holodeck_chapelcourt.dmm",
+        "templates/holodeck_dodgeball.dmm", "templates/holodeck_emptycourt.dmm", "templates/holodeck_firingrange.dmm",
+        "templates/holodeck_fitness.dmm", "templates/holodeck_holdoutbunker.dmm", "templates/holodeck_kobayashi.dmm",
+        "templates/holodeck_lounge.dmm", "templates/holodeck_medicalsim.dmm", "templates/holodeck_microwave.dmm",
+        "templates/holodeck_offline.dmm", "templates/holodeck_petpark.dmm", "templates/holodeck_photobooth.dmm",
+        "templates/holodeck_prison.dmm", "templates/holodeck_refuelingstation.dmm", "templates/holodeck_skatepark.dmm",
+        "templates/holodeck_spacecheckers.dmm", "templates/holodeck_spacechess.dmm", "templates/holodeck_thunderdome.dmm",
+        "templates/holodeck_thunderdome1218.dmm", "templates/holodeck_wildlifesim.dmm", "templates/holodeck_winterwonderland.dmm"];
 
     internal static readonly string[] Safehouses = ["safehouses/abductor.dmm", "safehouses/bathroom.dmm", "safehouses/den.dmm",
         "safehouses/dig.dmm", "safehouses/ice.dmm", "safehouses/lavaland_boss.dmm", "safehouses/maintsafe.dmm", "safehouses/mine.dmm",

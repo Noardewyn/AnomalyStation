@@ -339,6 +339,11 @@ public static class TguiInterfaces
         ["LibraryConsole"] = LibraryConsole.Render, // the library's book management console
         ["LibraryScanner"] = LibraryScanner.Render, // the library's scanner
         ["LibraryAdmin"] = LibraryAdmin.Render, // the admins' library console
+        ["Holodeck"] = Holodeck.Render, // the holodeck control console
+        ["OrionGame"] = OrionGame.Render, // The Orion Trail arcade
+        ["BattleArcade"] = BattleArcade.Render, // the battle arcade
+        ["SlotMachine"] = SlotMachine.Render, // the slot machines
+        ["Roulette"] = Roulette.Render, // the roulette table
         ["AdminBookViewer"] = AdminBookViewer.Render, // the admins' library console's book viewer
         ["DSMBook"] = DSMBook.Render, // the psychologist's manual
         ["IDCBook"] = IDCBook.Render, // the manual of the diseases

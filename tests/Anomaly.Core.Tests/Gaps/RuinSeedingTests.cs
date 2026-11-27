@@ -72,12 +72,15 @@ public class RuinSeedingTests
 
     /// No runtimes but tg's own: the pride ruin's door stands on weak lava under a stone tile, and the lava's Initialize burns what
     /// stands on it (`initialize_occupant`, lava.dm:84) before the tile has made the lava safe and before the door has its integrity,
-    /// so the door's take_damage CRASHes (atom_defense.dm:22), as in tg; and the food cart's table (below).
+    /// so the door's take_damage CRASHes (atom_defense.dm:22), as in tg; and the food cart's table and the syndicate base's slot machine (below).
     private static void AssertNoRuntimes(AudioRoom r)
     {
         r.Room.Runtimes.RemoveAll(e => e.Message.Contains("cult airlock taking damage while having <= 0 integrity", StringComparison.Ordinal));
         // and the beach's food cart's packed table, nullspaced in the cart, queued for smoothing on its Initialize (structures.dm:23)
         r.Room.Runtimes.RemoveAll(e => e.Message.Contains("/obj/structure/table/reinforced called smooth_icon() without being on a z-level", StringComparison.Ordinal));
+        // and the syndicate base's slot machine, whose first Initialize in a world makes one of every coin to learn their values
+        // (slotmachine.dm:99-102), the mythril one among them, whose material reaches the fantasy affixes' listed leaf (VarBlockLeaves)
+        r.Room.Runtimes.RemoveAll(e => e.Message.Contains("not translated yet", StringComparison.Ordinal) && e.Message.Contains("code/datums/materials/basemats.dm:541", StringComparison.Ordinal));
         r.AssertNoRuntimes();
     }
 

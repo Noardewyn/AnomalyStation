@@ -1348,9 +1348,9 @@ public partial class obj_item_melee_energy_sword_bananium
     }
 }
 
-// tg: code/modules/holodeck/items.dm:11
-[DmPath("/obj/item/melee/energy/sword/holographic"), DmGeneratedOnly, DmInert]
-public partial class obj_item_melee_energy_sword_holographic : obj_item_melee_energy_sword
+// tg: code/modules/holodeck/items.dm:11 (the var block of a hand-written class)
+[DmPath("/obj/item/melee/energy/sword/holographic")]
+public partial class obj_item_melee_energy_sword_holographic
 {
     // tg: code/modules/holodeck/items.dm:11
     public obj_item_melee_energy_sword_holographic()
@@ -1370,7 +1370,7 @@ public partial class obj_item_melee_energy_sword_holographic : obj_item_melee_en
 }
 
 // tg: code/modules/holodeck/items.dm:30
-[DmPath("/obj/item/melee/energy/sword/holographic/green"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/melee/energy/sword/holographic/green"), DmGeneratedOnly]
 public partial class obj_item_melee_energy_sword_holographic_green : obj_item_melee_energy_sword_holographic
 {
     // tg: code/modules/holodeck/items.dm:30
@@ -1381,7 +1381,7 @@ public partial class obj_item_melee_energy_sword_holographic_green : obj_item_me
 }
 
 // tg: code/modules/holodeck/items.dm:33
-[DmPath("/obj/item/melee/energy/sword/holographic/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/melee/energy/sword/holographic/red"), DmGeneratedOnly]
 public partial class obj_item_melee_energy_sword_holographic_red : obj_item_melee_energy_sword_holographic
 {
     // tg: code/modules/holodeck/items.dm:33

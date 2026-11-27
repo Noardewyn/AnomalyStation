@@ -1,0 +1,10 @@
+anomaly-map 1
+source _maps/templates/holodeck_anthophillia.dmm tg 1d99bd7f
+size 9 10 1
+chunk 32
+default /obj/effect/holodeck_effect/mobspawner/bee | /turf/open/floor/holofloor/asteroid | /area/template_noop
+
+[chunk 1 1 1]
+5,6: /obj/effect/holodeck_effect/mobspawner/bee | /obj/item/clothing/head/utility/beekeeper_head | /turf/open/floor/holofloor/asteroid | /area/template_noop
+5,5: /obj/effect/holodeck_effect/mobspawner/bee | /obj/effect/decal/remains/human | /obj/item/clothing/suit/utility/beekeeper_suit | /turf/open/floor/holofloor/asteroid | /area/template_noop
+6,5: /obj/effect/holodeck_effect/mobspawner/bee | /obj/item/melee/flyswatter | /turf/open/floor/holofloor/asteroid | /area/template_noop

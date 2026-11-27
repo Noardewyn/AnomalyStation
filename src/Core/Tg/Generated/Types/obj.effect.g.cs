@@ -4290,9 +4290,9 @@ public partial class obj_effect_resin_container
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg_machines.dm:397
-[DmPath("/obj/effect/trading_card_panel"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_trading_card_panel : obj_effect
+// tg: code/game/objects/items/tcg/tcg_machines.dm:397 (the var block of a hand-written class)
+[DmPath("/obj/effect/trading_card_panel")]
+public partial class obj_effect_trading_card_panel
 {
     public float gems = 1; // tg: code/game/objects/items/tcg/tcg_machines.dm:404
     public float gem_slots = 1; // tg: code/game/objects/items/tcg/tcg_machines.dm:406
@@ -4320,7 +4320,7 @@ public partial class obj_effect_trading_card_panel : obj_effect
 }
 
 // tg: code/game/objects/items/tcg/tcg_machines.dm:455
-[DmPath("/obj/effect/trading_card_panel/health"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/trading_card_panel/health"), DmGeneratedOnly]
 public partial class obj_effect_trading_card_panel_health : obj_effect_trading_card_panel
 {
     // tg: code/game/objects/items/tcg/tcg_machines.dm:455
@@ -5796,9 +5796,9 @@ public partial class obj_effect_plasma_image_holder : obj_effect
     }
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:8
-[DmPath("/obj/effect/holodeck_effect"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect : obj_effect
+// tg: code/modules/holodeck/holo_effect.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect")]
+public partial class obj_effect_holodeck_effect
 {
     // tg: code/modules/holodeck/holo_effect.dm:8
     public obj_effect_holodeck_effect()
@@ -5809,9 +5809,9 @@ public partial class obj_effect_holodeck_effect : obj_effect
     }
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:28
-[DmPath("/obj/effect/holodeck_effect/cards"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_cards : obj_effect_holodeck_effect
+// tg: code/modules/holodeck/holo_effect.dm:28 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/cards")]
+public partial class obj_effect_holodeck_effect_cards
 {
     // tg: code/modules/holodeck/holo_effect.dm:28
     public obj_effect_holodeck_effect_cards()
@@ -5821,28 +5821,28 @@ public partial class obj_effect_holodeck_effect_cards : obj_effect_holodeck_effe
     }
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:36
-[DmPath("/obj/effect/holodeck_effect/sparks"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_sparks : obj_effect_holodeck_effect { }
+// tg: code/modules/holodeck/holo_effect.dm:36 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/sparks")]
+public partial class obj_effect_holodeck_effect_sparks { }
 
-// tg: code/modules/holodeck/holo_effect.dm:46
-[DmPath("/obj/effect/holodeck_effect/random_book"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_random_book : obj_effect_holodeck_effect { }
+// tg: code/modules/holodeck/holo_effect.dm:46 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/random_book")]
+public partial class obj_effect_holodeck_effect_random_book { }
 
-// tg: code/modules/holodeck/holo_effect.dm:54
-[DmPath("/obj/effect/holodeck_effect/mobspawner"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_mobspawner : obj_effect_holodeck_effect
+// tg: code/modules/holodeck/holo_effect.dm:54 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/mobspawner")]
+public partial class obj_effect_holodeck_effect_mobspawner
 {
     public object mobtype = typeof(mob_living_basic_carp_holographic); // tg: code/modules/holodeck/holo_effect.dm:54
     public mob our_mob; // tg: code/modules/holodeck/holo_effect.dm:55
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:103
-[DmPath("/obj/effect/holodeck_effect/mobspawner/pet"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_mobspawner_pet : obj_effect_holodeck_effect_mobspawner { }
+// tg: code/modules/holodeck/holo_effect.dm:103 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/mobspawner/pet")]
+public partial class obj_effect_holodeck_effect_mobspawner_pet { }
 
 // tg: code/modules/holodeck/holo_effect.dm:122
-[DmPath("/obj/effect/holodeck_effect/mobspawner/bee"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/bee"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_bee : obj_effect_holodeck_effect_mobspawner
 {
     // tg: code/modules/holodeck/holo_effect.dm:122
@@ -5853,7 +5853,7 @@ public partial class obj_effect_holodeck_effect_mobspawner_bee : obj_effect_holo
 }
 
 // tg: code/modules/holodeck/holo_effect.dm:125
-[DmPath("/obj/effect/holodeck_effect/mobspawner/monkey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/monkey"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_monkey : obj_effect_holodeck_effect_mobspawner
 {
     // tg: code/modules/holodeck/holo_effect.dm:125
@@ -5863,9 +5863,9 @@ public partial class obj_effect_holodeck_effect_mobspawner_monkey : obj_effect_h
     }
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:128
-[DmPath("/obj/effect/holodeck_effect/mobspawner/penguin"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_mobspawner_penguin : obj_effect_holodeck_effect_mobspawner
+// tg: code/modules/holodeck/holo_effect.dm:128 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/mobspawner/penguin")]
+public partial class obj_effect_holodeck_effect_mobspawner_penguin
 {
     // tg: code/modules/holodeck/holo_effect.dm:128
     public obj_effect_holodeck_effect_mobspawner_penguin()
@@ -5875,7 +5875,7 @@ public partial class obj_effect_holodeck_effect_mobspawner_penguin : obj_effect_
 }
 
 // tg: code/modules/holodeck/holo_effect.dm:136
-[DmPath("/obj/effect/holodeck_effect/mobspawner/penguin_baby"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/penguin_baby"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_penguin_baby : obj_effect_holodeck_effect_mobspawner
 {
     // tg: code/modules/holodeck/holo_effect.dm:136
@@ -5886,11 +5886,11 @@ public partial class obj_effect_holodeck_effect_mobspawner_penguin_baby : obj_ef
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/obj/effect/holodeck_effect/mobspawner/crab"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/crab"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_crab : obj_effect_holodeck_effect_mobspawner { }
 
 // tg: code/modules/holodeck/holo_effect.dm:139
-[DmPath("/obj/effect/holodeck_effect/mobspawner/crab/jon"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/crab/jon"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_crab_jon : obj_effect_holodeck_effect_mobspawner_crab
 {
     // tg: code/modules/holodeck/holo_effect.dm:139

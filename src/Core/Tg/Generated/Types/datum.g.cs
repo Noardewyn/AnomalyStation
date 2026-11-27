@@ -22243,9 +22243,9 @@ public partial class datum_wires_robot
     }
 }
 
-// tg: code/datums/wires/roulette.dm:2
-[DmPath("/datum/wires/roulette"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_roulette : datum_wires
+// tg: code/datums/wires/roulette.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/wires/roulette")]
+public partial class datum_wires_roulette
 {
     // tg: code/datums/wires/roulette.dm:2
     public datum_wires_roulette()
@@ -25152,9 +25152,9 @@ public partial class datum_battle_arcade_gear_tier_9_armor : datum_battle_arcade
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:4
-[DmPath("/datum/orion_event"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event : datum
+// tg: code/game/machinery/computer/arcade/orion_event.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/orion_event")]
+public partial class datum_orion_event
 {
     public string name = "this displays the events name"; // tg: code/game/machinery/computer/arcade/orion_event.dm:4
     public string text = "this displays a blurb about the event"; // tg: code/game/machinery/computer/arcade/orion_event.dm:5
@@ -25174,9 +25174,9 @@ public partial class datum_orion_event : datum
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:66
-[DmPath("/datum/orion_event/engine_part"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_engine_part : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:66 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/engine_part")]
+public partial class datum_orion_event_engine_part
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:66
     public datum_orion_event_engine_part()
@@ -25196,9 +25196,9 @@ public partial class datum_orion_event_engine_part : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:93
-[DmPath("/datum/orion_event/electronic_part"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_electronic_part : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:93 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/electronic_part")]
+public partial class datum_orion_event_electronic_part
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:93
     public datum_orion_event_electronic_part()
@@ -25216,9 +25216,9 @@ public partial class datum_orion_event_electronic_part : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:138
-[DmPath("/datum/orion_event/hull_part"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_hull_part : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:138 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/hull_part")]
+public partial class datum_orion_event_hull_part
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:138
     public datum_orion_event_hull_part()
@@ -25236,9 +25236,9 @@ public partial class datum_orion_event_hull_part : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:181
-[DmPath("/datum/orion_event/old_ship"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_old_ship : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:181 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/old_ship")]
+public partial class datum_orion_event_old_ship
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:181
     public datum_orion_event_old_ship()
@@ -25256,9 +25256,9 @@ public partial class datum_orion_event_old_ship : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:201
-[DmPath("/datum/orion_event/exploring_derelict"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_exploring_derelict : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:201 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/exploring_derelict")]
+public partial class datum_orion_event_exploring_derelict
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:201
     public datum_orion_event_exploring_derelict()
@@ -25275,9 +25275,9 @@ public partial class datum_orion_event_exploring_derelict : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:241
-[DmPath("/datum/orion_event/raiders"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_raiders : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:241 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/raiders")]
+public partial class datum_orion_event_raiders
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:241
     public datum_orion_event_raiders()
@@ -25294,9 +25294,9 @@ public partial class datum_orion_event_raiders : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:270
-[DmPath("/datum/orion_event/illness"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_illness : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:270 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/illness")]
+public partial class datum_orion_event_illness
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:270
     public datum_orion_event_illness()
@@ -25313,9 +25313,9 @@ public partial class datum_orion_event_illness : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:301
-[DmPath("/datum/orion_event/flux"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_flux : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:301 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/flux")]
+public partial class datum_orion_event_flux
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:301
     public datum_orion_event_flux()
@@ -25333,9 +25333,9 @@ public partial class datum_orion_event_flux : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:327
-[DmPath("/datum/orion_event/changeling_infiltration"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_changeling_infiltration : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:327 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/changeling_infiltration")]
+public partial class datum_orion_event_changeling_infiltration
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:327
     public datum_orion_event_changeling_infiltration()
@@ -25352,9 +25352,9 @@ public partial class datum_orion_event_changeling_infiltration : datum_orion_eve
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:349
-[DmPath("/datum/orion_event/changeling_attack"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_changeling_attack : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:349 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/changeling_attack")]
+public partial class datum_orion_event_changeling_attack
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:349
     public datum_orion_event_changeling_attack()
@@ -25370,9 +25370,9 @@ public partial class datum_orion_event_changeling_attack : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:401
-[DmPath("/datum/orion_event/black_hole"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_black_hole : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:401 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/black_hole")]
+public partial class datum_orion_event_black_hole
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:401
     public datum_orion_event_black_hole()
@@ -25389,9 +25389,9 @@ public partial class datum_orion_event_black_hole : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:424
-[DmPath("/datum/orion_event/black_hole_death"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_black_hole_death : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:424 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/black_hole_death")]
+public partial class datum_orion_event_black_hole_death
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:424
     public datum_orion_event_black_hole_death()
@@ -25408,9 +25408,9 @@ public partial class datum_orion_event_black_hole_death : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:448
-[DmPath("/datum/orion_event/space_port"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_space_port : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:448 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/space_port")]
+public partial class datum_orion_event_space_port
 {
     public string normal_arrival = "You have spotted a small pocket of civilization along the Orion Trail. A friendly hailing from the nearby space port assures that you can dock to rest and prepare for the travels ahead."; // tg: code/game/machinery/computer/arcade/orion_event.dm:449
 
@@ -25430,7 +25430,7 @@ public partial class datum_orion_event_space_port : datum_orion_event
 }
 
 // tg: code/game/machinery/computer/arcade/orion_event.dm:486
-[DmPath("/datum/orion_event/space_port/tau_ceti"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/orion_event/space_port/tau_ceti"), DmGeneratedOnly]
 public partial class datum_orion_event_space_port_tau_ceti : datum_orion_event_space_port
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:486
@@ -25442,9 +25442,9 @@ public partial class datum_orion_event_space_port_tau_ceti : datum_orion_event_s
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:495
-[DmPath("/datum/orion_event/space_port_raid"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_space_port_raid : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:495 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/space_port_raid")]
+public partial class datum_orion_event_space_port_raid
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:495
     public datum_orion_event_space_port_raid()
@@ -27750,9 +27750,9 @@ public partial class datum_golem_food_buff_bluespace : datum_golem_food_buff
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg.dm:475
-[DmPath("/datum/card"), DmGeneratedOnly, DmInert]
-public partial class datum_card : datum
+// tg: code/game/objects/items/tcg/tcg.dm:475 (the vars the hand-written class does not declare)
+[DmPath("/datum/card")]
+public partial class datum_card
 {
     public string id = "coder"; // tg: code/game/objects/items/tcg/tcg.dm:475
     public string name = "Coder"; // tg: code/game/objects/items/tcg/tcg.dm:476
@@ -27760,9 +27760,6 @@ public partial class datum_card : datum
     public string rules = "There are no rules here. There is no escape. No Recall or Intervention can work in this place."; // tg: code/game/objects/items/tcg/tcg.dm:479
     public string icon = "icons/runtime/tcg/default.dmi"; // tg: code/game/objects/items/tcg/tcg.dm:480
     public string icon_state = "template"; // tg: code/game/objects/items/tcg/tcg.dm:481
-    public float summoncost = -1; // tg: code/game/objects/items/tcg/tcg.dm:483
-    public float? power = -1; // tg: code/game/objects/items/tcg/tcg.dm:485
-    public float resolve = -1; // tg: code/game/objects/items/tcg/tcg.dm:487
     public string faction = "socks"; // tg: code/game/objects/items/tcg/tcg.dm:489
     public string cardtype = "C43a7u43?"; // tg: code/game/objects/items/tcg/tcg.dm:491
     public string cardsubtype = "Weeb"; // tg: code/game/objects/items/tcg/tcg.dm:493

@@ -5827,9 +5827,9 @@ public partial class obj_item_producepad
     }
 }
 
-// tg: code/game/machinery/roulette_machine.dm:452
-[DmPath("/obj/item/roulette_wheel_beacon"), DmGeneratedOnly, DmInert]
-public partial class obj_item_roulette_wheel_beacon : obj_item
+// tg: code/game/machinery/roulette_machine.dm:452 (the var block of a hand-written class)
+[DmPath("/obj/item/roulette_wheel_beacon")]
+public partial class obj_item_roulette_wheel_beacon
 {
     public object used; // tg: code/game/machinery/roulette_machine.dm:456
 
@@ -6270,9 +6270,9 @@ public partial class obj_item_civ_bounty_beacon
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion.dm:497
-[DmPath("/obj/item/orion_ship"), DmGeneratedOnly, DmInert]
-public partial class obj_item_orion_ship : obj_item
+// tg: code/game/machinery/computer/arcade/orion.dm:497 (the var block of a hand-written class)
+[DmPath("/obj/item/orion_ship")]
+public partial class obj_item_orion_ship
 {
     public float? active = 0; // tg: code/game/machinery/computer/arcade/orion.dm:503
 
@@ -25374,9 +25374,9 @@ public partial class obj_item_extinguisher_anti : obj_item_extinguisher
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg.dm:5
-[DmPath("/obj/item/tcgcard"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tcgcard : obj_item
+// tg: code/game/objects/items/tcg/tcg.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/item/tcgcard")]
+public partial class obj_item_tcgcard
 {
     public string id = "code"; // tg: code/game/objects/items/tcg/tcg.dm:11
     public string series = "coderbus"; // tg: code/game/objects/items/tcg/tcg.dm:13
@@ -25395,9 +25395,9 @@ public partial class obj_item_tcgcard : obj_item
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg.dm:189
-[DmPath("/obj/item/tcgcard_deck"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tcgcard_deck : obj_item
+// tg: code/game/objects/items/tcg/tcg.dm:189 (the var block of a hand-written class)
+[DmPath("/obj/item/tcgcard_deck")]
+public partial class obj_item_tcgcard_deck
 {
     public float flipped = 0; // tg: code/game/objects/items/tcg/tcg.dm:196
 
@@ -25414,9 +25414,9 @@ public partial class obj_item_tcgcard_deck : obj_item
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg.dm:339
-[DmPath("/obj/item/cardpack"), DmGeneratedOnly, DmInert]
-public partial class obj_item_cardpack : obj_item
+// tg: code/game/objects/items/tcg/tcg.dm:339 (the var block of a hand-written class)
+[DmPath("/obj/item/cardpack")]
+public partial class obj_item_cardpack
 {
     public string series = "MEME"; // tg: code/game/objects/items/tcg/tcg.dm:346
     public float contains_coin = -1; // tg: code/game/objects/items/tcg/tcg.dm:348
@@ -25447,7 +25447,7 @@ public partial class obj_item_cardpack : obj_item
 }
 
 // tg: code/game/objects/items/tcg/tcg.dm:370
-[DmPath("/obj/item/cardpack/series_one"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/cardpack/series_one"), DmGeneratedOnly]
 public partial class obj_item_cardpack_series_one : obj_item_cardpack
 {
     // tg: code/game/objects/items/tcg/tcg.dm:370
@@ -25462,7 +25462,7 @@ public partial class obj_item_cardpack_series_one : obj_item_cardpack
 }
 
 // tg: code/game/objects/items/tcg/tcg.dm:377
-[DmPath("/obj/item/cardpack/resin"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/cardpack/resin"), DmGeneratedOnly]
 public partial class obj_item_cardpack_resin : obj_item_cardpack
 {
     // tg: code/game/objects/items/tcg/tcg.dm:377

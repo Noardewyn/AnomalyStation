@@ -1496,9 +1496,9 @@ public partial class datum_storage_bag_of_holding
     }
 }
 
-// tg: code/datums/storage/subtypes/others/cards.dm:5
-[DmPath("/datum/storage/tcg"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_tcg : datum_storage
+// tg: code/datums/storage/subtypes/others/cards.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/storage/tcg")]
+public partial class datum_storage_tcg
 {
     // tg: code/datums/storage/subtypes/others/cards.dm:5
     public datum_storage_tcg()
@@ -1919,9 +1919,9 @@ public partial class datum_storage_mail_counterfeit_bluespace : datum_storage_ma
     }
 }
 
-// tg: code/datums/storage/subtypes/others/misc.dm:278
-[DmPath("/datum/storage/card_binder"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_card_binder : datum_storage
+// tg: code/datums/storage/subtypes/others/misc.dm:278 (the var block of a hand-written class)
+[DmPath("/datum/storage/card_binder")]
+public partial class datum_storage_card_binder
 {
     // tg: code/datums/storage/subtypes/others/misc.dm:278
     public datum_storage_card_binder()

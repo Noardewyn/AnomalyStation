@@ -1,0 +1,19 @@
+anomaly-map 1
+source _maps/templates/holodeck_wildlifesim.dmm tg 1d99bd7f
+size 9 10 1
+chunk 32
+default /turf/open/floor/holofloor/plating | /area/template_noop
+
+[chunk 1 1 1]
+2,8: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+4,8: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+6,8: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+8,8: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+3,6: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+7,6: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+5,5: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+5,4: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+2,2: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+4,2: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+6,2: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop
+8,2: /obj/effect/holodeck_effect/mobspawner | /turf/open/floor/holofloor/plating | /area/template_noop

@@ -1506,9 +1506,9 @@ public partial class obj_structure_projected_forcefield
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg_machines.dm:133
-[DmPath("/obj/structure/trading_card_summon"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_trading_card_summon : obj_structure
+// tg: code/game/objects/items/tcg/tcg_machines.dm:133 (the var block of a hand-written class)
+[DmPath("/obj/structure/trading_card_summon")]
+public partial class obj_structure_trading_card_summon
 {
     public datum_card template; // tg: code/game/objects/items/tcg/tcg_machines.dm:139
     public obj_item_tcgcard card_ref; // tg: code/game/objects/items/tcg/tcg_machines.dm:141
@@ -1534,9 +1534,9 @@ public partial class obj_structure_trading_card_summon : obj_structure
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg_machines.dm:252
-[DmPath("/obj/structure/trading_card_summon/blank"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_trading_card_summon_blank : obj_structure_trading_card_summon
+// tg: code/game/objects/items/tcg/tcg_machines.dm:252 (the var block of a hand-written class)
+[DmPath("/obj/structure/trading_card_summon/blank")]
+public partial class obj_structure_trading_card_summon_blank
 {
     // tg: code/game/objects/items/tcg/tcg_machines.dm:252
     public obj_structure_trading_card_summon_blank()

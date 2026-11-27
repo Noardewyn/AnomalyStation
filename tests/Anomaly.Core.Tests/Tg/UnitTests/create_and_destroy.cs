@@ -195,6 +195,10 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         foreach (Type t in new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection), typeof(obj_effect_mob_spawn_corpse_human_bitrunner), typeof(obj_effect_mob_spawn_corpse_human_cyber_police) })
             uncreatables.Add(t);
         uncreatables.Add(typeof(obj_item_storage_box_syndie_kit_induction_kit_clown)); // tg's own stack trace, see VarBlockLeaves
+        // ADAPTED: the first slot machine of a world makes one of every coin to learn their values (slotmachine.dm:99-102), the mythril
+        // coin among them, and so reaches its listed leaf (VarBlockLeaves); with the base machine left out, its themed kinds would reach it
+        foreach (Type t in Dm.each_cast<Type>(typesof(typeof(obj_machinery_computer_slot_machine))))
+            uncreatables.Add(t);
         // ADAPTED: the second syndi-kit picks its kit at random (uplink_kits.dm:186, pick_weight): its bees kit holds the beesease bottle,
         // whose disease is not ported (reagent_containers.dm:81, diseases after the core version), and the uplink hides the kit (DV343);
         // new live types move the sweep's random stream onto that kit (as MobLifecycleTests since syndicate G4d; here since N3a)

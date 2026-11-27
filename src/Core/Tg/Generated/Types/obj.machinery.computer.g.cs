@@ -37,9 +37,9 @@ public partial class obj_machinery_computer
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:23
-[DmPath("/obj/machinery/computer/slot_machine"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine : obj_machinery_computer
+// tg: code/game/machinery/slotmachine.dm:23 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine")]
+public partial class obj_machinery_computer_slot_machine
 {
     public float money = 3000; // tg: code/game/machinery/slotmachine.dm:33
     public float plays = 0; // tg: code/game/machinery/slotmachine.dm:34
@@ -84,9 +84,9 @@ public partial class obj_machinery_computer_slot_machine : obj_machinery_compute
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:558
-[DmPath("/obj/machinery/computer/slot_machine/command"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_command : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:558 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/command")]
+public partial class obj_machinery_computer_slot_machine_command
 {
     // tg: code/game/machinery/slotmachine.dm:558
     public obj_machinery_computer_slot_machine_command()
@@ -105,9 +105,9 @@ public partial class obj_machinery_computer_slot_machine_command : obj_machinery
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:578
-[DmPath("/obj/machinery/computer/slot_machine/security"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_security : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:578 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/security")]
+public partial class obj_machinery_computer_slot_machine_security
 {
     // tg: code/game/machinery/slotmachine.dm:578
     public obj_machinery_computer_slot_machine_security()
@@ -126,9 +126,9 @@ public partial class obj_machinery_computer_slot_machine_security : obj_machiner
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:598
-[DmPath("/obj/machinery/computer/slot_machine/medical"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_medical : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:598 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/medical")]
+public partial class obj_machinery_computer_slot_machine_medical
 {
     // tg: code/game/machinery/slotmachine.dm:598
     public obj_machinery_computer_slot_machine_medical()
@@ -147,9 +147,9 @@ public partial class obj_machinery_computer_slot_machine_medical : obj_machinery
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:618
-[DmPath("/obj/machinery/computer/slot_machine/engineering"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_engineering : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:618 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/engineering")]
+public partial class obj_machinery_computer_slot_machine_engineering
 {
     // tg: code/game/machinery/slotmachine.dm:618
     public obj_machinery_computer_slot_machine_engineering()
@@ -168,9 +168,9 @@ public partial class obj_machinery_computer_slot_machine_engineering : obj_machi
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:638
-[DmPath("/obj/machinery/computer/slot_machine/cargo"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_cargo : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:638 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/cargo")]
+public partial class obj_machinery_computer_slot_machine_cargo
 {
     // tg: code/game/machinery/slotmachine.dm:638
     public obj_machinery_computer_slot_machine_cargo()
@@ -189,9 +189,9 @@ public partial class obj_machinery_computer_slot_machine_cargo : obj_machinery_c
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:658
-[DmPath("/obj/machinery/computer/slot_machine/service"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_service : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:658 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/service")]
+public partial class obj_machinery_computer_slot_machine_service
 {
     // tg: code/game/machinery/slotmachine.dm:658
     public obj_machinery_computer_slot_machine_service()
@@ -210,9 +210,9 @@ public partial class obj_machinery_computer_slot_machine_service : obj_machinery
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:678
-[DmPath("/obj/machinery/computer/slot_machine/science"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_science : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:678 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/science")]
+public partial class obj_machinery_computer_slot_machine_science
 {
     // tg: code/game/machinery/slotmachine.dm:678
     public obj_machinery_computer_slot_machine_science()
@@ -231,9 +231,9 @@ public partial class obj_machinery_computer_slot_machine_science : obj_machinery
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:698
-[DmPath("/obj/machinery/computer/slot_machine/clown"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_clown : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:698 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/clown")]
+public partial class obj_machinery_computer_slot_machine_clown
 {
     // tg: code/game/machinery/slotmachine.dm:698
     public obj_machinery_computer_slot_machine_clown()
@@ -251,9 +251,9 @@ public partial class obj_machinery_computer_slot_machine_clown : obj_machinery_c
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:717
-[DmPath("/obj/machinery/computer/slot_machine/mime"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_mime : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:717 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/mime")]
+public partial class obj_machinery_computer_slot_machine_mime
 {
     // tg: code/game/machinery/slotmachine.dm:717
     public obj_machinery_computer_slot_machine_mime()
@@ -271,9 +271,9 @@ public partial class obj_machinery_computer_slot_machine_mime : obj_machinery_co
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:736
-[DmPath("/obj/machinery/computer/slot_machine/syndicate"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_syndicate : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:736 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/syndicate")]
+public partial class obj_machinery_computer_slot_machine_syndicate
 {
     // tg: code/game/machinery/slotmachine.dm:736
     public obj_machinery_computer_slot_machine_syndicate()
@@ -4380,9 +4380,9 @@ public partial class obj_machinery_computer_warrant
     }
 }
 
-// tg: code/game/machinery/computer/arcade/_arcade.dm:2
-[DmPath("/obj/machinery/computer/arcade"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade : obj_machinery_computer
+// tg: code/game/machinery/computer/arcade/_arcade.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade")]
+public partial class obj_machinery_computer_arcade
 {
     public DmList prize_override; // tg: code/game/machinery/computer/arcade/_arcade.dm:14
 
@@ -4400,9 +4400,9 @@ public partial class obj_machinery_computer_arcade : obj_machinery_computer
     }
 }
 
-// tg: code/game/machinery/computer/arcade/amputation.dm:2
-[DmPath("/obj/machinery/computer/arcade/amputation"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade_amputation : obj_machinery_computer_arcade
+// tg: code/game/machinery/computer/arcade/amputation.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade/amputation")]
+public partial class obj_machinery_computer_arcade_amputation
 {
     // tg: code/game/machinery/computer/arcade/amputation.dm:2
     public obj_machinery_computer_arcade_amputation()
@@ -4416,7 +4416,7 @@ public partial class obj_machinery_computer_arcade_amputation : obj_machinery_co
 }
 
 // tg: code/game/machinery/computer/arcade/amputation.dm:43
-[DmPath("/obj/machinery/computer/arcade/amputation/festive"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/arcade/amputation/festive"), DmGeneratedOnly]
 public partial class obj_machinery_computer_arcade_amputation_festive : obj_machinery_computer_arcade_amputation
 {
     // tg: code/game/machinery/computer/arcade/amputation.dm:43
@@ -4434,9 +4434,9 @@ public partial class obj_machinery_computer_arcade_amputation_festive : obj_mach
     }
 }
 
-// tg: code/game/machinery/computer/arcade/battle.dm:41
-[DmPath("/obj/machinery/computer/arcade/battle"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade_battle : obj_machinery_computer_arcade
+// tg: code/game/machinery/computer/arcade/battle.dm:41 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade/battle")]
+public partial class obj_machinery_computer_arcade_battle
 {
     public string player_current_world = "The Plains"; // tg: code/game/machinery/computer/arcade/battle.dm:68
     public string latest_unlocked_world = "The Plains"; // tg: code/game/machinery/computer/arcade/battle.dm:70
@@ -4474,9 +4474,9 @@ public partial class obj_machinery_computer_arcade_battle : obj_machinery_comput
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion.dm:4
-[DmPath("/obj/machinery/computer/arcade/orion_trail"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade_orion_trail : obj_machinery_computer_arcade
+// tg: code/game/machinery/computer/arcade/orion.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade/orion_trail")]
+public partial class obj_machinery_computer_arcade_orion_trail
 {
     public float? busy = 0; // tg: code/game/machinery/computer/arcade/orion.dm:11
     public float? engine = 0; // tg: code/game/machinery/computer/arcade/orion.dm:12
@@ -4517,9 +4517,9 @@ public partial class obj_machinery_computer_arcade_orion_trail : obj_machinery_c
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion.dm:52
-[DmPath("/obj/machinery/computer/arcade/orion_trail/kobayashi"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade_orion_trail_kobayashi : obj_machinery_computer_arcade_orion_trail
+// tg: code/game/machinery/computer/arcade/orion.dm:52 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade/orion_trail/kobayashi")]
+public partial class obj_machinery_computer_arcade_orion_trail_kobayashi
 {
     public DmList event_whitelist; // tg: code/game/machinery/computer/arcade/orion.dm:59
 
@@ -6455,9 +6455,9 @@ public partial class obj_machinery_computer_exoscanner_control : obj_machinery_c
     }
 }
 
-// tg: code/modules/holodeck/computer.dm:33
-[DmPath("/obj/machinery/computer/holodeck"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_holodeck : obj_machinery_computer
+// tg: code/modules/holodeck/computer.dm:33 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/holodeck")]
+public partial class obj_machinery_computer_holodeck
 {
     public Type mapped_start_area = typeof(area_station_holodeck_rec_center); // tg: code/modules/holodeck/computer.dm:40
     public datum_map_template_holodeck template; // tg: code/modules/holodeck/computer.dm:43

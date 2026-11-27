@@ -38,6 +38,14 @@ public static class TgStrings
         "strings/dreamstrings.txt", "strings/names/adjectives.txt", "strings/names/adverbs.txt", "strings/names/ing_verbs.txt",
         "strings/names/verbs.txt");
 
+    /// <summary>
+    /// The trading card game's keywords and its two sets (controllers/subsystem/tcgsetup.dm:5-10, read through file2text at its
+    /// Initialize): SStrading_card_game loads them at boot, before the map, and every card and pack reads the loaded sets at its
+    /// Initialize (objects/items/tcg/tcg.dm:21, :389), so a world that makes them without the Master loads these with the subsystem.
+    /// </summary>
+    public static readonly ImmutableArray<string> CardFiles = ImmutableArray.Create(
+        "strings/tcg/keywords.json", "strings/tcg/set_one.json", "strings/tcg/set_two.json"); // declared before Files, whose initializer adds them
+
     /// <summary>The paths, relative to the clone's root, of the files the translated world start and strings() read.</summary>
     public static readonly ImmutableArray<string> Files = ImmutableArray.Create(
     
@@ -120,8 +128,10 @@ public static class TgStrings
         // SSrestaurant's init) and their voices (space_fauna/robot_customer.dm:47, through strings() from the config folder)
         "strings/names/american_prefix.txt", "strings/names/italian_prefix.txt", "strings/names/french_prefix.txt",
         "strings/names/japanese_prefix.txt", "strings/names/moth_prefix.txt", "strings/names/mexican_prefix.txt",
-        "strings/names/british_prefix.txt", "strings/names/malf_prefix.txt", "config/robot_voices.json"
-    ).AddRange(GeneticsFiles);
+        "strings/names/british_prefix.txt", "strings/names/malf_prefix.txt", "config/robot_voices.json",
+        // the battle arcade's enemy names (machinery/computer/arcade/battle.dm:150, ARCADE_FILE through pick_list)
+        "strings/arcade.json"
+    ).AddRange(GeneticsFiles).AddRange(CardFiles);
 
 
     /// <summary>

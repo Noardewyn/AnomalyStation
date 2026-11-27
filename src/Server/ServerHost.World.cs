@@ -940,7 +940,7 @@ public sealed partial class ServerHost
                     RadialExtra.Pull => new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, label),
                     RadialExtra.StopPulling => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.StopPulling),
                     RadialExtra.Strip => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.DropOntoSelf),
-                    RadialExtra.Flip => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503)
+                    RadialExtra.Flip or RadialExtra.StepIn => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503, DV640)
                     _ => new ContextHint(ClickButton.Left, ClickModifiers.None, label), // Unbuckle: the empty hand's click
                 });
             }

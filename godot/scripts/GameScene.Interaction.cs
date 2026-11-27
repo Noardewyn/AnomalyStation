@@ -654,7 +654,7 @@ public partial class GameScene
                 OnRightReleased(App.NowSeconds);
             else if (button.ButtonIndex == MouseButton.Left && _drag.Pressed)
                 OnLeftReleased(button.Position);
-            if (button.ButtonIndex == MouseButton.Left)
+            if (button.ButtonIndex == MouseButton.Left || button.ButtonIndex == MouseButton.Middle && _session.MouseHeld == ClickButton.Middle)
                 _session.MouseUp(_target, HeldModifiers(), _aim); // version 34: BYOND's MouseUp (stops tg's full auto)
             return;
         }
@@ -730,6 +730,9 @@ public partial class GameScene
                 }
                 break;
             case PlayAction.MiddleClick:
+                // BYOND's MouseDown of the middle press too: a selected MOD module's dig (the drill's) runs while the button is held, as a pick's (DV348, DV354)
+                if (button.ButtonIndex == MouseButton.Middle && _aim.HasValue && (modifiers & ClickModifiers.Shift) == 0 && !_mouse.CursorMode)
+                    _session.MouseDown(_target, ClickButton.Middle, modifiers, _aim, App.NowSeconds);
                 ClickAtCrosshair(ClickButton.Middle, modifiers);
                 break;
         }

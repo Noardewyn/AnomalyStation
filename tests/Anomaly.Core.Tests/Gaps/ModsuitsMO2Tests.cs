@@ -328,8 +328,8 @@ public class ModsuitsMO2Tests
         r.In(() => Waiting.NoSleep(bob.Move(At(r, 5, 4), EAST)));
         r.Step(Second);
         r.In(() => Assert.Same(orebag, ore.loc));
-        // the drill digs the rock its wearer bumps: Dan, with no player (DV348: a player's dig runs only while the left button is
-        // held on the rock, which a bump does not do; a mob with no player ignores the hold, so this is tg's bump-mining)
+        // the drill digs the rock it is used on, not the rock its wearer bumps (DV354): Dan, with no player (DV348: a mob with no
+        // player ignores the held button)
         var dan = r.Dummy(5, 6);
         r.In(() => ADD_TRAIT(dan, TRAIT_ADVANCEDTOOLUSER, "test"));
         var danSuit = Sealed<obj_item_mod_control_pre_equipped_mining>(r, dan);
@@ -343,6 +343,8 @@ public class ModsuitsMO2Tests
         r.In(() => Assert.Same(At(r, 6, 6), dan.loc));
         r.In(() => Waiting.NoSleep(dan.Move(At(r, 7, 6), EAST))); // a bump into the rock
         r.Step(8 * Second);
+        r.In(() => Assert.True(At(r, 7, 6) is turf_closed_mineral, "the bump mined the rock"));
+        UseOn(r, drill, At(r, 7, 6), 8 * Second);
         r.In(() => Assert.False(At(r, 7, 6) is turf_closed_mineral, "the drill mined the rock"));
 
         // the loader's clamp picks up a crate and puts it down

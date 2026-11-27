@@ -172,7 +172,7 @@ public class BitrunningBR1Tests
         Deploy(d, "test_only");
         // Bob's mining experience goes with him (avatar_connection.dm:84) and what the avatar learnt comes back (:322)
         d.R.In(() => d.Bob.mind.set_experience(typeof(datum_skill_mining), 1000, silent: TRUE));
-        // DV565: the radial offers Climb in on the open pod beside him (the drag of himself onto it, which Connect sends)
+        // DV639: the radial offers Climb in on the open pod beside him (the drag of himself onto it, which Connect sends)
         Assert.Contains((RadialExtra.Enter, "Climb in"), d.R.In(() => RadialExtras.Of(d.Bob, d.Pod)));
         var avatar = Connect(d);
 

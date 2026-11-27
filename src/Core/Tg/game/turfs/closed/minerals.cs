@@ -166,7 +166,9 @@ public partial class turf_closed_mineral : turf_closed
         float strike_delay = tool_mine_speed * tool.toolspeed / MINING_STRIKES;
         next_mining_strike = Dm.num(world.time) + strike_delay;
         datum_callback strike = Dm.@new<datum_callback>(this, nameof(mining_strike), user, tool, strike_delay);
-        if (!Dm.truthy(await tool.use_tool(this, user, tool_mine_speed, volume: 50, extra_checks: strike, timed_action_flags: datum_timed_action.DO_AFTER_HOLD)))
+        // the sphere's excavation digs on the bump, with no hand to hold the button (DV354)
+        float hold = tool is obj_item_mod_module_drill { ballin: > 0 } ? NONE : datum_timed_action.DO_AFTER_HOLD;
+        if (!Dm.truthy(await tool.use_tool(this, user, tool_mine_speed, volume: 50, extra_checks: strike, timed_action_flags: hold)))
         {
             TIMER_COOLDOWN_END(this, REF(user)); //if we fail we can start again immediately
             (locate(cell_x, cell_y, cell_z) as turf_closed_mineral)?.clear_mining_cracks();

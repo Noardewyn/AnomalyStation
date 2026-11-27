@@ -103,14 +103,14 @@ public readonly record struct RadialEntry(RadialKind Kind, string Label, ClickBu
         RadialKind.SwapHand => "exchange-alt",
         RadialKind.ThingsHere => "boxes",
         RadialKind.Cancel => "times",
-        RadialKind.DropSelf => "chair",
+        RadialKind.DropSelf => ClimbsIn(Label) ? "sign-in-alt" : "chair",
         RadialKind.StopPulling => "unlink",
         RadialKind.DropOntoSelf => "tshirt",
         RadialKind.Sleep => "bed",
         RadialKind.Succumb => "skull",
         RadialKind.Emote => "smile",
         RadialKind.EmotePanel => "ellipsis-h",
-        RadialKind.Extra => "undo",
+        RadialKind.Extra => ClimbsIn(Label) ? "sign-in-alt" : "undo",
         _ => null,
     };
 
@@ -121,6 +121,9 @@ public readonly record struct RadialEntry(RadialKind Kind, string Label, ClickBu
         ("insert", "box"), ("put", "box"), ("place", "box"), ("load", "box"), ("toggle", "power-off"), ("turn", "power-off"),
         ("activate", "power-off"), ("examine", "eye"), ("look", "eye"), ("throw", "paper-plane"), ("fix", "wrench"), ("repair", "wrench"),
     };
+
+    // DV639: the server's Climb in and Climb on (into a machine, a bin, a vehicle, a closet, onto a photocopier or a tray)
+    private static bool ClimbsIn(string label) => label is "Climb in" or "Climb on";
 
     private static string HintIcon(string label)
     {

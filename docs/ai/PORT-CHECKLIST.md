@@ -1,24 +1,15 @@
 # What is not ported yet: the tg port checklist
 
-Status: recounted 2026-11-24 (1.12.0-pre-alpha). A list of everything in tg's MetaStation round that
+Status: recounted 2026-11-25 (1.12.0-pre-alpha). A list of everything in tg's MetaStation round that
 the port does not have yet, to tick off as it is ported. Things that are not on MetaStation, cut or obsolete are listed apart
 in section 12; they will most likely not be ported.
 
 Sources:
 - tg's snapshot `1d99bd7f` (2026-10-04) in `../tgstation/`;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-24): 46,051 tg types, of them 38,806
+- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-25): 46,051 tg types, of them 38,806
   live and 7,235 inert; 65,645 tg procs, of them 47,301 translated (72%) and 417 stubbed;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-24): 46,051 tg types, of them 38,483
-  live and 7,558 inert; 65,645 tg procs, of them 46,259 translated (70%) and 424 stubbed;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-24): 46,051 tg types, of them 38,695
-  live and 7,346 inert; 65,645 tg procs, of them 46,742 translated (71%) and 431 stubbed;
 - MetaStation's map (`_maps/map_files/MetaStation/MetaStation.dmm`): how many of each type it places;
 - the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 312 of tg's 444 interfaces;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-24): 46,051 tg types, of them 38,363
-  live and 7,678 inert; 65,645 tg procs, of them 46,024 translated (70%) and 432 stubbed;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-24): 46,051 tg types, of them 38,427
-  live and 7,614 inert; 65,645 tg procs, of them 46,474 translated (70%) and 426 stubbed;
-- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 310 of tg's 444 interfaces;
 - `docs/ROADMAP.md`, `docs/ai/DECISIONS.md`, `docs/ai/specs/not-translated.md` for what is planned, deferred or cut by the owner.
 
 How to read a row:
@@ -38,7 +29,7 @@ How to read a row:
 
 ## 0. Overview by tg area
 
-Share of tg's procs declared in each area of `code/` (translated or stubbed), recounted 2026-11-24 by
+Share of tg's procs declared in each area of `code/` (translated or stubbed), recounted 2026-11-25 by
 `tools/checklist/refresh-port-checklist.py`. All of `code/`: 47,718/65,645 (72%). An area at 100% can still have leaves in
 `not-translated.md`; the rows below say what of it runs.
 
@@ -66,7 +57,7 @@ Live mechanics that still miss a window, a leaf or a piece the owner put off.
 - [x] Memory panel (gaps G4: the 54 memories and the HUD button; win: MemoryPanel; DV191 retired by gaps S3: the captain's code folder). Left: the tattoo kit and the engravings (with the art), the memories of callers not yet live
 - [x] Floors with their own procs (gaps G2; the engine floor family, 35 types, Meta 496 tiles: engineering E4): wood (Meta 480), carpet (223), grass (68), large, circuit, the reinforced plating (`plating/reinforced`) and others (Meta's 24 floor types, 1,045 tiles); volcanic mineral turfs (9), plastitanium walls (5). Left inert, none on Meta: the tram's high-traction floor, the rusted and meat platings, the random, ore, gibtonite and biome rocks, the explosive plastitanium wall, snow, ice and lavaland floors
 - [x] Meta's untranslated mapping helpers and spawners (gaps G3; the dead body placer's cadavers came with gaps OG1; left: the holidays wait for `check_holidays`) (ROADMAP 3, M4 follow-up): request console helpers (Meta 64), mail sorting, `dead_body_placer`, Ian's birthday and new year, `turn_off_lights_with_lightswitch`, xmas trees, costumes, maintenance MOD, `round_default_module`
-- [ ] The deferred leaves of ported mechanics: `not-translated.md` (226 sections; the sites tagged M10+) and `live-partial.txt` (414 lines); each names its milestone
+- [ ] The deferred leaves of ported mechanics: `not-translated.md` (227 sections; the sites tagged M10+) and `live-partial.txt` (414 lines); each names its milestone
 - [ ] Owner-deferred pieces of ported milestones: screentips (M9 G, owner; the object examines and `examine_more` are done, D288: X1, X2, X3); chat icons, icon2html (owner: later); the fireman carry and piggyback (M9 F, owner); leaning on walls, the table slam and the table flip (done, gaps L1); the hand-item emotes' leftovers
 - [x] M10x's slices (D281, D282, `docs/ai/specs/lobby.md`; done, released in 1.1.0-pre-alpha): G the Esc menu, bug reports and tg's admin help, D the character's looks, E the preview, I the closing; not now (owner): tg's server game preferences (stashed, D282), the Quirks, Loadout and Personality tabs, the polls (the Antagonists tab: syndicate A3, D316)
 - [x] M9x station life (D228, D249): eating, drinking and hunger with the nutrition HUD (done, gaps S1), vending machines (done, gaps S2: free until the economy, DV225), paper, pens, clipboards and the hand labeler (done, gaps S3), the PDA's job apps (done, gaps S4; the cargo apps, the budget orders, shipping and bounty board: gaps P4)
@@ -345,7 +336,7 @@ the runed metal for the cult, `not-translated.md` section 214).
 
 - [x] Clothing leftovers (gaps CL1; gaps J1 made the 58 inert clothing types the jobs start in live, with the accessories, medals and hoods; before it 817/1794 live; Meta 161 inert pieces: hazard vests, traffic cones, gas masks, surgical masks, welding masks and goggles, science goggles, earmuffs...): their own procs (mask sounds, visor toggles, ear protection), accessories, suit sensors (section 5.2): the procs of `modules/clothing` left (glasses, masks, hats, gloves, shoes, suits, jumpsuits, badges, neckwear), the laser tag game, the strong pull, the series and onwear mood components, the theatre's fake wizard costumes, the clothing's suicides. Left (not-translated.md 209): chameleon clothing (traitor gear, D333), the plasmamen's and ethereals' clothing (species), the reactive armour, the polymorph belt and the perceptomatrix (anomaly cores), the horrific necktie and the mind-monkey helmet (ghost polls), the collar bomb, the admin outfits, the fishing gloves, the pearl necklace, the wheelys
 - [ ] Cups and containers (310/314 live since gaps OD1's jerrycans, OD2's blastoff ampoule and BR1's bitrunning bottles, 135 before the food and bar packages; Meta 92 inert then; left: the cult's and the heretic's flasks and the Lavaland potions): drinking glasses, bowls, mugs, cans, the shaker, salt and pepper
-- [x] MODsuits (`modules/mod` 817/882; `/obj/item/mod` 235/245 live; Meta: 12 MOD units in the suit storage units, 7 modules and the maintenance MOD spawner): the control unit, themes, 100+ modules, the MOD installer and paint (win: MODsuit, MODpaint, NtosMODsuit) (gaps MO1, the core: the control unit with its themes, skins and parts, deploying and sealing, the cores, the module base with the general and visor modules, the action buttons and pins, the AI and pAI assistant, the MODlink with the scryer and its calls, the paint kit and skin appliers, the shell's construction, the wires, the hat stabilizer, the MODsuit Control app (win: MODsuit, MODpaint, NtosMODsuit); gaps MO2, the modules: the engineering, medical, security, supply, service, science, maintenance and timeline modules, the storage of holding, kinesis and pathfinder modules, the anomaly core slot and the antagonists' modules, the uplink's MODsuits; left: the space ninja's modules (M10+) and the soul shard cores (the antagonists, D333), the circuit module (wiremod), and leaves of unported systems (particles, achievements, the anomaly cores, body textures), not-translated.md 219 and 222)
+- [x] MODsuits (`modules/mod` 817/882; `/obj/item/mod` 235/245 live; Meta: 12 MOD units in the suit storage units, 7 modules and the maintenance MOD spawner): the control unit, themes, 100+ modules, the MOD installer and paint (win: MODsuit, MODpaint, NtosMODsuit) (gaps MO1, the core: the control unit with its themes, skins and parts, deploying and sealing, the cores, the module base with the general and visor modules, the action buttons and pins, the AI and pAI assistant, the MODlink with the scryer and its calls, the paint kit and skin appliers, the shell's construction, the wires, the hat stabilizer, the MODsuit Control app (win: MODsuit, MODpaint, NtosMODsuit); gaps MO2, the modules: the engineering, medical, security, supply, service, science, maintenance and timeline modules, the storage of holding, kinesis and pathfinder modules, the anomaly core slot and the antagonists' modules, the uplink's MODsuits; gaps FX1: the drill digs on its click held on the rock, as a pick, not on a bump (DV354; the sphere's excavation keeps the bump); left: the space ninja's modules (M10+) and the soul shard cores (the antagonists, D333), the circuit module (wiremod), and leaves of unported systems (particles, achievements, the anomaly cores, body textures), not-translated.md 219 and 222)
 - [x] Paperwork (`modules/paperwork`, gaps S3; M9x): paper (368 types; Meta 20 sheets, 47 paper bins, 6 carbon bins) with writing and stamping (win: PaperSheet), pens (Meta 67), folders (89; win: Folder), clipboards (8; win: Clipboard), stamps (15), the hand labeler (15), the paper cutter (4), filing cabinets (17; win: FilingCabinet), notice boards (16; win: NoticeBoard), carbon paper, paper planes
 - [x] Smoking (gaps J3): cigarettes and cigars, packs, lighters and zippos, matches, pipes, cigarette butts; the e-cigarettes (9/9 live, gaps OD1: the cap, the voltage, the emag's smoke and burst). Left: the smoke particles, rolling rollies with dried plants (P2), `not-translated.md` section 107
 - [x] Grenades and explosives (76/79 live; C4 is done; the smoke grenade by D303; gaps F1: chem grenades and casings (Meta 4), smart metal foam grenades (10), cleaner grenades (3), antiweed (1), teargas, clusterbusters and gas crystals): flashbangs, EMP grenades, the syndicate's charges, landmines and traps (done, gaps ST5: the landmines and the mine spawner, the magic traps and the tripwire; the fugitive hunters' bounty trap waits, not-translated.md 213), the grenade launcher (Meta 1); the IED and the halved pipe (done, gaps WP1) (syndicate G2: the minibomb, HE, frag, gluon, EMP and hypnotic grenades, the pizza bomb, the Earthcracker, the syndicate bombs and beacons); the rotfrag and rotsting grenades (admin goofs; done, gaps OD3). Left: the ninja's charge and the heretic's rust sower (antagonists, D333), the MODsuit's mirage grenade (its module, gaps MO2)

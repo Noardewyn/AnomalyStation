@@ -4639,7 +4639,6 @@ counts its `3 SECONDS` (30 deciseconds) to kill down by seconds (a victim is era
 `pixel_x` from `base_pixel_y`, and the disposal selector's first tag is a destination's name (`Initialize`, `:387`), which no sorting
 junction matches (the port keeps NONE, which routes and shows the same, until a destination is picked). Leaves:
 | `modules_ninja.dm:60-1020` | the space ninja's modules (the advanced cloak, the camera vision welding module, the star dispenser and its stamina stars, the hacker with its `ninjadrain_act` procs, the weapon recall, the reinforced DNA lock, the EMP pulse, the ninja status readout, the energy net, the adrenaline boost): inert, the D132 seam (section 219) keeps them out of a suit | the ninja's suits, the administrative suit's cloak, a module put into a suit | the ninja (M10+, D333) | `modules/mod/modules/modules_ninja.cs` (PARTIAL); (generated, inert) |
-| `modules_supply.dm:181-222` | the drill digs through `manual_mine`, whose do_after holds (DV348): a player's dig runs only while the left button is down with the crosshair on the rock, so walking into rock with the drill active (tg's bump mining, `bump_mine`) or a middle-click use digs nothing unless the player also holds the left button on the rock; a mob with no player bump-mines as tg (DV354 dropped the bump dig of a mining tool in the hand, not this module's) | a player with an active drill module | an owner question (gaps MO2's report) | `modules/mod/modules/modules_supply.cs` |
 | `modules_supply.dm:778` | the mining micromissile's impact particles (`spawn_particles`, `/particles/...`, `Dm.Deferred`): DM particles, which the client does not draw (the missile's damage and mining are translated) | a sphere-mode missile hitting something | the client's particles (after the core version) | `modules/mod/modules/modules_supply.cs` |
 | `modules_maint.dm:89` | the springlock's achievement (`give_award(/datum/award/achievement/misc/springlock)`, `Dm.Deferred`) | a springlock snapping shut on its wearer | the achievements (D332) | `modules/mod/modules/modules_maint.cs` |
 | `module_kinesis.dm:80-92` | the kinesis drag: the cursor catcher's `given_turf` stays null in the first-person client (DV98), so a grabbed object floats where it was grabbed (with its beam, glow and hum) until it is thrown or let go | a kinesis module grabbing something | DV98 (the cursor catcher's 3D aim) | `modules/mod/modules/module_kinesis.cs` |
@@ -5088,3 +5087,27 @@ SSprocessing even when it started on the fast one. Left:
 | `bileworm_actions.dm:203` | the bile splash's goop particles (the particle holder is not ported) | a bile glob's impact | M10+ | `basic/lavaland/bileworm/bileworm_actions.cs` |
 | `goliath.dm:186`, `tentacle.dm:102`, `watcher.dm:72`, `legion.dm:95`, `legion_brood.dm:130`, `brimdemon.dm:65`, `lobstrosity.dm:70`, `_bileworm.dm:65`, `bileworm_actions.dm:179`, `:247` | the fauna's emissive glows in the dark (DV12) | always | DV12 | the mirror files |
 | the fauna's 3D models | the goliaths, watchers, legions, hivelords, basilisks, brimdemons, bileworms, lobstrosities and the node drone keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 241. Climb in, the MOD drill and the lizards' limbs (gaps FX1, D355)
+The radial's Climb in (DV639) is offered on every live receiver of tg's drag of a player's own mob onto a thing that would take him in
+or onto it: the exosuits and the other sealed vehicles, the netpod, the DNA scanner, the suit storage unit, the hypnochair, the implant
+chair, the cryo cell (tg lets only an incapacitated carbon in by himself), the disposal bins and chutes, and Climb on for the
+photocopier, the morgue and crematorium trays and a hacked MULEbot; each receiver answers quietly beside it
+(`Infrastructure/ClimbIn.cs`, `dm_climb_in_label`), with tg's own drop checks (`ClimbIn.DropPasses`), and the choice sends tg's drag.
+An open closet, locker, crate or body bag offers Climb in as tg's step onto its tile and its close (DV640). The drop receivers that take
+no one in are not offered: the wall healer takes the user's hand, the DNA infuser only a dead creature, the transit tube station a
+pod, the monkey recycler an unconscious monkey, the golf cart's rear buckles (Buckle), the walls, windows, airlocks and computers lean.
+The MOD drill digs on its click held on the rock and not on a bump; the sphere's excavation keeps tg's bump (DV354; the client sends
+the middle button's MouseDown, so the held dig runs while it is down; a module's click that waits runs detached, `_module.cs`
+`on_special_click`). The lizards' limbs: the real client draws tg's lizard bodyparts on every lizard, a player turned lizard, a spawned
+lizard and an ash walker with digitigrade legs, standing and lying, and his severed arm on the floor, from
+`icons/mob/human/species/lizard/bodyparts.dmi` in his mutant colour (the server's appearance, lobby.md 10; screenshots in FX1's
+report); no 2D limb is a human's, so the owner's "own limbs" is asked back as the 3D models' question (D338). Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `game/machinery/sleepers.dm:118` | the sleeper's Climb in: the sleeper is not ported (D216) | a sleeper | not planned (D216) | (generated) |
+| `game/machinery/experimental_cloner/experimental_cloner_scanner.dm:136` | the experimental cloner scanner's Climb in: the cloner is inert | the experimental cloner | with the cloner | (generated) |
+| `vehicles/cars/car.dm:27`, `cars/golfcart/golfcart.dm:207`, `golfcart_rear.dm:172` | the cars' Climb in (the clown car's kidnapping too) and the golf cart's drop: the cars are inert | the clown car, the golf cart | the vehicles' campaign | (generated) |
+| `antagonists/abductor/machinery/experiment.dm:26`, `antagonists/fugitive/hunters/hunter_gear.dm:16` | the abductors' experiment machine and the fugitive hunters' capture device: inert | their antagonists | their antagonists (D333) | (generated) |
+| `game/objects/structures/crates_lockers/closets.dm:987` | an owner question: the closet's Climb in is the port's step and close (DV640), tg takes no drag of oneself onto a closet; kept, or no Climb in on closets | an open closet | the owner's answer | `Infrastructure/ClimbIn.cs` |
+| `species_parts/lizard_bodyparts.dm` | an owner question: the lizard's 3D body (D338 draws the species on the human billboard with tg's lizard sprites, which the client already shows); the lizard body and its digitigrade legs are already in `required-models.md` (gaps SP1) | a lizard | the owner's answer | (none) |
+| `modules_supply.dm:192` `bump_mine` | an owner question: the sphere's excavation still digs on the bump (tg's), the drill's only bump-dig left | a mining MOD in sphere mode | the owner's answer | `modules/mod/modules/modules_supply.cs` |

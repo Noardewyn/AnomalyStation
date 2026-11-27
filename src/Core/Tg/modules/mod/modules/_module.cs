@@ -313,7 +313,9 @@ public partial class obj_item_mod_module : obj_item_mod
     [SignalHandler]
     public virtual object on_special_click(mob source = null, atom target = null)
     {
-        Waiting.NoSleep(on_select_use(target));
+        // tg sleeps here when the use waits (the drill's dig, a do_after): BYOND holds the click until it ends and cancels it either way,
+        // so the use runs on detached (INVOKE_ASYNC) and the click is cancelled now
+        Waiting.Detach(on_select_use(target));
         return COMSIG_MOB_CANCEL_CLICKON;
     }
 

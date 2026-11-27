@@ -31,11 +31,14 @@ public enum RadialExtra : byte
     /// <summary>A human dragged onto oneself: tg's strip menu (<c>/datum/element/strippable</c>'s <c>mouse_drop_onto</c>, M8z slice B, D238).</summary>
     Strip = 6,
 
-    /// <summary>Oneself climbed into the vehicle (an exosuit, the clown car): tg's drag of oneself onto it (<c>/obj/vehicle/sealed/mouse_drop_receive</c>, <c>mob_try_enter</c>); since gaps BR1 (DV565) also into an open netpod (<c>/obj/machinery/netpod/mouse_drop_receive</c>).</summary>
+    /// <summary>DV639: oneself into (or onto) the thing whose tg <c>mouse_drop_receive</c> would take him: tg's drag of oneself onto it (an exosuit's <c>mob_try_enter</c>, a netpod's, a scanner's or a chair's <c>close_machine</c>, a disposal bin's <c>stuff_mob_in</c>, the photocopier, a morgue tray; <see cref="atom_movable.dm_climb_in_label"/>).</summary>
     Enter = 7,
 
     /// <summary>DV503: the table flipped over or back upright (tg's empty hand's right click, which no longer flips: <c>radial_flip</c>).</summary>
     Flip = 8,
+
+    /// <summary>DV640: oneself into an open closet: tg's step onto its tile and the hand's close from there (<see cref="ClimbIn.StepInto"/>).</summary>
+    StepIn = 9,
 }
 
 public static class RadialExtras
@@ -43,7 +46,7 @@ public static class RadialExtras
     /// <summary>
     /// The entries of D230 and D238 that <paramref name="user"/> can use on <paramref name="target"/> now, with their labels, in this order: Buckle
     /// (a thing he can buckle himself to, as tg's <c>is_user_buckle_possible</c> of a drag), Unbuckle (a thing with someone buckled to it,
-    /// his active hand empty), Climb in (a sealed vehicle with a free seat he is not in), Climb (a climbable tg's drag would start climbing), Pull (a thing tg lets him pull) or Stop pulling (the thing he pulls), and Strip (a human whose strip menu
+    /// his active hand empty), Climb in or Climb on (a thing whose tg drop of him would take him, DV639, or an open closet, DV640), Climb (a climbable tg's drag would start climbing), Pull (a thing tg lets him pull) or Stop pulling (the thing he pulls), and Strip (a human whose strip menu
     /// tg's drag of him onto oneself would open: <c>should_strip</c> and <c>can_perform_action</c>). Only for a movable on a turf next to
     /// him (tg's <c>Adjacent</c>); none for a mob he would buckle to (tg's grabs, M9) or for himself. Called in the tick (the hover).
     /// </summary>
@@ -60,12 +63,15 @@ public static class RadialExtras
             if (Dm.truthy(thing.has_buckled_mobs()) && user.get_active_held_item() == null)
                 entries.Add((RadialExtra.Unbuckle, I18n.T("Unbuckle")));
         }
-        // Only a free seat: the vehicle's own enter_checks talk to the user, and the hover must not (tg says why on the choice)
-        if (thing is obj_vehicle_sealed vehicle && !vehicle.is_occupant(living) && Dm.num(vehicle.occupant_amount()) < Dm.num(vehicle.max_occupants))
-            entries.Add((RadialExtra.Enter, I18n.T("Climb in")));
-        // DEVIATION(DV565): an open, working netpod takes the carbon who drags himself onto it (netpod/_netpod.dm:132 mouse_drop_receive's own checks)
-        if (thing is obj_machinery_netpod pod && user is mob_living_carbon && Dm.truthy(pod.is_operational) && Dm.truthy(pod.state_open) && living.buckled == null)
-            entries.Add((RadialExtra.Enter, I18n.T("Climb in")));
+        // DEVIATION(DV639): the thing's own receiver would take him (asked quietly; it speaks on the choice), and tg's drag reaches it;
+        // a type whose receiver is not ported keeps none (the drag would be refused, D132)
+        if (thing.dm_climb_in_label(living) is string climb_in && !InertSeam.HasUndeclaredOverride(thing, "mouse_drop_receive"))
+        {
+            if (thing is obj_structure_closet)
+                entries.Add((RadialExtra.StepIn, climb_in)); // DEVIATION(DV640): no drop; the step in and the close
+            else if (ClimbIn.DropPasses(living, thing))
+                entries.Add((RadialExtra.Enter, climb_in));
+        }
         if (CanClimb(living, thing))
             entries.Add((RadialExtra.Climb, I18n.T("Climb")));
         if (thing is obj_structure_table table && Dm.truthy(table.can_flip))
@@ -81,7 +87,7 @@ public static class RadialExtras
     }
 
     /// <summary>
-    /// DV503: the radial's entry <paramref name="label"/> that is no click (<c>ContextHintAction.Extra</c>) picked on <paramref name="target"/>: run only
+    /// DV503, DV640: the radial's entry <paramref name="label"/> that is no click (<c>ContextHintAction.Extra</c>: Flip, a closet's Climb in) picked on <paramref name="target"/>: run only
     /// when <see cref="Of"/> offers it for the target now, with usr the player's mob, detached as BYOND runs a verb.
     /// </summary>
     public static void Pick(client player, atom target, string label)
@@ -91,14 +97,17 @@ public static class RadialExtras
             return;
         foreach ((RadialExtra kind, string offered) in Of(user, target))
         {
-            if (kind != RadialExtra.Flip || offered != label || target is not obj_structure_table table)
+            if (offered != label || !(kind == RadialExtra.Flip && target is obj_structure_table || kind == RadialExtra.StepIn && target is obj_structure_closet && user is mob_living))
                 continue;
             World world = World.Current;
             object caller_usr = world.usr;
             try
             {
                 world.usr = user;
-                Waiting.Detach(table.radial_flip(user));
+                if (target is obj_structure_table table)
+                    Waiting.Detach(table.radial_flip(user));
+                else
+                    Waiting.Detach(ClimbIn.StepInto((obj_structure_closet)target, (mob_living)user));
             }
             finally
             {

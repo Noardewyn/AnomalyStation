@@ -79,6 +79,9 @@ public class ExamineGameplayTests(ITestOutputHelper output)
         Assert.Contains(bobChat, t => t.Html.Contains("ID card</em>", StringComparison.Ordinal) && t.Html.Contains("Name: " + aliceName, StringComparison.Ordinal));
 
         // ---- 3. The closer look: tg's examine_more inside EXAMINE_MORE_WINDOW (her age).
+        // the first examine's clear (RECENT_EXAMINE_MAX_WINDOW, 2 s, mob.dm:588) takes any entry of hers off when it fires
+        // (clear_from_recent_examines, mob.dm:684): it fires before this pair of examines
+        w.Run(Second);
         Examine(4); // tg's client/Click drops a click within a decisecond of the last
         bobChat.Clear();
         Assert.True(bob.Session.Click(her.dm_id, ClickButton.Left, ClickModifiers.Shift));

@@ -51,7 +51,8 @@ public class BotRoundGameplayTests(ITestOutputHelper output)
         && lobby.Merged.Get("isReady")?.Truthy == true;
 
     private static void WaitForPregame(RealHeadlessWorld w)
-        => RunUntil(w, () => In(w, () => Dm.num(SSticker.current_state)) >= GameStatePregame, 30 * Second, "tg's ticker enters the pregame");
+        // the rebooted world makes its ticker during its first ticks: until then there is none
+        => RunUntil(w, () => In(w, () => SSticker == null ? 0 : Dm.num(SSticker.current_state)) >= GameStatePregame, 30 * Second, "tg's ticker enters the pregame");
 
     [MetaServerFact]
     public void Bots_ready_up_late_join_and_ride_the_round_restart_into_the_next_lobby()

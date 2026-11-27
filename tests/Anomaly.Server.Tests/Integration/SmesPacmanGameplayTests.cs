@@ -99,7 +99,9 @@ public class SmesPacmanGameplayTests(ITestOutputHelper output)
 
         // the round starts on tg's charged SMES: the Engineering units (90 kW each), the full ones and the super one; the station's
         // network (the biggest) carries the three Engineering units' output
-        List<obj_machinery_power_smes> units = In(w, () => Dm.each_cast<obj_machinery_power_smes>(SSmachines.get_machines_by_type_and_subtypes(typeof(obj_machinery_power_smes))).ToList());
+        // the station's (Lavaland's ruins hold more, as their seeding rolls)
+        List<obj_machinery_power_smes> units = In(w, () => Dm.each_cast<obj_machinery_power_smes>(SSmachines.get_machines_by_type_and_subtypes(typeof(obj_machinery_power_smes)))
+            .Where(u => Dm.truthy(is_station_level(u.z))).ToList());
         Assert.NotEmpty(units);
         Assert.All(units, u => Assert.True(In(w, () => u.terminal != null && !Dm.truthy(Dm.bitand(u.machine_stat, BROKEN))), "every unit has its terminal"));
         List<obj_machinery_power_smes_engineering> engineering = units.OfType<obj_machinery_power_smes_engineering>().ToList();

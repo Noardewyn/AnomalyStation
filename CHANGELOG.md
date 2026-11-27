@@ -7,6 +7,38 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+### Added
+
+- Aquariums and fish tanks: put fish in, feed them, set water and temperature, watch them swim and breed; the fish analyzer and fishing gloves.
+- Fishing: cast a rod at water, lava, toilets and more, play tg's reeling minigame, swap bait and hooks, open the fish-porter and unfold fishing capsules.
+- The PDA & ID painters, the pipe dispensers, laptops that open and close, and the gateway's control console.
+- The outlet injector's and passive gate's windows, the volume pump's overclock, radiation shutters that shield when shut, and the AI satellite's ambience.
+- Climb in on the radial for every machine, bin, closet and vehicle you can get into; the MOD drill digs while held on rock, not on a bump.
+- Lavaland mining: shelter capsules, jaunters, grapple guns, Kheiral cuffs, mine carts, and the auxiliary base dropped to Lavaland.
+- Circuits act and sense: speech, radio, sensors, ID readers and more, in bots, drones, airlocks, dispensers, money bots, guns and other shells.
+- Brain-computer interfaces and circuit implants run circuits from your head, and a USB cable lets a circuit drive pumps, alarms, consoles and PDAs.
+- Bitrunning: the other virtual domains with their mobs and objectives, and glitches (cyber police, tactical unit, netguardian) that hunt avatars.
+- Lavaland's fauna hunts the wastes: goliaths, watchers, legions, hivelords and more, with monster organs and the kinetic crusher.
+- Xenobiology works: slime extracts react, potions tame and change slimes, the slime console moves them, and cytology grows creatures in vats.
+- Raptor ranching (breed, hatch, tame by riding, the RaptorDex), goldgrubs, gutlunchers, mooks and the ice moon's demons, whelps, bears and wolves.
+- The chapel's altar: pick one of nine sects, earn favour, perform its rites, spar under a contract, bless through your god; sleepers dream.
+- Lavaland's megafauna: the ash drake, Bubblegum, the colossus, the hierophant, the legion and the other bosses, with their loot and crusher trophies.
+- The library's machines work: scan and bind books, loan them out at the console, print bibles and posters; the mime's invisible blockade and finger guns.
+- Slime crossbreeds: feed a slime ten extracts for burning, charged, chilling, regenerative, stabilized and the other cores, with cookies and potions.
+- Necropolis tendrils fight back and drop locked chests of loot, and Lavaland's elites wake from their tumors to fight you in an arena.
+- The holodeck loads its programs, the arcades play Orion Trail and the battle game for tickets, slot machines and roulette pay out, trading cards.
+- The restaurant and the bar open their portals: robot tourists sit, order food or drinks, pay for what they get, and leave.
+- Exploration drones: scan space with the dish array, fuel and fly a drone to the sites it finds, play its adventures, bring the loot home.
+- Lavaland's ruins are seeded each round with their puzzles, loot and guardians, and ghosts can hatch as ash walkers from the nest's eggs.
+- Fish live, flop and die out of water, eat, grow, breed and evolve with their traits; cut them into fillets, mount trophies, read the fish encyclopedia.
+- Ordnance: the tank compressor, the doppler array's blast records, NT Frontier's research papers and the mass drivers to the testing range.
+- The anomaly refinery implodes raw cores into anomaly cores for reactive armours and other gear; gizmos, quantum pads and launchpad consoles.
+- The Veteran Security Advisor and Human AI station-trait jobs can be signed up for, and heavy machine gun turrets can be manned, fired and folded.
+
+### Fixed
+
+- A crate you are pulling no longer hitches when you turn around and push it: the push takes it over in one smooth motion.
+
 ## [1.14.0-pre-alpha] - 2026-11-26
 
 ### Protocol
@@ -73,10 +105,6 @@ client's top-right corner, in its window title and in the first line of the serv
 - The crosshair now opens for the spread of firing two light guns at once in combat mode.
 - Picking an item up with an empty hand in combat mode no longer plays a punch swing.
 - Character Setup's species page opens again, so the lizard and the felinid can be picked (it showed an empty window).
-
-### Fixed
-
-- A crate you are pulling no longer hitches when you turn around and push it: the push takes it over in one smooth motion.
 
 ## [1.12.0-pre-alpha] - 2026-11-23
 

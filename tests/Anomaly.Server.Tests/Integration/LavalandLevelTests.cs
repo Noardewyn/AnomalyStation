@@ -62,7 +62,8 @@ public class LavalandLevelTests
             // Lavaland's water (smoothed with the basalt around it) are live
             var tiles = Dm.each<obj_structure_stone_tile>(Dm.world).Where(t => Dm.num(t.z) == z).ToList();
             Assert.True(tiles.Count > 500, "stone tiles: " + tiles.Count);
-            Assert.All(tiles, t => Assert.Matches("^(pristine|cracked)_[a-z_]+[0-9]+$", t.icon_state));
+            // (and the burnt ones of the ruins that roll, the battle site's or a blood-drunk miner's: necropolis_gate.dm:341)
+            Assert.All(tiles, t => Assert.Matches("^(pristine|cracked|burnt)_[a-z_]+[0-9]+$", t.icon_state));
             Assert.All(tiles, t => Assert.True(HAS_TRAIT(t.loc, TRAIT_LAVA_STOPPED) && HAS_TRAIT(t.loc, TRAIT_CHASM_STOPPED)));
             Assert.False(InertSeam.IsInert(Dm.each<turf_closed_indestructible_riveted_boss>(Dm.world).First()));
             var waters = Dm.each<turf_open_water_lavaland_atmos_basalt>(Dm.world).ToList();

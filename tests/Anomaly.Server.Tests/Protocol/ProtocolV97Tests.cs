@@ -13,7 +13,7 @@ public class ProtocolV97Tests
         Assert.Equal(hello, back);
         Assert.True(Codec.TryDecode(Codec.Encode(hello with { WaitsForLoad = false }), out back, out error), error.ToString());
         Assert.False(back.WaitsForLoad);
-        Assert.Equal(97, ProtocolVersion.Current);
+        Assert.True(ProtocolVersion.Current >= 97);
     }
 
     [Fact]

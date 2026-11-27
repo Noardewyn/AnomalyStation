@@ -30,14 +30,9 @@ internal static class VarBlockLeaves
         // skeletons here (initialize_materials, EMISSIVE_BLOCK_UNIQUE). M3 P4 switched the inert seam on: those types are
         // inert (D112) and their init skips both leaves (types-converter.md 7), so their rows are gone. A package that makes
         // one of them live adds its row back while its leaf is untranslated.
-        // Gaps P4a: the coins are live; a mythril coin's material gives an item fantasy affixes (basemats.dm:541,
-        // /datum/component/fantasy), a not-translated leaf until the fantasy affixes.
-        [typeof(obj_item_coin_mythril)] = "fantasy affixes",
-        // Gaps SK1: the mythril sheet is live with its recipes, and its material reaches the same leaf
-        [typeof(obj_item_stack_sheet_mineral_mythril)] = "fantasy affixes",
-        // The slot machine's first Initialize makes one of every coin to learn their values (slotmachine.dm:99-102), the mythril
-        // coin among them, and so reaches the same leaf; the machines made after it in the same world read the values it kept
-        [typeof(obj_machinery_computer_slot_machine)] = "fantasy affixes",
+        // The mythril coin's and sheet's material, and the slot machine's first Initialize, which makes one of every coin
+        // (slotmachine.dm:99-102), reach a mythril item's fantasy affixes (basemats.dm:541): a deferred leaf (not-translated.md
+        // section 1), no runtime, so their rows are gone.
     };
 
     /// <summary>

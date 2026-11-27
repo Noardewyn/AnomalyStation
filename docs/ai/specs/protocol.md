@@ -1628,7 +1628,7 @@ Version 16 adds one message and two action kinds; nothing else changes. Types: `
 `UiWindowKind`, `UiValue`, `UiValueKind`, `ActionKinds.Last`), `ActionKind.UiAct` (11) and `ActionKind.UiClose` (12) with
 `ActionMessage.UiWindow`, `UiAction` and `UiParams` in `MessagesV2.cs`, `MessageId.UiWindow` (16), codec `Codec.V16.cs` (the actions are
 written and read by `Codec.V2.cs`'s action codec through it), caps in `Limits.cs` (`MaxUiWindows` 200, `MaxUiInterfaceBytes` 64,
-`MaxUiTitleBytes` 256, `MaxUiStringBytes` 4096, `MaxUiKeyBytes` 128, `MaxUiDepth` 16, `MaxUiValues` 65536 since version 95 (32768 before), `MaxUiWindowBytes` 1 MiB since version 95 (256 KiB before),
+`MaxUiTitleBytes` 256, `MaxUiStringBytes` 4096, `MaxUiKeyBytes` 128, `MaxUiDepth` 16, `MaxUiValues` 65536 since version 98 (32768 before), `MaxUiWindowBytes` 1 MiB since version 98 (256 KiB before),
 `MaxUiActionBytes` 48, `MaxUiParamsBytes` 140), the replica's part in `ReplicaWorld.V16.cs`.
 
 ### 25.1 The rule
@@ -1663,7 +1663,7 @@ UiClose (Action kind 12, client to server, Control): [u8 id = 10] [varuint frame
 
 The window is tg's pool index (`TGUI_WINDOW_INDEX`). A value is JSON's model: tg `json_encode`s its DM lists (an associative list is an
 object whose fields keep their order, a plain list an array, a number a number, text a string, null null), the client's act params are
-JavaScript values. A value nests at most 16 deep and a payload holds at most `Limits.MaxUiValues` values (65536 since version 95, 32768 before); the integer tag is used exactly when a number is
+JavaScript values. A value nests at most 16 deep and a payload holds at most `Limits.MaxUiValues` values (65536 since version 98, 32768 before); the integer tag is used exactly when a number is
 whole and within 53 bits, so every value has one encoding and a message that decodes encodes back to the same bytes. The codec refuses a
 kind other than 0 or 1, a window outside 1 to 200, an update without an interface, a status outside -1 to 2, unknown flag bits, an
 unknown tag, a NaN or infinite number, a whole number sent as a double, a value nested too deep or too many values, a close with an
@@ -3224,3 +3224,12 @@ lobby on the server refuses nothing: the client's loading screen covers the lobb
 skips it only plays on a world it has not loaded.
 
 Tests: `Protocol/ProtocolV97Tests`, `Integration/JoinGateTests` (server).
+
+## 93. Version 98 (tg's cooking list)
+
+`Limits.MaxUiWindowBytes` is 1 MiB (it was 256 KiB) and `Limits.MaxUiValues` 65536 (it was 32768; section 25): tg's crafting window
+(`PersonalCrafting`) sends every cooking recipe at once in its static data, and since the restaurant the cooking list holds tg's
+recipes with reagent ingredients and the chemical reactions' recipe guides: about 419 kB and 25,000 values encoded, the crafting tab about
+152 kB and 8,300. Nothing else of the `UiWindow` message changes; a version 97 peer would refuse such a window.
+
+Tests: `M5/CraftingTests` (core: the cooking tab's encoded window within the caps), `Protocol/` (server).

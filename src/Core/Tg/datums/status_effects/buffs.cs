@@ -537,32 +537,30 @@ public partial class datum_status_effect_jump_jet : datum_status_effect
     }
 }
 
-/// Same as the shadow alert, but also heal in darkness!! Mostly superseded but some simple mobs use this
-// tg: code/datums/status_effects/buffs.dm:641
-public partial class datum_status_effect_shadow_regeneration : datum_status_effect_shadow
+// tg: code/datums/status_effects/buffs.dm:381
+public partial class datum_status_effect_regenerative_core : datum_status_effect
 {
-    // tg: code/datums/status_effects/buffs.dm:643
+    // tg: code/datums/status_effects/buffs.dm:388
     public override async DmTask<object> on_apply(params object[] __extra)
     {
-        object dot = await base.on_apply(__extra);
-        if (!Dm.truthy(dot))
-            return FALSE;
-        await heal_owner();
+        owner.add_movespeed_mod_immunities(id, typeof(datum_movespeed_modifier_damage_slowdown));
+        await owner.adjust_brute_loss(-25);
+        await owner.adjust_fire_loss(-25);
+        await owner.fully_heal(HEAL_CC_STATUS);
+        owner.bodytemperature = Dm.num(owner.get_body_temp_normal());
+        if (ishuman(owner))
+        {
+            mob_living_carbon_human humi = owner as mob_living_carbon_human;
+            humi.set_coretemperature(humi.get_body_temp_normal());
+        }
         return TRUE;
     }
 
-    // tg: code/datums/status_effects/buffs.dm:650
-    public override async DmTask refresh(object effect = null, params object[] __extra)
+    // tg: code/datums/status_effects/buffs.dm:398
+    public override async DmTask<object> on_remove()
     {
-        await base.refresh(effect, __extra);
-        await heal_owner();
-    }
-
-    /// Regenerate health whenever this status effect is applied or reapplied
-    // tg: code/datums/status_effects/buffs.dm:655
-    public virtual async DmTask heal_owner()
-    {
-        await owner.heal_overall_damage(brute: 1, burn: 1, required_bodytype: BODYTYPE_ORGANIC);
+        owner.remove_movespeed_mod_immunities(id, typeof(datum_movespeed_modifier_damage_slowdown));
+        return null;
     }
 }
 

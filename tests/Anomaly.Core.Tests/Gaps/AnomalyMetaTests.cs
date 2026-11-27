@@ -57,7 +57,9 @@ public class AnomalyMetaTests : IClassFixture<MetaWorldFixture>
             Assert.Single(refineries);
             Assert.Equal(3, raw.Count);
             Assert.DoesNotContain(raw, c => c is obj_item_raw_anomaly_core_random);
-            Assert.Equal(2, gizmos.Count);
+            // the lab's tucker tubes and the gizmo of its gizmo spawner (MetaStation.dmm), and any that maintenance's crate spawners
+            // roll (spawners/random/structure.dm:25)
+            Assert.True(gizmos.Count >= 2, gizmos.Count + " gizmos");
             Assert.Contains(gizmos, g => g is obj_machinery_gizmo_toggle_tucker_tubes);
             Assert.Single(sniffers);
             Assert.Equal(2, pads.Count); // the station's and Lavaland's base's

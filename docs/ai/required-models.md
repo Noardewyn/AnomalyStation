@@ -850,6 +850,420 @@ what the bitrunning machinery (gaps BR1) still draws in 2D:
 - **The virtual domains' props** (gaps BR1-2, `_maps/virtual_domains/*.dmm`): the domains reuse the station's and the ruins' things;
   their own are the binary floor and wall (`icons/turf/floors.dmi` `binary`, `bitrunning`), drawn as flat textures, and the host
   monitor (`icons/obj/devices/scanner.dmi` `host_monitor`), an item in 2D.
+- **The cliffs** (gaps BR2, `turf/open/cliff.dm`, `icons/turf/cliff/cliff.dmi`, `icerock_cliff.dmi`): the glacier grind's snowy rock
+  slope that slides whoever steps onto it southward, with the floor it lies on drawn under it. Needs a sloped turf model (the slope
+  facing its fall direction, south) so the drop reads in 3D. Meanwhile the client draws tg's flat smoothed sprite on the floor.
+- **The netguardian prime** (gaps BR2, `antagonists/netguardian.dm`, `icons/mob/nonhuman-player/netguardian.dmi` `netguardian`,
+  `crash`, `scan`, `rockets`): the flying war machine a heavily threatened server spawns, with its burst SMG, the scan visor and
+  rocket pods its barrage raises, and its crashed wreck. Meanwhile tg's 2D sprite and overlays.
+- **The clowns** (gaps BR2, `basic/clown/clown.dm`, `icons/mob/simple/clown_mobs.dmi`): Clown Planet's clown, living lube, honkling,
+  flesh clown, the clown hulks (honk hulk, chlown, honkmunculus, destroyer) and the mutant, each its own creature (the hulks larger
+  than a human). Meanwhile tg's 2D sprites.
+- **The xenomorph maid** (gaps BR2, `basic/alien/maid.dm`, `icons/mob/nonhuman-player/alien.dmi` `maid`): a drone in an apron; a
+  variant of the adult castes' model (Xenomorphs above). Meanwhile tg's 2D sprite.
+- **The password door** (gaps BR2, `doors/passworddoor.dm`, `icons/obj/doors/blastdoor.dmi` `closed`, `opening`, `open`, `closing`):
+  the blast door model serves it (its open and close animations), so nothing new is needed unless a vault look is wanted.
+
+## The miners' gear and shelters
+
+What the Lavaland shuttles' and the mining gear's package (gaps LV1) draws in 2D; the mine cart (`miningcar`, `miningcaropen`) has its
+model already.
+- **Shelter furniture** (gaps LV1, `mining/equipment/survival_pod.dm`, `icons/obj/mining_zones/survival_pod.dmi` states `table`,
+  `windoor`, `sleeper` (and its `sleeper-open`), `bed`, `bed_double`, `tubes`; `icons/obj/mining_zones/pod_computer.dmi`
+  `pod_computer`; `icons/obj/mining_zones/donkvendor.dmi` `donkvendor`; the pod airlock `icons/obj/doors/airlocks/survival/survival.dmi`):
+  the white rounded fittings of a bluespace shelter: its table, windoor, wall sleeper, single and double beds, the wall tubes, the wall
+  computer with its GPS screen and the Donk storage fridge. Meanwhile tg's sprites.
+- **Survival capsules** (gaps LV1, `icons/obj/mining.dmi` `capsule`, shared by all four kinds): a small capsule thrown on the ground.
+  Meanwhile tg's sprite.
+- **Jaunter and its tunnel** (gaps LV1, `wormhole_jaunter.dm`, `icons/obj/mining.dmi` `Jaunter`; `icons/effects/anomalies.dmi`
+  `vortex`): the belt-worn wormhole device and the swirling vortex it opens. Meanwhile tg's sprites.
+- **Grapple gun** (gaps LV1, `grapple_gun.dm`, `icons/obj/mining.dmi` `grapple_gun` with its hook overlay, the `grapple_hook`
+  projectile and the zipline beam): a hook launcher whose hook leaves the barrel when fired. Meanwhile tg's sprites.
+- **Kheiral cuffs** (gaps LV1, `kheiral_cuffs.dm`, `icons/obj/mining.dmi` `strand` with its `strand_light` glow, worn `strandcuff` with
+  `strandcuff_emissive`): a wrist strand that glows while it links the wearer's suit sensors far from the station. Meanwhile tg's sprites, the glow not emissive (DV12).
+- **Vent pointer** (gaps LV1, `vent_pointer.dm`, `pinpointer_vent`): the pinpointer's model in the miners' colours. Meanwhile tg's
+  sprite.
+- **Landing field designator and the mining shuttle beacon** (gaps LV1, `aux_base.dm`, `icons/obj/devices/remote.dmi`
+  `designator_mining`; `icons/obj/mining.dmi` `miningbeacon`): the handheld designator and the waist-high beacon that marks a landing
+  site for the mining shuttle. Meanwhile tg's sprites.
+- **Mine rails** (gaps LV1, `mine_items.dm`, `icons/obj/track.dmi` `track`, `track_break`): the rails the mine cart rolls on, and
+  the broken rail where a cart stops. Meanwhile tg's sprites flat on the floor.
+## Lavaland's fauna and the kinetic crusher
+The wastes' common creatures (`mob/living/basic/lavaland/`), their effects and the miner's crusher, all drawn as tg's 2D sprites
+until their models exist:
+- **The goliath** (`goliath/goliath.dm`, `icons/mob/simple/lavaland/lavaland_monsters.dmi` `goliath`, `goliath_preattack`,
+  `goliath_dead`, the ancient goliath's `ancient_goliath*`, the saddled `goliath_saddled`): a large, slow, rock-plated quadruped, its
+  pre-attack shiver before the tentacles. Its **tentacles** (`goliath/tentacle.dm`, `goliath_tentacle_spawn`, `goliath_tentacle_wiggle`,
+  `goliath_tentacle_retract`): a stony tentacle rising out of the floor, wrapping, and sinking back.
+- **The watchers** (`watcher/watcher.dm`, `lavaland_monsters.dmi` `watcher`, `watcher_magmawing`, `watcher_icewing` with their
+  `_dead` states and the eye glow `watcher_glow`): a floating eye with membrane wings, the magmawing's burning, the icewing's frosted;
+  their beam bolts (`icons/obj/weapons/guns/projectiles.dmi` `temp_4`, `ice_2`, `lava`) and the gaze's flash.
+- **The legion** (`legion/legion.dm`, `lavaland_monsters.dmi` `legion`, `dwarf_legion`, `snowlegion`, `legion_large`) and its
+  **skulls** (`legion/legion_brood.dm`, `legion_head`, `snowlegion_head`): a floating mass of skulls, and the flying skulls it
+  launches; the infested corpse is a human body.
+- **The hivelord** and its **brood** (`hivelord/hivelord.dm`, `hivelord`, `hivelord_alert`, `hivelordbrood`): a pulsing hive and
+  the small flying spawn.
+- **The basilisk** (`basilisk/basilisk.dm`, `basilisk`, `basilisk_alert`, `basilisk_dead`): a crystal-backed lizard, glowing red when
+  overheated.
+- **The brimdemon** (`brimdemon/brimdemon.dm`, `brimdemon`, `brimdemon_firing`, `brimdemon_dead`) and its **beam**
+  (`icons/mob/simple/lavaland/lavaland_monsters.dmi` `brimbeam_start`, `brimbeam_mid`, `brimbeam_end`): a horned demon firing a
+  straight blood-red beam.
+- **The bileworm** and the **vileworm** (`bileworm/_bileworm.dm`, `icons/mob/simple/lavaland/bileworm.dmi`, `bileworm_jump.dmi`):
+  a worm bursting out of the ground and diving back, its bile globs and target circle.
+- **The lobstrosity** and the **juvenile** (`lobstrosity/lobstrosity.dm`, `icons/mob/simple/lavaland/lavaland_monsters.dmi`
+  `arctic_lobstrosity`, `lobstrosity`, `arctic_lobstrosity_juvenile`, `lobstrosity_juvenile`): a giant crab-like lobster, the
+  juvenile its small young.
+- **The NODE drone** (`node_drone/node_drone.dm`, `icons/obj/mining.dmi` `mining_node_active`, `mining_node_flying`,
+  `mining_node_escape`): the hovering drone that latches onto an ore vent during its wave defence, flying in and out.
+- **The kinetic crusher** (`kinetic_crusher/kinetic_crusher.dm`, `icons/obj/mining.dmi` `crusher` with `_uncharged` and `_lit`, the
+  skins `crusher_sword`, `crusher_harpoon`, `crusher_dagger`, `crusher_glaive`, `crusher_skull`; in-hands
+  `icons/mob/inhands/weapons/hammers_*hand.dmi` `crusher0`, `crusher1`): a two-handed club-hammer with a light; its **mark**
+  (`icons/effects/effects.dmi` `shield`, a bubble under the marked creature) and **blast** (`kinetic_blast`).
+- **The monster organs and trophies** (`icons/obj/medical/organs/mining_organs.dmi`, `icons/obj/mining_zones/artefacts.dmi`): the
+  regenerative cores, the brimdust sac, the rush gland and the crusher trophies (wings, skull, tentacle, claw, fang, spewlet) are small
+  items; a generic organ or trinket model serves them.
+
+## Lavaland's fauna, second half, the raptor ranch and the ice moon's mobs
+The rest of the wastes' creatures (`mob/living/basic/lavaland/goldgrub/`, `gutlunchers/`, `raptor/`, `mook/`), the ice moon's
+(`mob/living/basic/icemoon/`) and the ranch's things, drawn as tg's 2D sprites until their models exist:
+- **The goldgrub** (`goldgrub/goldgrub.dm`, `icons/mob/simple/lavaland/lavaland_monsters_wide.dmi` `goldgrub`, `goldgrub_dead`,
+  the alert overlay `goldgrub_alert`; the baby `lavaland_monsters.dmi` `grub_baby`): a fat, glossy burrowing larva, ridable once
+  tamed; it sinks into the rock and bursts out of it. Its **egg** (`egg` green) is a food egg.
+- **The gutlunchers** (`gutlunchers/gutlunchers.dm`, `lavaland_monsters.dmi` `gutlunch`, the full udder overlay `gl_full`; the milk
+  one, the warrior and the grub tinted by their greyscale colours): a squat, toothy ash-land livestock with a pink udder; the grub
+  its small young. The **gutlunch trough** (`icons/obj/structures.dmi` `gutlunch_trough`) is a wooden trough with the ores in it.
+- **The raptors** (`raptor/_raptor.dm`, `raptor_color.dm`; `icons/mob/simple/lavaland/raptor_big.dmi` `raptor_<colour>` and
+  `young_<colour>` with their `_dead` states and the collars `raptor_collar`, `young_collar`; `raptor_baby.dmi` `baby_<colour>`): a feathered,
+  rideable bipedal lizard-bird in seven colours (red, purple, green, white, black, yellow, blue) and three growth stages, the chick
+  small enough to hold, the purple one carried on the back with its **wings**. The **raptor egg** (`raptor_baby.dmi` `raptor_egg`), the
+  **raptor trough** (`icons/obj/structures.dmi` `raptor_trough`) and the **RaptorDex** (`icons/obj/devices/scanner.dmi`
+  `raptor_dex`), a handheld scanner.
+- **The mooks** (`mook/mook.dm`, `icons/mob/simple/jungle/mook.dmi` `mook`, `mook_warmup`, `mook_leap`, `mook_strike`, the axe
+  `mook_axe_overlay` and `axe_strike_overlay`, the bard's `bard_overlay` and `bard_strike`, the chief's `mook_chief*`, the carried
+  ore `mook_ore_overlay`): small, hunched primitives in machine-made garments, crouching to leap; their **dust** puffs (`mook_dust`)
+  and the village's **material stand** (`mook.dmi` `material_stand`), a stone counter with ores on it.
+- **The ice demon** and its **afterimages** (`icemoon/ice_demon/ice_demon.dm`, `icons/mob/simple/icemoon/icemoon_monsters.dmi`
+  `ice_demon`): a floating, horned ice spirit that shrinks before it teleports and splits into translucent copies;
+  its **slippery ice** (`icons/turf/floors/ice_turf.dmi` `ice_turf-6`), a fading ice sheet, and its frost bolt (`ice_2`).
+- **The ice whelp** (`icemoon/ice_whelp/ice_whelp.dm`, `icemoon_monsters.dmi` `ice_whelp`, the breath warning
+  `ice_whelp_telegraph_dir`; the ash whelp `lavaland_monsters.dmi` `ash_whelp`): a young, white drake breathing a freezing line or a
+  cross; its **statue** is a dragon statue of itself.
+- **The polar bear** (`icemoon/polar_bear/polar_bear.dm`, `icemoon_monsters.dmi` `polarbear`): a large white bear.
+- **The wolf** (`icemoon/wolf/wolf.dm`, `icemoon_monsters.dmi` `whitewolf`): a white wolf, rideable once tamed.
+- **The trophies** (`icons/obj/mining_zones/artefacts.dmi` the demonic cube, the wolf ear, the bear paw, the raptor feather, the
+  tail spike): small items; a generic trinket model serves them.
+
+## The megafauna and their loot
+The bosses of Lavaland and the ice moon (`simple_animal/hostile/megafauna/`, `basic/boss/`), their attacks' effects and their loot,
+all drawn as tg's 2D sprites (the large ones on 64 or 96 pixel sheets):
+
+- **The ash drake** (`megafauna/drake.dm`, `icons/mob/simple/lavaland/96x96megafauna.dmi` `dragon`, `dragon_dead`; the lesser
+  drake): a winged red dragon that breathes fire, swoops off the screen and lands in a lava arena; its meteors fall on target marks.
+- **Bubblegum** (`megafauna/bubblegum.dm`, `96x96megafauna.dmi` `bubblegum`): a huge horned blood demon that sinks into blood
+  pools and rises from them, its clawed hands reaching out of the blood (`icons/effects/bubblegum.dmi`), and its translucent
+  charging hallucinations.
+- **The colossus** (`megafauna/colossus.dm`, `96x96megafauna.dmi` `eva`): a giant armoured statue-like humanoid firing volleys of
+  glowing bolts; the anomalous crystals of its chest.
+- **The hierophant** (`megafauna/hierophant.dm`, `icons/mob/simple/lavaland/hierophant_new.dmi` `hierophant`): a floating
+  club-shaped machine; its blasts, chasers, arena walls and squares, its beacon, and the hierophant club it leaves.
+- **The legion** (`megafauna/legion.dm`, `96x96megafauna.dmi` `mega_legion`, the medium ones on `64x64megafauna.dmi`, the small
+  ones on `lavaland_monsters.dmi`): a floating mass of skulls splitting into smaller masses; its sentinels and the staff of
+  storms.
+- **The demonic frost miner** (`megafauna/demonic_frost_miner.dm`, `icons/mob/simple/icemoon/icemoon_monsters.dmi`
+  `demonic_miner`): a frozen, possessed miner; its frost orbs, snowballs and ice blasts, and the prisms of its arena.
+- **The wendigo** (`megafauna/wendigo.dm`, `icons/mob/simple/icemoon/64x64megafauna.dmi` `wendigo`, `wendigo_dead`): a gaunt
+  antlered beast; its shockwaves and the exit portal it leaves.
+- **The clockwork defender** (`megafauna/clockwork_knight.dm`, `icemoon_monsters.dmi` `clockwork_defender`): a brass knight.
+- **The blood-drunk miner** (`basic/boss/blood_drunk_miner/`, `icons/mob/simple/broadMobs.dmi` `miner`, with its guidance, hunter
+  and doom kinds): a mad shaft miner with a transforming cleaving saw and a kinetic accelerator.
+- **The Thing** (`basic/boss/thing/`, `icons/mob/simple/icemoon/thething.dmi` `p1`, `p2`, `p3`, `dead`): a writhing flesh monster in
+  three phases, its tendrils and acid; the phase depleters and aggro gates of its ruin.
+- **The loot** (`mining_loot/megafauna/`): the drake's armour and cloak, the ghost sword, the dragon's blood, the lava staff, the
+  H.E.C.K. suit, the bottle of mayhem, the soulscythe, the resurrection crystal, the ice trail boots, the demonic jackhammer, the
+  wendigo's blood, the AI-uplink brain, the cleaving saw and the wildhunter knife, and the megafauna's crusher trophies (the
+  miner's eye, tail spike, demon claws, blaster tubes, vortex and ice block talismans, wendigo horn, flesh glob): small items a
+  generic item or weapon model serves; the necropolis chests are crates.
+## Xenobiology and cytology
+The xenobiologist's and the cytologist's odds (gaps XB1, `research/xenobiology/`), drawn as tg's 2D sprites until their models
+exist; the growing vat and the microscope have theirs (`machines/medical_wave/biological_growing_vat.glb`, `microscope.glb`), the
+slime management console is the standard console with tg's `slime_comp` screen:
+- **The slime extracts** (`xenobiology.dm`, `icons/mob/simple/slimes.dmi` `grey-core` to `rainbow-core`, 22 colours): a small
+  gelatinous core, one model tinted per colour (the adamantine, bluespace, pyrite, cerulean, sepia and rainbow ones with their own
+  shine). A used extract keeps its look in tg (only its name changes).
+- **The slime potions** (`icons/obj/medical/chemical.dmi` `potsilver`, `potpink`, `potred`, `potblue`, `potgreen`, `potorange`,
+  `potpurple`, `potrainbow`, `potcyan`, `potbrown`, `potbluespace`): a small round flask, tinted per potion.
+- **The petri dish** (`icons/obj/science/vatgrowing.dmi` `petri_dish`, with the sample's `petri_dish_overlay` tinted by the sample
+  colour and `petri_dish_overlay2`): a shallow glass dish with a lid, the culture a coloured film inside.
+- **The swab** and **the biopsy tool** (`vatgrowing.dmi` `swab` with its `swab_<colour>` tip, `biopsy`, `biopsy_organ`): a cotton
+  bud, and a pen-like sampling tool with its sample window.
+- **The vatbeast** (`mob/living/basic/cytology/vatbeast.dm`, `icons/mob/vatgrowing.dmi` `vat_beast`, `vat_beast_dead`): a big
+  rideable grub-like beast with a lashing tentacle; tg's tentacle slap.
+- **The console's suction tube** (`xenobio_camera.dm:668`, `icons/effects/effects.dmi` `xenotube_back` below the mobs and
+  `xenotube_fore` above them): a glass tube dropping from the ceiling over the tile, a slime, monkey or potion sliding up or down
+  it (`sucked_atom`'s animation) with the air's suck and shoot sounds. Drawn as tg's sprites over the tile until it has a model.
+## The chapel
+Gaps CH1 (D339), `modules/religion`. Meanwhile tg's sprites.
+- **The altar of the gods** (`religion/religion_structures.dm`, `icons/obj/service/hand_of_god_structures.dmi` `convertaltar` and the
+  sects' states `convertaltar-blue`, `-red`, `-yellow`, `-burden`, `-white`, `-maint`, `-orange`, `-festival`, `-dream`): a stone altar
+  a body can lie on, its cloth and glow in the chosen sect's colours; the lit candles of its `candle_overlay`.
+- **The ritual totem** (`religion_structures.dm`, `icons/obj/service/hand_of_god_structures.dmi` `ritual_totem`): the maintenance
+  god's carved totem pole of scrap, heavy and anchored.
+- **The ceremonial blade** (`sparring/ceremonial_gear.dm`, `icons/obj/weapons/sword.dmi` `default`): a plain ceremonial sword whose
+  blade takes the colour and name of the material it is forged from.
+- **The sparring contract and the holy writ** (`sparring/sparring_contract.dm`, `honorbound/honorbound_rites.dm`,
+  `icons/obj/scrolls.dmi` `sparringcontract`, `honorscroll`): rolled parchment scrolls; a generic scroll model serves both.
+- **The chaplain's revolver** (`burdened/psyker.dm`, `icons/obj/weapons/guns/ballistic.dmi` `lucky`): the psyker's holy
+  six-shooter.
+- **The festival violin** (`festival/festival_violin.dm`, `icons/obj/art/musician.dmi` `holy_violin`): a gilded violin; the violin
+  model, recoloured.
+- **The psyker head and brain** (`burdened/psyker.dm`, `icons/obj/medical/organs/organs.dmi` `brain-psyker`, the head's `psyker`
+  limb): an eyeless, swollen head and its exposed brain.
+- **The soulstone shards and the shade** (`antagonists/wizard/equipment/soulstone.dm`, `icons/obj/mining_zones/artefacts.dmi`
+  `soulstone`, `purified_soulstone`, `mystic_soulstone` and their `2` states with a soul inside; `mob/living/basic/cult/shade.dm`,
+  `icons/mob/nonhuman-player/cult.dmi` `shade_cult`, `shade_holy`, `shade_wizard`; the ectoplasm `icons/effects/magic.dmi`
+  `ectoplasm`, `angelplasm`, `mysticplasm`): a red, blue or purple crystal shard, glowing when it holds a soul; the shade, a
+  hooded, translucent spirit in the theme's colour; the ectoplasm a shapeless goo.
+
+## The tendrils, the necropolis and the elites
+The necropolis tendrils, the ice moon's nests, the necropolis chests' loot and Lavaland's elites with their tumor, all drawn as tg's
+2D sprites:
+
+- **The necropolis tendril** (`basic/lavaland/tendril/tendril.dm`, `icons/mob/simple/lavaland/tendril.dmi` `tendril`): a thick,
+  pulsing stalk of red flesh rising from the ground, its heart glowing; its spike stab (`spike_stab`), the tentacle lash it throws
+  in eight directions and reels back in, and the spikes erupting from the ground (`icons/effects/effects.dmi`
+  `emerging_ground_spike`) along its chasers' trails and in its cross. The necropolis floor it spreads is a floor texture.
+- **The nests** (`structures/spawner.dm`, `icemoon/cave_entrance.dm`, `icons/mob/simple/lavaland/nest.dmi` `hole`, `nether`): a
+  monster den, a hole dug into rock (the cave entrance, the mining dens, the bone pit); the netherworld link and the ice moon's
+  demonic portal, a swirling red portal that collapses flat before it closes; the syndicate warp beacon and Laughing Larry
+  (`icons/obj/machines/beacon.dmi`).
+- **The pulsing tumor** (`mining_mobs/elites/elite.dm`, `lavaland_elites.dmi` `tumor`, `advanced_tumor`, `tumor_popped`): a
+  fleshy growth on the ash, glowing when fed a core, burst open when its elite is out; the force-field walls of its arena
+  (`hierophant_wall_temp`).
+- **The goliath broodmother** (`elites/goliath_broodmother.dm`, `lavaland_elites.dmi` `broodmother`): a larger, darker goliath
+  with a brood sac; its babies (`goliath_baby`), small goliaths that explode when they die.
+- **The herald** (`elites/herald.dm`, `lavaland_elites.dmi` `herald`): a tall, robed, floating harbinger shooting bright orbs
+  (`chronobolt`), red when enraged (`herald_enraged`), a ghost when dead (`herald_ghost`); its translucent mirror image
+  (`herald_mirror`).
+- **The legionnaire** (`elites/legionnaire.dm`, `lavaland_elites.dmi` `legionnaire`, `legionnaire_headless`, `legionnaire_head`): a
+  skeletal giant whose skull flies off on its own; the bonfire it lights (`bonfire`).
+- **Pandora** (`elites/pandora.dm`, `lavaland_elites.dmi` `pandora`): a floating ornate box firing hierophant-like blasts.
+- **The loot** (`mining_loot/`, `cain_and_abel/`, `vehicles/lavaboat.dm`): the berserker armour and its helmet, the memento mori,
+  the concussive gauntlets, the godslayer armour, the eye of god, the spooky lantern and its wisp, Jacob's ladder (a ladder through
+  every level), the book of Babel, the potion of flight, the rod of Asclepius (wooden, then with its living snake), the red and
+  blue warp cubes, the immortality talisman, the paradox bags, the cursed katana and its shard, Cain and Abel (two daggers with
+  their orbiting wisps and crystals), the lava boat and its oar, the ship in a bottle and the dragon boat, the herald's cloak,
+  Pandora's hope, the tumor shard, the skeleton key: small items a generic item or weapon model serves, but the boats, which are
+  boats.
+## Xenobiology's crossbreeds
+The crossed cores and what they make (gaps XB2, `research/xenobiology/crossbreeding/`), drawn as tg's 2D sprites until their models
+exist:
+- **The crossbred extracts** (`icons/obj/science/slimecrossing.dmi` `burning`, `charged`, `chilling`, `consuming`, `industrial`
+  with `industrial_still`, `prismatic`, `recurring`, `regenerative`, `reproductive`, `selfsustaining`, `stabilized`, tinted by
+  the colour, 22 colours each): the plain extract's core (Xenobiology and cytology above) reshaped per family: flaming, sparking,
+  frosted, a mouth, a bubbling vat-core, a prism, a ring, a pulsing heart, a twin core, a split core, a crystal. The industrial
+  one bubbles while it makes its item.
+- **The slime cookies** (`icons/obj/food/slimecookies.dmi`, one state per colour): a small round cookie per colour.
+- **The slime-crossed beakers and autoinjectors** (`/obj/item/slimecrossbeaker` and its blood pack, pax, omnizine and autoinjector
+  kinds, `slimecrossing.dmi` `base` tinted by the colour): a soft gel sac holding the reagent, which melts away when empty.
+- **The barrier cube and its walls** (`slimecrossing.dmi` `barriercube`, `slimebarrier`, `slimebarrier_thick`, `rainbowbarrier`):
+  a gel cube in hand; a waist-high jelly barricade; a full jelly wall, the rainbow one shimmering.
+- **The ice stasis block** (`frozen`): a block of ice around a standing mob.
+- **The light prism and the prism glasses** (`lightprism`, `prismglasses`, the action buttons `prismcolor` and `lightprism`):
+  a tall glowing crystal on the floor; tinted glasses with a prismatic frame.
+- **The capture device** (`capturedevice`): a palm-sized ball that holds a small mob.
+- **The heroine bud** (`peaceflower`, worn from `icons/mob/clothing/head/costume.dmi`): a pink flower worn on the head.
+- **The slime rebreather** (`/obj/item/clothing/mask/nobreath`, `icons/obj/clothing/masks.dmi` `slime`): a gel mask over mouth and
+  nose.
+- **The adamantine armor and shield** (`icons/obj/clothing/suits/armor.dmi` `adamsuit`, `icons/obj/weapons/shields.dmi`
+  `adamshield`): a heavy green-crystal plated suit; a large two-handed crystal tower shield.
+- **The rainbow knife** (`icons/obj/weapons/stabby.dmi` `rainbowknife`): a knife whose blade cycles through colours.
+- **The blood gun** (`bloodgun`, with its `bloodchill` projectile): a fleshy pistol grown on the hand, firing red globs.
+- **The slime hypercharged cell** (`icons/mob/simple/slimes.dmi` `yellow-core`): the yellow extract's core with a power cell's
+  contacts.
+
+## Lavaland's ruins and the ash walkers
+Lavaland's ruins load from their maps with their own turfs, walls and things, which keep tg's sprites and the turfs' textures:
+
+- **The ash walkers' nest** (`objects_and_mobs/ash_walker_den.dm`, `icons/mob/simple/lavaland/nest.dmi` `ash_walker_nest`): a
+  vile tendril rising from a nest of man-sized yellow eggs; when it breaks, the collapsing tendril (`tendril`) a player can grab
+  loot from before the ground about it falls into a chasm.
+- **The ash walker egg** (`ghost_roles/mining_roles.dm`, `lavaland_monsters.dmi` `large_egg`): a man-sized yellow egg with a
+  humanoid shadow inside, its shell (`structures`); the egg is the ghost role's spawner.
+- **The sliding puzzle's pillars** (`lavalandruin_code/puzzle.dm`, `icons/obj/mining_zones/artefacts.dmi` `puzzle_pillar`): a
+  stone pillar with a picture tile set into its face (the client draws the tile cropped from the puzzle's picture); the prison
+  cube (`prison_cube`), a dusty stone cube with a humanoid imprint.
+- **Greed's slot machine** (`objects_and_mobs/cursed_slot_machine.dm`, `icons/obj/machines/computer.dmi` `slots`): a gilded slot
+  machine with its screen (`slots_screen`, `slots_screen_working`); the bag of money (`moneybag`).
+- **Gluttony's wall** (`objects_and_mobs/sin_ruins.dm`, the blob's sprite tinted yellow-green): a fleshy, pulsing wall; envy's
+  knife (`envyknife`), a bone-handled kitchen knife.
+- **The dead god** (`lavalandruin_code/surface.dm`, `icons/obj/fluff/lavaland/dead_ratvar.dmi`): the huge brass corpse of a
+  clockwork god lying in the ash, 6 by 4 tiles.
+- **The freeze cube** (`lavalandruin_code/biodome_winter.dm`, `artefacts.dmi` `freeze_cube`): a block of clear ice, spinning when
+  thrown.
+- **The watcher egg and hatchling** (`lavalandruin_code/watcher_grave.dm`, `egg_watcher`, `watcher_baby`): a pale egg with an eye
+  showing through; the baby watcher, a small floating eye with wings that circles its owner and shoots small beams.
+- **The firepit** (`awaymissions/mission_code/Cabin.dm`, `icons/obj/fluff/fireplace.dmi` `firepit`, `firepit-active`): a ring of
+  stones with logs, burning or cold.
+- **The all-terrain vehicle** (`vehicles/atv.dm`, `icons/obj/vehicles.dmi` `atv`, `atvcover`): a four-wheeled quad bike, its
+  front cover drawn over the rider; the turret ATV carries a small mounted turret.
+- **The gas miners** (`atmospherics/machinery/other/miner.dm`, `icons/obj/machines/atmospherics/miners.dmi` `miner`, `on`,
+  `broken`): a heavy floor vent with a coloured glow by gas (oxygen blue, plasma purple, nitrogen green, carbon dioxide grey).
+- **The dark wizard and the skeletons** (`basic/ruin_defender/`): drawn from a dressed human (the dark wizard's robes and staff;
+  the skeleton, the settler with its spear, the templar's armour and sword, the ice skeleton, the plasma-burnt miner), as the
+  other human-shaped mobs; their models are the human model's.
+- **The ruins' walls and floors** (`turfs/closed/wall/misc_walls.dm`, `mineral_walls.dm`, `indestructible.dm`,
+  `turfs/open/sand.dm`, `ice.dm`, `grass.dm`, `ashplanet.dm`): the cult's runed walls, rusted walls, wooden walls, the
+  hierophant's riveted walls and the necropolis' walls; sand, the coast, ice, snow, grass and the watery rock: textures, not models.
+## The restaurant
+Gaps KT1 (D339), `food_and_drinks/restaurant/`. Meanwhile tg's sprites.
+- **The restaurant portal** (`restaurant/_venue.dm`, `icons/obj/machines/restaurant_portal.dmi` `portal`, `portal-open`,
+  `portal_door`): a floor-standing teleporter gate the robot tourists walk in and out of, its sliding door shut while the venue is
+  closed, its panel open for maintenance.
+- **The robot tourists** (`basic/space_fauna/robot_customer.dm`, `icons/mob/simple/tourists.dmi`): a humanoid service robot in eight
+  looks with their `_features` and clothes (`amerifat`, `italian`, `french`, `japanese`, `mothbot`, `mexican`, `british`, `defect`;
+  the clothes `amerifat_clothes`, `italian_pison`, `italian_godfather`, `french_fit`, `japanese_animes`, `japanese_salary`,
+  `mothbot_clothes`, `mexican_poncho`, `british_gentleman`, `british_bobby`, `defect_wires`, `defect_bad_takes`), its body tinted a
+  random colour; the French flag waved on the way out (`french_flag`), the moth bot's jetpack and moth wings (`mothbot_jetpack`,
+  `moth_wings.dmi`); one robot model with swappable outfits serves them all.
+- **The seat holosign** (`restaurant/_venue.dm`, `icons/effects/effects.dmi` `eating_zone`): a translucent hologram on a seat marking
+  it for a customer; the projector (`signmaker_service`) is the holosign projector model.
+- **The order's thought bubble** (`generic_venues.dm`, `icons/effects/effects.dmi` `thought_bubble`): a cloud bubble over the
+  customer with its ordered food or drink inside, seen only by whoever looks at it; a billboard.
+## Recreation
+Gaps RC1 (D339): the holodeck, the arcades, the slot machines, the roulette and the trading card game. The arcade cabinet, the slot
+machine and the computers (the holodeck console) have their models already. Meanwhile tg's sprites.
+- **The roulette table** (`machinery/roulette_machine.dm`, `icons/obj/machines/roulette.dmi` `idle`, `rolling`, `open`, the
+  `flick_up` and `flick_down` flicks, the number and colour overlays of its last spin): a green felt table with a sunken wheel that
+  rises on its piston to spin; the winning number lit on its rim. Its prize beacon (`icons/obj/machines/floor.dmi` `floor_beacon`) is a
+  small floor beacon.
+- **The trading card holder** (`items/tcg/tcg_machines.dm`, `icons/obj/toys/tcgmisc.dmi` `card_holder_inactive`,
+  `card_holder_active`, the red team's kind): a low floor plinth with a card slot that lights when a card is in.
+- **The summon hologram** (`tcg_machines.dm`, `icons/obj/toys/tcgsummons.dmi` `hologram`, with the card's own summon sprite on it): a
+  translucent hologram base in the team's colour, the power and resolve numbers floating at its foot, the green gem of a marked summon.
+- **The mana and life buttons and the display panel** (`tcg_machines.dm`, `icons/obj/toys/tcgmisc.dmi` `mana_buttons`,
+  `health_buttons`; `icons/obj/toys/tcgmisc_large.dmi` `display_panel` with its `gem_blue`, `gem_red` and empty gems): a wall-high
+  scoreboard panel with a row of gems for mana and life, and the button posts beside it.
+- **The trading cards, packs, decks and binder** (`items/tcg/tcg.dm`, `icons/runtime/tcg/default.dmi` and `xenos.dmi` (the cards'
+  fronts), `icons/obj/toys/tcgmisc.dmi` `cardback`, `cardpack_*`, `deck_up`, `deck_tcg`, `deck_tcg_low`, `deck_tcg_half`,
+  `deck_tcg_full`, the card binder's `binder`): a flat card with its printed front or its back, a foil
+  pack, a pile of cards growing with its count, a ring binder.
+- **The model Orion ship** (`machinery/computer/arcade/orion.dm`, `icons/obj/toys/toy.dmi` `ship`): a toy spaceship on a stand, the
+  emagged Orion Trail's prize.
+- **The holodeck's ready button** (`modules/holodeck/items.dm`, `icons/obj/machines/wallmounts.dmi` `auth_off`): a wall button for the
+  thunderdome's and the dodgeball court's ready check.
+
+## The exploration drones
+Gaps EX1 (D339), `modules/explorer_drone/`. The launcher (`launcher` with its fuel overlays) and the scanner dish (`scanner_off`,
+`scanner_ready`, `scanner_on`, `scanner_open`) have their models already; the consoles are the computer's model. Meanwhile tg's sprites.
+- **The exploration drone** (`exodrone.dm`, `icons/obj/exploration.dmi` `drone`): a bulky, two-handed probe with folded thrusters that
+  stands on its launcher's cradle between trips; it leaves the cradle at the launch and lands back on it (or on a random station tile).
+- **The fuel pellets** (`exodrone.dm`, `fuel_basic`, `fuel_advanced`, `fuel_exotic`): three canisters of one shape, coloured by grade,
+  that go into the launcher's fuel port.
+- **The drones' loot** (`loot.dm`, `antique`, `trade_chip`, `firelance` with its in-hand states `firelance` and `firelance_charging`): a
+  ruined antique, the trade chip card, and the fire lance, a two-handed heavy beam drill whose tip glows while it charges.
+## The trait jobs and the deployable turrets
+
+- **The machine gun turrets** (gaps JB1, `structures/deployable_turret.dm`, `icons/obj/weapons/turrets.dmi` `machinegun` and `hmg`, eight
+  directions each): a tripod-mounted machine gun and a heavier belt-fed heavy machine gun with a seat behind it for the gunner, turning
+  on its mount to face where it is aimed (eight directions; a free rotation would read better in first person), with a muzzle flash on
+  each shot. Meanwhile the client draws tg's directional sprites.
+- **The folded heavy machine gun** (gaps JB1, `machinery/deployable.dm`, `turrets.dmi` `folded_hmg`, and its back and inhand sprites):
+  the gun folded into a carrying bundle worn on the back. Meanwhile the client draws tg's sprite.
+- **The human AI's pre-packaged camera console** (gaps JB1, `station_trait/human_ai.dm:162`, `icons/obj/devices/remote.dmi`
+  `botpad_controller`): a boxed handheld controller; the console it unpacks into is the computer model (`computer`) with the camera
+  console's screen. Meanwhile the client draws tg's sprite.
+## The fish
+Gaps FI1 (D339), `fishing/fish/`, `fishing/fish_mount.dm`, `aquarium/aquarium_kit.dm`. Meanwhile tg's sprites.
+- **The fish** (`fishing/fish/types/`, `icons/obj/aquarium/fish.dmi`, `wide.dmi`, `rift.dmi`; each fish's `icon_state`, its dead
+  state `[icon_state]_dead`, the flop of a fish out of water as tg's floating animation): about a hundred species in a few body
+  shapes, each a model of its own size and colours (the item scales with the fish's size, tg's `update_size_and_weight`): the slim
+  river fish (goldfish, guppy, angelfish, plasma tetra, perch, pike, salmon, sacabambaspis), the flat reef fish (clownfish,
+  cardinal, greenchromis, dwarf moonfish, monkfish, lanternfish), the long fish (swordfish, needlefish, eel-like zipzap, the
+  armored pike, the chainsawfish with its running saw blade), the round fish (pufferfish, sludgefish, mossglob, the slime fish),
+  the crustaceans (chasm crab and its ice kin, sand crab, skin crab, armorfish), the star fish (starfish, chrystarfish), the
+  jellyfish (gunner jellyfish), the odd ones (the mastodon and the bone fish as skeletons, the lavaloop ring, the holographic fish
+  with their scanlines, the babbelfish and its two halves, the dolphish, the flumpulus, the gullion of quartz, the fryish and
+  fritterish shaped like fries, a dinosaur and a pterodactyl, the tadpole, the baby carp, the moonfish eggs, the donkfish, the
+  jumpercable, the emulsijack, the soul fish, the ratfish). The two-handed fish (pike, swordfish, chainsawfish) have their
+  wielded in-hand states (`_wielded`).
+- **The fish mount** (`fish_mount.dm`, `icons/obj/wallmounts.dmi` `fish_mount`, `fish_mount_item`): a wooden trophy plaque on the
+  wall with the mounted fish's model on it (tg's vis_contents), and its frame as an item.
+- **The stasis fish case** (`aquarium_kit.dm`, `icons/obj/storage/case.dmi` `fishbox`, `fishbox_bluespace`): a small plastic and
+  iron case with a clear lid, the bluespace one with a blue glow; it grows with the fish inside it.
+- **The fish encyclopedia** (`fish_catalog.dm`, `icons/obj/service/library.dmi` `fishbook`): a book with a fish on its cover; the
+  book model with its own cover texture.
+- **The babbel ears** (`types/rift.dm`, `icons/obj/medical/organs/organs.dmi` `babbearfish` and its body overlay): the split
+  babbelfish's two halves, worn as obsidian tubes where the ears are.
+- **The lavaloop's wind-up bar** (`components/throwbonus_on_windup.dm`, `icons/effects/effects.dmi` `windup_red`, `windup_green`,
+  `windup_purple`): five coloured pips stacked beside the holder while the lavaloop heats up in the throwing hand; a billboard.
+## The anomaly cores, the gizmos and the pads
+Gaps OR2 (D339), `research/anomaly/`, `research/gizmo/`, the pads. The anomaly refinery (`explosive_compressor` with its `-off`), the
+orbital pad (`mechpad`, `mechpad-open`), the ecto sniffer (`ecto_sniffer`, `-p`, `_open`) and the tucker tubes gizmo
+(`gizmo_active_0`, `_on`) have their models already; the launchpad and orbital pad consoles are the computer's model. Meanwhile tg's
+sprites.
+- **The quantum pad** (`machinery/quantum_pad.dm`, `icons/obj/machines/telepad.dmi` `qpad-idle`, `qpad-idle-open`, the `qpad-beam`
+  flick): a round floor pad with a glowing ring, its panel open for maintenance, a column of light when it sends and receives.
+- **The gizmos** (`research/gizmo/gizmo_machines.dm`, `icons/obj/science/gizmos.dmi` `gizmo_0` to `gizmo_4`, `beyblade` with
+  `beyblade_spinning`, `gizmo_active_1` to `gizmo_active_4` with their `_on` states): five odd machines of unknown purpose, a top-like
+  gizmo that spins and wanders, and four more toggle gizmos that light up when they hum to life.
+- **The gizmo items** (`gizmo_items.dm`, `gizmos.dmi` `gizmo_item_1` and the moo gizmo's): a hand-held strange device with wires.
+- **The raw anomaly cores** (`raw_anomaly.dm`, `icons/obj/devices/new_assemblies.dmi` `rawcore_bluespace`, `_vortex`, `_grav`, `_pyro`,
+  `_flux`, `_hallucination`, `_bioscrambler`, `_dimensional`, `_weather`, `_inert`): a rough crystal in each anomaly's colour.
+- **The anomaly cores** (`anomaly_core.dm`, `new_assemblies.dmi` `anomaly_core`, `pyro_core`, `grav_core`, `flux_core`, `vortex_core`,
+  `bioscrambler_core`, `hallucination_core`, `dimensional_core`, `weather_core`): the refined core, a cut gem in a metal cage.
+- **The reactive armour and its shell** (`suits/reactive_armour.dm`, `icons/obj/clothing/suits/armor.dmi` `reactive`, `reactiveoff`
+  and the shell's `reactiveoff`): a ribbed chest plate with sensor nodes, lit when on.
+- **The polymorphic field inverter** (`belts/polymorph_belt.dm`, `icons/obj/clothing/belts.dmi` `polybelt`, `polybelt_inactive`): a
+  belt with a glowing DNA buckle.
+- **The perceptomatrix helm** (`head/perceptomatrix.dm`, `perceptomatrix_helmet`, `_inactive`): a closed helmet with a visor of
+  lenses, dark without its core.
+
+## Fishing
+Gaps FI2 (D339), `fishing/fishing_rod.dm`, `fishing_equipment.dm`, `bait.dm`, `fishing_minigame.dm`, `fishing_portal_machine.dm`
+(all states in `icons/obj/fishing.dmi` unless named). Meanwhile tg's sprites.
+- **The fishing rods** (`fishing_rod`, `fishing_rod_bone`, `fishing_rod_science`, `fishing_rod_telescopic` and
+  `_telescopic_collapsed`, `fishing_rod_master` and `_master_collapsed`, `fishing_rod_material` with its material colour; the reels
+  `reel_overlay`, `reel_bone`, `reel_science`, `reel_telescopic`, `reel_master`, `reel_material` and the line's coloured reels
+  `reel_white`, `reel_green`, `reel_red`, `reel_blue`, `reel_sinew`, `reel_auto`, `reel_bluespace`; the slotted parts' overlays
+  `line_overlay`, `hook_*_overlay`, `worm_overlay`, `dough_overlay`, `battery_overlay`): a rod with its grip, reel and guides, the
+  telescopic and master rods collapsible to a short tube, the tech rod's display; the reel shows the line slotted.
+- **The fishing line** (`fishing_line`, tg's held beam from the rod to the bobber): a thin cord from the rod's tip to the bobber, in
+  the line's colour.
+- **The bobber** (`float`, the lit lure's `lure_light`): a red and white float that bobs on the spot and dips at a bite.
+- **The hooks** (`hook`, `shiny`, `gold_shiny`, `weighted`, `rescue`, `hook_bone`, `gyro`, `jaws`, `treasure`, the anomaly hook `anom`
+  with its core overlays): small hooks, the jaws a trap, the anomaly hook with its glowing core.
+- **The lures** (`daisy_chain`, `minnow`, `plug`, `dropping`, `spoon`, `artificial_fly`, `led`, `lucky_coin`, `algae`, `grub`,
+  `buzzbait`, `spinnerbait`): a painted lure of each kind, the LED one lit.
+- **The bait can** (`bait_can`, `bait_can_open`, `bait_can_empty`) and its baits (`worm`, `doughball`, `doughball_blue`).
+- **The fish-porter 3000** (`portal`, `portal_open`, `portal_on`, each dimension's portal state `portal_aquarium`, `portal_beach`,
+  `portal_chasm`, `portal_ocean`, `portal_hyperspace`, `portal_randomizer`, `portal_syndicate` and the linked spots' `portal_lava`,
+  `portal_river`, `portal_plasma`, `portal_tray`, `portal_rift`, `portal_fry`, `portal_mansus`): a machine with a round basin whose
+  portal swirls in the dimension's colours while on, and its open panel.
+- **The fishing bag** (`fishing_bag`, `fishing_bag_carpskin`), **the fish gene gun** (`fish_gun` with its inject and extract states)
+  and **the fish trait injector** (`fish_trait_injector`).
+- The minigame's HUD (`icons/hud/fishing_hud.dmi`) is a screen overlay drawn from tg's sprites; no model.
+
+## Aquariums
+Gaps FI3 (D339), `fishing/aquarium/`, `gloves/special.dm`, `boxes/fishing_boxes.dm` (the tanks' states in `icons/obj/aquarium/tanks.dmi`,
+the kits' in `supplies.dmi`). Meanwhile tg's sprites, with the fish drawn into the tank's picture.
+- **The aquarium** (`aquarium_base`, with `aquarium_glass_water`, `_glass_air`, `_glass_water_broken`, `_glass_air_broken`,
+  `_glass_cracks`, `aquarium_borders`, `aquarium_panel`): a waist-high glass tank on a metal stand with a lid, the water inside, a
+  control panel that opens on the side; the fish and props swim and stand inside, behind the glass (the model needs an inner volume
+  the fish visuals are drawn in, and a cracked-glass state).
+- **The bioelectricity generator** (`bioelec_base` and its glass, borders and panel states): the aquarium with copper coils and
+  electrodes around the tank.
+- **The fish tank** (`fish_tank`, `fish_tank_water`, `fish_tank_air`, `fish_tank_borders`, `fish_tank_panel`, `_panel_open`;
+  the bluespace tank `fish_tank_bluespace` and its states): a carriable rectangular plastic tank with a handle, the bluespace one
+  smaller with a blue glow.
+- **The aquarium props** (`rocks`, `seaweeds_back`, `seaweeds_front`, `sand`, `treasure`, and their `_fish_tank` states drawn in a
+  tank): small plastic rocks, seaweed, a sand board and a tiny treasure chest, as items and inside the tanks.
+- **The aquarium kits** (`construction_kit`, `bioelec_kit`, `bluespace_kit`, `fish_feed`): a flat-pack kit box in three colours and
+  a small can of fish feed.
+- **The fish analyzer** (`icons/obj/devices/scanner.dmi` `fish_analyzer`, its `fish_analyzer_case` tinted by its random colour): a
+  fish-shaped handheld scanner with a screen.
+- **The athletic fishing gloves** (`icons/obj/clothing/gloves.dmi` `fishing_gloves`): sporty fingerless gloves with grip pads.
+- **The fishing boxes** (the box `illustration` `fish`, the lures' tackle box `plasticbox`): a cardboard box with a fish on it and a
+  small plastic tackle box.
 - **Abductor, dullahan, ghost, shadow and vampire bodies** (gaps SP3b, `species_parts/misc_bodyparts.dm`, `icons/mob/human/species/abductor/`, `dullahan`, `ghost`, `shadow`): the grey three-fingered limbs; the detached **dullahan head** held in the hands (its own orbiting-free model with the eyes inside); the legless **ghost** chest with its see-through limbs; the see-through **shadow** limbs. Meanwhile tg's sprites.
 - **Nightmare light eater** (gaps SP3b, `icons/obj/weapons/Nightmare_items.dmi` `light_eater`, `icons/mob/inhands/antag/nightmare_*`, the `crit_glow` outline): the armblade the heart of darkness grows, held in the hand with the critical-strike glow; and the **shadow walk** holder (`purple_laser`). Meanwhile tg's sprites.
 ## MetaStation's last machines and photography

@@ -129,7 +129,16 @@ public class MetaAirTests
             _output.WriteLine(DevCommands.Delete(MapView.TurfAt(world.World, wx, wy, 1)));
             Assert.IsType<turf_open_floor_plating>(MapView.TurfAt(world.World, wx, wy, 1));
         }
-        world.Run(40);
+        // SSair's turfs share their gas over a few fires: up to 5 s for the hole and the floor beside it to drain
+        for (int t = 0; t < 100; t++)
+        {
+            bool drained;
+            using (world.World.Enter())
+                drained = Dm.num(((turf_open)MapView.TurfAt(world.World, wx, wy, 1)).air.return_pressure()) < 5f
+                    && Dm.num(((turf_open)MapView.TurfAt(world.World, wx + 1, wy, 1)).air.return_pressure()) < 70f;
+            if (drained && t >= 40) break;
+            world.Run(1);
+        }
         using (world.World.Enter())
         {
             float hole = Dm.num(((turf_open)MapView.TurfAt(world.World, wx, wy, 1)).air.return_pressure());
@@ -162,7 +171,16 @@ public class MetaAirTests
             _output.WriteLine(DevCommands.Delete((atom)vent.nodes[1]));
             Assert.Null(vent.nodes[1]); // the pipe's Destroy nullified the vent's node
         }
-        world.Run(10);
+        // the vent turns off at its next process_atmos (vent_pump.dm), in SSair's machinery stage, which a fire reaches after the
+        // stages before it: a few fires
+        for (int t = 0; t < 100; t++)
+        {
+            bool on;
+            using (world.World.Enter())
+                on = Dm.truthy(vent.on);
+            if (!on) break;
+            world.Run(1);
+        }
         using (world.World.Enter())
         {
             Assert.False(Dm.truthy(vent.on));

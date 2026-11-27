@@ -56,6 +56,11 @@ public class UndertileTests : IClassFixture<MetaWorldFixture>
 
     private static int Accessibility(turf t) => Convert.ToInt32(t.underfloor_accessibility);
 
+    // what hid the things of a Meta cell: its turf, or broken tiling over plating, whose LateInitialize hides them as
+    // UNDERFLOOR_VISIBLE (broken_flooring.dm:23)
+    private static int MapAccessibility(turf t)
+        => t is turf_open_floor_plating && Dm.each_cast<atom>(t.contents).Any(a => a is obj_structure_broken_flooring) ? 1 : Accessibility(t);
+
     [Fact]
     public void Things_made_in_the_map_step_are_hidden_or_shown_by_their_turf_when_SSatoms_walks_the_world()
     {
@@ -161,9 +166,9 @@ public class UndertileTests : IClassFixture<MetaWorldFixture>
                             if (Convert.ToSingle(thing.invisibility) != 0) wrong.Add($"{DmTypes.PathOf(thing.GetType())} at ({x},{y}) has no undertile element but is invisible");
                             continue;
                         }
-                        string problem = Check(thing, Accessibility(t));
+                        string problem = Check(thing, MapAccessibility(t));
                         if (problem != null) wrong.Add(problem);
-                        if (Accessibility(t) < 1) hidden++;
+                        if (MapAccessibility(t) < 1) hidden++;
                         else shown++;
                     }
                 }

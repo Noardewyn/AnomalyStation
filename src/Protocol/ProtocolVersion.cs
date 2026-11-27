@@ -196,7 +196,9 @@ public static class ProtocolVersion
     /// a circuit floor or lava lights the room, and a ceiling's floor block lights the room under it.
     /// Version 97 (DV597): the Hello's flag <see cref="Hello.WaitsForLoad"/> and the action <see cref="ActionKind.Loaded"/>: the game's client
     /// loads the world behind its loading screen before its new player is late-joined.
-    public const ushort Current = 97;
+    /// Version 98: a <see cref="UiWindowMessage"/> may be <see cref="Limits.MaxUiWindowBytes"/> 1 MiB long (256 KiB before) and a UI payload
+    /// may hold <see cref="Limits.MaxUiValues"/> 65536 values (32768 before), as tg's crafting window sends every cooking recipe at once.
+    public const ushort Current = 98;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

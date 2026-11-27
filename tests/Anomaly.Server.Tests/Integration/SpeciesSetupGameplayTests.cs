@@ -84,7 +84,10 @@ public class SpeciesSetupGameplayTests(ITestOutputHelper output)
         Window(windows, replica, Limits.LobbyUiInterface).Context.Act("ready_toggle");
         w.Run(Second / 2);
         alice.Session.DevCommand("startnow");
-        w.Run(5 * Second);
+        // the round's setup takes a few seconds of world time (the ruins, the fish's caches): wait for it, as the lobby chat test does
+        for (int i = 0; i < 20 * Second && In(w, () => GlobalProcs.SSticker.current_state) != Defines.GAME_STATE_PLAYING; i++)
+            w.Run(1);
+        w.Run(Second);
         Assert.Equal(Defines.GAME_STATE_PLAYING, In(w, () => GlobalProcs.SSticker.current_state));
         var lizard = Assert.IsType<mob_living_carbon_human>(w.MobOf(alice));
         Assert.IsType<datum_species_lizard>(In(w, () => lizard.dna.species));

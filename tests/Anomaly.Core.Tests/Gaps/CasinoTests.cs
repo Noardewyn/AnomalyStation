@@ -48,7 +48,7 @@ public class CasinoTests
     }
 
     /// The slot machine's first Initialize makes one of every coin to learn their values (slotmachine.dm:99-102), the mythril coin
-    /// included, whose material reaches its listed leaf, the fantasy affixes (VarBlockLeaves): that runtime is expected, no other is.
+    /// included, whose material reaches the fantasy affixes, a deferred leaf: no runtime is expected.
     private static void AssertNoOtherRuntimes(Casino c) =>
         Assert.Empty(Anomaly.Core.Tests.Tools.Types.VarBlockLeaves.Unexpected(typeof(obj_item_coin_mythril), c.R.Room.RuntimeText.ToList()));
 

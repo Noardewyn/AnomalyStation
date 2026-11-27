@@ -102,14 +102,16 @@ public class MetaPictureTests
     // states that tg's icons/obj/service/janitor.dmi does not have, so BYOND draws nothing for those cans either (which can a spawner
     // picks depends on the RNG stream). M5 slice 2: a cut cable piece (/obj/item/stack/cable_coil/cut, base_icon_state "coil2",
     // cable.dm:735) gets "coil21" or "coil22" from the coil's update_icon_state (cable.dm:552), states stack_objects.dmi lacks.
-    // The M7 supermatter slice: the crystal's countdown (countdown.dm:1) has no icon state; it shows only its maptext, to ghosts.
+    // The M7 supermatter slice: the crystal's countdown (countdown.dm:1) has no icon state; it shows only its maptext, to ghosts
+    // (INVISIBILITY_OBSERVER), and so do the nuclear bomb's and the syndicate bomb's countdowns.
     // M8x: a cryo cell's gas connector (machine_connector.dm:13) is a bare unary component on the cell's tile with no icon state
     // (unary_devices.dm:1), which unary_devices.dmi lacks: in BYOND it draws nothing under the cell.
     private static readonly string[] TgMissingStates =
     {
         "/obj/item/trash/can: no state 'lemon_lime'", "/obj/item/trash/can: no state 'space_up'", "/obj/item/trash/can: no state 'space beer'",
         "/obj/item/stack/cable_coil/cut: no state 'coil21'", "/obj/item/stack/cable_coil/cut: no state 'coil22'",
-        "/obj/effect/countdown/supermatter: no state ''",
+        "/obj/effect/countdown/supermatter: no state ''", "/obj/effect/countdown/nuclearbomb: no state ''",
+        "/obj/effect/countdown/syndicatebomb: no state ''",
         "/obj/machinery/atmospherics/components/unary: no state ''",
     };
 
@@ -154,7 +156,12 @@ public class MetaPictureTests
                     preview[g] = preview.GetValueOrDefault(g) + 1;
                     where.TryAdd(g, $"({on.x},{on.y},{on.z})");
                 }
-                string problem = Problem(icons, m.icon, m.icon_state, m.overlays?.Count ?? 0);
+                // what an appearance shows of other atoms counts as its picture: an unburrowing mob is drawn through the effect's
+                // vis_contents (mining_mob_respawner.dm:154), the effect itself has no icon
+                string problem = Problem(icons, m.icon, m.icon_state, (m.overlays?.Count ?? 0) + (m.vis_contents?.Count ?? 0));
+                // an icon object's recipe (new /icon(file, state) and its operations) is what the client draws (AppearanceTables'
+                // iconops:), as a beam's last segment, cut to the beam's length (beam.dm Draw)
+                if (problem != null && m.icon is Anomaly.Core.DmShim.icon made && made.dm_resource() != null) problem = null;
                 if (problem == null) continue;
                 string key = DmTypes.PathOf(m.GetType()) + ": " + problem;
                 byType[key] = byType.GetValueOrDefault(key) + 1;

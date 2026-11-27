@@ -89,8 +89,18 @@ public class EatingGameplayTests
         Assert.Same(bar, In(w, () => me.get_active_held_item()));
         chat.Clear();
         heard.Clear();
-        Assert.True(p.Session.Click(new ClickTarget(TargetKind.Entity, me.dm_id, 0, 0, 0, 16, 16, AimZone.Head), ClickButton.Left, ClickModifiers.None));
-        w.Run(5 * Second);
+        // one click eats bite after bite (edible.dm:479), but the bar's liquid electricity can shock him between two (its SPT_PROB):
+        // the shock ends the do_after, and he clicks again (and picks the bar up again if it fell)
+        for (int bite = 0; bite < 8 && !In(w, () => QDELETED(bar)); bite++)
+        {
+            if (In(w, () => me.get_active_held_item()) != bar)
+            {
+                p.Session.Click(new ClickTarget(TargetKind.Entity, bar.dm_id, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
+                w.Run(Second);
+            }
+            Assert.True(p.Session.Click(new ClickTarget(TargetKind.Entity, me.dm_id, 0, 0, 0, 16, 16, AimZone.Head), ClickButton.Left, ClickModifiers.None));
+            w.Run(3 * Second);
+        }
         _output.WriteLine(string.Join("\n", chat.Select(c => c.Html)));
 
         Assert.True(In(w, () => QDELETED(bar)), "the bar is eaten");

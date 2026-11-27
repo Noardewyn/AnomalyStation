@@ -1,7 +1,6 @@
 // Translated from tgstation (snapshot 1d99bd7f): code/__HELPERS/randoms.dm
 // Original copyright and license: tgstation, AGPL-3.0 (code). See ../tgstation/LICENSE.
 using Anomaly.Core.DmShim;
-using Anomaly.Core.Kernel;
 using static Anomaly.Core.DmShim.Dm;
 using static Anomaly.Core.Tg.Builtins;
 using static Anomaly.Core.Tg.Defines;
@@ -66,6 +65,22 @@ public static partial class GlobalProcs
         }
 
         return pick(get_random_drink__allowed_drinks);
+    }
+
+    ///Gets a random coin excluding the blocked type and including extra coins which aren't pathed like coins.
+    // tg: code/__HELPERS/randoms.dm:38
+    public static object get_random_coin()
+    {
+        DmList blocked = Dm.list(
+            typeof(obj_item_coin_gold_debug),
+            typeof(obj_item_coin_eldritch),
+            typeof(obj_item_coin_mythril)
+        );
+        DmList extra_coins = Dm.list(
+            typeof(obj_item_food_chococoin)
+        );
+        DmList allowed_coins = Dm.add(Dm.sub(subtypesof(typeof(obj_item_coin)), blocked), extra_coins) as DmList;
+        return pick(allowed_coins);
     }
 
     private static ref DmList get_random_food__allowed_food => ref TgState.Current.GlobalProcs__get_random_food__allowed_food;

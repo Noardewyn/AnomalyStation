@@ -85,7 +85,7 @@ public class SupermatterGameplayTests(ITestOutputHelper output)
         w.World.RuntimeErrorSink = e => { errors.Add(e); sink?.Invoke(e); };
 
         // MetaStation's engine (MetaStation.dmm: /obj/machinery/power/supermatter_crystal/engine in the supermatter chamber)
-        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).ToList()));
+        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).Where(c => Dm.truthy(is_station_level(c.z))).ToList()));
         Assert.IsType<obj_machinery_power_supermatter_crystal_engine>(sm);
         Assert.Same(sm, In(w, () => GLOB.main_supermatter_engine));
         int smx = (int)In(w, () => Dm.num(sm.x)), smy = (int)In(w, () => Dm.num(sm.y));

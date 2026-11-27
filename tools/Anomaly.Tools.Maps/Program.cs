@@ -225,6 +225,9 @@ public static class Program
         // M10 slice G (D272): the shuttle templates tg's SSmapping preloads and the docks load, at _maps/shuttles/<folder>/<name>.dmm,
         // converted to maps/shuttles/<folder>/<name>.as3dmap (the host mounts each at tg's path); Meta's by default when Meta is converted
         if (shuttles.Count == 0 && mapNames.Contains("metastation", StringComparer.Ordinal)) shuttles.AddRange(MetaShuttles);
+        // Tramstation's labour shuttle (its dock's roundstart_template, /datum/map_template/shuttle/labour/generic) and its emergency
+        // shuttle (tramstation.json); its arrivals, auxiliary base, cargo and ferry shuttles are Meta's
+        if (mapNames.Contains("tramstation", StringComparer.Ordinal)) shuttles.AddRange(["labour/labour_generic.dmm", "emergency/emergency_tram.dmm"]);
         // D299: CentCom's level goes with Meta, at maps/map_files/generic/CentCom.as3dmap; D304: so does Lavaland (Meta's minetype)
         var templates = shuttles.Distinct(StringComparer.Ordinal).Select(shuttle => "shuttles/" + shuttle).ToList();
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(["map_files/generic/CentCom.dmm", "map_files/Mining/Lavaland.dmm"]);

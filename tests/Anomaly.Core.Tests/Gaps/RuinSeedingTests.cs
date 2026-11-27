@@ -78,9 +78,6 @@ public class RuinSeedingTests
         r.Room.Runtimes.RemoveAll(e => e.Message.Contains("cult airlock taking damage while having <= 0 integrity", StringComparison.Ordinal));
         // and the beach's food cart's packed table, nullspaced in the cart, queued for smoothing on its Initialize (structures.dm:23)
         r.Room.Runtimes.RemoveAll(e => e.Message.Contains("/obj/structure/table/reinforced called smooth_icon() without being on a z-level", StringComparison.Ordinal));
-        // and the syndicate base's slot machine, whose first Initialize in a world makes one of every coin to learn their values
-        // (slotmachine.dm:99-102), the mythril one among them, whose material reaches the fantasy affixes' listed leaf (VarBlockLeaves)
-        r.Room.Runtimes.RemoveAll(e => e.Message.Contains("not translated yet", StringComparison.Ordinal) && e.Message.Contains("code/datums/materials/basemats.dm:541", StringComparison.Ordinal));
         r.AssertNoRuntimes();
     }
 

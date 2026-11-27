@@ -175,9 +175,7 @@ public class RecreationGameplayTests(ITestOutputHelper output)
         Assert.NotNull(content);
         output.WriteLine("server errors:\n" + string.Join("\n", w.Err.ToString().Split('\n').TakeLast(20)));
         // the slot machine's first Initialize makes one of every coin to learn their values (slotmachine.dm:99-102), the mythril coin
-        // among them, whose material reaches the listed fantasy affixes leaf (basemats.dm:541): that runtime is expected, no other is
-        List<string> runtimes = System.Text.RegularExpressions.Regex.Matches(w.Err.ToString(), @"runtime at tick \d+: ([^\n]*)").Select(m => m.Groups[1].Value).ToList();
-        Assert.Equal(w.World.RuntimeErrorCount, runtimes.Count);
-        Assert.All(runtimes, r => Assert.Contains("basemats.dm:541", r));
+        // among them, whose material reaches the fantasy affixes, a deferred leaf (basemats.dm:541): no runtime
+        Assert.Equal(0, w.World.RuntimeErrorCount);
     }
 }

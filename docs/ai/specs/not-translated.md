@@ -37,6 +37,7 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/game/world.dm:263` | `SetupLogs`: `log_runtime(GLOB.revdata.get_log_message())`, the commit info for the runtime log (`/datum/getrev`) | `SetupLogs` | M10 | `game/world.cs` |
 | `code/controllers/subsystem/air.dm:106` | `Initialize`: atmos_handbooks_init: the tgui handbooks (M10) | `Initialize` | M10 | `controllers/subsystem/air.cs` |
 | `code/controllers/subsystem/air.dm:217` | `fire`: SStgui.update_uis(SSair): the admin atmos control panel (tgui, M10) | `fire` | M10 (tgui) | `controllers/subsystem/air.cs` |
+| `code/datums/materials/basemats.dm:541`, `:547` | a mythril item's fantasy affixes (`AddComponent(/datum/component/fantasy)`, `TRAIT_INNATELY_FANTASTICAL_ITEM`): nothing reads an affix | a mythril coin's or sheet's Initialize; the first slot machine of a world makes one of every coin (`slotmachine.dm:99-102`); Lavaland's greed ruin holds a mythril coin | the fantasy component (a leftover, D356) | `datums/materials/basemats.cs` |
 | `code/modules/tgui/external.dm:107` | `/datum/ui_act` "change_ui_state": writes the tgui layout preference (the preferences are not translated: a window's layout choice is not kept) | any window's layout toggle (no translated interface has one) | M9 (the preferences) | `modules/tgui/external.cs` |
 | `code/modules/tgui/states.dm:107` | `shared_living_ui_distance`: the machine remote's controlled machine (`/obj/item/machine_remote` is generated only) | every living mob's window update with a remote in hand | M10+ (the machine remote) | `modules/tgui/states.cs` |
 | `code/modules/tgui_input/alert.dm:30` | `tgui_alert` with more than 3 buttons: tg falls back to `tgui_input_list` (not translated yet): null | a caller with 4 or more buttons (none in M5) | with tgui_input_list | `modules/tgui_input/alert.cs` |
@@ -2508,6 +2509,7 @@ these admin tools are tgui's prompts; the tools offer no inert antagonist or obj
 | `objective.dm:937-961` | summon magic's objective (inert: `GLOB.summoned_magic_objectives` is the wizard's) | the wizard's summon magic | the wizard (no package) | (inert) |
 | `objective.dm:665-673` | a custom steal target by type search in the admin's objective edit (`pick_closest_path`, `make_types_fancy`: the admin type picker; `Dm.Deferred`, the objective is unchanged) | the admin's steal objective edit, "custom" | the admin tools (D275) | `objective.cs` |
 | `objective_items.dm:554-581` | the steal targets with their own procs whose items or systems are not ported (inert; SStraitor does not make them, DV340): the supermatter sliver with its kit (G3), a functional AI (the silicons); the research server's hard drive (`:520-535`) came with gaps RD2 | a steal objective's target pick | G3, the silicons | (inert) |
+| `objective_items.dm:181`, `:361`, `:399`, `:450`, `:461`, `:514`, `:613`, `:683`, `:740`, `:983` | `add_stealing_item_objective` of the inert target items (the mech removal tool, the captain's laser, the hand teleporter, the CMO's hypospray, the nuclear disk, the nuclear core, the black box, the plushies, the space law book, Lamarr, the sabre sheath; the MOD units' came with gaps MO1, the reactive teleport armour's with gaps OR2): an inert item never initializes, so its target is never on the map and drops out at New, as in tg with the item missing | the map load | each item's package | (inert) |
 | `objective_items.dm:361`, `:399`, `:450`, `:461`, `:489`, `:514`, `:613`, `:683`, `:740`, `:983` | `add_stealing_item_objective` of the inert target items (the captain's laser, the hand teleporter, the CMO's hypospray, the nuclear disk, the reactive armour, the nuclear core, the black box, the plushies, the space law book, Lamarr, the sabre sheath; the MOD units' came with gaps MO1): an inert item never initializes, so its target is never on the map and drops out at New, as in tg with the item missing | the map load | each item's package | (inert) |
 
 ## 135. The traitor's weapons and explosives (syndicate G2, D316)
@@ -3454,7 +3456,7 @@ client's NtosPay, AccountingConsole, BankMachine and HoloPay windows.
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `basemats.dm:541`, `:547` | a mythril item's fantasy affixes (`/datum/component/fantasy`): a mythril coin's Initialize reaches the not-translated leaf, and so does a mythril sheet's (gaps SK1) and the first slot machine's of a world, which makes one of every coin to learn their values (`slotmachine.dm:99-102`, gaps RC1) | a mythril coin or sheet; a slot machine | the fantasy affixes | `datums/materials/basemats.cs` |
+| `basemats.dm:541`, `:547` | (a deferred leaf since 2026-11-27, section 1) a mythril item's fantasy affixes (`/datum/component/fantasy`): a mythril coin's Initialize reaches the not-translated leaf, and so does a mythril sheet's (gaps SK1) and the first slot machine's of a world, which makes one of every coin to learn their values (`slotmachine.dm:99-102`, gaps RC1) | a mythril coin or sheet; a slot machine | the fantasy affixes | `datums/materials/basemats.cs` |
 | `account.dm:253-290` | the bank card's picture before its chat line (`icon2html`, chat icons) | every card message | chat icons (section 76) | `modules/economy/account.cs` |
 | `account.dm:120-139` | the CRAB-17's drain (`/obj/structure/checkoutmachine`: `dumpeet` and `stop_dump` are translated, the machine is inert) | a traitor's CRAB-17 | the traitor's uplink items | `modules/economy/account.cs` |
 | `cards_ids.dm:134`, `:704`, `:1034` | the card's fantasy bonuses, its admin var edits and the honorific toggle (`item_ctrl_click`) | — | the fantasy affixes, admin tooling, the honorifics | `game/objects/items/cards_ids.cs` |
@@ -4649,7 +4651,6 @@ client: the game plane's colour filters in their colour spaces (HSL, HCY), its w
 |---|---|---|---|---|
 | `drug_reagents.dm:568-579`, `:632-643`, `:755-765` | the loops of the trips' `animate()` on the game plane's filters (the hue cycle, the waves' phase, saturnX's pulse and blur): the private block's game plane carries no animation tracks, so the client draws each filter as it stands (DV553) | a drugged player | a protocol version with the game plane's animations | `godot/scripts/Shared/Play/ViewBlur.cs` |
 | `neutral.dm:565` | the eigenstasium wild ride's reroll of the quirks (`SSquirks.randomise_quirks`, `Dm.Deferred`) | the wild ride's end | the quirks (D333) | `datums/status_effects/neutral.cs` |
-| `pyrotechnic_reagents.dm:492` | energized jelly's luminescent jellyperson (the extract cooldown, `Dm.Deferred`: the species is inert) | a luminescent | the jellypeople (gaps SP3) | `pyrotechnic_reagents.cs` |
 | `other_reagents.dm:376` | holy water draining a heretic's spells (`Dm.Deferred`); the cultist's branches of holy and unholy water run, for whoever is a cultist | a heretic | the heretic (D333) | `other_reagents.cs` |
 | `elements/rust.dm:97-139` | the heretic's rust (its corruption of whoever walks on it) | the heretic's rust spreading | the heretic (D333) | `datums/elements/rust.cs` |
 | `other_reagents.dm:695-760` | the mutation toxins of the species not ported yet (the moth, the ethereal, the pod, the jellypeople, the golem, the abductor, the skeleton, the zombie, the plasmaman): a human keeps his species (GAP(D338)) | chemistry, the green extract | gaps SP2, SP3 | `other_reagents.cs` |
@@ -5075,7 +5076,7 @@ turf lists (two colossus bolts on one wall in a tick); a hotspot made on a wall 
 | `mining_loot/megafauna/the_thing.dm:129`, `:165` | the AI's `deployed_shell` is not set to the human shell the AI-uplink brain puts it in (DV624) | an AI deployed into the brain's body | DV624 | `mining_loot/megafauna/the_thing.cs` |
 | the megafauna's 3D models | the drake, Bubblegum, the colossus, the hierophant, the legion, the frost miner, the wendigo, the knight, the blood-drunk miner and the Thing keep tg's sprites (required-models.md) | always | the models | `godot/assets/models/models.json` |
 ## 242. Xenobiology and cytology (gaps XB1, D339)
-Live: `research/xenobiology/xenobiology.dm` whole but the luminescent's activation (every slime extract with its uses, grinding,
+Live: `research/xenobiology/xenobiology.dm` whole (every slime extract with its uses, grinding,
 the enhancer and the maximizer, core crossing, `auto_activate_reaction` with `GLOB.slime_extract_auto_activate_reactions`, every potion
 and the steroid), `reagents/chemistry/recipes/slime_extracts.dm` whole (every reaction is in the reaction lists; the gold extract's
 mobs through `chemical_mob_spawn`, the silver's food and drinks through `get_random_food` and `get_random_drink`, the rainbow's
@@ -5093,7 +5094,6 @@ overlays are one static pair for every vat, the foam reaction's message is passe
 spells "violently !". Left:
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `xenobiology.dm:160`, `:186`, `:216`, `:241`, `:264`, `:282`, `:304`, `:323`, `:346`, `:365`, `:383`, `:405`, `:432`, `:455`, `:478`, `:498`, `:521`, `:554`, `:585`, `:611`, `:630`, `:651` | each colour's `activate`, the extract's major and minor activation by a luminescent jellyperson (live-partial stubs; the base `activate` is live) | a luminescent | the jellypeople (gaps SP3) | (live-partial stubs) |
 | `xenobio_camera.dm:79` | the console's context tips (`add_context`, a live-partial stub) | hovering the console | the context tips (D264, D291) | (live-partial stub) |
 | `minebots/minebot_upgrades.dm:40` | the minebot's sentience potion (inert, its `after_success`) | a mining sentience potion | the minebots (Lavaland's gear, LV1-5, D353) | (generated) |
 | `cell_lines/common.dm` blob spore, blobbernaut | the independent blob spore and blobbernaut a cell line grows are inert | a grown blob cell line | the blob (antagonists, D333) | (generated) |

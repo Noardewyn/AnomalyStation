@@ -24,10 +24,11 @@ public class KitchenH2MetaTests : IClassFixture<MetaWorldFixture>
         _output = output;
     }
 
+    // "plate.cs", not "plate": a map template's load (from_template) is on the stack of every runtime in a ruin
     private static readonly string[] Files =
     {
         "microwave", "oven", "stove", "griddle", "grill", "deep_fryer", "processor", "gibber", "icecream_vat", "food_cart",
-        "coffeemaker", "smartfridge", "kitchen_spike", "bakeable", "grillable", "processable", "microwavable", "dryable", "plate",
+        "coffeemaker", "smartfridge", "kitchen_spike", "bakeable", "grillable", "processable", "microwavable", "dryable", "plate.cs",
         "ice_cream_holder", "food_storage", "meat.dm", "donuts", "fancy", "quality_food_ingredient",
     };
 

@@ -342,7 +342,9 @@ public partial class datum_material_mythril : datum_material
     {
         await base.on_applied(source, mat_amount, multiplier, from_slot);
         if (isitem(source))
-            Dm.NotTranslated("code/datums/materials/basemats.dm:541", "on_applied: AddComponent(/datum/component/fantasy) and TRAIT_INNATELY_FANTASTICAL_ITEM (fantasy affixes, M10+)");
+            // a deferred leaf (not-translated.md section 1): nothing reads a fantasy affix, and every world that has a slot machine makes a
+            // mythril coin (slotmachine.dm:99-102)
+            Dm.Deferred("code/datums/materials/basemats.dm:541", "on_applied: AddComponent(/datum/component/fantasy) and TRAIT_INNATELY_FANTASTICAL_ITEM (the fantasy affixes)");
     }
 
     // tg: code/datums/materials/basemats.dm:545
@@ -350,7 +352,7 @@ public partial class datum_material_mythril : datum_material
     {
         base.on_removed(source, mat_amount, material_flags, from_slot);
         if (isitem(source))
-            Dm.NotTranslated("code/datums/materials/basemats.dm:547", "on_removed: REMOVE_TRAIT(TRAIT_INNATELY_FANTASTICAL_ITEM) and the fantasy component (fantasy affixes, M10+)");
+            Dm.Deferred("code/datums/materials/basemats.dm:547", "on_removed: REMOVE_TRAIT(TRAIT_INNATELY_FANTASTICAL_ITEM) and the fantasy component (the fantasy affixes)");
     }
     // tg: code/datums/materials/basemats.dm:551
     public override async DmTask<object> on_accidental_mat_consumption(mob_living_carbon victim = null, obj_item source_item = null)

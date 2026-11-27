@@ -50,10 +50,11 @@ public class MegafaunaMetaTests : IClassFixture<MetaWorldFixture>
             _output.WriteLine($"Lavaland: {megafauna.Count} megafauna ({string.Join(", ", byType)}); {vents.Count} menacing vents");
             Assert.NotEmpty(megafauna);
             Assert.All(megafauna, m => Assert.False(InertSeam.IsInert(m), m.GetType().Name + " is inert"));
-            // the caves' kinds, and the legion the map holds in the necropolis behind its gate (Lavaland.dmm)
+            // the caves' kinds, the legion the map holds in the necropolis behind its gate (Lavaland.dmm), and the hierophant of its
+            // arena when the ruins' seeding rolls that ruin (lavaland_surface_hierophant.dmm)
             Assert.All(megafauna, m => Assert.True(m is mob_living_simple_animal_hostile_megafauna_dragon
                 || m is mob_living_simple_animal_hostile_megafauna_bubblegum || m is mob_living_simple_animal_hostile_megafauna_colossus
-                || m is mob_living_simple_animal_hostile_megafauna_legion,
+                || m is mob_living_simple_animal_hostile_megafauna_legion || m is mob_living_simple_animal_hostile_megafauna_hierophant,
                 m.GetType().Name + " is not one Lavaland places"));
             Assert.Equal(1, megafauna.Count(m => m is mob_living_simple_animal_hostile_megafauna_legion));
             Assert.NotNull(GLOB.necropolis_gate);

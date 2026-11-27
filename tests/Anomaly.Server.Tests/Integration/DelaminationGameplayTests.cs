@@ -54,7 +54,7 @@ public class DelaminationGameplayTests(ITestOutputHelper output)
         Action<Exception> sink = w.World.RuntimeErrorSink;
         w.World.RuntimeErrorSink = e => { errors.Add(e); sink?.Invoke(e); };
 
-        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).ToList()));
+        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).Where(c => Dm.truthy(is_station_level(c.z))).ToList()));
         int smx = (int)In(w, () => Dm.num(sm.x)), smy = (int)In(w, () => Dm.num(sm.y));
         long smId = In(w, () => sm.dm_id);
         Assert.Contains(replica.Entities, e => e.Id == smId);
@@ -115,7 +115,7 @@ public class DelaminationGameplayTests(ITestOutputHelper output)
         Action<Exception> sink = w.World.RuntimeErrorSink;
         w.World.RuntimeErrorSink = e => { errors.Add(e); sink?.Invoke(e); };
 
-        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).ToList()));
+        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).Where(c => Dm.truthy(is_station_level(c.z))).ToList()));
         int smx = (int)In(w, () => Dm.num(sm.x)), smy = (int)In(w, () => Dm.num(sm.y));
         // the engineer watches from 30 tiles north, outside its pull
         In(w, () => Waiting.NoSleep(w.MobOf(p).forceMove(locate(smx, smy + 30, 1))));
@@ -128,7 +128,7 @@ public class DelaminationGameplayTests(ITestOutputHelper output)
         Assert.All(items, i => Assert.Contains(replica.Entities, e => e.Id == i.Id));
 
         p.Session.DevCommand($"smdelam {smx} {smy} 1 singularity");
-        for (int i = 0; i < 20 && texts.Count == 0; i++)
+        for (int i = 0; i < 20 && !texts.Any(t => t.Contains("delaminates", StringComparison.Ordinal)); i++) // a payday line may come first
             w.Run(1);
         output.WriteLine("reply: " + string.Join(" | ", texts));
         Assert.Contains(texts, t => t.Contains("delaminates (singularity)", StringComparison.Ordinal));
@@ -170,7 +170,7 @@ public class DelaminationGameplayTests(ITestOutputHelper output)
         Action<Exception> sink = w.World.RuntimeErrorSink;
         w.World.RuntimeErrorSink = e => { errors.Add(e); sink?.Invoke(e); };
 
-        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).ToList()));
+        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).Where(c => Dm.truthy(is_station_level(c.z))).ToList()));
         int smx = (int)In(w, () => Dm.num(sm.x)), smy = (int)In(w, () => Dm.num(sm.y));
         mob_living engineer = w.MobOf(p);
         In(w, () => Waiting.NoSleep(engineer.forceMove(locate(smx, smy + 3, 1))));
@@ -202,12 +202,12 @@ public class DelaminationGameplayTests(ITestOutputHelper output)
         Action<Exception> sink = w.World.RuntimeErrorSink;
         w.World.RuntimeErrorSink = e => { errors.Add(e); sink?.Invoke(e); };
 
-        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).ToList()));
+        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).Where(c => Dm.truthy(is_station_level(c.z))).ToList()));
         int smx = (int)In(w, () => Dm.num(sm.x)), smy = (int)In(w, () => Dm.num(sm.y));
         In(w, () => Waiting.NoSleep(w.MobOf(p).forceMove(locate(smx + 6, smy, 1))));
         w.Run(Second);
         p.Session.DevCommand($"smdelam {smx} {smy} 1 tesla");
-        for (int i = 0; i < 20 && texts.Count == 0; i++)
+        for (int i = 0; i < 20 && !texts.Any(t => t.Contains("delaminates", StringComparison.Ordinal)); i++) // a payday line may come first
             w.Run(1);
         Assert.Contains(texts, t => t.Contains("delaminates (tesla)", StringComparison.Ordinal));
         Assert.True(In(w, () => QDELETED(sm)), "the crystal is gone (_sm_delam.dm:32)");
@@ -234,7 +234,7 @@ public class DelaminationGameplayTests(ITestOutputHelper output)
         // a stack_trace's exception is never thrown: its caller is the sink's own stack
         w.World.RuntimeErrorSink = e => { errors.Add(e is DmCrashException ? e + "\n" + Environment.StackTrace : e.ToString()); sink?.Invoke(e); };
 
-        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).ToList()));
+        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).Where(c => Dm.truthy(is_station_level(c.z))).ToList()));
         int smx = (int)In(w, () => Dm.num(sm.x)), smy = (int)In(w, () => Dm.num(sm.y));
         In(w, () => Waiting.NoSleep(w.MobOf(p).forceMove(locate(smx, smy + 30, 1))));
         w.Run(Second);

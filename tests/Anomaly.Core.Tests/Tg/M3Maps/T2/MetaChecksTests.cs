@@ -136,7 +136,10 @@ public class MetaChecksTests : IClassFixture<MetaWorldFixture>
         || path.StartsWith("/obj/effect/turf_decal", StringComparison.Ordinal)
         || path == "/mob/living/basic/pet/dog/corgi/ian" // with no save he goes on as his puppy (corgi.dm:393)
         || path == "/obj/item/reagent_containers/cup/soda_cans/random" // a random can in its place (soda.dm:37, live since gaps H3)
-        || path == "/obj/docking_port/stationary/random"; // the escape pods' landing spot moves to Lavaland at the map load (pods.dm:89)
+        || path == "/obj/docking_port/stationary/random" // the escape pods' landing spot moves to Lavaland at the map load (pods.dm:89)
+        || path == "/obj/item/raw_anomaly_core/random" // a random raw core in its place (raw_anomaly.dm:84)
+        // landmarks that put their tile on a list and delete themselves (landmarks.dm:368, :379, :389)
+        || path is "/obj/effect/landmark/generic_maintenance_landmark" or "/obj/effect/landmark/blobstart" or "/obj/effect/landmark/secequipment";
 
     /// <summary>
     /// Null when the cell's movables are what tg's map file gives after the init, else what is wrong. The map's members that no
@@ -168,6 +171,8 @@ public class MetaChecksTests : IClassFixture<MetaWorldFixture>
                 if (transient) continue;
                 // one emergency closet in a hundred deletes itself at init (utility_closets.dm:30, prob(1)): which one is the random stream's
                 if (path == "/obj/structure/closet/emcloset") continue;
+                // a stack merges into one of its kind on its tile at init (stack.dm:108, merge_with_loc)
+                if (IsStack(path) && found.Contains(path)) continue;
                 return $"{path} of the map is missing";
             }
             used[at] = true;
@@ -363,9 +368,9 @@ public class MetaChecksTests : IClassFixture<MetaWorldFixture>
                     // M4a P3: the map's movables a closed closet took inside at LateInitialize (closets.dm:521) are alive in it; and
                     // (2026-10-18) the items a locked safe took inside at its Initialize (safe.dm:72); (gaps S3) the pen a paper bin took
                     // (paperbin.dm:32), the small items a filing cabinet took (filingcabinet.dm:37) and the papers a notice board took
-                    // (noticeboard.dm:31) at theirs.
+                    // (noticeboard.dm:31) at theirs; and the books a bookcase took at its mapload (bookcase.dm:41).
                     var cellMovables = locate(x, y, 1).contents.Items().Cast<atom_movable>().ToList();
-                    cellMovables.AddRange(cellMovables.Where(c => c is obj_structure_closet or obj_structure_safe or obj_item_paper_bin or obj_structure_filingcabinet or obj_structure_noticeboard)
+                    cellMovables.AddRange(cellMovables.Where(c => c is obj_structure_closet or obj_structure_safe or obj_item_paper_bin or obj_structure_filingcabinet or obj_structure_noticeboard or obj_structure_bookcase)
                         .SelectMany(c => c.contents.Items().Cast<atom_movable>()).ToList());
                     foreach (atom_movable m in cellMovables)
                     {

@@ -10,7 +10,7 @@ namespace Anomaly.Core.Tg;
 
 /// <summary>
 /// The tg definitions of the interaction chain's guarded procs (<see cref="InertSeam.GuardedProcs"/>) at types whose C#
-/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 713 rows over 441 types.
+/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 388 rows over 227 types.
 /// <see cref="InertSeam.HasUndeclaredOverride"/> walks a runtime class up to the class whose C# method would run.
 /// </summary>
 internal static partial class UndeclaredOverrides
@@ -56,9 +56,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_clothing_head_helmet_skull_cosmic), "attack_self"), // /obj/item/clothing/head/helmet/skull/cosmic (tg: code/modules/antagonists/voidwalker/voidwalker_loot.dm:16)
         (typeof(obj_item_clothing_head_helmet_monkey_sentience), "dropped"), // /obj/item/clothing/head/helmet/monkey_sentience (tg: code/modules/clothing/head/mind_monkey_helmet.dm:139)
         (typeof(obj_item_clothing_head_helmet_monkey_sentience), "equipped"), // /obj/item/clothing/head/helmet/monkey_sentience (tg: code/modules/clothing/head/mind_monkey_helmet.dm:37)
-        (typeof(obj_item_clothing_head_helmet_perceptomatrix), "dropped"), // /obj/item/clothing/head/helmet/perceptomatrix (tg: code/modules/clothing/head/perceptomatrix.dm:81)
-        (typeof(obj_item_clothing_head_helmet_perceptomatrix), "equipped"), // /obj/item/clothing/head/helmet/perceptomatrix (tg: code/modules/clothing/head/perceptomatrix.dm:76)
-        (typeof(obj_item_clothing_head_helmet_perceptomatrix), "item_interaction"), // /obj/item/clothing/head/helmet/perceptomatrix (tg: code/modules/clothing/head/perceptomatrix.dm:135)
         (typeof(obj_item_clothing_head_hooded_cult_hoodie_eldritch_rust), "equipped"), // /obj/item/clothing/head/hooded/cult_hoodie/eldritch/rust (tg: code/modules/antagonists/heretic/items/heretic_armor.dm:1020)
         (typeof(obj_item_clothing_shoes_wheelys), "dropped"), // /obj/item/clothing/shoes/wheelys (tg: code/modules/clothing/shoes/wheelys.dm:46)
         (typeof(obj_item_clothing_shoes_wheelys), "ui_action_click"), // /obj/item/clothing/shoes/wheelys (tg: code/modules/clothing/shoes/wheelys.dm:29)
@@ -114,13 +111,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_gun_magic_midas_hand), "interact_with_atom_secondary"), // /obj/item/gun/magic/midas_hand (tg: code/modules/projectiles/guns/special/hand_of_midas.dm:40)
         (typeof(obj_item_gun_magic_midas_hand), "item_interaction"), // /obj/item/gun/magic/midas_hand (tg: code/modules/projectiles/guns/special/hand_of_midas.dm:78)
         (typeof(obj_item_gun_magic_midas_hand), "ranged_interact_with_atom_secondary"), // /obj/item/gun/magic/midas_hand (tg: code/modules/projectiles/guns/special/hand_of_midas.dm:45)
-        (typeof(obj_item_fishing_rod), "attack_self_secondary"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:291)
-        (typeof(obj_item_fishing_rod), "dropped"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:328)
-        (typeof(obj_item_fishing_rod), "interact_with_atom"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:371)
-        (typeof(obj_item_fishing_rod), "interact_with_atom_secondary"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:390)
-        (typeof(obj_item_fishing_rod), "item_interaction"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:503)
-        (typeof(obj_item_fishing_rod), "ranged_interact_with_atom"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:377)
-        (typeof(obj_item_fishing_rod), "ranged_interact_with_atom_secondary"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:393)
         (typeof(obj_item_trapdoor_remote), "attack_self"), // /obj/item/trapdoor_remote (tg: code/datums/components/trapdoor.dm:422)
         (typeof(obj_item_trapdoor_remote), "item_interaction"), // /obj/item/trapdoor_remote (tg: code/datums/components/trapdoor.dm:411)
         (typeof(obj_item_trapdoor_kit), "interact_with_atom"), // /obj/item/trapdoor_kit (tg: code/datums/components/trapdoor.dm:490)
@@ -282,19 +272,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_minebot_remote_control), "interact_with_atom"), // /obj/item/minebot_remote_control (tg: code/modules/mob/living/basic/minebots/minebot_remote_control.dm:46)
         (typeof(obj_item_minebot_remote_control), "ranged_interact_with_atom"), // /obj/item/minebot_remote_control (tg: code/modules/mob/living/basic/minebots/minebot_remote_control.dm:51)
         (typeof(obj_item_mine_bot_upgrade), "interact_with_atom"), // /obj/item/mine_bot_upgrade (tg: code/modules/mob/living/basic/minebots/minebot_upgrades.dm:8)
-        (typeof(obj_item_slimepotion_slime), "interact_with_atom"), // /obj/item/slimepotion/slime (tg: code/modules/research/xenobiology/xenobiology.dm:695)
-        (typeof(obj_item_slimepotion_transference), "interact_with_atom"), // /obj/item/slimepotion/transference (tg: code/modules/research/xenobiology/xenobiology.dm:840)
-        (typeof(obj_item_slimepotion_speed), "interact_with_atom"), // /obj/item/slimepotion/speed (tg: code/modules/research/xenobiology/xenobiology.dm:960)
-        (typeof(obj_item_slimepotion_fireproof), "interact_with_atom"), // /obj/item/slimepotion/fireproof (tg: code/modules/research/xenobiology/xenobiology.dm:1002)
-        (typeof(obj_item_slimepotion_genderchange), "interact_with_atom"), // /obj/item/slimepotion/genderchange (tg: code/modules/research/xenobiology/xenobiology.dm:1033)
-        (typeof(obj_item_slimepotion_slimeradio), "interact_with_atom"), // /obj/item/slimepotion/slimeradio (tg: code/modules/research/xenobiology/xenobiology.dm:1108)
-        (typeof(obj_item_slimepotion_extract_cloner), "interact_with_atom"), // /obj/item/slimepotion/extract_cloner (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:13)
-        (typeof(obj_item_slimepotion_peacepotion), "interact_with_atom"), // /obj/item/slimepotion/peacepotion (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:39)
-        (typeof(obj_item_slimepotion_lovepotion), "interact_with_atom"), // /obj/item/slimepotion/lovepotion (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:77)
-        (typeof(obj_item_slimepotion_spaceproof), "interact_with_atom"), // /obj/item/slimepotion/spaceproof (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:114)
-        (typeof(obj_item_slimepotion_lavaproof), "interact_with_atom"), // /obj/item/slimepotion/lavaproof (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:157)
-        (typeof(obj_item_slimepotion_slime_reviver), "interact_with_atom"), // /obj/item/slimepotion/slime_reviver (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:189)
-        (typeof(obj_item_gizmo), "item_interaction"), // /obj/item/gizmo (tg: code/modules/research/gizmo/gizmo_items.dm:24)
         (typeof(obj_item_shuttle_remote), "attack_self"), // /obj/item/shuttle_remote (tg: code/modules/shuttle/misc/shuttle_remote.dm:60)
         (typeof(obj_item_shuttle_remote), "click_alt_secondary"), // /obj/item/shuttle_remote (tg: code/modules/shuttle/misc/shuttle_remote.dm:99)
         (typeof(obj_item_shuttle_remote), "interact_with_atom"), // /obj/item/shuttle_remote (tg: code/modules/shuttle/misc/shuttle_remote.dm:42)

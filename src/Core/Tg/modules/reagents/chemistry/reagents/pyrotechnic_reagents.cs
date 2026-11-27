@@ -600,9 +600,9 @@ public partial class datum_reagent_teslium_energized_jelly : datum_reagent_tesli
             dot = UPDATE_MOB_HEALTH;
         if (Dm.truthy(is_species(mob, typeof(datum_species_jelly_luminescent))))
         {
-            // GAP(XB1-2): the luminescent jellyperson's extract cooldown (slime_people.dm, xenobiology): the species is inert, so
-            // is_species finds none and this branch does not run.
-            Dm.Deferred("code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:492", "energized_jelly on_mob_life: slime_species.extract_cooldown (the luminescent jellypeople, XB1-2)");
+            var slime_species = (mob as mob_living_carbon_human)?.dna?.species as datum_species_jelly_luminescent;
+            if (slime_species != null)
+                slime_species.extract_cooldown = max(slime_species.extract_cooldown - (1 * SECONDS * k), 0);
         }
         return dot;
     }

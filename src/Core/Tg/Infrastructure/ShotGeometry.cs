@@ -593,8 +593,6 @@ public static class ShotGeometry
     /// <c>receive_damage</c>) is lit for <see cref="HitFlashDeciseconds"/>, for everyone who sees the mob: the part's own cached images as
     /// one overlay over the picture, bright red.
     /// </summary>
-    // the world time each carbon's lit parts go out (FlashLimb)
-    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<mob_living_carbon, Dictionary<string, float>> LitParts = new();
 
     public static void FlashLimb(mob_living_carbon carbon, object zone)
     {
@@ -603,7 +601,7 @@ public static class ShotGeometry
         if (mob_living_carbon.limb_icon_cache[carbon.icon_render_keys[zone]] is not DmList parts || parts.len == 0)
             return;
         // one flash per part at a time: damage every tick (toxins, fire) would pile up tg's 100 overlays before the first went out
-        var lit = LitParts.GetOrCreateValue(carbon);
+        var lit = TgState.Current.ShotGeometry__LitParts.GetOrCreateValue(carbon);
         string part = Dm.str(zone);
         float now = Dm.num(world.time);
         if (lit.TryGetValue(part, out float until) && now < until)
@@ -925,4 +923,10 @@ public static class BodyMasks
         }
         return table;
     }
+}
+
+public sealed partial class TgState
+{
+    // the world time each carbon's lit parts go out (ShotGeometry.FlashLimb)
+    internal readonly System.Runtime.CompilerServices.ConditionalWeakTable<mob_living_carbon, Dictionary<string, float>> ShotGeometry__LitParts = new();
 }

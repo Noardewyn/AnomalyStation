@@ -428,14 +428,14 @@ public static class Limits
 
     /// <summary>
     /// The most values one payload may hold (each null, number, string, array and object counts once). tg's crafting window sends every
-    /// cooking recipe at once (about 25,000 values in its static data); version 95 raised the cap from 32768 to 65536.
+    /// cooking recipe at once (about 25,000 values in its static data); version 98 raised the cap from 32768 to 65536.
     /// </summary>
     public const int MaxUiValues = 65536;
 
     /// <summary>
     /// The largest <see cref="UiWindowMessage"/> (tg's payloads are a few kB; the stack recipes of a large stack about 20). tg's crafting window
     /// sends every cooking recipe at once (its static data: the recipes with their reagent ingredients and the chemical reactions' recipe guides),
-    /// several hundred kB; version 95 raised the cap from 256 KiB to 1 MiB.
+    /// several hundred kB; version 98 raised the cap from 256 KiB to 1 MiB.
     /// </summary>
     public const int MaxUiWindowBytes = 1024 * 1024;
 

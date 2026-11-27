@@ -1,0 +1,38 @@
+anomaly-map 1
+source _maps/shuttles/labour/labour_generic.dmm tg 1d99bd7f
+size 5 9 1
+chunk 32
+default /turf/closed/wall/mineral/titanium | /area/shuttle/labor
+
+[chunk 1 1 1]
+2,9: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/labor
+3,9: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/labor
+4,9: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/labor
+2,8: /obj/machinery/computer/shuttle/labor{dir = 4} | /obj/structure/reagent_dispensers/wall/peppertank/directional/west | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/labor
+3,8: /obj/structure/chair/office{dir = 1} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/labor
+4,8: /obj/structure/table | /obj/item/folder/red | /obj/item/restraints/handcuffs | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/labor
+1,7: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/labor
+2,7: /turf/open/floor/mineral/plastitanium/red | /area/shuttle/labor
+3,7: /obj/machinery/button/flasher{id = "gulagshuttleflasher"; name = "Flash Control"; pixel_y = -26; req_access = list("security")} | /obj/machinery/light/directional/south | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/labor
+4,7: /obj/machinery/mineral/stacking_unit_console{pixel_x = 30; pixel_y = 30} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/labor
+5,7: /obj/machinery/door/airlock/titanium{name = "Labor Shuttle Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/security/brig | /turf/open/floor/mineral/titanium | /area/shuttle/labor
+2,6: /obj/machinery/door/airlock/titanium{name = "Labor Shuttle Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/security/brig | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/labor
+4,6: /obj/machinery/mineral/stacking_machine/laborstacker{input_dir = 2; output_dir = 1} | /turf/open/floor/iron/dark | /area/shuttle/labor
+2,5: /turf/open/floor/mineral/titanium | /area/shuttle/labor
+3,5: /obj/machinery/light/directional/north | /turf/open/floor/mineral/titanium | /area/shuttle/labor
+4,5: /obj/machinery/mineral/labor_claim_console{pixel_x = 30} | /turf/open/floor/mineral/titanium | /area/shuttle/labor
+1,4: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/labor
+2,4: /obj/structure/closet/crate | /turf/open/floor/mineral/titanium | /area/shuttle/labor
+3,4: /turf/open/floor/mineral/titanium | /area/shuttle/labor
+4,4: /obj/structure/chair/comfy/shuttle{dir = 8} | /obj/machinery/flasher/directional/east{id = "gulagshuttleflasher"} | /turf/open/floor/mineral/titanium | /area/shuttle/labor
+1,3: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/labor
+2,3: /turf/open/floor/mineral/titanium | /area/shuttle/labor
+3,3: /turf/open/floor/mineral/titanium | /area/shuttle/labor
+4,3: /turf/open/floor/mineral/titanium | /area/shuttle/labor
+5,3: /obj/docking_port/mobile{dir = 8; shuttle_id = "laborcamp"; name = "labor camp shuttle"; port_direction = 4} | /obj/machinery/door/airlock/titanium{name = "Labor Shuttle Airlock"} | /turf/open/floor/mineral/titanium | /area/shuttle/labor
+2,2: /obj/machinery/power/shuttle_engine/heater | /obj/structure/window/reinforced/spawner/directional/north | /turf/open/floor/plating/airless | /area/shuttle/labor
+3,2: /obj/machinery/power/shuttle_engine/heater | /obj/structure/window/reinforced/spawner/directional/north | /turf/open/floor/plating/airless | /area/shuttle/labor
+4,2: /obj/machinery/power/shuttle_engine/heater | /obj/structure/window/reinforced/spawner/directional/north | /turf/open/floor/plating/airless | /area/shuttle/labor
+2,1: /obj/machinery/power/shuttle_engine/propulsion | /turf/open/floor/plating/airless | /area/shuttle/labor
+3,1: /obj/machinery/power/shuttle_engine/propulsion | /turf/open/floor/plating/airless | /area/shuttle/labor
+4,1: /obj/machinery/power/shuttle_engine/propulsion | /turf/open/floor/plating/airless | /area/shuttle/labor

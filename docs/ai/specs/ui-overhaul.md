@@ -1749,3 +1749,7 @@ The wire (protocol 99, unreleased, so no new version number), for 4B-1:
   owner: "Climb in" on an open closet and "Flip" on a table run for a paralysed, handcuffed or dead user (the
   radial's extras check the target and not the user's state; called directly on the server, the network path for a
   dead client was not driven).
+- The Tab inventory's own sprite is not a drag source onto objects in the view ("you dont need to do sprite from
+  inventory dragging to obj", 2026-11-27): dragging oneself onto an object is done from the own body seen by
+  looking down, or from the health doll. An item dragged onto the sprite (used on oneself at the part) stays in
+  slice 4B.

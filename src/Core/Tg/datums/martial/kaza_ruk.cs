@@ -10,8 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The syndicate campaign X3b (D316): Kaza Ruk (its three stance buttons, the leg sweep, the lung punch, the neck chop, the disarm and
-// the punch's follow-up strike) and its gloves, whole but the security gloves' reskins (/datum/atom_skin and the reskinable item are
-// not ported, not-translated.md section 147). The var blocks are generated (D111).
+// the punch's follow-up strike) and its gloves, whole with the security gloves' red and blue reskins. The var blocks are generated (D111).
 
 // tg: code/datums/martial/kaza_ruk.dm:1
 public partial class datum_martial_art_kaza_ruk : datum_martial_art
@@ -341,9 +340,37 @@ public partial class obj_item_clothing_gloves_kaza_ruk : obj_item_clothing_glove
 public partial class obj_item_clothing_gloves_kaza_ruk_sec : obj_item_clothing_gloves_kaza_ruk
 {
     // tg: code/datums/martial/kaza_ruk.dm:315
-    public override DmTask setup_reskins()
+    public override async DmTask setup_reskins()
     {
-        Dm.Deferred("code/datums/martial/kaza_ruk.dm:316", "setup_reskins: AddComponent(/datum/component/reskinable_item, /datum/atom_skin/kaza_ruk, infinite = TRUE), the red and blue skins (the atom skins are not ported)");
-        return DmTask.CompletedTask;
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_kaza_ruk), Dm.named("infinite", TRUE));
+    }
+}
+
+// tg: code/datums/martial/kaza_ruk.dm:274
+public partial class datum_atom_skin_kaza_ruk : datum_atom_skin
+{
+    // tg: code/datums/martial/kaza_ruk.dm:280
+    public override void apply(atom apply_to = null, mob user = null)
+    {
+        base.apply(apply_to, user);
+        if (Dm.truthy(reskin_color))
+            Waiting.NoSleep(apply_to.add_atom_colour(color_matrix_filter(reskin_color), FIXED_COLOUR_PRIORITY));
+    }
+
+    // tg: code/datums/martial/kaza_ruk.dm:285
+    public override void clear_skin(atom clear_from = null, mob user = null)
+    {
+        base.clear_skin(clear_from, user);
+        if (Dm.truthy(reskin_color))
+            Waiting.NoSleep(clear_from.remove_atom_colour(FIXED_COLOUR_PRIORITY, reskin_color));
+    }
+
+    // tg: code/datums/martial/kaza_ruk.dm:290
+    public override object get_preview_icon(atom for_atom = null)
+    {
+        image generated = base.get_preview_icon(for_atom) as image;
+        if (Dm.truthy(reskin_color))
+            generated.add_filter("preview_filter", 1, color_matrix_filter(reskin_color) as DmList);
+        return generated;
     }
 }

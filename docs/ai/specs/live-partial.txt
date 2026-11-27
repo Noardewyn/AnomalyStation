@@ -486,7 +486,6 @@
 /mob/living/basic/bot/medbot	ninjadrain_act	M10+	deferred	the ninja's draining gloves (antagonists)
 /obj/item/mop	apply_fantasy_bonuses	M10+	deferred	the enchanting's fantasy component (not ported)
 /obj/item/mop	remove_fantasy_bonuses	M10+	deferred	the enchanting's fantasy component (not ported)
-/datum/component/ranged_attacks	disable_attack	M10+	deferred	the watcher trophy's delay (the crusher, lavaland)
 
 ## Gaps C4 (D298): vermin, space fauna and farm animals
 /obj/item/knife/bloodletter	afterattack	the cult	deferred	the bloodletter's saw_bleed stacks (the status effect stays inert)

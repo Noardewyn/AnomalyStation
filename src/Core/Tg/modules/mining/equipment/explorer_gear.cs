@@ -9,41 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The explorer suit and hood (armour plates of goliath hide fit them, and the suit holds the mining tools), the explorer's gas mask
-// (folded in the miner's survival box), the goliath cloak with its hood (worn on the neck for ceremony, its armour off) and the skull
-// helmet. The bone armour's drake-mesh body texture waits for the bodypart textures, which are not ported.
-
-/****************Explorer's Suit and Mask****************/
-// tg: code/modules/mining/equipment/explorer_gear.dm:2
-public partial class obj_item_clothing_suit_hooded_explorer : obj_item_clothing_suit_hooded
-{
-    // tg: code/modules/mining/equipment/explorer_gear.dm:21
-    public override object get_general_color(icon base_icon = null)
-    {
-        return "#796755";
-    }
-
-    // tg: code/modules/mining/equipment/explorer_gear.dm:49
-    public override object Initialize(object mapload = null, params object[] __extra)
-    {
-        object dot = base.Initialize(mapload, __extra);
-        Waiting.NoSleep(AddComponent(typeof(datum_component_armor_plate)));
-        allowed = GLOB.mining_suit_allowed;
-        return dot;
-    }
-}
-
-// tg: code/modules/mining/equipment/explorer_gear.dm:34
-public partial class obj_item_clothing_head_hooded_explorer : obj_item_clothing_head_hooded
-{
-    // tg: code/modules/mining/equipment/explorer_gear.dm:54
-    public override object Initialize(object mapload = null, params object[] __extra)
-    {
-        object dot = base.Initialize(mapload, __extra);
-        Waiting.NoSleep(AddComponent(typeof(datum_component_armor_plate)));
-        return dot;
-    }
-}
+// Gaps J6 (D298): the explorer's gas mask, folded in the miner's survival box. The explorer suit and hood with their armour
+// plating (goliath plates), the goliath cloak, the bone armour and the skull helmet.
 
 // tg: code/modules/mining/equipment/explorer_gear.dm:60
 public partial class obj_item_clothing_mask_gas_explorer : obj_item_clothing_mask_gas
@@ -93,7 +60,45 @@ public partial class obj_item_clothing_mask_gas_explorer_folded : obj_item_cloth
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:112
+public sealed partial class TgState
+{
+    // tg: code/modules/clothing/gloves/color.dm:46  var/static/list/slapcraft_recipe_list
+    internal DmList obj_item_clothing_gloves_fingerless__Initialize__slapcraft_recipe_list = Dm.list(typeof(datum_crafting_recipe_gripperoffbrand));
+}
+
+/****************Explorer's Suit and Mask****************/
+// tg: code/modules/mining/equipment/explorer_gear.dm:2
+public partial class obj_item_clothing_suit_hooded_explorer : obj_item_clothing_suit_hooded
+{
+    // tg: code/modules/mining/equipment/explorer_gear.dm:21
+    public override object get_general_color(icon base_icon = null)
+    {
+        return "#796755";
+    }
+
+    // tg: code/modules/mining/equipment/explorer_gear.dm:49
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_armor_plate)));
+        allowed = GLOB.mining_suit_allowed;
+        return dot;
+    }
+}
+
+// tg: code/modules/mining/equipment/explorer_gear.dm:35
+public partial class obj_item_clothing_head_hooded_explorer : obj_item_clothing_head_hooded
+{
+    // tg: code/modules/mining/equipment/explorer_gear.dm:54
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_armor_plate)));
+        return dot;
+    }
+}
+
+// tg: code/modules/mining/equipment/explorer_gear.dm:113
 public partial class obj_item_clothing_suit_hooded_cloak_goliath : obj_item_clothing_suit_hooded_cloak
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:128
@@ -109,7 +114,7 @@ public partial class obj_item_clothing_suit_hooded_cloak_goliath : obj_item_clot
     {
         if (!iscarbon(user))
             return NONE;
-        var @char = (mob_living_carbon)user;
+        mob_living_carbon @char = user as mob_living_carbon;
         if (@char.get_item_by_slot(ITEM_SLOT_NECK) == this || @char.get_item_by_slot(ITEM_SLOT_OCLOTHING) == this)
         {
             to_chat(user, span_warning(I18n.T("You can't adjust [] while wearing it!", this)));
@@ -123,16 +128,16 @@ public partial class obj_item_clothing_suit_hooded_cloak_goliath : obj_item_clot
         if (Dm.truthy(Dm.bitand(slot_flags, ITEM_SLOT_OCLOTHING)))
         {
             slot_flags = ITEM_SLOT_NECK;
-            cold_protection = 0;
-            heat_protection = 0;
+            cold_protection = null;
+            heat_protection = null;
             set_armor(typeof(datum_armor_none));
             user.visible_message(span_notice(I18n.T("[] adjusts their [] for ceremonial use.", user, this)), span_notice(I18n.T("You adjust your [] for ceremonial use.", this)));
         }
         else
         {
-            slot_flags = Dm.num(Dm.initial(type, (obj_item_clothing_suit_hooded_cloak_goliath c) => c.slot_flags));
-            cold_protection = Dm.num(Dm.initial(type, (obj_item_clothing_suit_hooded_cloak_goliath c) => c.cold_protection));
-            heat_protection = Dm.num(Dm.initial(type, (obj_item_clothing_suit_hooded_cloak_goliath c) => c.heat_protection));
+            slot_flags = Dm.initial(type, (obj_item_clothing_suit_hooded_cloak_goliath c) => c.slot_flags);
+            cold_protection = Dm.initial(type, (obj_item_clothing_suit_hooded_cloak_goliath c) => c.cold_protection);
+            heat_protection = Dm.initial(type, (obj_item_clothing_suit_hooded_cloak_goliath c) => c.heat_protection);
             set_armor(Dm.initial(type, (obj_item_clothing_suit_hooded_cloak_goliath c) => c.armor_type));
             user.visible_message(span_notice(I18n.T("[] adjusts their [] for defensive use.", user, this)), span_notice(I18n.T("You adjust your [] for defensive use.", this)));
         }
@@ -140,31 +145,38 @@ public partial class obj_item_clothing_suit_hooded_cloak_goliath : obj_item_clot
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:168
+// tg: code/modules/mining/equipment/explorer_gear.dm:166
 public partial class obj_item_clothing_head_hooded_cloakhood_goliath : obj_item_clothing_head_hooded_cloakhood
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:183
     public override object Initialize(object mapload = null, params object[] __extra)
     {
+        return base.Initialize(mapload, __extra);
+    }
+}
+
+// tg: code/modules/mining/equipment/explorer_gear.dm:186
+public partial class obj_item_clothing_suit_armor_bone : obj_item_clothing_suit_armor
+{
+    // tg: code/modules/mining/equipment/explorer_gear.dm:200
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
         object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_armor_plate), Dm.named("upgrade_item", typeof(obj_item_clothing_accessory_talisman))));
+        Dm.Deferred("code/modules/mining/equipment/explorer_gear.dm:203", "Initialize: AddElement(/datum/element/equipment_bodypart_texture, BODY_ZONE_CHEST, /datum/bodypart_texture/mesh/drake), the drake mesh texture on the chest (bodypart textures, M10+)");
+        allowed = GLOB.mining_suit_allowed;
         return dot;
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:205
+// tg: code/modules/mining/equipment/explorer_gear.dm:206
 public partial class obj_item_clothing_head_helmet_skull : obj_item_clothing_head_helmet
 {
-    // tg: code/modules/mining/equipment/explorer_gear.dm:223
+    // tg: code/modules/mining/equipment/explorer_gear.dm:222
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_armor_plate), Dm.named("upgrade_item", typeof(obj_item_clothing_accessory_talisman))));
         return dot;
     }
-}
-
-public sealed partial class TgState
-{
-    // tg: code/modules/clothing/gloves/color.dm:46  var/static/list/slapcraft_recipe_list
-    internal DmList obj_item_clothing_gloves_fingerless__Initialize__slapcraft_recipe_list = Dm.list(typeof(datum_crafting_recipe_gripperoffbrand));
 }

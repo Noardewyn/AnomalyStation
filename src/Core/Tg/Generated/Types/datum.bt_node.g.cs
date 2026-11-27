@@ -431,13 +431,13 @@ public partial class datum_bt_node_ai_behavior_targeted_mob_ability_build_girder
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_ai.dm:15
-[DmPath("/datum/bt_node/ai_behavior/targeted_mob_ability/brimbeam"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_targeted_mob_ability_brimbeam : datum_bt_node_ai_behavior_targeted_mob_ability { }
+// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_ai.dm:15 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/targeted_mob_ability/brimbeam")]
+public partial class datum_bt_node_ai_behavior_targeted_mob_ability_brimbeam { }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:16
-[DmPath("/datum/bt_node/ai_behavior/targeted_mob_ability/goliath_tentacles"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_targeted_mob_ability_goliath_tentacles : datum_bt_node_ai_behavior_targeted_mob_ability
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:16 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/targeted_mob_ability/goliath_tentacles")]
+public partial class datum_bt_node_ai_behavior_targeted_mob_ability_goliath_tentacles
 {
     public float min_target_time = 30; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:16
 }
@@ -2191,9 +2191,9 @@ public partial class datum_bt_node_ai_behavior_grub_eat : datum_bt_node_ai_behav
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:31
-[DmPath("/datum/bt_node/ai_behavior/goliath_find_diggable_turf"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_goliath_find_diggable_turf : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:31 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/goliath_find_diggable_turf")]
+public partial class datum_bt_node_ai_behavior_goliath_find_diggable_turf
 {
     public string target_key = "BB_goliath_hole"; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:32
     public float scan_range = 3; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:33
@@ -2205,9 +2205,9 @@ public partial class datum_bt_node_ai_behavior_goliath_find_diggable_turf : datu
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:46
-[DmPath("/datum/bt_node/ai_behavior/goliath_dig"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_goliath_dig : datum_bt_node_ai_behavior
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:46 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/goliath_dig")]
+public partial class datum_bt_node_ai_behavior_goliath_dig
 {
     public string target_key = "BB_goliath_hole"; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath_ai.dm:47
 
@@ -3101,9 +3101,9 @@ public partial class datum_bt_node_decorator_item_being_held { }
 [DmPath("/datum/bt_node/decorator/vending_is_tilted")]
 public partial class datum_bt_node_decorator_vending_is_tilted { }
 
-// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_ai.dm:17
-[DmPath("/datum/bt_node/decorator/bileworm_should_resurface"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_decorator_bileworm_should_resurface : datum_bt_node_decorator
+// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_ai.dm:17 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/decorator/bileworm_should_resurface")]
+public partial class datum_bt_node_decorator_bileworm_should_resurface
 {
     public string target_key = "Current Target"; // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_ai.dm:17
 }

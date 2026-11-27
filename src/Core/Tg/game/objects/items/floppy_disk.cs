@@ -12,9 +12,8 @@ namespace Anomaly.Core.Tg;
 // The file whole (engineering E16 the manipulator task disk's two procs, gaps J5 the disk's own procs, gaps DV2 the rest): the floppy
 // disk's write-protect tab, its sticker written with a pen or picked from a radial of tg's stickers, and the stacks of disks (a disk
 // used on a disk, up to ten, drawn as the disks piled two pixels apart; the top one pulled off by the right hand, the stack spilling
-// when thrown), the flat parcel with a data disk inside. Left (not-translated.md 216): the disk's reskin menu (the
-// `/datum/atom_skin/floppy_disk` colours through `/datum/component/reskinable_item`, not-translated.md 114). The var blocks are
-// generated (D111).
+// when thrown), the flat parcel with a data disk inside, and the disk's reskin menu (the `/datum/atom_skin/floppy_disk` colours). The var
+// blocks are generated (D111).
 
 // tg: code/game/objects/items/floppy_disk.dm:362
 public partial class obj_item_disk_manipulator : obj_item_disk
@@ -76,8 +75,7 @@ public partial class obj_item_disk : obj_item
     // tg: code/game/objects/items/floppy_disk.dm:91
     public override async DmTask setup_reskins()
     {
-        // AddComponent(/datum/component/reskinable_item, /datum/atom_skin/floppy_disk, infinite = TRUE): the reskin menu (not-translated.md 114)
-        Dm.Deferred("code/game/objects/items/floppy_disk.dm:92", "setup_reskins: the disk's colours through the reskin component (not-translated.md 114)");
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_floppy_disk), Dm.named("infinite", TRUE));
     }
 
     // tg: code/game/objects/items/floppy_disk.dm:94

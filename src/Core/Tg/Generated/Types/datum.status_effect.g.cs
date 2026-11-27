@@ -9,9 +9,9 @@ using Anomaly.Core.Kernel;
 
 namespace Anomaly.Core.Tg;
 
-// tg: code/datums/actions/mobs/charge.dm:232
-[DmPath("/datum/status_effect/tired_post_charge"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_tired_post_charge : datum_status_effect
+// tg: code/datums/actions/mobs/charge.dm:232 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/tired_post_charge")]
+public partial class datum_status_effect_tired_post_charge
 {
     public Type tired_movespeed = typeof(datum_movespeed_modifier_status_effect_tired_post_charge); // tg: code/datums/actions/mobs/charge.dm:235
 
@@ -25,7 +25,7 @@ public partial class datum_status_effect_tired_post_charge : datum_status_effect
 }
 
 // tg: code/datums/actions/mobs/charge.dm:246
-[DmPath("/datum/status_effect/tired_post_charge/lesser"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/status_effect/tired_post_charge/lesser"), DmGeneratedOnly]
 public partial class datum_status_effect_tired_post_charge_lesser : datum_status_effect_tired_post_charge
 {
     // tg: code/datums/actions/mobs/charge.dm:246
@@ -845,9 +845,9 @@ public partial class datum_status_effect_good_music
     }
 }
 
-// tg: code/datums/status_effects/buffs.dm:381
-[DmPath("/datum/status_effect/regenerative_core"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_regenerative_core : datum_status_effect
+// tg: code/datums/status_effects/buffs.dm:381 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/regenerative_core")]
+public partial class datum_status_effect_regenerative_core
 {
     // tg: code/datums/status_effects/buffs.dm:381
     public datum_status_effect_regenerative_core()
@@ -1268,9 +1268,9 @@ public partial class datum_status_effect_stacking_saw_bleed_bloodletting : datum
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:73
-[DmPath("/datum/status_effect/stacking/brimdust_coating"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stacking_brimdust_coating : datum_status_effect_stacking
+// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:73 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stacking/brimdust_coating")]
+public partial class datum_status_effect_stacking_brimdust_coating
 {
     public float blast_damage = 40; // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:81
     public float pressure_modifier = 0.25f; // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:83
@@ -1356,9 +1356,9 @@ public partial class datum_status_effect_hypernob_protection
     }
 }
 
-// tg: code/datums/status_effects/neutral.dm:4
-[DmPath("/datum/status_effect/crusher_damage"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_crusher_damage : datum_status_effect
+// tg: code/datums/status_effects/neutral.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/crusher_damage")]
+public partial class datum_status_effect_crusher_damage
 {
     public float total_damage = 0; // tg: code/datums/status_effects/neutral.dm:10
 
@@ -1681,9 +1681,9 @@ public partial class datum_status_effect_admin_esp
     }
 }
 
-// tg: code/datums/status_effects/neutral.dm:924
-[DmPath("/datum/status_effect/heads_up"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_heads_up : datum_status_effect
+// tg: code/datums/status_effects/neutral.dm:924 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/heads_up")]
+public partial class datum_status_effect_heads_up
 {
     public obj_effect_overlay_wave_headsup arrow_overlay; // tg: code/datums/status_effects/neutral.dm:928
 
@@ -2447,9 +2447,9 @@ public partial class datum_status_effect_cultghost : datum_status_effect
     }
 }
 
-// tg: code/datums/status_effects/debuffs/debuffs.dm:430
-[DmPath("/datum/status_effect/crusher_mark"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_crusher_mark : datum_status_effect
+// tg: code/datums/status_effects/debuffs/debuffs.dm:430 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/crusher_mark")]
+public partial class datum_status_effect_crusher_mark
 {
     public obj_effect_abstract_crusher_mark marked_underlay; // tg: code/datums/status_effects/debuffs/debuffs.dm:435
     public float boosted = 0; // tg: code/datums/status_effects/debuffs/debuffs.dm:437
@@ -4874,9 +4874,9 @@ public partial class datum_status_effect_shapechange_mob_from_spell : datum_stat
 [DmPath("/datum/status_effect/shapechange_mob/from_spell/polymorph_belt"), DmGeneratedOnly, DmInert]
 public partial class datum_status_effect_shapechange_mob_from_spell_polymorph_belt : datum_status_effect_shapechange_mob_from_spell { }
 
-// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:236
-[DmPath("/datum/status_effect/brimdust_concussion"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_brimdust_concussion : datum_status_effect
+// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:236 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/brimdust_concussion")]
+public partial class datum_status_effect_brimdust_concussion
 {
     // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:236
     public datum_status_effect_brimdust_concussion()
@@ -4887,9 +4887,9 @@ public partial class datum_status_effect_brimdust_concussion : datum_status_effe
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:48
-[DmPath("/datum/status_effect/lobster_rush"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_lobster_rush : datum_status_effect
+// tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:48 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/lobster_rush")]
+public partial class datum_status_effect_lobster_rush
 {
     public float spawned_last_move = 0; // tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:52
 
@@ -4903,9 +4903,9 @@ public partial class datum_status_effect_lobster_rush : datum_status_effect
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:105
-[DmPath("/datum/status_effect/lobster_rush/extended"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_lobster_rush_extended : datum_status_effect_lobster_rush
+// tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:105 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/lobster_rush/extended")]
+public partial class datum_status_effect_lobster_rush_extended
 {
     // tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:105
     public datum_status_effect_lobster_rush_extended()
@@ -5034,9 +5034,9 @@ public partial class datum_status_effect_guardian_scout_mode
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/basilisk/basilisk_overheat.dm:3
-[DmPath("/datum/status_effect/basilisk_overheat"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_basilisk_overheat : datum_status_effect
+// tg: code/modules/mob/living/basic/lavaland/basilisk/basilisk_overheat.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/basilisk_overheat")]
+public partial class datum_status_effect_basilisk_overheat
 {
     // tg: code/modules/mob/living/basic/lavaland/basilisk/basilisk_overheat.dm:3
     public datum_status_effect_basilisk_overheat()
@@ -5047,9 +5047,9 @@ public partial class datum_status_effect_basilisk_overheat : datum_status_effect
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:54
-[DmPath("/datum/status_effect/overwatch"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_overwatch : datum_status_effect
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:54 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/overwatch")]
+public partial class datum_status_effect_overwatch
 {
     public float watch_range = 9; // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:59
     public datum_beam link; // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:61
@@ -5068,9 +5068,9 @@ public partial class datum_status_effect_overwatch : datum_status_effect
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:154
-[DmPath("/datum/status_effect/overwatch_immune"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_overwatch_immune : datum_status_effect
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:154 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/overwatch_immune")]
+public partial class datum_status_effect_overwatch_immune
 {
     // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:154
     public datum_status_effect_overwatch_immune()

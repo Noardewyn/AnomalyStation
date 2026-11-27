@@ -1564,9 +1564,9 @@ public partial class obj_effect_decal_cleanable_vomit_nebula : obj_effect_decal_
 [DmPath("/obj/effect/decal/cleanable/vomit/nebula/worms"), DmGeneratedOnly, DmInert]
 public partial class obj_effect_decal_cleanable_vomit_nebula_worms : obj_effect_decal_cleanable_vomit_nebula { }
 
-// tg: code/game/objects/effects/decals/cleanable/mess.dm:258
-[DmPath("/obj/effect/decal/cleanable/vomit/old"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_vomit_old : obj_effect_decal_cleanable_vomit
+// tg: code/game/objects/effects/decals/cleanable/mess.dm:258 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/vomit/old")]
+public partial class obj_effect_decal_cleanable_vomit_old
 {
     // tg: code/game/objects/effects/decals/cleanable/mess.dm:258
     public obj_effect_decal_cleanable_vomit_old()
@@ -1577,7 +1577,7 @@ public partial class obj_effect_decal_cleanable_vomit_old : obj_effect_decal_cle
 }
 
 // tg: code/game/objects/effects/decals/cleanable/mess.dm:269
-[DmPath("/obj/effect/decal/cleanable/vomit/old/black_bile"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/decal/cleanable/vomit/old/black_bile"), DmGeneratedOnly]
 public partial class obj_effect_decal_cleanable_vomit_old_black_bile : obj_effect_decal_cleanable_vomit_old
 {
     // tg: code/game/objects/effects/decals/cleanable/mess.dm:269

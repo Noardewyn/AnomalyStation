@@ -4000,9 +4000,9 @@ public partial class mob_living_basic_tie : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mining.dm:3
-[DmPath("/mob/living/basic/mining"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining : mob_living_basic
+// tg: code/modules/mob/living/basic/lavaland/mining.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining")]
+public partial class mob_living_basic_mining
 {
     public string throw_blocked_message = "bounces off"; // tg: code/modules/mob/living/basic/lavaland/mining.dm:19
     public Type crusher_loot; // tg: code/modules/mob/living/basic/lavaland/mining.dm:21
@@ -4035,9 +4035,9 @@ public partial class mob_living_basic_mining : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:6
-[DmPath("/mob/living/basic/mining/legion"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_legion : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:6 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/legion")]
+public partial class mob_living_basic_mining_legion
 {
     public Type brood_type = typeof(mob_living_basic_mining_legion_brood); // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:29
     public Type corpse_type = typeof(obj_effect_mob_spawn_corpse_human_legioninfested); // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:31
@@ -4080,7 +4080,7 @@ public partial class mob_living_basic_mining_legion : mob_living_basic_mining
 }
 
 // tg: code/modules/mapfluff/ruins/icemoonruin_code/lavaland_incursion.dm:2
-[DmPath("/mob/living/basic/mining/legion/cult_skeleton"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/legion/cult_skeleton"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_legion_cult_skeleton : mob_living_basic_mining_legion
 {
     // tg: code/modules/mapfluff/ruins/icemoonruin_code/lavaland_incursion.dm:2
@@ -4091,7 +4091,7 @@ public partial class mob_living_basic_mining_legion_cult_skeleton : mob_living_b
 }
 
 // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:126
-[DmPath("/mob/living/basic/mining/legion/spawner_made"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/legion/spawner_made"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_legion_spawner_made : mob_living_basic_mining_legion
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:126
@@ -4101,9 +4101,9 @@ public partial class mob_living_basic_mining_legion_spawner_made : mob_living_ba
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:131
-[DmPath("/mob/living/basic/mining/legion/snow"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_legion_snow : mob_living_basic_mining_legion
+// tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:131 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/legion/snow")]
+public partial class mob_living_basic_mining_legion_snow
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:131
     public mob_living_basic_mining_legion_snow()
@@ -4121,7 +4121,7 @@ public partial class mob_living_basic_mining_legion_snow : mob_living_basic_mini
 }
 
 // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:148
-[DmPath("/mob/living/basic/mining/legion/snow/spawner_made"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/legion/snow/spawner_made"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_legion_snow_spawner_made : mob_living_basic_mining_legion_snow
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:148
@@ -4132,7 +4132,7 @@ public partial class mob_living_basic_mining_legion_snow_spawner_made : mob_livi
 }
 
 // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:153
-[DmPath("/mob/living/basic/mining/legion/dwarf"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/legion/dwarf"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_legion_dwarf : mob_living_basic_mining_legion
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:153
@@ -4150,9 +4150,9 @@ public partial class mob_living_basic_mining_legion_dwarf : mob_living_basic_min
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:165
-[DmPath("/mob/living/basic/mining/legion/large"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_legion_large : mob_living_basic_mining_legion
+// tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:165 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/legion/large")]
+public partial class mob_living_basic_mining_legion_large
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/legion.dm:165
     public mob_living_basic_mining_legion_large()
@@ -4177,9 +4177,9 @@ public partial class mob_living_basic_mining_legion_large : mob_living_basic_min
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/legion_monkey.dm:3
-[DmPath("/mob/living/basic/mining/legion/lesser"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_legion_lesser : mob_living_basic_mining_legion
+// tg: code/modules/mob/living/basic/lavaland/legion/legion_monkey.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/legion/lesser")]
+public partial class mob_living_basic_mining_legion_lesser
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/legion_monkey.dm:3
     public mob_living_basic_mining_legion_lesser()
@@ -4210,9 +4210,9 @@ public partial class mob_living_basic_mining_legion_lesser : mob_living_basic_mi
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/legion_monkey.dm:34
-[DmPath("/mob/living/basic/mining/legion/lesser/snow"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_legion_lesser_snow : mob_living_basic_mining_legion_lesser
+// tg: code/modules/mob/living/basic/lavaland/legion/legion_monkey.dm:34 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/legion/lesser/snow")]
+public partial class mob_living_basic_mining_legion_lesser_snow
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/legion_monkey.dm:34
     public mob_living_basic_mining_legion_lesser_snow()
@@ -4491,9 +4491,9 @@ public partial class mob_living_basic_mining_wolf : mob_living_basic_mining
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/basilisk/basilisk.dm:3
-[DmPath("/mob/living/basic/mining/basilisk"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_basilisk : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/basilisk/basilisk.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/basilisk")]
+public partial class mob_living_basic_mining_basilisk
 {
     public datum_component_ranged_attacks ranged_attacks; // tg: code/modules/mob/living/basic/lavaland/basilisk/basilisk.dm:28
 
@@ -4529,9 +4529,9 @@ public partial class mob_living_basic_mining_basilisk : mob_living_basic_mining
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/bileworm/_bileworm.dm:2
-[DmPath("/mob/living/basic/mining/bileworm"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_bileworm : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/bileworm/_bileworm.dm:2 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/bileworm")]
+public partial class mob_living_basic_mining_bileworm
 {
     public Type attack_action_path = typeof(datum_action_cooldown_mob_cooldown_bileworm_spew); // tg: code/modules/mob/living/basic/lavaland/bileworm/_bileworm.dm:32
     public Type evolve_path = typeof(mob_living_basic_mining_bileworm_vileworm); // tg: code/modules/mob/living/basic/lavaland/bileworm/_bileworm.dm:34
@@ -4571,7 +4571,7 @@ public partial class mob_living_basic_mining_bileworm : mob_living_basic_mining
 }
 
 // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_vileworm.dm:2
-[DmPath("/mob/living/basic/mining/bileworm/vileworm"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/bileworm/vileworm"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_bileworm_vileworm : mob_living_basic_mining_bileworm
 {
     // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_vileworm.dm:2
@@ -4589,9 +4589,9 @@ public partial class mob_living_basic_mining_bileworm_vileworm : mob_living_basi
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:3
-[DmPath("/mob/living/basic/mining/brimdemon"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_brimdemon : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/brimdemon")]
+public partial class mob_living_basic_mining_brimdemon
 {
     public datum_action_cooldown_mob_cooldown_brimbeam beam; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:36
     public string firing_icon_state = "brimdemon_firing"; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:38
@@ -4707,9 +4707,9 @@ public partial class mob_living_basic_mining_goldgrub_baby : mob_living_basic_mi
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:3
-[DmPath("/mob/living/basic/mining/goliath"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_goliath : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/goliath")]
+public partial class mob_living_basic_mining_goliath
 {
     public string tentacle_warning_state = "goliath_preattack"; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:34
     public float tameable = 1; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:36
@@ -4759,13 +4759,13 @@ public partial class mob_living_basic_mining_goliath : mob_living_basic_mining
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:97
-[DmPath("/mob/living/basic/mining/goliath/apply_damage"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_goliath_apply_damage : mob_living_basic_mining_goliath { }
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:97 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/goliath/apply_damage")]
+public partial class mob_living_basic_mining_goliath_apply_damage { }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:190
-[DmPath("/mob/living/basic/mining/goliath/deathmatch"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_goliath_deathmatch : mob_living_basic_mining_goliath
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:190 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/goliath/deathmatch")]
+public partial class mob_living_basic_mining_goliath_deathmatch
 {
     // tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:190
     public mob_living_basic_mining_goliath_deathmatch()
@@ -4776,7 +4776,7 @@ public partial class mob_living_basic_mining_goliath_deathmatch : mob_living_bas
 }
 
 // tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:203
-[DmPath("/mob/living/basic/mining/goliath/ancient"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/goliath/ancient"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_goliath_ancient : mob_living_basic_mining_goliath
 {
     // tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:203
@@ -4793,9 +4793,9 @@ public partial class mob_living_basic_mining_goliath_ancient : mob_living_basic_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:214
-[DmPath("/mob/living/basic/mining/goliath/ancient/immortal"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_goliath_ancient_immortal : mob_living_basic_mining_goliath_ancient
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:214 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/goliath/ancient/immortal")]
+public partial class mob_living_basic_mining_goliath_ancient_immortal
 {
     public float retarget_turfs_cooldown = 0; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:220
     public DmList tentacle_target_turfs; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath.dm:222
@@ -4923,9 +4923,9 @@ public partial class mob_living_basic_mining_gutlunch_grub : mob_living_basic_mi
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:3
-[DmPath("/mob/living/basic/mining/hivelord"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_hivelord : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/hivelord")]
+public partial class mob_living_basic_mining_hivelord
 {
     public Type death_spawn_type = typeof(mob_living_basic_hivelord_brood); // tg: code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:26
     public datum_action_cooldown_mob_cooldown_hivelord_spawn spawn_brood; // tg: code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:28
@@ -4963,9 +4963,9 @@ public partial class mob_living_basic_mining_hivelord : mob_living_basic_mining
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/legion_brood.dm:3
-[DmPath("/mob/living/basic/mining/legion_brood"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_legion_brood : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/legion/legion_brood.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/legion_brood")]
+public partial class mob_living_basic_mining_legion_brood
 {
     public datum_weakref created_by; // tg: code/modules/mob/living/basic/lavaland/legion/legion_brood.dm:35
     public float random_states = 3; // tg: code/modules/mob/living/basic/lavaland/legion/legion_brood.dm:37
@@ -5014,9 +5014,9 @@ public partial class mob_living_basic_mining_legion_brood : mob_living_basic_min
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/legion_brood.dm:134
-[DmPath("/mob/living/basic/mining/legion_brood/snow"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_legion_brood_snow : mob_living_basic_mining_legion_brood
+// tg: code/modules/mob/living/basic/lavaland/legion/legion_brood.dm:134 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/legion_brood/snow")]
+public partial class mob_living_basic_mining_legion_brood_snow
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/legion_brood.dm:134
     public mob_living_basic_mining_legion_brood_snow()
@@ -5031,11 +5031,11 @@ public partial class mob_living_basic_mining_legion_brood_snow : mob_living_basi
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:3
-[DmPath("/mob/living/basic/mining/lobstrosity"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_lobstrosity : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/lobstrosity")]
+public partial class mob_living_basic_mining_lobstrosity
 {
-    public Type charge; // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:30
+    public datum_action_cooldown_mob_cooldown_charge_basic_charge_lobster charge; // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:30
     public Type charge_type = typeof(datum_action_cooldown_mob_cooldown_charge_basic_charge_lobster); // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:32
     public Type charge_command = typeof(datum_pet_command_use_ability_lob_charge); // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:34
     public float snip_speed = 50; // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:36
@@ -5076,7 +5076,7 @@ public partial class mob_living_basic_mining_lobstrosity : mob_living_basic_mini
 }
 
 // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:110
-[DmPath("/mob/living/basic/mining/lobstrosity/lava"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/lobstrosity/lava"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_lobstrosity_lava : mob_living_basic_mining_lobstrosity
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:110
@@ -5090,9 +5090,9 @@ public partial class mob_living_basic_mining_lobstrosity_lava : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:143
-[DmPath("/mob/living/basic/mining/lobstrosity/juvenile"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_lobstrosity_juvenile : mob_living_basic_mining_lobstrosity
+// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:143 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/lobstrosity/juvenile")]
+public partial class mob_living_basic_mining_lobstrosity_juvenile
 {
     public Type grow_type = typeof(mob_living_basic_mining_lobstrosity); // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:168
 
@@ -5129,7 +5129,7 @@ public partial class mob_living_basic_mining_lobstrosity_juvenile : mob_living_b
 }
 
 // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:245
-[DmPath("/mob/living/basic/mining/lobstrosity/juvenile/lava"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/lobstrosity/juvenile/lava"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_lobstrosity_juvenile_lava : mob_living_basic_mining_lobstrosity_juvenile
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:245
@@ -5294,9 +5294,9 @@ public partial class mob_living_basic_mining_tendril : mob_living_basic_mining
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher.dm:3
-[DmPath("/mob/living/basic/mining/watcher"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mining_watcher : mob_living_basic_mining
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mining/watcher")]
+public partial class mob_living_basic_mining_watcher
 {
     public float ranged_cooldown = 30; // tg: code/modules/mob/living/basic/lavaland/watcher/watcher.dm:28
     public Type projectile_type = typeof(obj_projectile_temp_watcher); // tg: code/modules/mob/living/basic/lavaland/watcher/watcher.dm:30
@@ -5339,7 +5339,7 @@ public partial class mob_living_basic_mining_watcher : mob_living_basic_mining
 }
 
 // tg: code/modules/mob/living/basic/lavaland/watcher/watcher.dm:82
-[DmPath("/mob/living/basic/mining/watcher/magmawing"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/watcher/magmawing"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_watcher_magmawing : mob_living_basic_mining_watcher
 {
     // tg: code/modules/mob/living/basic/lavaland/watcher/watcher.dm:82
@@ -5366,7 +5366,7 @@ public partial class mob_living_basic_mining_watcher_magmawing : mob_living_basi
 }
 
 // tg: code/modules/mob/living/basic/lavaland/watcher/watcher.dm:100
-[DmPath("/mob/living/basic/mining/watcher/icewing"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mining/watcher/icewing"), DmGeneratedOnly]
 public partial class mob_living_basic_mining_watcher_icewing : mob_living_basic_mining_watcher
 {
     // tg: code/modules/mob/living/basic/lavaland/watcher/watcher.dm:100
@@ -8933,9 +8933,9 @@ public partial class mob_living_basic_seedling_meanie : mob_living_basic_seedlin
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:71
-[DmPath("/mob/living/basic/hivelord_brood"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_hivelord_brood : mob_living_basic
+// tg: code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:71 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/hivelord_brood")]
+public partial class mob_living_basic_hivelord_brood
 {
     // tg: code/modules/mob/living/basic/lavaland/hivelord/hivelord.dm:71
     public mob_living_basic_hivelord_brood()
@@ -8979,9 +8979,9 @@ public partial class mob_living_basic_hivelord_brood : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:13
-[DmPath("/mob/living/basic/node_drone"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_node_drone : mob_living_basic
+// tg: code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:13 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/node_drone")]
+public partial class mob_living_basic_node_drone
 {
     public float active_node = 0; // tg: code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:43
     public float flying_state = 3; // tg: code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:45

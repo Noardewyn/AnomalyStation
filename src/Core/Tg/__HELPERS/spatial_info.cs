@@ -14,7 +14,8 @@ namespace Anomaly.Core.Tg;
 // get_adjacent_open_areas; M4b audio slice 1 (playsound's listeners): /mob/oranges_ear whole, get_hearers_in_view,
 // get_hearers_in_range and get_dist_euclidean; M7x slice C: inLineOfSight and is_in_sight (a ricocheting bullet's auto aim); M9 slice D (the radio): get_hearers_in_LOS,
 // get_hearers_in_radio_ranges and get_hearers_in_radio_ranges_track_radios; engineering E10 (the modular shield's circle):
-// circle_range_turfs, circle_range (syndicate X2); gaps X5: border_diamond_range_turfs and slice_off_turfs (the alien stomach).
+// circle_range_turfs, circle_range (syndicate X2); gaps X5: border_diamond_range_turfs and slice_off_turfs (the alien stomach);
+// circle_view_turfs and turf_peel (the mob spawner component).
 // The other spatial helpers are translated with their callers.
 
 /** # Oranges Ear
@@ -386,6 +387,25 @@ public static partial class GlobalProcs
         return turfs;
     }
 
+    // tg: code/__HELPERS/spatial_info.dm:355
+    public static object circle_view_turfs(object center = null, object radius = null) //Is there even a diffrence between this proc and circle_range_turfs()? // Yes
+    {
+        center ??= usr;
+        radius ??= 3;
+        turf center_turf = get_turf(center) as turf;
+        DmList turfs = Dm.list();
+        float rsq = Dm.num(radius) * (Dm.num(radius) + 0.5f);
+
+        foreach (turf checked_turf in Dm.each<turf>(view(radius, center_turf)))
+        {
+            float dx = checked_turf.x - center_turf.x;
+            float dy = checked_turf.y - center_turf.y;
+            if (dx * dx + dy * dy <= rsq)
+                Dm.append(turfs, checked_turf);
+        }
+        return turfs;
+    }
+
     ///Returns the list of turfs around the outside of a center based on RANGE_TURFS()
     // tg: code/__HELPERS/spatial_info.dm:368  (gaps X5: the alien stomach's ejection)
     public static DmList border_diamond_range_turfs(atom center = null, object radius = null)
@@ -574,6 +594,44 @@ public static partial class GlobalProcs
 
 public static partial class GlobalProcs
 {
+    /**
+     * Behaves like the orange() proc, but only looks in the outer range of the function (The "peel" of the orange).
+     * This is useful for things like checking if a mob is in a certain range, but not within a smaller range.
+     */
+    // tg: code/__HELPERS/spatial_info.dm:521
+    public static DmList turf_peel(object outer_range = null, object inner_range = null, object center = null, float? view_based = null, float? reject_dense = null)
+    {
+        view_based ??= FALSE;
+        reject_dense ??= TRUE;
+        if (Dm.num(inner_range) > Dm.num(outer_range)) // If the inner range is larger than the outer range, you're using this wrong.
+            throw Dm.CRASH("Turf peel inner range is larger than outer range!", "code/__HELPERS/spatial_info.dm", 523);
+        DmList peel = Dm.list();
+        DmList outer = null;
+        DmList inner = null;
+        if (Dm.truthy(view_based))
+        {
+            outer = circle_view_turfs(center, outer_range) as DmList;
+            inner = circle_view_turfs(center, inner_range) as DmList;
+        }
+        else
+        {
+            outer = circle_range_turfs(center, outer_range) as DmList;
+            inner = circle_range_turfs(center, inner_range) as DmList;
+        }
+        foreach (turf possible_spawn in Dm.each<turf>(outer))
+        {
+            if (Dm.@in(possible_spawn, inner))
+                continue;
+            if (Dm.truthy(possible_spawn.density) && Dm.truthy(reject_dense))
+                continue;
+            Dm.append(peel, possible_spawn);
+        }
+
+        if (!Dm.truthy(Dm.length(peel)))
+            Dm.append(peel, center); //Offer the center only as a default case when we don't have a valid circle.
+        return peel;
+    }
+
     // tg: code/__HELPERS/spatial_info.dm:545
     public static async DmTask<object> diagonally_blocked(turf our_turf = null, turf dest_turf = null)
     {

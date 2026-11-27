@@ -12,8 +12,8 @@ namespace Anomaly.Core.Tg;
 // J1 (D298): the lawyer's badge (the bubble, the point at it, the objection at a table slam; the stealing objective is a live-partial
 // row), the pocket protector (its storage; the full one with its pens); the subversive pin with the black market's hostages (gaps P4d).
 // Gaps CL1 (D333): the rest of the file (the clown's and the mime's pins with their fan HUD and moods, the cosmetology protector's
-// lipsticks, the dogtags read up close, the press badge filled in and shown); the pride pin's reskin menu waits for the reskinnable
-// items (not-translated.md 209). The var blocks are generated.
+// lipsticks, the dogtags read up close, the press badge filled in and shown) and the pride pin's reskin menu. The var blocks are
+// generated.
 
 // tg: code/modules/clothing/under/accessories/badges.dm:3
 public partial class obj_item_clothing_accessory_lawyers_badge : obj_item_clothing_accessory
@@ -278,9 +278,7 @@ public partial class obj_item_clothing_accessory_pride : obj_item_clothing_acces
     // tg: code/modules/clothing/under/accessories/badges.dm:224
     public override async DmTask setup_reskins()
     {
-        // AddComponent(/datum/component/reskinable_item, /datum/atom_skin/pride_pin, infinite = TRUE)
-        Dm.Deferred("code/modules/clothing/under/accessories/badges.dm:225", "setup_reskins: AddComponent(/datum/component/reskinable_item, /datum/atom_skin/pride_pin): the reskin menu (M10+)");
-        await DmTask.CompletedTask;
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_pride_pin), Dm.named("infinite", TRUE));
     }
 }
 

@@ -385,7 +385,7 @@ public class MiningGearTests
             Assert.Same(GLOB.mining_suit_allowed, cloak.allowed);
             Assert.Equal(CLICK_ACTION_SUCCESS, Waiting.NoSleep(cloak.click_alt(miner)));
             Assert.Equal((float)ITEM_SLOT_NECK, cloak.slot_flags);
-            Assert.Equal(0f, cloak.cold_protection);
+            Assert.Null(cloak.cold_protection); // tg: explorer_gear.dm:154 sets it to null
             Assert.Equal(CLICK_ACTION_SUCCESS, Waiting.NoSleep(cloak.click_alt(miner)));
             Assert.Equal((float)ITEM_SLOT_OCLOTHING, cloak.slot_flags);
         });

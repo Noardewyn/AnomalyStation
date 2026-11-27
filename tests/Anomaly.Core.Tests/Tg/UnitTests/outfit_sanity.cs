@@ -15,8 +15,7 @@ namespace Anomaly.Core.Tests.Tg.UnitTests;
 // and the rest); the other outfits of tg (antagonists, event roles, ghost roles) dress with items the port does not carry. Left out of
 // the job set, with the reasons in docs/ai/specs/not-translated.md section 55: the gimmick assistants (large worn sprites, M4a rows) and
 // the bitrunning domain's outfit (the MODsuit outfits are checked since gaps MO1, which made the MODsuits live); the duffel bag user
-// (duffel bags are an inert type, their storage waits); and the suit_store check of the two miner outfits whose explorer suit takes
-// its allowed list from GLOB.mining_suit_allowed in its own Initialize (explorer_gear.dm is inert: mining, M10). The
+// (duffel bags are an inert type, their storage waits). The
 // "Mr. Runtime" outfits (stacks in hands, duffel, satchel and backpack users) and the final backpack_contents and belt_contents
 // checks are tg's. EQUIP_OUTFIT_ITEM's whole path is also run: equip() itself, which implants and activates the chips.
 
@@ -93,8 +92,6 @@ public sealed class datum_unit_test_outfit_sanity : TgUnitTest
         await H.equip_to_slot_or_del(Dm.@new(item_type, H) as obj_item, slot_name, TRUE);
         /* We don't check the result of equip_to_slot_or_del because it returns false for random jumpsuits, as they delete themselves on init */
         obj_item outfit_item = H.get_item_by_slot(slot_name) as obj_item;
-        if (outfit_item == null && slot_name == ITEM_SLOT_SUITSTORE && NoSuitStoreAllowed.Contains((string)outfit.name))
-            return;
         if (outfit_item == null)
             TEST_FAIL(Dm.text("[]'s [] is invalid! Could not equip a [] into that slot.", outfit.name, outfit_key, item_type));
         else
@@ -103,9 +100,6 @@ public sealed class datum_unit_test_outfit_sanity : TgUnitTest
 
     internal static bool OutsideScope(Type outfit_type, datum_outfit outfit)
         => outfit_type.Name.Contains("assistant_gimmick", StringComparison.Ordinal) || outfit_type.Name.Contains("virtual_domain", StringComparison.Ordinal);
-
-    // the miner outfits whose explorer suit has no allowed list yet (its Initialize reads GLOB.mining_suit_allowed; explorer_gear.dm, mining M10)
-    private static readonly HashSet<string> NoSuitStoreAllowed = new() { "Shaft Miner (Equipment)", "Shaft Miner (Combat-Ready)" };
 
     // tg: code/modules/unit_tests/outfit_sanity.dm:46
     public override async DmTask Run()

@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (syndicate G4c, D316): His Grace's effect and its alert; silicons SI2 (D326) the Synthpax immunity; gaps B1 (D327) the desensitization of the combat PTSD and the obsession; gaps K1
 // (D327) the changeling's Fleshmend; gaps X5 the alien nest's sustenance; gaps MO1 (D333) the MODsuit jump jet's anti-gravity; gaps SL1
 // (D333) the exercised effect of a workout (its mood event since gaps MS1); gaps RG1
-// (D339) the garibaldi's revolutionary resilience; the other buffs come with their systems.
+// (D339) the garibaldi's revolutionary resilience; the regenerative core's tendrils; the other buffs come with their systems.
 
 //Largely beneficial effects go here, even if they have drawbacks.
 

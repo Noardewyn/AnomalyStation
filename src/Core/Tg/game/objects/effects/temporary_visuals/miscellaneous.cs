@@ -16,8 +16,8 @@ namespace Anomaly.Core.Tg;
 // (:319-328); the M7x slice B: the gun's firing effect (:61); the M7 projectiles slice: a projectile's impact (:383); the M7 supermatter slice, part 2: the circle wave (:782, a
 // gravitational anomaly's detonation); E13: the RCD family's constructing effect (:518); syndicate X2: the decoys (:236-262); gaps R1: the
 // bluespace artillery's splash (:173); gaps B1: the bluespace fissure (:310, the bluespace prophet's streams); gaps OD2: the focus ring (:823, the
-// House Edge's wind-up); gaps MO2: the sonar ping (:613, the MOD active sonar's pings, DV541). The other visuals of the file come with their
-// mechanics.
+// House Edge's wind-up); gaps MO2: the sonar ping (:613, the MOD active sonar's pings, DV541); the Lavaland fauna: the withering spawn (:720, the despawn
+// of the hivelord's and the legion's minions). The other visuals of the file come with their mechanics.
 
 // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:691
 [DmPath("/obj/effect/temp_visual/block")]
@@ -520,5 +520,39 @@ public partial class obj_effect_temp_visual_dir_setting_curse : obj_effect_temp_
         if (Dm.truthy(fades))
             Dm.animate(this, Dm.named("alpha", 0), Dm.named("time", 32));
         return dot;
+    }
+}
+
+/// Plays a dispersing animation on hivelord and legion minions so they don't just vanish
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:720
+public partial class obj_effect_temp_visual_despawn_effect : obj_effect_temp_visual
+{
+    // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:724
+    [DmParams("mapload", "copy_from")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        atom copy_from = Dm.arg<atom>(__extra, 0);
+        if (copy_from == null)
+        {
+            base.Initialize(mapload, __extra);
+            return INITIALIZE_HINT_QDEL;
+        }
+        icon = copy_from.icon;
+        icon_state = copy_from.icon_state;
+        pixel_x = copy_from.pixel_x;
+        pixel_y = copy_from.pixel_y;
+        duration = rand(0.5f * SECONDS, 1 * SECONDS);
+        matrix transformation = Dm.matrix(transform);
+        transformation.Turn(rand(-70, 70));
+        transformation.Scale(0.7f, 0.7f);
+        animate(
+            this,
+            Dm.named("pixel_x", rand(-5, 5)),
+            Dm.named("pixel_y", -5),
+            Dm.named("transform", transformation),
+            Dm.named("color", "#44444400"),
+            Dm.named("time", duration),
+            Dm.named("flags", ANIMATION_RELATIVE));
+        return base.Initialize(mapload, __extra);
     }
 }

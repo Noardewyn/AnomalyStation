@@ -191,9 +191,9 @@ public partial class datum_action_cooldown_mob_cooldown_charge_basic_charge_guar
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:118
-[DmPath("/datum/action/cooldown/mob_cooldown/charge/basic_charge/lobster"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_charge_basic_charge_lobster : datum_action_cooldown_mob_cooldown_charge_basic_charge
+// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:118 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/charge/basic_charge/lobster")]
+public partial class datum_action_cooldown_mob_cooldown_charge_basic_charge_lobster
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:118
     public datum_action_cooldown_mob_cooldown_charge_basic_charge_lobster()
@@ -205,7 +205,7 @@ public partial class datum_action_cooldown_mob_cooldown_charge_basic_charge_lobs
 }
 
 // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:254
-[DmPath("/datum/action/cooldown/mob_cooldown/charge/basic_charge/lobster/shrimp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/mob_cooldown/charge/basic_charge/lobster/shrimp"), DmGeneratedOnly]
 public partial class datum_action_cooldown_mob_cooldown_charge_basic_charge_lobster_shrimp : datum_action_cooldown_mob_cooldown_charge_basic_charge_lobster
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:254
@@ -982,9 +982,9 @@ public partial class datum_action_cooldown_mob_cooldown_projectile_attack_shotgu
     }
 }
 
-// tg: code/datums/actions/mobs/projectileattack.dm:260
-[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/dir_shots"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_projectile_attack_dir_shots : datum_action_cooldown_mob_cooldown_projectile_attack
+// tg: code/datums/actions/mobs/projectileattack.dm:260 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/dir_shots")]
+public partial class datum_action_cooldown_mob_cooldown_projectile_attack_dir_shots
 {
     public DmList firing_directions; // tg: code/datums/actions/mobs/projectileattack.dm:267
 
@@ -1024,9 +1024,9 @@ public partial class datum_action_cooldown_mob_cooldown_projectile_attack_dir_sh
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:253
-[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/dir_shots/spewlet"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_projectile_attack_dir_shots_spewlet : datum_action_cooldown_mob_cooldown_projectile_attack_dir_shots
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:253 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/dir_shots/spewlet")]
+public partial class datum_action_cooldown_mob_cooldown_projectile_attack_dir_shots_spewlet
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:253
     public datum_action_cooldown_mob_cooldown_projectile_attack_dir_shots_spewlet()
@@ -2304,9 +2304,9 @@ public partial class datum_action_cooldown_mob_cooldown_solarbeam : datum_action
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:2
-[DmPath("/datum/action/cooldown/mob_cooldown/resurface"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_resurface : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/resurface")]
+public partial class datum_action_cooldown_mob_cooldown_resurface
 {
     public float jump_damaged = 0; // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:6
     public float jump_length = 10; // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:8
@@ -2321,9 +2321,9 @@ public partial class datum_action_cooldown_mob_cooldown_resurface : datum_action
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:102
-[DmPath("/datum/action/cooldown/mob_cooldown/bileworm_spew"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_bileworm_spew : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:102 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/bileworm_spew")]
+public partial class datum_action_cooldown_mob_cooldown_bileworm_spew
 {
     public object projectile_sound = Dm.resource("sound/mobs/non-humanoids/bileworm/bileworm_spit.ogg"); // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:107
     public float additional_shots = 4; // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:109
@@ -2341,7 +2341,7 @@ public partial class datum_action_cooldown_mob_cooldown_bileworm_spew : datum_ac
 }
 
 // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_vileworm.dm:14
-[DmPath("/datum/action/cooldown/mob_cooldown/bileworm_spew/corrupt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/mob_cooldown/bileworm_spew/corrupt"), DmGeneratedOnly]
 public partial class datum_action_cooldown_mob_cooldown_bileworm_spew_corrupt : datum_action_cooldown_mob_cooldown_bileworm_spew
 {
     // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_vileworm.dm:14
@@ -2356,9 +2356,9 @@ public partial class datum_action_cooldown_mob_cooldown_bileworm_spew_corrupt : 
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:266
-[DmPath("/datum/action/cooldown/mob_cooldown/devour"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_devour : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:266 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/devour")]
+public partial class datum_action_cooldown_mob_cooldown_devour
 {
     // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:266
     public datum_action_cooldown_mob_cooldown_devour()
@@ -2369,9 +2369,9 @@ public partial class datum_action_cooldown_mob_cooldown_devour : datum_action_co
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:3
-[DmPath("/datum/action/cooldown/mob_cooldown/brimbeam"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_brimbeam : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/brimbeam")]
+public partial class datum_action_cooldown_mob_cooldown_brimbeam
 {
     public float beam_range = 10; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:13
     public float beam_duration = 20; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:15
@@ -2429,9 +2429,9 @@ public partial class datum_action_cooldown_mob_cooldown_burrow : datum_action_co
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:3
-[DmPath("/datum/action/cooldown/mob_cooldown/goliath_tentacles"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_goliath_tentacles : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/goliath_tentacles")]
+public partial class datum_action_cooldown_mob_cooldown_goliath_tentacles
 {
     public float? max_range = 7; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:14
 
@@ -2451,9 +2451,9 @@ public partial class datum_action_cooldown_mob_cooldown_goliath_tentacles : datu
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:38
-[DmPath("/datum/action/cooldown/mob_cooldown/tentacle_burst"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_tentacle_burst : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:38 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/tentacle_burst")]
+public partial class datum_action_cooldown_mob_cooldown_tentacle_burst
 {
     // tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:38
     public datum_action_cooldown_mob_cooldown_tentacle_burst()
@@ -2471,9 +2471,9 @@ public partial class datum_action_cooldown_mob_cooldown_tentacle_burst : datum_a
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:61
-[DmPath("/datum/action/cooldown/mob_cooldown/tentacle_grasp"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_tentacle_grasp : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:61 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/tentacle_grasp")]
+public partial class datum_action_cooldown_mob_cooldown_tentacle_grasp
 {
     // tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:61
     public datum_action_cooldown_mob_cooldown_tentacle_grasp()
@@ -2491,9 +2491,9 @@ public partial class datum_action_cooldown_mob_cooldown_tentacle_grasp : datum_a
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:3
-[DmPath("/datum/action/cooldown/mob_cooldown/hivelord_spawn"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_hivelord_spawn : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/hivelord_spawn")]
+public partial class datum_action_cooldown_mob_cooldown_hivelord_spawn
 {
     public string ai_target_key = "Current Target"; // tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:14
     public Type spawn_type = typeof(mob_living_basic_hivelord_brood); // tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:16
@@ -2517,9 +2517,9 @@ public partial class datum_action_cooldown_mob_cooldown_hivelord_spawn : datum_a
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:3
-[DmPath("/datum/action/cooldown/mob_cooldown/skull_launcher"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_skull_launcher : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/skull_launcher")]
+public partial class datum_action_cooldown_mob_cooldown_skull_launcher
 {
     public string ai_target_key = "Current Target"; // tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:14
     public Type spawn_type = typeof(mob_living_basic_mining_legion_brood); // tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:16
@@ -2626,9 +2626,9 @@ public partial class datum_action_cooldown_mob_cooldown_tendril_cross_spikes : d
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:5
-[DmPath("/datum/action/cooldown/mob_cooldown/watcher_gaze"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_watcher_gaze : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/watcher_gaze")]
+public partial class datum_action_cooldown_mob_cooldown_watcher_gaze
 {
     public float effect_radius = 7; // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:15
     public float animation_time = 8; // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:17
@@ -2661,9 +2661,9 @@ public partial class datum_action_cooldown_mob_cooldown_watcher_gaze : datum_act
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:203
-[DmPath("/datum/action/cooldown/mob_cooldown/watcher_gaze/fire"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_watcher_gaze_fire : datum_action_cooldown_mob_cooldown_watcher_gaze
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:203 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/watcher_gaze/fire")]
+public partial class datum_action_cooldown_mob_cooldown_watcher_gaze_fire
 {
     // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:203
     public datum_action_cooldown_mob_cooldown_watcher_gaze_fire()
@@ -2673,9 +2673,9 @@ public partial class datum_action_cooldown_mob_cooldown_watcher_gaze_fire : datu
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:215
-[DmPath("/datum/action/cooldown/mob_cooldown/watcher_gaze/ice"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_watcher_gaze_ice : datum_action_cooldown_mob_cooldown_watcher_gaze
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:215 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/watcher_gaze/ice")]
+public partial class datum_action_cooldown_mob_cooldown_watcher_gaze_ice
 {
     public float max_throw = 3; // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:218
 
@@ -2687,9 +2687,9 @@ public partial class datum_action_cooldown_mob_cooldown_watcher_gaze_ice : datum
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:6
-[DmPath("/datum/action/cooldown/mob_cooldown/watcher_overwatch"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_watcher_overwatch : datum_action_cooldown_mob_cooldown
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/watcher_overwatch")]
+public partial class datum_action_cooldown_mob_cooldown_watcher_overwatch
 {
     public float? max_range = 7; // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:16
     public Type projectile_type = typeof(obj_projectile_temp_watcher); // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_overwatch.dm:18
@@ -8526,9 +8526,9 @@ public partial class datum_action_cooldown_fishing_tip
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:220
-[DmPath("/datum/action/cooldown/monster_core_action"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_monster_core_action : datum_action_cooldown
+// tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:220 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/monster_core_action")]
+public partial class datum_action_cooldown_monster_core_action
 {
     // tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:220
     public datum_action_cooldown_monster_core_action()
@@ -8540,7 +8540,7 @@ public partial class datum_action_cooldown_monster_core_action : datum_action_co
 }
 
 // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:252
-[DmPath("/datum/action/cooldown/monster_core_action/exhale_brimdust"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/monster_core_action/exhale_brimdust"), DmGeneratedOnly]
 public partial class datum_action_cooldown_monster_core_action_exhale_brimdust : datum_action_cooldown_monster_core_action
 {
     // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:252
@@ -8554,7 +8554,7 @@ public partial class datum_action_cooldown_monster_core_action_exhale_brimdust :
 }
 
 // tg: code/modules/mining/equipment/monster_organs/regenerative_core.dm:59
-[DmPath("/datum/action/cooldown/monster_core_action/regenerative_core"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/monster_core_action/regenerative_core"), DmGeneratedOnly]
 public partial class datum_action_cooldown_monster_core_action_regenerative_core : datum_action_cooldown_monster_core_action
 {
     // tg: code/modules/mining/equipment/monster_organs/regenerative_core.dm:59
@@ -8567,7 +8567,7 @@ public partial class datum_action_cooldown_monster_core_action_regenerative_core
 }
 
 // tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:117
-[DmPath("/datum/action/cooldown/monster_core_action/adrenal_boost"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/monster_core_action/adrenal_boost"), DmGeneratedOnly]
 public partial class datum_action_cooldown_monster_core_action_adrenal_boost : datum_action_cooldown_monster_core_action
 {
     // tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:117

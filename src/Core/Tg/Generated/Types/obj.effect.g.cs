@@ -68,9 +68,9 @@ public partial class obj_effect_overlay_camera_static : obj_effect_overlay
     }
 }
 
-// tg: code/datums/components/happiness.dm:145
-[DmPath("/obj/effect/overlay/happiness_overlay"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_overlay_happiness_overlay : obj_effect_overlay
+// tg: code/datums/components/happiness.dm:145 (the var block of a hand-written class)
+[DmPath("/obj/effect/overlay/happiness_overlay")]
+public partial class obj_effect_overlay_happiness_overlay
 {
     public object hearts_percentage; // tg: code/datums/components/happiness.dm:150
     public object heart_icon = Dm.resource("icons/effects/effects.dmi"); // tg: code/datums/components/happiness.dm:152
@@ -2622,9 +2622,9 @@ public partial class obj_effect_mine_minebot : obj_effect_mine
     }
 }
 
-// tg: code/game/objects/effects/mining_mob_respawner.dm:3
-[DmPath("/obj/effect/mining_mob_respawner"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mining_mob_respawner : obj_effect
+// tg: code/game/objects/effects/mining_mob_respawner.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/effect/mining_mob_respawner")]
+public partial class obj_effect_mining_mob_respawner
 {
     public float outdoor_only = 1; // tg: code/game/objects/effects/mining_mob_respawner.dm:7
     public float registered_spawn_signal = 0; // tg: code/game/objects/effects/mining_mob_respawner.dm:9
@@ -2654,9 +2654,9 @@ public partial class obj_effect_mining_mob_respawner : obj_effect
     }
 }
 
-// tg: code/game/objects/effects/mining_mob_respawner.dm:142
-[DmPath("/obj/effect/unburrow"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_unburrow : obj_effect
+// tg: code/game/objects/effects/mining_mob_respawner.dm:142 (the var block of a hand-written class)
+[DmPath("/obj/effect/unburrow")]
+public partial class obj_effect_unburrow
 {
     public float? animate_time = 20; // tg: code/game/objects/effects/mining_mob_respawner.dm:144
 
@@ -2667,9 +2667,9 @@ public partial class obj_effect_unburrow : obj_effect
     }
 }
 
-// tg: code/game/objects/effects/mining_mob_respawner.dm:172
-[DmPath("/obj/effect/fly_down"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_fly_down : obj_effect
+// tg: code/game/objects/effects/mining_mob_respawner.dm:172 (the var block of a hand-written class)
+[DmPath("/obj/effect/fly_down")]
+public partial class obj_effect_fly_down
 {
     public float? animate_time = 6; // tg: code/game/objects/effects/mining_mob_respawner.dm:175
 
@@ -3896,9 +3896,9 @@ public partial class obj_effect_particle_effect_fluid_smoke_bad_black : obj_effe
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:54
-[DmPath("/obj/effect/particle_effect/fluid/smoke/bad/brimdust"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_particle_effect_fluid_smoke_bad_brimdust : obj_effect_particle_effect_fluid_smoke_bad
+// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:54 (the var block of a hand-written class)
+[DmPath("/obj/effect/particle_effect/fluid/smoke/bad/brimdust")]
+public partial class obj_effect_particle_effect_fluid_smoke_bad_brimdust
 {
     // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:54
     public obj_effect_particle_effect_fluid_smoke_bad_brimdust()
@@ -6752,9 +6752,9 @@ public partial class obj_effect_slippery_acid : obj_effect
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:153
-[DmPath("/obj/effect/bileworm_acid"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_bileworm_acid : obj_effect
+// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:153 (the var block of a hand-written class)
+[DmPath("/obj/effect/bileworm_acid")]
+public partial class obj_effect_bileworm_acid
 {
     public float? damage = 20; // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:159
     public float speed = 5; // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:161
@@ -6773,7 +6773,7 @@ public partial class obj_effect_bileworm_acid : obj_effect
 }
 
 // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_vileworm.dm:22
-[DmPath("/obj/effect/bileworm_acid/corrupt"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/bileworm_acid/corrupt"), DmGeneratedOnly]
 public partial class obj_effect_bileworm_acid_corrupt : obj_effect_bileworm_acid
 {
     // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_vileworm.dm:22
@@ -6784,9 +6784,9 @@ public partial class obj_effect_bileworm_acid_corrupt : obj_effect_bileworm_acid
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:236
-[DmPath("/obj/effect/bileworm_target"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_bileworm_target : obj_effect
+// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:236 (the var block of a hand-written class)
+[DmPath("/obj/effect/bileworm_target")]
+public partial class obj_effect_bileworm_target
 {
     // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:236
     public obj_effect_bileworm_target()
@@ -6798,9 +6798,9 @@ public partial class obj_effect_bileworm_target : obj_effect
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:128
-[DmPath("/obj/effect/brimbeam"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_brimbeam : obj_effect
+// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:128 (the var block of a hand-written class)
+[DmPath("/obj/effect/brimbeam")]
+public partial class obj_effect_brimbeam
 {
     public datum_weakref creator; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:138
 
@@ -6819,9 +6819,9 @@ public partial class obj_effect_brimbeam : obj_effect
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:3
-[DmPath("/obj/effect/goliath_tentacle"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_goliath_tentacle : obj_effect
+// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/effect/goliath_tentacle")]
+public partial class obj_effect_goliath_tentacle
 {
     public object action_timer; // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:10
     public float grapple_time = 100; // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:12
@@ -6843,7 +6843,7 @@ public partial class obj_effect_goliath_tentacle : obj_effect
 }
 
 // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:113
-[DmPath("/obj/effect/goliath_tentacle/drag"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/goliath_tentacle/drag"), DmGeneratedOnly]
 public partial class obj_effect_goliath_tentacle_drag : obj_effect_goliath_tentacle
 {
     // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:113
@@ -6854,7 +6854,7 @@ public partial class obj_effect_goliath_tentacle_drag : obj_effect_goliath_tenta
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:229
-[DmPath("/obj/effect/goliath_tentacle/broodmother"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/goliath_tentacle/broodmother"), DmGeneratedOnly]
 public partial class obj_effect_goliath_tentacle_broodmother : obj_effect_goliath_tentacle
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:229

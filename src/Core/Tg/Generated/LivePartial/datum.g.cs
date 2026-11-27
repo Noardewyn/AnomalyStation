@@ -429,18 +429,6 @@ public partial class datum_component_mob_harvest
     }
 }
 
-// tg: code/datums/components/ranged_attacks.dm:6
-public partial class datum_component_ranged_attacks
-{
-    // tg: code/datums/components/ranged_attacks.dm:95
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual void disable_attack(mob source = null, obj_item_crusher_trophy used_trophy = null, mob_living user = null)
-    {
-        Dm.Deferred("code/datums/components/ranged_attacks.dm:95", "disable_attack: the watcher trophy's delay (the crusher, lavaland) (M10+)");
-    }
-}
-
 // tg: code/datums/components/scope.dm:7
 public partial class datum_component_scope
 {

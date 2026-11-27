@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL (syndicate X2: the charger holoparasite's charge): only the charge (:1-181) and the basic charge (:183-229) translated; the
-// post-charge tiredness and the triple, hallucination and other bosses' charges come with their mobs.
+// post-charge tiredness (:232-248, the lobstrosity's); the triple, hallucination and other bosses' charges come with their mobs.
 
 // tg: code/datums/actions/mobs/charge.dm:1
 public partial class datum_action_cooldown_mob_cooldown_charge : datum_action_cooldown_mob_cooldown
@@ -307,5 +307,25 @@ public partial class datum_action_cooldown_mob_cooldown_charge_basic_charge : da
         living_target.visible_message(span_danger(Dm.text("[] charges into []!", source, living_target)), span_userdanger(Dm.text("[] charges into you!", source)));
         if (knockdown_duration >= 0)
             await living_target.Knockdown(knockdown_duration);
+    }
+}
+
+// tg: code/datums/actions/mobs/charge.dm:232
+public partial class datum_status_effect_tired_post_charge : datum_status_effect
+{
+    // tg: code/datums/actions/mobs/charge.dm:238
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        object dot = await base.on_apply(__extra);
+        await owner.add_movespeed_modifier(tired_movespeed);
+        return dot;
+    }
+
+    // tg: code/datums/actions/mobs/charge.dm:242
+    public override async DmTask<object> on_remove()
+    {
+        object dot = await base.on_remove();
+        owner.remove_movespeed_modifier(tired_movespeed);
+        return dot;
     }
 }

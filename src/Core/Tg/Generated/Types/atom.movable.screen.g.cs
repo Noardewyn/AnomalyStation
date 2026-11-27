@@ -3557,9 +3557,9 @@ public partial class atom_movable_screen_alert_status_effect_embryonic : atom_mo
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:92
-[DmPath("/atom/movable/screen/alert/status_effect/brimdust_coating"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_status_effect_brimdust_coating : atom_movable_screen_alert_status_effect
+// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:92 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/status_effect/brimdust_coating")]
+public partial class atom_movable_screen_alert_status_effect_brimdust_coating
 {
     // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:92
     public atom_movable_screen_alert_status_effect_brimdust_coating()

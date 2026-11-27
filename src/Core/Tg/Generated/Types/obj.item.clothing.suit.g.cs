@@ -3054,9 +3054,9 @@ public partial class obj_item_clothing_suit_armor_dragoon : obj_item_clothing_su
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:187
-[DmPath("/obj/item/clothing/suit/armor/bone"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_bone : obj_item_clothing_suit_armor
+// tg: code/modules/mining/equipment/explorer_gear.dm:187 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/bone")]
+public partial class obj_item_clothing_suit_armor_bone
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:187
     public obj_item_clothing_suit_armor_bone()

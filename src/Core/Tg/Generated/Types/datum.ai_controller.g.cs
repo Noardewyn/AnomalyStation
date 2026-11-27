@@ -1868,9 +1868,9 @@ public partial class datum_ai_controller_basic_controller_legion_lesser : datum_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity_ai.dm:9
-[DmPath("/datum/ai_controller/basic_controller/lobstrosity"), DmGeneratedOnly, DmInert]
-public partial class datum_ai_controller_basic_controller_lobstrosity : datum_ai_controller_basic_controller
+// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity_ai.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/ai_controller/basic_controller/lobstrosity")]
+public partial class datum_ai_controller_basic_controller_lobstrosity
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity_ai.dm:29
     public datum_ai_controller_basic_controller_lobstrosity()
@@ -1888,7 +1888,7 @@ public partial class datum_ai_controller_basic_controller_lobstrosity : datum_ai
 }
 
 // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity_ai.dm:41
-[DmPath("/datum/ai_controller/basic_controller/lobstrosity/juvenile"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/ai_controller/basic_controller/lobstrosity/juvenile"), DmGeneratedOnly]
 public partial class datum_ai_controller_basic_controller_lobstrosity_juvenile : datum_ai_controller_basic_controller_lobstrosity
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity_ai.dm:41
@@ -1900,7 +1900,7 @@ public partial class datum_ai_controller_basic_controller_lobstrosity_juvenile :
 }
 
 // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity_ai.dm:60
-[DmPath("/datum/ai_controller/basic_controller/lobstrosity/juvenile/calm"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/ai_controller/basic_controller/lobstrosity/juvenile/calm"), DmGeneratedOnly]
 public partial class datum_ai_controller_basic_controller_lobstrosity_juvenile_calm : datum_ai_controller_basic_controller_lobstrosity_juvenile
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity_ai.dm:60
@@ -1911,7 +1911,7 @@ public partial class datum_ai_controller_basic_controller_lobstrosity_juvenile_c
 }
 
 // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity_ai.dm:64
-[DmPath("/datum/ai_controller/basic_controller/lobstrosity/juvenile/capricious"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/ai_controller/basic_controller/lobstrosity/juvenile/capricious"), DmGeneratedOnly]
 public partial class datum_ai_controller_basic_controller_lobstrosity_juvenile_capricious : datum_ai_controller_basic_controller_lobstrosity_juvenile
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity_ai.dm:64

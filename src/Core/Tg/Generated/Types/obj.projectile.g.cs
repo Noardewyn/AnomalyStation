@@ -5030,9 +5030,9 @@ public partial class obj_projectile_grapple_hook : obj_projectile
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:295
-[DmPath("/obj/projectile/destabilizer"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_destabilizer : obj_projectile
+// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:295 (the var block of a hand-written class)
+[DmPath("/obj/projectile/destabilizer")]
+public partial class obj_projectile_destabilizer
 {
     public float boosted = 0; // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:302
     public float ignore_allies = 0; // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:304
@@ -5050,9 +5050,9 @@ public partial class obj_projectile_destabilizer : obj_projectile
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:264
-[DmPath("/obj/projectile/bileworm_acid"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_bileworm_acid : obj_projectile
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:264 (the var block of a hand-written class)
+[DmPath("/obj/projectile/bileworm_acid")]
+public partial class obj_projectile_bileworm_acid
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:264
     public obj_projectile_bileworm_acid()
@@ -5229,9 +5229,9 @@ public partial class obj_projectile_temp_ice_demon : obj_projectile_temp
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_projectiles.dm:3
-[DmPath("/obj/projectile/temp/watcher"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_temp_watcher : obj_projectile_temp
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_projectiles.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/projectile/temp/watcher")]
+public partial class obj_projectile_temp_watcher
 {
     // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_projectiles.dm:3
     public obj_projectile_temp_watcher()
@@ -5245,9 +5245,9 @@ public partial class obj_projectile_temp_watcher : obj_projectile_temp
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_projectiles.dm:26
-[DmPath("/obj/projectile/temp/watcher/magma_wing"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_temp_watcher_magma_wing : obj_projectile_temp_watcher
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_projectiles.dm:26 (the var block of a hand-written class)
+[DmPath("/obj/projectile/temp/watcher/magma_wing")]
+public partial class obj_projectile_temp_watcher_magma_wing
 {
     // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_projectiles.dm:26
     public obj_projectile_temp_watcher_magma_wing()
@@ -5259,9 +5259,9 @@ public partial class obj_projectile_temp_watcher_magma_wing : obj_projectile_tem
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_projectiles.dm:37
-[DmPath("/obj/projectile/temp/watcher/ice_wing"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_temp_watcher_ice_wing : obj_projectile_temp_watcher
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_projectiles.dm:37 (the var block of a hand-written class)
+[DmPath("/obj/projectile/temp/watcher/ice_wing")]
+public partial class obj_projectile_temp_watcher_ice_wing
 {
     // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_projectiles.dm:37
     public obj_projectile_temp_watcher_ice_wing()

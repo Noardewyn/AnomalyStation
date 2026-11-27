@@ -8630,9 +8630,9 @@ public partial class datum_outfit_dragoon_gear : datum_outfit
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:162
-[DmPath("/datum/outfit/consumed_miner"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_consumed_miner : datum_outfit
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:162 (the var block of a hand-written class)
+[DmPath("/datum/outfit/consumed_miner")]
+public partial class datum_outfit_consumed_miner
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:162
     public datum_outfit_consumed_miner()
@@ -8644,9 +8644,9 @@ public partial class datum_outfit_consumed_miner : datum_outfit
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:219
-[DmPath("/datum/outfit/consumed_ashwalker"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_consumed_ashwalker : datum_outfit
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:219 (the var block of a hand-written class)
+[DmPath("/datum/outfit/consumed_ashwalker")]
+public partial class datum_outfit_consumed_ashwalker
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:219
     public datum_outfit_consumed_ashwalker()
@@ -8656,9 +8656,9 @@ public partial class datum_outfit_consumed_ashwalker : datum_outfit
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:243
-[DmPath("/datum/outfit/consumed_clown"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_consumed_clown : datum_outfit
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:243 (the var block of a hand-written class)
+[DmPath("/datum/outfit/consumed_clown")]
+public partial class datum_outfit_consumed_clown
 {
     public float drop_a_pie_cannon = 0; // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:257
 
@@ -8686,9 +8686,9 @@ public partial class datum_outfit_consumed_clown : datum_outfit
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:291
-[DmPath("/datum/outfit/consumed_golem"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_consumed_golem : datum_outfit
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:291 (the var block of a hand-written class)
+[DmPath("/datum/outfit/consumed_golem")]
+public partial class datum_outfit_consumed_golem
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:291
     public datum_outfit_consumed_golem()
@@ -8697,9 +8697,9 @@ public partial class datum_outfit_consumed_golem : datum_outfit
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:316
-[DmPath("/datum/outfit/consumed_ice_settler"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_consumed_ice_settler : datum_outfit
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:316 (the var block of a hand-written class)
+[DmPath("/datum/outfit/consumed_ice_settler")]
+public partial class datum_outfit_consumed_ice_settler
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:316
     public datum_outfit_consumed_ice_settler()
@@ -8712,9 +8712,9 @@ public partial class datum_outfit_consumed_ice_settler : datum_outfit
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:347
-[DmPath("/datum/outfit/consumed_dame"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_consumed_dame : datum_outfit
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:347 (the var block of a hand-written class)
+[DmPath("/datum/outfit/consumed_dame")]
+public partial class datum_outfit_consumed_dame
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:347
     public datum_outfit_consumed_dame()
@@ -8772,9 +8772,9 @@ public partial class datum_outfit_consumed_cultist : datum_outfit
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:393
-[DmPath("/datum/outfit/consumed_heremoth"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_consumed_heremoth : datum_outfit
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:393 (the var block of a hand-written class)
+[DmPath("/datum/outfit/consumed_heremoth")]
+public partial class datum_outfit_consumed_heremoth
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:393
     public datum_outfit_consumed_heremoth()

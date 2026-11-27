@@ -12523,9 +12523,9 @@ public partial class datum_pet_command_use_ability_rapidseeds : datum_pet_comman
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:265
-[DmPath("/datum/pet_command/use_ability/lob_charge"), DmGeneratedOnly, DmInert]
-public partial class datum_pet_command_use_ability_lob_charge : datum_pet_command_use_ability
+// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:265 (the var block of a hand-written class)
+[DmPath("/datum/pet_command/use_ability/lob_charge")]
+public partial class datum_pet_command_use_ability_lob_charge
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:265
     public datum_pet_command_use_ability_lob_charge()
@@ -12548,7 +12548,7 @@ public partial class datum_pet_command_use_ability_lob_charge : datum_pet_comman
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/datum/pet_command/use_ability/lob_charge/shrimp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/pet_command/use_ability/lob_charge/shrimp"), DmGeneratedOnly]
 public partial class datum_pet_command_use_ability_lob_charge_shrimp : datum_pet_command_use_ability_lob_charge { }
 
 // tg: code/modules/mob/living/basic/pets/orbie/orbie_ai.dm:117 (the var block of a hand-written class)
@@ -20144,9 +20144,9 @@ public partial class datum_proximity_monitor_influence_monitor : datum_proximity
     public float xray_cooldown = 0; // tg: code/modules/antagonists/heretic/influences.dm:286
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:179
-[DmPath("/datum/proximity_monitor/watcher_gaze"), DmGeneratedOnly, DmInert]
-public partial class datum_proximity_monitor_watcher_gaze : datum_proximity_monitor
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:179 (the var block of a hand-written class)
+[DmPath("/datum/proximity_monitor/watcher_gaze")]
+public partial class datum_proximity_monitor_watcher_gaze
 {
     public datum_action_cooldown_mob_cooldown_watcher_gaze gaze; // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:179
 }

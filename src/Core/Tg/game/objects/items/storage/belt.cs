@@ -355,7 +355,7 @@ public partial class obj_item_storage_belt_grenade_full : obj_item_storage_belt_
 }
 
 
-// Gaps SR1 (D333): the belts left (the mining vendor's, the soulstone, abductor, assault, janitor and fannypack contents, the champion's
+// Gaps SR1 (D333): the belts left (the mining vendor's and the healing explorer's webbing, the soulstone, abductor, assault, janitor and fannypack contents, the champion's
 // belt, the snack rigs, the wand belts and the wand bandolier, the sheaths and their counterattack).
 
 // tg: code/game/objects/items/storage/belt.dm:293
@@ -365,6 +365,25 @@ public partial class obj_item_storage_belt_mining_vendor : obj_item_storage_belt
     public override async DmTask PopulateContents()
     {
         Dm.@new<obj_item_survivalcapsule>(this);
+    }
+}
+
+// tg: code/game/objects/items/storage/belt.dm:301
+public partial class obj_item_storage_belt_mining_healing : obj_item_storage_belt_mining
+{
+    // tg: code/game/objects/items/storage/belt.dm:301
+    public override async DmTask PopulateContents()
+    {
+        for (float i = 1; i <= 2; i++)
+            Dm.@new<obj_item_reagent_containers_hypospray_medipen_survival_luxury>(this);
+        for (float i = 1; i <= 2; i++)
+            Dm.@new<obj_item_reagent_containers_hypospray_medipen_survival>(this);
+        for (float i = 1; i <= 2; i++)
+        {
+            obj_item_organ_monster_core core = Dm.@new<obj_item_organ_monster_core_regenerative_core_legion>(this);
+            core.preserve();
+        }
+        await DmTask.CompletedTask;
     }
 }
 

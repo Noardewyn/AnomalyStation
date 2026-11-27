@@ -12,7 +12,8 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (M7x slice D): the held-up and holding-up effects of the gunpoint component, the surrender alert (heldup applies the grouped
 // surrender effect, whose alert's click is the emote that M9 translates) and their alerts; the offering and its subtypes (M9 slice F,
 // the give key and the hand items); gaps R3 the in-love effect; gaps H1 the washing effect (the showers) and the hot spring's; gaps RG1 (D339) the soothed throat and
-// headache and the Cherenkov radiation of the drinks, and the tinea luxor's glow; gaps RG3 the eigenstasium wild ride; the gutted corpse of the bitrunning domains. The rest of neutral.dm (caltropped, ...) comes
+// headache and the Cherenkov radiation of the drinks, and the tinea luxor's glow; gaps RG3 the eigenstasium wild ride; the gutted corpse of the bitrunning domains; the crusher's
+// damage tally and the spawner waves' heads-up arrow (the Lavaland fauna). The rest of neutral.dm (caltropped, ...) comes
 // with its users. The var blocks are generated (D111), but the washing effect's.
 
 // heldup is for the person being aimed at
@@ -862,5 +863,73 @@ public partial class datum_status_effect_eigenstasium : datum_status_effect
             alt_clone = null;
         }
         return await base.on_remove();
+    }
+}
+
+// tg: code/datums/status_effects/neutral.dm:3
+public partial class datum_status_effect_crusher_damage : datum_status_effect
+{
+    // tg: code/datums/status_effects/neutral.dm:12
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        RegisterSignal(owner, COMSIG_MOB_AFTER_APPLY_DAMAGE, nameof(damage_taken));
+        return TRUE;
+    }
+
+    // tg: code/datums/status_effects/neutral.dm:16
+    public override async DmTask<object> on_remove()
+    {
+        UnregisterSignal(owner, COMSIG_MOB_AFTER_APPLY_DAMAGE);
+        return null;
+    }
+
+    // tg: code/datums/status_effects/neutral.dm:19
+    [SignalHandler]
+    public virtual void damage_taken(datum source = null, object damage_dealt = null, object damagetype = null, object def_zone = null, object blocked = null, object wound_bonus = null, object exposed_wound_bonus = null, object sharpness = null, object attack_direction = null, object attacking_item = null)
+    {
+        if (attacking_item is obj_item_kinetic_crusher)
+            total_damage += Dm.num(damage_dealt);
+    }
+}
+
+// tg: code/datums/status_effects/neutral.dm:923
+public partial class datum_status_effect_heads_up : datum_status_effect
+{
+    // tg: code/datums/status_effects/neutral.dm:930
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        object dot = await base.on_apply(__extra);
+        turf owner_turf = get_turf(owner) as turf;
+        arrow_overlay = Dm.@new<obj_effect_overlay_wave_headsup>();
+        arrow_overlay.pixel_x = -(owner.base_pixel_x);
+        SET_PLANE(arrow_overlay, Dm.num(PLANE_TO_TRUE(arrow_overlay.plane)), owner_turf);
+        Dm.append(owner.vis_contents, arrow_overlay);
+        RegisterSignal(owner, COMSIG_MOVABLE_Z_CHANGED, nameof(on_z_change));
+        RegisterSignal(owner, COMSIG_LIVING_DEATH, nameof(on_death));
+        return dot;
+    }
+
+    // tg: code/datums/status_effects/neutral.dm:940
+    public override async DmTask<object> on_remove()
+    {
+        Dm.remove(owner.vis_contents, arrow_overlay);
+        QDEL_NULL(ref arrow_overlay);
+        UnregisterSignal(owner, COMSIG_MOVABLE_Z_CHANGED);
+        return null;
+    }
+
+    // tg: code/datums/status_effects/neutral.dm:945
+    [SignalHandler]
+    public virtual void on_z_change(mob_living source = null, turf old_turf = null, turf new_turf = null, object same_z_layer = null)
+    {
+        SET_PLANE(arrow_overlay, Dm.num(PLANE_TO_TRUE(arrow_overlay.plane)), new_turf);
+    }
+
+    /// We delete the status effect and visual on mob death.
+    // tg: code/datums/status_effects/neutral.dm:950
+    [SignalHandler]
+    public virtual void on_death(mob_living source = null)
+    {
+        qdel(this);
     }
 }

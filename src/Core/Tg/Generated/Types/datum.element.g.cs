@@ -9,9 +9,9 @@ using Anomaly.Core.Kernel;
 
 namespace Anomaly.Core.Tg;
 
-// tg: code/datums/elements/above_mob_drop.dm:3
-[DmPath("/datum/element/above_mob_drop"), DmGeneratedOnly, DmInert]
-public partial class datum_element_above_mob_drop : datum_element
+// tg: code/datums/elements/above_mob_drop.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/above_mob_drop")]
+public partial class datum_element_above_mob_drop
 {
     public float target_layer = 3.85f; // tg: code/datums/elements/above_mob_drop.dm:6
 
@@ -597,9 +597,9 @@ public partial class datum_element_crackable
     }
 }
 
-// tg: code/datums/elements/crusher_loot.dm:7
-[DmPath("/datum/element/crusher_loot"), DmGeneratedOnly, DmInert]
-public partial class datum_element_crusher_loot : datum_element
+// tg: code/datums/elements/crusher_loot.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/element/crusher_loot")]
+public partial class datum_element_crusher_loot
 {
     public object trophy_type; // tg: code/datums/elements/crusher_loot.dm:10
     public object drop_mod; // tg: code/datums/elements/crusher_loot.dm:14
@@ -1095,9 +1095,9 @@ public partial class datum_element_fish_safe_storage : datum_element
 [DmPath("/datum/element/floor_placeable")]
 public partial class datum_element_floor_placeable { }
 
-// tg: code/datums/elements/floorloving.dm:4
-[DmPath("/datum/element/floor_loving"), DmGeneratedOnly, DmInert]
-public partial class datum_element_floor_loving : datum_element { }
+// tg: code/datums/elements/floorloving.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/element/floor_loving")]
+public partial class datum_element_floor_loving { }
 
 // tg: code/datums/elements/footstep.dm:3 (the var block of a hand-written class)
 [DmPath("/datum/element/footstep")]
@@ -1471,9 +1471,9 @@ public partial class datum_element_mob_grabber
     }
 }
 
-// tg: code/datums/elements/mob_killed_tally.dm:7
-[DmPath("/datum/element/mob_killed_tally"), DmGeneratedOnly, DmInert]
-public partial class datum_element_mob_killed_tally : datum_element
+// tg: code/datums/elements/mob_killed_tally.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/element/mob_killed_tally")]
+public partial class datum_element_mob_killed_tally
 {
     public object tally_string; // tg: code/datums/elements/mob_killed_tally.dm:10
 
@@ -1485,9 +1485,9 @@ public partial class datum_element_mob_killed_tally : datum_element
     }
 }
 
-// tg: code/datums/elements/move_force_on_death.dm:5
-[DmPath("/datum/element/change_force_on_death"), DmGeneratedOnly, DmInert]
-public partial class datum_element_change_force_on_death : datum_element
+// tg: code/datums/elements/move_force_on_death.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/element/change_force_on_death")]
+public partial class datum_element_change_force_on_death
 {
     public object move_force; // tg: code/datums/elements/move_force_on_death.dm:8
     public object move_resist; // tg: code/datums/elements/move_force_on_death.dm:10
@@ -1890,9 +1890,9 @@ public partial class datum_element_radioactive
     }
 }
 
-// tg: code/datums/elements/ranged_armour.dm:3
-[DmPath("/datum/element/ranged_armour"), DmGeneratedOnly, DmInert]
-public partial class datum_element_ranged_armour : datum_element
+// tg: code/datums/elements/ranged_armour.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/ranged_armour")]
+public partial class datum_element_ranged_armour
 {
     public object minimum_projectile_force; // tg: code/datums/elements/ranged_armour.dm:6
     public object below_projectile_multiplier; // tg: code/datums/elements/ranged_armour.dm:8

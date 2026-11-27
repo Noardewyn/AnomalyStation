@@ -1328,9 +1328,9 @@ public partial class obj_effect_temp_visual_dir_setting_miner_death : obj_effect
     }
 }
 
-// tg: code/game/objects/effects/temporary_visuals/effect_trail.dm:3
-[DmPath("/obj/effect/temp_visual/effect_trail"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_effect_trail : obj_effect_temp_visual
+// tg: code/game/objects/effects/temporary_visuals/effect_trail.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/effect_trail")]
+public partial class obj_effect_temp_visual_effect_trail
 {
     public Type spawned_effect; // tg: code/game/objects/effects/temporary_visuals/effect_trail.dm:10
     public float spawn_interval = 5; // tg: code/game/objects/effects/temporary_visuals/effect_trail.dm:12
@@ -1352,9 +1352,9 @@ public partial class obj_effect_temp_visual_effect_trail : obj_effect_temp_visua
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:81
-[DmPath("/obj/effect/temp_visual/effect_trail/burrowed_tentacle"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_effect_trail_burrowed_tentacle : obj_effect_temp_visual_effect_trail
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:81 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/effect_trail/burrowed_tentacle")]
+public partial class obj_effect_temp_visual_effect_trail_burrowed_tentacle
 {
     public mob_living owner; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:88
 
@@ -1397,7 +1397,7 @@ public partial class obj_effect_temp_visual_effect_trail_tendril_chaser_wide_are
 }
 
 // tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:32
-[DmPath("/obj/effect/temp_visual/effect_trail/spike_chaser"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/effect_trail/spike_chaser"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_effect_trail_spike_chaser : obj_effect_temp_visual_effect_trail
 {
     // tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:32
@@ -2199,9 +2199,9 @@ public partial class obj_effect_temp_visual_jet_plume : obj_effect_temp_visual
     }
 }
 
-// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:721
-[DmPath("/obj/effect/temp_visual/despawn_effect"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_despawn_effect : obj_effect_temp_visual
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:721 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/despawn_effect")]
+public partial class obj_effect_temp_visual_despawn_effect
 {
     // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:721
     public obj_effect_temp_visual_despawn_effect()
@@ -3308,9 +3308,9 @@ public partial class obj_effect_temp_visual_solarbeam_killsat : obj_effect_temp_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:69
-[DmPath("/obj/effect/temp_visual/brim_burst"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_brim_burst : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:69 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/brim_burst")]
+public partial class obj_effect_temp_visual_brim_burst
 {
     // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:69
     public obj_effect_temp_visual_brim_burst()
@@ -3322,9 +3322,9 @@ public partial class obj_effect_temp_visual_brim_burst : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:91
-[DmPath("/obj/effect/temp_visual/hivebrood_spawn"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hivebrood_spawn : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:91 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hivebrood_spawn")]
+public partial class obj_effect_temp_visual_hivebrood_spawn
 {
     // tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:91
     public obj_effect_temp_visual_hivebrood_spawn()
@@ -3335,9 +3335,9 @@ public partial class obj_effect_temp_visual_hivebrood_spawn : obj_effect_temp_vi
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:77
-[DmPath("/obj/effect/temp_visual/legion_skull_depart"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_legion_skull_depart : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:77 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/legion_skull_depart")]
+public partial class obj_effect_temp_visual_legion_skull_depart
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:77
     public obj_effect_temp_visual_legion_skull_depart()
@@ -3349,9 +3349,9 @@ public partial class obj_effect_temp_visual_legion_skull_depart : obj_effect_tem
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:90
-[DmPath("/obj/effect/temp_visual/legion_skull_land"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_legion_skull_land : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:90 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/legion_skull_land")]
+public partial class obj_effect_temp_visual_legion_skull_land
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:90
     public obj_effect_temp_visual_legion_skull_land()
@@ -3365,9 +3365,9 @@ public partial class obj_effect_temp_visual_legion_skull_land : obj_effect_temp_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:107
-[DmPath("/obj/effect/temp_visual/legion_brood_indicator"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_legion_brood_indicator : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:107 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/legion_brood_indicator")]
+public partial class obj_effect_temp_visual_legion_brood_indicator
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:107
     public obj_effect_temp_visual_legion_brood_indicator()

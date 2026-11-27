@@ -10,6 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The riding creature base and the animals' variants (gaps package C4), the charger holoparasite's (syndicate X2), the cyborg's (silicons SI2): the human, mulebot and ruin creatures' variants wait with their hosts (a row).
+// The goliath's variant comes with the Lavaland fauna.
 
 // For any mob that can be ridden
 // tg: code/datums/components/riding/riding_mob.dm:3
@@ -513,5 +514,69 @@ public partial class datum_component_riding_creature_guardian : datum_component_
         if (charger == null)
             return base.ride_check(rider, consequences);
         return Dm.num(charger.summoner == rider);
+    }
+}
+
+// tg: code/datums/components/riding/riding_mob.dm:517
+public partial class datum_component_riding_creature_goliath : datum_component_riding_creature
+{
+    // tg: code/datums/components/riding/riding_mob.dm:536
+    public override object driver_move(atom_movable movable_parent = null, mob_living user = null, object direction = null)
+    {
+        if (speed_boost != maximum_boost)
+            return base.driver_move(movable_parent, user, direction);
+        // At maximum acceleration, start spawning afterimages
+        turf old_loc = movable_parent.loc as turf;
+        object dot = base.driver_move(movable_parent, user, direction);
+        if (Dm.truthy(Dm.bitand(dot, COMPONENT_DRIVER_BLOCK_MOVE)))
+            return dot;
+        if (!Dm.truthy(spawned_last_move) && old_loc != null)
+            Dm.@new<obj_effect_temp_visual_decoy_fading>(old_loc, movable_parent, 150);
+        spawned_last_move = Dm.not(spawned_last_move);
+        return dot;
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:548
+    public override float get_move_delay(mob_living living_parent = null, mob_living user = null, object direction = null)
+    {
+        float move_delay = Dm.num(living_parent.cached_multiplicative_slowdown) + flat_speed_mod;
+        // We give grace of 2 ticks of stopped movement, or 0.1 seconds, in case of SSinput not being able to process all inputs in a single tick
+        if (!Dm.eq(last_move_dir, direction) || vehicle_move_cooldown + 0.1f * SECONDS < world.time)
+        {
+            last_move_dir = direction;
+            // If we're "drifting" only halve our speed instead
+            if (Dm.truthy(Dm.bitand(last_move_dir, direction)))
+                speed_boost /= 2;
+            else
+                speed_boost = 0;
+        }
+
+        float modified_move_delay = move_delay + Dm.max(maximum_boost, speed_boost);
+        speed_boost += rush_speed_boost * (modified_move_delay / move_delay);
+
+        // Apply roughrider boost last
+        if (HAS_TRAIT(user, TRAIT_ROUGHRIDER))
+            modified_move_delay *= get_roughrider_mult(user);
+        return modified_move_delay;
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:568
+    public override DmList get_rider_offsets_and_layers(object pass_index = null, mob offsetter = null)
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(0f, 12f)),
+            Dm.kv(TEXT_SOUTH, Dm.list(0f, 12f)),
+            Dm.kv(TEXT_EAST, Dm.list(-4f, 12f)),
+            Dm.kv(TEXT_WEST, Dm.list(3f, 12f)));
+    }
+
+    // tg: code/datums/components/riding/riding_mob.dm:576
+    public override DmList get_parent_offsets_and_layers()
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(0f, 0f, MOB_BELOW_PIGGYBACK_LAYER)),
+            Dm.kv(TEXT_SOUTH, Dm.list(0f, 0f, MOB_ABOVE_PIGGYBACK_LAYER)),
+            Dm.kv(TEXT_EAST, Dm.list(0f, 0f, MOB_BELOW_PIGGYBACK_LAYER)),
+            Dm.kv(TEXT_WEST, Dm.list(0f, 0f, MOB_BELOW_PIGGYBACK_LAYER)));
     }
 }

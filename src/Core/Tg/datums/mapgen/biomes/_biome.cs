@@ -259,11 +259,13 @@ public partial class datum_biome : datum
                 Dm.append((DmList)spawn_data[CAVE_SPAWN_MEGAFAUNA], target_turf);
             Dm.append((DmList)spawn_data[CAVE_SPAWN_MOB], target_turf);
 
-            Dm.@new((Type)picked_mob, target_turf);
+            atom created = Dm.@new((Type)picked_mob, target_turf) as atom;
 
-            // the mining mob respawner (game/objects/effects/mining_mob_respawner.dm), which respawns them in ash storms, comes with the fauna (D304 L5)
             if (!is_tendril && !is_megafauna)
-                Dm.Deferred("code/datums/mapgen/biomes/_biome.dm:216", "populate_turfs: the mining mob respawner comes with the fauna and the ash storms (D304 L4, L5)");
+            {
+                obj_effect_mining_mob_respawner respawner = Dm.@new<obj_effect_mining_mob_respawner>(target_turf);
+                respawner.setup(fauna_types, created);
+            }
 
             // There can be only one Bubblegum, so don't waste spawns on it
             if (ispath(picked_mob, typeof(mob_living_simple_animal_hostile_megafauna_bubblegum)))

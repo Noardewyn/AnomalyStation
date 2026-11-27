@@ -608,6 +608,13 @@ public class MobLifecycleTests
             GLOB.InitGlobalposibrain_names(); // silicons SI2: a positronic brain names itself from it (positronic.dm:33)
             GLOB.InitGlobalai_names(); // silicons SI9: the saboteur cyborg's chameleon picks an AI name (borgchameleon.dm:32)
             GLOB.InitGlobalgross_adjectives(); // gaps P3b: the fly's infused organs name themselves from it (odd_organ_name, names.dm:288)
+            GLOB.InitGlobalclown_names(); // the legion-infested corpses: the consumed clown names itself from them (mining_corpses.dm:261)
+            GLOB.InitGlobalgolem_names(); // and the corpses of the other species from their languages (terrum.dm:32, calcic.dm:31, draconic.dm:41, moffic.dm:34)
+            GLOB.InitGlobalplasmaman_names();
+            GLOB.InitGloballizard_names_male();
+            GLOB.InitGloballizard_names_female();
+            GLOB.InitGlobalmoth_first();
+            GLOB.InitGlobalmoth_last();
             // silicons SI3: the printers' auto-unlocking techwebs (the lathe's, the smelter's, the biogenerator's) register with SSresearch
             // and read its design table; tg's MC always makes it
             if (SSresearch == null)

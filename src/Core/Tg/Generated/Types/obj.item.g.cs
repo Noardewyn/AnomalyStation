@@ -11622,9 +11622,9 @@ public partial class obj_item_restraints_legcuffs_bola_cult : obj_item_restraint
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:116
-[DmPath("/obj/item/restraints/legcuffs/goliath_tentacle"), DmGeneratedOnly, DmInert]
-public partial class obj_item_restraints_legcuffs_goliath_tentacle : obj_item_restraints_legcuffs
+// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:116 (the var block of a hand-written class)
+[DmPath("/obj/item/restraints/legcuffs/goliath_tentacle")]
+public partial class obj_item_restraints_legcuffs_goliath_tentacle
 {
     public obj_effect_goliath_tentacle tentacle; // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:128
     public datum_component_leash leash; // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:130
@@ -11647,9 +11647,9 @@ public partial class obj_item_restraints_legcuffs_goliath_tentacle : obj_item_re
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:212
-[DmPath("/obj/item/restraints/legcuffs/goliath_tentacle/drag"), DmGeneratedOnly, DmInert]
-public partial class obj_item_restraints_legcuffs_goliath_tentacle_drag : obj_item_restraints_legcuffs_goliath_tentacle { }
+// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:212 (the var block of a hand-written class)
+[DmPath("/obj/item/restraints/legcuffs/goliath_tentacle/drag")]
+public partial class obj_item_restraints_legcuffs_goliath_tentacle_drag { }
 
 // tg: code/game/objects/items/holosign_creator.dm:2 (the var block of a hand-written class)
 [DmPath("/obj/item/holosign_creator")]
@@ -39588,9 +39588,9 @@ public partial class obj_item_wormhole_jaunter
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:9
-[DmPath("/obj/item/kinetic_crusher"), DmGeneratedOnly, DmInert]
-public partial class obj_item_kinetic_crusher : obj_item
+// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/kinetic_crusher")]
+public partial class obj_item_kinetic_crusher
 {
     public object toggle_light_sound = Dm.resource("sound/items/weapons/empty.ogg"); // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:41
     public object fire_kinetic_blast_sound = Dm.resource("sound/items/weapons/plasma_cutter.ogg"); // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:43
@@ -39650,7 +39650,7 @@ public partial class obj_item_kinetic_crusher : obj_item
 }
 
 // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:290
-[DmPath("/obj/item/kinetic_crusher/compact"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/kinetic_crusher/compact"), DmGeneratedOnly]
 public partial class obj_item_kinetic_crusher_compact : obj_item_kinetic_crusher
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:290
@@ -39661,9 +39661,9 @@ public partial class obj_item_kinetic_crusher_compact : obj_item_kinetic_crusher
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher_trophies.dm:6
-[DmPath("/obj/item/crusher_trophy"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy : obj_item
+// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher_trophies.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy")]
+public partial class obj_item_crusher_trophy
 {
     public float bonus_value = 10; // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher_trophies.dm:12
     public object trophy_id; // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher_trophies.dm:14
@@ -39681,9 +39681,9 @@ public partial class obj_item_crusher_trophy : obj_item
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:7
-[DmPath("/obj/item/crusher_trophy/watcher_wing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_watcher_wing : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/watcher_wing")]
+public partial class obj_item_crusher_trophy_watcher_wing
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:7
     public obj_item_crusher_trophy_watcher_wing()
@@ -39705,9 +39705,9 @@ public partial class obj_item_crusher_trophy_watcher_wing : obj_item_crusher_tro
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:33
-[DmPath("/obj/item/crusher_trophy/magma_wing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_magma_wing : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:33 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/magma_wing")]
+public partial class obj_item_crusher_trophy_magma_wing
 {
     public DmList marked_targets; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:40
 
@@ -39730,9 +39730,9 @@ public partial class obj_item_crusher_trophy_magma_wing : obj_item_crusher_troph
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:97
-[DmPath("/obj/item/crusher_trophy/ice_wing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_ice_wing : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:97 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/ice_wing")]
+public partial class obj_item_crusher_trophy_ice_wing
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:97
     public obj_item_crusher_trophy_ice_wing()
@@ -39753,9 +39753,9 @@ public partial class obj_item_crusher_trophy_ice_wing : obj_item_crusher_trophy
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:126
-[DmPath("/obj/item/crusher_trophy/legion_skull"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_legion_skull : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:126 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/legion_skull")]
+public partial class obj_item_crusher_trophy_legion_skull
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:126
     public obj_item_crusher_trophy_legion_skull()
@@ -39775,9 +39775,9 @@ public partial class obj_item_crusher_trophy_legion_skull : obj_item_crusher_tro
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:149
-[DmPath("/obj/item/crusher_trophy/goliath_tentacle"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_goliath_tentacle : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:149 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/goliath_tentacle")]
+public partial class obj_item_crusher_trophy_goliath_tentacle
 {
     public float missing_health_ratio = 0.1f; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:158
 
@@ -39801,9 +39801,9 @@ public partial class obj_item_crusher_trophy_goliath_tentacle : obj_item_crusher
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:175
-[DmPath("/obj/item/crusher_trophy/lobster_claw"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_lobster_claw : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:175 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/lobster_claw")]
+public partial class obj_item_crusher_trophy_lobster_claw
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:175
     public obj_item_crusher_trophy_lobster_claw()
@@ -39824,9 +39824,9 @@ public partial class obj_item_crusher_trophy_lobster_claw : obj_item_crusher_tro
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:193
-[DmPath("/obj/item/crusher_trophy/brimdemon_fang"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_brimdemon_fang : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:193 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/brimdemon_fang")]
+public partial class obj_item_crusher_trophy_brimdemon_fang
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:193
     public obj_item_crusher_trophy_brimdemon_fang()
@@ -39839,9 +39839,9 @@ public partial class obj_item_crusher_trophy_brimdemon_fang : obj_item_crusher_t
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:212
-[DmPath("/obj/item/crusher_trophy/bileworm_spewlet"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_bileworm_spewlet : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:212 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/bileworm_spewlet")]
+public partial class obj_item_crusher_trophy_bileworm_spewlet
 {
     public datum_action_cooldown_mob_cooldown_projectile_attack_dir_shots_spewlet ability; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:220
 
@@ -39864,9 +39864,9 @@ public partial class obj_item_crusher_trophy_bileworm_spewlet : obj_item_crusher
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:295
-[DmPath("/obj/item/crusher_trophy/ice_demon_cube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_ice_demon_cube : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:295 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/ice_demon_cube")]
+public partial class obj_item_crusher_trophy_ice_demon_cube
 {
     public float summon_amount = 2; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:301
     public float summon_cooldown = 0; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:303
@@ -39882,9 +39882,9 @@ public partial class obj_item_crusher_trophy_ice_demon_cube : obj_item_crusher_t
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:332
-[DmPath("/obj/item/crusher_trophy/wolf_ear"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_wolf_ear : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:332 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/wolf_ear")]
+public partial class obj_item_crusher_trophy_wolf_ear
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:332
     public obj_item_crusher_trophy_wolf_ear()
@@ -39897,9 +39897,9 @@ public partial class obj_item_crusher_trophy_wolf_ear : obj_item_crusher_trophy
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:347
-[DmPath("/obj/item/crusher_trophy/bear_paw"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_bear_paw : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:347 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/bear_paw")]
+public partial class obj_item_crusher_trophy_bear_paw
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:347
     public obj_item_crusher_trophy_bear_paw()
@@ -39912,9 +39912,9 @@ public partial class obj_item_crusher_trophy_bear_paw : obj_item_crusher_trophy
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:366
-[DmPath("/obj/item/crusher_trophy/raptor_feather"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_raptor_feather : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:366 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/raptor_feather")]
+public partial class obj_item_crusher_trophy_raptor_feather
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:366
     public obj_item_crusher_trophy_raptor_feather()
@@ -40094,9 +40094,9 @@ public partial class obj_item_crusher_trophy_flesh_glob : obj_item_crusher_troph
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:124
-[DmPath("/obj/item/crusher_trophy/retool_kit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_retool_kit : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:124 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/retool_kit")]
+public partial class obj_item_crusher_trophy_retool_kit
 {
     public Type forced_skin; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:131
 
@@ -40111,9 +40111,9 @@ public partial class obj_item_crusher_trophy_retool_kit : obj_item_crusher_troph
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:148
-[DmPath("/obj/item/crusher_trophy/retool_kit/ashenskull"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_retool_kit_ashenskull : obj_item_crusher_trophy_retool_kit
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:148 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/retool_kit/ashenskull")]
+public partial class obj_item_crusher_trophy_retool_kit_ashenskull
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:148
     public obj_item_crusher_trophy_retool_kit_ashenskull()
@@ -40125,9 +40125,9 @@ public partial class obj_item_crusher_trophy_retool_kit_ashenskull : obj_item_cr
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:5
-[DmPath("/obj/item/mining_stabilizer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mining_stabilizer : obj_item
+// tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/item/mining_stabilizer")]
+public partial class obj_item_mining_stabilizer
 {
     // tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:5
     public obj_item_mining_stabilizer()
@@ -40817,9 +40817,9 @@ public partial class obj_item_guardian_creator_miner
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:15
-[DmPath("/obj/item/ore_sensor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_ore_sensor : obj_item
+// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:15 (the var block of a hand-written class)
+[DmPath("/obj/item/ore_sensor")]
+public partial class obj_item_ore_sensor
 {
     public float? range = 5; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:21
     public float cooldown = 40; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:22

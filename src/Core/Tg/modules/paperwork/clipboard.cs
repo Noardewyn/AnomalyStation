@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file (gaps S3, D298) but the skins (setup_reskins and the /datum/atom_skin/clipboard datums: the reskin component and
-// its radial menu are not ported, as the other reskinnable items'). The var blocks are generated.
+// The whole file (gaps S3, D298) with its skins (setup_reskins and the /datum/atom_skin/clipboard datums). The var blocks are
+// generated.
 
 /**
  * Clipboard
@@ -35,7 +35,7 @@ public partial class obj_item_clipboard : obj_item
     // tg: code/modules/paperwork/clipboard.dm:55
     public override async DmTask setup_reskins()
     {
-        Dm.Deferred("code/modules/paperwork/clipboard.dm:56", "setup_reskins: AddComponent(/datum/component/reskinable_item, /datum/atom_skin/clipboard) (the reskin component and its radial menu)");
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_clipboard));
     }
 
     // tg: code/modules/paperwork/clipboard.dm:58

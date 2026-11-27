@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // M8 slice C: the whole file but the suicides (the cyborgs' self-filling sprays since silicons SI2): the spray
 // bottle (refilling from a tank, the puff and its stream mode, the range from the reagents' weight, the Empty verb's body),
 // the space cleaner, the pepper spray, the hercuri spray, the water flower, the chem sprayers, the syndicate spray.
-// Deferred leaves: the sprayer's attack log line (M10), the medical spray's reskins. The var blocks are generated.
+// The medical spray's reskins. Deferred leaf: the sprayer's attack log line (M10). The var blocks are generated.
 
 // tg: code/modules/reagents/reagent_containers/spray.dm:1
 public partial class obj_item_reagent_containers_spray : obj_item_reagent_containers
@@ -342,8 +342,7 @@ public partial class obj_item_reagent_containers_spray_medical : obj_item_reagen
     // tg: code/modules/reagents/reagent_containers/spray.dm:455
     public override async DmTask setup_reskins()
     {
-        // AddComponent(/datum/component/reskinable_item, /datum/atom_skin/med_spray)
-        Dm.Deferred("code/modules/reagents/reagent_containers/spray.dm:456", "setup_reskins: AddComponent(/datum/component/reskinable_item, /datum/atom_skin/med_spray) (the reskin component and its radial menu)");
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_med_spray));
     }
 }
 

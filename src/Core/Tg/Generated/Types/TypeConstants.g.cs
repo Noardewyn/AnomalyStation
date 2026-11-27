@@ -75438,6 +75438,29 @@ public static partial class TypeOrder
 32967	f5
 39213	f5
 39848	f0
+#move_force
+8323	n
+20976	f0
+21017	f30000
+21045	f2999
+21131	f30000
+21132	f1000
+21160	f2999
+21163	f2999
+21165	f2999
+21167	f500
+21174	f2999
+21305	f30000
+21311	f30000
+21323	f2999
+21352	f0
+21492	f9000
+21543	f30000
+21582	f1E+31
+38106	f30000
+38111	f30000
+39255	f1E+31
+43935	f111.111115
 #move_resist
 8323	n
 20896	f1E+31
@@ -106306,6 +106329,78 @@ public static partial class TypeOrder
 #pressure_limit
 36504	f500000
 36533	f1E+14
+#preview_name
+6593	n
+6595	sRed
+6596	sBlue
+6598	sRed
+6599	sDark Blue
+6600	sYellow
+6601	sBlack
+6602	sGreen
+6603	sPurple
+6604	sGrey
+6605	sLight Blue
+6607	sDefault
+6608	sEnergy
+6610	sJoy
+6611	sFlushed
+6612	sPensive
+6613	sAngry
+6614	sPleading
+6616	sRed
+6617	sWhite
+6618	sBlue
+6619	sBlack
+6620	sroyal division
+6621	sroyal division - alternate
+6622	sexplorer corps - alternate
+6624	sRainbow Pride
+6625	sBisexual Pride
+6626	sPansexual Pride
+6627	sAsexual Pride
+6628	sNon-binary Pride
+6629	sTransgender Pride
+6630	sIntersex Pride
+6631	sLesbian Pride
+6632	sGay Pride
+6634	sSword
+6635	sHarpoon
+6636	sDagger and Blaster
+6637	sGlaive
+6639	sSkull
+6641	sBrown
+6642	sBlack
+6643	sWhite
+6645	sOak
+6646	sGold
+6647	sRosewood
+6648	sBlack and Silver
+6649	sCommand Blue
+6651	sDefault
+6652	sFitz Special
+6653	sPolice Positive Special
+6654	sBlued Steel
+6655	sStainless Steel
+6656	sGold Trim
+6657	sGolden
+6658	sThe Peacemaker
+6659	sBlack Panther
+6661	sStandard Finish
+6662	sDark Red Finish
+6663	sAsh
+6664	sFaded Grey
+6665	sMaple
+6666	sRosewood
+6668	sBlue
+6669	sCyan
+6670	sGreen
+6671	sRed
+6672	sOrange
+6673	sPurple
+6675	sRed
+6676	sYellow
+6677	sBlue
 #priority
 10	f21
 11	f19
@@ -106683,6 +106778,10 @@ public static partial class TypeOrder
 19253	smodsuit_control
 19255	sspectre_meter_0
 19263	stext
+#projectile_icon
+32868	ricons/obj/weapons/guns/projectiles.dmi
+#projectile_icon_state
+32868	spulse1
 #projectile_sound
 774	n
 780	rsound/items/weapons/kinetic_accel.ogg
@@ -107055,6 +107154,26 @@ public static partial class TypeOrder
 43084	y/obj/projectile/bullet/shrapnel
 43085	y/obj/projectile/beam/laser/repeater
 43086	y/obj/projectile/bullet/ballista_spear
+#pull_force
+8323	n
+20976	f0
+21017	f30000
+21131	f30000
+21160	f2999
+21163	f2999
+21165	f2999
+21167	f500
+21174	f2999
+21215	f0
+21305	f30000
+21311	f30000
+21318	f2999
+21323	f2999
+21352	f0
+21388	f0
+21492	f9000
+21543	f30000
+39255	f1E+31
 #purchase_path
 11767	n
 11769	y/obj/item/reagent_containers/condiment/milk

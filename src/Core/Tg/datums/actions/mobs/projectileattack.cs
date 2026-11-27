@@ -9,7 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The base attack (gaps package C4) and the rapid fire (the netguardian's rockets); the shrapnel fire, the shotgun and the other
+// The base attack (gaps package C4), the rapid fire (the netguardian's rockets) and the directional shots (the bileworm
+// spewlet trophy's); the shrapnel fire, the shotgun and the other
 // megafauna's variants stay inert with their hosts.
 
 // tg: code/datums/actions/mobs/projectileattack.dm:2
@@ -98,5 +99,34 @@ public partial class datum_action_cooldown_mob_cooldown_projectile_attack_rapid_
             }
         }
         return null;
+    }
+}
+
+// tg: code/datums/actions/mobs/projectileattack.dm:258
+public partial class datum_action_cooldown_mob_cooldown_projectile_attack_dir_shots : datum_action_cooldown_mob_cooldown_projectile_attack
+{
+    // tg: code/datums/actions/mobs/projectileattack.dm:268
+    public override async DmTask New(params object[] __extra)
+    {
+        await base.New(__extra);
+        if (!Dm.truthy(firing_directions))
+            firing_directions = GLOB.alldirs.Copy();
+    }
+
+    // tg: code/datums/actions/mobs/projectileattack.dm:273
+    public override async DmTask<object> attack_sequence(mob_living firer = null, atom target = null)
+    {
+        fire_in_directions(firer, target, firing_directions);
+        return null;
+    }
+
+    // tg: code/datums/actions/mobs/projectileattack.dm:276
+    public virtual void fire_in_directions(mob_living firer = null, atom target = null, object dirs = null)
+    {
+        if (!islist(dirs))
+            dirs = GLOB.alldirs.Copy();
+        playsound(firer, projectile_sound, 200, TRUE, 2);
+        foreach (object dir in Dm.each(dirs as DmList))
+            shoot_projectile(firer, target, dir2angle(dir), firer);
     }
 }

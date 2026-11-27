@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M7x slice C: the revolver (cylinder, spin, ignition), the .38 revolver and the detective's, and the Russian revolver (the spin before
-// the trigger, the aim pause, the self-shot and its mood events). The reskin component and the memories are rows of
+// the trigger, the aim pause, the self-shot and its mood events). The detective's revolver's reskins are live; the memories are a row of
 // docs/ai/specs/not-translated.md section 48; the traitor mail's Russian revolver and the reverse revolver are syndicate G4a's (D316);
 // gaps GU1: the cursed Russian revolver of the Lavaland greed ruin (its cheater's dusting; the soul capture into a soulstone waits for
 // the cult's soulstones, section 215). The var blocks are generated (D111).
@@ -177,7 +177,7 @@ public partial class obj_item_gun_ballistic_revolver_c38_detective : obj_item_gu
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:168
     public override async DmTask setup_reskins()
     {
-        Dm.Deferred("code/modules/projectiles/guns/ballistic/revolver.dm:177", "setup_reskins: AddComponent(/datum/component/reskinable_item, /datum/atom_skin/det_revolver) (the reskin component and its radial menu)");
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_det_revolver));
     }
 }
 

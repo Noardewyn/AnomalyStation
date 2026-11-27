@@ -134,6 +134,46 @@ public partial class obj_effect_landmark_latejoin : obj_effect_landmark
     }
 }
 
+//generic maintenance locations
+// tg: code/game/objects/effects/landmarks.dm:362
+public partial class obj_effect_landmark_generic_maintenance_landmark : obj_effect_landmark
+{
+    // tg: code/game/objects/effects/landmarks.dm:366
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        base.Initialize(mapload, __extra);
+        Dm.append(ref GLOB.generic_maintenance_landmarks, loc);
+        return INITIALIZE_HINT_QDEL;
+    }
+}
+
+//objects with the stationloving component (nuke disk) respawn here.
+//also blobs that have their spawn forcemoved (running out of time when picking their spawn spot) and santa
+// tg: code/game/objects/effects/landmarks.dm:373
+public partial class obj_effect_landmark_blobstart : obj_effect_landmark
+{
+    // tg: code/game/objects/effects/landmarks.dm:377
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        base.Initialize(mapload, __extra);
+        Dm.append(ref GLOB.blobstart, loc);
+        return INITIALIZE_HINT_QDEL;
+    }
+}
+
+//spawns sec equipment lockers depending on the number of sec officers
+// tg: code/game/objects/effects/landmarks.dm:383
+public partial class obj_effect_landmark_secequipment : obj_effect_landmark
+{
+    // tg: code/game/objects/effects/landmarks.dm:387
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        base.Initialize(mapload, __extra);
+        Dm.append(ref GLOB.secequipment, loc);
+        return INITIALIZE_HINT_QDEL;
+    }
+}
+
 /**
  * Generic event spawn points
  *

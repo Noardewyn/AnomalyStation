@@ -5517,3 +5517,17 @@ Deviations: DV683 (the Aquarium window's locked sections).
 | `fish_analyzer.dm:63` | the analyzer's screen glow (`emissive_appearance`, DV12) | a fish analyzer seen in the dark | the emissive plane (DV12) | `fishing/aquarium/fish_analyzer.cs` |
 | `mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm` | the trading post's other gimmicks (only its donkfish aquarium is live) | the haunted trading post | the space ruins | `spaceruin_code/hauntedtradingpost.cs` |
 | the aquariums' 3D models | the aquariums, the fish tanks, the upgrade kits, the props, the fish analyzer, the athletic gloves and the fishing boxes keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 255. MetaStation's small leftovers (gaps MT1, the 2026-11-26 audit)
+Live: the blobstart, generic maintenance and security equipment landmarks (`effects/landmarks.dm:362-390`) fill `GLOB.blobstart`,
+`GLOB.generic_maintenance_landmarks` and `GLOB.secequipment` (the nuke disk's fallback relocation, `find_maintenance_spawn` and the
+Santa event read them), and `controllers/subsystem/job.dm:647`'s spare security lockers past five officers spawn on the last; the AI
+areas' `secure` ambience with `annoying_ambience` (`area/areas/station/ai.dm:14`) and the bar's `GLOB.bar_areas` (`service.dm:43`);
+the radiation shutters' insulation swap on open and close (`doors/shutters.dm:74-80`); the random contraband poster's trait, the
+medical wrench's examine, the chem master board's dial, the garbage decal's swab, the iced abductor's corpse; the outlet injector's
+and the passive gate's `AtmosPump` windows (`ui_interact`, `ui_data`, `ui_act`, the client already drew the window) and the volume
+pump's multitool overclock.
+
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `tools/engineering/wrench.dm:70` | the medical wrench's `suicide_act` (the prayer, the light and the servitude overlay; a live-partial row, as the other suicide acts) | the suicide verb | M10+ (the suicide verb) | `game/objects/items/tools/engineering/wrench.cs` |
+

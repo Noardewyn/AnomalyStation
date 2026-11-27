@@ -1349,9 +1349,9 @@ public partial class area_station_holodeck_rec_center_offstation_one : area_stat
     }
 }
 
-// tg: code/game/area/areas/station/ai.dm:2
-[DmPath("/area/station/ai"), DmGeneratedOnly, DmInert]
-public partial class area_station_ai : area_station
+// tg: code/game/area/areas/station/ai.dm:2 (the var block of a hand-written class)
+[DmPath("/area/station/ai")]
+public partial class area_station_ai
 {
     public float secure = 1; // tg: code/game/area/areas/station/ai.dm:9
     public DmList annoying_ambience; // tg: code/game/area/areas/station/ai.dm:12
@@ -1375,7 +1375,7 @@ public partial class area_station_ai : area_station
 }
 
 // tg: code/game/area/areas/station/ai.dm:25
-[DmPath("/area/station/ai/upload"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/upload"), DmGeneratedOnly]
 public partial class area_station_ai_upload : area_station_ai
 {
     // tg: code/game/area/areas/station/ai.dm:25
@@ -1388,7 +1388,7 @@ public partial class area_station_ai_upload : area_station_ai
 }
 
 // tg: code/game/area/areas/station/ai.dm:30
-[DmPath("/area/station/ai/upload/chamber"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/upload/chamber"), DmGeneratedOnly]
 public partial class area_station_ai_upload_chamber : area_station_ai_upload
 {
     // tg: code/game/area/areas/station/ai.dm:30
@@ -1400,7 +1400,7 @@ public partial class area_station_ai_upload_chamber : area_station_ai_upload
 }
 
 // tg: code/game/area/areas/station/ai.dm:34
-[DmPath("/area/station/ai/upload/foyer"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/upload/foyer"), DmGeneratedOnly]
 public partial class area_station_ai_upload_foyer : area_station_ai_upload
 {
     // tg: code/game/area/areas/station/ai.dm:34
@@ -1412,7 +1412,7 @@ public partial class area_station_ai_upload_foyer : area_station_ai_upload
 }
 
 // tg: code/game/area/areas/station/ai.dm:40
-[DmPath("/area/station/ai/satellite"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite"), DmGeneratedOnly]
 public partial class area_station_ai_satellite : area_station_ai
 {
     // tg: code/game/area/areas/station/ai.dm:40
@@ -1424,7 +1424,7 @@ public partial class area_station_ai_satellite : area_station_ai
 }
 
 // tg: code/game/area/areas/station/ai.dm:44 (the var block of a hand-written class)
-[DmPath("/area/station/ai/satellite/chamber"), DmInert]
+[DmPath("/area/station/ai/satellite/chamber")]
 public partial class area_station_ai_satellite_chamber
 {
     // tg: code/game/area/areas/station/ai.dm:44
@@ -1443,7 +1443,7 @@ public partial class area_station_ai_satellite_chamber
 }
 
 // tg: code/game/area/areas/station/ai.dm:53
-[DmPath("/area/station/ai/satellite/exterior"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/exterior"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_exterior : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:53
@@ -1455,7 +1455,7 @@ public partial class area_station_ai_satellite_exterior : area_station_ai_satell
 }
 
 // tg: code/game/area/areas/station/ai.dm:57
-[DmPath("/area/station/ai/satellite/maintenance"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/maintenance"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_maintenance : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:57
@@ -1467,7 +1467,7 @@ public partial class area_station_ai_satellite_maintenance : area_station_ai_sat
 }
 
 // tg: code/game/area/areas/station/ai.dm:61
-[DmPath("/area/station/ai/satellite/maintenance/storage"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/maintenance/storage"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_maintenance_storage : area_station_ai_satellite_maintenance
 {
     // tg: code/game/area/areas/station/ai.dm:61
@@ -1480,7 +1480,7 @@ public partial class area_station_ai_satellite_maintenance_storage : area_statio
 }
 
 // tg: code/game/area/areas/station/ai.dm:68
-[DmPath("/area/station/ai/satellite/interior"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/interior"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_interior : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:68
@@ -1493,7 +1493,7 @@ public partial class area_station_ai_satellite_interior : area_station_ai_satell
 }
 
 // tg: code/game/area/areas/station/ai.dm:73
-[DmPath("/area/station/ai/satellite/foyer"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/foyer"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_foyer : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:73
@@ -1505,7 +1505,7 @@ public partial class area_station_ai_satellite_foyer : area_station_ai_satellite
 }
 
 // tg: code/game/area/areas/station/ai.dm:77
-[DmPath("/area/station/ai/satellite/hallway"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/hallway"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_hallway : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:77
@@ -1516,7 +1516,7 @@ public partial class area_station_ai_satellite_hallway : area_station_ai_satelli
 }
 
 // tg: code/game/area/areas/station/ai.dm:80
-[DmPath("/area/station/ai/satellite/uppernorth"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/uppernorth"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_uppernorth : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:80
@@ -1527,7 +1527,7 @@ public partial class area_station_ai_satellite_uppernorth : area_station_ai_sate
 }
 
 // tg: code/game/area/areas/station/ai.dm:83
-[DmPath("/area/station/ai/satellite/uppersouth"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/uppersouth"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_uppersouth : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:83
@@ -1538,7 +1538,7 @@ public partial class area_station_ai_satellite_uppersouth : area_station_ai_sate
 }
 
 // tg: code/game/area/areas/station/ai.dm:88
-[DmPath("/area/station/ai/satellite/atmos"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/atmos"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_atmos : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:88
@@ -1549,7 +1549,7 @@ public partial class area_station_ai_satellite_atmos : area_station_ai_satellite
 }
 
 // tg: code/game/area/areas/station/ai.dm:91
-[DmPath("/area/station/ai/satellite/service"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/service"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_service : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:91
@@ -1560,7 +1560,7 @@ public partial class area_station_ai_satellite_service : area_station_ai_satelli
 }
 
 // tg: code/game/area/areas/station/ai.dm:94
-[DmPath("/area/station/ai/satellite/teleporter"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/teleporter"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_teleporter : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:94
@@ -1571,7 +1571,7 @@ public partial class area_station_ai_satellite_teleporter : area_station_ai_sate
 }
 
 // tg: code/game/area/areas/station/ai.dm:97
-[DmPath("/area/station/ai/satellite/equipment"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/ai/satellite/equipment"), DmGeneratedOnly]
 public partial class area_station_ai_satellite_equipment : area_station_ai_satellite
 {
     // tg: code/game/area/areas/station/ai.dm:97
@@ -4987,9 +4987,9 @@ public partial class area_station_service_kitchen_abandoned : area_station_servi
     }
 }
 
-// tg: code/game/area/areas/station/service.dm:35
-[DmPath("/area/station/service/bar"), DmGeneratedOnly, DmInert]
-public partial class area_station_service_bar : area_station_service
+// tg: code/game/area/areas/station/service.dm:35 (the var block of a hand-written class)
+[DmPath("/area/station/service/bar")]
+public partial class area_station_service_bar
 {
     // tg: code/game/area/areas/station/service.dm:35
     public area_station_service_bar()
@@ -5005,7 +5005,7 @@ public partial class area_station_service_bar : area_station_service
 }
 
 // tg: code/game/area/areas/station/service.dm:48
-[DmPath("/area/station/service/bar/atrium"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/service/bar/atrium"), DmGeneratedOnly]
 public partial class area_station_service_bar_atrium : area_station_service_bar
 {
     // tg: code/game/area/areas/station/service.dm:48
@@ -5018,7 +5018,7 @@ public partial class area_station_service_bar_atrium : area_station_service_bar
 }
 
 // tg: code/game/area/areas/station/service.dm:53
-[DmPath("/area/station/service/bar/backroom"), DmGeneratedOnly, DmInert]
+[DmPath("/area/station/service/bar/backroom"), DmGeneratedOnly]
 public partial class area_station_service_bar_backroom : area_station_service_bar
 {
     // tg: code/game/area/areas/station/service.dm:53

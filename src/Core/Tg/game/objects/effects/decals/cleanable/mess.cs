@@ -225,6 +225,20 @@ public partial class obj_effect_decal_cleanable_vomit_old : obj_effect_decal_cle
     }
 }
 
+// tg: code/game/objects/effects/decals/cleanable/mess.dm:366
+public partial class obj_effect_decal_cleanable_garbage : obj_effect_decal_cleanable
+{
+    // tg: code/game/objects/effects/decals/cleanable/mess.dm:375
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        if (Dm.eq(dot, INITIALIZE_HINT_QDEL))
+            return dot;
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 15));
+        return dot;
+    }
+}
+
 // tg: code/game/objects/effects/decals/cleanable/mess.dm:382
 public partial class obj_effect_decal_cleanable_rubble : obj_effect_decal_cleanable
 {

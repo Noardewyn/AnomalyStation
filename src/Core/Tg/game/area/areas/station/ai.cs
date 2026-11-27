@@ -9,8 +9,23 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: gaps E1b (D327): the AI chamber's Initialize, which the grid check's power failure spares (block_area_power_fail); the
-// file's other areas are var-only.
+// tg: code/game/area/areas/station/ai.dm:1
+public partial class area_station_ai : area_station
+{
+    // tg: code/game/area/areas/station/ai.dm:14
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        if (!Dm.truthy(secure))
+        {
+            ambientsounds = null;
+            return dot;
+        }
+        if (Dm.truthy(annoying_ambience))
+            Dm.append(ref ambientsounds, annoying_ambience);
+        return dot;
+    }
+}
 
 // tg: code/game/area/areas/station/ai.dm:43
 public partial class area_station_ai_satellite_chamber : area_station_ai_satellite

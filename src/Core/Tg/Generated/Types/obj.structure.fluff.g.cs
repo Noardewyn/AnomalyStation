@@ -805,9 +805,9 @@ public partial class obj_structure_fluff_arc : obj_structure_fluff
     }
 }
 
-// tg: code/modules/antagonists/abductor/ice_abductor.dm:2
-[DmPath("/obj/structure/fluff/iced_abductor"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_fluff_iced_abductor : obj_structure_fluff
+// tg: code/modules/antagonists/abductor/ice_abductor.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/fluff/iced_abductor")]
+public partial class obj_structure_fluff_iced_abductor
 {
     // tg: code/modules/antagonists/abductor/ice_abductor.dm:2
     public obj_structure_fluff_iced_abductor()

@@ -40,3 +40,23 @@ public partial class obj_machinery_door_poddoor_shutters : obj_machinery_door_po
         return null;
     }
 }
+
+// tg: code/game/machinery/doors/shutters.dm:52
+public partial class obj_machinery_door_poddoor_shutters_radiation : obj_machinery_door_poddoor_shutters
+{
+    // tg: code/game/machinery/doors/shutters.dm:74
+    public override async DmTask<object> open(float? forced = null, mob_living opener = null)
+    {
+        object dot = await base.open(forced, opener);
+        rad_insulation = RAD_NO_INSULATION;
+        return dot;
+    }
+
+    // tg: code/game/machinery/doors/shutters.dm:78
+    public override async DmTask<object> close(float? forced = null, params object[] __extra)
+    {
+        object dot = await base.close(forced, __extra);
+        rad_insulation = RAD_EXTREME_INSULATION;
+        return dot;
+    }
+}

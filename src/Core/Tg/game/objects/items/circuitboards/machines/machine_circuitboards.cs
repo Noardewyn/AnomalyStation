@@ -257,6 +257,28 @@ public partial class obj_item_circuitboard_machine_smartfridge : obj_item_circui
     }
 }
 
+// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:830
+public partial class obj_item_circuitboard_machine_chem_master : obj_item_circuitboard_machine
+{
+    // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:840
+    public override async DmTask<object> screwdriver_act(mob_living user = null, obj_item tool = null)
+    {
+        string new_name = "ChemMaster";
+        Type new_path = typeof(obj_machinery_chem_master);
+
+        if (Dm.eq(build_path, typeof(obj_machinery_chem_master)))
+        {
+            new_name = "CondiMaster";
+            new_path = typeof(obj_machinery_chem_master_condimaster);
+        }
+
+        build_path = new_path;
+        name = Dm.text("[] 3000", new_name);
+        to_chat(user, span_notice(I18n.T("You change the circuit board setting to \"[]\".", new_name)));
+        return null;
+    }
+}
+
 // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:875
 public partial class obj_item_circuitboard_machine_medical_kiosk : obj_item_circuitboard_machine
 {

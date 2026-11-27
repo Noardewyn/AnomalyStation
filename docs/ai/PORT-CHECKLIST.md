@@ -62,7 +62,7 @@ Live mechanics that still miss a window, a leaf or a piece the owner put off.
 - [x] M10x's slices (D281, D282, `docs/ai/specs/lobby.md`; done, released in 1.1.0-pre-alpha): G the Esc menu, bug reports and tg's admin help, D the character's looks, E the preview, I the closing; not now (owner): tg's server game preferences (stashed, D282), the Quirks, Loadout and Personality tabs, the polls (the Antagonists tab: syndicate A3, D316)
 - [x] M9x station life (D228, D249): eating, drinking and hunger with the nutrition HUD (done, gaps S1), vending machines (done, gaps S2: free until the economy, DV225), paper, pens, clipboards and the hand labeler (done, gaps S3), the PDA's job apps (done, gaps S4; the cargo apps, the budget orders, shipping and bounty board: gaps P4)
 - [ ] The core version's left-outs (ROADMAP 4): languages (alpha; done in gaps L2), proximity voice (D254; TTS and speech to text came with D307), full rollback beyond stage 1 (D38)
-- [ ] MetaStation's last inert pieces (the 2026-11-26 audit, gaps MT1): the blobstart (Meta 25), generic maintenance (Meta 30) and security equipment (Meta 4) landmarks, with tg's extra security lockers past five officers; the AI satellite's and upload's ambience (`/area/station/ai`, 530 tiles) and the bar's area list (72 tiles); the engine's radiation shutters shielding when closed (Meta 11); the random contraband poster (Meta 14), the medical wrench (Meta 3), the chem master's board (Meta 1), the garbage decal (Meta 1), the iced abductor (Meta 1); the outlet injector's and the passive gate's windows (Meta 14 and 3; win: AtmosPump); the volume pump's overclock
+- [x] MetaStation's last inert pieces (the 2026-11-26 audit, gaps MT1; the medical wrench's suicide waits for the suicide verb): the blobstart (Meta 25), generic maintenance (Meta 30) and security equipment (Meta 4) landmarks, with tg's extra security lockers past five officers; the AI satellite's and upload's ambience (`/area/station/ai`, 530 tiles) and the bar's area list (72 tiles); the engine's radiation shutters shielding when closed (Meta 11); the random contraband poster (Meta 14), the medical wrench (Meta 3), the chem master's board (Meta 1), the garbage decal (Meta 1), the iced abductor (Meta 1); the outlet injector's and the passive gate's windows (Meta 14 and 3; win: AtmosPump); the volume pump's overclock
 
 ---
 
@@ -98,7 +98,7 @@ Already ported: the ticker, the lobby and the round start, late join, the emerge
 
 ---
 
-## 3. Antagonists (`modules/antagonists` 915/3,715; `/datum/antagonist` 45/142)
+## 3. Antagonists (`modules/antagonists` 916/3,715; `/datum/antagonist` 45/142)
 
 Each row means the antagonist with its datum, team, objectives, powers, items, HUD icon and info window.
 

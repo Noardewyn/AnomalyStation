@@ -1548,6 +1548,19 @@ public partial class obj_item_wrench
     }
 }
 
+// tg: code/game/objects/items/tools/engineering/wrench.dm:54
+public partial class obj_item_wrench_medical
+{
+    // tg: code/game/objects/items/tools/engineering/wrench.dm:70
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
+    [DmGeneratedStub]
+    public override DmTask<object> suicide_act(mob_living user = null)
+    {
+        Dm.Deferred("code/game/objects/items/tools/engineering/wrench.dm:70", "suicide_act: suicides (the suicide verb, M10+) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+}
+
 // tg: code/game/objects/items/tools/engineering/painter/airlock_painter.dm:2
 public partial class obj_item_airlock_painter
 {
@@ -2405,33 +2418,6 @@ public partial class obj_machinery_atmospherics_components_unary_outlet_injector
         Dm.Deferred("code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:36", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
         return default;
     }
-
-    // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:113
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_interact(mob user = null, datum_tgui ui = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:113", "ui_interact: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:119
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_data(mob user = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:119", "ui_data: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:126
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_act(object action = null, DmList @params = null, datum_tgui ui = null, datum_ui_state state = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:126", "ui_act: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
 }
 
 // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:11
@@ -2444,33 +2430,6 @@ public partial class obj_machinery_atmospherics_components_binary_passive_gate
     {
         Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:29", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
         return default;
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:76
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_interact(mob user = null, datum_tgui ui = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:76", "ui_interact: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:82
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_data(mob user = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:82", "ui_data: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:89
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_act(object action = null, DmList @params = null, datum_tgui ui = null, datum_ui_state state = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:89", "ui_act: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
     }
 }
 
@@ -2536,15 +2495,6 @@ public partial class obj_machinery_atmospherics_components_binary_volume_pump
     {
         Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:114", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
         return default;
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:163
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> multitool_act(mob_living user = null, obj_item tool = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:163", "multitool_act: the volume pump's overclock (atmospherics, after the core version) (M10+)");
-        return DmTask<object>.FromResult(default);
     }
 }
 

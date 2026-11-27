@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // PARTIAL (M4b slice 2: the passive gate): the init, the ctrl and alt clicks, the picture, process_atmos and
 // can_unwrench. Deferred leaves: the screentip context (M9) and the investigate logs (M10). Generated live-partial stubs:
-// add_context (M9) and the tgui window (ui_interact, ui_data, ui_act: M9); the ventcrawling relaymove since gaps X5. The var block
+// add_context (M9); the tgui window (ui_interact, ui_data, ui_act) is tg's AtmosPump; the ventcrawling relaymove since gaps X5. The var block
 // is generated.
 
 /*
@@ -83,6 +83,63 @@ public partial class obj_machinery_atmospherics_components_binary_passive_gate :
         if (Dm.truthy(input_air.release_gas_to(output_air, target_pressure, output_pipenet_air: output_pipenet_air)))
             update_parents();
         return null;
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:76
+    public override async DmTask<object> ui_interact(mob user = null, datum_tgui ui = null, params object[] __extra)
+    {
+        ui = await SStgui.try_update_ui(user, this, ui) as datum_tgui;
+        if (!Dm.truthy(ui))
+        {
+            ui = Dm.@new<datum_tgui>(user, this, "AtmosPump", name);
+            await ui.open();
+        }
+        return null;
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:82
+    public override async DmTask<object> ui_data(mob user = null)
+    {
+        DmList data = Dm.list();
+        data["on"] = on;
+        data["pressure"] = round(target_pressure);
+        data["max_pressure"] = round(MAX_OUTPUT_PRESSURE);
+        return data;
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:89
+    public override async DmTask<object> ui_act(object action = null, DmList @params = null, datum_tgui ui = null, datum_ui_state state = null)
+    {
+        object dot = await base.ui_act(action, @params, ui, state);
+        if (Dm.truthy(dot))
+            return dot;
+        if (Dm.eq(action, "power"))
+        {
+            on = Dm.truthy(on) ? FALSE : TRUE;
+            investigate_log(Dm.text("was turned [] by []", Dm.truthy(on) ? "on" : "off", key_name(usr)), INVESTIGATE_ATMOS);
+            dot = TRUE;
+        }
+        else if (Dm.eq(action, "pressure"))
+        {
+            object pressure = @params["pressure"];
+            if (Dm.eq(pressure, "max"))
+            {
+                pressure = MAX_OUTPUT_PRESSURE;
+                dot = TRUE;
+            }
+            else if (text2num(pressure) != null)
+            {
+                pressure = text2num(pressure);
+                dot = TRUE;
+            }
+            if (Dm.truthy(dot))
+            {
+                target_pressure = clamp(Dm.num(pressure), 0, ONE_ATMOSPHERE * 100);
+                investigate_log(Dm.text("was set to [] kPa by []", target_pressure, key_name(usr)), INVESTIGATE_ATMOS);
+            }
+        }
+        update_appearance(UPDATE_ICON);
+        return dot;
     }
 
     // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:111

@@ -11,8 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // PARTIAL (M4b slice 2: the volume pump): the init, the ctrl and alt clicks, the picture, process_atmos and can_unwrench.
 // Deferred leaves: the screentip context (M9) and the investigate logs (M10). Generated
-// live-partial stubs: add_context (M9) and the multitool
-// overclock (multitool_act, M4a). The USB port and its circuit component (/obj/item/circuit_component/atmos_volume_pump) are live. The var block is
+// live-partial stub: add_context (M9). The multitool's overclock (multitool_act) is translated. The USB port and its circuit component (/obj/item/circuit_component/atmos_volume_pump) are live. The var block is
 // generated.
 
 // Every cycle, the pump uses the air in air_in to try and move a specific volume of gas into air_out.
@@ -204,6 +203,23 @@ public partial class obj_machinery_atmospherics_components_binary_volume_pump : 
         }
         update_appearance(UPDATE_ICON);
         return dot;
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:163
+    public override async DmTask<object> multitool_act(mob_living user = null, obj_item tool = null)
+    {
+        if (!Dm.truthy(overclocked))
+        {
+            overclocked = TRUE;
+            to_chat(user, I18n.T("The pump makes a grinding noise and air starts to hiss out as you disable its pressure limits."));
+        }
+        else
+        {
+            overclocked = FALSE;
+            to_chat(user, I18n.T("The pump quiets down as you turn its limiters back on."));
+        }
+        update_appearance(UPDATE_ICON);
+        return TRUE;
     }
 
     // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:157

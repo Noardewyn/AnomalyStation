@@ -1755,9 +1755,9 @@ public partial class obj_effect_decal_cleanable_wrapping_pinata_donk : obj_effec
     }
 }
 
-// tg: code/game/objects/effects/decals/cleanable/mess.dm:366
-[DmPath("/obj/effect/decal/cleanable/garbage"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_garbage : obj_effect_decal_cleanable
+// tg: code/game/objects/effects/decals/cleanable/mess.dm:366 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/garbage")]
+public partial class obj_effect_decal_cleanable_garbage
 {
     // tg: code/game/objects/effects/decals/cleanable/mess.dm:366
     public obj_effect_decal_cleanable_garbage()

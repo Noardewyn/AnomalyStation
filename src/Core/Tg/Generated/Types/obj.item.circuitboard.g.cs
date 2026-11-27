@@ -1891,9 +1891,9 @@ public partial class obj_item_circuitboard_machine_chem_mass_spec : obj_item_cir
     }
 }
 
-// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:830
-[DmPath("/obj/item/circuitboard/machine/chem_master"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_machine_chem_master : obj_item_circuitboard_machine
+// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:830 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/machine/chem_master")]
+public partial class obj_item_circuitboard_machine_chem_master
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:830
     public obj_item_circuitboard_machine_chem_master()
@@ -1914,7 +1914,7 @@ public partial class obj_item_circuitboard_machine_chem_master : obj_item_circui
 }
 
 // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1246
-[DmPath("/obj/item/circuitboard/machine/chem_master/condi"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/circuitboard/machine/chem_master/condi"), DmGeneratedOnly]
 public partial class obj_item_circuitboard_machine_chem_master_condi : obj_item_circuitboard_machine_chem_master
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1246

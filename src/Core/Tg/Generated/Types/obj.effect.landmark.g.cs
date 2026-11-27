@@ -775,9 +775,9 @@ public partial class obj_effect_landmark_observer_start : obj_effect_landmark
     }
 }
 
-// tg: code/game/objects/effects/landmarks.dm:362
-[DmPath("/obj/effect/landmark/generic_maintenance_landmark"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_landmark_generic_maintenance_landmark : obj_effect_landmark
+// tg: code/game/objects/effects/landmarks.dm:362 (the var block of a hand-written class)
+[DmPath("/obj/effect/landmark/generic_maintenance_landmark")]
+public partial class obj_effect_landmark_generic_maintenance_landmark
 {
     // tg: code/game/objects/effects/landmarks.dm:362
     public obj_effect_landmark_generic_maintenance_landmark()
@@ -787,9 +787,9 @@ public partial class obj_effect_landmark_generic_maintenance_landmark : obj_effe
     }
 }
 
-// tg: code/game/objects/effects/landmarks.dm:373
-[DmPath("/obj/effect/landmark/blobstart"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_landmark_blobstart : obj_effect_landmark
+// tg: code/game/objects/effects/landmarks.dm:373 (the var block of a hand-written class)
+[DmPath("/obj/effect/landmark/blobstart")]
+public partial class obj_effect_landmark_blobstart
 {
     // tg: code/game/objects/effects/landmarks.dm:373
     public obj_effect_landmark_blobstart()
@@ -799,9 +799,9 @@ public partial class obj_effect_landmark_blobstart : obj_effect_landmark
     }
 }
 
-// tg: code/game/objects/effects/landmarks.dm:383
-[DmPath("/obj/effect/landmark/secequipment"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_landmark_secequipment : obj_effect_landmark
+// tg: code/game/objects/effects/landmarks.dm:383 (the var block of a hand-written class)
+[DmPath("/obj/effect/landmark/secequipment")]
+public partial class obj_effect_landmark_secequipment
 {
     // tg: code/game/objects/effects/landmarks.dm:383
     public obj_effect_landmark_secequipment()

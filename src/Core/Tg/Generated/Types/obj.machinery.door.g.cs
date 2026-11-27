@@ -1857,9 +1857,9 @@ public partial class obj_machinery_door_poddoor_shutters_indestructible_preopen 
     }
 }
 
-// tg: code/game/machinery/doors/shutters.dm:53
-[DmPath("/obj/machinery/door/poddoor/shutters/radiation"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_door_poddoor_shutters_radiation : obj_machinery_door_poddoor_shutters
+// tg: code/game/machinery/doors/shutters.dm:53 (the var block of a hand-written class)
+[DmPath("/obj/machinery/door/poddoor/shutters/radiation")]
+public partial class obj_machinery_door_poddoor_shutters_radiation
 {
     // tg: code/game/machinery/doors/shutters.dm:53
     public obj_machinery_door_poddoor_shutters_radiation()
@@ -1873,7 +1873,7 @@ public partial class obj_machinery_door_poddoor_shutters_radiation : obj_machine
 }
 
 // tg: code/game/machinery/doors/shutters.dm:60
-[DmPath("/obj/machinery/door/poddoor/shutters/radiation/preopen"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/poddoor/shutters/radiation/preopen"), DmGeneratedOnly]
 public partial class obj_machinery_door_poddoor_shutters_radiation_preopen : obj_machinery_door_poddoor_shutters_radiation
 {
     // tg: code/game/machinery/doors/shutters.dm:60

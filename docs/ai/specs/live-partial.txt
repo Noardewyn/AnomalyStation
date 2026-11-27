@@ -78,18 +78,11 @@
 # The atmospherics device base, the unary devices, the air vents and the air scrubbers are live; the procs they leave out:
 /obj/machinery/atmospherics/components	get_save_vars	M10+	deferred	admin variable editing and map saving
 /obj/machinery/atmospherics/components/unary/outlet_injector	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
-/obj/machinery/atmospherics/components/unary/outlet_injector	ui_interact	M10+	deferred	tgui windows
-/obj/machinery/atmospherics/components/unary/outlet_injector	ui_data	M10+	deferred	tgui windows
-/obj/machinery/atmospherics/components/unary/outlet_injector	ui_act	M10+	deferred	tgui windows
 /obj/machinery/atmospherics/components/trinary/filter	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /obj/machinery/atmospherics/components/trinary/mixer	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /obj/machinery/atmospherics/components/binary/pump	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /obj/machinery/atmospherics/components/binary/volume_pump	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
-/obj/machinery/atmospherics/components/binary/volume_pump	multitool_act	M10+	deferred	the volume pump's overclock (atmospherics, after the core version)
 /obj/machinery/atmospherics/components/binary/passive_gate	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
-/obj/machinery/atmospherics/components/binary/passive_gate	ui_interact	M10+	deferred	tgui windows
-/obj/machinery/atmospherics/components/binary/passive_gate	ui_data	M10+	deferred	tgui windows
-/obj/machinery/atmospherics/components/binary/passive_gate	ui_act	M10+	deferred	tgui windows
 
 ## M4b slice 2: firelocks and fire alarms
 # The firelocks and the fire alarms are live; the procs they leave out:
@@ -774,3 +767,6 @@
 
 ## Species SP3b (D349)
 # No rows: every proc of the abductor, dullahan, vampire, spirit/ghost and nightmare species is translated. Left out whole (their types stay inert): the abductor baton recall (summonitem/abductor, abductor gear), the nightmare antagonist's terrorize spell and the shadow cloak (heretic).
+
+## The MetaStation leftovers (gaps MT1)
+/obj/item/wrench/medical	suicide_act	M10+	deferred	suicides (the suicide verb, M10+)

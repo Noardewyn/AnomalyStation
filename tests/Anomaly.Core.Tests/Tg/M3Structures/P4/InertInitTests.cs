@@ -168,7 +168,7 @@ public class InertInitTests
         var room = TgToyRoom.Create();
         using (room.World.Enter())
         {
-            Type areaType = FirstInertGenerated(typeof(area_station_service_bar)); // D296 made the maintenance areas live
+            Type areaType = FirstInertGenerated(typeof(area_centcom_central_command_areas_supplypod_loading)); // the maintenance (D296), bar and AI areas are live
             var inert = Dm.@new(areaType) as area;
 
             Assert.Empty(room.RuntimeText);

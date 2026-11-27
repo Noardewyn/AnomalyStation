@@ -7801,9 +7801,9 @@ public partial class obj_item_poster_wanted_missing : obj_item_poster_wanted
     }
 }
 
-// tg: code/game/objects/effects/posters/contraband.dm:3
-[DmPath("/obj/item/poster/random_contraband"), DmGeneratedOnly, DmInert]
-public partial class obj_item_poster_random_contraband : obj_item_poster
+// tg: code/game/objects/effects/posters/contraband.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/poster/random_contraband")]
+public partial class obj_item_poster_random_contraband
 {
     // tg: code/game/objects/effects/posters/contraband.dm:3
     public obj_item_poster_random_contraband()
@@ -27184,9 +27184,9 @@ public partial class obj_item_wrench_abductor : obj_item_wrench
     }
 }
 
-// tg: code/game/objects/items/tools/engineering/wrench.dm:54
-[DmPath("/obj/item/wrench/medical"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wrench_medical : obj_item_wrench
+// tg: code/game/objects/items/tools/engineering/wrench.dm:54 (the var block of a hand-written class)
+[DmPath("/obj/item/wrench/medical")]
+public partial class obj_item_wrench_medical
 {
     public object suicider; // tg: code/game/objects/items/tools/engineering/wrench.dm:63
 

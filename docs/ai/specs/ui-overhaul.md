@@ -49,6 +49,7 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `7e4f032` | Package 3: the belt hotbar, ten cells on the number keys, action buttons on Shift+digits (server and client, protocol 98, DV603; section 10; signed off by the contributor 2026-11-27) |
 | `11e5c15` | The chat window above the bar, see-through at rest, input shown only while typing (client only; section 13) |
 | `a951ee7` | Package 4, slice 4A: under Tab the chat column, the character with its worn slots, clicks on the sprite, the overlay closing on damage (client only; DV604; section 12) |
+| `4012739` | tg's own slot sprites on the hands, the bar and the worn slots (client only; section 16) |
 
 The branch follows `origin/main` (https://github.com/Noardewyn/AnomalyStation): fetch at the start of a session and
 before any wire or server work, and merge upstream in before building on it; upstream's protocol and DV numbers win

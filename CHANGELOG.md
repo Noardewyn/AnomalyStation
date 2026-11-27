@@ -7,6 +7,12 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+## [1.16.0-pre-alpha] - 2026-11-27
+
+### Protocol
+
+- Network protocol 99: clients and servers older than 1.16.0-pre-alpha cannot connect to this version.
+
 ### Added
 
 - Cigarettes and their smokers give off smoke, and lighters', welders' and flares' flames flicker.

@@ -133,7 +133,7 @@ public class LookDownTests
     }
 
     [Theory]
-    // the picture is 0.05 m a pixel: the playtest clicked icon rows 2 (the left leg), 11 (tg's groin rows 10 to 13) and 14 (the chest)
+    // the picture is 0.05 m a pixel: these heights are icon rows 2 (the left leg), 11 (tg's groin rows 10 to 13) and 14 (the chest)
     [InlineData(105, 0.084)] // the feet
     [InlineData(119, 0.534)] // the groin
     [InlineData(135, 0.696)] // the chest

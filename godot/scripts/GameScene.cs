@@ -757,6 +757,8 @@ public partial class GameScene : Node3D
         bool onTurf = own != 0 && _feed.Replica.TryGet(own, out body);
         _entities.OwnBodyInView = _rig.Camera != null && LookDown.ShowsOwnBody(_rig.Pitch, _rig.FovDegrees, _rig.Camera.Near, _rig.EyeUp, _rig.Mode == CameraMode.FirstPerson,
             onTurf, ghost, observing, PostureBits.IsLying(pose.Posture), PostureBits.IsLimp(pose.Posture), onTurf && body.IsExosuit(), _scopeZoom >= 1.01f);
+        _ownBodyShowable = LookDown.CanShowOwnBody(_rig.Mode == CameraMode.FirstPerson, onTurf, ghost, observing, PostureBits.IsLying(pose.Posture),
+            PostureBits.IsLimp(pose.Posture), onTurf && body.IsExosuit(), _scopeZoom >= 1.01f); // DV691: a held drag of oneself ends when the body cannot be shown
         using (Dev.FrameProbe.Scope("GameScene/entities.Update"))
             _entities.Update(_session.RenderTick, now, observing ? eye : own, observing || (_rig.Mode == CameraMode.FirstPerson && !ghost), _names);
 
@@ -856,6 +858,8 @@ public partial class GameScene : Node3D
         UpdateEditor();
         _hudLayer.RenderTick = _session.RenderTick; // M4v slice 4: the screen objects' flicks and animate() chains play at the entities' render tick
         _hudLayer.CursorMode = _mouse.CursorMode; // ui-overhaul.md 6: tg's zone selector shows only while the cursor is free
+        _hudLayer.SelfDrag = _selfDrag.Holding; // DV691: the hint strip reads "Yourself" while the own body is dragged
+        _hudLayer.SelfDragPicture = _selfDrag.HintPicture(_feed.Replica); // with the own body's picture, as the drag mark shows it
         _hudLayer.Hotbar = _session.Hotbar; // ui-overhaul.md section 10: the bar's cells
         // slice T5c: the doll's part under the free pointer, so its eyes and mouth show tg's hover pictures
         _hudLayer.DollHover = _hudHover.Kind == TargetKind.Screen ? BodyZoneAim.DollFaceAt(_hudLayer.DollZoneAt(_hudHover.Id, _hudHover.IconX, _hudHover.IconY), _hudHover.IconX, _hudHover.IconY) : AimZone.None;
@@ -1219,6 +1223,13 @@ public partial class GameScene : Node3D
                 Dev.Tracy.Message($"script: {step.Action} {step.Key}{(step.Action == ScriptAction.Press ? "+" : step.Action == ScriptAction.Release ? "-" : "")}");
             switch (step.Action)
             {
+                case ScriptAction.Press or ScriptAction.Release when step.Key.StartsWith("MOUSE", StringComparison.Ordinal):
+                {
+                    // MOUSELEFT+ ... MOUSELEFT-: a mouse button held at the crosshair (the screen's centre) until its release step, so view steps can come between
+                    Vector2 centre = GetViewport().GetVisibleRect().Size / 2f;
+                    Input.ParseInputEvent(WithHeldKeys(new InputEventMouseButton { ButtonIndex = ScriptButton(step.Key[5..]), Pressed = step.Action == ScriptAction.Press, Position = centre, GlobalPosition = centre }));
+                    break;
+                }
                 case ScriptAction.Press:
                 case ScriptAction.Release:
                     Key key = ScriptKey(step.Key);

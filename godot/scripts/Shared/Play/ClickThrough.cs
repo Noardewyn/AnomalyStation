@@ -5,6 +5,7 @@ namespace Anomaly.Client.Shared;
 /// <summary>Which entities a click passes through to what is behind them, decided on the client by type path.</summary>
 public static class ClickThrough
 {
+    // DEVIATION(DV685): these types are left out of the pick shapes in play by type path, so a click goes to what is behind them.
     // tg sets mouse_opacity = MOUSE_OPACITY_TRANSPARENT on these (temporary_visual.dm:6, game.dm:139 for the attack's flick visual, projectile_effects.dm:7
     // for a shot's tracer, muzzle and impact) and BYOND never gives them a click; mouse_opacity is not replicated, so the client knows them by type.
     private static readonly string[] Types = { "/atom/movable/flick_visual", "/obj/effect/temp_visual", "/obj/effect/projectile" };

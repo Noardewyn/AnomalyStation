@@ -290,7 +290,7 @@ public class HudTests
         Assert.NotEqual(HealthZones.Hatch(new ZoneState("chest", ZoneKind.Level, 3)), HealthZones.Hatch(new ZoneState("chest", ZoneKind.Level, 4)));
     }
 
-    // playtest 2026-11-24: tinted by its red marks, tg's disabled sprite (dark grey with bright red marks) read as a dark maroon
+    // tg's disabled sprite (dark grey with bright red marks) is drawn untinted: tinted by its red marks it would read as a dark maroon
     [Fact]
     public void WithoutAColourblindPaletteADisabledPartIsTgsOwnPictureAndKeepsItsHatch()
     {
@@ -334,7 +334,7 @@ public class HudTests
     private static readonly HatchStyle[] AllHatched =
         { HatchStyle.Light, HatchStyle.Medium, HatchStyle.Cross, HatchStyle.DenseCross, HatchStyle.Solid, HatchStyle.Dots, HatchStyle.Bars, HatchStyle.Stripes };
 
-    // ui-overhaul.md 6 (playtest 2026-11-24): at levels 4 and 5 the old hatching covered most of the part and it read near-black
+    // ui-overhaul.md 6: every hatching leaves most of the part in its colour, so levels 4 and 5 do not read near-black
     [Fact]
     public void EveryHatchingLeavesMostOfThePartInItsColourAndTheLevelsStayApart()
     {

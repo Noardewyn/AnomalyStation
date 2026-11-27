@@ -6,8 +6,8 @@ namespace Anomaly.Client.Shared;
 // Protocol version 17 (drag and drop; docs/ai/specs/interaction.md section 8). Engine-free: no Godot API here (it is compiled into
 // tests/Anomaly.Server.Tests too). BYOND's client turns a press into a drag once the mouse moves with the button held (OpenDream's
 // MouseInputSystem: 3 screen pixels) and calls MouseDrop on the release over the thing under the mouse; a press and a release without
-// that move is a click. The game scene feeds the cursor mode's (Tab) left button and pointer moves into this model; the captured view
-// has no drags.
+// that move is a click. The game scene feeds the cursor mode's (Tab) left button and pointer moves into this model; the captured view's
+// only drag is of the own body (SelfDrag, DV691).
 
 /// <summary>What a release does (<see cref="DragModel.Release"/>).</summary>
 public enum DragOutcome : byte

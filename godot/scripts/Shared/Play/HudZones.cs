@@ -266,7 +266,7 @@ public static class HealthZones
     /// <summary>
     /// The standard ramp (wireframes, Mockup 1: green, yellow, orange, red, dark grey): level 0 green, 1 to 2 yellow, 3 to 4 orange,
     /// 5 red, a missing part dark grey, a dead mob near black (<see cref="UiTokens"/>). A disabled part has none (null): tg's own picture, a
-    /// dark grey part with bright red marks, says it best; tinted by its red marks it read as a dark maroon (playtest 2026-11-24).
+    /// dark grey part with bright red marks, says it best; tinted by its red marks it would read as a dark maroon.
     /// </summary>
     public static Rgb? StandardColor(ZoneState state) => state.Kind switch
     {

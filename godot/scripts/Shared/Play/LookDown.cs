@@ -79,7 +79,11 @@ public static class LookDown
     /// </summary>
     public static bool ShowsOwnBody(double pitch, double fovDegrees, double nearMetres, double eyeMetres, bool firstPerson, bool onTurf, bool ghost,
         bool observing, bool lying, bool limp, bool exosuit, bool scoped)
-        => firstPerson && onTurf && !ghost && !observing && !lying && !limp && !exosuit && !scoped && -pitch >= BodyFrom(fovDegrees, nearMetres, eyeMetres);
+        => CanShowOwnBody(firstPerson, onTurf, ghost, observing, lying, limp, exosuit, scoped) && -pitch >= BodyFrom(fovDegrees, nearMetres, eyeMetres);
+
+    /// <summary>Whether looking down far enough would show the own body (<see cref="ShowsOwnBody"/> at any pitch): a held drag of oneself ends when it would not.</summary>
+    public static bool CanShowOwnBody(bool firstPerson, bool onTurf, bool ghost, bool observing, bool lying, bool limp, bool exosuit, bool scoped)
+        => firstPerson && onTurf && !ghost && !observing && !lying && !limp && !exosuit && !scoped;
 
     /// <summary>
     /// Slice T5b (the own body is a target while it is looked at, as other people are): the

@@ -152,7 +152,7 @@ public class ModifierTapTests
     [Fact]
     public void ALoneModifierTappedWhileTypingDoesNothing()
     {
-        // ui-overhaul.md section 5 (playtest 2026-11-23): Shift in the chat input switched walk and run, Ctrl took a ghost down a level
+        // ui-overhaul.md section 5: Shift tapped in the chat input must not switch walk and run, nor Ctrl take a ghost down a level
         var tap = new ModifierTap();
         Assert.True(Wait(tap, "Shift", PlayAction.ToggleMoveIntent, blocked: true)); // held back: not run on the press
         Assert.Null(tap.Release("Shift", blocked: true));

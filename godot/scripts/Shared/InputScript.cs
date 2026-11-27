@@ -55,7 +55,8 @@ public readonly record struct ScriptedInput(double AtSeconds, ScriptAction Actio
 /// <c>SECONDS:STEP</c> with <c>STEP</c> one of <c>W+</c> (press), <c>W-</c> (release), <c>yaw=DEG</c>, <c>pitch=DEG</c>; keys are
 /// W, A, S, D, UP, DOWN, LEFT, RIGHT, and, since M2, U, F (combat mode) and C (rest since ui-overhaul.md section 3, walk/run before; SHIFT tapped alone switches walk and run now), and QUOTELEFT, F9, F10, F3 and F4 (the console, the analyzer and the options panels, the debug HUD on F3: <c>--keys=1:F3+,1.1:F3-</c> hides it for a screenshot; F4 is the names overlay), and, since M3 I1c, L (the dev flashlight until ui-overhaul.md section 6, slice E, which moved it to U: <c>--keys=1:U+,1.1:U-</c>; L is the language menu now), and, since M4b, F8 (the dev menu before D137), and, since D137, BACKSLASH (the dev menu, the | key) and F12 (fullscreen until ui-overhaul.md section 3, F11 now), and ESCAPE, and ENTER and BACKSPACE (a field's submit and erase), and F5 (the view: a ghost's free look and first person, D160), and T, Y, M, O and P (the say window, M9; Y is the emote wheel since ui-overhaul.md), and J (the emote wheel, M9 slice B; the pet commands now), and META, S, DELETE, V and ALT (the map editor's menu keys: <c>--keys=1:META+,1.1:S+,1.2:S-,1.3:META-</c> is Command+S), and SEMICOLON, BRACKETLEFT, APOSTROPHE and F11 (ui-overhaul.md: the radio, OOC and me keys, Shift+' with SHIFT held, and fullscreen: <c>--keys=1:SEMICOLON+,1.1:SEMICOLON-</c>); <c>click=left@XxY</c> clicks a point of the screen (pixels; <c>click=wheelup@XxY</c> and <c>click=wheeldown@XxY</c> turn the wheel a notch there), <c>drag=left@XxY&gt;XxY</c> drags from one point to another in cursor mode (protocol version 17; <c>right</c> and <c>middle</c> drag with those buttons) and <c>type=TEXT</c> types letters into a text field (2026-10-14, the dev menu's repro); <c>click=left</c> and
 /// <c>click=right</c> click the mob under the crosshair; <c>radial=LABEL</c> (slice T4c) picks the context radial's entry of that label on what is under
-/// the crosshair (<c>radial=Turn_over</c>: case ignored, _ a space). Example: <c>--keys=1:W+,3:yaw=90,5:W-</c> walks forward from 1 s, turns the view west
+/// the crosshair (<c>radial=Turn_over</c>: case ignored, _ a space); <c>MOUSELEFT+</c> and <c>MOUSELEFT-</c> (and <c>MOUSERIGHT</c>, <c>MOUSEMIDDLE</c>) press a
+/// mouse button at the crosshair and let it go at a later step, so view steps can turn the view while it is held. Example: <c>--keys=1:W+,3:yaw=90,5:W-</c> walks forward from 1 s, turns the view west
 /// at 3 s (the same key now walks west) and lets go at 5 s. The game scene feeds the key steps to the engine's input
 /// (<c>Input.ParseInputEvent</c>) so that the whole path from the key state to the <c>InputFrame</c> runs.
 /// </summary>
@@ -65,7 +66,8 @@ public static class InputScript
         "SEMICOLON", "BRACKETLEFT", "APOSTROPHE", "F11", // ui-overhaul.md section 5: the radio, OOC and me keys and fullscreen
         // the map editor's own keys (docs/ai/specs/map-editor.md 5.16), by the engine's names of them
         "KEY1", "KEY2", "KEY3", "KEY4", "EQUAL", "MINUS", "PERIOD", "COMMA", "PAGEUP", "PAGEDOWN", "HOME", "KPADD", "KPSUBTRACT", "G",
-        "KEY5", "KEY6", "KEY7", "KEY8", "KEY9", "KEY0" }; // ui-overhaul.md section 10: the hotbar's other number keys
+        "KEY5", "KEY6", "KEY7", "KEY8", "KEY9", "KEY0", // ui-overhaul.md section 10: the hotbar's other number keys
+        "MOUSELEFT", "MOUSERIGHT", "MOUSEMIDDLE" }; // a mouse button pressed (+) and let go (-) at the crosshair, with view steps between (ui-overhaul.md section 17)
 
     /// <summary>Parses a script; on an error returns false with the problem.</summary>
     public static bool TryParse(string text, out List<ScriptedInput> steps, out string error)

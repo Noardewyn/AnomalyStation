@@ -50,6 +50,9 @@ public partial class GameScene
     private readonly Queue<(double At, MouseButton Button, Vector2 Point)> _pendingReleases = new();
     // Protocol version 17 (drag and drop): the cursor mode's left press, drag and release, and the dragged icon under the pointer.
     private readonly DragModel _drag = new();
+    // DV691: the first-person drag of oneself (a press on the own body held until the release); whether the own body can be shown at all
+    private readonly SelfDrag _selfDrag = new();
+    private bool _ownBodyShowable;
     private TextureRect _dragIcon;
     private IAppearanceTextures _dragTextures;
     private readonly Queue<(double At, Vector2 Point)> _pendingMoves = new();
@@ -207,7 +210,15 @@ public partial class GameScene
 
     // ui-overhaul.md section 5: Godot sends no key release for keys let go while the window has no focus (Input.release_pressed_events clears the
     // key state only), so a lost focus drops a lone Ctrl's or Shift's waiting action
-    private void OnFocusLost() => _modifierTap.Drop();
+    // (DV691: and a held drag of oneself ends, nothing sent: its release would never come)
+    private void OnFocusLost()
+    {
+        _modifierTap.Drop();
+        _selfDrag.Cancel();
+    }
+
+    // DV691: something other than the view takes the mouse: the emote wheel, a radial (the context one or the server's), the dev menu, a text field
+    private bool SelfDragOverlay => _emoteWheel.IsOpen || _radialModel.Phase != RadialPhase.Closed || DevMenuHasMouse || TextFieldTyping;
 
     // The hints that belong to what is hovered now (the answer to an older hover is dropped).
     // DV382: what the own view looks from: a camera eye's drawn place (the AI's eye far from its core), else the own predicted mob
@@ -337,6 +348,10 @@ public partial class GameScene
         // in cursor mode the pointer aims at the world as BYOND's and Space Station 14's mouse does (the HUD under it first).
         bool thirdPerson = _rig.Mode == CameraMode.Orbit && _session.Predicting && camera != null;
         bool panels = PanelsOpen;
+        // DV691: the view lost (a window, death, a stun that lays the body down, a body swap), something else taking the mouse, or the left
+        // button let go where the release never reached OnSelfDragReleased: the drag of oneself ends, nothing sent
+        if (_selfDrag.Lost(_feed.OwnEntity, firstPerson, _mouse.CursorMode, panels, _ownBodyShowable, SelfDragOverlay, Input.IsMouseButtonPressed(MouseButton.Left)))
+            _selfDrag.Cancel();
         bool pointerAim = (firstPerson || thirdPerson) && _mouse.CursorMode && !panels && !_drag.Dragging && !PointerHud().IsSet;
         bool aiming = (firstPerson || thirdPerson) && !_mouse.CursorMode && !panels || pointerAim;
         _hit = default;
@@ -406,7 +421,7 @@ public partial class GameScene
             hover = ClickTarget.Of(_hudPicker.PickScreen(GetViewport().GetMousePosition().X, GetViewport().GetMousePosition().Y));
         _session.Hover(hover, now);
         _hudHover = hover.Kind == TargetKind.Screen ? hover : default;
-        _crosshair.Visible = (firstPerson || thirdPerson) && !PanelsOpen && !_mouse.CursorMode;
+        _crosshair.Visible = (firstPerson || thirdPerson) && !PanelsOpen && !_mouse.CursorMode && !_selfDrag.Holding; // DV691: the drag mark replaces it
         _crosshair.Set(_hit.Kind == TargetKind.Entity, reach);
         GunSightMessage sight = _shotGunSight ?? _feed.GunSight; // DV96: the shooter's crosshair while a gun is held (a shot scenario's own, below)
         _crosshair.SetGun(sight.Gun, sight.ConeDegrees, _rig.FovDegrees);
@@ -498,7 +513,10 @@ public partial class GameScene
         _chatLines.BalloonAlpha = alpha;
         string name = null;
         List<PromptLine> prompts = NoPrompts;
-        if (aiming && _target.IsSet && _target.Kind != TargetKind.Screen && _radialModel.Phase != RadialPhase.Open)
+        if (_selfDrag.Holding)
+            // DV691: while dragging oneself, only the name of a thing in reach under the crosshair (DV687), no action lines
+            name = SelfDrag.PromptName(_target, aiming ? KeyChips.PromptName(HintsFor(_target), _feed is not FakeFeed, TargetName(_target)) : null);
+        else if (aiming && _target.IsSet && _target.Kind != TargetKind.Screen && _radialModel.Phase != RadialPhase.Open)
         {
             ContextHintsMessage answer = HintsFor(_target);
             string targetName = KeyChips.PromptName(answer, _feed is not FakeFeed, TargetName(_target)) ?? "";
@@ -665,6 +683,8 @@ public partial class GameScene
             _rig.Zoom(button.ButtonIndex == MouseButton.WheelUp ? -1 : 1); // third-person play: the wheel zooms the view in and out
             return;
         }
+        if (_selfDrag.Holding && SelfDragOverlay)
+            _selfDrag.Cancel(); // DV691: an overlay that takes this button ends the drag of oneself before it does, nothing sent
         if (OnEmoteWheelMouse(button))
             return; // M9 slice B: the emote wheel's own
         if (wheel)
@@ -680,6 +700,8 @@ public partial class GameScene
                 OnRightReleased(App.NowSeconds);
             else if (button.ButtonIndex == MouseButton.Left && _drag.Pressed)
                 OnLeftReleased(button.Position);
+            else if (button.ButtonIndex == MouseButton.Left && _selfDrag.Holding)
+                OnSelfDragReleased();
             if (button.ButtonIndex == MouseButton.Left || button.ButtonIndex == MouseButton.Middle && _session.MouseHeld == ClickButton.Middle)
                 _session.MouseUp(_target, HeldModifiers(), _aim); // version 34: BYOND's MouseUp (stops tg's full auto)
             return;
@@ -691,6 +713,11 @@ public partial class GameScene
         }
         if (Input.MouseMode != Input.MouseModeEnum.Captured && !automated && !_mouse.CursorMode)
             return; // D282: a panel has the pointer (SyncMouse captures it again when the panel closes)
+        if (_selfDrag.Holding && button.ButtonIndex == MouseButton.Right)
+        {
+            _selfDrag.Cancel(); // DV691: the right button drops the drag of oneself, and is nothing more
+            return;
+        }
         string name = button.ButtonIndex switch
         {
             MouseButton.Left => "MouseLeft",
@@ -747,6 +774,9 @@ public partial class GameScene
                 bool wallMount = source.Kind == TargetKind.Entity && _feed.Replica?.TryGet(source.Id, out ReplicaEntity pressed) == true && pressed.TypePath != null && Shared.World.PropKinds.IsWallMountType(pressed.TypePath);
                 if (!_drag.Press(source, ClickButton.Left, modifiers, button.Position.X, button.Position.Y, App.NowSeconds, !wallMount))
                     ClickAtCrosshair(ClickButton.Left, modifiers); // nothing under the pointer: as before
+                break;
+            case PlayAction.PrimaryClick when button.ButtonIndex == MouseButton.Left && _selfDrag.Press(_target, _feed.OwnEntity, _mouse.CursorMode, modifiers, App.NowSeconds):
+                // DV691: a plain press on the own body sends nothing (no MouseDown either, so no full auto or held use): the release decides
                 break;
             case PlayAction.PrimaryClick:
                 // version 34: BYOND's MouseDown before the press's click (tg's full auto takes the press and drops the click)
@@ -831,12 +861,36 @@ public partial class GameScene
                         release.Source.Kind == TargetKind.Screen ? _hudLayer.DollZoneAt(release.Source.Id, release.Source.IconX, release.Source.IconY) : AimZone.None), release.Button, release.Modifiers);
                 break;
             case DragOutcome.Drop:
-                release = DragModel.SelfFromDoll(release, _hudLayer.IsDoll, _feed.OwnEntity); // DV417
-                bool sent = _session.Drop(release);
-                if (App.Instance.Args.Automated)
-                    GD.Print($"[anomaly] drop: {Describe(release.Source)} onto {Describe(release.Over)}{(sent ? string.Empty : " (not sent)")} after {release.DragTime} ds");
+                SendDrop(DragModel.SelfFromDoll(release, _hudLayer.IsDoll, _feed.OwnEntity)); // DV417
                 break;
         }
+    }
+
+    // DV691: the first-person drag of oneself let go: on the own body the click with the press's zone, on a thing the drop of the own mob onto it
+    // (unless the server's answer to the hover says it is out of reach, DV687), on anything else nothing.
+    private void OnSelfDragReleased()
+    {
+        bool outOfReach = HintsFor(_target)?.Name is { Length: 0 };
+        switch (_selfDrag.Release(_target, _feed.OwnEntity, outOfReach, App.NowSeconds, out DragRelease release))
+        {
+            case SelfDragOutcome.Click:
+                SendClick(release.Source, release.Button, release.Modifiers);
+                break;
+            case SelfDragOutcome.Drop:
+                SendDrop(release);
+                break;
+            default:
+                if (App.Instance.Args.Automated)
+                    GD.Print($"[anomaly] drop: yourself onto {Describe(_target)}{(outOfReach ? " out of reach" : string.Empty)}: nothing sent");
+                break;
+        }
+    }
+
+    private void SendDrop(in DragRelease release)
+    {
+        bool sent = _session.Drop(release);
+        if (App.Instance.Args.Automated)
+            GD.Print($"[anomaly] drop: {Describe(release.Source)} onto {Describe(release.Over)}{(sent ? string.Empty : " (not sent)")} after {release.DragTime} ds");
     }
 
     private static string Describe(in ClickTarget target) => target.Kind switch
@@ -852,12 +906,14 @@ public partial class GameScene
     {
         if (_dragIcon == null)
             return;
-        if (!_drag.Dragging || !_mouse.CursorMode)
+        // DV691: the first-person drag of oneself draws the own body's icon at the crosshair, as cursor mode draws the dragged thing at the pointer
+        bool self = _selfDrag.Holding && !_mouse.CursorMode;
+        if (!self && (!_drag.Dragging || !_mouse.CursorMode))
         {
             _dragIcon.Visible = false;
             return;
         }
-        TableRef icon = DragModel.IconOf(_feed.Replica, _drag.Source);
+        TableRef icon = DragModel.IconOf(_feed.Replica, self ? _selfDrag.Pressed : _drag.Source);
         if (icon.IsNone || _dragTextures == null || !_dragTextures.TryCompose(_feed.Replica, icon, 2, now, out ComposedAppearance composed) || composed.Texture == null)
         {
             _dragIcon.Visible = false;
@@ -866,7 +922,7 @@ public partial class GameScene
         Vector2 view = GetViewport().GetVisibleRect().Size;
         float scale = new HudMetrics(view.X, view.Y, _options.UiScale).PixelScale; // the HUD's own pixel size, as a slot draws the item
         var size = new Vector2(composed.PixelWidth, composed.PixelHeight) * scale;
-        Vector2 pointer = GetViewport().GetMousePosition();
+        Vector2 pointer = self ? view / 2f : GetViewport().GetMousePosition();
         _dragIcon.Texture = composed.Texture;
         _dragIcon.Size = size;
         _dragIcon.Position = pointer - size / 2f;
@@ -1283,7 +1339,8 @@ public partial class GameScene
     {
         _radialModel.Reset();
         _radialSticky = false;
-        _drag.Cancel(); // version 17: a drag ends with cursor mode (the captured view has none)
+        _drag.Cancel(); // version 17: a cursor-mode drag ends with cursor mode
+        _selfDrag.Cancel(); // DV691: and the first-person drag of oneself ends when cursor mode starts (Tab, a window), with nothing sent
         if (_dragIcon != null)
             _dragIcon.Visible = false;
     }

@@ -125,6 +125,12 @@ void fragment() {
     /// <summary>Whether the cursor is free (cursor mode, Tab): tg's zone selector is shown then only (<see cref="LiveHud.Shown"/>). Set by the scene each frame.</summary>
     public bool CursorMode { get; set; }
 
+    /// <summary>DV691: whether the own body is being dragged in first person: the hint strip reads "Yourself" and "Release on an object". Set by the scene each frame.</summary>
+    public bool SelfDrag { get; set; }
+
+    /// <summary>DV691: the picture in the hint strip's square while the own body is dragged (<c>SelfDrag.HintPicture</c>). Set by the scene each frame.</summary>
+    public TableRef SelfDragPicture { get; set; }
+
     /// <summary>Whether the HUD is the human HUD (tg's inventory toggle is on the screen): the hands, the slots and the Tab inventory are ours.</summary>
     public bool HumanHud => _humanHud;
 
@@ -357,7 +363,8 @@ void fragment() {
 
     private readonly List<Item> _numbered = new();
 
-    // The owner (2026-10-29): the shown item action buttons in reading order, each with its key (ActionButton1-9) as a key cap in its top left corner
+    // The shown item action buttons in reading order, each with its key (ActionButton1-9) as a key cap in its top left corner, so the key that uses
+    // each one is on it
     private void NumberActionButtons(float unit)
     {
         _numbered.Clear();
@@ -523,8 +530,10 @@ void fragment() {
         _view.ShowAlerts(_chips);
         bool leftActive = active != null && active == left, rightActive = active != null && active == right;
         // package 3: the held item's name leads the hint strip (the server's names of the items in the own hands)
-        string heldName = leftActive ? Hotbar?.LeftHand : rightActive ? Hotbar?.RightHand : null;
-        float named = 0f, hint = human ? HintNatural(UiTokens.Unit(metrics), heldName, out named) : 0f;
+        // DV691: while the own body is dragged the strip names it, with or without a held item
+        bool selfDrag = SelfDrag && !CursorMode;
+        string heldName = selfDrag ? Shared.SelfDrag.HintName : leftActive ? Hotbar?.LeftHand : rightActive ? Hotbar?.RightHand : null;
+        float named = 0f, hint = human ? HintNatural(UiTokens.Unit(metrics), heldName, selfDrag, out named) : 0f;
         _hands = LiveHud.Hands(metrics, leftActive, rightActive, human ? _layout : default, hint, named, CursorMode);
         UpdatePanel(metrics, human);
         PanelLeftEdge = doll ? LiveHud.LeftOfVitals(_layout, metrics) : float.PositiveInfinity;
@@ -562,8 +571,15 @@ void fragment() {
         scene.Hint = _hands.Hint;
         scene.HintShare = _hands.HintShare;
         scene.HintUnit = UiTokens.Unit(metrics);
-        Pictures(_hands.Hint.Width > 0f ? active : null, LiveHud.HintPictureSquare(_hands.Hint, scene.HintUnit, _hands.HintShare), scene.HintPictures);
-        scene.HintShown = scene.HintPictures.Count > 0;
+        HudRect hintSquare = LiveHud.HintPictureSquare(_hands.Hint, scene.HintUnit, _hands.HintShare);
+        Pictures(_hands.Hint.Width > 0f && !selfDrag ? active : null, hintSquare, scene.HintPictures);
+        if (selfDrag && _hands.Hint.Width > 0f && !SelfDragPicture.IsNone && _textures.TryCompose(_replica, SelfDragPicture, 2, _lastNow, out ComposedAppearance own))
+        {
+            // DV691: the own body's picture in the square, fitted as a held item's picture is
+            HudRect at = LiveHud.ChildPicture(hintSquare, own.PixelWidth, own.PixelHeight, own.OriginX, own.OriginY, 0, 0);
+            scene.HintPictures.Add(new LiveHudView.Picture(own.Texture, new Rect2(at.Left, at.Top, at.Width, at.Height)));
+        }
+        scene.HintShown = scene.HintPictures.Count > 0 || selfDrag && _hands.Hint.Width > 0f;
         // package 3: the name, cut to the width the layout left it
         scene.HintName = _hands.HintName > 0f ? LiveHud.HintName(heldName, _hands.HintName, _measureVerb) : null;
         _view.ShowHands();
@@ -715,9 +731,9 @@ void fragment() {
     // Slice D: the hint strip's entries (use, drop, throw with their bound keys) and the widths of their key caps and verbs at the compact size, at
     // the HUD's unit: the strip's natural width (LiveHud.HintWidth), which the hands' layout fits over the row; package 3: the held item's name
     // (`name`, null: none) measured at the verbs' size (`named`, 0: none).
-    private float HintNatural(float unit, string name, out float named)
+    private float HintNatural(float unit, string name, bool selfDrag, out float named)
     {
-        _hintLines = LiveHud.HintLines(_options.Bindings);
+        _hintLines = selfDrag ? Shared.SelfDrag.HintLines(_options.Bindings) : LiveHud.HintLines(_options.Bindings);
         Font font = ThemeDB.FallbackFont;
         float k = unit * UiTokens.HintShare;
         int capSize = Math.Max(1, (int)Math.Round(UiTokens.ChipFont * k)), verbSize = Math.Max(1, (int)Math.Round(UiTokens.PromptFont * k));

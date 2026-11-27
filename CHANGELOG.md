@@ -34,6 +34,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - The prompt beside the crosshair shows only for things within reach; anything further away leaves the crosshair bare.
 - A hit on an alien aimed at a body part it lacks lands on its chest instead of being refused.
 - The chat window sits above the hotbar, see-through until you type; its buttons and input show only while you type, and chat lines clear the bar.
+- Look down, hold the left button on your own body and let go on a table, chair, bed or closet to climb, sit, lie or get in; a click on yourself lands on release.
 
 ## [1.15.0-pre-alpha] - 2026-11-27
 

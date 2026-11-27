@@ -31,7 +31,7 @@ public class InputScriptTests
     [Fact]
     public void TheRadioOocMeAndFullscreenKeysCanBeScripted()
     {
-        // ui-overhaul.md section 5: ;, [, ' (Shift+' is me) and F11 for a playtest without the operating system's key events
+        // ui-overhaul.md section 5: ;, [, ' (Shift+' is me) and F11 for a scripted run without the operating system's key events
         Assert.True(InputScript.TryParse("1:SEMICOLON+,1.1:SEMICOLON-,2:BRACKETLEFT+,2.1:BRACKETLEFT-,3:SHIFT+,3.1:APOSTROPHE+,3.2:APOSTROPHE-,3.3:SHIFT-,4:F11+,4.1:F11-",
             out List<ScriptedInput> steps, out string error), error);
         Assert.Equal(new[] { "SEMICOLON", "BRACKETLEFT", "SHIFT", "APOSTROPHE", "F11" }, steps.Where(s => s.Action == ScriptAction.Press).Select(s => s.Key));
@@ -147,5 +147,21 @@ public class InputScriptTests
         Assert.False(InputScript.TryParse("1:radial=___", out _, out _)); // only spaces
         Assert.False(InputScript.TryParse("1:radial=" + new string('a', 65), out _, out _));
         Assert.False(InputScript.TryParse("radial=Turn_over", out _, out _)); // no time
+    }
+
+    [Fact]
+    public void AMouseButtonIsHeldFromItsPressStepToItsReleaseStepWithViewStepsBetween()
+    {
+        // ui-overhaul.md section 17: the drag of oneself in first person, a press on the own body, a turn, the release elsewhere
+        Assert.True(InputScript.TryParse("2:pitch=-105,3:mouseleft+,3.5:pitch=-60,4:MOUSELEFT-,5:MOUSERIGHT+,5.1:MOUSERIGHT-,6:MOUSEMIDDLE+", out List<ScriptedInput> steps, out string error), error);
+        Assert.Equal(new[]
+        {
+            new ScriptedInput(2, ScriptAction.Pitch, null, -105), new ScriptedInput(3, ScriptAction.Press, "MOUSELEFT", 0),
+            new ScriptedInput(3.5, ScriptAction.Pitch, null, -60), new ScriptedInput(4, ScriptAction.Release, "MOUSELEFT", 0),
+            new ScriptedInput(5, ScriptAction.Press, "MOUSERIGHT", 0), new ScriptedInput(5.1, ScriptAction.Release, "MOUSERIGHT", 0),
+            new ScriptedInput(6, ScriptAction.Press, "MOUSEMIDDLE", 0),
+        }, steps);
+        Assert.False(InputScript.TryParse("1:MOUSEWHEEL+", out _, out error));
+        Assert.Contains("unknown key", error);
     }
 }

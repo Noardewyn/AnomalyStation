@@ -5,7 +5,7 @@ namespace Anomaly.Server.Tests.Protocol;
 
 /// <summary>
 /// Protocol version 99 also (package T, slice T4c, DV686): the posture byte's bits 6 and 7, the side a lying body was turned to, and the radial's
-/// Turn over, a context hint of the Extra action whose pick is a ContextPick of its label (<see cref="RadialExtra.TurnOver"/>, 9, is the server's own).
+/// Turn over, a context hint of the Extra action whose pick is a ContextPick of its label (<see cref="RadialExtra.TurnOver"/>, 10, is the server's own).
 /// </summary>
 public class ProtocolV99TurnOverTests
 {

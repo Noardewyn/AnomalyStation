@@ -53,7 +53,7 @@ public class SayModelTests
     [Fact]
     public void EachSpeechKeySelectsItsChannelInTheOpenChatWindowsInput()
     {
-        // ui-overhaul.md section 5 (playtest 2026-11-23): with the chat window open the radio, OOC and me keys only focused its input, left on Say
+        // ui-overhaul.md section 5: with the chat window open the radio, OOC and me keys select their channel in its input, not only focus it on Say
         Assert.Equal(SayChannels.Radio, ChatInputModel.ChannelOfKey(PlayAction.Radio));
         Assert.Equal(SayChannels.Ooc, ChatInputModel.ChannelOfKey(PlayAction.Ooc));
         Assert.Equal(SayChannels.Me, ChatInputModel.ChannelOfKey(PlayAction.Me));

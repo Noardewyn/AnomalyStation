@@ -284,7 +284,7 @@ public class LiveHudTests
         Assert.NotEqual(DollId, picker.PickScreen(layout.Doll.Left - 1, layout.Doll.Top + 1).Id);
     }
 
-    // The probe (2026-11-24): on the top screen line of a tg pixel row the pick said the row above (1697,503 at 1920x1080: drawn 14,22, picked 14,23).
+    // The top screen line of a tg pixel row picks that row, not the row above (1697,503 at 1920x1080 is drawn as 14,22 and must pick 14,22, not 14,23).
     [Theory]
     [InlineData(1)]
     [InlineData(2)]

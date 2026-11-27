@@ -12,7 +12,7 @@ namespace Anomaly.Client.Shared;
 /// <see cref="IContainerView"/>: lays out the entries of one HUD group as a grid from their tg <c>screen_loc</c>s. For the storage group (tg's
 /// <c>storage_interface</c>): the <c>cells</c> entry (<c>storage_cell</c>, a range <c>"x:px,y:py to x2:px2,y2:py2"</c> over the whole grid) gives the
 /// grid and its size, an item entry (<c>"x:px,y:py"</c>) is the cell it stands on, <c>storage_close</c> is the close button, the corners, row
-/// joins and the up button are other. For the inventory group: every entry is a slot, placed by its position on the 32-pixel grid.
+/// joins and the up button are other.
 /// </summary>
 public sealed class ContainerLayout : IContainerView
 {
@@ -61,10 +61,7 @@ public sealed class ContainerLayout : IContainerView
         }
         if (placed.Count == 0)
             return;
-        if (Group == HudGroup.Storage)
-            LayoutStorage(placed);
-        else
-            LayoutSlots(placed);
+        LayoutStorage(placed);
         _cells.Sort(static (a, b) => a.Row != b.Row ? a.Row.CompareTo(b.Row) : a.Column != b.Column ? a.Column.CompareTo(b.Column) : a.EntryId.CompareTo(b.EntryId));
     }
 
@@ -130,26 +127,6 @@ public sealed class ContainerLayout : IContainerView
         }
     }
 
-    private void LayoutSlots(List<(ScreenEntry Entry, ScreenLocSpec Spec, string State)> placed)
-    {
-        int minX = int.MaxValue, minY = int.MaxValue, maxX = int.MinValue, maxY = int.MinValue;
-        foreach (var p in placed)
-        {
-            minX = Math.Min(minX, PixelX(p.Spec.X));
-            minY = Math.Min(minY, PixelY(p.Spec.Y));
-            maxX = Math.Max(maxX, PixelX(p.Spec.X));
-            maxY = Math.Max(maxY, PixelY(p.Spec.Y));
-        }
-        Columns = (int)Math.Round((maxX - minX) / 32.0) + 1;
-        Rows = (int)Math.Round((maxY - minY) / 32.0) + 1;
-        foreach (var p in placed)
-        {
-            int column = (int)Math.Round((PixelX(p.Spec.X) - minX) / 32.0);
-            int row = Rows - 1 - (int)Math.Round((PixelY(p.Spec.Y) - minY) / 32.0);
-            _cells.Add(new ContainerCell(p.Entry.Id, column, row, ContainerCellRole.Slot, SlotName(p.State)));
-        }
-    }
-
     private static bool IsItem(string state)
         => state != CellState && state != CloseState && state != UpState
            && !(state != null && (state.StartsWith(CornerPrefix, StringComparison.Ordinal) || state.StartsWith(RowjoinPrefix, StringComparison.Ordinal)));
@@ -168,29 +145,6 @@ public sealed class ContainerLayout : IContainerView
 
     private static string LabelOf(string iconState, string fallback)
         => string.IsNullOrEmpty(iconState) ? fallback : Humanise(iconState);
-
-    // tg's slot icon states and the words a player knows them by (D70: every slot has a text label).
-    private static readonly Dictionary<string, string> SlotNames = new(StringComparer.Ordinal)
-    {
-        ["id"] = "ID card", ["mask"] = "Mask", ["neck"] = "Neck", ["back"] = "Back", ["belt"] = "Belt", ["suit"] = "Suit",
-        ["suit_storage"] = "Suit storage", ["uniform"] = "Jumpsuit", ["glasses"] = "Glasses", ["ears"] = "Ears", ["head"] = "Head",
-        ["gloves"] = "Gloves", ["shoes"] = "Shoes", ["pocket"] = "Pocket", ["hand_l"] = "Left hand", ["hand_r"] = "Right hand",
-    };
-
-    /// <summary>The D70 word for a slot or hand entry from its icon state.</summary>
-    public static string SlotName(string iconState)
-    {
-        if (string.IsNullOrEmpty(iconState))
-            return "Slot";
-        // "id_inactive"-style states and "belt_active": the first word is the slot.
-        string key = iconState;
-        foreach (string suffix in new[] { "_active", "_inactive", "_empty", "_full" })
-        {
-            if (key.EndsWith(suffix, StringComparison.Ordinal))
-                key = key.Substring(0, key.Length - suffix.Length);
-        }
-        return SlotNames.TryGetValue(key, out string name) ? name : Humanise(iconState);
-    }
 
     /// <summary>An icon state as a label: underscores and dashes are spaces, the first letter is a capital.</summary>
     public static string Humanise(string iconState)

@@ -62,6 +62,13 @@ public static class ChatPlace
     }
 
     /// <summary>
+    /// Slice 4A: where the round's chat window stands: docked at <paramref name="dock"/> (<see cref="TabInventory.ChatDock"/>, the Tab inventory's
+    /// left column) while there is one, else at its own place <paramref name="own"/> (its default or the player's), which docking leaves as it was.
+    /// Whether the window is shown is its own: docking neither opens nor closes it.
+    /// </summary>
+    public static HudRect Docked(HudRect own, HudRect? dock) => dock ?? own;
+
+    /// <summary>
     /// Whether a press and release on the chat window's title bar or edge moved or resized it (its place and its size at scale 1 before and after):
     /// only then is the place and size saved as the player's own; a plain click saves nothing, so the default place keeps following the screen.
     /// </summary>

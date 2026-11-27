@@ -8,7 +8,8 @@ namespace Anomaly.Client.Hud;
 /// <summary>
 /// The live HUD's native boxes (ui-overhaul.md section 6, wireframes Mockup 1): slice C's two hand boxes with the held items' pictures, the active
 /// one larger with an amber border, the swap-hands key on the inactive one, a red border on a cuffed or missing hand; package 3's ten hotbar cells
-/// between them (ui-overhaul.md section 10); slice D's alert chips by the vitals and the held-item hint strip over the hands. It only draws: <see cref="HudLayer"/> places it first in its root, so tg's pictures (the
+/// between them (ui-overhaul.md section 10); slice D's alert chips by the vitals and the held-item hint strip over the hands; slice 4A's character
+/// panel under Tab (its cells and the own sprite). It only draws: <see cref="HudLayer"/> places it first in its root, so tg's pictures (the
 /// alerts in their chips) stand over it and it hides with the interface, and reports the hand boxes' rectangles to the HUD pick under their
 /// screen entries.
 /// </summary>
@@ -62,6 +63,25 @@ public partial class LiveHudView : Control
         QueueRedraw();
     }
 
+    private readonly List<HudRect> _panelCells = new();
+    private float _panelUnit;
+    private Texture2D _sprite;
+    private Rect2 _spriteAt, _spriteFrom;
+
+    /// <summary>
+    /// Slice 4A: the character panel this frame: the cells of tg's worn slots (tg's slot pictures are drawn over them) at <paramref name="unit"/>, and
+    /// the own sprite's picture (<paramref name="sprite"/>; null: none), its part <paramref name="from"/> drawn at <paramref name="at"/>. No backing.
+    /// </summary>
+    public void ShowPanel(List<HudRect> cells, float unit, Texture2D sprite, Rect2 at, Rect2 from)
+    {
+        if (sprite == null && _sprite == null && cells.SequenceEqual(_panelCells) && unit == _panelUnit)
+            return;
+        _panelCells.Clear();
+        _panelCells.AddRange(cells);
+        (_panelUnit, _sprite, _spriteAt, _spriteFrom) = (unit, sprite, at, from);
+        QueueRedraw(); // the sprite's picture animates and changes with what is worn: drawn afresh while shown
+    }
+
     public LiveHudView()
     {
         MouseFilter = MouseFilterEnum.Ignore;
@@ -93,6 +113,17 @@ public partial class LiveHudView : Control
             _chipStyle.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.DollPanelRadius * c)));
             DrawStyleBox(_chipStyle, R(chip));
         }
+        // slice 4A: the panel's cells in the bar's look (its fill and faint rim), and the own sprite
+        foreach (HudRect cell in _panelCells)
+        {
+            _boxStyle.BgColor = ChatLines.Rgba(UiTokens.DollPanelBack);
+            _boxStyle.BorderColor = ChatLines.Rgba(UiTokens.HotbarRim);
+            _boxStyle.SetBorderWidthAll(Math.Max(1, (int)Math.Round(_panelUnit)));
+            _boxStyle.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.DollPanelRadius * _panelUnit)));
+            DrawStyleBox(_boxStyle, R(cell));
+        }
+        if (_sprite != null)
+            DrawTextureRectRegion(_sprite, _spriteAt, _spriteFrom);
     }
 
     // Slice C: the hand boxes (the active one with its border, a cuffed or missing one red), the swap key on the inactive one, their items, and

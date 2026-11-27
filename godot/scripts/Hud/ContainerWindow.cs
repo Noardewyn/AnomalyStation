@@ -11,7 +11,7 @@ namespace Anomaly.Client.Hud;
 
 /// <summary>
 /// M4a P7 (D131, interaction.md 5): a native window over one HUD group's screen entries. The server stays 100 % tg: an open storage's cells, close button and items
-/// (<see cref="HudGroup.Storage"/>) or the inventory's slots (<see cref="HudGroup.ToggleableInventory"/>) are tg's own <c>client.screen</c> objects; this window lays them out
+/// (<see cref="HudGroup.Storage"/>) are tg's own <c>client.screen</c> objects; this window lays them out
 /// (<see cref="ContainerLayout"/>), draws their pictures from the replica's tables, gives every cell a text label (D70) and never sends anything itself: a click on a cell is a
 /// <see cref="TargetKind.Screen"/> click on its entry id, found through <see cref="IHudSurface"/> by the scene.
 /// </summary>
@@ -101,14 +101,11 @@ public partial class ContainerWindow : Control, IHudSurface
             _dirty = true;
     }
 
-    /// <summary>Whether the window is shown by the scene's state (the inventory only in cursor mode); the storage whenever tg shows one.</summary>
-    protected virtual bool WantsShown => true;
-
     /// <summary>The cell size in pixels for this screen.</summary>
-    protected float CellSize(in HudMetrics metrics) => Mathf.Round(metrics.Tile * 0.95f);
+    private static float CellSize(in HudMetrics metrics) => Mathf.Round(metrics.Tile * 0.95f);
 
     /// <summary>Where the window's frame goes on the screen (the origin of cell (0, 0) is its top left plus a margin).</summary>
-    protected virtual Vector2 Origin(in HudMetrics metrics, float cell, int columns, int rows)
+    private static Vector2 Origin(in HudMetrics metrics, float cell, int columns, int rows)
         => new((metrics.Width - columns * cell) / 2f, metrics.Height - metrics.Tile * 2.35f - rows * cell - 18f);
 
     public void Update(double now, in HudMetrics metrics)
@@ -121,7 +118,7 @@ public partial class ContainerWindow : Control, IHudSurface
             _dirty = false;
             _layout.Rebuild(_replica.ScreenGroup(_layout.Group), _replica);
         }
-        bool show = _layout.IsOpen && WantsShown;
+        bool show = _layout.IsOpen;
         if (Visible != show)
             Visible = show;
         _rects.Clear();
@@ -238,7 +235,6 @@ public partial class ContainerWindow : Control, IHudSurface
         DrawRect(_frame, new Color(0.04f, 0.05f, 0.08f, 0.82f));
         DrawRect(_frame, new Color(0.7f, 0.78f, 0.9f, 0.9f), false, 2f);
         DrawString(font, _frame.Position + new Vector2(10, 17), Title, HorizontalAlignment.Left, -1, 14, new Color(0.85f, 0.92f, 1f));
-        DrawExtra();
         bool storage = _layout.Group == HudGroup.Storage;
         // The storage's background cell (the whole grid) first, as Collect orders the pick: drawn in layout order it sorts at row 0,
         // column 0 and covered an item there (a lower id than the storage interface tg makes on the first open) with its boxes.
@@ -309,45 +305,5 @@ public partial class ContainerWindow : Control, IHudSurface
             return false;
         composed = new ComposedAppearance(picture.Texture, raster.Image.Width, raster.Image.Height, raster.OriginX, raster.OriginY);
         return true;
-    }
-
-    /// <summary>Anything drawn behind the cells (the inventory's doll).</summary>
-    protected virtual void DrawExtra()
-    {
-    }
-}
-
-/// <summary>
-/// M4a P7 (D131): the native inventory panel: tg's slot objects of <see cref="HudGroup.ToggleableInventory"/> as a grid of labelled boxes around a drawn doll,
-/// shown in cursor mode (Tab). Clicking a slot is a screen click on tg's slot object: with an item in hand it equips, with an empty hand it takes the worn item.
-/// </summary>
-public partial class InventoryPanel : ContainerWindow
-{
-    /// <summary>Whether the scene is in cursor mode (the panel shows then).</summary>
-    public bool CursorMode { get; set; }
-
-    protected override bool WantsShown => CursorMode;
-
-    protected override Vector2 Origin(in HudMetrics metrics, float cell, int columns, int rows)
-        => new(24f, metrics.Height * 0.289f); // the owner's layout (2026-10-30): bottom left, the chat window right under it
-
-    protected override void DrawExtra()
-    {
-        if (CellRects.Count == 0)
-            return;
-        // A doll behind the slots: a head, a torso, arms and legs in a quiet outline.
-        Rect2 first = CellRects[0].Rect;
-        float cell = first.Size.X;
-        float left = CellRects.Min(r => r.Rect.Position.X), top = CellRects.Min(r => r.Rect.Position.Y);
-        float width = CellRects.Max(r => r.Rect.End.X) - left, height = CellRects.Max(r => r.Rect.End.Y) - top;
-        var centre = new Vector2(left + Mathf.Min(width, cell * 4f) / 2f + cell * 0.2f, top + height / 2f);
-        var tone = new Color(0.55f, 0.65f, 0.8f, 0.28f);
-        float u = Mathf.Min(height / 6f, cell * 0.7f);
-        DrawCircle(centre + new Vector2(0, -2.3f * u), 0.55f * u, tone);
-        DrawRect(new Rect2(centre + new Vector2(-0.7f * u, -1.6f * u), new Vector2(1.4f * u, 2.2f * u)), tone);
-        DrawRect(new Rect2(centre + new Vector2(-1.25f * u, -1.55f * u), new Vector2(0.45f * u, 2.0f * u)), tone);
-        DrawRect(new Rect2(centre + new Vector2(0.8f * u, -1.55f * u), new Vector2(0.45f * u, 2.0f * u)), tone);
-        DrawRect(new Rect2(centre + new Vector2(-0.65f * u, 0.65f * u), new Vector2(0.55f * u, 2.1f * u)), tone);
-        DrawRect(new Rect2(centre + new Vector2(0.1f * u, 0.65f * u), new Vector2(0.55f * u, 2.1f * u)), tone);
     }
 }

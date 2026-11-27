@@ -28,7 +28,7 @@ public partial class GameScene
 
     /// <summary>M5 slice 3: a tgui window is open (the mouse is free for it, as for the dev menu).</summary>
     private bool TguiOpen => _tguiWindows?.AnyOpen == true;
-    private InventoryPanel _inventoryPanel;
+    private readonly InventoryExpander _inventoryExpander = new(); // slice 4A: keeps tg's inventory expanded on the human HUD
     private readonly RadialModel _radialModel = new();
     private readonly ChatFeed _chat = new();
     private readonly BalloonModel _balloon = new();
@@ -83,9 +83,6 @@ public partial class GameScene
         _storageWindow = new ContainerWindow();
         windows.AddChild(_storageWindow);
         _storageWindow.Bind(replica, textures, HudGroup.Storage, "Open container", "storage", _options, SaveOptions);
-        _inventoryPanel = new InventoryPanel();
-        windows.AddChild(_inventoryPanel);
-        _inventoryPanel.Bind(replica, textures, HudGroup.ToggleableInventory, "Inventory", "inventory", _options, SaveOptions);
         // Version 17: BYOND draws the dragged object's icon at the pointer; above the HUD and the windows.
         var dragLayer = new CanvasLayer { Name = "Drag", Layer = 3 };
         AddChild(dragLayer); // stays with the windows: a thing dragged out of an open container
@@ -177,7 +174,6 @@ public partial class GameScene
         public void Collect(List<HudDrawn> bottomToTop)
         {
             _scene._hudLayer.Collect(bottomToTop);
-            _scene._inventoryPanel.Collect(bottomToTop);
             _scene._storageWindow.Collect(bottomToTop);
         }
     }
@@ -227,10 +223,19 @@ public partial class GameScene
     // tooltip (openToolTip: action buttons, alerts) says nothing: the AI's and the cyborgs' HUD buttons have only their names (the owner, 2026-11-14)
     private TooltipMessage HudTooltip()
     {
-        if (!_hudHover.IsSet || HintsFor(_hudHover) is not ContextHintsMessage h || string.IsNullOrEmpty(h.Name))
+        string text;
+        if (_hudHover.Kind == TargetKind.Screen && _hudHover.Id == TabInventory.SpriteId)
+        {
+            // slice 4A: over the own sprite of the Tab inventory the prompt names the part under the pointer
+            if (TabInventory.PartName(_hudLayer.SpriteZoneAt(_hudHover.IconX, _hudHover.IconY)) is not string part)
+                return null;
+            text = "<p>" + System.Net.WebUtility.HtmlEncode(part) + "</p>";
+        }
+        else if (!_hudHover.IsSet || HintsFor(_hudHover) is not ContextHintsMessage h || string.IsNullOrEmpty(h.Name))
             return null;
-        string text = "<p>" + System.Net.WebUtility.HtmlEncode(h.Name) + "</p>"
-            + string.Concat(KeyChips.Prompts(h, _options.Bindings).Select(line => "<p>[" + System.Net.WebUtility.HtmlEncode(line.Key) + "] " + System.Net.WebUtility.HtmlEncode(line.Text) + "</p>"));
+        else
+            text = "<p>" + System.Net.WebUtility.HtmlEncode(h.Name) + "</p>"
+                + string.Concat(KeyChips.Prompts(h, _options.Bindings).Select(line => "<p>[" + System.Net.WebUtility.HtmlEncode(line.Key) + "] " + System.Net.WebUtility.HtmlEncode(line.Text) + "</p>"));
         if (_hudTip?.Text != text)
             _hudTip = new TooltipMessage { Kind = TooltipKind.Show, Text = text, Theme = "default" };
         return _hudTip;
@@ -427,8 +432,6 @@ public partial class GameScene
         var metrics = new HudMetrics(size.X, size.Y, _options.UiScale);
         _viewModel.Update(now, _handsShown, _feed.OwnEntity, HeldHolder());
         _storageWindow.Update(now, metrics);
-        _inventoryPanel.CursorMode = _mouse.CursorMode;
-        _inventoryPanel.Update(now, metrics);
 
         if (_radialModel.Phase == RadialPhase.Pressed && _radialModel.Update(now))
             OpenRadial();
@@ -550,9 +553,13 @@ public partial class GameScene
 
     private void SendClick(in ClickTarget clicked, ClickButton button, ClickModifiers modifiers, ShotAim? aim = null)
     {
-        // D183: with an item in the active hand, a click on a limb of the health doll is a click on the own mob aimed at that limb
-        ClickTarget target = DragModel.SelfItemClickOnDoll(clicked, modifiers, _viewModel?.HasItem == true, _hudLayer.IsDoll, _feed.OwnEntity,
-            clicked.Kind == TargetKind.Screen ? BodyZoneAim.DollFaceAt(_hudLayer.DollZoneAt(clicked.Id, clicked.IconX, clicked.IconY), clicked.IconX, clicked.IconY) : AimZone.None);
+        // D183: with an item in the active hand, a click on a limb of the health doll is a click on the own mob aimed at that limb; slice 4A: a click on
+        // the own sprite of the Tab inventory is one on the doll, or on the own mob at the part of the sprite clicked
+        bool holds = _viewModel?.HasItem == true;
+        ClickTarget target = clicked.Kind == TargetKind.Screen && clicked.Id == TabInventory.SpriteId
+            ? TabInventory.SelfClick(clicked, modifiers, holds, _feed.OwnEntity, _hudLayer.DollEntry, _hudLayer.SpriteZoneAt(clicked.IconX, clicked.IconY))
+            : DragModel.SelfItemClickOnDoll(clicked, modifiers, holds, _hudLayer.IsDoll, _feed.OwnEntity,
+                clicked.Kind == TargetKind.Screen ? BodyZoneAim.DollFaceAt(_hudLayer.DollZoneAt(clicked.Id, clicked.IconX, clicked.IconY), clicked.IconX, clicked.IconY) : AimZone.None);
         ClickTarget aimed = target;
         // DV30: a click on a mob's picture aims at the body part under the crosshair (the server selects it as tg's zone_selected)
         if (target.Kind == TargetKind.Entity && target.IconX != 0)
@@ -1068,15 +1075,10 @@ public partial class GameScene
             ToggleDevMenuFocus(); // the owner (2026-11-10): the dev menu stays open, Tab gives the mouse to the game and back
             return;
         }
-        if (action is PlayAction.CursorMode)
+        if (action is PlayAction.CursorMode) // slice 4A: the inventory key's press arrives here as this action too (TabInventory.KeyAction)
         {
             if (!InLobby) // the lobby has no view to give the mouse to: a stray Tab would only hide the pointer
                 SetCursorMode(!_mouse.CursorMode);
-            return;
-        }
-        if (action is PlayAction.Inventory)
-        {
-            ToggleInventory();
             return;
         }
         if (_rig.Mode == CameraMode.Free)
@@ -1250,17 +1252,13 @@ public partial class GameScene
         CloseStorage();
     }
 
-    // The owner (2026-10-30): the inventory key is tg's click on the HUD's inventory toggle (screen/human/toggle, which sends the worn
-    // slots); the panel shows in cursor mode, so opening it frees the mouse and closing it gives the mouse back to the view
-    private void ToggleInventory()
+    // Slice 4A: tg's worn slots exist as screen entries only while tg's inventory is expanded, so the client clicks tg's inventory toggle (which the
+    // human HUD does not draw) once whenever it shows collapsed (InventoryExpander); in first person the slots are neither drawn nor clicked
+    private void ExpandInventory()
     {
-        ReplicaWorld replica = _feed.Replica;
-        long toggle = replica.Screen.Values.Where(e => replica.TryGetAppearance(e.Appearance, out AppearanceEntry look)
-            && replica.ResolveString(look.IconState) is "toggle" or "toggle_active").Select(e => e.Id).FirstOrDefault();
-        bool opening = !_inventoryPanel.View.IsOpen || !_mouse.CursorMode;
-        if (toggle != 0 && _inventoryPanel.View.IsOpen != opening)
-            _session.Click(new ClickTarget(TargetKind.Screen, toggle, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
-        SetCursorMode(opening);
+        long toggle = _inventoryExpander.Next(_hudLayer.CollapsedToggle, _hudLayer.ExpandedToggle);
+        if (toggle != 0)
+            _session?.Click(new ClickTarget(TargetKind.Screen, toggle, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
     }
 
     private bool CloseStorage()

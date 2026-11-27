@@ -52,6 +52,20 @@ public static class UiTokens
     /// <summary>Where the doll column ends and the containers' column starts.</summary>
     public const float OverlayRightShare = 0.64f;
 
+    // ---- the Tab inventory's character panel in the middle column (TabInventory.Layout; ui-overhaul.md section 12, slice 4A) ----
+
+    /// <summary>The own sprite is drawn at this many screen pixels per tg pixel at the reference size (a whole number at every size).</summary>
+    public const float TabSpritePixels = 6f;
+
+    /// <summary>The gap between two of the panel's slot cells.</summary>
+    public const float TabCellGap = 4f;
+
+    /// <summary>The gap between the sprite and the slot cells round it.</summary>
+    public const float TabSpriteGap = 12f;
+
+    /// <summary>The least side the panel's cells are made where the panel does not fit at a sprite scale of 1, screen pixels; below it the panel is left out.</summary>
+    public const float TabCellMinPixels = 12f;
+
     // ---- chips: a key label or a short status in a small rounded box, white on the local pill's slate with a white rim ----
 
     /// <summary>A chip's fill: <see cref="LocalBack"/>, a little see-through.</summary>

@@ -300,7 +300,7 @@ public sealed class PlaySession
                 HotbarPress(cell);
             return false;
         }
-        if (!target.IsSet || button == ClickButton.None)
+        if (!target.IsSet || button == ClickButton.None || LiveHud.IsOurs(target)) // slice 4A: any other of ours (the own sprite) is never sent
             return false;
         if (target.Kind == TargetKind.Entity)
             NotePull(target.Id, button, modifiers);
@@ -588,11 +588,11 @@ public sealed class PlaySession
     /// under it clears the hints at once and, when the server was told of a thing, sends an <see cref="ActionKind.Unhover"/> (BYOND's
     /// <c>MouseExited</c>), on the same interval. Version 98 also (slice T4b): the hover carries the target's <see cref="ClickTarget.Aim"/>, the zone looked
     /// at, and goes out again when only that zone changed, at most once per <see cref="ZoneHoverInterval"/>. Returns true when a hover or an unhover was sent.
-    /// A belt cell of the bar (package 3) is no tg entry: over it the pointer hovers nothing.
+    /// A belt cell of the bar (package 3) or the Tab inventory's own sprite (slice 4A) is no tg entry: over it the pointer hovers nothing.
     /// </summary>
     public bool Hover(in ClickTarget target, double now)
     {
-        if (LiveHud.BeltCellOf(target) > 0)
+        if (LiveHud.IsOurs(target)) // a belt cell, the own sprite (slice 4A)
             return Hover(ClickTarget.None, now);
         if (!target.SameThing(_hintsLook))
             (_hintsLook, Hints) = (target, null); // DV601: a new look, or none: the answer in hand was for an earlier one
@@ -762,8 +762,8 @@ public sealed class PlaySession
     /// </summary>
     public bool Drop(in DragRelease drop)
     {
-        // package 3: a belt cell of the bar is no tg entry the server knows; dragging to or from it does nothing yet (package 4)
-        if (!drop.Source.IsSet || !drop.Over.IsSet || drop.Button == ClickButton.None || LiveHud.BeltCellOf(drop.Source) > 0 || LiveHud.BeltCellOf(drop.Over) > 0)
+        // package 3: a belt cell of the bar (slice 4A: or the own sprite) is no tg entry the server knows; dragging to or from it does nothing yet
+        if (!drop.Source.IsSet || !drop.Over.IsSet || drop.Button == ClickButton.None || LiveHud.IsOurs(drop.Source) || LiveHud.IsOurs(drop.Over))
             return false;
         bool sourceCell = drop.Source.Kind is TargetKind.Turf or TargetKind.Ceiling, overCell = drop.Over.Kind is TargetKind.Turf or TargetKind.Ceiling;
         Send(new ActionMessage(Prediction.NewestSeq, ActionKind.Drop, sourceCell ? 0 : drop.Source.Id, drop.Button, drop.Modifiers, null)

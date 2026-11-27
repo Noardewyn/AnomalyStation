@@ -279,6 +279,12 @@ public sealed partial class ChatWindow : Control
         Visible = false;
     }
 
+    /// <summary>
+    /// Slice 4A: the place the window is docked at as the Tab inventory's left column, screen pixels, at its normal opacity (null: at its own place).
+    /// Docking never moves the player's own place, never opens a closed window, and the title bar and edges neither move nor resize it meanwhile.
+    /// </summary>
+    public HudRect? Docked { get; set; }
+
     /// <summary>The place and size, as shares of the screen, of a window with no saved place or size.</summary>
     public Rect2 DefaultShare { get; set; } = new(0.01f, 0.4f, 0.3f, 0.35f);
 
@@ -426,7 +432,7 @@ public sealed partial class ChatWindow : Control
         }
         _scale = Math.Max(0.5f, scale);
         // section 13: the round's backing (the panel, the title bar, the tabs) at its rest share unless typed in or hovered under Tab; the log's text whole
-        float backing = Round ? ChatPlace.BackingAlpha(_edit.HasFocus(), CursorMode, CursorMode && _frame.GetGlobalRect().HasPoint(GetViewport().GetMousePosition())) : 1f;
+        float backing = Round && Docked == null ? ChatPlace.BackingAlpha(_edit.HasFocus(), CursorMode, CursorMode && _frame.GetGlobalRect().HasPoint(GetViewport().GetMousePosition())) : 1f;
         _frame.SelfModulate = _logBox.SelfModulate = new Color(1, 1, 1, Opacity * backing);
         _bar.SelfModulate = new Color(1, 1, 1, Opacity);
         _bar.Modulate = _tabs.Modulate = new Color(1, 1, 1, backing);
@@ -468,8 +474,9 @@ public sealed partial class ChatWindow : Control
     {
         Vector2 screen = GetViewportRect().Size;
         Rect2 fallback = DefaultRect;
-        HudRect placed = ChatPlace.Placed(new HudRect(fallback.Position.X, fallback.Position.Y, fallback.Size.X, fallback.Size.Y), screen.X, screen.Y, _scale,
+        HudRect own = ChatPlace.Placed(new HudRect(fallback.Position.X, fallback.Position.Y, fallback.Size.X, fallback.Size.Y), screen.X, screen.Y, _scale,
             _position is Vector2 at ? (at.X, at.Y) : null, _size is Vector2 size ? (size.X, size.Y) : null);
+        HudRect placed = ChatPlace.Docked(own, Docked);
         _frame.Scale = new Vector2(_scale, _scale);
         _frame.Position = new Vector2(placed.Left, placed.Top);
         _frame.Size = new Vector2(placed.Width, placed.Height) / _scale;
@@ -702,6 +709,11 @@ public sealed partial class ChatWindow : Control
 
     private void OnTitleInput(InputEvent e)
     {
+        if (Docked != null) // slice 4A: docked, it keeps the Tab inventory's column
+        {
+            _moving = false;
+            return;
+        }
         switch (e)
         {
             case InputEventMouseButton { ButtonIndex: MouseButton.Left } press:
@@ -718,6 +730,12 @@ public sealed partial class ChatWindow : Control
     // Any edge or corner resizes the window (the owner, 2026-10-20: the game's windows can be resized).
     private void OnFrameInput(InputEvent e)
     {
+        if (Docked != null) // slice 4A: docked, it keeps the Tab inventory's column
+        {
+            _resizing = 0;
+            _frame.MouseDefaultCursorShape = CursorShape.Arrow;
+            return;
+        }
         switch (e)
         {
             case InputEventMouseButton { ButtonIndex: MouseButton.Left } press:

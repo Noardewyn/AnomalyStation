@@ -41,8 +41,8 @@ public enum LiveHudRole : byte
     BarSlot,
 
     /// <summary>
-    /// Any other of tg's bottom slots (an inventory box outside the toggled inventory: the belt, the back, suit storage): under Tab only, in the
-    /// worn slots' row above the bar's right end (<see cref="LiveHud.WornCell"/>; package 3).
+    /// Any other of tg's inventory slots (an inventory box with a slot id: the belt, the back, suit storage, and the worn slots of tg's toggled
+    /// inventory): under Tab only, in the character panel's cell for its slot (<see cref="TabInventory.CellOf"/>; slice 4A).
     /// </summary>
     WornSlot,
 
@@ -128,14 +128,12 @@ public readonly record struct LiveHudLayout(HudRect Doll, int DollScale, bool Vi
 /// <summary>Where the hands and the hotbar go, screen pixels (<see cref="LiveHud.Hands"/>).</summary>
 /// <param name="Left">The left hand's box, left of the bar.</param>
 /// <param name="Right">The right hand's box, right of it.</param>
-/// <param name="Hotbar">The bar of ten cells (package 3: <see cref="LiveHud.BarCell"/>), the worn slots' row over its right end (<see cref="LiveHud.WornCell"/>).</param>
+/// <param name="Hotbar">The bar of ten cells (package 3: <see cref="LiveHud.BarCell"/>).</param>
 /// <param name="Unit">Screen pixels per reference pixel in the row (<see cref="UiTokens.Unit"/>, less when the row is made smaller to fit).</param>
 /// <param name="Hint">Slice D: the held-item hint strip over the row (<see cref="LiveHud.HintBy"/>); empty where it is left out.</param>
 /// <param name="HintShare">The share of its natural size the hint strip is drawn at.</param>
 /// <param name="HintName">Package 3: the width the held item's name has in the strip, screen pixels at its natural size (cut to fit the row); 0: no name.</param>
-/// <param name="WornRight">Package 3: where the worn slots' row ends on the right, screen pixels (<see cref="LiveHud.WornCell"/>); 0: left out.</param>
-public readonly record struct HandsLayout(HudRect Left, HudRect Right, HudRect Hotbar, float Unit, HudRect Hint = default, float HintShare = 0f, float HintName = 0f,
-    float WornRight = 0f);
+public readonly record struct HandsLayout(HudRect Left, HudRect Right, HudRect Hotbar, float Unit, HudRect Hint = default, float HintShare = 0f, float HintName = 0f);
 
 /// <summary>What a hotbar cell shows at a given time (<see cref="LiveHud.CellLook"/>; package 3).</summary>
 /// <param name="Alpha">The whole cell's opacity (its fill, rim, cap and picture): less for a belt cell with no belt worn.</param>
@@ -151,14 +149,17 @@ public static class LiveHud
 {
     /// <summary>
     /// What <paramref name="entry"/> is, by its hand index, slot id, icon state and group, never by where it is drawn (only tg's own alert places
-    /// say an entry is an alert): an entry of a native window (a
-    /// storage, the inventory) or an action button is always <see cref="LiveHudRole.Tg"/>. The hands and the bottom slots are re-placed only on
-    /// the human HUD (<see cref="Placed"/>); a bottom slot is a cell of the bar or a worn slot by its slot id.
+    /// say an entry is an alert): an entry of a storage's native window or an action button is always <see cref="LiveHudRole.Tg"/>. The hands and
+    /// the slots are re-placed only on the human HUD (<see cref="Placed"/>); a slot (of the bottom row or of tg's toggled inventory) is a cell of
+    /// the bar or a worn slot by its slot id.
     /// </summary>
     public static LiveHudRole RoleOf(ReplicaWorld replica, ScreenEntry entry)
     {
-        if (entry.Group is HudGroup.Storage or HudGroup.ToggleableInventory || entry.ActionTarget > 0)
+        if (entry.Group == HudGroup.Storage || entry.ActionTarget > 0)
             return LiveHudRole.Tg;
+        // slice 4A: tg's toggled inventory holds only its worn slots, the character panel's; anything else there is never re-placed
+        if (entry.Group == HudGroup.ToggleableInventory)
+            return entry.SlotId != 0 && entry.HandIndex == 0 && BarCellOfSlot(entry.SlotId) == 0 ? LiveHudRole.WornSlot : LiveHudRole.Tg;
         if (entry.HandIndex is 1 or 2) // hands beyond the second keep tg's place
             return entry.HandIndex == 1 ? LiveHudRole.LeftHand : LiveHudRole.RightHand;
         if (entry.SlotId != 0 && entry.HandIndex == 0)
@@ -221,8 +222,8 @@ public static class LiveHud
     /// Whether an entry drawn in the role <paramref name="placed"/> (<see cref="Placed"/>) is drawn and takes clicks now: tg's zone selector only while
     /// the cursor is free (cursor mode, Tab), where any zone, the eyes, mouth and groin included (tg's surgeries, a ctrl-click on the doll), is still
     /// chosen on it (looking aims at them too since package T, slice T4a, and the selector shows the zone the server selected); slice E: on the human
-    /// HUD tg's memories button and area creator only then too, and a hidden entry never (no picture, no pick, no tooltip); package 3: tg's belt, back
-    /// and suit-storage slots only then; every other entry always.
+    /// HUD tg's memories button and area creator only then too, and a hidden entry never (no picture, no pick, no tooltip); slice 4A: tg's worn slots
+    /// (the character panel) only then; every other entry always.
     /// </summary>
     public static bool Shown(LiveHudRole placed, bool cursorMode) => placed switch
     {
@@ -461,8 +462,8 @@ public static class LiveHud
         float name = 0f, bool tab = false)
     {
         HandsLayout row = Row(metrics, leftActive, rightActive, ScreenLoc.Place(ToggleLoc, metrics, 32, 32, 0, 0, out _).Right);
-        // slice D: the held-item hint strip over the row, with the vitals given (the human HUD); package 3: none under Tab, where its place is the
-        // worn slots' row's and the pointer has tooltips
+        // slice D: the held-item hint strip over the row, with the vitals given (the human HUD); package 3: none under Tab, where the pointer has
+        // tooltips
         if (column.Doll.Width <= 0f || tab)
             return row;
         float named = hint > 0f ? HintNameWidth(metrics, row, hint, name) : 0f;
@@ -533,14 +534,15 @@ public static class LiveHud
 
     /// <summary>
     /// The icon square the maptexts of an entry drawn in <paramref name="placed"/> stand on, which they scale with: a hand box's picture square, a
-    /// worn slot's cell (number <paramref name="cell"/> of <paramref name="cells"/>); null for an entry at its own place (its screen_loc's square at
-    /// the HUD's pixel scale). A bar slot's texts are not its entry's: the cell draws its item's (<see cref="CellLook"/>).
+    /// worn slot's in the character panel (<paramref name="panel"/>, its cell number <paramref name="cell"/>: the square its picture fills, as a bar
+    /// cell's item, <see cref="HandPicture"/>); null for an entry at its own place (its screen_loc's square at the HUD's pixel scale) or a worn slot
+    /// without a cell. A bar slot's texts are not its entry's: the cell draws its item's (<see cref="CellLook"/>).
     /// </summary>
-    public static HudRect? MaptextSquare(LiveHudRole placed, in HandsLayout hands, int cell, int cells) => placed switch
+    public static HudRect? MaptextSquare(LiveHudRole placed, in HandsLayout hands, in TabInventoryLayout panel = default, int cell = -1) => placed switch
     {
         LiveHudRole.LeftHand => HandPicture(hands.Left, hands.Unit),
         LiveHudRole.RightHand => HandPicture(hands.Right, hands.Unit),
-        LiveHudRole.WornSlot => WornCell(hands, cell, cells),
+        LiveHudRole.WornSlot when panel.CellAt(cell).Width > 0f => HandPicture(panel.CellAt(cell), panel.CellUnit),
         _ => null,
     };
 
@@ -565,8 +567,7 @@ public static class LiveHud
         float leftSide = leftActive ? active : other, rightSide = rightActive ? active : other;
         var leftBox = new HudRect(hotbar.Left - handGap - leftSide, bottom - leftSide, leftSide, leftSide);
         var rightBox = new HudRect(hotbar.Right + handGap, bottom - rightSide, rightSide, rightSide);
-        var row = new HandsLayout(leftBox, rightBox, hotbar, k);
-        return row with { WornRight = WornEnd(metrics, row) };
+        return new HandsLayout(leftBox, rightBox, hotbar, k);
     }
 
     // Two rectangles share some area (an empty one shares none).
@@ -616,47 +617,6 @@ public static class LiveHud
     }
 
     /// <summary>
-    /// Package 3: where tg's worn slot number <paramref name="index"/> (from 0) of <paramref name="count"/> (tg's belt, back and suit storage, in tg's
-    /// slot order) is under Tab: a row of cells of the bar's size and gap ending at <see cref="HandsLayout.WornRight"/> (the bar's right end), its
-    /// bottom <see cref="UiTokens.HotbarSlotGap"/> over the bar's top, whole pixels; empty where the row is left out.
-    /// </summary>
-    public static HudRect WornCell(in HandsLayout hands, int index, int count) => WornCellAt(hands, hands.WornRight, index, count);
-
-    private static HudRect WornCellAt(in HandsLayout hands, float end, int index, int count)
-    {
-        if (end <= 0f)
-            return default;
-        float k = hands.Unit, fromRight = (count - 1 - index) * (UiTokens.HotbarSlot + UiTokens.HotbarSlotGap);
-        float right = end - MathF.Round(fromRight * k), left = end - MathF.Round((fromRight + UiTokens.HotbarSlot) * k);
-        float side = Math.Min(right - left, hands.Hotbar.Height), bottom = hands.Hotbar.Top - MathF.Round(UiTokens.HotbarSlotGap * k);
-        return new HudRect(right - side, bottom - side, side, side);
-    }
-
-    // Where the worn slots' row ends: over the bar's right end; where tg's entries still drawn at the bottom right (or at tg's places in its right
-    // column) reach down over that place, which only a 5:4 screen at the largest UI scales does (tg's buttons there take the bottom's width and the
-    // row is made small under them), over the bar's left end instead; 0 (left out) where neither is clear.
-    private static float WornEnd(in HudMetrics metrics, in HandsLayout row)
-    {
-        float span = MathF.Round((WornSlots * UiTokens.HotbarSlot + (WornSlots - 1) * UiTokens.HotbarSlotGap) * row.Unit);
-        foreach (float end in new[] { row.Hotbar.Right, row.Hotbar.Left + span })
-        {
-            bool clear = true;
-            for (int i = 0; i < WornSlots && clear; i++)
-            {
-                HudRect cell = WornCellAt(row, end, i, WornSlots);
-                foreach (ScreenLocSpec spec in HintClear)
-                    clear &= !Over(cell, ScreenLoc.Place(spec, metrics, 32, 32, 0, 0, out _));
-            }
-            if (clear)
-                return end;
-        }
-        return 0f;
-    }
-
-    /// <summary>tg's worn slots shown under Tab on the human HUD: the belt, the back and suit storage.</summary>
-    public const int WornSlots = 3;
-
-    /// <summary>
     /// Package 3: the screen entry id the HUD pick reports for the belt's cell <paramref name="cell"/> (1 to 7), which is ours, not a tg entry: below
     /// zero, where no screen entry of the server's is (<see cref="BeltCellOf"/>).
     /// </summary>
@@ -665,6 +625,12 @@ public static class LiveHud
     /// <summary>The belt's cell (1 to 7) a HUD pick's <paramref name="target"/> names (<see cref="BeltCellId"/>); 0 for anything else.</summary>
     public static int BeltCellOf(in ClickTarget target)
         => target.Kind == TargetKind.Screen && target.Id is <= -1 and >= -HotbarMessage.BeltCells ? (int)-target.Id : 0;
+
+    /// <summary>
+    /// Whether a HUD pick's <paramref name="target"/> is one of ours, not a screen entry of the server's (a belt cell, slice 4A's own sprite): its id
+    /// is below zero. The server is never told of one.
+    /// </summary>
+    public static bool IsOurs(in ClickTarget target) => target.Kind == TargetKind.Screen && target.Id < 0;
 
     /// <summary>
     /// What the HUD pick gets for the belt's cells on the bar (<paramref name="hands"/>): each whole cell under its <see cref="BeltCellId"/>, so a
@@ -685,10 +651,17 @@ public static class LiveHud
     /// its vis_contents), so a click on the item's pixels is the item's and anywhere else on the cell tg's slot's, as on a hand box.
     /// </summary>
     public static void BarSlotDrawn(in HandsLayout hands, long entryId, int cell, IReadOnlyList<HudChildDrawn> children, List<HudDrawn> into)
+        => SlotCellDrawn(BarCell(hands, cell), hands.Unit, entryId, children, into);
+
+    /// <summary>
+    /// What the HUD pick gets for tg's slot <paramref name="entryId"/> drawn in the cell <paramref name="rect"/> (a bar cell, or slice 4A's character
+    /// panel's at <paramref name="unit"/>): the whole cell under the slot's id, and over it the cell's picture square with the slot's items
+    /// (<paramref name="children"/>), so a click on an item's pixels is the item's and anywhere else on the cell tg's slot's.
+    /// </summary>
+    public static void SlotCellDrawn(HudRect rect, float unit, long entryId, IReadOnlyList<HudChildDrawn> children, List<HudDrawn> into)
     {
-        HudRect rect = BarCell(hands, cell);
         into.Add(new HudDrawn(entryId, rect, null, 0, 0));
-        into.Add(new HudDrawn(entryId, HandPicture(rect, hands.Unit), null, 0, 0, children));
+        into.Add(new HudDrawn(entryId, HandPicture(rect, unit), null, 0, 0, children));
     }
 
     /// <summary>

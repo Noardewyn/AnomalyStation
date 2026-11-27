@@ -62,16 +62,9 @@ public class FakeInventoryTests
         Assert.All(slots.Concat(world.ScreenGroup(HudGroup.Static).Where(e => e.Id is >= 2010 and < FakeServer.CraftId)), e => Assert.Equal(1, System.Numerics.BitOperations.PopCount(e.SlotId)));
         Assert.Equal(15, slots.Concat(world.ScreenGroup(HudGroup.Static)).Select(e => e.SlotId).Where(s => s != 0).Distinct().Count());
 
-        var inventory = new ContainerLayout(HudGroup.ToggleableInventory);
-        inventory.Rebuild(slots, world);
-        Assert.True(inventory.IsOpen);
-        Assert.Equal(9, inventory.Cells.Count);
-        Assert.All(inventory.Cells, c => Assert.Equal(ContainerCellRole.Slot, c.Role));
-        Assert.All(inventory.Cells, c => Assert.NotEqual(string.Empty, c.Label)); // D70: every slot has a text label
-        Assert.Contains(inventory.Cells, c => c.Label == "Shoes");
-        Assert.DoesNotContain(inventory.Cells, c => c.Label == "Belt"); // on the HUD's bottom row, as tg's
-        // D70: no two slots share a grid position.
-        Assert.Equal(inventory.Cells.Count, inventory.Cells.Select(c => (c.Column, c.Row)).Distinct().Count());
+        // slice 4A: the toggled inventory's slots are worn slots of the Tab inventory's character panel, each in a cell of its own
+        Assert.All(slots, s => Assert.Equal(LiveHudRole.WornSlot, LiveHud.RoleOf(world, s)));
+        Assert.Equal(9, slots.Select(s => TabInventory.CellOf(s.SlotId)).Where(c => c >= 0).Distinct().Count());
         _ = rig;
     }
 

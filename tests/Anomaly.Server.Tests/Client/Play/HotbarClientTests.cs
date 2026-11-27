@@ -236,13 +236,16 @@ public class HotbarClientTests
         Assert.Equal(pen, server.HeldId(server.ActiveHand));
         Assert.Equal(slots[9], At(9).Id);
         Assert.Equal(slots[10], At(10).Id);
-        // tg's belt, back and suit-storage slots: drawn and clicked under Tab only
-        foreach (ScreenEntry entry in world.Screen.Values.Where(e => LiveHud.RoleOf(world, e) == LiveHudRole.WornSlot))
+        // slice 4A: tg's belt, back and suit-storage slots and the nine of tg's toggled inventory: drawn and clicked under Tab only, each in its own
+        // cell of the character panel
+        List<ScreenEntry> worn = world.Screen.Values.Where(e => LiveHud.RoleOf(world, e) == LiveHudRole.WornSlot).ToList();
+        foreach (ScreenEntry entry in worn)
         {
             Assert.False(LiveHud.Shown(LiveHud.Placed(LiveHud.RoleOf(world, entry), humanHud: true), cursorMode: false));
             Assert.True(LiveHud.Shown(LiveHud.Placed(LiveHud.RoleOf(world, entry), humanHud: true), cursorMode: true));
         }
-        Assert.Equal(3, world.Screen.Values.Count(e => LiveHud.RoleOf(world, e) == LiveHudRole.WornSlot));
+        Assert.Equal(TabInventory.CellCount, worn.Count);
+        Assert.Equal(Enumerable.Range(0, TabInventory.CellCount), worn.Select(e => TabInventory.CellOf(e.SlotId)).OrderBy(c => c));
     }
 
     [Fact]

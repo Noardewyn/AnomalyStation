@@ -26,7 +26,8 @@ namespace Anomaly.Client.Hud;
 /// still taking tg's clicks, and tg's zone selector is shown only while the cursor is free. Slice C, on the human HUD: tg's two hand boxes are
 /// drawn as native boxes either side of the hotbar at the bottom centre (<see cref="LiveHudView"/>); the boxes still take tg's clicks and drags.
 /// Package 3: the hotbar's ten cells between them (the belt's seven, a click on one under Tab its press; tg's pocket and ID slots drawn as cells 8
-/// to 10, still tg's for clicks and drags), and tg's belt, back and suit-storage slots in a row over the bar's right end under Tab only. Slice D,
+/// to 10, still tg's for clicks and drags). Slice 4A, under Tab only: the character panel (the own sprite, taking clicks as the doll does, with tg's
+/// worn slots round it in cells, still tg's for clicks, drags and tooltips) and the chat window's docked place (<see cref="TabInventory"/>). Slice D,
 /// on the human HUD: a hint strip over the hands names the held item (package 3) and its keys, not under Tab, and tg's alerts are chips by the vitals (above them, or left of them) instead of tg's column (DV82, which other HUDs keep), each chip
 /// taking its alert's clicks and hover. Slice E, on the human HUD: the doll, tg's health indicator and mood face stand bare against the screen's
 /// right edge (or the doll alone left of tg's right column on a crowded screen), tg's status indicators and sleep button are chips, tg's combat
@@ -104,7 +105,16 @@ void fragment() {
     private LiveHudLayout _layout;
     private HandsLayout _hands;
     private bool _humanHud; // slice C: tg's inventory toggle is on the screen, so the hands and the bottom slots are re-placed (LiveHud.Placed)
-    private readonly List<Item> _wornSlots = new(); // package 3: tg's belt, back and suit-storage slots, in the row over the bar under Tab
+    private readonly List<Item> _wornSlots = new(); // slice 4A: tg's worn slots, in the character panel under Tab
+    private TabInventoryLayout _panel; // slice 4A: the chat column and the character panel under Tab on the human HUD
+    private readonly List<HudRect> _tgDrawn = new(); // tg's entries still drawn under Tab, which the Tab inventory keeps clear of
+    private ComposedRaster _spriteRaster; // slice 4A: the own sprite's last picture, and its icon square as the HUD pick gets it (TabInventory.SpritePick)
+    private Anomaly.Client.Shared.Icons.Raster _spritePick, _spriteShown; // the pick's square of that picture; the one this frame (null: no sprite drawn)
+    private HudRect _spriteRect;
+    private TableRef _spriteLook; // the appearance it was composed from, and its zone map (made once per appearance)
+    private BodyZoneMap _spriteMap;
+    private TableRef _spriteMapLook;
+    private int _spriteMapSnapshots;
     private readonly MaptextNode[] _cellTexts = new MaptextNode[HotbarMessage.CellCount]; // package 3: a stack's amount on its cell's item
 
     /// <summary>Package 3 (ui-overhaul.md section 10): the own hotbar as the server last sent it, which the bar's cells show. Set by the scene each frame.</summary>
@@ -114,6 +124,38 @@ void fragment() {
 
     /// <summary>Whether the cursor is free (cursor mode, Tab): tg's zone selector is shown then only (<see cref="LiveHud.Shown"/>). Set by the scene each frame.</summary>
     public bool CursorMode { get; set; }
+
+    /// <summary>Whether the HUD is the human HUD (tg's inventory toggle is on the screen): the hands, the slots and the Tab inventory are ours.</summary>
+    public bool HumanHud => _humanHud;
+
+    /// <summary>Slice 4A: where the chat window is docked under Tab (<see cref="TabInventory.ChatDock"/>); null: at its own place.</summary>
+    public HudRect? ChatDock { get; private set; }
+
+    /// <summary>The health doll's screen entry (0: none): an empty-hand click on the own sprite is a click on it (<see cref="TabInventory.SelfClick"/>).</summary>
+    public long DollEntry { get; private set; }
+
+    /// <summary>Slice 4A: tg's inventory toggle while it shows tg's inventory collapsed (its <c>toggle</c> state), else 0 (<see cref="InventoryExpander"/>).</summary>
+    public long CollapsedToggle { get; private set; }
+
+    /// <summary>Slice 4A: tg's inventory toggle while it shows tg's inventory expanded (<c>toggle_active</c>), else 0.</summary>
+    public long ExpandedToggle { get; private set; }
+
+    /// <summary>
+    /// Slice 4A: the part of the own sprite in the character panel at tg's (<paramref name="iconX"/>, <paramref name="iconY"/>) of a pick on it (the
+    /// nine zones of aiming by look, from the sprite's own picture); None off its body or without it.
+    /// </summary>
+    public AimZone SpriteZoneAt(byte iconX, byte iconY)
+    {
+        if (_textures is not AppearanceTextures real || _spriteLook.IsNone || iconX == 0 || iconY == 0)
+            return AimZone.None;
+        ReplicaTables tables = real.TablesOf(_replica);
+        if (_spriteMapLook != _spriteLook || _spriteMap == null || _spriteMapSnapshots != _replica.SnapshotsApplied)
+        {
+            _spriteMap = BodyZoneAim.ZoneMap(tables, real.Compositor, _spriteLook, ByondDir.South);
+            (_spriteMapLook, _spriteMapSnapshots) = (_spriteLook, _replica.SnapshotsApplied);
+        }
+        return BodyZoneAim.ZoneAtPixel(tables, real.Compositor, _spriteLook, _spriteMap, iconX, iconY);
+    }
 
     // the role an item is drawn in this frame: the hands, the bottom slots and the alerts only on the human HUD, tg's right-column indicators
     // only with its full vitals stack (slices D and E)
@@ -230,18 +272,28 @@ void fragment() {
         }
     }
 
-    // M4a P7 (D131): the entries of an open storage and of the inventory are drawn by the native windows (ContainerWindow, InventoryPanel), not at their screen_loc.
-    private static bool InWindow(ScreenEntry entry) => entry.Group is HudGroup.Storage or HudGroup.ToggleableInventory;
+    // M4a P7 (D131): the entries of an open storage are drawn by the native window (ContainerWindow), not at their screen_loc; slice 4A: tg's toggled
+    // inventory's slots are worn slots (the character panel), and anything else of that group is not drawn.
+    private static bool InWindow(ScreenEntry entry) => entry.Group == HudGroup.Storage || (entry.Group == HudGroup.ToggleableInventory && entry.SlotId == 0);
 
     /// <inheritdoc />
     public void Collect(List<HudDrawn> bottomToTop)
     {
         if (_view.Hands.Shown) // package 3: the belt's cells are ours, a click on one is its press (PlaySession.Click)
             LiveHud.BeltDrawn(_hands, bottomToTop, hidden: !_root.Visible);
+        // slice 4A: the own sprite under the slots' cells, on the pixels drawn of it: its icon square alone (TabInventory.SpritePick; a transparent
+        // pixel, or a part of a larger picture cut off at the square, is no click on it)
+        if (_root.Visible && _panel.Shown && _spriteShown != null)
+            bottomToTop.Add(new HudDrawn(TabInventory.SpriteId, _panel.Sprite, _spriteShown, 0, 0));
         foreach (Item item in _order)
         {
             if (!item.Container.Visible || !item.HasSpec || item.Hidden || !LiveHud.Shown(RoleNow(item), CursorMode))
                 continue;
+            if (RoleNow(item) == LiveHudRole.WornSlot) // slice 4A: the panel's cell is tg's slot for clicks, drags and its tooltip
+            {
+                LiveHud.SlotCellDrawn(_panel.CellAt(item.Cell), _panel.CellUnit, item.Entry.Id, HudPictures.ChildrenOf(_replica, _textures, item.Entry, _lastNow), bottomToTop);
+                continue;
+            }
             if (item.Zones.Count > 0)
             {
                 // the doll's own 32 x 32 icon square, once: a point on it is tg's icon pixel whatever size the zones' pictures are (a wound
@@ -403,8 +455,8 @@ void fragment() {
 
     private bool _dollShown;
 
-    // ui-overhaul.md section 6: where the live HUD's re-placed entries go (slice C: on the human HUD the hands; package 3: the bar's cells and the
-    // worn slots' row; slice D: the vitals, the alert chips and the hint strip; slice E: the vitals bare, tg's combat toggle in the corner), what
+    // ui-overhaul.md section 6: where the live HUD's re-placed entries go (slice C: on the human HUD the hands; package 3: the bar's cells; slice 4A:
+    // the Tab inventory; slice D: the vitals, the alert chips and the hint strip; slice E: the vitals bare, tg's combat toggle in the corner), what
     // its view draws, and where what stands left of them must end.
     private void UpdateLiveHud(in HudMetrics metrics)
     {
@@ -412,6 +464,7 @@ void fragment() {
         Item left = null, right = null, active = null;
         _wornSlots.Clear();
         _alerts.Clear();
+        (DollEntry, CollapsedToggle, ExpandedToggle) = (0, 0, 0);
         foreach (Item item in _order)
         {
             if (!item.HasSpec || item.Hidden)
@@ -420,11 +473,25 @@ void fragment() {
                 Analyze(item);
             switch (item.Role)
             {
-                case LiveHudRole.Doll: doll = true; break;
-                case LiveHudRole.InventoryToggle: human = true; break;
+                case LiveHudRole.Doll:
+                    doll = true;
+                    DollEntry = item.Entry.Id;
+                    break;
+                case LiveHudRole.InventoryToggle:
+                    human = true;
+                    // slice 4A: tg's own state of the toggle says whether tg's inventory is expanded (screen_objects/human.dm update_icon_state)
+                    string state = _replica.TryGetAppearance(item.Entry.Appearance, out AppearanceEntry look) ? _replica.ResolveString(look.IconState) : null;
+                    if (state == "toggle")
+                        CollapsedToggle = item.Entry.Id;
+                    else if (state == "toggle_active")
+                        ExpandedToggle = item.Entry.Id;
+                    break;
                 case LiveHudRole.LeftHand: left = item; break;
                 case LiveHudRole.RightHand: right = item; break;
-                case LiveHudRole.WornSlot: _wornSlots.Add(item); break;
+                case LiveHudRole.WornSlot:
+                    item.Cell = TabInventory.CellOf(item.Entry.SlotId);
+                    _wornSlots.Add(item);
+                    break;
                 case LiveHudRole.BarSlot:
                     item.Cell = LiveHud.BarCellOfSlot(item.Entry.SlotId);
                     break;
@@ -457,9 +524,7 @@ void fragment() {
         string heldName = leftActive ? Hotbar?.LeftHand : rightActive ? Hotbar?.RightHand : null;
         float named = 0f, hint = human ? HintNatural(UiTokens.Unit(metrics), heldName, out named) : 0f;
         _hands = LiveHud.Hands(metrics, leftActive, rightActive, human ? _layout : default, hint, named, CursorMode);
-        _wornSlots.Sort((a, b) => a.Entry.SlotId.CompareTo(b.Entry.SlotId)); // tg's slot order (belt, back, suit storage), not their places
-        for (int i = 0; i < _wornSlots.Count; i++)
-            _wornSlots[i].Cell = i;
+        UpdatePanel(metrics, human);
         PanelLeftEdge = doll ? LiveHud.LeftOfVitals(_layout, metrics) : float.PositiveInfinity;
         if (_chips.Count > 0) // slice D: the prompts end before alert chips left of the vitals too
             PanelLeftEdge = Math.Min(PanelLeftEdge, LiveHud.LeftOfAlerts(_chips, metrics));
@@ -497,6 +562,66 @@ void fragment() {
         scene.HintName = _hands.HintName > 0f ? LiveHud.HintName(heldName, _hands.HintName, _measureVerb) : null;
         _view.ShowHands();
     }
+
+    // Slice 4A: under Tab on the human HUD the chat column and the character panel (TabInventory.Layout), clear of tg's entries still drawn there;
+    // the panel's cells for tg's worn slots on the screen, and the own sprite facing the viewer as the game draws the body, clipped to its square.
+    private void UpdatePanel(in HudMetrics metrics, bool human)
+    {
+        _panel = default;
+        _spriteLook = TableRef.None;
+        _spriteShown = null; // no pick on the sprite unless it is drawn this frame
+        if (human && CursorMode)
+        {
+            _tgDrawn.Clear();
+            foreach (Item item in _order)
+            {
+                LiveHudRole role = RoleNow(item);
+                bool tg = role is LiveHudRole.Tg or LiveHudRole.CombatToggle or LiveHudRole.ZoneSelector or LiveHudRole.Memories or LiveHudRole.AreaCreator;
+                // what tg draws now: a picture made at least once, or one of tg's entries that stands at its human place only under Tab
+                if (!tg || !item.HasSpec || item.Hidden || item.Splash || item.Fullscreen || (item.Whole?.Texture == null && LiveHud.HumanPlace(role) == null))
+                    continue;
+                HudRect at = Place(item, metrics, 32, 32, 0, 0, out bool full);
+                if (!full && at.Width < metrics.Width / 2f && at.Height < metrics.Height / 2f) // not a picture over the screen (a range, an overlay)
+                    _tgDrawn.Add(at);
+            }
+            _panel = TabInventory.Layout(metrics, _hands, _layout, _tgDrawn);
+        }
+        ChatDock = TabInventory.ChatDock(CursorMode, human, _panel);
+        _panelCells.Clear();
+        if (!_panel.Shown || !_root.Visible)
+        {
+            _view.ShowPanel(_panelCells, 0f, null, default, default);
+            return;
+        }
+        foreach (Item item in _wornSlots)
+        {
+            if (item.Cell >= 0)
+                _panelCells.Add(_panel.Cells[item.Cell]);
+        }
+        Texture2D sprite = null;
+        Rect2 shown = default, source = default;
+        if (_textures is AppearanceTextures real && _replica.TryGet(_replica.OwnEntity, out ReplicaEntity me) && !me.State.Appearance.IsNone
+            && real.TryGet(real.TablesOf(_replica), me.State.Appearance, ByondDir.South, _lastNow, out ComposedRaster raster, out GodotPicture picture) && raster.Image != null)
+        {
+            _spriteLook = me.State.Appearance;
+            if (!ReferenceEquals(_spriteRaster?.Image, raster.Image)) // the pick's square, made once per picture (the compositor keeps its pictures)
+                (_spriteRaster, _spritePick) = (raster, TabInventory.SpritePick(raster.Image, raster.OriginX, raster.OriginY));
+            _spriteShown = _spritePick;
+            _spriteRect = ScreenLoc.FitIcon(_panel.Sprite, raster.Image.Width, raster.Image.Height, raster.OriginX, raster.OriginY);
+            // a picture larger than the icon square (a big hat, a lying body's turned corners) is cut at the square, so it never covers a cell
+            var whole = new Rect2(_spriteRect.Left, _spriteRect.Top, _spriteRect.Width, _spriteRect.Height);
+            shown = whole.Intersection(new Rect2(_panel.Sprite.Left, _panel.Sprite.Top, _panel.Sprite.Width, _panel.Sprite.Height));
+            float k = _spriteRect.Width / raster.Image.Width;
+            if (shown.Size.X > 0f && shown.Size.Y > 0f && k > 0f)
+            {
+                sprite = picture.Texture;
+                source = new Rect2((shown.Position - whole.Position) / k, shown.Size / k);
+            }
+        }
+        _view.ShowPanel(_panelCells, _panel.CellUnit, sprite, shown, source);
+    }
+
+    private readonly List<HudRect> _panelCells = new();
 
     // Package 3: the bar's ten cells as the hotbar model says (LiveHud.CellLook), each item drawn as a hand box draws its item, with a stack's
     // amount (its maptext) on the item's square; tg's pocket and ID slots are only their cells' click areas (Collect).
@@ -633,10 +758,11 @@ void fragment() {
             fullscreen = false;
             return ScreenLoc.FitIcon(_layout.Doll, width, height, originX, originY);
         }
-        if (RoleNow(item) == LiveHudRole.WornSlot) // package 3: tg's picture in the worn slots' row over the bar, its icon pixels kept
+        if (RoleNow(item) == LiveHudRole.WornSlot) // slice 4A: tg's picture in its cell of the character panel, as a bar cell's item, its icon pixels kept
         {
             fullscreen = false;
-            return ScreenLoc.FitIcon(LiveHud.WornCell(_hands, item.Cell, _wornSlots.Count), width, height, originX, originY);
+            HudRect cell = _panel.CellAt(item.Cell);
+            return ScreenLoc.FitIcon(cell.Width > 0f ? LiveHud.HandPicture(cell, _panel.CellUnit) : default, width, height, originX, originY);
         }
         if (RoleNow(item) == LiveHudRole.Alert && item.Cell < _chips.Count) // slice D: tg's picture in its chip; section 11: its visible art fitted to it
         {
@@ -745,7 +871,9 @@ void fragment() {
             Analyze(item);
         // tg's zone selector only while the cursor is free, slice E's hidden buttons never (LiveHud.Shown): hidden, Collect leaves it out too
         // slice E: an entry drawn as a chip draws nothing while it has none (tg fading its hunger bar out: the chip follows the fade's target)
-        item.Container.Visible = LiveHud.Shown(RoleNow(item), CursorMode) && !(RoleNow(item) == LiveHudRole.Alert && item.Cell >= _chips.Count);
+        // slice 4A: a worn slot only in its cell of the character panel (none without the panel, or for a slot the panel does not show)
+        item.Container.Visible = LiveHud.Shown(RoleNow(item), CursorMode) && !(RoleNow(item) == LiveHudRole.Alert && item.Cell >= _chips.Count)
+            && !(RoleNow(item) == LiveHudRole.WornSlot && _panel.CellAt(item.Cell).Width <= 0f);
         if (!item.Container.Visible)
             return;
         float pixelScale = metrics.PixelScale;
@@ -910,7 +1038,7 @@ void fragment() {
 
     // Protocol version 18: the maptexts of the entry's picture (its own, its overlays' and the item in its hand), over it, at the HUD's pixel size.
     // The box sits at the icon's lower left corner, which is the entry's tile; the entry's animate() chain moves the text with the picture.
-    // Slice C: a hand box's or a worn slot's texts stand on its icon square there and scale with it (LiveHud.MaptextSquare).
+    // Slice C: a hand box's or (slice 4A) a worn slot's texts stand on its picture square there and scale with it (LiveHud.MaptextSquare).
     private void ShowMaptext(Item item, in HudMetrics metrics, TableRef shown, in HudLook moved)
     {
         if (_textures is not AppearanceTextures real)
@@ -926,7 +1054,7 @@ void fragment() {
 
         LiveHudRole role = RoleNow(item);
         HudRect? square = role == LiveHudRole.Alert && item.Cell < _chips.Count ? LiveHud.AlertPicture(_chips[item.Cell])
-            : LiveHud.VitalSquare(role, _layout) ?? LiveHud.MaptextSquare(role, _hands, item.Cell, _wornSlots.Count);
+            : LiveHud.VitalSquare(role, _layout) ?? LiveHud.MaptextSquare(role, _hands, _panel, item.Cell);
         HudRect tile = square ?? Place(item, metrics, 32, 32, 0, 0, out _);
         item.Text.Modulate = item.Whole != null && !IsHand(role) ? item.Whole.Modulate : Colors.White;
         item.Text.SetText(renderer, real, _replica, shown, new Vector2(tile.Left + moved.MoveX, tile.Top + tile.Height + moved.MoveY), square is HudRect s ? s.Width / 32f : metrics.PixelScale);
@@ -1138,7 +1266,7 @@ void fragment() {
         public int OriginX, OriginY;
         public LiveHudRole Role; // ui-overhaul.md section 6: the doll and the combat toggle are re-placed, the zone selector shown in cursor mode only
         public HudRect IconSquare; // a doll entry's own 32 x 32 icon square, where it is drawn (what Collect reports)
-        public int Cell; // package 3: a worn slot's place in its row, a bar slot's cell (8 to 10); slice D: an alert's chip
+        public int Cell; // slice 4A: a worn slot's cell of the character panel (-1: none); package 3: a bar slot's cell (8 to 10); slice D: an alert's chip
         public TextureRect Face; // slice T5c: tg's eyes or mouth hover picture on the doll
         public readonly List<ZoneNode> Zones = new();
         // section 11: a chip's visible art (LiveHud.TryChipArtBounds), and the icon, icon state, overlays and underlays it was found for

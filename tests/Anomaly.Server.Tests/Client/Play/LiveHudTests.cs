@@ -38,14 +38,15 @@ public class LiveHudTests
         Assert.Equal(LiveHudRole.Doll, LiveHud.RoleOf(world, world.Screen[DollId]));
         Assert.Equal(LiveHudRole.ZoneSelector, LiveHud.RoleOf(world, world.Screen[FakeServer.ZoneSelId]));
         Assert.Equal(LiveHudRole.CombatToggle, LiveHud.RoleOf(world, world.Screen[FakeServer.CombatId]));
-        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, world.Screen[FirstSlotId])); // a slot of the toggled inventory: the window's
+        Assert.Equal(LiveHudRole.WornSlot, LiveHud.RoleOf(world, world.Screen[FirstSlotId])); // slice 4A: a slot of the toggled inventory: the character panel's
         Assert.Equal(LiveHudRole.Health, LiveHud.RoleOf(world, world.Screen[HealthId])); // slice D: tg's health indicator, at ui_health
         // slice E: tg's move intent, throw, drop and swap buttons, which keys do
         foreach (long id in new[] { IntentId, ThrowId, DropId, SwapId })
             Assert.Equal(LiveHudRole.KeyButton, LiveHud.RoleOf(world, world.Screen[id]));
         // every other entry of the fake's HUD stays at tg's place, but slice C's: the two hands, the six bottom slots and the inventory toggle,
-        // slice D's health indicator, and slice E's buttons: those four and the fake's nine others (FakeServer.HudButtons)
-        Assert.Equal(3 + 2 + 6 + 1 + 1 + 4 + 9, world.Screen.Values.Count(e => LiveHud.RoleOf(world, e) != LiveHudRole.Tg));
+        // slice D's health indicator, slice E's buttons: those four and the fake's nine others (FakeServer.HudButtons), and slice 4A's nine slots of
+        // the toggled inventory
+        Assert.Equal(3 + 2 + 6 + 1 + 1 + 4 + 9 + 9, world.Screen.Values.Count(e => LiveHud.RoleOf(world, e) != LiveHudRole.Tg));
         // tg puts them where the fake does: the zone selector at ui_zonesel, the toggle at ui_acti
         Assert.Equal("EAST-1:28,SOUTH:5", world.Screen[FakeServer.ZoneSelId].ScreenLoc);
         Assert.Equal("EAST-3:24,SOUTH:5", world.Screen[FakeServer.CombatId].ScreenLoc);
@@ -400,9 +401,9 @@ public class LiveHudTests
         // a third and fourth hand keep tg's place
         Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, left with { HandIndex = 3 }));
         Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, right with { HandIndex = 4 }));
-        // a slot of the toggled inventory or of a storage window is the window's, whatever its slot id
+        // slice 4A: a slot of tg's toggled inventory is a worn slot (the character panel's); one of a storage window is the window's, whatever its slot id
         ScreenEntry belt = world.Screen[BeltSlotId];
-        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, belt with { Group = HudGroup.ToggleableInventory }));
+        Assert.Equal(LiveHudRole.WornSlot, LiveHud.RoleOf(world, belt with { Group = HudGroup.ToggleableInventory }));
         Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, belt with { Group = HudGroup.Storage }));
         Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, belt with { SlotId = 0 }));
         Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, left with { ActionTarget = 7 }));
@@ -420,7 +421,7 @@ public class LiveHudTests
         // the doll, the combat toggle and the zone selector are slice B's on every HUD
         foreach (LiveHudRole role in new[] { LiveHudRole.Doll, LiveHudRole.CombatToggle, LiveHudRole.ZoneSelector, LiveHudRole.InventoryToggle, LiveHudRole.Tg })
             Assert.Equal(role, LiveHud.Placed(role, humanHud: false));
-        // the hands and the bar always; package 3: tg's belt, back and suit-storage slots only under Tab, at tg's places on another HUD always
+        // the hands and the bar always; slice 4A: tg's worn slots (the character panel) only under Tab, at tg's places on another HUD always
         Assert.True(LiveHud.Shown(LiveHudRole.LeftHand, cursorMode: false) && LiveHud.Shown(LiveHudRole.BarSlot, cursorMode: false));
         Assert.False(LiveHud.Shown(LiveHudRole.WornSlot, cursorMode: false));
         Assert.True(LiveHud.Shown(LiveHudRole.WornSlot, cursorMode: true));
@@ -503,7 +504,7 @@ public class LiveHudTests
 
     [Theory]
     [MemberData(nameof(HandScreens))]
-    public void TheHandsTheBarTheWornRowTheVitalsAndTheStripAreOnTheScreenAndClearOfEachOtherAndOfTgsHud(int width, int height, float scale)
+    public void TheHandsTheBarTheVitalsAndTheStripAreOnTheScreenAndClearOfEachOtherAndOfTgsHud(int width, int height, float scale)
     {
         // the chat window does not move the row (a window over it covers it as it covers tg's HUD), so the row depends on the screen, the scale and
         // the active hand alone
@@ -530,12 +531,9 @@ public class LiveHudTests
             var tg = HumanTg(metrics, layout, tab);
             HandsLayout hands = LiveHud.Hands(metrics, leftActive, rightActive, layout, hint, tab: tab);
             var row = new List<(string Name, HudRect Rect)> { ("left hand", hands.Left), ("right hand", hands.Right), ("hotbar", hands.Hotbar) };
-            // package 3: the ten cells in the bar; under Tab the worn slots' row over its right end, and no hint strip
+            // package 3: the ten cells in the bar; under Tab no hint strip (slice 4A's Tab inventory: TabInventoryTests)
             var cells = Enumerable.Range(1, HotbarMessage.CellCount).Select(c => (Name: $"cell {c}", Rect: LiveHud.BarCell(hands, c))).ToList();
-            var worn = Enumerable.Range(0, LiveHud.WornSlots).Select(i => (Name: $"worn slot {i}", Rect: LiveHud.WornCell(hands, i, LiveHud.WornSlots))).ToList();
             var ours = new List<(string Name, HudRect Rect)> { row[0], row[1] }.Concat(cells).Concat(vitals).ToList();
-            if (tab && hands.WornRight > 0f)
-                ours.AddRange(worn);
             if (hands.Hint.Width > 0)
                 ours.Add(("hint strip", hands.Hint));
             string at = $"{width}x{height} at {scale}, {(tab ? "Tab" : "first person")}, active {(leftActive ? "left" : rightActive ? "right" : "neither")}, {(layout.Vitals ? "full" : "reduced")}";
@@ -556,23 +554,6 @@ public class LiveHudTests
             HandsLayout closed = LiveHud.Hands(metrics, leftActive, rightActive);
             Assert.Equal(closed, hands with { Hint = default, HintShare = 0f });
             Assert.Equal(LiveHud.Hands(metrics, rightActive, leftActive, layout, hint, tab: tab).Hint, hands.Hint);
-            Assert.True(hands.WornRight > 0f, $"{at}: the worn row left out");
-            if (tab && hands.WornRight > 0f)
-            {
-                // the worn slots' row: whole pixel squares of a cell's size, side by side to the bar's right end, over the bar and clear of the prompt block
-                for (int i = 0; i < worn.Count; i++)
-                {
-                    HudRect cell = worn[i].Rect;
-                    Assert.True(Whole(cell) && cell.Width == cell.Height, $"{at}: worn slot {i} {cell}");
-                    Assert.InRange(cell.Width, UiTokens.HotbarSlot * hands.Unit - 1.5f, UiTokens.HotbarSlot * hands.Unit + 1f);
-                    Assert.True(cell.Bottom <= hands.Hotbar.Top && cell.Left >= hands.Hotbar.Left, $"{at}: worn slot {i} {cell} not over the bar {hands.Hotbar}");
-                    Assert.False(Overlaps(cell, prompt), $"{at}: worn slot {i} {cell} over the prompt block {prompt}");
-                    if (i > 0)
-                        Assert.True(worn[i - 1].Rect.Right <= cell.Left, $"{at}: worn slots {i - 1} and {i}");
-                }
-                // over the bar's right end; where tg's entries reach down over it (a 5:4 screen at the largest scales) over its left end
-                Assert.True(worn[^1].Rect.Right == hands.Hotbar.Right || worn[0].Rect.Left == hands.Hotbar.Left, $"{at}: the worn row {worn[0].Rect}..{worn[^1].Rect} at neither end of the bar {hands.Hotbar}");
-            }
             if (hands.Hint.Width > 0)
             {
                 foreach (HudRect chip in chips)
@@ -636,7 +617,7 @@ public class LiveHudTests
                 Assert.Equal(other.Top + inset, cap.Top);
                 Assert.Equal(leftActive ? other.Right - inset : other.Left + inset, leftActive ? cap.Right : cap.Left);
             }
-            // the bar stays put through a swap, and so do its cells and the worn row
+            // the bar stays put through a swap, and so do its cells
             Assert.Equal(LiveHud.Hands(metrics, !leftActive, leftActive).Hotbar, hands.Hotbar);
         }
         // slice E: the pictures at whole pixels, the doll a whole multiple of tg's pixels, under the version tag and the ping chip (the reduced doll
@@ -692,7 +673,6 @@ public class LiveHudTests
         {
             HandsLayout hands = LiveHud.Hands(metrics, leftActive, !leftActive);
             others.AddRange(new[] { ("left hand", hands.Left), ("right hand", hands.Right), ("hotbar", hands.Hotbar) });
-            others.AddRange(Enumerable.Range(0, LiveHud.WornSlots).Select(i => ($"worn slot {i}", LiveHud.WornCell(hands, i, LiveHud.WornSlots)))); // under Tab
         }
         others.AddRange(tg.Select(t => (t.loc, t.rect)));
         bool above = LiveHud.AlertsAbove(metrics, layout);
@@ -1021,10 +1001,6 @@ public class LiveHudTests
         float[] lefts = { 694, 746, 798, 850, 902, 954, 1006, 1066, 1118, 1178 }; // the belt's seven, the pockets' two, the ID slot
         for (int c = 1; c <= 10; c++)
             Assert.Equal(new HudRect(lefts[c - 1], 1016, 48, 48), LiveHud.BarCell(left, c));
-        // under Tab tg's belt, back and suit-storage slots in a row of cells over the bar's right end, 4 over it
-        Assert.Equal(new HudRect(1074, 964, 48, 48), LiveHud.WornCell(left, 0, 3));
-        Assert.Equal(new HudRect(1126, 964, 48, 48), LiveHud.WornCell(left, 1, 3));
-        Assert.Equal(new HudRect(1178, 964, 48, 48), LiveHud.WornCell(left, 2, 3));
         // a swap moves the highlight, not the bar
         Assert.Equal(left.Hotbar, right.Hotbar);
         Assert.Equal(new HudRect(960 - 266 - 8 - 56, 1080 - 16 - 56, 56, 56), right.Left);
@@ -1039,7 +1015,7 @@ public class LiveHudTests
         Assert.Equal(hinted with { Hint = default, HintShare = 0f }, left);
         Assert.Equal(default, LiveHud.Hands(metrics, true, false, default, 300f).Hint);
         Assert.Equal(default, LiveHud.Hands(metrics, true, false, column, 0f).Hint);
-        // package 3: under Tab there is no strip (the worn slots' row has its place), and the row is the same
+        // package 3: under Tab there is no strip, and the row is the same
         HandsLayout tab = LiveHud.Hands(metrics, true, false, column, 300f, name: 80f, tab: true);
         Assert.Equal(default, tab.Hint);
         Assert.Equal(0f, tab.HintName);
@@ -1210,25 +1186,30 @@ public class LiveHudTests
     [InlineData(1280, 720, 1.5f)]
     public void AHandsOrAWornSlotsMaptextStandsOnItsSquareThereAndScalesWithIt(int width, int height, float scale)
     {
-        // a stack's amount (tg's maptext at the icon's lower left) on an item in a hand or in a worn slot under Tab: on that box's square, at that
-        // square's size (32 tg pixels across it), not at the HUD's tg scale of the entry's own place
+        // a stack's amount (tg's maptext at the icon's lower left) on an item in a hand or in a worn slot under Tab: on that box's picture square, at
+        // that square's size (32 tg pixels across it), not at the HUD's tg scale of the entry's own place
         var metrics = new HudMetrics(width, height, scale);
         HandsLayout hands = LiveHud.Hands(metrics, true, false);
-        Assert.Equal(LiveHud.HandPicture(hands.Left, hands.Unit), LiveHud.MaptextSquare(LiveHudRole.LeftHand, hands, 0, 3));
-        Assert.Equal(LiveHud.HandPicture(hands.Right, hands.Unit), LiveHud.MaptextSquare(LiveHudRole.RightHand, hands, 0, 3));
-        for (int cell = 0; cell < LiveHud.WornSlots; cell++)
+        TabInventoryLayout panel = TabInventory.Layout(metrics, hands, LiveHud.Layout(metrics, human: true), Array.Empty<HudRect>());
+        Assert.True(panel.Shown);
+        Assert.Equal(LiveHud.HandPicture(hands.Left, hands.Unit), LiveHud.MaptextSquare(LiveHudRole.LeftHand, hands));
+        Assert.Equal(LiveHud.HandPicture(hands.Right, hands.Unit), LiveHud.MaptextSquare(LiveHudRole.RightHand, hands));
+        for (int cell = 0; cell < TabInventory.CellCount; cell++)
         {
-            HudRect slot = LiveHud.WornCell(hands, cell, LiveHud.WornSlots);
-            Assert.Equal(slot, LiveHud.MaptextSquare(LiveHudRole.WornSlot, hands, cell, LiveHud.WornSlots));
-            // the slot's tg picture is fitted to that cell (HudLayer.Place), so its icon square is the cell
-            Assert.Equal(slot, ScreenLoc.FitIcon(slot, 32, 32, 0, 0));
-            Assert.True(slot.Width / 32f < metrics.PixelScale, "the cell's scale is not the HUD's tg scale, which made the amount too large");
+            // slice 4A: the slot's tg picture is fitted to its cell's picture square in the character panel (HudLayer.Place), so its icon square is that
+            HudRect square = LiveHud.HandPicture(panel.Cells[cell], panel.CellUnit);
+            Assert.Equal(square, LiveHud.MaptextSquare(LiveHudRole.WornSlot, hands, panel, cell));
+            Assert.Equal(square, ScreenLoc.FitIcon(square, 32, 32, 0, 0));
+            Assert.True(square.Width / 32f < metrics.PixelScale, "the cell's scale is not the HUD's tg scale, which made the amount too large");
         }
+        // a worn slot with no cell (no panel, a slot the panel does not show) has none
+        Assert.Null(LiveHud.MaptextSquare(LiveHudRole.WornSlot, hands, default, 0));
+        Assert.Null(LiveHud.MaptextSquare(LiveHudRole.WornSlot, hands, panel, -1));
         // an entry at its own place (or a slot of another HUD, which LiveHud.Placed keeps there) keeps the HUD's own square and scale; a bar slot's
         // amount is its cell's (drawn from the hotbar model), not its entry's
         foreach (LiveHudRole role in new[] { LiveHudRole.Tg, LiveHudRole.Doll, LiveHudRole.CombatToggle, LiveHudRole.ZoneSelector, LiveHudRole.InventoryToggle, LiveHudRole.BarSlot })
-            Assert.Null(LiveHud.MaptextSquare(role, hands, 0, 3));
-        Assert.Null(LiveHud.MaptextSquare(LiveHud.Placed(LiveHudRole.WornSlot, humanHud: false), hands, 0, 3));
+            Assert.Null(LiveHud.MaptextSquare(role, hands, panel, 0));
+        Assert.Null(LiveHud.MaptextSquare(LiveHud.Placed(LiveHudRole.WornSlot, humanHud: false), hands, panel, 0));
     }
 
     // ---- slices D and E: the vitals ----

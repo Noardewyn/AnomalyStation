@@ -627,8 +627,8 @@ public sealed partial class ServerHost
             : null;
         string clickParams = ClientSeam.ClickParams(button, (command.Modifiers & ClickModifiers.Shift) != 0, (command.Modifiers & ClickModifiers.Ctrl) != 0,
             (command.Modifiers & ClickModifiers.Alt) != 0, command.IconX, command.IconY, screenLoc) + AimParamOf(s, command.Aim);
-        if (command.AimZone != AimZone.None && command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob aimer)
-            AimAt(aimer, command.AimZone);
+        if (command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob aimer && ActedZone(command, target, aimer) is var aimZone and not AimZone.None)
+            AimAt(aimer, aimZone);
         // the dev hook of `shoot WHO TYPE` (M7x slice A): the click fires a projectile with its params, as a gun's would
         if (s.Client.dm_dev_shot is Type shot && (_config.DevCommandsEnabled || s.Client.holder != null) && s.Client.mob is mob shooter)
         {
@@ -654,8 +654,8 @@ public sealed partial class ServerHost
             return;
         }
         string clickParams = ClientSeam.ClickParams(LEFT_CLICK, false, false, false, command.IconX, command.IconY, null) + AimParamOf(s, command.Aim);
-        if (command.AimZone != AimZone.None && command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob aimer)
-            AimAt(aimer, command.AimZone);
+        if (command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob aimer && ActedZone(command, target, aimer) is var aimZone and not AimZone.None)
+            AimAt(aimer, aimZone);
         _clients.Throw(s.Client, target, clickParams);
     }
 
@@ -790,6 +790,14 @@ public sealed partial class ServerHost
         => target is atom_movable shown && kind == TargetKind.Screen
             ? (Dm.@in(shown, s.Client.screen) ? shown : ClientSeam.ScreenHolderOf(s.Client, shown))?.screen_loc
             : null;
+
+    // DEVIATION(DV602): the zone a click or a throw selects. A carbon drawn as one icon (an alien: no body part images) gets no zone from the
+    // client; when the zone selected (chosen on tg's selector, or left by a look at another body) names a part that carbon lacks, tg's own test
+    // (aimed_limb_missing's check_zone and get_bodypart) would refuse the hit, so the action counts as aimed at the chest. Otherwise the selected
+    // zone stands, as in tg. A hover never changes it, and a human (a monkey too) always gets the client's zone or none.
+    private static AimZone ActedZone(in QueuedCommand command, atom target, mob aimer)
+        => command.AimZone == AimZone.None && target is mob_living_carbon carbon and not mob_living_carbon_human
+            && !Dm.truthy(carbon.get_bodypart(Dm.str(check_zone(aimer.zone_selected)))) ? AimZone.Chest : command.AimZone;
 
     // DEVIATION(DV30): a click on a carbon's picture selects the body zone under the crosshair before tg's Click, through tg's
     // own zone selector (set_selected_zone, so the HUD's doll shows it), where tg selects it on the zone selector alone.

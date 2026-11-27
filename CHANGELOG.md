@@ -29,6 +29,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - Looking down goes further, to 135 degrees, and shows more of your own body: the crosshair climbs from your feet to your chest.
 - The health doll's head has eyes and a mouth to use items on, and a Ctrl-click on the doll grasps the limb clicked.
 - The prompt beside the crosshair shows only for things within reach; anything further away leaves the crosshair bare.
+- A hit on an alien aimed at a body part it lacks lands on its chest instead of being refused.
 
 ## [1.14.0-pre-alpha] - 2026-11-26
 

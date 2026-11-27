@@ -515,7 +515,7 @@ public class CircuitsCI1Tests
         });
 
         // a component the port has not translated is skipped with an error (DV569)
-        string inert = json.Replace("/obj/item/circuit_component/tostring", "/obj/item/circuit_component/quantumpad");
+        string inert = json.Replace("/obj/item/circuit_component/tostring", "/obj/item/circuit_component/proccall");
         r.In(() =>
         {
             var copy = Dm.@new<obj_item_integrated_circuit>(locate(6, 6, 1));

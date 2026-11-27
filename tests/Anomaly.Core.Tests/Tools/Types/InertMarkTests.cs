@@ -80,14 +80,15 @@ public class InertMarkTests
     [Fact]
     public void HandPickedTypesFollowTheRule()
     {
-        // The raw bluespace core that defines no procs: inert while /obj/item/raw_anomaly_core's procs are not declared (the anomaly
-        // cores wait; the mass drivers of this example went live with the ordnance lab, the departmental protolathe in gaps RD1, the
-        // syndicate bomb in the syndicate campaign G2, the air sensor in engineering package E5, the thermomachine in M7 slice 4, the
-        // firelock of M3's example in M4b slice 2).
-        Assert.Empty(Index.ProcsAt("/obj/item/raw_anomaly_core/bluespace"));
-        Assert.Contains(Index.ProcsAt("/obj/item/raw_anomaly_core"), p => p.Translated == "no");
-        AssertInert(typeof(obj_item_raw_anomaly_core), true);
-        AssertInert(typeof(obj_item_raw_anomaly_core_bluespace), true);
+        // The cult's stun blood spell that defines no procs: inert while /datum/action/innate/cult/blood_spell's procs are not
+        // declared (the cult waits for its antagonist; the raw anomaly cores of this example went live with the anomaly refinery,
+        // the mass drivers with the ordnance lab, the departmental protolathe in gaps RD1, the syndicate bomb in the syndicate
+        // campaign G2, the air sensor in engineering package E5, the thermomachine in M7 slice 4, the firelock of M3's example in
+        // M4b slice 2).
+        Assert.Empty(Index.ProcsAt("/datum/action/innate/cult/blood_spell/stun"));
+        Assert.Contains(Index.ProcsAt("/datum/action/innate/cult/blood_spell"), p => p.Translated == "no");
+        AssertInert(typeof(datum_action_innate_cult_blood_spell), true);
+        AssertInert(typeof(datum_action_innate_cult_blood_spell_stun), true);
         // M3 P3 declared every proc of /obj/machinery/door/airlock (translated or live-partial stubs): it and its procless
         // subtypes are live.
         Assert.Empty(Index.ProcsAt("/obj/machinery/door/airlock/public/glass/incinerator"));

@@ -368,6 +368,19 @@ public partial class obj_item_assembly_signaler
     }
 }
 
+// tg: code/modules/research/anomaly/anomaly_core.dm:3
+public partial class obj_item_assembly_signaler_anomaly
+{
+    // tg: code/modules/research/anomaly/anomaly_core.dm:27
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override DmTask manual_suicide(params object[] __extra)
+    {
+        Dm.Deferred("code/modules/research/anomaly/anomaly_core.dm:27", "manual_suicide: the suicide verb (M10+)");
+        return DmTask.CompletedTask;
+    }
+}
+
 // tg: code/modules/assembly/timer.dm:2
 public partial class obj_item_assembly_timer
 {

@@ -2862,7 +2862,7 @@ proc	/datum/controller/global_vars	InitGlobaladdictions	code/modules/reagents/wi
 proc	/datum/controller/global_vars	InitGlobalconveyors_by_id	code/modules/recycling/conveyor.dm:9		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobaldisposals_animals_spawned	code/modules/recycling/disposal/bin.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalrequests	code/modules/requests/request_manager.dm:14		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalgizmo_words	code/modules/research/gizmo/gizmo_voice.dm:2		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalgizmo_words	code/modules/research/gizmo/gizmo_voice.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalstock_part_datums_per_object	code/modules/research/stock_parts/stock_part_datum.dm:37		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalstock_part_datums	code/modules/research/stock_parts/stock_part_datum.dm:40		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalautounlock_techwebs	code/modules/research/techweb/techweb_types.dm:41		yes	full	proc root
@@ -6666,12 +6666,12 @@ proc	/datum/action/cooldown/spell/pointed/untie_shoes	cast	code/modules/spells/s
 proc	/datum/action/cooldown/spell/pointed/untie_shoes	after_cast	code/modules/spells/spell_types/pointed/tie_shoes.dm:118	cast_on	no	-	proc
 proc	/datum/action/cooldown/spell/pointed/untie_shoes	get_spell_title	code/modules/spells/spell_types/pointed/tie_shoes.dm:126		no	-	proc
 type	/datum/action/cooldown/spell/pointed/untie_shoes/digital	/datum/action/cooldown/spell/pointed/untie_shoes	code/modules/bitrunning/objects/gimmick_disks/dungeon_disk.dm:167	inert	datum_action_cooldown_spell_pointed_untie_shoes_digital	0	0
-type	/datum/action/cooldown/spell/pointed/percept_hallucination	/datum/action/cooldown/spell/pointed	code/modules/clothing/head/perceptomatrix.dm:152	inert	datum_action_cooldown_spell_pointed_percept_hallucination	0	0
-proc	/datum/action/cooldown/spell/pointed/percept_hallucination	is_valid_target	code/modules/clothing/head/perceptomatrix.dm:174	cast_on	no	-	proc
-proc	/datum/action/cooldown/spell/pointed/percept_hallucination	blows_up_pancakes_with_mind	code/modules/clothing/head/perceptomatrix.dm:185	pancakes	no	-	proc root
-proc	/datum/action/cooldown/spell/pointed/percept_hallucination	pancake_explosion	code/modules/clothing/head/perceptomatrix.dm:207	pancakes	no	-	proc root
-proc	/datum/action/cooldown/spell/pointed/percept_hallucination	cast_fx	code/modules/clothing/head/perceptomatrix.dm:212	cast_on	no	-	proc root
-proc	/datum/action/cooldown/spell/pointed/percept_hallucination	cast	code/modules/clothing/head/perceptomatrix.dm:217	cast_on	no	-	proc
+type	/datum/action/cooldown/spell/pointed/percept_hallucination	/datum/action/cooldown/spell/pointed	code/modules/clothing/head/perceptomatrix.dm:152	live	datum_action_cooldown_spell_pointed_percept_hallucination	1	0
+proc	/datum/action/cooldown/spell/pointed/percept_hallucination	is_valid_target	code/modules/clothing/head/perceptomatrix.dm:174	cast_on	yes	full	proc
+proc	/datum/action/cooldown/spell/pointed/percept_hallucination	blows_up_pancakes_with_mind	code/modules/clothing/head/perceptomatrix.dm:185	pancakes	yes	full	proc root
+proc	/datum/action/cooldown/spell/pointed/percept_hallucination	pancake_explosion	code/modules/clothing/head/perceptomatrix.dm:207	pancakes	yes	full	proc root
+proc	/datum/action/cooldown/spell/pointed/percept_hallucination	cast_fx	code/modules/clothing/head/perceptomatrix.dm:212	cast_on	yes	full	proc root
+proc	/datum/action/cooldown/spell/pointed/percept_hallucination	cast	code/modules/clothing/head/perceptomatrix.dm:217	cast_on	yes	full	proc
 type	/datum/action/cooldown/spell/pointed/scan	/datum/action/cooldown/spell/pointed	code/modules/mining/lavaland/mining_loot/eye_of_god.dm:43	live	datum_action_cooldown_spell_pointed_scan	1	0
 proc	/datum/action/cooldown/spell/pointed/scan	is_valid_target	code/modules/mining/lavaland/mining_loot/eye_of_god.dm:56	cast_on	yes	full	proc
 proc	/datum/action/cooldown/spell/pointed/scan	cast	code/modules/mining/lavaland/mining_loot/eye_of_god.dm:67	cast_on	yes	full	proc
@@ -7003,12 +7003,12 @@ type	/datum/action/cooldown/spell/shapeshift/shed_human_form	/datum/action/coold
 proc	/datum/action/cooldown/spell/shapeshift/shed_human_form	do_shapeshift	code/modules/antagonists/heretic/magic/flesh_ascension.dm:24	caster	no	-	proc
 proc	/datum/action/cooldown/spell/shapeshift/shed_human_form	do_unshapeshift	code/modules/antagonists/heretic/magic/flesh_ascension.dm:39	caster	no	-	proc
 proc	/datum/action/cooldown/spell/shapeshift/shed_human_form	create_shapeshift_mob	code/modules/antagonists/heretic/magic/flesh_ascension.dm:45	loc	no	-	proc
-type	/datum/action/cooldown/spell/shapeshift/polymorph_belt	/datum/action/cooldown/spell/shapeshift	code/modules/clothing/belts/polymorph_belt.dm:112	inert	datum_action_cooldown_spell_shapeshift_polymorph_belt	0	0
-proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	cast	code/modules/clothing/belts/polymorph_belt.dm:123	cast_on	no	-	proc
-proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	Remove	code/modules/clothing/belts/polymorph_belt.dm:127	remove_from	no	-	proc
-proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	before_cast	code/modules/clothing/belts/polymorph_belt.dm:133	cast_on	no	-	proc
-proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	after_cast	code/modules/clothing/belts/polymorph_belt.dm:162	cast_on	no	-	proc
-proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	update_type	code/modules/clothing/belts/polymorph_belt.dm:170	transform_type	no	-	proc root
+type	/datum/action/cooldown/spell/shapeshift/polymorph_belt	/datum/action/cooldown/spell/shapeshift	code/modules/clothing/belts/polymorph_belt.dm:112	live	datum_action_cooldown_spell_shapeshift_polymorph_belt	1	0
+proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	cast	code/modules/clothing/belts/polymorph_belt.dm:123	cast_on	yes	full	proc
+proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	Remove	code/modules/clothing/belts/polymorph_belt.dm:127	remove_from	yes	full	proc
+proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	before_cast	code/modules/clothing/belts/polymorph_belt.dm:133	cast_on	yes	full	proc
+proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	after_cast	code/modules/clothing/belts/polymorph_belt.dm:162	cast_on	yes	full	proc
+proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	update_type	code/modules/clothing/belts/polymorph_belt.dm:170	transform_type	yes	full	proc root
 type	/datum/action/cooldown/spell/shapeshift/slime_form	/datum/action/cooldown/spell/shapeshift	code/modules/research/xenobiology/crossbreeding/_mobs.dm:9	live	datum_action_cooldown_spell_shapeshift_slime_form	1	0
 proc	/datum/action/cooldown/spell/shapeshift/slime_form	do_unshapeshift	code/modules/research/xenobiology/crossbreeding/_mobs.dm:23	caster	yes	full	proc
 type	/datum/action/cooldown/spell/shapeshift/dragon	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/dragon.dm:3	live	datum_action_cooldown_spell_shapeshift_dragon	0	0
@@ -14054,10 +14054,10 @@ proc	/datum/status_effect/shapechange_mob/from_spell	restore_caster	code/modules
 proc	/datum/status_effect/shapechange_mob/from_spell	after_unchange	code/modules/spells/spell_types/shapeshift/_shape_status.dm:213		yes	full	proc
 proc	/datum/status_effect/shapechange_mob/from_spell	on_shape_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:226	source,gibbed	yes	full	proc
 proc	/datum/status_effect/shapechange_mob/from_spell	on_caster_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:238	source	yes	full	proc
-type	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	/datum/status_effect/shapechange_mob/from_spell	code/modules/clothing/belts/polymorph_belt.dm:181	inert	datum_status_effect_shapechange_mob_from_spell_polymorph_belt	0	0
-proc	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	on_apply	code/modules/clothing/belts/polymorph_belt.dm:181		no	-	proc
-proc	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	on_pre_type_change	code/modules/clothing/belts/polymorph_belt.dm:185	source	no	-	proc
-proc	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	on_type_change	code/modules/clothing/belts/polymorph_belt.dm:189	source,new_mob	no	-	proc root
+type	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	/datum/status_effect/shapechange_mob/from_spell	code/modules/clothing/belts/polymorph_belt.dm:181	live	datum_status_effect_shapechange_mob_from_spell_polymorph_belt	1	0
+proc	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	on_apply	code/modules/clothing/belts/polymorph_belt.dm:181		yes	full	proc
+proc	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	on_pre_type_change	code/modules/clothing/belts/polymorph_belt.dm:185	source	yes	full	proc
+proc	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	on_type_change	code/modules/clothing/belts/polymorph_belt.dm:189	source,new_mob	yes	full	proc root
 type	/datum/status_effect/brimdust_concussion	/datum/status_effect	code/modules/mining/equipment/monster_organs/brimdust_sac.dm:236	live	datum_status_effect_brimdust_concussion	1	0
 proc	/datum/status_effect/brimdust_concussion	on_apply	code/modules/mining/equipment/monster_organs/brimdust_sac.dm:240		yes	full	proc
 proc	/datum/status_effect/brimdust_concussion	on_remove	code/modules/mining/equipment/monster_organs/brimdust_sac.dm:245		yes	full	proc
@@ -21325,10 +21325,10 @@ proc	/datum/component/meteor_combat	UnregisterFromParent	code/modules/meteors/me
 proc	/datum/component/meteor_combat	on_attacked	code/modules/meteors/meteor_deflection.dm:24	owner,attacking_item,user,modifiers	yes	full	proc root
 proc	/datum/component/meteor_combat	on_punched	code/modules/meteors/meteor_deflection.dm:55	owner,user,modifiers	yes	full	proc root
 proc	/datum/component/meteor_combat	check_punch_award	code/modules/meteors/meteor_deflection.dm:69	user	yes	full	proc root
-type	/datum/component/gizmo_voice	/datum/component	code/modules/research/gizmo/gizmo_voice.dm:6	inert	datum_component_gizmo_voice	0	0
-proc	/datum/component/gizmo_voice	Initialize	code/modules/research/gizmo/gizmo_voice.dm:10	puzzle	no	-	proc
-proc	/datum/component/gizmo_voice	generate_active_words	code/modules/research/gizmo/gizmo_voice.dm:24		no	-	proc root
-proc	/datum/component/gizmo_voice	on_hear	code/modules/research/gizmo/gizmo_voice.dm:30	source,hearing_args	no	-	proc root
+type	/datum/component/gizmo_voice	/datum/component	code/modules/research/gizmo/gizmo_voice.dm:6	live	datum_component_gizmo_voice	1	0
+proc	/datum/component/gizmo_voice	Initialize	code/modules/research/gizmo/gizmo_voice.dm:10	puzzle	yes	full	proc
+proc	/datum/component/gizmo_voice	generate_active_words	code/modules/research/gizmo/gizmo_voice.dm:24		yes	full	proc root
+proc	/datum/component/gizmo_voice	on_hear	code/modules/research/gizmo/gizmo_voice.dm:30	source,hearing_args	yes	full	proc root
 type	/datum/component/circuit_component_add_port	/datum/component	code/modules/wiremod/dcs_components/component_add_port.dm:3	live	datum_component_circuit_component_add_port	1	0
 proc	/datum/component/circuit_component_add_port	Initialize	code/modules/wiremod/dcs_components/component_add_port.dm:24	port_list,add_action,remove_action,port_type,is_output,prefix,order,minimum_amount,maximum_amount	yes	full	proc
 proc	/datum/component/circuit_component_add_port	RegisterWithParent	code/modules/wiremod/dcs_components/component_add_port.dm:42		yes	full	proc
@@ -24367,11 +24367,11 @@ proc	/datum/element/movetype_handler	on_movement_type_trait_gain	code/datums/ele
 proc	/datum/element/movetype_handler	on_movement_type_trait_loss	code/datums/elements/movetype_handler.dm:57	source,trait	yes	full	proc root
 proc	/datum/element/movetype_handler	on_no_floating_anim_trait_gain	code/datums/elements/movetype_handler.dm:74	source,trait	yes	full	proc root
 proc	/datum/element/movetype_handler	on_no_floating_anim_trait_loss	code/datums/elements/movetype_handler.dm:80	source,trait	yes	full	proc root
-type	/datum/element/moving_randomly	/datum/element	code/datums/elements/moving_randomly.dm:3	inert	datum_element_moving_randomly	0	0
-proc	/datum/element/moving_randomly	Attach	code/datums/elements/moving_randomly.dm:8	target	no	-	proc
-proc	/datum/element/moving_randomly	Detach	code/datums/elements/moving_randomly.dm:16	source	no	-	proc
-proc	/datum/element/moving_randomly	New	code/datums/elements/moving_randomly.dm:21		no	-	proc
-proc	/datum/element/moving_randomly	process	code/datums/elements/moving_randomly.dm:24	seconds_per_tick	no	-	proc
+type	/datum/element/moving_randomly	/datum/element	code/datums/elements/moving_randomly.dm:3	live	datum_element_moving_randomly	1	0
+proc	/datum/element/moving_randomly	Attach	code/datums/elements/moving_randomly.dm:8	target	yes	full	proc
+proc	/datum/element/moving_randomly	Detach	code/datums/elements/moving_randomly.dm:16	source	yes	full	proc
+proc	/datum/element/moving_randomly	New	code/datums/elements/moving_randomly.dm:21		yes	full	proc
+proc	/datum/element/moving_randomly	process	code/datums/elements/moving_randomly.dm:24	seconds_per_tick	yes	full	proc
 type	/datum/element/muffles_speech	/datum/element	code/datums/elements/muffles_speech.dm:3	inert	datum_element_muffles_speech	1	0
 proc	/datum/element/muffles_speech	Attach	code/datums/elements/muffles_speech.dm:3	target	yes	full	proc
 proc	/datum/element/muffles_speech	Detach	code/datums/elements/muffles_speech.dm:11	source	yes	full	proc
@@ -31204,10 +31204,10 @@ type	/datum/wires/conveyor	/datum/wires	code/datums/wires/conveyor.dm:2	live	dat
 proc	/datum/wires/conveyor	New	code/datums/wires/conveyor.dm:7	holder	yes	full	proc
 proc	/datum/wires/conveyor	on_pulse	code/datums/wires/conveyor.dm:11	wire	yes	full	proc
 proc	/datum/wires/conveyor	interactable	code/datums/wires/conveyor.dm:16	user	yes	full	proc
-type	/datum/wires/ecto_sniffer	/datum/wires	code/datums/wires/ecto_sniffer.dm:2	inert	datum_wires_ecto_sniffer	0	0
-proc	/datum/wires/ecto_sniffer	New	code/datums/wires/ecto_sniffer.dm:6	holder	no	-	proc
-proc	/datum/wires/ecto_sniffer	on_pulse	code/datums/wires/ecto_sniffer.dm:10	wire	no	-	proc
-proc	/datum/wires/ecto_sniffer	on_cut	code/datums/wires/ecto_sniffer.dm:15	wire,mend,source	no	-	proc
+type	/datum/wires/ecto_sniffer	/datum/wires	code/datums/wires/ecto_sniffer.dm:2	live	datum_wires_ecto_sniffer	1	0
+proc	/datum/wires/ecto_sniffer	New	code/datums/wires/ecto_sniffer.dm:6	holder	yes	full	proc
+proc	/datum/wires/ecto_sniffer	on_pulse	code/datums/wires/ecto_sniffer.dm:10	wire	yes	full	proc
+proc	/datum/wires/ecto_sniffer	on_cut	code/datums/wires/ecto_sniffer.dm:15	wire,mend,source	yes	full	proc
 type	/datum/wires/emitter	/datum/wires	code/datums/wires/emitter.dm:3	live	datum_wires_emitter	1	0
 proc	/datum/wires/emitter	New	code/datums/wires/emitter.dm:6	holder	yes	full	proc
 proc	/datum/wires/emitter	on_pulse	code/datums/wires/emitter.dm:10	wire	yes	full	proc
@@ -31350,9 +31350,9 @@ type	/datum/wires/experimentor	/datum/wires	code/modules/research/experimentor/w
 proc	/datum/wires/experimentor	New	code/modules/research/experimentor/wires.dm:6	holder	yes	full	proc
 proc	/datum/wires/experimentor	interactable	code/modules/research/experimentor/wires.dm:19	user	yes	full	proc
 proc	/datum/wires/experimentor	on_pulse	code/modules/research/experimentor/wires.dm:26	wire	yes	full	proc
-type	/datum/wires/gizmo	/datum/wires	code/modules/research/gizmo/gizmo_wires.dm:4	inert	datum_wires_gizmo	0	0
-proc	/datum/wires/gizmo	New	code/modules/research/gizmo/gizmo_wires.dm:23	holder,puzzle	no	-	proc
-proc	/datum/wires/gizmo	on_pulse	code/modules/research/gizmo/gizmo_wires.dm:29	wire,user	no	-	proc
+type	/datum/wires/gizmo	/datum/wires	code/modules/research/gizmo/gizmo_wires.dm:4	live	datum_wires_gizmo	1	0
+proc	/datum/wires/gizmo	New	code/modules/research/gizmo/gizmo_wires.dm:23	holder,puzzle	yes	full	proc
+proc	/datum/wires/gizmo	on_pulse	code/modules/research/gizmo/gizmo_wires.dm:29	wire,user	yes	full	proc
 type	/datum/wound_pregen_data	/datum	code/datums/wounds/_wound_static_data.dm:8	live	datum_wound_pregen_data	1	0
 proc	/datum/wound_pregen_data	New	code/datums/wounds/_wound_static_data.dm:51		yes	full	proc
 proc	/datum/wound_pregen_data	generate_scar_priorities	code/datums/wounds/_wound_static_data.dm:63		yes	full	proc root
@@ -40142,27 +40142,27 @@ type	/datum/mod_theme/corporate	/datum/mod_theme	code/modules/mod/mod_theme.dm:2
 type	/datum/mod_theme/chrono	/datum/mod_theme	code/modules/mod/mod_theme.dm:2082	live	datum_mod_theme_chrono	0	0
 type	/datum/mod_theme/debug	/datum/mod_theme	code/modules/mod/mod_theme.dm:2146	live	datum_mod_theme_debug	0	0
 type	/datum/mod_theme/administrative	/datum/mod_theme	code/modules/mod/mod_theme.dm:2211	live	datum_mod_theme_administrative	0	0
-type	/datum/armour_dimensional_theme	/datum	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:9	inert	datum_armour_dimensional_theme	0	0
-proc	/datum/armour_dimensional_theme	apply_random	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:23	source,dangerous	no	-	proc root
-proc	/datum/armour_dimensional_theme	apply	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:40	source	no	-	proc root
-proc	/datum/armour_dimensional_theme	get_target_area	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:54	source	no	-	proc root
-proc	/datum/armour_dimensional_theme	convert_turf	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:78	to_convert	no	-	proc root
-proc	/datum/armour_dimensional_theme	place_barriers	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:96	source,target_area	no	-	proc root
-proc	/datum/armour_dimensional_theme	place_barrier	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:121	source,materials	no	-	proc root
-type	/datum/armour_dimensional_theme/safe	/datum/armour_dimensional_theme	(implied by a subtype's path)	inert	datum_armour_dimensional_theme_safe	0	0
-type	/datum/armour_dimensional_theme/safe/natural	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:132	inert	datum_armour_dimensional_theme_safe_natural	0	0
-type	/datum/armour_dimensional_theme/safe/snow	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:137	inert	datum_armour_dimensional_theme_safe_snow	0	0
-type	/datum/armour_dimensional_theme/safe/space	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:143	inert	datum_armour_dimensional_theme_safe_space	0	0
-type	/datum/armour_dimensional_theme/safe/glass	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:149	inert	datum_armour_dimensional_theme_safe_glass	0	0
-type	/datum/armour_dimensional_theme/safe/secure	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:153	inert	datum_armour_dimensional_theme_safe_secure	0	0
-type	/datum/armour_dimensional_theme/safe/meat	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:158	inert	datum_armour_dimensional_theme_safe_meat	0	0
-type	/datum/armour_dimensional_theme/dangerous	/datum/armour_dimensional_theme	(implied by a subtype's path)	inert	datum_armour_dimensional_theme_dangerous	0	0
-type	/datum/armour_dimensional_theme/dangerous/clown	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:164	inert	datum_armour_dimensional_theme_dangerous_clown	0	0
-type	/datum/armour_dimensional_theme/dangerous/radioactive	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:169	inert	datum_armour_dimensional_theme_dangerous_radioactive	0	0
-type	/datum/armour_dimensional_theme/dangerous/plasma	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:173	inert	datum_armour_dimensional_theme_dangerous_plasma	0	0
-type	/datum/armour_dimensional_theme/dangerous/ice	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:177	inert	datum_armour_dimensional_theme_dangerous_ice	0	0
-type	/datum/armour_dimensional_theme/dangerous/lavaland	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:183	inert	datum_armour_dimensional_theme_dangerous_lavaland	0	0
-proc	/datum/armour_dimensional_theme/dangerous/lavaland	place_barrier	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:187	source,materials	no	-	proc
+type	/datum/armour_dimensional_theme	/datum	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:9	live	datum_armour_dimensional_theme	1	0
+proc	/datum/armour_dimensional_theme	apply_random	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:23	source,dangerous	yes	full	proc root
+proc	/datum/armour_dimensional_theme	apply	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:40	source	yes	full	proc root
+proc	/datum/armour_dimensional_theme	get_target_area	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:54	source	yes	full	proc root
+proc	/datum/armour_dimensional_theme	convert_turf	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:78	to_convert	yes	full	proc root
+proc	/datum/armour_dimensional_theme	place_barriers	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:96	source,target_area	yes	full	proc root
+proc	/datum/armour_dimensional_theme	place_barrier	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:121	source,materials	yes	full	proc root
+type	/datum/armour_dimensional_theme/safe	/datum/armour_dimensional_theme	(implied by a subtype's path)	live	datum_armour_dimensional_theme_safe	0	0
+type	/datum/armour_dimensional_theme/safe/natural	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:132	live	datum_armour_dimensional_theme_safe_natural	0	0
+type	/datum/armour_dimensional_theme/safe/snow	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:137	live	datum_armour_dimensional_theme_safe_snow	0	0
+type	/datum/armour_dimensional_theme/safe/space	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:143	live	datum_armour_dimensional_theme_safe_space	0	0
+type	/datum/armour_dimensional_theme/safe/glass	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:149	live	datum_armour_dimensional_theme_safe_glass	0	0
+type	/datum/armour_dimensional_theme/safe/secure	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:153	live	datum_armour_dimensional_theme_safe_secure	0	0
+type	/datum/armour_dimensional_theme/safe/meat	/datum/armour_dimensional_theme/safe	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:158	live	datum_armour_dimensional_theme_safe_meat	0	0
+type	/datum/armour_dimensional_theme/dangerous	/datum/armour_dimensional_theme	(implied by a subtype's path)	live	datum_armour_dimensional_theme_dangerous	0	0
+type	/datum/armour_dimensional_theme/dangerous/clown	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:164	live	datum_armour_dimensional_theme_dangerous_clown	0	0
+type	/datum/armour_dimensional_theme/dangerous/radioactive	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:169	live	datum_armour_dimensional_theme_dangerous_radioactive	0	0
+type	/datum/armour_dimensional_theme/dangerous/plasma	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:173	live	datum_armour_dimensional_theme_dangerous_plasma	0	0
+type	/datum/armour_dimensional_theme/dangerous/ice	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:177	live	datum_armour_dimensional_theme_dangerous_ice	0	0
+type	/datum/armour_dimensional_theme/dangerous/lavaland	/datum/armour_dimensional_theme/dangerous	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:183	live	datum_armour_dimensional_theme_dangerous_lavaland	1	0
+proc	/datum/armour_dimensional_theme/dangerous/lavaland	place_barrier	code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:187	source,materials	yes	full	proc
 type	/datum/deathmatch_controller	/datum	code/modules/deathmatch/deathmatch_controller.dm:3	inert	datum_deathmatch_controller	0	0
 proc	/datum/deathmatch_controller	New	code/modules/deathmatch/deathmatch_controller.dm:11		no	-	proc
 proc	/datum/deathmatch_controller	create_new_lobby	code/modules/deathmatch/deathmatch_controller.dm:25	host	no	-	proc root
@@ -46971,174 +46971,174 @@ type	/datum/experimentor_result_handler/scan/discover	/datum/experimentor_result
 proc	/datum/experimentor_result_handler/scan/discover	execute	code/modules/research/experimentor/experiments.dm:344	machine,exp_on	yes	full	proc
 type	/datum/experimentor_result_handler/fail	/datum/experimentor_result_handler	code/modules/research/experimentor/experiments.dm:357	live	datum_experimentor_result_handler_fail	1	0
 proc	/datum/experimentor_result_handler/fail	execute	code/modules/research/experimentor/experiments.dm:360	machine,exp_on	yes	full	proc
-type	/datum/gizmo_controller	/datum	code/modules/research/gizmo/gizmo_controller.dm:6	inert	datum_gizmo_controller	0	0
-proc	/datum/gizmo_controller	generate_interfaces	code/modules/research/gizmo/gizmo_controller.dm:11	holder	no	-	proc root
-type	/datum/gizmo_controller/beyblade	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:27	inert	datum_gizmo_controller_beyblade	0	0
-type	/datum/gizmo_controller/toggle	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:31	inert	datum_gizmo_controller_toggle	0	0
-type	/datum/gizmo_controller/voice	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:35	inert	datum_gizmo_controller_voice	0	0
-type	/datum/gizmo_controller/item	/datum/gizmo_controller	(implied by a subtype's path)	inert	datum_gizmo_controller_item	0	0
-type	/datum/gizmo_controller/cursed	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:42	inert	datum_gizmo_controller_cursed	0	0
-type	/datum/gizmo_controller/moo	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:46	inert	datum_gizmo_controller_moo	0	0
-type	/datum/gizmo_interface	/datum	code/modules/research/gizmo/gizmo_interface.dm:4	inert	datum_gizmo_interface	0	0
-proc	/datum/gizmo_interface	New	code/modules/research/gizmo/gizmo_interface.dm:20	controller	no	-	proc
-proc	/datum/gizmo_interface	generate_interface	code/modules/research/gizmo/gizmo_interface.dm:26	holder,pulse_callback	no	-	proc root
-type	/datum/gizmo_interface/beyblade	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:46	inert	datum_gizmo_interface_beyblade	0	0
-type	/datum/gizmo_interface/toggle	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:52	inert	datum_gizmo_interface_toggle	0	0
-type	/datum/gizmo_interface/voice_unlock	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:56	inert	datum_gizmo_interface_voice_unlock	0	0
-type	/datum/gizmo_interface/voice	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:62	inert	datum_gizmo_interface_voice	0	0
-type	/datum/gizmo_interface/cursed	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:66	inert	datum_gizmo_interface_cursed	0	0
-type	/datum/gizmo_interface/moo	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:72	inert	datum_gizmo_interface_moo	0	0
-type	/datum/gizmo_puzzle	/datum	code/modules/research/gizmo/gizpuzzle.dm:4	inert	datum_gizmo_puzzle	0	0
-proc	/datum/gizmo_puzzle	New	code/modules/research/gizmo/gizpuzzle.dm:31	pulsed	no	-	proc
-proc	/datum/gizmo_puzzle	generate_code_sequences	code/modules/research/gizmo/gizpuzzle.dm:36	solution_callbacks	no	-	proc root
-proc	/datum/gizmo_puzzle	on_pulse	code/modules/research/gizmo/gizpuzzle.dm:46	pulse_number,user,holder,no_feedback	no	-	proc root
-proc	/datum/gizmo_puzzle	default_on_pulsed	code/modules/research/gizmo/gizpuzzle.dm:73	holder,user,solved_type,no_feedback	no	-	proc root
-type	/datum/gizmo_puzzle/voice	/datum/gizmo_puzzle	code/modules/research/gizmo/gizpuzzle.dm:95	inert	datum_gizmo_puzzle_voice	0	0
-type	/datum/gizmodes	/datum	code/modules/research/gizmo/gizmodes/gizactives.dm:8	inert	datum_gizmodes	0	0
-proc	/datum/gizmodes	generate_modes	code/modules/research/gizmo/gizmodes/gizactives.dm:41	trigger_callbacks,interface	no	-	proc root
-proc	/datum/gizmodes	activate	code/modules/research/gizmo/gizmodes/gizactives.dm:69	holder	no	-	proc root
-type	/datum/gizmodes/sputter	/datum/gizmodes	code/modules/research/gizmo/gizmodes/giz_filler.dm:3	inert	datum_gizmodes_sputter	0	0
-type	/datum/gizmodes/dispenser	/datum/gizmodes	code/modules/research/gizmo/gizmodes/giz_filler.dm:31	inert	datum_gizmodes_dispenser	0	0
-type	/datum/gizmodes/dispenser/food	/datum/gizmodes/dispenser	code/modules/research/gizmo/gizmodes/giz_filler.dm:80	inert	datum_gizmodes_dispenser_food	0	0
-type	/datum/gizmodes/bad	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizbad.dm:3	inert	datum_gizmodes_bad	0	0
-type	/datum/gizmodes/code_crack	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizcode.dm:25	inert	datum_gizmodes_code_crack	0	0
-proc	/datum/gizmodes/code_crack	generate_code	code/modules/research/gizmo/gizmodes/gizcode.dm:59		no	-	proc root
-proc	/datum/gizmodes/code_crack	validate_code	code/modules/research/gizmo/gizmodes/gizcode.dm:71	code	no	-	proc root
-proc	/datum/gizmodes/code_crack	check_code	code/modules/research/gizmo/gizmodes/gizcode.dm:76		no	-	proc root
-proc	/datum/gizmodes/code_crack	dispense_reward	code/modules/research/gizmo/gizmodes/gizcode.dm:83	holder	no	-	proc root
-proc	/datum/gizmodes/code_crack	punishment	code/modules/research/gizmo/gizmodes/gizcode.dm:91	holder	no	-	proc root
-proc	/datum/gizmodes/code_crack	feedback	code/modules/research/gizmo/gizmodes/gizcode.dm:97	holder	no	-	proc root
-proc	/datum/gizmodes/code_crack	reset_input	code/modules/research/gizmo/gizmodes/gizcode.dm:107		no	-	proc root
-type	/datum/gizmodes/code_crack/tutorial	/datum/gizmodes/code_crack	code/modules/research/gizmo/gizmodes/gizcode.dm:220	inert	datum_gizmodes_code_crack_tutorial	0	0
-proc	/datum/gizmodes/code_crack/tutorial	dispense_reward	code/modules/research/gizmo/gizmodes/gizcode.dm:236	holder	no	-	proc
-proc	/datum/gizmodes/code_crack/tutorial	feedback	code/modules/research/gizmo/gizmodes/gizcode.dm:243	holder	no	-	proc
-proc	/datum/gizmodes/code_crack/tutorial	punishment	code/modules/research/gizmo/gizmodes/gizcode.dm:257	holder	no	-	proc
-type	/datum/gizmodes/code_crack/moo	/datum/gizmodes/code_crack	code/modules/research/gizmo/gizmodes/gizcode.dm:269	inert	datum_gizmodes_code_crack_moo	0	0
-proc	/datum/gizmodes/code_crack/moo	validate_code	code/modules/research/gizmo/gizmodes/gizcode.dm:275	code	no	-	proc
-proc	/datum/gizmodes/code_crack/moo	generate_code	code/modules/research/gizmo/gizmodes/gizcode.dm:282		no	-	proc
-proc	/datum/gizmodes/code_crack/moo	feedback	code/modules/research/gizmo/gizmodes/gizcode.dm:286	holder	no	-	proc
-proc	/datum/gizmodes/code_crack/moo	punishment	code/modules/research/gizmo/gizmodes/gizcode.dm:309	holder	no	-	proc
-type	/datum/gizmodes/copier	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizcopier.dm:3	inert	datum_gizmodes_copier	0	0
-type	/datum/gizmodes/electric	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizlectric.dm:3	inert	datum_gizmodes_electric	0	0
-proc	/datum/gizmodes/electric	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:31	holder	no	-	proc
-type	/datum/gizmodes/mover	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmisc.dm:3	inert	datum_gizmodes_mover	0	0
-type	/datum/gizmodes/lights	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmisc.dm:15	inert	datum_gizmodes_lights	0	0
-type	/datum/gizmodes/voice	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmisc.dm:38	inert	datum_gizmodes_voice	0	0
-type	/datum/gizmodes/mood_pulser	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmood.dm:3	inert	datum_gizmodes_mood_pulser	0	0
-type	/datum/gizmodes/mopper	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmopper.dm:3	inert	datum_gizmodes_mopper	0	0
-proc	/datum/gizmodes/mopper	New	code/modules/research/gizmo/gizmodes/gizmopper.dm:34		no	-	proc
-proc	/datum/gizmodes/mopper	activate	code/modules/research/gizmo/gizmodes/gizmopper.dm:40	holder	no	-	proc
-proc	/datum/gizmodes/mopper	process	code/modules/research/gizmo/gizmodes/gizmopper.dm:48	seconds_per_tick	no	-	proc
-type	/datum/gizmodes/teleporter	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizporter.dm:3	inert	datum_gizmodes_teleporter	0	0
-type	/datum/gizpulse	/datum	code/modules/research/gizmo/gizmodes/gizactives.dm:80	inert	datum_gizpulse	0	0
-proc	/datum/gizpulse	activate	code/modules/research/gizmo/gizmodes/gizactives.dm:83	holder,master,interface	no	-	proc root
-type	/datum/gizpulse/sputter	/datum/gizpulse	code/modules/research/gizmo/gizmodes/giz_filler.dm:14	inert	datum_gizpulse_sputter	0	0
-proc	/datum/gizpulse/sputter	activate	code/modules/research/gizmo/gizmodes/giz_filler.dm:18	holder,master,interface	no	-	proc
-type	/datum/gizpulse/throw_self	/datum/gizpulse	code/modules/research/gizmo/gizmodes/giz_filler.dm:26	inert	datum_gizpulse_throw_self	0	0
-proc	/datum/gizpulse/throw_self	activate	code/modules/research/gizmo/gizmodes/giz_filler.dm:26	holder,master,interface	no	-	proc
-type	/datum/gizpulse/dispense	/datum/gizpulse	code/modules/research/gizmo/gizmodes/giz_filler.dm:44	inert	datum_gizpulse_dispense	0	0
-proc	/datum/gizpulse/dispense	activate	code/modules/research/gizmo/gizmodes/giz_filler.dm:62	holder,master,interface	no	-	proc
-proc	/datum/gizpulse/dispense	modify	code/modules/research/gizmo/gizmodes/giz_filler.dm:75	new_object	no	-	proc root
-type	/datum/gizpulse/dispense/food	/datum/gizpulse/dispense	code/modules/research/gizmo/gizmodes/giz_filler.dm:93	inert	datum_gizpulse_dispense_food	0	0
-proc	/datum/gizpulse/dispense/food	modify	code/modules/research/gizmo/gizmodes/giz_filler.dm:98	new_object	no	-	proc
-type	/datum/gizpulse/dispense/robot_spider	/datum/gizpulse/dispense	code/modules/research/gizmo/gizmodes/gizbad.dm:35	inert	datum_gizpulse_dispense_robot_spider	0	0
-type	/datum/gizpulse/mode_controle	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizactives.dm:88	inert	datum_gizpulse_mode_controle	0	0
-proc	/datum/gizpulse/mode_controle	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:91	master,active_gizmodes,trigger_callbacks	no	-	proc root
-type	/datum/gizpulse/mode_controle/select_mode	/datum/gizpulse/mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:95	inert	datum_gizpulse_mode_controle_select_mode	0	0
-proc	/datum/gizpulse/mode_controle/select_mode	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:95	master,active_gizmodes,trigger_callbacks	no	-	proc
-proc	/datum/gizpulse/mode_controle/select_mode	select_mode	code/modules/research/gizmo/gizmodes/gizactives.dm:100	master,new_active_mode,holder	no	-	proc root
-type	/datum/gizpulse/mode_controle/cycle_mode	/datum/gizpulse/mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:106	inert	datum_gizpulse_mode_controle_cycle_mode	0	0
-proc	/datum/gizpulse/mode_controle/cycle_mode	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:106	master,active_gizmodes,trigger_callbacks	no	-	proc
-proc	/datum/gizpulse/mode_controle/cycle_mode	cycle_mode	code/modules/research/gizmo/gizmodes/gizactives.dm:110	master,holder	no	-	proc root
-type	/datum/gizpulse/mode_controle/cycle_mode/activate	/datum/gizpulse/mode_controle/cycle_mode	code/modules/research/gizmo/gizmodes/gizactives.dm:126	inert	datum_gizpulse_mode_controle_cycle_mode_activate	0	0
-proc	/datum/gizpulse/mode_controle/cycle_mode/activate	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:126	master,active_gizmodes,trigger_callbacks	no	-	proc
-proc	/datum/gizpulse/mode_controle/cycle_mode/activate	cycle_mode	code/modules/research/gizmo/gizmodes/gizactives.dm:129	master,holder	no	-	proc
-type	/datum/gizpulse/mode_controle/direct_activate	/datum/gizpulse/mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:117	inert	datum_gizpulse_mode_controle_direct_activate	0	0
-proc	/datum/gizpulse/mode_controle/direct_activate	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:117	master,active_gizmodes,trigger_callbacks	no	-	proc
-proc	/datum/gizpulse/mode_controle/direct_activate	switch_and_activate	code/modules/research/gizmo/gizmodes/gizactives.dm:121	master,active,holder	no	-	proc root
-type	/datum/gizpulse/explode	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizbad.dm:23	inert	datum_gizpulse_explode	0	0
-proc	/datum/gizpulse/explode	activate	code/modules/research/gizmo/gizmodes/gizbad.dm:28	holder,master,interface	no	-	proc
-type	/datum/gizpulse/explode/fire	/datum/gizpulse/explode	code/modules/research/gizmo/gizmodes/gizbad.dm:32	inert	datum_gizpulse_explode_fire	0	0
-type	/datum/gizpulse/thrower	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizbad.dm:68	inert	datum_gizpulse_thrower	0	0
-proc	/datum/gizpulse/thrower	New	code/modules/research/gizmo/gizmodes/gizbad.dm:76		no	-	proc
-proc	/datum/gizpulse/thrower	activate	code/modules/research/gizmo/gizmodes/gizbad.dm:80	holder,master,interface	no	-	proc
-proc	/datum/gizpulse/thrower	modify	code/modules/research/gizmo/gizmodes/gizbad.dm:93	item	no	-	proc root
-type	/datum/gizpulse/thrower/grenade	/datum/gizpulse/thrower	code/modules/research/gizmo/gizmodes/gizbad.dm:100	inert	datum_gizpulse_thrower_grenade	0	0
-proc	/datum/gizpulse/thrower/grenade	modify	code/modules/research/gizmo/gizmodes/gizbad.dm:111	item	no	-	proc
-type	/datum/gizpulse/ominous	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizbad.dm:96	inert	datum_gizpulse_ominous	0	0
-proc	/datum/gizpulse/ominous	activate	code/modules/research/gizmo/gizmodes/gizbad.dm:96	holder,master,interface	no	-	proc
-type	/datum/gizpulse/bone_breaker	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizbad.dm:115	inert	datum_gizpulse_bone_breaker	0	0
-proc	/datum/gizpulse/bone_breaker	activate	code/modules/research/gizmo/gizmodes/gizbad.dm:115	holder,master,interface	no	-	proc
-type	/datum/gizpulse/activate_puzzle	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcode.dm:117	inert	datum_gizpulse_activate_puzzle	0	0
-proc	/datum/gizpulse/activate_puzzle	activate	code/modules/research/gizmo/gizmodes/gizcode.dm:117	holder,master,interface	no	-	proc
-type	/datum/gizpulse/cycle_position	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcode.dm:139	inert	datum_gizpulse_cycle_position	0	0
-proc	/datum/gizpulse/cycle_position	activate	code/modules/research/gizmo/gizmodes/gizcode.dm:139	holder,master,interface	no	-	proc
-type	/datum/gizpulse/cycle_digit	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcode.dm:160	inert	datum_gizpulse_cycle_digit	0	0
-proc	/datum/gizpulse/cycle_digit	activate	code/modules/research/gizmo/gizmodes/gizcode.dm:160	holder,master,interface	no	-	proc
-type	/datum/gizpulse/try_crack	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcode.dm:182	inert	datum_gizpulse_try_crack	0	0
-proc	/datum/gizpulse/try_crack	activate	code/modules/research/gizmo/gizmodes/gizcode.dm:182	holder,master,interface	no	-	proc
-type	/datum/gizpulse/scan	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcopier.dm:17	inert	datum_gizpulse_scan	0	0
-proc	/datum/gizpulse/scan	activate	code/modules/research/gizmo/gizmodes/gizcopier.dm:17	holder,master,interface	no	-	proc
-type	/datum/gizpulse/copy	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcopier.dm:34	inert	datum_gizpulse_copy	0	0
-proc	/datum/gizpulse/copy	activate	code/modules/research/gizmo/gizmodes/gizcopier.dm:36	holder,master,interface	no	-	proc
-proc	/datum/gizpulse/copy	remove_from_list	code/modules/research/gizmo/gizmodes/gizcopier.dm:65	source	no	-	proc root
-type	/datum/gizpulse/erase	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcopier.dm:71	inert	datum_gizpulse_erase	0	0
-proc	/datum/gizpulse/erase	activate	code/modules/research/gizmo/gizmodes/gizcopier.dm:71	holder,master,interface	no	-	proc
-type	/datum/gizpulse/electric	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizlectric.dm:42	inert	datum_gizpulse_electric	0	0
-proc	/datum/gizpulse/electric	get_power	code/modules/research/gizmo/gizmodes/gizlectric.dm:42	holder,master	no	-	proc root
-proc	/datum/gizpulse/electric	use_power	code/modules/research/gizmo/gizmodes/gizlectric.dm:49	amount,holder,master	no	-	proc root
-type	/datum/gizpulse/electric/emp	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:58	inert	datum_gizpulse_electric_emp	0	0
-proc	/datum/gizpulse/electric/emp	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:61	holder,master,interface	no	-	proc
-type	/datum/gizpulse/electric/discharge	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:70	inert	datum_gizpulse_electric_discharge	0	0
-proc	/datum/gizpulse/electric/discharge	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:70	holder,master,interface	no	-	proc
-type	/datum/gizpulse/electric/charge	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:79	inert	datum_gizpulse_electric_charge	0	0
-proc	/datum/gizpulse/electric/charge	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:79	holder,master,interface	no	-	proc
-type	/datum/gizpulse/electric/revive	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:105	inert	datum_gizpulse_electric_revive	0	0
-proc	/datum/gizpulse/electric/revive	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:107	holder,master,interface	no	-	proc
-type	/datum/gizpulse/electric/draw	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:131	inert	datum_gizpulse_electric_draw	0	0
-proc	/datum/gizpulse/electric/draw	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:131	holder,master,interface	no	-	proc
-type	/datum/gizpulse/electric/passive_charge	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:157	inert	datum_gizpulse_electric_passive_charge	0	0
-proc	/datum/gizpulse/electric/passive_charge	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:159	holder,master,interface	no	-	proc
-type	/datum/gizpulse/start_moving	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:5	inert	datum_gizpulse_start_moving	0	0
-proc	/datum/gizpulse/start_moving	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:5	holder,master,interface	no	-	proc
-type	/datum/gizpulse/stop_moving	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:9	inert	datum_gizpulse_stop_moving	0	0
-proc	/datum/gizpulse/stop_moving	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:9	holder,master,interface	no	-	proc
-type	/datum/gizpulse/lights_on	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:21	inert	datum_gizpulse_lights_on	0	0
-proc	/datum/gizpulse/lights_on	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:21	holder,master,interface	no	-	proc
-type	/datum/gizpulse/lights_off	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:31	inert	datum_gizpulse_lights_off	0	0
-proc	/datum/gizpulse/lights_off	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:31	holder,master,interface	no	-	proc
-type	/datum/gizpulse/voice_hint	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:44	inert	datum_gizpulse_voice_hint	0	0
-proc	/datum/gizpulse/voice_hint	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:44	holder,master,interface	no	-	proc
-type	/datum/gizpulse/language_change	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:50	inert	datum_gizpulse_language_change	0	0
-proc	/datum/gizpulse/language_change	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:50	holder,master,interface	no	-	proc
-type	/datum/gizpulse/mood_pulser	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmood.dm:13	inert	datum_gizpulse_mood_pulser	0	0
-proc	/datum/gizpulse/mood_pulser	activate	code/modules/research/gizmo/gizmodes/gizmood.dm:19	holder,master,interface	no	-	proc
-proc	/datum/gizpulse/mood_pulser	mood_pulse	code/modules/research/gizmo/gizmodes/gizmood.dm:23	holder	no	-	proc root
-type	/datum/gizpulse/mood_pulser/positive	/datum/gizpulse/mood_pulser	code/modules/research/gizmo/gizmodes/gizmood.dm:30	inert	datum_gizpulse_mood_pulser_positive	0	0
-type	/datum/gizpulse/mood_pulser/negative	/datum/gizpulse/mood_pulser	code/modules/research/gizmo/gizmodes/gizmood.dm:35	inert	datum_gizpulse_mood_pulser_negative	0	0
-type	/datum/gizpulse/radiation_pulse	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmood.dm:38	inert	datum_gizpulse_radiation_pulse	0	0
-proc	/datum/gizpulse/radiation_pulse	activate	code/modules/research/gizmo/gizmodes/gizmood.dm:38	holder,master,interface	no	-	proc
-type	/datum/gizpulse/wet_tiles	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmopper.dm:52	inert	datum_gizpulse_wet_tiles	0	0
-proc	/datum/gizpulse/wet_tiles	activate	code/modules/research/gizmo/gizmodes/gizmopper.dm:52	holder,master,interface	no	-	proc
-proc	/datum/gizpulse/wet_tiles	get_tiles	code/modules/research/gizmo/gizmodes/gizmopper.dm:61	holder	no	-	proc root
-type	/datum/gizpulse/wet_tiles/fluid_circle	/datum/gizpulse/wet_tiles	code/modules/research/gizmo/gizmodes/gizmopper.dm:67	inert	datum_gizpulse_wet_tiles_fluid_circle	0	0
-proc	/datum/gizpulse/wet_tiles/fluid_circle	get_tiles	code/modules/research/gizmo/gizmodes/gizmopper.dm:69	holder	no	-	proc
-type	/datum/gizpulse/wet_tiles/fluid_circle/small	/datum/gizpulse/wet_tiles/fluid_circle	code/modules/research/gizmo/gizmodes/gizmopper.dm:74	inert	datum_gizpulse_wet_tiles_fluid_circle_small	0	0
-type	/datum/gizpulse/wet_tiles/fluid_circle/medium	/datum/gizpulse/wet_tiles/fluid_circle	code/modules/research/gizmo/gizmodes/gizmopper.dm:78	inert	datum_gizpulse_wet_tiles_fluid_circle_medium	0	0
-type	/datum/gizpulse/wet_tiles/fluid_circle/large	/datum/gizpulse/wet_tiles/fluid_circle	code/modules/research/gizmo/gizmodes/gizmopper.dm:82	inert	datum_gizpulse_wet_tiles_fluid_circle_large	0	0
-type	/datum/gizpulse/fluid_smoke	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmopper.dm:85	inert	datum_gizpulse_fluid_smoke	0	0
-proc	/datum/gizpulse/fluid_smoke	activate	code/modules/research/gizmo/gizmodes/gizmopper.dm:85	holder,interface	no	-	proc
-type	/datum/gizpulse/swap_reagent	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmopper.dm:90	inert	datum_gizpulse_swap_reagent	0	0
-proc	/datum/gizpulse/swap_reagent	activate	code/modules/research/gizmo/gizmodes/gizmopper.dm:90	holder,master,interface	no	-	proc
-type	/datum/gizpulse/teleport	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizporter.dm:15	inert	datum_gizpulse_teleport	0	0
-proc	/datum/gizpulse/teleport	activate	code/modules/research/gizmo/gizmodes/gizporter.dm:20	holder,master,interface	no	-	proc
-proc	/datum/gizpulse/teleport	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:29	holder	no	-	proc root
-type	/datum/gizpulse/teleport/self	/datum/gizpulse/teleport	code/modules/research/gizmo/gizmodes/gizporter.dm:33	inert	datum_gizpulse_teleport_self	0	0
-proc	/datum/gizpulse/teleport/self	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:33	holder	no	-	proc
-type	/datum/gizpulse/teleport/other	/datum/gizpulse/teleport	code/modules/research/gizmo/gizmodes/gizporter.dm:37	inert	datum_gizpulse_teleport_other	0	0
-proc	/datum/gizpulse/teleport/other	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:37	holder	no	-	proc
-type	/datum/gizpulse/teleport/other/and_self	/datum/gizpulse/teleport/other	code/modules/research/gizmo/gizmodes/gizporter.dm:43	inert	datum_gizpulse_teleport_other_and_self	0	0
-proc	/datum/gizpulse/teleport/other/and_self	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:43	holder	no	-	proc
+type	/datum/gizmo_controller	/datum	code/modules/research/gizmo/gizmo_controller.dm:6	live	datum_gizmo_controller	1	0
+proc	/datum/gizmo_controller	generate_interfaces	code/modules/research/gizmo/gizmo_controller.dm:11	holder	yes	full	proc root
+type	/datum/gizmo_controller/beyblade	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:27	live	datum_gizmo_controller_beyblade	0	0
+type	/datum/gizmo_controller/toggle	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:31	live	datum_gizmo_controller_toggle	0	0
+type	/datum/gizmo_controller/voice	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:35	live	datum_gizmo_controller_voice	0	0
+type	/datum/gizmo_controller/item	/datum/gizmo_controller	(implied by a subtype's path)	live	datum_gizmo_controller_item	0	0
+type	/datum/gizmo_controller/cursed	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:42	live	datum_gizmo_controller_cursed	0	0
+type	/datum/gizmo_controller/moo	/datum/gizmo_controller	code/modules/research/gizmo/gizmo_controller.dm:46	live	datum_gizmo_controller_moo	0	0
+type	/datum/gizmo_interface	/datum	code/modules/research/gizmo/gizmo_interface.dm:4	live	datum_gizmo_interface	1	0
+proc	/datum/gizmo_interface	New	code/modules/research/gizmo/gizmo_interface.dm:20	controller	yes	full	proc
+proc	/datum/gizmo_interface	generate_interface	code/modules/research/gizmo/gizmo_interface.dm:26	holder,pulse_callback	yes	full	proc root
+type	/datum/gizmo_interface/beyblade	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:46	live	datum_gizmo_interface_beyblade	0	0
+type	/datum/gizmo_interface/toggle	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:52	live	datum_gizmo_interface_toggle	0	0
+type	/datum/gizmo_interface/voice_unlock	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:56	live	datum_gizmo_interface_voice_unlock	0	0
+type	/datum/gizmo_interface/voice	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:62	live	datum_gizmo_interface_voice	0	0
+type	/datum/gizmo_interface/cursed	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:66	live	datum_gizmo_interface_cursed	0	0
+type	/datum/gizmo_interface/moo	/datum/gizmo_interface	code/modules/research/gizmo/gizmo_interface.dm:72	live	datum_gizmo_interface_moo	0	0
+type	/datum/gizmo_puzzle	/datum	code/modules/research/gizmo/gizpuzzle.dm:4	live	datum_gizmo_puzzle	1	0
+proc	/datum/gizmo_puzzle	New	code/modules/research/gizmo/gizpuzzle.dm:31	pulsed	yes	full	proc
+proc	/datum/gizmo_puzzle	generate_code_sequences	code/modules/research/gizmo/gizpuzzle.dm:36	solution_callbacks	yes	full	proc root
+proc	/datum/gizmo_puzzle	on_pulse	code/modules/research/gizmo/gizpuzzle.dm:46	pulse_number,user,holder,no_feedback	yes	full	proc root
+proc	/datum/gizmo_puzzle	default_on_pulsed	code/modules/research/gizmo/gizpuzzle.dm:73	holder,user,solved_type,no_feedback	yes	full	proc root
+type	/datum/gizmo_puzzle/voice	/datum/gizmo_puzzle	code/modules/research/gizmo/gizpuzzle.dm:95	live	datum_gizmo_puzzle_voice	0	0
+type	/datum/gizmodes	/datum	code/modules/research/gizmo/gizmodes/gizactives.dm:8	live	datum_gizmodes	1	0
+proc	/datum/gizmodes	generate_modes	code/modules/research/gizmo/gizmodes/gizactives.dm:41	trigger_callbacks,interface	yes	full	proc root
+proc	/datum/gizmodes	activate	code/modules/research/gizmo/gizmodes/gizactives.dm:69	holder	yes	full	proc root
+type	/datum/gizmodes/sputter	/datum/gizmodes	code/modules/research/gizmo/gizmodes/giz_filler.dm:3	live	datum_gizmodes_sputter	0	0
+type	/datum/gizmodes/dispenser	/datum/gizmodes	code/modules/research/gizmo/gizmodes/giz_filler.dm:31	live	datum_gizmodes_dispenser	0	0
+type	/datum/gizmodes/dispenser/food	/datum/gizmodes/dispenser	code/modules/research/gizmo/gizmodes/giz_filler.dm:80	live	datum_gizmodes_dispenser_food	0	0
+type	/datum/gizmodes/bad	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizbad.dm:3	live	datum_gizmodes_bad	0	0
+type	/datum/gizmodes/code_crack	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizcode.dm:25	live	datum_gizmodes_code_crack	1	0
+proc	/datum/gizmodes/code_crack	generate_code	code/modules/research/gizmo/gizmodes/gizcode.dm:59		yes	full	proc root
+proc	/datum/gizmodes/code_crack	validate_code	code/modules/research/gizmo/gizmodes/gizcode.dm:71	code	yes	full	proc root
+proc	/datum/gizmodes/code_crack	check_code	code/modules/research/gizmo/gizmodes/gizcode.dm:76		yes	full	proc root
+proc	/datum/gizmodes/code_crack	dispense_reward	code/modules/research/gizmo/gizmodes/gizcode.dm:83	holder	yes	full	proc root
+proc	/datum/gizmodes/code_crack	punishment	code/modules/research/gizmo/gizmodes/gizcode.dm:91	holder	yes	full	proc root
+proc	/datum/gizmodes/code_crack	feedback	code/modules/research/gizmo/gizmodes/gizcode.dm:97	holder	yes	full	proc root
+proc	/datum/gizmodes/code_crack	reset_input	code/modules/research/gizmo/gizmodes/gizcode.dm:107		yes	full	proc root
+type	/datum/gizmodes/code_crack/tutorial	/datum/gizmodes/code_crack	code/modules/research/gizmo/gizmodes/gizcode.dm:220	live	datum_gizmodes_code_crack_tutorial	1	0
+proc	/datum/gizmodes/code_crack/tutorial	dispense_reward	code/modules/research/gizmo/gizmodes/gizcode.dm:236	holder	yes	full	proc
+proc	/datum/gizmodes/code_crack/tutorial	feedback	code/modules/research/gizmo/gizmodes/gizcode.dm:243	holder	yes	full	proc
+proc	/datum/gizmodes/code_crack/tutorial	punishment	code/modules/research/gizmo/gizmodes/gizcode.dm:257	holder	yes	full	proc
+type	/datum/gizmodes/code_crack/moo	/datum/gizmodes/code_crack	code/modules/research/gizmo/gizmodes/gizcode.dm:269	live	datum_gizmodes_code_crack_moo	1	0
+proc	/datum/gizmodes/code_crack/moo	validate_code	code/modules/research/gizmo/gizmodes/gizcode.dm:275	code	yes	full	proc
+proc	/datum/gizmodes/code_crack/moo	generate_code	code/modules/research/gizmo/gizmodes/gizcode.dm:282		yes	full	proc
+proc	/datum/gizmodes/code_crack/moo	feedback	code/modules/research/gizmo/gizmodes/gizcode.dm:286	holder	yes	full	proc
+proc	/datum/gizmodes/code_crack/moo	punishment	code/modules/research/gizmo/gizmodes/gizcode.dm:309	holder	yes	full	proc
+type	/datum/gizmodes/copier	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizcopier.dm:3	live	datum_gizmodes_copier	0	0
+type	/datum/gizmodes/electric	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizlectric.dm:3	live	datum_gizmodes_electric	1	0
+proc	/datum/gizmodes/electric	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:31	holder	yes	full	proc
+type	/datum/gizmodes/mover	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmisc.dm:3	live	datum_gizmodes_mover	0	0
+type	/datum/gizmodes/lights	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmisc.dm:15	live	datum_gizmodes_lights	0	0
+type	/datum/gizmodes/voice	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmisc.dm:38	live	datum_gizmodes_voice	0	0
+type	/datum/gizmodes/mood_pulser	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmood.dm:3	live	datum_gizmodes_mood_pulser	0	0
+type	/datum/gizmodes/mopper	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizmopper.dm:3	live	datum_gizmodes_mopper	1	0
+proc	/datum/gizmodes/mopper	New	code/modules/research/gizmo/gizmodes/gizmopper.dm:34		yes	full	proc
+proc	/datum/gizmodes/mopper	activate	code/modules/research/gizmo/gizmodes/gizmopper.dm:40	holder	yes	full	proc
+proc	/datum/gizmodes/mopper	process	code/modules/research/gizmo/gizmodes/gizmopper.dm:48	seconds_per_tick	yes	full	proc
+type	/datum/gizmodes/teleporter	/datum/gizmodes	code/modules/research/gizmo/gizmodes/gizporter.dm:3	live	datum_gizmodes_teleporter	0	0
+type	/datum/gizpulse	/datum	code/modules/research/gizmo/gizmodes/gizactives.dm:80	live	datum_gizpulse	1	0
+proc	/datum/gizpulse	activate	code/modules/research/gizmo/gizmodes/gizactives.dm:83	holder,master,interface	yes	full	proc root
+type	/datum/gizpulse/sputter	/datum/gizpulse	code/modules/research/gizmo/gizmodes/giz_filler.dm:14	live	datum_gizpulse_sputter	1	0
+proc	/datum/gizpulse/sputter	activate	code/modules/research/gizmo/gizmodes/giz_filler.dm:18	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/throw_self	/datum/gizpulse	code/modules/research/gizmo/gizmodes/giz_filler.dm:26	live	datum_gizpulse_throw_self	1	0
+proc	/datum/gizpulse/throw_self	activate	code/modules/research/gizmo/gizmodes/giz_filler.dm:26	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/dispense	/datum/gizpulse	code/modules/research/gizmo/gizmodes/giz_filler.dm:44	live	datum_gizpulse_dispense	1	0
+proc	/datum/gizpulse/dispense	activate	code/modules/research/gizmo/gizmodes/giz_filler.dm:62	holder,master,interface	yes	full	proc
+proc	/datum/gizpulse/dispense	modify	code/modules/research/gizmo/gizmodes/giz_filler.dm:75	new_object	yes	full	proc root
+type	/datum/gizpulse/dispense/food	/datum/gizpulse/dispense	code/modules/research/gizmo/gizmodes/giz_filler.dm:93	live	datum_gizpulse_dispense_food	1	0
+proc	/datum/gizpulse/dispense/food	modify	code/modules/research/gizmo/gizmodes/giz_filler.dm:98	new_object	yes	full	proc
+type	/datum/gizpulse/dispense/robot_spider	/datum/gizpulse/dispense	code/modules/research/gizmo/gizmodes/gizbad.dm:35	live	datum_gizpulse_dispense_robot_spider	0	0
+type	/datum/gizpulse/mode_controle	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizactives.dm:88	live	datum_gizpulse_mode_controle	1	0
+proc	/datum/gizpulse/mode_controle	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:91	master,active_gizmodes,trigger_callbacks	yes	full	proc root
+type	/datum/gizpulse/mode_controle/select_mode	/datum/gizpulse/mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:95	live	datum_gizpulse_mode_controle_select_mode	1	0
+proc	/datum/gizpulse/mode_controle/select_mode	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:95	master,active_gizmodes,trigger_callbacks	yes	full	proc
+proc	/datum/gizpulse/mode_controle/select_mode	select_mode	code/modules/research/gizmo/gizmodes/gizactives.dm:100	master,new_active_mode,holder	yes	full	proc root
+type	/datum/gizpulse/mode_controle/cycle_mode	/datum/gizpulse/mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:106	live	datum_gizpulse_mode_controle_cycle_mode	1	0
+proc	/datum/gizpulse/mode_controle/cycle_mode	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:106	master,active_gizmodes,trigger_callbacks	yes	full	proc
+proc	/datum/gizpulse/mode_controle/cycle_mode	cycle_mode	code/modules/research/gizmo/gizmodes/gizactives.dm:110	master,holder	yes	full	proc root
+type	/datum/gizpulse/mode_controle/cycle_mode/activate	/datum/gizpulse/mode_controle/cycle_mode	code/modules/research/gizmo/gizmodes/gizactives.dm:126	live	datum_gizpulse_mode_controle_cycle_mode_activate	1	0
+proc	/datum/gizpulse/mode_controle/cycle_mode/activate	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:126	master,active_gizmodes,trigger_callbacks	yes	full	proc
+proc	/datum/gizpulse/mode_controle/cycle_mode/activate	cycle_mode	code/modules/research/gizmo/gizmodes/gizactives.dm:129	master,holder	yes	full	proc
+type	/datum/gizpulse/mode_controle/direct_activate	/datum/gizpulse/mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:117	live	datum_gizpulse_mode_controle_direct_activate	1	0
+proc	/datum/gizpulse/mode_controle/direct_activate	setup_mode_controle	code/modules/research/gizmo/gizmodes/gizactives.dm:117	master,active_gizmodes,trigger_callbacks	yes	full	proc
+proc	/datum/gizpulse/mode_controle/direct_activate	switch_and_activate	code/modules/research/gizmo/gizmodes/gizactives.dm:121	master,active,holder	yes	full	proc root
+type	/datum/gizpulse/explode	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizbad.dm:23	live	datum_gizpulse_explode	1	0
+proc	/datum/gizpulse/explode	activate	code/modules/research/gizmo/gizmodes/gizbad.dm:28	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/explode/fire	/datum/gizpulse/explode	code/modules/research/gizmo/gizmodes/gizbad.dm:32	live	datum_gizpulse_explode_fire	0	0
+type	/datum/gizpulse/thrower	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizbad.dm:68	live	datum_gizpulse_thrower	1	0
+proc	/datum/gizpulse/thrower	New	code/modules/research/gizmo/gizmodes/gizbad.dm:76		yes	full	proc
+proc	/datum/gizpulse/thrower	activate	code/modules/research/gizmo/gizmodes/gizbad.dm:80	holder,master,interface	yes	full	proc
+proc	/datum/gizpulse/thrower	modify	code/modules/research/gizmo/gizmodes/gizbad.dm:93	item	yes	full	proc root
+type	/datum/gizpulse/thrower/grenade	/datum/gizpulse/thrower	code/modules/research/gizmo/gizmodes/gizbad.dm:100	live	datum_gizpulse_thrower_grenade	1	0
+proc	/datum/gizpulse/thrower/grenade	modify	code/modules/research/gizmo/gizmodes/gizbad.dm:111	item	yes	full	proc
+type	/datum/gizpulse/ominous	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizbad.dm:96	live	datum_gizpulse_ominous	1	0
+proc	/datum/gizpulse/ominous	activate	code/modules/research/gizmo/gizmodes/gizbad.dm:96	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/bone_breaker	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizbad.dm:115	live	datum_gizpulse_bone_breaker	1	0
+proc	/datum/gizpulse/bone_breaker	activate	code/modules/research/gizmo/gizmodes/gizbad.dm:115	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/activate_puzzle	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcode.dm:117	live	datum_gizpulse_activate_puzzle	1	0
+proc	/datum/gizpulse/activate_puzzle	activate	code/modules/research/gizmo/gizmodes/gizcode.dm:117	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/cycle_position	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcode.dm:139	live	datum_gizpulse_cycle_position	1	0
+proc	/datum/gizpulse/cycle_position	activate	code/modules/research/gizmo/gizmodes/gizcode.dm:139	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/cycle_digit	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcode.dm:160	live	datum_gizpulse_cycle_digit	1	0
+proc	/datum/gizpulse/cycle_digit	activate	code/modules/research/gizmo/gizmodes/gizcode.dm:160	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/try_crack	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcode.dm:182	live	datum_gizpulse_try_crack	1	0
+proc	/datum/gizpulse/try_crack	activate	code/modules/research/gizmo/gizmodes/gizcode.dm:182	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/scan	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcopier.dm:17	live	datum_gizpulse_scan	1	0
+proc	/datum/gizpulse/scan	activate	code/modules/research/gizmo/gizmodes/gizcopier.dm:17	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/copy	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcopier.dm:34	live	datum_gizpulse_copy	1	0
+proc	/datum/gizpulse/copy	activate	code/modules/research/gizmo/gizmodes/gizcopier.dm:36	holder,master,interface	yes	full	proc
+proc	/datum/gizpulse/copy	remove_from_list	code/modules/research/gizmo/gizmodes/gizcopier.dm:65	source	yes	full	proc root
+type	/datum/gizpulse/erase	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizcopier.dm:71	live	datum_gizpulse_erase	1	0
+proc	/datum/gizpulse/erase	activate	code/modules/research/gizmo/gizmodes/gizcopier.dm:71	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/electric	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizlectric.dm:42	live	datum_gizpulse_electric	1	0
+proc	/datum/gizpulse/electric	get_power	code/modules/research/gizmo/gizmodes/gizlectric.dm:42	holder,master	yes	full	proc root
+proc	/datum/gizpulse/electric	use_power	code/modules/research/gizmo/gizmodes/gizlectric.dm:49	amount,holder,master	yes	full	proc root
+type	/datum/gizpulse/electric/emp	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:58	live	datum_gizpulse_electric_emp	1	0
+proc	/datum/gizpulse/electric/emp	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:61	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/electric/discharge	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:70	live	datum_gizpulse_electric_discharge	1	0
+proc	/datum/gizpulse/electric/discharge	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:70	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/electric/charge	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:79	live	datum_gizpulse_electric_charge	1	0
+proc	/datum/gizpulse/electric/charge	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:79	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/electric/revive	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:105	live	datum_gizpulse_electric_revive	1	0
+proc	/datum/gizpulse/electric/revive	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:107	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/electric/draw	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:131	live	datum_gizpulse_electric_draw	1	0
+proc	/datum/gizpulse/electric/draw	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:131	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/electric/passive_charge	/datum/gizpulse/electric	code/modules/research/gizmo/gizmodes/gizlectric.dm:157	live	datum_gizpulse_electric_passive_charge	1	0
+proc	/datum/gizpulse/electric/passive_charge	activate	code/modules/research/gizmo/gizmodes/gizlectric.dm:159	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/start_moving	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:5	live	datum_gizpulse_start_moving	1	0
+proc	/datum/gizpulse/start_moving	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:5	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/stop_moving	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:9	live	datum_gizpulse_stop_moving	1	0
+proc	/datum/gizpulse/stop_moving	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:9	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/lights_on	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:21	live	datum_gizpulse_lights_on	1	0
+proc	/datum/gizpulse/lights_on	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:21	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/lights_off	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:31	live	datum_gizpulse_lights_off	1	0
+proc	/datum/gizpulse/lights_off	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:31	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/voice_hint	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:44	live	datum_gizpulse_voice_hint	1	0
+proc	/datum/gizpulse/voice_hint	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:44	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/language_change	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmisc.dm:50	live	datum_gizpulse_language_change	1	0
+proc	/datum/gizpulse/language_change	activate	code/modules/research/gizmo/gizmodes/gizmisc.dm:50	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/mood_pulser	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmood.dm:13	live	datum_gizpulse_mood_pulser	1	0
+proc	/datum/gizpulse/mood_pulser	activate	code/modules/research/gizmo/gizmodes/gizmood.dm:19	holder,master,interface	yes	full	proc
+proc	/datum/gizpulse/mood_pulser	mood_pulse	code/modules/research/gizmo/gizmodes/gizmood.dm:23	holder	yes	full	proc root
+type	/datum/gizpulse/mood_pulser/positive	/datum/gizpulse/mood_pulser	code/modules/research/gizmo/gizmodes/gizmood.dm:30	live	datum_gizpulse_mood_pulser_positive	0	0
+type	/datum/gizpulse/mood_pulser/negative	/datum/gizpulse/mood_pulser	code/modules/research/gizmo/gizmodes/gizmood.dm:35	live	datum_gizpulse_mood_pulser_negative	0	0
+type	/datum/gizpulse/radiation_pulse	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmood.dm:38	live	datum_gizpulse_radiation_pulse	1	0
+proc	/datum/gizpulse/radiation_pulse	activate	code/modules/research/gizmo/gizmodes/gizmood.dm:38	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/wet_tiles	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmopper.dm:52	live	datum_gizpulse_wet_tiles	1	0
+proc	/datum/gizpulse/wet_tiles	activate	code/modules/research/gizmo/gizmodes/gizmopper.dm:52	holder,master,interface	yes	full	proc
+proc	/datum/gizpulse/wet_tiles	get_tiles	code/modules/research/gizmo/gizmodes/gizmopper.dm:61	holder	yes	full	proc root
+type	/datum/gizpulse/wet_tiles/fluid_circle	/datum/gizpulse/wet_tiles	code/modules/research/gizmo/gizmodes/gizmopper.dm:67	live	datum_gizpulse_wet_tiles_fluid_circle	1	0
+proc	/datum/gizpulse/wet_tiles/fluid_circle	get_tiles	code/modules/research/gizmo/gizmodes/gizmopper.dm:69	holder	yes	full	proc
+type	/datum/gizpulse/wet_tiles/fluid_circle/small	/datum/gizpulse/wet_tiles/fluid_circle	code/modules/research/gizmo/gizmodes/gizmopper.dm:74	live	datum_gizpulse_wet_tiles_fluid_circle_small	0	0
+type	/datum/gizpulse/wet_tiles/fluid_circle/medium	/datum/gizpulse/wet_tiles/fluid_circle	code/modules/research/gizmo/gizmodes/gizmopper.dm:78	live	datum_gizpulse_wet_tiles_fluid_circle_medium	0	0
+type	/datum/gizpulse/wet_tiles/fluid_circle/large	/datum/gizpulse/wet_tiles/fluid_circle	code/modules/research/gizmo/gizmodes/gizmopper.dm:82	live	datum_gizpulse_wet_tiles_fluid_circle_large	0	0
+type	/datum/gizpulse/fluid_smoke	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmopper.dm:85	live	datum_gizpulse_fluid_smoke	1	0
+proc	/datum/gizpulse/fluid_smoke	activate	code/modules/research/gizmo/gizmodes/gizmopper.dm:85	holder,interface	yes	full	proc
+type	/datum/gizpulse/swap_reagent	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizmopper.dm:90	live	datum_gizpulse_swap_reagent	1	0
+proc	/datum/gizpulse/swap_reagent	activate	code/modules/research/gizmo/gizmodes/gizmopper.dm:90	holder,master,interface	yes	full	proc
+type	/datum/gizpulse/teleport	/datum/gizpulse	code/modules/research/gizmo/gizmodes/gizporter.dm:15	live	datum_gizpulse_teleport	1	0
+proc	/datum/gizpulse/teleport	activate	code/modules/research/gizmo/gizmodes/gizporter.dm:20	holder,master,interface	yes	full	proc
+proc	/datum/gizpulse/teleport	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:29	holder	yes	full	proc root
+type	/datum/gizpulse/teleport/self	/datum/gizpulse/teleport	code/modules/research/gizmo/gizmodes/gizporter.dm:33	live	datum_gizpulse_teleport_self	1	0
+proc	/datum/gizpulse/teleport/self	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:33	holder	yes	full	proc
+type	/datum/gizpulse/teleport/other	/datum/gizpulse/teleport	code/modules/research/gizmo/gizmodes/gizporter.dm:37	live	datum_gizpulse_teleport_other	1	0
+proc	/datum/gizpulse/teleport/other	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:37	holder	yes	full	proc
+type	/datum/gizpulse/teleport/other/and_self	/datum/gizpulse/teleport/other	code/modules/research/gizmo/gizmodes/gizporter.dm:43	live	datum_gizpulse_teleport_other_and_self	1	0
+proc	/datum/gizpulse/teleport/other/and_self	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:43	holder	yes	full	proc
 type	/datum/scientific_paper	/datum	code/modules/research/ordnance/_scipaper.dm:4	live	datum_scientific_paper	1	0
 proc	/datum/scientific_paper	New	code/modules/research/ordnance/_scipaper.dm:25		yes	full	proc
 proc	/datum/scientific_paper	calculate_gains	code/modules/research/ordnance/_scipaper.dm:39	calculated_tier	yes	full	proc root
@@ -55727,9 +55727,9 @@ proc	/mob/living/basic/spider/giant/midwife	Initialize	code/modules/mob/living/b
 type	/mob/living/basic/spider/giant/ice	/mob/living/basic/spider/giant	code/modules/mob/living/basic/space_fauna/spider/giant_spider/giant_spiders.dm:465	live	mob_living_basic_spider_giant_ice	0	0
 type	/mob/living/basic/spider/giant/sgt_araneus	/mob/living/basic/spider/giant	code/modules/mob/living/basic/space_fauna/spider/giant_spider/giant_spiders.dm:583	live	mob_living_basic_spider_giant_sgt_araneus	1	1
 proc	/mob/living/basic/spider/giant/sgt_araneus	Initialize	code/modules/mob/living/basic/space_fauna/spider/giant_spider/giant_spiders.dm:594	mapload	yes	full	proc
-type	/mob/living/basic/spider/robot	/mob/living/basic/spider	code/modules/research/gizmo/gizmodes/gizbad.dm:40	inert	mob_living_basic_spider_robot	0	0
-proc	/mob/living/basic/spider/robot	death	code/modules/research/gizmo/gizmodes/gizbad.dm:54	gibbed	no	-	proc
-proc	/mob/living/basic/spider/robot	emp_act	code/modules/research/gizmo/gizmodes/gizbad.dm:61	severity	no	-	proc
+type	/mob/living/basic/spider/robot	/mob/living/basic/spider	code/modules/research/gizmo/gizmodes/gizbad.dm:40	live	mob_living_basic_spider_robot	1	0
+proc	/mob/living/basic/spider/robot	death	code/modules/research/gizmo/gizmodes/gizbad.dm:54	gibbed	yes	full	proc
+proc	/mob/living/basic/spider/robot	emp_act	code/modules/research/gizmo/gizmodes/gizbad.dm:61	severity	yes	full	proc
 type	/mob/living/basic/statue	/mob/living/basic	code/modules/mob/living/basic/space_fauna/statue/statue.dm:4	live	mob_living_basic_statue	1	0
 proc	/mob/living/basic/statue	Initialize	code/modules/mob/living/basic/space_fauna/statue/statue.dm:57	mapload	yes	full	proc
 proc	/mob/living/basic/statue	med_hud_set_health	code/modules/mob/living/basic/space_fauna/statue/statue.dm:69		yes	full	proc
@@ -57262,17 +57262,17 @@ proc	/obj/item/clothing/head/helmet/monkey_sentience	disconnect	code/modules/clo
 proc	/obj/item/clothing/head/helmet/monkey_sentience	malfunction	code/modules/clothing/head/mind_monkey_helmet.dm:126	target	no	-	proc root
 proc	/obj/item/clothing/head/helmet/monkey_sentience	dropped	code/modules/clothing/head/mind_monkey_helmet.dm:139	user	no	-	proc
 proc	/obj/item/clothing/head/helmet/monkey_sentience	make_fall_off	code/modules/clothing/head/mind_monkey_helmet.dm:144		no	-	proc root
-type	/obj/item/clothing/head/helmet/perceptomatrix	/obj/item/clothing/head/helmet	code/modules/clothing/head/perceptomatrix.dm:3	inert	obj_item_clothing_head_helmet_perceptomatrix	0	0
-proc	/obj/item/clothing/head/helmet/perceptomatrix	Initialize	code/modules/clothing/head/perceptomatrix.dm:69	mapload	no	-	proc
-proc	/obj/item/clothing/head/helmet/perceptomatrix	equipped	code/modules/clothing/head/perceptomatrix.dm:76	user,slot	no	-	proc
-proc	/obj/item/clothing/head/helmet/perceptomatrix	dropped	code/modules/clothing/head/perceptomatrix.dm:81	user,silent	no	-	proc
-proc	/obj/item/clothing/head/helmet/perceptomatrix	pre_cast_core_check	code/modules/clothing/head/perceptomatrix.dm:86	caster,spell	no	-	proc root
-proc	/obj/item/clothing/head/helmet/perceptomatrix	update_anomaly_state	code/modules/clothing/head/perceptomatrix.dm:92		no	-	proc root
-proc	/obj/item/clothing/head/helmet/perceptomatrix	Destroy	code/modules/clothing/head/perceptomatrix.dm:121	force	no	-	proc
-proc	/obj/item/clothing/head/helmet/perceptomatrix	examine	code/modules/clothing/head/perceptomatrix.dm:125	user	no	-	proc
-proc	/obj/item/clothing/head/helmet/perceptomatrix	update_icon_state	code/modules/clothing/head/perceptomatrix.dm:130		no	-	proc
-proc	/obj/item/clothing/head/helmet/perceptomatrix	item_interaction	code/modules/clothing/head/perceptomatrix.dm:135	user,weapon,params	no	-	proc
-type	/obj/item/clothing/head/helmet/perceptomatrix/functioning	/obj/item/clothing/head/helmet/perceptomatrix	code/modules/clothing/head/perceptomatrix.dm:149	inert	obj_item_clothing_head_helmet_perceptomatrix_functioning	0	0
+type	/obj/item/clothing/head/helmet/perceptomatrix	/obj/item/clothing/head/helmet	code/modules/clothing/head/perceptomatrix.dm:3	live	obj_item_clothing_head_helmet_perceptomatrix	1	0
+proc	/obj/item/clothing/head/helmet/perceptomatrix	Initialize	code/modules/clothing/head/perceptomatrix.dm:69	mapload	yes	full	proc
+proc	/obj/item/clothing/head/helmet/perceptomatrix	equipped	code/modules/clothing/head/perceptomatrix.dm:76	user,slot	yes	full	proc
+proc	/obj/item/clothing/head/helmet/perceptomatrix	dropped	code/modules/clothing/head/perceptomatrix.dm:81	user,silent	yes	full	proc
+proc	/obj/item/clothing/head/helmet/perceptomatrix	pre_cast_core_check	code/modules/clothing/head/perceptomatrix.dm:86	caster,spell	yes	full	proc root
+proc	/obj/item/clothing/head/helmet/perceptomatrix	update_anomaly_state	code/modules/clothing/head/perceptomatrix.dm:92		yes	full	proc root
+proc	/obj/item/clothing/head/helmet/perceptomatrix	Destroy	code/modules/clothing/head/perceptomatrix.dm:121	force	yes	full	proc
+proc	/obj/item/clothing/head/helmet/perceptomatrix	examine	code/modules/clothing/head/perceptomatrix.dm:125	user	yes	full	proc
+proc	/obj/item/clothing/head/helmet/perceptomatrix	update_icon_state	code/modules/clothing/head/perceptomatrix.dm:130		yes	full	proc
+proc	/obj/item/clothing/head/helmet/perceptomatrix	item_interaction	code/modules/clothing/head/perceptomatrix.dm:135	user,weapon,params	yes	full	proc
+type	/obj/item/clothing/head/helmet/perceptomatrix/functioning	/obj/item/clothing/head/helmet/perceptomatrix	code/modules/clothing/head/perceptomatrix.dm:149	live	obj_item_clothing_head_helmet_perceptomatrix_functioning	0	0
 type	/obj/item/clothing/head/helmet/space	/obj/item/clothing/head/helmet	code/modules/clothing/spacesuits/_spacesuits.dm:7	live	obj_item_clothing_head_helmet_space	1	0
 proc	/obj/item/clothing/head/helmet/space	Initialize	code/modules/clothing/spacesuits/_spacesuits.dm:47	mapload	yes	full	proc
 proc	/obj/item/clothing/head/helmet/space	add_stabilizer	code/modules/clothing/spacesuits/_spacesuits.dm:56	loose_hat	yes	full	proc root
@@ -58647,64 +58647,64 @@ type	/obj/item/clothing/suit/armor	/obj/item/clothing/suit	code/modules/clothing
 proc	/obj/item/clothing/suit/armor	Initialize	code/modules/clothing/suits/armor.dm:28	mapload	yes	full	proc
 proc	/obj/item/clothing/suit/armor	apply_fantasy_bonuses	code/modules/clothing/suits/armor.dm:33	bonus	stub	deferred	proc
 proc	/obj/item/clothing/suit/armor	remove_fantasy_bonuses	code/modules/clothing/suits/armor.dm:40	bonus	stub	deferred	proc
-type	/obj/item/clothing/suit/armor/reactive	/obj/item/clothing/suit/armor	code/modules/clothing/suits/reactive_armour.dm:35	inert	obj_item_clothing_suit_armor_reactive	0	0
-proc	/obj/item/clothing/suit/armor/reactive	Initialize	code/modules/clothing/suits/reactive_armour.dm:61	mapload	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive	update_icon_state	code/modules/clothing/suits/reactive_armour.dm:65		no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive	attack_self	code/modules/clothing/suits/reactive_armour.dm:69	user	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive	hit_reaction	code/modules/clothing/suits/reactive_armour.dm:75	owner,hitby,attack_text,final_block_chance,damage,attack_type,damage_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:91	owner	no	-	proc root
-proc	/obj/item/clothing/suit/armor/reactive	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:99	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc root
-proc	/obj/item/clothing/suit/armor/reactive	emp_activation	code/modules/clothing/suits/reactive_armour.dm:108	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc root
-proc	/obj/item/clothing/suit/armor/reactive	emp_act	code/modules/clothing/suits/reactive_armour.dm:112	severity	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/teleport	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:122	inert	obj_item_clothing_suit_armor_reactive_teleport	0	0
-proc	/obj/item/clothing/suit/armor/reactive/teleport	add_stealing_item_objective	code/game/gamemodes/objective_items.dm:489		no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/teleport	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:129	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/teleport	emp_activation	code/modules/clothing/suits/reactive_armour.dm:136	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
+type	/obj/item/clothing/suit/armor/reactive	/obj/item/clothing/suit/armor	code/modules/clothing/suits/reactive_armour.dm:35	live	obj_item_clothing_suit_armor_reactive	1	0
+proc	/obj/item/clothing/suit/armor/reactive	Initialize	code/modules/clothing/suits/reactive_armour.dm:61	mapload	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive	update_icon_state	code/modules/clothing/suits/reactive_armour.dm:65		yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive	attack_self	code/modules/clothing/suits/reactive_armour.dm:69	user	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive	hit_reaction	code/modules/clothing/suits/reactive_armour.dm:75	owner,hitby,attack_text,final_block_chance,damage,attack_type,damage_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:91	owner	yes	full	proc root
+proc	/obj/item/clothing/suit/armor/reactive	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:99	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc root
+proc	/obj/item/clothing/suit/armor/reactive	emp_activation	code/modules/clothing/suits/reactive_armour.dm:108	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc root
+proc	/obj/item/clothing/suit/armor/reactive	emp_act	code/modules/clothing/suits/reactive_armour.dm:112	severity	yes	full	proc
+type	/obj/item/clothing/suit/armor/reactive/teleport	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:122	live	obj_item_clothing_suit_armor_reactive_teleport	1	0
+proc	/obj/item/clothing/suit/armor/reactive/teleport	add_stealing_item_objective	code/game/gamemodes/objective_items.dm:489		yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/teleport	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:129	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/teleport	emp_activation	code/modules/clothing/suits/reactive_armour.dm:136	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
 type	/obj/item/clothing/suit/armor/reactive/psykerboost	/obj/item/clothing/suit/armor/reactive	code/modules/antagonists/fugitive/hunters/hunter_gear.dm:103	inert	obj_item_clothing_suit_armor_reactive_psykerboost	0	0
 proc	/obj/item/clothing/suit/armor/reactive/psykerboost	cooldown_activation	code/modules/antagonists/fugitive/hunters/hunter_gear.dm:109	owner	no	-	proc
 proc	/obj/item/clothing/suit/armor/reactive/psykerboost	reactive_activation	code/modules/antagonists/fugitive/hunters/hunter_gear.dm:113	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
 proc	/obj/item/clothing/suit/armor/reactive/psykerboost	emp_activation	code/modules/antagonists/fugitive/hunters/hunter_gear.dm:121	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/fire	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:148	inert	obj_item_clothing_suit_armor_reactive_fire	0	0
-proc	/obj/item/clothing/suit/armor/reactive/fire	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:153	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/fire	emp_activation	code/modules/clothing/suits/reactive_armour.dm:164	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/stealth	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:175	inert	obj_item_clothing_suit_armor_reactive_stealth	0	0
-proc	/obj/item/clothing/suit/armor/reactive/stealth	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:189	owner	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/stealth	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:196	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/stealth	end_stealth	code/modules/clothing/suits/reactive_armour.dm:213	owner	no	-	proc root
-proc	/obj/item/clothing/suit/armor/reactive/stealth	emp_activation	code/modules/clothing/suits/reactive_armour.dm:217	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/tesla	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:230	inert	obj_item_clothing_suit_armor_reactive_tesla	0	0
-proc	/obj/item/clothing/suit/armor/reactive/tesla	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:244	owner	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/tesla	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:248	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/tesla	emp_activation	code/modules/clothing/suits/reactive_armour.dm:254	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/repulse	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:265	inert	obj_item_clothing_suit_armor_reactive_repulse	0	0
-proc	/obj/item/clothing/suit/armor/reactive/repulse	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:271	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/repulse	emp_activation	code/modules/clothing/suits/reactive_armour.dm:286	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/table	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:301	inert	obj_item_clothing_suit_armor_reactive_table	0	0
-proc	/obj/item/clothing/suit/armor/reactive/table	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:307	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/table	emp_activation	code/modules/clothing/suits/reactive_armour.dm:320	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/hallucinating	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:333	inert	obj_item_clothing_suit_armor_reactive_hallucinating	0	0
-proc	/obj/item/clothing/suit/armor/reactive/hallucinating	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:339	owner	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/hallucinating	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:343	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/hallucinating	emp_activation	code/modules/clothing/suits/reactive_armour.dm:354	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/bioscrambling	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:362	inert	obj_item_clothing_suit_armor_reactive_bioscrambling	0	0
-proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	Initialize	code/modules/clothing/suits/reactive_armour.dm:377	mapload	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:392	owner	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:396	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	emp_activation	code/modules/clothing/suits/reactive_armour.dm:402	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	bioscrambler_pulse	code/modules/clothing/suits/reactive_armour.dm:408	owner,can_hit_owner	no	-	proc root
-type	/obj/item/clothing/suit/armor/reactive/barricade	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:416	inert	obj_item_clothing_suit_armor_reactive_barricade	0	0
-proc	/obj/item/clothing/suit/armor/reactive/barricade	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:422	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/barricade	repulse_targets	code/modules/clothing/suits/reactive_armour.dm:441	source	no	-	proc root
-proc	/obj/item/clothing/suit/armor/reactive/barricade	repulse	code/modules/clothing/suits/reactive_armour.dm:458	victim,source	no	-	proc root
-proc	/obj/item/clothing/suit/armor/reactive/barricade	emp_activation	code/modules/clothing/suits/reactive_armour.dm:469	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/ectoplasm	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:478	inert	obj_item_clothing_suit_armor_reactive_ectoplasm	0	0
-proc	/obj/item/clothing/suit/armor/reactive/ectoplasm	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:484	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/ectoplasm	emp_activation	code/modules/clothing/suits/reactive_armour.dm:493	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-type	/obj/item/clothing/suit/armor/reactive/weather	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:497	inert	obj_item_clothing_suit_armor_reactive_weather	0	0
-proc	/obj/item/clothing/suit/armor/reactive/weather	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:503	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/weather	emp_activation	code/modules/clothing/suits/reactive_armour.dm:525	owner,hitby,attack_text,final_block_chance,damage,attack_type	no	-	proc
-proc	/obj/item/clothing/suit/armor/reactive/weather	shock_turf_windup	code/modules/clothing/suits/reactive_armour.dm:538	target	no	-	proc root
-proc	/obj/item/clothing/suit/armor/reactive/weather	shock_turf	code/modules/clothing/suits/reactive_armour.dm:542	target	no	-	proc root
+type	/obj/item/clothing/suit/armor/reactive/fire	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:148	live	obj_item_clothing_suit_armor_reactive_fire	1	0
+proc	/obj/item/clothing/suit/armor/reactive/fire	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:153	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/fire	emp_activation	code/modules/clothing/suits/reactive_armour.dm:164	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+type	/obj/item/clothing/suit/armor/reactive/stealth	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:175	live	obj_item_clothing_suit_armor_reactive_stealth	1	0
+proc	/obj/item/clothing/suit/armor/reactive/stealth	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:189	owner	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/stealth	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:196	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/stealth	end_stealth	code/modules/clothing/suits/reactive_armour.dm:213	owner	yes	full	proc root
+proc	/obj/item/clothing/suit/armor/reactive/stealth	emp_activation	code/modules/clothing/suits/reactive_armour.dm:217	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+type	/obj/item/clothing/suit/armor/reactive/tesla	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:230	live	obj_item_clothing_suit_armor_reactive_tesla	1	0
+proc	/obj/item/clothing/suit/armor/reactive/tesla	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:244	owner	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/tesla	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:248	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/tesla	emp_activation	code/modules/clothing/suits/reactive_armour.dm:254	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+type	/obj/item/clothing/suit/armor/reactive/repulse	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:265	live	obj_item_clothing_suit_armor_reactive_repulse	1	0
+proc	/obj/item/clothing/suit/armor/reactive/repulse	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:271	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/repulse	emp_activation	code/modules/clothing/suits/reactive_armour.dm:286	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+type	/obj/item/clothing/suit/armor/reactive/table	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:301	live	obj_item_clothing_suit_armor_reactive_table	1	0
+proc	/obj/item/clothing/suit/armor/reactive/table	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:307	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/table	emp_activation	code/modules/clothing/suits/reactive_armour.dm:320	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+type	/obj/item/clothing/suit/armor/reactive/hallucinating	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:333	live	obj_item_clothing_suit_armor_reactive_hallucinating	1	0
+proc	/obj/item/clothing/suit/armor/reactive/hallucinating	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:339	owner	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/hallucinating	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:343	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/hallucinating	emp_activation	code/modules/clothing/suits/reactive_armour.dm:354	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+type	/obj/item/clothing/suit/armor/reactive/bioscrambling	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:362	live	obj_item_clothing_suit_armor_reactive_bioscrambling	1	0
+proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	Initialize	code/modules/clothing/suits/reactive_armour.dm:377	mapload	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	cooldown_activation	code/modules/clothing/suits/reactive_armour.dm:392	owner	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:396	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	emp_activation	code/modules/clothing/suits/reactive_armour.dm:402	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/bioscrambling	bioscrambler_pulse	code/modules/clothing/suits/reactive_armour.dm:408	owner,can_hit_owner	yes	full	proc root
+type	/obj/item/clothing/suit/armor/reactive/barricade	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:416	live	obj_item_clothing_suit_armor_reactive_barricade	1	0
+proc	/obj/item/clothing/suit/armor/reactive/barricade	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:422	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/barricade	repulse_targets	code/modules/clothing/suits/reactive_armour.dm:441	source	yes	full	proc root
+proc	/obj/item/clothing/suit/armor/reactive/barricade	repulse	code/modules/clothing/suits/reactive_armour.dm:458	victim,source	yes	full	proc root
+proc	/obj/item/clothing/suit/armor/reactive/barricade	emp_activation	code/modules/clothing/suits/reactive_armour.dm:469	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+type	/obj/item/clothing/suit/armor/reactive/ectoplasm	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:478	live	obj_item_clothing_suit_armor_reactive_ectoplasm	1	0
+proc	/obj/item/clothing/suit/armor/reactive/ectoplasm	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:484	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/ectoplasm	emp_activation	code/modules/clothing/suits/reactive_armour.dm:493	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+type	/obj/item/clothing/suit/armor/reactive/weather	/obj/item/clothing/suit/armor/reactive	code/modules/clothing/suits/reactive_armour.dm:497	live	obj_item_clothing_suit_armor_reactive_weather	1	0
+proc	/obj/item/clothing/suit/armor/reactive/weather	reactive_activation	code/modules/clothing/suits/reactive_armour.dm:503	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/weather	emp_activation	code/modules/clothing/suits/reactive_armour.dm:525	owner,hitby,attack_text,final_block_chance,damage,attack_type	yes	full	proc
+proc	/obj/item/clothing/suit/armor/reactive/weather	shock_turf_windup	code/modules/clothing/suits/reactive_armour.dm:538	target	yes	full	proc root
+proc	/obj/item/clothing/suit/armor/reactive/weather	shock_turf	code/modules/clothing/suits/reactive_armour.dm:542	target	yes	full	proc root
 type	/obj/item/clothing/suit/armor/abductor	/obj/item/clothing/suit/armor	code/modules/antagonists/abductor/equipment/gear/abductor_clothing.dm:177	inert	obj_item_clothing_suit_armor_abductor	0	0
 proc	/obj/item/clothing/suit/armor/abductor	Destroy	code/modules/antagonists/abductor/equipment/gear/abductor_clothing.dm:177		no	-	proc
 type	/obj/item/clothing/suit/armor/abductor/vest	/obj/item/clothing/suit/armor/abductor	code/modules/antagonists/abductor/equipment/gear/abductor_clothing.dm:16	inert	obj_item_clothing_suit_armor_abductor_vest	0	0
@@ -62329,34 +62329,34 @@ proc	/obj/item/assembly/signaler/internal	item_interaction	code/modules/assembly
 proc	/obj/item/assembly/signaler/internal	screwdriver_act	code/modules/assembly/signaler.dm:212	user,I	yes	full	proc
 proc	/obj/item/assembly/signaler/internal	can_interact	code/modules/assembly/signaler.dm:215	user	yes	full	proc
 type	/obj/item/assembly/signaler/low_range	/obj/item/assembly/signaler	code/modules/assembly/signaler.dm:221	live	obj_item_assembly_signaler_low_range	0	0
-type	/obj/item/assembly/signaler/anomaly	/obj/item/assembly/signaler	code/modules/research/anomaly/anomaly_core.dm:3	inert	obj_item_assembly_signaler_anomaly	0	0
-proc	/obj/item/assembly/signaler/anomaly	receive_signal	code/modules/research/anomaly/anomaly_core.dm:16	signal	no	-	proc
-proc	/obj/item/assembly/signaler/anomaly	manual_suicide	code/modules/research/anomaly/anomaly_core.dm:27	suicidee	no	-	proc
-proc	/obj/item/assembly/signaler/anomaly	attack_self	code/modules/research/anomaly/anomaly_core.dm:33		no	-	proc
-proc	/obj/item/assembly/signaler/anomaly	analyzer_act	code/modules/research/anomaly/anomaly_core.dm:36	user,tool	no	-	proc
-proc	/obj/item/assembly/signaler/anomaly	on_mail_unwrap	code/modules/research/anomaly/anomaly_core.dm:40	source,user,letter	no	-	proc
-type	/obj/item/assembly/signaler/anomaly/pyro	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:45	inert	obj_item_assembly_signaler_anomaly_pyro	0	0
-proc	/obj/item/assembly/signaler/anomaly/pyro	signal	code/modules/research/anomaly/anomaly_core.dm:51		no	-	proc
-type	/obj/item/assembly/signaler/anomaly/grav	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:60	inert	obj_item_assembly_signaler_anomaly_grav	0	0
-proc	/obj/item/assembly/signaler/anomaly/grav	signal	code/modules/research/anomaly/anomaly_core.dm:66		no	-	proc
-type	/obj/item/assembly/signaler/anomaly/flux	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:75	inert	obj_item_assembly_signaler_anomaly_flux	0	0
-proc	/obj/item/assembly/signaler/anomaly/flux	signal	code/modules/research/anomaly/anomaly_core.dm:81		no	-	proc
-type	/obj/item/assembly/signaler/anomaly/bluespace	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:85	inert	obj_item_assembly_signaler_anomaly_bluespace	0	0
-proc	/obj/item/assembly/signaler/anomaly/bluespace	signal	code/modules/research/anomaly/anomaly_core.dm:92		no	-	proc
-type	/obj/item/assembly/signaler/anomaly/vortex	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:101	inert	obj_item_assembly_signaler_anomaly_vortex	0	0
-proc	/obj/item/assembly/signaler/anomaly/vortex	signal	code/modules/research/anomaly/anomaly_core.dm:112		no	-	proc
-type	/obj/item/assembly/signaler/anomaly/bioscrambler	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:144	inert	obj_item_assembly_signaler_anomaly_bioscrambler	0	0
-proc	/obj/item/assembly/signaler/anomaly/bioscrambler	signal	code/modules/research/anomaly/anomaly_core.dm:151		no	-	proc
-type	/obj/item/assembly/signaler/anomaly/hallucination	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:157	inert	obj_item_assembly_signaler_anomaly_hallucination	0	0
-proc	/obj/item/assembly/signaler/anomaly/hallucination	signal	code/modules/research/anomaly/anomaly_core.dm:164		no	-	proc
-type	/obj/item/assembly/signaler/anomaly/dimensional	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:168	inert	obj_item_assembly_signaler_anomaly_dimensional	0	0
-proc	/obj/item/assembly/signaler/anomaly/dimensional	signal	code/modules/research/anomaly/anomaly_core.dm:175		no	-	proc
-proc	/obj/item/assembly/signaler/anomaly/dimensional	Initialize	code/modules/research/anomaly/anomaly_core.dm:184	mapload	no	-	proc
-type	/obj/item/assembly/signaler/anomaly/ectoplasm	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:190	inert	obj_item_assembly_signaler_anomaly_ectoplasm	0	0
-proc	/obj/item/assembly/signaler/anomaly/ectoplasm	signal	code/modules/research/anomaly/anomaly_core.dm:197		no	-	proc
-type	/obj/item/assembly/signaler/anomaly/weather	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:201	inert	obj_item_assembly_signaler_anomaly_weather	0	0
-proc	/obj/item/assembly/signaler/anomaly/weather	signal	code/modules/research/anomaly/anomaly_core.dm:210		no	-	proc
-proc	/obj/item/assembly/signaler/anomaly/weather	strike	code/modules/research/anomaly/anomaly_core.dm:224	target	no	-	proc root
+type	/obj/item/assembly/signaler/anomaly	/obj/item/assembly/signaler	code/modules/research/anomaly/anomaly_core.dm:3	live	obj_item_assembly_signaler_anomaly	1	0
+proc	/obj/item/assembly/signaler/anomaly	receive_signal	code/modules/research/anomaly/anomaly_core.dm:16	signal	yes	full	proc
+proc	/obj/item/assembly/signaler/anomaly	manual_suicide	code/modules/research/anomaly/anomaly_core.dm:27	suicidee	stub	deferred	proc
+proc	/obj/item/assembly/signaler/anomaly	attack_self	code/modules/research/anomaly/anomaly_core.dm:33		yes	full	proc
+proc	/obj/item/assembly/signaler/anomaly	analyzer_act	code/modules/research/anomaly/anomaly_core.dm:36	user,tool	yes	full	proc
+proc	/obj/item/assembly/signaler/anomaly	on_mail_unwrap	code/modules/research/anomaly/anomaly_core.dm:40	source,user,letter	yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/pyro	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:45	live	obj_item_assembly_signaler_anomaly_pyro	1	0
+proc	/obj/item/assembly/signaler/anomaly/pyro	signal	code/modules/research/anomaly/anomaly_core.dm:51		yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/grav	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:60	live	obj_item_assembly_signaler_anomaly_grav	1	0
+proc	/obj/item/assembly/signaler/anomaly/grav	signal	code/modules/research/anomaly/anomaly_core.dm:66		yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/flux	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:75	live	obj_item_assembly_signaler_anomaly_flux	1	0
+proc	/obj/item/assembly/signaler/anomaly/flux	signal	code/modules/research/anomaly/anomaly_core.dm:81		yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/bluespace	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:85	live	obj_item_assembly_signaler_anomaly_bluespace	1	0
+proc	/obj/item/assembly/signaler/anomaly/bluespace	signal	code/modules/research/anomaly/anomaly_core.dm:92		yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/vortex	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:101	live	obj_item_assembly_signaler_anomaly_vortex	1	0
+proc	/obj/item/assembly/signaler/anomaly/vortex	signal	code/modules/research/anomaly/anomaly_core.dm:112		yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/bioscrambler	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:144	live	obj_item_assembly_signaler_anomaly_bioscrambler	1	0
+proc	/obj/item/assembly/signaler/anomaly/bioscrambler	signal	code/modules/research/anomaly/anomaly_core.dm:151		yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/hallucination	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:157	live	obj_item_assembly_signaler_anomaly_hallucination	1	0
+proc	/obj/item/assembly/signaler/anomaly/hallucination	signal	code/modules/research/anomaly/anomaly_core.dm:164		yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/dimensional	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:168	live	obj_item_assembly_signaler_anomaly_dimensional	1	0
+proc	/obj/item/assembly/signaler/anomaly/dimensional	signal	code/modules/research/anomaly/anomaly_core.dm:175		yes	full	proc
+proc	/obj/item/assembly/signaler/anomaly/dimensional	Initialize	code/modules/research/anomaly/anomaly_core.dm:184	mapload	yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/ectoplasm	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:190	live	obj_item_assembly_signaler_anomaly_ectoplasm	1	0
+proc	/obj/item/assembly/signaler/anomaly/ectoplasm	signal	code/modules/research/anomaly/anomaly_core.dm:197		yes	full	proc
+type	/obj/item/assembly/signaler/anomaly/weather	/obj/item/assembly/signaler/anomaly	code/modules/research/anomaly/anomaly_core.dm:201	live	obj_item_assembly_signaler_anomaly_weather	1	0
+proc	/obj/item/assembly/signaler/anomaly/weather	signal	code/modules/research/anomaly/anomaly_core.dm:210		yes	full	proc
+proc	/obj/item/assembly/signaler/anomaly/weather	strike	code/modules/research/anomaly/anomaly_core.dm:224	target	yes	full	proc root
 type	/obj/item/assembly/timer	/obj/item/assembly	code/modules/assembly/timer.dm:2	live	obj_item_assembly_timer	1	1
 proc	/obj/item/assembly/timer	suicide_act	code/modules/assembly/timer.dm:16	user	stub	deferred	proc
 proc	/obj/item/assembly/timer	manual_suicide	code/modules/assembly/timer.dm:22	user	stub	deferred	proc root
@@ -70641,22 +70641,22 @@ proc	/obj/item/circuit_component/bluespace_launchpad	populate_ports	code/game/ma
 proc	/obj/item/circuit_component/bluespace_launchpad	register_usb_parent	code/game/machinery/launch_pad.dm:478	shell	yes	full	proc
 proc	/obj/item/circuit_component/bluespace_launchpad	unregister_usb_parent	code/game/machinery/launch_pad.dm:483	shell	yes	full	proc
 proc	/obj/item/circuit_component/bluespace_launchpad	input_received	code/game/machinery/launch_pad.dm:487	port	yes	full	proc
-type	/obj/item/circuit_component/bluespace_launchpad/console	/obj/item/circuit_component/bluespace_launchpad	code/game/machinery/computer/launchpad_control.dm:19	inert	obj_item_circuit_component_bluespace_launchpad_console	0	0
-proc	/obj/item/circuit_component/bluespace_launchpad/console	populate_ports	code/game/machinery/computer/launchpad_control.dm:26		no	-	proc
-proc	/obj/item/circuit_component/bluespace_launchpad/console	register_usb_parent	code/game/machinery/computer/launchpad_control.dm:30	shell	no	-	proc
-proc	/obj/item/circuit_component/bluespace_launchpad/console	unregister_usb_parent	code/game/machinery/computer/launchpad_control.dm:35	shell	no	-	proc
-proc	/obj/item/circuit_component/bluespace_launchpad/console	input_received	code/game/machinery/computer/launchpad_control.dm:39	port	no	-	proc
+type	/obj/item/circuit_component/bluespace_launchpad/console	/obj/item/circuit_component/bluespace_launchpad	code/game/machinery/computer/launchpad_control.dm:19	live	obj_item_circuit_component_bluespace_launchpad_console	1	0
+proc	/obj/item/circuit_component/bluespace_launchpad/console	populate_ports	code/game/machinery/computer/launchpad_control.dm:26		yes	full	proc
+proc	/obj/item/circuit_component/bluespace_launchpad/console	register_usb_parent	code/game/machinery/computer/launchpad_control.dm:30	shell	yes	full	proc
+proc	/obj/item/circuit_component/bluespace_launchpad/console	unregister_usb_parent	code/game/machinery/computer/launchpad_control.dm:35	shell	yes	full	proc
+proc	/obj/item/circuit_component/bluespace_launchpad/console	input_received	code/game/machinery/computer/launchpad_control.dm:39	port	yes	full	proc
 type	/obj/item/circuit_component/light_switch	/obj/item/circuit_component	code/game/machinery/lightswitch.dm:131	live	obj_item_circuit_component_light_switch	1	0
 proc	/obj/item/circuit_component/light_switch	populate_ports	code/game/machinery/lightswitch.dm:142		yes	full	proc
 proc	/obj/item/circuit_component/light_switch	register_usb_parent	code/game/machinery/lightswitch.dm:146	parent	yes	full	proc
 proc	/obj/item/circuit_component/light_switch	unregister_usb_parent	code/game/machinery/lightswitch.dm:152	parent	yes	full	proc
 proc	/obj/item/circuit_component/light_switch	on_light_switch_set	code/game/machinery/lightswitch.dm:157	source,status	yes	full	proc root
 proc	/obj/item/circuit_component/light_switch	input_received	code/game/machinery/lightswitch.dm:161	port	yes	full	proc
-type	/obj/item/circuit_component/quantumpad	/obj/item/circuit_component	code/game/machinery/quantum_pad.dm:199	inert	obj_item_circuit_component_quantumpad	0	0
-proc	/obj/item/circuit_component/quantumpad	populate_ports	code/game/machinery/quantum_pad.dm:208		no	-	proc
-proc	/obj/item/circuit_component/quantumpad	register_usb_parent	code/game/machinery/quantum_pad.dm:212	shell	no	-	proc
-proc	/obj/item/circuit_component/quantumpad	unregister_usb_parent	code/game/machinery/quantum_pad.dm:217	shell	no	-	proc
-proc	/obj/item/circuit_component/quantumpad	input_received	code/game/machinery/quantum_pad.dm:221	port	no	-	proc
+type	/obj/item/circuit_component/quantumpad	/obj/item/circuit_component	code/game/machinery/quantum_pad.dm:199	live	obj_item_circuit_component_quantumpad	1	0
+proc	/obj/item/circuit_component/quantumpad	populate_ports	code/game/machinery/quantum_pad.dm:208		yes	full	proc
+proc	/obj/item/circuit_component/quantumpad	register_usb_parent	code/game/machinery/quantum_pad.dm:212	shell	yes	full	proc
+proc	/obj/item/circuit_component/quantumpad	unregister_usb_parent	code/game/machinery/quantum_pad.dm:217	shell	yes	full	proc
+proc	/obj/item/circuit_component/quantumpad	input_received	code/game/machinery/quantum_pad.dm:221	port	yes	full	proc
 type	/obj/item/circuit_component/status_display	/obj/item/circuit_component	code/game/machinery/status_display.dm:798	live	obj_item_circuit_component_status_display	1	0
 proc	/obj/item/circuit_component/status_display	populate_ports	code/game/machinery/status_display.dm:812		yes	full	proc
 proc	/obj/item/circuit_component/status_display	populate_options	code/game/machinery/status_display.dm:816		yes	full	proc
@@ -80877,15 +80877,15 @@ proc	/obj/item/market_uplink	ui_static_data	code/modules/cargo/markets/market_up
 proc	/obj/item/market_uplink	ui_act	code/modules/cargo/markets/market_uplink.dm:101	action,params,ui,state	yes	full	proc
 type	/obj/item/market_uplink/blackmarket	/obj/item/market_uplink	code/modules/cargo/markets/market_uplink.dm:153	live	obj_item_market_uplink_blackmarket	1	0
 proc	/obj/item/market_uplink/blackmarket	Initialize	code/modules/cargo/markets/market_uplink.dm:161	mapload	yes	full	proc
-type	/obj/item/polymorph_belt	/obj/item	code/modules/clothing/belts/polymorph_belt.dm:3	inert	obj_item_polymorph_belt	0	0
-proc	/obj/item/polymorph_belt	Initialize	code/modules/clothing/belts/polymorph_belt.dm:19	mapload	no	-	proc
-proc	/obj/item/polymorph_belt	Destroy	code/modules/clothing/belts/polymorph_belt.dm:23	force	no	-	proc
-proc	/obj/item/polymorph_belt	examine	code/modules/clothing/belts/polymorph_belt.dm:27	user	no	-	proc
-proc	/obj/item/polymorph_belt	update_icon_state	code/modules/clothing/belts/polymorph_belt.dm:35		no	-	proc
-proc	/obj/item/polymorph_belt	item_interaction	code/modules/clothing/belts/polymorph_belt.dm:40	user,tool,modifiers	no	-	proc
-proc	/obj/item/polymorph_belt	attack	code/modules/clothing/belts/polymorph_belt.dm:65	target_mob,user,modifiers,attack_modifiers	no	-	proc
-proc	/obj/item/polymorph_belt	update_transform_action	code/modules/clothing/belts/polymorph_belt.dm:97		no	-	proc root
-type	/obj/item/polymorph_belt/functioning	/obj/item/polymorph_belt	code/modules/clothing/belts/polymorph_belt.dm:106	inert	obj_item_polymorph_belt_functioning	0	0
+type	/obj/item/polymorph_belt	/obj/item	code/modules/clothing/belts/polymorph_belt.dm:3	live	obj_item_polymorph_belt	1	0
+proc	/obj/item/polymorph_belt	Initialize	code/modules/clothing/belts/polymorph_belt.dm:19	mapload	yes	full	proc
+proc	/obj/item/polymorph_belt	Destroy	code/modules/clothing/belts/polymorph_belt.dm:23	force	yes	full	proc
+proc	/obj/item/polymorph_belt	examine	code/modules/clothing/belts/polymorph_belt.dm:27	user	yes	full	proc
+proc	/obj/item/polymorph_belt	update_icon_state	code/modules/clothing/belts/polymorph_belt.dm:35		yes	full	proc
+proc	/obj/item/polymorph_belt	item_interaction	code/modules/clothing/belts/polymorph_belt.dm:40	user,tool,modifiers	yes	full	proc
+proc	/obj/item/polymorph_belt	attack	code/modules/clothing/belts/polymorph_belt.dm:65	target_mob,user,modifiers,attack_modifiers	yes	full	proc
+proc	/obj/item/polymorph_belt	update_transform_action	code/modules/clothing/belts/polymorph_belt.dm:97		yes	full	proc root
+type	/obj/item/polymorph_belt/functioning	/obj/item/polymorph_belt	code/modules/clothing/belts/polymorph_belt.dm:106	live	obj_item_polymorph_belt_functioning	0	0
 type	/obj/item/chameleon_scanner	/obj/item	code/modules/clothing/chameleon/chameleon_scanner.dm:4	live	obj_item_chameleon_scanner	1	0
 proc	/obj/item/chameleon_scanner	Initialize	code/modules/clothing/chameleon/chameleon_scanner.dm:17	mapload	yes	full	proc
 proc	/obj/item/chameleon_scanner	add_item_context	code/modules/clothing/chameleon/chameleon_scanner.dm:21	source,context,target,user	yes	full	proc
@@ -80906,8 +80906,8 @@ type	/obj/item/gas_filter/plasmaman	/obj/item/gas_filter	code/modules/clothing/m
 type	/obj/item/collar_bomb_button	/obj/item	code/modules/clothing/neck/collar_bomb.dm:90	inert	obj_item_collar_bomb_button	0	0
 proc	/obj/item/collar_bomb_button	attack_self	code/modules/clothing/neck/collar_bomb.dm:101	user	no	-	proc
 proc	/obj/item/collar_bomb_button	Destroy	code/modules/clothing/neck/collar_bomb.dm:119		no	-	proc
-type	/obj/item/reactive_armor_shell	/obj/item	code/modules/clothing/suits/reactive_armour.dm:2	inert	obj_item_reactive_armor_shell	0	0
-proc	/obj/item/reactive_armor_shell	item_interaction	code/modules/clothing/suits/reactive_armour.dm:9	user,tool,modifiers	no	-	proc
+type	/obj/item/reactive_armor_shell	/obj/item	code/modules/clothing/suits/reactive_armour.dm:2	live	obj_item_reactive_armor_shell	1	0
+proc	/obj/item/reactive_armor_shell	item_interaction	code/modules/clothing/suits/reactive_armour.dm:9	user,tool,modifiers	yes	full	proc
 type	/obj/item/suit_sensor	/obj/item	code/modules/clothing/under/_suit_sensor.dm:3	live	obj_item_suit_sensor	1	0
 proc	/obj/item/suit_sensor	examine	code/modules/clothing/under/_suit_sensor.dm:21	user	yes	full	proc
 proc	/obj/item/suit_sensor	update_overlays	code/modules/clothing/under/_suit_sensor.dm:28		yes	full	proc
@@ -82925,27 +82925,27 @@ proc	/obj/item/sparring_contract	ui_data	code/modules/religion/sparring/sparring
 proc	/obj/item/sparring_contract	get_possible_areas	code/modules/religion/sparring/sparring_contract.dm:61		yes	full	proc root
 proc	/obj/item/sparring_contract	ui_act	code/modules/religion/sparring/sparring_contract.dm:68	action,params,ui,state	yes	full	proc
 type	/obj/item/research	/obj/item	code/modules/research/stock_parts.dm:251	live	obj_item_research	0	0
-type	/obj/item/raw_anomaly_core	/obj/item	code/modules/research/anomaly/raw_anomaly.dm:10	inert	obj_item_raw_anomaly_core	0	1
-proc	/obj/item/raw_anomaly_core	create_core	code/modules/research/anomaly/raw_anomaly.dm:98	newloc,del_self,count_towards_limit	no	-	proc root
-type	/obj/item/raw_anomaly_core/bluespace	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:19	inert	obj_item_raw_anomaly_core_bluespace	0	0
-type	/obj/item/raw_anomaly_core/vortex	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:25	inert	obj_item_raw_anomaly_core_vortex	0	0
-type	/obj/item/raw_anomaly_core/grav	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:31	inert	obj_item_raw_anomaly_core_grav	0	0
-type	/obj/item/raw_anomaly_core/pyro	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:37	inert	obj_item_raw_anomaly_core_pyro	0	0
-type	/obj/item/raw_anomaly_core/flux	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:43	inert	obj_item_raw_anomaly_core_flux	0	0
-type	/obj/item/raw_anomaly_core/hallucination	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:49	inert	obj_item_raw_anomaly_core_hallucination	0	0
-type	/obj/item/raw_anomaly_core/bioscrambler	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:55	inert	obj_item_raw_anomaly_core_bioscrambler	0	0
-type	/obj/item/raw_anomaly_core/dimensional	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:61	inert	obj_item_raw_anomaly_core_dimensional	0	0
-type	/obj/item/raw_anomaly_core/ectoplasm	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:67	inert	obj_item_raw_anomaly_core_ectoplasm	0	0
-type	/obj/item/raw_anomaly_core/weather	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:73	inert	obj_item_raw_anomaly_core_weather	0	0
-type	/obj/item/raw_anomaly_core/random	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:79	inert	obj_item_raw_anomaly_core_random	0	1
-proc	/obj/item/raw_anomaly_core/random	Initialize	code/modules/research/anomaly/raw_anomaly.dm:84	mapload	no	-	proc
+type	/obj/item/raw_anomaly_core	/obj/item	code/modules/research/anomaly/raw_anomaly.dm:10	live	obj_item_raw_anomaly_core	1	1
+proc	/obj/item/raw_anomaly_core	create_core	code/modules/research/anomaly/raw_anomaly.dm:98	newloc,del_self,count_towards_limit	yes	full	proc root
+type	/obj/item/raw_anomaly_core/bluespace	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:19	live	obj_item_raw_anomaly_core_bluespace	0	0
+type	/obj/item/raw_anomaly_core/vortex	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:25	live	obj_item_raw_anomaly_core_vortex	0	0
+type	/obj/item/raw_anomaly_core/grav	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:31	live	obj_item_raw_anomaly_core_grav	0	0
+type	/obj/item/raw_anomaly_core/pyro	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:37	live	obj_item_raw_anomaly_core_pyro	0	0
+type	/obj/item/raw_anomaly_core/flux	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:43	live	obj_item_raw_anomaly_core_flux	0	0
+type	/obj/item/raw_anomaly_core/hallucination	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:49	live	obj_item_raw_anomaly_core_hallucination	0	0
+type	/obj/item/raw_anomaly_core/bioscrambler	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:55	live	obj_item_raw_anomaly_core_bioscrambler	0	0
+type	/obj/item/raw_anomaly_core/dimensional	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:61	live	obj_item_raw_anomaly_core_dimensional	0	0
+type	/obj/item/raw_anomaly_core/ectoplasm	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:67	live	obj_item_raw_anomaly_core_ectoplasm	0	0
+type	/obj/item/raw_anomaly_core/weather	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:73	live	obj_item_raw_anomaly_core_weather	0	0
+type	/obj/item/raw_anomaly_core/random	/obj/item/raw_anomaly_core	code/modules/research/anomaly/raw_anomaly.dm:79	live	obj_item_raw_anomaly_core_random	1	1
+proc	/obj/item/raw_anomaly_core/random	Initialize	code/modules/research/anomaly/raw_anomaly.dm:84	mapload	yes	full	proc
 type	/obj/item/inert_anomaly	/obj/item	code/modules/research/anomaly/raw_anomaly.dm:107	live	obj_item_inert_anomaly	0	0
-type	/obj/item/gizmo	/obj/item	code/modules/research/gizmo/gizmo_items.dm:3	inert	obj_item_gizmo	0	0
-proc	/obj/item/gizmo	Initialize	code/modules/research/gizmo/gizmo_items.dm:14	mapload	no	-	proc
-proc	/obj/item/gizmo	item_interaction	code/modules/research/gizmo/gizmo_items.dm:24	user,tool,modifiers	no	-	proc
-type	/obj/item/gizmo/moo	/obj/item/gizmo	code/modules/research/gizmo/gizmo_items.dm:34	inert	obj_item_gizmo_moo	0	0
-type	/obj/item/gizmo_copy	/obj/item	code/modules/research/gizmo/gizmodes/gizcopier.dm:82	inert	obj_item_gizmo_copy	0	0
-proc	/obj/item/gizmo_copy	emp_act	code/modules/research/gizmo/gizmodes/gizcopier.dm:82	severity	no	-	proc
+type	/obj/item/gizmo	/obj/item	code/modules/research/gizmo/gizmo_items.dm:3	live	obj_item_gizmo	1	0
+proc	/obj/item/gizmo	Initialize	code/modules/research/gizmo/gizmo_items.dm:14	mapload	yes	full	proc
+proc	/obj/item/gizmo	item_interaction	code/modules/research/gizmo/gizmo_items.dm:24	user,tool,modifiers	yes	full	proc
+type	/obj/item/gizmo/moo	/obj/item/gizmo	code/modules/research/gizmo/gizmo_items.dm:34	live	obj_item_gizmo_moo	0	0
+type	/obj/item/gizmo_copy	/obj/item	code/modules/research/gizmo/gizmodes/gizcopier.dm:82	live	obj_item_gizmo_copy	1	0
+proc	/obj/item/gizmo_copy	emp_act	code/modules/research/gizmo/gizmodes/gizcopier.dm:82	severity	yes	full	proc
 type	/obj/item/slime_extract	/obj/item	code/modules/research/xenobiology/xenobiology.dm:4	live	obj_item_slime_extract	1	0
 proc	/obj/item/slime_extract	grind_results	code/modules/research/xenobiology/xenobiology.dm:24		stub	deferred	proc
 proc	/obj/item/slime_extract	examine	code/modules/research/xenobiology/xenobiology.dm:27	user	stub	deferred	proc
@@ -86191,34 +86191,34 @@ proc	/obj/machinery/computer/dna_console	set_default_state	code/game/machinery/c
 proc	/obj/machinery/computer/dna_console	eject_disk	code/game/machinery/computer/dna_console.dm:2352	user	yes	full	proc root
 proc	/obj/machinery/computer/dna_console	set_connected_scanner	code/game/machinery/computer/dna_console.dm:2367	new_scanner	yes	full	proc root
 proc	/obj/machinery/computer/dna_console	react_to_scanner_del	code/game/machinery/computer/dna_console.dm:2377	source	yes	full	proc root
-type	/obj/machinery/computer/launchpad	/obj/machinery/computer	code/game/machinery/computer/launchpad_control.dm:2	inert	obj_machinery_computer_launchpad	0	0
-proc	/obj/machinery/computer/launchpad	Initialize	code/game/machinery/computer/launchpad_control.dm:13	mapload	no	-	proc
-proc	/obj/machinery/computer/launchpad	attack_paw	code/game/machinery/computer/launchpad_control.dm:56	user,modifiers	no	-	proc
-proc	/obj/machinery/computer/launchpad	multitool_act	code/game/machinery/computer/launchpad_control.dm:60	user,tool	no	-	proc
-proc	/obj/machinery/computer/launchpad	pad_exists	code/game/machinery/computer/launchpad_control.dm:71	number	no	-	proc root
-proc	/obj/machinery/computer/launchpad	get_pad	code/game/machinery/computer/launchpad_control.dm:77	number	no	-	proc root
-proc	/obj/machinery/computer/launchpad	ui_interact	code/game/machinery/computer/launchpad_control.dm:81	user,ui	no	-	proc
-proc	/obj/machinery/computer/launchpad	ui_data	code/game/machinery/computer/launchpad_control.dm:88	user	no	-	proc
-proc	/obj/machinery/computer/launchpad	ui_act	code/game/machinery/computer/launchpad_control.dm:118	action,params,ui,state	no	-	proc
-type	/obj/machinery/computer/mechpad	/obj/machinery/computer	code/game/machinery/computer/mechlaunchpad.dm:2	inert	obj_machinery_computer_mechpad	0	1
-proc	/obj/machinery/computer/mechpad	Initialize	code/game/machinery/computer/mechlaunchpad.dm:19	mapload	no	-	proc
-proc	/obj/machinery/computer/mechpad	connect_launchpad	code/game/machinery/computer/mechlaunchpad.dm:27	pad	no	-	proc root
-proc	/obj/machinery/computer/mechpad	unconnect_launchpad	code/game/machinery/computer/mechlaunchpad.dm:34	pad	no	-	proc root
-proc	/obj/machinery/computer/mechpad	post_machine_initialize	code/game/machinery/computer/mechlaunchpad.dm:38		no	-	proc
-proc	/obj/machinery/computer/mechpad	mech_melee_attack	code/game/machinery/computer/mechlaunchpad.dm:51	mecha_attacker,user	no	-	proc
-proc	/obj/machinery/computer/mechpad	do_after_checks	code/game/machinery/computer/mechlaunchpad.dm:65	mech,mech_dir	no	-	proc root
-proc	/obj/machinery/computer/mechpad	random_beeps	code/game/machinery/computer/mechlaunchpad.dm:69	user,time,mintime,maxtime	no	-	proc root
-proc	/obj/machinery/computer/mechpad	find_pad	code/game/machinery/computer/mechlaunchpad.dm:82		no	-	proc root
-proc	/obj/machinery/computer/mechpad	multitool_act	code/game/machinery/computer/mechlaunchpad.dm:90	user,multitool	no	-	proc
-proc	/obj/machinery/computer/mechpad	add_pad	code/game/machinery/computer/mechlaunchpad.dm:117	pad	no	-	proc root
-proc	/obj/machinery/computer/mechpad	remove_pad	code/game/machinery/computer/mechlaunchpad.dm:121	pad	no	-	proc root
-proc	/obj/machinery/computer/mechpad	try_launch	code/game/machinery/computer/mechlaunchpad.dm:132	user,where	no	-	proc root
-proc	/obj/machinery/computer/mechpad	start_launch	code/game/machinery/computer/mechlaunchpad.dm:139	user,where	no	-	proc root
-proc	/obj/machinery/computer/mechpad	can_launch	code/game/machinery/computer/mechlaunchpad.dm:146	user,where,silent	no	-	proc root
-proc	/obj/machinery/computer/mechpad	get_pad	code/game/machinery/computer/mechlaunchpad.dm:176	number	no	-	proc root
-proc	/obj/machinery/computer/mechpad	ui_interact	code/game/machinery/computer/mechlaunchpad.dm:180	user,ui	no	-	proc
-proc	/obj/machinery/computer/mechpad	ui_data	code/game/machinery/computer/mechlaunchpad.dm:187	user	no	-	proc
-proc	/obj/machinery/computer/mechpad	ui_act	code/game/machinery/computer/mechlaunchpad.dm:209	action,params,ui,state	no	-	proc
+type	/obj/machinery/computer/launchpad	/obj/machinery/computer	code/game/machinery/computer/launchpad_control.dm:2	live	obj_machinery_computer_launchpad	1	0
+proc	/obj/machinery/computer/launchpad	Initialize	code/game/machinery/computer/launchpad_control.dm:13	mapload	yes	full	proc
+proc	/obj/machinery/computer/launchpad	attack_paw	code/game/machinery/computer/launchpad_control.dm:56	user,modifiers	yes	full	proc
+proc	/obj/machinery/computer/launchpad	multitool_act	code/game/machinery/computer/launchpad_control.dm:60	user,tool	yes	full	proc
+proc	/obj/machinery/computer/launchpad	pad_exists	code/game/machinery/computer/launchpad_control.dm:71	number	yes	full	proc root
+proc	/obj/machinery/computer/launchpad	get_pad	code/game/machinery/computer/launchpad_control.dm:77	number	yes	full	proc root
+proc	/obj/machinery/computer/launchpad	ui_interact	code/game/machinery/computer/launchpad_control.dm:81	user,ui	yes	full	proc
+proc	/obj/machinery/computer/launchpad	ui_data	code/game/machinery/computer/launchpad_control.dm:88	user	yes	full	proc
+proc	/obj/machinery/computer/launchpad	ui_act	code/game/machinery/computer/launchpad_control.dm:118	action,params,ui,state	yes	full	proc
+type	/obj/machinery/computer/mechpad	/obj/machinery/computer	code/game/machinery/computer/mechlaunchpad.dm:2	live	obj_machinery_computer_mechpad	1	1
+proc	/obj/machinery/computer/mechpad	Initialize	code/game/machinery/computer/mechlaunchpad.dm:19	mapload	yes	full	proc
+proc	/obj/machinery/computer/mechpad	connect_launchpad	code/game/machinery/computer/mechlaunchpad.dm:27	pad	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	unconnect_launchpad	code/game/machinery/computer/mechlaunchpad.dm:34	pad	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	post_machine_initialize	code/game/machinery/computer/mechlaunchpad.dm:38		yes	full	proc
+proc	/obj/machinery/computer/mechpad	mech_melee_attack	code/game/machinery/computer/mechlaunchpad.dm:51	mecha_attacker,user	yes	full	proc
+proc	/obj/machinery/computer/mechpad	do_after_checks	code/game/machinery/computer/mechlaunchpad.dm:65	mech,mech_dir	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	random_beeps	code/game/machinery/computer/mechlaunchpad.dm:69	user,time,mintime,maxtime	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	find_pad	code/game/machinery/computer/mechlaunchpad.dm:82		yes	full	proc root
+proc	/obj/machinery/computer/mechpad	multitool_act	code/game/machinery/computer/mechlaunchpad.dm:90	user,multitool	yes	full	proc
+proc	/obj/machinery/computer/mechpad	add_pad	code/game/machinery/computer/mechlaunchpad.dm:117	pad	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	remove_pad	code/game/machinery/computer/mechlaunchpad.dm:121	pad	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	try_launch	code/game/machinery/computer/mechlaunchpad.dm:132	user,where	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	start_launch	code/game/machinery/computer/mechlaunchpad.dm:139	user,where	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	can_launch	code/game/machinery/computer/mechlaunchpad.dm:146	user,where,silent	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	get_pad	code/game/machinery/computer/mechlaunchpad.dm:176	number	yes	full	proc root
+proc	/obj/machinery/computer/mechpad	ui_interact	code/game/machinery/computer/mechlaunchpad.dm:180	user,ui	yes	full	proc
+proc	/obj/machinery/computer/mechpad	ui_data	code/game/machinery/computer/mechlaunchpad.dm:187	user	yes	full	proc
+proc	/obj/machinery/computer/mechpad	ui_act	code/game/machinery/computer/mechlaunchpad.dm:209	action,params,ui,state	yes	full	proc
 type	/obj/machinery/computer/modular_shield	/obj/machinery/computer	code/game/machinery/computer/modular_shield.dm:2	live	obj_machinery_computer_modular_shield	1	0
 proc	/obj/machinery/computer/modular_shield	attack_paw	code/game/machinery/computer/modular_shield.dm:10	user,modifiers	yes	full	proc
 proc	/obj/machinery/computer/modular_shield	multitool_act	code/game/machinery/computer/modular_shield.dm:18	user,tool	yes	full	proc
@@ -87196,19 +87196,19 @@ type	/obj/machinery/drone_dispenser/derelict	/obj/machinery/drone_dispenser	code
 type	/obj/machinery/drone_dispenser/classic	/obj/machinery/drone_dispenser	code/game/machinery/drone_dispenser.dm:132	live	obj_machinery_drone_dispenser_classic	0	0
 type	/obj/machinery/drone_dispenser/hivebot	/obj/machinery/drone_dispenser	code/game/machinery/drone_dispenser.dm:140	live	obj_machinery_drone_dispenser_hivebot	0	0
 type	/obj/machinery/drone_dispenser/binoculars	/obj/machinery/drone_dispenser	code/game/machinery/drone_dispenser.dm:160	live	obj_machinery_drone_dispenser_binoculars	0	0
-type	/obj/machinery/ecto_sniffer	/obj/machinery	code/game/machinery/ecto_sniffer.dm:2	inert	obj_machinery_ecto_sniffer	0	1
-proc	/obj/machinery/ecto_sniffer	Initialize	code/game/machinery/ecto_sniffer.dm:18	mapload	no	-	proc
-proc	/obj/machinery/ecto_sniffer	attack_ghost	code/game/machinery/ecto_sniffer.dm:22	user	no	-	proc
-proc	/obj/machinery/ecto_sniffer	activate	code/game/machinery/ecto_sniffer.dm:32	activator	no	-	proc root
-proc	/obj/machinery/ecto_sniffer	attack_hand	code/game/machinery/ecto_sniffer.dm:42	user,modifiers	no	-	proc
-proc	/obj/machinery/ecto_sniffer	update_icon_state	code/game/machinery/ecto_sniffer.dm:49		no	-	proc
-proc	/obj/machinery/ecto_sniffer	update_overlays	code/game/machinery/ecto_sniffer.dm:56		no	-	proc
-proc	/obj/machinery/ecto_sniffer	wrench_act	code/game/machinery/ecto_sniffer.dm:61	user,tool	no	-	proc
-proc	/obj/machinery/ecto_sniffer	screwdriver_act	code/game/machinery/ecto_sniffer.dm:67	user,screwdrivertool	no	-	proc
-proc	/obj/machinery/ecto_sniffer	crowbar_act	code/game/machinery/ecto_sniffer.dm:70	user,tool	no	-	proc
-proc	/obj/machinery/ecto_sniffer	Destroy	code/game/machinery/ecto_sniffer.dm:73		no	-	proc
-proc	/obj/machinery/ecto_sniffer	examine	code/game/machinery/ecto_sniffer.dm:77	user	no	-	proc
-proc	/obj/machinery/ecto_sniffer	clear_residue	code/game/machinery/ecto_sniffer.dm:83	ghost_ckey	no	-	proc root
+type	/obj/machinery/ecto_sniffer	/obj/machinery	code/game/machinery/ecto_sniffer.dm:2	live	obj_machinery_ecto_sniffer	1	1
+proc	/obj/machinery/ecto_sniffer	Initialize	code/game/machinery/ecto_sniffer.dm:18	mapload	yes	full	proc
+proc	/obj/machinery/ecto_sniffer	attack_ghost	code/game/machinery/ecto_sniffer.dm:22	user	yes	full	proc
+proc	/obj/machinery/ecto_sniffer	activate	code/game/machinery/ecto_sniffer.dm:32	activator	yes	full	proc root
+proc	/obj/machinery/ecto_sniffer	attack_hand	code/game/machinery/ecto_sniffer.dm:42	user,modifiers	yes	full	proc
+proc	/obj/machinery/ecto_sniffer	update_icon_state	code/game/machinery/ecto_sniffer.dm:49		yes	full	proc
+proc	/obj/machinery/ecto_sniffer	update_overlays	code/game/machinery/ecto_sniffer.dm:56		yes	full	proc
+proc	/obj/machinery/ecto_sniffer	wrench_act	code/game/machinery/ecto_sniffer.dm:61	user,tool	yes	full	proc
+proc	/obj/machinery/ecto_sniffer	screwdriver_act	code/game/machinery/ecto_sniffer.dm:67	user,screwdrivertool	yes	full	proc
+proc	/obj/machinery/ecto_sniffer	crowbar_act	code/game/machinery/ecto_sniffer.dm:70	user,tool	yes	full	proc
+proc	/obj/machinery/ecto_sniffer	Destroy	code/game/machinery/ecto_sniffer.dm:73		yes	full	proc
+proc	/obj/machinery/ecto_sniffer	examine	code/game/machinery/ecto_sniffer.dm:77	user	yes	full	proc
+proc	/obj/machinery/ecto_sniffer	clear_residue	code/game/machinery/ecto_sniffer.dm:83	ghost_ckey	yes	full	proc root
 type	/obj/machinery/fat_sucker	/obj/machinery	code/game/machinery/fat_sucker.dm:2	inert	obj_machinery_fat_sucker	0	0
 proc	/obj/machinery/fat_sucker	Initialize	code/game/machinery/fat_sucker.dm:30	mapload	no	-	proc
 proc	/obj/machinery/fat_sucker	Destroy	code/game/machinery/fat_sucker.dm:35		no	-	proc
@@ -87590,15 +87590,15 @@ type	/obj/machinery/mass_driver/ordnance	/obj/machinery/mass_driver	code/game/ma
 type	/obj/machinery/mass_driver/trash	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:26	live	obj_machinery_mass_driver_trash	0	1
 type	/obj/machinery/mass_driver/shack	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:29	live	obj_machinery_mass_driver_shack	0	1
 type	/obj/machinery/mass_driver/feeder	/obj/machinery/mass_driver	code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:87	live	obj_machinery_mass_driver_feeder	0	0
-type	/obj/machinery/mechpad	/obj/machinery	code/game/machinery/mechlaunchpad.dm:2	inert	obj_machinery_mechpad	0	1
-proc	/obj/machinery/mechpad	Initialize	code/game/machinery/mechlaunchpad.dm:15	mapload	no	-	proc
-proc	/obj/machinery/mechpad	examine	code/game/machinery/mechlaunchpad.dm:19	user	no	-	proc
-proc	/obj/machinery/mechpad	update_icon_state	code/game/machinery/mechlaunchpad.dm:24		no	-	proc
-proc	/obj/machinery/mechpad	screwdriver_act	code/game/machinery/mechlaunchpad.dm:28	user,tool	no	-	proc
-proc	/obj/machinery/mechpad	crowbar_act	code/game/machinery/mechlaunchpad.dm:31	user,tool	no	-	proc
-proc	/obj/machinery/mechpad	multitool_act	code/game/machinery/mechlaunchpad.dm:34	user,multitool	no	-	proc
-proc	/obj/machinery/mechpad	wirecutter_act	code/game/machinery/mechlaunchpad.dm:42	user,tool	no	-	proc
-proc	/obj/machinery/mechpad	launch	code/game/machinery/mechlaunchpad.dm:54	where	no	-	proc root
+type	/obj/machinery/mechpad	/obj/machinery	code/game/machinery/mechlaunchpad.dm:2	live	obj_machinery_mechpad	1	1
+proc	/obj/machinery/mechpad	Initialize	code/game/machinery/mechlaunchpad.dm:15	mapload	yes	full	proc
+proc	/obj/machinery/mechpad	examine	code/game/machinery/mechlaunchpad.dm:19	user	yes	full	proc
+proc	/obj/machinery/mechpad	update_icon_state	code/game/machinery/mechlaunchpad.dm:24		yes	full	proc
+proc	/obj/machinery/mechpad	screwdriver_act	code/game/machinery/mechlaunchpad.dm:28	user,tool	yes	full	proc
+proc	/obj/machinery/mechpad	crowbar_act	code/game/machinery/mechlaunchpad.dm:31	user,tool	yes	full	proc
+proc	/obj/machinery/mechpad	multitool_act	code/game/machinery/mechlaunchpad.dm:34	user,multitool	yes	full	proc
+proc	/obj/machinery/mechpad	wirecutter_act	code/game/machinery/mechlaunchpad.dm:42	user,tool	yes	full	proc
+proc	/obj/machinery/mechpad	launch	code/game/machinery/mechlaunchpad.dm:54	where	yes	full	proc root
 type	/obj/machinery/medical_kiosk	/obj/machinery	code/game/machinery/medical_kiosk.dm:14	live	obj_machinery_medical_kiosk	1	1
 proc	/obj/machinery/medical_kiosk	Initialize	code/game/machinery/medical_kiosk.dm:39	mapload	yes	full	proc
 proc	/obj/machinery/medical_kiosk	add_context	code/game/machinery/medical_kiosk.dm:45	source,context,held_item,user	yes	full	proc
@@ -87801,22 +87801,22 @@ proc	/obj/machinery/produceporter	add_context	code/game/machinery/prisonlabor.dm
 proc	/obj/machinery/produceporter	wrench_act	code/game/machinery/prisonlabor.dm:183	user,tool	yes	full	proc
 proc	/obj/machinery/produceporter	update_produce	code/game/machinery/prisonlabor.dm:189		yes	full	proc root
 proc	/obj/machinery/produceporter	post_delivery	code/game/machinery/prisonlabor.dm:197	user,labor_points,produce_count	yes	full	proc root
-type	/obj/machinery/quantumpad	/obj/machinery	code/game/machinery/quantum_pad.dm:2	inert	obj_machinery_quantumpad	0	0
-proc	/obj/machinery/quantumpad	Initialize	code/game/machinery/quantum_pad.dm:22	mapload	no	-	proc
-proc	/obj/machinery/quantumpad	Destroy	code/game/machinery/quantum_pad.dm:29		no	-	proc
-proc	/obj/machinery/quantumpad	examine	code/game/machinery/quantum_pad.dm:33	user	no	-	proc
-proc	/obj/machinery/quantumpad	RefreshParts	code/game/machinery/quantum_pad.dm:41		no	-	proc
-proc	/obj/machinery/quantumpad	multitool_act	code/game/machinery/quantum_pad.dm:55	user,multi_tool	no	-	proc
-proc	/obj/machinery/quantumpad	screwdriver_act	code/game/machinery/quantum_pad.dm:73	user,tool	no	-	proc
-proc	/obj/machinery/quantumpad	crowbar_act	code/game/machinery/quantum_pad.dm:76	user,tool	no	-	proc
-proc	/obj/machinery/quantumpad	item_interaction	code/game/machinery/quantum_pad.dm:79	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/quantumpad	update_icon_state	code/game/machinery/quantum_pad.dm:95		no	-	proc
-proc	/obj/machinery/quantumpad	interact	code/game/machinery/quantum_pad.dm:102	user,target_pad	no	-	proc
-proc	/obj/machinery/quantumpad	sparks	code/game/machinery/quantum_pad.dm:128		no	-	proc root
-proc	/obj/machinery/quantumpad	attack_ghost	code/game/machinery/quantum_pad.dm:131	ghost	no	-	proc
-proc	/obj/machinery/quantumpad	doteleport	code/game/machinery/quantum_pad.dm:140	user,target_pad	no	-	proc root
-proc	/obj/machinery/quantumpad	teleport_contents	code/game/machinery/quantum_pad.dm:148	user,target_pad	no	-	proc root
-proc	/obj/machinery/quantumpad	initMappedLink	code/game/machinery/quantum_pad.dm:187		no	-	proc root
+type	/obj/machinery/quantumpad	/obj/machinery	code/game/machinery/quantum_pad.dm:2	live	obj_machinery_quantumpad	1	0
+proc	/obj/machinery/quantumpad	Initialize	code/game/machinery/quantum_pad.dm:22	mapload	yes	full	proc
+proc	/obj/machinery/quantumpad	Destroy	code/game/machinery/quantum_pad.dm:29		yes	full	proc
+proc	/obj/machinery/quantumpad	examine	code/game/machinery/quantum_pad.dm:33	user	yes	full	proc
+proc	/obj/machinery/quantumpad	RefreshParts	code/game/machinery/quantum_pad.dm:41		yes	full	proc
+proc	/obj/machinery/quantumpad	multitool_act	code/game/machinery/quantum_pad.dm:55	user,multi_tool	yes	full	proc
+proc	/obj/machinery/quantumpad	screwdriver_act	code/game/machinery/quantum_pad.dm:73	user,tool	yes	full	proc
+proc	/obj/machinery/quantumpad	crowbar_act	code/game/machinery/quantum_pad.dm:76	user,tool	yes	full	proc
+proc	/obj/machinery/quantumpad	item_interaction	code/game/machinery/quantum_pad.dm:79	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/quantumpad	update_icon_state	code/game/machinery/quantum_pad.dm:95		yes	full	proc
+proc	/obj/machinery/quantumpad	interact	code/game/machinery/quantum_pad.dm:102	user,target_pad	yes	full	proc
+proc	/obj/machinery/quantumpad	sparks	code/game/machinery/quantum_pad.dm:128		yes	full	proc root
+proc	/obj/machinery/quantumpad	attack_ghost	code/game/machinery/quantum_pad.dm:131	ghost	yes	full	proc
+proc	/obj/machinery/quantumpad	doteleport	code/game/machinery/quantum_pad.dm:140	user,target_pad	yes	full	proc root
+proc	/obj/machinery/quantumpad	teleport_contents	code/game/machinery/quantum_pad.dm:148	user,target_pad	yes	full	proc root
+proc	/obj/machinery/quantumpad	initMappedLink	code/game/machinery/quantum_pad.dm:187		yes	full	proc root
 type	/obj/machinery/recharger	/obj/machinery	code/game/machinery/recharger.dm:2	live	obj_machinery_recharger	1	1
 proc	/obj/machinery/recharger	RefreshParts	code/game/machinery/recharger.dm:24		yes	full	proc
 proc	/obj/machinery/recharger	examine	code/game/machinery/recharger.dm:29	user	yes	full	proc
@@ -93947,52 +93947,52 @@ type	/obj/machinery/disposal/delivery_chute	/obj/machinery/disposal	code/modules
 proc	/obj/machinery/disposal/delivery_chute	place_item_in_disposal	code/modules/recycling/disposal/bin.dm:711	I,user	yes	full	proc
 proc	/obj/machinery/disposal/delivery_chute	Bumped	code/modules/recycling/disposal/bin.dm:716	AM	yes	full	proc
 type	/obj/machinery/research	/obj/machinery	(implied by a subtype's path)	live	obj_machinery_research	0	1
-type	/obj/machinery/research/anomaly_refinery	/obj/machinery/research	code/modules/research/anomaly/anomaly_refinery.dm:14	inert	obj_machinery_research_anomaly_refinery	0	1
-proc	/obj/machinery/research/anomaly_refinery	Initialize	code/modules/research/anomaly/anomaly_refinery.dm:41	mapload	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	examine_more	code/modules/research/anomaly/anomaly_refinery.dm:45	user	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	assume_air	code/modules/research/anomaly/anomaly_refinery.dm:51	giver	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	get_required_radius	code/modules/research/anomaly/anomaly_refinery.dm:62	anomaly_type	no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	item_interaction	code/modules/research/anomaly/anomaly_refinery.dm:76	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	update_icon_state	code/modules/research/anomaly/anomaly_refinery.dm:120		no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	wrench_act	code/modules/research/anomaly/anomaly_refinery.dm:124	user,tool	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	screwdriver_act	code/modules/research/anomaly/anomaly_refinery.dm:129	user,tool	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	crowbar_act	code/modules/research/anomaly/anomaly_refinery.dm:132	user,tool	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	emag_act	code/modules/research/anomaly/anomaly_refinery.dm:135	user,emag_card	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	start_test	code/modules/research/anomaly/anomaly_refinery.dm:149		no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	error_test	code/modules/research/anomaly/anomaly_refinery.dm:180		no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	end_test	code/modules/research/anomaly/anomaly_refinery.dm:196	message	no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	check_test	code/modules/research/anomaly/anomaly_refinery.dm:213	source,arguments	no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	timeout_test	code/modules/research/anomaly/anomaly_refinery.dm:246		no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	simulate_valve	code/modules/research/anomaly/anomaly_refinery.dm:253		no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	eject_bomb	code/modules/research/anomaly/anomaly_refinery.dm:272	user,force	no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	eject_core	code/modules/research/anomaly/anomaly_refinery.dm:283	user	no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	Exited	code/modules/research/anomaly/anomaly_refinery.dm:293	gone,direction	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	swap_target	code/modules/research/anomaly/anomaly_refinery.dm:301		no	-	proc root
-proc	/obj/machinery/research/anomaly_refinery	on_deconstruction	code/modules/research/anomaly/anomaly_refinery.dm:307	disassembled	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	Destroy	code/modules/research/anomaly/anomaly_refinery.dm:312		no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	ui_interact	code/modules/research/anomaly/anomaly_refinery.dm:318	user,ui	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	ui_act	code/modules/research/anomaly/anomaly_refinery.dm:325	action,params,ui,state	no	-	proc
-proc	/obj/machinery/research/anomaly_refinery	ui_data	code/modules/research/anomaly/anomaly_refinery.dm:341	user	no	-	proc
-type	/obj/machinery/gizmo	/obj/machinery	code/modules/research/gizmo/gizmo_machines.dm:3	inert	obj_machinery_gizmo	0	1
-proc	/obj/machinery/gizmo	Initialize	code/modules/research/gizmo/gizmo_machines.dm:26	mapload	no	-	proc
-proc	/obj/machinery/gizmo	item_interaction	code/modules/research/gizmo/gizmo_machines.dm:41	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/gizmo	wrench_act	code/modules/research/gizmo/gizmo_machines.dm:49	user,tool	no	-	proc
-proc	/obj/machinery/gizmo	start_moving	code/modules/research/gizmo/gizmo_machines.dm:54	source,pulse	no	-	proc root
-proc	/obj/machinery/gizmo	stop_moving	code/modules/research/gizmo/gizmo_machines.dm:59	source,pulse	no	-	proc root
-proc	/obj/machinery/gizmo	on_start_moving	code/modules/research/gizmo/gizmo_machines.dm:64	pulse	no	-	proc root
-proc	/obj/machinery/gizmo	on_stop_moving	code/modules/research/gizmo/gizmo_machines.dm:67	pulse	no	-	proc root
-type	/obj/machinery/gizmo/beyblade	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:72	inert	obj_machinery_gizmo_beyblade	0	0
-proc	/obj/machinery/gizmo/beyblade	update_icon	code/modules/research/gizmo/gizmo_machines.dm:79	updates	no	-	proc
-proc	/obj/machinery/gizmo/beyblade	on_start_moving	code/modules/research/gizmo/gizmo_machines.dm:84	pulse	no	-	proc
-proc	/obj/machinery/gizmo/beyblade	on_stop_moving	code/modules/research/gizmo/gizmo_machines.dm:90	pulse	no	-	proc
-type	/obj/machinery/gizmo/toggle	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:98	inert	obj_machinery_gizmo_toggle	0	1
-proc	/obj/machinery/gizmo/toggle	Initialize	code/modules/research/gizmo/gizmo_machines.dm:104	mapload	no	-	proc
-proc	/obj/machinery/gizmo/toggle	update_icon	code/modules/research/gizmo/gizmo_machines.dm:110	updates	no	-	proc
-proc	/obj/machinery/gizmo/toggle	on_state	code/modules/research/gizmo/gizmo_machines.dm:120	source	no	-	proc root
-proc	/obj/machinery/gizmo/toggle	off_state	code/modules/research/gizmo/gizmo_machines.dm:127	source	no	-	proc root
-type	/obj/machinery/gizmo/toggle/tucker_tubes	/obj/machinery/gizmo/toggle	code/modules/research/gizmo/gizmo_machines.dm:116	inert	obj_machinery_gizmo_toggle_tucker_tubes	0	1
-type	/obj/machinery/gizmo/voice	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:136	inert	obj_machinery_gizmo_voice	0	0
-type	/obj/machinery/gizmo/cursed	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:139	inert	obj_machinery_gizmo_cursed	0	0
+type	/obj/machinery/research/anomaly_refinery	/obj/machinery/research	code/modules/research/anomaly/anomaly_refinery.dm:14	live	obj_machinery_research_anomaly_refinery	1	1
+proc	/obj/machinery/research/anomaly_refinery	Initialize	code/modules/research/anomaly/anomaly_refinery.dm:41	mapload	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	examine_more	code/modules/research/anomaly/anomaly_refinery.dm:45	user	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	assume_air	code/modules/research/anomaly/anomaly_refinery.dm:51	giver	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	get_required_radius	code/modules/research/anomaly/anomaly_refinery.dm:62	anomaly_type	yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	item_interaction	code/modules/research/anomaly/anomaly_refinery.dm:76	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	update_icon_state	code/modules/research/anomaly/anomaly_refinery.dm:120		yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	wrench_act	code/modules/research/anomaly/anomaly_refinery.dm:124	user,tool	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	screwdriver_act	code/modules/research/anomaly/anomaly_refinery.dm:129	user,tool	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	crowbar_act	code/modules/research/anomaly/anomaly_refinery.dm:132	user,tool	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	emag_act	code/modules/research/anomaly/anomaly_refinery.dm:135	user,emag_card	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	start_test	code/modules/research/anomaly/anomaly_refinery.dm:149		yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	error_test	code/modules/research/anomaly/anomaly_refinery.dm:180		yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	end_test	code/modules/research/anomaly/anomaly_refinery.dm:196	message	yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	check_test	code/modules/research/anomaly/anomaly_refinery.dm:213	source,arguments	yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	timeout_test	code/modules/research/anomaly/anomaly_refinery.dm:246		yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	simulate_valve	code/modules/research/anomaly/anomaly_refinery.dm:253		yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	eject_bomb	code/modules/research/anomaly/anomaly_refinery.dm:272	user,force	yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	eject_core	code/modules/research/anomaly/anomaly_refinery.dm:283	user	yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	Exited	code/modules/research/anomaly/anomaly_refinery.dm:293	gone,direction	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	swap_target	code/modules/research/anomaly/anomaly_refinery.dm:301		yes	full	proc root
+proc	/obj/machinery/research/anomaly_refinery	on_deconstruction	code/modules/research/anomaly/anomaly_refinery.dm:307	disassembled	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	Destroy	code/modules/research/anomaly/anomaly_refinery.dm:312		yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	ui_interact	code/modules/research/anomaly/anomaly_refinery.dm:318	user,ui	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	ui_act	code/modules/research/anomaly/anomaly_refinery.dm:325	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/research/anomaly_refinery	ui_data	code/modules/research/anomaly/anomaly_refinery.dm:341	user	yes	full	proc
+type	/obj/machinery/gizmo	/obj/machinery	code/modules/research/gizmo/gizmo_machines.dm:3	live	obj_machinery_gizmo	1	1
+proc	/obj/machinery/gizmo	Initialize	code/modules/research/gizmo/gizmo_machines.dm:26	mapload	yes	full	proc
+proc	/obj/machinery/gizmo	item_interaction	code/modules/research/gizmo/gizmo_machines.dm:41	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/gizmo	wrench_act	code/modules/research/gizmo/gizmo_machines.dm:49	user,tool	yes	full	proc
+proc	/obj/machinery/gizmo	start_moving	code/modules/research/gizmo/gizmo_machines.dm:54	source,pulse	yes	full	proc root
+proc	/obj/machinery/gizmo	stop_moving	code/modules/research/gizmo/gizmo_machines.dm:59	source,pulse	yes	full	proc root
+proc	/obj/machinery/gizmo	on_start_moving	code/modules/research/gizmo/gizmo_machines.dm:64	pulse	yes	full	proc root
+proc	/obj/machinery/gizmo	on_stop_moving	code/modules/research/gizmo/gizmo_machines.dm:67	pulse	yes	full	proc root
+type	/obj/machinery/gizmo/beyblade	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:72	live	obj_machinery_gizmo_beyblade	1	0
+proc	/obj/machinery/gizmo/beyblade	update_icon	code/modules/research/gizmo/gizmo_machines.dm:79	updates	yes	full	proc
+proc	/obj/machinery/gizmo/beyblade	on_start_moving	code/modules/research/gizmo/gizmo_machines.dm:84	pulse	yes	full	proc
+proc	/obj/machinery/gizmo/beyblade	on_stop_moving	code/modules/research/gizmo/gizmo_machines.dm:90	pulse	yes	full	proc
+type	/obj/machinery/gizmo/toggle	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:98	live	obj_machinery_gizmo_toggle	1	1
+proc	/obj/machinery/gizmo/toggle	Initialize	code/modules/research/gizmo/gizmo_machines.dm:104	mapload	yes	full	proc
+proc	/obj/machinery/gizmo/toggle	update_icon	code/modules/research/gizmo/gizmo_machines.dm:110	updates	yes	full	proc
+proc	/obj/machinery/gizmo/toggle	on_state	code/modules/research/gizmo/gizmo_machines.dm:120	source	yes	full	proc root
+proc	/obj/machinery/gizmo/toggle	off_state	code/modules/research/gizmo/gizmo_machines.dm:127	source	yes	full	proc root
+type	/obj/machinery/gizmo/toggle/tucker_tubes	/obj/machinery/gizmo/toggle	code/modules/research/gizmo/gizmo_machines.dm:116	live	obj_machinery_gizmo_toggle_tucker_tubes	0	1
+type	/obj/machinery/gizmo/voice	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:136	live	obj_machinery_gizmo_voice	0	0
+type	/obj/machinery/gizmo/cursed	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:139	live	obj_machinery_gizmo_cursed	0	0
 type	/obj/machinery/doppler_array	/obj/machinery	code/modules/research/ordnance/doppler_array.dm:2	live	obj_machinery_doppler_array	1	1
 proc	/obj/machinery/doppler_array	Initialize	code/modules/research/ordnance/doppler_array.dm:26	mapload	yes	full	proc
 proc	/obj/machinery/doppler_array	examine	code/modules/research/ordnance/doppler_array.dm:47	user	yes	full	proc
@@ -99257,8 +99257,8 @@ type	/obj/structure/closet/supplypod/transport	/obj/structure/closet/supplypod	c
 type	/obj/structure/closet/supplypod/transport/botpod	/obj/structure/closet/supplypod/transport	code/game/machinery/botlaunchpad.dm:72	live	obj_structure_closet_supplypod_transport_botpod	0	0
 type	/obj/structure/closet/supplypod/transport/module_pathfinder	/obj/structure/closet/supplypod/transport	code/modules/mod/modules/module_pathfinder.dm:248	live	obj_structure_closet_supplypod_transport_module_pathfinder	1	0
 proc	/obj/structure/closet/supplypod/transport/module_pathfinder	insertion_allowed	code/modules/mod/modules/module_pathfinder.dm:248	to_insert	yes	full	proc
-type	/obj/structure/closet/supplypod/mechpod	/obj/structure/closet/supplypod	code/game/machinery/mechlaunchpad.dm:65	inert	obj_structure_closet_supplypod_mechpod	0	0
-proc	/obj/structure/closet/supplypod/mechpod	handleReturnAfterDeparting	code/game/machinery/mechlaunchpad.dm:78	holder	no	-	proc
+type	/obj/structure/closet/supplypod/mechpod	/obj/structure/closet/supplypod	code/game/machinery/mechlaunchpad.dm:65	live	obj_structure_closet_supplypod_mechpod	1	0
+proc	/obj/structure/closet/supplypod/mechpod	handleReturnAfterDeparting	code/game/machinery/mechlaunchpad.dm:78	holder	yes	full	proc
 type	/obj/structure/closet/supplypod/bluespacepod	/obj/structure/closet/supplypod	code/modules/cargo/supplypod.dm:65	live	obj_structure_closet_supplypod_bluespacepod	0	0
 type	/obj/structure/closet/supplypod/podspawn	/obj/structure/closet/supplypod	code/modules/cargo/supplypod.dm:71	live	obj_structure_closet_supplypod_podspawn	0	0
 type	/obj/structure/closet/supplypod/podspawn/deathmatch	/obj/structure/closet/supplypod/podspawn	code/modules/cargo/supplypod.dm:88	live	obj_structure_closet_supplypod_podspawn_deathmatch	1	0

@@ -4446,6 +4446,14 @@
 /obj/machinery/chem_master	active_power_usage	override	code/modules/reagents/chemistry/machinery/chem_master.dm:11	{"K":"num","N":200}
 /obj/machinery/chem_master	resistance_flags	override	code/modules/reagents/chemistry/machinery/chem_master.dm:12	{"K":"num","N":34}
 /obj/machinery/chem_master	circuit	override	code/modules/reagents/chemistry/machinery/chem_master.dm:13	{"K":"type","N":0,"S":"/obj/item/circuitboard/machine/chem_master"}
+/obj/machinery/research/anomaly_refinery	inserted_core	decl	code/modules/research/anomaly/anomaly_refinery.dm:23	{"K":"null","N":0}
+/obj/machinery/research/anomaly_refinery	name	override	code/modules/research/anomaly/anomaly_refinery.dm:14	{"K":"str","N":0,"S":"anomaly refinery"}
+/obj/machinery/research/anomaly_refinery	desc	override	code/modules/research/anomaly/anomaly_refinery.dm:15	{"K":"str","N":0,"S":"An advanced machine capable of implosion-compressing raw anomaly cores into finished artifacts. Also equipped with state of the art bomb prediction software."}
+/obj/machinery/research/anomaly_refinery	circuit	override	code/modules/research/anomaly/anomaly_refinery.dm:16	{"K":"type","N":0,"S":"/obj/item/circuitboard/machine/anomaly_refinery"}
+/obj/machinery/research/anomaly_refinery	icon	override	code/modules/research/anomaly/anomaly_refinery.dm:17	{"K":"res","N":0,"S":"icons/obj/machines/research.dmi"}
+/obj/machinery/research/anomaly_refinery	base_icon_state	override	code/modules/research/anomaly/anomaly_refinery.dm:18	{"K":"str","N":0,"S":"explosive_compressor"}
+/obj/machinery/research/anomaly_refinery	icon_state	override	code/modules/research/anomaly/anomaly_refinery.dm:19	{"K":"str","N":0,"S":"explosive_compressor"}
+/obj/machinery/research/anomaly_refinery	density	override	code/modules/research/anomaly/anomaly_refinery.dm:20	{"K":"num","N":1}
 /obj/effect/anomaly/dimensional	theme	decl	code/game/objects/effects/anomalies/anomalies_dimensional.dm:13	{"K":"null","N":0}
 /obj/effect/anomaly/dimensional	name	override	code/game/objects/effects/anomalies/anomalies_dimensional.dm:3	{"K":"str","N":0,"S":"dimensional anomaly"}
 /obj/effect/anomaly/dimensional	icon_state	override	code/game/objects/effects/anomalies/anomalies_dimensional.dm:4	{"K":"str","N":0,"S":"dimensional"}

@@ -143,7 +143,11 @@ public static class TgStrings
         // the exploration drones: their names, the sites' names and fluff (EXODRONE_FILE, explorer_drone/exodrone.dm:66, through
         // strings()), and the adventures SSpersistence loads at its Initialize (explorer_drone/adventure.dm:52, flist of
         // strings/exoadventures/)
-        "strings/exodrone.json"
+        "strings/exodrone.json",
+        // the ecto sniffer's paranormal activity levels (machinery/ecto_sniffer.dm:36, world.file2list)
+        "strings/spook_levels.txt",
+        // the voice gizmos' words (research/gizmo/gizmo_voice.dm:2, GLOBAL_LIST_INIT through world.file2list)
+        "strings/gizmo_words.txt"
     ).AddRange(GeneticsFiles).AddRange(CardFiles).AddRange(AdventureFiles);
 
 

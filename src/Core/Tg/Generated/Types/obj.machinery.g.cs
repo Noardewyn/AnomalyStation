@@ -1949,9 +1949,9 @@ public partial class obj_machinery_drone_dispenser_binoculars : obj_machinery_dr
     }
 }
 
-// tg: code/game/machinery/ecto_sniffer.dm:2
-[DmPath("/obj/machinery/ecto_sniffer"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_ecto_sniffer : obj_machinery
+// tg: code/game/machinery/ecto_sniffer.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/ecto_sniffer")]
+public partial class obj_machinery_ecto_sniffer
 {
     public float on = 1; // tg: code/game/machinery/ecto_sniffer.dm:12
     public float sensor_enabled = 1; // tg: code/game/machinery/ecto_sniffer.dm:14
@@ -3144,9 +3144,9 @@ public partial class obj_machinery_mass_driver_feeder : obj_machinery_mass_drive
     }
 }
 
-// tg: code/game/machinery/mechlaunchpad.dm:2
-[DmPath("/obj/machinery/mechpad"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_mechpad : obj_machinery
+// tg: code/game/machinery/mechlaunchpad.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/mechpad")]
+public partial class obj_machinery_mechpad
 {
     public string id = "roboticsmining"; // tg: code/game/machinery/mechlaunchpad.dm:9
     public string display_name = "Orbital Pad"; // tg: code/game/machinery/mechlaunchpad.dm:11
@@ -3792,9 +3792,9 @@ public partial class obj_machinery_produceporter
     }
 }
 
-// tg: code/game/machinery/quantum_pad.dm:2
-[DmPath("/obj/machinery/quantumpad"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_quantumpad : obj_machinery
+// tg: code/game/machinery/quantum_pad.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/quantumpad")]
+public partial class obj_machinery_quantumpad
 {
     public float teleport_cooldown = 400; // tg: code/game/machinery/quantum_pad.dm:10
     public float teleport_speed = 50; // tg: code/game/machinery/quantum_pad.dm:11
@@ -15859,11 +15859,10 @@ public partial class obj_machinery_disposal_delivery_chute
 [DmPath("/obj/machinery/research"), DmGeneratedOnly]
 public partial class obj_machinery_research : obj_machinery { }
 
-// tg: code/modules/research/anomaly/anomaly_refinery.dm:14
-[DmPath("/obj/machinery/research/anomaly_refinery"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_research_anomaly_refinery : obj_machinery_research
+// tg: code/modules/research/anomaly/anomaly_refinery.dm:14 (the vars the hand-written class does not declare)
+[DmPath("/obj/machinery/research/anomaly_refinery")]
+public partial class obj_machinery_research_anomaly_refinery
 {
-    public obj_item_raw_anomaly_core inserted_core; // tg: code/modules/research/anomaly/anomaly_refinery.dm:23
     public obj_item_transfer_valve inserted_bomb; // tg: code/modules/research/anomaly/anomaly_refinery.dm:25
     public datum_timedevent timeout_timer; // tg: code/modules/research/anomaly/anomaly_refinery.dm:27
     public float? active = 0; // tg: code/modules/research/anomaly/anomaly_refinery.dm:29
@@ -15871,23 +15870,11 @@ public partial class obj_machinery_research_anomaly_refinery : obj_machinery_res
     public obj_item_tank tank_to_target; // tg: code/modules/research/anomaly/anomaly_refinery.dm:33
     public datum_gas_mixture combined_gasmix; // tg: code/modules/research/anomaly/anomaly_refinery.dm:37
     public float reaction_increment = 0; // tg: code/modules/research/anomaly/anomaly_refinery.dm:39
-
-    // tg: code/modules/research/anomaly/anomaly_refinery.dm:14
-    public obj_machinery_research_anomaly_refinery()
-    {
-        name = "anomaly refinery";
-        desc = "An advanced machine capable of implosion-compressing raw anomaly cores into finished artifacts. Also equipped with state of the art bomb prediction software.";
-        circuit = typeof(obj_item_circuitboard_machine_anomaly_refinery);
-        icon = Dm.resource("icons/obj/machines/research.dmi");
-        base_icon_state = "explosive_compressor";
-        icon_state = "explosive_compressor";
-        density = 1;
-    }
 }
 
-// tg: code/modules/research/gizmo/gizmo_machines.dm:3
-[DmPath("/obj/machinery/gizmo"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_gizmo : obj_machinery
+// tg: code/modules/research/gizmo/gizmo_machines.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/machinery/gizmo")]
+public partial class obj_machinery_gizmo
 {
     public DmList icon_states; // tg: code/modules/research/gizmo/gizmo_machines.dm:16
     public Type controller = typeof(datum_gizmo_controller); // tg: code/modules/research/gizmo/gizmo_machines.dm:18
@@ -15914,9 +15901,9 @@ public partial class obj_machinery_gizmo : obj_machinery
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_machines.dm:72
-[DmPath("/obj/machinery/gizmo/beyblade"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_gizmo_beyblade : obj_machinery_gizmo
+// tg: code/modules/research/gizmo/gizmo_machines.dm:72 (the var block of a hand-written class)
+[DmPath("/obj/machinery/gizmo/beyblade")]
+public partial class obj_machinery_gizmo_beyblade
 {
     public float? moving = 0; // tg: code/modules/research/gizmo/gizmo_machines.dm:77
 
@@ -15934,9 +15921,9 @@ public partial class obj_machinery_gizmo_beyblade : obj_machinery_gizmo
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_machines.dm:98
-[DmPath("/obj/machinery/gizmo/toggle"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_gizmo_toggle : obj_machinery_gizmo
+// tg: code/modules/research/gizmo/gizmo_machines.dm:98 (the var block of a hand-written class)
+[DmPath("/obj/machinery/gizmo/toggle")]
+public partial class obj_machinery_gizmo_toggle
 {
     public float on_state = 0; // tg: code/modules/research/gizmo/gizmo_machines.dm:102
 
@@ -15955,7 +15942,7 @@ public partial class obj_machinery_gizmo_toggle : obj_machinery_gizmo
 }
 
 // tg: code/modules/research/gizmo/gizmo_machines.dm:116
-[DmPath("/obj/machinery/gizmo/toggle/tucker_tubes"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/gizmo/toggle/tucker_tubes"), DmGeneratedOnly]
 public partial class obj_machinery_gizmo_toggle_tucker_tubes : obj_machinery_gizmo_toggle
 {
     // tg: code/modules/research/gizmo/gizmo_machines.dm:117
@@ -15974,7 +15961,7 @@ public partial class obj_machinery_gizmo_toggle_tucker_tubes : obj_machinery_giz
 }
 
 // tg: code/modules/research/gizmo/gizmo_machines.dm:136
-[DmPath("/obj/machinery/gizmo/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/gizmo/voice"), DmGeneratedOnly]
 public partial class obj_machinery_gizmo_voice : obj_machinery_gizmo
 {
     // tg: code/modules/research/gizmo/gizmo_machines.dm:136
@@ -15985,7 +15972,7 @@ public partial class obj_machinery_gizmo_voice : obj_machinery_gizmo
 }
 
 // tg: code/modules/research/gizmo/gizmo_machines.dm:139
-[DmPath("/obj/machinery/gizmo/cursed"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/gizmo/cursed"), DmGeneratedOnly]
 public partial class obj_machinery_gizmo_cursed : obj_machinery_gizmo
 {
     // tg: code/modules/research/gizmo/gizmo_machines.dm:139

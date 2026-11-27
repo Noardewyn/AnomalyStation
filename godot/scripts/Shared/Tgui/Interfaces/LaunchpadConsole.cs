@@ -3,11 +3,10 @@ using Anomaly.Protocol;
 
 namespace Anomaly.Client.Shared.Tgui.Interfaces;
 
-// Translated from tgstation (snapshot 1d99bd7f): tgui/packages/tgui/interfaces/LaunchpadConsole.tsx (the syndicate campaign G2,
-// D316). Original copyright and license: tgstation, AGPL-3.0 (code). See ../tgstation/LICENSE.
-//
-// Only LaunchpadControl and its parts, which the briefcase launchpad's LaunchpadRemote window draws; the LaunchpadConsole window
-// itself (the station's launchpad console with its pad tabs) comes with the console.
+// Translated from tgstation (snapshot 1d99bd7f): tgui/packages/tgui/interfaces/LaunchpadConsole.tsx: the launchpad console's pads
+// as vertical tabs and the selected pad's control (its name field, the offset buttons and fields, launch and pull), which the
+// briefcase launchpad's LaunchpadRemote window draws too. Original copyright and license: tgstation, AGPL-3.0 (code). See
+// ../tgstation/LICENSE.
 
 public static class LaunchpadConsole
 {
@@ -18,6 +17,39 @@ public static class LaunchpadConsole
         new (string, double, string, int?, int?)[] { ("arrow-up", 0, null, null, 1), (null, 0, "R", 0, 0), ("arrow-down", 0, null, null, -1) },
         new (string, double, string, int?, int?)[] { ("arrow-up", 45, null, 1, 1), ("arrow-right", 0, null, 1, null), ("arrow-right", 45, null, 1, -1) },
     };
+
+    // tg: LaunchpadConsole.tsx:47
+    public static UiNode Render(TguiContext c)
+    {
+        UiValue data = c.Data;
+        IReadOnlyList<UiValue> launchpads = data.Arr("launchpads");
+        double selectedId = data.Num("selected_id");
+        UiNode content = launchpads.Count == 0
+            ? new UiNode(UiKind.NoticeBox) { Key = "none", Text = "No Pads Connected" }
+            : new UiNode(UiKind.Stack) { Key = "body", Fill = true }.With(
+                new UiNode(UiKind.StackItem) { Key = "tabs", Grow = 1 }.With(LaunchpadTabs(c)),
+                new UiNode(UiKind.StackItem) { Key = "control", Grow = 3 }.With(
+                    selectedId == 0 ? new UiNode(UiKind.Box) { Key = "select", Text = "Please select a pad" } : LaunchpadControl(c)));
+        return c.Window(475, 275, c.ConfigTitle, content);
+    }
+
+    // tg: LaunchpadConsole.tsx:104
+    private static UiNode LaunchpadTabs(TguiContext c)
+    {
+        UiValue data = c.Data;
+        double selectedId = data.Num("selected_id");
+        var tabs = new UiNode(UiKind.Tabs) { Key = "pads", Vertical = true };
+        foreach (UiValue pad in data.Arr("launchpads"))
+        {
+            double id = pad.Num("id");
+            tabs.With(new UiNode(UiKind.Tab)
+            {
+                Key = "pad-" + id, Selected = id == selectedId, Text = pad.Str("name"),
+                OnClick = () => c.Act("select_pad", ("id", id)),
+            });
+        }
+        return new UiNode(UiKind.Section) { Fill = true }.With(tabs);
+    }
 
     // tg: LaunchpadConsole.tsx:79
     public static UiNode LaunchpadControl(TguiContext c) =>

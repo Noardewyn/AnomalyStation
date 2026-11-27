@@ -1004,9 +1004,9 @@ public partial class obj_item_assembly_signaler_low_range : obj_item_assembly_si
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:3
-[DmPath("/obj/item/assembly/signaler/anomaly"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly : obj_item_assembly_signaler
+// tg: code/modules/research/anomaly/anomaly_core.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly")]
+public partial class obj_item_assembly_signaler_anomaly
 {
     public Type anomaly_type = typeof(obj_effect_anomaly); // tg: code/modules/research/anomaly/anomaly_core.dm:12
     public string core_color = "#FFFFFF"; // tg: code/modules/research/anomaly/anomaly_core.dm:14
@@ -1032,9 +1032,9 @@ public partial class obj_item_assembly_signaler_anomaly : obj_item_assembly_sign
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:45
-[DmPath("/obj/item/assembly/signaler/anomaly/pyro"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_pyro : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:45 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/pyro")]
+public partial class obj_item_assembly_signaler_anomaly_pyro
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:45
     public obj_item_assembly_signaler_anomaly_pyro()
@@ -1047,9 +1047,9 @@ public partial class obj_item_assembly_signaler_anomaly_pyro : obj_item_assembly
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:60
-[DmPath("/obj/item/assembly/signaler/anomaly/grav"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_grav : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:60 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/grav")]
+public partial class obj_item_assembly_signaler_anomaly_grav
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:60
     public obj_item_assembly_signaler_anomaly_grav()
@@ -1062,9 +1062,9 @@ public partial class obj_item_assembly_signaler_anomaly_grav : obj_item_assembly
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:75
-[DmPath("/obj/item/assembly/signaler/anomaly/flux"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_flux : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:75 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/flux")]
+public partial class obj_item_assembly_signaler_anomaly_flux
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:75
     public obj_item_assembly_signaler_anomaly_flux()
@@ -1077,9 +1077,9 @@ public partial class obj_item_assembly_signaler_anomaly_flux : obj_item_assembly
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:85
-[DmPath("/obj/item/assembly/signaler/anomaly/bluespace"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_bluespace : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:85 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/bluespace")]
+public partial class obj_item_assembly_signaler_anomaly_bluespace
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:85
     public obj_item_assembly_signaler_anomaly_bluespace()
@@ -1093,9 +1093,9 @@ public partial class obj_item_assembly_signaler_anomaly_bluespace : obj_item_ass
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:101
-[DmPath("/obj/item/assembly/signaler/anomaly/vortex"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_vortex : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:101 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/vortex")]
+public partial class obj_item_assembly_signaler_anomaly_vortex
 {
     public float turf_contents_pull_chance = 33; // tg: code/modules/research/anomaly/anomaly_core.dm:107
     public float turf_destroy_chance = 25; // tg: code/modules/research/anomaly/anomaly_core.dm:108
@@ -1113,9 +1113,9 @@ public partial class obj_item_assembly_signaler_anomaly_vortex : obj_item_assemb
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:144
-[DmPath("/obj/item/assembly/signaler/anomaly/bioscrambler"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_bioscrambler : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:144 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/bioscrambler")]
+public partial class obj_item_assembly_signaler_anomaly_bioscrambler
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:144
     public obj_item_assembly_signaler_anomaly_bioscrambler()
@@ -1129,9 +1129,9 @@ public partial class obj_item_assembly_signaler_anomaly_bioscrambler : obj_item_
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:157
-[DmPath("/obj/item/assembly/signaler/anomaly/hallucination"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_hallucination : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:157 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/hallucination")]
+public partial class obj_item_assembly_signaler_anomaly_hallucination
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:157
     public obj_item_assembly_signaler_anomaly_hallucination()
@@ -1145,9 +1145,9 @@ public partial class obj_item_assembly_signaler_anomaly_hallucination : obj_item
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:168
-[DmPath("/obj/item/assembly/signaler/anomaly/dimensional"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_dimensional : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:168 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/dimensional")]
+public partial class obj_item_assembly_signaler_anomaly_dimensional
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:168
     public obj_item_assembly_signaler_anomaly_dimensional()
@@ -1161,9 +1161,9 @@ public partial class obj_item_assembly_signaler_anomaly_dimensional : obj_item_a
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:190
-[DmPath("/obj/item/assembly/signaler/anomaly/ectoplasm"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_ectoplasm : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:190 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/ectoplasm")]
+public partial class obj_item_assembly_signaler_anomaly_ectoplasm
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:190
     public obj_item_assembly_signaler_anomaly_ectoplasm()
@@ -1177,9 +1177,9 @@ public partial class obj_item_assembly_signaler_anomaly_ectoplasm : obj_item_ass
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:201
-[DmPath("/obj/item/assembly/signaler/anomaly/weather"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_weather : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:201 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/weather")]
+public partial class obj_item_assembly_signaler_anomaly_weather
 {
     public float charges = 8; // tg: code/modules/research/anomaly/anomaly_core.dm:208
 
@@ -34135,9 +34135,9 @@ public partial class obj_item_market_uplink_blackmarket
     }
 }
 
-// tg: code/modules/clothing/belts/polymorph_belt.dm:3
-[DmPath("/obj/item/polymorph_belt"), DmGeneratedOnly, DmInert]
-public partial class obj_item_polymorph_belt : obj_item
+// tg: code/modules/clothing/belts/polymorph_belt.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/polymorph_belt")]
+public partial class obj_item_polymorph_belt
 {
     public object stored_mob_type; // tg: code/modules/clothing/belts/polymorph_belt.dm:13
     public float? active = 0; // tg: code/modules/clothing/belts/polymorph_belt.dm:15
@@ -34165,7 +34165,7 @@ public partial class obj_item_polymorph_belt : obj_item
 }
 
 // tg: code/modules/clothing/belts/polymorph_belt.dm:106
-[DmPath("/obj/item/polymorph_belt/functioning"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/polymorph_belt/functioning"), DmGeneratedOnly]
 public partial class obj_item_polymorph_belt_functioning : obj_item_polymorph_belt
 {
     // tg: code/modules/clothing/belts/polymorph_belt.dm:106
@@ -34303,9 +34303,9 @@ public partial class obj_item_collar_bomb_button : obj_item
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:2
-[DmPath("/obj/item/reactive_armor_shell"), DmGeneratedOnly, DmInert]
-public partial class obj_item_reactive_armor_shell : obj_item
+// tg: code/modules/clothing/suits/reactive_armour.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/reactive_armor_shell")]
+public partial class obj_item_reactive_armor_shell
 {
     // tg: code/modules/clothing/suits/reactive_armour.dm:2
     public obj_item_reactive_armor_shell()
@@ -43871,9 +43871,9 @@ public partial class obj_item_research : obj_item
     }
 }
 
-// tg: code/modules/research/anomaly/raw_anomaly.dm:10
-[DmPath("/obj/item/raw_anomaly_core"), DmGeneratedOnly, DmInert]
-public partial class obj_item_raw_anomaly_core : obj_item
+// tg: code/modules/research/anomaly/raw_anomaly.dm:10 (the var block of a hand-written class)
+[DmPath("/obj/item/raw_anomaly_core")]
+public partial class obj_item_raw_anomaly_core
 {
     public Type anomaly_type; // tg: code/modules/research/anomaly/raw_anomaly.dm:16
 
@@ -43888,7 +43888,7 @@ public partial class obj_item_raw_anomaly_core : obj_item
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:19
-[DmPath("/obj/item/raw_anomaly_core/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/bluespace"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_bluespace : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:19
@@ -43902,7 +43902,7 @@ public partial class obj_item_raw_anomaly_core_bluespace : obj_item_raw_anomaly_
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:25
-[DmPath("/obj/item/raw_anomaly_core/vortex"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/vortex"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_vortex : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:25
@@ -43916,7 +43916,7 @@ public partial class obj_item_raw_anomaly_core_vortex : obj_item_raw_anomaly_cor
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:31
-[DmPath("/obj/item/raw_anomaly_core/grav"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/grav"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_grav : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:31
@@ -43930,7 +43930,7 @@ public partial class obj_item_raw_anomaly_core_grav : obj_item_raw_anomaly_core
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:37
-[DmPath("/obj/item/raw_anomaly_core/pyro"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/pyro"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_pyro : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:37
@@ -43944,7 +43944,7 @@ public partial class obj_item_raw_anomaly_core_pyro : obj_item_raw_anomaly_core
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:43
-[DmPath("/obj/item/raw_anomaly_core/flux"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/flux"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_flux : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:43
@@ -43958,7 +43958,7 @@ public partial class obj_item_raw_anomaly_core_flux : obj_item_raw_anomaly_core
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:49
-[DmPath("/obj/item/raw_anomaly_core/hallucination"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/hallucination"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_hallucination : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:49
@@ -43972,7 +43972,7 @@ public partial class obj_item_raw_anomaly_core_hallucination : obj_item_raw_anom
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:55
-[DmPath("/obj/item/raw_anomaly_core/bioscrambler"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/bioscrambler"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_bioscrambler : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:55
@@ -43986,7 +43986,7 @@ public partial class obj_item_raw_anomaly_core_bioscrambler : obj_item_raw_anoma
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:61
-[DmPath("/obj/item/raw_anomaly_core/dimensional"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/dimensional"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_dimensional : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:61
@@ -44000,7 +44000,7 @@ public partial class obj_item_raw_anomaly_core_dimensional : obj_item_raw_anomal
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:67
-[DmPath("/obj/item/raw_anomaly_core/ectoplasm"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/ectoplasm"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_ectoplasm : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:67
@@ -44014,7 +44014,7 @@ public partial class obj_item_raw_anomaly_core_ectoplasm : obj_item_raw_anomaly_
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:73
-[DmPath("/obj/item/raw_anomaly_core/weather"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/weather"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_weather : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:73
@@ -44027,9 +44027,9 @@ public partial class obj_item_raw_anomaly_core_weather : obj_item_raw_anomaly_co
     }
 }
 
-// tg: code/modules/research/anomaly/raw_anomaly.dm:79
-[DmPath("/obj/item/raw_anomaly_core/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_raw_anomaly_core_random : obj_item_raw_anomaly_core
+// tg: code/modules/research/anomaly/raw_anomaly.dm:79 (the var block of a hand-written class)
+[DmPath("/obj/item/raw_anomaly_core/random")]
+public partial class obj_item_raw_anomaly_core_random
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:79
     public obj_item_raw_anomaly_core_random()
@@ -44055,9 +44055,9 @@ public partial class obj_item_inert_anomaly : obj_item
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_items.dm:3
-[DmPath("/obj/item/gizmo"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gizmo : obj_item
+// tg: code/modules/research/gizmo/gizmo_items.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/gizmo")]
+public partial class obj_item_gizmo
 {
     public DmList icon_states; // tg: code/modules/research/gizmo/gizmo_items.dm:10
     public Type controller = typeof(datum_gizmo_controller_item); // tg: code/modules/research/gizmo/gizmo_items.dm:12
@@ -44080,7 +44080,7 @@ public partial class obj_item_gizmo : obj_item
 }
 
 // tg: code/modules/research/gizmo/gizmo_items.dm:34
-[DmPath("/obj/item/gizmo/moo"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/gizmo/moo"), DmGeneratedOnly]
 public partial class obj_item_gizmo_moo : obj_item_gizmo
 {
     // tg: code/modules/research/gizmo/gizmo_items.dm:34
@@ -44090,9 +44090,9 @@ public partial class obj_item_gizmo_moo : obj_item_gizmo
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:82
-[DmPath("/obj/item/gizmo_copy"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gizmo_copy : obj_item { }
+// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:82 (the var block of a hand-written class)
+[DmPath("/obj/item/gizmo_copy")]
+public partial class obj_item_gizmo_copy { }
 
 // tg: code/modules/research/xenobiology/xenobiology.dm:4 (the var block of a hand-written class)
 [DmPath("/obj/item/slime_extract")]

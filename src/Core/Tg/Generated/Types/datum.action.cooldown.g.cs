@@ -4840,9 +4840,9 @@ public partial class datum_action_cooldown_spell_pointed_untie_shoes_digital : d
     }
 }
 
-// tg: code/modules/clothing/head/perceptomatrix.dm:152
-[DmPath("/datum/action/cooldown/spell/pointed/percept_hallucination"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_pointed_percept_hallucination : datum_action_cooldown_spell_pointed
+// tg: code/modules/clothing/head/perceptomatrix.dm:152 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/pointed/percept_hallucination")]
+public partial class datum_action_cooldown_spell_pointed_percept_hallucination
 {
     public float eye_blur_duration = 70; // tg: code/modules/clothing/head/perceptomatrix.dm:168
     public float stagger_duration = 30; // tg: code/modules/clothing/head/perceptomatrix.dm:170
@@ -6434,9 +6434,9 @@ public partial class datum_action_cooldown_spell_shapeshift_shed_human_form : da
     }
 }
 
-// tg: code/modules/clothing/belts/polymorph_belt.dm:112
-[DmPath("/datum/action/cooldown/spell/shapeshift/polymorph_belt"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_shapeshift_polymorph_belt : datum_action_cooldown_spell_shapeshift
+// tg: code/modules/clothing/belts/polymorph_belt.dm:112 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/shapeshift/polymorph_belt")]
+public partial class datum_action_cooldown_spell_shapeshift_polymorph_belt
 {
     public float channel_time = 30; // tg: code/modules/clothing/belts/polymorph_belt.dm:121
 

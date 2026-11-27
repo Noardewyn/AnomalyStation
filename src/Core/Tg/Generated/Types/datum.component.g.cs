@@ -5798,9 +5798,9 @@ public partial class datum_component_meteor_combat
     public datum_callback destruction_proc; // tg: code/modules/meteors/meteor_deflection.dm:11
 }
 
-// tg: code/modules/research/gizmo/gizmo_voice.dm:6
-[DmPath("/datum/component/gizmo_voice"), DmGeneratedOnly, DmInert]
-public partial class datum_component_gizmo_voice : datum_component
+// tg: code/modules/research/gizmo/gizmo_voice.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/component/gizmo_voice")]
+public partial class datum_component_gizmo_voice
 {
     public Type puzzle; // tg: code/modules/research/gizmo/gizmo_voice.dm:6
 }

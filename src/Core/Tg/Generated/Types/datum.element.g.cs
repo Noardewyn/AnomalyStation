@@ -1515,9 +1515,9 @@ public partial class datum_element_movement_turf_changer
     }
 }
 
-// tg: code/datums/elements/moving_randomly.dm:3
-[DmPath("/datum/element/moving_randomly"), DmGeneratedOnly, DmInert]
-public partial class datum_element_moving_randomly : datum_element
+// tg: code/datums/elements/moving_randomly.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/moving_randomly")]
+public partial class datum_element_moving_randomly
 {
     public DmList movers; // tg: code/datums/elements/moving_randomly.dm:6
 

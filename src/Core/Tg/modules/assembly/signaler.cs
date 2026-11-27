@@ -43,7 +43,7 @@ public partial class obj_item_assembly_signaler : obj_item_assembly
     {
         if (!Dm.truthy(await base.activate(activator)))//cooldown processing
             return FALSE;
-        signal();
+        await signal();
         return TRUE;
     }
 
@@ -107,7 +107,7 @@ public partial class obj_item_assembly_signaler : obj_item_assembly
                 // TIMER_COOLDOWN_START(src, COOLDOWN_SIGNALLER_SEND, cooldown_length) (__DEFINES/cooldowns.dm:77, it expands addtimer: inline, rules 11.1 (f))
                 LAZYSET(ref cooldowns, COOLDOWN_SIGNALLER_SEND, _addtimer(Dm.@new<datum_callback>(GLOBAL_PROC, "/proc/" + nameof(GlobalProcs.end_cooldown), this, COOLDOWN_SIGNALLER_SEND), cooldown_length, file: "code/modules/assembly/signaler.dm", line: 104));
             }
-            signal(); // INVOKE_ASYNC: signal() cannot sleep
+            Waiting.Detach(signal()); // INVOKE_ASYNC
             balloon_alert(ui.user, I18n.T("signaled"));
             dot = TRUE;
         }
@@ -166,13 +166,14 @@ public partial class obj_item_assembly_signaler : obj_item_assembly
         }
         // TIMER_COOLDOWN_START(src, COOLDOWN_SIGNALLER_SEND, 1 SECONDS) (inline, rules 11.1 (f))
         LAZYSET(ref cooldowns, COOLDOWN_SIGNALLER_SEND, _addtimer(Dm.@new<datum_callback>(GLOBAL_PROC, "/proc/" + nameof(GlobalProcs.end_cooldown), this, COOLDOWN_SIGNALLER_SEND), 1 * SECONDS, file: "code/modules/assembly/signaler.dm", line: 147));
-        signal(); // INVOKE_ASYNC: signal() cannot sleep
+        Waiting.Detach(signal()); // INVOKE_ASYNC
         return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN;
     }
 
     // tg: code/modules/assembly/signaler.dm:151
-    public virtual void signal()
+    public virtual async DmTask signal()
     {
+        await DmTask.CompletedTask;
         if (radio_connection == null)
             return;
 
@@ -228,7 +229,7 @@ public partial class obj_item_assembly_signaler : obj_item_assembly
     public virtual object on_mail_unwrap(atom source = null, mob user = null, obj_item_mail_traitor letter = null)
     {
         to_chat(user, span_danger(I18n.T("As you open [], you accidentally press a button on []!", letter, this)));
-        signal(); // INVOKE_ASYNC of a proc that never sleeps. No need to check for cooldown, the cooldown is shorter than the do_after for opening mail
+        Waiting.Detach(signal()); // INVOKE_ASYNC. No need to check for cooldown, the cooldown is shorter than the do_after for opening mail
         return NONE; //don't return handled, we want in hands and open ui
     }
 }

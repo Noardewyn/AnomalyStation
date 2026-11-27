@@ -4870,9 +4870,9 @@ public partial class datum_status_effect_shapechange_mob_from_spell
     }
 }
 
-// tg: code/modules/clothing/belts/polymorph_belt.dm:181
-[DmPath("/datum/status_effect/shapechange_mob/from_spell/polymorph_belt"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_shapechange_mob_from_spell_polymorph_belt : datum_status_effect_shapechange_mob_from_spell { }
+// tg: code/modules/clothing/belts/polymorph_belt.dm:181 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/shapechange_mob/from_spell/polymorph_belt")]
+public partial class datum_status_effect_shapechange_mob_from_spell_polymorph_belt { }
 
 // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:236 (the var block of a hand-written class)
 [DmPath("/datum/status_effect/brimdust_concussion")]

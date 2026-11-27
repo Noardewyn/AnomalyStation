@@ -13484,9 +13484,9 @@ public partial class mob_living_basic_spider_giant_sgt_araneus
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:40
-[DmPath("/mob/living/basic/spider/robot"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_spider_robot : mob_living_basic_spider
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:40 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/spider/robot")]
+public partial class mob_living_basic_spider_robot
 {
     // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:40
     public mob_living_basic_spider_robot()

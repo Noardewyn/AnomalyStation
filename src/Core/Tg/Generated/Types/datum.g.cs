@@ -22035,9 +22035,9 @@ public partial class datum_wires_conveyor
     }
 }
 
-// tg: code/datums/wires/ecto_sniffer.dm:2
-[DmPath("/datum/wires/ecto_sniffer"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_ecto_sniffer : datum_wires
+// tg: code/datums/wires/ecto_sniffer.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/wires/ecto_sniffer")]
+public partial class datum_wires_ecto_sniffer
 {
     // tg: code/datums/wires/ecto_sniffer.dm:2
     public datum_wires_ecto_sniffer()
@@ -22380,9 +22380,9 @@ public partial class datum_wires_experimentor
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_wires.dm:4
-[DmPath("/datum/wires/gizmo"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_gizmo : datum_wires
+// tg: code/modules/research/gizmo/gizmo_wires.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/wires/gizmo")]
+public partial class datum_wires_gizmo
 {
     public DmList cryptic_wires; // tg: code/modules/research/gizmo/gizmo_wires.dm:10
     public Type puzzle; // tg: code/modules/research/gizmo/gizmo_wires.dm:21
@@ -38623,9 +38623,9 @@ public partial class datum_mod_theme_administrative : datum_mod_theme
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:9
-[DmPath("/datum/armour_dimensional_theme"), DmGeneratedOnly, DmInert]
-public partial class datum_armour_dimensional_theme : datum
+// tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/armour_dimensional_theme")]
+public partial class datum_armour_dimensional_theme
 {
     public Type material; // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:9
     public Type replace_floor = typeof(turf_open_floor_material); // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:10
@@ -38635,11 +38635,11 @@ public partial class datum_armour_dimensional_theme : datum
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/datum/armour_dimensional_theme/safe"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe : datum_armour_dimensional_theme { }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:132
-[DmPath("/datum/armour_dimensional_theme/safe/natural"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/natural"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_natural : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:132
@@ -38652,7 +38652,7 @@ public partial class datum_armour_dimensional_theme_safe_natural : datum_armour_
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:137
-[DmPath("/datum/armour_dimensional_theme/safe/snow"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/snow"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_snow : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:137
@@ -38666,7 +38666,7 @@ public partial class datum_armour_dimensional_theme_safe_snow : datum_armour_dim
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:143
-[DmPath("/datum/armour_dimensional_theme/safe/space"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/space"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_space : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:143
@@ -38680,7 +38680,7 @@ public partial class datum_armour_dimensional_theme_safe_space : datum_armour_di
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:149
-[DmPath("/datum/armour_dimensional_theme/safe/glass"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/glass"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_glass : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:149
@@ -38692,7 +38692,7 @@ public partial class datum_armour_dimensional_theme_safe_glass : datum_armour_di
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:153
-[DmPath("/datum/armour_dimensional_theme/safe/secure"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/secure"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_secure : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:153
@@ -38705,7 +38705,7 @@ public partial class datum_armour_dimensional_theme_safe_secure : datum_armour_d
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:158
-[DmPath("/datum/armour_dimensional_theme/safe/meat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/meat"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_meat : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:158
@@ -38716,11 +38716,11 @@ public partial class datum_armour_dimensional_theme_safe_meat : datum_armour_dim
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/datum/armour_dimensional_theme/dangerous"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous : datum_armour_dimensional_theme { }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:164
-[DmPath("/datum/armour_dimensional_theme/dangerous/clown"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous/clown"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous_clown : datum_armour_dimensional_theme_dangerous
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:164
@@ -38733,7 +38733,7 @@ public partial class datum_armour_dimensional_theme_dangerous_clown : datum_armo
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:169
-[DmPath("/datum/armour_dimensional_theme/dangerous/radioactive"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous/radioactive"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous_radioactive : datum_armour_dimensional_theme_dangerous
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:169
@@ -38745,7 +38745,7 @@ public partial class datum_armour_dimensional_theme_dangerous_radioactive : datu
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:173
-[DmPath("/datum/armour_dimensional_theme/dangerous/plasma"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous/plasma"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous_plasma : datum_armour_dimensional_theme_dangerous
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:173
@@ -38757,7 +38757,7 @@ public partial class datum_armour_dimensional_theme_dangerous_plasma : datum_arm
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:177
-[DmPath("/datum/armour_dimensional_theme/dangerous/ice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous/ice"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous_ice : datum_armour_dimensional_theme_dangerous
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:177
@@ -38770,9 +38770,9 @@ public partial class datum_armour_dimensional_theme_dangerous_ice : datum_armour
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:183
-[DmPath("/datum/armour_dimensional_theme/dangerous/lavaland"), DmGeneratedOnly, DmInert]
-public partial class datum_armour_dimensional_theme_dangerous_lavaland : datum_armour_dimensional_theme_dangerous
+// tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:183 (the var block of a hand-written class)
+[DmPath("/datum/armour_dimensional_theme/dangerous/lavaland")]
+public partial class datum_armour_dimensional_theme_dangerous_lavaland
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:183
     public datum_armour_dimensional_theme_dangerous_lavaland()
@@ -52202,9 +52202,9 @@ public partial class datum_experimentor_result_handler_fail
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_controller.dm:6
-[DmPath("/datum/gizmo_controller"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmo_controller : datum
+// tg: code/modules/research/gizmo/gizmo_controller.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/gizmo_controller")]
+public partial class datum_gizmo_controller
 {
     public DmList interfaces; // tg: code/modules/research/gizmo/gizmo_controller.dm:6
     public DmList instances; // tg: code/modules/research/gizmo/gizmo_controller.dm:8
@@ -52219,7 +52219,7 @@ public partial class datum_gizmo_controller : datum
 }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:27
-[DmPath("/datum/gizmo_controller/beyblade"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/beyblade"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_beyblade : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:27
@@ -52231,7 +52231,7 @@ public partial class datum_gizmo_controller_beyblade : datum_gizmo_controller
 }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:31
-[DmPath("/datum/gizmo_controller/toggle"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/toggle"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_toggle : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:31
@@ -52243,7 +52243,7 @@ public partial class datum_gizmo_controller_toggle : datum_gizmo_controller
 }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:35
-[DmPath("/datum/gizmo_controller/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/voice"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_voice : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:35
@@ -52255,11 +52255,11 @@ public partial class datum_gizmo_controller_voice : datum_gizmo_controller
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/datum/gizmo_controller/item"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/item"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_item : datum_gizmo_controller { }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:42
-[DmPath("/datum/gizmo_controller/cursed"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/cursed"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_cursed : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:42
@@ -52271,7 +52271,7 @@ public partial class datum_gizmo_controller_cursed : datum_gizmo_controller
 }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:46
-[DmPath("/datum/gizmo_controller/moo"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/moo"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_moo : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:46
@@ -52282,9 +52282,9 @@ public partial class datum_gizmo_controller_moo : datum_gizmo_controller
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_interface.dm:4
-[DmPath("/datum/gizmo_interface"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmo_interface : datum
+// tg: code/modules/research/gizmo/gizmo_interface.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/gizmo_interface")]
+public partial class datum_gizmo_interface
 {
     public Type controller; // tg: code/modules/research/gizmo/gizmo_interface.dm:4
     public Type puzzle = typeof(datum_gizmo_puzzle); // tg: code/modules/research/gizmo/gizmo_interface.dm:6
@@ -52305,7 +52305,7 @@ public partial class datum_gizmo_interface : datum
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:46
-[DmPath("/datum/gizmo_interface/beyblade"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/beyblade"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_beyblade : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:47
@@ -52324,7 +52324,7 @@ public partial class datum_gizmo_interface_beyblade : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:52
-[DmPath("/datum/gizmo_interface/toggle"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/toggle"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_toggle : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:52
@@ -52336,7 +52336,7 @@ public partial class datum_gizmo_interface_toggle : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:56
-[DmPath("/datum/gizmo_interface/voice_unlock"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/voice_unlock"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_voice_unlock : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:57
@@ -52355,7 +52355,7 @@ public partial class datum_gizmo_interface_voice_unlock : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:62
-[DmPath("/datum/gizmo_interface/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/voice"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_voice : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:62
@@ -52366,7 +52366,7 @@ public partial class datum_gizmo_interface_voice : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:66
-[DmPath("/datum/gizmo_interface/cursed"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/cursed"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_cursed : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:69
@@ -52384,7 +52384,7 @@ public partial class datum_gizmo_interface_cursed : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:72
-[DmPath("/datum/gizmo_interface/moo"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/moo"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_moo : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:73
@@ -52402,9 +52402,9 @@ public partial class datum_gizmo_interface_moo : datum_gizmo_interface
     }
 }
 
-// tg: code/modules/research/gizmo/gizpuzzle.dm:4
-[DmPath("/datum/gizmo_puzzle"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmo_puzzle : datum
+// tg: code/modules/research/gizmo/gizpuzzle.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/gizmo_puzzle")]
+public partial class datum_gizmo_puzzle
 {
     public DmList cryptic_pulse; // tg: code/modules/research/gizmo/gizpuzzle.dm:4
     public float code_length = 3; // tg: code/modules/research/gizmo/gizpuzzle.dm:16
@@ -52425,7 +52425,7 @@ public partial class datum_gizmo_puzzle : datum
 }
 
 // tg: code/modules/research/gizmo/gizpuzzle.dm:95
-[DmPath("/datum/gizmo_puzzle/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_puzzle/voice"), DmGeneratedOnly]
 public partial class datum_gizmo_puzzle_voice : datum_gizmo_puzzle
 {
     // tg: code/modules/research/gizmo/gizpuzzle.dm:95
@@ -52435,9 +52435,9 @@ public partial class datum_gizmo_puzzle_voice : datum_gizmo_puzzle
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:8
-[DmPath("/datum/gizmodes"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes : datum
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes")]
+public partial class datum_gizmodes
 {
     public datum_gizmo_interface @interface; // tg: code/modules/research/gizmo/gizmodes/gizactives.dm:8
     public datum_gizpulse current_active; // tg: code/modules/research/gizmo/gizmodes/gizactives.dm:10
@@ -52463,7 +52463,7 @@ public partial class datum_gizmodes : datum
 }
 
 // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:3
-[DmPath("/datum/gizmodes/sputter"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/sputter"), DmGeneratedOnly]
 public partial class datum_gizmodes_sputter : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:8
@@ -52482,7 +52482,7 @@ public partial class datum_gizmodes_sputter : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:31
-[DmPath("/datum/gizmodes/dispenser"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/dispenser"), DmGeneratedOnly]
 public partial class datum_gizmodes_dispenser : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:39
@@ -52501,7 +52501,7 @@ public partial class datum_gizmodes_dispenser : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:80
-[DmPath("/datum/gizmodes/dispenser/food"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/dispenser/food"), DmGeneratedOnly]
 public partial class datum_gizmodes_dispenser_food : datum_gizmodes_dispenser
 {
     // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:88
@@ -52521,7 +52521,7 @@ public partial class datum_gizmodes_dispenser_food : datum_gizmodes_dispenser
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:3
-[DmPath("/datum/gizmodes/bad"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/bad"), DmGeneratedOnly]
 public partial class datum_gizmodes_bad : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:17
@@ -52541,9 +52541,9 @@ public partial class datum_gizmodes_bad : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:25
-[DmPath("/datum/gizmodes/code_crack"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_code_crack : datum_gizmodes
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:25 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/code_crack")]
+public partial class datum_gizmodes_code_crack
 {
     public string init_jingle = "sound/machines/terminal/terminal_processing.ogg"; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:37
     public float puzzles_left = 3; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:39
@@ -52572,9 +52572,9 @@ public partial class datum_gizmodes_code_crack : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:220
-[DmPath("/datum/gizmodes/code_crack/tutorial"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_code_crack_tutorial : datum_gizmodes_code_crack
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:220 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/code_crack/tutorial")]
+public partial class datum_gizmodes_code_crack_tutorial
 {
     public float dispensed_hardmode = 0; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:234
 
@@ -52586,9 +52586,9 @@ public partial class datum_gizmodes_code_crack_tutorial : datum_gizmodes_code_cr
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:269
-[DmPath("/datum/gizmodes/code_crack/moo"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_code_crack_moo : datum_gizmodes_code_crack
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:269 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/code_crack/moo")]
+public partial class datum_gizmodes_code_crack_moo
 {
     public float min_code_length = 2; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:271
     public float max_code_length = 3; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:272
@@ -52602,7 +52602,7 @@ public partial class datum_gizmodes_code_crack_moo : datum_gizmodes_code_crack
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:3
-[DmPath("/datum/gizmodes/copier"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/copier"), DmGeneratedOnly]
 public partial class datum_gizmodes_copier : datum_gizmodes
 {
     public datum_weakref marked; // tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:10
@@ -52618,9 +52618,9 @@ public partial class datum_gizmodes_copier : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:3
-[DmPath("/datum/gizmodes/electric"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_electric : datum_gizmodes
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/electric")]
+public partial class datum_gizmodes_electric
 {
     public obj_item_stock_parts_power_store_battery_gizmo power; // tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:29
 
@@ -52643,7 +52643,7 @@ public partial class datum_gizmodes_electric : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:3
-[DmPath("/datum/gizmodes/mover"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/mover"), DmGeneratedOnly]
 public partial class datum_gizmodes_mover : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:3
@@ -52655,7 +52655,7 @@ public partial class datum_gizmodes_mover : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:15
-[DmPath("/datum/gizmodes/lights"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/lights"), DmGeneratedOnly]
 public partial class datum_gizmodes_lights : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:15
@@ -52668,7 +52668,7 @@ public partial class datum_gizmodes_lights : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:38
-[DmPath("/datum/gizmodes/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/voice"), DmGeneratedOnly]
 public partial class datum_gizmodes_voice : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:38
@@ -52681,7 +52681,7 @@ public partial class datum_gizmodes_voice : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:3
-[DmPath("/datum/gizmodes/mood_pulser"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/mood_pulser"), DmGeneratedOnly]
 public partial class datum_gizmodes_mood_pulser : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:7
@@ -52700,9 +52700,9 @@ public partial class datum_gizmodes_mood_pulser : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:3
-[DmPath("/datum/gizmodes/mopper"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_mopper : datum_gizmodes
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/mopper")]
+public partial class datum_gizmodes_mopper
 {
     public DmList reagents; // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:15
     public datum_reagents reagent_holder; // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:22
@@ -52729,7 +52729,7 @@ public partial class datum_gizmodes_mopper : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizporter.dm:3
-[DmPath("/datum/gizmodes/teleporter"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/teleporter"), DmGeneratedOnly]
 public partial class datum_gizmodes_teleporter : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizporter.dm:9
@@ -52747,28 +52747,28 @@ public partial class datum_gizmodes_teleporter : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:80
-[DmPath("/datum/gizpulse"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse : datum
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:80 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse")]
+public partial class datum_gizpulse
 {
     public float affect_timer = 1; // tg: code/modules/research/gizmo/gizmodes/gizactives.dm:80
 }
 
-// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:14
-[DmPath("/datum/gizpulse/sputter"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_sputter : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:14 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/sputter")]
+public partial class datum_gizpulse_sputter
 {
     public float oil_range = 3; // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:14
     public float oil_chance = 8; // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:16
 }
 
-// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:26
-[DmPath("/datum/gizpulse/throw_self"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_throw_self : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/throw_self")]
+public partial class datum_gizpulse_throw_self { }
 
-// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:44
-[DmPath("/datum/gizpulse/dispense"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_dispense : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:44 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/dispense")]
+public partial class datum_gizpulse_dispense
 {
     public DmList possible_objects; // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:44
     public object object_to_spawn; // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:53
@@ -52785,9 +52785,9 @@ public partial class datum_gizpulse_dispense : datum_gizpulse
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:93
-[DmPath("/datum/gizpulse/dispense/food"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_dispense_food : datum_gizpulse_dispense
+// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:93 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/dispense/food")]
+public partial class datum_gizpulse_dispense_food
 {
     // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:93
     protected internal override void dm_init_vars()
@@ -52798,7 +52798,7 @@ public partial class datum_gizpulse_dispense_food : datum_gizpulse_dispense
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:35
-[DmPath("/datum/gizpulse/dispense/robot_spider"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/dispense/robot_spider"), DmGeneratedOnly]
 public partial class datum_gizpulse_dispense_robot_spider : datum_gizpulse_dispense
 {
     // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:35
@@ -52809,9 +52809,9 @@ public partial class datum_gizpulse_dispense_robot_spider : datum_gizpulse_dispe
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:88
-[DmPath("/datum/gizpulse/mode_controle"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:88 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle")]
+public partial class datum_gizpulse_mode_controle
 {
     // tg: code/modules/research/gizmo/gizmodes/gizactives.dm:88
     public datum_gizpulse_mode_controle()
@@ -52820,25 +52820,25 @@ public partial class datum_gizpulse_mode_controle : datum_gizpulse
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:95
-[DmPath("/datum/gizpulse/mode_controle/select_mode"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle_select_mode : datum_gizpulse_mode_controle { }
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:95 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle/select_mode")]
+public partial class datum_gizpulse_mode_controle_select_mode { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:106
-[DmPath("/datum/gizpulse/mode_controle/cycle_mode"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle_cycle_mode : datum_gizpulse_mode_controle { }
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:106 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle/cycle_mode")]
+public partial class datum_gizpulse_mode_controle_cycle_mode { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:126
-[DmPath("/datum/gizpulse/mode_controle/cycle_mode/activate"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle_cycle_mode_activate : datum_gizpulse_mode_controle_cycle_mode { }
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:126 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle/cycle_mode/activate")]
+public partial class datum_gizpulse_mode_controle_cycle_mode_activate { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:117
-[DmPath("/datum/gizpulse/mode_controle/direct_activate"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle_direct_activate : datum_gizpulse_mode_controle { }
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:117 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle/direct_activate")]
+public partial class datum_gizpulse_mode_controle_direct_activate { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:23
-[DmPath("/datum/gizpulse/explode"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_explode : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:23 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/explode")]
+public partial class datum_gizpulse_explode
 {
     public float? range_heavy = 0; // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:23
     public float range_medium = 1; // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:24
@@ -52847,7 +52847,7 @@ public partial class datum_gizpulse_explode : datum_gizpulse
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:32
-[DmPath("/datum/gizpulse/explode/fire"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/explode/fire"), DmGeneratedOnly]
 public partial class datum_gizpulse_explode_fire : datum_gizpulse_explode
 {
     // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:32
@@ -52857,9 +52857,9 @@ public partial class datum_gizpulse_explode_fire : datum_gizpulse_explode
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:68
-[DmPath("/datum/gizpulse/thrower"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_thrower : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:68 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/thrower")]
+public partial class datum_gizpulse_thrower
 {
     public DmList throwables; // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:68
     public object throwing_path; // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:74
@@ -52872,9 +52872,9 @@ public partial class datum_gizpulse_thrower : datum_gizpulse
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:100
-[DmPath("/datum/gizpulse/thrower/grenade"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_thrower_grenade : datum_gizpulse_thrower
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:100 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/thrower/grenade")]
+public partial class datum_gizpulse_thrower_grenade
 {
     // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:100
     protected internal override void dm_init_vars()
@@ -52884,109 +52884,109 @@ public partial class datum_gizpulse_thrower_grenade : datum_gizpulse_thrower
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:96
-[DmPath("/datum/gizpulse/ominous"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_ominous : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:96 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/ominous")]
+public partial class datum_gizpulse_ominous { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:115
-[DmPath("/datum/gizpulse/bone_breaker"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_bone_breaker : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:115 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/bone_breaker")]
+public partial class datum_gizpulse_bone_breaker { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:117
-[DmPath("/datum/gizpulse/activate_puzzle"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_activate_puzzle : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:117 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/activate_puzzle")]
+public partial class datum_gizpulse_activate_puzzle { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:139
-[DmPath("/datum/gizpulse/cycle_position"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_cycle_position : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:139 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/cycle_position")]
+public partial class datum_gizpulse_cycle_position { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:160
-[DmPath("/datum/gizpulse/cycle_digit"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_cycle_digit : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:160 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/cycle_digit")]
+public partial class datum_gizpulse_cycle_digit { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:182
-[DmPath("/datum/gizpulse/try_crack"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_try_crack : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:182 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/try_crack")]
+public partial class datum_gizpulse_try_crack { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:17
-[DmPath("/datum/gizpulse/scan"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_scan : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:17 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/scan")]
+public partial class datum_gizpulse_scan { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:34
-[DmPath("/datum/gizpulse/copy"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_copy : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:34 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/copy")]
+public partial class datum_gizpulse_copy
 {
     public DmList copies; // tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:34
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:71
-[DmPath("/datum/gizpulse/erase"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_erase : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:71 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/erase")]
+public partial class datum_gizpulse_erase { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:42
-[DmPath("/datum/gizpulse/electric"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:42 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric")]
+public partial class datum_gizpulse_electric { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:58
-[DmPath("/datum/gizpulse/electric/emp"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_emp : datum_gizpulse_electric
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:58 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/emp")]
+public partial class datum_gizpulse_electric_emp
 {
     public float min_power = 10000; // tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:58
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:70
-[DmPath("/datum/gizpulse/electric/discharge"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_discharge : datum_gizpulse_electric { }
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:70 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/discharge")]
+public partial class datum_gizpulse_electric_discharge { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:79
-[DmPath("/datum/gizpulse/electric/charge"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_charge : datum_gizpulse_electric { }
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:79 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/charge")]
+public partial class datum_gizpulse_electric_charge { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:105
-[DmPath("/datum/gizpulse/electric/revive"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_revive : datum_gizpulse_electric
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:105 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/revive")]
+public partial class datum_gizpulse_electric_revive
 {
     public float defib_cost = 5000; // tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:105
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:131
-[DmPath("/datum/gizpulse/electric/draw"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_draw : datum_gizpulse_electric { }
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:131 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/draw")]
+public partial class datum_gizpulse_electric_draw { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:157
-[DmPath("/datum/gizpulse/electric/passive_charge"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_passive_charge : datum_gizpulse_electric
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:157 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/passive_charge")]
+public partial class datum_gizpulse_electric_passive_charge
 {
     public float recharge = 1000.00006f; // tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:157
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:5
-[DmPath("/datum/gizpulse/start_moving"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_start_moving : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/start_moving")]
+public partial class datum_gizpulse_start_moving { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:9
-[DmPath("/datum/gizpulse/stop_moving"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_stop_moving : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/stop_moving")]
+public partial class datum_gizpulse_stop_moving { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:21
-[DmPath("/datum/gizpulse/lights_on"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_lights_on : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:21 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/lights_on")]
+public partial class datum_gizpulse_lights_on { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:31
-[DmPath("/datum/gizpulse/lights_off"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_lights_off : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:31 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/lights_off")]
+public partial class datum_gizpulse_lights_off { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:44
-[DmPath("/datum/gizpulse/voice_hint"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_voice_hint : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:44 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/voice_hint")]
+public partial class datum_gizpulse_voice_hint { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:50
-[DmPath("/datum/gizpulse/language_change"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_language_change : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:50 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/language_change")]
+public partial class datum_gizpulse_language_change { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmood.dm:13
-[DmPath("/datum/gizpulse/mood_pulser"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mood_pulser : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizmood.dm:13 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mood_pulser")]
+public partial class datum_gizpulse_mood_pulser
 {
     public Type mood; // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:13
     public object ring_color; // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:15
@@ -52994,7 +52994,7 @@ public partial class datum_gizpulse_mood_pulser : datum_gizpulse
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:30
-[DmPath("/datum/gizpulse/mood_pulser/positive"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/mood_pulser/positive"), DmGeneratedOnly]
 public partial class datum_gizpulse_mood_pulser_positive : datum_gizpulse_mood_pulser
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:30
@@ -53006,7 +53006,7 @@ public partial class datum_gizpulse_mood_pulser_positive : datum_gizpulse_mood_p
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:35
-[DmPath("/datum/gizpulse/mood_pulser/negative"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/mood_pulser/negative"), DmGeneratedOnly]
 public partial class datum_gizpulse_mood_pulser_negative : datum_gizpulse_mood_pulser
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:35
@@ -53017,23 +53017,23 @@ public partial class datum_gizpulse_mood_pulser_negative : datum_gizpulse_mood_p
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmood.dm:38
-[DmPath("/datum/gizpulse/radiation_pulse"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_radiation_pulse : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmood.dm:38 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/radiation_pulse")]
+public partial class datum_gizpulse_radiation_pulse { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:52
-[DmPath("/datum/gizpulse/wet_tiles"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_wet_tiles : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:52 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/wet_tiles")]
+public partial class datum_gizpulse_wet_tiles { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:67
-[DmPath("/datum/gizpulse/wet_tiles/fluid_circle"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_wet_tiles_fluid_circle : datum_gizpulse_wet_tiles
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:67 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/wet_tiles/fluid_circle")]
+public partial class datum_gizpulse_wet_tiles_fluid_circle
 {
     public float? size = 0; // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:67
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:74
-[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/small"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/small"), DmGeneratedOnly]
 public partial class datum_gizpulse_wet_tiles_fluid_circle_small : datum_gizpulse_wet_tiles_fluid_circle
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:74
@@ -53044,7 +53044,7 @@ public partial class datum_gizpulse_wet_tiles_fluid_circle_small : datum_gizpuls
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:78
-[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/medium"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/medium"), DmGeneratedOnly]
 public partial class datum_gizpulse_wet_tiles_fluid_circle_medium : datum_gizpulse_wet_tiles_fluid_circle
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:78
@@ -53055,7 +53055,7 @@ public partial class datum_gizpulse_wet_tiles_fluid_circle_medium : datum_gizpul
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:82
-[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/large"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/large"), DmGeneratedOnly]
 public partial class datum_gizpulse_wet_tiles_fluid_circle_large : datum_gizpulse_wet_tiles_fluid_circle
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:82
@@ -53065,33 +53065,33 @@ public partial class datum_gizpulse_wet_tiles_fluid_circle_large : datum_gizpuls
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:85
-[DmPath("/datum/gizpulse/fluid_smoke"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_fluid_smoke : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:85 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/fluid_smoke")]
+public partial class datum_gizpulse_fluid_smoke { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:90
-[DmPath("/datum/gizpulse/swap_reagent"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_swap_reagent : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:90 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/swap_reagent")]
+public partial class datum_gizpulse_swap_reagent { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:15
-[DmPath("/datum/gizpulse/teleport"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_teleport : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:15 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/teleport")]
+public partial class datum_gizpulse_teleport
 {
     public float offset_min = 5; // tg: code/modules/research/gizmo/gizmodes/gizporter.dm:15
     public float offset_max = 15; // tg: code/modules/research/gizmo/gizmodes/gizporter.dm:17
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:33
-[DmPath("/datum/gizpulse/teleport/self"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_teleport_self : datum_gizpulse_teleport { }
+// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:33 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/teleport/self")]
+public partial class datum_gizpulse_teleport_self { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:37
-[DmPath("/datum/gizpulse/teleport/other"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_teleport_other : datum_gizpulse_teleport { }
+// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:37 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/teleport/other")]
+public partial class datum_gizpulse_teleport_other { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:43
-[DmPath("/datum/gizpulse/teleport/other/and_self"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_teleport_other_and_self : datum_gizpulse_teleport_other { }
+// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:43 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/teleport/other/and_self")]
+public partial class datum_gizpulse_teleport_other_and_self { }
 
 // tg: code/modules/research/ordnance/_scipaper.dm:4 (the var block of a hand-written class)
 [DmPath("/datum/scientific_paper")]

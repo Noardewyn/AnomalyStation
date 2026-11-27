@@ -96,9 +96,9 @@ public partial class obj_item_circuit_component_bluespace_launchpad
     }
 }
 
-// tg: code/game/machinery/computer/launchpad_control.dm:19
-[DmPath("/obj/item/circuit_component/bluespace_launchpad/console"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_bluespace_launchpad_console : obj_item_circuit_component_bluespace_launchpad
+// tg: code/game/machinery/computer/launchpad_control.dm:19 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/bluespace_launchpad/console")]
+public partial class obj_item_circuit_component_bluespace_launchpad_console
 {
     public datum_port_input launchpad_id; // tg: code/game/machinery/computer/launchpad_control.dm:22
     public obj_machinery_computer_launchpad attached_console; // tg: code/game/machinery/computer/launchpad_control.dm:24
@@ -128,9 +128,9 @@ public partial class obj_item_circuit_component_light_switch
     }
 }
 
-// tg: code/game/machinery/quantum_pad.dm:199
-[DmPath("/obj/item/circuit_component/quantumpad"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_quantumpad : obj_item_circuit_component
+// tg: code/game/machinery/quantum_pad.dm:199 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/quantumpad")]
+public partial class obj_item_circuit_component_quantumpad
 {
     public datum_port_input target_pad; // tg: code/game/machinery/quantum_pad.dm:203
     public datum_port_output failed; // tg: code/game/machinery/quantum_pad.dm:204

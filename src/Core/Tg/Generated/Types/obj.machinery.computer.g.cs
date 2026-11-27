@@ -3696,9 +3696,9 @@ public partial class obj_machinery_computer_dna_console
     }
 }
 
-// tg: code/game/machinery/computer/launchpad_control.dm:2
-[DmPath("/obj/machinery/computer/launchpad"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_launchpad : obj_machinery_computer
+// tg: code/game/machinery/computer/launchpad_control.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/launchpad")]
+public partial class obj_machinery_computer_launchpad
 {
     public object selected_id; // tg: code/game/machinery/computer/launchpad_control.dm:9
     public DmList launchpads; // tg: code/game/machinery/computer/launchpad_control.dm:10
@@ -3716,9 +3716,9 @@ public partial class obj_machinery_computer_launchpad : obj_machinery_computer
     }
 }
 
-// tg: code/game/machinery/computer/mechlaunchpad.dm:2
-[DmPath("/obj/machinery/computer/mechpad"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_mechpad : obj_machinery_computer
+// tg: code/game/machinery/computer/mechlaunchpad.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/mechpad")]
+public partial class obj_machinery_computer_mechpad
 {
     public string id = "roboticsmining"; // tg: code/game/machinery/computer/mechlaunchpad.dm:9
     public object selected_id; // tg: code/game/machinery/computer/mechlaunchpad.dm:11

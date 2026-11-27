@@ -9,16 +9,22 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The M7 supermatter slice, part 2 (D167): the anomaly base, the anomalies an overpowered supermatter makes. Left out: the anomaly
-// cores (the signaler's frequency and code, the analyzer's readout and the core a neutralized anomaly drops: radio and signalers,
-// M9), the neutralization smoke (fluid spread, after the core version) and the admins' variable editor
-// (M10). The generated anomaly_core var is a Type (the V3 grep): it holds the core's path while the cores wait for M9. The var
-// block is generated (D111).
+// The M7 supermatter slice, part 2 (D167): the anomaly base, the anomalies an overpowered supermatter makes, with their cores
+// (the signaler a cored anomaly carries on a random free frequency and code, the analyzer's readout, the core a neutralized
+// anomaly drops or the inert core past SSresearch's cap). Left out: the admins' variable editor (M10). The var block is generated
+// (D111).
+//
+// GAP(types): tg's `var/obj/item/assembly/signaler/anomaly/anomaly_core` (:13) is generated as a Type (rules 3.2 V3: its default
+// and the subtypes' overrides are typepaths, which tg replaces by the core on Initialize); the core the anomaly carries is
+// anomaly_core_value (the same split as /obj/machinery/var/circuit).
 
 //Anomalies, used for anomaly events. Anomalies cause adverse effects on their surroundings and can be mitigated by signalling their respective frequency.
 // tg: code/game/objects/effects/anomalies/_anomalies.dm:2
 public partial class obj_effect_anomaly : obj_effect
 {
+    /// GAP(types): tg's `anomaly_core` (:13) once it holds the core: the signaler that neutralizes the anomaly.
+    public obj_item_assembly_signaler_anomaly anomaly_core_value;
+
     // tg: code/game/objects/effects/anomalies/_anomalies.dm:27
     [DmParams("mapload", "new_lifespan", "drops_core")]
     public override object Initialize(object mapload = null, params object[] __extra)
@@ -45,9 +51,11 @@ public partial class obj_effect_anomaly : obj_effect
 
         if (Dm.truthy(anomaly_core))
         {
-            // anomaly_core = new anomaly_core(src); anomaly_core.code = rand(1,100); anomaly_core.anomaly_type = type
-            // anomaly_core.set_frequency(sanitize_frequency(rand(MIN_FREE_FREQ, MAX_FREE_FREQ), free = TRUE))
-            Dm.Deferred("code/game/objects/effects/anomalies/_anomalies.dm:42", "Initialize: the anomaly core, a signaler on a random free frequency and code (radio and signalers, M10+)");
+            anomaly_core_value = Dm.@new(anomaly_core, this) as obj_item_assembly_signaler_anomaly;
+            anomaly_core_value.code = rand(1, 100);
+            anomaly_core_value.anomaly_type = type;
+
+            anomaly_core_value.set_frequency(sanitize_frequency(rand(MIN_FREE_FREQ, MAX_FREE_FREQ), free: TRUE));
         }
 
         if (Dm.truthy(new_lifespan))
@@ -86,7 +94,7 @@ public partial class obj_effect_anomaly : obj_effect
     {
         STOP_PROCESSING(SSobj, this);
         QDEL_NULL(ref countdown);
-        // QDEL_NULL(anomaly_core): the core is not made (Initialize, _anomalies.dm:42, M9)
+        QDEL_NULL(ref anomaly_core_value);
         anomaly_core = null;
         return base.Destroy(force);
     }
@@ -132,10 +140,21 @@ public partial class obj_effect_anomaly : obj_effect
         // SSblackbox.record_feedback("nested tally", "anomaly_defused", ...)
         Dm.Deferred("code/game/objects/effects/anomalies/_anomalies.dm:102", "anomalyNeutralize: the blackbox tally (statistics, M10+)");
 
-        if (anomaly_core != null)
+        if (anomaly_core_value != null)
         {
-            // SSresearch.is_core_available(anomaly_type): the core falls out, or an inert anomaly when the station has too many
-            Dm.Deferred("code/game/objects/effects/anomalies/_anomalies.dm:112", "anomalyNeutralize: the anomaly core it drops (the cores, radio and signalers, M10+)");
+            Type anomaly_type = anomaly_core_value.type;
+            if (SSresearch.is_core_available(anomaly_type))
+            {
+                SSresearch.increment_existing_anomaly_cores(anomaly_type);
+                await anomaly_core_value.forceMove(drop_location() as atom);
+                anomaly_core_value = null;
+                anomaly_core = null;
+            }
+            else // You exceeded the cap sorry
+            {
+                visible_message(span_warning(I18n.T("[] loses its lustre as it falls to the ground, there is too little ambient energy to support another core of this type.", anomaly_core_value)));
+                Dm.@new<obj_item_inert_anomaly>(drop_location());
+            }
         }
 
         // else, anomaly core gets deleted by qdel(src).
@@ -146,10 +165,9 @@ public partial class obj_effect_anomaly : obj_effect
     // tg: code/game/objects/effects/anomalies/_anomalies.dm:126
     public override object analyzer_act(mob_living user = null, obj_item tool = null)
     {
-        if (anomaly_core != null)
+        if (anomaly_core_value != null)
         {
-            // to_chat(user, span_notice("Analyzing... [src]'s unstable field is fluctuating along frequency [format_frequency(anomaly_core.frequency)], code [anomaly_core.code]."))
-            Dm.Deferred("code/game/objects/effects/anomalies/_anomalies.dm:128", "analyzer_act: the frequency and code of the anomaly's core (the cores, radio and signalers, M10+)");
+            to_chat(user, span_notice(I18n.T("Analyzing... []'s unstable field is fluctuating along frequency [], code [].", this, format_frequency(anomaly_core_value.frequency), anomaly_core_value.code)));
             return ITEM_INTERACT_SUCCESS;
         }
         to_chat(user, span_notice(I18n.T("Analyzing... []'s unstable field is not fluctuating along a stable frequency.", this)));
@@ -165,7 +183,10 @@ public partial class obj_effect_anomaly : obj_effect
         immortal = TRUE;
         name = (Dm.truthy(has_core) ? "stable " : "hollow ") + name;
         if (!Dm.truthy(has_core))
-            anomaly_core = null; // QDEL_NULL(anomaly_core): the core is not made (M9)
+        {
+            QDEL_NULL(ref anomaly_core_value);
+            anomaly_core = null;
+        }
         if (Dm.truthy(anchor))
             move_chance = 0;
     }

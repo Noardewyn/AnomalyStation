@@ -237,9 +237,9 @@ public partial class obj_structure_closet_supplypod_transport_botpod : obj_struc
 [DmPath("/obj/structure/closet/supplypod/transport/module_pathfinder")]
 public partial class obj_structure_closet_supplypod_transport_module_pathfinder { }
 
-// tg: code/game/machinery/mechlaunchpad.dm:65
-[DmPath("/obj/structure/closet/supplypod/mechpod"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_supplypod_mechpod : obj_structure_closet_supplypod
+// tg: code/game/machinery/mechlaunchpad.dm:65 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/supplypod/mechpod")]
+public partial class obj_structure_closet_supplypod_mechpod
 {
     // tg: code/game/machinery/mechlaunchpad.dm:65
     public obj_structure_closet_supplypod_mechpod()

@@ -2566,9 +2566,9 @@ public partial class obj_item_clothing_head_helmet_monkey_sentience : obj_item_c
     }
 }
 
-// tg: code/modules/clothing/head/perceptomatrix.dm:3
-[DmPath("/obj/item/clothing/head/helmet/perceptomatrix"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_helmet_perceptomatrix : obj_item_clothing_head_helmet
+// tg: code/modules/clothing/head/perceptomatrix.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/helmet/perceptomatrix")]
+public partial class obj_item_clothing_head_helmet_perceptomatrix
 {
     public float core_installed = 0; // tg: code/modules/clothing/head/perceptomatrix.dm:37
     public DmList active_components; // tg: code/modules/clothing/head/perceptomatrix.dm:39
@@ -2613,7 +2613,7 @@ public partial class obj_item_clothing_head_helmet_perceptomatrix : obj_item_clo
 }
 
 // tg: code/modules/clothing/head/perceptomatrix.dm:149
-[DmPath("/obj/item/clothing/head/helmet/perceptomatrix/functioning"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/perceptomatrix/functioning"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_perceptomatrix_functioning : obj_item_clothing_head_helmet_perceptomatrix
 {
     // tg: code/modules/clothing/head/perceptomatrix.dm:149

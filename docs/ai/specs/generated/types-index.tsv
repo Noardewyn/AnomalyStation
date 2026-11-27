@@ -31251,10 +31251,10 @@ proc	/datum/wires/holopad	New	code/datums/wires/holopad.dm:10	holder	yes	full	pr
 proc	/datum/wires/holopad	get_status	code/datums/wires/holopad.dm:17		yes	full	proc
 proc	/datum/wires/holopad	on_pulse	code/datums/wires/holopad.dm:24	wire	yes	full	proc
 proc	/datum/wires/holopad	on_cut	code/datums/wires/holopad.dm:38	wire,mend,source	yes	full	proc
-type	/datum/wires/mass_driver	/datum/wires	code/datums/wires/mass_driver.dm:2	inert	datum_wires_mass_driver	0	0
-proc	/datum/wires/mass_driver	New	code/datums/wires/mass_driver.dm:5	holder	no	-	proc
-proc	/datum/wires/mass_driver	on_pulse	code/datums/wires/mass_driver.dm:9	wire	no	-	proc
-proc	/datum/wires/mass_driver	on_cut	code/datums/wires/mass_driver.dm:19	wire,mend,source	no	-	proc
+type	/datum/wires/mass_driver	/datum/wires	code/datums/wires/mass_driver.dm:2	live	datum_wires_mass_driver	1	0
+proc	/datum/wires/mass_driver	New	code/datums/wires/mass_driver.dm:5	holder	yes	full	proc
+proc	/datum/wires/mass_driver	on_pulse	code/datums/wires/mass_driver.dm:9	wire	yes	full	proc
+proc	/datum/wires/mass_driver	on_cut	code/datums/wires/mass_driver.dm:19	wire,mend,source	yes	full	proc
 type	/datum/wires/mecha	/datum/wires	code/datums/wires/mecha.dm:2	live	datum_wires_mecha	1	0
 proc	/datum/wires/mecha	New	code/datums/wires/mecha.dm:5	holder	yes	full	proc
 proc	/datum/wires/mecha	interactable	code/datums/wires/mecha.dm:13	user	yes	full	proc
@@ -46103,15 +46103,15 @@ proc	/datum/computer_file/program/filemanager	ui_act	code/modules/modular_comput
 proc	/datum/computer_file/program/filemanager	try_print	code/modules/modular_computers/file_system/programs/file_browser.dm:180	picture,width,height,offset_x,offset_y,typepath,user	stub	deferred	proc root
 proc	/datum/computer_file/program/filemanager	ui_static_data	code/modules/modular_computers/file_system/programs/file_browser.dm:202	user	yes	full	proc
 proc	/datum/computer_file/program/filemanager	ui_data	code/modules/modular_computers/file_system/programs/file_browser.dm:216	user	yes	full	proc
-type	/datum/computer_file/program/scipaper_program	/datum/computer_file/program	code/modules/modular_computers/file_system/programs/frontier.dm:2	inert	datum_computer_file_program_scipaper_program	0	0
-proc	/datum/computer_file/program/scipaper_program	on_install	code/modules/modular_computers/file_system/programs/frontier.dm:21	source,computer_installing,user	no	-	proc
-proc	/datum/computer_file/program/scipaper_program	application_item_interaction	code/modules/modular_computers/file_system/programs/frontier.dm:27	user,tool,modifiers	no	-	proc
-proc	/datum/computer_file/program/scipaper_program	multitool_act	code/modules/modular_computers/file_system/programs/frontier.dm:31	user,used_multitool	no	-	proc root
-proc	/datum/computer_file/program/scipaper_program	recheck_file_presence	code/modules/modular_computers/file_system/programs/frontier.dm:38		no	-	proc root
-proc	/datum/computer_file/program/scipaper_program	ui_static_data	code/modules/modular_computers/file_system/programs/frontier.dm:45	user	no	-	proc
-proc	/datum/computer_file/program/scipaper_program	ui_data	code/modules/modular_computers/file_system/programs/frontier.dm:84		no	-	proc
-proc	/datum/computer_file/program/scipaper_program	ui_act	code/modules/modular_computers/file_system/programs/frontier.dm:168	action,params,ui,state	no	-	proc
-proc	/datum/computer_file/program/scipaper_program	publish	code/modules/modular_computers/file_system/programs/frontier.dm:231		no	-	proc root
+type	/datum/computer_file/program/scipaper_program	/datum/computer_file/program	code/modules/modular_computers/file_system/programs/frontier.dm:2	live	datum_computer_file_program_scipaper_program	1	0
+proc	/datum/computer_file/program/scipaper_program	on_install	code/modules/modular_computers/file_system/programs/frontier.dm:21	source,computer_installing,user	yes	full	proc
+proc	/datum/computer_file/program/scipaper_program	application_item_interaction	code/modules/modular_computers/file_system/programs/frontier.dm:27	user,tool,modifiers	yes	full	proc
+proc	/datum/computer_file/program/scipaper_program	multitool_act	code/modules/modular_computers/file_system/programs/frontier.dm:31	user,used_multitool	yes	full	proc root
+proc	/datum/computer_file/program/scipaper_program	recheck_file_presence	code/modules/modular_computers/file_system/programs/frontier.dm:38		yes	full	proc root
+proc	/datum/computer_file/program/scipaper_program	ui_static_data	code/modules/modular_computers/file_system/programs/frontier.dm:45	user	yes	full	proc
+proc	/datum/computer_file/program/scipaper_program	ui_data	code/modules/modular_computers/file_system/programs/frontier.dm:84		yes	full	proc
+proc	/datum/computer_file/program/scipaper_program	ui_act	code/modules/modular_computers/file_system/programs/frontier.dm:168	action,params,ui,state	yes	full	proc
+proc	/datum/computer_file/program/scipaper_program	publish	code/modules/modular_computers/file_system/programs/frontier.dm:231		yes	full	proc root
 type	/datum/computer_file/program/job_management	/datum/computer_file/program	code/modules/modular_computers/file_system/programs/jobmanagement.dm:5	live	datum_computer_file_program_job_management	1	0
 proc	/datum/computer_file/program/job_management	New	code/modules/modular_computers/file_system/programs/jobmanagement.dm:25		yes	full	proc
 proc	/datum/computer_file/program/job_management	can_edit_job	code/modules/modular_computers/file_system/programs/jobmanagement.dm:30	job	yes	full	proc root
@@ -46444,15 +46444,15 @@ type	/datum/computer_file/data/text	/datum/computer_file/data	code/modules/modul
 proc	/datum/computer_file/data/text	clone	code/modules/modular_computers/file_system/data.dm:20		yes	full	proc
 proc	/datum/computer_file/data/text	calculate_size	code/modules/modular_computers/file_system/data.dm:26		yes	full	proc root
 type	/datum/computer_file/data/text/logfile	/datum/computer_file/data/text	code/modules/modular_computers/file_system/data.dm:34	live	datum_computer_file_data_text_logfile	0	0
-type	/datum/computer_file/data/ordnance	/datum/computer_file/data	code/modules/modular_computers/file_system/data.dm:41	inert	datum_computer_file_data_ordnance	0	0
-proc	/datum/computer_file/data/ordnance	return_data	code/modules/modular_computers/file_system/data.dm:47		no	-	proc root
-proc	/datum/computer_file/data/ordnance	clone	code/modules/modular_computers/file_system/data.dm:50		no	-	proc
-type	/datum/computer_file/data/ordnance/explosive	/datum/computer_file/data/ordnance	code/modules/modular_computers/file_system/data.dm:60	inert	datum_computer_file_data_ordnance_explosive	0	0
-proc	/datum/computer_file/data/ordnance/explosive	return_data	code/modules/modular_computers/file_system/data.dm:64		no	-	proc
-proc	/datum/computer_file/data/ordnance/explosive	clone	code/modules/modular_computers/file_system/data.dm:67		no	-	proc
-type	/datum/computer_file/data/ordnance/gaseous	/datum/computer_file/data/ordnance	code/modules/modular_computers/file_system/data.dm:77	inert	datum_computer_file_data_ordnance_gaseous	0	0
-proc	/datum/computer_file/data/ordnance/gaseous	return_data	code/modules/modular_computers/file_system/data.dm:81		no	-	proc
-proc	/datum/computer_file/data/ordnance/gaseous	clone	code/modules/modular_computers/file_system/data.dm:84		no	-	proc
+type	/datum/computer_file/data/ordnance	/datum/computer_file/data	code/modules/modular_computers/file_system/data.dm:41	live	datum_computer_file_data_ordnance	1	0
+proc	/datum/computer_file/data/ordnance	return_data	code/modules/modular_computers/file_system/data.dm:47		yes	full	proc root
+proc	/datum/computer_file/data/ordnance	clone	code/modules/modular_computers/file_system/data.dm:50		yes	full	proc
+type	/datum/computer_file/data/ordnance/explosive	/datum/computer_file/data/ordnance	code/modules/modular_computers/file_system/data.dm:60	live	datum_computer_file_data_ordnance_explosive	1	0
+proc	/datum/computer_file/data/ordnance/explosive	return_data	code/modules/modular_computers/file_system/data.dm:64		yes	full	proc
+proc	/datum/computer_file/data/ordnance/explosive	clone	code/modules/modular_computers/file_system/data.dm:67		yes	full	proc
+type	/datum/computer_file/data/ordnance/gaseous	/datum/computer_file/data/ordnance	code/modules/modular_computers/file_system/data.dm:77	live	datum_computer_file_data_ordnance_gaseous	1	0
+proc	/datum/computer_file/data/ordnance/gaseous	return_data	code/modules/modular_computers/file_system/data.dm:81		yes	full	proc
+proc	/datum/computer_file/data/ordnance/gaseous	clone	code/modules/modular_computers/file_system/data.dm:84		yes	full	proc
 type	/datum/computer_file/data/paint_project	/datum/computer_file/data	code/modules/modular_computers/file_system/data.dm:90	inert	datum_computer_file_data_paint_project	0	0
 proc	/datum/computer_file/data/paint_project	New	code/modules/modular_computers/file_system/data.dm:96	workspace,source_photo_or_painting	no	-	proc
 proc	/datum/computer_file/data/paint_project	Destroy	code/modules/modular_computers/file_system/data.dm:101	force	no	-	proc
@@ -47139,27 +47139,27 @@ type	/datum/gizpulse/teleport/other	/datum/gizpulse/teleport	code/modules/resear
 proc	/datum/gizpulse/teleport/other	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:37	holder	no	-	proc
 type	/datum/gizpulse/teleport/other/and_self	/datum/gizpulse/teleport/other	code/modules/research/gizmo/gizmodes/gizporter.dm:43	inert	datum_gizpulse_teleport_other_and_self	0	0
 proc	/datum/gizpulse/teleport/other/and_self	get_teleport_targets	code/modules/research/gizmo/gizmodes/gizporter.dm:43	holder	no	-	proc
-type	/datum/scientific_paper	/datum	code/modules/research/ordnance/_scipaper.dm:4	inert	datum_scientific_paper	0	0
-proc	/datum/scientific_paper	New	code/modules/research/ordnance/_scipaper.dm:25		no	-	proc
-proc	/datum/scientific_paper	calculate_gains	code/modules/research/ordnance/_scipaper.dm:39	calculated_tier	no	-	proc root
-proc	/datum/scientific_paper	calculate_tier	code/modules/research/ordnance/_scipaper.dm:52		no	-	proc root
-proc	/datum/scientific_paper	set_experiment	code/modules/research/ordnance/_scipaper.dm:74	ex_path,variable,data	no	-	proc root
-proc	/datum/scientific_paper	set_tier	code/modules/research/ordnance/_scipaper.dm:78	assigned_tier	no	-	proc root
-proc	/datum/scientific_paper	set_partner	code/modules/research/ordnance/_scipaper.dm:87	new_partner	no	-	proc root
-proc	/datum/scientific_paper	set_amount	code/modules/research/ordnance/_scipaper.dm:100		no	-	proc root
-proc	/datum/scientific_paper	allowed_to_publish	code/modules/research/ordnance/_scipaper.dm:115	techweb_to_check	no	-	proc root
-proc	/datum/scientific_paper	publish_paper	code/modules/research/ordnance/_scipaper.dm:120	techweb_to_publish	no	-	proc root
-proc	/datum/scientific_paper	clone_into	code/modules/research/ordnance/_scipaper.dm:137	typepath	no	-	proc root
-proc	/datum/scientific_paper	return_gist	code/modules/research/ordnance/_scipaper.dm:151		no	-	proc root
-proc	/datum/scientific_paper	autofill	code/modules/research/ordnance/_scipaper.dm:181		no	-	proc root
-type	/datum/scientific_paper/explosive	/datum/scientific_paper	code/modules/research/ordnance/_scipaper.dm:195	inert	datum_scientific_paper_explosive	0	0
-proc	/datum/scientific_paper/explosive	allowed_to_publish	code/modules/research/ordnance/_scipaper.dm:198	techweb_to_check	no	-	proc
-proc	/datum/scientific_paper/explosive	set_experiment	code/modules/research/ordnance/_scipaper.dm:210	ex_path,variable,data	no	-	proc
-proc	/datum/scientific_paper/explosive	clone_into	code/modules/research/ordnance/_scipaper.dm:223	typepath	no	-	proc
-type	/datum/scientific_paper/gaseous	/datum/scientific_paper	code/modules/research/ordnance/_scipaper.dm:232	inert	datum_scientific_paper_gaseous	0	0
-proc	/datum/scientific_paper/gaseous	allowed_to_publish	code/modules/research/ordnance/_scipaper.dm:239	techweb_to_check	no	-	proc
-proc	/datum/scientific_paper/gaseous	set_experiment	code/modules/research/ordnance/_scipaper.dm:250	ex_path,variable,data	no	-	proc
-proc	/datum/scientific_paper/gaseous	clone_into	code/modules/research/ordnance/_scipaper.dm:263	typepath	no	-	proc
+type	/datum/scientific_paper	/datum	code/modules/research/ordnance/_scipaper.dm:4	live	datum_scientific_paper	1	0
+proc	/datum/scientific_paper	New	code/modules/research/ordnance/_scipaper.dm:25		yes	full	proc
+proc	/datum/scientific_paper	calculate_gains	code/modules/research/ordnance/_scipaper.dm:39	calculated_tier	yes	full	proc root
+proc	/datum/scientific_paper	calculate_tier	code/modules/research/ordnance/_scipaper.dm:52		yes	full	proc root
+proc	/datum/scientific_paper	set_experiment	code/modules/research/ordnance/_scipaper.dm:74	ex_path,variable,data	yes	full	proc root
+proc	/datum/scientific_paper	set_tier	code/modules/research/ordnance/_scipaper.dm:78	assigned_tier	yes	full	proc root
+proc	/datum/scientific_paper	set_partner	code/modules/research/ordnance/_scipaper.dm:87	new_partner	yes	full	proc root
+proc	/datum/scientific_paper	set_amount	code/modules/research/ordnance/_scipaper.dm:100		yes	full	proc root
+proc	/datum/scientific_paper	allowed_to_publish	code/modules/research/ordnance/_scipaper.dm:115	techweb_to_check	yes	full	proc root
+proc	/datum/scientific_paper	publish_paper	code/modules/research/ordnance/_scipaper.dm:120	techweb_to_publish	yes	full	proc root
+proc	/datum/scientific_paper	clone_into	code/modules/research/ordnance/_scipaper.dm:137	typepath	yes	full	proc root
+proc	/datum/scientific_paper	return_gist	code/modules/research/ordnance/_scipaper.dm:151		yes	full	proc root
+proc	/datum/scientific_paper	autofill	code/modules/research/ordnance/_scipaper.dm:181		yes	full	proc root
+type	/datum/scientific_paper/explosive	/datum/scientific_paper	code/modules/research/ordnance/_scipaper.dm:195	live	datum_scientific_paper_explosive	1	0
+proc	/datum/scientific_paper/explosive	allowed_to_publish	code/modules/research/ordnance/_scipaper.dm:198	techweb_to_check	yes	full	proc
+proc	/datum/scientific_paper/explosive	set_experiment	code/modules/research/ordnance/_scipaper.dm:210	ex_path,variable,data	yes	full	proc
+proc	/datum/scientific_paper/explosive	clone_into	code/modules/research/ordnance/_scipaper.dm:223	typepath	yes	full	proc
+type	/datum/scientific_paper/gaseous	/datum/scientific_paper	code/modules/research/ordnance/_scipaper.dm:232	live	datum_scientific_paper_gaseous	1	0
+proc	/datum/scientific_paper/gaseous	allowed_to_publish	code/modules/research/ordnance/_scipaper.dm:239	techweb_to_check	yes	full	proc
+proc	/datum/scientific_paper/gaseous	set_experiment	code/modules/research/ordnance/_scipaper.dm:250	ex_path,variable,data	yes	full	proc
+proc	/datum/scientific_paper/gaseous	clone_into	code/modules/research/ordnance/_scipaper.dm:263	typepath	yes	full	proc
 type	/datum/scientific_partner	/datum	code/modules/research/ordnance/_scipaper.dm:274	live	datum_scientific_partner	1	0
 proc	/datum/scientific_partner	New	code/modules/research/ordnance/_scipaper.dm:284		yes	full	proc
 proc	/datum/scientific_partner	purchase_boost	code/modules/research/ordnance/_scipaper.dm:292	purchasing_techweb,node	yes	full	proc root
@@ -47232,7 +47232,7 @@ proc	/datum/techweb	unhide_node	code/modules/research/techweb/_techweb.dm:402	no
 proc	/datum/techweb	update_tiers	code/modules/research/techweb/_techweb.dm:410	base	yes	full	proc root
 proc	/datum/techweb	update_node_status	code/modules/research/techweb/_techweb.dm:427	node	yes	full	proc root
 proc	/datum/techweb	initialize_published_papers	code/modules/research/techweb/_techweb.dm:459		yes	full	proc root
-proc	/datum/techweb	add_scientific_paper	code/modules/research/techweb/_techweb.dm:470	paper_to_add	stub	deferred	proc root
+proc	/datum/techweb	add_scientific_paper	code/modules/research/techweb/_techweb.dm:470	paper_to_add	yes	full	proc root
 proc	/datum/techweb	get_researched_design_datums	code/modules/research/techweb/_techweb.dm:493		yes	full	proc root
 type	/datum/techweb/science	/datum/techweb	code/modules/research/techweb/techweb_types.dm:5	live	datum_techweb_science	1	0
 proc	/datum/techweb/science	research_node	code/modules/research/techweb/techweb_types.dm:9	node,force,auto_adjust_cost,get_that_dosh,research_source	yes	full	proc
@@ -62129,9 +62129,9 @@ proc	/obj/item/assembly/control/curtain	activate	code/modules/assembly/doorcontr
 type	/obj/item/assembly/control/airlock	/obj/item/assembly/control	code/modules/assembly/doorcontrol.dm:133	live	obj_item_assembly_control_airlock	1	0
 proc	/obj/item/assembly/control/airlock	activate	code/modules/assembly/doorcontrol.dm:145		yes	full	proc
 type	/obj/item/assembly/control/massdriver	/obj/item/assembly/control	code/modules/assembly/doorcontrol.dm:181	live	obj_item_assembly_control_massdriver	1	0
-proc	/obj/item/assembly/control/massdriver	activate	code/modules/assembly/doorcontrol.dm:184		stub	not_translated	proc
-proc	/obj/item/assembly/control/massdriver	activate_stage2	code/modules/assembly/doorcontrol.dm:194		yes	skeleton	proc root
-proc	/obj/item/assembly/control/massdriver	activate_stage3	code/modules/assembly/doorcontrol.dm:201		yes	skeleton	proc root
+proc	/obj/item/assembly/control/massdriver	activate	code/modules/assembly/doorcontrol.dm:184		yes	full	proc
+proc	/obj/item/assembly/control/massdriver	activate_stage2	code/modules/assembly/doorcontrol.dm:194		yes	full	proc root
+proc	/obj/item/assembly/control/massdriver	activate_stage3	code/modules/assembly/doorcontrol.dm:201		yes	full	proc root
 type	/obj/item/assembly/control/igniter	/obj/item/assembly/control	code/modules/assembly/doorcontrol.dm:210	live	obj_item_assembly_control_igniter	1	0
 proc	/obj/item/assembly/control/igniter	activate	code/modules/assembly/doorcontrol.dm:216		yes	full	proc
 type	/obj/item/assembly/control/flasher	/obj/item/assembly/control	code/modules/assembly/doorcontrol.dm:231	live	obj_item_assembly_control_flasher	0	0
@@ -86246,23 +86246,23 @@ proc	/obj/machinery/computer/operating	on_techweb_research	code/game/machinery/c
 proc	/obj/machinery/computer/operating	on_techweb_unresearch	code/game/machinery/computer/operating_computer.dm:275	source,design	yes	full	proc root
 proc	/obj/machinery/computer/operating	update_static_data_batched	code/game/machinery/computer/operating_computer.dm:285		yes	full	proc root
 type	/obj/machinery/computer/operating/oldstation	/obj/machinery/computer/operating	code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_rnd.dm:39	live	obj_machinery_computer_operating_oldstation	0	0
-type	/obj/machinery/computer/pod	/obj/machinery/computer	code/game/machinery/computer/pod.dm:2	inert	obj_machinery_computer_pod	0	1
-proc	/obj/machinery/computer/pod	Initialize	code/game/machinery/computer/pod.dm:18	mapload	no	-	proc
-proc	/obj/machinery/computer/pod	process	code/game/machinery/computer/pod.dm:25	seconds_per_tick	no	-	proc
-proc	/obj/machinery/computer/pod	alarm	code/game/machinery/computer/pod.dm:35		no	-	proc root
-proc	/obj/machinery/computer/pod	ui_interact	code/game/machinery/computer/pod.dm:58	user,ui	no	-	proc
-proc	/obj/machinery/computer/pod	ui_data	code/game/machinery/computer/pod.dm:65	user	no	-	proc
-proc	/obj/machinery/computer/pod	ui_act	code/game/machinery/computer/pod.dm:81	action,params,ui,state	no	-	proc
-type	/obj/machinery/computer/pod/old	/obj/machinery/computer/pod	code/game/machinery/computer/pod.dm:135	inert	obj_machinery_computer_pod_old	0	1
-type	/obj/machinery/computer/pod/old/mass_driver_controller	/obj/machinery/computer/pod/old	code/game/machinery/computer/pod.dm:141	inert	obj_machinery_computer_pod_old_mass_driver_controller	0	1
-type	/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver	/obj/machinery/computer/pod/old/mass_driver_controller	code/game/machinery/computer/pod.dm:148	inert	obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver	0	1
-type	/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver/longrange	/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver	code/game/machinery/computer/pod.dm:152	inert	obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver_longrange	0	0
-type	/obj/machinery/computer/pod/old/mass_driver_controller/chapelgun	/obj/machinery/computer/pod/old/mass_driver_controller	code/game/machinery/computer/pod.dm:155	inert	obj_machinery_computer_pod_old_mass_driver_controller_chapelgun	0	1
-type	/obj/machinery/computer/pod/old/mass_driver_controller/trash	/obj/machinery/computer/pod/old/mass_driver_controller	code/game/machinery/computer/pod.dm:158	inert	obj_machinery_computer_pod_old_mass_driver_controller_trash	0	1
-type	/obj/machinery/computer/pod/old/mass_driver_controller/shack	/obj/machinery/computer/pod/old/mass_driver_controller	code/game/machinery/computer/pod.dm:161	inert	obj_machinery_computer_pod_old_mass_driver_controller_shack	0	1
-type	/obj/machinery/computer/pod/old/mass_driver_controller/feeder	/obj/machinery/computer/pod/old/mass_driver_controller	code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:91	inert	obj_machinery_computer_pod_old_mass_driver_controller_feeder	0	0
-type	/obj/machinery/computer/pod/old/syndicate	/obj/machinery/computer/pod/old	code/game/machinery/computer/pod.dm:164	inert	obj_machinery_computer_pod_old_syndicate	0	0
-type	/obj/machinery/computer/pod/old/swf	/obj/machinery/computer/pod/old	code/game/machinery/computer/pod.dm:169	inert	obj_machinery_computer_pod_old_swf	0	0
+type	/obj/machinery/computer/pod	/obj/machinery/computer	code/game/machinery/computer/pod.dm:2	live	obj_machinery_computer_pod	1	1
+proc	/obj/machinery/computer/pod	Initialize	code/game/machinery/computer/pod.dm:18	mapload	yes	full	proc
+proc	/obj/machinery/computer/pod	process	code/game/machinery/computer/pod.dm:25	seconds_per_tick	yes	full	proc
+proc	/obj/machinery/computer/pod	alarm	code/game/machinery/computer/pod.dm:35		yes	full	proc root
+proc	/obj/machinery/computer/pod	ui_interact	code/game/machinery/computer/pod.dm:58	user,ui	yes	full	proc
+proc	/obj/machinery/computer/pod	ui_data	code/game/machinery/computer/pod.dm:65	user	yes	full	proc
+proc	/obj/machinery/computer/pod	ui_act	code/game/machinery/computer/pod.dm:81	action,params,ui,state	yes	full	proc
+type	/obj/machinery/computer/pod/old	/obj/machinery/computer/pod	code/game/machinery/computer/pod.dm:135	live	obj_machinery_computer_pod_old	0	1
+type	/obj/machinery/computer/pod/old/mass_driver_controller	/obj/machinery/computer/pod/old	code/game/machinery/computer/pod.dm:141	live	obj_machinery_computer_pod_old_mass_driver_controller	0	1
+type	/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver	/obj/machinery/computer/pod/old/mass_driver_controller	code/game/machinery/computer/pod.dm:148	live	obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver	0	1
+type	/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver/longrange	/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver	code/game/machinery/computer/pod.dm:152	live	obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver_longrange	0	0
+type	/obj/machinery/computer/pod/old/mass_driver_controller/chapelgun	/obj/machinery/computer/pod/old/mass_driver_controller	code/game/machinery/computer/pod.dm:155	live	obj_machinery_computer_pod_old_mass_driver_controller_chapelgun	0	1
+type	/obj/machinery/computer/pod/old/mass_driver_controller/trash	/obj/machinery/computer/pod/old/mass_driver_controller	code/game/machinery/computer/pod.dm:158	live	obj_machinery_computer_pod_old_mass_driver_controller_trash	0	1
+type	/obj/machinery/computer/pod/old/mass_driver_controller/shack	/obj/machinery/computer/pod/old/mass_driver_controller	code/game/machinery/computer/pod.dm:161	live	obj_machinery_computer_pod_old_mass_driver_controller_shack	0	1
+type	/obj/machinery/computer/pod/old/mass_driver_controller/feeder	/obj/machinery/computer/pod/old/mass_driver_controller	code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:91	live	obj_machinery_computer_pod_old_mass_driver_controller_feeder	0	0
+type	/obj/machinery/computer/pod/old/syndicate	/obj/machinery/computer/pod/old	code/game/machinery/computer/pod.dm:164	live	obj_machinery_computer_pod_old_syndicate	0	0
+type	/obj/machinery/computer/pod/old/swf	/obj/machinery/computer/pod/old	code/game/machinery/computer/pod.dm:169	live	obj_machinery_computer_pod_old_swf	0	0
 type	/obj/machinery/computer/robotics	/obj/machinery/computer	code/game/machinery/computer/robot.dm:2	live	obj_machinery_computer_robotics	1	1
 proc	/obj/machinery/computer/robotics	can_control	code/game/machinery/computer/robot.dm:14	user,R	yes	full	proc root
 proc	/obj/machinery/computer/robotics	ui_interact	code/game/machinery/computer/robot.dm:28	user,ui	yes	full	proc
@@ -87573,23 +87573,23 @@ proc	/obj/machinery/limbgrower	check_busy	code/game/machinery/limbgrower.dm:324	
 proc	/obj/machinery/limbgrower	can_build	code/game/machinery/limbgrower.dm:336	limb_design	yes	full	proc root
 type	/obj/machinery/limbgrower/fullupgrade	/obj/machinery/limbgrower	code/game/machinery/limbgrower.dm:343	live	obj_machinery_limbgrower_fullupgrade	1	0
 proc	/obj/machinery/limbgrower/fullupgrade	Initialize	code/game/machinery/limbgrower.dm:346	mapload	yes	full	proc
-type	/obj/machinery/mass_driver	/obj/machinery	code/game/machinery/mass_driver.dm:2	inert	obj_machinery_mass_driver	0	1
-proc	/obj/machinery/mass_driver	Initialize	code/game/machinery/mass_driver.dm:14	mapload	no	-	proc
-proc	/obj/machinery/mass_driver	Destroy	code/game/machinery/mass_driver.dm:31		no	-	proc
-proc	/obj/machinery/mass_driver	connect_to_shuttle	code/game/machinery/mass_driver.dm:37	mapload,port,dock	no	-	proc
-proc	/obj/machinery/mass_driver	drive	code/game/machinery/mass_driver.dm:40	amount	no	-	proc root
-proc	/obj/machinery/mass_driver	update_icon_state	code/game/machinery/mass_driver.dm:58		no	-	proc
-proc	/obj/machinery/mass_driver	item_interaction	code/game/machinery/mass_driver.dm:62	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/mass_driver	screwdriver_act	code/game/machinery/mass_driver.dm:69	user,tool	no	-	proc
-proc	/obj/machinery/mass_driver	wrench_act	code/game/machinery/mass_driver.dm:72	user,tool	no	-	proc
-proc	/obj/machinery/mass_driver	crowbar_act	code/game/machinery/mass_driver.dm:75	user,tool	no	-	proc
-proc	/obj/machinery/mass_driver	RefreshParts	code/game/machinery/mass_driver.dm:78		no	-	proc
-proc	/obj/machinery/mass_driver	emp_act	code/game/machinery/mass_driver.dm:83	severity	no	-	proc
-type	/obj/machinery/mass_driver/chapelgun	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:19	inert	obj_machinery_mass_driver_chapelgun	0	1
-type	/obj/machinery/mass_driver/ordnance	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:23	inert	obj_machinery_mass_driver_ordnance	0	1
-type	/obj/machinery/mass_driver/trash	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:26	inert	obj_machinery_mass_driver_trash	0	1
-type	/obj/machinery/mass_driver/shack	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:29	inert	obj_machinery_mass_driver_shack	0	1
-type	/obj/machinery/mass_driver/feeder	/obj/machinery/mass_driver	code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:87	inert	obj_machinery_mass_driver_feeder	0	0
+type	/obj/machinery/mass_driver	/obj/machinery	code/game/machinery/mass_driver.dm:2	live	obj_machinery_mass_driver	1	1
+proc	/obj/machinery/mass_driver	Initialize	code/game/machinery/mass_driver.dm:14	mapload	yes	full	proc
+proc	/obj/machinery/mass_driver	Destroy	code/game/machinery/mass_driver.dm:31		yes	full	proc
+proc	/obj/machinery/mass_driver	connect_to_shuttle	code/game/machinery/mass_driver.dm:37	mapload,port,dock	yes	full	proc
+proc	/obj/machinery/mass_driver	drive	code/game/machinery/mass_driver.dm:40	amount	yes	full	proc root
+proc	/obj/machinery/mass_driver	update_icon_state	code/game/machinery/mass_driver.dm:58		yes	full	proc
+proc	/obj/machinery/mass_driver	item_interaction	code/game/machinery/mass_driver.dm:62	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/mass_driver	screwdriver_act	code/game/machinery/mass_driver.dm:69	user,tool	yes	full	proc
+proc	/obj/machinery/mass_driver	wrench_act	code/game/machinery/mass_driver.dm:72	user,tool	yes	full	proc
+proc	/obj/machinery/mass_driver	crowbar_act	code/game/machinery/mass_driver.dm:75	user,tool	yes	full	proc
+proc	/obj/machinery/mass_driver	RefreshParts	code/game/machinery/mass_driver.dm:78		yes	full	proc
+proc	/obj/machinery/mass_driver	emp_act	code/game/machinery/mass_driver.dm:83	severity	yes	full	proc
+type	/obj/machinery/mass_driver/chapelgun	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:19	live	obj_machinery_mass_driver_chapelgun	0	1
+type	/obj/machinery/mass_driver/ordnance	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:23	live	obj_machinery_mass_driver_ordnance	0	1
+type	/obj/machinery/mass_driver/trash	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:26	live	obj_machinery_mass_driver_trash	0	1
+type	/obj/machinery/mass_driver/shack	/obj/machinery/mass_driver	code/game/machinery/mass_driver.dm:29	live	obj_machinery_mass_driver_shack	0	1
+type	/obj/machinery/mass_driver/feeder	/obj/machinery/mass_driver	code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:87	live	obj_machinery_mass_driver_feeder	0	0
 type	/obj/machinery/mechpad	/obj/machinery	code/game/machinery/mechlaunchpad.dm:2	inert	obj_machinery_mechpad	0	1
 proc	/obj/machinery/mechpad	Initialize	code/game/machinery/mechlaunchpad.dm:15	mapload	no	-	proc
 proc	/obj/machinery/mechpad	examine	code/game/machinery/mechlaunchpad.dm:19	user	no	-	proc
@@ -89605,33 +89605,33 @@ proc	/obj/machinery/atmospherics/components/binary/crystallizer	ui_static_data	c
 proc	/obj/machinery/atmospherics/components/binary/crystallizer	ui_data	code/modules/atmospherics/machinery/components/gas_recipe_machines/crystallizer.dm:250		yes	full	proc
 proc	/obj/machinery/atmospherics/components/binary/crystallizer	ui_act	code/modules/atmospherics/machinery/components/gas_recipe_machines/crystallizer.dm:301	action,params,ui,state	yes	full	proc
 proc	/obj/machinery/atmospherics/components/binary/crystallizer	update_layer	code/modules/atmospherics/machinery/components/gas_recipe_machines/crystallizer.dm:330		yes	full	proc
-type	/obj/machinery/atmospherics/components/binary/tank_compressor	/obj/machinery/atmospherics/components/binary	code/modules/research/ordnance/tank_compressor.dm:6	inert	obj_machinery_atmospherics_components_binary_tank_compressor	0	1
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	Initialize	code/modules/research/ordnance/tank_compressor.dm:26	mapload	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	examine	code/modules/research/ordnance/tank_compressor.dm:32		no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	item_interaction	code/modules/research/ordnance/tank_compressor.dm:45	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	wrench_act	code/modules/research/ordnance/tank_compressor.dm:75	user,tool	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	default_change_direction_wrench	code/modules/research/ordnance/tank_compressor.dm:82	user,I	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	screwdriver_act	code/modules/research/ordnance/tank_compressor.dm:89	user,tool	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	crowbar_act	code/modules/research/ordnance/tank_compressor.dm:97	user,tool	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	process_atmos	code/modules/research/ordnance/tank_compressor.dm:104		no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	assume_air	code/modules/research/ordnance/tank_compressor.dm:128	giver	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	tank_destruction	code/modules/research/ordnance/tank_compressor.dm:135		no	-	proc root
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	explosion_handle	code/modules/research/ordnance/tank_compressor.dm:146	source,arguments	no	-	proc root
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	flush_buffer	code/modules/research/ordnance/tank_compressor.dm:156		no	-	proc root
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	record_data	code/modules/research/ordnance/tank_compressor.dm:168		no	-	proc root
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	apply_experiments	code/modules/research/ordnance/tank_compressor.dm:180	record	no	-	proc root
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	print	code/modules/research/ordnance/tank_compressor.dm:191	user,record	no	-	proc root
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	eject_tank	code/modules/research/ordnance/tank_compressor.dm:206	user	no	-	proc root
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	eject_disk	code/modules/research/ordnance/tank_compressor.dm:220	user	no	-	proc root
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	Exited	code/modules/research/ordnance/tank_compressor.dm:231	gone,direction	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	on_deconstruction	code/modules/research/ordnance/tank_compressor.dm:240	disassembled	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	Destroy	code/modules/research/ordnance/tank_compressor.dm:245		no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	update_icon_state	code/modules/research/ordnance/tank_compressor.dm:252		no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	update_overlays	code/modules/research/ordnance/tank_compressor.dm:259		no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	ui_interact	code/modules/research/ordnance/tank_compressor.dm:270	user,ui	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	ui_act	code/modules/research/ordnance/tank_compressor.dm:277	action,params,ui,state	no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	ui_static_data	code/modules/research/ordnance/tank_compressor.dm:303		no	-	proc
-proc	/obj/machinery/atmospherics/components/binary/tank_compressor	ui_data	code/modules/research/ordnance/tank_compressor.dm:312	user	no	-	proc
+type	/obj/machinery/atmospherics/components/binary/tank_compressor	/obj/machinery/atmospherics/components/binary	code/modules/research/ordnance/tank_compressor.dm:6	live	obj_machinery_atmospherics_components_binary_tank_compressor	1	1
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	Initialize	code/modules/research/ordnance/tank_compressor.dm:26	mapload	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	examine	code/modules/research/ordnance/tank_compressor.dm:32		yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	item_interaction	code/modules/research/ordnance/tank_compressor.dm:45	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	wrench_act	code/modules/research/ordnance/tank_compressor.dm:75	user,tool	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	default_change_direction_wrench	code/modules/research/ordnance/tank_compressor.dm:82	user,I	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	screwdriver_act	code/modules/research/ordnance/tank_compressor.dm:89	user,tool	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	crowbar_act	code/modules/research/ordnance/tank_compressor.dm:97	user,tool	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	process_atmos	code/modules/research/ordnance/tank_compressor.dm:104		yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	assume_air	code/modules/research/ordnance/tank_compressor.dm:128	giver	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	tank_destruction	code/modules/research/ordnance/tank_compressor.dm:135		yes	full	proc root
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	explosion_handle	code/modules/research/ordnance/tank_compressor.dm:146	source,arguments	yes	full	proc root
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	flush_buffer	code/modules/research/ordnance/tank_compressor.dm:156		yes	full	proc root
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	record_data	code/modules/research/ordnance/tank_compressor.dm:168		yes	full	proc root
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	apply_experiments	code/modules/research/ordnance/tank_compressor.dm:180	record	yes	full	proc root
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	print	code/modules/research/ordnance/tank_compressor.dm:191	user,record	yes	full	proc root
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	eject_tank	code/modules/research/ordnance/tank_compressor.dm:206	user	yes	full	proc root
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	eject_disk	code/modules/research/ordnance/tank_compressor.dm:220	user	yes	full	proc root
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	Exited	code/modules/research/ordnance/tank_compressor.dm:231	gone,direction	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	on_deconstruction	code/modules/research/ordnance/tank_compressor.dm:240	disassembled	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	Destroy	code/modules/research/ordnance/tank_compressor.dm:245		yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	update_icon_state	code/modules/research/ordnance/tank_compressor.dm:252		yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	update_overlays	code/modules/research/ordnance/tank_compressor.dm:259		yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	ui_interact	code/modules/research/ordnance/tank_compressor.dm:270	user,ui	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	ui_act	code/modules/research/ordnance/tank_compressor.dm:277	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	ui_static_data	code/modules/research/ordnance/tank_compressor.dm:303		yes	full	proc
+proc	/obj/machinery/atmospherics/components/binary/tank_compressor	ui_data	code/modules/research/ordnance/tank_compressor.dm:312	user	yes	full	proc
 type	/obj/machinery/atmospherics/components/trinary	/obj/machinery/atmospherics/components	code/modules/atmospherics/machinery/components/trinary_devices/trinary_devices.dm:2	live	obj_machinery_atmospherics_components_trinary	1	1
 proc	/obj/machinery/atmospherics/components/trinary	set_init_directions	code/modules/atmospherics/machinery/components/trinary_devices/trinary_devices.dm:15		yes	full	proc
 proc	/obj/machinery/atmospherics/components/trinary	get_node_connects	code/modules/atmospherics/machinery/components/trinary_devices/trinary_devices.dm:30		yes	full	proc
@@ -93993,26 +93993,26 @@ proc	/obj/machinery/gizmo/toggle	off_state	code/modules/research/gizmo/gizmo_mac
 type	/obj/machinery/gizmo/toggle/tucker_tubes	/obj/machinery/gizmo/toggle	code/modules/research/gizmo/gizmo_machines.dm:116	inert	obj_machinery_gizmo_toggle_tucker_tubes	0	1
 type	/obj/machinery/gizmo/voice	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:136	inert	obj_machinery_gizmo_voice	0	0
 type	/obj/machinery/gizmo/cursed	/obj/machinery/gizmo	code/modules/research/gizmo/gizmo_machines.dm:139	inert	obj_machinery_gizmo_cursed	0	0
-type	/obj/machinery/doppler_array	/obj/machinery	code/modules/research/ordnance/doppler_array.dm:2	inert	obj_machinery_doppler_array	0	1
-proc	/obj/machinery/doppler_array	Initialize	code/modules/research/ordnance/doppler_array.dm:26	mapload	no	-	proc
-proc	/obj/machinery/doppler_array	examine	code/modules/research/ordnance/doppler_array.dm:47	user	no	-	proc
-proc	/obj/machinery/doppler_array	item_interaction	code/modules/research/ordnance/doppler_array.dm:51	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/doppler_array	wrench_act	code/modules/research/ordnance/doppler_array.dm:61	user,tool	no	-	proc
-proc	/obj/machinery/doppler_array	screwdriver_act	code/modules/research/ordnance/doppler_array.dm:65	user,tool	no	-	proc
-proc	/obj/machinery/doppler_array	crowbar_act	code/modules/research/ordnance/doppler_array.dm:70	user,tool	no	-	proc
-proc	/obj/machinery/doppler_array	print	code/modules/research/ordnance/doppler_array.dm:74	user,record	no	-	proc root
-proc	/obj/machinery/doppler_array	apply_experiments	code/modules/research/ordnance/doppler_array.dm:93	record	no	-	proc root
-proc	/obj/machinery/doppler_array	sense_explosion	code/modules/research/ordnance/doppler_array.dm:148	source,epicenter,devastation_range,heavy_impact_range,light_impact_range,took,orig_dev_range,orig_heavy_range,orig_light_range,explosion_cause,explosion_index	no	-	proc root
-proc	/obj/machinery/doppler_array	eject_disk	code/modules/research/ordnance/doppler_array.dm:201	user	no	-	proc root
-proc	/obj/machinery/doppler_array	Exited	code/modules/research/ordnance/doppler_array.dm:212	gone,direction	no	-	proc
-proc	/obj/machinery/doppler_array	powered	code/modules/research/ordnance/doppler_array.dm:217		no	-	proc
-proc	/obj/machinery/doppler_array	update_overlays	code/modules/research/ordnance/doppler_array.dm:222		no	-	proc
-proc	/obj/machinery/doppler_array	on_deconstruction	code/modules/research/ordnance/doppler_array.dm:234	disassembled	no	-	proc
-proc	/obj/machinery/doppler_array	Destroy	code/modules/research/ordnance/doppler_array.dm:238		no	-	proc
-proc	/obj/machinery/doppler_array	update_doppler_light	code/modules/research/ordnance/doppler_array.dm:243		no	-	proc root
-proc	/obj/machinery/doppler_array	ui_interact	code/modules/research/ordnance/doppler_array.dm:248	user,ui	no	-	proc
-proc	/obj/machinery/doppler_array	ui_data	code/modules/research/ordnance/doppler_array.dm:254	user	no	-	proc
-proc	/obj/machinery/doppler_array	ui_act	code/modules/research/ordnance/doppler_array.dm:287	action,params,ui,state	no	-	proc
+type	/obj/machinery/doppler_array	/obj/machinery	code/modules/research/ordnance/doppler_array.dm:2	live	obj_machinery_doppler_array	1	1
+proc	/obj/machinery/doppler_array	Initialize	code/modules/research/ordnance/doppler_array.dm:26	mapload	yes	full	proc
+proc	/obj/machinery/doppler_array	examine	code/modules/research/ordnance/doppler_array.dm:47	user	yes	full	proc
+proc	/obj/machinery/doppler_array	item_interaction	code/modules/research/ordnance/doppler_array.dm:51	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/doppler_array	wrench_act	code/modules/research/ordnance/doppler_array.dm:61	user,tool	yes	full	proc
+proc	/obj/machinery/doppler_array	screwdriver_act	code/modules/research/ordnance/doppler_array.dm:65	user,tool	yes	full	proc
+proc	/obj/machinery/doppler_array	crowbar_act	code/modules/research/ordnance/doppler_array.dm:70	user,tool	yes	full	proc
+proc	/obj/machinery/doppler_array	print	code/modules/research/ordnance/doppler_array.dm:74	user,record	yes	full	proc root
+proc	/obj/machinery/doppler_array	apply_experiments	code/modules/research/ordnance/doppler_array.dm:93	record	yes	full	proc root
+proc	/obj/machinery/doppler_array	sense_explosion	code/modules/research/ordnance/doppler_array.dm:148	source,epicenter,devastation_range,heavy_impact_range,light_impact_range,took,orig_dev_range,orig_heavy_range,orig_light_range,explosion_cause,explosion_index	yes	full	proc root
+proc	/obj/machinery/doppler_array	eject_disk	code/modules/research/ordnance/doppler_array.dm:201	user	yes	full	proc root
+proc	/obj/machinery/doppler_array	Exited	code/modules/research/ordnance/doppler_array.dm:212	gone,direction	yes	full	proc
+proc	/obj/machinery/doppler_array	powered	code/modules/research/ordnance/doppler_array.dm:217		yes	full	proc
+proc	/obj/machinery/doppler_array	update_overlays	code/modules/research/ordnance/doppler_array.dm:222		yes	full	proc
+proc	/obj/machinery/doppler_array	on_deconstruction	code/modules/research/ordnance/doppler_array.dm:234	disassembled	yes	full	proc
+proc	/obj/machinery/doppler_array	Destroy	code/modules/research/ordnance/doppler_array.dm:238		yes	full	proc
+proc	/obj/machinery/doppler_array	update_doppler_light	code/modules/research/ordnance/doppler_array.dm:243		yes	full	proc root
+proc	/obj/machinery/doppler_array	ui_interact	code/modules/research/ordnance/doppler_array.dm:248	user,ui	yes	full	proc
+proc	/obj/machinery/doppler_array	ui_data	code/modules/research/ordnance/doppler_array.dm:254	user	yes	full	proc
+proc	/obj/machinery/doppler_array	ui_act	code/modules/research/ordnance/doppler_array.dm:287	action,params,ui,state	yes	full	proc
 type	/obj/machinery/vatgrower	/obj/machinery	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:3	live	obj_machinery_vatgrower	1	1
 proc	/obj/machinery/vatgrower	Initialize	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:21	mapload	yes	full	proc
 proc	/obj/machinery/vatgrower	create_reagents	code/modules/research/xenobiology/vatgrowing/vatgrower.dm:40	max_vol,flags	yes	full	proc

@@ -525,9 +525,9 @@ public partial class datum_computer_file_program_filemanager
     }
 }
 
-// tg: code/modules/modular_computers/file_system/programs/frontier.dm:2
-[DmPath("/datum/computer_file/program/scipaper_program"), DmGeneratedOnly, DmInert]
-public partial class datum_computer_file_program_scipaper_program : datum_computer_file_program
+// tg: code/modules/modular_computers/file_system/programs/frontier.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/computer_file/program/scipaper_program")]
+public partial class datum_computer_file_program_scipaper_program
 {
     public datum_techweb linked_techweb; // tg: code/modules/modular_computers/file_system/programs/frontier.dm:13
     public datum_scientific_paper paper_to_be; // tg: code/modules/modular_computers/file_system/programs/frontier.dm:15
@@ -1787,9 +1787,9 @@ public partial class datum_computer_file_data_text_logfile : datum_computer_file
     }
 }
 
-// tg: code/modules/modular_computers/file_system/data.dm:41
-[DmPath("/datum/computer_file/data/ordnance"), DmGeneratedOnly, DmInert]
-public partial class datum_computer_file_data_ordnance : datum_computer_file_data
+// tg: code/modules/modular_computers/file_system/data.dm:41 (the var block of a hand-written class)
+[DmPath("/datum/computer_file/data/ordnance")]
+public partial class datum_computer_file_data_ordnance
 {
     public DmList possible_experiments; // tg: code/modules/modular_computers/file_system/data.dm:45
 
@@ -1801,9 +1801,9 @@ public partial class datum_computer_file_data_ordnance : datum_computer_file_dat
     }
 }
 
-// tg: code/modules/modular_computers/file_system/data.dm:60
-[DmPath("/datum/computer_file/data/ordnance/explosive"), DmGeneratedOnly, DmInert]
-public partial class datum_computer_file_data_ordnance_explosive : datum_computer_file_data_ordnance
+// tg: code/modules/modular_computers/file_system/data.dm:60 (the var block of a hand-written class)
+[DmPath("/datum/computer_file/data/ordnance/explosive")]
+public partial class datum_computer_file_data_ordnance_explosive
 {
     public datum_data_tachyon_record explosion_record; // tg: code/modules/modular_computers/file_system/data.dm:62
 
@@ -1814,9 +1814,9 @@ public partial class datum_computer_file_data_ordnance_explosive : datum_compute
     }
 }
 
-// tg: code/modules/modular_computers/file_system/data.dm:77
-[DmPath("/datum/computer_file/data/ordnance/gaseous"), DmGeneratedOnly, DmInert]
-public partial class datum_computer_file_data_ordnance_gaseous : datum_computer_file_data_ordnance
+// tg: code/modules/modular_computers/file_system/data.dm:77 (the var block of a hand-written class)
+[DmPath("/datum/computer_file/data/ordnance/gaseous")]
+public partial class datum_computer_file_data_ordnance_gaseous
 {
     public datum_data_compressor_record gas_record; // tg: code/modules/modular_computers/file_system/data.dm:79
 

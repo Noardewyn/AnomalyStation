@@ -1849,7 +1849,7 @@ inquisitive ghost preference; the client's `Supermatter` and `NtosSupermatter` w
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `console_presets.dm:93-170` | the cargo interfacing consoles: translated (gaps P4d, section 170: the department order app, the chat client's channels and `#cargobus`; their shipping, budget and coupon apps live, the bounty board since silicons SI6b, the restock tracker still inert) | MetaStation's cargo and department consoles | translated (section 170) | `computers/machinery/console_presets.cs` |
-| the programs `scipaper_program`, `arcade` (`card_mod`, `job_management`, `power_monitor`, `chatclient`, `ntnetmonitor` and `robocontrol` came with gaps S4, section 164; `ai_restorer` and `portrait_printer` with the silicons campaign) | the consoles' other apps: stored as tg stores them, generated-only; running one shows the client's placeholder for an untranslated window (as the PDA's, section 74) | an engineering, identification, research, command, civilian or curator console | the packages that port them (`alarm_monitor`, Canary, came with E6: section 86) | (none) |
+| the programs `arcade` (`scipaper_program` came with gaps OR1, section 248; `card_mod`, `job_management`, `power_monitor`, `chatclient`, `ntnetmonitor` and `robocontrol` came with gaps S4, section 164; `ai_restorer` and `portrait_printer` with the silicons campaign) | the consoles' other apps: stored as tg stores them, generated-only; running one shows the client's placeholder for an untranslated window (as the PDA's, section 74) | an engineering, identification, research, command, civilian or curator console | the packages that port them (`alarm_monitor`, Canary, came with E6: section 86) | (none) |
 | `modular_computer.dm:89` | `emag_act` (`live-partial.txt` E2) | an emag on a console | M10+ (antagonists) | `Generated/LivePartial/obj.g.cs` |
 | `controllers/subsystem/persistence/*.dm` but `counter_delamination.dm`, `incident_display.dm:103`, `:183`, `:355` | SSpersistence: only `Initialize`, `collect_data` and the delamination counter are translated (DV220); every other load and save (Poly, engravings, tattoos, trophies, recent maps, photos, outfits, adventures, recipes, scars, message bottles) and the tram counters (`tram_hits_this_round` and `tram_hits_last_round` stay 0: no trams) are left out with a comment | a round's start and end, a multitool's switch to tram mode | M10+ (round persistence) | `controllers/subsystem/persistence/_persistence.cs` |
 | `incident_display.dm:102` | the tram collisions (`SStransport`'s `COMSIG_TRAM_COLLISION`; no tram on MetaStation) | a tram display | with the trams | `game/machinery/incident_display.cs` |
@@ -3286,8 +3286,6 @@ retired), the operating computer's and the medbot's techweb links, the war decla
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `research/techweb/_techweb.dm:470` | `add_scientific_paper`: publishing an ordnance paper (`live-partial.txt`) | NT Frontier | a later research campaign | (generated) |
-| `research/ordnance/_scipaper.dm` (the papers) | the papers (the experiments, their handler, the scanners and the destructive analyzer since gaps RD3, section 195; the experimentor since gaps RD4, section 202) | NT Frontier | a later research campaign | inert types |
 | `research/rdconsole.dm`, `server.dm`, `server_control.dm`, `designs/*` printers (protolathes, imprinters, techfabs, the autolathe) | the R&D consoles, servers and fabricators: no server mines points, nothing enqueues a node | research | a later research campaign | inert types |
 
 ## 156. The AI (silicons SI4, D326)
@@ -4043,7 +4041,6 @@ client's `ExperimentConfigure` (with its public `Experiment` and `TechwebServer`
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `types/ordnance.dm` | the ordnance experiments are completed by publishing a paper with the NT Frontier app (the doppler array's and the tank compressor's records, `_scipaper.dm`): the papers and the ordnance machines are not ported | the ordnance lab, NT Frontier | the papers and the ordnance lab | `experisci/experiment/types/ordnance.cs` |
 | `types/exploration.dm` | the exploration scans read `GLOB.exploration_sites`, which the explorer drones' scanner array fills (`explorer_drone/`, with its own experiment handler, `scanner_array.dm:188`): the list stays empty and no exploration scan completes | the exodrone scanner array | the explorer drones | `experisci/experiment/types/exploration.cs` |
 | `types/scanning_fish.dm` | the fish scans' other handlers (the tech fishing rod, `fishing_rod.dm:790`, and the fish analyzer, `fish_analyzer.dm:34`) and the fishing portal generator's settings they unlock (`fishing_portal_machine.dm:273`): fishing is not ported; the experi-scanner and the destructive scanner scan a fish | fishing | fishing | `experisci/experiment/types/scanning_fish.cs` |
 | `random_scanning.dm:33` | the exosuit load test counts only crew-built mechs (`TRAIT_MECHA_CREATED_NORMALLY`, given by the mech construction paths, `mecha_construction_paths.dm:35`, inert): none passes until mech construction comes | scanning an equipped mech | mech construction | `experisci/experiment/types/random_scanning.cs` |
@@ -5383,3 +5380,25 @@ second argument to `give_payout`, which takes one; `datum_card`'s numbers are te
 | `holodeck/items.dm:135`, `slotmachine.dm`, `roulette_machine.dm` | the emissive glow of the ready button and the machines' lights on the emissive plane (DV12) | always | the client's emissives (DV12) | (the files) |
 | the client | the holodeck's program swap, the arcade windows' pictures and mood faces, the slot reels rolling, the roulette's flicks and lights, the summons' holograms, seen in a real client | always | the client checks | (client) |
 | the 3D models | the roulette table, the card holders and summons, the mana and life buttons, the display panel, the cards, packs, decks and binder, the model Orion ship and the ready button keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+
+## 248. Ordnance and the small machines (gaps OR1, D339)
+Live: `research/ordnance/` whole: the tank compressor (`tank_compressor.dm`: it pumps its input port's gas into an inserted tank up to
+5000 kPa, keeps what the tank leaks in its buffer and records it, ten moles or more, as a gas record when the tank is destroyed or
+ejected, absorbs a blast inside it, prints a record to a disk as a gaseous ordnance file with the experiments it fits; the
+TankCompressor window), the tachyon-doppler array (`doppler_array.dm`: it records every blast in front of it within 150 tiles with the
+factual and the theoretical radii and the exploding tank's reactions, states it, prints it to a disk; its red light while powered and
+its rotation; the DopplerArray window), the scientific papers and their partners (`_scipaper.dm`, `scipaper_partner.dm`); the NT Frontier
+app (`programs/frontier.dm`, the NtosScipaper window), the ordnance data files (`file_system/data.dm:36-87`) and the techweb's
+`add_scientific_paper` (publishing completes the ordnance experiment and pays the science budget); `game/machinery/mass_driver.dm` with
+`datums/wires/mass_driver.dm` (the testing range's, the chapel's, the disposals' and the shack's drivers with their launch flick) and
+`computer/pod.dm` (the launch controls with the MassDriverControl window), and the mass driver button's controller
+(`assembly/doorcontrol.dm:180-207`). Meta's compressor, doppler array, four drivers and four controls boot live. The models were already
+in the catalog (the compressor's doors and hatch, the doppler's panel, the driver's launch flick). Kept as tg has it: the launch control's
+`process` sleeps into its alarm (pod.dm:25, the port runs it detached as `set waitfor = FALSE` does); `add_scientific_paper` looks for
+the experiment's type among the papers and so always completes it again; a paper's `0 in gains` never matches; the purchase message
+reads its refund by text, so it says "refunding  points"; each `RefreshParts` adds the servos' range to the driver's again. Left (the
+package is far bigger than one helper's run; the rest waits for its own run, gaps OR1's second part):
+| `research/anomaly/anomaly_refinery.dm`, `raw_anomaly.dm`, `anomaly_core.dm` | the anomaly refinery (imploding a raw core with a transfer valve, the AnomalyRefinery window), the raw anomaly cores and the anomaly cores' signals (inert) | Meta's refinery and its three random raw cores, a neutralized anomaly | gaps OR1, second part | (generated) |
+| the anomaly cores' users | the reactive armours, the polymorph belt, the perceptomatrix, the anomalock heart, the wormhole projector and the gravity gun, the Atlas spine, the anomaly releaser, the dimensional bomb core, the weather tower's charges, the MOD core slot's cores from anomalies (their rows elsewhere name the cores) | those items | gaps OR1, second part (each where nothing else blocks it) | (generated) |
+| `research/gizmo/` | the gizmos with their modes, machines, puzzle, voice, wires and window (inert) | Meta's gizmo spawner and the tucker tubes | gaps OR1, second part | (generated) |
+| `game/machinery/quantum_pad.dm`, `computer/launchpad_control.dm`, `mechlaunchpad.dm`, `computer/mechlaunchpad.dm`, `ecto_sniffer.dm` | the quantum pad, the launchpad console (LaunchpadConsole window), the mech pad and its console (MechpadConsole), the ectoscopic sniffer (inert) | Meta's mech pads and sniffer, built pads | gaps OR1, second part | (generated) |

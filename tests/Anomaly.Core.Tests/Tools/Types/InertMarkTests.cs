@@ -80,14 +80,14 @@ public class InertMarkTests
     [Fact]
     public void HandPickedTypesFollowTheRule()
     {
-        // The ordnance mass driver that defines no procs: inert while /obj/machinery/mass_driver's procs are not declared (the mass
-        // drivers wait; the departmental protolathe of this example went live in gaps RD1, the syndicate bomb in the syndicate
-        // campaign G2, the air sensor in engineering package E5, the thermomachine in M7 slice 4, the firelock of M3's example in
-        // M4b slice 2).
-        Assert.Empty(Index.ProcsAt("/obj/machinery/mass_driver/ordnance"));
-        Assert.Contains(Index.ProcsAt("/obj/machinery/mass_driver"), p => p.Translated == "no");
-        AssertInert(typeof(obj_machinery_mass_driver), true);
-        AssertInert(typeof(obj_machinery_mass_driver_ordnance), true);
+        // The raw bluespace core that defines no procs: inert while /obj/item/raw_anomaly_core's procs are not declared (the anomaly
+        // cores wait; the mass drivers of this example went live with the ordnance lab, the departmental protolathe in gaps RD1, the
+        // syndicate bomb in the syndicate campaign G2, the air sensor in engineering package E5, the thermomachine in M7 slice 4, the
+        // firelock of M3's example in M4b slice 2).
+        Assert.Empty(Index.ProcsAt("/obj/item/raw_anomaly_core/bluespace"));
+        Assert.Contains(Index.ProcsAt("/obj/item/raw_anomaly_core"), p => p.Translated == "no");
+        AssertInert(typeof(obj_item_raw_anomaly_core), true);
+        AssertInert(typeof(obj_item_raw_anomaly_core_bluespace), true);
         // M3 P3 declared every proc of /obj/machinery/door/airlock (translated or live-partial stubs): it and its procless
         // subtypes are live.
         Assert.Empty(Index.ProcsAt("/obj/machinery/door/airlock/public/glass/incinerator"));

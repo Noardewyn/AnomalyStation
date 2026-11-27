@@ -338,6 +338,10 @@ public static class TguiInterfaces
         ["LibraryVisitor"] = LibraryVisitor.Render, // the library's visitor console
         ["LibraryConsole"] = LibraryConsole.Render, // the library's book management console
         ["LibraryScanner"] = LibraryScanner.Render, // the library's scanner
+        ["TankCompressor"] = TankCompressor.Render, // the ordnance lab
+        ["DopplerArray"] = DopplerArray.Render, // the ordnance lab
+        ["NtosScipaper"] = NtosScipaper.Render, // the ordnance lab
+        ["MassDriverControl"] = MassDriverControl.Render, // the ordnance lab
         ["LibraryAdmin"] = LibraryAdmin.Render, // the admins' library console
         ["Holodeck"] = Holodeck.Render, // the holodeck control console
         ["OrionGame"] = OrionGame.Render, // The Orion Trail arcade

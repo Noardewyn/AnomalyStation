@@ -139,7 +139,6 @@
 # M4a P4b: the buttons, the assemblies and the door controllers (construction M5, tgui M9, the AI and shuttles later).
 /obj/machinery/button	get_save_vars	M10+	deferred	admin variable editing and map saving
 /obj/machinery/button	ninjadrain_act	M10+	deferred	the space ninja's drain (antagonists, after the core version)
-/obj/item/assembly/control/massdriver	activate	M10+	not_translated	the mass driver controller (after the core version)
 /obj/item/assembly/control/flasher	activate	M10+	not_translated	the flasher controller (after the core version)
 
 ## P5 (M4a): ID cards, trims, SSid_access, jobs, outfit
@@ -684,7 +683,6 @@
 /obj/item/borg/cyborg_omnitool	add_context	M10+	deferred	the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred)
 
 ## Silicons SI3 (D326): research and the exosuit fabricator. The techweb publishes no paper until the ordnance papers and NT Frontier come.
-/datum/techweb	add_scientific_paper	research	deferred	the ordnance papers' publication (NT Frontier and the scientific papers, a later research campaign)
 
 ## Silicons SI4 (D326): the AI, the camera net, holopads and the verb registry.
 /datum/controller/subsystem/verbs	serialize_verb	M10+	deferred	the tgui panel's entry of a verb (the port's stat panel is the replicated command verb list, ClientSeam.Verbs.cs)

@@ -6146,9 +6146,9 @@ public partial class obj_machinery_atmospherics_components_binary_crystallizer
     }
 }
 
-// tg: code/modules/research/ordnance/tank_compressor.dm:6
-[DmPath("/obj/machinery/atmospherics/components/binary/tank_compressor"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_atmospherics_components_binary_tank_compressor : obj_machinery_atmospherics_components_binary
+// tg: code/modules/research/ordnance/tank_compressor.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/machinery/atmospherics/components/binary/tank_compressor")]
+public partial class obj_machinery_atmospherics_components_binary_tank_compressor
 {
     public float? active = 0; // tg: code/modules/research/ordnance/tank_compressor.dm:14
     public float transfer_rate = 20; // tg: code/modules/research/ordnance/tank_compressor.dm:15
@@ -6157,7 +6157,7 @@ public partial class obj_machinery_atmospherics_components_binary_tank_compresso
     public float last_recorded_pressure = 0; // tg: code/modules/research/ordnance/tank_compressor.dm:18
     public float record_number = 1; // tg: code/modules/research/ordnance/tank_compressor.dm:19
     public obj_item_tank inserted_tank; // tg: code/modules/research/ordnance/tank_compressor.dm:20
-    public Type inserted_disk; // tg: code/modules/research/ordnance/tank_compressor.dm:22
+    public obj_item_disk_computer inserted_disk; // tg: code/modules/research/ordnance/tank_compressor.dm:22
 
     // tg: code/modules/research/ordnance/tank_compressor.dm:6
     public obj_machinery_atmospherics_components_binary_tank_compressor()

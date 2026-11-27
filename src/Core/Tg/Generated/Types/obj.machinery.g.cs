@@ -3065,9 +3065,9 @@ public partial class obj_machinery_limbgrower_fullupgrade
     }
 }
 
-// tg: code/game/machinery/mass_driver.dm:2
-[DmPath("/obj/machinery/mass_driver"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_mass_driver : obj_machinery
+// tg: code/game/machinery/mass_driver.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/mass_driver")]
+public partial class obj_machinery_mass_driver
 {
     public float? power = 1; // tg: code/game/machinery/mass_driver.dm:8
     public float? code = 1; // tg: code/game/machinery/mass_driver.dm:9
@@ -3088,7 +3088,7 @@ public partial class obj_machinery_mass_driver : obj_machinery
 }
 
 // tg: code/game/machinery/mass_driver.dm:19
-[DmPath("/obj/machinery/mass_driver/chapelgun"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/mass_driver/chapelgun"), DmGeneratedOnly]
 public partial class obj_machinery_mass_driver_chapelgun : obj_machinery_mass_driver
 {
     // tg: code/game/machinery/mass_driver.dm:19
@@ -3100,7 +3100,7 @@ public partial class obj_machinery_mass_driver_chapelgun : obj_machinery_mass_dr
 }
 
 // tg: code/game/machinery/mass_driver.dm:23
-[DmPath("/obj/machinery/mass_driver/ordnance"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/mass_driver/ordnance"), DmGeneratedOnly]
 public partial class obj_machinery_mass_driver_ordnance : obj_machinery_mass_driver
 {
     // tg: code/game/machinery/mass_driver.dm:23
@@ -3111,7 +3111,7 @@ public partial class obj_machinery_mass_driver_ordnance : obj_machinery_mass_dri
 }
 
 // tg: code/game/machinery/mass_driver.dm:26
-[DmPath("/obj/machinery/mass_driver/trash"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/mass_driver/trash"), DmGeneratedOnly]
 public partial class obj_machinery_mass_driver_trash : obj_machinery_mass_driver
 {
     // tg: code/game/machinery/mass_driver.dm:26
@@ -3122,7 +3122,7 @@ public partial class obj_machinery_mass_driver_trash : obj_machinery_mass_driver
 }
 
 // tg: code/game/machinery/mass_driver.dm:29
-[DmPath("/obj/machinery/mass_driver/shack"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/mass_driver/shack"), DmGeneratedOnly]
 public partial class obj_machinery_mass_driver_shack : obj_machinery_mass_driver
 {
     // tg: code/game/machinery/mass_driver.dm:29
@@ -3133,7 +3133,7 @@ public partial class obj_machinery_mass_driver_shack : obj_machinery_mass_driver
 }
 
 // tg: code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:87
-[DmPath("/obj/machinery/mass_driver/feeder"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/mass_driver/feeder"), DmGeneratedOnly]
 public partial class obj_machinery_mass_driver_feeder : obj_machinery_mass_driver
 {
     // tg: code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:87
@@ -15995,16 +15995,16 @@ public partial class obj_machinery_gizmo_cursed : obj_machinery_gizmo
     }
 }
 
-// tg: code/modules/research/ordnance/doppler_array.dm:2
-[DmPath("/obj/machinery/doppler_array"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_doppler_array : obj_machinery
+// tg: code/modules/research/ordnance/doppler_array.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/doppler_array")]
+public partial class obj_machinery_doppler_array
 {
     public float cooldown = 10; // tg: code/modules/research/ordnance/doppler_array.dm:10
     public float next_announce = 0; // tg: code/modules/research/ordnance/doppler_array.dm:11
     public float max_dist = 150; // tg: code/modules/research/ordnance/doppler_array.dm:12
     public float record_number = 1; // tg: code/modules/research/ordnance/doppler_array.dm:14
     public DmList records; // tg: code/modules/research/ordnance/doppler_array.dm:16
-    public Type inserted_disk; // tg: code/modules/research/ordnance/doppler_array.dm:18
+    public obj_item_disk_computer inserted_disk; // tg: code/modules/research/ordnance/doppler_array.dm:18
 
     // tg: code/modules/research/ordnance/doppler_array.dm:2
     public obj_machinery_doppler_array()

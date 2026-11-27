@@ -22144,9 +22144,9 @@ public partial class datum_wires_holopad
     }
 }
 
-// tg: code/datums/wires/mass_driver.dm:2
-[DmPath("/datum/wires/mass_driver"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_mass_driver : datum_wires
+// tg: code/datums/wires/mass_driver.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/wires/mass_driver")]
+public partial class datum_wires_mass_driver
 {
     // tg: code/datums/wires/mass_driver.dm:2
     public datum_wires_mass_driver()
@@ -53094,31 +53094,31 @@ public partial class datum_gizpulse_teleport_other : datum_gizpulse_teleport { }
 [DmPath("/datum/gizpulse/teleport/other/and_self"), DmGeneratedOnly, DmInert]
 public partial class datum_gizpulse_teleport_other_and_self : datum_gizpulse_teleport_other { }
 
-// tg: code/modules/research/ordnance/_scipaper.dm:4
-[DmPath("/datum/scientific_paper"), DmGeneratedOnly, DmInert]
-public partial class datum_scientific_paper : datum
+// tg: code/modules/research/ordnance/_scipaper.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/scientific_paper")]
+public partial class datum_scientific_paper
 {
     public object title; // tg: code/modules/research/ordnance/_scipaper.dm:4
     public object author; // tg: code/modules/research/ordnance/_scipaper.dm:6
     public float et_alia = 0; // tg: code/modules/research/ordnance/_scipaper.dm:8
     public object @abstract; // tg: code/modules/research/ordnance/_scipaper.dm:10
     public DmList gains; // tg: code/modules/research/ordnance/_scipaper.dm:12
-    public datum_experiment_ordnance experiment_path; // tg: code/modules/research/ordnance/_scipaper.dm:14
+    public Type experiment_path; // tg: code/modules/research/ordnance/_scipaper.dm:14
     public object tracked_variable; // tg: code/modules/research/ordnance/_scipaper.dm:16
     public object tier; // tg: code/modules/research/ordnance/_scipaper.dm:21
-    public datum_scientific_partner partner_path; // tg: code/modules/research/ordnance/_scipaper.dm:23
+    public Type partner_path; // tg: code/modules/research/ordnance/_scipaper.dm:23
 }
 
-// tg: code/modules/research/ordnance/_scipaper.dm:195
-[DmPath("/datum/scientific_paper/explosive"), DmGeneratedOnly, DmInert]
-public partial class datum_scientific_paper_explosive : datum_scientific_paper
+// tg: code/modules/research/ordnance/_scipaper.dm:195 (the var block of a hand-written class)
+[DmPath("/datum/scientific_paper/explosive")]
+public partial class datum_scientific_paper_explosive
 {
     public datum_data_tachyon_record explosion_record; // tg: code/modules/research/ordnance/_scipaper.dm:195
 }
 
-// tg: code/modules/research/ordnance/_scipaper.dm:232
-[DmPath("/datum/scientific_paper/gaseous"), DmGeneratedOnly, DmInert]
-public partial class datum_scientific_paper_gaseous : datum_scientific_paper
+// tg: code/modules/research/ordnance/_scipaper.dm:232 (the var block of a hand-written class)
+[DmPath("/datum/scientific_paper/gaseous")]
+public partial class datum_scientific_paper_gaseous
 {
     public datum_data_compressor_record compressor_record; // tg: code/modules/research/ordnance/_scipaper.dm:232
 }

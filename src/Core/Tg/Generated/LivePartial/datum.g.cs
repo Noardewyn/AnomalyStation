@@ -821,19 +821,6 @@ public partial class datum_religion_sect_dreams
     }
 }
 
-// tg: code/modules/research/techweb/_techweb.dm:11
-public partial class datum_techweb
-{
-    // tg: code/modules/research/techweb/_techweb.dm:470
-    // STUB(research): docs/ai/specs/live-partial.txt, section Silicons
-    [DmGeneratedStub]
-    public virtual DmTask<object> add_scientific_paper(datum_scientific_paper paper_to_add = null)
-    {
-        Dm.Deferred("code/modules/research/techweb/_techweb.dm:470", "add_scientific_paper: the ordnance papers' publication (NT Frontier and the scientific papers, a later research campaign) (research)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
 // tg: code/modules/sprite_editing/workspace.dm:2
 public partial class datum_sprite_editor_workspace
 {

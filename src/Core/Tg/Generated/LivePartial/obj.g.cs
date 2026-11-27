@@ -307,19 +307,6 @@ public partial class obj_item_gun_magic
     }
 }
 
-// tg: code/modules/assembly/doorcontrol.dm:181
-public partial class obj_item_assembly_control_massdriver
-{
-    // tg: code/modules/assembly/doorcontrol.dm:184
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section P4
-    [DmGeneratedStub]
-    public override DmTask<object> activate(mob activator = null)
-    {
-        Dm.NotTranslated("code/modules/assembly/doorcontrol.dm:184", "activate: the mass driver controller (after the core version) (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
 // tg: code/modules/assembly/doorcontrol.dm:231
 public partial class obj_item_assembly_control_flasher
 {

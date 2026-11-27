@@ -7,11 +7,11 @@ in section 12; they will most likely not be ported.
 
 Sources:
 - tg's snapshot `1d99bd7f` (2026-10-04) in `../tgstation/`;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-26): 46,051 tg types, of them 40,492
-  live and 5,549 inert; 65,645 tg procs, of them 50,411 translated (76%) and 444 stubbed;
+- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-26): 46,051 tg types, of them 40,519
+  live and 5,522 inert; 65,645 tg procs, of them 50,510 translated (76%) and 442 stubbed;
   live and 6,198 inert; 65,645 tg procs, of them 49,465 translated (75%) and 444 stubbed;
 - MetaStation's map (`_maps/map_files/MetaStation/MetaStation.dmm`): how many of each type it places;
-- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 330 of tg's 444 interfaces;
+- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 334 of tg's 444 interfaces;
 - `docs/ROADMAP.md`, `docs/ai/DECISIONS.md`, `docs/ai/specs/not-translated.md` for what is planned, deferred or cut by the owner.
 
 How to read a row:
@@ -32,13 +32,13 @@ How to read a row:
 ## 0. Overview by tg area
 
 Share of tg's procs declared in each area of `code/` (translated or stubbed), recounted 2026-11-26 by
-`tools/checklist/refresh-port-checklist.py`. All of `code/`: 50,855/65,645 (77%). An area at 100% can still have leaves in
+`tools/checklist/refresh-port-checklist.py`. All of `code/`: 50,952/65,645 (77%). An area at 100% can still have leaves in
 `not-translated.md`; the rows below say what of it runs.
 
 | State | Areas (procs declared / tg procs) |
 |---|---|
 | Done (100%) | art 98/98, brain traumas 216/216, detective work 36/36, dna 104/104, dna infuser 174/174, economy 45/45, experisci 127/127, food and drinks 969/969, forensics 37/37, grenades 141/141, hallucination 236/236, holiday 110/110, hydroponics 529/529, instruments 97/97, library 228/228, lost crew 38/38, mafia 124/124, materials 197/197, meteors 78/78, mining 947/947, mutations 235/235, newscaster 71/71, paperwork 407/407, plumbing 148/148, porta turrets 105/105, power 994/994, rcd 182/182, recycling (disposal pipes) 232/232, religion 283/283, robot items 198/198, security levels 20/20, silicons 528/528, skills 13/13, station goals 94/94, TCG 67/67, telecomms 123/123, transit tubes 74/74, water structures 60/60, weather 66/66, wounds 182/182 |
-| Mostly ported (70-99%) | transport 366/368, bitrunning 274/277, station traits 136/138, reagents 2,011/2,041, holodeck 64/65, language 64/65, pai 121/123, manufactorio 95/97, atmospherics 1,150/1,178, wiremod 1,037/1,063, structures 1,349/1,383, memory 183/188, diseases 299/308, weaponry 413/426, items 1,239/1,280, cards 59/61, doors 359/372, movespeed and actionspeed 27/28, devices 698/724, storage 206/217, uplink 55/58, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, tgui 134/144, AI modules 66/71, MODsuits 817/882, computers 485/525, simple animals 408/448, AI controllers 775/853, wires 175/195, actions 220/246, modular computers 663/751, machinery 1,503/1,715, martial arts 143/164, cargo 346/398, tools 225/259, mapping 337/393, turfs 650/761, stacks 338/398, lobby menu 26/31, implants 131/160, clothing 960/1,173, projectiles 943/1,153, effects 716/876, status effects 616/755, research 777/993, basic mobs 2,150/2,756, carbon 893/1,182, vehicles and mechs 659/876, `__HELPERS` 819/1,108, elements 876/1,200, jobs 183/251, `_onclick` 677/935, subsystems 1,123/1,578, components 2,540/3,579, photography 75/106, events 398/564 |
+| Mostly ported (70-99%) | transport 366/368, bitrunning 274/277, station traits 136/138, reagents 2,011/2,041, holodeck 64/65, language 64/65, pai 121/123, manufactorio 95/97, atmospherics 1,150/1,178, wiremod 1,037/1,063, structures 1,349/1,383, memory 183/188, diseases 299/308, weaponry 413/426, items 1,239/1,280, cards 59/61, doors 359/372, movespeed and actionspeed 27/28, devices 698/724, storage 206/217, uplink 55/58, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, computers 491/525, tgui 134/144, AI modules 66/71, MODsuits 817/882, wires 178/195, simple animals 408/448, AI controllers 775/853, modular computers 677/751, actions 220/246, machinery 1,514/1,715, martial arts 143/164, cargo 346/398, tools 225/259, mapping 337/393, turfs 650/761, stacks 338/398, research 840/993, lobby menu 26/31, implants 131/160, clothing 960/1,173, projectiles 943/1,153, effects 716/876, status effects 616/755, basic mobs 2,150/2,756, carbon 893/1,182, vehicles and mechs 659/876, `__HELPERS` 819/1,108, elements 876/1,200, jobs 183/251, `_onclick` 677/935, subsystems 1,123/1,578, components 2,540/3,579, photography 75/106, events 398/564 |
 | Partly (2-69%) | shuttles 280/401, vending 97/148, mob spawners 69/116, basketball 29/51, client 367/737, mapfluff 124/268, spells 186/426, keybindings 28/71, antagonists 915/3,715, species (`carbon/human/species_types`) 55/273, awaymissions 19/136, admin 178/1,643, admin verbs 85/975, quirks 10/287 |
 | Not started (0-1%) | explorer drones 3/207, achievements 1/72, fishing 10/787, minimap 1/127, buildmode 0/102, CTF 0/101, deathmatch 0/113, tutorials 0/48 |
 
@@ -59,7 +59,7 @@ Live mechanics that still miss a window, a leaf or a piece the owner put off.
 - [x] Memory panel (gaps G4: the 54 memories and the HUD button; win: MemoryPanel; DV191 retired by gaps S3: the captain's code folder). Left: the tattoo kit and the engravings (with the art), the memories of callers not yet live
 - [x] Floors with their own procs (gaps G2; the engine floor family, 35 types, Meta 496 tiles: engineering E4): wood (Meta 480), carpet (223), grass (68), large, circuit, the reinforced plating (`plating/reinforced`) and others (Meta's 24 floor types, 1,045 tiles); volcanic mineral turfs (9), plastitanium walls (5). Left inert, none on Meta: the tram's high-traction floor, the rusted and meat platings, the random, ore, gibtonite and biome rocks, the explosive plastitanium wall, snow, ice and lavaland floors
 - [x] Meta's untranslated mapping helpers and spawners (gaps G3; the dead body placer's cadavers came with gaps OG1; left: the holidays wait for `check_holidays`) (ROADMAP 3, M4 follow-up): request console helpers (Meta 64), mail sorting, `dead_body_placer`, Ian's birthday and new year, `turn_off_lights_with_lightswitch`, xmas trees, costumes, maintenance MOD, `round_default_module`
-- [ ] The deferred leaves of ported mechanics: `not-translated.md` (237 sections; the sites tagged M10+) and `live-partial.txt` (441 lines); each names its milestone
+- [ ] The deferred leaves of ported mechanics: `not-translated.md` (238 sections; the sites tagged M10+) and `live-partial.txt` (439 lines); each names its milestone
 - [ ] Owner-deferred pieces of ported milestones: screentips (M9 G, owner; the object examines and `examine_more` are done, D288: X1, X2, X3); chat icons, icon2html (owner: later); the fireman carry and piggyback (M9 F, owner); leaning on walls, the table slam and the table flip (done, gaps L1); the hand-item emotes' leftovers
 - [x] M10x's slices (D281, D282, `docs/ai/specs/lobby.md`; done, released in 1.1.0-pre-alpha): G the Esc menu, bug reports and tg's admin help, D the character's looks, E the preview, I the closing; not now (owner): tg's server game preferences (stashed, D282), the Quirks, Loadout and Personality tabs, the polls (the Antagonists tab: syndicate A3, D316)
 - [x] M9x station life (D228, D249): eating, drinking and hunger with the nutrition HUD (done, gaps S1), vending machines (done, gaps S2: free until the economy, DV225), paper, pens, clipboards and the hand labeler (done, gaps S3), the PDA's job apps (done, gaps S4; the cargo apps, the budget orders, shipping and bounty board: gaps P4)
@@ -219,10 +219,11 @@ hallucinations, cryo cells, stasis beds, IV drips, buckling.
 
 ### 5.3 Science
 
-- [x] The techweb (`modules/research` 777/993): 128 nodes, 1,270 designs (silicons SI3: SSresearch, the techwebs, the nodes and every design, the station's starter nodes researched), research points, the R&D consoles (Meta 3; win: Techweb, NtosTechweb), the R&D servers and their control console (Meta 2+1; win: ServerControl), tech disks (Meta 4) and design disks (gaps RD2: the consoles, the servers with the master's hard drive, the control console, the disks and the Science Hub app; the B.E.P.I.S. that prints the experimental disks is not ported)
+- [x] The techweb (`modules/research` 840/993): 128 nodes, 1,270 designs (silicons SI3: SSresearch, the techwebs, the nodes and every design, the station's starter nodes researched), research points, the R&D consoles (Meta 3; win: Techweb, NtosTechweb), the R&D servers and their control console (Meta 2+1; win: ServerControl), tech disks (Meta 4) and design disks (gaps RD2: the consoles, the servers with the master's hard drive, the control console, the disks and the Science Hub app; the B.E.P.I.S. that prints the experimental disks is not ported)
 - [ ] Experiments (gaps RD3: every experiment and the experiment handler are live, the cytology scans count vat-grown creatures since gaps XB1, those waiting on ordnance, exploration drones, fishing and mech construction in not-translated.md 195; the arcade playtest is won at a cabinet since gaps RC1; the handler's window lists techwebs once the R&D servers are live, gaps RD2; the experimentor and its relics are live, gaps RD4; research papers remain; `/datum/experiment` 85/85, `modules/experisci` 127/127; win: ExperimentConfigure, done): the experi-scanners (Meta 3; done, gaps RD3), the destructive scanner (Meta 1; done, gaps RD3), the destructive analyzer (Meta 1; win: DestructiveAnalyzer; done, gaps RD3), the experimentor (Meta 1; win: Experimentor; done, gaps RD4), research papers (win: NtosScipaper)
+- [x] Experiments (gaps RD3: every experiment and the experiment handler are live, the cytology scans count vat-grown creatures since gaps XB1, those waiting on ordnance, exploration drones, fishing, the arcade and mech construction in not-translated.md 195; the handler's window lists techwebs once the R&D servers are live, gaps RD2; the experimentor and its relics are live, gaps RD4; the research papers came with gaps OR1; `/datum/experiment` 85/85, `modules/experisci` 127/127; win: ExperimentConfigure, done): the experi-scanners (Meta 3; done, gaps RD3), the destructive scanner (Meta 1; done, gaps RD3), the destructive analyzer (Meta 1; win: DestructiveAnalyzer; done, gaps RD3), the experimentor (Meta 1; win: Experimentor; done, gaps RD4), research papers (win: NtosScipaper; done, gaps OR1)
 - [ ] Fabricators: protolathes, circuit imprinters and the departmental techfabs (Meta 9; `/obj/machinery/rnd` 27/28; win: Fabricator; done, gaps RD1), the autolathe (Meta 1; win: Autolathe; done, gaps RD1), the exosuit fabricator (Meta 3; win: ExosuitFabricator; done, silicons SI3), the ore silo and remote materials (Meta 1; win: OreSilo), the flatpacker and flatpacks (Meta 2; win: Flatpacker)
-- [ ] Ordnance: tank transfer valves (Meta 5; win: TransferValve; done, syndicate G4b), the tank compressor (Meta 1; win: TankCompressor), the burn and freezer chambers (section 5.1), the doppler array (Meta 1; win: DopplerArray), the mass drivers to the testing range and their controllers (Meta 4; win: MassDriverControl), bomb cores, ordnance disks (Meta 4)
+- [x] Ordnance: tank transfer valves (Meta 5; win: TransferValve; done, syndicate G4b), the tank compressor (Meta 1; win: TankCompressor; done, gaps OR1), the burn and freezer chambers (section 5.1), the doppler array (Meta 1; win: DopplerArray; done, gaps OR1), the mass drivers to the testing range and their controllers (Meta 4; win: MassDriverControl; done, gaps OR1), bomb cores, ordnance disks (Meta 4)
 - [x] Xenobiology (gaps C4: the slime itself is live; gaps XB1: the extracts with their reactions, the potions, the console with its eye, actions and hotkeys, cytology; gaps XB2: the crossbreeds, every family and colour with their cookies, potions, gear and status effects; left: a luminescent's activation of an extract and the crossbreeds' jellyperson and golem changes, gaps SP3, and the client checks of not-translated.md section 243): slimes (Meta 3; `basic/slime` 5/5) and their feeding, growth and splitting, slime extracts (`/obj/item/slime_extract` 23/23) and their reactions, the crossbreeds (`/obj/item/slimecross` 254/254), the slime management console with its camera (Meta 2), the slime processor (Meta 1), the monkey recycler (Meta 1), the pens' shield wall generators (Meta 2), cell lines and the growing vat (Meta 1), the biopsy tool and the microscope (Meta 1+1; win: Microscope)
 - [ ] Robotics: mechs (`/obj/vehicle/sealed/mecha` 28/28: Ripley, Clarke, Odysseus, Gygax, Durand, H.O.N.K., Phazon, Savannah-Ivanov, Reticence, Marauder, Vim; Meta 2 and a wreckage) with their 133 parts and equipment (win: Mecha), the mech bay recharge ports and consoles (Meta 6+5; win: MechBayPowerConsole), the mech pad and its console (Meta 1+1; win: MechpadConsole), the exosuit control consoles (Meta 2; win: ExosuitControlConsole), building cyborgs (section 6), robotic limbs (Meta 4)
 - [x] Circuits (wiremod; `modules/wiremod` 1,037/1,063, 191 components): integrated circuits (Meta 4), shells, USB ports, the component printer and the module duplicator (Meta 2+2; win: ComponentPrinter), the BCI implanter (Meta 2), the circuit multitool (Meta 6) (win: IntegratedCircuit, CircuitModule, CircuitAccessChecker, CircuitSignalHandler, ProcCallMenu) (gaps CI1: the core with the integrated circuit, ports, datatypes, variables, the circuit multitool, the USB cable, the component printer, the module duplicator and the save and load, the shell component, the math, list, string, table, variable, utility and module components, the compact remote (Meta 4) and the controller (Meta 3), the IntegratedCircuit editor (DV571), ComponentPrinter, CircuitModule and CircuitAdminPanel; gaps CI2: the action, entity, ID, NTNet, sensor, wirenet and admin components with CircuitAccessChecker and CircuitSignalHandler, the BORIS container, the bot, money bot, drone, server, airlock, dispenser, scanner gate, gun, keyboard, scanner, MOD module, assembly, undertile and wallmount shells and their assemblies, Meta's loaded circuits (hello world and speech relay, Meta 2+2); gaps CI3: the BCI with its components and overlays and the BCI implanter (Meta 2), the circuit implant, the USB port with the USB components and every machine's and computer program's circuit component, the computers as shells; left: the quantum pad's and the launchpad console's components (gaps OR1), the camera app's component (NtOS image files), the proc call and SDQL components with ProcCallMenu, the admin tools)
@@ -475,7 +476,8 @@ Well-known SS13 mechanics that are not in tg any more; nothing to port. Checked 
 
 ## 13. Index of the tgui windows not drawn yet
 
-396 of tg's 444 windows (the client drew 48 when this index was made); 284 of the 396 are ticked now. One row per
+396 of tg's 444 windows (the client drew 48 when this index was made); 288 of the 396 are ticked now. One row per
+396 of tg's 444 windows (the client drew 48 when this index was made); 283 of the 396 are ticked now. One row per
 396 of tg's 444 windows (the client drew 48 when this index was made); 271 of the 396 are ticked now. One row per
 396 of tg's 444 windows (the client drew 48 when this index was made); 276 of the 396 are ticked now. One row per
 396 of tg's 444 windows (the client drew 48 when this index was made); 267 of the 396 are ticked now. One row per
@@ -620,7 +622,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] Reagents
 - [x] SmokeMachine (gaps F1)
 
-### Science (5.3): 30 (19 drawn)
+### Science (5.3): 30 (22 drawn)
 
 - [ ] AdventureBrowser
 - [ ] AnomalyRefinery
@@ -630,7 +632,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] CircuitSignalHandler (gaps CI2)
 - [x] ComponentPrinter (gaps CI1)
 - [x] DestructiveAnalyzer (gaps RD3)
-- [ ] DopplerArray
+- [x] DopplerArray (gaps OR1)
 - [ ] ExodroneConsole
 - [ ] ExoscannerConsole
 - [x] ExosuitControlConsole (D321)
@@ -641,7 +643,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] Fabricator (gaps RD1)
 - [ ] Flatpacker
 - [x] IntegratedCircuit (gaps CI1)
-- [ ] MassDriverControl
+- [x] MassDriverControl (gaps OR1)
 - [x] MechBayPowerConsole (D321)
 - [x] Mecha (D321)
 - [ ] MechpadConsole
@@ -649,7 +651,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] OreSilo (Lavaland L2a)
 - [ ] ProcCallMenu
 - [x] ServerControl (gaps RD2)
-- [ ] TankCompressor
+- [x] TankCompressor (gaps OR1)
 - [x] Techweb (gaps RD2)
 - [x] TransferValve (syndicate G4b)
 
@@ -790,7 +792,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] RadioactiveMicrolaser (syndicate G2)
 - [x] Thermometer
 
-### NtOS (PDA and laptop) apps: 48 (42 drawn)
+### NtOS (PDA and laptop) apps: 48 (43 drawn)
 
 - [x] NtosAiRestorer (silicons SI4)
 - [x] NtosArcade
@@ -826,7 +828,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] NtosRevelation
 - [x] NtosRoboControl
 - [x] NtosRobotact (silicons SI2)
-- [ ] NtosScipaper
+- [x] NtosScipaper (gaps OR1)
 - [x] NtosSecurEye (syndicate G3d; person tracking: silicons SI4, DV373 retired)
 - [x] NtosShipping
 - [x] NtosSignaler

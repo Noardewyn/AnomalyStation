@@ -219,6 +219,11 @@ internal sealed partial class Generator
         "/obj/effect/portal/permanent:id",
         // The elite tumor's activator is the human who touched it (elite.dm:139); the name is a typepath elsewhere in tg.
         "/obj/structure/elite_tumor:activator",
+        // The tank compressor's and the doppler array's disk is the disk put in them (tank_compressor.dm:52, doppler_array.dm:57); the
+        // mass driver launch control's driver is the mass driver it found at init (pod.dm:22). The names are typepaths elsewhere in tg.
+        "/obj/machinery/atmospherics/components/binary/tank_compressor:inserted_disk",
+        "/obj/machinery/doppler_array:inserted_disk",
+        "/obj/machinery/computer/pod:connected",
     };
 
     /// <summary>Typed vars that hold typepaths read from a list (rules 3.2, "typepaths read from a list": <c>Type</c>), which the V3
@@ -231,6 +236,10 @@ internal sealed partial class Generator
         "/datum/round_event/disease_outbreak:virus_type",
         // The voice change symptom's language is picked from the language subtypes (voice_change.dm:60, gaps VI1).
         "/datum/symptom/voice_change:current_language",
+        // A scientific paper's experiment and sponsor are typepaths (_scipaper.dm:14, :23): the NT Frontier app sets them from the
+        // record's experiment list and text2path.
+        "/datum/scientific_paper:experiment_path",
+        "/datum/scientific_paper:partner_path",
     };
 
     /// <summary>Vars whose number default (FALSE, 0) later holds a stoppable timer's id, which is a text (addtimer with TIMER_STOPPABLE,

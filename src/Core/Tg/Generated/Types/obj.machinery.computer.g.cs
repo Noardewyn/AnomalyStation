@@ -3818,11 +3818,11 @@ public partial class obj_machinery_computer_operating_oldstation : obj_machinery
     }
 }
 
-// tg: code/game/machinery/computer/pod.dm:2
-[DmPath("/obj/machinery/computer/pod"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_pod : obj_machinery_computer
+// tg: code/game/machinery/computer/pod.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/pod")]
+public partial class obj_machinery_computer_pod
 {
-    public Type connected; // tg: code/game/machinery/computer/pod.dm:6
+    public obj_machinery_mass_driver connected; // tg: code/game/machinery/computer/pod.dm:6
     public object id = 1; // tg: code/game/machinery/computer/pod.dm:8
     public float timing = 0; // tg: code/game/machinery/computer/pod.dm:10
     public float? time = 30; // tg: code/game/machinery/computer/pod.dm:12
@@ -3839,7 +3839,7 @@ public partial class obj_machinery_computer_pod : obj_machinery_computer
 }
 
 // tg: code/game/machinery/computer/pod.dm:135
-[DmPath("/obj/machinery/computer/pod/old"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old : obj_machinery_computer_pod
 {
     // tg: code/game/machinery/computer/pod.dm:135
@@ -3853,7 +3853,7 @@ public partial class obj_machinery_computer_pod_old : obj_machinery_computer_pod
 }
 
 // tg: code/game/machinery/computer/pod.dm:141
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller : obj_machinery_computer_pod_old
 {
     // tg: code/game/machinery/computer/pod.dm:141
@@ -3868,7 +3868,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller : obj
 }
 
 // tg: code/game/machinery/computer/pod.dm:148
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/game/machinery/computer/pod.dm:148
@@ -3879,7 +3879,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_ordna
 }
 
 // tg: code/game/machinery/computer/pod.dm:152
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver/longrange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver/longrange"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver_longrange : obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver
 {
     // tg: code/game/machinery/computer/pod.dm:152
@@ -3890,7 +3890,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_ordna
 }
 
 // tg: code/game/machinery/computer/pod.dm:155
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/chapelgun"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/chapelgun"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_chapelgun : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/game/machinery/computer/pod.dm:155
@@ -3901,7 +3901,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_chape
 }
 
 // tg: code/game/machinery/computer/pod.dm:158
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/trash"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/trash"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_trash : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/game/machinery/computer/pod.dm:158
@@ -3912,7 +3912,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_trash
 }
 
 // tg: code/game/machinery/computer/pod.dm:161
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/shack"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/shack"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_shack : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/game/machinery/computer/pod.dm:161
@@ -3923,7 +3923,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_shack
 }
 
 // tg: code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:91
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/feeder"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/feeder"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_feeder : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:91
@@ -3934,7 +3934,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_feede
 }
 
 // tg: code/game/machinery/computer/pod.dm:164
-[DmPath("/obj/machinery/computer/pod/old/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/syndicate"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_syndicate : obj_machinery_computer_pod_old
 {
     // tg: code/game/machinery/computer/pod.dm:164
@@ -3953,7 +3953,7 @@ public partial class obj_machinery_computer_pod_old_syndicate : obj_machinery_co
 }
 
 // tg: code/game/machinery/computer/pod.dm:169
-[DmPath("/obj/machinery/computer/pod/old/swf"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/swf"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_swf : obj_machinery_computer_pod_old
 {
     // tg: code/game/machinery/computer/pod.dm:169

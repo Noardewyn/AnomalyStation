@@ -9,19 +9,77 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// SKELETON: completed with its module (a later milestone). Holds the [DmPath] of a type that an M2 slot signature or
-// var block names, in the earliest .dme file that declares it (rules 2.3); written by the M2 contracts step
-// (docs/ai/specs/m2-ownership.md). Only the type is declared, but for the Lavaland water below.
+// The water's own procs with its lazy fishing spot and the Lavaland water's smoothing (Lavaland L1, D304). The
+// watery tile's wetting, the scooping and the deep water's swimming are elements that wait for the water package (Dm.Deferred,
+// not-translated.md section 251); the immersion mask is BYOND presentation the 3D client draws its own way (DV12, as lava's).
+// The hot spring's procs stay inert. The var blocks are generated.
 
 // tg: code/game/turfs/open/water.dm:1
 [DmPath("/turf/open/water")]
 public partial class turf_open_water : turf_open
 {
+    // tg: code/game/turfs/open/water.dm:45
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        RegisterSignal(this, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON, nameof(on_atom_inited));
+        Dm.Deferred("code/game/turfs/open/water.dm:48", "Initialize: AddElement(/datum/element/watery_tile), the water's wetting (the water package)");
+        if (fishing_datum != null)
+            add_lazy_fishing(fishing_datum);
+        ADD_TRAIT(this, TRAIT_CATCH_AND_RELEASE, INNATE_TRAIT);
+        if (reagent_to_extract != null)
+            Dm.Deferred("code/game/turfs/open/water.dm:53", "Initialize: AddElement(/datum/element/reagent_scoopable_atom, reagent_to_extract), scooping the water (the water package)");
+        return dot;
+    }
+
+    ///We lazily add the immerse element when something is spawned or crosses this turf and not before.
+    // tg: code/game/turfs/open/water.dm:56
+    [SignalHandler]
+    public virtual void on_atom_inited(datum source = null, atom_movable movable = null)
+    {
+        UnregisterSignal(this, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON);
+        make_immersed(movable);
+    }
+
+    // tg: code/game/turfs/open/water.dm:61
+    public override async DmTask<object> Entered(atom_movable arrived = null, atom old_loc = null, DmList old_locs = null)
+    {
+        object dot = await base.Entered(arrived, old_loc, old_locs);
+        make_immersed(arrived);
+        return dot;
+    }
+
+    // tg: code/game/turfs/open/water.dm:65
+    public override async DmTask initialize_occupant(atom_movable occupant = null)
+    {
+        await base.initialize_occupant(occupant);
+        make_immersed(occupant);
+    }
+
+    ///Makes this turf immersable, return true if we actually did anything so child procs don't have to repeat our checks
+    // tg: code/game/turfs/open/water.dm:70
+    public virtual object make_immersed(atom_movable triggering_atom = null)
+    {
+        if (Dm.truthy(immerse_added))
+            return FALSE;
+        // DEVIATION(DV12): is_type_in_typecache(triggering_atom, GLOB.immerse_ignored_movable) and
+        // AddElement(/datum/element/immerse, immerse_overlay, immerse_overlay_alpha), the vis_contents sinking mask
+        immerse_added = TRUE;
+        if (Dm.truthy(is_swimming_tile))
+            Dm.Deferred("code/game/turfs/open/water.dm:76", "make_immersed: AddElement(/datum/element/swimming_tile, ...), the deep water's swimming and drowning (the water package)");
+        return TRUE;
+    }
+
+    // tg: code/game/turfs/open/water.dm:79
+    public override object Destroy(float? force = null)
+    {
+        UnregisterSignal(this, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON);
+        return base.Destroy(force);
+    }
 }
 
 // Lavaland L1 (D304): Lavaland's water smooths with the basalt, siderite and shale around it and draws their outlines, as the
-// smooth lava does (lava.cs). The water's own procs (the watery tile, immersion, swimming, scooping, fishing) wait for the water
-// package; the other water types lack them too.
+// smooth lava does (lava.cs).
 // tg: code/game/turfs/open/water.dm:141
 public partial class turf_open_water_lavaland_atmos_basalt : turf_open_water_lavaland_atmos
 {

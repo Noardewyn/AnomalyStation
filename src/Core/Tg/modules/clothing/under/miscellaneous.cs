@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (gaps CL1, D333): the psychedelic jumpsuit's general colour and the administrative cybernetic jumpsuit (its fishing
-// difficulty waits for fishing); the rest of the file is var-only. The var blocks are generated (D111).
+// PARTIAL (gaps CL1, D333): the psychedelic jumpsuit's general colour and the administrative cybernetic jumpsuit (with its fishing
+// difficulty); the rest of the file is var-only. The var blocks are generated (D111).
 
 // tg: code/modules/clothing/under/miscellaneous.dm:33
 public partial class obj_item_clothing_under_misc_psyche : obj_item_clothing_under_misc
@@ -29,7 +29,7 @@ public partial class obj_item_clothing_under_misc_adminsuit : obj_item_clothing_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/under/miscellaneous.dm:67", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -25): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -25));
         return dot;
     }
 }

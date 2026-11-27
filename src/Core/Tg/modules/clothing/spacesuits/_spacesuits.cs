@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // M4c slice 2: the space helmet and the space suit (pressure and cold protection by their flags, the suit's thermal
 // regulator on a cell, its cell cover, the spacesuit HUD display, the helmet's visor). Left to their milestones in
 // docs/ai/specs/live-partial.txt: the helmet's suicide_act (suicides, M10); emp_act is translated (M7 EMP), emag_act (G1a, D316). The visor dirt (clothing_dirt: pepper spray, chemistry M8), the hat stabilizer (a hat worn on the helmet,
-// M9), the fishing difficulty (fishing, M10+) and the mesh texture on the wearer's limbs (equipment_bodypart_texture:
+// M9) and the mesh texture on the wearer's limbs (equipment_bodypart_texture:
 // bodypart textures are layering filters, species features under suits, M9) are deferred leaves. The item action buttons
 // (toggle_spacesuit, adjust_visor) came with M4c slice 3 (add_item_action). The var blocks are generated.
 //
@@ -37,8 +37,7 @@ public partial class obj_item_clothing_head_helmet_space : obj_item_clothing_hea
         }
         if (Dm.truthy(fishing_modifier))
         {
-            // AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier): fishing (M10+)
-            Dm.Deferred("code/modules/clothing/spacesuits/_spacesuits.dm:52", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty), the fishing difficulty (fishing, M10+)");
+            Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier));
         }
         Waiting.NoSleep(add_stabilizer());
         // AddElement(/datum/element/equipment_bodypart_texture, BODY_ZONE_HEAD, /datum/bodypart_texture/mesh/space): the mesh
@@ -107,8 +106,7 @@ public partial class obj_item_clothing_suit_space : obj_item_clothing_suit
 
         if (Dm.truthy(fishing_modifier))
         {
-            // AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier): fishing (M10+)
-            Dm.Deferred("code/modules/clothing/spacesuits/_spacesuits.dm:135", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty), the fishing difficulty (fishing, M10+)");
+            Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier));
         }
         // AddElement(/datum/element/equipment_bodypart_texture, BODY_ZONE_CHEST, /datum/bodypart_texture/mesh/space): the mesh
         // texture filter on the wearer's limbs (bodypart textures, M9)

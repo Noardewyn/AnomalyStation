@@ -22,8 +22,7 @@ public partial class mob_living_basic_mining_lobstrosity : mob_living_basic_mini
     {
         object dot = base.Initialize(mapload, __extra);
         add_traits(Dm.list(TRAIT_NODROWN, TRAIT_SWIMMER), INNATE_TRAIT);
-        // AddComponent(/datum/component/profound_fisher): the lobstrosity's fishing in lava (fishing)
-        Dm.Deferred("code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:45", "Initialize: AddComponent(/datum/component/profound_fisher), the lobstrosity's fishing (fishing is not ported)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_profound_fisher)));
         Waiting.NoSleep(AddElement(typeof(datum_element_mob_grabber)));
         Waiting.NoSleep(AddElement(typeof(datum_element_footstep), FOOTSTEP_MOB_CLAW));
         Waiting.NoSleep(AddElement(typeof(datum_element_basic_eating), Dm.named("food_types", target_foods)));

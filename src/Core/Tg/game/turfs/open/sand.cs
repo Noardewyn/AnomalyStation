@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The beach's sand and coast (Lavaland's beach biodome). Their fishing (the lazy fishing spot and its loot from an
-// explosion) waits for fishing. The var blocks are generated.
+// The beach's sand and coast (Lavaland's beach biodome) with their lazy fishing spot and its loot from an explosion. The var
+// blocks are generated.
 
 // tg: code/game/turfs/open/sand.dm:1
 public partial class turf_open_misc_beach : turf_open_misc
@@ -19,15 +19,15 @@ public partial class turf_open_misc_beach : turf_open_misc
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // add_lazy_fishing(/datum/fish_source/sand): fishing is not in the core version (ROADMAP section 4), as lava.cs's
+        add_lazy_fishing(typeof(datum_fish_source_sand));
         return dot;
     }
 
     // tg: code/game/turfs/open/sand.dm:18
     public override object ex_act(object severity = null, object target = null, params object[] __extra)
     {
-        // if(fish_source) GLOB.preset_fish_sources[fish_source].spawn_reward_from_explosion(src, severity): no fishing spot is added
-        // while fishing waits (Initialize), so fish_source stays null
+        if (Dm.truthy(fish_source))
+            ((datum_fish_source)GLOB.preset_fish_sources[fish_source]).spawn_reward_from_explosion(this, severity);
         return FALSE;
     }
 

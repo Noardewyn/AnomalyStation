@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The whole file (gaps package H2, D333): the deep fryer. The var block is generated (D111); the static deepfry_blacklisted_items
-// is a TgState field (rules 10.6). Fishing in the fryer (the fishing spot) waits for the rods; the fryer keeps its fish alive (the fish-safe storage).
+// is a TgState field (rules 10.6). The fryer is a fishing spot and keeps its fish alive (the fish-safe storage).
 
 // tg: code/modules/food_and_drinks/machinery/deep_fryer.dm:2
 public partial class datum_controller_global_vars
@@ -59,9 +59,7 @@ public partial class obj_machinery_deepfryer : obj_machinery
         Waiting.NoSleep(((datum_reagents)reagents).add_reagent(typeof(datum_reagent_consumable_nutriment_fat_oil), 25));
         fry_loop = Dm.@new<datum_looping_sound_deep_fryer>(this, FALSE);
         RegisterSignal(this, COMSIG_COMPONENT_CLEAN_ACT, nameof(on_cleaned));
-        // AddComponent(/datum/component/fishing_spot, GLOB.preset_fish_sources[/datum/fish_source/deepfryer]): fishing in the
-        // deep fryer comes with the rods and the fishing spots.
-        Dm.Deferred("code/modules/food_and_drinks/machinery/deep_fryer.dm:63", "Initialize: AddComponent(/datum/component/fishing_spot), fishing in the deep fryer (the rods and the fishing spots)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), GLOB.preset_fish_sources[typeof(datum_fish_source_deepfryer)]));
         Waiting.NoSleep(AddElement(typeof(datum_element_fish_safe_storage))); //Prevents fryish and fritterish from dying inside the deepfryer.
         return dot;
     }

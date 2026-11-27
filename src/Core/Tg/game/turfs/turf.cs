@@ -1286,36 +1286,49 @@ public partial class turf : atom
     // tg: code/game/turfs/turf.dm:829
     public virtual void add_lazy_fishing(object fish_source_path = null)
     {
-        Dm.NotTranslated("code/game/turfs/turf.dm:829", "add_lazy_fishing: fishing is not in the core version (ROADMAP section 4)");
+        RegisterSignal(this, COMSIG_FISHING_ROD_CAST, nameof(add_fishing_spot_comp));
+        RegisterSignal(this, COMSIG_NPC_FISHING, nameof(on_npc_fishing));
+        RegisterSignal(this, COMSIG_FISH_RELEASED_INTO, nameof(on_fish_release_into));
+        RegisterSignal(this, COMSIG_TURF_CHANGE, nameof(remove_lazy_fishing));
+        ADD_TRAIT(this, TRAIT_FISHING_SPOT, INNATE_TRAIT);
+        fish_source = fish_source_path;
     }
 
     // tg: code/game/turfs/turf.dm:837
     [SignalHandler]
     public virtual void remove_lazy_fishing()
     {
-        Dm.NotTranslated("code/game/turfs/turf.dm:837", "remove_lazy_fishing: fishing is not in the core version (ROADMAP section 4)");
+        UnregisterSignal(this, Dm.list(
+            COMSIG_FISHING_ROD_CAST,
+            COMSIG_NPC_FISHING,
+            COMSIG_FISH_RELEASED_INTO,
+            COMSIG_ATOM_TOOL_ACT(TOOL_MULTITOOL),
+            COMSIG_TURF_CHANGE));
+        REMOVE_TRAIT(this, TRAIT_FISHING_SPOT, INNATE_TRAIT);
+        fish_source = null;
     }
 
     // tg: code/game/turfs/turf.dm:849
     [SignalHandler]
     public virtual object add_fishing_spot_comp(datum source = null, obj_item_fishing_rod rod = null, mob user = null, params object[] __extra)
     {
-        Dm.NotTranslated("code/game/turfs/turf.dm:849", "add_fishing_spot_comp: fishing is not in the core version (ROADMAP section 4)");
-        return null;
+        datum_component_fishing_spot spot = Waiting.NoSleep(source.AddComponent(typeof(datum_component_fishing_spot), GLOB.preset_fish_sources[fish_source])) as datum_component_fishing_spot;
+        remove_lazy_fishing();
+        return spot.handle_cast(source, rod, user);
     }
 
     // tg: code/game/turfs/turf.dm:855
     [SignalHandler]
     public virtual void on_npc_fishing(datum source = null, DmList fish_spot_container = null)
     {
-        Dm.NotTranslated("code/game/turfs/turf.dm:855", "on_npc_fishing: fishing is not in the core version (ROADMAP section 4)");
+        fish_spot_container[NPC_FISHING_SPOT] = GLOB.preset_fish_sources[fish_source];
     }
 
     // tg: code/game/turfs/turf.dm:859
     [SignalHandler]
     public virtual void on_fish_release_into(datum source = null, obj_item_fish fish = null, mob_living releaser = null)
     {
-        Dm.NotTranslated("code/game/turfs/turf.dm:859", "on_fish_release_into: fishing is not in the core version (ROADMAP section 4)");
+        Waiting.NoSleep(((datum_fish_source)GLOB.preset_fish_sources[fish_source]).readd_fish(this, fish, releaser));
     }
 
     // tg: code/game/turfs/turf.dm:863
@@ -1324,8 +1337,9 @@ public partial class turf : atom
         object dot = await base.examine(user, __extra);
         if (!Dm.truthy(fish_source) || !HAS_MIND_TRAIT(user, TRAIT_EXAMINE_FISHING_SPOT))
             return dot;
-        // no turf of the ported maps has a fish source (the one with a fishing-spot examiner would be GLOB.preset_fish_sources)
-        Dm.Deferred("code/game/turfs/turf.dm:866", "examine: the fish source's known fishes and the fishing spot line (fishing, not in the core version)");
+        if (!Dm.truthy(((datum_fish_source)GLOB.preset_fish_sources[fish_source]).has_known_fishes(this)))
+            return dot;
+        Dm.append(ref dot, span_tinynoticeital(I18n.T("This is a fishing spot. You can look again to list its fishes...")));
         return dot;
     }
 
@@ -1335,7 +1349,7 @@ public partial class turf : atom
         object dot = await base.examine_more(user);
         if (!HAS_MIND_TRAIT(user, TRAIT_EXAMINE_FISHING_SPOT) || !Dm.truthy(fish_source))
             return dot;
-        Dm.Deferred("code/game/turfs/turf.dm:874", "examine_more: the fish source's catchable fish names (fishing, not in the core version)");
+        await ((datum_fish_source)GLOB.preset_fish_sources[fish_source]).get_catchable_fish_names(user, this, dot as DmList);
         return dot;
     }
 
@@ -1348,13 +1362,18 @@ public partial class turf : atom
         CeilingSystem.Of(World.Current).ExAct((int)x, (int)y, (int)z, Dm.num(severity), target); // D295: the floor's odds on the ceiling
         if (!Dm.truthy(fish_source))
             return dot;
-        // GLOB.preset_fish_sources[fish_source].spawn_reward_from_explosion(src, severity): fishing is not in the core version
-        // (ROADMAP section 4); no station turf of the ported maps has a fish source
-        Dm.Deferred("code/game/turfs/turf.dm:881", "ex_act: the fish source's reward from an explosion (fishing, not in the core version)");
+        ((datum_fish_source)GLOB.preset_fish_sources[fish_source]).spawn_reward_from_explosion(this, severity);
         return dot;
     }
-    // tg: code/game/turfs/turf.dm:883  multitool_act(mob/living/user, obj/item/multitool/tool): not declared, its root
-    // /atom/proc/multitool_act (game/atom/atom_tool_acts.dm) is translated with tools (M4a).
+
+    // tg: code/game/turfs/turf.dm:883
+    public override async DmTask<object> multitool_act(mob_living user = null, obj_item tool = null)
+    {
+        if (!Dm.truthy(fish_source) || !istype((tool as obj_item_multitool)?.buffer, typeof(obj_machinery_fishing_portal_generator)))
+            return await base.multitool_act(user, tool);
+        obj_machinery_fishing_portal_generator portal = (obj_machinery_fishing_portal_generator)((obj_item_multitool)tool).buffer;
+        return portal.link_fishing_spot((datum_fish_source)GLOB.preset_fish_sources[fish_source], this, user);
+    }
 
     // tg: code/game/turfs/turf.dm:803
     public override async DmTask apply_main_material_effects(datum_material main_material = null, object amount = null, object multiplier = null)

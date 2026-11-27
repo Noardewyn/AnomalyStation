@@ -3064,9 +3064,9 @@ public partial class atom_movable_screen_alert_status_effect_firewall : atom_mov
     }
 }
 
-// tg: code/datums/status_effects/debuffs/hooked.dm:23
-[DmPath("/atom/movable/screen/alert/status_effect/hooked"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_status_effect_hooked : atom_movable_screen_alert_status_effect
+// tg: code/datums/status_effects/debuffs/hooked.dm:23 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/status_effect/hooked")]
+public partial class atom_movable_screen_alert_status_effect_hooked
 {
     // tg: code/datums/status_effects/debuffs/hooked.dm:23
     public atom_movable_screen_alert_status_effect_hooked()
@@ -3080,7 +3080,7 @@ public partial class atom_movable_screen_alert_status_effect_hooked : atom_movab
 }
 
 // tg: code/datums/status_effects/debuffs/hooked.dm:60
-[DmPath("/atom/movable/screen/alert/status_effect/hooked/jaws"), DmGeneratedOnly, DmInert]
+[DmPath("/atom/movable/screen/alert/status_effect/hooked/jaws"), DmGeneratedOnly]
 public partial class atom_movable_screen_alert_status_effect_hooked_jaws : atom_movable_screen_alert_status_effect_hooked
 {
     // tg: code/datums/status_effects/debuffs/hooked.dm:60
@@ -6686,9 +6686,9 @@ public partial class atom_movable_screen_buildmode_preview_item : atom_movable_s
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:803
-[DmPath("/atom/movable/screen/fishing_hud"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_fishing_hud : atom_movable_screen
+// tg: code/modules/fishing/fishing_minigame.dm:803 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/fishing_hud")]
+public partial class atom_movable_screen_fishing_hud
 {
     public atom_movable_screen_hud_fish hud_fish; // tg: code/modules/fishing/fishing_minigame.dm:808
     public atom_movable_screen_hud_bait hud_bait; // tg: code/modules/fishing/fishing_minigame.dm:810
@@ -6704,9 +6704,9 @@ public partial class atom_movable_screen_fishing_hud : atom_movable_screen
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:836
-[DmPath("/atom/movable/screen/hud_bait"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_hud_bait : atom_movable_screen
+// tg: code/modules/fishing/fishing_minigame.dm:836 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/hud_bait")]
+public partial class atom_movable_screen_hud_bait
 {
     public float cur_height = 27; // tg: code/modules/fishing/fishing_minigame.dm:839
 
@@ -6719,9 +6719,9 @@ public partial class atom_movable_screen_hud_bait : atom_movable_screen
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:864
-[DmPath("/atom/movable/screen/hud_fish"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_hud_fish : atom_movable_screen
+// tg: code/modules/fishing/fishing_minigame.dm:864 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/hud_fish")]
+public partial class atom_movable_screen_hud_fish
 {
     // tg: code/modules/fishing/fishing_minigame.dm:864
     public atom_movable_screen_hud_fish()
@@ -6732,9 +6732,9 @@ public partial class atom_movable_screen_hud_fish : atom_movable_screen
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:874
-[DmPath("/atom/movable/screen/hud_completion"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_hud_completion : atom_movable_screen
+// tg: code/modules/fishing/fishing_minigame.dm:874 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/hud_completion")]
+public partial class atom_movable_screen_hud_completion
 {
     // tg: code/modules/fishing/fishing_minigame.dm:874
     public atom_movable_screen_hud_completion()

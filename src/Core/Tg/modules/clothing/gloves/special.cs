@@ -9,10 +9,10 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// J1 (D298): the captain's gloves' and the nitrile gloves' Initialize (the fishing difficulty element is a deferred leaf, fishing M10+) and the
+// J1 (D298): the captain's gloves' and the nitrile gloves' Initialize (with its fishing difficulty element) and the
 // coroner's gloves' add_blood_DNA (they never take blood). Gaps CL1 (D333): the cargo gauntlets (the wearer's strong pull,
-// datums/components/strong_pull.cs) and the race gloves; the athletic fishing gloves and their fishing rod wait for fishing
-// (not-translated.md 209). The var blocks are generated.
+// datums/components/strong_pull.cs) and the race gloves; the athletic fishing gloves and their fishing rod are
+// left (not-translated.md 209). The var blocks are generated.
 
 // tg: code/modules/clothing/gloves/special.dm:2
 public partial class obj_item_clothing_gloves_cargo_gauntlet : obj_item_clothing_gloves
@@ -23,7 +23,7 @@ public partial class obj_item_clothing_gloves_cargo_gauntlet : obj_item_clothing
         object dot = base.Initialize(mapload, __extra);
         RegisterSignal(this, COMSIG_ITEM_EQUIPPED, nameof(on_glove_equip));
         RegisterSignal(this, COMSIG_ITEM_POST_UNEQUIP, nameof(on_glove_unequip));
-        Dm.Deferred("code/modules/clothing/gloves/special.dm:17", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 19): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 19));
         return dot;
     }
 
@@ -68,7 +68,7 @@ public partial class obj_item_clothing_gloves_race : obj_item_clothing_gloves
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/gloves/special.dm:82", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -9): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -9));
         return dot;
     }
 }
@@ -81,8 +81,7 @@ public partial class obj_item_clothing_gloves_rapid : obj_item_clothing_gloves
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_wearertargeting_punchcooldown)));
-        // AddElement(/datum/element/adjust_fishing_difficulty, -9)
-        Dm.Deferred("code/modules/clothing/gloves/special.dm:62", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -9): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -9));
         return dot;
     }
 }
@@ -94,8 +93,7 @@ public partial class obj_item_clothing_gloves_captain : obj_item_clothing_gloves
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, -6)
-        Dm.Deferred("code/modules/clothing/gloves/special.dm:102", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -6): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -6));
         return dot;
     }
 }
@@ -107,8 +105,7 @@ public partial class obj_item_clothing_gloves_latex_nitrile : obj_item_clothing_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, -6)
-        Dm.Deferred("code/modules/clothing/gloves/special.dm:134", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -6): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -6));
         return dot;
     }
 }

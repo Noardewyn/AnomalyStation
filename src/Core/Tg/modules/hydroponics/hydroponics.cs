@@ -1501,7 +1501,7 @@ public partial class obj_machinery_hydroponics_constructable : obj_machinery_hyd
         Waiting.NoSleep(AddElement(typeof(datum_element_simple_rotation)));
         Waiting.NoSleep(AddComponent(typeof(datum_component_plumbing_hydroponics)));
         Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_hydroponics)), only_root_path: TRUE)));
-        Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), typeof(datum_fish_source_hydro_tray))); // inert until fishing
+        Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), typeof(datum_fish_source_hydro_tray)));
         return dot;
     }
 

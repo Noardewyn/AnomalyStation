@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL: only the stasis fish cases, which carry a fish safe from the air and start with one (the random, freshwater,
-// saltwater, Tiziran and black-market cases; the syndicate case picks from the syndicate fishing portal's fish, which come
-// with the rods). The aquarium kit and the aquarium props come with the aquariums. The var blocks are generated (D111).
+// saltwater, Tiziran, syndicate and black-market cases). The aquarium kit and the aquarium props come with the aquariums. The
+// var blocks are generated.
 
 /**
  * Stasis fish case container for moving fish between aquariums safely.
@@ -56,6 +56,23 @@ public partial class obj_item_storage_fish_case_random : obj_item_storage_fish_c
     public override object get_fish_type()
     {
         return random_fish_type(fluid_type);
+    }
+}
+
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:61
+public partial class obj_item_storage_fish_case_syndicate : obj_item_storage_fish_case
+{
+    // tg: code/modules/fishing/aquarium/aquarium_kit.dm:64
+    public override object get_fish_type()
+    {
+        datum_fish_source_portal syndicate = GLOB.preset_fish_sources[typeof(datum_fish_source_portal_syndicate)] as datum_fish_source_portal;
+        DmList picks = syndicate.fish_table.Copy();
+        foreach (object fish in Dm.each(picks.Copy()))
+        {
+            if (!ispath(fish, typeof(obj_item_fish)))
+                Dm.remove(picks, fish);
+        }
+        return pick(picks);
     }
 }
 

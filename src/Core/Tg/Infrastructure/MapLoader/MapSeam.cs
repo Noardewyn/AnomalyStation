@@ -116,8 +116,9 @@ public static class MapSeam
                 seam.WriteText("_maps/templates/lazy_templates/" + Path.GetFileNameWithoutExtension(converted) + ".dmm", File.ReadAllText(converted));
         }
 
-        // The survival capsules' shelters, <MapsFolder>/templates/shelter_*.as3dmap, at tg's _maps/templates/shelter_*.dmm, where SSmapping's
-        // preloadShelterTemplates finds them (and preloadTemplates, as tg's every file of _maps/templates)
+        // The survival capsules' shelters and the fishing capsule's spots, <MapsFolder>/templates/shelter_*.as3dmap and fishing_*.as3dmap,
+        // at tg's _maps/templates/<name>.dmm, where SSmapping's preloadShelterTemplates finds them (and preloadTemplates, as tg's every
+        // file of _maps/templates)
         string templates = Path.Combine(selection.MapsFolder, "templates");
         if (Directory.Exists(templates))
         {

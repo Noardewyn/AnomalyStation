@@ -285,6 +285,9 @@ public enum ConsoleVerb : byte
 
     /// <summary><c>adventures</c>, tg's Adventure Manager (the AdventureBrowser window: the exploration drones' adventures, played as a test).</summary>
     Adventures,
+
+    /// <summary><c>fishing-calculator</c>, tg's Fishing Calculator (the FishingCalculator window: a fishing spot's catches for a rod, hook, line and bait).</summary>
+    FishingCalculator,
 }
 
 /// <summary>A parsed console line.</summary>
@@ -329,6 +332,7 @@ public readonly record struct ConsoleCommand(ConsoleVerb Verb, IReadOnlyList<str
         + "  circuits                    every integrated circuit in the game (a window)\n"
         + "  load-circuit JSON           a circuit loaded from its saved JSON at your feet\n"
         + "  adventures                  the exploration drones' adventures, each playable as a test (a window)\n"
+        + "  fishing-calculator          a fishing spot's catches for a rod, hook, line and bait (a window)\n"
         + "  dev-help                    the dev commands' syntax\n"
         + "  help                        this text";
 
@@ -338,7 +342,7 @@ public readonly record struct ConsoleCommand(ConsoleVerb Verb, IReadOnlyList<str
         or ConsoleVerb.Tickets or ConsoleVerb.Pm
         or ConsoleVerb.CheckAntagonists or ConsoleVerb.TraitorPanel or ConsoleVerb.CheckTeams or ConsoleVerb.ComboHud
         or ConsoleVerb.DynamicPanel or ConsoleVerb.DynamicTester or ConsoleVerb.Secrets or ConsoleVerb.StationTraits or ConsoleVerb.SkillPanel
-        or ConsoleVerb.Circuits or ConsoleVerb.LoadCircuit or ConsoleVerb.Adventures;
+        or ConsoleVerb.Circuits or ConsoleVerb.LoadCircuit or ConsoleVerb.Adventures or ConsoleVerb.FishingCalculator;
 
     /// <summary>
     /// M10 slice I: a ban's DURATION, <c>perm</c> (null) or minutes (<c>30</c>, <c>30m</c>, <c>2h</c>, <c>7d</c>, <c>1w</c>); false for anything else.
@@ -413,6 +417,7 @@ public readonly record struct ConsoleCommand(ConsoleVerb Verb, IReadOnlyList<str
             "circuits" => ConsoleVerb.Circuits,
             "load-circuit" => ConsoleVerb.LoadCircuit,
             "adventures" => ConsoleVerb.Adventures,
+            "fishing-calculator" => ConsoleVerb.FishingCalculator,
             _ when DevCommandLine.IsDevVerb(words[0]) => ConsoleVerb.Dev,
             _ => ConsoleVerb.Unknown,
         };

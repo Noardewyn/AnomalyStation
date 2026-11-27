@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The whole file (gaps E3, D327: the Spider Clan gift's shuttle loan leaves a balaclava by the victim) but the floortile balaclava's
-// fishing modifier (a Dm.Deferred: fishing, M10+). The var blocks are generated (D111).
+// fishing modifier (the fishing difficulty element). The var blocks are generated (D111).
 
 // tg: code/modules/clothing/masks/boxing.dm:1
 public partial class obj_item_clothing_mask_balaclava : obj_item_clothing_mask
@@ -30,7 +30,7 @@ public partial class obj_item_clothing_mask_floortilebalaclava : obj_item_clothi
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/masks/boxing.dm:29", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)"); //tacticool
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5)); //tacticool
         return dot;
     }
 

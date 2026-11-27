@@ -257,9 +257,9 @@ public partial class obj_item_fishing_rod_bone : obj_item_fishing_rod
     }
 }
 
-// tg: code/modules/fishing/fishing_rod.dm:679
-[DmPath("/obj/item/fishing_rod/telescopic"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_rod_telescopic : obj_item_fishing_rod
+// tg: code/modules/fishing/fishing_rod.dm:679 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_rod/telescopic")]
+public partial class obj_item_fishing_rod_telescopic
 {
     public float active_force = 8; // tg: code/modules/fishing/fishing_rod.dm:696
 
@@ -286,7 +286,7 @@ public partial class obj_item_fishing_rod_telescopic : obj_item_fishing_rod
 }
 
 // tg: code/modules/fishing/fishing_rod.dm:752
-[DmPath("/obj/item/fishing_rod/telescopic/master"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fishing_rod/telescopic/master"), DmGeneratedOnly]
 public partial class obj_item_fishing_rod_telescopic_master : obj_item_fishing_rod_telescopic
 {
     // tg: code/modules/fishing/fishing_rod.dm:752
@@ -313,9 +313,9 @@ public partial class obj_item_fishing_rod_telescopic_master : obj_item_fishing_r
     }
 }
 
-// tg: code/modules/fishing/fishing_rod.dm:772
-[DmPath("/obj/item/fishing_rod/tech"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_rod_tech : obj_item_fishing_rod
+// tg: code/modules/fishing/fishing_rod.dm:772 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_rod/tech")]
+public partial class obj_item_fishing_rod_tech
 {
     // tg: code/modules/fishing/fishing_rod.dm:772
     public obj_item_fishing_rod_tech()
@@ -342,9 +342,9 @@ public partial class obj_item_fishing_rod_tech : obj_item_fishing_rod
     }
 }
 
-// tg: code/modules/fishing/fishing_rod.dm:812
-[DmPath("/obj/item/fishing_rod/material"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_rod_material : obj_item_fishing_rod
+// tg: code/modules/fishing/fishing_rod.dm:812 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_rod/material")]
+public partial class obj_item_fishing_rod_material
 {
     // tg: code/modules/fishing/fishing_rod.dm:812
     public obj_item_fishing_rod_material()
@@ -34764,9 +34764,9 @@ public partial class obj_item_firelance
     public float melt_range = 3; // tg: code/modules/explorer_drone/loot.dm:154
 }
 
-// tg: code/modules/fishing/bait.dm:2
-[DmPath("/obj/item/bait_can"), DmGeneratedOnly, DmInert]
-public partial class obj_item_bait_can : obj_item
+// tg: code/modules/fishing/bait.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/bait_can")]
+public partial class obj_item_bait_can
 {
     public float bait_removal_cooldown = 0; // tg: code/modules/fishing/bait.dm:9
     public Type bait_type = typeof(obj_item_food_bait); // tg: code/modules/fishing/bait.dm:11
@@ -34786,7 +34786,7 @@ public partial class obj_item_bait_can : obj_item
 }
 
 // tg: code/modules/fishing/bait.dm:49
-[DmPath("/obj/item/bait_can/worm"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/bait_can/worm"), DmGeneratedOnly]
 public partial class obj_item_bait_can_worm : obj_item_bait_can
 {
     // tg: code/modules/fishing/bait.dm:49
@@ -34799,7 +34799,7 @@ public partial class obj_item_bait_can_worm : obj_item_bait_can
 }
 
 // tg: code/modules/fishing/bait.dm:54
-[DmPath("/obj/item/bait_can/worm/premium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/bait_can/worm/premium"), DmGeneratedOnly]
 public partial class obj_item_bait_can_worm_premium : obj_item_bait_can_worm
 {
     // tg: code/modules/fishing/bait.dm:54
@@ -34812,7 +34812,7 @@ public partial class obj_item_bait_can_worm_premium : obj_item_bait_can_worm
 }
 
 // tg: code/modules/fishing/bait.dm:59
-[DmPath("/obj/item/bait_can/super_baits"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/bait_can/super_baits"), DmGeneratedOnly]
 public partial class obj_item_bait_can_super_baits : obj_item_bait_can
 {
     // tg: code/modules/fishing/bait.dm:59
@@ -34825,9 +34825,9 @@ public partial class obj_item_bait_can_super_baits : obj_item_bait_can
     }
 }
 
-// tg: code/modules/fishing/bait.dm:65
-[DmPath("/obj/item/fishing_lure"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure : obj_item
+// tg: code/modules/fishing/bait.dm:65 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure")]
+public partial class obj_item_fishing_lure
 {
     public DmList spin_frequency; // tg: code/modules/fishing/bait.dm:74
 
@@ -34849,9 +34849,9 @@ public partial class obj_item_fishing_lure : obj_item
     }
 }
 
-// tg: code/modules/fishing/bait.dm:130
-[DmPath("/obj/item/fishing_lure/minnow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_minnow : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:130 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/minnow")]
+public partial class obj_item_fishing_lure_minnow
 {
     // tg: code/modules/fishing/bait.dm:130
     public obj_item_fishing_lure_minnow()
@@ -34862,9 +34862,9 @@ public partial class obj_item_fishing_lure_minnow : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:143
-[DmPath("/obj/item/fishing_lure/plug"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_plug : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:143 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/plug")]
+public partial class obj_item_fishing_lure_plug
 {
     // tg: code/modules/fishing/bait.dm:143
     public obj_item_fishing_lure_plug()
@@ -34875,9 +34875,9 @@ public partial class obj_item_fishing_lure_plug : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:155
-[DmPath("/obj/item/fishing_lure/dropping"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_dropping : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:155 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/dropping")]
+public partial class obj_item_fishing_lure_dropping
 {
     // tg: code/modules/fishing/bait.dm:155
     public obj_item_fishing_lure_dropping()
@@ -34895,9 +34895,9 @@ public partial class obj_item_fishing_lure_dropping : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:175
-[DmPath("/obj/item/fishing_lure/spoon"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_spoon : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:175 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/spoon")]
+public partial class obj_item_fishing_lure_spoon
 {
     // tg: code/modules/fishing/bait.dm:175
     public obj_item_fishing_lure_spoon()
@@ -34915,9 +34915,9 @@ public partial class obj_item_fishing_lure_spoon : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:193
-[DmPath("/obj/item/fishing_lure/artificial_fly"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_artificial_fly : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:193 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/artificial_fly")]
+public partial class obj_item_fishing_lure_artificial_fly
 {
     // tg: code/modules/fishing/bait.dm:193
     public obj_item_fishing_lure_artificial_fly()
@@ -34935,9 +34935,9 @@ public partial class obj_item_fishing_lure_artificial_fly : obj_item_fishing_lur
     }
 }
 
-// tg: code/modules/fishing/bait.dm:204
-[DmPath("/obj/item/fishing_lure/led"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_led : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:204 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/led")]
+public partial class obj_item_fishing_lure_led
 {
     // tg: code/modules/fishing/bait.dm:204
     public obj_item_fishing_lure_led()
@@ -34955,9 +34955,9 @@ public partial class obj_item_fishing_lure_led : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:231
-[DmPath("/obj/item/fishing_lure/lucky_coin"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_lucky_coin : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:231 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/lucky_coin")]
+public partial class obj_item_fishing_lure_lucky_coin
 {
     // tg: code/modules/fishing/bait.dm:231
     public obj_item_fishing_lure_lucky_coin()
@@ -34975,9 +34975,9 @@ public partial class obj_item_fishing_lure_lucky_coin : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:250
-[DmPath("/obj/item/fishing_lure/algae"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_algae : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:250 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/algae")]
+public partial class obj_item_fishing_lure_algae
 {
     // tg: code/modules/fishing/bait.dm:250
     public obj_item_fishing_lure_algae()
@@ -34995,9 +34995,9 @@ public partial class obj_item_fishing_lure_algae : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:261
-[DmPath("/obj/item/fishing_lure/grub"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_grub : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:261 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/grub")]
+public partial class obj_item_fishing_lure_grub
 {
     // tg: code/modules/fishing/bait.dm:261
     public obj_item_fishing_lure_grub()
@@ -35015,9 +35015,9 @@ public partial class obj_item_fishing_lure_grub : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:274
-[DmPath("/obj/item/fishing_lure/buzzbait"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_buzzbait : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:274 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/buzzbait")]
+public partial class obj_item_fishing_lure_buzzbait
 {
     // tg: code/modules/fishing/bait.dm:274
     public obj_item_fishing_lure_buzzbait()
@@ -35035,9 +35035,9 @@ public partial class obj_item_fishing_lure_buzzbait : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:285
-[DmPath("/obj/item/fishing_lure/spinnerbait"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_spinnerbait : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:285 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/spinnerbait")]
+public partial class obj_item_fishing_lure_spinnerbait
 {
     // tg: code/modules/fishing/bait.dm:285
     public obj_item_fishing_lure_spinnerbait()
@@ -35055,9 +35055,9 @@ public partial class obj_item_fishing_lure_spinnerbait : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:301
-[DmPath("/obj/item/fishing_lure/daisy_chain"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_daisy_chain : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:301 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/daisy_chain")]
+public partial class obj_item_fishing_lure_daisy_chain
 {
     // tg: code/modules/fishing/bait.dm:301
     public obj_item_fishing_lure_daisy_chain()
@@ -35095,9 +35095,9 @@ public partial class obj_item_fishing_line : obj_item
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:25
-[DmPath("/obj/item/fishing_line/reinforced"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_line_reinforced : obj_item_fishing_line
+// tg: code/modules/fishing/fishing_equipment.dm:25 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_line/reinforced")]
+public partial class obj_item_fishing_line_reinforced
 {
     // tg: code/modules/fishing/fishing_equipment.dm:25
     public obj_item_fishing_line_reinforced()
@@ -35144,9 +35144,9 @@ public partial class obj_item_fishing_line_bouncy : obj_item_fishing_line
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:63
-[DmPath("/obj/item/fishing_line/sinew"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_line_sinew : obj_item_fishing_line
+// tg: code/modules/fishing/fishing_equipment.dm:63 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_line/sinew")]
+public partial class obj_item_fishing_line_sinew
 {
     // tg: code/modules/fishing/fishing_equipment.dm:63
     public obj_item_fishing_line_sinew()
@@ -35161,9 +35161,9 @@ public partial class obj_item_fishing_line_sinew : obj_item_fishing_line
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:90
-[DmPath("/obj/item/fishing_line/auto_reel"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_line_auto_reel : obj_item_fishing_line
+// tg: code/modules/fishing/fishing_equipment.dm:90 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_line/auto_reel")]
+public partial class obj_item_fishing_line_auto_reel
 {
     // tg: code/modules/fishing/fishing_equipment.dm:90
     public obj_item_fishing_line_auto_reel()
@@ -35209,9 +35209,9 @@ public partial class obj_item_fishing_line_bluespace : obj_item_fishing_line
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:162
-[DmPath("/obj/item/fishing_hook"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook : obj_item
+// tg: code/modules/fishing/fishing_equipment.dm:162 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook")]
+public partial class obj_item_fishing_hook
 {
     public object fishing_hook_traits; // tg: code/modules/fishing/fishing_equipment.dm:170
     public string rod_overlay_icon_state = "hook_overlay"; // tg: code/modules/fishing/fishing_equipment.dm:172
@@ -35236,9 +35236,9 @@ public partial class obj_item_fishing_hook : obj_item
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:217
-[DmPath("/obj/item/fishing_hook/magnet"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_magnet : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:217 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/magnet")]
+public partial class obj_item_fishing_hook_magnet
 {
     // tg: code/modules/fishing/fishing_equipment.dm:217
     public obj_item_fishing_hook_magnet()
@@ -35252,9 +35252,9 @@ public partial class obj_item_fishing_hook_magnet : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:245
-[DmPath("/obj/item/fishing_hook/shiny"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_shiny : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:245 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/shiny")]
+public partial class obj_item_fishing_hook_shiny
 {
     // tg: code/modules/fishing/fishing_equipment.dm:245
     public obj_item_fishing_hook_shiny()
@@ -35266,9 +35266,9 @@ public partial class obj_item_fishing_hook_shiny : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:264
-[DmPath("/obj/item/fishing_hook/anomaly"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_anomaly : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:264 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/anomaly")]
+public partial class obj_item_fishing_hook_anomaly
 {
     public obj_item_assembly_signaler_anomaly core; // tg: code/modules/fishing/fishing_equipment.dm:269
 
@@ -35282,7 +35282,7 @@ public partial class obj_item_fishing_hook_anomaly : obj_item_fishing_hook
 }
 
 // tg: code/modules/fishing/fishing_equipment.dm:480
-[DmPath("/obj/item/fishing_hook/weighted"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fishing_hook/weighted"), DmGeneratedOnly]
 public partial class obj_item_fishing_hook_weighted : obj_item_fishing_hook
 {
     // tg: code/modules/fishing/fishing_equipment.dm:480
@@ -35296,9 +35296,9 @@ public partial class obj_item_fishing_hook_weighted : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:487
-[DmPath("/obj/item/fishing_hook/rescue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_rescue : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:487 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/rescue")]
+public partial class obj_item_fishing_hook_rescue
 {
     // tg: code/modules/fishing/fishing_equipment.dm:487
     public obj_item_fishing_hook_rescue()
@@ -35313,7 +35313,7 @@ public partial class obj_item_fishing_hook_rescue : obj_item_fishing_hook
 }
 
 // tg: code/modules/fishing/fishing_equipment.dm:520
-[DmPath("/obj/item/fishing_hook/bone"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fishing_hook/bone"), DmGeneratedOnly]
 public partial class obj_item_fishing_hook_bone : obj_item_fishing_hook
 {
     // tg: code/modules/fishing/fishing_equipment.dm:520
@@ -35333,9 +35333,9 @@ public partial class obj_item_fishing_hook_bone : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:527
-[DmPath("/obj/item/fishing_hook/stabilized"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_stabilized : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:527 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/stabilized")]
+public partial class obj_item_fishing_hook_stabilized
 {
     // tg: code/modules/fishing/fishing_equipment.dm:527
     public obj_item_fishing_hook_stabilized()
@@ -35356,9 +35356,9 @@ public partial class obj_item_fishing_hook_stabilized : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:541
-[DmPath("/obj/item/fishing_hook/jaws"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_jaws : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:541 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/jaws")]
+public partial class obj_item_fishing_hook_jaws
 {
     // tg: code/modules/fishing/fishing_equipment.dm:541
     public obj_item_fishing_hook_jaws()
@@ -35393,9 +35393,9 @@ public partial class obj_item_survivalcapsule
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:590
-[DmPath("/obj/item/survivalcapsule/fishing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_survivalcapsule_fishing : obj_item_survivalcapsule
+// tg: code/modules/fishing/fishing_equipment.dm:590 (the var block of a hand-written class)
+[DmPath("/obj/item/survivalcapsule/fishing")]
+public partial class obj_item_survivalcapsule_fishing
 {
     // tg: code/modules/fishing/fishing_equipment.dm:590
     public obj_item_survivalcapsule_fishing()
@@ -35413,7 +35413,7 @@ public partial class obj_item_survivalcapsule_fishing : obj_item_survivalcapsule
 }
 
 // tg: code/modules/fishing/fishing_equipment.dm:680
-[DmPath("/obj/item/survivalcapsule/fishing/hacked"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/survivalcapsule/fishing/hacked"), DmGeneratedOnly]
 public partial class obj_item_survivalcapsule_fishing_hacked : obj_item_survivalcapsule_fishing
 {
     // tg: code/modules/fishing/fishing_equipment.dm:680
@@ -35462,9 +35462,9 @@ public partial class obj_item_survivalcapsule_bathroom : obj_item_survivalcapsul
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:714
-[DmPath("/obj/item/fish_genegun"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_genegun : obj_item
+// tg: code/modules/fishing/fishing_equipment.dm:714 (the var block of a hand-written class)
+[DmPath("/obj/item/fish_genegun")]
+public partial class obj_item_fish_genegun
 {
     public obj_item loaded_injector; // tg: code/modules/fishing/fishing_equipment.dm:731
 
@@ -35496,28 +35496,9 @@ public partial class obj_item_fish_genegun : obj_item
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:848
-[DmPath("/obj/item/fish_gene"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_gene : obj_item
-{
-    public datum_fish_trait trait_type; // tg: code/modules/fishing/fishing_equipment.dm:859
-
-    // tg: code/modules/fishing/fishing_equipment.dm:848
-    public obj_item_fish_gene()
-    {
-        name = "fish trait injector";
-        icon = Dm.resource("icons/obj/fishing.dmi");
-        icon_state = "fish_trait_injector";
-        desc = "A single-use injector containing a specific trait that can be used on any (living) fish compatible with it.";
-        w_class = 1;
-        inhand_icon_state = "dnainjector";
-        worn_icon_state = "pen";
-        lefthand_file = Dm.resource("icons/mob/inhands/equipment/medical_lefthand.dmi");
-        righthand_file = Dm.resource("icons/mob/inhands/equipment/medical_righthand.dmi");
-        throw_speed = 3;
-        throw_range = 5;
-    }
-}
+// tg: code/modules/fishing/fishing_equipment.dm:848 (the vars the hand-written class does not declare)
+[DmPath("/obj/item/fish_gene")]
+public partial class obj_item_fish_gene { }
 
 // tg: code/modules/fishing/aquarium/aquarium.dm:123
 [DmPath("/obj/item/fish_tank"), DmGeneratedOnly, DmInert]

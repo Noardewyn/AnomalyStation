@@ -11,8 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // PARTIAL: /obj/item/clothing/head/soft's dropped (M4a clothing: a cap is put on and taken off, and comes off facing forward
 // again) and, J1 (D298), flipping the cap (click_alt, flip) and its examine. The Flip cap verb is a live-partial row (verbs, M10+).
-// Gaps CL1 (D333): the fishing hat (its crustacean speech and, since gaps SL1, the fishing skill's reward; the fishing difficulty
-// waits for fishing) and the propeller hat (its spinning propeller's worn state, its mood and its suicide).
+// Gaps CL1 (D333): the fishing hat (its crustacean speech and, since gaps SL1, the fishing skill's reward, the fishing difficulty) and the propeller hat (its spinning propeller's worn state, its mood and its suicide).
 
 // tg: code/modules/clothing/head/soft_caps.dm:1
 public partial class obj_item_clothing_head_soft : obj_item_clothing_head
@@ -73,7 +72,7 @@ public partial class obj_item_clothing_head_soft_fishing_hat : obj_item_clothing
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_speechmod), Dm.named("replacements", strings("crustacean_replacement.json", "crustacean")))); //you asked for this.
         Waiting.NoSleep(AddElement(typeof(datum_element_skill_reward), typeof(datum_skill_fishing)));
-        Dm.Deferred("code/modules/clothing/head/soft_caps.dm:168", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5));
         return dot;
     }
 }

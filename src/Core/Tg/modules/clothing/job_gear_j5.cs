@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps J5 (D298). adjust_fishing_difficulty (fishing), equipment_bodypart_texture (body textures) and clothing_dirt are rows (not-translated.md 114; the hat_stabilizer came with gaps MO1);
+// Gaps J5 (D298). equipment_bodypart_texture (body textures) and clothing_dirt are rows (not-translated.md 114; the hat_stabilizer came with gaps MO1);
 // the emissive worn overlays are under DV12.
 
 // tg: code/modules/clothing/ears/_ears.dm:14
@@ -29,7 +29,12 @@ public partial class obj_item_clothing_ears_earmuffs : obj_item_clothing_ears
 public partial class obj_item_clothing_glasses_blindfold : obj_item_clothing_glasses
 {
     // tg: code/modules/clothing/glasses/_glasses.dm:560
-    public override object Initialize(object mapload = null, params object[] __extra) => base.Initialize(mapload, __extra); // adjust_fishing_difficulty: fishing
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 8));
+        return dot;
+    }
 }
 
 // tg: code/modules/clothing/glasses/_glasses.dm:323
@@ -100,14 +105,24 @@ public partial class obj_item_clothing_glasses_regular : obj_item_clothing_glass
 public partial class obj_item_clothing_gloves_atmos : obj_item_clothing_gloves
 {
     // tg: code/modules/clothing/gloves/special.dm:176
-    public override object Initialize(object mapload = null, params object[] __extra) => base.Initialize(mapload, __extra); // adjust_fishing_difficulty: fishing
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 6));
+        return dot;
+    }
 }
 
 // tg: code/modules/clothing/gloves/insulated.dm:146
 public partial class obj_item_clothing_gloves_chief_engineer : obj_item_clothing_gloves
 {
     // tg: code/modules/clothing/gloves/insulated.dm:155
-    public override object Initialize(object mapload = null, params object[] __extra) => base.Initialize(mapload, __extra); // adjust_fishing_difficulty: fishing
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -6));
+        return dot;
+    }
 }
 
 // tg: code/modules/clothing/gloves/color.dm:32
@@ -117,7 +132,8 @@ public partial class obj_item_clothing_gloves_fingerless : obj_item_clothing_glo
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // adjust_fishing_difficulty: fishing
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4));
+
         Waiting.NoSleep(AddElement(typeof(datum_element_slapcrafting), Dm.named("slapcraft_recipes", Dm.list(typeof(datum_crafting_recipe_gripperoffbrand)))));
         return dot;
     }
@@ -230,7 +246,13 @@ public partial class obj_item_clothing_head_utility_hardhat_welding_atmos : obj_
 public partial class obj_item_clothing_head_utility_welding : obj_item_clothing_head_utility
 {
     // tg: code/modules/clothing/head/welding.dm:27
-    public override object Initialize(object mapload = null, params object[] __extra) => base.Initialize(mapload, __extra); // adjust_fishing_difficulty: fishing
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        if (!Dm.truthy(up))
+            Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 8));
+        return dot;
+    }
 
     // tg: code/modules/clothing/head/welding.dm:32
     public override async DmTask<object> attack_self(mob user = null, object modifiers = null, params object[] __extra)
@@ -243,7 +265,10 @@ public partial class obj_item_clothing_head_utility_welding : obj_item_clothing_
     public override async DmTask<object> adjust_visor(mob_living user = null)
     {
         object dot = await base.adjust_visor(user);
-        // the fishing difficulty element's swap: fishing
+        if (Dm.truthy(up))
+            RemoveElement(typeof(datum_element_adjust_fishing_difficulty));
+        else
+            await AddElement(typeof(datum_element_adjust_fishing_difficulty), 8);
         return dot;
     }
 
@@ -268,7 +293,12 @@ public partial class obj_item_clothing_shoes_magboots_advance : obj_item_clothin
 public partial class obj_item_clothing_under_rank_medical_chief_medical_officer_scrubs : obj_item_clothing_under_rank_medical_chief_medical_officer
 {
     // tg: code/modules/clothing/under/jobs/medical.dm:51
-    public override object Initialize(object mapload = null, params object[] __extra) => base.Initialize(mapload, __extra); // adjust_fishing_difficulty: fishing
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -3)); //FISH DOCTOR?!
+        return dot;
+    }
 }
 
 // tg: code/modules/clothing/under/accessories/medals.dm:116

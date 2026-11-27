@@ -1586,9 +1586,9 @@ public partial class obj_item_storage_bag_garment_paramedic
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:686
-[DmPath("/obj/item/storage/bag/fishing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_bag_fishing : obj_item_storage_bag
+// tg: code/modules/fishing/fishing_equipment.dm:686 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/bag/fishing")]
+public partial class obj_item_storage_bag_fishing
 {
     public float fishing_modifier = -2; // tg: code/modules/fishing/fishing_equipment.dm:696
 
@@ -1607,7 +1607,7 @@ public partial class obj_item_storage_bag_fishing : obj_item_storage_bag
 }
 
 // tg: code/modules/fishing/fishing_equipment.dm:704
-[DmPath("/obj/item/storage/bag/fishing/carpskin"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/storage/bag/fishing/carpskin"), DmGeneratedOnly]
 public partial class obj_item_storage_bag_fishing_carpskin : obj_item_storage_bag_fishing
 {
     // tg: code/modules/fishing/fishing_equipment.dm:704
@@ -3884,9 +3884,9 @@ public partial class obj_item_storage_fish_case_random_saltwater : obj_item_stor
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:62
-[DmPath("/obj/item/storage/fish_case/syndicate"), DmGeneratedOnly]
-public partial class obj_item_storage_fish_case_syndicate : obj_item_storage_fish_case
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:62 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/fish_case/syndicate")]
+public partial class obj_item_storage_fish_case_syndicate
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:62
     public obj_item_storage_fish_case_syndicate()

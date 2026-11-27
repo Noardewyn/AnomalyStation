@@ -5749,9 +5749,9 @@ public partial class obj_effect_immovablerod_wizard : obj_effect_immovablerod
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:887
-[DmPath("/obj/effect/fishing_float"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_fishing_float : obj_effect
+// tg: code/modules/fishing/fishing_minigame.dm:887 (the var block of a hand-written class)
+[DmPath("/obj/effect/fishing_float")]
+public partial class obj_effect_fishing_float
 {
     public DmList spin_frequency; // tg: code/modules/fishing/fishing_minigame.dm:895
     public float spin_ready = 0; // tg: code/modules/fishing/fishing_minigame.dm:897

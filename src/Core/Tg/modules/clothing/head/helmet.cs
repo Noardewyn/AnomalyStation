@@ -188,7 +188,7 @@ public partial class obj_item_clothing_head_helmet_toggleable_riot : obj_item_cl
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_seclite_attachable), Dm.named("light_icon_state", "flight")));
-        // AddElement(/datum/element/adjust_fishing_difficulty, 2): fishing difficulty (section 105)
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 2));
         return dot;
     }
 }
@@ -238,7 +238,7 @@ public partial class obj_item_clothing_head_helmet_swat : obj_item_clothing_head
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/head/helmet.dm:363", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 3): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 3));
         return dot;
     }
 }
@@ -262,7 +262,7 @@ public partial class obj_item_clothing_head_helmet_knight : obj_item_clothing_he
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/head/helmet.dm:514", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 3): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 3));
         return dot;
     }
 }

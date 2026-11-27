@@ -10,14 +10,18 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL (syndicate G3c, D316): the blood-red sneaksuit and with it the uplink's blood-red pajamas; syndicate N2c: the overwatch agent's
-// tacticool turtleneck (gaps H1: its syndicate dye). Gaps CL1 (D333): the floor tile camouflage and the scrubs (their fishing difficulty
-// waits for fishing). The var blocks are generated (D111).
+// tacticool turtleneck (gaps H1: its syndicate dye). Gaps CL1 (D333): the floor tile camouflage and the scrubs (with their fishing difficulty). The var blocks are generated (D111).
 
 // tg: code/modules/clothing/under/syndicate.dm:29
 public partial class obj_item_clothing_under_syndicate_bloodred : obj_item_clothing_under_syndicate
 {
     // tg: code/modules/clothing/under/syndicate.dm:39
-    public override object Initialize(object mapload = null, params object[] __extra) => base.Initialize(mapload, __extra); // AddElement(/datum/element/adjust_fishing_difficulty, -4): fishing (not-translated.md 114)
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4)); //extra-tactical
+        return dot;
+    }
 }
 
 // tg: code/modules/clothing/under/syndicate.dm:63
@@ -61,7 +65,7 @@ public partial class obj_item_clothing_under_syndicate_floortilecamo : obj_item_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/under/syndicate.dm:141", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)"); //tacticool
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5)); //tacticool
         return dot;
     }
 }
@@ -73,7 +77,7 @@ public partial class obj_item_clothing_under_syndicate_scrubs : obj_item_clothin
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/under/syndicate.dm:186", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -3): fishing (M10+)"); //FISH DOCTOR?!
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -3)); //FISH DOCTOR?!
         return dot;
     }
 }

@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Gaps CL1 (D333): the collectable hats' Initialize (the series element, datums/elements/series.cs); the pirate, wizard and SWAT
-// hats' fishing difficulty elements wait for fishing. The var blocks are generated (D111).
+// hats' fishing difficulty elements. The var blocks are generated (D111).
 
 // tg: code/modules/clothing/head/collectable.dm:4
 public partial class obj_item_clothing_head_collectable : obj_item_clothing_head
@@ -31,7 +31,7 @@ public partial class obj_item_clothing_head_collectable_pirate : obj_item_clothi
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/head/collectable.dm:121", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4));
         return dot;
     }
 }
@@ -43,7 +43,7 @@ public partial class obj_item_clothing_head_collectable_wizard : obj_item_clothi
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/head/collectable.dm:147", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -2): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -2));
         return dot;
     }
 }
@@ -55,7 +55,7 @@ public partial class obj_item_clothing_head_collectable_swat : obj_item_clothing
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/head/collectable.dm:196", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 2): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 2));
         return dot;
     }
 }

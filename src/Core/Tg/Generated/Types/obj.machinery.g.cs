@@ -11599,9 +11599,9 @@ public partial class obj_machinery_exoscanner
     }
 }
 
-// tg: code/modules/fishing/fishing_portal_machine.dm:2
-[DmPath("/obj/machinery/fishing_portal_generator"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_fishing_portal_generator : obj_machinery
+// tg: code/modules/fishing/fishing_portal_machine.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/fishing_portal_generator")]
+public partial class obj_machinery_fishing_portal_generator
 {
     public datum_component_fishing_spot active; // tg: code/modules/fishing/fishing_portal_machine.dm:12
     public DmList linked_fishing_spots; // tg: code/modules/fishing/fishing_portal_machine.dm:14
@@ -11625,7 +11625,7 @@ public partial class obj_machinery_fishing_portal_generator : obj_machinery
 }
 
 // tg: code/modules/fishing/fishing_portal_machine.dm:304
-[DmPath("/obj/machinery/fishing_portal_generator/emagged"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/fishing_portal_generator/emagged"), DmGeneratedOnly]
 public partial class obj_machinery_fishing_portal_generator_emagged : obj_machinery_fishing_portal_generator
 {
     // tg: code/modules/fishing/fishing_portal_machine.dm:304
@@ -11637,7 +11637,7 @@ public partial class obj_machinery_fishing_portal_generator_emagged : obj_machin
 }
 
 // tg: code/modules/fishing/fishing_portal_machine.dm:308
-[DmPath("/obj/machinery/fishing_portal_generator/full"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/fishing_portal_generator/full"), DmGeneratedOnly]
 public partial class obj_machinery_fishing_portal_generator_full : obj_machinery_fishing_portal_generator
 {
     // tg: code/modules/fishing/fishing_portal_machine.dm:308

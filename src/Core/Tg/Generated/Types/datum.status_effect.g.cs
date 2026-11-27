@@ -447,9 +447,9 @@ public partial class datum_status_effect_grouped_stasis
     }
 }
 
-// tg: code/datums/status_effects/debuffs/hooked.dm:3
-[DmPath("/datum/status_effect/grouped/hooked"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_grouped_hooked : datum_status_effect_grouped
+// tg: code/datums/status_effects/debuffs/hooked.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/grouped/hooked")]
+public partial class datum_status_effect_grouped_hooked
 {
     // tg: code/datums/status_effects/debuffs/hooked.dm:3
     public datum_status_effect_grouped_hooked()
@@ -462,9 +462,9 @@ public partial class datum_status_effect_grouped_hooked : datum_status_effect_gr
     }
 }
 
-// tg: code/datums/status_effects/debuffs/hooked.dm:45
-[DmPath("/datum/status_effect/grouped/hooked/jaws"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_grouped_hooked_jaws : datum_status_effect_grouped_hooked
+// tg: code/datums/status_effects/debuffs/hooked.dm:45 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/grouped/hooked/jaws")]
+public partial class datum_status_effect_grouped_hooked_jaws
 {
     // tg: code/datums/status_effects/debuffs/hooked.dm:45
     public datum_status_effect_grouped_hooked_jaws()

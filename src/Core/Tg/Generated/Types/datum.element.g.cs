@@ -23,9 +23,9 @@ public partial class datum_element_above_mob_drop
     }
 }
 
-// tg: code/datums/elements/adjust_fishing_difficulty.dm:3
-[DmPath("/datum/element/adjust_fishing_difficulty"), DmGeneratedOnly, DmInert]
-public partial class datum_element_adjust_fishing_difficulty : datum_element
+// tg: code/datums/elements/adjust_fishing_difficulty.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/adjust_fishing_difficulty")]
+public partial class datum_element_adjust_fishing_difficulty
 {
     public object modifier; // tg: code/datums/elements/adjust_fishing_difficulty.dm:6
     public object slots; // tg: code/datums/elements/adjust_fishing_difficulty.dm:8
@@ -2062,9 +2062,9 @@ public partial class datum_element_series
     }
 }
 
-// tg: code/datums/elements/shiny_bait.dm:4
-[DmPath("/datum/element/shiny_bait"), DmGeneratedOnly, DmInert]
-public partial class datum_element_shiny_bait : datum_element { }
+// tg: code/datums/elements/shiny_bait.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/element/shiny_bait")]
+public partial class datum_element_shiny_bait { }
 
 // tg: code/datums/elements/shuttle_construction_lattice.dm:3
 [DmPath("/datum/element/shuttle_construction_lattice"), DmGeneratedOnly, DmInert]

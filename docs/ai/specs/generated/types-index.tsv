@@ -637,7 +637,7 @@ proc	/	generate_reagents_taste_message	code/modules/reagents/chemistry/taste.dm:
 proc	/	generate_seed_data_from	code/__HELPERS/botany.dm:3	seeds	yes	full	global
 proc	/	generate_selectable_species_and_languages	code/modules/mob/living/carbon/human/_species.dm:210		yes	full	global
 proc	/	generate_space_underlay	code/game/atoms_movable.dm:298	underlay_appearance,generate_for	yes	full	global
-proc	/	generate_specific_fish_icons	code/modules/fishing/sources/_fish_source.dm:13		no	-	global
+proc	/	generate_specific_fish_icons	code/modules/fishing/sources/_fish_source.dm:13		yes	full	global
 proc	/	generate_status_text	code/game/machinery/status_display.dm:145	line_y,message,x_offset,text_color,header_text_color,line_pair	yes	full	global
 proc	/	generate_stock_part_datums	code/modules/research/stock_parts/stock_part_datum.dm:42		yes	full	global
 proc	/	generate_tgm_metadata	code/modules/admin/verbs/map_export.dm:325	object	no	-	global
@@ -943,7 +943,7 @@ proc	/	is_ic_filtered	code/__HELPERS/chat_filter.dm:7	message	yes	partial	global
 proc	/	is_ic_filtered_for_pdas	code/__HELPERS/chat_filter.dm:66	message	yes	partial	global
 proc	/	is_in_sight	code/__HELPERS/spatial_info.dm:292	first_atom,second_atom	yes	full	global
 proc	/	is_infiltrator_docked_at_syndiebase	code/modules/antagonists/nukeop/datums/operative_team.dm:300		yes	full	global
-proc	/	is_matching_bait	code/game/objects/items.dm:2173	bait,identifier	yes	skeleton	global
+proc	/	is_matching_bait	code/game/objects/items.dm:2173	bait,identifier	yes	full	global
 proc	/	is_mononym	code/__HELPERS/names.dm:391	given_name	no	-	global
 proc	/	is_on_a_planet	code/__HELPERS/levels.dm:35	what	no	-	global
 proc	/	is_ooc_filtered	code/__HELPERS/chat_filter.dm:31	message	no	-	global
@@ -2226,7 +2226,7 @@ proc	/datum/controller/global_vars	InitGlobalmob_spawners	code/_globalvars/lists
 proc	/datum/controller/global_vars	InitGlobaljoinable_mobs	code/_globalvars/lists/objects.dm:80		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalroundstart_station_borgcharger_areas	code/_globalvars/lists/objects.dm:83		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalroundstart_station_mechcharger_areas	code/_globalvars/lists/objects.dm:86		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalprototype_organs	code/_globalvars/lists/objects.dm:89		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalprototype_organs	code/_globalvars/lists/objects.dm:89		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalore_vent_minerals_lavaland	code/_globalvars/lists/ores_spawned.dm:11		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalore_vent_minerals_triple_z	code/_globalvars/lists/ores_spawned.dm:22		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalatmos_pipe_recipes	code/_globalvars/lists/pipe_recipes.dm:1		yes	full	proc root
@@ -2715,9 +2715,9 @@ proc	/datum/controller/global_vars	InitGlobalfish_evolutions	code/modules/fishin
 proc	/datum/controller/global_vars	InitGlobalfishes_by_fish_evolution	code/modules/fishing/fish/fish_evolution.dm:4		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalfish_traits	code/modules/fishing/fish/fish_traits.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalspontaneous_fish_traits	code/modules/fishing/fish/fish_traits.dm:8		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalfishing_challenges_by_user	code/modules/fishing/fishing_minigame.dm:35		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalpreset_fish_sources	code/modules/fishing/sources/_fish_source.dm:1		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalspecific_fish_icons	code/modules/fishing/sources/_fish_source.dm:11		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalfishing_challenges_by_user	code/modules/fishing/fishing_minigame.dm:35		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalpreset_fish_sources	code/modules/fishing/sources/_fish_source.dm:1		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalspecific_fish_icons	code/modules/fishing/sources/_fish_source.dm:11		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobaldreams	code/modules/flufftext/dreaming.dm:76		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalchicks_from_eggs	code/modules/food_and_drinks/food/egg.dm:17		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalsafe_peanut_types	code/modules/food_and_drinks/food/snacks.dm:311		yes	full	proc root
@@ -12664,15 +12664,15 @@ proc	/datum/status_effect/grouped/stasis	on_creation	code/datums/status_effects/
 proc	/datum/status_effect/grouped/stasis	on_apply	code/datums/status_effects/debuffs/debuffs.dm:362		yes	full	proc
 proc	/datum/status_effect/grouped/stasis	tick	code/datums/status_effects/debuffs/debuffs.dm:372	seconds_between_ticks	yes	full	proc
 proc	/datum/status_effect/grouped/stasis	on_remove	code/datums/status_effects/debuffs/debuffs.dm:375		yes	full	proc
-type	/datum/status_effect/grouped/hooked	/datum/status_effect/grouped	code/datums/status_effects/debuffs/hooked.dm:3	inert	datum_status_effect_grouped_hooked	0	0
-proc	/datum/status_effect/grouped/hooked	try_unhook	code/datums/status_effects/debuffs/hooked.dm:9		no	-	proc root
-proc	/datum/status_effect/grouped/hooked	still_exists	code/datums/status_effects/debuffs/hooked.dm:12		no	-	proc root
-proc	/datum/status_effect/grouped/hooked	source_added	code/datums/status_effects/debuffs/hooked.dm:15	source	no	-	proc
-proc	/datum/status_effect/grouped/hooked	on_fishing_line_deleted	code/datums/status_effects/debuffs/hooked.dm:18	source	no	-	proc root
-type	/datum/status_effect/grouped/hooked/jaws	/datum/status_effect/grouped/hooked	code/datums/status_effects/debuffs/hooked.dm:45	inert	datum_status_effect_grouped_hooked_jaws	0	0
-proc	/datum/status_effect/grouped/hooked/jaws	on_apply	code/datums/status_effects/debuffs/hooked.dm:48		no	-	proc
-proc	/datum/status_effect/grouped/hooked/jaws	on_remove	code/datums/status_effects/debuffs/hooked.dm:52		no	-	proc
-proc	/datum/status_effect/grouped/hooked/jaws	try_unhook	code/datums/status_effects/debuffs/hooked.dm:56		no	-	proc
+type	/datum/status_effect/grouped/hooked	/datum/status_effect/grouped	code/datums/status_effects/debuffs/hooked.dm:3	live	datum_status_effect_grouped_hooked	1	0
+proc	/datum/status_effect/grouped/hooked	try_unhook	code/datums/status_effects/debuffs/hooked.dm:9		yes	full	proc root
+proc	/datum/status_effect/grouped/hooked	still_exists	code/datums/status_effects/debuffs/hooked.dm:12		yes	full	proc root
+proc	/datum/status_effect/grouped/hooked	source_added	code/datums/status_effects/debuffs/hooked.dm:15	source	yes	full	proc
+proc	/datum/status_effect/grouped/hooked	on_fishing_line_deleted	code/datums/status_effects/debuffs/hooked.dm:18	source	yes	full	proc root
+type	/datum/status_effect/grouped/hooked/jaws	/datum/status_effect/grouped/hooked	code/datums/status_effects/debuffs/hooked.dm:45	live	datum_status_effect_grouped_hooked_jaws	1	0
+proc	/datum/status_effect/grouped/hooked/jaws	on_apply	code/datums/status_effects/debuffs/hooked.dm:48		yes	full	proc
+proc	/datum/status_effect/grouped/hooked/jaws	on_remove	code/datums/status_effects/debuffs/hooked.dm:52		yes	full	proc
+proc	/datum/status_effect/grouped/hooked/jaws	try_unhook	code/datums/status_effects/debuffs/hooked.dm:56		yes	full	proc
 type	/datum/status_effect/grouped/screwy_hud	/datum/status_effect/grouped	code/datums/status_effects/debuffs/screwy_hud.dm:11	live	datum_status_effect_grouped_screwy_hud	1	0
 proc	/datum/status_effect/grouped/screwy_hud	on_apply	code/datums/status_effects/debuffs/screwy_hud.dm:18		yes	full	proc
 proc	/datum/status_effect/grouped/screwy_hud	on_remove	code/datums/status_effects/debuffs/screwy_hud.dm:26		yes	full	proc
@@ -18577,17 +18577,17 @@ proc	/datum/component/fish_growth	RegisterWithParent	code/datums/components/fish
 proc	/datum/component/fish_growth	UnregisterFromParent	code/datums/components/fish_growth.dm:48		yes	full	proc
 proc	/datum/component/fish_growth	on_fish_life	code/datums/components/fish_growth.dm:51	source,seconds_per_tick	yes	full	proc root
 proc	/datum/component/fish_growth	finish_growing	code/datums/components/fish_growth.dm:65	source	yes	full	proc root
-type	/datum/component/fishing_spot	/datum/component	code/datums/components/fishing_spot.dm:3	inert	datum_component_fishing_spot	0	0
-proc	/datum/component/fishing_spot	Initialize	code/datums/components/fishing_spot.dm:7	configuration	no	-	proc
-proc	/datum/component/fishing_spot	Destroy	code/datums/components/fishing_spot.dm:26		no	-	proc
-proc	/datum/component/fishing_spot	handle_cast	code/datums/components/fishing_spot.dm:32	source,rod,user	no	-	proc root
-proc	/datum/component/fishing_spot	on_examined	code/datums/components/fishing_spot.dm:39	source,user,examine_text	no	-	proc root
-proc	/datum/component/fishing_spot	on_examined_more	code/datums/components/fishing_spot.dm:46	source,user,examine_text	no	-	proc root
-proc	/datum/component/fishing_spot	try_start_fishing	code/datums/components/fishing_spot.dm:53	possibly_rod,user	no	-	proc root
-proc	/datum/component/fishing_spot	return_fishing_spot	code/datums/components/fishing_spot.dm:72	source,fish_spot_container	no	-	proc root
-proc	/datum/component/fishing_spot	explosive_fishing	code/datums/components/fishing_spot.dm:75	location,severity	no	-	proc root
-proc	/datum/component/fishing_spot	link_to_fish_porter	code/datums/components/fishing_spot.dm:79	source,user,tool	no	-	proc root
-proc	/datum/component/fishing_spot	fish_released	code/datums/components/fishing_spot.dm:85	source,fish,releaser	no	-	proc root
+type	/datum/component/fishing_spot	/datum/component	code/datums/components/fishing_spot.dm:3	live	datum_component_fishing_spot	1	0
+proc	/datum/component/fishing_spot	Initialize	code/datums/components/fishing_spot.dm:7	configuration	yes	full	proc
+proc	/datum/component/fishing_spot	Destroy	code/datums/components/fishing_spot.dm:26		yes	full	proc
+proc	/datum/component/fishing_spot	handle_cast	code/datums/components/fishing_spot.dm:32	source,rod,user	yes	full	proc root
+proc	/datum/component/fishing_spot	on_examined	code/datums/components/fishing_spot.dm:39	source,user,examine_text	yes	full	proc root
+proc	/datum/component/fishing_spot	on_examined_more	code/datums/components/fishing_spot.dm:46	source,user,examine_text	yes	full	proc root
+proc	/datum/component/fishing_spot	try_start_fishing	code/datums/components/fishing_spot.dm:53	possibly_rod,user	yes	full	proc root
+proc	/datum/component/fishing_spot	return_fishing_spot	code/datums/components/fishing_spot.dm:72	source,fish_spot_container	yes	full	proc root
+proc	/datum/component/fishing_spot	explosive_fishing	code/datums/components/fishing_spot.dm:75	location,severity	yes	full	proc root
+proc	/datum/component/fishing_spot	link_to_fish_porter	code/datums/components/fishing_spot.dm:79	source,user,tool	yes	full	proc root
+proc	/datum/component/fishing_spot	fish_released	code/datums/components/fishing_spot.dm:85	source,fish,releaser	yes	full	proc root
 type	/datum/component/focused_attacker	/datum/component	code/datums/components/focused_attacker.dm:7	inert	datum_component_focused_attacker	0	0
 proc	/datum/component/focused_attacker	Initialize	code/datums/components/focused_attacker.dm:15	gain_per_attack,maximum_gain	no	-	proc
 proc	/datum/component/focused_attacker	Destroy	code/datums/components/focused_attacker.dm:22	force	no	-	proc
@@ -19513,21 +19513,21 @@ proc	/datum/component/proficient_miner	on_unarmed_attack	code/datums/components/
 proc	/datum/component/proficient_miner	on_bump	code/datums/components/proficient_miner.dm:30	source,target	yes	full	proc root
 proc	/datum/component/proficient_miner	try_mine	code/datums/components/proficient_miner.dm:37	source,target	yes	full	proc root
 proc	/datum/component/proficient_miner	slow_mine	code/datums/components/proficient_miner.dm:65	user,mineral_wall	yes	full	proc root
-type	/datum/component/profound_fisher	/datum/component	code/datums/components/profound_fisher.dm:4	inert	datum_component_profound_fisher	0	0
-proc	/datum/component/profound_fisher	Initialize	code/datums/components/profound_fisher.dm:8	our_rod,delete_rod_when_deleted	no	-	proc
-proc	/datum/component/profound_fisher	on_requesting_context_from_item	code/datums/components/profound_fisher.dm:33	source,context,held_item,user	no	-	proc root
-proc	/datum/component/profound_fisher	on_examine	code/datums/components/profound_fisher.dm:39	source,user,examine_list	no	-	proc root
-proc	/datum/component/profound_fisher	on_rod_moved	code/datums/components/profound_fisher.dm:45	source	no	-	proc root
-proc	/datum/component/profound_fisher	Destroy	code/datums/components/profound_fisher.dm:57		no	-	proc
-proc	/datum/component/profound_fisher	on_equip	code/datums/components/profound_fisher.dm:67	source,equipper,slot	no	-	proc root
-proc	/datum/component/profound_fisher	open_rod_menu	code/datums/components/profound_fisher.dm:74	source,user,modifiers	no	-	proc root
-proc	/datum/component/profound_fisher	on_drop	code/datums/components/profound_fisher.dm:79	source,dropper	no	-	proc root
-proc	/datum/component/profound_fisher	on_unarmed_attack	code/datums/components/profound_fisher.dm:84	source,attack_target,proximity_flag,modifiers	no	-	proc root
-proc	/datum/component/profound_fisher	pre_attack	code/datums/components/profound_fisher.dm:94	source,target	no	-	proc root
-proc	/datum/component/profound_fisher	should_fish_on	code/datums/components/profound_fisher.dm:105	user,target	no	-	proc root
-proc	/datum/component/profound_fisher	begin_fishing	code/datums/components/profound_fisher.dm:112	user,target	no	-	proc root
-proc	/datum/component/profound_fisher	stop_fishing	code/datums/components/profound_fisher.dm:116	source	no	-	proc root
-proc	/datum/component/profound_fisher	pretend_fish	code/datums/components/profound_fisher.dm:120	source,target	no	-	proc root
+type	/datum/component/profound_fisher	/datum/component	code/datums/components/profound_fisher.dm:4	live	datum_component_profound_fisher	1	0
+proc	/datum/component/profound_fisher	Initialize	code/datums/components/profound_fisher.dm:8	our_rod,delete_rod_when_deleted	yes	full	proc
+proc	/datum/component/profound_fisher	on_requesting_context_from_item	code/datums/components/profound_fisher.dm:33	source,context,held_item,user	yes	full	proc root
+proc	/datum/component/profound_fisher	on_examine	code/datums/components/profound_fisher.dm:39	source,user,examine_list	yes	full	proc root
+proc	/datum/component/profound_fisher	on_rod_moved	code/datums/components/profound_fisher.dm:45	source	yes	full	proc root
+proc	/datum/component/profound_fisher	Destroy	code/datums/components/profound_fisher.dm:57		yes	full	proc
+proc	/datum/component/profound_fisher	on_equip	code/datums/components/profound_fisher.dm:67	source,equipper,slot	yes	full	proc root
+proc	/datum/component/profound_fisher	open_rod_menu	code/datums/components/profound_fisher.dm:74	source,user,modifiers	yes	full	proc root
+proc	/datum/component/profound_fisher	on_drop	code/datums/components/profound_fisher.dm:79	source,dropper	yes	full	proc root
+proc	/datum/component/profound_fisher	on_unarmed_attack	code/datums/components/profound_fisher.dm:84	source,attack_target,proximity_flag,modifiers	yes	full	proc root
+proc	/datum/component/profound_fisher	pre_attack	code/datums/components/profound_fisher.dm:94	source,target	yes	full	proc root
+proc	/datum/component/profound_fisher	should_fish_on	code/datums/components/profound_fisher.dm:105	user,target	yes	full	proc root
+proc	/datum/component/profound_fisher	begin_fishing	code/datums/components/profound_fisher.dm:112	user,target	yes	full	proc root
+proc	/datum/component/profound_fisher	stop_fishing	code/datums/components/profound_fisher.dm:116	source	yes	full	proc root
+proc	/datum/component/profound_fisher	pretend_fish	code/datums/components/profound_fisher.dm:120	source,target	yes	full	proc root
 type	/datum/component/projectile_instance_drop	/datum/component	code/datums/components/projectile_instance_drop.dm:3	inert	datum_component_projectile_instance_drop	0	0
 proc	/datum/component/projectile_instance_drop	Initialize	code/datums/components/projectile_instance_drop.dm:6	dropped_atom	no	-	proc
 proc	/datum/component/projectile_instance_drop	RegisterWithParent	code/datums/components/projectile_instance_drop.dm:14		no	-	proc
@@ -23640,18 +23640,18 @@ proc	/datum/element	_detach_on_trait_removed	code/datums/elements/_element.dm:10
 type	/datum/element/above_mob_drop	/datum/element	code/datums/elements/above_mob_drop.dm:3	live	datum_element_above_mob_drop	1	0
 proc	/datum/element/above_mob_drop	Attach	code/datums/elements/above_mob_drop.dm:8	target,target_layer	yes	full	proc
 proc	/datum/element/above_mob_drop	on_moved	code/datums/elements/above_mob_drop.dm:17	source	yes	full	proc root
-type	/datum/element/adjust_fishing_difficulty	/datum/element	code/datums/elements/adjust_fishing_difficulty.dm:3	inert	datum_element_adjust_fishing_difficulty	0	0
-proc	/datum/element/adjust_fishing_difficulty	Attach	code/datums/elements/adjust_fishing_difficulty.dm:10	target,modifier,slots	no	-	proc
-proc	/datum/element/adjust_fishing_difficulty	Detach	code/datums/elements/adjust_fishing_difficulty.dm:34	source	no	-	proc
-proc	/datum/element/adjust_fishing_difficulty	update_check	code/datums/elements/adjust_fishing_difficulty.dm:46	movable_source,removing	no	-	proc root
-proc	/datum/element/adjust_fishing_difficulty	on_item_examine	code/datums/elements/adjust_fishing_difficulty.dm:56	item,user,examine_text	no	-	proc root
-proc	/datum/element/adjust_fishing_difficulty	on_buckle_examine	code/datums/elements/adjust_fishing_difficulty.dm:63	source,user,examine_text	no	-	proc root
-proc	/datum/element/adjust_fishing_difficulty	add_examine_line	code/datums/elements/adjust_fishing_difficulty.dm:69	user,examine_text,method	no	-	proc root
-proc	/datum/element/adjust_fishing_difficulty	on_buckle	code/datums/elements/adjust_fishing_difficulty.dm:77	source,buckled_mob,forced	no	-	proc root
-proc	/datum/element/adjust_fishing_difficulty	on_unbuckle	code/datums/elements/adjust_fishing_difficulty.dm:81	source,buckled_mob,forced	no	-	proc root
-proc	/datum/element/adjust_fishing_difficulty	on_equipped	code/datums/elements/adjust_fishing_difficulty.dm:85	source,wearer,slot	no	-	proc root
-proc	/datum/element/adjust_fishing_difficulty	on_dropped	code/datums/elements/adjust_fishing_difficulty.dm:90	source,dropper	no	-	proc root
-proc	/datum/element/adjust_fishing_difficulty	update_user	code/datums/elements/adjust_fishing_difficulty.dm:95	user,source_item,removing	no	-	proc root
+type	/datum/element/adjust_fishing_difficulty	/datum/element	code/datums/elements/adjust_fishing_difficulty.dm:3	live	datum_element_adjust_fishing_difficulty	1	0
+proc	/datum/element/adjust_fishing_difficulty	Attach	code/datums/elements/adjust_fishing_difficulty.dm:10	target,modifier,slots	yes	full	proc
+proc	/datum/element/adjust_fishing_difficulty	Detach	code/datums/elements/adjust_fishing_difficulty.dm:34	source	yes	full	proc
+proc	/datum/element/adjust_fishing_difficulty	update_check	code/datums/elements/adjust_fishing_difficulty.dm:46	movable_source,removing	yes	full	proc root
+proc	/datum/element/adjust_fishing_difficulty	on_item_examine	code/datums/elements/adjust_fishing_difficulty.dm:56	item,user,examine_text	yes	full	proc root
+proc	/datum/element/adjust_fishing_difficulty	on_buckle_examine	code/datums/elements/adjust_fishing_difficulty.dm:63	source,user,examine_text	yes	full	proc root
+proc	/datum/element/adjust_fishing_difficulty	add_examine_line	code/datums/elements/adjust_fishing_difficulty.dm:69	user,examine_text,method	yes	full	proc root
+proc	/datum/element/adjust_fishing_difficulty	on_buckle	code/datums/elements/adjust_fishing_difficulty.dm:77	source,buckled_mob,forced	yes	full	proc root
+proc	/datum/element/adjust_fishing_difficulty	on_unbuckle	code/datums/elements/adjust_fishing_difficulty.dm:81	source,buckled_mob,forced	yes	full	proc root
+proc	/datum/element/adjust_fishing_difficulty	on_equipped	code/datums/elements/adjust_fishing_difficulty.dm:85	source,wearer,slot	yes	full	proc root
+proc	/datum/element/adjust_fishing_difficulty	on_dropped	code/datums/elements/adjust_fishing_difficulty.dm:90	source,dropper	yes	full	proc root
+proc	/datum/element/adjust_fishing_difficulty	update_user	code/datums/elements/adjust_fishing_difficulty.dm:95	user,source_item,removing	yes	full	proc root
 type	/datum/element/ai_control_examine	/datum/element	code/datums/elements/ai_control_examine.dm:7	live	datum_element_ai_control_examine	1	0
 proc	/datum/element/ai_control_examine	Attach	code/datums/elements/ai_control_examine.dm:13	target,noticable_organ_examines	yes	full	proc
 proc	/datum/element/ai_control_examine	Detach	code/datums/elements/ai_control_examine.dm:23	target_controller	yes	full	proc
@@ -24627,11 +24627,11 @@ type	/datum/element/series	/datum/element	code/datums/elements/series.dm:8	live	
 proc	/datum/element/series	Attach	code/datums/elements/series.dm:13	target,subtype,series_name	yes	full	proc
 proc	/datum/element/series	Detach	code/datums/elements/series.dm:25	target	yes	full	proc
 proc	/datum/element/series	on_examine	code/datums/elements/series.dm:30	target,user,examine_list	yes	full	proc root
-type	/datum/element/shiny_bait	/datum/element	code/datums/elements/shiny_bait.dm:4	inert	datum_element_shiny_bait	0	0
-proc	/datum/element/shiny_bait	Attach	code/datums/elements/shiny_bait.dm:4	target	no	-	proc
-proc	/datum/element/shiny_bait	Detach	code/datums/elements/shiny_bait.dm:15	source	no	-	proc
-proc	/datum/element/shiny_bait	on_fishing_rod_slotted	code/datums/elements/shiny_bait.dm:26	source,rod,slot	no	-	proc root
-proc	/datum/element/shiny_bait	on_fishing_rod_unslotted	code/datums/elements/shiny_bait.dm:31	source,rod,slot	no	-	proc root
+type	/datum/element/shiny_bait	/datum/element	code/datums/elements/shiny_bait.dm:4	live	datum_element_shiny_bait	1	0
+proc	/datum/element/shiny_bait	Attach	code/datums/elements/shiny_bait.dm:4	target	yes	full	proc
+proc	/datum/element/shiny_bait	Detach	code/datums/elements/shiny_bait.dm:15	source	yes	full	proc
+proc	/datum/element/shiny_bait	on_fishing_rod_slotted	code/datums/elements/shiny_bait.dm:26	source,rod,slot	yes	full	proc root
+proc	/datum/element/shiny_bait	on_fishing_rod_unslotted	code/datums/elements/shiny_bait.dm:31	source,rod,slot	yes	full	proc root
 type	/datum/element/shuttle_construction_lattice	/datum/element	code/datums/elements/shuttle_construction_lattice.dm:3	inert	datum_element_shuttle_construction_lattice	0	0
 proc	/datum/element/shuttle_construction_lattice	Attach	code/datums/elements/shuttle_construction_lattice.dm:6	target	no	-	proc
 proc	/datum/element/shuttle_construction_lattice	Detach	code/datums/elements/shuttle_construction_lattice.dm:20	source	no	-	proc
@@ -26341,13 +26341,13 @@ proc	/datum/material/plasma	on_applied	code/datums/materials/basemats.dm:230	sou
 proc	/datum/material/plasma	on_removed	code/datums/materials/basemats.dm:236	source,mat_amount,multiplier,from_slot	yes	full	proc
 type	/datum/material/bluespace	/datum/material	code/datums/materials/basemats.dm:244	live	datum_material_bluespace	1	0
 proc	/datum/material/bluespace	on_main_applied	code/datums/materials/basemats.dm:272	source,mat_amount,multiplier	yes	full	proc
-proc	/datum/material/bluespace	on_begin_fishing	code/datums/materials/basemats.dm:277	rod,challenge	yes	skeleton	proc root
+proc	/datum/material/bluespace	on_begin_fishing	code/datums/materials/basemats.dm:277	rod,challenge	yes	full	proc root
 proc	/datum/material/bluespace	on_main_removed	code/datums/materials/basemats.dm:288	source,mat_amount,multiplier	yes	full	proc
 type	/datum/material/bananium	/datum/material	code/datums/materials/basemats.dm:295	live	datum_material_bananium	1	0
 proc	/datum/material/bananium	on_applied	code/datums/materials/basemats.dm:318	source,mat_amount,multiplier,from_slot	yes	full	proc
 proc	/datum/material/bananium	on_main_applied	code/datums/materials/basemats.dm:323	source,mat_amount,multiplier	yes	full	proc
-proc	/datum/material/bananium	on_begin_fishing	code/datums/materials/basemats.dm:328	rod,challenge	yes	skeleton	proc root
-proc	/datum/material/bananium	roll_funny_fish	code/datums/materials/basemats.dm:333	source,rod,fisherman,location,rewards	yes	skeleton	proc root
+proc	/datum/material/bananium	on_begin_fishing	code/datums/materials/basemats.dm:328	rod,challenge	yes	full	proc root
+proc	/datum/material/bananium	roll_funny_fish	code/datums/materials/basemats.dm:333	source,rod,fisherman,location,rewards	yes	full	proc root
 proc	/datum/material/bananium	on_removed	code/datums/materials/basemats.dm:344	source,mat_amount,multiplier,from_slot	yes	full	proc
 proc	/datum/material/bananium	on_main_removed	code/datums/materials/basemats.dm:349	source,mat_amount,multiplier	yes	full	proc
 type	/datum/material/titanium	/datum/material	code/datums/materials/basemats.dm:356	live	datum_material_titanium	1	0
@@ -26382,15 +26382,15 @@ proc	/datum/material/runedmetal	on_accidental_mat_consumption	code/datums/materi
 type	/datum/material/bronze	/datum/material	code/datums/materials/basemats.dm:709	live	datum_material_bronze	1	0
 type	/datum/material/paper	/datum/material	code/datums/materials/basemats.dm:727	live	datum_material_paper	1	0
 proc	/datum/material/paper	on_main_applied	code/datums/materials/basemats.dm:748	source,mat_amount,multiplier	yes	full	proc
-proc	/datum/material/paper	on_begin_fishing	code/datums/materials/basemats.dm:757	rod,challenge	yes	skeleton	proc root
-proc	/datum/material/paper	roll_stickman	code/datums/materials/basemats.dm:762	source,rod,fisherman,location,rewards	yes	skeleton	proc root
+proc	/datum/material/paper	on_begin_fishing	code/datums/materials/basemats.dm:757	rod,challenge	yes	full	proc root
+proc	/datum/material/paper	roll_stickman	code/datums/materials/basemats.dm:762	source,rod,fisherman,location,rewards	yes	full	proc root
 proc	/datum/material/paper	on_main_removed	code/datums/materials/basemats.dm:766	source,mat_amount,multiplier	yes	full	proc
 type	/datum/material/cardboard	/datum/material	code/datums/materials/basemats.dm:772	live	datum_material_cardboard	1	0
 proc	/datum/material/cardboard	on_main_applied	code/datums/materials/basemats.dm:790	source,mat_amount,multiplier	yes	full	proc
 type	/datum/material/bone	/datum/material	code/datums/materials/basemats.dm:797	live	datum_material_bone	1	0
 proc	/datum/material/bone	on_main_applied	code/datums/materials/basemats.dm:814	source,mat_amount,multiplier	yes	full	proc
-proc	/datum/material/bone	on_begin_fishing	code/datums/materials/basemats.dm:821	rod,challenge	yes	skeleton	proc root
-proc	/datum/material/bone	roll_bones	code/datums/materials/basemats.dm:826	source,rod,fisherman,location,rewards	yes	skeleton	proc root
+proc	/datum/material/bone	on_begin_fishing	code/datums/materials/basemats.dm:821	rod,challenge	yes	full	proc root
+proc	/datum/material/bone	roll_bones	code/datums/materials/basemats.dm:826	source,rod,fisherman,location,rewards	yes	full	proc root
 proc	/datum/material/bone	on_main_removed	code/datums/materials/basemats.dm:840	source,mat_amount,multiplier	yes	full	proc
 type	/datum/material/bamboo	/datum/material	code/datums/materials/basemats.dm:848	live	datum_material_bamboo	1	0
 type	/datum/material/zaukerite	/datum/material	code/datums/materials/basemats.dm:870	live	datum_material_zaukerite	1	0
@@ -26400,7 +26400,7 @@ proc	/datum/material/zaukerite	on_accidental_mat_consumption	code/datums/materia
 type	/datum/material/telecrystal	/datum/material	code/datums/materials/basemats.dm:905	live	datum_material_telecrystal	1	0
 proc	/datum/material/telecrystal	on_main_applied	code/datums/materials/basemats.dm:928	source,mat_amount,multiplier	yes	full	proc
 proc	/datum/material/telecrystal	on_main_removed	code/datums/materials/basemats.dm:933	source,mat_amount,multiplier	yes	full	proc
-proc	/datum/material/telecrystal	on_begin_fishing	code/datums/materials/basemats.dm:938	rod,challenge	yes	skeleton	proc root
+proc	/datum/material/telecrystal	on_begin_fishing	code/datums/materials/basemats.dm:938	rod,challenge	yes	full	proc root
 type	/datum/material/rock	/datum/material	code/datums/materials/basemats.dm:944	live	datum_material_rock	1	0
 type	/datum/material/hauntium	/datum/material	code/datums/materials/hauntium.dm:2	live	datum_material_hauntium	1	0
 proc	/datum/material/hauntium	on_main_applied	code/datums/materials/hauntium.dm:23	source,mat_amount,multiplier	yes	full	proc
@@ -40909,74 +40909,74 @@ type	/datum/exploration_event/adventure	/datum/exploration_event	code/modules/ex
 proc	/datum/exploration_event/adventure	encounter	code/modules/explorer_drone/exploration_events/adventure.dm:7	drone	yes	full	proc
 type	/datum/exploration_event/fluff	/datum/exploration_event	code/modules/explorer_drone/exploration_events/fluff.dm:3	live	datum_exploration_event_fluff	1	0
 proc	/datum/exploration_event/fluff	get_discovery_message	code/modules/explorer_drone/exploration_events/fluff.dm:5	drone	yes	full	proc
-type	/datum/fishing_calculator	/datum	code/modules/fishing/admin.dm:6	inert	datum_fishing_calculator	0	0
-proc	/datum/fishing_calculator	ui_interact	code/modules/fishing/admin.dm:8	user,ui	no	-	proc
-proc	/datum/fishing_calculator	ui_state	code/modules/fishing/admin.dm:14	user	no	-	proc
-proc	/datum/fishing_calculator	ui_close	code/modules/fishing/admin.dm:17	user	no	-	proc
-proc	/datum/fishing_calculator	ui_static_data	code/modules/fishing/admin.dm:20	user	no	-	proc
-proc	/datum/fishing_calculator	ui_data	code/modules/fishing/admin.dm:27	user	no	-	proc
-proc	/datum/fishing_calculator	ui_act	code/modules/fishing/admin.dm:30	action,params,ui,state	no	-	proc
-type	/datum/fish_movement	/datum	code/modules/fishing/fish_movement.dm:13	inert	datum_fish_movement	0	0
-proc	/datum/fish_movement	New	code/modules/fishing/fish_movement.dm:35	master	no	-	proc
-proc	/datum/fish_movement	adjust_to_difficulty	code/modules/fishing/fish_movement.dm:44		no	-	proc root
-proc	/datum/fish_movement	reset_difficulty_values	code/modules/fishing/fish_movement.dm:56		no	-	proc root
-proc	/datum/fish_movement	move_fish	code/modules/fishing/fish_movement.dm:61	seconds_per_tick	no	-	proc root
-proc	/datum/fish_movement	get_acceleration	code/modules/fishing/fish_movement.dm:146	seconds_per_tick	no	-	proc root
-proc	/datum/fish_movement	set_fish_position	code/modules/fishing/fish_movement.dm:150	seconds_per_tick	no	-	proc root
-type	/datum/fish_movement/slow	/datum/fish_movement	code/modules/fishing/fish_movement.dm:155	inert	datum_fish_movement_slow	0	0
-type	/datum/fish_movement/zippy	/datum/fish_movement	code/modules/fishing/fish_movement.dm:162	inert	datum_fish_movement_zippy	0	0
-type	/datum/fish_movement/accelerando	/datum/fish_movement	code/modules/fishing/fish_movement.dm:167	inert	datum_fish_movement_accelerando	0	0
-proc	/datum/fish_movement/accelerando	move_fish	code/modules/fishing/fish_movement.dm:173	seconds_per_tick	no	-	proc
-proc	/datum/fish_movement/accelerando	get_acceleration	code/modules/fishing/fish_movement.dm:190	seconds_per_tick	no	-	proc
-proc	/datum/fish_movement/accelerando	set_fish_position	code/modules/fishing/fish_movement.dm:194	seconds_per_tick	no	-	proc
-type	/datum/fish_movement/choppy	/datum/fish_movement	code/modules/fishing/fish_movement.dm:201	inert	datum_fish_movement_choppy	0	0
-proc	/datum/fish_movement/choppy	set_fish_position	code/modules/fishing/fish_movement.dm:203	seconds_per_tick	no	-	proc
-type	/datum/fish_movement/plunger	/datum/fish_movement	code/modules/fishing/fish_movement.dm:211	inert	datum_fish_movement_plunger	0	0
-proc	/datum/fish_movement/plunger	adjust_to_difficulty	code/modules/fishing/fish_movement.dm:215		no	-	proc
-proc	/datum/fish_movement/plunger	reset_difficulty_values	code/modules/fishing/fish_movement.dm:221		no	-	proc
-proc	/datum/fish_movement/plunger	move_fish	code/modules/fishing/fish_movement.dm:227	seconds_per_tick	no	-	proc
-type	/datum/fishing_challenge	/datum	code/modules/fishing/fishing_minigame.dm:39	inert	datum_fishing_challenge	0	0
-proc	/datum/fishing_challenge	New	code/modules/fishing/fishing_minigame.dm:123	comp,rod,user	no	-	proc
-proc	/datum/fishing_challenge	Destroy	code/modules/fishing/fishing_minigame.dm:179	force	no	-	proc
-proc	/datum/fishing_challenge	register_reward_signals	code/modules/fishing/fishing_minigame.dm:199	new_fish_source	no	-	proc root
-proc	/datum/fishing_challenge	send_alert	code/modules/fishing/fishing_minigame.dm:209	message	no	-	proc root
-proc	/datum/fishing_challenge	on_spot_gone	code/modules/fishing/fishing_minigame.dm:212	source	no	-	proc root
-proc	/datum/fishing_challenge	interrupt_challenge	code/modules/fishing/fishing_minigame.dm:217	source,reason	no	-	proc root
-proc	/datum/fishing_challenge	start	code/modules/fishing/fishing_minigame.dm:223	user	no	-	proc root
-proc	/datum/fishing_challenge	set_lure_timers	code/modules/fishing/fishing_minigame.dm:246		no	-	proc root
-proc	/datum/fishing_challenge	set_lure_ready	code/modules/fishing/fishing_minigame.dm:252		no	-	proc root
-proc	/datum/fishing_challenge	auto_spin	code/modules/fishing/fishing_minigame.dm:261		no	-	proc root
-proc	/datum/fishing_challenge	missed_lure	code/modules/fishing/fishing_minigame.dm:269		no	-	proc root
-proc	/datum/fishing_challenge	on_line_deleted	code/modules/fishing/fishing_minigame.dm:275	source	no	-	proc root
-proc	/datum/fishing_challenge	on_float_or_user_move	code/modules/fishing/fishing_minigame.dm:282	source	no	-	proc root
-proc	/datum/fishing_challenge	on_hands_blocked	code/modules/fishing/fishing_minigame.dm:289	source	no	-	proc root
-proc	/datum/fishing_challenge	no_longer_fishing	code/modules/fishing/fishing_minigame.dm:296	source	no	-	proc root
-proc	/datum/fishing_challenge	handle_click	code/modules/fishing/fishing_minigame.dm:303	source,target,modifiers	no	-	proc root
-proc	/datum/fishing_challenge	interrupt	code/modules/fishing/fishing_minigame.dm:333		no	-	proc root
-proc	/datum/fishing_challenge	on_attack_self	code/modules/fishing/fishing_minigame.dm:338	source,user	no	-	proc root
-proc	/datum/fishing_challenge	stop_fishing	code/modules/fishing/fishing_minigame.dm:342	rod,user	no	-	proc root
-proc	/datum/fishing_challenge	complete	code/modules/fishing/fishing_minigame.dm:351	win	no	-	proc root
-proc	/datum/fishing_challenge	start_baiting_phase	code/modules/fishing/fishing_minigame.dm:399	penalty	no	-	proc root
-proc	/datum/fishing_challenge	start_biting_phase	code/modules/fishing/fishing_minigame.dm:418		no	-	proc root
-proc	/datum/fishing_challenge	automatically_start_minigame	code/modules/fishing/fishing_minigame.dm:480		no	-	proc root
-proc	/datum/fishing_challenge	on_user_logout	code/modules/fishing/fishing_minigame.dm:488	source	no	-	proc root
-proc	/datum/fishing_challenge	on_reward_removed	code/modules/fishing/fishing_minigame.dm:492	source	no	-	proc root
-proc	/datum/fishing_challenge	on_fish_death	code/modules/fishing/fishing_minigame.dm:497	source	no	-	proc root
-proc	/datum/fishing_challenge	win_anyway	code/modules/fishing/fishing_minigame.dm:502		no	-	proc root
-proc	/datum/fishing_challenge	hurt_fish	code/modules/fishing/fishing_minigame.dm:509	source,reward	no	-	proc root
-proc	/datum/fishing_challenge	get_difficulty	code/modules/fishing/fishing_minigame.dm:515		no	-	proc root
-proc	/datum/fishing_challenge	update_difficulty	code/modules/fishing/fishing_minigame.dm:528		no	-	proc root
-proc	/datum/fishing_challenge	adjust_to_difficulty	code/modules/fishing/fishing_minigame.dm:540		no	-	proc root
-proc	/datum/fishing_challenge	start_minigame_phase	code/modules/fishing/fishing_minigame.dm:548	auto_reel	no	-	proc root
-proc	/datum/fishing_challenge	get_stack_trace	code/modules/fishing/fishing_minigame.dm:612	init_text	no	-	proc root
-proc	/datum/fishing_challenge	prepare_minigame_hud	code/modules/fishing/fishing_minigame.dm:630		no	-	proc root
-proc	/datum/fishing_challenge	remove_minigame_hud	code/modules/fishing/fishing_minigame.dm:645		no	-	proc root
-proc	/datum/fishing_challenge	start_reeling	code/modules/fishing/fishing_minigame.dm:650	source,object,location,control,params	no	-	proc root
-proc	/datum/fishing_challenge	stop_reeling	code/modules/fishing/fishing_minigame.dm:660	source,object,location,control,params	no	-	proc root
-proc	/datum/fishing_challenge	process	code/modules/fishing/fishing_minigame.dm:665	seconds_per_tick	no	-	proc
-proc	/datum/fishing_challenge	select_active_effect	code/modules/fishing/fishing_minigame.dm:674		no	-	proc root
-proc	/datum/fishing_challenge	move_bait	code/modules/fishing/fishing_minigame.dm:714	seconds_per_tick	no	-	proc root
-proc	/datum/fishing_challenge	update_visuals	code/modules/fishing/fishing_minigame.dm:794	seconds_per_tick	no	-	proc root
+type	/datum/fishing_calculator	/datum	code/modules/fishing/admin.dm:6	live	datum_fishing_calculator	1	0
+proc	/datum/fishing_calculator	ui_interact	code/modules/fishing/admin.dm:8	user,ui	yes	full	proc
+proc	/datum/fishing_calculator	ui_state	code/modules/fishing/admin.dm:14	user	yes	full	proc
+proc	/datum/fishing_calculator	ui_close	code/modules/fishing/admin.dm:17	user	yes	full	proc
+proc	/datum/fishing_calculator	ui_static_data	code/modules/fishing/admin.dm:20	user	yes	full	proc
+proc	/datum/fishing_calculator	ui_data	code/modules/fishing/admin.dm:27	user	yes	full	proc
+proc	/datum/fishing_calculator	ui_act	code/modules/fishing/admin.dm:30	action,params,ui,state	yes	full	proc
+type	/datum/fish_movement	/datum	code/modules/fishing/fish_movement.dm:13	live	datum_fish_movement	1	0
+proc	/datum/fish_movement	New	code/modules/fishing/fish_movement.dm:35	master	yes	full	proc
+proc	/datum/fish_movement	adjust_to_difficulty	code/modules/fishing/fish_movement.dm:44		yes	full	proc root
+proc	/datum/fish_movement	reset_difficulty_values	code/modules/fishing/fish_movement.dm:56		yes	full	proc root
+proc	/datum/fish_movement	move_fish	code/modules/fishing/fish_movement.dm:61	seconds_per_tick	yes	full	proc root
+proc	/datum/fish_movement	get_acceleration	code/modules/fishing/fish_movement.dm:146	seconds_per_tick	yes	full	proc root
+proc	/datum/fish_movement	set_fish_position	code/modules/fishing/fish_movement.dm:150	seconds_per_tick	yes	full	proc root
+type	/datum/fish_movement/slow	/datum/fish_movement	code/modules/fishing/fish_movement.dm:155	live	datum_fish_movement_slow	0	0
+type	/datum/fish_movement/zippy	/datum/fish_movement	code/modules/fishing/fish_movement.dm:162	live	datum_fish_movement_zippy	0	0
+type	/datum/fish_movement/accelerando	/datum/fish_movement	code/modules/fishing/fish_movement.dm:167	live	datum_fish_movement_accelerando	1	0
+proc	/datum/fish_movement/accelerando	move_fish	code/modules/fishing/fish_movement.dm:173	seconds_per_tick	yes	full	proc
+proc	/datum/fish_movement/accelerando	get_acceleration	code/modules/fishing/fish_movement.dm:190	seconds_per_tick	yes	full	proc
+proc	/datum/fish_movement/accelerando	set_fish_position	code/modules/fishing/fish_movement.dm:194	seconds_per_tick	yes	full	proc
+type	/datum/fish_movement/choppy	/datum/fish_movement	code/modules/fishing/fish_movement.dm:201	live	datum_fish_movement_choppy	1	0
+proc	/datum/fish_movement/choppy	set_fish_position	code/modules/fishing/fish_movement.dm:203	seconds_per_tick	yes	full	proc
+type	/datum/fish_movement/plunger	/datum/fish_movement	code/modules/fishing/fish_movement.dm:211	live	datum_fish_movement_plunger	1	0
+proc	/datum/fish_movement/plunger	adjust_to_difficulty	code/modules/fishing/fish_movement.dm:215		yes	full	proc
+proc	/datum/fish_movement/plunger	reset_difficulty_values	code/modules/fishing/fish_movement.dm:221		yes	full	proc
+proc	/datum/fish_movement/plunger	move_fish	code/modules/fishing/fish_movement.dm:227	seconds_per_tick	yes	full	proc
+type	/datum/fishing_challenge	/datum	code/modules/fishing/fishing_minigame.dm:39	live	datum_fishing_challenge	1	0
+proc	/datum/fishing_challenge	New	code/modules/fishing/fishing_minigame.dm:123	comp,rod,user	yes	full	proc
+proc	/datum/fishing_challenge	Destroy	code/modules/fishing/fishing_minigame.dm:179	force	yes	full	proc
+proc	/datum/fishing_challenge	register_reward_signals	code/modules/fishing/fishing_minigame.dm:199	new_fish_source	yes	full	proc root
+proc	/datum/fishing_challenge	send_alert	code/modules/fishing/fishing_minigame.dm:209	message	yes	full	proc root
+proc	/datum/fishing_challenge	on_spot_gone	code/modules/fishing/fishing_minigame.dm:212	source	yes	full	proc root
+proc	/datum/fishing_challenge	interrupt_challenge	code/modules/fishing/fishing_minigame.dm:217	source,reason	yes	full	proc root
+proc	/datum/fishing_challenge	start	code/modules/fishing/fishing_minigame.dm:223	user	yes	full	proc root
+proc	/datum/fishing_challenge	set_lure_timers	code/modules/fishing/fishing_minigame.dm:246		yes	full	proc root
+proc	/datum/fishing_challenge	set_lure_ready	code/modules/fishing/fishing_minigame.dm:252		yes	full	proc root
+proc	/datum/fishing_challenge	auto_spin	code/modules/fishing/fishing_minigame.dm:261		yes	full	proc root
+proc	/datum/fishing_challenge	missed_lure	code/modules/fishing/fishing_minigame.dm:269		yes	full	proc root
+proc	/datum/fishing_challenge	on_line_deleted	code/modules/fishing/fishing_minigame.dm:275	source	yes	full	proc root
+proc	/datum/fishing_challenge	on_float_or_user_move	code/modules/fishing/fishing_minigame.dm:282	source	yes	full	proc root
+proc	/datum/fishing_challenge	on_hands_blocked	code/modules/fishing/fishing_minigame.dm:289	source	yes	full	proc root
+proc	/datum/fishing_challenge	no_longer_fishing	code/modules/fishing/fishing_minigame.dm:296	source	yes	full	proc root
+proc	/datum/fishing_challenge	handle_click	code/modules/fishing/fishing_minigame.dm:303	source,target,modifiers	yes	full	proc root
+proc	/datum/fishing_challenge	interrupt	code/modules/fishing/fishing_minigame.dm:333		yes	full	proc root
+proc	/datum/fishing_challenge	on_attack_self	code/modules/fishing/fishing_minigame.dm:338	source,user	yes	full	proc root
+proc	/datum/fishing_challenge	stop_fishing	code/modules/fishing/fishing_minigame.dm:342	rod,user	yes	full	proc root
+proc	/datum/fishing_challenge	complete	code/modules/fishing/fishing_minigame.dm:351	win	yes	full	proc root
+proc	/datum/fishing_challenge	start_baiting_phase	code/modules/fishing/fishing_minigame.dm:399	penalty	yes	full	proc root
+proc	/datum/fishing_challenge	start_biting_phase	code/modules/fishing/fishing_minigame.dm:418		yes	full	proc root
+proc	/datum/fishing_challenge	automatically_start_minigame	code/modules/fishing/fishing_minigame.dm:480		yes	full	proc root
+proc	/datum/fishing_challenge	on_user_logout	code/modules/fishing/fishing_minigame.dm:488	source	yes	full	proc root
+proc	/datum/fishing_challenge	on_reward_removed	code/modules/fishing/fishing_minigame.dm:492	source	yes	full	proc root
+proc	/datum/fishing_challenge	on_fish_death	code/modules/fishing/fishing_minigame.dm:497	source	yes	full	proc root
+proc	/datum/fishing_challenge	win_anyway	code/modules/fishing/fishing_minigame.dm:502		yes	full	proc root
+proc	/datum/fishing_challenge	hurt_fish	code/modules/fishing/fishing_minigame.dm:509	source,reward	yes	full	proc root
+proc	/datum/fishing_challenge	get_difficulty	code/modules/fishing/fishing_minigame.dm:515		yes	full	proc root
+proc	/datum/fishing_challenge	update_difficulty	code/modules/fishing/fishing_minigame.dm:528		yes	full	proc root
+proc	/datum/fishing_challenge	adjust_to_difficulty	code/modules/fishing/fishing_minigame.dm:540		yes	full	proc root
+proc	/datum/fishing_challenge	start_minigame_phase	code/modules/fishing/fishing_minigame.dm:548	auto_reel	yes	full	proc root
+proc	/datum/fishing_challenge	get_stack_trace	code/modules/fishing/fishing_minigame.dm:612	init_text	yes	full	proc root
+proc	/datum/fishing_challenge	prepare_minigame_hud	code/modules/fishing/fishing_minigame.dm:630		yes	full	proc root
+proc	/datum/fishing_challenge	remove_minigame_hud	code/modules/fishing/fishing_minigame.dm:645		yes	full	proc root
+proc	/datum/fishing_challenge	start_reeling	code/modules/fishing/fishing_minigame.dm:650	source,object,location,control,params	yes	full	proc root
+proc	/datum/fishing_challenge	stop_reeling	code/modules/fishing/fishing_minigame.dm:660	source,object,location,control,params	yes	full	proc root
+proc	/datum/fishing_challenge	process	code/modules/fishing/fishing_minigame.dm:665	seconds_per_tick	yes	full	proc
+proc	/datum/fishing_challenge	select_active_effect	code/modules/fishing/fishing_minigame.dm:674		yes	full	proc root
+proc	/datum/fishing_challenge	move_bait	code/modules/fishing/fishing_minigame.dm:714	seconds_per_tick	yes	full	proc root
+proc	/datum/fishing_challenge	update_visuals	code/modules/fishing/fishing_minigame.dm:794	seconds_per_tick	yes	full	proc root
 type	/datum/chasm_detritus	/datum	code/modules/fishing/fish/chasm_detritus.dm:21	live	datum_chasm_detritus	1	0
 proc	/datum/chasm_detritus	dispense_detritus	code/modules/fishing/fish/chasm_detritus.dm:48	spawn_location,fishing_spot	yes	full	proc root
 proc	/datum/chasm_detritus	determine_detritus	code/modules/fishing/fish/chasm_detritus.dm:55	chasm_stuff	yes	full	proc root
@@ -41027,13 +41027,13 @@ proc	/datum/fish_trait	eat_fish	code/modules/fishing/fish/fish_traits.dm:96	pred
 proc	/datum/fish_trait	add_reagents	code/modules/fishing/fish/fish_traits.dm:108	fish,reagents	yes	full	proc root
 proc	/datum/fish_trait	add_venom	code/modules/fishing/fish/fish_traits.dm:114	source,venom_path,new_weight,mult	yes	full	proc root
 proc	/datum/fish_trait	change_venom	code/modules/fishing/fish/fish_traits.dm:123	source,venom_path,live_mult,dead_mult,just_remove	yes	full	proc root
-type	/datum/fish_trait/wary	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:133	live	datum_fish_trait_wary	0	0
-proc	/datum/fish_trait/wary	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:137	rod,fisherman	stub	deferred	proc
+type	/datum/fish_trait/wary	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:133	live	datum_fish_trait_wary	1	0
+proc	/datum/fish_trait/wary	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:137	rod,fisherman	yes	full	proc
 type	/datum/fish_trait/shiny_lover	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:146	live	datum_fish_trait_shiny_lover	1	0
-proc	/datum/fish_trait/shiny_lover	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:150	rod,fisherman	stub	deferred	proc
+proc	/datum/fish_trait/shiny_lover	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:150	rod,fisherman	yes	full	proc
 proc	/datum/fish_trait/shiny_lover	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:156	rod,fisherman	yes	full	proc
-type	/datum/fish_trait/picky_eater	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:163	live	datum_fish_trait_picky_eater	0	0
-proc	/datum/fish_trait/picky_eater	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:167	rod,fisherman,location,fish_type	stub	deferred	proc
+type	/datum/fish_trait/picky_eater	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:163	live	datum_fish_trait_picky_eater	1	0
+proc	/datum/fish_trait/picky_eater	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:167	rod,fisherman,location,fish_type	yes	full	proc
 type	/datum/fish_trait/nocturnal	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:195	live	datum_fish_trait_nocturnal	1	0
 proc	/datum/fish_trait/nocturnal	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:199	rod,fisherman,location,fish_type	yes	full	proc
 proc	/datum/fish_trait/nocturnal	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:207	fish,initial	yes	full	proc
@@ -41044,10 +41044,10 @@ proc	/datum/fish_trait/nocturnal	on_non_stasis_life	code/modules/fishing/fish/fi
 type	/datum/fish_trait/heavy	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:239	live	datum_fish_trait_heavy	1	0
 proc	/datum/fish_trait/heavy	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:242	mob	yes	full	proc
 proc	/datum/fish_trait/heavy	minigame_mod	code/modules/fishing/fish/fish_traits.dm:251	rod,fisherman,minigame	yes	full	proc
-type	/datum/fish_trait/carnivore	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:255	live	datum_fish_trait_carnivore	0	0
-proc	/datum/fish_trait/carnivore	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:259	rod,fisherman,location,fish_type	stub	deferred	proc
-type	/datum/fish_trait/vegan	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:276	live	datum_fish_trait_vegan	0	0
-proc	/datum/fish_trait/vegan	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:280	rod,fisherman,location,fish_type	stub	deferred	proc
+type	/datum/fish_trait/carnivore	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:255	live	datum_fish_trait_carnivore	1	0
+proc	/datum/fish_trait/carnivore	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:259	rod,fisherman,location,fish_type	yes	full	proc
+type	/datum/fish_trait/vegan	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:276	live	datum_fish_trait_vegan	1	0
+proc	/datum/fish_trait/vegan	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:280	rod,fisherman,location,fish_type	yes	full	proc
 type	/datum/fish_trait/emulsijack	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:303	live	datum_fish_trait_emulsijack	1	0
 proc	/datum/fish_trait/emulsijack	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:308	fish,initial	yes	full	proc
 proc	/datum/fish_trait/emulsijack	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:312	fish	yes	full	proc
@@ -41070,7 +41070,7 @@ proc	/datum/fish_trait/revival	check_status	code/modules/fishing/fish/fish_trait
 proc	/datum/fish_trait/revival	revive	code/modules/fishing/fish/fish_traits.dm:429	fish_ref	yes	full	proc root
 proc	/datum/fish_trait/revival	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:440	mob	yes	full	proc
 type	/datum/fish_trait/predator	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:445	live	datum_fish_trait_predator	1	0
-proc	/datum/fish_trait/predator	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:450	rod,fisherman,location,fish_type	stub	deferred	proc
+proc	/datum/fish_trait/predator	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:450	rod,fisherman,location,fish_type	yes	full	proc
 proc	/datum/fish_trait/predator	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:455	fish,initial	yes	full	proc
 proc	/datum/fish_trait/predator	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:459	fish	yes	full	proc
 proc	/datum/fish_trait/predator	eat_fishes	code/modules/fishing/fish/fish_traits.dm:463	source,seconds_per_tick	yes	full	proc root
@@ -41108,7 +41108,7 @@ proc	/datum/fish_trait/antigrav	apply_to_fish	code/modules/fishing/fish/fish_tra
 proc	/datum/fish_trait/antigrav	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:652	fish	yes	full	proc
 proc	/datum/fish_trait/antigrav	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:656	mob	yes	full	proc
 type	/datum/fish_trait/anxiety	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:664	live	datum_fish_trait_anxiety	1	0
-proc	/datum/fish_trait/anxiety	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:668	rod,fisherman	stub	deferred	proc
+proc	/datum/fish_trait/anxiety	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:668	rod,fisherman	yes	full	proc
 proc	/datum/fish_trait/anxiety	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:674	fish,initial	yes	full	proc
 proc	/datum/fish_trait/anxiety	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:678	fish	yes	full	proc
 proc	/datum/fish_trait/anxiety	on_fish_life	code/modules/fishing/fish/fish_traits.dm:683	fish,seconds_per_tick	yes	full	proc root
@@ -41147,114 +41147,114 @@ proc	/datum/fish_trait/camouflage	apply_to_fish	code/modules/fishing/fish/fish_t
 proc	/datum/fish_trait/camouflage	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:902	fish	yes	full	proc
 proc	/datum/fish_trait/camouflage	fade_out	code/modules/fishing/fish/fish_traits.dm:907	source,seconds_per_tick	yes	full	proc root
 proc	/datum/fish_trait/camouflage	reset_alpha	code/modules/fishing/fish/fish_traits.dm:913	source	yes	full	proc root
-type	/datum/fish_source	/datum	code/modules/fishing/sources/_fish_source.dm:77	inert	datum_fish_source	0	0
-proc	/datum/fish_source	New	code/modules/fishing/sources/_fish_source.dm:126		no	-	proc
-proc	/datum/fish_source	Destroy	code/modules/fishing/sources/_fish_source.dm:142		no	-	proc
-proc	/datum/fish_source	on_fishing_spot_init	code/modules/fishing/sources/_fish_source.dm:148	spot	no	-	proc root
-proc	/datum/fish_source	on_fishing_spot_del	code/modules/fishing/sources/_fish_source.dm:152	spot	no	-	proc root
-proc	/datum/fish_source	reason_we_cant_fish	code/modules/fishing/sources/_fish_source.dm:155	rod,fisherman,parent	no	-	proc root
-proc	/datum/fish_source	on_start_fishing	code/modules/fishing/sources/_fish_source.dm:159	rod,fisherman,parent	no	-	proc root
-proc	/datum/fish_source	calculate_difficulty_minigame	code/modules/fishing/sources/_fish_source.dm:170	challenge,reward_path,rod,fisherman	no	-	proc root
-proc	/datum/fish_source	calculate_difficulty	code/modules/fishing/sources/_fish_source.dm:190	result,rod,fisherman	no	-	proc root
-proc	/datum/fish_source	roll_reward_minigame	code/modules/fishing/sources/_fish_source.dm:247	source,rod,fisherman,location,rewards	no	-	proc root
-proc	/datum/fish_source	roll_reward	code/modules/fishing/sources/_fish_source.dm:253	rod,fisherman,location	no	-	proc root
-proc	/datum/fish_source	roll_mindless_reward	code/modules/fishing/sources/_fish_source.dm:257	rod,fisherman,location	no	-	proc root
-proc	/datum/fish_source	pre_challenge_started	code/modules/fishing/sources/_fish_source.dm:266	rod,user,challenge	no	-	proc root
-proc	/datum/fish_source	interrupt_challenge	code/modules/fishing/sources/_fish_source.dm:270	reason	no	-	proc root
-proc	/datum/fish_source	on_challenge_completed	code/modules/fishing/sources/_fish_source.dm:277	user,challenge,success	no	-	proc root
-proc	/datum/fish_source	dispense_reward	code/modules/fishing/sources/_fish_source.dm:292	reward_path,fisherman,fishing_spot,rod	no	-	proc root
-proc	/datum/fish_source	simple_dispense_reward	code/modules/fishing/sources/_fish_source.dm:313	reward_path,spawn_location,fishing_spot	no	-	proc root
-proc	/datum/fish_source	regen_count	code/modules/fishing/sources/_fish_source.dm:332	reward_path	no	-	proc root
-proc	/datum/fish_source	spawn_reward	code/modules/fishing/sources/_fish_source.dm:344	reward_path,spawn_location,fishing_spot	no	-	proc root
-proc	/datum/fish_source	get_fish_table	code/modules/fishing/sources/_fish_source.dm:363	location,from_explosion	no	-	proc root
-proc	/datum/fish_source	get_modified_fish_table	code/modules/fishing/sources/_fish_source.dm:375	rod,fisherman,location	no	-	proc root
-proc	/datum/fish_source	level_out_fish	code/modules/fishing/sources/_fish_source.dm:428	table,exponent	no	-	proc root
-proc	/datum/fish_source	get_fish_trait_catch_mods	code/modules/fishing/sources/_fish_source.dm:444	weight,fish,rod,user,location	no	-	proc root
-proc	/datum/fish_source	has_known_fishes	code/modules/fishing/sources/_fish_source.dm:463	location	no	-	proc root
-proc	/datum/fish_source	get_catchable_fish_names	code/modules/fishing/sources/_fish_source.dm:474	user,location,examine_text	no	-	proc root
-proc	/datum/fish_source	spawn_reward_from_explosion	code/modules/fishing/sources/_fish_source.dm:537	location,severity	no	-	proc root
-proc	/datum/fish_source	process	code/modules/fishing/sources/_fish_source.dm:566	seconds_per_tick	no	-	proc
-proc	/datum/fish_source	readd_fish	code/modules/fishing/sources/_fish_source.dm:576	location,fish,releaser	no	-	proc root
-proc	/datum/fish_source	generate_wiki_contents	code/modules/fishing/sources/_fish_source.dm:603	wiki	no	-	proc root
-type	/datum/fish_source/portal	/datum/fish_source	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:4	inert	datum_fish_source_portal	0	0
-type	/datum/fish_source/portal/beach	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:21	inert	datum_fish_source_portal_beach	0	0
-proc	/datum/fish_source/portal/beach	on_fishing_spot_init	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:41	spot	no	-	proc
-proc	/datum/fish_source/portal/beach	on_fishing_spot_del	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:44	spot	no	-	proc
-type	/datum/fish_source/portal/chasm	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:48	inert	datum_fish_source_portal_chasm	0	0
-type	/datum/fish_source/portal/ocean	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:62	inert	datum_fish_source_portal_ocean	0	0
-proc	/datum/fish_source/portal/ocean	on_fishing_spot_init	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:90	spot	no	-	proc
-proc	/datum/fish_source/portal/ocean	on_fishing_spot_del	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:93	spot	no	-	proc
-type	/datum/fish_source/portal/hyperspace	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:97	inert	datum_fish_source_portal_hyperspace	0	0
-type	/datum/fish_source/portal/syndicate	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:117	inert	datum_fish_source_portal_syndicate	0	0
-type	/datum/fish_source/portal/random	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:147	inert	datum_fish_source_portal_random	0	0
-proc	/datum/fish_source/portal/random	on_fishing_spot_init	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:156	spot	no	-	proc
-proc	/datum/fish_source/portal/random	calculate_difficulty	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:178	challenge,result,rod,fisherman	no	-	proc
-proc	/datum/fish_source/portal/random	pre_challenge_started	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:183	rod,user,challenge	no	-	proc
-proc	/datum/fish_source/portal/random	randomize_mover_velocity	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:195	source,mover	no	-	proc root
-proc	/datum/fish_source/portal/random	spawn_reward	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:201	reward_path,spawn_location,fishing_spot,used_rod	no	-	proc
-type	/datum/fish_source/cursed_spring	/datum/fish_source	code/modules/fishing/sources/subtypes/mining_ruins.dm:4	inert	datum_fish_source_cursed_spring	0	0
-type	/datum/fish_source/chasm	/datum/fish_source	code/modules/fishing/sources/subtypes/mining_ruins.dm:20	inert	datum_fish_source_chasm	0	0
-proc	/datum/fish_source/chasm	on_start_fishing	code/modules/fishing/sources/subtypes/mining_ruins.dm:32	rod,fisherman,parent	no	-	proc
-proc	/datum/fish_source/chasm	roll_reward	code/modules/fishing/sources/subtypes/mining_ruins.dm:39	rod,fisherman	no	-	proc
-type	/datum/fish_source/lavaland	/datum/fish_source	code/modules/fishing/sources/subtypes/mining_ruins.dm:48	inert	datum_fish_source_lavaland	0	0
-proc	/datum/fish_source/lavaland	reason_we_cant_fish	code/modules/fishing/sources/subtypes/mining_ruins.dm:82	rod,fisherman,parent	no	-	proc
-type	/datum/fish_source/lavaland/icemoon	/datum/fish_source/lavaland	code/modules/fishing/sources/subtypes/mining_ruins.dm:88	inert	datum_fish_source_lavaland_icemoon	0	0
-type	/datum/fish_source/oil_well	/datum/fish_source	code/modules/fishing/sources/subtypes/mining_ruins.dm:121	inert	datum_fish_source_oil_well	0	0
-type	/datum/fish_source/carp_rift	/datum/fish_source	code/modules/fishing/sources/subtypes/rifts.dm:4	inert	datum_fish_source_carp_rift	0	0
-type	/datum/fish_source/dimensional_rift	/datum/fish_source	code/modules/fishing/sources/subtypes/rifts.dm:30	inert	datum_fish_source_dimensional_rift	0	0
-proc	/datum/fish_source/dimensional_rift	get_fish_table	code/modules/fishing/sources/subtypes/rifts.dm:74	location,from_explosion	no	-	proc
-proc	/datum/fish_source/dimensional_rift	on_challenge_completed	code/modules/fishing/sources/subtypes/rifts.dm:83	user,challenge,success	no	-	proc
-proc	/datum/fish_source/dimensional_rift	spawn_reward	code/modules/fishing/sources/subtypes/rifts.dm:104	reward_path,spawn_location,fishing_spot	no	-	proc
-proc	/datum/fish_source/dimensional_rift	on_epic_fail	code/modules/fishing/sources/subtypes/rifts.dm:115	user,challenge,success	no	-	proc root
-proc	/datum/fish_source/dimensional_rift	check_item_location	code/modules/fishing/sources/subtypes/rifts.dm:127	location,used_rod	no	-	proc root
-proc	/datum/fish_source/dimensional_rift	arm_fished	code/modules/fishing/sources/subtypes/rifts.dm:136	spawn_location	no	-	proc root
-proc	/datum/fish_source/dimensional_rift	influence_fished	code/modules/fishing/sources/subtypes/rifts.dm:142	user,challenge	no	-	proc root
-type	/datum/fish_source/moisture_trap	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:4	inert	datum_fish_source_moisture_trap	0	0
-type	/datum/fish_source/toilet	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:16	inert	datum_fish_source_toilet	0	0
-type	/datum/fish_source/holographic	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:35	inert	datum_fish_source_holographic	0	0
-proc	/datum/fish_source/holographic	on_fishing_spot_init	code/modules/fishing/sources/subtypes/structures.dm:49	spot	no	-	proc
-proc	/datum/fish_source/holographic	on_fishing_spot_del	code/modules/fishing/sources/subtypes/structures.dm:52	spot	no	-	proc
-proc	/datum/fish_source/holographic	generate_wiki_contents	code/modules/fishing/sources/subtypes/structures.dm:55	wiki	no	-	proc
-proc	/datum/fish_source/holographic	reason_we_cant_fish	code/modules/fishing/sources/subtypes/structures.dm:64	rod,fisherman,parent	no	-	proc
-proc	/datum/fish_source/holographic	pre_challenge_started	code/modules/fishing/sources/subtypes/structures.dm:69	rod,user,challenge	no	-	proc
-proc	/datum/fish_source/holographic	check_area	code/modules/fishing/sources/subtypes/structures.dm:72	user	no	-	proc root
-proc	/datum/fish_source/holographic	on_challenge_completed	code/modules/fishing/sources/subtypes/structures.dm:77	source,user,success	no	-	proc
-type	/datum/fish_source/hydro_tray	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:82	inert	datum_fish_source_hydro_tray	0	0
-proc	/datum/fish_source/hydro_tray	generate_wiki_contents	code/modules/fishing/sources/subtypes/structures.dm:106	wiki	no	-	proc
-proc	/datum/fish_source/hydro_tray	reason_we_cant_fish	code/modules/fishing/sources/subtypes/structures.dm:148	rod,fisherman,parent	no	-	proc
-proc	/datum/fish_source/hydro_tray	spawn_reward_from_explosion	code/modules/fishing/sources/subtypes/structures.dm:160	location,severity	no	-	proc
-proc	/datum/fish_source/hydro_tray	spawn_reward	code/modules/fishing/sources/subtypes/structures.dm:169	reward_path,spawn_location,fishing_spot,used_rod	no	-	proc
-type	/datum/fish_source/deepfryer	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:193	inert	datum_fish_source_deepfryer	0	0
-type	/datum/fish_source/aquarium	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:219	inert	datum_fish_source_aquarium	0	0
-proc	/datum/fish_source/aquarium	get_fish_table	code/modules/fishing/sources/subtypes/structures.dm:229	location,from_explosion	no	-	proc
-proc	/datum/fish_source/aquarium	generate_wiki_contents	code/modules/fishing/sources/subtypes/structures.dm:242	wiki	no	-	proc
-type	/datum/fish_source/vending	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:255	inert	datum_fish_source_vending	0	0
-proc	/datum/fish_source/vending	generate_wiki_contents	code/modules/fishing/sources/subtypes/structures.dm:265	wiki	no	-	proc
-proc	/datum/fish_source/vending	get_modified_fish_table	code/modules/fishing/sources/subtypes/structures.dm:277	rod,fisherman,location	no	-	proc
-proc	/datum/fish_source/vending	get_vending_table	code/modules/fishing/sources/subtypes/structures.dm:286	rod,fisherman,location	no	-	proc root
-proc	/datum/fish_source/vending	add_risks	code/modules/fishing/sources/subtypes/structures.dm:311	table,bait_value,highest_price,malus_multiplier	no	-	proc root
-proc	/datum/fish_source/vending	calculate_difficulty	code/modules/fishing/sources/subtypes/structures.dm:324	challenge,result,rod,fisherman	no	-	proc
-proc	/datum/fish_source/vending	get_product_difficulty	code/modules/fishing/sources/subtypes/structures.dm:330	diff,result	no	-	proc root
-proc	/datum/fish_source/vending	dispense_reward	code/modules/fishing/sources/subtypes/structures.dm:338	reward_path,fisherman,fishing_spot,rod	no	-	proc
-proc	/datum/fish_source/vending	spawn_reward	code/modules/fishing/sources/subtypes/structures.dm:358	reward_path,spawn_location,fishing_spot,used_rod	no	-	proc
-proc	/datum/fish_source/vending	spawn_vending_reward	code/modules/fishing/sources/subtypes/structures.dm:366	reward_path,spawn_location,fishing_spot	no	-	proc root
-proc	/datum/fish_source/vending	pre_challenge_started	code/modules/fishing/sources/subtypes/structures.dm:372	rod,user,challenge	no	-	proc
-proc	/datum/fish_source/vending	on_challenge_completed	code/modules/fishing/sources/subtypes/structures.dm:375	user,challenge,success	no	-	proc
-proc	/datum/fish_source/vending	on_reward	code/modules/fishing/sources/subtypes/structures.dm:379	rod,reward,user	no	-	proc root
-type	/datum/fish_source/vending/custom	/datum/fish_source/vending	code/modules/fishing/sources/subtypes/structures.dm:386	inert	datum_fish_source_vending_custom	0	0
-proc	/datum/fish_source/vending/custom	get_vending_table	code/modules/fishing/sources/subtypes/structures.dm:388	rod,fisherman,location	no	-	proc
-proc	/datum/fish_source/vending/custom	get_product_difficulty	code/modules/fishing/sources/subtypes/structures.dm:418	diff,result	no	-	proc
-proc	/datum/fish_source/vending/custom	spawn_vending_reward	code/modules/fishing/sources/subtypes/structures.dm:424	reward,spawn_location,fishing_spot	no	-	proc
-type	/datum/fish_source/surgery	/datum/fish_source	code/modules/fishing/sources/subtypes/surgery.dm:4	inert	datum_fish_source_surgery	0	0
-proc	/datum/fish_source/surgery	spawn_reward	code/modules/fishing/sources/subtypes/surgery.dm:15	reward_path,spawn_location,fishing_spot,used_rod	no	-	proc
-proc	/datum/fish_source/surgery	generate_wiki_contents	code/modules/fishing/sources/subtypes/surgery.dm:43	wiki	no	-	proc
-type	/datum/fish_source/ocean	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:4	inert	datum_fish_source_ocean	0	0
-type	/datum/fish_source/ocean/beach	/datum/fish_source/ocean	code/modules/fishing/sources/subtypes/turfs.dm:39	inert	datum_fish_source_ocean_beach	0	0
-type	/datum/fish_source/ice_fishing	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:45	inert	datum_fish_source_ice_fishing	0	0
-type	/datum/fish_source/river	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:61	inert	datum_fish_source_river	0	0
-type	/datum/fish_source/sand	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:90	inert	datum_fish_source_sand	0	0
-type	/datum/fish_source/hot_spring	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:103	inert	datum_fish_source_hot_spring	0	0
-type	/datum/fish_source/tizira	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:125	inert	datum_fish_source_tizira	0	0
+type	/datum/fish_source	/datum	code/modules/fishing/sources/_fish_source.dm:77	live	datum_fish_source	1	0
+proc	/datum/fish_source	New	code/modules/fishing/sources/_fish_source.dm:126		yes	full	proc
+proc	/datum/fish_source	Destroy	code/modules/fishing/sources/_fish_source.dm:142		yes	full	proc
+proc	/datum/fish_source	on_fishing_spot_init	code/modules/fishing/sources/_fish_source.dm:148	spot	yes	full	proc root
+proc	/datum/fish_source	on_fishing_spot_del	code/modules/fishing/sources/_fish_source.dm:152	spot	yes	full	proc root
+proc	/datum/fish_source	reason_we_cant_fish	code/modules/fishing/sources/_fish_source.dm:155	rod,fisherman,parent	yes	full	proc root
+proc	/datum/fish_source	on_start_fishing	code/modules/fishing/sources/_fish_source.dm:159	rod,fisherman,parent	yes	full	proc root
+proc	/datum/fish_source	calculate_difficulty_minigame	code/modules/fishing/sources/_fish_source.dm:170	challenge,reward_path,rod,fisherman	yes	full	proc root
+proc	/datum/fish_source	calculate_difficulty	code/modules/fishing/sources/_fish_source.dm:190	result,rod,fisherman	yes	full	proc root
+proc	/datum/fish_source	roll_reward_minigame	code/modules/fishing/sources/_fish_source.dm:247	source,rod,fisherman,location,rewards	yes	full	proc root
+proc	/datum/fish_source	roll_reward	code/modules/fishing/sources/_fish_source.dm:253	rod,fisherman,location	yes	full	proc root
+proc	/datum/fish_source	roll_mindless_reward	code/modules/fishing/sources/_fish_source.dm:257	rod,fisherman,location	yes	full	proc root
+proc	/datum/fish_source	pre_challenge_started	code/modules/fishing/sources/_fish_source.dm:266	rod,user,challenge	yes	full	proc root
+proc	/datum/fish_source	interrupt_challenge	code/modules/fishing/sources/_fish_source.dm:270	reason	yes	full	proc root
+proc	/datum/fish_source	on_challenge_completed	code/modules/fishing/sources/_fish_source.dm:277	user,challenge,success	yes	full	proc root
+proc	/datum/fish_source	dispense_reward	code/modules/fishing/sources/_fish_source.dm:292	reward_path,fisherman,fishing_spot,rod	yes	full	proc root
+proc	/datum/fish_source	simple_dispense_reward	code/modules/fishing/sources/_fish_source.dm:313	reward_path,spawn_location,fishing_spot	yes	full	proc root
+proc	/datum/fish_source	regen_count	code/modules/fishing/sources/_fish_source.dm:332	reward_path	yes	full	proc root
+proc	/datum/fish_source	spawn_reward	code/modules/fishing/sources/_fish_source.dm:344	reward_path,spawn_location,fishing_spot	yes	full	proc root
+proc	/datum/fish_source	get_fish_table	code/modules/fishing/sources/_fish_source.dm:363	location,from_explosion	yes	full	proc root
+proc	/datum/fish_source	get_modified_fish_table	code/modules/fishing/sources/_fish_source.dm:375	rod,fisherman,location	yes	full	proc root
+proc	/datum/fish_source	level_out_fish	code/modules/fishing/sources/_fish_source.dm:428	table,exponent	yes	full	proc root
+proc	/datum/fish_source	get_fish_trait_catch_mods	code/modules/fishing/sources/_fish_source.dm:444	weight,fish,rod,user,location	yes	full	proc root
+proc	/datum/fish_source	has_known_fishes	code/modules/fishing/sources/_fish_source.dm:463	location	yes	full	proc root
+proc	/datum/fish_source	get_catchable_fish_names	code/modules/fishing/sources/_fish_source.dm:474	user,location,examine_text	yes	full	proc root
+proc	/datum/fish_source	spawn_reward_from_explosion	code/modules/fishing/sources/_fish_source.dm:537	location,severity	yes	full	proc root
+proc	/datum/fish_source	process	code/modules/fishing/sources/_fish_source.dm:566	seconds_per_tick	yes	full	proc
+proc	/datum/fish_source	readd_fish	code/modules/fishing/sources/_fish_source.dm:576	location,fish,releaser	yes	full	proc root
+proc	/datum/fish_source	generate_wiki_contents	code/modules/fishing/sources/_fish_source.dm:603	wiki	stub	not_translated	proc root
+type	/datum/fish_source/portal	/datum/fish_source	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:4	live	datum_fish_source_portal	0	0
+type	/datum/fish_source/portal/beach	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:21	live	datum_fish_source_portal_beach	1	0
+proc	/datum/fish_source/portal/beach	on_fishing_spot_init	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:41	spot	yes	full	proc
+proc	/datum/fish_source/portal/beach	on_fishing_spot_del	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:44	spot	yes	full	proc
+type	/datum/fish_source/portal/chasm	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:48	live	datum_fish_source_portal_chasm	0	0
+type	/datum/fish_source/portal/ocean	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:62	live	datum_fish_source_portal_ocean	1	0
+proc	/datum/fish_source/portal/ocean	on_fishing_spot_init	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:90	spot	yes	full	proc
+proc	/datum/fish_source/portal/ocean	on_fishing_spot_del	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:93	spot	yes	full	proc
+type	/datum/fish_source/portal/hyperspace	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:97	live	datum_fish_source_portal_hyperspace	0	0
+type	/datum/fish_source/portal/syndicate	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:117	live	datum_fish_source_portal_syndicate	0	0
+type	/datum/fish_source/portal/random	/datum/fish_source/portal	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:147	live	datum_fish_source_portal_random	1	0
+proc	/datum/fish_source/portal/random	on_fishing_spot_init	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:156	spot	yes	full	proc
+proc	/datum/fish_source/portal/random	calculate_difficulty	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:178	challenge,result,rod,fisherman	yes	full	proc
+proc	/datum/fish_source/portal/random	pre_challenge_started	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:183	rod,user,challenge	yes	full	proc
+proc	/datum/fish_source/portal/random	randomize_mover_velocity	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:195	source,mover	yes	full	proc root
+proc	/datum/fish_source/portal/random	spawn_reward	code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:201	reward_path,spawn_location,fishing_spot,used_rod	yes	full	proc
+type	/datum/fish_source/cursed_spring	/datum/fish_source	code/modules/fishing/sources/subtypes/mining_ruins.dm:4	live	datum_fish_source_cursed_spring	0	0
+type	/datum/fish_source/chasm	/datum/fish_source	code/modules/fishing/sources/subtypes/mining_ruins.dm:20	live	datum_fish_source_chasm	1	0
+proc	/datum/fish_source/chasm	on_start_fishing	code/modules/fishing/sources/subtypes/mining_ruins.dm:32	rod,fisherman,parent	yes	full	proc
+proc	/datum/fish_source/chasm	roll_reward	code/modules/fishing/sources/subtypes/mining_ruins.dm:39	rod,fisherman	yes	full	proc
+type	/datum/fish_source/lavaland	/datum/fish_source	code/modules/fishing/sources/subtypes/mining_ruins.dm:48	live	datum_fish_source_lavaland	1	0
+proc	/datum/fish_source/lavaland	reason_we_cant_fish	code/modules/fishing/sources/subtypes/mining_ruins.dm:82	rod,fisherman,parent	yes	full	proc
+type	/datum/fish_source/lavaland/icemoon	/datum/fish_source/lavaland	code/modules/fishing/sources/subtypes/mining_ruins.dm:88	live	datum_fish_source_lavaland_icemoon	0	0
+type	/datum/fish_source/oil_well	/datum/fish_source	code/modules/fishing/sources/subtypes/mining_ruins.dm:121	live	datum_fish_source_oil_well	0	0
+type	/datum/fish_source/carp_rift	/datum/fish_source	code/modules/fishing/sources/subtypes/rifts.dm:4	live	datum_fish_source_carp_rift	0	0
+type	/datum/fish_source/dimensional_rift	/datum/fish_source	code/modules/fishing/sources/subtypes/rifts.dm:30	live	datum_fish_source_dimensional_rift	1	0
+proc	/datum/fish_source/dimensional_rift	get_fish_table	code/modules/fishing/sources/subtypes/rifts.dm:74	location,from_explosion	yes	full	proc
+proc	/datum/fish_source/dimensional_rift	on_challenge_completed	code/modules/fishing/sources/subtypes/rifts.dm:83	user,challenge,success	yes	full	proc
+proc	/datum/fish_source/dimensional_rift	spawn_reward	code/modules/fishing/sources/subtypes/rifts.dm:104	reward_path,spawn_location,fishing_spot	yes	full	proc
+proc	/datum/fish_source/dimensional_rift	on_epic_fail	code/modules/fishing/sources/subtypes/rifts.dm:115	user,challenge,success	yes	full	proc root
+proc	/datum/fish_source/dimensional_rift	check_item_location	code/modules/fishing/sources/subtypes/rifts.dm:127	location,used_rod	yes	full	proc root
+proc	/datum/fish_source/dimensional_rift	arm_fished	code/modules/fishing/sources/subtypes/rifts.dm:136	spawn_location	yes	full	proc root
+proc	/datum/fish_source/dimensional_rift	influence_fished	code/modules/fishing/sources/subtypes/rifts.dm:142	user,challenge	yes	full	proc root
+type	/datum/fish_source/moisture_trap	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:4	live	datum_fish_source_moisture_trap	0	0
+type	/datum/fish_source/toilet	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:16	live	datum_fish_source_toilet	0	0
+type	/datum/fish_source/holographic	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:35	live	datum_fish_source_holographic	1	0
+proc	/datum/fish_source/holographic	on_fishing_spot_init	code/modules/fishing/sources/subtypes/structures.dm:49	spot	yes	full	proc
+proc	/datum/fish_source/holographic	on_fishing_spot_del	code/modules/fishing/sources/subtypes/structures.dm:52	spot	yes	full	proc
+proc	/datum/fish_source/holographic	generate_wiki_contents	code/modules/fishing/sources/subtypes/structures.dm:55	wiki	stub	not_translated	proc
+proc	/datum/fish_source/holographic	reason_we_cant_fish	code/modules/fishing/sources/subtypes/structures.dm:64	rod,fisherman,parent	yes	full	proc
+proc	/datum/fish_source/holographic	pre_challenge_started	code/modules/fishing/sources/subtypes/structures.dm:69	rod,user,challenge	yes	full	proc
+proc	/datum/fish_source/holographic	check_area	code/modules/fishing/sources/subtypes/structures.dm:72	user	yes	full	proc root
+proc	/datum/fish_source/holographic	on_challenge_completed	code/modules/fishing/sources/subtypes/structures.dm:77	source,user,success	yes	full	proc
+type	/datum/fish_source/hydro_tray	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:82	live	datum_fish_source_hydro_tray	1	0
+proc	/datum/fish_source/hydro_tray	generate_wiki_contents	code/modules/fishing/sources/subtypes/structures.dm:106	wiki	stub	not_translated	proc
+proc	/datum/fish_source/hydro_tray	reason_we_cant_fish	code/modules/fishing/sources/subtypes/structures.dm:148	rod,fisherman,parent	yes	full	proc
+proc	/datum/fish_source/hydro_tray	spawn_reward_from_explosion	code/modules/fishing/sources/subtypes/structures.dm:160	location,severity	yes	full	proc
+proc	/datum/fish_source/hydro_tray	spawn_reward	code/modules/fishing/sources/subtypes/structures.dm:169	reward_path,spawn_location,fishing_spot,used_rod	yes	full	proc
+type	/datum/fish_source/deepfryer	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:193	live	datum_fish_source_deepfryer	0	0
+type	/datum/fish_source/aquarium	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:219	live	datum_fish_source_aquarium	1	0
+proc	/datum/fish_source/aquarium	get_fish_table	code/modules/fishing/sources/subtypes/structures.dm:229	location,from_explosion	yes	full	proc
+proc	/datum/fish_source/aquarium	generate_wiki_contents	code/modules/fishing/sources/subtypes/structures.dm:242	wiki	stub	not_translated	proc
+type	/datum/fish_source/vending	/datum/fish_source	code/modules/fishing/sources/subtypes/structures.dm:255	live	datum_fish_source_vending	1	0
+proc	/datum/fish_source/vending	generate_wiki_contents	code/modules/fishing/sources/subtypes/structures.dm:265	wiki	stub	not_translated	proc
+proc	/datum/fish_source/vending	get_modified_fish_table	code/modules/fishing/sources/subtypes/structures.dm:277	rod,fisherman,location	yes	full	proc
+proc	/datum/fish_source/vending	get_vending_table	code/modules/fishing/sources/subtypes/structures.dm:286	rod,fisherman,location	yes	full	proc root
+proc	/datum/fish_source/vending	add_risks	code/modules/fishing/sources/subtypes/structures.dm:311	table,bait_value,highest_price,malus_multiplier	yes	full	proc root
+proc	/datum/fish_source/vending	calculate_difficulty	code/modules/fishing/sources/subtypes/structures.dm:324	challenge,result,rod,fisherman	yes	full	proc
+proc	/datum/fish_source/vending	get_product_difficulty	code/modules/fishing/sources/subtypes/structures.dm:330	diff,result	yes	full	proc root
+proc	/datum/fish_source/vending	dispense_reward	code/modules/fishing/sources/subtypes/structures.dm:338	reward_path,fisherman,fishing_spot,rod	yes	full	proc
+proc	/datum/fish_source/vending	spawn_reward	code/modules/fishing/sources/subtypes/structures.dm:358	reward_path,spawn_location,fishing_spot,used_rod	yes	full	proc
+proc	/datum/fish_source/vending	spawn_vending_reward	code/modules/fishing/sources/subtypes/structures.dm:366	reward_path,spawn_location,fishing_spot	yes	full	proc root
+proc	/datum/fish_source/vending	pre_challenge_started	code/modules/fishing/sources/subtypes/structures.dm:372	rod,user,challenge	yes	full	proc
+proc	/datum/fish_source/vending	on_challenge_completed	code/modules/fishing/sources/subtypes/structures.dm:375	user,challenge,success	yes	full	proc
+proc	/datum/fish_source/vending	on_reward	code/modules/fishing/sources/subtypes/structures.dm:379	rod,reward,user	yes	full	proc root
+type	/datum/fish_source/vending/custom	/datum/fish_source/vending	code/modules/fishing/sources/subtypes/structures.dm:386	live	datum_fish_source_vending_custom	1	0
+proc	/datum/fish_source/vending/custom	get_vending_table	code/modules/fishing/sources/subtypes/structures.dm:388	rod,fisherman,location	yes	full	proc
+proc	/datum/fish_source/vending/custom	get_product_difficulty	code/modules/fishing/sources/subtypes/structures.dm:418	diff,result	yes	full	proc
+proc	/datum/fish_source/vending/custom	spawn_vending_reward	code/modules/fishing/sources/subtypes/structures.dm:424	reward,spawn_location,fishing_spot	yes	full	proc
+type	/datum/fish_source/surgery	/datum/fish_source	code/modules/fishing/sources/subtypes/surgery.dm:4	live	datum_fish_source_surgery	1	0
+proc	/datum/fish_source/surgery	spawn_reward	code/modules/fishing/sources/subtypes/surgery.dm:15	reward_path,spawn_location,fishing_spot,used_rod	yes	full	proc
+proc	/datum/fish_source/surgery	generate_wiki_contents	code/modules/fishing/sources/subtypes/surgery.dm:43	wiki	stub	not_translated	proc
+type	/datum/fish_source/ocean	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:4	live	datum_fish_source_ocean	0	0
+type	/datum/fish_source/ocean/beach	/datum/fish_source/ocean	code/modules/fishing/sources/subtypes/turfs.dm:39	live	datum_fish_source_ocean_beach	0	0
+type	/datum/fish_source/ice_fishing	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:45	live	datum_fish_source_ice_fishing	0	0
+type	/datum/fish_source/river	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:61	live	datum_fish_source_river	0	0
+type	/datum/fish_source/sand	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:90	live	datum_fish_source_sand	0	0
+type	/datum/fish_source/hot_spring	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:103	live	datum_fish_source_hot_spring	0	0
+type	/datum/fish_source/tizira	/datum/fish_source	code/modules/fishing/sources/subtypes/turfs.dm:125	live	datum_fish_source_tizira	0	0
 type	/datum/chemical_reaction	/datum	code/modules/reagents/chemistry/recipes.dm:10	live	datum_chemical_reaction	1	0
 proc	/datum/chemical_reaction	pre_reaction_other_checks	code/modules/reagents/chemistry/recipes.dm:66	holder	yes	full	proc root
 proc	/datum/chemical_reaction	on_reaction	code/modules/reagents/chemistry/recipes.dm:82	holder,reaction,created_volume	yes	full	proc root
@@ -50287,9 +50287,9 @@ type	/atom/movable/screen/alert/status_effect/decloning	/atom/movable/screen/ale
 type	/atom/movable/screen/alert/status_effect/high	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/drugginess.dm:37	live	atom_movable_screen_alert_status_effect_high	0	0
 type	/atom/movable/screen/alert/status_effect/drunk	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/drunk.dm:242	live	atom_movable_screen_alert_status_effect_drunk	0	0
 type	/atom/movable/screen/alert/status_effect/firewall	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/firewall.dm:18	live	atom_movable_screen_alert_status_effect_firewall	0	0
-type	/atom/movable/screen/alert/status_effect/hooked	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/hooked.dm:23	inert	atom_movable_screen_alert_status_effect_hooked	0	0
-proc	/atom/movable/screen/alert/status_effect/hooked	Click	code/datums/status_effects/debuffs/hooked.dm:29		no	-	proc
-type	/atom/movable/screen/alert/status_effect/hooked/jaws	/atom/movable/screen/alert/status_effect/hooked	code/datums/status_effects/debuffs/hooked.dm:60	inert	atom_movable_screen_alert_status_effect_hooked_jaws	0	0
+type	/atom/movable/screen/alert/status_effect/hooked	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/hooked.dm:23	live	atom_movable_screen_alert_status_effect_hooked	1	0
+proc	/atom/movable/screen/alert/status_effect/hooked	Click	code/datums/status_effects/debuffs/hooked.dm:29		yes	full	proc
+type	/atom/movable/screen/alert/status_effect/hooked/jaws	/atom/movable/screen/alert/status_effect/hooked	code/datums/status_effects/debuffs/hooked.dm:60	live	atom_movable_screen_alert_status_effect_hooked_jaws	0	0
 type	/atom/movable/screen/alert/status_effect/gravity_sickness	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/spacer.dm:109	live	atom_movable_screen_alert_status_effect_gravity_sickness	0	0
 type	/atom/movable/screen/alert/status_effect/strandling	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/strandling.dm:87	inert	atom_movable_screen_alert_status_effect_strandling	0	0
 proc	/atom/movable/screen/alert/status_effect/strandling	Click	code/datums/status_effects/debuffs/strandling.dm:93	location,control,params	no	-	proc
@@ -50879,18 +50879,18 @@ proc	/atom/movable/screen/buildmode/dirswitch	Click	code/modules/buildmode/butto
 type	/atom/movable/screen/buildmode/quit	/atom/movable/screen/buildmode	code/modules/buildmode/buttons.dm:86	inert	atom_movable_screen_buildmode_quit	0	0
 proc	/atom/movable/screen/buildmode/quit	Click	code/modules/buildmode/buttons.dm:90		no	-	proc
 type	/atom/movable/screen/buildmode/preview_item	/atom/movable/screen/buildmode	code/modules/buildmode/buttons.dm:95	inert	atom_movable_screen_buildmode_preview_item	0	0
-type	/atom/movable/screen/fishing_hud	/atom/movable/screen	code/modules/fishing/fishing_minigame.dm:803	inert	atom_movable_screen_fishing_hud	0	0
-proc	/atom/movable/screen/fishing_hud	prepare_minigame	code/modules/fishing/fishing_minigame.dm:815	challenge	no	-	proc root
-proc	/atom/movable/screen/fishing_hud	Destroy	code/modules/fishing/fishing_minigame.dm:826		no	-	proc
-type	/atom/movable/screen/hud_bait	/atom/movable/screen	code/modules/fishing/fishing_minigame.dm:836	inert	atom_movable_screen_hud_bait	0	0
-proc	/atom/movable/screen/hud_bait	Initialize	code/modules/fishing/fishing_minigame.dm:841	mapload,hud_owner,challenge	no	-	proc
-proc	/atom/movable/screen/hud_bait	adjust_to_difficulty	code/modules/fishing/fishing_minigame.dm:849	challenge	no	-	proc root
-proc	/atom/movable/screen/hud_bait	update_overlays	code/modules/fishing/fishing_minigame.dm:853		no	-	proc
-type	/atom/movable/screen/hud_fish	/atom/movable/screen	code/modules/fishing/fishing_minigame.dm:864	inert	atom_movable_screen_hud_fish	0	0
-proc	/atom/movable/screen/hud_fish	Initialize	code/modules/fishing/fishing_minigame.dm:868	mapload,hud_owner,challenge	no	-	proc
-type	/atom/movable/screen/hud_completion	/atom/movable/screen	code/modules/fishing/fishing_minigame.dm:874	inert	atom_movable_screen_hud_completion	0	0
-proc	/atom/movable/screen/hud_completion	Initialize	code/modules/fishing/fishing_minigame.dm:878	mapload,hud_owner	no	-	proc
-proc	/atom/movable/screen/hud_completion	update_state	code/modules/fishing/fishing_minigame.dm:882	completion,seconds_per_tick	no	-	proc root
+type	/atom/movable/screen/fishing_hud	/atom/movable/screen	code/modules/fishing/fishing_minigame.dm:803	live	atom_movable_screen_fishing_hud	1	0
+proc	/atom/movable/screen/fishing_hud	prepare_minigame	code/modules/fishing/fishing_minigame.dm:815	challenge	yes	full	proc root
+proc	/atom/movable/screen/fishing_hud	Destroy	code/modules/fishing/fishing_minigame.dm:826		yes	full	proc
+type	/atom/movable/screen/hud_bait	/atom/movable/screen	code/modules/fishing/fishing_minigame.dm:836	live	atom_movable_screen_hud_bait	1	0
+proc	/atom/movable/screen/hud_bait	Initialize	code/modules/fishing/fishing_minigame.dm:841	mapload,hud_owner,challenge	yes	full	proc
+proc	/atom/movable/screen/hud_bait	adjust_to_difficulty	code/modules/fishing/fishing_minigame.dm:849	challenge	yes	full	proc root
+proc	/atom/movable/screen/hud_bait	update_overlays	code/modules/fishing/fishing_minigame.dm:853		yes	full	proc
+type	/atom/movable/screen/hud_fish	/atom/movable/screen	code/modules/fishing/fishing_minigame.dm:864	live	atom_movable_screen_hud_fish	1	0
+proc	/atom/movable/screen/hud_fish	Initialize	code/modules/fishing/fishing_minigame.dm:868	mapload,hud_owner,challenge	yes	full	proc
+type	/atom/movable/screen/hud_completion	/atom/movable/screen	code/modules/fishing/fishing_minigame.dm:874	live	atom_movable_screen_hud_completion	1	0
+proc	/atom/movable/screen/hud_completion	Initialize	code/modules/fishing/fishing_minigame.dm:878	mapload,hud_owner	yes	full	proc
+proc	/atom/movable/screen/hud_completion	update_state	code/modules/fishing/fishing_minigame.dm:882	completion,seconds_per_tick	yes	full	proc root
 type	/atom/movable/screen/mafia_popup	/atom/movable/screen	code/modules/mafia/controller.dm:879	live	atom_movable_screen_mafia_popup	1	0
 proc	/atom/movable/screen/mafia_popup	Initialize	code/modules/mafia/controller.dm:890	mapload,mafia	yes	full	proc
 proc	/atom/movable/screen/mafia_popup	Destroy	code/modules/mafia/controller.dm:894		yes	full	proc
@@ -56808,7 +56808,7 @@ proc	/obj/item	change_material_strength	code/game/objects/items.dm:2065	material
 proc	/obj/item	get_material_force_modifier	code/game/objects/items.dm:2077	material,item_sharpness	yes	full	proc root
 proc	/obj/item	get_material_throwforce_modifier	code/game/objects/items.dm:2109	material,item_sharpness	yes	full	proc root
 proc	/obj/item	get_proxy_attacker_for	code/game/objects/items.dm:2148	target,user	yes	full	proc root
-proc	/obj/item	check_bait	code/game/objects/items.dm:2154	fish	yes	skeleton	proc root
+proc	/obj/item	check_bait	code/game/objects/items.dm:2154	fish	yes	full	proc root
 proc	/obj/item	vv_get_header	code/game/objects/items.dm:2188		no	-	proc
 proc	/obj/item	get_embed	code/game/objects/items.dm:2200		yes	full	proc root
 proc	/obj/item	set_embed	code/game/objects/items.dm:2212	new_embed	yes	full	proc root
@@ -62017,48 +62017,48 @@ proc	/obj/item/mutant_hand/zombie	suicide_act	code/modules/zombie/items.dm:69	us
 proc	/obj/item/mutant_hand/zombie	check_feast	code/modules/zombie/items.dm:76	target,user	yes	full	proc root
 type	/obj/item/mutant_hand/zombie/weak	/obj/item/mutant_hand/zombie	code/modules/zombie/items.dm:25	live	obj_item_mutant_hand_zombie_weak	0	0
 type	/obj/item/fishing_rod	/obj/item	code/modules/fishing/fishing_rod.dm:2	base	obj_item_fishing_rod	1	1
-proc	/obj/item/fishing_rod	Initialize	code/modules/fishing/fishing_rod.dm:81	mapload	no	-	proc
-proc	/obj/item/fishing_rod	add_context	code/modules/fishing/fishing_rod.dm:101	source,context,held_item,user	no	-	proc
-proc	/obj/item/fishing_rod	add_item_context	code/modules/fishing/fishing_rod.dm:109	source,context,target,user	no	-	proc
+proc	/obj/item/fishing_rod	Initialize	code/modules/fishing/fishing_rod.dm:81	mapload	yes	full	proc
+proc	/obj/item/fishing_rod	add_context	code/modules/fishing/fishing_rod.dm:101	source,context,held_item,user	stub	deferred	proc
+proc	/obj/item/fishing_rod	add_item_context	code/modules/fishing/fishing_rod.dm:109	source,context,target,user	stub	deferred	proc
 proc	/obj/item/fishing_rod	examine	code/modules/fishing/fishing_rod.dm:119	user	yes	full	proc
 proc	/obj/item/fishing_rod	examine_more	code/modules/fishing/fishing_rod.dm:144	user	yes	full	proc
 proc	/obj/item/fishing_rod	get_stat_info	code/modules/fishing/fishing_rod.dm:174	get_percent,value,prefix,easier,harder,suffix,span_info,less_is_better	yes	full	proc root
-proc	/obj/item/fishing_rod	apply_single_mat_effect	code/modules/fishing/fishing_rod.dm:186	custom_material,amount,multiplier	no	-	proc
-proc	/obj/item/fishing_rod	remove_single_mat_effect	code/modules/fishing/fishing_rod.dm:194	custom_material,amount,multiplier	no	-	proc
-proc	/obj/item/fishing_rod	reason_we_cant_fish	code/modules/fishing/fishing_rod.dm:209	target_fish_source	no	-	proc root
-proc	/obj/item/fishing_rod	on_reward_caught	code/modules/fishing/fishing_rod.dm:213	reward,user	no	-	proc root
-proc	/obj/item/fishing_rod	should_bane_fish_infusions	code/modules/fishing/fishing_rod.dm:239	target	no	-	proc root
-proc	/obj/item/fishing_rod	on_bane_fish_infusions	code/modules/fishing/fishing_rod.dm:242	target,attacker	no	-	proc root
-proc	/obj/item/fishing_rod	interact	code/modules/fishing/fishing_rod.dm:247	user	no	-	proc
-proc	/obj/item/fishing_rod	reel	code/modules/fishing/fishing_rod.dm:251	user	no	-	proc root
-proc	/obj/item/fishing_rod	fishing_line_check	code/modules/fishing/fishing_rod.dm:288		no	-	proc root
-proc	/obj/item/fishing_rod	attack_self_secondary	code/modules/fishing/fishing_rod.dm:291	user,modifiers	no	-	proc
-proc	/obj/item/fishing_rod	create_fishing_line	code/modules/fishing/fishing_rod.dm:296	target,firer,target_py	no	-	proc root
-proc	/obj/item/fishing_rod	clear_line	code/modules/fishing/fishing_rod.dm:312	source	no	-	proc root
-proc	/obj/item/fishing_rod	get_cast_range	code/modules/fishing/fishing_rod.dm:320	user	no	-	proc root
-proc	/obj/item/fishing_rod	dropped	code/modules/fishing/fishing_rod.dm:328	user,silent	no	-	proc
-proc	/obj/item/fishing_rod	hook_item	code/modules/fishing/fishing_rod.dm:333	user,target_atom	no	-	proc root
-proc	/obj/item/fishing_rod	check_los	code/modules/fishing/fishing_rod.dm:345	source	no	-	proc root
-proc	/obj/item/fishing_rod	interact_with_atom	code/modules/fishing/fishing_rod.dm:371	interacting_with,user,modifiers	no	-	proc
-proc	/obj/item/fishing_rod	ranged_interact_with_atom	code/modules/fishing/fishing_rod.dm:377	interacting_with,user,modifiers	no	-	proc
-proc	/obj/item/fishing_rod	interact_with_atom_secondary	code/modules/fishing/fishing_rod.dm:390	interacting_with,user,modifiers	no	-	proc
-proc	/obj/item/fishing_rod	ranged_interact_with_atom_secondary	code/modules/fishing/fishing_rod.dm:393	interacting_with,user,modifiers	no	-	proc
-proc	/obj/item/fishing_rod	cast_line	code/modules/fishing/fishing_rod.dm:401	target,user	no	-	proc root
-proc	/obj/item/fishing_rod	hook_hit	code/modules/fishing/fishing_rod.dm:436	atom_hit_by_hook_projectile,user	no	-	proc root
-proc	/obj/item/fishing_rod	ui_interact	code/modules/fishing/fishing_rod.dm:444	user,ui	no	-	proc
-proc	/obj/item/fishing_rod	ui_state	code/modules/fishing/fishing_rod.dm:451		no	-	proc
-proc	/obj/item/fishing_rod	update_overlays	code/modules/fishing/fishing_rod.dm:457		no	-	proc
-proc	/obj/item/fishing_rod	get_fishing_overlays	code/modules/fishing/fishing_rod.dm:461		no	-	proc root
-proc	/obj/item/fishing_rod	worn_overlays	code/modules/fishing/fishing_rod.dm:486	standing,isinhands,icon_file,bodyshape	no	-	proc
-proc	/obj/item/fishing_rod	get_fishing_worn_overlays	code/modules/fishing/fishing_rod.dm:490	standing,isinhands,icon_file,bodyshape	no	-	proc root
-proc	/obj/item/fishing_rod	item_interaction	code/modules/fishing/fishing_rod.dm:503	user,tool,modifiers	no	-	proc
-proc	/obj/item/fishing_rod	ui_data	code/modules/fishing/fishing_rod.dm:521	user	no	-	proc
-proc	/obj/item/fishing_rod	slot_check	code/modules/fishing/fishing_rod.dm:541	item,slot	no	-	proc root
-proc	/obj/item/fishing_rod	ui_act	code/modules/fishing/fishing_rod.dm:556	action,params,ui,state	no	-	proc
-proc	/obj/item/fishing_rod	use_slot	code/modules/fishing/fishing_rod.dm:569	slot,user,new_item	no	-	proc root
-proc	/obj/item/fishing_rod	set_slot	code/modules/fishing/fishing_rod.dm:619	equipment,slot	no	-	proc root
-proc	/obj/item/fishing_rod	Exited	code/modules/fishing/fishing_rod.dm:634	gone,direction	no	-	proc
-proc	/obj/item/fishing_rod	get_frame	code/modules/fishing/fishing_rod.dm:652	challenge	no	-	proc root
+proc	/obj/item/fishing_rod	apply_single_mat_effect	code/modules/fishing/fishing_rod.dm:186	custom_material,amount,multiplier	yes	full	proc
+proc	/obj/item/fishing_rod	remove_single_mat_effect	code/modules/fishing/fishing_rod.dm:194	custom_material,amount,multiplier	yes	full	proc
+proc	/obj/item/fishing_rod	reason_we_cant_fish	code/modules/fishing/fishing_rod.dm:209	target_fish_source	yes	full	proc root
+proc	/obj/item/fishing_rod	on_reward_caught	code/modules/fishing/fishing_rod.dm:213	reward,user	yes	full	proc root
+proc	/obj/item/fishing_rod	should_bane_fish_infusions	code/modules/fishing/fishing_rod.dm:239	target	yes	full	proc root
+proc	/obj/item/fishing_rod	on_bane_fish_infusions	code/modules/fishing/fishing_rod.dm:242	target,attacker	yes	full	proc root
+proc	/obj/item/fishing_rod	interact	code/modules/fishing/fishing_rod.dm:247	user	yes	full	proc
+proc	/obj/item/fishing_rod	reel	code/modules/fishing/fishing_rod.dm:251	user	yes	full	proc root
+proc	/obj/item/fishing_rod	fishing_line_check	code/modules/fishing/fishing_rod.dm:288		yes	full	proc root
+proc	/obj/item/fishing_rod	attack_self_secondary	code/modules/fishing/fishing_rod.dm:291	user,modifiers	yes	full	proc
+proc	/obj/item/fishing_rod	create_fishing_line	code/modules/fishing/fishing_rod.dm:296	target,firer,target_py	yes	full	proc root
+proc	/obj/item/fishing_rod	clear_line	code/modules/fishing/fishing_rod.dm:312	source	yes	full	proc root
+proc	/obj/item/fishing_rod	get_cast_range	code/modules/fishing/fishing_rod.dm:320	user	yes	full	proc root
+proc	/obj/item/fishing_rod	dropped	code/modules/fishing/fishing_rod.dm:328	user,silent	yes	full	proc
+proc	/obj/item/fishing_rod	hook_item	code/modules/fishing/fishing_rod.dm:333	user,target_atom	yes	full	proc root
+proc	/obj/item/fishing_rod	check_los	code/modules/fishing/fishing_rod.dm:345	source	yes	full	proc root
+proc	/obj/item/fishing_rod	interact_with_atom	code/modules/fishing/fishing_rod.dm:371	interacting_with,user,modifiers	yes	full	proc
+proc	/obj/item/fishing_rod	ranged_interact_with_atom	code/modules/fishing/fishing_rod.dm:377	interacting_with,user,modifiers	yes	full	proc
+proc	/obj/item/fishing_rod	interact_with_atom_secondary	code/modules/fishing/fishing_rod.dm:390	interacting_with,user,modifiers	yes	full	proc
+proc	/obj/item/fishing_rod	ranged_interact_with_atom_secondary	code/modules/fishing/fishing_rod.dm:393	interacting_with,user,modifiers	yes	full	proc
+proc	/obj/item/fishing_rod	cast_line	code/modules/fishing/fishing_rod.dm:401	target,user	yes	full	proc root
+proc	/obj/item/fishing_rod	hook_hit	code/modules/fishing/fishing_rod.dm:436	atom_hit_by_hook_projectile,user	yes	full	proc root
+proc	/obj/item/fishing_rod	ui_interact	code/modules/fishing/fishing_rod.dm:444	user,ui	yes	full	proc
+proc	/obj/item/fishing_rod	ui_state	code/modules/fishing/fishing_rod.dm:451		yes	full	proc
+proc	/obj/item/fishing_rod	update_overlays	code/modules/fishing/fishing_rod.dm:457		yes	full	proc
+proc	/obj/item/fishing_rod	get_fishing_overlays	code/modules/fishing/fishing_rod.dm:461		yes	full	proc root
+proc	/obj/item/fishing_rod	worn_overlays	code/modules/fishing/fishing_rod.dm:486	standing,isinhands,icon_file,bodyshape	yes	full	proc
+proc	/obj/item/fishing_rod	get_fishing_worn_overlays	code/modules/fishing/fishing_rod.dm:490	standing,isinhands,icon_file,bodyshape	yes	full	proc root
+proc	/obj/item/fishing_rod	item_interaction	code/modules/fishing/fishing_rod.dm:503	user,tool,modifiers	yes	full	proc
+proc	/obj/item/fishing_rod	ui_data	code/modules/fishing/fishing_rod.dm:521	user	yes	full	proc
+proc	/obj/item/fishing_rod	slot_check	code/modules/fishing/fishing_rod.dm:541	item,slot	yes	full	proc root
+proc	/obj/item/fishing_rod	ui_act	code/modules/fishing/fishing_rod.dm:556	action,params,ui,state	yes	full	proc
+proc	/obj/item/fishing_rod	use_slot	code/modules/fishing/fishing_rod.dm:569	slot,user,new_item	yes	full	proc root
+proc	/obj/item/fishing_rod	set_slot	code/modules/fishing/fishing_rod.dm:619	equipment,slot	yes	full	proc root
+proc	/obj/item/fishing_rod	Exited	code/modules/fishing/fishing_rod.dm:634	gone,direction	yes	full	proc
+proc	/obj/item/fishing_rod	get_frame	code/modules/fishing/fishing_rod.dm:652	challenge	yes	full	proc root
 type	/obj/item/fishing_rod/mob_fisher	/obj/item/fishing_rod	code/datums/components/profound_fisher.dm:142	live	obj_item_fishing_rod_mob_fisher	0	0
 type	/obj/item/fishing_rod/mob_fisher/athletic	/obj/item/fishing_rod/mob_fisher	code/modules/clothing/gloves/special.dm:238	inert	obj_item_fishing_rod_mob_fisher_athletic	0	0
 proc	/obj/item/fishing_rod/mob_fisher/athletic	Initialize	code/modules/clothing/gloves/special.dm:248	mapload	no	-	proc
@@ -62069,24 +62069,24 @@ type	/obj/item/fishing_rod/mob_fisher/dragon	/obj/item/fishing_rod/mob_fisher	co
 type	/obj/item/fishing_rod/unslotted	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:657	live	obj_item_fishing_rod_unslotted	0	0
 type	/obj/item/fishing_rod/rescue	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:663	live	obj_item_fishing_rod_rescue	0	0
 type	/obj/item/fishing_rod/bone	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:667	live	obj_item_fishing_rod_bone	0	0
-type	/obj/item/fishing_rod/telescopic	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:679	inert	obj_item_fishing_rod_telescopic	0	0
-proc	/obj/item/fishing_rod/telescopic	Initialize	code/modules/fishing/fishing_rod.dm:698	mapload	no	-	proc
-proc	/obj/item/fishing_rod/telescopic	reason_we_cant_fish	code/modules/fishing/fishing_rod.dm:704	target_fish_source	no	-	proc
-proc	/obj/item/fishing_rod/telescopic	cast_line	code/modules/fishing/fishing_rod.dm:709	target,user,proximity_flag	no	-	proc
-proc	/obj/item/fishing_rod/telescopic	get_fishing_overlays	code/modules/fishing/fishing_rod.dm:716		no	-	proc
-proc	/obj/item/fishing_rod/telescopic	get_fishing_worn_overlays	code/modules/fishing/fishing_rod.dm:721	standing,isinhands,icon_file,bodyshape	no	-	proc
-proc	/obj/item/fishing_rod/telescopic	pre_transform	code/modules/fishing/fishing_rod.dm:727	source,user,active	no	-	proc root
-proc	/obj/item/fishing_rod/telescopic	on_transform	code/modules/fishing/fishing_rod.dm:736	source,user,active	no	-	proc root
-proc	/obj/item/fishing_rod/telescopic	update_icon_state	code/modules/fishing/fishing_rod.dm:747		no	-	proc
-type	/obj/item/fishing_rod/telescopic/master	/obj/item/fishing_rod/telescopic	code/modules/fishing/fishing_rod.dm:752	inert	obj_item_fishing_rod_telescopic_master	0	0
-type	/obj/item/fishing_rod/tech	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:772	inert	obj_item_fishing_rod_tech	0	0
-proc	/obj/item/fishing_rod/tech	Initialize	code/modules/fishing/fishing_rod.dm:786	mapload	no	-	proc
-proc	/obj/item/fishing_rod/tech	examine	code/modules/fishing/fishing_rod.dm:802	user	no	-	proc
-proc	/obj/item/fishing_rod/tech	use_slot	code/modules/fishing/fishing_rod.dm:806	slot,user,new_item	no	-	proc
-type	/obj/item/fishing_rod/material	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:812	inert	obj_item_fishing_rod_material	0	0
-proc	/obj/item/fishing_rod/material	Initialize	code/modules/fishing/fishing_rod.dm:821	mapload	no	-	proc
-proc	/obj/item/fishing_rod/material	finalize_remove_material_effects	code/modules/fishing/fishing_rod.dm:825	materials	no	-	proc
-proc	/obj/item/fishing_rod/material	get_frame	code/modules/fishing/fishing_rod.dm:829	challenge	no	-	proc
+type	/obj/item/fishing_rod/telescopic	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:679	live	obj_item_fishing_rod_telescopic	1	0
+proc	/obj/item/fishing_rod/telescopic	Initialize	code/modules/fishing/fishing_rod.dm:698	mapload	yes	full	proc
+proc	/obj/item/fishing_rod/telescopic	reason_we_cant_fish	code/modules/fishing/fishing_rod.dm:704	target_fish_source	yes	full	proc
+proc	/obj/item/fishing_rod/telescopic	cast_line	code/modules/fishing/fishing_rod.dm:709	target,user,proximity_flag	yes	full	proc
+proc	/obj/item/fishing_rod/telescopic	get_fishing_overlays	code/modules/fishing/fishing_rod.dm:716		yes	full	proc
+proc	/obj/item/fishing_rod/telescopic	get_fishing_worn_overlays	code/modules/fishing/fishing_rod.dm:721	standing,isinhands,icon_file,bodyshape	yes	full	proc
+proc	/obj/item/fishing_rod/telescopic	pre_transform	code/modules/fishing/fishing_rod.dm:727	source,user,active	yes	full	proc root
+proc	/obj/item/fishing_rod/telescopic	on_transform	code/modules/fishing/fishing_rod.dm:736	source,user,active	yes	full	proc root
+proc	/obj/item/fishing_rod/telescopic	update_icon_state	code/modules/fishing/fishing_rod.dm:747		yes	full	proc
+type	/obj/item/fishing_rod/telescopic/master	/obj/item/fishing_rod/telescopic	code/modules/fishing/fishing_rod.dm:752	live	obj_item_fishing_rod_telescopic_master	0	0
+type	/obj/item/fishing_rod/tech	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:772	live	obj_item_fishing_rod_tech	1	0
+proc	/obj/item/fishing_rod/tech	Initialize	code/modules/fishing/fishing_rod.dm:786	mapload	yes	full	proc
+proc	/obj/item/fishing_rod/tech	examine	code/modules/fishing/fishing_rod.dm:802	user	yes	full	proc
+proc	/obj/item/fishing_rod/tech	use_slot	code/modules/fishing/fishing_rod.dm:806	slot,user,new_item	yes	full	proc
+type	/obj/item/fishing_rod/material	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:812	live	obj_item_fishing_rod_material	1	0
+proc	/obj/item/fishing_rod/material	Initialize	code/modules/fishing/fishing_rod.dm:821	mapload	yes	full	proc
+proc	/obj/item/fishing_rod/material	finalize_remove_material_effects	code/modules/fishing/fishing_rod.dm:825	materials	yes	full	proc
+proc	/obj/item/fishing_rod/material	get_frame	code/modules/fishing/fishing_rod.dm:829	challenge	yes	full	proc
 type	/obj/item/assembly	/obj/item	code/modules/assembly/assembly.dm:3	live	obj_item_assembly	1	1
 proc	/obj/item/assembly	Destroy	code/modules/assembly/assembly.dm:34		yes	full	proc
 proc	/obj/item/assembly	get_part_rating	code/modules/assembly/assembly.dm:38		yes	full	proc
@@ -65339,9 +65339,9 @@ type	/obj/item/storage/bag/garment/quartermaster	/obj/item/storage/bag/garment	c
 proc	/obj/item/storage/bag/garment/quartermaster	PopulateContents	code/game/objects/items/storage/garment.dm:155		yes	full	proc
 type	/obj/item/storage/bag/garment/paramedic	/obj/item/storage/bag/garment	code/game/objects/items/storage/garment.dm:43	live	obj_item_storage_bag_garment_paramedic	1	0
 proc	/obj/item/storage/bag/garment/paramedic	PopulateContents	code/game/objects/items/storage/garment.dm:167		yes	full	proc
-type	/obj/item/storage/bag/fishing	/obj/item/storage/bag	code/modules/fishing/fishing_equipment.dm:686	inert	obj_item_storage_bag_fishing	0	0
-proc	/obj/item/storage/bag/fishing	Initialize	code/modules/fishing/fishing_equipment.dm:698	mapload	no	-	proc
-type	/obj/item/storage/bag/fishing/carpskin	/obj/item/storage/bag/fishing	code/modules/fishing/fishing_equipment.dm:704	inert	obj_item_storage_bag_fishing_carpskin	0	0
+type	/obj/item/storage/bag/fishing	/obj/item/storage/bag	code/modules/fishing/fishing_equipment.dm:686	live	obj_item_storage_bag_fishing	1	0
+proc	/obj/item/storage/bag/fishing	Initialize	code/modules/fishing/fishing_equipment.dm:698	mapload	yes	full	proc
+type	/obj/item/storage/bag/fishing/carpskin	/obj/item/storage/bag/fishing	code/modules/fishing/fishing_equipment.dm:704	live	obj_item_storage_bag_fishing_carpskin	0	0
 type	/obj/item/storage/mail_counterfeit_device	/obj/item/storage	code/game/objects/items/mail.dm:497	live	obj_item_storage_mail_counterfeit_device	1	0
 proc	/obj/item/storage/mail_counterfeit_device	examine_more	code/game/objects/items/mail.dm:504	user	yes	full	proc
 proc	/obj/item/storage/mail_counterfeit_device	attack_self	code/game/objects/items/mail.dm:511	user,modifiers	yes	full	proc
@@ -65822,8 +65822,8 @@ type	/obj/item/storage/fish_case/random	/obj/item/storage/fish_case	code/modules
 proc	/obj/item/storage/fish_case/random	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:52		yes	full	proc
 type	/obj/item/storage/fish_case/random/freshwater	/obj/item/storage/fish_case/random	code/modules/fishing/aquarium/aquarium_kit.dm:56	live	obj_item_storage_fish_case_random_freshwater	0	0
 type	/obj/item/storage/fish_case/random/saltwater	/obj/item/storage/fish_case/random	code/modules/fishing/aquarium/aquarium_kit.dm:59	live	obj_item_storage_fish_case_random_saltwater	0	0
-type	/obj/item/storage/fish_case/syndicate	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:62	live	obj_item_storage_fish_case_syndicate	0	0
-proc	/obj/item/storage/fish_case/syndicate	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:64		stub	deferred	proc
+type	/obj/item/storage/fish_case/syndicate	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:62	live	obj_item_storage_fish_case_syndicate	1	0
+proc	/obj/item/storage/fish_case/syndicate	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:64		yes	full	proc
 type	/obj/item/storage/fish_case/tiziran	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:73	live	obj_item_storage_fish_case_tiziran	1	0
 proc	/obj/item/storage/fish_case/tiziran	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:75		yes	full	proc
 type	/obj/item/storage/fish_case/blackmarket	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:86	live	obj_item_storage_fish_case_blackmarket	1	0
@@ -81019,113 +81019,113 @@ proc	/obj/item/firelance	attack	code/modules/explorer_drone/loot.dm:162	M,user,m
 proc	/obj/item/firelance	get_cell	code/modules/explorer_drone/loot.dm:167		yes	full	proc
 proc	/obj/item/firelance	ranged_interact_with_atom	code/modules/explorer_drone/loot.dm:170	interacting_with,user,modifiers	yes	full	proc
 proc	/obj/item/firelance	windup_checks	code/modules/explorer_drone/loot.dm:198		yes	full	proc root
-type	/obj/item/bait_can	/obj/item	code/modules/fishing/bait.dm:2	inert	obj_item_bait_can	0	0
-proc	/obj/item/bait_can	attack_self	code/modules/fishing/bait.dm:17	user,modifiers	no	-	proc
-proc	/obj/item/bait_can	examine	code/modules/fishing/bait.dm:23	user	no	-	proc
-proc	/obj/item/bait_can	update_icon_state	code/modules/fishing/bait.dm:27		no	-	proc
-proc	/obj/item/bait_can	retrieve_bait	code/modules/fishing/bait.dm:36	user	no	-	proc root
-type	/obj/item/bait_can/worm	/obj/item/bait_can	code/modules/fishing/bait.dm:49	inert	obj_item_bait_can_worm	0	0
-type	/obj/item/bait_can/worm/premium	/obj/item/bait_can/worm	code/modules/fishing/bait.dm:54	inert	obj_item_bait_can_worm_premium	0	0
-type	/obj/item/bait_can/super_baits	/obj/item/bait_can	code/modules/fishing/bait.dm:59	inert	obj_item_bait_can_super_baits	0	0
-type	/obj/item/fishing_lure	/obj/item	code/modules/fishing/bait.dm:65	inert	obj_item_fishing_lure	0	0
-proc	/obj/item/fishing_lure	Initialize	code/modules/fishing/bait.dm:76	mapload	no	-	proc
-proc	/obj/item/fishing_lure	on_fishing_rod_slotted	code/modules/fishing/bait.dm:82	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_lure	on_fishing_rod_unslotted	code/modules/fishing/bait.dm:86	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_lure	is_catchable_fish	code/modules/fishing/bait.dm:91	fish,fish_properties	no	-	proc root
-proc	/obj/item/fishing_lure	examine	code/modules/fishing/bait.dm:94	user	no	-	proc
-proc	/obj/item/fishing_lure	examine_more	code/modules/fishing/bait.dm:100	user	no	-	proc
-proc	/obj/item/fishing_lure	check_bait	code/modules/fishing/bait.dm:116	fish	no	-	proc
-type	/obj/item/fishing_lure/minnow	/obj/item/fishing_lure	code/modules/fishing/bait.dm:130	inert	obj_item_fishing_lure_minnow	0	0
-proc	/obj/item/fishing_lure/minnow	is_catchable_fish	code/modules/fishing/bait.dm:134	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/plug	/obj/item/fishing_lure	code/modules/fishing/bait.dm:143	inert	obj_item_fishing_lure_plug	0	0
-proc	/obj/item/fishing_lure/plug	is_catchable_fish	code/modules/fishing/bait.dm:147	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/dropping	/obj/item/fishing_lure	code/modules/fishing/bait.dm:155	inert	obj_item_fishing_lure_dropping	0	0
-proc	/obj/item/fishing_lure/dropping	is_catchable_fish	code/modules/fishing/bait.dm:160	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/spoon	/obj/item/fishing_lure	code/modules/fishing/bait.dm:175	inert	obj_item_fishing_lure_spoon	0	0
-proc	/obj/item/fishing_lure/spoon	is_catchable_fish	code/modules/fishing/bait.dm:180	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/artificial_fly	/obj/item/fishing_lure	code/modules/fishing/bait.dm:193	inert	obj_item_fishing_lure_artificial_fly	0	0
-proc	/obj/item/fishing_lure/artificial_fly	is_catchable_fish	code/modules/fishing/bait.dm:198	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/led	/obj/item/fishing_lure	code/modules/fishing/bait.dm:204	inert	obj_item_fishing_lure_led	0	0
-proc	/obj/item/fishing_lure/led	Initialize	code/modules/fishing/bait.dm:209	mapload	no	-	proc
-proc	/obj/item/fishing_lure/led	update_overlays	code/modules/fishing/bait.dm:213		no	-	proc
-proc	/obj/item/fishing_lure/led	on_fishing_rod_slotted	code/modules/fishing/bait.dm:217	rod,slot	no	-	proc
-proc	/obj/item/fishing_lure/led	on_fishing_rod_unslotted	code/modules/fishing/bait.dm:221	rod,slot	no	-	proc
-proc	/obj/item/fishing_lure/led	is_catchable_fish	code/modules/fishing/bait.dm:225	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/lucky_coin	/obj/item/fishing_lure	code/modules/fishing/bait.dm:231	inert	obj_item_fishing_lure_lucky_coin	0	0
-proc	/obj/item/fishing_lure/lucky_coin	on_fishing_rod_slotted	code/modules/fishing/bait.dm:236	rod,slot	no	-	proc
-proc	/obj/item/fishing_lure/lucky_coin	on_fishing_rod_unslotted	code/modules/fishing/bait.dm:240	rod,slot	no	-	proc
-proc	/obj/item/fishing_lure/lucky_coin	is_catchable_fish	code/modules/fishing/bait.dm:244	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/algae	/obj/item/fishing_lure	code/modules/fishing/bait.dm:250	inert	obj_item_fishing_lure_algae	0	0
-proc	/obj/item/fishing_lure/algae	is_catchable_fish	code/modules/fishing/bait.dm:255	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/grub	/obj/item/fishing_lure	code/modules/fishing/bait.dm:261	inert	obj_item_fishing_lure_grub	0	0
-proc	/obj/item/fishing_lure/grub	is_catchable_fish	code/modules/fishing/bait.dm:266	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/buzzbait	/obj/item/fishing_lure	code/modules/fishing/bait.dm:274	inert	obj_item_fishing_lure_buzzbait	0	0
-proc	/obj/item/fishing_lure/buzzbait	is_catchable_fish	code/modules/fishing/bait.dm:279	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/spinnerbait	/obj/item/fishing_lure	code/modules/fishing/bait.dm:285	inert	obj_item_fishing_lure_spinnerbait	0	0
-proc	/obj/item/fishing_lure/spinnerbait	is_catchable_fish	code/modules/fishing/bait.dm:290	fish,fish_properties	no	-	proc
-type	/obj/item/fishing_lure/daisy_chain	/obj/item/fishing_lure	code/modules/fishing/bait.dm:301	inert	obj_item_fishing_lure_daisy_chain	0	0
-proc	/obj/item/fishing_lure/daisy_chain	is_catchable_fish	code/modules/fishing/bait.dm:306	fish,fish_properties	no	-	proc
+type	/obj/item/bait_can	/obj/item	code/modules/fishing/bait.dm:2	live	obj_item_bait_can	1	0
+proc	/obj/item/bait_can	attack_self	code/modules/fishing/bait.dm:17	user,modifiers	yes	full	proc
+proc	/obj/item/bait_can	examine	code/modules/fishing/bait.dm:23	user	yes	full	proc
+proc	/obj/item/bait_can	update_icon_state	code/modules/fishing/bait.dm:27		yes	full	proc
+proc	/obj/item/bait_can	retrieve_bait	code/modules/fishing/bait.dm:36	user	yes	full	proc root
+type	/obj/item/bait_can/worm	/obj/item/bait_can	code/modules/fishing/bait.dm:49	live	obj_item_bait_can_worm	0	0
+type	/obj/item/bait_can/worm/premium	/obj/item/bait_can/worm	code/modules/fishing/bait.dm:54	live	obj_item_bait_can_worm_premium	0	0
+type	/obj/item/bait_can/super_baits	/obj/item/bait_can	code/modules/fishing/bait.dm:59	live	obj_item_bait_can_super_baits	0	0
+type	/obj/item/fishing_lure	/obj/item	code/modules/fishing/bait.dm:65	live	obj_item_fishing_lure	1	0
+proc	/obj/item/fishing_lure	Initialize	code/modules/fishing/bait.dm:76	mapload	yes	full	proc
+proc	/obj/item/fishing_lure	on_fishing_rod_slotted	code/modules/fishing/bait.dm:82	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_lure	on_fishing_rod_unslotted	code/modules/fishing/bait.dm:86	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_lure	is_catchable_fish	code/modules/fishing/bait.dm:91	fish,fish_properties	yes	full	proc root
+proc	/obj/item/fishing_lure	examine	code/modules/fishing/bait.dm:94	user	yes	full	proc
+proc	/obj/item/fishing_lure	examine_more	code/modules/fishing/bait.dm:100	user	yes	full	proc
+proc	/obj/item/fishing_lure	check_bait	code/modules/fishing/bait.dm:116	fish	yes	full	proc
+type	/obj/item/fishing_lure/minnow	/obj/item/fishing_lure	code/modules/fishing/bait.dm:130	live	obj_item_fishing_lure_minnow	1	0
+proc	/obj/item/fishing_lure/minnow	is_catchable_fish	code/modules/fishing/bait.dm:134	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/plug	/obj/item/fishing_lure	code/modules/fishing/bait.dm:143	live	obj_item_fishing_lure_plug	1	0
+proc	/obj/item/fishing_lure/plug	is_catchable_fish	code/modules/fishing/bait.dm:147	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/dropping	/obj/item/fishing_lure	code/modules/fishing/bait.dm:155	live	obj_item_fishing_lure_dropping	1	0
+proc	/obj/item/fishing_lure/dropping	is_catchable_fish	code/modules/fishing/bait.dm:160	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/spoon	/obj/item/fishing_lure	code/modules/fishing/bait.dm:175	live	obj_item_fishing_lure_spoon	1	0
+proc	/obj/item/fishing_lure/spoon	is_catchable_fish	code/modules/fishing/bait.dm:180	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/artificial_fly	/obj/item/fishing_lure	code/modules/fishing/bait.dm:193	live	obj_item_fishing_lure_artificial_fly	1	0
+proc	/obj/item/fishing_lure/artificial_fly	is_catchable_fish	code/modules/fishing/bait.dm:198	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/led	/obj/item/fishing_lure	code/modules/fishing/bait.dm:204	live	obj_item_fishing_lure_led	1	0
+proc	/obj/item/fishing_lure/led	Initialize	code/modules/fishing/bait.dm:209	mapload	yes	full	proc
+proc	/obj/item/fishing_lure/led	update_overlays	code/modules/fishing/bait.dm:213		yes	full	proc
+proc	/obj/item/fishing_lure/led	on_fishing_rod_slotted	code/modules/fishing/bait.dm:217	rod,slot	yes	full	proc
+proc	/obj/item/fishing_lure/led	on_fishing_rod_unslotted	code/modules/fishing/bait.dm:221	rod,slot	yes	full	proc
+proc	/obj/item/fishing_lure/led	is_catchable_fish	code/modules/fishing/bait.dm:225	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/lucky_coin	/obj/item/fishing_lure	code/modules/fishing/bait.dm:231	live	obj_item_fishing_lure_lucky_coin	1	0
+proc	/obj/item/fishing_lure/lucky_coin	on_fishing_rod_slotted	code/modules/fishing/bait.dm:236	rod,slot	yes	full	proc
+proc	/obj/item/fishing_lure/lucky_coin	on_fishing_rod_unslotted	code/modules/fishing/bait.dm:240	rod,slot	yes	full	proc
+proc	/obj/item/fishing_lure/lucky_coin	is_catchable_fish	code/modules/fishing/bait.dm:244	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/algae	/obj/item/fishing_lure	code/modules/fishing/bait.dm:250	live	obj_item_fishing_lure_algae	1	0
+proc	/obj/item/fishing_lure/algae	is_catchable_fish	code/modules/fishing/bait.dm:255	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/grub	/obj/item/fishing_lure	code/modules/fishing/bait.dm:261	live	obj_item_fishing_lure_grub	1	0
+proc	/obj/item/fishing_lure/grub	is_catchable_fish	code/modules/fishing/bait.dm:266	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/buzzbait	/obj/item/fishing_lure	code/modules/fishing/bait.dm:274	live	obj_item_fishing_lure_buzzbait	1	0
+proc	/obj/item/fishing_lure/buzzbait	is_catchable_fish	code/modules/fishing/bait.dm:279	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/spinnerbait	/obj/item/fishing_lure	code/modules/fishing/bait.dm:285	live	obj_item_fishing_lure_spinnerbait	1	0
+proc	/obj/item/fishing_lure/spinnerbait	is_catchable_fish	code/modules/fishing/bait.dm:290	fish,fish_properties	yes	full	proc
+type	/obj/item/fishing_lure/daisy_chain	/obj/item/fishing_lure	code/modules/fishing/bait.dm:301	live	obj_item_fishing_lure_daisy_chain	1	0
+proc	/obj/item/fishing_lure/daisy_chain	is_catchable_fish	code/modules/fishing/bait.dm:306	fish,fish_properties	yes	full	proc
 type	/obj/item/fishing_line	/obj/item	code/modules/fishing/fishing_equipment.dm:10	live	obj_item_fishing_line	0	0
-type	/obj/item/fishing_line/reinforced	/obj/item/fishing_line	code/modules/fishing/fishing_equipment.dm:25	inert	obj_item_fishing_line_reinforced	0	0
-proc	/obj/item/fishing_line/reinforced	Initialize	code/modules/fishing/fishing_equipment.dm:32	mapload	no	-	proc
-proc	/obj/item/fishing_line/reinforced	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:37	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_line/reinforced	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:41	source,rod,slot	no	-	proc root
+type	/obj/item/fishing_line/reinforced	/obj/item/fishing_line	code/modules/fishing/fishing_equipment.dm:25	live	obj_item_fishing_line_reinforced	1	0
+proc	/obj/item/fishing_line/reinforced	Initialize	code/modules/fishing/fishing_equipment.dm:32	mapload	yes	full	proc
+proc	/obj/item/fishing_line/reinforced	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:37	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_line/reinforced	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:41	source,rod,slot	yes	full	proc root
 type	/obj/item/fishing_line/cloaked	/obj/item/fishing_line	code/modules/fishing/fishing_equipment.dm:46	live	obj_item_fishing_line_cloaked	0	0
 type	/obj/item/fishing_line/bouncy	/obj/item/fishing_line	code/modules/fishing/fishing_equipment.dm:54	live	obj_item_fishing_line_bouncy	0	0
-type	/obj/item/fishing_line/sinew	/obj/item/fishing_line	code/modules/fishing/fishing_equipment.dm:63	inert	obj_item_fishing_line_sinew	0	0
-proc	/obj/item/fishing_line/sinew	Initialize	code/modules/fishing/fishing_equipment.dm:71	mapload	no	-	proc
-proc	/obj/item/fishing_line/sinew	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:76	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_line/sinew	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:80	source,rod,slot	no	-	proc root
-type	/obj/item/fishing_line/auto_reel	/obj/item/fishing_line	code/modules/fishing/fishing_equipment.dm:90	inert	obj_item_fishing_line_auto_reel	0	0
-proc	/obj/item/fishing_line/auto_reel	Initialize	code/modules/fishing/fishing_equipment.dm:100	mapload	no	-	proc
-proc	/obj/item/fishing_line/auto_reel	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:105	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_line/auto_reel	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:109	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_line/auto_reel	on_hooked_item	code/modules/fishing/fishing_equipment.dm:113	source,target,user	no	-	proc root
-proc	/obj/item/fishing_line/auto_reel	catch_it_chucklenut	code/modules/fishing/fishing_equipment.dm:134	source,hit_atom,throwingdatum	no	-	proc root
-proc	/obj/item/fishing_line/auto_reel	clear_hitby_signal	code/modules/fishing/fishing_equipment.dm:144	item	no	-	proc root
+type	/obj/item/fishing_line/sinew	/obj/item/fishing_line	code/modules/fishing/fishing_equipment.dm:63	live	obj_item_fishing_line_sinew	1	0
+proc	/obj/item/fishing_line/sinew	Initialize	code/modules/fishing/fishing_equipment.dm:71	mapload	yes	full	proc
+proc	/obj/item/fishing_line/sinew	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:76	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_line/sinew	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:80	source,rod,slot	yes	full	proc root
+type	/obj/item/fishing_line/auto_reel	/obj/item/fishing_line	code/modules/fishing/fishing_equipment.dm:90	live	obj_item_fishing_line_auto_reel	1	0
+proc	/obj/item/fishing_line/auto_reel	Initialize	code/modules/fishing/fishing_equipment.dm:100	mapload	yes	full	proc
+proc	/obj/item/fishing_line/auto_reel	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:105	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_line/auto_reel	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:109	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_line/auto_reel	on_hooked_item	code/modules/fishing/fishing_equipment.dm:113	source,target,user	yes	full	proc root
+proc	/obj/item/fishing_line/auto_reel	catch_it_chucklenut	code/modules/fishing/fishing_equipment.dm:134	source,hit_atom,throwingdatum	yes	full	proc root
+proc	/obj/item/fishing_line/auto_reel	clear_hitby_signal	code/modules/fishing/fishing_equipment.dm:144	item	yes	full	proc root
 type	/obj/item/fishing_line/bluespace	/obj/item/fishing_line	code/modules/fishing/fishing_equipment.dm:148	live	obj_item_fishing_line_bluespace	0	0
-type	/obj/item/fishing_hook	/obj/item	code/modules/fishing/fishing_equipment.dm:162	inert	obj_item_fishing_hook	0	0
-proc	/obj/item/fishing_hook	get_hook_bonus_additive	code/modules/fishing/fishing_equipment.dm:183	fish_type	no	-	proc root
-proc	/obj/item/fishing_hook	get_hook_bonus_multiplicative	code/modules/fishing/fishing_equipment.dm:191	fish_type	no	-	proc root
-proc	/obj/item/fishing_hook	can_be_hooked	code/modules/fishing/fishing_equipment.dm:195	target	no	-	proc root
-proc	/obj/item/fishing_hook	hook_attached	code/modules/fishing/fishing_equipment.dm:202	target,rod	no	-	proc root
-proc	/obj/item/fishing_hook	reason_we_cant_fish	code/modules/fishing/fishing_equipment.dm:212	target_fish_source	no	-	proc root
-type	/obj/item/fishing_hook/magnet	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:217	inert	obj_item_fishing_hook_magnet	0	0
-proc	/obj/item/fishing_hook/magnet	Initialize	code/modules/fishing/fishing_equipment.dm:224	mapload	no	-	proc
-proc	/obj/item/fishing_hook/magnet	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:229	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_hook/magnet	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:233	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_hook/magnet	get_hook_bonus_multiplicative	code/modules/fishing/fishing_equipment.dm:237	fish_type	no	-	proc
-type	/obj/item/fishing_hook/shiny	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:245	inert	obj_item_fishing_hook_shiny	0	0
-proc	/obj/item/fishing_hook/shiny	Initialize	code/modules/fishing/fishing_equipment.dm:250	mapload	no	-	proc
-proc	/obj/item/fishing_hook/shiny	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:255	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_hook/shiny	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:259	source,rod,slot	no	-	proc root
-type	/obj/item/fishing_hook/anomaly	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:264	inert	obj_item_fishing_hook_anomaly	0	0
-proc	/obj/item/fishing_hook/anomaly	Initialize	code/modules/fishing/fishing_equipment.dm:271	mapload	no	-	proc
-proc	/obj/item/fishing_hook/anomaly	examine	code/modules/fishing/fishing_equipment.dm:276	user	no	-	proc
-proc	/obj/item/fishing_hook/anomaly	examine_more	code/modules/fishing/fishing_equipment.dm:281	user	no	-	proc
-proc	/obj/item/fishing_hook/anomaly	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:292	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_hook/anomaly	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:313	source,rod,slot	no	-	proc root
-proc	/obj/item/fishing_hook/anomaly	get_probability_bonuses	code/modules/fishing/fishing_equipment.dm:324	rod,user	no	-	proc root
-proc	/obj/item/fishing_hook/anomaly	dimensional_catch_bonus	code/modules/fishing/fishing_equipment.dm:338	rod,caught,user	no	-	proc root
-proc	/obj/item/fishing_hook/anomaly	bioscrambler_catch_bonus	code/modules/fishing/fishing_equipment.dm:376	rod,caught,user	no	-	proc root
-proc	/obj/item/fishing_hook/anomaly	pyro_catch_effect	code/modules/fishing/fishing_equipment.dm:393	rod,caught,user	no	-	proc root
-proc	/obj/item/fishing_hook/anomaly	ectoplasm_catch_effect	code/modules/fishing/fishing_equipment.dm:407	rod,caught,user	no	-	proc root
-proc	/obj/item/fishing_hook/anomaly	hallucination_catch_effect	code/modules/fishing/fishing_equipment.dm:420	rod,caught,user	no	-	proc root
-proc	/obj/item/fishing_hook/anomaly	item_interaction	code/modules/fishing/fishing_equipment.dm:428	user,tool,modifiers	no	-	proc
-proc	/obj/item/fishing_hook/anomaly	attack_self	code/modules/fishing/fishing_equipment.dm:446	user,modifiers	no	-	proc
-proc	/obj/item/fishing_hook/anomaly	update_overlays	code/modules/fishing/fishing_equipment.dm:464		no	-	proc
-type	/obj/item/fishing_hook/weighted	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:480	inert	obj_item_fishing_hook_weighted	0	0
-type	/obj/item/fishing_hook/rescue	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:487	inert	obj_item_fishing_hook_rescue	0	0
-proc	/obj/item/fishing_hook/rescue	can_be_hooked	code/modules/fishing/fishing_equipment.dm:495	target	no	-	proc
-proc	/obj/item/fishing_hook/rescue	hook_attached	code/modules/fishing/fishing_equipment.dm:498	target,rod	no	-	proc
-proc	/obj/item/fishing_hook/rescue	reason_we_cant_fish	code/modules/fishing/fishing_equipment.dm:504	target_fish_source	no	-	proc
-proc	/obj/item/fishing_hook/rescue	get_hook_bonus_multiplicative	code/modules/fishing/fishing_equipment.dm:511	fish_type	no	-	proc
-type	/obj/item/fishing_hook/bone	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:520	inert	obj_item_fishing_hook_bone	0	0
-type	/obj/item/fishing_hook/stabilized	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:527	inert	obj_item_fishing_hook_stabilized	0	0
-proc	/obj/item/fishing_hook/stabilized	examine	code/modules/fishing/fishing_equipment.dm:536	user	no	-	proc
-type	/obj/item/fishing_hook/jaws	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:541	inert	obj_item_fishing_hook_jaws	0	0
-proc	/obj/item/fishing_hook/jaws	can_be_hooked	code/modules/fishing/fishing_equipment.dm:551	target	no	-	proc
-proc	/obj/item/fishing_hook/jaws	hook_attached	code/modules/fishing/fishing_equipment.dm:554	target,rod	no	-	proc
+type	/obj/item/fishing_hook	/obj/item	code/modules/fishing/fishing_equipment.dm:162	live	obj_item_fishing_hook	1	0
+proc	/obj/item/fishing_hook	get_hook_bonus_additive	code/modules/fishing/fishing_equipment.dm:183	fish_type	yes	full	proc root
+proc	/obj/item/fishing_hook	get_hook_bonus_multiplicative	code/modules/fishing/fishing_equipment.dm:191	fish_type	yes	full	proc root
+proc	/obj/item/fishing_hook	can_be_hooked	code/modules/fishing/fishing_equipment.dm:195	target	yes	full	proc root
+proc	/obj/item/fishing_hook	hook_attached	code/modules/fishing/fishing_equipment.dm:202	target,rod	yes	full	proc root
+proc	/obj/item/fishing_hook	reason_we_cant_fish	code/modules/fishing/fishing_equipment.dm:212	target_fish_source	yes	full	proc root
+type	/obj/item/fishing_hook/magnet	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:217	live	obj_item_fishing_hook_magnet	1	0
+proc	/obj/item/fishing_hook/magnet	Initialize	code/modules/fishing/fishing_equipment.dm:224	mapload	yes	full	proc
+proc	/obj/item/fishing_hook/magnet	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:229	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_hook/magnet	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:233	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_hook/magnet	get_hook_bonus_multiplicative	code/modules/fishing/fishing_equipment.dm:237	fish_type	yes	full	proc
+type	/obj/item/fishing_hook/shiny	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:245	live	obj_item_fishing_hook_shiny	1	0
+proc	/obj/item/fishing_hook/shiny	Initialize	code/modules/fishing/fishing_equipment.dm:250	mapload	yes	full	proc
+proc	/obj/item/fishing_hook/shiny	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:255	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_hook/shiny	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:259	source,rod,slot	yes	full	proc root
+type	/obj/item/fishing_hook/anomaly	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:264	live	obj_item_fishing_hook_anomaly	1	0
+proc	/obj/item/fishing_hook/anomaly	Initialize	code/modules/fishing/fishing_equipment.dm:271	mapload	yes	full	proc
+proc	/obj/item/fishing_hook/anomaly	examine	code/modules/fishing/fishing_equipment.dm:276	user	yes	full	proc
+proc	/obj/item/fishing_hook/anomaly	examine_more	code/modules/fishing/fishing_equipment.dm:281	user	yes	full	proc
+proc	/obj/item/fishing_hook/anomaly	on_fishing_rod_slotted	code/modules/fishing/fishing_equipment.dm:292	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_hook/anomaly	on_fishing_rod_unslotted	code/modules/fishing/fishing_equipment.dm:313	source,rod,slot	yes	full	proc root
+proc	/obj/item/fishing_hook/anomaly	get_probability_bonuses	code/modules/fishing/fishing_equipment.dm:324	rod,user	yes	full	proc root
+proc	/obj/item/fishing_hook/anomaly	dimensional_catch_bonus	code/modules/fishing/fishing_equipment.dm:338	rod,caught,user	yes	full	proc root
+proc	/obj/item/fishing_hook/anomaly	bioscrambler_catch_bonus	code/modules/fishing/fishing_equipment.dm:376	rod,caught,user	yes	full	proc root
+proc	/obj/item/fishing_hook/anomaly	pyro_catch_effect	code/modules/fishing/fishing_equipment.dm:393	rod,caught,user	yes	full	proc root
+proc	/obj/item/fishing_hook/anomaly	ectoplasm_catch_effect	code/modules/fishing/fishing_equipment.dm:407	rod,caught,user	yes	full	proc root
+proc	/obj/item/fishing_hook/anomaly	hallucination_catch_effect	code/modules/fishing/fishing_equipment.dm:420	rod,caught,user	yes	full	proc root
+proc	/obj/item/fishing_hook/anomaly	item_interaction	code/modules/fishing/fishing_equipment.dm:428	user,tool,modifiers	yes	full	proc
+proc	/obj/item/fishing_hook/anomaly	attack_self	code/modules/fishing/fishing_equipment.dm:446	user,modifiers	yes	full	proc
+proc	/obj/item/fishing_hook/anomaly	update_overlays	code/modules/fishing/fishing_equipment.dm:464		yes	full	proc
+type	/obj/item/fishing_hook/weighted	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:480	live	obj_item_fishing_hook_weighted	0	0
+type	/obj/item/fishing_hook/rescue	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:487	live	obj_item_fishing_hook_rescue	1	0
+proc	/obj/item/fishing_hook/rescue	can_be_hooked	code/modules/fishing/fishing_equipment.dm:495	target	yes	full	proc
+proc	/obj/item/fishing_hook/rescue	hook_attached	code/modules/fishing/fishing_equipment.dm:498	target,rod	yes	full	proc
+proc	/obj/item/fishing_hook/rescue	reason_we_cant_fish	code/modules/fishing/fishing_equipment.dm:504	target_fish_source	yes	full	proc
+proc	/obj/item/fishing_hook/rescue	get_hook_bonus_multiplicative	code/modules/fishing/fishing_equipment.dm:511	fish_type	yes	full	proc
+type	/obj/item/fishing_hook/bone	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:520	live	obj_item_fishing_hook_bone	0	0
+type	/obj/item/fishing_hook/stabilized	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:527	live	obj_item_fishing_hook_stabilized	1	0
+proc	/obj/item/fishing_hook/stabilized	examine	code/modules/fishing/fishing_equipment.dm:536	user	yes	full	proc
+type	/obj/item/fishing_hook/jaws	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:541	live	obj_item_fishing_hook_jaws	1	0
+proc	/obj/item/fishing_hook/jaws	can_be_hooked	code/modules/fishing/fishing_equipment.dm:551	target	yes	full	proc
+proc	/obj/item/fishing_hook/jaws	hook_attached	code/modules/fishing/fishing_equipment.dm:554	target,rod	yes	full	proc
 type	/obj/item/survivalcapsule	/obj/item	code/modules/mining/equipment/survival_pod.dm:13	live	obj_item_survivalcapsule	1	0
 proc	/obj/item/survivalcapsule	get_template	code/modules/mining/equipment/survival_pod.dm:27		yes	full	proc root
 proc	/obj/item/survivalcapsule	Destroy	code/modules/mining/equipment/survival_pod.dm:35		yes	full	proc
@@ -81136,33 +81136,33 @@ proc	/obj/item/survivalcapsule	get_ignore_flags	code/modules/mining/equipment/su
 proc	/obj/item/survivalcapsule	fail_feedback	code/modules/mining/equipment/survival_pod.dm:88	status	yes	full	proc root
 proc	/obj/item/survivalcapsule	yote_nearby	code/modules/mining/equipment/survival_pod.dm:97	deploy_location	yes	full	proc root
 proc	/obj/item/survivalcapsule	trigger_admin_alert	code/modules/mining/equipment/survival_pod.dm:126	triggerer,trigger_loc	yes	full	proc root
-type	/obj/item/survivalcapsule/fishing	/obj/item/survivalcapsule	code/modules/fishing/fishing_equipment.dm:590	inert	obj_item_survivalcapsule_fishing	0	0
-proc	/obj/item/survivalcapsule/fishing	Initialize	code/modules/fishing/fishing_equipment.dm:600	mapload	no	-	proc
-proc	/obj/item/survivalcapsule/fishing	add_context	code/modules/fishing/fishing_equipment.dm:606	source,context,held_item,user	no	-	proc
-proc	/obj/item/survivalcapsule/fishing	examine	code/modules/fishing/fishing_equipment.dm:611	user	no	-	proc
-proc	/obj/item/survivalcapsule/fishing	examine_more	code/modules/fishing/fishing_equipment.dm:615	user	no	-	proc
-proc	/obj/item/survivalcapsule/fishing	emag_act	code/modules/fishing/fishing_equipment.dm:619	user,emag_card	no	-	proc
-proc	/obj/item/survivalcapsule/fishing	attack_self_secondary	code/modules/fishing/fishing_equipment.dm:627	user	no	-	proc
-proc	/obj/item/survivalcapsule/fishing	get_ignore_flags	code/modules/fishing/fishing_equipment.dm:650		no	-	proc
-proc	/obj/item/survivalcapsule/fishing	fail_feedback	code/modules/fishing/fishing_equipment.dm:655	status	no	-	proc
-proc	/obj/item/survivalcapsule/fishing	trigger_admin_alert	code/modules/fishing/fishing_equipment.dm:668	triggerer,trigger_loc	no	-	proc
-type	/obj/item/survivalcapsule/fishing/hacked	/obj/item/survivalcapsule/fishing	code/modules/fishing/fishing_equipment.dm:680	inert	obj_item_survivalcapsule_fishing_hacked	0	0
+type	/obj/item/survivalcapsule/fishing	/obj/item/survivalcapsule	code/modules/fishing/fishing_equipment.dm:590	live	obj_item_survivalcapsule_fishing	1	0
+proc	/obj/item/survivalcapsule/fishing	Initialize	code/modules/fishing/fishing_equipment.dm:600	mapload	yes	full	proc
+proc	/obj/item/survivalcapsule/fishing	add_context	code/modules/fishing/fishing_equipment.dm:606	source,context,held_item,user	stub	deferred	proc
+proc	/obj/item/survivalcapsule/fishing	examine	code/modules/fishing/fishing_equipment.dm:611	user	yes	full	proc
+proc	/obj/item/survivalcapsule/fishing	examine_more	code/modules/fishing/fishing_equipment.dm:615	user	yes	full	proc
+proc	/obj/item/survivalcapsule/fishing	emag_act	code/modules/fishing/fishing_equipment.dm:619	user,emag_card	yes	full	proc
+proc	/obj/item/survivalcapsule/fishing	attack_self_secondary	code/modules/fishing/fishing_equipment.dm:627	user	yes	full	proc
+proc	/obj/item/survivalcapsule/fishing	get_ignore_flags	code/modules/fishing/fishing_equipment.dm:650		yes	full	proc
+proc	/obj/item/survivalcapsule/fishing	fail_feedback	code/modules/fishing/fishing_equipment.dm:655	status	yes	full	proc
+proc	/obj/item/survivalcapsule/fishing	trigger_admin_alert	code/modules/fishing/fishing_equipment.dm:668	triggerer,trigger_loc	yes	full	proc
+type	/obj/item/survivalcapsule/fishing/hacked	/obj/item/survivalcapsule/fishing	code/modules/fishing/fishing_equipment.dm:680	live	obj_item_survivalcapsule_fishing_hacked	0	0
 type	/obj/item/survivalcapsule/luxury	/obj/item/survivalcapsule	code/modules/mining/equipment/survival_pod.dm:137	live	obj_item_survivalcapsule_luxury	0	0
 type	/obj/item/survivalcapsule/luxuryelite	/obj/item/survivalcapsule	code/modules/mining/equipment/survival_pod.dm:142	live	obj_item_survivalcapsule_luxuryelite	0	0
 type	/obj/item/survivalcapsule/bathroom	/obj/item/survivalcapsule	code/modules/mining/equipment/survival_pod.dm:147	live	obj_item_survivalcapsule_bathroom	0	0
-type	/obj/item/fish_genegun	/obj/item	code/modules/fishing/fishing_equipment.dm:714	inert	obj_item_fish_genegun	0	0
-proc	/obj/item/fish_genegun	Initialize	code/modules/fishing/fishing_equipment.dm:733	mapload	no	-	proc
-proc	/obj/item/fish_genegun	examine	code/modules/fishing/fishing_equipment.dm:737	user	no	-	proc
-proc	/obj/item/fish_genegun	update_icon_state	code/modules/fishing/fishing_equipment.dm:750		no	-	proc
-proc	/obj/item/fish_genegun	attack_self	code/modules/fishing/fishing_equipment.dm:757	user	no	-	proc
-proc	/obj/item/fish_genegun	Exited	code/modules/fishing/fishing_equipment.dm:768	gone	no	-	proc
-proc	/obj/item/fish_genegun	item_interaction	code/modules/fishing/fishing_equipment.dm:774	user,item,modifiers	no	-	proc
-proc	/obj/item/fish_genegun	interact_with_atom	code/modules/fishing/fishing_equipment.dm:793	interacting_with,user,modifiers	no	-	proc
-type	/obj/item/fish_gene	/obj/item	code/modules/fishing/fishing_equipment.dm:848	inert	obj_item_fish_gene	0	0
-proc	/obj/item/fish_gene	Initialize	code/modules/fishing/fishing_equipment.dm:861	mapload,trait_type	no	-	proc
-proc	/obj/item/fish_gene	update_name	code/modules/fishing/fishing_equipment.dm:868		no	-	proc
-proc	/obj/item/fish_gene	interact_with_atom	code/modules/fishing/fishing_equipment.dm:872	interacting_with,user,modifiers	no	-	proc
-proc	/obj/item/fish_gene	inject_into_fish	code/modules/fishing/fishing_equipment.dm:884	fish,user,tool	no	-	proc root
+type	/obj/item/fish_genegun	/obj/item	code/modules/fishing/fishing_equipment.dm:714	live	obj_item_fish_genegun	1	0
+proc	/obj/item/fish_genegun	Initialize	code/modules/fishing/fishing_equipment.dm:733	mapload	yes	full	proc
+proc	/obj/item/fish_genegun	examine	code/modules/fishing/fishing_equipment.dm:737	user	yes	full	proc
+proc	/obj/item/fish_genegun	update_icon_state	code/modules/fishing/fishing_equipment.dm:750		yes	full	proc
+proc	/obj/item/fish_genegun	attack_self	code/modules/fishing/fishing_equipment.dm:757	user	yes	full	proc
+proc	/obj/item/fish_genegun	Exited	code/modules/fishing/fishing_equipment.dm:768	gone	yes	full	proc
+proc	/obj/item/fish_genegun	item_interaction	code/modules/fishing/fishing_equipment.dm:774	user,item,modifiers	yes	full	proc
+proc	/obj/item/fish_genegun	interact_with_atom	code/modules/fishing/fishing_equipment.dm:793	interacting_with,user,modifiers	yes	full	proc
+type	/obj/item/fish_gene	/obj/item	code/modules/fishing/fishing_equipment.dm:848	live	obj_item_fish_gene	1	0
+proc	/obj/item/fish_gene	Initialize	code/modules/fishing/fishing_equipment.dm:861	mapload,trait_type	yes	full	proc
+proc	/obj/item/fish_gene	update_name	code/modules/fishing/fishing_equipment.dm:868		yes	full	proc
+proc	/obj/item/fish_gene	interact_with_atom	code/modules/fishing/fishing_equipment.dm:872	interacting_with,user,modifiers	yes	full	proc
+proc	/obj/item/fish_gene	inject_into_fish	code/modules/fishing/fishing_equipment.dm:884	fish,user,tool	yes	full	proc root
 type	/obj/item/fish_tank	/obj/item	code/modules/fishing/aquarium/aquarium.dm:123	inert	obj_item_fish_tank	0	1
 proc	/obj/item/fish_tank	Initialize	code/modules/fishing/aquarium/aquarium.dm:161	mapload	no	-	proc
 proc	/obj/item/fish_tank	update_icon	code/modules/fishing/aquarium/aquarium.dm:181		no	-	proc
@@ -92219,31 +92219,31 @@ proc	/obj/machinery/exoscanner	wrench_act	code/modules/explorer_drone/scanner_ar
 proc	/obj/machinery/exoscanner	set_anchored	code/modules/explorer_drone/scanner_array.dm:275	anchorvalue	yes	full	proc
 proc	/obj/machinery/exoscanner	on_set_is_operational	code/modules/explorer_drone/scanner_array.dm:279	old_value	yes	full	proc
 proc	/obj/machinery/exoscanner	on_set_panel_open	code/modules/explorer_drone/scanner_array.dm:283	old_value	yes	full	proc
-type	/obj/machinery/fishing_portal_generator	/obj/machinery	code/modules/fishing/fishing_portal_machine.dm:2	inert	obj_machinery_fishing_portal_generator	0	1
-proc	/obj/machinery/fishing_portal_generator	Initialize	code/modules/fishing/fishing_portal_machine.dm:24	mapload	no	-	proc
-proc	/obj/machinery/fishing_portal_generator	Destroy	code/modules/fishing/fishing_portal_machine.dm:35		no	-	proc
-proc	/obj/machinery/fishing_portal_generator	RefreshParts	code/modules/fishing/fishing_portal_machine.dm:41		no	-	proc
-proc	/obj/machinery/fishing_portal_generator	on_set_panel_open	code/modules/fishing/fishing_portal_machine.dm:58		no	-	proc
-proc	/obj/machinery/fishing_portal_generator	wrench_act	code/modules/fishing/fishing_portal_machine.dm:62	user,tool	no	-	proc
-proc	/obj/machinery/fishing_portal_generator	multitool_act	code/modules/fishing/fishing_portal_machine.dm:67	user,tool	no	-	proc
-proc	/obj/machinery/fishing_portal_generator	multitool_act_secondary	code/modules/fishing/fishing_portal_machine.dm:80	user,tool	no	-	proc
-proc	/obj/machinery/fishing_portal_generator	multitool_context	code/modules/fishing/fishing_portal_machine.dm:109	source,context,target,user	no	-	proc root
-proc	/obj/machinery/fishing_portal_generator	multitool_unbuffered	code/modules/fishing/fishing_portal_machine.dm:116	source,buffer	no	-	proc root
-proc	/obj/machinery/fishing_portal_generator	link_fishing_spot	code/modules/fishing/fishing_portal_machine.dm:121	source,spot,user	no	-	proc root
-proc	/obj/machinery/fishing_portal_generator	unlink_fishing_spot	code/modules/fishing/fishing_portal_machine.dm:143	spot	no	-	proc root
-proc	/obj/machinery/fishing_portal_generator	examine	code/modules/fishing/fishing_portal_machine.dm:151	user	no	-	proc
-proc	/obj/machinery/fishing_portal_generator	emag_act	code/modules/fishing/fishing_portal_machine.dm:156	user,emag_card	no	-	proc
-proc	/obj/machinery/fishing_portal_generator	interact	code/modules/fishing/fishing_portal_machine.dm:164	user	no	-	proc
-proc	/obj/machinery/fishing_portal_generator	update_overlays	code/modules/fishing/fishing_portal_machine.dm:171		no	-	proc
-proc	/obj/machinery/fishing_portal_generator	on_changed_z_level	code/modules/fishing/fishing_portal_machine.dm:182	old_turf,new_turf,same_z_layer,notify_contents	no	-	proc
-proc	/obj/machinery/fishing_portal_generator	check_fishing_spot_z	code/modules/fishing/fishing_portal_machine.dm:186		no	-	proc root
-proc	/obj/machinery/fishing_portal_generator	activate	code/modules/fishing/fishing_portal_machine.dm:200	selected_source,user	no	-	proc root
-proc	/obj/machinery/fishing_portal_generator	deactivate	code/modules/fishing/fishing_portal_machine.dm:230		no	-	proc root
-proc	/obj/machinery/fishing_portal_generator	on_fishing_spot_z_level_changed	code/modules/fishing/fishing_portal_machine.dm:245	spot,old_turf,new_turf,same_z_layer	no	-	proc root
-proc	/obj/machinery/fishing_portal_generator	on_set_is_operational	code/modules/fishing/fishing_portal_machine.dm:251	old_value	no	-	proc
-proc	/obj/machinery/fishing_portal_generator	select_fish_source	code/modules/fishing/fishing_portal_machine.dm:256	user	no	-	proc root
-type	/obj/machinery/fishing_portal_generator/emagged	/obj/machinery/fishing_portal_generator	code/modules/fishing/fishing_portal_machine.dm:304	inert	obj_machinery_fishing_portal_generator_emagged	0	0
-type	/obj/machinery/fishing_portal_generator/full	/obj/machinery/fishing_portal_generator	code/modules/fishing/fishing_portal_machine.dm:308	inert	obj_machinery_fishing_portal_generator_full	0	0
+type	/obj/machinery/fishing_portal_generator	/obj/machinery	code/modules/fishing/fishing_portal_machine.dm:2	live	obj_machinery_fishing_portal_generator	1	1
+proc	/obj/machinery/fishing_portal_generator	Initialize	code/modules/fishing/fishing_portal_machine.dm:24	mapload	yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	Destroy	code/modules/fishing/fishing_portal_machine.dm:35		yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	RefreshParts	code/modules/fishing/fishing_portal_machine.dm:41		yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	on_set_panel_open	code/modules/fishing/fishing_portal_machine.dm:58		yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	wrench_act	code/modules/fishing/fishing_portal_machine.dm:62	user,tool	yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	multitool_act	code/modules/fishing/fishing_portal_machine.dm:67	user,tool	yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	multitool_act_secondary	code/modules/fishing/fishing_portal_machine.dm:80	user,tool	yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	multitool_context	code/modules/fishing/fishing_portal_machine.dm:109	source,context,target,user	yes	full	proc root
+proc	/obj/machinery/fishing_portal_generator	multitool_unbuffered	code/modules/fishing/fishing_portal_machine.dm:116	source,buffer	yes	full	proc root
+proc	/obj/machinery/fishing_portal_generator	link_fishing_spot	code/modules/fishing/fishing_portal_machine.dm:121	source,spot,user	yes	full	proc root
+proc	/obj/machinery/fishing_portal_generator	unlink_fishing_spot	code/modules/fishing/fishing_portal_machine.dm:143	spot	yes	full	proc root
+proc	/obj/machinery/fishing_portal_generator	examine	code/modules/fishing/fishing_portal_machine.dm:151	user	yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	emag_act	code/modules/fishing/fishing_portal_machine.dm:156	user,emag_card	yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	interact	code/modules/fishing/fishing_portal_machine.dm:164	user	yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	update_overlays	code/modules/fishing/fishing_portal_machine.dm:171		yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	on_changed_z_level	code/modules/fishing/fishing_portal_machine.dm:182	old_turf,new_turf,same_z_layer,notify_contents	yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	check_fishing_spot_z	code/modules/fishing/fishing_portal_machine.dm:186		yes	full	proc root
+proc	/obj/machinery/fishing_portal_generator	activate	code/modules/fishing/fishing_portal_machine.dm:200	selected_source,user	yes	full	proc root
+proc	/obj/machinery/fishing_portal_generator	deactivate	code/modules/fishing/fishing_portal_machine.dm:230		yes	full	proc root
+proc	/obj/machinery/fishing_portal_generator	on_fishing_spot_z_level_changed	code/modules/fishing/fishing_portal_machine.dm:245	spot,old_turf,new_turf,same_z_layer	yes	full	proc root
+proc	/obj/machinery/fishing_portal_generator	on_set_is_operational	code/modules/fishing/fishing_portal_machine.dm:251	old_value	yes	full	proc
+proc	/obj/machinery/fishing_portal_generator	select_fish_source	code/modules/fishing/fishing_portal_machine.dm:256	user	yes	full	proc root
+type	/obj/machinery/fishing_portal_generator/emagged	/obj/machinery/fishing_portal_generator	code/modules/fishing/fishing_portal_machine.dm:304	live	obj_machinery_fishing_portal_generator_emagged	0	0
+type	/obj/machinery/fishing_portal_generator/full	/obj/machinery/fishing_portal_generator	code/modules/fishing/fishing_portal_machine.dm:308	live	obj_machinery_fishing_portal_generator_full	0	0
 type	/obj/machinery/coffeemaker	/obj/machinery	code/modules/food_and_drinks/machinery/coffeemaker.dm:4	live	obj_machinery_coffeemaker	1	1
 proc	/obj/machinery/coffeemaker	Initialize	code/modules/food_and_drinks/machinery/coffeemaker.dm:45	mapload	yes	full	proc
 proc	/obj/machinery/coffeemaker	on_deconstruction	code/modules/food_and_drinks/machinery/coffeemaker.dm:51	disassembled	yes	full	proc
@@ -98123,10 +98123,10 @@ proc	/obj/effect/immovablerod/wizard	suplex_rod	code/modules/spells/spell_types/
 proc	/obj/effect/immovablerod/wizard	stop_travel	code/modules/spells/spell_types/self/rod_form.dm:129		no	-	proc root
 proc	/obj/effect/immovablerod/wizard	set_wizard	code/modules/spells/spell_types/self/rod_form.dm:137	wizard	no	-	proc root
 proc	/obj/effect/immovablerod/wizard	eject_wizard	code/modules/spells/spell_types/self/rod_form.dm:147		no	-	proc root
-type	/obj/effect/fishing_float	/obj/effect	code/modules/fishing/fishing_minigame.dm:887	inert	obj_effect_fishing_float	0	0
-proc	/obj/effect/fishing_float	Initialize	code/modules/fishing/fishing_minigame.dm:899	mapload,spot	no	-	proc
-proc	/obj/effect/fishing_float	follow_movable	code/modules/fishing/fishing_minigame.dm:916	source	no	-	proc root
-proc	/obj/effect/fishing_float	update_overlays	code/modules/fishing/fishing_minigame.dm:922		no	-	proc
+type	/obj/effect/fishing_float	/obj/effect	code/modules/fishing/fishing_minigame.dm:887	live	obj_effect_fishing_float	1	0
+proc	/obj/effect/fishing_float	Initialize	code/modules/fishing/fishing_minigame.dm:899	mapload,spot	yes	full	proc
+proc	/obj/effect/fishing_float	follow_movable	code/modules/fishing/fishing_minigame.dm:916	source	yes	full	proc root
+proc	/obj/effect/fishing_float	update_overlays	code/modules/fishing/fishing_minigame.dm:922		yes	full	proc
 type	/obj/effect/food_cart_stand	/obj/effect	code/modules/food_and_drinks/machinery/food_cart.dm:135	live	obj_effect_food_cart_stand	0	0
 type	/obj/effect/plasma_image_holder	/obj/effect	code/modules/hallucination/fake_plasmaflood.dm:97	live	obj_effect_plasma_image_holder	0	0
 type	/obj/effect/holodeck_effect	/obj/effect	code/modules/holodeck/holo_effect.dm:8	live	obj_effect_holodeck_effect	1	0
@@ -106931,12 +106931,12 @@ proc	/obj/projectile/moon_parade	prehit_pierce	code/modules/antagonists/heretic/
 proc	/obj/projectile/moon_parade	on_hit	code/modules/antagonists/heretic/magic/moon_parade.dm:72	target,blocked,pierce_hit	no	-	proc
 proc	/obj/projectile/moon_parade	was_hit_already	code/modules/antagonists/heretic/magic/moon_parade.dm:87	victim	no	-	proc root
 proc	/obj/projectile/moon_parade	Destroy	code/modules/antagonists/heretic/magic/moon_parade.dm:94		no	-	proc
-type	/obj/projectile/fishing_cast	/obj/projectile	code/modules/fishing/fishing_rod.dm:839	inert	obj_projectile_fishing_cast	0	0
-proc	/obj/projectile/fishing_cast	fire	code/modules/fishing/fishing_rod.dm:849	angle,direct_target	no	-	proc
-proc	/obj/projectile/fishing_cast	on_entered	code/modules/fishing/fishing_rod.dm:857	source,entered_atom	no	-	proc
-proc	/obj/projectile/fishing_cast	scan_moved_turf	code/modules/fishing/fishing_rod.dm:863		no	-	proc
-proc	/obj/projectile/fishing_cast	on_hit	code/modules/fishing/fishing_rod.dm:870	target,blocked,pierce_hit	no	-	proc
-proc	/obj/projectile/fishing_cast	Destroy	code/modules/fishing/fishing_rod.dm:892		no	-	proc
+type	/obj/projectile/fishing_cast	/obj/projectile	code/modules/fishing/fishing_rod.dm:839	live	obj_projectile_fishing_cast	1	0
+proc	/obj/projectile/fishing_cast	fire	code/modules/fishing/fishing_rod.dm:849	angle,direct_target	yes	full	proc
+proc	/obj/projectile/fishing_cast	on_entered	code/modules/fishing/fishing_rod.dm:857	source,entered_atom	yes	full	proc
+proc	/obj/projectile/fishing_cast	scan_moved_turf	code/modules/fishing/fishing_rod.dm:863		yes	full	proc
+proc	/obj/projectile/fishing_cast	on_hit	code/modules/fishing/fishing_rod.dm:870	target,blocked,pierce_hit	yes	full	proc
+proc	/obj/projectile/fishing_cast	Destroy	code/modules/fishing/fishing_rod.dm:892		yes	full	proc
 type	/obj/projectile/hallucination	/obj/projectile	code/modules/hallucination/stray_bullet.dm:28	live	obj_projectile_hallucination	1	0
 proc	/obj/projectile/hallucination	Initialize	code/modules/hallucination/stray_bullet.dm:54	mapload,parent	yes	full	proc
 proc	/obj/projectile/hallucination	Destroy	code/modules/hallucination/stray_bullet.dm:64		yes	full	proc
@@ -108165,15 +108165,15 @@ proc	/turf	set_explosion_block	code/game/turfs/turf.dm:798	explosion_block	yes	f
 proc	/turf	apply_main_material_effects	code/game/turfs/turf.dm:803	main_material,amount,multiplier	yes	full	proc
 proc	/turf	remove_main_material_effects	code/game/turfs/turf.dm:810	custom_material,amount,multiplier	yes	full	proc
 proc	/turf	can_cross_safely	code/game/turfs/turf.dm:821	crossing	yes	full	proc root
-proc	/turf	add_lazy_fishing	code/game/turfs/turf.dm:829	fish_source_path	yes	skeleton	proc root
-proc	/turf	remove_lazy_fishing	code/game/turfs/turf.dm:837		yes	skeleton	proc root
-proc	/turf	add_fishing_spot_comp	code/game/turfs/turf.dm:849	source,rod,user	yes	skeleton	proc root
-proc	/turf	on_npc_fishing	code/game/turfs/turf.dm:855	source,fish_spot_container	yes	skeleton	proc root
-proc	/turf	on_fish_release_into	code/game/turfs/turf.dm:859	source,fish,releaser	yes	skeleton	proc root
+proc	/turf	add_lazy_fishing	code/game/turfs/turf.dm:829	fish_source_path	yes	full	proc root
+proc	/turf	remove_lazy_fishing	code/game/turfs/turf.dm:837		yes	full	proc root
+proc	/turf	add_fishing_spot_comp	code/game/turfs/turf.dm:849	source,rod,user	yes	full	proc root
+proc	/turf	on_npc_fishing	code/game/turfs/turf.dm:855	source,fish_spot_container	yes	full	proc root
+proc	/turf	on_fish_release_into	code/game/turfs/turf.dm:859	source,fish,releaser	yes	full	proc root
 proc	/turf	examine	code/game/turfs/turf.dm:863	user	yes	full	proc
 proc	/turf	examine_more	code/game/turfs/turf.dm:871	user	yes	full	proc
 proc	/turf	ex_act	code/game/turfs/turf.dm:877	severity,target	yes	full	proc
-proc	/turf	multitool_act	code/game/turfs/turf.dm:883	user,tool	no	-	proc
+proc	/turf	multitool_act	code/game/turfs/turf.dm:883	user,tool	yes	full	proc
 proc	/turf	hotspot_expose	code/modules/atmospherics/environmental/LINDA_fire.dm:15	exposed_temperature,exposed_volume,soh	yes	full	proc root
 proc	/turf	init_immediate_calculate_adjacent_turfs	code/modules/atmospherics/environmental/LINDA_system.dm:59		yes	full	proc root
 proc	/turf	immediate_calculate_adjacent_turfs	code/modules/atmospherics/environmental/LINDA_system.dm:111		yes	full	proc root
@@ -109782,12 +109782,12 @@ type	/turf/open/openspace/xenobio	/turf/open/openspace	code/game/turfs/open/open
 type	/turf/open/openspace/telecomms	/turf/open/openspace	code/game/turfs/open/openspace.dm:226	live	turf_open_openspace_telecomms	0	0
 type	/turf/open/openspace/coldroom	/turf/open/openspace	code/game/turfs/open/openspace.dm:229	live	turf_open_openspace_coldroom	0	0
 type	/turf/open/water	/turf/open	code/game/turfs/open/water.dm:2	base	turf_open_water	1	1
-proc	/turf/open/water	Initialize	code/game/turfs/open/water.dm:45	mapload	no	-	proc
-proc	/turf/open/water	on_atom_inited	code/game/turfs/open/water.dm:56	source,movable	no	-	proc root
-proc	/turf/open/water	Entered	code/game/turfs/open/water.dm:61	arrived	no	-	proc
-proc	/turf/open/water	initialize_occupant	code/game/turfs/open/water.dm:65	occupant	no	-	proc
-proc	/turf/open/water	make_immersed	code/game/turfs/open/water.dm:70	triggering_atom	no	-	proc root
-proc	/turf/open/water	Destroy	code/game/turfs/open/water.dm:79		no	-	proc
+proc	/turf/open/water	Initialize	code/game/turfs/open/water.dm:45	mapload	yes	full	proc
+proc	/turf/open/water	on_atom_inited	code/game/turfs/open/water.dm:56	source,movable	yes	full	proc root
+proc	/turf/open/water	Entered	code/game/turfs/open/water.dm:61	arrived	yes	full	proc
+proc	/turf/open/water	initialize_occupant	code/game/turfs/open/water.dm:65	occupant	yes	full	proc
+proc	/turf/open/water	make_immersed	code/game/turfs/open/water.dm:70	triggering_atom	yes	full	proc root
+proc	/turf/open/water	Destroy	code/game/turfs/open/water.dm:79		yes	full	proc
 type	/turf/open/water/jungle	/turf/open/water	(implied by a subtype's path)	live	turf_open_water_jungle	0	0
 type	/turf/open/water/no_planet_atmos	/turf/open/water	code/game/turfs/open/water.dm:87	live	turf_open_water_no_planet_atmos	0	1
 type	/turf/open/water/no_planet_atmos/deep	/turf/open/water/no_planet_atmos	code/game/turfs/open/water.dm:91	live	turf_open_water_no_planet_atmos_deep	0	1

@@ -9,7 +9,7 @@ namespace Anomaly.Core.Tests.Playtest;
 
 /// <summary>
 /// The owner's M5 play test (2026-10-16): cable restraints made from a coil (cable.dm:629, 15 cable, new(null) then put_in_hands)
-/// were lost with the cable spent. The restraints were inert then (M7x slice E translated them; a fishing rod, whose dropped is untranslated, stands in now): the
+/// were lost with the cable spent. The restraints were inert then (M7x slice E translated them; an abductor's helmet, whose dropped is untranslated, stands in now): the
 /// interaction guard refuses an inert item a hand, and it ends where tg's put_in_hands leaves an item no hand takes, at the user's
 /// feet; one already somewhere stays there.
 /// </summary>
@@ -21,13 +21,13 @@ public class InertResultTests
         var (room, a) = P4aToolTests.Room(9801);
         room.In(() =>
         {
-            var cuffs = Dm.@new<obj_item_fishing_rod>(null);
+            var cuffs = Dm.@new<obj_item_clothing_head_helmet_abductor>(null);
             Assert.False(Dm.truthy(Waiting.NoSleep(a.put_in_hands(cuffs))));
             Assert.Same(get_turf(a), cuffs.loc);
-            var other = Dm.@new<obj_item_fishing_rod>(locate(7, 7, 1));
+            var other = Dm.@new<obj_item_clothing_head_helmet_abductor>(locate(7, 7, 1));
             Assert.False(Dm.truthy(Waiting.NoSleep(a.put_in_hands(other))));
             Assert.Same(locate(7, 7, 1), other.loc);
-            var gone = Dm.@new<obj_item_fishing_rod>(null);
+            var gone = Dm.@new<obj_item_clothing_head_helmet_abductor>(null);
             Assert.False(Dm.truthy(Waiting.NoSleep(a.put_in_hands(gone, del_on_fail: 1))));
             Assert.True(QDELETED(gone));
         });

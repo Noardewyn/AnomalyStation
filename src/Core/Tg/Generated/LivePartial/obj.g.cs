@@ -307,6 +307,28 @@ public partial class obj_item_gun_magic
     }
 }
 
+// tg: code/modules/fishing/fishing_rod.dm:2
+public partial class obj_item_fishing_rod
+{
+    // tg: code/modules/fishing/fishing_rod.dm:101
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/modules/fishing/fishing_rod.dm:101", "add_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
+        return default;
+    }
+
+    // tg: code/modules/fishing/fishing_rod.dm:109
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object add_item_context(obj_item source = null, DmList context = null, atom target = null, mob_living user = null)
+    {
+        Dm.Deferred("code/modules/fishing/fishing_rod.dm:109", "add_item_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
+        return default;
+    }
+}
+
 // tg: code/modules/assembly/doorcontrol.dm:231
 public partial class obj_item_assembly_control_flasher
 {
@@ -634,19 +656,6 @@ public partial class obj_item_storage_toolbox_guncase_traitor
     public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
     {
         Dm.Deferred("code/game/objects/items/storage/toolboxes/weapons.dm:98", "add_context: the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred) (M10+)");
-        return default;
-    }
-}
-
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:62
-public partial class obj_item_storage_fish_case_syndicate
-{
-    // tg: code/modules/fishing/aquarium/aquarium_kit.dm:64
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public override object get_fish_type()
-    {
-        Dm.Deferred("code/modules/fishing/aquarium/aquarium_kit.dm:64", "get_fish_type: the syndicate fishing portal's fish (GLOB.preset_fish_sources, the fishing spots, FI2) (M10+)");
         return default;
     }
 }
@@ -1640,6 +1649,19 @@ public partial class obj_item_universal_scanner
     public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
     {
         Dm.Deferred("code/modules/cargo/universal_scanner.dm:161", "add_context: screentips (D264) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/fishing/fishing_equipment.dm:590
+public partial class obj_item_survivalcapsule_fishing
+{
+    // tg: code/modules/fishing/fishing_equipment.dm:606
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/modules/fishing/fishing_equipment.dm:606", "add_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
         return default;
     }
 }

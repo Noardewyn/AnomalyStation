@@ -1381,11 +1381,7 @@ public partial class obj_item_bodypart : obj_item
         UnregisterSignal(old_owner, Dm.list(COMSIG_ATOM_RESTYLE, COMSIG_COMPONENT_CLEAN_ACT, COMSIG_LIVING_SET_BODY_POSITION));
 
         if (LIMB_HAS_SURGERY_STATE(this, ALL_SURGERY_FISH_STATES(body_zone)))
-        {
-            // qdel(old_owner.GetComponent(/datum/component/fishing_spot)): fishing in an open body is surgery (M8); a limb only
-            // gets there with the surgical states of an operation.
-            Dm.Deferred("code/modules/surgery/bodyparts/_bodyparts.dm:1026", "clear_ownership: qdel(old_owner.GetComponent(/datum/component/fishing_spot)), the opened body's fishing spot (surgery and fishing, M8; never added, :1060)");
-        }
+            qdel(old_owner.GetComponent(typeof(datum_component_fishing_spot)));
     }
 
     // tg: code/modules/surgery/bodyparts/_bodyparts.dm:1029
@@ -1422,10 +1418,7 @@ public partial class obj_item_bodypart : obj_item
         RegisterSignal(this, COMSIG_MOVABLE_MOVED, nameof(on_forced_removal)); //this must be set after we moved, or we insta gib
 
         if (LIMB_HAS_SURGERY_STATE(this, ALL_SURGERY_FISH_STATES(body_zone)))
-        {
-            // owner.AddComponent(/datum/component/fishing_spot, /datum/fish_source/surgery): surgery (M8).
-            Dm.Deferred("code/modules/surgery/bodyparts/_bodyparts.dm:1060", "apply_ownership: owner.AddComponent(/datum/component/fishing_spot, /datum/fish_source/surgery), fishing in an opened body (surgery and fishing, M8)");
-        }
+            await owner.AddComponent(typeof(datum_component_fishing_spot), typeof(datum_fish_source_surgery));
     }
 
     // tg: code/modules/surgery/bodyparts/_bodyparts.dm:1063
@@ -1926,9 +1919,9 @@ public partial class obj_item_bodypart : obj_item
         if (Dm.truthy(owner._listen_lookup?[COMSIG_LIVING_UPDATING_SURGERY_STATE]))
             owner._SendSignal(COMSIG_LIVING_UPDATING_SURGERY_STATE, Dm.list(owner, old_state, surgery_state, changed_states));
         if (HAS_SURGERY_STATE(surgery_state, ALL_SURGERY_FISH_STATES(body_zone)))
-            Dm.Deferred("code/modules/surgery/bodyparts/_bodyparts.dm:1991", "update_surgical_state: owner.AddComponent(/datum/component/fishing_spot, /datum/fish_source/surgery), fishing in an opened body (the fishing spot is inert; fishing)");
+            await owner.AddComponent(typeof(datum_component_fishing_spot), typeof(datum_fish_source_surgery)); // no-op if they already have one
         else if (HAS_SURGERY_STATE(Dm.num(old_state), ALL_SURGERY_FISH_STATES(body_zone)))
-            Dm.Deferred("code/modules/surgery/bodyparts/_bodyparts.dm:1993", "update_surgical_state: qdel(owner.GetComponent(/datum/component/fishing_spot)) (never added, :1991; fishing)");
+            qdel(owner.GetComponent(typeof(datum_component_fishing_spot)));
     }
 
     // tg: code/modules/surgery/bodyparts/_bodyparts.dm:2005

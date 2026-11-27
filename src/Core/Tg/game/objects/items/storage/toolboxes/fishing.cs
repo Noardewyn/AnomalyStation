@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // M4a P3: the PopulateContents of Meta's containers in this file (D133), translated with the help of m4/p3w/popgen2.py
 // (the pure `new /path(src)` bodies, their loops, prob and switch). Gaps SR1 (D333): the toolbox's init (its fishing difficulty
 // element is a deferred leaf with fishing) and the compact toolbox. Left: the super fishing toolbox (its boxes of hooks and lines,
-// its aquarium kit and fish analyzer wait on fishing, not-translated.md section 208).
+// its aquarium kit and fish analyzer, not-translated.md section 208).
 
 // tg: code/game/objects/items/storage/toolboxes/fishing.dm:18
 public partial class obj_item_storage_toolbox_fishing : obj_item_storage_toolbox
@@ -21,7 +21,7 @@ public partial class obj_item_storage_toolbox_fishing : obj_item_storage_toolbox
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/game/objects/items/storage/toolboxes/fishing.dm:16", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier, ITEM_SLOT_HANDS) (fishing, M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier, ITEM_SLOT_HANDS));
         return dot;
     }
 

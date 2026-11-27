@@ -19,7 +19,7 @@ namespace Anomaly.Core.Tg;
 // var-only. Gaps CL1 (D333): the night vision and science night goggles' off state, the wizard's chuuni eyepatch, the chemical
 // sunglasses' slapcrafting, the welding goggles' visor (its icon up and down, tg's tint through update_tint), the suicides of the
 // glasses, the mesons and the science goggles, the white blindfold's eye colour, the debug glasses' x-ray, the salesman's glasses
-// and the nightmare vision goggles. Their adjust_fishing_difficulty elements wait for fishing (not-translated.md 209).
+// and the nightmare vision goggles. Their fishing difficulty elements are live.
 
 // tg: code/modules/clothing/glasses/_glasses.dm:2
 public partial class obj_item_clothing_glasses : obj_item_clothing
@@ -342,7 +342,7 @@ public partial class obj_item_clothing_glasses_welding : obj_item_clothing_glass
     {
         object dot = base.Initialize(mapload, __extra);
         if (!Dm.truthy(up))
-            Dm.Deferred("code/modules/clothing/glasses/_glasses.dm:524", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 8): fishing (M10+)");
+            Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 8));
         return dot;
     }
 
@@ -358,8 +358,10 @@ public partial class obj_item_clothing_glasses_welding : obj_item_clothing_glass
     public override async DmTask<object> adjust_visor(mob_living user = null)
     {
         object dot = await base.adjust_visor(user);
-        // if(up) RemoveElement(/datum/element/adjust_fishing_difficulty) else AddElement(/datum/element/adjust_fishing_difficulty, 8)
-        Dm.Deferred("code/modules/clothing/glasses/_glasses.dm:531", "adjust_visor: the adjust_fishing_difficulty element of the visor: fishing (M10+)");
+        if (Dm.truthy(up))
+            RemoveElement(typeof(datum_element_adjust_fishing_difficulty));
+        else
+            await AddElement(typeof(datum_element_adjust_fishing_difficulty), 8);
         return dot;
     }
 
@@ -408,7 +410,7 @@ public partial class obj_item_clothing_glasses_debug : obj_item_clothing_glasses
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/glasses/_glasses.dm:726", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -15): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -15));
         return dot;
     }
 
@@ -478,7 +480,7 @@ public partial class obj_item_clothing_glasses_nightmare_vision : obj_item_cloth
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/glasses/_glasses.dm:794", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 13): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 13));
         return dot;
     }
 

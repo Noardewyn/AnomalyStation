@@ -92,6 +92,10 @@ public class MetaPictureTests
         // roll. tg's /obj/item/paper/construction keeps the spawner icon until its Initialize (paper.dm:916), which waits
         // for /obj/item/paper (paperwork, M9).
         "/obj/item/paper/construction ",
+        // A ghost role's spawner stays on the map with its own sprite until a ghost takes it (tg's seed vault terrarium,
+        // icons/obj/mining_zones/spawners.dmi 'terrarium', mining_roles.dm:146): it is drawn whenever the boot draws place the
+        // seed vault ruin on Lavaland (they did after fishing's sources joined the boot).
+        "/obj/effect/mob_spawn/ghost_role/human/seed_vault ",
     };
 
     // tg's own gap: /obj/effect/spawner/random/trash/crushed_can picks "space_up", "lemon_lime" and "space beer" (trash.dm:391-392),

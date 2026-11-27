@@ -1880,9 +1880,9 @@ public partial class datum_component_fish_growth
     }
 }
 
-// tg: code/datums/components/fishing_spot.dm:3
-[DmPath("/datum/component/fishing_spot"), DmGeneratedOnly, DmInert]
-public partial class datum_component_fishing_spot : datum_component
+// tg: code/datums/components/fishing_spot.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/fishing_spot")]
+public partial class datum_component_fishing_spot
 {
     public datum_fish_source fish_source; // tg: code/datums/components/fishing_spot.dm:5
 
@@ -3131,11 +3131,10 @@ public partial class datum_component_proficient_miner
     public float last_bumpmine_tick = -1; // tg: code/datums/components/proficient_miner.dm:8
 }
 
-// tg: code/datums/components/profound_fisher.dm:4
-[DmPath("/datum/component/profound_fisher"), DmGeneratedOnly, DmInert]
-public partial class datum_component_profound_fisher : datum_component
+// tg: code/datums/components/profound_fisher.dm:4 (the vars the hand-written class does not declare)
+[DmPath("/datum/component/profound_fisher")]
+public partial class datum_component_profound_fisher
 {
-    public obj_item_fishing_rod_mob_fisher our_rod; // tg: code/datums/components/profound_fisher.dm:4
     public float delete_rod_when_deleted = 1; // tg: code/datums/components/profound_fisher.dm:6
 }
 

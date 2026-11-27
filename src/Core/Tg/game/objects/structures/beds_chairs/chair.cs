@@ -36,7 +36,7 @@ public partial class obj_structure_chair : obj_structure
         }
         MakeRotate();
         if (Dm.truthy(can_buckle) && Dm.truthy(fishing_modifier))
-            Dm.Deferred("code/game/objects/structures/beds_chairs/chair.dm:30", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier): fishing (M10+)");
+            Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier));
         return dot;
     }
 

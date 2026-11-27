@@ -21,9 +21,7 @@ public partial class obj_item_book_manual_fish_catalog : obj_item_book_manual
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, -7, ITEM_SLOT_HANDS): the element eases the fishing minigame held in
-        // hand; the minigame and its element are the rods' (not-translated section 250).
-        Dm.Deferred("code/modules/fishing/fish_catalog.dm:11", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -7, ITEM_SLOT_HANDS), the fishing minigame's element");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -7, ITEM_SLOT_HANDS));
         return dot;
     }
 
@@ -116,10 +114,11 @@ public partial class obj_item_book_manual_fish_catalog : obj_item_book_manual
         DmList dot = Dm.list();
         //// Where can it be found - iterate fish sources, how should this handle key
         DmList spot_descriptions = Dm.list();
-        // GAP(the rods): GLOB.preset_fish_sources, the fishing spots, comes with the rods; until then no spot names a fish.
-        DmList preset_fish_sources__gap = null;
-        foreach (datum_fish_source source in Dm.each<datum_fish_source>(preset_fish_sources__gap))
+        // tg loops over the list's keys, the source types, and reads their vars as a type's (BYOND 515 reads a path's var as its
+        // initial value); the port reads them off the preset source each key names, whose values are the same.
+        foreach (object source_path in Dm.each(GLOB.preset_fish_sources))
         {
+            datum_fish_source source = GLOB.preset_fish_sources[source_path] as datum_fish_source;
             if (Dm.truthy(source.catalog_description) && Dm.@in(fish_type, source.fish_table))
                 Dm.append(spot_descriptions, source.catalog_description);
         }

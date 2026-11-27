@@ -9,8 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps CL1 (D333): the pirate hat's pirate speak (the language granted while worn); its fishing difficulty element waits for
-// fishing. The var blocks are generated (D111).
+// Gaps CL1 (D333): the pirate hat's pirate speak (the language granted while worn); with its fishing difficulty element. The var blocks are generated (D111).
 
 // tg: code/modules/clothing/head/pirate.dm:1
 public partial class obj_item_clothing_head_costume_pirate : obj_item_clothing_head_costume
@@ -19,7 +18,7 @@ public partial class obj_item_clothing_head_costume_pirate : obj_item_clothing_h
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/head/pirate.dm:10", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5));
         return dot;
     }
 

@@ -964,6 +964,7 @@
 /datum/component/damage_chain	dupe_mode	override	code/datums/components/damage_chain.dm:5	{"K":"num","N":1}
 /datum/component/gas_leaker	process_type	decl	code/datums/components/gas_leaker.dm:8	{"K":"null","N":0}
 /datum/component/pinata	death_drop	decl	code/datums/components/pinata.dm:10	{"K":"null","N":0}
+/datum/component/profound_fisher	our_rod	decl	code/datums/components/profound_fisher.dm:4	{"K":"null","N":0}
 /datum/component/plumbing	reagents	decl	code/datums/components/plumbing/_plumbing.dm:6	{"K":"null","N":0}
 /datum/component/plumbing	dupe_mode	override	code/datums/components/plumbing/_plumbing.dm:2	{"K":"num","N":1}
 /datum/looping_sound/spectre_meter	mid_sounds	override	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:115	{"K":"null","N":0}
@@ -1557,6 +1558,8 @@
 /datum/preferences	path	decl	code/modules/client/preferences.dm:6	{"K":"null","N":0}
 /datum/deathmatch_modifier	name	decl	code/modules/deathmatch/deathmatch_modifier.dm:4	{"K":"str","N":0,"S":"Unnamed Modifier"}
 /datum/adventure_node	id	decl	code/modules/explorer_drone/adventure.dm:286	{"K":"null","N":0}
+/datum/fishing_challenge	reward_path	decl	code/modules/fishing/fishing_minigame.dm:51	{"K":"str","N":0,"S":"dud"}
+/datum/fishing_challenge	location	decl	code/modules/fishing/fishing_minigame.dm:69	{"K":"null","N":0}
 /datum/instrument_key	key	decl	code/modules/instruments/instrument_data/_instrument_key.dm:7	{"K":"null","N":0}
 /datum/job_department	display_order	decl	code/modules/jobs/departments/departments.dm:13	{"K":"num","N":0}
 /datum/job_department	abstract_type	override	code/modules/jobs/departments/departments.dm:3	{"K":"type","N":0,"S":"/datum/job_department"}
@@ -4058,6 +4061,18 @@
 /obj/item/firelance	inhand_icon_state	override	code/modules/explorer_drone/loot.dm:150	{"K":"str","N":0,"S":"firelance"}
 /obj/item/firelance	righthand_file	override	code/modules/explorer_drone/loot.dm:151	{"K":"res","N":0,"S":"icons/mob/inhands/items/firelance_righthand.dmi"}
 /obj/item/firelance	lefthand_file	override	code/modules/explorer_drone/loot.dm:152	{"K":"res","N":0,"S":"icons/mob/inhands/items/firelance_lefthand.dmi"}
+/obj/item/fish_gene	trait_type	decl	code/modules/fishing/fishing_equipment.dm:859	{"K":"null","N":0}
+/obj/item/fish_gene	name	override	code/modules/fishing/fishing_equipment.dm:848	{"K":"str","N":0,"S":"fish trait injector"}
+/obj/item/fish_gene	icon	override	code/modules/fishing/fishing_equipment.dm:849	{"K":"res","N":0,"S":"icons/obj/fishing.dmi"}
+/obj/item/fish_gene	icon_state	override	code/modules/fishing/fishing_equipment.dm:850	{"K":"str","N":0,"S":"fish_trait_injector"}
+/obj/item/fish_gene	desc	override	code/modules/fishing/fishing_equipment.dm:851	{"K":"str","N":0,"S":"A single-use injector containing a specific trait that can be used on any (living) fish compatible with it."}
+/obj/item/fish_gene	w_class	override	code/modules/fishing/fishing_equipment.dm:852	{"K":"num","N":1}
+/obj/item/fish_gene	inhand_icon_state	override	code/modules/fishing/fishing_equipment.dm:853	{"K":"str","N":0,"S":"dnainjector"}
+/obj/item/fish_gene	worn_icon_state	override	code/modules/fishing/fishing_equipment.dm:854	{"K":"str","N":0,"S":"pen"}
+/obj/item/fish_gene	lefthand_file	override	code/modules/fishing/fishing_equipment.dm:855	{"K":"res","N":0,"S":"icons/mob/inhands/equipment/medical_lefthand.dmi"}
+/obj/item/fish_gene	righthand_file	override	code/modules/fishing/fishing_equipment.dm:856	{"K":"res","N":0,"S":"icons/mob/inhands/equipment/medical_righthand.dmi"}
+/obj/item/fish_gene	throw_speed	override	code/modules/fishing/fishing_equipment.dm:857	{"K":"num","N":3}
+/obj/item/fish_gene	throw_range	override	code/modules/fishing/fishing_equipment.dm:858	{"K":"num","N":5}
 /obj/item/pizzabox	pizza	decl	code/modules/food_and_drinks/pizzabox.dm:29	{"K":"null","N":0}
 /obj/item/pizzabox	name	override	code/modules/food_and_drinks/pizzabox.dm:10	{"K":"str","N":0,"S":"pizza box"}
 /obj/item/pizzabox	desc	override	code/modules/food_and_drinks/pizzabox.dm:11	{"K":"str","N":0,"S":"A box suited for pizzas."}

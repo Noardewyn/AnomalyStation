@@ -487,7 +487,7 @@ public partial class obj_item_storage_belt_champion : obj_item_storage_belt
     {
         object dot = base.Initialize(mapload, __extra);
 
-        Dm.Deferred("code/game/objects/items/storage/belt.dm:348", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -2) (fishing, M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -2));
         return dot;
     }
 }

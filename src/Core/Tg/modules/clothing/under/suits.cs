@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (gaps CL1, D333): the tuxedo and the carpskin suit (their fishing difficulty waits for fishing); the rest of the file is
+// PARTIAL (gaps CL1, D333): the tuxedo and the carpskin suit (with their fishing difficulty); the rest of the file is
 // var-only. The var blocks are generated (D111).
 
 // tg: code/modules/clothing/under/suits.dm:99
@@ -19,7 +19,7 @@ public partial class obj_item_clothing_under_suit_tuxedo : obj_item_clothing_und
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/under/suits.dm:107", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 4): fishing (M10+)"); //You aren't going to fish with this are you?
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 4)); //You aren't going to fish with this are you?
         return dot;
     }
 }
@@ -31,7 +31,7 @@ public partial class obj_item_clothing_under_suit_carpskin : obj_item_clothing_u
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/under/suits.dm:118", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4));
         return dot;
     }
 }

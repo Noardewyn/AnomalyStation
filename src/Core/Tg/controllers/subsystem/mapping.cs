@@ -732,8 +732,8 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
             object mappath = Dm.initial(shelter_type, (datum_map_template_shelter p) => p.mappath);
             if (!Dm.truthy(mappath))
                 continue;
-            // DEVIATION(DV611): only the shelters whose map the host mounted (the converted _maps/templates/shelter_*.dmm); the fishing
-            // spots' maps are not converted, and a template whose file is absent would fail to load
+            // DEVIATION(DV611): only the shelters whose map the host mounted (the converted _maps/templates/shelter_*.dmm and
+            // fishing_*.dmm); a template whose file is absent (a host without the converted templates, a toy test room) would fail to load
             if (!Dm.truthy(fexists(mappath)))
                 continue;
             var S = (datum_map_template_shelter)Dm.@new(shelter_type);

@@ -45,7 +45,7 @@ public partial class obj_item_clothing_mask_gas : obj_item_clothing_mask
             Dm.Deferred("code/modules/clothing/masks/gasmask.dm:48", "Initialize: AddComponent(/datum/component/clothing_dirt, dirt_state), the pepper spray's dirt on a visor");
 
         if (Dm.truthy(fishing_modifier))
-            Dm.Deferred("code/modules/clothing/masks/gasmask.dm:51", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier): fishing");
+            Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier));
 
         if (!Dm.truthy(max_filters) || starting_filter_type == null)
             return dot;
@@ -261,8 +261,10 @@ public partial class obj_item_clothing_mask_gas_welding : obj_item_clothing_mask
             playsound(this, Dm.truthy(up) ? SFX_VISOR_UP : SFX_VISOR_DOWN, 50, TRUE);
         if (!Dm.truthy(fishing_modifier))
             return dot;
-        // if(up) RemoveElement(/datum/element/adjust_fishing_difficulty) else AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier)
-        Dm.Deferred("code/modules/clothing/masks/gasmask.dm:253", "adjust_visor: the adjust_fishing_difficulty element of the visor: fishing (M10+)");
+        if (Dm.truthy(up))
+            RemoveElement(typeof(datum_element_adjust_fishing_difficulty));
+        else
+            await AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier);
         return dot;
     }
 

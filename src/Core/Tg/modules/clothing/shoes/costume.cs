@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // Gaps CL1 (D333): the whole file (the griffin boots' and the ducky shoes' pockets, the bronze boots' clockwork steps, the jester's
 // jingle and the ducky shoes' quack and waddle). The glow shoes' colour picker (gags_recolorable) waits for the GAGS recolouring
-// (not-translated.md 209) and their glow is DV12; the fishing difficulty elements wait for fishing. The var blocks are generated (D111).
+// (not-translated.md 209) and their glow is DV12; the fishing difficulty elements are live. The var blocks are generated (D111).
 
 // tg: code/modules/clothing/shoes/costume.dm:12
 public partial class obj_item_clothing_shoes_griffin : obj_item_clothing_shoes
@@ -34,7 +34,7 @@ public partial class obj_item_clothing_shoes_bronze : obj_item_clothing_shoes
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_squeak), Dm.list(Dm.kv(Dm.resource("sound/machines/clockcult/integration_cog_install.ogg"), 1), Dm.kv(Dm.resource("sound/effects/magic/clockwork/fellowship_armory.ogg"), 1)), 50, Dm.named("extrarange", SHORT_RANGE_SOUND_EXTRARANGE)));
-        Dm.Deferred("code/modules/clothing/shoes/costume.dm:56", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 4));
         return dot;
     }
 }
@@ -94,7 +94,7 @@ public partial class obj_item_clothing_shoes_ducky_shoes : obj_item_clothing_sho
 
         Waiting.NoSleep(create_storage(storage_type: typeof(datum_storage_pockets_shoes)));
         Waiting.NoSleep(LoadComponent(typeof(datum_component_squeak), Dm.list(Dm.kv(Dm.resource("sound/effects/quack.ogg"), 1)), 50, Dm.named("falloff_exponent", 20)));
-        Dm.Deferred("code/modules/clothing/shoes/costume.dm:139", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -7): fishing (M10+)"); //deploy tactical duckling lure
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -7)); //deploy tactical duckling lure
         return dot;
     }
 

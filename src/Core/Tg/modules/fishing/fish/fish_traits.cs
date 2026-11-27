@@ -1,5 +1,6 @@
 // Translated from tgstation (snapshot 1d99bd7f): code/modules/fishing/fish/fish_traits.dm
 // Original copyright and license: tgstation, AGPL-3.0 (code). See ../tgstation/LICENSE.
+using System;
 using Anomaly.Core.DmShim;
 using Anomaly.Core.Kernel;
 using static Anomaly.Core.DmShim.Dm;
@@ -9,10 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file but seven fishing-side modifiers that read the rod's line or bait (the rod's slots hold paths until the rods
-// are ported): wary's and anxiety's line checks and the shiny lover's, picky eater's, carnivore's, herbivore's and predator's bait
-// checks are live-partial stubs (docs/ai/specs/live-partial.txt). Every trait's effect on the fish and on the mobs grown from it
-// is live. The var blocks are generated (D111).
+// The whole file: every trait's effect on the fish and on the mobs grown from it, and on fishing (the difficulty and the catch
+// weight the rod's line, bait and material change). The var blocks are generated.
 
 // tg: code/modules/fishing/fish/fish_traits.dm:2 and :8 (interleaved types, rules 1.9)
 public partial class datum_controller_global_vars : datum_controller
@@ -84,7 +83,7 @@ public partial class datum_fish_trait : datum
     /// Catch weight table modifier from this mod, needs to return a list with two values
     // tg: code/modules/fishing/fish/fish_traits.dm:53
     [ShouldCallParent]
-    public virtual async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    public virtual async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, Type fish_type = null)
     {
         await DmTask.CompletedTask;
         return Dm.list(Dm.kv(ADDITIVE_FISHING_MOD, 0), Dm.kv(MULTIPLICATIVE_FISHING_MOD, 1));
@@ -203,11 +202,37 @@ public partial class datum_fish_trait : datum
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:145  (its difficulty_mod reads the rod's bait: live-partial)
+// tg: code/modules/fishing/fish/fish_traits.dm:132
+public partial class datum_fish_trait_wary : datum_fish_trait
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:137
+    public override object difficulty_mod(obj_item_fishing_rod rod = null, mob fisherman = null)
+    {
+        object dot = base.difficulty_mod(rod, fisherman);
+        if (Dm.num(rod.alpha) <= Dm.num(Dm.initial(typeof(datum_material_glass), (datum_material p) => p.alpha)))
+            return dot;
+        // Wary fish require transparent line or they're harder
+        if (rod.line_value == null || !Dm.truthy(Dm.bitand(rod.line_value.fishing_line_traits, FISHING_LINE_CLOAKED)))
+            ((DmList)dot)[ADDITIVE_FISHING_MOD] = Dm.num(((DmList)dot)[ADDITIVE_FISHING_MOD]) + FISH_TRAIT_MINOR_DIFFICULTY_BOOST;
+        return dot;
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:145
 public partial class datum_fish_trait_shiny_lover : datum_fish_trait
 {
+    // tg: code/modules/fishing/fish/fish_traits.dm:150
+    public override object difficulty_mod(obj_item_fishing_rod rod = null, mob fisherman = null)
+    {
+        object dot = base.difficulty_mod(rod, fisherman);
+        // These fish are easier to catch with shiny hook
+        if (HAS_TRAIT(rod, TRAIT_ROD_ATTRACT_SHINY_LOVERS) || Dm.num(rod.bait_value?.get_item_credit_value()) >= PAYCHECK_CREW)
+            ((DmList)dot)[ADDITIVE_FISHING_MOD] = Dm.num(((DmList)dot)[ADDITIVE_FISHING_MOD]) - FISH_TRAIT_MINOR_DIFFICULTY_BOOST;
+        return dot;
+    }
+
     // tg: code/modules/fishing/fish/fish_traits.dm:156
-    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, Type fish_type = null)
     {
         object dot = await base.catch_weight_mod(rod, fisherman, location, fish_type);
         // These fish are harder to find without a shiny hook
@@ -217,11 +242,58 @@ public partial class datum_fish_trait_shiny_lover : datum_fish_trait
     }
 }
 
+// tg: code/modules/fishing/fish/fish_traits.dm:162
+public partial class datum_fish_trait_picky_eater : datum_fish_trait
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:167
+    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, Type fish_type = null)
+    {
+        DmList dot = await base.catch_weight_mod(rod, fisherman, location, fish_type) as DmList;
+        DmList fav_baits = (SSfishing.fish_properties[fish_type] as DmList)?[FISH_PROPERTIES_FAV_BAIT] as DmList;
+        foreach (object identifier in Dm.each(fav_baits))
+        {
+            if (identifier is not DmList identifier_list)
+                continue;
+            if (!Dm.eq(identifier_list[FISH_BAIT_TYPE], FISH_BAIT_FOODTYPE))
+                continue;
+            if (Dm.truthy(is_matching_bait(rod, identifier_list))) //Bait or no bait, it's a yummy rod.
+                return dot;
+        }
+        if (rod.bait_value == null)
+        {
+            dot[MULTIPLICATIVE_FISHING_MOD] = 0;
+            return dot;
+        }
+        if (HAS_TRAIT(rod.bait_value, TRAIT_OMNI_BAIT))
+            return dot;
+
+        foreach (object identifier in Dm.each(fav_baits))
+        {
+            if (Dm.truthy(is_matching_bait(rod.bait_value, identifier))) //we like this bait anyway
+                return dot;
+        }
+
+        DmList bad_baits = (SSfishing.fish_properties[fish_type] as DmList)?[FISH_PROPERTIES_BAD_BAIT] as DmList;
+        foreach (object identifier in Dm.each(bad_baits))
+        {
+            if (Dm.truthy(is_matching_bait(rod.bait_value, identifier))) //we hate this bait.
+            {
+                dot[MULTIPLICATIVE_FISHING_MOD] = 0;
+                return dot;
+            }
+        }
+
+        if (!HAS_TRAIT(rod.bait_value, TRAIT_GOOD_QUALITY_BAIT) && !HAS_TRAIT(rod.bait_value, TRAIT_GREAT_QUALITY_BAIT))
+            dot[MULTIPLICATIVE_FISHING_MOD] = 0;
+        return dot;
+    }
+}
+
 // tg: code/modules/fishing/fish/fish_traits.dm:194
 public partial class datum_fish_trait_nocturnal : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:199
-    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, Type fish_type = null)
     {
         object dot = await base.catch_weight_mod(rod, fisherman, location, fish_type);
         if (HAS_TRAIT(rod, TRAIT_ROD_IGNORE_ENVIRONMENT))
@@ -300,6 +372,61 @@ public partial class datum_fish_trait_heavy : datum_fish_trait
     public override void minigame_mod(obj_item_fishing_rod rod = null, mob fisherman = null, datum_fishing_challenge minigame = null)
     {
         minigame.mover.fish_idle_velocity -= 10;
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:254
+public partial class datum_fish_trait_carnivore : datum_fish_trait
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:259
+    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, Type fish_type = null)
+    {
+        DmList dot = await base.catch_weight_mod(rod, fisherman, location, fish_type) as DmList;
+        if (IS_EDIBLE(rod)) //who cares about the bait, that fishing rod is yummy!
+            return dot;
+        if (rod.bait_value == null)
+        {
+            dot[MULTIPLICATIVE_FISHING_MOD] = 0;
+            return dot;
+        }
+        if (HAS_TRAIT(rod.bait_value, TRAIT_OMNI_BAIT))
+            return dot;
+        DmList bait_identifier = Dm.list(
+            Dm.kv(FISH_BAIT_TYPE, FISH_BAIT_FOODTYPE),
+            Dm.kv(FISH_BAIT_VALUE, Dm.bitor(Dm.bitor(MEAT, SEAFOOD), BUGS)));
+        if (!Dm.truthy(is_matching_bait(rod.bait_value, bait_identifier)))
+            dot[MULTIPLICATIVE_FISHING_MOD] = 0;
+        return dot;
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:275
+public partial class datum_fish_trait_vegan : datum_fish_trait
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:280
+    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, Type fish_type = null)
+    {
+        DmList dot = await base.catch_weight_mod(rod, fisherman, location, fish_type) as DmList;
+        if (await rod.get_master_material() is datum_material_bamboo) //bamboo is technically grass.
+            return dot;
+        if (rod.bait_value == null)
+        {
+            dot[MULTIPLICATIVE_FISHING_MOD] = 0;
+            return dot;
+        }
+        if (HAS_TRAIT(rod.bait_value, TRAIT_OMNI_BAIT))
+            return dot;
+        if (istype(rod.bait_value, typeof(obj_item_food_grown)))
+            return dot;
+        DmList bait_liked_identifier = Dm.list(
+            Dm.kv(FISH_BAIT_TYPE, FISH_BAIT_FOODTYPE),
+            Dm.kv(FISH_BAIT_VALUE, Dm.bitor(VEGETABLES, FRUIT)));
+        DmList bait_hated_identifier = Dm.list(
+            Dm.kv(FISH_BAIT_TYPE, FISH_BAIT_FOODTYPE),
+            Dm.kv(FISH_BAIT_VALUE, Dm.bitor(Dm.bitor(Dm.bitor(Dm.bitor(MEAT, SEAFOOD), GORE), BUGS), DAIRY)));
+        if (!Dm.truthy(is_matching_bait(rod.bait_value, bait_liked_identifier)) || Dm.truthy(is_matching_bait(rod.bait_value, bait_hated_identifier)))
+            dot[MULTIPLICATIVE_FISHING_MOD] = 0;
+        return dot;
     }
 }
 
@@ -466,6 +593,15 @@ public partial class datum_fish_trait_revival : datum_fish_trait
 // tg: code/modules/fishing/fish/fish_traits.dm:444  (its catch_weight_mod reads the rod's bait: live-partial)
 public partial class datum_fish_trait_predator : datum_fish_trait
 {
+    // tg: code/modules/fishing/fish/fish_traits.dm:450
+    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, Type fish_type = null)
+    {
+        DmList dot = await base.catch_weight_mod(rod, fisherman, location, fish_type) as DmList;
+        if (isfish(rod.bait_value))
+            dot[MULTIPLICATIVE_FISHING_MOD] = Dm.num(dot[MULTIPLICATIVE_FISHING_MOD]) * 2;
+        return dot;
+    }
+
     // tg: code/modules/fishing/fish/fish_traits.dm:455
     public override async DmTask<object> apply_to_fish(obj_item_fish fish = null, float? initial = null)
     {
@@ -616,7 +752,7 @@ public partial class datum_fish_trait_territorial : datum_fish_trait
 public partial class datum_fish_trait_lubed : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:592
-    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    public override async DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, Type fish_type = null)
     {
         object dot = await base.catch_weight_mod(rod, fisherman, location, fish_type);
         if (await rod.get_master_material() is datum_material_bananium) //x5 chance of catching lubefish & co with a bananium rod.
@@ -719,6 +855,16 @@ public partial class datum_fish_trait_antigrav : datum_fish_trait
 // tg: code/modules/fishing/fish/fish_traits.dm:663  (its difficulty_mod reads the rod's line: live-partial)
 public partial class datum_fish_trait_anxiety : datum_fish_trait
 {
+    // tg: code/modules/fishing/fish/fish_traits.dm:668
+    public override object difficulty_mod(obj_item_fishing_rod rod = null, mob fisherman = null)
+    {
+        object dot = base.difficulty_mod(rod, fisherman);
+        // Anxious fish are easier with a cloaked line.
+        if (rod.line_value != null && Dm.truthy(Dm.bitand(rod.line_value.fishing_line_traits, FISHING_LINE_CLOAKED)))
+            ((DmList)dot)[ADDITIVE_FISHING_MOD] = Dm.num(((DmList)dot)[ADDITIVE_FISHING_MOD]) - FISH_TRAIT_MINOR_DIFFICULTY_BOOST;
+        return dot;
+    }
+
     // tg: code/modules/fishing/fish/fish_traits.dm:674
     public override async DmTask<object> apply_to_fish(obj_item_fish fish = null, float? initial = null)
     {

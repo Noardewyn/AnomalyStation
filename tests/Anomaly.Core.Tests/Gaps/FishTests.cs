@@ -406,7 +406,8 @@ public class FishTests
         Assert.Equal("Freshwater", gold.GetProperty("fluid").GetString());
         Assert.Equal("iconsobjaquariumfishdmigoldfish", gold.GetProperty("icon").GetString());
         Assert.Contains("★", gold.GetProperty("beauty").GetString());
-        Assert.Equal("Unknown", gold.GetProperty("fishing_tips").GetProperty("spots").GetString());
+        // the fish sources name where it bites: the fish-porter's aquarium dimension among them
+        Assert.Contains("Aquarium dimension (Fishing portal generator)", gold.GetProperty("fishing_tips").GetProperty("spots").GetString());
         Assert.True(gold.GetProperty("fishing_tips").GetProperty("traits").GetArrayLength() > 0);
         r.AssertNoRuntimes();
     }

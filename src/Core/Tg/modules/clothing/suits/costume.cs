@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // Gaps CL1 (D333): the file's procs (the flash suit hood's white-out, the costumes' allowed lists, the cardborg suit's robot look to
 // silicons with its helmet, the poncho of shame, the carp hood's carp faction and the spaceproof hood locked on, the bear suit's bear
-// faction with its pelt). The fishing difficulty elements wait for fishing (not-translated.md 209); the rest of the file is var-only.
+// faction with its pelt). The fishing difficulty elements are live; the rest of the file is var-only.
 // The var blocks are generated (D111).
 
 // tg: code/modules/clothing/suits/costume.dm:16
@@ -150,7 +150,7 @@ public partial class obj_item_clothing_suit_hooded_carp_costume : obj_item_cloth
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/costume.dm:286", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4));
         return dot;
     }
 }
@@ -162,7 +162,7 @@ public partial class obj_item_clothing_head_hooded_carp_hood : obj_item_clothing
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/costume.dm:302", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5));
         return dot;
     }
 
@@ -205,7 +205,7 @@ public partial class obj_item_clothing_suit_hooded_shark_costume : obj_item_clot
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/costume.dm:422", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4));
         return dot;
     }
 }
@@ -217,7 +217,7 @@ public partial class obj_item_clothing_head_hooded_shark_hood : obj_item_clothin
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/costume.dm:436", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5));
         return dot;
     }
 }
@@ -229,7 +229,7 @@ public partial class obj_item_clothing_suit_hooded_shork_costume : obj_item_clot
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/costume.dm:451", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 4));
         return dot;
     }
 }
@@ -241,7 +241,7 @@ public partial class obj_item_clothing_head_hooded_shork_hood : obj_item_clothin
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/costume.dm:465", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 5));
         return dot;
     }
 }
@@ -253,7 +253,7 @@ public partial class obj_item_clothing_suit_costume_hawaiian : obj_item_clothing
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/costume.dm:642", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5));
         Dm.append(ref allowed, GLOB.personal_carry_allowed);
         return dot;
     }

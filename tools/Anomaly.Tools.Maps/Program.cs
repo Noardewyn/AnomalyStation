@@ -237,7 +237,7 @@ public static class Program
         // safehouses their modular map roots load (maps/safehouses/<name>.as3dmap)
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(VirtualDomains);
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(Safehouses);
-        // The survival capsules' shelters (tg's /datum/map_template/shelter mappaths) the miners unfold on Lavaland, at maps/templates/<name>.as3dmap
+        // The survival capsules' shelters and the fishing capsule's spots (tg's /datum/map_template/shelter mappaths), at maps/templates/<name>.as3dmap
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(Shelters);
         // Lavaland's ruins (tg's /datum/map_template/ruin/lavaland prefix and suffix values, and the syndicate base's modules), at
         // maps/RandomRuins/<folder>/<name>.as3dmap, which SSmapping's seedRuins places over the caves
@@ -329,10 +329,13 @@ public static class Program
         "virtual_domains/vaporwave.dmm", "virtual_domains/wendigo.dmm", "virtual_domains/xeno_nest.dmm"];
 
     /// <summary>
-    /// The survival capsules' shelters: the mining shelters of code/modules/mining/shelters.dm (the fishing spots come with fishing).
+    /// The survival capsules' shelters: the mining shelters of code/modules/mining/shelters.dm and the fishing spots the fishing
+    /// capsule unfolds (/datum/map_template/shelter/fishing and its subtypes).
     /// </summary>
     internal static readonly string[] Shelters = ["templates/shelter_1.dmm", "templates/shelter_2.dmm", "templates/shelter_3.dmm",
-        "templates/shelter_t.dmm"];
+        "templates/shelter_t.dmm", "templates/fishing_freshwater.dmm", "templates/fishing_saltwater.dmm", "templates/fishing_tizira.dmm",
+        "templates/fishing_hot_spring.dmm", "templates/fishing_ice.dmm", "templates/fishing_lava.dmm", "templates/fishing_plasma.dmm",
+        "templates/fishing_depths.dmm"];
 
     /// <summary>
     /// Lavaland's ruins: every map of tg's _maps/RandomRuins/LavaRuins (with the syndicate base's modules, which its modular map roots

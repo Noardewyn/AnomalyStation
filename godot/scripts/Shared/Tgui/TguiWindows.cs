@@ -295,6 +295,8 @@ public static class TguiInterfaces
         ["MedicalKiosk"] = MedicalKiosk.Render, // gaps MD1
         ["Biogenerator"] = Biogenerator.Render, // gaps package P2
         ["FishCatalog"] = FishCatalog.Render,
+        ["FishingRod"] = FishingRod.Render,
+        ["FishingCalculator"] = FishingCalculator.Render,
         ["ExosuitFabricator"] = ExosuitFabricator.Render, // silicons SI3
         ["Fabricator"] = Fabricator.Render, // gaps RD1
         ["Autolathe"] = Autolathe.Render, // gaps RD1

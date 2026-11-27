@@ -126,17 +126,24 @@ public partial class datum_controller_subsystem_processing_fishing : datum_contr
 
         ///init the list of things lures can catch
         lure_catchables = Dm.list();
-        // tg: fishing.dm:100-107  each lure's catchable fish (is_catchable_fish): the lures come with the rods (not-translated section 250).
-        Dm.Deferred("code/controllers/subsystem/processing/fishing.dm:100", "Initialize: the fish each fishing lure can catch (/obj/item/fishing_lure/is_catchable_fish), the rods' lures");
+        foreach (Type lure_type in Dm.each<Type>(subtypesof(typeof(obj_item_fishing_lure))))
+        {
+            obj_item_fishing_lure lure = await Dm.new_async(lure_type) as obj_item_fishing_lure;
+            lure_catchables[lure_type] = Dm.list();
+            foreach (obj_item_fish fish in Dm.each<obj_item_fish>(spawned_fish))
+            {
+                if (Dm.truthy(lure.is_catchable_fish(fish, fish_properties[fish.type] as DmList)))
+                    Dm.append(lure_catchables[lure_type] as DmList, fish.type);
+            }
+            qdel(lure);
+        }
 
         QDEL_LIST(spawned_fish);
 
         //Populate the list of safe turfs for several fishes
-        // GAP(the rods): GLOB.preset_fish_sources, the fishing spots, comes with the rods; until then no fish has safe turfs.
-        DmList preset_fish_sources__gap = null;
-        foreach (object source_path in Dm.each(preset_fish_sources__gap))
+        foreach (object source_path in Dm.each(GLOB.preset_fish_sources))
         {
-            datum_fish_source source = preset_fish_sources__gap[source_path] as datum_fish_source;
+            datum_fish_source source = GLOB.preset_fish_sources[source_path] as datum_fish_source;
             if (!Dm.truthy(length(source.associated_safe_turfs)))
                 continue;
             foreach (object fish_path in Dm.each(source.fish_table))

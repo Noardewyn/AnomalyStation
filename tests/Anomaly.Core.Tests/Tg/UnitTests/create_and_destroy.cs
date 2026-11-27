@@ -149,6 +149,11 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         turf spawn_at = run_loc_floor_bottom_left as turf;
 
         DmList cached_contents = spawn_at.contents.Copy();
+        // ADAPTED (with the mob lists' check below, which tg's test lacks): a random spawner scatters its loot up to
+        // spawn_scatter_radius tiles away (2 at most in tg), where tg's cleanup of spawn_at never looks; those tiles are cleaned
+        // too, or a scattered mob (the snake in the cowboy boots of the shoe factory's loot) stays on the mob lists.
+        List<(turf Near, DmList Cached)> scatter_turfs = Dm.each_cast<turf>(RANGE_TURFS(2, spawn_at)).Where(near => near != spawn_at)
+            .Select(near => (near, near.contents.Copy())).ToList();
 
         // GLOB.running_create_and_destroy = TRUE: ADAPTED, the global (create_and_destroy.dm:8) is test-only and read by
         // no translated code yet.
@@ -300,6 +305,13 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
                     qdel(to_kill, force: TRUE);
             }
             to_del = null;
+            foreach ((turf near, DmList near_cached) in scatter_turfs)
+            {
+                DmList scattered = Dm.sub(near.contents, near_cached) as DmList;
+                if (Dm.truthy(length(scattered)))
+                    foreach (atom to_kill in Dm.each_cast<atom>(scattered))
+                        qdel(to_kill, force: TRUE);
+            }
         }
 
         //Clear it, just in case

@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The ice sheet (Lavaland's winter biodome): permanently slippery, and a shovel or a pick digs a fishing hole in it (the
-// hole's fishing spot waits for fishing). The var blocks are generated.
+// The ice sheet (Lavaland's winter biodome): permanently slippery, and a shovel or a pick digs a fishing hole in it (a
+// fishing spot). The var blocks are generated.
 
 // tg: code/game/turfs/open/ice.dm:2
 public partial class turf_open_misc_ice : turf_open_misc
@@ -81,8 +81,7 @@ public partial class turf_open_misc_ice : turf_open_misc
     // tg: code/game/turfs/open/ice.dm:67
     public virtual void spawn_hole()
     {
-        // AddComponent(/datum/component/fishing_spot, GLOB.preset_fish_sources[/datum/fish_source/ice_fishing]): fishing is not in the core
-        // version (ROADMAP section 4); the hole is dug and shown
+        Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), GLOB.preset_fish_sources[typeof(datum_fish_source_ice_fishing)]));
         ADD_TRAIT(this, TRAIT_CATCH_AND_RELEASE, INNATE_TRAIT);
         add_overlay(mutable_appearance(Dm.resource("icons/turf/overlays.dmi"), "ice_hole"));
         can_make_hole = FALSE;

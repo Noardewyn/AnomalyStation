@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The survival capsules' shelter templates and where they may unfold: not on walls (but rock), in a shuttle or the holodeck, over a dense
-// anchored thing or a banned one (the necropolis' stone tiles), nor sticking out of the map. The fishing spots' templates come with
-// fishing: their maps are not converted, so SSmapping skips them (DV611).
+// anchored thing or a banned one (the necropolis' stone tiles), nor sticking out of the map; and the fishing capsule's spots. SSmapping
+// skips a template whose converted map the host did not mount (DV611).
 
 ///Map templates used for bluespace survival capsules.
 // tg: code/modules/mining/shelters.dm:2

@@ -2313,11 +2313,32 @@ public partial class obj_item : obj
         return this;
     }
 
+    /// Checks if the bait is liked by the fish type or not. Returns a multiplier that affects the chance of catching it.
+    // The fish is a fish or a fish's typepath (the fish sources pass either): the slot's parameter is decided as object
+    // (translation-rules.md Appendix A).
     // tg: code/game/objects/items.dm:2154
-    public virtual object check_bait(obj_item_fish fish = null)
+    public virtual object check_bait(object fish = null)
     {
-        Dm.NotTranslated("code/game/objects/items.dm:2154", "check_bait: M2 P2 (skeleton)");
-        return default;
+        if (HAS_TRAIT(this, TRAIT_OMNI_BAIT))
+            return 1;
+        float catch_multiplier = 1;
+
+        DmList properties = SSfishing.fish_properties[isfish(fish) ? ((datum)fish).type : fish] as DmList;
+        //Bait matching likes doubles the chance
+        DmList fav_bait = properties[FISH_PROPERTIES_FAV_BAIT] as DmList;
+        foreach (object bait_identifer in Dm.each(fav_bait))
+        {
+            if (Dm.truthy(is_matching_bait(this, bait_identifer)))
+                catch_multiplier *= 2;
+        }
+        //Bait matching dislikes
+        DmList disliked_bait = properties[FISH_PROPERTIES_BAD_BAIT] as DmList;
+        foreach (object bait_identifer in Dm.each(disliked_bait))
+        {
+            if (Dm.truthy(is_matching_bait(this, bait_identifer)))
+                catch_multiplier *= 0.5f;
+        }
+        return catch_multiplier;
     }
 
     /// Fetches, or lazyloads, our embedding datum
@@ -2423,11 +2444,24 @@ public partial class atom_movable : atom
 // tg: code/game/objects/items.dm:2173 (global procs)
 public static partial class GlobalProcs
 {
+    /// Helper proc that checks if a bait matches identifier from fav/disliked bait list
     // tg: code/game/objects/items.dm:2173
     public static object is_matching_bait(obj_item bait = null, object identifier = null)
     {
-        Dm.NotTranslated("code/game/objects/items.dm:2173", "is_matching_bait: M2 P2 (skeleton)");
-        return default;
+        if (ispath(identifier)) //Just a path
+            return istype(bait, (Type)identifier);
+        if (!islist(identifier))
+            return HAS_TRAIT(bait, identifier);
+        DmList special_identifier = (DmList)identifier;
+        object bait_type = special_identifier[FISH_BAIT_TYPE];
+        if (Dm.eq(bait_type, FISH_BAIT_FOODTYPE))
+        {
+            datum_component_edible edible = bait.GetComponent(typeof(datum_component_edible)) as datum_component_edible;
+            return edible != null ? Dm.bitand(edible.foodtypes, special_identifier[FISH_BAIT_VALUE]) : null;
+        }
+        if (Dm.eq(bait_type, FISH_BAIT_REAGENT))
+            return (bait.reagents as datum_reagents)?.has_reagent(special_identifier[FISH_BAIT_VALUE], Dm.num(special_identifier[FISH_BAIT_AMOUNT]), check_subtypes: TRUE);
+        throw Dm.CRASH("Unknown bait identifier in fish favourite/disliked list", "code/game/objects/items.dm", 2187);
     }
 }
 

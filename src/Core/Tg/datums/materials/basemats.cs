@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// M5 slice 2 (materials and stacks): the whole file. The var blocks are generated (D111). Fishing (the fishing rods'
-// rewards, M10+), the combustible flooder of plasma and hot ice and mythril's fantasy component are not translated here: their
+// M5 slice 2 (materials and stacks): the whole file. The var blocks are generated (D111). The fishing rods' rewards are
+// translated. The combustible flooder of plasma and hot ice and mythril's fantasy component are not translated here: their
 // calls stay Dm.NotTranslated with the reason. Bananium's squeak and slip are (M10 slice F: datums/components/squeak.cs).
 
 // tg: code/datums/materials/basemats.dm:2
@@ -155,7 +155,16 @@ public partial class datum_material_bluespace : datum_material
     [SignalHandler]
     public virtual void on_begin_fishing(obj_item_fishing_rod rod = null, datum_fishing_challenge challenge = null)
     {
-        Dm.NotTranslated("code/datums/materials/basemats.dm:277", "on_begin_fishing: a fishing rod's reward (fishing, M10+)");
+        if (prob(67))
+            return;
+        DmList elegible_fish_sources = assoc_to_values(GLOB.preset_fish_sources) as DmList;
+        foreach (datum_fish_source source in Dm.each<datum_fish_source>(elegible_fish_sources.Copy()))
+        {
+            if (Dm.truthy(Dm.bitand(source.fish_source_flags, FISH_SOURCE_FLAG_NO_BLUESPACE_ROD)))
+                Dm.remove(elegible_fish_sources, source);
+        }
+        datum_fish_source new_source = pick(elegible_fish_sources) as datum_fish_source;
+        challenge.register_reward_signals(new_source);
     }
     // tg: code/datums/materials/basemats.dm:288
     public override void on_main_removed(atom source = null, object mat_amount = null, object multiplier = null)
@@ -188,13 +197,20 @@ public partial class datum_material_bananium : datum_material
     [SignalHandler]
     public virtual void on_begin_fishing(obj_item_fishing_rod rod = null, datum_fishing_challenge challenge = null)
     {
-        Dm.NotTranslated("code/datums/materials/basemats.dm:328", "on_begin_fishing: a fishing rod's reward (fishing, M10+)");
+        if (prob(40))
+            RegisterSignal(challenge, COMSIG_FISHING_CHALLENGE_ROLL_REWARD, nameof(roll_funny_fish));
     }
     // tg: code/datums/materials/basemats.dm:333
     [SignalHandler]
     public virtual void roll_funny_fish(datum source = null, obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, DmList rewards = null)
     {
-        Dm.NotTranslated("code/datums/materials/basemats.dm:333", "roll_funny_fish: a fishing rod's reward (fishing, M10+)");
+        DmList funny_fish = TgState.Current.datum_material_bananium_roll_funny_fish__funny_fish ??= Dm.list(
+            Dm.kv(typeof(obj_item_fish_clownfish), 5),
+            Dm.kv(typeof(obj_item_fish_clownfish_lube), 3),
+            Dm.kv(typeof(obj_item_fish_soul), 2),
+            Dm.kv(typeof(obj_item_fish_skin_crab), 2),
+            Dm.kv(typeof(obj_item_fish_donkfish), 2));
+        Dm.append(rewards, pick_weight(funny_fish));
     }
     // tg: code/datums/materials/basemats.dm:344
     public override void on_removed(atom source = null, object mat_amount = null, object material_flags = null, object from_slot = null)
@@ -448,13 +464,14 @@ public partial class datum_material_paper : datum_material
     [SignalHandler]
     public virtual void on_begin_fishing(obj_item_fishing_rod rod = null, datum_fishing_challenge challenge = null)
     {
-        Dm.NotTranslated("code/datums/materials/basemats.dm:757", "on_begin_fishing: a fishing rod's reward (fishing, M10+)");
+        if (prob(40)) //consider the default reward and it's 15%
+            RegisterSignal(challenge, COMSIG_FISHING_CHALLENGE_ROLL_REWARD, nameof(roll_stickman));
     }
     // tg: code/datums/materials/basemats.dm:762
     [SignalHandler]
     public virtual void roll_stickman(datum source = null, obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, DmList rewards = null)
     {
-        Dm.NotTranslated("code/datums/materials/basemats.dm:762", "roll_stickman: a fishing rod's reward (fishing, M10+)");
+        Dm.append(rewards, pick(typeof(mob_living_basic_stickman), typeof(mob_living_basic_stickman_dog), typeof(mob_living_basic_stickman_ranged)));
     }
     // tg: code/datums/materials/basemats.dm:766
     public override void on_main_removed(atom source = null, object mat_amount = null, object multiplier = null)
@@ -496,13 +513,23 @@ public partial class datum_material_bone : datum_material
     [SignalHandler]
     public virtual void on_begin_fishing(obj_item_fishing_rod rod = null, datum_fishing_challenge challenge = null)
     {
-        Dm.NotTranslated("code/datums/materials/basemats.dm:821", "on_begin_fishing: a fishing rod's reward (fishing, M10+)");
+        if (prob(40))
+            RegisterSignal(challenge, COMSIG_FISHING_CHALLENGE_ROLL_REWARD, nameof(roll_bones));
     }
     // tg: code/datums/materials/basemats.dm:826
     [SignalHandler]
     public virtual void roll_bones(datum source = null, obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, DmList rewards = null)
     {
-        Dm.NotTranslated("code/datums/materials/basemats.dm:826", "roll_bones: a fishing rod's reward (fishing, M10+)");
+        DmList bones = TgState.Current.datum_material_bone_roll_bones__bones ??= Dm.list(
+            Dm.kv(typeof(obj_item_fish_boned), 65),
+            Dm.kv(typeof(obj_item_fish_mastodon), 8),
+            Dm.kv(typeof(mob_living_basic_skeleton), 6),
+            Dm.kv(typeof(mob_living_basic_skeleton_ice), 6),
+            Dm.kv(typeof(mob_living_basic_skeleton_templar), 6),
+            Dm.kv(typeof(obj_item_instrument_trumpet_spectral_one_doot), 3),
+            Dm.kv(typeof(obj_item_instrument_saxophone_spectral_one_doot), 3),
+            Dm.kv(typeof(obj_item_instrument_trombone_spectral_one_doot), 3));
+        Dm.append(rewards, pick_weight(bones));
     }
     // tg: code/datums/materials/basemats.dm:840
     public override void on_main_removed(atom source = null, object mat_amount = null, object multiplier = null)
@@ -571,11 +598,20 @@ public partial class datum_material_telecrystal : datum_material
     [SignalHandler]
     public virtual void on_begin_fishing(obj_item_fishing_rod rod = null, datum_fishing_challenge challenge = null)
     {
-        Dm.NotTranslated("code/datums/materials/basemats.dm:938", "on_begin_fishing: a fishing rod's reward (fishing, M10+)");
+        // Oops, all chainsawfish!
+        challenge.register_reward_signals(GLOB.preset_fish_sources[typeof(datum_fish_source_portal_syndicate)] as datum_fish_source);
     }
 }
 
 // tg: code/datums/materials/basemats.dm:943
 public partial class datum_material_rock : datum_material
 {
+}
+
+public sealed partial class TgState
+{
+    // tg: code/datums/materials/basemats.dm:335  roll_funny_fish's var/static/list/funny_fish
+    internal DmList datum_material_bananium_roll_funny_fish__funny_fish;
+    // tg: code/datums/materials/basemats.dm:828  roll_bones's var/static/list/bones
+    internal DmList datum_material_bone_roll_bones__bones;
 }

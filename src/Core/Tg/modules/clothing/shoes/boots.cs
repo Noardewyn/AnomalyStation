@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // J1 (D298): the jackboots' and work boots' Initialize: the knife slot (the shoes' pockets, datums/storage/subtypes/pockets.cs); J3: the element that
 // lights a match on the boot; syndicate N1 (D316): the operatives' combat boots; gaps CL1 (D333): the floortile jackboots, the winter, Russian and
-// pirate boots (their pockets; the fishing difficulty elements wait for fishing). The var blocks are generated.
+// pirate boots (their pockets; their fishing difficulty elements). The var blocks are generated.
 
 // tg: code/modules/clothing/shoes/boots.dm:1
 public partial class obj_item_clothing_shoes_combat : obj_item_clothing_shoes
@@ -46,7 +46,7 @@ public partial class obj_item_clothing_shoes_jackboots_floortile : obj_item_clot
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/shoes/boots.dm:83", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)"); //tacticool
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5)); //tacticool
         return dot;
     }
 }
@@ -98,7 +98,7 @@ public partial class obj_item_clothing_shoes_pirate : obj_item_clothing_shoes
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(create_storage(storage_type: typeof(datum_storage_pockets_shoes)));
-        Dm.Deferred("code/modules/clothing/shoes/boots.dm:202", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4));
         return dot;
     }
 }

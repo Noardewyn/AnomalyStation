@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // gaps ST5 (D333): the file whole. The moisture trap (a maintenance crate spawner's pick): its drip loop, a hidden item in three of
 // four (tg's weighted loot), reached by a mob lying down after two seconds in the cold water (or a bite from what lives in it), an
-// item hidden in it, a container filled with its water, a monkey cube grown in it; its cell lines are the swabable element's and its fishing spot waits for the rods (Dm.Deferred, not-translated.md 213), and it keeps its fish alive (the fish-safe storage), tg's random
+// item hidden in it, a container filled with its water, a monkey cube grown in it; its cell lines are the swabable element's, it is a fishing spot and it keeps its fish alive (the fish-safe storage), tg's random
 // draws for them kept. The strange pants altar (a crate spawner's rarest pick; its cult structure base is cult_structures.cs): a
 // radial to recolour or create, three stages of nine and a half seconds (the pants overlay in the chosen colour, the nausea, the
 // dizziness), then the flash and the strange pants, a minute's cooldown. The steam vent (Meta's six spawners): a hand opens or shuts
@@ -62,7 +62,7 @@ public partial class obj_structure_moisture_trap : obj_structure
             fish_source.fish_table[picked_item] = 5;
             fish_source.fish_counts[picked_item] = 1;
         }
-        Dm.Deferred("code/game/objects/structures/maintenance.dm:49", "Initialize: AddComponent(/datum/component/fishing_spot, fish_source): fishing in the trap waits for the fishing");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), fish_source));
         drip_sfx = Dm.@new<datum_looping_sound_drip>(this);
         drip_sfx.start();
         return dot;

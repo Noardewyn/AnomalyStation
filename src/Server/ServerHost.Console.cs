@@ -234,7 +234,8 @@ public sealed partial class ServerHost
             case ConsoleVerb.Tickets or ConsoleVerb.Pm: ApplyTicketConsole(command); break;
             case ConsoleVerb.CheckAntagonists or ConsoleVerb.TraitorPanel or ConsoleVerb.CheckTeams or ConsoleVerb.ComboHud
                 or ConsoleVerb.DynamicPanel or ConsoleVerb.DynamicTester or ConsoleVerb.Secrets or ConsoleVerb.StationTraits
-                or ConsoleVerb.SkillPanel or ConsoleVerb.Circuits or ConsoleVerb.LoadCircuit or ConsoleVerb.Adventures: ApplyAntagonistConsole(command); break;
+                or ConsoleVerb.SkillPanel or ConsoleVerb.Circuits or ConsoleVerb.LoadCircuit or ConsoleVerb.Adventures
+                or ConsoleVerb.FishingCalculator: ApplyAntagonistConsole(command); break;
         }
     }
 
@@ -351,6 +352,10 @@ public sealed partial class ServerHost
                 case ConsoleVerb.Adventures:
                     // ADMIN_VERB(adventure_manager, R_DEBUG, ...) (explorer_drone/manager.dm:86)
                     Waiting.Detach(admin.adventure_manager());
+                    break;
+                case ConsoleVerb.FishingCalculator:
+                    // ADMIN_VERB(fishing_calculator, R_DEBUG, ...) (fishing/admin.dm:1)
+                    Waiting.Detach(admin.fishing_calculator());
                     break;
                 case ConsoleVerb.LoadCircuit:
                 {

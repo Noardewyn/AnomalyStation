@@ -19,7 +19,7 @@ public partial class obj_item_clothing_shoes_galoshes : obj_item_clothing_shoes
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/shoes/galoshes.dm:20", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier));
         return dot;
     }
 }

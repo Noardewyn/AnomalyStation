@@ -674,93 +674,80 @@ public partial class datum_spacevine_controller
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:133
-public partial class datum_fish_trait_wary
+// tg: code/modules/fishing/sources/_fish_source.dm:77
+public partial class datum_fish_source
 {
-    // tg: code/modules/fishing/fish/fish_traits.dm:137
+    // tg: code/modules/fishing/sources/_fish_source.dm:603
     // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]
-    public override object difficulty_mod(obj_item_fishing_rod rod = null, mob fisherman = null)
+    public virtual object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
     {
-        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:137", "difficulty_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        Dm.NotTranslated("code/modules/fishing/sources/_fish_source.dm:603", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
         return default;
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:146
-public partial class datum_fish_trait_shiny_lover
+// tg: code/modules/fishing/sources/subtypes/structures.dm:35
+public partial class datum_fish_source_holographic
 {
-    // tg: code/modules/fishing/fish/fish_traits.dm:150
+    // tg: code/modules/fishing/sources/subtypes/structures.dm:55
     // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]
-    public override object difficulty_mod(obj_item_fishing_rod rod = null, mob fisherman = null)
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
     {
-        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:150", "difficulty_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/structures.dm:55", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
         return default;
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:163
-public partial class datum_fish_trait_picky_eater
+// tg: code/modules/fishing/sources/subtypes/structures.dm:82
+public partial class datum_fish_source_hydro_tray
 {
-    // tg: code/modules/fishing/fish/fish_traits.dm:167
+    // tg: code/modules/fishing/sources/subtypes/structures.dm:106
     // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]
-    public override DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
     {
-        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:167", "catch_weight_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
-        return DmTask<object>.FromResult(default);
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/structures.dm:106", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
+        return default;
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:255
-public partial class datum_fish_trait_carnivore
+// tg: code/modules/fishing/sources/subtypes/structures.dm:219
+public partial class datum_fish_source_aquarium
 {
-    // tg: code/modules/fishing/fish/fish_traits.dm:259
+    // tg: code/modules/fishing/sources/subtypes/structures.dm:242
     // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]
-    public override DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
     {
-        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:259", "catch_weight_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
-        return DmTask<object>.FromResult(default);
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/structures.dm:242", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
+        return default;
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:276
-public partial class datum_fish_trait_vegan
+// tg: code/modules/fishing/sources/subtypes/structures.dm:255
+public partial class datum_fish_source_vending
 {
-    // tg: code/modules/fishing/fish/fish_traits.dm:280
+    // tg: code/modules/fishing/sources/subtypes/structures.dm:265
     // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]
-    public override DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
     {
-        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:280", "catch_weight_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
-        return DmTask<object>.FromResult(default);
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/structures.dm:265", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
+        return default;
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:445
-public partial class datum_fish_trait_predator
+// tg: code/modules/fishing/sources/subtypes/surgery.dm:4
+public partial class datum_fish_source_surgery
 {
-    // tg: code/modules/fishing/fish/fish_traits.dm:450
+    // tg: code/modules/fishing/sources/subtypes/surgery.dm:43
     // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]
-    public override DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
     {
-        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:450", "catch_weight_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/fishing/fish/fish_traits.dm:664
-public partial class datum_fish_trait_anxiety
-{
-    // tg: code/modules/fishing/fish/fish_traits.dm:668
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public override object difficulty_mod(obj_item_fishing_rod rod = null, mob fisherman = null)
-    {
-        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:668", "difficulty_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/surgery.dm:43", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
         return default;
     }
 }

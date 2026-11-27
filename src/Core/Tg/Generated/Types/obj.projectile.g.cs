@@ -4826,9 +4826,9 @@ public partial class obj_projectile_moon_parade : obj_projectile
     }
 }
 
-// tg: code/modules/fishing/fishing_rod.dm:839
-[DmPath("/obj/projectile/fishing_cast"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_fishing_cast : obj_projectile
+// tg: code/modules/fishing/fishing_rod.dm:839 (the var block of a hand-written class)
+[DmPath("/obj/projectile/fishing_cast")]
+public partial class obj_projectile_fishing_cast
 {
     public obj_item_fishing_rod owner; // tg: code/modules/fishing/fishing_rod.dm:847
 

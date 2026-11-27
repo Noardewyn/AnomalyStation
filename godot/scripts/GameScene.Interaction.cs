@@ -489,6 +489,7 @@ public partial class GameScene
         _chatLines.PromptRightEdge = pointerAim || _hudLayer == null ? float.PositiveInfinity : _hudLayer.PanelLeftEdge;
         _chatLines.TextScale = metrics.TextScale; // scales with the HUD
         _chatLines.ChatScale = _options.ChatLinesScale; // and its chat lines by their own share (the owner, 2026-11-19)
+        _chatLines.BottomRow = !InLobby; // ui-overhaul.md section 13: in the round the lines keep clear of the hands' row and the hint strip
         _chatLines.Lines = ChatWindowOpen ? new List<ChatLine>() : _chat.Visible(now); // D252: the feed is hidden while the chat window is open
         _chatLines.Balloon = _balloon.Current(now, out float alpha);
         _chatLines.BalloonAlpha = alpha;

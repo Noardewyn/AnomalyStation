@@ -13,10 +13,12 @@ namespace Anomaly.Client.Hud;
 /// <see cref="ChatLog"/>, with the action row (Say, Whisper, Shout, Radio, Me, Emotes, OOC) and the input row (<see cref="ChatInputModel"/>:
 /// the channel button, the text, Send). Its title bar moves it, any edge or corner resizes it; it follows the windows' scale. The log's text
 /// can be selected and copied; tg's links in it are clicked as in the feed.
+/// In the round (ui-overhaul.md section 13, <see cref="Round"/>) it is see-through while the player is not typing (<see cref="ChatPlace.BackingAlpha"/>;
+/// the log's text whole, outlined) and shows its action row and input row only while the player types (<see cref="ChatInputRows"/>).
 /// </summary>
 public sealed partial class ChatWindow : Control
 {
-    public static readonly Vector2 MinSize = new(360, 240);
+    public static readonly Vector2 MinSize = new(ChatPlace.MinWidth, ChatPlace.MinHeight);
     private const float Edge = 6f;
     private const int LogFontSize = 13; // tg's chat font size (settings/atoms.ts)
 
@@ -31,7 +33,24 @@ public sealed partial class ChatWindow : Control
     private ChatLog _log;
     private ChatInputModel _input;
     private Panel _frame;
-    private Control _bar, _logBox;
+    private Control _bar, _logBox, _actionRow, _inputRow;
+    private readonly ChatInputRows _rows = new();
+    private bool _outlined;
+    private Vector2? _pressAt; // where a left press in the window went down, for a click in it under Tab
+
+    /// <summary>The window is the round's (section 13): see-through at rest, its rows shown only while typing. False: the lobby's, unchanged.</summary>
+    public bool Round
+    {
+        get => _rows.Round;
+        set
+        {
+            _rows.Round = value;
+            ApplyRows();
+        }
+    }
+
+    /// <summary>Whether the pointer is free (cursor mode, Tab): a click in the window types, the pointer over it shows it whole. Set by the scene each frame.</summary>
+    public bool CursorMode { get; set; }
 
     /// <summary>The owner (2026-10-29): how opaque the window's backgrounds are (PlayOptions.WindowOpacity); the text stays solid.</summary>
     public float Opacity { get; set; } = 1f;
@@ -146,6 +165,7 @@ public sealed partial class ChatWindow : Control
         _text.OffsetLeft = _text.OffsetTop = 4;
         _text.OffsetRight = _text.OffsetBottom = -2;
         ChatText.Style(_text, LogFontSize);
+        _text.AddThemeColorOverride("font_outline_color", ChatLines.Rgba(UiTokens.TextOutline));
         // a little room at the sides, so a boxed message's frame is never cut by the log's edge or its scroll bar
         _text.AddThemeStyleboxOverride("normal", new StyleBoxEmpty { ContentMarginLeft = 2, ContentMarginRight = 6 });
         _text.AddThemeStyleboxOverride("focus", new StyleBoxEmpty());
@@ -184,12 +204,13 @@ public sealed partial class ChatWindow : Control
             else if (id - 1 < _radioPrefixes.Count)
             {
                 _input?.SetRadioPrefix(_radioPrefixes[(int)id - 1]);
-                _edit.GrabFocus();
+                StartTyping();
                 SyncInput();
             }
         };
         AddChild(_radioMenu);
         column.AddChild(actions);
+        _actionRow = actions;
 
         // The input row: the channel button, the text, Send.
         var inputRow = new HBoxContainer();
@@ -200,7 +221,7 @@ public sealed partial class ChatWindow : Control
         _channel.Pressed += () =>
         {
             _input?.IncrementChannel();
-            _edit.GrabFocus();
+            StartTyping();
             SyncInput();
         };
         inputRow.AddChild(_channel);
@@ -225,8 +246,24 @@ public sealed partial class ChatWindow : Control
         _edit.AddThemeColorOverride("font_color", TguiTheme.Text);
         _edit.AddThemeFontSizeOverride("font_size", LogFontSize);
         _edit.TextChanged += OnTextChanged;
-        _edit.FocusEntered += () => _input?.Focus();
-        _edit.FocusExited += () => _input?.Blur();
+        _edit.FocusEntered += () =>
+        {
+            _input?.Focus();
+            _rows.Type(); // however the input got the keyboard (a click into it too), its rows show
+            ApplyRows();
+        };
+        _edit.FocusExited += () =>
+        {
+            _input?.Blur();
+            if (!_edit.IsVisibleInTree())
+            {
+                // the interface was hidden under it (a cinematic, the round starting): the line being typed may take the keyboard back (Update)
+                _rows.LostWhileHidden();
+                return;
+            }
+            _rows.Leave(); // sent, cancelled or a click elsewhere: the round's rows hide
+            ApplyRows();
+        };
         inputRow.AddChild(_edit);
         Button mic = MakeButton("Mic", false);
         mic.TooltipText = "Hold and speak: your words go into the input (speech to text; Alt does it too while typing)";
@@ -234,19 +271,19 @@ public sealed partial class ChatWindow : Control
         mic.ButtonUp += () => MicHeld?.Invoke(false);
         inputRow.AddChild(mic);
         Button send = MakeButton("Send", false);
-        send.Pressed += () =>
-        {
-            _input?.Enter();
-            SyncInput();
-        };
+        send.Pressed += Send;
         inputRow.AddChild(send);
         column.AddChild(inputRow);
+        _inputRow = inputRow;
 
         Visible = false;
     }
 
     /// <summary>The place and size, as shares of the screen, of a window with no saved place or size.</summary>
     public Rect2 DefaultShare { get; set; } = new(0.01f, 0.4f, 0.3f, 0.35f);
+
+    /// <summary>The place and size, screen pixels, of a window with no saved place or size, from the screen's size and the window's scale (the round's, <see cref="ChatPlace.RoundDefault"/>); null: <see cref="DefaultShare"/>'s.</summary>
+    public Func<Vector2, float, Rect2> DefaultPlace { get; set; }
 
     /// <summary>Binds the log and the input.</summary>
     public void Bind(ChatLog log, ChatInputModel input)
@@ -272,18 +309,78 @@ public sealed partial class ChatWindow : Control
     {
         if (_edit.HasFocus())
             _edit.ReleaseFocus();
+        _rows.Leave();
+        ApplyRows();
         Visible = false;
     }
 
-    /// <summary>Puts the caret in the input.</summary>
-    /// <summary>Focuses the input; with <paramref name="channel"/> (a speech key's, ui-overhaul.md section 5) it is selected first, as its action button does.</summary>
+    /// <summary>Focuses the input (showing the round's rows); with <paramref name="channel"/> (a speech key's, ui-overhaul.md section 5) it is selected first, as its action button does.</summary>
     public void FocusInput(string channel = null)
     {
         if (channel != null)
             _input?.SetChannel(channel);
-        _edit.GrabFocus();
+        StartTyping();
         if (channel != null)
             SyncInput();
+    }
+
+    // The player goes to type: the rows show first, as a hidden input cannot take the keyboard.
+    private void StartTyping()
+    {
+        _rows.Type();
+        ApplyRows();
+        _edit.GrabFocus();
+        if (!_edit.HasFocus()) // refused (the window hidden): the rows do not stay shown under an input without the keyboard
+        {
+            _rows.Leave();
+            ApplyRows();
+        }
+    }
+
+    private void ApplyRows()
+    {
+        if (_actionRow != null)
+            _actionRow.Visible = _inputRow.Visible = _rows.Shown;
+    }
+
+    // Enter or Send: the line goes; in the round the input then lets the keyboard go and the rows hide, in the lobby it keeps it for the next line
+    private void Send()
+    {
+        _input?.Enter();
+        SyncInput();
+        if (_rows.Sent() && _edit.HasFocus())
+            _edit.ReleaseFocus();
+        ApplyRows();
+    }
+
+    // Section 13: a click in the round's window under Tab (a press and release on its own body, moving at most UiTokens.ChatClickSlop) types.
+    // _Input sees every click, so the control under the pointer decides: nothing drawn over the window, a modal or a menu takes it.
+    public override void _Input(InputEvent e)
+    {
+        if (!Visible || !Round || e is not InputEventMouseButton { ButtonIndex: MouseButton.Left } button)
+            return;
+        if (button.Pressed)
+        {
+            _pressAt = CursorMode && !_rows.Shown && OnBody() ? button.Position : null;
+            return;
+        }
+        if (_pressAt is Vector2 at && at.DistanceTo(button.Position) <= UiTokens.ChatClickSlop && OnBody())
+            Callable.From(ClickIn).CallDeferred(); // after the window's own controls took the release
+        _pressAt = null;
+    }
+
+    // The pointer is on the window itself (the frame or one of its controls), not on a button (a tab, the X, an action), a scroll bar, or anything
+    // drawn over the window (another window, a menu, a modal).
+    private bool OnBody()
+    {
+        Control hovered = GetViewport().GuiGetHoveredControl();
+        return hovered != null && (hovered == _frame || _frame.IsAncestorOf(hovered)) && hovered is not BaseButton and not ScrollBar;
+    }
+
+    private void ClickIn()
+    {
+        if (Visible && _rows.Click(CursorMode, OnBody()))
+            StartTyping();
     }
 
     /// <summary>D307: speech to text's words after what is typed, for the player to send or fix.</summary>
@@ -293,7 +390,7 @@ public sealed partial class ChatWindow : Control
             return;
         _input.Input(_input.Value.Length == 0 ? text : _input.Value.TrimEnd() + " " + text, Now());
         SyncInput();
-        _edit.GrabFocus();
+        StartTyping();
         _edit.SetCaretLine(_edit.GetLineCount() - 1);
         _edit.SetCaretColumn(_edit.GetLine(_edit.GetLineCount() - 1).Length);
     }
@@ -316,8 +413,29 @@ public sealed partial class ChatWindow : Control
         _log.Advance(Now());
         if (!Visible)
             return;
+        // a line typed when the interface was hidden takes the keyboard back when it shows, unless the player typed somewhere else meanwhile
+        Control owner = GetViewport().GuiGetFocusOwner();
+        switch (_rows.Resume(_edit.IsVisibleInTree(), owner != null && owner != _edit))
+        {
+            case ChatResume.TakeBack:
+                StartTyping();
+                break;
+            case ChatResume.Dropped:
+                ApplyRows();
+                break;
+        }
         _scale = Math.Max(0.5f, scale);
-        _frame.SelfModulate = _bar.SelfModulate = _logBox.SelfModulate = new Color(1, 1, 1, Opacity);
+        // section 13: the round's backing (the panel, the title bar, the tabs) at its rest share unless typed in or hovered under Tab; the log's text whole
+        float backing = Round ? ChatPlace.BackingAlpha(_edit.HasFocus(), CursorMode, CursorMode && _frame.GetGlobalRect().HasPoint(GetViewport().GetMousePosition())) : 1f;
+        _frame.SelfModulate = _logBox.SelfModulate = new Color(1, 1, 1, Opacity * backing);
+        _bar.SelfModulate = new Color(1, 1, 1, Opacity);
+        _bar.Modulate = _tabs.Modulate = new Color(1, 1, 1, backing);
+        if (_outlined != backing < 1f)
+        {
+            _outlined = backing < 1f;
+            _text.AddThemeConstantOverride("outline_size", _outlined ? UiTokens.ChatLogOutline : 0);
+        }
+        ApplyRows();
         if (s_buttonOpacity != Opacity)
         {
             FadeButtons(_frame, Opacity / s_buttonOpacity);
@@ -332,18 +450,29 @@ public sealed partial class ChatWindow : Control
         SyncInput();
     }
 
-    private Vector2 Size1 => _size ?? new Vector2(Math.Max(MinSize.X, DefaultShare.Size.X * GetViewportRect().Size.X / _scale), Math.Max(MinSize.Y, DefaultShare.Size.Y * GetViewportRect().Size.Y / _scale));
+    // the place and size, screen pixels, of a window with no saved place or size
+    private Rect2 DefaultRect
+    {
+        get
+        {
+            Vector2 screen = GetViewportRect().Size;
+            if (DefaultPlace != null)
+                return DefaultPlace(screen, _scale);
+            return new Rect2(DefaultShare.Position * screen, new Vector2(Math.Max(MinSize.X * _scale, DefaultShare.Size.X * screen.X), Math.Max(MinSize.Y * _scale, DefaultShare.Size.Y * screen.Y)));
+        }
+    }
+
+    private Vector2 Size1 => _size ?? DefaultRect.Size / _scale;
 
     private void Place()
     {
         Vector2 screen = GetViewportRect().Size;
-        Vector2 size = Size1;
-        Vector2 shown = size * _scale;
-        Vector2 at = (_position ?? DefaultShare.Position) * screen;
-        at = new Vector2(Math.Clamp(at.X, 0, Math.Max(0, screen.X - shown.X)), Math.Clamp(at.Y, 0, Math.Max(0, screen.Y - shown.Y)));
+        Rect2 fallback = DefaultRect;
+        HudRect placed = ChatPlace.Placed(new HudRect(fallback.Position.X, fallback.Position.Y, fallback.Size.X, fallback.Size.Y), screen.X, screen.Y, _scale,
+            _position is Vector2 at ? (at.X, at.Y) : null, _size is Vector2 size ? (size.X, size.Y) : null);
         _frame.Scale = new Vector2(_scale, _scale);
-        _frame.Position = at;
-        _frame.Size = size;
+        _frame.Position = new Vector2(placed.Left, placed.Top);
+        _frame.Size = new Vector2(placed.Width, placed.Height) / _scale;
     }
 
     // tg's ChatTabs: a tab per page, its unread count (up to 99) unless it is muted.
@@ -486,7 +615,7 @@ public sealed partial class ChatWindow : Control
             return;
         }
         _input?.SetChannel(channel);
-        _edit.GrabFocus();
+        StartTyping();
         SyncInput();
     }
 
@@ -542,10 +671,9 @@ public sealed partial class ChatWindow : Control
                 return false;
             case Godot.Key.Enter:
             case Godot.Key.KpEnter:
-                _input.Enter();
-                SyncInput();
-                // the owner (2026-10-29, revising 2026-10-26): sent, the input keeps the keys for the next message; Tab, Esc or a click outside
-                // goes back to the game (D292)
+                // sent: in the lobby the input keeps the keys for the next message (Tab, Esc or a click outside goes back to the game, D292);
+                // in the round it goes back to the game and the rows hide (ui-overhaul.md section 13)
+                Send();
                 return true;
             case Godot.Key.Tab: // Shift+Tab (D292, DV224): the game takes a plain Tab first (back to the game) unless cursor mode is bound elsewhere
                 _input.IncrementChannel();
@@ -558,14 +686,27 @@ public sealed partial class ChatWindow : Control
         return false;
     }
 
+    private HudRect _grabbed; // the window's place and size at scale 1 when the title bar or an edge was pressed
+
+    private HudRect Geometry => new(_frame.Position.X, _frame.Position.Y, Size1.X, Size1.Y);
+
+    // A press on the title bar or an edge notes the window's place and size; its release saves them as the player's only when a move or a resize
+    // changed them (a plain click keeps the default place, which follows the screen and the UI scale).
+    private void PressedOrReleased(bool pressed)
+    {
+        if (pressed)
+            _grabbed = Geometry;
+        else if (ChatPlace.GeometryChanged(_grabbed, Geometry))
+            GeometryChanged?.Invoke(_frame.Position / GetViewportRect().Size, Size1);
+    }
+
     private void OnTitleInput(InputEvent e)
     {
         switch (e)
         {
             case InputEventMouseButton { ButtonIndex: MouseButton.Left } press:
                 _moving = press.Pressed;
-                if (!press.Pressed)
-                    GeometryChanged?.Invoke(_frame.Position / GetViewportRect().Size, Size1);
+                PressedOrReleased(press.Pressed);
                 break;
             case InputEventMouseMotion motion when _moving:
                 _position = (_frame.Position + motion.Relative * _scale) / GetViewportRect().Size;
@@ -581,8 +722,7 @@ public sealed partial class ChatWindow : Control
         {
             case InputEventMouseButton { ButtonIndex: MouseButton.Left } press:
                 _resizing = press.Pressed ? EdgesAt(press.Position) : 0;
-                if (!press.Pressed)
-                    GeometryChanged?.Invoke(_frame.Position / GetViewportRect().Size, Size1);
+                PressedOrReleased(press.Pressed);
                 break;
             case InputEventMouseMotion motion when _resizing != 0:
                 Vector2 d = motion.Relative;

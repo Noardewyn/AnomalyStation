@@ -304,4 +304,18 @@ public static class UiTokens
 
     /// <summary>The least side the chips are made when they do not fit at full size, screen pixels (not reference pixels).</summary>
     public const float AlertChipMinPixels = 24f;
+
+    // ---- the chat in first person (ChatPlace; ui-overhaul.md section 13) ----
+
+    /// <summary>The gap between the bottom of the chat window at its default place, or of the chat lines, and the top of the bottom row under it.</summary>
+    public const float ChatRowGap = 8f;
+
+    /// <summary>The share of its opacity the round's chat window's backing (its panel, title bar and tabs) is drawn at while the player is not typing.</summary>
+    public const float ChatRestAlpha = 0.35f;
+
+    /// <summary>The outline of the chat window's log text while the window is see-through, so it reads over the room (at the window's scale 1).</summary>
+    public const int ChatLogOutline = 4;
+
+    /// <summary>The most a press in the chat window may move, screen pixels, and still be a click (not a drag, a resize or a selection).</summary>
+    public const float ChatClickSlop = 4f;
 }

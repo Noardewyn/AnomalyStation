@@ -31,6 +31,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - The health doll's head has eyes and a mouth to use items on, and a Ctrl-click on the doll grasps the limb clicked.
 - The prompt beside the crosshair shows only for things within reach; anything further away leaves the crosshair bare.
 - A hit on an alien aimed at a body part it lacks lands on its chest instead of being refused.
+- The chat window sits above the hotbar, see-through until you type; its buttons and input show only while you type, and chat lines clear the bar.
 
 ## [1.14.0-pre-alpha] - 2026-11-26
 

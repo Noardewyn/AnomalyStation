@@ -888,14 +888,12 @@ public static class LiveHud
         share = 0f;
         if (natural <= 0f)
             return default;
-        float u = UiTokens.Unit(metrics), k = row.Unit;
-        float active = MathF.Round(UiTokens.HandActive * k), rowWidth = RowWidth(row);
+        float u = UiTokens.Unit(metrics), rowWidth = RowWidth(row);
         float fit = natural > rowWidth ? rowWidth / natural : 1f;
         if (fit * UiTokens.HintShare < UiTokens.HintLeastShare - 0.0001f)
             return default;
         float width = MathF.Floor(natural * fit), height = MathF.Round(UiTokens.HintHeight * u * fit);
-        // at the whole pixel above the active box (the row's place can end at a fraction of one), so the strip and its picture stand at whole pixels
-        float bottom = MathF.Floor(row.Hotbar.Bottom - active) - MathF.Round(UiTokens.HintRise * u);
+        float bottom = HintBottom(metrics, row);
         var hint = new HudRect(MathF.Round(row.Hotbar.Left + row.Hotbar.Width / 2f - width / 2f), bottom - height, width, height);
         if (hint.Left < 0f || hint.Top < 0f || hint.Right > metrics.Width || hint.Bottom > metrics.Height)
             return default;
@@ -917,6 +915,21 @@ public static class LiveHud
             return default;
         share = fit;
         return hint;
+    }
+
+    // the hint strip's bottom: at the whole pixel above the active box (the row's place can end at a fraction of one), so the strip and its picture
+    // stand at whole pixels
+    private static float HintBottom(in HudMetrics metrics, in HandsLayout row)
+        => MathF.Floor(row.Hotbar.Bottom - MathF.Round(UiTokens.HandActive * row.Unit)) - MathF.Round(UiTokens.HintRise * UiTokens.Unit(metrics));
+
+    /// <summary>
+    /// The largest place the hint strip can take over the hands' row <paramref name="row"/> (<see cref="HintBy"/>): as wide as the row with both boxes
+    /// at the active size, at its full height, whatever item and keys it names (the chat keeps clear of it, <see cref="ChatPlace"/>).
+    /// </summary>
+    public static HudRect HintSpan(in HudMetrics metrics, in HandsLayout row)
+    {
+        float width = RowWidth(row), height = MathF.Round(UiTokens.HintHeight * UiTokens.Unit(metrics)), bottom = HintBottom(metrics, row);
+        return new HudRect(MathF.Round(row.Hotbar.Left + row.Hotbar.Width / 2f - width / 2f), bottom - height, width, height);
     }
 
     /// <summary>

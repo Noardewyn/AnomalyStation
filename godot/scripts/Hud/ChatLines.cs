@@ -26,6 +26,9 @@ public partial class ChatLines : Control
     /// <summary>The screen the HUD is drawn on, with the options' HUD scale (the prompts' and the balloon's sizes, <see cref="UiTokens.Unit"/>), set by the scene every frame.</summary>
     public HudMetrics Metrics { get; set; } = new(1920, 1080, 1f);
 
+    /// <summary>The round's bottom row is on the screen (not the lobby): the chat lines keep clear of it (ui-overhaul.md section 13). Set by the scene every frame.</summary>
+    public bool BottomRow { get; set; }
+
     /// <summary>What the prompts stand beside, screen pixels: the screen's middle (the crosshair), or the free pointer in cursor mode.</summary>
     public Vector2 PromptAnchor { get; set; }
 
@@ -73,10 +76,10 @@ public partial class ChatLines : Control
         Vector2 centre = size / 2f;
         Font font = ThemeDB.FallbackFont;
         float k = TextScale, kc = k * ChatScale; // the chat block's own scale (kc); the screentip, the balloon and the bars below keep the HUD's
-        // Chat: the newest at the bottom, above the hands' row.
+        // Chat: the newest at the bottom, above the hands' row and clear of the bottom row in the round (ChatPlace.LinesBottom).
         _links.Clear();
-        float y = size.Y - Mathf.Round(size.Y * 0.2f);
-        float chatWidth = Math.Max(200f, size.X / 3f - 16 * kc); // at most a third of the screen: text and boxes wrap there
+        float y = ChatPlace.LinesBottom(Metrics, kc, BottomRow) - 20f * kc;
+        float chatWidth = ChatPlace.LinesWidth(size.X, kc); // at most a third of the screen: text and boxes wrap there
         int chatSize = Math.Max(1, (int)Math.Round(15 * kc));
         float lineHeight = font.GetHeight(chatSize);
         float ascent = font.GetAscent(chatSize);
@@ -92,10 +95,10 @@ public partial class ChatLines : Control
             float top = y + 20f * kc - gap - padY - height;
             var linkColour = new Color(0.55f, 0.8f, 1f, line.Alpha);
             var outline = new Color(0, 0, 0, 0.85f * line.Alpha);
-            var origin = new Vector2(16 * kc + padX, top);
+            var origin = new Vector2(ChatPlace.LinesLeft(kc) + padX, top);
             if (line.Box is ChatBox box)
             {
-                var frame = new Rect2(16 * kc, top - padY, inkWidth + 2 * padX, height + 2 * padY);
+                var frame = new Rect2(ChatPlace.LinesLeft(kc), top - padY, inkWidth + 2 * padX, height + 2 * padY);
                 Color border = ToColor(box.Border, line.Alpha);
                 float thick = Math.Max(2f, 3f * kc);
                 DrawRect(frame, ToColor(box.Bg, 0.9f * line.Alpha));

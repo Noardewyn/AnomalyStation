@@ -815,7 +815,10 @@ public partial class GameScene : Node3D
         if (_tguiHost != null)
             _tguiHost.Opacity = _options.WindowOpacity;
         if (_chatWindow != null)
+        {
             _chatWindow.Opacity = _options.WindowOpacity;
+            _chatWindow.CursorMode = _mouse.CursorMode;
+        }
         using (Dev.FrameProbe.Scope("GameScene/tgui.Update"))
             _tguiHost?.Update(_feed.Replica, windowScale);
         UpdateSpeech(now, windowScale, _chatLines?.TextScale ?? 1f);

@@ -1599,3 +1599,16 @@ the actions menu has to come first; it can reuse the Tab inventory's dragging be
 The search mechanic of section 12 (looking into a bag someone still wears, item by item, over time) is agreed by the
 lead developer, as the contributor reports on 2026-11-27 ("it is agreed"). It is built with the Tab inventory and
 recorded as a deviation from tg when it is; `DECISIONS.md` is the owner's to update.
+
+Section 13 as built (2026-11-27), additions and what to tell the owner:
+- The plain chat lines (drawn when the window is closed) are also lifted clear of the bottom row: where their block
+  would reach over the hands' row or the hint strip its bottom is 8 above the top of what stands under it (at 200%
+  UI scale the lines ran into the hint strip's left end).
+- The window and the lines keep clear of the largest place the hint strip can take (the row's width, full height),
+  not the strip as drawn at the moment, so that neither moves when the held item changes.
+- Owner decisions this departs from in the round (the lobby is unchanged), for the contributor to raise: D292 (a
+  sent message kept the input focused for the next one: now the input lets go and the rows hide); D290 (window
+  backgrounds see-through by the Settings slider with text and controls solid: the chat window's backing is now
+  also multiplied by 0.35 at rest, and its title bar's text, its X and its tab labels fade with it); D259 and D247
+  (the action row and the input row always shown: now only while typing); and the layout of 2026-10-30 that put
+  the chat window at the bottom left under the inventory (now above the hands' row).

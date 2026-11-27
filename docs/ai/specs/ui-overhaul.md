@@ -42,7 +42,7 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `b258604` | The prompt beside the crosshair only for a thing within reach (server and client, no wire change, DV687; section 9, one known fault accepted by the contributor) |
 | `fc882c5` | Package 2, slice E: the vitals without a box, tg's combat toggle in the corner, the key-duplicating buttons hidden, keys for crafting, language and navigate, "Offer item" in the wheel (server and client, no wire change, DV139; section 6, "Slice E as built") |
 | `52bcb78` | Package T, slice T5's numbers: the look-down pivot 0.25 m and the limit 135 degrees (client only; section 8, "T5's numbers changed") |
-| `5a42a6d` | Merge of `origin/main` (release 1.14.0, upstream's protocol 95 to 97): this branch's wire changes are protocol 99, its new deviations DV685 (click through), DV686 (Turn over) and DV687 (the prompt only in reach); signed off by the contributor 2026-11-26 |
+| `5a42a6d` | Merge of `origin/main` (release 1.14.0, upstream's protocol 95 to 97): this branch's wire changes became protocol 98 then (99 today), its new deviations DV599 to DV601 then (DV685 click through, DV686 Turn over and DV687 the prompt only in reach today); signed off by the contributor 2026-11-26 |
 | `6449390` | Chip pictures fitted to their art (client only; section 11) |
 | `b475196` | A hit on an alien aimed at a body part it lacks lands on its chest (server; DV688; found by the merge's stress test) |
 | `f6a5677` | Code comments of this branch: what and why, not who asked or when (upstream's new rule) |
@@ -50,13 +50,19 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `11e5c15` | The chat window above the bar, see-through at rest, input shown only while typing (client only; section 13) |
 | `a951ee7` | Package 4, slice 4A: under Tab the chat column, the character with its worn slots, clicks on the sprite, the overlay closing on damage (client only; DV690; section 12) |
 | `4012739` | tg's own slot sprites on the hands, the bar and the worn slots (client only; section 16) |
+| `336a2929` | Merge of `origin/main` (release 1.15.0, upstream's protocol 98): this branch's wire changes are protocol 99, its deviations DV685 to DV690 (were DV599 to DV604); `RadialExtra.TurnOver` 10 and `Offer` 11 beside upstream's `StepIn` 9; signed off by the contributor 2026-11-27 |
+
+The numbers in this table are today's. Commit messages carry the numbers of their time: this branch's wire changes
+were built as protocol 95, became 98 in the merge of release 1.14.0 and 99 in the merge of release 1.15.0; its
+deviations were DV599 to DV604 until the merge of 1.15.0 and are DV685 to DV690 since. "Since the merge" in a row
+means since both.
 
 The branch follows `origin/main` (https://github.com/Noardewyn/AnomalyStation): fetch at the start of a session and
 before any wire or server work, and merge upstream in before building on it; upstream's protocol and DV numbers win
 and ours are renumbered after them. Upstream's `CLAUDE.md` now forbids code comments that say who asked for something
 or when; builders write what the code does and why, with plain `DEVIATION(DVnnn)` and decision references.
 
-Protocol version 99 (ours; built as "95" before the merge) is not released: slices T4a, T4b and T4c and the hotbar
+Protocol version 99 (ours; built as "95", "98" after the merge of 1.14.0, 99 since the merge of 1.15.0) is not released: slices T4a, T4b and T4c and the hotbar
 ride one release by the owner (`tools/release.sh`); until then the build warns `ANOMVER01` and
 `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
@@ -1730,3 +1736,16 @@ The wire (protocol 99, unreleased, so no new version number), for 4B-1:
   a hand, the floor); one "inventory opened" notice. Nothing else is trusted: the server checks that the item is
   the sender's own (in a hand, a worn slot or a carried storage), that the target is the sender's own, that the
   sender can act (tg's incapacitated, restrained and reach rules), and that every number is in range.
+
+### Slice 4B: confirmed and added by the designer (2026-11-27)
+
+- The storage panels show every slot (chosen from two mockups: one cell for every slot tg gives the storage, the
+  empty ones included, against cells for the items only).
+- "make sure the dragging our sprite onto objects works by looking at yourself": dragging the own body, seen by
+  looking down, onto an object does tg's drag of one's own mob onto it (climb a table, sit on a chair, get into a
+  closet or a machine). Built in T5b and playtested on 2026-11-26; playtested again after the look-down numbers,
+  the HUD and two merges changed (the result is recorded under this heading when it is in).
+- Found by the stress test of the merge of 1.15.0, upstream's and left as they are, for the contributor to tell the
+  owner: "Climb in" on an open closet and "Flip" on a table run for a paralysed, handcuffed or dead user (the
+  radial's extras check the target and not the user's state; called directly on the server, the network path for a
+  dead client was not driven).

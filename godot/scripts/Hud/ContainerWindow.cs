@@ -46,6 +46,15 @@ public partial class ContainerWindow : Control, IHudSurface
 
     public bool IsOpen => _layout != null && _layout.IsOpen && Visible;
 
+    /// <summary>Slice 4B-2: given the item entries of the storage now open, whether it is not shown (a storage the Tab inventory lists); null: always shown.</summary>
+    public Func<IEnumerable<long>, bool> Suppress { get; set; }
+
+    /// <summary>Slice 4B-2: tg's storage is open but not shown (<see cref="Suppress"/>).</summary>
+    public bool Suppressed { get; private set; }
+
+    /// <summary>Slice 4B-2: the screen entry of tg's close button of the storage open now, shown or not, else 0.</summary>
+    public long OpenCloseEntry => _layout != null && _layout.IsOpen ? _layout.Cells.FirstOrDefault(c => c.Role == ContainerCellRole.Close).EntryId : 0;
+
     /// <summary>D292: the screen entry of tg's close button while the window is open (a click on it closes the storage), else 0.</summary>
     public long CloseEntry => IsOpen ? _layout.Cells.FirstOrDefault(c => c.Role == ContainerCellRole.Close).EntryId : 0;
 
@@ -118,7 +127,9 @@ public partial class ContainerWindow : Control, IHudSurface
             _dirty = false;
             _layout.Rebuild(_replica.ScreenGroup(_layout.Group), _replica);
         }
-        bool show = _layout.IsOpen;
+        // slice 4B-2: a storage the Tab inventory's right column lists is never shown here (each thing once; InventoryRules.ListedWindow)
+        Suppressed = _layout.IsOpen && Suppress != null && Suppress(_layout.Cells.Where(c => c.Role == ContainerCellRole.Item).Select(c => c.EntryId));
+        bool show = _layout.IsOpen && !Suppressed;
         if (Visible != show)
             Visible = show;
         _rects.Clear();

@@ -206,6 +206,9 @@ public static class ProtocolVersion
     /// <see cref="PostureBits.FaceUp"/>), the side a lying body was turned to from the radial's Turn over (a ContextPick of that label).
     /// Version 99 also (ui-overhaul.md section 10, slice 3A, DV689; MessagesV99Hotbar.cs): the Hotbar message, the own human's ten hotbar cells
     /// and the held items' names, and the <see cref="ActionKind.HotbarPress"/> action, a press of one cell.
+    /// Version 99 also (ui-overhaul.md section 12, slice 4B-1, DV692; MessagesV99Storages.cs): the Storages message, the storages the own human
+    /// carries and their items, and the <see cref="ActionKind.InventoryMove"/> action (one item to a storage, a worn slot, a hand or the floor) and
+    /// the <see cref="ActionKind.InventoryOpen"/> action (tg's opening rustle of the back storage).
     public const ushort Current = 99;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>

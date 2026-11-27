@@ -117,4 +117,7 @@ public enum MessageId : byte
 
     /// <summary>Version 99: <see cref="Anomaly.Protocol.HotbarMessage"/>: server to client, State channel (the own hotbar's ten cells and the held items' names, after the tick's Delta, when they change or a press was refused).</summary>
     Hotbar = 32,
+
+    /// <summary>Version 99 also: <see cref="Anomaly.Protocol.StoragesMessage"/>: server to client, State channel (the storages the own human carries and their items, after the tick's Delta, when they change or a move was refused).</summary>
+    Storages = 33,
 }

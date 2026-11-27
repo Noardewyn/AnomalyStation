@@ -496,6 +496,14 @@ public enum ActionKind : byte
     /// 8 and 9 the pockets, 10 the ID slot), untargeted. The server does what the cell's rules say with tg's procs, or tells the client it refused.
     /// </summary>
     HotbarPress = 28,
+    /// <summary>
+    /// Version 99 also (DV692, ui-overhaul.md section 12, slice 4B): move <see cref="ActionMessage.MoveItem"/>, an item of the own inventory, to
+    /// <see cref="ActionMessage.MoveTo"/> (a carried storage <see cref="ActionMessage.MoveStorage"/> at a wished cell, a worn slot, a hand or the floor;
+    /// <see cref="ActionMessage.MoveIndex"/>), untargeted. The server checks every field and does the move with tg's procs, or refuses it.
+    /// </summary>
+    InventoryMove = 29,
+    /// <summary>Version 99 also (DV692): the Tab inventory was opened; the server plays tg's opening of the back storage (its rustle), no fields.</summary>
+    InventoryOpen = 30,
 }
 
 /// <summary>The mouse button of a click (tg's <c>params</c>: <c>button=left</c>, <c>right</c>, <c>middle</c>).</summary>
@@ -636,4 +644,19 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
 
     /// <summary>Version 99 also (DV689): the cell of a <see cref="ActionKind.HotbarPress"/>, 1 to <see cref="HotbarMessage.CellCount"/>; 0 for every other kind.</summary>
     public int HotbarCell { get; init; }
+
+    /// <summary>Version 99 also (DV692): the item an <see cref="ActionKind.InventoryMove"/> moves (an entity id, above 0); 0 for every other kind.</summary>
+    public long MoveItem { get; init; }
+
+    /// <summary>Version 99 also: where an <see cref="ActionKind.InventoryMove"/> puts its item; <see cref="InventoryTarget.None"/> for every other kind.</summary>
+    public InventoryTarget MoveTo { get; init; }
+
+    /// <summary>Version 99 also: the storage (an entity id, above 0) of a move to <see cref="InventoryTarget.Storage"/>, else 0.</summary>
+    public long MoveStorage { get; init; }
+
+    /// <summary>
+    /// Version 99 also: a move's index: the wished cell of a storage (1 to <see cref="Limits.MaxStorageItems"/>, 0 for none), tg's slot id of a worn slot
+    /// (<see cref="InventorySlots.Worn"/>), tg's held index of a hand (1 to <see cref="Limits.MaxStorageHands"/>); 0 for the floor and every other kind.
+    /// </summary>
+    public int MoveIndex { get; init; }
 }

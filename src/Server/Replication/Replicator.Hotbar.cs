@@ -66,7 +66,8 @@ public sealed partial class Replicator
                     continue;
                 }
                 uint look = Tables.InternVisChild(bar.ItemOf(c));
-                cells[c - 1] = new HotbarCell(state == HotbarState.Holding ? HotbarCellState.Holding : HotbarCellState.Out, look == 0 ? TableRef.None : new TableRef(look, true));
+                cells[c - 1] = new HotbarCell(state == HotbarState.Holding ? HotbarCellState.Holding : HotbarCellState.Out, look == 0 ? TableRef.None : new TableRef(look, true),
+                    bar.ItemOf(c).dm_id); // slice 4B-2: the item itself, so the Tab inventory moves the one the cell holds
             }
             return new HotbarMessage
             {

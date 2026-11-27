@@ -96,6 +96,7 @@ public sealed partial class Replicator : IReplicator
     private readonly List<Candidate> _candidates = new();
     private readonly List<long> _pendingTurfs = new();
     private readonly HashSet<long> _appearanceHinted = new(); // ids named by an appearance hint in the last BuildDelta (the screen objects' check)
+    private readonly HashSet<long> _hinted = new(); // version 99 also (DV692): ids named by any hint (a move, a look, a name) in the last BuildDelta (the carried storages' check)
     private readonly HashSet<long> _maptextHinted = new(); // version 18: ids whose maptext (version 29: or filters) changed since the last BuildDelta (joins _appearanceHinted for the screen objects and the game plane only)
     private bool _mapChanged = true;
     private long _watermark;
@@ -336,6 +337,7 @@ public sealed partial class Replicator : IReplicator
         _delta.FirstNewType = _types.Count;
         _sweepCatches.Clear();
         _appearanceHinted.Clear();
+        _hinted.Clear();
         _appearanceHinted.UnionWith(_maptextHinted);
         _maptextHinted.Clear();
         _public.BeginTick();
@@ -456,7 +458,11 @@ public sealed partial class Replicator : IReplicator
             byte source = 0;
             for (; i < _candidates.Count && _candidates[i].Id == id; i++) source |= _candidates[i].Source;
             distinct++;
-            if ((source & FromHint) != 0) hinted++;
+            if ((source & FromHint) != 0)
+            {
+                hinted++;
+                _hinted.Add(id);
+            }
             if ((source & FromCreated) != 0) created++;
             if ((source & FromDeleted) != 0) deleted++;
             if ((source & FromSweep) != 0) swept++;
@@ -2130,6 +2136,7 @@ public sealed partial class Replicator : IReplicator
             UpdateVision(player, full); // version 31
             UpdateRadioChannels(owner, player, full); // version 40
             UpdateHotbar(player, tick, full); // version 99 also (DV689), before the tables' new rows are taken: its pictures are among them
+            UpdateStorages(owner, player, tick, full); // version 99 also (DV692), the same
 
             // The private tables' new entries (all of them in a join: the tables start afresh).
             AppearanceTables t = Tables;

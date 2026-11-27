@@ -183,6 +183,15 @@ public sealed class GameClient : IWorldFeed, IDisposable
     /// <inheritdoc/>
     public int HotbarRefusedCell => _replica.HotbarRefusedCell;
 
+    /// <inheritdoc/>
+    public StoragesMessage Storages => _replica.Storages; // version 99 also (DV692): the replica takes the message (ReplicaWorld.V99Storages.cs)
+
+    /// <inheritdoc/>
+    public int StoragesRefusals => _replica.StoragesRefusals;
+
+    /// <inheritdoc/>
+    public long StoragesRefusedItem => _replica.StoragesRefusedItem;
+
     /// <summary>How many connection attempts a connect makes before it gives up (LiteNetLib's <c>MaxConnectAttempts</c>).</summary>
     public const int ConnectAttempts = 6;
 
@@ -351,6 +360,7 @@ public sealed class GameClient : IWorldFeed, IDisposable
             case MessageId.Motion: // version 42: the capsule mobs' positions on the unreliable channel
             case MessageId.HeldMotion: // version 54: the replica raises HeldMotionReceived (the first-person gun moves, Hud/ViewModel)
             case MessageId.Hotbar: // version 99 also (DV689): the replica keeps the own hotbar and counts its refusals
+            case MessageId.Storages: // version 99 also (DV692): the replica keeps the own carried storages and counts the refused moves
                 if (_phase == FeedPhase.BetweenRounds)
                     break; // D306: the old world's last messages
                 try

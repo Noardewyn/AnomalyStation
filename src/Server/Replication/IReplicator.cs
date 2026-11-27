@@ -192,6 +192,9 @@ public interface IReplicator
     /// <summary>Version 99 also (DV689): the Hotbar message of a session's last <see cref="BuildPrivate"/> or join (its cells or held names changed, or a press was refused), or null.</summary>
     HotbarMessage TakeHotbar(int session) => null;
 
+    /// <summary>Version 99 also (DV692): the Storages message of a session's last <see cref="BuildPrivate"/> or join (its carried storages changed, or a move was refused), or null.</summary>
+    StoragesMessage TakeStorages(int session) => null;
+
     /// <summary>
     /// Version 42: the Motion messages of a session for the last <see cref="BuildDelta"/>, after its <see cref="BuildPrivate"/> (the observer
     /// layer's held entities decide which ghosts it names): the capsule mobs whose position or yaw changed within

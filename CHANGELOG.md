@@ -15,6 +15,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - Your hands sit either side of a ten-cell bar of belt, pockets and ID at the bottom centre; a strip above them names the held item and its keys.
 - The hand boxes, the bar's cells and the worn slots under Tab are drawn with tg's own slot pictures of your HUD style.
 - Tab (or I) shows your character with its worn slots round it and the chat at the left; click the sprite to use an item on yourself; damage closes it.
+- Under Tab every bag, box and belt you carry is listed at the right with its room; drag items between hands, slots, bags and the floor, or Ctrl+click to transfer.
 - Alerts, hunger and stamina are small chips above the health doll, or left of it on a crowded screen, instead of a column at the right edge.
 - Every chip's picture is centred and scaled so its art fills the chip, so hunger, stamina and alerts no longer sit small or off-centre.
 - The swap-hands key sits on the corner of the other hand; a cuffed or missing hand gets a red border.

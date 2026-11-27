@@ -23,7 +23,7 @@ public class ProtocolV97Tests
         byte[] bytes = Codec.Encode(loaded);
         Assert.True(Codec.TryDecode(bytes, out ActionMessage back, out ProtocolError error), error.ToString());
         Assert.Equal(loaded, back);
-        Assert.True(ActionKinds.Last >= ActionKind.Loaded); // version 99 adds HotbarPress after it
+        Assert.True(ActionKinds.Last >= ActionKind.Loaded); // version 99 adds HotbarPress, InventoryMove and InventoryOpen after it
         Assert.Throws<ProtocolException>(() => Codec.Encode(loaded with { Target = 4, TargetKind = TargetKind.Entity }));
         Assert.Throws<ProtocolException>(() => Codec.Encode(loaded with { Text = "x" }));
     }

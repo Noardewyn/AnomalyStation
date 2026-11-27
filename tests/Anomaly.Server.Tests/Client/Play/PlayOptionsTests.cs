@@ -81,6 +81,9 @@ public class PlayOptionsTests
             foreach (string key in keys.KeysOf(action))
             {
                 Assert.True(KeyBindings.IsValidKeyName(key), key);
+                // slice 4B-2: the quick transfer shares Pull's Ctrl+left click, acting only on an item of the Tab inventory (KeyBindings.SharesKeys)
+                if (action == PlayAction.QuickTransfer && keys.Has(PlayAction.Pull, key))
+                    continue;
                 Assert.True(seen.Add(key), key + " is bound twice");
             }
         }
@@ -475,6 +478,7 @@ public class PlayOptionsTests
         [PlayAction.ActivateInHand] = new[] { "Z" },
         [PlayAction.Examine] = new[] { "Shift_MouseLeft" },
         [PlayAction.Pull] = new[] { "Ctrl_MouseLeft" },
+        [PlayAction.QuickTransfer] = new[] { "Ctrl_MouseLeft" }, // section 12, slice 4B-2: on an item of the Tab inventory, Pull elsewhere
         [PlayAction.StopPulling] = new[] { "H", "Delete" }, // H and Delete, as in tg
         [PlayAction.Say] = new[] { "T" },
         [PlayAction.Radio] = new[] { "Semicolon" },
@@ -672,9 +676,9 @@ public class PlayOptionsTests
             PlayAction action = KeyBindings.ActionOfId(pair[0]).Value;
             Assert.True(string.Join(",", options.Bindings.KeysOf(action)) == pair[1], $"{pair[0]}: {string.Join(",", options.Bindings.KeysOf(action))}, saved {pair[1]}");
         }
-        // every action of the time, the give key among them: today's actions less slice E's three menu keys and section 10's ten hotbar keys, and the
-        // give and analyzer keys
-        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 - 10 + 2, lines);
+        // every action of the time, the give key among them: today's actions less slice E's three menu keys, section 10's ten hotbar keys and slice
+        // 4B-2's quick transfer, and the give and analyzer keys
+        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 - 10 - 1 + 2, lines);
         // slice E's menu keys keep their defaults where the old file left the key free (G: the give key's line is ignored), and lose it where the old
         // file gave it to another action (L the flashlight's, M the me key's), as a key serves one action
         Assert.Equal(new[] { "G" }, options.Bindings.KeysOf(PlayAction.CraftingMenu));
@@ -683,7 +687,12 @@ public class PlayOptionsTests
         // and the old keys do what they did: R throws, Ctrl+Q drops (no Ctrl pair there), Shift+left click is the plain left click, V examines
         Assert.Equal(PlayAction.ThrowMode, options.Bindings.ActionOfPress("R", shift: false));
         Assert.Equal(PlayAction.DropItem, options.Bindings.ActionOfPress("Q", shift: false, ctrl: true));
-        Assert.Equal(PlayAction.PrimaryClick, options.Bindings.ActionOfPress("MouseLeft", shift: true, ctrl: true));
+        Assert.Equal(PlayAction.PrimaryClick, options.Bindings.ActionOfPress("MouseLeft", shift: true));
+        // slice 4B-2: the quick transfer (no line in the old file) keeps its default Ctrl+left click, so Ctrl and Shift with the left click match it;
+        // the game still takes that press as the plain left click with those modifiers anywhere but on an item of the Tab inventory (it is no
+        // action that takes a modified mouse press, GameScene.OnMouseButton)
+        Assert.Equal(PlayAction.QuickTransfer, options.Bindings.ActionOfPress("MouseLeft", shift: true, ctrl: true));
+        Assert.False(KeyBindings.TakesModifiedMouse(PlayAction.QuickTransfer));
         Assert.Equal(PlayAction.Examine, options.Bindings.ActionOf("V"));
         Assert.Equal(PlayAction.ViewPetCommands, options.Bindings.ActionOfPress("Shift", shift: true));
     }

@@ -119,6 +119,71 @@ void fragment() {
 
     /// <summary>Package 3 (ui-overhaul.md section 10): the own hotbar as the server last sent it, which the bar's cells show. Set by the scene each frame.</summary>
     public HotbarModel Hotbar { get; set; }
+
+    /// <summary>Slice 4B-2: the own carried storages as the server last sent them, which the right column's panels show. Set by the scene each frame.</summary>
+    public StoragesModel Storages { get; set; }
+
+    /// <summary>Slice 4B-2: what an item dragged from the inventory is over now (the HUD pick; none when no such drag): its cell gets a light rim. Set by the scene each frame.</summary>
+    public ClickTarget DragOver { get; set; }
+
+    /// <summary>Slice 4B-2: tg's held index of the active hand (0: none known).</summary>
+    public int ActiveHand { get; private set; }
+
+    /// <summary>Slice 4B-2: the item in the active hand (0: none).</summary>
+    public long HeldItem { get; private set; }
+
+    /// <summary>Slice 4B-2: the storage worn on the back (the quick transfer's backpack), 0 for none.</summary>
+    public long BackStorage => Storages?.At(StoragePlace.Back)?.Entity ?? 0;
+
+    /// <summary>Slice 4B-2: the right column as drawn this frame.</summary>
+    public StorageColumnLayout Column => _column;
+
+    private List<StoragePanel> _panels = new(); // slice 4B-2: the right column's panels this frame
+    private StorageColumnLayout _column = StorageColumnLayout.None;
+    private float _scroll; // kept while Tab stays on, back to the top on each opening
+    private long _belt; // the worn belt's storage (0: none) and the item each belt cell of the bar shows
+    private long[] _beltItems = new long[HotbarMessage.BeltCells];
+    private long _blink; // the item whose cell blinks red now (InventoryRules.Blinking)
+    private InvPlace _over; // the inventory place a drag is over now
+    private Item _left, _right;
+    private readonly List<LiveHudView.PanelScene> _panelScenesCol = new(), _panelsShown = new();
+    private readonly List<MaptextNode> _columnTexts = new();
+
+    /// <summary>Slice 4B-2: the inventory place a HUD pick's <paramref name="target"/> names (<see cref="InventoryRules.Resolve"/>), against this frame's panels.</summary>
+    public InvPlace PlaceOf(in ClickTarget target) => InventoryRules.Resolve(target, _replica?.Screen, _panels, _belt, _beltItems, _humanHud);
+
+    /// <summary>Slice 4B-2: the item a place of ours shows (a panel's cell, a belt cell of the bar): its picture and its name; none for anything else.</summary>
+    public (TableRef Picture, string Name) ItemOf(in InvPlace place)
+    {
+        foreach (CarriedStorage s in Storages?.Storages ?? Array.Empty<CarriedStorage>())
+        {
+            if ((place.Kind == InvKind.Cell || place.Kind == InvKind.Belt) && place.Item != 0 && s.Entity == place.Storage)
+            {
+                foreach (StorageItem i in s.Items)
+                {
+                    if (i.Entity == place.Item)
+                        return (i.Appearance, i.Name);
+                }
+            }
+        }
+        return (TableRef.None, null);
+    }
+
+    /// <summary>
+    /// Slice 4B-2: the mouse wheel at the screen point (<paramref name="x"/>, <paramref name="y"/>), <paramref name="steps"/> steps (positive: down):
+    /// over the right column's panels it scrolls them (true: the wheel is the column's), anywhere else it is not the column's.
+    /// </summary>
+    public bool ScrollColumn(float x, float y, int steps)
+    {
+        HudRect c = _column.Column;
+        if (_column.Panels.Length == 0 || x < c.Left || x >= c.Right || y < c.Top || y >= c.Bottom)
+            return false;
+        _scroll = StorageColumn.Scrolled(_column.Scroll, steps, _hands.Unit, _column.MaxScroll);
+        return true;
+    }
+
+    // a refused move's red blink on the cell of its item, else the light rim of a drag over this place
+    private uint RimOf(long item, in InvPlace place) => InventoryRules.Rim(item, place, _blink, _over);
     private readonly List<Item> _alerts = new(); // slice D: tg's alerts on the human HUD, in tg's order
     private List<HudRect> _chips = new(); // their chips (Item.Cell is the index)
 
@@ -287,6 +352,8 @@ void fragment() {
     {
         if (_view.Hands.Shown) // package 3: the belt's cells are ours, a click on one is its press (PlaySession.Click)
             LiveHud.BeltDrawn(_hands, bottomToTop, hidden: !_root.Visible);
+        if (_root.Visible) // slice 4B-2: the storage panels' backings and cells, ours, cut at the column's edges
+            StorageColumn.Drawn(_column, bottomToTop);
         // slice 4A: the own sprite under the slots' cells, on the pixels drawn of it: its icon square alone (TabInventory.SpritePick; a transparent
         // pixel, or a part of a larger picture cut off at the square, is no click on it)
         if (_root.Visible && _panel.Shown && _spriteShown != null)
@@ -511,6 +578,10 @@ void fragment() {
         }
         _dollShown = doll;
         _humanHud = human;
+        (_left, _right) = (left, right);
+        ActiveHand = active?.Entry.HandIndex ?? 0;
+        HeldItem = active == null ? 0 : InventoryRules.ItemIn(active.Entry);
+        UpdateInventoryState();
         _layout = LiveHud.Layout(metrics, human);
         // slice D: on the human HUD tg's alerts are chips by the vitals, in tg's order, and with the full stack slice E's status chips (hunger,
         // stamina, internals, suit cell, any other entry of tg's right status column, sleep) follow them while tg draws them
@@ -536,6 +607,7 @@ void fragment() {
         float named = 0f, hint = human ? HintNatural(UiTokens.Unit(metrics), heldName, selfDrag, out named) : 0f;
         _hands = LiveHud.Hands(metrics, leftActive, rightActive, human ? _layout : default, hint, named, CursorMode);
         UpdatePanel(metrics, human);
+        UpdateColumn(human);
         PanelLeftEdge = doll ? LiveHud.LeftOfVitals(_layout, metrics) : float.PositiveInfinity;
         if (_chips.Count > 0) // slice D: the prompts end before alert chips left of the vitals too
             PanelLeftEdge = Math.Min(PanelLeftEdge, LiveHud.LeftOfAlerts(_chips, metrics));
@@ -565,6 +637,8 @@ void fragment() {
         scene.Swap = LiveHud.SwapKey(_options.Bindings);
         scene.LeftMarked = left != null && LiveHud.HandMarked(_replica, left.Entry);
         scene.RightMarked = right != null && LiveHud.HandMarked(_replica, right.Entry);
+        scene.LeftRim = HandRim(left);
+        scene.RightRim = HandRim(right);
         scene.HintLines = _hintLines;
         // the held-item hint strip over the row (slice D): the active hand's item and the keys for it; none with an empty active hand, or where the
         // strip is left out at this size (its stack count and hand are on the hand box)
@@ -583,6 +657,118 @@ void fragment() {
         // package 3: the name, cut to the width the layout left it
         scene.HintName = _hands.HintName > 0f ? LiveHud.HintName(heldName, _hands.HintName, _measureVerb) : null;
         _view.ShowHands();
+    }
+
+    // Slice 4B-2: this frame's inventory: the worn belt and which of its items each bar cell shows, the right column's panels, the item blinking red
+    // after a refused move, and the place a drag is over.
+    private void UpdateInventoryState()
+    {
+        IReadOnlyList<CarriedStorage> storages = Storages?.Storages ?? Array.Empty<CarriedStorage>();
+        CarriedStorage belt = Storages?.At(StoragePlace.Belt);
+        _belt = belt?.Entity ?? 0;
+        _beltItems = StorageColumn.BeltOnBar(Hotbar);
+        _panels = StorageColumn.Panels(storages, _beltItems);
+        _blink = InventoryRules.Blinking(Storages, _lastNow);
+        _over = DragOver.IsSet ? PlaceOf(DragOver) : default;
+    }
+
+    private uint HandRim(Item hand)
+    {
+        if (hand == null)
+            return 0u;
+        long held = InventoryRules.ItemIn(hand.Entry);
+        return RimOf(held, new InvPlace(InvKind.Hand, held, hand.Entry.HandIndex));
+    }
+
+    // Slice 4B-2: under Tab on the human HUD the right column's storage panels (StorageColumn.Layout), each a backing, a header (the storage's
+    // picture, its name, its room) and the cells drawn as the bar's: tg's blank slot picture, the item, its stack's count; the scroll place starts
+    // at the top on each opening.
+    private void UpdateColumn(bool human)
+    {
+        LiveHudView.ColumnView view = _view.Column;
+        if (!human || !CursorMode)
+            _scroll = 0f;
+        if (!human || !CursorMode || !_root.Visible || _panel.Column.Width <= 0f)
+        {
+            _column = StorageColumnLayout.None;
+            _panelsShown.Clear();
+            view.Show(_column, _panelsShown, 0f);
+            foreach (MaptextNode t in _columnTexts)
+                t.Visible = false;
+            return;
+        }
+        float unit = _hands.Unit;
+        _column = StorageColumn.Layout(_panel.Column, LiveHud.BarCell(_hands, 1).Width, unit, _panels, _scroll);
+        _scroll = _column.Scroll;
+        _styled.Clear();
+        foreach (Item slot in _barSlots)
+        {
+            if (slot != null)
+                _styled.Add(slot.Entry);
+        }
+        if (_left != null)
+            _styled.Add(_left.Entry);
+        if (_right != null)
+            _styled.Add(_right.Entry);
+        Texture2D blank = StatePicture(LiveHud.BlankSlotArt(_replica, _styled));
+        var real = _textures as AppearanceTextures;
+        var origin = new Vector2(_column.Column.Left, _column.Column.Top);
+        int texts = 0;
+        _panelsShown.Clear();
+        // the layout's panels, which are this frame's panels or none (a column too narrow for a cell): the view draws only what the layout placed
+        for (int p = 0; p < _column.Panels.Length; p++)
+        {
+            if (_panelScenesCol.Count == p)
+                _panelScenesCol.Add(new LiveHudView.PanelScene());
+            LiveHudView.PanelScene scene = _panelScenesCol[p];
+            StoragePanel panel = _panels[p];
+            StoragePanelRects rects = _column.Panels[p];
+            (scene.Rects, scene.Title, scene.Room, scene.Locked, scene.Header) = (rects, panel.Title, panel.Room, panel.Locked, null);
+            TableRef own = StorageColumn.PictureOf(_replica.Screen, panel.Storage);
+            if (!own.IsNone && _textures.TryCompose(_replica, own, 2, _lastNow, out ComposedAppearance header))
+            {
+                HudRect at = LiveHud.ChildPicture(rects.Picture, header.PixelWidth, header.PixelHeight, header.OriginX, header.OriginY);
+                scene.Header = new LiveHudView.Picture(header.Texture, new Rect2(at.Left, at.Top, at.Width, at.Height));
+            }
+            while (scene.Cells.Count < rects.Cells.Length)
+                scene.Cells.Add(new LiveHudView.CellScene());
+            while (scene.Cells.Count > rects.Cells.Length)
+                scene.Cells.RemoveAt(scene.Cells.Count - 1);
+            for (int c = 0; c < rects.Cells.Length; c++)
+            {
+                LiveHudView.CellScene cell = scene.Cells[c];
+                HudRect rect = rects.Cells[c];
+                StorageItem item = panel.Cells[c];
+                cell.Rect = rect;
+                cell.Look = new HotbarCellLook(1f, item.Appearance, 1f, null, 1f, RimOf(item.Entity, new InvPlace(InvKind.Cell, item.Entity, c, panel.Storage)));
+                HudRect art = LiveHud.SlotArtSquare(rect), square = LiveHud.HandPicture(rect, unit);
+                cell.Art.Clear();
+                if (blank != null)
+                    cell.Art.Add(new LiveHudView.Picture(blank, new Rect2(art.Left, art.Top, art.Width, art.Height), LiveHud.SlotTint(_replica, null)));
+                cell.Pictures.Clear();
+                cell.Overlays.Clear();
+                if (item.Entity == 0 || item.Appearance.IsNone || !_textures.TryCompose(_replica, item.Appearance, 2, _lastNow, out ComposedAppearance composed))
+                    continue;
+                HudRect pic = LiveHud.ChildPicture(square, composed.PixelWidth, composed.PixelHeight, composed.OriginX, composed.OriginY);
+                cell.Pictures.Add(new LiveHudView.Picture(composed.Texture, new Rect2(pic.Left, pic.Top, pic.Width, pic.Height)));
+                // a stack's amount, tg's maptext of the item's picture as on the bar, for a cell at least partly in the column
+                if (real == null || StorageColumn.Cut(rect, _column.Column) == null)
+                    continue;
+                if (_columnTexts.Count == texts)
+                {
+                    var node = new MaptextNode { Name = "ColumnMaptext" + texts };
+                    view.AddChild(node);
+                    _columnTexts.Add(node);
+                }
+                MaptextNode text = _columnTexts[texts++];
+                text.SetText(MaptextRenderer.Shared, real, _replica, item.Appearance, new Vector2(square.Left, square.Bottom) - origin, square.Width / 32f);
+                text.Visible = true;
+            }
+            _panelsShown.Add(scene);
+        }
+        for (int t = texts; t < _columnTexts.Count; t++)
+            _columnTexts[t].Visible = false;
+        view.Show(_column, _panelsShown, unit);
     }
 
     // Slice 4A: under Tab on the human HUD the chat column and the character panel (TabInventory.Layout), clear of tg's entries still drawn there;
@@ -629,6 +815,8 @@ void fragment() {
             SlotPictures(item, art, cell.Art, active: false);
             Pictures(item, square, cell.Pictures);
             Overlays(item, art, square, cell.Overlays);
+            long worn = InventoryRules.ItemIn(item.Entry); // slice 4B-2: a refused move's blink, a drag's rim
+            cell.Look = cell.Look with { Rim = RimOf(worn, new InvPlace(InvKind.Slot, worn, (int)item.Entry.SlotId)) };
             _panelCells.Add(cell);
         }
         Texture2D sprite = null;
@@ -682,6 +870,13 @@ void fragment() {
             HotbarCellLook look = LiveHud.CellLook(bar, cell, _options.Bindings, _lastNow);
             LiveHudView.CellScene shown = scene.Cells[cell - 1];
             shown.Rect = rect;
+            if (look.Rim == 0u) // slice 4B-2: a refused move's blink on the cell of its item, a drag's rim
+            {
+                Item slot = cell <= HotbarMessage.BeltCells ? null : _barSlots[cell - HotbarMessage.BeltCells - 1];
+                InvPlace place = cell <= HotbarMessage.BeltCells ? new InvPlace(InvKind.Belt, _beltItems[cell - 1], cell, _belt)
+                    : slot != null ? new InvPlace(InvKind.Slot, InventoryRules.ItemIn(slot.Entry), (int)slot.Entry.SlotId) : default;
+                look = look with { Rim = place.Kind == InvKind.None ? 0u : RimOf(place.Item, place) };
+            }
             shown.Look = look;
             HudRect art = LiveHud.SlotArtSquare(rect);
             if (cell <= HotbarMessage.BeltCells)

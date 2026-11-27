@@ -392,8 +392,12 @@ public sealed partial class ServerHost
         bool ui = action.Kind is ActionKind.UiAct or ActionKind.UiClose;
         if (!ui && (action.UiWindow != 0 || action.UiAction != null || action.UiParams != null)) { why = "a UI action's fields on another action"; return false; }
         if (action.Kind != ActionKind.HotbarPress && action.HotbarCell != 0) { why = "a hotbar cell on another action"; return false; }
+        if (action.Kind != ActionKind.InventoryMove && (action.MoveItem != 0 || action.MoveTo != InventoryTarget.None || action.MoveStorage != 0 || action.MoveIndex != 0)) { why = "an inventory move's fields on another action"; return false; }
         switch (action.Kind)
         {
+            case ActionKind.InventoryMove: // version 99 also (DV692): the item and the target in range; whose they are is CarriedStorages.Move's check
+                if (action.MoveItem < 1 || !Codec.IsValidInventoryMoveTarget(action.MoveTo, action.MoveStorage, action.MoveIndex)) { why = "an inventory move out of range"; return false; }
+                return true;
             case ActionKind.HotbarPress: // version 99 also (DV689): the cell; whether the mob has a hotbar and can act is BeltHotbar.Press's check
                 if (action.HotbarCell < 1 || action.HotbarCell > HotbarMessage.CellCount) { why = "a hotbar press of a cell out of range"; return false; }
                 return true;
@@ -409,6 +413,7 @@ public sealed partial class ServerHost
             case ActionKind.ToggleCombatMode:
             case ActionKind.Unhover: // version 14: untargeted
             case ActionKind.Loaded: // version 97: untargeted
+            case ActionKind.InventoryOpen: // version 99 also (DV692): untargeted
                 return true;
             case ActionKind.RadialPick: // version 15: the menu and the element; whether the menu is shown to the player is ClientSeam's check
                 if (action.RadialMenu < 1) { why = "a radial pick without a menu"; return false; }
@@ -566,6 +571,9 @@ public sealed partial class ServerHost
             ActionKind.ContextPick => s.ClickBucket.Take(tick),
             // Version 99 also (DV689): a hotbar press takes the keybinding bucket (it is a key, as tg's quick-equip keys are).
             ActionKind.HotbarPress => s.KeybindingBucket.Take(tick),
+            // Version 99 also (DV692): an inventory move takes the click bucket (it is a drop of a drag, or a click); the Tab notice the keybinding bucket (a key).
+            ActionKind.InventoryMove => s.ClickBucket.Take(tick),
+            ActionKind.InventoryOpen => s.KeybindingBucket.Take(tick),
             // Version 51: a double click takes only the overall bucket (it always comes with its press's click, which the click bucket counts).
             ActionKind.DblClick => true,
             // Version 34: a press and a release take only the overall bucket (each comes with a click or ends one, which the click bucket counts).
@@ -758,6 +766,7 @@ public sealed partial class ServerHost
             SendBuildPreview(s); // version 70
             SendGunSight(s); // version 92
             SendHotbar(s); // version 99 also (DV689)
+            SendStorages(s); // version 99 also (DV692)
             SendWeather(s); // version 84
         }
     }
@@ -869,6 +878,15 @@ public sealed partial class ServerHost
             Send(s, Channel.State, Codec.Encode(held));
     }
 
+    // Version 99 also (DV692): the own carried storages when they changed or a move was refused, to this session only, after the Delta or Snapshot
+    // whose private tables carry their pictures.
+    private void SendStorages(Session s)
+    {
+        StoragesMessage storages = _replicator.TakeStorages(s.Ordinal);
+        if (storages != null)
+            Send(s, Channel.State, Codec.Encode(storages));
+    }
+
     // Version 99 also (DV689): the own hotbar when its cells or the held names changed or a press was refused, after the Delta or Snapshot whose
     // private tables carry its pictures.
     private void SendHotbar(Session s)
@@ -933,6 +951,7 @@ public sealed partial class ServerHost
         SendUiWindows(s); // version 16: the tgui windows open at the join
         SendTooltip(s); // version 19: the tooltip shown at the join
         SendHotbar(s); // version 99 also (DV689): the hotbar at the join, its pictures in the Snapshot's tables
+        SendStorages(s); // version 99 also (DV692): the carried storages at the join, their pictures in the Snapshot's tables
         s.MinimapLevels.Clear(); // version 67: a join's client has no minimap yet
         s.BuildPreview = BuildPreviewMessage.None; // version 70: nor a build preview
         s.GunSight = GunSightMessage.None; // version 92: nor a gun sight

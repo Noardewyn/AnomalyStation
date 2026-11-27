@@ -214,6 +214,13 @@ public enum PlayAction : byte
 
     /// <summary>DV585 (protocol version 93): the deathmatch scoreboard, held [K]: the kills and deaths of a deathmatch map's players.</summary>
     Scoreboard,
+
+    /// <summary>
+    /// ui-overhaul.md section 12, slice 4B-2: the quick transfer of the Tab inventory [Ctrl+left click]: on an item in a storage panel, a bar cell or a
+    /// worn slot it goes to the active hand, on a held item into the backpack (an InventoryMove). It shares its default with <see cref="Pull"/>: it acts
+    /// only on an item of the inventory under Tab, Pull everywhere else (<see cref="KeyBindings.SharesKeys"/>).
+    /// </summary>
+    QuickTransfer,
 }
 
 /// <summary>The colourblind palettes of the health HUD (D70: the colours of medical parameters are never the only carrier).</summary>
@@ -316,6 +323,7 @@ public sealed class KeyBindings
         b.Set(PlayAction.Flashlight, "U"); // slice E: L is the language menu
         b.Set(PlayAction.Scoreboard, "K");
         b.Set(PlayAction.Fullscreen, "F11");
+        b.Set(PlayAction.QuickTransfer, "Ctrl_MouseLeft"); // slice 4B-2: on an inventory item under Tab; Pull keeps the same press elsewhere
         return b;
     }
 
@@ -328,6 +336,12 @@ public sealed class KeyBindings
         _keys[action] = new List<string>(keys);
     }
 
+    /// <summary>
+    /// Slice 4B-2: whether two actions may hold the same key, since they act in different places: <see cref="PlayAction.Pull"/> (tg's Ctrl-click on
+    /// the world and the HUD) and <see cref="PlayAction.QuickTransfer"/> (on an item of the Tab inventory only). Every other key serves one action.
+    /// </summary>
+    public static bool SharesKeys(PlayAction a, PlayAction b) => (a, b) is (PlayAction.Pull, PlayAction.QuickTransfer) or (PlayAction.QuickTransfer, PlayAction.Pull);
+
     /// <summary>Sets the keys of <paramref name="action"/> and takes each of them from any other action that had it (a key serves one action).</summary>
     public void Claim(PlayAction action, params string[] keys)
     {
@@ -335,7 +349,7 @@ public sealed class KeyBindings
         {
             foreach (PlayAction other in Enum.GetValues<PlayAction>())
             {
-                if (other != action)
+                if (other != action && !SharesKeys(action, other))
                     _keys[other].Remove(key);
             }
         }
@@ -353,7 +367,7 @@ public sealed class KeyBindings
         PlayAction? displaced = null;
         foreach (PlayAction other in Enum.GetValues<PlayAction>())
         {
-            if (other != action && _keys[other].Remove(key))
+            if (other != action && !SharesKeys(action, other) && _keys[other].Remove(key))
                 displaced = other;
         }
         _keys[action] = new List<string> { key };
@@ -417,7 +431,7 @@ public sealed class KeyBindings
     public static string MouseBindingName(PlayAction action, string button, bool shift, bool ctrl) => action switch
     {
         PlayAction.PrimaryClick or PlayAction.SecondaryClick or PlayAction.MiddleClick => button,
-        PlayAction.Examine or PlayAction.Pull when button == "MouseLeft" && (shift || ctrl) => NameOf(button, shift, ctrl),
+        PlayAction.Examine or PlayAction.Pull or PlayAction.QuickTransfer when button == "MouseLeft" && (shift || ctrl) => NameOf(button, shift, ctrl),
         _ => null,
     };
 
@@ -548,6 +562,7 @@ public sealed class KeyBindings
         PlayAction.MoveDownLevel => "Down a level (flying)",
         PlayAction.Pull => "Pull what the crosshair points at",
         PlayAction.Scoreboard => "Scoreboard (deathmatch, while held)",
+        PlayAction.QuickTransfer => "Quick transfer (an item of the Tab inventory to the hand, a held one into the backpack)",
         _ => action.ToString(),
     };
 

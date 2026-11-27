@@ -244,7 +244,7 @@ public sealed partial class FakeServer
         {
             HotbarCellState state = HotbarStateOf(i);
             Thing item = _hotbarCells[i];
-            cells[i] = state == HotbarCellState.Empty ? HotbarCell.Empty : new HotbarCell(state, Leaf(item.Icon, ShownState(item), 255, 20f));
+            cells[i] = state == HotbarCellState.Empty ? HotbarCell.Empty : new HotbarCell(state, Leaf(item.Icon, ShownState(item), 255, 20f), item.Id);
         }
         var now = new HotbarMessage
         {

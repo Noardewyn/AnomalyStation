@@ -19,8 +19,12 @@ public enum HotbarCellState : byte
     Out = 2,
 }
 
-/// <summary>Version 99: one hotbar cell: its state and its item's picture (the item drawn alone, as a slot's <see cref="ScreenChild"/>; none for an empty cell, or an item that shows nothing).</summary>
-public readonly record struct HotbarCell(HotbarCellState State, TableRef Appearance)
+/// <summary>
+/// Version 99: one hotbar cell: its state, its item's picture (the item drawn alone, as a slot's <see cref="ScreenChild"/>; none for an empty cell, or an
+/// item that shows nothing) and its item (<see cref="Entity"/>: the id a move names; in the belt, the pocket or the ID slot, or out in a hand; 0 for an
+/// empty cell).
+/// </summary>
+public readonly record struct HotbarCell(HotbarCellState State, TableRef Appearance, long Entity = 0)
 {
     /// <summary>An empty cell.</summary>
     public static readonly HotbarCell Empty = new(HotbarCellState.Empty, TableRef.None);
@@ -95,5 +99,5 @@ public sealed class HotbarMessage : IEquatable<HotbarMessage>
     public override int GetHashCode() => HashCode.Combine(Bar, BeltWorn, RefusedCell, _cells[0], _cells[CellCount - 1], LeftHand, RightHand);
 
     public override string ToString()
-        => $"Hotbar(bar {Bar}, belt {BeltWorn}, [{string.Join(", ", Array.ConvertAll(_cells, c => c.State == HotbarCellState.Empty ? "-" : c.State + ":" + c.Appearance))}], left {LeftHand}, right {RightHand}, refused {RefusedCell})";
+        => $"Hotbar(bar {Bar}, belt {BeltWorn}, [{string.Join(", ", Array.ConvertAll(_cells, c => c.State == HotbarCellState.Empty ? "-" : c.State + ":" + c.Appearance + "#" + c.Entity))}], left {LeftHand}, right {RightHand}, refused {RefusedCell})";
 }

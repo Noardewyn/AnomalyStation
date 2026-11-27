@@ -104,6 +104,12 @@ public interface IClientEntryPoints
     /// <summary>Version 99 also (DV689): a press of hotbar cell <paramref name="cell"/> (<see cref="BeltHotbar.Press"/>: the own human's cells, by tg's procs).</summary>
     void HotbarPress(client player, int cell) => BeltHotbar.Press(player, cell);
 
+    /// <summary>Version 99 also (DV692): an inventory move (<see cref="CarriedStorages.Move"/>: the own item to a carried storage, a worn slot, a hand or the floor, by tg's procs).</summary>
+    void InventoryMove(client player, long item, MoveTarget to, long storage, int index) => CarriedStorages.Move(player, item, to, storage, index);
+
+    /// <summary>Version 99 also (DV692): the Tab inventory was opened (<see cref="CarriedStorages.Opened"/>: tg's rustle of the back storage).</summary>
+    void InventoryOpen(client player) => CarriedStorages.Opened(player);
+
     /// <summary>Version 78: the player clicked a command verb of the stat panel (<see cref="ClientSeam.RunVerb"/>: BYOND runs the verb with usr the mob).</summary>
     void Verb(client player, string path) => ClientSeam.RunVerb(player, path);
 

@@ -14,7 +14,8 @@ namespace Anomaly.Client.Shared;
 /// <param name="SpriteScale">Screen pixels per tg pixel of the sprite: a whole number.</param>
 /// <param name="Cells">The worn slots' cells in <see cref="TabInventory.CellOf"/>'s order; null where the panel is left out.</param>
 /// <param name="CellUnit">Screen pixels per reference pixel of the cells (the bar's unit, less where they were made smaller to fit).</param>
-public readonly record struct TabInventoryLayout(HudRect Chat, HudRect Sprite, int SpriteScale, HudRect[] Cells, float CellUnit)
+/// <param name="Column">Slice 4B-2: the right column the storage panels stand in (<see cref="StorageColumn"/>); empty where it has no room.</param>
+public readonly record struct TabInventoryLayout(HudRect Chat, HudRect Sprite, int SpriteScale, HudRect[] Cells, float CellUnit, HudRect Column = default)
 {
     /// <summary>Whether the character panel is shown.</summary>
     public bool Shown => Cells != null && Sprite.Width > 0f;
@@ -109,25 +110,30 @@ public static class TabInventory
         chatBottom -= gap;
         HudRect chat = chatBottom > chatTop ? new HudRect(0f, chatTop, split, chatBottom - chatTop) : default;
 
+        // slice 4B-2: the right column, from the middle column's end (and a gap) to the vitals' left edge, from the chat column's top line to the gap
+        // over the bottom row, cut clear of the same
+        float columnRight = MathF.Floor(Math.Min(metrics.Width, LiveHud.LeftOfVitals(vitals, metrics)));
+        HudRect column = Clear(Span(end + gap, chat.Height > 0f ? chat.Top : firstRow + gap, columnRight, rowTop - gap), obstacles, gap);
+
         // the middle column, cut clear of the same
         var box = new HudRect(split, firstRow + gap, end - split, rowTop - gap - (firstRow + gap));
         box = Clear(box, obstacles, gap);
         if (box.Width <= 0f || box.Height <= 0f)
-            return new TabInventoryLayout(chat, default, 0, null, 0f);
+            return new TabInventoryLayout(chat, default, 0, null, 0f, column);
 
         float full = LiveHud.BarCell(hands, 1).Width;
         int first = Math.Max(1, (int)Math.Round(UiTokens.TabSpritePixels * u, MidpointRounding.AwayFromZero));
         for (int s = first; s >= 1; s--)
         {
             if (TryPanel(box, s, full, out HudRect sprite, out HudRect[] cells))
-                return new TabInventoryLayout(chat, sprite, s, cells, full / UiTokens.HotbarSlot);
+                return new TabInventoryLayout(chat, sprite, s, cells, full / UiTokens.HotbarSlot, column);
         }
         for (float side = full - 1f; side >= UiTokens.TabCellMinPixels; side--)
         {
             if (TryPanel(box, 1, side, out HudRect sprite, out HudRect[] cells))
-                return new TabInventoryLayout(chat, sprite, 1, cells, side / UiTokens.HotbarSlot);
+                return new TabInventoryLayout(chat, sprite, 1, cells, side / UiTokens.HotbarSlot, column);
         }
-        return new TabInventoryLayout(chat, default, 0, null, 0f);
+        return new TabInventoryLayout(chat, default, 0, null, 0f, column);
     }
 
     // The largest part of `box` clear of every obstacle (each kept `gap` away): for each obstacle in it, the cut (above, below, left or right of

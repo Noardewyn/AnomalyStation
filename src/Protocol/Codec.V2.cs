@@ -134,6 +134,7 @@ public static partial class Codec
     //   Keybinding (6): [u8 code 1..13] [u8 key up 0|1]
     //   Emote (19, version 39): [str(32) emote key: a-z, 0-9, _]
     //   DevCommand (5): [str(200) text]
+    //   HotbarPress (28, version 99): [u8 cell 1..10]; InventoryMove (29, version 99): Codec.V99Storages.cs
     //   others:         nothing
     // (docs/ai/specs/protocol.md section 14.1). A version-3 click (target kind None, a target above 0) is written as an
     // entity click: ActionMessage.EffectiveTargetKind.
@@ -171,11 +172,16 @@ public static partial class Codec
             throw Bad("a UI window, action or params on an action that is not a UI act or close");
         if (message.Kind != ActionKind.HotbarPress && message.HotbarCell != 0)
             throw Bad("a hotbar cell on an action that is not a hotbar press");
+        if (message.Kind != ActionKind.InventoryMove && (message.MoveItem != 0 || message.MoveTo != InventoryTarget.None || message.MoveStorage != 0 || message.MoveIndex != 0))
+            throw Bad("an inventory move's fields on an action that is not an inventory move");
         switch (message.Kind)
         {
             case ActionKind.UiAct:
             case ActionKind.UiClose:
                 WriteUiAction(ref w, message);
+                break;
+            case ActionKind.InventoryMove:
+                WriteInventoryMove(ref w, message); // version 99 also (DV692, Codec.V99Storages.cs)
                 break;
             case ActionKind.HotbarPress:
                 // version 99 also (DV689): the cell, 1 to 10
@@ -355,11 +361,17 @@ public static partial class Codec
             string uiAction = null;
             UiValue uiParams = null;
             int hotbarCell = 0;
+            long moveItem = 0, moveStorage = 0;
+            InventoryTarget moveTo = InventoryTarget.None;
+            int moveIndex = 0;
             switch (kind)
             {
                 case ActionKind.UiAct:
                 case ActionKind.UiClose:
                     ReadUiAction(ref r, kind, out uiWindow, out uiAction, out uiParams);
+                    break;
+                case ActionKind.InventoryMove:
+                    ReadInventoryMove(ref r, out moveItem, out moveTo, out moveStorage, out moveIndex); // version 99 also (DV692)
                     break;
                 case ActionKind.HotbarPress:
                     hotbarCell = r.ReadByte(); // version 99 also (DV689)
@@ -516,6 +528,10 @@ public static partial class Codec
                 SayChannel = sayChannel,
                 SayVisible = sayVisible,
                 HotbarCell = hotbarCell,
+                MoveItem = moveItem,
+                MoveTo = moveTo,
+                MoveStorage = moveStorage,
+                MoveIndex = moveIndex,
             };
             return true;
         }

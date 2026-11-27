@@ -435,4 +435,196 @@ public class BeltHotbarTests
             g.R.AssertNoRuntimes();
         }
     }
+
+    // ---- slice 4B-2 (DV689, DV692): a move into the worn belt wishing for a bar cell (CarriedStorages.Move, BeltHotbar.PlaceInCell) ----
+
+    private static void MoveToCell(Rig g, obj_item item, obj_item belt, int cell)
+    {
+        g.R.Command(() => CarriedStorages.Move(g.Alice.client, item.dm_id, MoveTarget.Storage, belt.dm_id, cell));
+        g.R.Step(Second);
+    }
+
+    private static obj_item[] Bar(Rig g) => Enumerable.Range(1, BeltHotbar.BeltCells).Select(c => Item(g, c)).ToArray();
+
+    [Fact]
+    public void A_move_into_the_belt_wishing_for_a_bar_cell_puts_the_item_in_that_cell()
+    {
+        Rig g = Build(9301);
+        var belt = Wear<obj_item_storage_belt_utility>(g, ITEM_SLOT_BELT);
+        obj_item a = g.R.In(() => (obj_item)Dm.@new<obj_item_screwdriver>(belt));
+        obj_item b = g.R.In(() => (obj_item)Dm.@new<obj_item_wrench>(belt));
+        g.R.Step(2);
+        Assert.Equal(new[] { a, b, null, null, null, null, null }, Bar(g));
+        // a held item onto the empty cell 6: in the belt (tg's insert), in cell 6
+        obj_item c = Hold<obj_item_crowbar>(g);
+        MoveToCell(g, c, belt, 6);
+        Assert.True(InBelt(g, belt, c));
+        Assert.Equal(new[] { a, b, null, null, null, c, null }, Bar(g));
+        // an item already in the belt onto an empty cell: only its cell changes, tg's order in the belt is left as it was
+        List<obj_item> order = Contents(g, belt);
+        MoveToCell(g, a, belt, 4);
+        Assert.Equal(new[] { null, b, null, a, null, c, null }, Bar(g));
+        Assert.Equal(order, Contents(g, belt));
+        // onto a cell holding another belt item, the moved item having a cell: the two swap
+        MoveToCell(g, a, belt, 6);
+        Assert.Equal(new[] { null, b, null, c, null, a, null }, Bar(g));
+        // a wish for the cell it already has: nothing changes
+        MoveToCell(g, a, belt, 6);
+        Assert.Equal(new[] { null, b, null, c, null, a, null }, Bar(g));
+        // a held item new to the bar onto an occupied cell: it takes the cell, the item there the lowest free one
+        obj_item d = Hold<obj_item_wirecutters>(g);
+        MoveToCell(g, d, belt, 2);
+        Assert.Equal(new[] { b, d, null, c, null, a, null }, Bar(g));
+        // an item out of its cell in a hand (taken with its key) dropped onto another cell: it swaps with the item there, as having a cell
+        Press(g, 4);
+        Assert.Equal((c, HotbarState.Out), (Active(g), State(g, 4)));
+        MoveToCell(g, c, belt, 1);
+        Assert.True(InBelt(g, belt, c));
+        Assert.Equal(new[] { c, d, null, b, null, a, null }, Bar(g));
+        // no wish: as before, the lowest free cell
+        obj_item e = Hold<obj_item_multitool>(g);
+        MoveToCell(g, e, belt, 0);
+        Assert.Equal(new[] { c, d, e, b, null, a, null }, Bar(g));
+        // a wish past the bar's seven cells names no bar cell: the move is not taken at all (nothing moves, nothing refused)
+        obj_item f = Hold<obj_item_weldingtool>(g);
+        int refused = g.R.In(() => g.Alice.dm_carried?.Refusals ?? 0);
+        MoveToCell(g, f, belt, 8);
+        Assert.Equal(f, Active(g));
+        Assert.Equal(refused, g.R.In(() => g.Alice.dm_carried?.Refusals ?? 0));
+        Assert.Equal(0, Refusals(g));
+    }
+
+    [Fact]
+    public void With_a_full_bar_a_wished_cell_swaps_within_the_belt_and_tg_refuses_an_eighth_item()
+    {
+        Rig g = Build(9302);
+        obj_item_storage_belt_utility_full belt = Toolbelt(g);
+        obj_item[] full = Bar(g);
+        Assert.DoesNotContain(null, full);
+        // the seventh cell's item onto the first: they swap
+        MoveToCell(g, full[6], belt, 1);
+        Assert.Equal(new[] { full[6], full[1], full[2], full[3], full[4], full[5], full[0] }, Bar(g));
+        // a held item into the full belt at cell 3: tg's insert refuses it, the bar stays as it was
+        obj_item extra = Hold<obj_item_crowbar>(g);
+        obj_item[] before = Bar(g);
+        MoveToCell(g, extra, belt, 3);
+        Assert.Equal(extra, Active(g));
+        Assert.Equal(before, Bar(g));
+    }
+
+    // no cell names two items, and no item has two cells
+    private static void AssertOneToOne(Rig g)
+    {
+        obj_item[] cells = Enumerable.Range(1, BeltHotbar.CellCount).Select(c => Item(g, c)).Where(i => i != null).ToArray();
+        Assert.Equal(cells.Length, cells.Distinct().Count());
+    }
+
+    [Fact]
+    public void A_wish_for_a_cell_whose_item_a_press_is_taking_out_leaves_that_cell_to_the_press()
+    {
+        // heavy gravity: the press of cell 5 waits in attempt_pickup's 3 s (items.dm:556-561) holding E; meanwhile X (cell 2) is dropped onto cell 5
+        Rig g = Build(9303);
+        var belt = Wear<obj_item_storage_belt_utility>(g, ITEM_SLOT_BELT);
+        obj_item[] items = g.R.In(() => new obj_item[] { Dm.@new<obj_item_crowbar>(belt), Dm.@new<obj_item_screwdriver>(belt), Dm.@new<obj_item_wrench>(belt),
+            Dm.@new<obj_item_wirecutters>(belt), Dm.@new<obj_item_multitool>(belt) });
+        g.R.Step(2);
+        obj_item x = items[1], e = items[4];
+        Assert.Equal((x, e), (Item(g, 2), Item(g, 5)));
+        g.R.In(() => Waiting.NoSleep(g.Alice.AddElement(typeof(datum_element_forced_gravity), 2)));
+        g.R.Step(1);
+        g.R.Command(() => BeltHotbar.Press(g.Alice.client, 5));
+        g.R.Step(2);
+        Assert.Null(Active(g)); // the press is still waiting
+        Assert.True(g.R.In(() => CarriedStorages.IsClaimed(g.Alice, e)));
+        g.R.Command(() => CarriedStorages.Move(g.Alice.client, x.dm_id, MoveTarget.Storage, belt.dm_id, 5));
+        g.R.Step(2);
+        // the move took place (X stays in the belt) without taking E's cell
+        Assert.True(InBelt(g, belt, x));
+        Assert.Equal((x, e), (Item(g, 2), Item(g, 5)));
+        g.R.Step(4 * Second);
+        // both done: E out in the hand with its cell 5, X in the belt in its cell, one item a cell
+        Assert.Equal(e, Active(g));
+        Assert.Equal(HotbarState.Out, State(g, 5));
+        Assert.Equal(e, Item(g, 5));
+        Assert.Equal((x, HotbarState.Holding), (Item(g, 2), State(g, 2)));
+        AssertOneToOne(g);
+        // the same key puts E back
+        Press(g, 5);
+        g.R.Step(Second);
+        Assert.True(InBelt(g, belt, e));
+        Assert.Equal((e, HotbarState.Holding), (Item(g, 5), State(g, 5)));
+        Assert.Null(Active(g));
+        AssertOneToOne(g);
+        Assert.Equal(0, Refusals(g));
+        g.R.AssertNoRuntimes();
+    }
+
+    [Fact]
+    public void A_press_during_a_moves_wait_on_the_wished_cells_item_keeps_that_item_its_cell()
+    {
+        // a screwdriver in a trash bag in a pocket goes into the belt at cell 2, where X is, after the trash bag's own search (its removal's 1.5 s
+        // wait); during that wait X's cell is pressed and X comes into the hand, out of its cell: when the move ends it must not take X's cell
+        Rig g = Build(9304);
+        var belt = Wear<obj_item_storage_belt_utility>(g, ITEM_SLOT_BELT);
+        obj_item[] items = g.R.In(() => new obj_item[] { Dm.@new<obj_item_crowbar>(belt), Dm.@new<obj_item_wrench>(belt) });
+        obj_item m = g.R.In(() =>
+        {
+            var bag = Dm.@new<obj_item_storage_bag_trash>(get_turf(g.Alice));
+            Waiting.NoSleep(g.Alice.equip_to_slot(bag, ITEM_SLOT_LPOCKET));
+            var tool = Dm.@new<obj_item_screwdriver>(get_turf(g.Alice));
+            Assert.True(Dm.truthy(bag.atom_storage.attempt_insert(tool, null, messages: Dm.FALSE)));
+            return (obj_item)tool;
+        });
+        g.R.Step(2);
+        obj_item x = items[1];
+        Assert.Equal(x, Item(g, 2));
+        g.R.Command(() => CarriedStorages.Move(g.Alice.client, m.dm_id, MoveTarget.Storage, belt.dm_id, 2));
+        g.R.Step(2);
+        Assert.False(InBelt(g, belt, m)); // still searched for
+        g.R.Command(() => BeltHotbar.Press(g.Alice.client, 2));
+        g.R.Step(2);
+        Assert.Equal((x, HotbarState.Out), (Active(g), State(g, 2)));
+        g.R.Step(3 * Second);
+        // tg's do_after of the trash bag's search ends when the searching hand's item changes (X came into it): the move is refused and M stays in
+        // the bag; X keeps its cell 2, out in the hand; no cell names two items
+        Assert.False(InBelt(g, belt, m));
+        Assert.Equal(1, g.R.In(() => g.Alice.dm_carried?.Refusals ?? 0));
+        Assert.Equal(x, Active(g));
+        Assert.Equal((x, HotbarState.Out), (Item(g, 2), State(g, 2)));
+        AssertOneToOne(g);
+        // the same key puts X back into its cell
+        Press(g, 2);
+        g.R.Step(Second);
+        Assert.True(InBelt(g, belt, x));
+        Assert.Equal((x, HotbarState.Holding), (Item(g, 2), State(g, 2)));
+        AssertOneToOne(g);
+        g.R.AssertNoRuntimes();
+    }
+
+    [Fact]
+    public void A_wish_for_a_cell_whose_item_is_out_in_a_hand_leaves_that_item_its_cell()
+    {
+        // X is taken from cell 2 with its key and held; a screwdriver from the backpack is then moved onto cell 2: it goes into the belt
+        // and takes the lowest free cell; X keeps cell 2 while in the hand (section 10), and its key puts it back
+        Rig g = Build(9305);
+        var belt = Wear<obj_item_storage_belt_utility>(g, ITEM_SLOT_BELT);
+        var bag = Wear<obj_item_storage_backpack>(g, ITEM_SLOT_BACK);
+        obj_item[] items = g.R.In(() => new obj_item[] { Dm.@new<obj_item_crowbar>(belt), Dm.@new<obj_item_wrench>(belt) });
+        obj_item m = g.R.In(() => (obj_item)Dm.@new<obj_item_screwdriver>(bag));
+        g.R.Step(2);
+        obj_item x = items[1];
+        Press(g, 2);
+        Assert.Equal((x, HotbarState.Out), (Active(g), State(g, 2)));
+        g.R.Command(() => CarriedStorages.Move(g.Alice.client, m.dm_id, MoveTarget.Storage, belt.dm_id, 2));
+        g.R.Step(Second);
+        Assert.True(InBelt(g, belt, m));
+        Assert.Equal((x, HotbarState.Out), (Item(g, 2), State(g, 2)));
+        Assert.Equal((m, HotbarState.Holding), (Item(g, 3), State(g, 3)));
+        AssertOneToOne(g);
+        Press(g, 2);
+        g.R.Step(Second);
+        Assert.Equal((x, HotbarState.Holding), (Item(g, 2), State(g, 2)));
+        AssertOneToOne(g);
+        g.R.AssertNoRuntimes();
+    }
 }

@@ -387,7 +387,8 @@ public class HotbarClientTests
         var seen = new HashSet<string>();
         foreach (PlayAction action in Enum.GetValues<PlayAction>())
             foreach (string key in keys.KeysOf(action))
-                Assert.True(seen.Add(key), key + " is bound twice");
+                // slice 4B-2: the quick transfer shares Pull's Ctrl+left click (KeyBindings.SharesKeys); every other key serves one action
+                Assert.True(seen.Add(key) || (action == PlayAction.QuickTransfer && keys.Has(PlayAction.Pull, key)), key + " is bound twice");
         // the options rows, in the style of the others, and their file ids
         Assert.Equal("Hotbar 1 (belt)", KeyBindings.TitleOf(PlayAction.Hotbar1));
         Assert.Equal("Hotbar 7 (belt)", KeyBindings.TitleOf(PlayAction.Hotbar7));

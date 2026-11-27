@@ -50,6 +50,11 @@ public partial class GameScene
     private readonly Queue<(double At, MouseButton Button, Vector2 Point)> _pendingReleases = new();
     // Protocol version 17 (drag and drop): the cursor mode's left press, drag and release, and the dragged icon under the pointer.
     private readonly DragModel _drag = new();
+    private InvPlace _dragFrom; // slice 4B-2: the inventory item a cursor-mode press was on (Kind None: none), checked against each new message
+    private bool _pressQuick; // slice 4B-2: that press was bound to the quick transfer
+    private readonly InventoryNotice _inventoryNotice = new(); // slice 4B-2: the "inventory opened" notice, once per opening
+    private (long Item, double At) _actedOn; // slice 4B-2: what the player last clicked or used in hand (a listed storage opening by it)
+    private long _closedListed; // slice 4B-2: tg's close button of the listed storage last closed unseen
     // DV691: the first-person drag of oneself (a press on the own body held until the release); whether the own body can be shown at all
     private readonly SelfDrag _selfDrag = new();
     private bool _ownBodyShowable;
@@ -86,6 +91,9 @@ public partial class GameScene
         _storageWindow = new ContainerWindow();
         windows.AddChild(_storageWindow);
         _storageWindow.Bind(replica, textures, HudGroup.Storage, "Open container", "storage", _options, SaveOptions);
+        // slice 4B-2: a storage the Tab inventory lists is shown in its right column, never in tg's window
+        _storageWindow.Suppress = items => _session != null && InventoryRules.ListedWindow(items, _session.Storages.Storages,
+            App.NowSeconds - _actedOn.At < InventoryRules.ActedOnSeconds ? _actedOn.Item : 0);
         // Version 17: BYOND draws the dragged object's icon at the pointer; above the HUD and the windows.
         var dragLayer = new CanvasLayer { Name = "Drag", Layer = 3 };
         AddChild(dragLayer); // stays with the windows: a thing dragged out of an open container
@@ -241,6 +249,13 @@ public partial class GameScene
             if (TabInventory.PartName(_hudLayer.SpriteZoneAt(_hudHover.IconX, _hudHover.IconY)) is not string part)
                 return null;
             text = "<p>" + System.Net.WebUtility.HtmlEncode(part) + "</p>";
+        }
+        else if (LiveHud.IsOurs(_hudHover))
+        {
+            // slice 4B-2: an item in a storage panel's cell or a belt cell of the bar is named from the server's Storages message
+            if (_hudLayer.ItemOf(_hudLayer.PlaceOf(_hudHover)).Name is not string item)
+                return null;
+            text = "<p>" + System.Net.WebUtility.HtmlEncode(item) + "</p>";
         }
         else if (!_hudHover.IsSet || HintsFor(_hudHover) is not ContextHintsMessage h || string.IsNullOrEmpty(h.Name))
             return null;
@@ -441,12 +456,35 @@ public partial class GameScene
             _highlight.Show(dragOver, dragShape, camera.GlobalTransform.Basis, now);
         else
             _highlight.Show(default, null, Basis.Identity, now);
+        // slice 4B-2: a drag of an inventory item ends, nothing sent, once a message took the item from where it was pressed (gone, moved, its
+        // storage gone); while it goes on, the cell under the pointer has a light rim
+        if (_drag.Pressed && _dragFrom.Item != 0 && !InventoryRules.DragHolds(_dragFrom, _hudLayer.PlaceOf(_drag.Source)))
+        {
+            if (App.Instance.Args.Automated)
+                GD.Print($"[anomaly] drag: item #{_dragFrom.Item} left its place, the drag ends");
+            _drag.Cancel();
+            _dragFrom = default;
+        }
+        _hudLayer.DragOver = _drag.Dragging && _dragFrom.Item != 0 ? PointerHud() : default;
         UpdateDragIcon(now);
 
         Vector2 size = GetViewport().GetVisibleRect().Size;
         var metrics = new HudMetrics(size.X, size.Y, _options.UiScale);
         _viewModel.Update(now, _handsShown, _feed.OwnEntity, HeldHolder());
         _storageWindow.Update(now, metrics);
+        // slice 4B-2: a storage the column lists opened by tg's click (the worn bag clicked, a held box used): the Tab inventory comes on where it is
+        // and tg's storage is closed unseen, once per opening
+        long listed = _storageWindow.Suppressed ? _storageWindow.OpenCloseEntry : 0;
+        if (_storageWindow.OpenCloseEntry == 0)
+            _closedListed = 0;
+        else if (listed != 0 && listed != _closedListed)
+        {
+            _closedListed = listed;
+            SetCursorMode(true);
+            _session.Click(new ClickTarget(TargetKind.Screen, listed, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
+            if (App.Instance.Args.Automated)
+                GD.Print($"[anomaly] storage window: a listed storage opened by tg's click, shown in the Tab inventory (tg's window closed, screen #{listed})");
+        }
 
         if (_radialModel.Phase == RadialPhase.Pressed && _radialModel.Update(now))
             OpenRadial();
@@ -587,6 +625,9 @@ public partial class GameScene
         if (sent)
         {
             double now = App.NowSeconds;
+            // slice 4B-2: what was clicked (the item in a clicked hand box or slot), for telling a listed storage's window opening by it
+            InvPlace clickedPlace = _hudLayer.PlaceOf(target);
+            _actedOn = (clickedPlace.Item != 0 ? clickedPlace.Item : target.Id, now);
             if (_doubleClick.Clicked(target, button, now))
                 _session.DblClick(target, button, modifiers);
             _crosshair.PulseNow(now);
@@ -687,6 +728,8 @@ public partial class GameScene
             _selfDrag.Cancel(); // DV691: an overlay that takes this button ends the drag of oneself before it does, nothing sent
         if (OnEmoteWheelMouse(button))
             return; // M9 slice B: the emote wheel's own
+        if (wheel && _mouse.CursorMode && _hudLayer.ScrollColumn(button.Position.X, button.Position.Y, button.ButtonIndex == MouseButton.WheelUp ? -1 : 1))
+            return; // slice 4B-2: the wheel over the Tab inventory's right column scrolls its panels
         if (wheel)
         {
             // version 70: BYOND's MouseWheel over the aimed thing (tg's RPD: the wheel picks the pipe layer, D320: Shift with it turns the next build)
@@ -772,6 +815,10 @@ public partial class GameScene
                 if (!source.IsSet)
                     source = ClickTarget.Of(PointerWorldPick(_rig.Camera, out _));
                 bool wallMount = source.Kind == TargetKind.Entity && _feed.Replica?.TryGet(source.Id, out ReplicaEntity pressed) == true && pressed.TypePath != null && Shared.World.PropKinds.IsWallMountType(pressed.TypePath);
+                // slice 4B-2: a press on an item of the Tab inventory (its drag follows InventoryRules.Drop), and whether it is the quick transfer's
+                InvPlace pressedPlace = source.Kind == TargetKind.Screen ? _hudLayer.PlaceOf(source) : default;
+                _dragFrom = pressedPlace.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell && pressedPlace.Item != 0 ? pressedPlace : default;
+                _pressQuick = InventoryRules.IsQuickTransfer(_options.Bindings, KeyBindings.NameOf(name, button.ShiftPressed, button.CtrlPressed), button.AltPressed);
                 if (!_drag.Press(source, ClickButton.Left, modifiers, button.Position.X, button.Position.Y, App.NowSeconds, !wallMount))
                     ClickAtCrosshair(ClickButton.Left, modifiers); // nothing under the pointer: as before
                 break;
@@ -849,10 +896,32 @@ public partial class GameScene
     {
         _drag.Move(at.X, at.Y);
         ClickTarget over = DragModel.ChooseOver(PointerHud(), ClickTarget.Of(PointerWorldPick(_rig.Camera, out _)));
-        if (_drag.Dragging)
+        bool dragged = _drag.Dragging;
+        if (dragged)
             over = DragModel.SelfOnDoll(over, _hudLayer.IsDoll, _feed.OwnEntity);
+        (InvPlace from, bool quick) = (_dragFrom, _pressQuick);
+        (_dragFrom, _pressQuick) = (default, false);
+        _hudLayer.DragOver = default;
         DragOutcome outcome = _drag.Release(over, App.NowSeconds, out DragRelease release);
         _dragIcon.Visible = false;
+        // slice 4B-2: a drag of an item of the Tab inventory, released over anything (nothing at all is the floor): one move, tg's drop, a use on oneself or nothing
+        if (dragged && from.Item != 0)
+        {
+            SendInventory(InventoryRules.Drop(from, _hudLayer.PlaceOf(over), _hudLayer.ActiveHand), release);
+            return;
+        }
+        // slice 4B-2: a click on a storage panel, and the quick transfer on an item of the inventory; anything else stays what it was
+        if (outcome == DragOutcome.Click && release.Source.Kind == TargetKind.Screen)
+        {
+            InvPlace place = _hudLayer.PlaceOf(release.Source);
+            InvSend? send = quick ? InventoryRules.QuickTransfer(place, _hudLayer.ActiveHand, _hudLayer.BackStorage)
+                : InventoryRules.Click(place, release.Modifiers, _hudLayer.ActiveHand, _hudLayer.HeldItem);
+            if (send is InvSend inventory)
+            {
+                SendInventory(inventory, release);
+                return;
+            }
+        }
         switch (outcome)
         {
             case DragOutcome.Click:
@@ -886,6 +955,40 @@ public partial class GameScene
         }
     }
 
+    // Slice 4B-2: what the Tab inventory's rules chose for a drag, a click or the quick transfer (InventoryRules): the server decides every move.
+    private void SendInventory(in InvSend send, in DragRelease release)
+    {
+        switch (send.Kind)
+        {
+            case InvSendKind.Move:
+                bool sent = _session.InventoryMove(send.Item, send.To, send.Storage, send.Index);
+                if (App.Instance.Args.Automated)
+                    GD.Print($"[anomaly] move: item #{send.Item} to {send.To}{(send.Storage != 0 ? " #" + send.Storage : string.Empty)}{(send.Index != 0 ? " index " + send.Index : string.Empty)}{(sent ? string.Empty : " (not sent)")}");
+                break;
+            case InvSendKind.TgDrop:
+                SendDrop(release);
+                break;
+            case InvSendKind.SelfUse:
+                SendClick(release.Over, ClickButton.Left, ClickModifiers.None);
+                break;
+            case InvSendKind.Examine:
+                // tg's Shift+click on a stored item: the server takes it for an item its own carried storages show (DV692)
+                SendClick(new ClickTarget(TargetKind.Screen, send.Item, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.Shift);
+                break;
+            case InvSendKind.Refused:
+                // nothing was sent: the client's own balloon says why, as tg's balloon alerts say a refusal's reason
+                _session.Storages.RefuseLocally(send.Item, App.NowSeconds);
+                _balloon.Add(InventoryRules.NoBackpack, App.NowSeconds);
+                if (App.Instance.Args.Automated)
+                    GD.Print($"[anomaly] move: item #{send.Item} has no backpack to go into: refused");
+                break;
+            default:
+                if (App.Instance.Args.Automated)
+                    GD.Print($"[anomaly] move: {Describe(release.Source)} onto {Describe(release.Over)}: nothing sent");
+                break;
+        }
+    }
+
     private void SendDrop(in DragRelease release)
     {
         bool sent = _session.Drop(release);
@@ -914,6 +1017,8 @@ public partial class GameScene
             return;
         }
         TableRef icon = DragModel.IconOf(_feed.Replica, self ? _selfDrag.Pressed : _drag.Source);
+        if (icon.IsNone && !self && LiveHud.IsOurs(_drag.Source))
+            icon = _hudLayer.ItemOf(_hudLayer.PlaceOf(_drag.Source)).Picture; // slice 4B-2: a storage panel's or belt cell's item
         if (icon.IsNone || _dragTextures == null || !_dragTextures.TryCompose(_feed.Replica, icon, 2, now, out ComposedAppearance composed) || composed.Texture == null)
         {
             _dragIcon.Visible = false;
@@ -1136,8 +1241,17 @@ public partial class GameScene
         }
         if (action is PlayAction.CursorMode) // slice 4A: the inventory key's press arrives here as this action too (TabInventory.KeyAction)
         {
-            if (!InLobby) // the lobby has no view to give the mouse to: a stray Tab would only hide the pointer
-                SetCursorMode(!_mouse.CursorMode);
+            if (InLobby) // the lobby has no view to give the mouse to: a stray Tab would only hide the pointer
+                return;
+            bool on = !_mouse.CursorMode;
+            SetCursorMode(on);
+            // slice 4B-2: turning the Tab inventory on opens the carried storages as tg's opening does (the rustle), at most once a second
+            if (_inventoryNotice.Opened(on, _hudLayer.HumanHud, App.NowSeconds))
+            {
+                _session.InventoryOpened();
+                if (App.Instance.Args.Automated)
+                    GD.Print("[anomaly] inventory: opened, the notice sent");
+            }
             return;
         }
         if (_rig.Mode == CameraMode.Free)
@@ -1157,6 +1271,7 @@ public partial class GameScene
                 _session.Keybinding(KeybindingCode.SwapHands);
                 break;
             case PlayAction.ActivateInHand:
+                _actedOn = (_hudLayer.HeldItem, App.NowSeconds); // slice 4B-2: a held box used in hand opens as a listed storage
                 _session.Keybinding(KeybindingCode.ActivateInhand);
                 break;
             case PlayAction.QuickEquip:
@@ -1340,6 +1455,7 @@ public partial class GameScene
         _radialModel.Reset();
         _radialSticky = false;
         _drag.Cancel(); // version 17: a cursor-mode drag ends with cursor mode
+        (_dragFrom, _pressQuick) = (default, false);
         _selfDrag.Cancel(); // DV691: and the first-person drag of oneself ends when cursor mode starts (Tab, a window), with nothing sent
         if (_dragIcon != null)
             _dragIcon.Visible = false;

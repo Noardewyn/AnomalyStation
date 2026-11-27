@@ -68,6 +68,15 @@ public sealed class FakeFeed : IWorldFeed
     /// <inheritdoc/>
     public int HotbarRefusedCell => _replica.HotbarRefusedCell;
 
+    /// <inheritdoc/>
+    public StoragesMessage Storages => _replica.Storages; // version 99 also (DV692): the replica takes the message (ReplicaWorld.V99Storages.cs)
+
+    /// <inheritdoc/>
+    public int StoragesRefusals => _replica.StoragesRefusals;
+
+    /// <inheritdoc/>
+    public long StoragesRefusedItem => _replica.StoragesRefusedItem;
+
     /// <summary>A room side that leaves room for <paramref name="bots"/> wandering bots (at least 32 tiles).</summary>
     public static int SizeFor(int bots) => Math.Max(32, (int)Math.Ceiling(Math.Sqrt(bots * 10.0)));
 

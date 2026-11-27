@@ -31,6 +31,7 @@ public partial class LiveHudView : Control
         public readonly List<Picture> Left = new(), Right = new(), LeftOverlays = new(), RightOverlays = new(); // the items, then tg's handcuffs and blocked mark
         public string Swap; // the swap-hands key cap's label (null: unbound)
         public bool LeftMarked, RightMarked; // tg's handcuff or blocked mark on that hand (LiveHud.HandMarked)
+        public uint LeftRim, RightRim; // slice 4B-2: a refused move's red blink, or the light rim of a drag over the box (0: none)
         public bool HintShown; // slice D: the held-item hint strip over the row
         public HudRect Hint;
         public float HintShare, HintUnit;
@@ -92,6 +93,8 @@ public partial class LiveHudView : Control
         MouseFilter = MouseFilterEnum.Ignore;
         TextureFilter = TextureFilterEnum.Nearest; // tg's item pictures, pixel for pixel
         SetAnchorsPreset(LayoutPreset.FullRect);
+        Column = new ColumnView { Name = "StorageColumn", Visible = false };
+        AddChild(Column);
     }
 
     /// <summary>Slice C: <see cref="Hands"/> was filled for this frame (the held items' pictures animate, so it is drawn afresh while shown).</summary>
@@ -132,9 +135,9 @@ public partial class LiveHudView : Control
         HandsScene h = Hands;
         float k = h.Layout.Unit;
         if (h.HasLeft)
-            DrawHand(h.Layout.Left, h.LeftMarked, h.LeftArt, h.Left, h.LeftOverlays, k);
+            DrawHand(h.Layout.Left, h.LeftMarked, h.LeftArt, h.Left, h.LeftOverlays, k, h.LeftRim);
         if (h.HasRight)
-            DrawHand(h.Layout.Right, h.RightMarked, h.RightArt, h.Right, h.RightOverlays, k);
+            DrawHand(h.Layout.Right, h.RightMarked, h.RightArt, h.Right, h.RightOverlays, k, h.RightRim);
         if (h.Swap != null && (h.LeftActive ? h.HasRight : h.HasLeft))
         {
             int capSize = FontPx(UiTokens.SwapCapFont, k);
@@ -179,25 +182,28 @@ public partial class LiveHudView : Control
     // Package 3: a cell of the bar: section 16's tg slot picture filling it, the item's picture as a hand box draws it (fainter while the item is
     // out in a hand), tg's marks over it (a worn slot's), a red rim while a refused press blinks, its key cap in the top left corner (dim on an
     // empty cell); the whole cell fainter for a belt cell with no belt worn.
-    private void DrawCell(Font font, CellScene cell, float k)
+    private void DrawCell(Font font, CellScene cell, float k) => DrawCellOn(this, font, cell, k, _frameStyle);
+
+    // the same on any canvas (slice 4B-2: the storage panels' clipped view), with its own frame style
+    private static void DrawCellOn(CanvasItem canvas, Font font, CellScene cell, float k, StyleBoxFlat frame)
     {
         HotbarCellLook look = cell.Look;
         var whole = new Color(1f, 1f, 1f, look.Alpha);
         foreach (Picture p in cell.Art)
-            DrawTextureRect(p.Texture, p.Rect, false, ChatLines.Rgba(p.Rgba)); // the cell's opacity is in the tint (LiveHud.SlotTint)
+            canvas.DrawTextureRect(p.Texture, p.Rect, false, ChatLines.Rgba(p.Rgba)); // the cell's opacity is in the tint (LiveHud.SlotTint)
         var tint = new Color(1f, 1f, 1f, look.Alpha * look.PictureAlpha);
         foreach (Picture p in cell.Pictures)
-            DrawTextureRect(p.Texture, p.Rect, false, tint);
+            canvas.DrawTextureRect(p.Texture, p.Rect, false, tint);
         foreach (Picture p in cell.Overlays)
-            DrawTextureRect(p.Texture, p.Rect, false, whole);
+            canvas.DrawTextureRect(p.Texture, p.Rect, false, whole);
         if (look.Rim != 0u)
-            DrawFrame(cell.Rect, look.Rim, look.Alpha, Math.Max(1, (int)Math.Round(k)), k);
+            FrameOn(canvas, frame, cell.Rect, look.Rim, look.Alpha, Math.Max(1, (int)Math.Round(k)), k);
         if (look.Cap == null)
             return;
         int capSize = FontPx(UiTokens.SwapCapFont, k);
         HudRect cap = LiveHud.CellCap(cell.Rect, k, font.GetStringSize(look.Cap, HorizontalAlignment.Left, -1, capSize).X + 2 * UiTokens.SwapCapInset * k);
         if (cap.Width > 0f)
-            DrawCap(this, font, cap, look.Cap, capSize, k, look.Alpha * look.CapAlpha);
+            DrawCap(canvas, font, cap, look.Cap, capSize, k, look.Alpha * look.CapAlpha);
     }
 
     /// <summary>
@@ -240,7 +246,7 @@ public partial class LiveHudView : Control
 
     // Section 16: tg's hand slot picture with its active mark filling the box, the held items, tg's handcuffs or blocked mark over them, and on a
     // cuffed or missing hand a red border over all (LiveHud.HandFrame), active or not.
-    private void DrawHand(HudRect box, bool marked, List<Picture> art, List<Picture> pictures, List<Picture> overlays, float k)
+    private void DrawHand(HudRect box, bool marked, List<Picture> art, List<Picture> pictures, List<Picture> overlays, float k, uint rim)
     {
         foreach (Picture p in art)
             DrawTextureRect(p.Texture, p.Rect, false, ChatLines.Rgba(p.Rgba));
@@ -250,16 +256,99 @@ public partial class LiveHudView : Control
             DrawTextureRect(p.Texture, p.Rect, false);
         if (LiveHud.HandFrame(marked) is uint frame and not 0u)
             DrawFrame(box, frame, 1f, Math.Max(1, (int)Math.Round(UiTokens.HandBorder * k)), k);
+        if (rim != 0u)
+            DrawFrame(box, rim, 1f, Math.Max(1, (int)Math.Round(k)), k);
     }
 
     // A border alone (no fill) round `rect`, with the chips' rounded corners.
-    private void DrawFrame(HudRect rect, uint rgba, float alpha, int width, float k)
+    private void DrawFrame(HudRect rect, uint rgba, float alpha, int width, float k) => FrameOn(this, _frameStyle, rect, rgba, alpha, width, k);
+
+    private static void FrameOn(CanvasItem canvas, StyleBoxFlat style, HudRect rect, uint rgba, float alpha, int width, float k)
     {
-        _frameStyle.BorderColor = ChatLines.Rgba(rgba, alpha);
-        _frameStyle.SetBorderWidthAll(width);
-        _frameStyle.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.ChipRadius * k)));
-        DrawStyleBox(_frameStyle, R(rect));
+        style.BorderColor = ChatLines.Rgba(rgba, alpha);
+        style.SetBorderWidthAll(width);
+        style.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.ChipRadius * k)));
+        canvas.DrawStyleBox(style, R(rect));
     }
 
     private readonly StyleBoxFlat _frameStyle = new() { DrawCenter = false };
+
+    /// <summary>Slice 4B-2: one storage panel this frame: its rectangles, the storage's picture in its header, its title and room, and its cells.</summary>
+    public sealed class PanelScene
+    {
+        public StoragePanelRects Rects;
+        public Picture? Header;
+        public string Title, Room;
+        public bool Locked;
+        public readonly List<CellScene> Cells = new();
+    }
+
+    /// <summary>
+    /// Slice 4B-2: the right column's storage panels, drawn in a view of their own cut at the column's edges (a cell scrolled half out shows its
+    /// part inside), each a dark backing, a header and the cells drawn as the bar's, and the scroll bar's thumb when they overflow.
+    /// </summary>
+    public sealed partial class ColumnView : Control
+    {
+        private readonly StyleBoxFlat _back = new(), _frame = new() { DrawCenter = false };
+        private readonly List<PanelScene> _panels = new();
+        private StorageColumnLayout _layout = StorageColumnLayout.None;
+        private float _unit;
+
+        public ColumnView()
+        {
+            MouseFilter = MouseFilterEnum.Ignore;
+            ClipContents = true;
+            TextureFilter = TextureFilterEnum.Nearest;
+        }
+
+        /// <summary>The panels of <paramref name="layout"/> at <paramref name="unit"/> screen pixels per reference pixel; none hides the view.</summary>
+        public void Show(StorageColumnLayout layout, List<PanelScene> panels, float unit)
+        {
+            bool shown = layout.Panels.Length > 0;
+            if (!shown && _panels.Count == 0)
+            {
+                Visible = false;
+                return;
+            }
+            Visible = shown;
+            (_layout, _unit) = (layout, unit);
+            _panels.Clear();
+            _panels.AddRange(panels);
+            Position = new Vector2(layout.Column.Left, layout.Column.Top);
+            Size = new Vector2(layout.Column.Width, layout.Column.Height);
+            QueueRedraw();
+        }
+
+        public override void _Draw()
+        {
+            DrawSetTransform(-Position); // drawn in the screen's pixels, cut at this view's rectangle
+            Font font = ThemeDB.FallbackFont;
+            float k = _unit;
+            int size = FontPx(UiTokens.StorageHeaderFont, k);
+            _back.BgColor = ChatLines.Rgba(UiTokens.StoragePanelBack);
+            _back.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.DollPanelRadius * k)));
+            foreach (PanelScene p in _panels)
+            {
+                DrawStyleBox(_back, R(p.Rects.Backing));
+                HudRect header = p.Rects.Header;
+                if (p.Header is Picture picture)
+                    DrawTextureRect(picture.Texture, picture.Rect, false);
+                float baseline = header.Top + (header.Height + font.GetAscent(size) - font.GetDescent(size)) / 2f;
+                float room = p.Room == null ? 0f : font.GetStringSize(p.Room, HorizontalAlignment.Left, -1, size).X;
+                if (p.Room != null)
+                    DrawString(font, new Vector2(header.Right - room, baseline), p.Room, HorizontalAlignment.Left, -1, size, ChatLines.Rgba(UiTokens.LocalText));
+                float left = p.Rects.Picture.Right + MathF.Round(UiTokens.StoragePanelPad * k), width = header.Right - room - MathF.Round(UiTokens.StoragePanelPad * 2 * k) - left;
+                string title = LiveHud.HintName(p.Title, width, t => font.GetStringSize(t, HorizontalAlignment.Left, -1, size).X);
+                if (!string.IsNullOrEmpty(title) && width > 0f)
+                    DrawString(font, new Vector2(left, baseline), title, HorizontalAlignment.Left, -1, size, ChatLines.Rgba(UiTokens.LocalText));
+                foreach (CellScene cell in p.Cells)
+                    DrawCellOn(this, font, cell, k, _frame);
+            }
+            if (_layout.Thumb.Height > 0f)
+                DrawRect(R(_layout.Thumb), ChatLines.Rgba(UiTokens.StorageScrollThumb));
+        }
+    }
+
+    /// <summary>Slice 4B-2: the right column's view (<see cref="HudLayer"/> fills it each frame); its children are the cells' stack counts.</summary>
+    public ColumnView Column { get; private set; }
 }

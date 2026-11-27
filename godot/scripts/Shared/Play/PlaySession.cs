@@ -136,6 +136,7 @@ public sealed class PlaySession
         if (_feed.Phase != FeedPhase.Playing)
             return;
         Hotbar.Apply(_feed.Hotbar, _feed.HotbarRefusals, _feed.HotbarRefusedCell, now); // version 99 also (DV689)
+        Storages.Apply(_feed.Storages, _feed.StoragesRefusals, _feed.StoragesRefusedItem, now); // version 99 also (DV692)
         long newest = Math.Max(_feed.Tick, _replica.MotionTick); // version 42: a Motion runs ahead of a Delta the reliable channel holds back
         if (newest != _lastTick)
         {
@@ -737,6 +738,29 @@ public sealed class PlaySession
         Send(new ActionMessage(Prediction.NewestSeq, ActionKind.HotbarPress, 0, ClickButton.None, ClickModifiers.None, null) { HotbarCell = cell });
         return true;
     }
+
+    /// <summary>Version 99 also (DV692): the own carried storages as the server last sent them (their items, the last refused move).</summary>
+    public StoragesModel Storages { get; } = new();
+
+    /// <summary>
+    /// Version 99 also (DV692, ui-overhaul.md section 12, slice 4B): a move of the own item <paramref name="item"/> (an entity id) to
+    /// <paramref name="to"/>: a carried storage <paramref name="storage"/> at the wished cell <paramref name="index"/> (1 to 64, 0 for none), a worn slot
+    /// (tg's slot id), a hand (tg's held index) or the floor; sent as it is, the server decides (nothing is predicted). False, and nothing sent, for
+    /// fields out of range.
+    /// </summary>
+    public bool InventoryMove(long item, InventoryTarget to, long storage = 0, int index = 0)
+    {
+        if (item < 1 || !Codec.IsValidInventoryMoveTarget(to, storage, index))
+            return false;
+        Send(new ActionMessage(Prediction.NewestSeq, ActionKind.InventoryMove, 0, ClickButton.None, ClickModifiers.None, null)
+        {
+            MoveItem = item, MoveTo = to, MoveStorage = storage, MoveIndex = index,
+        });
+        return true;
+    }
+
+    /// <summary>Version 99 also (DV692): the Tab inventory was opened; the server plays tg's opening rustle of the back storage (at most once a second).</summary>
+    public void InventoryOpened() => Send(new ActionMessage(Prediction.NewestSeq, ActionKind.InventoryOpen, 0, ClickButton.None, ClickModifiers.None, null));
 
     /// <summary>
     /// Protocol version 17 (drag and drop): the player dragged <see cref="DragRelease.Source"/> with its button held and let go over

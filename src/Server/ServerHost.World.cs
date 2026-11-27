@@ -134,9 +134,9 @@ public sealed partial class ServerHost
                     s.PendingStamps[kept++] = stamp;
                     continue;
                 }
-                _queue.Enqueue(new QueuedCommand(applyTick, s.Ordinal, taken, CommandKind.Action, a.Text, Action: a.Kind, Target: a.Kind == ActionKind.HotbarPress ? a.HotbarCell : a.Target, Button: a.Button, Modifiers: a.Modifiers,
-                    TargetKind: a.EffectiveTargetKind, TurfX: a.TurfX, TurfY: a.TurfY, TurfZ: a.TurfZ, IconX: a.IconX, IconY: a.IconY, Keybinding: a.Keybinding, KeyUp: a.KeyUp, AimZone: a.AimZone,
-                    RadialMenu: a.RadialMenu, RadialElement: a.RadialElement,
+                _queue.Enqueue(new QueuedCommand(applyTick, s.Ordinal, taken, CommandKind.Action, a.Text, Action: a.Kind, Target: a.Kind switch { ActionKind.HotbarPress => a.HotbarCell, ActionKind.InventoryMove => a.MoveItem, _ => a.Target }, Button: a.Button, Modifiers: a.Modifiers,
+                    TargetKind: a.EffectiveTargetKind, TurfX: a.Kind == ActionKind.InventoryMove ? (int)a.MoveTo : a.TurfX, TurfY: a.Kind == ActionKind.InventoryMove ? a.MoveIndex : a.TurfY, TurfZ: a.TurfZ, IconX: a.IconX, IconY: a.IconY, Keybinding: a.Keybinding, KeyUp: a.KeyUp, AimZone: a.AimZone,
+                    RadialMenu: a.Kind == ActionKind.InventoryMove ? a.MoveStorage : a.RadialMenu, RadialElement: a.RadialElement,
                     UiWindow: a.UiWindow, UiParams: a.UiParams?.ToJson(), OverKind: a.OverKind, OverTarget: a.OverTarget, OverX: a.OverX, OverY: a.OverY, OverZ: a.OverZ,
                     DragTime: a.DragTime, Aim: a.Aim, SayType: a.SayType, SayChannel: a.SayChannel, SayVisible: a.SayVisible) with { Text = a.Kind == ActionKind.UiAct ? a.UiAction : a.Text });
                 if (a.Kind is ActionKind.Click or ActionKind.Throw or ActionKind.PutDown) _clickStamps.Add(stamp);
@@ -535,6 +535,14 @@ public sealed partial class ServerHost
                 // version 99 also (DV689): a hotbar cell's press, the cell in the command's target field (QueuedCommand)
                 _clients.HotbarPress(s.Client, (int)command.Target);
                 break;
+            case ActionKind.InventoryMove:
+                // version 99 also (DV692): the item in the target field, the storage in the radial menu field, the target kind and the index in the turf
+                // fields (QueuedCommand), so the command log keeps them
+                _clients.InventoryMove(s.Client, command.Target, (MoveTarget)command.TurfX, command.RadialMenu, command.TurfY);
+                break;
+            case ActionKind.InventoryOpen:
+                _clients.InventoryOpen(s.Client); // version 99 also (DV692)
+                break;
             default:
                 return;
         }
@@ -631,7 +639,7 @@ public sealed partial class ServerHost
             ClickButton.Middle => MIDDLE_CLICK,
             _ => null,
         };
-        if (button == null || !TryResolveTarget(s, command, out atom target))
+        if (button == null || (!TryResolveTarget(s, command, out atom target) && !TryStoredExamine(s, command, out target)))
         {
             s.ClicksRejected++;
             return;
@@ -659,6 +667,20 @@ public sealed partial class ServerHost
             return;
         }
         _clients.Click(s.Client, target, clickParams);
+    }
+
+    // DEVIATION(DV692): slice 4B-2: tg's Shift+click (ShiftClickOn: examinate) on an item the sender's own carried storages show now
+    // (CarriedStorages.ShowsItem: in one of its listed storages, not locked, not hidden, not deeper), named as a screen target, as tg's storage screen
+    // would show it; only a plain left click with Shift alone. Any other click on a stored item, or on anyone else's, is refused as before.
+    private bool TryStoredExamine(Session s, in QueuedCommand command, out atom target)
+    {
+        target = null;
+        if (command.TargetKind != TargetKind.Screen || command.Button != ClickButton.Left || command.Modifiers != ClickModifiers.Shift
+            || s.Client?.mob is not mob_living_carbon_human user || QDELETED(user)
+            || !World.Objects.TryGet(command.Target, out object found) || found is not obj_item item || !CarriedStorages.ShowsItem(user, item))
+            return false;
+        target = item;
+        return true;
     }
 
     // Version 81 (D328): a throw at the target, tg's left click in throw mode with the click's params and the camera's aim (ClientSeam.Throw)

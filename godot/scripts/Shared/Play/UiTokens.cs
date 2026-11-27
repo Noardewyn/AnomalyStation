@@ -66,6 +66,38 @@ public static class UiTokens
     /// <summary>The least side the panel's cells are made where the panel does not fit at a sprite scale of 1, screen pixels; below it the panel is left out.</summary>
     public const float TabCellMinPixels = 12f;
 
+    // ---- the Tab inventory's right column: the storage panels (StorageColumn; ui-overhaul.md section 12, slice 4B-2) ----
+
+    /// <summary>The gap between two storage panels.</summary>
+    public const float StoragePanelGap = 12f;
+
+    /// <summary>The gap between two cells of a panel's grid.</summary>
+    public const float StorageCellGap = 4f;
+
+    /// <summary>The room between a panel's backing and its header and cells, and between its header and its grid.</summary>
+    public const float StoragePanelPad = 4f;
+
+    /// <summary>A panel's backing: the slate of the chips at half strength.</summary>
+    public const uint StoragePanelBack = 0x1E242B80;
+
+    /// <summary>A panel header's text size (its name and its room).</summary>
+    public const float StorageHeaderFont = 18f;
+
+    /// <summary>The scroll bar at the column's right edge: its width ...</summary>
+    public const float StorageScrollBar = 4f;
+
+    /// <summary>... and its colour.</summary>
+    public const uint StorageScrollThumb = 0xFFFFFF99;
+
+    /// <summary>How far one step of the mouse wheel scrolls the column: one row of cells.</summary>
+    public const float StorageScrollStep = HotbarSlot + StorageCellGap;
+
+    /// <summary>The most cells a panel shows (a storage tg gives more slots, up to its INFINITY, shows this many: the most items the message carries).</summary>
+    public const int StorageMaxCells = 64;
+
+    /// <summary>The light rim on the cell under the pointer while an item is dragged.</summary>
+    public const uint InventoryDragRim = 0xFFFFFFCC;
+
     // ---- chips: a key label or a short status in a small rounded box, white on the local pill's slate with a white rim ----
 
     /// <summary>A chip's fill: <see cref="LocalBack"/>, a little see-through.</summary>

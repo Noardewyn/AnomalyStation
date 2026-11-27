@@ -175,6 +175,15 @@ public interface IWorldFeed
     /// <summary>Protocol version 99 also (DV689): the cell (1 to 10) of the last refused press, 0 before the first.</summary>
     int HotbarRefusedCell => 0;
 
+    /// <summary>Protocol version 99 also (DV692): the own carried storages the server last sent (the refusal cleared), <see cref="StoragesMessage.None"/> before the first.</summary>
+    StoragesMessage Storages => StoragesMessage.None;
+
+    /// <summary>Protocol version 99 also (DV692): how many refused inventory moves the server reported since the join.</summary>
+    int StoragesRefusals => 0;
+
+    /// <summary>Protocol version 99 also (DV692): the item (its entity) of the last refused move, 0 before the first.</summary>
+    long StoragesRefusedItem => 0;
+
     /// <summary>The transport's round trip in milliseconds.</summary>
     int RoundTripMs { get; }
 

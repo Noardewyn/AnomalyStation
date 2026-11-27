@@ -665,8 +665,29 @@ public static class Limits
     /// <summary>Version 99 (DV689): the most UTF-8 bytes of a held item's name in a <see cref="HotbarMessage"/>.</summary>
     public const int MaxHotbarNameBytes = 128;
 
-    /// <summary>Version 99: a <see cref="HotbarMessage"/>: the id, the flags, ten cells (a state and an appearance each), two names and the refused cell.</summary>
-    public const int MaxHotbarBytes = 1 + 1 + HotbarMessage.CellCount * (1 + 5) + 2 * (2 + MaxHotbarNameBytes) + 1;
+    /// <summary>Version 99: a <see cref="HotbarMessage"/>: the id, the flags, ten cells (a state, an appearance and an item's entity each), two names and the refused cell.</summary>
+    public const int MaxHotbarBytes = 1 + 1 + HotbarMessage.CellCount * (1 + 5 + 10) + 2 * (2 + MaxHotbarNameBytes) + 1;
+
+    /// <summary>Version 99 also (DV692): the carried storages of a <see cref="StoragesMessage"/>.</summary>
+    public const int MaxStorages = 8;
+
+    /// <summary>Version 99 also: the items of one <see cref="CarriedStorage"/> (a storage that holds more sends the first ones, <see cref="CarriedStorage.Cut"/>); also the highest cell an inventory move may wish for.</summary>
+    public const int MaxStorageItems = 64;
+
+    /// <summary>Version 99 also: the cap of a storage's slots, room and limit and of a stack's count (a bigger number is sent as the cap).</summary>
+    public const int MaxStorageNumber = 65535;
+
+    /// <summary>Version 99 also: the highest held index a <see cref="CarriedStorage"/> or an inventory move names.</summary>
+    public const int MaxStorageHands = 8;
+
+    /// <summary>Version 99 also: the most UTF-8 bytes of a storage's or an item's name in a <see cref="StoragesMessage"/> (the hotbar's cap).</summary>
+    public const int MaxStorageNameBytes = MaxHotbarNameBytes;
+
+    /// <summary>
+    /// Version 99 also: a <see cref="StoragesMessage"/>: the id, the count, each storage (an entity, the place and a hand, a name, the slots, the room and
+    /// the limit, the flags, the item count and its items: an entity, a name, a picture and a count each) and the refused item.
+    /// </summary>
+    public const int MaxStoragesBytes = 1 + 1 + MaxStorages * (10 + 1 + 1 + 2 + MaxStorageNameBytes + 3 * 3 + 1 + 1 + MaxStorageItems * (10 + 2 + MaxStorageNameBytes + 5 + 3)) + 10;
 }
 
 /// <summary>A token bucket: <see cref="PerSecond"/> tokens refill per second of game time (20 ticks), at most <see cref="Burst"/> are kept.</summary>

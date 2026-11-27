@@ -3,7 +3,7 @@ namespace Anomaly.Protocol;
 // Version 99 also (MessagesV99Hotbar.cs, docs/ai/specs/protocol.md section 97; ui-overhaul.md section 10, slice 3A, DV689):
 //
 //   Hotbar (server to client, State): [u8 id = 32] [u8 flags: bit 0 the bar (a human), bit 1 a belt worn; bits 2-7 zero]
-//     ten cells, cell 1 first: { [u8 state: 0 empty, 1 holding, 2 out] ([tableref picture (may be none)] unless empty) }
+//     ten cells, cell 1 first: { [u8 state: 0 empty, 1 holding, 2 out] ([tableref picture (may be none)] [varuint item entity >= 1] unless empty) }
 //     [str(1..128) left hand's item name, or none] [str(1..128) right hand's] [u8 refused cell 0..10]
 //   without the bar every cell is empty, no belt, no names and no refusal; without a belt cells 1 to 7 are empty.
 //   a tableref is a varuint (appearance index << 1) | private, as everywhere (Codec.V2).
@@ -36,11 +36,15 @@ public static partial class Codec
             w.WriteByte((byte)cell.State);
             if (cell.State == HotbarCellState.Empty)
             {
-                if (!cell.Appearance.IsNone)
-                    throw Bad("a picture in an empty hotbar cell");
+                if (!cell.Appearance.IsNone || cell.Entity != 0)
+                    throw Bad("a picture or an item in an empty hotbar cell");
                 continue;
             }
             WritePlainRef(ref w, cell.Appearance, true, Limits.MaxAppearanceTableEntries, "a hotbar cell's picture");
+            // slice 4B-2: the cell's item, so the Tab inventory names the one it holds
+            if (cell.Entity < 1)
+                throw Bad("a hotbar cell's item " + cell.Entity);
+            w.WriteVarUInt((ulong)cell.Entity);
         }
         WriteHotbarName(ref w, message.LeftHand, message.Bar);
         WriteHotbarName(ref w, message.RightHand, message.Bar);
@@ -73,8 +77,16 @@ public static partial class Codec
                 if (state > (byte)HotbarCellState.Out)
                     throw Bad("a hotbar cell state " + state);
                 CheckHotbarCell(probe, i, (HotbarCellState)state);
-                cells[i] = state == 0 ? HotbarCell.Empty
-                    : new HotbarCell((HotbarCellState)state, ReadPlainRef(ref r, true, Limits.MaxAppearanceTableEntries, "a hotbar cell's picture"));
+                if (state == 0)
+                {
+                    cells[i] = HotbarCell.Empty;
+                    continue;
+                }
+                TableRef picture = ReadPlainRef(ref r, true, Limits.MaxAppearanceTableEntries, "a hotbar cell's picture");
+                long item = ReadNonNegativeLong(ref r, "a hotbar cell's item");
+                if (item < 1)
+                    throw Bad("a hotbar cell's item " + item);
+                cells[i] = new HotbarCell((HotbarCellState)state, picture, item);
             }
             string left = ReadHotbarName(ref r, bar);
             string right = ReadHotbarName(ref r, bar);

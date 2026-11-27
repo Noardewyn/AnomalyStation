@@ -13,11 +13,12 @@ public class ProtocolV99HotbarTests
         var cells = new HotbarCell[HotbarMessage.CellCount];
         for (int i = 0; i < cells.Length; i++)
             cells[i] = HotbarCell.Empty;
-        cells[0] = new HotbarCell(HotbarCellState.Holding, new TableRef(5, true));
-        cells[2] = new HotbarCell(HotbarCellState.Out, new TableRef(300, true));
-        cells[6] = new HotbarCell(HotbarCellState.Holding, TableRef.Public(7));
-        cells[7] = new HotbarCell(HotbarCellState.Holding, TableRef.None); // an item that shows nothing
-        cells[9] = new HotbarCell(HotbarCellState.Out, new TableRef(1, true));
+        // slice 4B-2: each held or out cell names its item (two screwdrivers of one picture in cells 1 and 7 are told apart by it)
+        cells[0] = new HotbarCell(HotbarCellState.Holding, new TableRef(5, true), 501);
+        cells[2] = new HotbarCell(HotbarCellState.Out, new TableRef(300, true), 200000);
+        cells[6] = new HotbarCell(HotbarCellState.Holding, new TableRef(5, true), 502);
+        cells[7] = new HotbarCell(HotbarCellState.Holding, TableRef.None, 7); // an item that shows nothing
+        cells[9] = new HotbarCell(HotbarCellState.Out, TableRef.Public(1), 1);
         return new HotbarMessage { Bar = true, BeltWorn = true, Cells = cells, LeftHand = "wrench", RightHand = null, RefusedCell = refused };
     }
 
@@ -38,6 +39,11 @@ public class ProtocolV99HotbarTests
         Assert.Equal(sample, read);
         Assert.Equal(HotbarCellState.Out, read.Cells[2].State);
         Assert.Equal(new TableRef(300, true), read.Cells[2].Appearance);
+        Assert.Equal(new long[] { 501, 0, 200000, 0, 0, 0, 502, 7, 0, 1 }, read.Cells.Select(c => c.Entity));
+        Assert.Equal(read.Cells[0].Appearance, read.Cells[6].Appearance); // one picture, two items
+        // a cell's bytes: the state, the picture, the item: cell 1 holding private picture 5 (0B), item 501 (F5 03)
+        Assert.Equal(new byte[] { 32, 3, 1, 0x0B, 0xF5, 0x03, 0 }, Codec.Encode(sample)[..7]);
+        Assert.NotEqual(Sample(), new HotbarMessage { Bar = true, BeltWorn = true, Cells = Sample().Cells.Select((c, i) => i == 6 ? c with { Entity = 501 } : c).ToArray(), LeftHand = "wrench" });
         Assert.Equal("wrench", read.LeftHand);
         Assert.Null(read.RightHand);
         Assert.Equal(4, read.RefusedCell);
@@ -66,7 +72,7 @@ public class ProtocolV99HotbarTests
         Assert.Equal(ProtocolError.BadValue, error);
         // the longest names fit the cap
         string longest = new('x', Limits.MaxHotbarNameBytes);
-        var cells = Sample().Cells.Select(c => c.State == HotbarCellState.Empty ? new HotbarCell(HotbarCellState.Holding, new TableRef((uint)Limits.MaxAppearanceTableEntries, true)) : c).ToArray();
+        var cells = Sample().Cells.Select(c => new HotbarCell(HotbarCellState.Holding, new TableRef((uint)Limits.MaxAppearanceTableEntries, true), long.MaxValue)).ToArray();
         HotbarMessage widest = new() { Bar = true, BeltWorn = true, Cells = cells, LeftHand = longest, RightHand = longest, RefusedCell = 10 };
         Assert.Equal(widest, RoundTrip(widest));
     }
@@ -87,6 +93,10 @@ public class ProtocolV99HotbarTests
         Assert.Throws<ProtocolException>(() => Codec.Encode(new HotbarMessage { Bar = true, BeltWorn = false, Cells = good.Cells })); // belt cells without a belt
         Assert.Throws<ProtocolException>(() => Codec.Encode(new HotbarMessage { Bar = true, BeltWorn = true, Cells = Cells(1, new HotbarCell(HotbarCellState.Empty, new TableRef(3, true))) }));
         Assert.Throws<ProtocolException>(() => Codec.Encode(new HotbarMessage { Bar = true, BeltWorn = true, Cells = Cells(1, new HotbarCell((HotbarCellState)3, TableRef.None)) }));
+        // slice 4B-2: a held or out cell names its item (1 or more); an empty cell none
+        Assert.Throws<ProtocolException>(() => Codec.Encode(new HotbarMessage { Bar = true, BeltWorn = true, Cells = Cells(1, new HotbarCell(HotbarCellState.Holding, new TableRef(3, true))) }));
+        Assert.Throws<ProtocolException>(() => Codec.Encode(new HotbarMessage { Bar = true, BeltWorn = true, Cells = Cells(1, new HotbarCell(HotbarCellState.Out, new TableRef(3, true), -4)) }));
+        Assert.Throws<ProtocolException>(() => Codec.Encode(new HotbarMessage { Bar = true, BeltWorn = true, Cells = Cells(1, new HotbarCell(HotbarCellState.Empty, TableRef.None, 9)) }));
         Assert.Throws<ProtocolException>(() => Codec.Encode(new HotbarMessage { Bar = true, Cells = Cells(0, HotbarCell.Empty).Select((c, i) => i < 7 ? HotbarCell.Empty : c).ToArray(), RefusedCell = 11 }));
         Assert.Throws<ProtocolException>(() => Codec.Encode(new HotbarMessage { Bar = true, BeltWorn = true, Cells = good.Cells, LeftHand = "" }));
         Assert.Throws<ProtocolException>(() => Codec.Encode(new HotbarMessage { Bar = true, BeltWorn = true, Cells = good.Cells, LeftHand = new string('x', Limits.MaxHotbarNameBytes + 1) }));
@@ -108,6 +118,10 @@ public class ProtocolV99HotbarTests
         bad = (byte[])bytes.Clone();
         bad[2] = 3; // an unknown cell state
         Assert.False(Codec.TryDecode(bad, out HotbarMessage _, out _));
+        // slice 4B-2: cell 1's item of 0 (its two bytes F5 03 made one 00): refused
+        bad = bytes[..4].Concat(new byte[] { 0 }).Concat(bytes[6..]).ToArray();
+        Assert.False(Codec.TryDecode(bad, out HotbarMessage _, out ProtocolError zero));
+        Assert.Equal(ProtocolError.BadValue, zero);
         bad = (byte[])bytes.Clone();
         bad[^1] = 11; // a refused cell out of range
         Assert.False(Codec.TryDecode(bad, out HotbarMessage _, out ProtocolError error));
@@ -125,7 +139,7 @@ public class ProtocolV99HotbarTests
     [Fact]
     public void AHotbarPressCarriesItsCellAndNothingElse()
     {
-        Assert.Equal(ActionKind.HotbarPress, ActionKinds.Last);
+        Assert.True(ActionKinds.Last >= ActionKind.HotbarPress); // version 99 also adds InventoryMove and InventoryOpen after it
         for (int cell = 1; cell <= HotbarMessage.CellCount; cell++)
         {
             var press = new ActionMessage(7, ActionKind.HotbarPress, 0, ClickButton.None, ClickModifiers.None, null) { HotbarCell = cell };

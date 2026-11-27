@@ -46,7 +46,7 @@ public ref struct WireReader
     }
 
     /// <summary>True for the ids a message may start with (<see cref="MessageId.Hello"/> through <see cref="MessageId.Motion"/>, version 42).</summary>
-    public static bool IsKnownMessageId(byte value) => value >= (byte)MessageId.Hello && value <= (byte)MessageId.Hotbar;
+    public static bool IsKnownMessageId(byte value) => value >= (byte)MessageId.Hello && value <= (byte)MessageId.Storages;
 
     /// <summary>Version 34: the next byte, not consumed (a mouse action's target kind, 0 for none).</summary>
     public readonly byte PeekByte()

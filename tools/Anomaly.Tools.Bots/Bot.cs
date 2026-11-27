@@ -496,6 +496,12 @@ public sealed partial class Bot : IDisposable
                 else Stats.DecodeErrors++;
                 break;
 
+            case MessageId.Storages:
+                // version 99 also (DV692): the own human's carried storages (a bot moves nothing, but one it cannot read is a decode error)
+                if (Codec.TryDecode(message, out StoragesMessage storages, out _)) Replica.Apply(storages);
+                else Stats.DecodeErrors++;
+                break;
+
             case MessageId.Motion:
                 // version 42: the capsule mobs' positions on the unreliable channel (the move counters count its entries, resends included)
                 if (!_snapshotApplied) break;

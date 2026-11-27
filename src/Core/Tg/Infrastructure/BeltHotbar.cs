@@ -133,6 +133,35 @@ public sealed class BeltHotbar
         }
     }
 
+    /// <summary>
+    /// DV689, DV692 (ui-overhaul.md section 12, slice 4B-2): an item moved into the worn belt with the wish for bar cell <paramref name="cell"/> (1 to
+    /// 7) takes that cell once it is in the belt: an empty cell simply; a cell holding another belt item swaps with the moved item's own cell when it had
+    /// one (an item out from a cell in a hand keeps that cell until it is back); an item new to the bar takes the cell and the item that was there
+    /// the lowest free one, or, with none free (a belt of more than seven), goes off the bar. A wish for the cell it already has, an item not in the
+    /// worn belt, a cell out of range, or a cell whose item another press or move is moving (<see cref="CarriedStorages.IsClaimed"/>) or which
+    /// is out in a hand changes nothing: the moved item stays in the belt where tg's insert and the bar put it, as with no wish.
+    /// </summary>
+    public static void PlaceInCell(mob_living_carbon_human user, obj_item item, int cell)
+    {
+        BeltHotbar bar = Of(user);
+        bar.Reconcile(user);
+        if (cell is < 1 or > BeltCells || item == null || bar._belt?.atom_storage == null || item.loc != bar._belt.atom_storage.real_location)
+            return;
+        int to = cell - 1, from = Array.IndexOf(bar._items, item, 0, BeltCells);
+        if (from == to)
+            return;
+        (obj_item other, bool otherTaken) = (bar._items[to], bar._taken[to]);
+        // an item another press or move is moving, or one out of the cell in a hand (section 10: it keeps its cell while held), keeps its cell: the bar
+        // is not rearranged for this wish, and the moved item keeps the cell it got as with no wish (the lowest free one, or none)
+        if (other != null && (otherTaken || CarriedStorages.IsClaimed(user, other)))
+            return;
+        if (from >= 0)
+            (bar._items[from], bar._taken[from]) = (other, other != null && otherTaken);
+        else if (other != null && Array.IndexOf(bar._items, null, 0, BeltCells) is int free and >= 0)
+            (bar._items[free], bar._taken[free]) = (other, otherTaken);
+        (bar._items[to], bar._taken[to]) = (item, false);
+    }
+
     /// <summary>A copy brought up to date (<see cref="Reconcile"/>), for a reader outside the world: the mob's own cells are not changed.</summary>
     public static BeltHotbar Peek(mob_living_carbon_human user)
     {
@@ -180,20 +209,35 @@ public sealed class BeltHotbar
 
     /// <summary>
     /// The five rules of a press (ui-overhaul.md section 10, "What a press of cell N does"), refused (nothing changes, the client is told) when the
-    /// mob is dead or incapacitated (tg's smart_equip_targeted: <c>if(incapacitated) return</c>), no rule applies, or tg's procs refuse the move.
+    /// mob is dead or incapacitated (tg's smart_equip_targeted: <c>if(incapacitated) return</c>), one of its items is being moved by an inventory
+    /// move, no rule applies, or tg's procs refuse the move.
     /// </summary>
     public static async DmTask PressAsync(mob_living_carbon_human user, int cell)
     {
         BeltHotbar bar = Of(user);
         bar.Reconcile(user);
-        if (await bar.Apply(user, cell))
-            return;
+        // DV692: a press and an inventory move (CarriedStorages) never move the same item at once
+        obj_item cellItem = bar.ItemOf(cell), held = user.get_active_held_item() as obj_item;
+        if (CarriedStorages.Claim(user, cellItem, held))
+        {
+            try
+            {
+                if (await bar.Apply(user, cell))
+                    return;
+            }
+            finally
+            {
+                CarriedStorages.Release(user, cellItem, held);
+            }
+        }
         bar.Refusals++;
         bar.RefusedCell = cell;
     }
 
     private async DmTask<bool> Apply(mob_living_carbon_human user, int cell)
     {
+        // tg: code/modules/mob/living/carbon/human/inventory.dm:386 (smart_equip_targeted: incapacitated; blocked hands and a mech are left to
+        // what tg's procs it calls refuse by themselves)
         if (user.stat == DEAD || Dm.truthy(user.incapacitated))
             return false;
         obj_item held = user.get_active_held_item() as obj_item;
@@ -288,7 +332,10 @@ public sealed class BeltHotbar
         }
         if (!Dm.truthy(user.is_holding(item)))
             return false;
-        _taken[cell - 1] = true;
+        // the item's cell after the waits (a move may have rearranged the bar meanwhile), not the cell index read before them
+        int index = Array.IndexOf(_items, item);
+        if (index >= 0)
+            _taken[index] = true;
         return true;
     }
 
@@ -307,6 +354,19 @@ public sealed class BeltHotbar
             return false;
         }
         return true;
+    }
+
+    /// <summary>
+    /// DV692: an item an inventory move took from the worn belt's storage <paramref name="from"/> into a hand keeps its cell, out, as a press of the
+    /// cell would have left it (the same key puts it back); a move anywhere else frees the cell at the next <see cref="Reconcile"/>.
+    /// </summary>
+    public static void TakenFromBar(mob_living_carbon_human user, obj_item item, datum_storage from)
+    {
+        if (user.dm_hotbar is not BeltHotbar bar || bar._belt == null || bar._belt.atom_storage != from || !Held(user, item))
+            return;
+        int index = Array.IndexOf(bar._items, item, 0, BeltCells);
+        if (index >= 0)
+            bar._taken[index] = true;
     }
 
     // The item is the cell's alone (an item has one cell).

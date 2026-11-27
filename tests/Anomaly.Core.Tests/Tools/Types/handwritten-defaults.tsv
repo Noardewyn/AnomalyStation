@@ -346,6 +346,10 @@
 /datum/reagents	ui_tags_selected	decl	code/modules/reagents/chemistry/holder/holder.dm:29	{"K":"num","N":0}
 /datum/reagents	ui_reaction_index	decl	code/modules/reagents/chemistry/holder/holder.dm:31	{"K":"num","N":1}
 /datum/reagents	ui_beaker_sync	decl	code/modules/reagents/chemistry/holder/holder.dm:33	{"K":"num","N":0}
+/datum/action/cooldown/spell/shapeshift	shapeshift_type	decl	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:27	{"K":"null","N":0}
+/datum/action/cooldown/spell/shapeshift	button_icon_state	override	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:10	{"K":"str","N":0,"S":"shapeshift"}
+/datum/action/cooldown/spell/shapeshift	school	override	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:11	{"K":"str","N":0,"S":"transmutation"}
+/datum/action/cooldown/spell/shapeshift	cooldown_time	override	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:12	{"K":"num","N":100}
 /datum/pathfind	start	decl	code/__HELPERS/paths/path.dm:85	{"K":"null","N":0}
 /datum/can_pass_info	pass_flags	decl	code/__HELPERS/paths/path.dm:276	{"K":"num","N":0}
 /datum/sort_instance	L	decl	code/__HELPERS/sorts/sort_instance.dm:15	{"K":"null","N":0}
@@ -862,6 +866,14 @@
 /datum/status_effect/temporary_blindness	tick_interval	override	code/datums/status_effects/debuffs/vision/blindness.dm:94	{"K":"num","N":20}
 /datum/status_effect/temporary_blindness	alert_type	override	code/datums/status_effects/debuffs/vision/blindness.dm:95	{"K":"null","N":0}
 /datum/status_effect/temporary_blindness	remove_on_fullheal	override	code/datums/status_effects/debuffs/vision/blindness.dm:96	{"K":"num","N":1}
+/datum/status_effect/slimerecall	bluespace	decl	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:63	{"K":"null","N":0}
+/datum/status_effect/slimerecall	id	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:57	{"K":"str","N":0,"S":"slime_recall"}
+/datum/status_effect/slimerecall	duration	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:58	{"K":"num","N":-1}
+/datum/status_effect/slimerecall	tick_interval	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:59	{"K":"num","N":-1}
+/datum/status_effect/slimerecall	alert_type	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:60	{"K":"null","N":0}
+/datum/status_effect/stabilized/gold	familiar	decl	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1037	{"K":"null","N":0}
+/datum/status_effect/stabilized/gold	id	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1035	{"K":"str","N":0,"S":"stabilizedgold"}
+/datum/status_effect/stabilized/gold	colour	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1036	{"K":"str","N":0,"S":"gold"}
 /datum/bt_node/ai_behavior/acquire_target	vision_range	decl	code/datums/ai/generic_behaviors/acquire_target.dm:12	{"K":"num","N":7}
 /datum/bt_node/ai_behavior/acquire_target/target_from_retaliate_list	check_faction	decl	code/datums/ai/generic_behaviors/target_retaliate.dm:12	{"K":"num","N":0}
 /datum/bt_node/ai_behavior/acquire_target/target_from_retaliate_list	target_source	override	code/datums/ai/generic_behaviors/target_retaliate.dm:4	{"K":"type","N":0,"S":"/datum/target_source/from_bb_list/retaliate_list"}

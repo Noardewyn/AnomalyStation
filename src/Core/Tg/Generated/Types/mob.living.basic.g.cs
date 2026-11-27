@@ -5529,9 +5529,9 @@ public partial class mob_living_basic_slime_pet
 [DmPath("/mob/living/basic/slime/hilbert")]
 public partial class mob_living_basic_slime_hilbert { }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_mobs.dm:35
-[DmPath("/mob/living/basic/slime/transformed_slime"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_slime_transformed_slime : mob_living_basic_slime { }
+// tg: code/modules/research/xenobiology/crossbreeding/_mobs.dm:35 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/slime/transformed_slime")]
+public partial class mob_living_basic_slime_transformed_slime { }
 
 // tg: code/modules/mob/living/basic/festivus_pole.dm:5
 [DmPath("/mob/living/basic/festivus"), DmGeneratedOnly, DmInert]

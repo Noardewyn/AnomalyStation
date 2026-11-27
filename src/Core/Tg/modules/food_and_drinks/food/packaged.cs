@@ -11,7 +11,8 @@ namespace Anomaly.Core.Tg;
 
 // PARTIAL: only the kitchen links of the food (make_grillable, make_bakeable, make_microwaveable, make_processable,
 // make_dryable), the cans' base (:4-38: opening a can) and the Ready-Donk's box (:241) translated (gaps package H2, D333);
-// the rest of the file is generated or waits for its package.
+// the ration pack (:359, the chilling silver slime extract's emergency food); the rest of the file is generated or waits for
+// its package.
 
 // Cans
 // tg: code/modules/food_and_drinks/food/packaged.dm:4
@@ -110,4 +111,23 @@ public sealed partial class TgState
 {
     // tg: code/modules/food_and_drinks/food/packaged.dm:233  /obj/item/food/ready_donk's var/static/list/added_reagents
     internal DmList obj_item_food_ready_donk__added_reagents;
+}
+
+// Rations
+// tg: code/modules/food_and_drinks/food/packaged.dm:359
+public partial class obj_item_food_rationpack : obj_item_food
+{
+    ///Override for checkliked callback
+    // tg: code/modules/food_and_drinks/food/packaged.dm:373
+    public override async DmTask make_edible()
+    {
+        await base.make_edible();
+        await AddComponentFrom(SOURCE_EDIBLE_INNATE, typeof(datum_component_edible), Dm.named("check_liked", Dm.@new<datum_callback>(this, nameof(check_liked))));
+    }
+
+    // tg: code/modules/food_and_drinks/food/packaged.dm:377
+    public virtual object check_liked(mob mob = null) //Nobody likes rationpacks. Nobody.
+    {
+        return FOOD_DISLIKED;
+    }
 }

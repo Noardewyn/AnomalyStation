@@ -19789,9 +19789,9 @@ public partial class obj_item_food_ready_donk_country_chicken : obj_item_food_re
     }
 }
 
-// tg: code/modules/food_and_drinks/food/packaged.dm:360
-[DmPath("/obj/item/food/rationpack"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_rationpack : obj_item_food
+// tg: code/modules/food_and_drinks/food/packaged.dm:360 (the var block of a hand-written class)
+[DmPath("/obj/item/food/rationpack")]
+public partial class obj_item_food_rationpack
 {
     // tg: code/modules/food_and_drinks/food/packaged.dm:360
     public obj_item_food_rationpack()

@@ -6341,30 +6341,21 @@ public partial class datum_action_cooldown_spell_aoe_sacred_flame : datum_action
     }
 }
 
-// tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:10
-[DmPath("/datum/action/cooldown/spell/shapeshift"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_shapeshift : datum_action_cooldown_spell
+// tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:10 (the vars the hand-written class does not declare)
+[DmPath("/datum/action/cooldown/spell/shapeshift")]
+public partial class datum_action_cooldown_spell_shapeshift
 {
     public object pre_shift_requirements; // tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:15
     public float revert_on_death = 1; // tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:18
     public float die_with_shapeshifted_form = 1; // tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:20
     public float convert_damage = 1; // tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:22
     public string convert_damage_type = "brute"; // tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:24
-    public mob_living shapeshift_type; // tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:27
     public DmList possible_shapes; // tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:30
     public Type shapechange_type = typeof(datum_status_effect_shapechange_mob_from_spell); // tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:33
-
-    // tg: code/modules/spells/spell_types/shapeshift/_shapeshift.dm:10
-    public datum_action_cooldown_spell_shapeshift()
-    {
-        button_icon_state = "shapeshift";
-        school = "transmutation";
-        cooldown_time = 100;
-    }
 }
 
 // tg: code/modules/antagonists/heretic/magic/eldritch_shapeshift.dm:3
-[DmPath("/datum/action/cooldown/spell/shapeshift/eldritch"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/spell/shapeshift/eldritch"), DmGeneratedOnly]
 public partial class datum_action_cooldown_spell_shapeshift_eldritch : datum_action_cooldown_spell_shapeshift
 {
     // tg: code/modules/antagonists/heretic/magic/eldritch_shapeshift.dm:3
@@ -6469,9 +6460,9 @@ public partial class datum_action_cooldown_spell_shapeshift_polymorph_belt : dat
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_mobs.dm:9
-[DmPath("/datum/action/cooldown/spell/shapeshift/slime_form"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_shapeshift_slime_form : datum_action_cooldown_spell_shapeshift
+// tg: code/modules/research/xenobiology/crossbreeding/_mobs.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/shapeshift/slime_form")]
+public partial class datum_action_cooldown_spell_shapeshift_slime_form
 {
     public float remove_on_restore = 0; // tg: code/modules/research/xenobiology/crossbreeding/_mobs.dm:21
 
@@ -6496,7 +6487,7 @@ public partial class datum_action_cooldown_spell_shapeshift_slime_form : datum_a
 }
 
 // tg: code/modules/spells/spell_types/shapeshift/dragon.dm:3
-[DmPath("/datum/action/cooldown/spell/shapeshift/dragon"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/spell/shapeshift/dragon"), DmGeneratedOnly]
 public partial class datum_action_cooldown_spell_shapeshift_dragon : datum_action_cooldown_spell_shapeshift
 {
     // tg: code/modules/spells/spell_types/shapeshift/dragon.dm:3
@@ -6519,7 +6510,7 @@ public partial class datum_action_cooldown_spell_shapeshift_dragon : datum_actio
 }
 
 // tg: code/modules/spells/spell_types/shapeshift/gorilla.dm:3
-[DmPath("/datum/action/cooldown/spell/shapeshift/gorilla"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/spell/shapeshift/gorilla"), DmGeneratedOnly]
 public partial class datum_action_cooldown_spell_shapeshift_gorilla : datum_action_cooldown_spell_shapeshift
 {
     // tg: code/modules/spells/spell_types/shapeshift/gorilla.dm:3
@@ -6542,7 +6533,7 @@ public partial class datum_action_cooldown_spell_shapeshift_gorilla : datum_acti
 }
 
 // tg: code/modules/spells/spell_types/shapeshift/polar_bear.dm:2
-[DmPath("/datum/action/cooldown/spell/shapeshift/polar_bear"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/spell/shapeshift/polar_bear"), DmGeneratedOnly]
 public partial class datum_action_cooldown_spell_shapeshift_polar_bear : datum_action_cooldown_spell_shapeshift
 {
     // tg: code/modules/spells/spell_types/shapeshift/polar_bear.dm:2
@@ -6565,7 +6556,7 @@ public partial class datum_action_cooldown_spell_shapeshift_polar_bear : datum_a
 }
 
 // tg: code/modules/spells/spell_types/shapeshift/shapechange.dm:2
-[DmPath("/datum/action/cooldown/spell/shapeshift/wizard"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/spell/shapeshift/wizard"), DmGeneratedOnly]
 public partial class datum_action_cooldown_spell_shapeshift_wizard : datum_action_cooldown_spell_shapeshift
 {
     // tg: code/modules/spells/spell_types/shapeshift/shapechange.dm:2
@@ -6590,7 +6581,7 @@ public partial class datum_action_cooldown_spell_shapeshift_wizard : datum_actio
 }
 
 // tg: code/modules/spells/spell_types/shapeshift/wolf.dm:2
-[DmPath("/datum/action/cooldown/spell/shapeshift/wolf"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/spell/shapeshift/wolf"), DmGeneratedOnly]
 public partial class datum_action_cooldown_spell_shapeshift_wolf : datum_action_cooldown_spell_shapeshift
 {
     // tg: code/modules/spells/spell_types/shapeshift/wolf.dm:2

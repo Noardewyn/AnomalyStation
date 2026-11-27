@@ -1872,9 +1872,9 @@ public partial class obj_item_melee_arm_blade_false : obj_item_melee_arm_blade
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:9
-[DmPath("/obj/item/melee/arm_blade/slime"), DmGeneratedOnly, DmInert]
-public partial class obj_item_melee_arm_blade_slime : obj_item_melee_arm_blade
+// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/melee/arm_blade/slime")]
+public partial class obj_item_melee_arm_blade_slime
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:9
     public obj_item_melee_arm_blade_slime()

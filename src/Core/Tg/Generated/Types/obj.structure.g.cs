@@ -18309,9 +18309,9 @@ public partial class obj_structure_altar_of_gods
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:50
-[DmPath("/obj/structure/light_prism"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_light_prism : obj_structure
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:50 (the var block of a hand-written class)
+[DmPath("/obj/structure/light_prism")]
+public partial class obj_structure_light_prism
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:50
     public obj_structure_light_prism()

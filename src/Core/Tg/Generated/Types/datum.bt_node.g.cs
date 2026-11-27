@@ -457,9 +457,9 @@ public partial class datum_bt_node_ai_behavior_use_mob_ability
     public string ability_key = "BB_generic_action"; // tg: code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:3
 }
 
-// tg: code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:31
-[DmPath("/datum/bt_node/ai_behavior/use_mob_ability/shapeshift"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_use_mob_ability_shapeshift : datum_bt_node_ai_behavior_use_mob_ability
+// tg: code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:31 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/use_mob_ability/shapeshift")]
+public partial class datum_bt_node_ai_behavior_use_mob_ability_shapeshift
 {
     // tg: code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:31
     public datum_bt_node_ai_behavior_use_mob_ability_shapeshift()

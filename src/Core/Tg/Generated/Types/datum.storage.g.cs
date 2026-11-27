@@ -1522,9 +1522,9 @@ public partial class datum_storage_carpskin_bag : datum_storage
     }
 }
 
-// tg: code/datums/storage/subtypes/others/extract_inventory.dm:2
-[DmPath("/datum/storage/extract_inventory"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_extract_inventory : datum_storage
+// tg: code/datums/storage/subtypes/others/extract_inventory.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/storage/extract_inventory")]
+public partial class datum_storage_extract_inventory
 {
     // tg: code/datums/storage/subtypes/others/extract_inventory.dm:2
     public datum_storage_extract_inventory()

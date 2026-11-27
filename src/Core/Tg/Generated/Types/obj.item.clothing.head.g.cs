@@ -7952,9 +7952,9 @@ public partial class obj_item_clothing_head_mod
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:101
-[DmPath("/obj/item/clothing/head/peaceflower"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_peaceflower : obj_item_clothing_head
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:101 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/peaceflower")]
+public partial class obj_item_clothing_head_peaceflower
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:101
     public obj_item_clothing_head_peaceflower()

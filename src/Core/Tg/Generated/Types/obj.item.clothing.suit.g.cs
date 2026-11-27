@@ -2744,9 +2744,9 @@ public partial class obj_item_clothing_suit_armor_heavy
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:123
-[DmPath("/obj/item/clothing/suit/armor/heavy/adamantine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_heavy_adamantine : obj_item_clothing_suit_armor_heavy
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:123 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/heavy/adamantine")]
+public partial class obj_item_clothing_suit_armor_heavy_adamantine
 {
     public float hit_reflect_chance = 40; // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:134
 

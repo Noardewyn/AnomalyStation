@@ -6411,9 +6411,9 @@ public partial class obj_item_gun_magic_hook_debug : obj_item_gun_magic_hook
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:85
-[DmPath("/obj/item/gun/magic/bloodchill"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gun_magic_bloodchill : obj_item_gun_magic
+// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:85 (the var block of a hand-written class)
+[DmPath("/obj/item/gun/magic/bloodchill")]
+public partial class obj_item_gun_magic_bloodchill
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:85
     public obj_item_gun_magic_bloodchill()

@@ -3719,9 +3719,9 @@ public partial class atom_movable_screen_alert_status_effect_bluespaceslime : at
     }
 }
 
-// tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:247
-[DmPath("/atom/movable/screen/alert/status_effect/shapeshifted"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_status_effect_shapeshifted : atom_movable_screen_alert_status_effect
+// tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:247 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/status_effect/shapeshifted")]
+public partial class atom_movable_screen_alert_status_effect_shapeshifted
 {
     // tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:247
     public atom_movable_screen_alert_status_effect_shapeshifted()

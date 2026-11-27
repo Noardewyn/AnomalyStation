@@ -4746,9 +4746,9 @@ public partial class obj_projectile_magic_spellcard : obj_projectile_magic
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:128
-[DmPath("/obj/projectile/magic/bloodchill"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_magic_bloodchill : obj_projectile_magic
+// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:128 (the var block of a hand-written class)
+[DmPath("/obj/projectile/magic/bloodchill")]
+public partial class obj_projectile_magic_bloodchill
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:128
     public obj_projectile_magic_bloodchill()

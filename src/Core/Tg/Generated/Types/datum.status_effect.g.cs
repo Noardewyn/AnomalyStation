@@ -4841,9 +4841,9 @@ public partial class datum_status_effect_embryonic
     }
 }
 
-// tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:5
-[DmPath("/datum/status_effect/shapechange_mob"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_shapechange_mob : datum_status_effect
+// tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/shapechange_mob")]
+public partial class datum_status_effect_shapechange_mob
 {
     public mob_living caster_mob; // tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:12
     public float already_restored = 0; // tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:14
@@ -4857,9 +4857,9 @@ public partial class datum_status_effect_shapechange_mob : datum_status_effect
     }
 }
 
-// tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:158
-[DmPath("/datum/status_effect/shapechange_mob/from_spell"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_shapechange_mob_from_spell : datum_status_effect_shapechange_mob
+// tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:158 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/shapechange_mob/from_spell")]
+public partial class datum_status_effect_shapechange_mob_from_spell
 {
     public datum_weakref source_weakref; // tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:160
 
@@ -5385,9 +5385,9 @@ public partial class datum_status_effect_slumber_party
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:7
-[DmPath("/datum/status_effect/rainbow_protection"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_rainbow_protection : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/rainbow_protection")]
+public partial class datum_status_effect_rainbow_protection
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:7
     public datum_status_effect_rainbow_protection()
@@ -5400,9 +5400,9 @@ public partial class datum_status_effect_rainbow_protection : datum_status_effec
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:38
-[DmPath("/datum/status_effect/slimeskin"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_slimeskin : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:38 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/slimeskin")]
+public partial class datum_status_effect_slimeskin
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:38
     public datum_status_effect_slimeskin()
@@ -5414,22 +5414,12 @@ public partial class datum_status_effect_slimeskin : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:57
-[DmPath("/datum/status_effect/slimerecall"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_slimerecall : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:57 (the vars the hand-written class does not declare)
+[DmPath("/datum/status_effect/slimerecall")]
+public partial class datum_status_effect_slimerecall
 {
     public float interrupted = 0; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:61
     public mob target; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:62
-    public Type bluespace; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:63
-
-    // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:57
-    public datum_status_effect_slimerecall()
-    {
-        id = "slime_recall";
-        duration = -1;
-        tick_interval = -1;
-        alert_type = null;
-    }
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:93 (the var block of a hand-written class)
@@ -5461,9 +5451,9 @@ public partial class datum_status_effect_frozenstasis_irresistable : datum_statu
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:135
-[DmPath("/datum/status_effect/slime_clone"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_slime_clone : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:135 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/slime_clone")]
+public partial class datum_status_effect_slime_clone
 {
     public mob_living clone; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:139
     public datum_mind originalmind; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:140
@@ -5478,9 +5468,9 @@ public partial class datum_status_effect_slime_clone : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:179
-[DmPath("/datum/status_effect/slime_clone_decay"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_slime_clone_decay : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:179 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/slime_clone_decay")]
+public partial class datum_status_effect_slime_clone_decay
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:179
     public datum_status_effect_slime_clone_decay()
@@ -5492,9 +5482,9 @@ public partial class datum_status_effect_slime_clone_decay : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:204
-[DmPath("/datum/status_effect/bloodchill"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_bloodchill : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:204 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/bloodchill")]
+public partial class datum_status_effect_bloodchill
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:204
     public datum_status_effect_bloodchill()
@@ -5505,9 +5495,9 @@ public partial class datum_status_effect_bloodchill : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:220
-[DmPath("/datum/status_effect/bonechill"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_bonechill : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:220 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/bonechill")]
+public partial class datum_status_effect_bonechill
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:220
     public datum_status_effect_bonechill()
@@ -5518,9 +5508,9 @@ public partial class datum_status_effect_bonechill : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:248
-[DmPath("/datum/status_effect/rebreathing"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_rebreathing : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:248 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/rebreathing")]
+public partial class datum_status_effect_rebreathing
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:248
     public datum_status_effect_rebreathing()
@@ -5531,9 +5521,9 @@ public partial class datum_status_effect_rebreathing : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:260
-[DmPath("/datum/status_effect/firecookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_firecookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:260 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/firecookie")]
+public partial class datum_status_effect_firecookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:260
     public datum_status_effect_firecookie()
@@ -5546,9 +5536,9 @@ public partial class datum_status_effect_firecookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:275
-[DmPath("/datum/status_effect/watercookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_watercookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:275 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/watercookie")]
+public partial class datum_status_effect_watercookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:275
     public datum_status_effect_watercookie()
@@ -5560,9 +5550,9 @@ public partial class datum_status_effect_watercookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:292
-[DmPath("/datum/status_effect/metalcookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_metalcookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:292 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/metalcookie")]
+public partial class datum_status_effect_metalcookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:292
     public datum_status_effect_metalcookie()
@@ -5575,9 +5565,9 @@ public partial class datum_status_effect_metalcookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:306
-[DmPath("/datum/status_effect/sparkcookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_sparkcookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:306 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/sparkcookie")]
+public partial class datum_status_effect_sparkcookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:306
     public datum_status_effect_sparkcookie()
@@ -5590,9 +5580,9 @@ public partial class datum_status_effect_sparkcookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:320
-[DmPath("/datum/status_effect/toxincookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_toxincookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:320 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/toxincookie")]
+public partial class datum_status_effect_toxincookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:320
     public datum_status_effect_toxincookie()
@@ -5605,9 +5595,9 @@ public partial class datum_status_effect_toxincookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:334
-[DmPath("/datum/status_effect/timecookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_timecookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:334 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/timecookie")]
+public partial class datum_status_effect_timecookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:334
     public datum_status_effect_timecookie()
@@ -5620,9 +5610,9 @@ public partial class datum_status_effect_timecookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:349
-[DmPath("/datum/status_effect/lovecookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_lovecookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:349 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/lovecookie")]
+public partial class datum_status_effect_lovecookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:349
     public datum_status_effect_lovecookie()
@@ -5634,9 +5624,9 @@ public partial class datum_status_effect_lovecookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:370
-[DmPath("/datum/status_effect/tarcookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_tarcookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:370 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/tarcookie")]
+public partial class datum_status_effect_tarcookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:370
     public datum_status_effect_tarcookie()
@@ -5648,9 +5638,9 @@ public partial class datum_status_effect_tarcookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:381
-[DmPath("/datum/status_effect/tarfoot"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_tarfoot : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:381 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/tarfoot")]
+public partial class datum_status_effect_tarfoot
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:381
     public datum_status_effect_tarfoot()
@@ -5662,9 +5652,9 @@ public partial class datum_status_effect_tarfoot : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:394
-[DmPath("/datum/status_effect/spookcookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_spookcookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:394 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/spookcookie")]
+public partial class datum_status_effect_spookcookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:394
     public datum_status_effect_spookcookie()
@@ -5676,9 +5666,9 @@ public partial class datum_status_effect_spookcookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:409
-[DmPath("/datum/status_effect/peacecookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_peacecookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:409 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/peacecookie")]
+public partial class datum_status_effect_peacecookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:409
     public datum_status_effect_peacecookie()
@@ -5690,9 +5680,9 @@ public partial class datum_status_effect_peacecookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:419
-[DmPath("/datum/status_effect/plur"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_plur : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:419 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/plur")]
+public partial class datum_status_effect_plur
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:419
     public datum_status_effect_plur()
@@ -5705,9 +5695,9 @@ public partial class datum_status_effect_plur : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:433
-[DmPath("/datum/status_effect/adamantinecookie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_adamantinecookie : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:433 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/adamantinecookie")]
+public partial class datum_status_effect_adamantinecookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:433
     public datum_status_effect_adamantinecookie()
@@ -5720,9 +5710,9 @@ public partial class datum_status_effect_adamantinecookie : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:451
-[DmPath("/datum/status_effect/stabilized"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:451 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized")]
+public partial class datum_status_effect_stabilized
 {
     public obj_item_slimecross_stabilized linked_extract; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:455
     public string colour = "null"; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:457
@@ -5737,7 +5727,7 @@ public partial class datum_status_effect_stabilized : datum_status_effect
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:476
-[DmPath("/datum/status_effect/stabilized/null"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/status_effect/stabilized/null"), DmGeneratedOnly]
 public partial class datum_status_effect_stabilized_null : datum_status_effect_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:476
@@ -5747,9 +5737,9 @@ public partial class datum_status_effect_stabilized_null : datum_status_effect_s
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:481
-[DmPath("/datum/status_effect/stabilized/grey"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_grey : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:481 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/grey")]
+public partial class datum_status_effect_stabilized_grey
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:481
     public datum_status_effect_stabilized_grey()
@@ -5759,9 +5749,9 @@ public partial class datum_status_effect_stabilized_grey : datum_status_effect_s
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:492
-[DmPath("/datum/status_effect/stabilized/orange"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_orange : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:492 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/orange")]
+public partial class datum_status_effect_stabilized_orange
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:492
     public datum_status_effect_stabilized_orange()
@@ -5771,9 +5761,9 @@ public partial class datum_status_effect_stabilized_orange : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:513
-[DmPath("/datum/status_effect/stabilized/purple"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_purple : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:513 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/purple")]
+public partial class datum_status_effect_stabilized_purple
 {
     public float healed_last_tick = 0; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:516
 
@@ -5785,9 +5775,9 @@ public partial class datum_status_effect_stabilized_purple : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:551
-[DmPath("/datum/status_effect/stabilized/blue"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_blue : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:551 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/blue")]
+public partial class datum_status_effect_stabilized_blue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:551
     public datum_status_effect_stabilized_blue()
@@ -5797,9 +5787,9 @@ public partial class datum_status_effect_stabilized_blue : datum_status_effect_s
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:562
-[DmPath("/datum/status_effect/stabilized/metal"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_metal : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:562 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/metal")]
+public partial class datum_status_effect_stabilized_metal
 {
     public float cooldown = 30; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:564
     public float max_cooldown = 30; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:565
@@ -5812,9 +5802,9 @@ public partial class datum_status_effect_stabilized_metal : datum_status_effect_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:585
-[DmPath("/datum/status_effect/stabilized/yellow"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_yellow : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:585 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/yellow")]
+public partial class datum_status_effect_stabilized_yellow
 {
     public float cooldown = 10; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:587
     public float max_cooldown = 10; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:588
@@ -5827,9 +5817,9 @@ public partial class datum_status_effect_stabilized_yellow : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:615
-[DmPath("/datum/status_effect/stabilized/darkpurple"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_darkpurple : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:615 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/darkpurple")]
+public partial class datum_status_effect_stabilized_darkpurple
 {
     public obj_item_hothands fire; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:617
 
@@ -5841,9 +5831,9 @@ public partial class datum_status_effect_stabilized_darkpurple : datum_status_ef
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:641
-[DmPath("/datum/status_effect/stabilized/darkblue"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_darkblue : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:641 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/darkblue")]
+public partial class datum_status_effect_stabilized_darkblue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:641
     public datum_status_effect_stabilized_darkblue()
@@ -5853,9 +5843,9 @@ public partial class datum_status_effect_stabilized_darkblue : datum_status_effe
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:673
-[DmPath("/datum/status_effect/stabilized/silver"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_silver : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:673 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/silver")]
+public partial class datum_status_effect_stabilized_silver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:673
     public datum_status_effect_stabilized_silver()
@@ -5865,9 +5855,9 @@ public partial class datum_status_effect_stabilized_silver : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:696
-[DmPath("/datum/status_effect/stabilized/bluespace"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_bluespace : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:696 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/bluespace")]
+public partial class datum_status_effect_stabilized_bluespace
 {
     public object healthcheck; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:699
 
@@ -5880,9 +5870,9 @@ public partial class datum_status_effect_stabilized_bluespace : datum_status_eff
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:726
-[DmPath("/datum/status_effect/stabilized/sepia"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_sepia : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:726 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/sepia")]
+public partial class datum_status_effect_stabilized_sepia
 {
     public float? mod = 0; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:728
 
@@ -5894,9 +5884,9 @@ public partial class datum_status_effect_stabilized_sepia : datum_status_effect_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:744
-[DmPath("/datum/status_effect/stabilized/cerulean"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_cerulean : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:744 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/cerulean")]
+public partial class datum_status_effect_stabilized_cerulean
 {
     public mob_living clone; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:746
 
@@ -5908,9 +5898,9 @@ public partial class datum_status_effect_stabilized_cerulean : datum_status_effe
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:786
-[DmPath("/datum/status_effect/stabilized/pyrite"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_pyrite : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:786 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/pyrite")]
+public partial class datum_status_effect_stabilized_pyrite
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:786
     public datum_status_effect_stabilized_pyrite()
@@ -5920,9 +5910,9 @@ public partial class datum_status_effect_stabilized_pyrite : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:798
-[DmPath("/datum/status_effect/stabilized/red"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_red : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:798 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/red")]
+public partial class datum_status_effect_stabilized_red
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:798
     public datum_status_effect_stabilized_red()
@@ -5932,9 +5922,9 @@ public partial class datum_status_effect_stabilized_red : datum_status_effect_st
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:810
-[DmPath("/datum/status_effect/stabilized/green"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_green : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:810 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/green")]
+public partial class datum_status_effect_stabilized_green
 {
     public datum_dna originalDNA; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:812
     public object originalname; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:813
@@ -5947,9 +5937,9 @@ public partial class datum_status_effect_stabilized_green : datum_status_effect_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:859
-[DmPath("/datum/status_effect/stabilized/pink"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_pink : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:859 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/pink")]
+public partial class datum_status_effect_stabilized_pink
 {
     public DmList mobs; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:862
     public string faction_name = ""; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:864
@@ -5969,9 +5959,9 @@ public partial class datum_status_effect_stabilized_pink : datum_status_effect_s
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:925
-[DmPath("/datum/status_effect/stabilized/oil"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_oil : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:925 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/oil")]
+public partial class datum_status_effect_stabilized_oil
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:925
     public datum_status_effect_stabilized_oil()
@@ -5981,9 +5971,9 @@ public partial class datum_status_effect_stabilized_oil : datum_status_effect_st
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:942
-[DmPath("/datum/status_effect/stabilized/black"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_black : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:942 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/black")]
+public partial class datum_status_effect_stabilized_black
 {
     public float heal_amount = 1; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:945
     public datum_weakref draining_ref; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:947
@@ -5996,9 +5986,9 @@ public partial class datum_status_effect_stabilized_black : datum_status_effect_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1008
-[DmPath("/datum/status_effect/stabilized/lightpink"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_lightpink : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1008 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/lightpink")]
+public partial class datum_status_effect_stabilized_lightpink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1008
     public datum_status_effect_stabilized_lightpink()
@@ -6008,9 +5998,9 @@ public partial class datum_status_effect_stabilized_lightpink : datum_status_eff
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1028
-[DmPath("/datum/status_effect/stabilized/adamantine"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_adamantine : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1028 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/adamantine")]
+public partial class datum_status_effect_stabilized_adamantine
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1028
     public datum_status_effect_stabilized_adamantine()
@@ -6020,23 +6010,13 @@ public partial class datum_status_effect_stabilized_adamantine : datum_status_ef
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1035
-[DmPath("/datum/status_effect/stabilized/gold"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_gold : datum_status_effect_stabilized
-{
-    public mob_living_simple_animal familiar; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1037
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1035 (the vars the hand-written class does not declare)
+[DmPath("/datum/status_effect/stabilized/gold")]
+public partial class datum_status_effect_stabilized_gold { }
 
-    // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1035
-    public datum_status_effect_stabilized_gold()
-    {
-        id = "stabilizedgold";
-        colour = "gold";
-    }
-}
-
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1071
-[DmPath("/datum/status_effect/stabilized/rainbow"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_stabilized_rainbow : datum_status_effect_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1071 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/stabilized/rainbow")]
+public partial class datum_status_effect_stabilized_rainbow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1071
     public datum_status_effect_stabilized_rainbow()
@@ -6073,9 +6053,9 @@ public partial class datum_status_effect_brokenpeace : datum_status_effect
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:847
-[DmPath("/datum/status_effect/pinkdamagetracker"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_pinkdamagetracker : datum_status_effect
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:847 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/pinkdamagetracker")]
+public partial class datum_status_effect_pinkdamagetracker
 {
     public float? damage = 0; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:850
     public object lasthealth; // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:851

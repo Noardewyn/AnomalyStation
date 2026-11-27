@@ -1535,9 +1535,9 @@ public partial class datum_action_item_action_pray_refill : datum_action_item_ac
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:70
-[DmPath("/datum/action/item_action/change_prism_colour"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_change_prism_colour : datum_action_item_action
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:70 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/change_prism_colour")]
+public partial class datum_action_item_action_change_prism_colour
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:70
     public datum_action_item_action_change_prism_colour()
@@ -1548,9 +1548,9 @@ public partial class datum_action_item_action_change_prism_colour : datum_action
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:84
-[DmPath("/datum/action/item_action/place_light_prism"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_place_light_prism : datum_action_item_action
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:84 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/place_light_prism")]
+public partial class datum_action_item_action_place_light_prism
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:84
     public datum_action_item_action_place_light_prism()

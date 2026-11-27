@@ -7029,9 +7029,9 @@ public partial class obj_item_knife_envy : obj_item_knife
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:21
-[DmPath("/obj/item/knife/rainbowknife"), DmGeneratedOnly, DmInert]
-public partial class obj_item_knife_rainbowknife : obj_item_knife
+// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:21 (the var block of a hand-written class)
+[DmPath("/obj/item/knife/rainbowknife")]
+public partial class obj_item_knife_rainbowknife
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:21
     public obj_item_knife_rainbowknife()
@@ -13600,9 +13600,9 @@ public partial class obj_item_shield_mirror : obj_item_shield
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:53
-[DmPath("/obj/item/shield/adamantineshield"), DmGeneratedOnly, DmInert]
-public partial class obj_item_shield_adamantineshield : obj_item_shield
+// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:53 (the var block of a hand-written class)
+[DmPath("/obj/item/shield/adamantineshield")]
+public partial class obj_item_shield_adamantineshield
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:53
     public obj_item_shield_adamantineshield()
@@ -21137,9 +21137,9 @@ public partial class obj_item_camera_detective : obj_item_camera
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:9
-[DmPath("/obj/item/camera/rewind"), DmGeneratedOnly, DmInert]
-public partial class obj_item_camera_rewind : obj_item_camera
+// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/camera/rewind")]
+public partial class obj_item_camera_rewind
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:9
     public obj_item_camera_rewind()
@@ -21153,9 +21153,9 @@ public partial class obj_item_camera_rewind : obj_item_camera
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:61
-[DmPath("/obj/item/camera/timefreeze"), DmGeneratedOnly, DmInert]
-public partial class obj_item_camera_timefreeze : obj_item_camera
+// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:61 (the var block of a hand-written class)
+[DmPath("/obj/item/camera/timefreeze")]
+public partial class obj_item_camera_timefreeze
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:61
     public obj_item_camera_timefreeze()
@@ -41070,9 +41070,9 @@ public partial class obj_item_slimepotion_slime_mutator
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:214
-[DmPath("/obj/item/slimepotion/slime/chargedstabilizer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_chargedstabilizer : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:214 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/chargedstabilizer")]
+public partial class obj_item_slimepotion_slime_chargedstabilizer
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:214
     public obj_item_slimepotion_slime_chargedstabilizer()
@@ -41195,9 +41195,9 @@ public partial class obj_item_slimepotion_slimeradio
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:9
-[DmPath("/obj/item/slimepotion/extract_cloner"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_extract_cloner : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/extract_cloner")]
+public partial class obj_item_slimepotion_extract_cloner
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:9
     public obj_item_slimepotion_extract_cloner()
@@ -41208,9 +41208,9 @@ public partial class obj_item_slimepotion_extract_cloner : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:35
-[DmPath("/obj/item/slimepotion/peacepotion"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_peacepotion : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:35 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/peacepotion")]
+public partial class obj_item_slimepotion_peacepotion
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:35
     public obj_item_slimepotion_peacepotion()
@@ -41221,9 +41221,9 @@ public partial class obj_item_slimepotion_peacepotion : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:73
-[DmPath("/obj/item/slimepotion/lovepotion"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_lovepotion : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:73 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/lovepotion")]
+public partial class obj_item_slimepotion_lovepotion
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:73
     public obj_item_slimepotion_lovepotion()
@@ -41234,9 +41234,9 @@ public partial class obj_item_slimepotion_lovepotion : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:109
-[DmPath("/obj/item/slimepotion/spaceproof"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_spaceproof : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:109 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/spaceproof")]
+public partial class obj_item_slimepotion_spaceproof
 {
     public float uses = 2; // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:112
 
@@ -41249,9 +41249,9 @@ public partial class obj_item_slimepotion_spaceproof : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:151
-[DmPath("/obj/item/slimepotion/lavaproof"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_lavaproof : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:151 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/lavaproof")]
+public partial class obj_item_slimepotion_lavaproof
 {
     public float uses = 2; // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:155
 
@@ -41265,9 +41265,9 @@ public partial class obj_item_slimepotion_lavaproof : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:185
-[DmPath("/obj/item/slimepotion/slime_reviver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_reviver : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:185 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime_reviver")]
+public partial class obj_item_slimepotion_slime_reviver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:185
     public obj_item_slimepotion_slime_reviver()
@@ -44434,9 +44434,9 @@ public partial class obj_item_slime_extract_rainbow
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:94
-[DmPath("/obj/item/slimecrossbeaker"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecrossbeaker : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:94 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecrossbeaker")]
+public partial class obj_item_slimecrossbeaker
 {
     public float del_on_empty = 1; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:98
     public DmList list_reagents; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:99
@@ -44452,7 +44452,7 @@ public partial class obj_item_slimecrossbeaker : obj_item
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:120
-[DmPath("/obj/item/slimecrossbeaker/bloodpack"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/bloodpack"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_bloodpack : obj_item_slimecrossbeaker
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:120
@@ -44472,7 +44472,7 @@ public partial class obj_item_slimecrossbeaker_bloodpack : obj_item_slimecrossbe
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:126
-[DmPath("/obj/item/slimecrossbeaker/pax"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/pax"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_pax : obj_item_slimecrossbeaker
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:126
@@ -44492,7 +44492,7 @@ public partial class obj_item_slimecrossbeaker_pax : obj_item_slimecrossbeaker
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:132
-[DmPath("/obj/item/slimecrossbeaker/omnizine"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/omnizine"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_omnizine : obj_item_slimecrossbeaker
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:132
@@ -44511,16 +44511,16 @@ public partial class obj_item_slimecrossbeaker_omnizine : obj_item_slimecrossbea
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:138
-[DmPath("/obj/item/slimecrossbeaker/autoinjector"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecrossbeaker_autoinjector : obj_item_slimecrossbeaker
+// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:138 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecrossbeaker/autoinjector")]
+public partial class obj_item_slimecrossbeaker_autoinjector
 {
     public float ignore_flags = 0; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:138
     public float self_use_only = 0; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:139
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:168
-[DmPath("/obj/item/slimecrossbeaker/autoinjector/regenpack"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/autoinjector/regenpack"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_autoinjector_regenpack : obj_item_slimecrossbeaker_autoinjector
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:168
@@ -44541,7 +44541,7 @@ public partial class obj_item_slimecrossbeaker_autoinjector_regenpack : obj_item
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:175
-[DmPath("/obj/item/slimecrossbeaker/autoinjector/slimejelly"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/autoinjector/slimejelly"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_autoinjector_slimejelly : obj_item_slimecrossbeaker_autoinjector
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:175
@@ -44562,9 +44562,9 @@ public partial class obj_item_slimecrossbeaker_autoinjector_slimejelly : obj_ite
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:183
-[DmPath("/obj/item/slimecrossbeaker/autoinjector/peaceandlove"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecrossbeaker_autoinjector_peaceandlove : obj_item_slimecrossbeaker_autoinjector
+// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:183 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecrossbeaker/autoinjector/peaceandlove")]
+public partial class obj_item_slimecrossbeaker_autoinjector_peaceandlove
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:183
     public obj_item_slimecrossbeaker_autoinjector_peaceandlove()
@@ -44583,7 +44583,7 @@ public partial class obj_item_slimecrossbeaker_autoinjector_peaceandlove : obj_i
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:193
-[DmPath("/obj/item/slimecrossbeaker/autoinjector/slimestimulant"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/autoinjector/slimestimulant"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_autoinjector_slimestimulant : obj_item_slimecrossbeaker_autoinjector
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:193
@@ -44602,9 +44602,9 @@ public partial class obj_item_slimecrossbeaker_autoinjector_slimestimulant : obj
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:85
-[DmPath("/obj/item/barriercube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_barriercube : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:85 (the var block of a hand-written class)
+[DmPath("/obj/item/barriercube")]
+public partial class obj_item_barriercube
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:85
     public obj_item_barriercube()
@@ -44617,9 +44617,9 @@ public partial class obj_item_barriercube : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:155
-[DmPath("/obj/item/capturedevice"), DmGeneratedOnly, DmInert]
-public partial class obj_item_capturedevice : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:155 (the var block of a hand-written class)
+[DmPath("/obj/item/capturedevice")]
+public partial class obj_item_capturedevice
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:155
     public obj_item_capturedevice()
@@ -44632,9 +44632,9 @@ public partial class obj_item_capturedevice : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:608
-[DmPath("/obj/item/hothands"), DmGeneratedOnly, DmInert]
-public partial class obj_item_hothands : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:608 (the var block of a hand-written class)
+[DmPath("/obj/item/hothands")]
+public partial class obj_item_hothands
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:608
     public obj_item_hothands()
@@ -44644,9 +44644,9 @@ public partial class obj_item_hothands : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:53
-[DmPath("/obj/item/slime_cookie"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:53 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie")]
+public partial class obj_item_slime_cookie
 {
     public string taste = "error"; // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:56
     public float nutrition = 5; // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:57
@@ -44667,7 +44667,7 @@ public partial class obj_item_slime_cookie : obj_item
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:98
-[DmPath("/obj/item/slime_cookie/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slime_cookie/grey"), DmGeneratedOnly]
 public partial class obj_item_slime_cookie_grey : obj_item_slime_cookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:98
@@ -44681,9 +44681,9 @@ public partial class obj_item_slime_cookie_grey : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:110
-[DmPath("/obj/item/slime_cookie/orange"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_orange : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:110 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/orange")]
+public partial class obj_item_slime_cookie_orange
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:110
     public obj_item_slime_cookie_orange()
@@ -44695,9 +44695,9 @@ public partial class obj_item_slime_cookie_orange : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:124
-[DmPath("/obj/item/slime_cookie/purple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_purple : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:124 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/purple")]
+public partial class obj_item_slime_cookie_purple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:124
     public obj_item_slime_cookie_purple()
@@ -44709,9 +44709,9 @@ public partial class obj_item_slime_cookie_purple : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:145
-[DmPath("/obj/item/slime_cookie/blue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_blue : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:145 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/blue")]
+public partial class obj_item_slime_cookie_blue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:145
     public obj_item_slime_cookie_blue()
@@ -44723,9 +44723,9 @@ public partial class obj_item_slime_cookie_blue : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:159
-[DmPath("/obj/item/slime_cookie/metal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_metal : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:159 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/metal")]
+public partial class obj_item_slime_cookie_metal
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:159
     public obj_item_slime_cookie_metal()
@@ -44737,9 +44737,9 @@ public partial class obj_item_slime_cookie_metal : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:173
-[DmPath("/obj/item/slime_cookie/yellow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_yellow : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:173 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/yellow")]
+public partial class obj_item_slime_cookie_yellow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:173
     public obj_item_slime_cookie_yellow()
@@ -44751,9 +44751,9 @@ public partial class obj_item_slime_cookie_yellow : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:187
-[DmPath("/obj/item/slime_cookie/darkpurple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_darkpurple : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:187 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/darkpurple")]
+public partial class obj_item_slime_cookie_darkpurple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:187
     public obj_item_slime_cookie_darkpurple()
@@ -44765,9 +44765,9 @@ public partial class obj_item_slime_cookie_darkpurple : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:201
-[DmPath("/obj/item/slime_cookie/darkblue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_darkblue : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:201 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/darkblue")]
+public partial class obj_item_slime_cookie_darkblue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:201
     public obj_item_slime_cookie_darkblue()
@@ -44779,9 +44779,9 @@ public partial class obj_item_slime_cookie_darkblue : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:216
-[DmPath("/obj/item/slime_cookie/silver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_silver : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:216 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/silver")]
+public partial class obj_item_slime_cookie_silver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:216
     public obj_item_slime_cookie_silver()
@@ -44794,9 +44794,9 @@ public partial class obj_item_slime_cookie_silver : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:231
-[DmPath("/obj/item/slime_cookie/bluespace"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_bluespace : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:231 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/bluespace")]
+public partial class obj_item_slime_cookie_bluespace
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:231
     public obj_item_slime_cookie_bluespace()
@@ -44808,9 +44808,9 @@ public partial class obj_item_slime_cookie_bluespace : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:272
-[DmPath("/obj/item/slime_cookie/sepia"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_sepia : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:272 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/sepia")]
+public partial class obj_item_slime_cookie_sepia
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:272
     public obj_item_slime_cookie_sepia()
@@ -44822,9 +44822,9 @@ public partial class obj_item_slime_cookie_sepia : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:287
-[DmPath("/obj/item/slime_cookie/cerulean"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_cerulean : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:287 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/cerulean")]
+public partial class obj_item_slime_cookie_cerulean
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:287
     public obj_item_slime_cookie_cerulean()
@@ -44836,9 +44836,9 @@ public partial class obj_item_slime_cookie_cerulean : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:304
-[DmPath("/obj/item/slime_cookie/pyrite"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_pyrite : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:304 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/pyrite")]
+public partial class obj_item_slime_cookie_pyrite
 {
     public string colour = "#FFFFFF"; // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:308
 
@@ -44852,9 +44852,9 @@ public partial class obj_item_slime_cookie_pyrite : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:346
-[DmPath("/obj/item/slime_cookie/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_red : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:346 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/red")]
+public partial class obj_item_slime_cookie_red
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:346
     public obj_item_slime_cookie_red()
@@ -44866,9 +44866,9 @@ public partial class obj_item_slime_cookie_red : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:364
-[DmPath("/obj/item/slime_cookie/green"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_green : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:364 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/green")]
+public partial class obj_item_slime_cookie_green
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:364
     public obj_item_slime_cookie_green()
@@ -44880,9 +44880,9 @@ public partial class obj_item_slime_cookie_green : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:381
-[DmPath("/obj/item/slime_cookie/pink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_pink : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:381 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/pink")]
+public partial class obj_item_slime_cookie_pink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:381
     public obj_item_slime_cookie_pink()
@@ -44894,9 +44894,9 @@ public partial class obj_item_slime_cookie_pink : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:395
-[DmPath("/obj/item/slime_cookie/gold"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_gold : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:395 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/gold")]
+public partial class obj_item_slime_cookie_gold
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:395
     public obj_item_slime_cookie_gold()
@@ -44908,9 +44908,9 @@ public partial class obj_item_slime_cookie_gold : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:414
-[DmPath("/obj/item/slime_cookie/oil"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_oil : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:414 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/oil")]
+public partial class obj_item_slime_cookie_oil
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:414
     public obj_item_slime_cookie_oil()
@@ -44922,9 +44922,9 @@ public partial class obj_item_slime_cookie_oil : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:428
-[DmPath("/obj/item/slime_cookie/black"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_black : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:428 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/black")]
+public partial class obj_item_slime_cookie_black
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:428
     public obj_item_slime_cookie_black()
@@ -44936,9 +44936,9 @@ public partial class obj_item_slime_cookie_black : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:442
-[DmPath("/obj/item/slime_cookie/lightpink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_lightpink : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:442 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/lightpink")]
+public partial class obj_item_slime_cookie_lightpink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:442
     public obj_item_slime_cookie_lightpink()
@@ -44950,9 +44950,9 @@ public partial class obj_item_slime_cookie_lightpink : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:456
-[DmPath("/obj/item/slime_cookie/adamantine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_adamantine : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:456 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/adamantine")]
+public partial class obj_item_slime_cookie_adamantine
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:456
     public obj_item_slime_cookie_adamantine()
@@ -44964,9 +44964,9 @@ public partial class obj_item_slime_cookie_adamantine : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:12
-[DmPath("/obj/item/autoslime"), DmGeneratedOnly, DmInert]
-public partial class obj_item_autoslime : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:12 (the var block of a hand-written class)
+[DmPath("/obj/item/autoslime")]
+public partial class obj_item_autoslime
 {
     public obj_item_slime_extract extract; // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:14
     public string effect_desc = "A self-sustaining slime extract. When used, lets you choose which reaction you want."; // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:15

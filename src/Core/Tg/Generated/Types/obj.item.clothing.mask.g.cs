@@ -2355,9 +2355,9 @@ public partial class obj_item_clothing_mask_surgical
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:9
-[DmPath("/obj/item/clothing/mask/nobreath"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_mask_nobreath : obj_item_clothing_mask
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/mask/nobreath")]
+public partial class obj_item_clothing_mask_nobreath
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:9
     public obj_item_clothing_mask_nobreath()

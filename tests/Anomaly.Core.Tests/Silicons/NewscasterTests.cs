@@ -246,11 +246,15 @@ public class NewscasterTests
         // Alice applies at the same newscaster
         string aliceWindow = Open(r, alice, caster);
         object accNumber = r.In(() => request.req_number);
+        // the newscaster keeps one current user, the last its window data was made for (ui_data, newscaster_machine.dm:136):
+        // Alice's, right before her act, whenever SStgui last refreshed Bob's open window
+        r.In(() => Waiting.NoSleep(caster.ui_data(alice)));
         GapsHarness.Act(r, alice, aliceWindow, "apply", ("request", accNumber));
         Assert.Same(alicesAccount, r.In(() => Dm.each<datum_bank_account>(request.applicants).Single()));
 
-        // Bob pays her
+        // Bob pays her (his window's data right before his act, as for Alice's)
         Data(r, bob, out _);
+        r.In(() => Waiting.NoSleep(caster.ui_data(bob)));
         GapsHarness.Act(r, bob, window, "payApplicant", ("request", accNumber), ("applicant", r.In(() => alicesAccount.account_id)));
         Assert.Equal(alicesStart + 150, r.In(() => alicesAccount.account_balance));
         Assert.Equal(bobsStart - 150, r.In(() => bobsAccount.account_balance));

@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (M7x slice D): the held-up and holding-up effects of the gunpoint component, the surrender alert (heldup applies the grouped
 // surrender effect, whose alert's click is the emote that M9 translates) and their alerts; the offering and its subtypes (M9 slice F,
 // the give key and the hand items); gaps R3 the in-love effect; gaps H1 the washing effect (the showers) and the hot spring's; gaps RG1 (D339) the soothed throat and
-// headache and the Cherenkov radiation of the drinks, and the tinea luxor's glow; gaps RG3 the eigenstasium wild ride. The rest of neutral.dm (caltropped, ...) comes
+// headache and the Cherenkov radiation of the drinks, and the tinea luxor's glow; gaps RG3 the eigenstasium wild ride; the gutted corpse of the bitrunning domains. The rest of neutral.dm (caltropped, ...) comes
 // with its users. The var blocks are generated (D111), but the washing effect's.
 
 // heldup is for the person being aimed at
@@ -591,6 +591,33 @@ public partial class datum_status_effect_cherenkov_radiation : datum_status_effe
     {
         QDEL_NULL(ref mob_light_obj);
         return null;
+    }
+}
+
+// tg: code/datums/status_effects/neutral.dm:643
+public partial class datum_status_effect_gutted : datum_status_effect
+{
+    // tg: code/datums/status_effects/neutral.dm:649
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        RegisterSignal(owner, COMSIG_MOB_STATCHANGE, nameof(stop_gutting));
+        await DmTask.CompletedTask;
+        return TRUE;
+    }
+
+    // tg: code/datums/status_effects/neutral.dm:653
+    public override async DmTask<object> on_remove()
+    {
+        UnregisterSignal(owner, COMSIG_MOB_STATCHANGE);
+        await DmTask.CompletedTask;
+        return null;
+    }
+
+    // tg: code/datums/status_effects/neutral.dm:656
+    [SignalHandler]
+    public virtual void stop_gutting()
+    {
+        qdel(this);
     }
 }
 

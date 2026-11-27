@@ -2682,9 +2682,9 @@ public partial class datum_controller_subsystem_movement_ai_movement
     }
 }
 
-// tg: code/controllers/subsystem/movement/cliff_falling.dm:3
-[DmPath("/datum/controller/subsystem/movement/cliff_falling"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_movement_cliff_falling : datum_controller_subsystem_movement
+// tg: code/controllers/subsystem/movement/cliff_falling.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/movement/cliff_falling")]
+public partial class datum_controller_subsystem_movement_cliff_falling
 {
     public DmList cliff_grinders; // tg: code/controllers/subsystem/movement/cliff_falling.dm:9
 

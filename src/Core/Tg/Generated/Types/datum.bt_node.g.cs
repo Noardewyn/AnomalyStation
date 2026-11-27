@@ -1922,13 +1922,13 @@ public partial class datum_bt_node_ai_behavior_robot_customer_find_exit_portal :
 [DmPath("/datum/bt_node/ai_behavior/robot_customer/leave_venue"), DmGeneratedOnly, DmInert]
 public partial class datum_bt_node_ai_behavior_robot_customer_leave_venue : datum_bt_node_ai_behavior_robot_customer { }
 
-// tg: code/modules/mob/living/basic/alien/alien_ai.dm:44
-[DmPath("/datum/bt_node/ai_behavior/plant_alien_weeds"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_plant_alien_weeds : datum_bt_node_ai_behavior { }
+// tg: code/modules/mob/living/basic/alien/alien_ai.dm:44 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/plant_alien_weeds")]
+public partial class datum_bt_node_ai_behavior_plant_alien_weeds { }
 
-// tg: code/modules/mob/living/basic/alien/alien_ai.dm:53
-[DmPath("/datum/bt_node/ai_behavior/lay_alien_egg"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_lay_alien_egg : datum_bt_node_ai_behavior { }
+// tg: code/modules/mob/living/basic/alien/alien_ai.dm:53 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/lay_alien_egg")]
+public partial class datum_bt_node_ai_behavior_lay_alien_egg { }
 
 // tg: code/modules/mob/living/basic/bots/cleanbot/cleanbot_ai.dm:51 (the var block of a hand-written class)
 [DmPath("/datum/bt_node/ai_behavior/execute_clean")]

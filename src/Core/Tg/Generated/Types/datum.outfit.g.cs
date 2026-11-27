@@ -3644,9 +3644,9 @@ public partial class datum_outfit_virtual_syndicate
     }
 }
 
-// tg: code/modules/bitrunning/antagonists/cyber_police.dm:18
-[DmPath("/datum/outfit/cyber_police"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_cyber_police : datum_outfit
+// tg: code/modules/bitrunning/antagonists/cyber_police.dm:18 (the var block of a hand-written class)
+[DmPath("/datum/outfit/cyber_police")]
+public partial class datum_outfit_cyber_police
 {
     // tg: code/modules/bitrunning/antagonists/cyber_police.dm:18
     public datum_outfit_cyber_police()
@@ -3661,9 +3661,9 @@ public partial class datum_outfit_cyber_police : datum_outfit
     }
 }
 
-// tg: code/modules/bitrunning/antagonists/cyber_tac.dm:17
-[DmPath("/datum/outfit/cyber_police/tactical"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_cyber_police_tactical : datum_outfit_cyber_police
+// tg: code/modules/bitrunning/antagonists/cyber_tac.dm:17 (the var block of a hand-written class)
+[DmPath("/datum/outfit/cyber_police/tactical")]
+public partial class datum_outfit_cyber_police_tactical
 {
     // tg: code/modules/bitrunning/antagonists/cyber_tac.dm:17
     public datum_outfit_cyber_police_tactical()
@@ -3681,9 +3681,9 @@ public partial class datum_outfit_cyber_police_tactical : datum_outfit_cyber_pol
     }
 }
 
-// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:63
-[DmPath("/datum/outfit/virtual_domain_heretic"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_virtual_domain_heretic : datum_outfit
+// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:63 (the var block of a hand-written class)
+[DmPath("/datum/outfit/virtual_domain_heretic")]
+public partial class datum_outfit_virtual_domain_heretic
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:63
     public datum_outfit_virtual_domain_heretic()

@@ -102,7 +102,12 @@ public class DeathmatchArenaGameplayTests
         w.Run(Second);
 
         // a laser: the projectile's firer kills
-        Do(w, () => aliceMob.next_click = -1);
+        Do(w, () =>
+        {
+            aliceMob.next_click = -1;
+            // again right before the shot (his breaths since recovered some), with a breath's margin before the laser lands
+            Waiting.NoSleep(bobMob.set_oxy_loss(190));
+        });
         Assert.True(alice.Session.Click(new ClickTarget(TargetKind.Entity, bobMob.dm_id, 0, 0, 0, 16, 18, AimZone.Chest), ClickButton.Left, ClickModifiers.None));
         w.Run(Second);
         Assert.True(In(w, () => bobMob.stat) == DEAD, In(w, () => $"stat {bobMob.stat} brute {bobMob.get_brute_loss()} burn {bobMob.get_fire_loss()} health {bobMob.health} at {bobMob.x},{bobMob.y} alice {aliceMob.x},{aliceMob.y} held {aliceMob.get_active_held_item()}"));

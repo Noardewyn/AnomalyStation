@@ -1529,9 +1529,9 @@ public partial class obj_machinery_door_firedoor_heavy : obj_machinery_door_fire
     }
 }
 
-// tg: code/game/machinery/doors/passworddoor.dm:2
-[DmPath("/obj/machinery/door/password"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_door_password : obj_machinery_door
+// tg: code/game/machinery/doors/passworddoor.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/door/password")]
+public partial class obj_machinery_door_password
 {
     public string password = "Swordfish"; // tg: code/game/machinery/doors/passworddoor.dm:13
     public float interaction_activated = 1; // tg: code/game/machinery/doors/passworddoor.dm:15
@@ -1557,7 +1557,7 @@ public partial class obj_machinery_door_password : obj_machinery_door
 }
 
 // tg: code/game/machinery/doors/passworddoor.dm:26
-[DmPath("/obj/machinery/door/password/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/password/voice"), DmGeneratedOnly]
 public partial class obj_machinery_door_password_voice : obj_machinery_door_password
 {
     // tg: code/game/machinery/doors/passworddoor.dm:26

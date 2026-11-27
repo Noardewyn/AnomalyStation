@@ -1916,9 +1916,9 @@ public partial class obj_effect_mob_spawn_corpse_human_factory_qm : obj_effect_m
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/job_corpses.dm:88
-[DmPath("/obj/effect/mob_spawn/corpse/human/bitrunner"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_bitrunner : obj_effect_mob_spawn_corpse_human
+// tg: code/modules/mob_spawn/corpses/job_corpses.dm:88 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/bitrunner")]
+public partial class obj_effect_mob_spawn_corpse_human_bitrunner
 {
     // tg: code/modules/mob_spawn/corpses/job_corpses.dm:88
     public obj_effect_mob_spawn_corpse_human_bitrunner()
@@ -1929,9 +1929,9 @@ public partial class obj_effect_mob_spawn_corpse_human_bitrunner : obj_effect_mo
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mob_corpses.dm:410
-[DmPath("/obj/effect/mob_spawn/corpse/human/cyber_police"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_cyber_police : obj_effect_mob_spawn_corpse_human
+// tg: code/modules/mob_spawn/corpses/mob_corpses.dm:410 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/cyber_police")]
+public partial class obj_effect_mob_spawn_corpse_human_cyber_police
 {
     // tg: code/modules/mob_spawn/corpses/mob_corpses.dm:410
     public obj_effect_mob_spawn_corpse_human_cyber_police()

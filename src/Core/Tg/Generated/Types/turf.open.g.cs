@@ -613,9 +613,9 @@ public partial class turf_open_chasm_pride
     }
 }
 
-// tg: code/game/turfs/open/cliff.dm:3
-[DmPath("/turf/open/cliff"), DmGeneratedOnly, DmInert]
-public partial class turf_open_cliff : turf_open
+// tg: code/game/turfs/open/cliff.dm:3 (the var block of a hand-written class)
+[DmPath("/turf/open/cliff")]
+public partial class turf_open_cliff
 {
     public float can_fall_from_direction = 1; // tg: code/game/turfs/open/cliff.dm:7
     public float fall_direction = 2; // tg: code/game/turfs/open/cliff.dm:9
@@ -644,7 +644,7 @@ public partial class turf_open_cliff : turf_open
 }
 
 // tg: code/game/turfs/open/cliff.dm:124
-[DmPath("/turf/open/cliff/snowrock"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/cliff/snowrock"), DmGeneratedOnly]
 public partial class turf_open_cliff_snowrock : turf_open_cliff
 {
     // tg: code/game/turfs/open/cliff.dm:124
@@ -675,7 +675,7 @@ public partial class turf_open_cliff_snowrock : turf_open_cliff
 }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/stairs_and_cliffs.dm:18
-[DmPath("/turf/open/cliff/snowrock/virtual_domain"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/cliff/snowrock/virtual_domain"), DmGeneratedOnly]
 public partial class turf_open_cliff_snowrock_virtual_domain : turf_open_cliff_snowrock
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/stairs_and_cliffs.dm:18

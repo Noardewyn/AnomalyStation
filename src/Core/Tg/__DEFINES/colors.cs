@@ -9,7 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: only GLOBAL_LIST_INIT(cable_colors) translated (M5 slice 2: the cable coil's colours, cable.dm:544); the colour
+// PARTIAL: only GLOBAL_LIST_INIT(cable_colors) translated (M5 slice 2: the cable coil's colours, cable.dm:544) and
+// GLOBAL_LIST_INIT(heretic_path_to_color) (the bitrunning heretic hunt's rune); the colour
 // constants are generated into Defines, the other colour lists come with their users.
 
 public partial class datum_controller_global_vars
@@ -32,6 +33,26 @@ public partial class datum_controller_global_vars
             Dm.kv(CABLE_COLOR_BROWN, CABLE_HEX_COLOR_BROWN)
         );
         Dm.append(ref gvars_datum_init_order, "cable_colors");
+    }
+
+    // tg: code/__DEFINES/colors.dm:522  GLOBAL_LIST_INIT(heretic_path_to_color, list(...))
+    public DmList heretic_path_to_color;
+
+    // tg: code/__DEFINES/colors.dm:522  (GLOBAL_MANAGED(heretic_path_to_color, list(...)), __DEFINES/__globals.dm:5)
+    public virtual void InitGlobalheretic_path_to_color()
+    {
+        heretic_path_to_color = Dm.list(
+            Dm.kv(PATH_START, COLOR_LIME),
+            Dm.kv(PATH_RUST, COLOR_CARGO_BROWN),
+            Dm.kv(PATH_FLESH, COLOR_SOFT_RED),
+            Dm.kv(PATH_ASH, COLOR_VIVID_RED),
+            Dm.kv(PATH_VOID, COLOR_CYAN),
+            Dm.kv(PATH_BLADE, COLOR_SILVER),
+            Dm.kv(PATH_COSMIC, COLOR_PURPLE),
+            Dm.kv(PATH_LOCK, COLOR_YELLOW),
+            Dm.kv(PATH_MOON, COLOR_BLUE_LIGHT)
+        );
+        Dm.append(ref gvars_datum_init_order, "heretic_path_to_color");
     }
 }
 

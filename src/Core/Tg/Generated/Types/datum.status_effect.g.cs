@@ -1583,9 +1583,9 @@ public partial class datum_status_effect_cherenkov_radiation
     }
 }
 
-// tg: code/datums/status_effects/neutral.dm:645
-[DmPath("/datum/status_effect/gutted"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_gutted : datum_status_effect
+// tg: code/datums/status_effects/neutral.dm:645 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/gutted")]
+public partial class datum_status_effect_gutted
 {
     // tg: code/datums/status_effects/neutral.dm:645
     public datum_status_effect_gutted()

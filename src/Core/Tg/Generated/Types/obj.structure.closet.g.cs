@@ -1888,9 +1888,9 @@ public partial class obj_structure_closet_crate_wooden_toy
     }
 }
 
-// tg: code/modules/antagonists/fugitive/hunters/hunter_gear.dm:52
-[DmPath("/obj/structure/closet/crate/eva"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_eva : obj_structure_closet_crate
+// tg: code/modules/antagonists/fugitive/hunters/hunter_gear.dm:52 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/eva")]
+public partial class obj_structure_closet_crate_eva
 {
     // tg: code/modules/antagonists/fugitive/hunters/hunter_gear.dm:52
     public obj_structure_closet_crate_eva()

@@ -1,15 +1,15 @@
 # What is not ported yet: the tg port checklist
 
-Status: recounted 2026-11-21 (1.9.0-pre-alpha). A list of everything in tg's MetaStation round that
+Status: recounted 2026-11-24 (1.12.0-pre-alpha). A list of everything in tg's MetaStation round that
 the port does not have yet, to tick off as it is ported. Things that are not on MetaStation, cut or obsolete are listed apart
 in section 12; they will most likely not be ported.
 
 Sources:
 - tg's snapshot `1d99bd7f` (2026-10-04) in `../tgstation/`;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-21): 46,051 tg types, of them 38,275
-  live and 7,766 inert; 65,645 tg procs, of them 45,586 translated (69%) and 432 stubbed;
+- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-24): 46,051 tg types, of them 38,341
+  live and 7,700 inert; 65,645 tg procs, of them 45,706 translated (69%) and 432 stubbed;
 - MetaStation's map (`_maps/map_files/MetaStation/MetaStation.dmm`): how many of each type it places;
-- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 308 of tg's 444 interfaces;
+- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 309 of tg's 444 interfaces;
 - `docs/ROADMAP.md`, `docs/ai/DECISIONS.md`, `docs/ai/specs/not-translated.md` for what is planned, deferred or cut by the owner.
 
 How to read a row:
@@ -29,15 +29,15 @@ How to read a row:
 
 ## 0. Overview by tg area
 
-Share of tg's procs declared in each area of `code/` (translated or stubbed), recounted 2026-11-21 by
-`tools/checklist/refresh-port-checklist.py`. All of `code/`: 46,018/65,645 (70%). An area at 100% can still have leaves in
+Share of tg's procs declared in each area of `code/` (translated or stubbed), recounted 2026-11-24 by
+`tools/checklist/refresh-port-checklist.py`. All of `code/`: 46,138/65,645 (70%). An area at 100% can still have leaves in
 `not-translated.md`; the rows below say what of it runs.
 
 | State | Areas (procs declared / tg procs) |
 |---|---|
 | Done (100%) | art 98/98, brain traumas 216/216, detective work 36/36, dna 104/104, dna infuser 174/174, economy 45/45, experisci 127/127, forensics 37/37, grenades 141/141, hallucination 236/236, holiday 110/110, lost crew 38/38, mafia 124/124, materials 197/197, meteors 78/78, mutations 235/235, newscaster 71/71, plumbing 148/148, porta turrets 105/105, power 994/994, rcd 182/182, robot items 198/198, security levels 20/20, silicons 528/528, skills 13/13, station goals 94/94, telecomms 123/123, transit tubes 74/74, water structures 60/60, weather 66/66, wounds 182/182 |
-| Mostly ported (70-99%) | paperwork 405/407, transport 366/368, station traits 136/138, language 64/65, pai 121/123, manufactorio 95/97, memory 183/188, diseases 299/308, hydroponics 513/529, items 1,239/1,280, cards 59/61, recycling (disposal pipes) 224/232, movespeed and actionspeed 27/28, devices 698/724, structures 1,329/1,383, reagents 1,958/2,041, uplink 55/58, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, tgui 134/144, AI modules 66/71, MODsuits 817/882, storage 199/217, doors 341/372, weaponry 387/426, atmospherics 1,051/1,178, AI controllers 752/853, wires 170/195, cargo 346/398, tools 224/259, martial arts 140/164, stacks 338/398, bitrunning 233/277, lobby menu 26/31, mapping 324/393, machinery 1,410/1,715, implants 131/160, clothing 960/1,173, projectiles 943/1,153, instruments 79/97, food and drinks 788/969, turfs 595/761, modular computers 584/751, effects 679/876, carbon 893/1,182, status effects 556/755, `__HELPERS` 809/1,108, vehicles and mechs 639/876, jobs 183/251, `_onclick` 675/935, photography 75/106, library 161/228, events 398/564, computers 369/525 |
-| Partly (2-69%) | subsystems 1,091/1,578, shuttles 274/401, elements 804/1,200, vending 95/148, components 2,250/3,579, basketball 29/51, actions 136/246, basic mobs 1,500/2,756, client 367/737, wiremod 473/1,063, mining 412/947, keybindings 28/71, research 322/993, mob spawners 34/116, spells 123/426, holodeck 16/65, antagonists 875/3,715, species (`carbon/human/species_types`) 55/273, admin 177/1,643, simple animals 47/448, awaymissions 13/136, admin verbs 85/975, mapfluff 23/268, quirks 10/287 |
+| Mostly ported (70-99%) | paperwork 405/407, transport 366/368, station traits 136/138, language 64/65, pai 121/123, bitrunning 272/277, manufactorio 95/97, memory 183/188, diseases 299/308, hydroponics 513/529, items 1,239/1,280, cards 59/61, recycling (disposal pipes) 224/232, movespeed and actionspeed 27/28, devices 698/724, structures 1,329/1,383, reagents 1,958/2,041, uplink 55/58, doors 352/372, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, tgui 134/144, AI modules 66/71, MODsuits 817/882, storage 199/217, weaponry 387/426, atmospherics 1,051/1,178, AI controllers 752/853, wires 170/195, cargo 346/398, tools 224/259, martial arts 140/164, stacks 338/398, lobby menu 26/31, mapping 324/393, machinery 1,410/1,715, implants 131/160, clothing 960/1,173, projectiles 943/1,153, instruments 79/97, food and drinks 788/969, turfs 607/761, modular computers 584/751, effects 679/876, carbon 893/1,182, status effects 559/755, `__HELPERS` 810/1,108, vehicles and mechs 639/876, jobs 183/251, `_onclick` 675/935, photography 75/106, library 161/228, events 398/564, computers 369/525 |
+| Partly (2-69%) | subsystems 1,098/1,578, shuttles 274/401, elements 808/1,200, vending 95/148, components 2,250/3,579, basketball 29/51, basic mobs 1,539/2,756, actions 137/246, client 367/737, wiremod 473/1,063, mining 412/947, keybindings 28/71, research 322/993, mob spawners 34/116, spells 123/426, holodeck 16/65, antagonists 876/3,715, species (`carbon/human/species_types`) 55/273, admin 177/1,643, simple animals 47/448, awaymissions 13/136, admin verbs 85/975, mapfluff 23/268, quirks 10/287 |
 | Not started (0-1%) | explorer drones 3/207, achievements 1/72, fishing 10/787, minimap 1/127, buildmode 0/102, CTF 0/101, deathmatch 0/113, religion 0/283, TCG 0/67, tutorials 0/48 |
 
 ---
@@ -75,7 +75,7 @@ Already ported: the ticker, the lobby and the round start, late join, the emerge
   - [ ] Midround rulesets from ghosts: wizard, nukies (done, syndicate N1c), blob, xenomorph (done, gaps X5), blood worms, nightmare, space dragon, abductors, space ninja, revenant, space changeling, paradox clone, voidwalker, fugitives, morph, slaughter demon; pirates, spiders
   - [ ] Midround rulesets from the living: traitor (done, syndicate A3, with mass traitors), malf AI (done, silicons SI8), blob, obsessed
   - [ ] Latejoin rulesets: traitor (done, syndicate A3), changeling, revolution
-- [ ] **Random events** (`modules/events` 398/564; `/datum/round_event_control` 106/114; SSevents, the event controls and the lone operative and scrubber overflows live since syndicate N1c, the rest set aside, DV380)
+- [ ] **Random events** (`modules/events` 398/564; `/datum/round_event_control` 107/114; SSevents, the event controls and the lone operative and scrubber overflows live since syndicate N1c, the rest set aside, DV380)
   - [x] Anomalies (`/datum/round_event_control/anomaly` 13/13; the anomaly objects themselves are live, `/obj/effect/anomaly` 21/21, D166; gaps E1a: every anomaly event but the weather one, with the bluespace and ectoplasmic anomalies; gaps E2a: the weather one)
   - [x] Meteors: meteor waves (5 kinds), stray meteor, dark matt-eor, space dust, immovable rod (gaps E2b; the meteor types since D299; the changeling's meteor waits for the changeling)
   - [x] Creatures: carp migration, mice migration, sentience (2), rabbit release, wisdom cow, spacevines (kudzu) (gaps E4: carp and mice migration, sentience (2), the wisdom cow; gaps E4b: the space vines; gaps R3: the rabbit release)
@@ -83,7 +83,7 @@ Already ported: the ticker, the lobby and the round start, late join, the emerge
   - [x] People: heart attack, disease outbreak (2), brain trauma, mass hallucination, fake virus (gaps E4; the disease outbreaks came with the diseases, gaps VI1; the brain trauma event's trauma came with the brain traumas, gaps B1)
   - [x] Space and weather: radiation storm (gaps E2a), radiation leak, ion storm (AI laws, silicons SI11), wormholes, aurora caelus, earthquake, sandstorms (2, gaps E2b), portal storms (2; gaps E2c with the troopers; the Nar'Sie storm's constructs wait for the cult), the tram malfunction (gaps E2c)
   - [x] Cargo and command: stray cargo (2), shuttle loan, shuttle catastrophe, shuttle insurance, market crash, bureaucratic error, false alarm, night shift (gaps E1b: market crash, bureaucratic error, false alarm, night shift; gaps E3: the cargo and shuttle ones)
-  - [ ] Antagonist events: lone operative (done, syndicate N1c), wizard events (33: summon guns and magic and the rest), bitrunning glitch, dynamic tweak
+  - [ ] Antagonist events: lone operative (done, syndicate N1c), wizard events (33: summon guns and magic and the rest), bitrunning glitch (done, gaps BR2), dynamic tweak
   - [x] Holiday events: Easter, Santa, Valentines, spooky (see Holidays) (gaps R3)
 - [x] **Station traits** (`datums/station_traits` 136/138, 81 traits; win: StationTraitsPanel; gaps R2: all of them with the lobby's sign-up buttons, the round-start report's lines and the admins' panel, and the cargo gorilla's, bridge assistant's and Pun Pun's jobs; left (not-translated.md 184): seven traits wait out of the random pool for their systems (the shuttle firesale, the radioactive nebula, the closet anomaly, the scryers, pet day, the veteran advisor's and the human AI's jobs), Ian's extra lives, the hangover's drunkenness, the nebulas' parallax; the icemoon's bright day and forested are planetary), for example: galactic grant, lucky winner, filled and empty maintenance, premium internals, strong and distant supply lines, bountiful bounties, quick and slow shuttle, luxury and cramped escape pods, pet day, birthday, glowsticks, bot and machine languages, colored assistants, Ian's adventure, the trait jobs (cargo gorilla, Pun Pun), scryers, skub, spiked drinks, blackout, late arrivals, hangover, structural weakness, carp and spider infestation, mail blocked, vending shortage, unnatural atmosphere, storms, nebula
 - [x] **Station goals** (`modules/station_goals` 94/94; gaps R1: all three with their windows; the carp sampler is gaps OD2's, its self-mutation waits for the space dragon, `not-translated.md` section 218): bluespace artillery, DNA vault, meteor shield satellites (win: BluespaceArtillery, DnaVault, SatelliteControl)
@@ -97,7 +97,7 @@ Already ported: the ticker, the lobby and the round start, late join, the emerge
 
 ---
 
-## 3. Antagonists (`modules/antagonists` 875/3,715; `/datum/antagonist` 38/142)
+## 3. Antagonists (`modules/antagonists` 876/3,715; `/datum/antagonist` 43/142)
 
 Each row means the antagonist with its datum, team, objectives, powers, items, HUD icon and info window.
 
@@ -125,9 +125,9 @@ Each row means the antagonist with its datum, team, objectives, powers, items, H
 - [ ] Fugitives and their hunters
 - [ ] Slaughter and laughter demons
 - [ ] Voidwalker and sunwalker (win: AntagInfoVoidwalker, AntagInfoSunwalker)
-- [ ] Minor antagonist datums: sentient creature (win: AntagInfoSentient; done), syndicate monkey (done, syndicate G4c), venus human trap (done, gaps E4b), pyroclastic anomaly, survivalist, highlander, valentines and the heartbreaker (done), magic servant, recovered crew (done, gaps OG1), the bitrunning glitch, ash walkers
+- [ ] Minor antagonist datums: sentient creature (win: AntagInfoSentient; done), syndicate monkey (done, syndicate G4c), venus human trap (done, gaps E4b), pyroclastic anomaly, survivalist, highlander, valentines and the heartbreaker (done), magic servant, recovered crew (done, gaps OG1), the bitrunning glitch (done, gaps BR2: the cyber police, the cyber tactical unit, the netguardian prime and the domain ghost actor; win: AntagInfoGlitch), ash walkers
 - [ ] ERT and deathsquad (admin-called teams; `/datum/antagonist/ert` 0/40, `/datum/job/ert` live)
-- [x] Objectives (`/datum/objective` 58/98) and the antagonist HUD icons for all (syndicate A1; left: the silicons' and the wizard's objectives, five steal targets with their packages, not-translated 130)
+- [x] Objectives (`/datum/objective` 60/98) and the antagonist HUD icons for all (syndicate A1; left: the silicons' and the wizard's objectives, five steal targets with their packages, not-translated 130)
 - [x] Syndicate gear as a set: energy swords (done, syndicate G2), the emag and the doorjack (done, G1a), the agent ID and chameleon kit (win: ChameleonCard; done, G1b), radio jammer (done, G2), stealth and implant items (the suspicious autosurgeons and the antagonists' arm kits done, gaps P6), the syndicate bombs (training bomb on Meta 1; done, G2), the black market (win: BlackMarketUplink, LTSRBT; done, gaps P4d: the market uplinks, the LTSRBT and the market's items, `/datum/market_item` 79/79), the contractor (X1a: the contracts, the extraction and the holding facility, the tablet; win: SyndicateContractor done; X1b: the support unit and the fulton kit done)
 
 ---
@@ -160,7 +160,7 @@ captaincy (D274), outfits 222/513, ID trims 152/159, the moods (gaps MS1), scree
 - [x] Martial arts (syndicate X3): CQC and the chef's cooking, the sleeping carp (X3a: the base, the combo display, the scroll, the carp gloves and the bo staff), boxing, evil and hunter boxing, plasma fist, mushpunch, psychotic brawling, jungle arts, kaza ruk, spider's bite (X3b); wrestling is kept out (D80: Goon-derived); their remaining sources and leaves are not-translated.md section 147
 - [x] Organs not ported (`/obj/item/organ` 273/324 live): cybernetic implants (39/43 live: the eye HUDs and the surgical processor, gaps P1; the rest, gaps P6; left: the cursed katana's and the vorpal scythe's shards, the BCI), the species' tails, snouts, spines and fangs (gaps SP1), the eye augments, hearts, tongues, stomachs, livers, lungs, vocal cords, the appendix and its inflammation and the golem, plasmaman, skeleton, ethereal, slime and snail organs that work without their species (gaps OG1, win: HighLuminosityEyesMenu, TacVisorEyesMenu); left (not-translated.md 229): the zombie infection, the species' own (cerulean, dullahan, mushpeople, vampire, lustrous), the abductor glands and other antagonists' organs, the chaplain's, the monster cores and Lavaland's (D342)
 - [x] Implants (`/obj/item/implant` 36/45 live): tracking, chemical, exile; storage, explosive, freedom, uplink, radio, EMP, stealth, deathrattle and the nuclear operative's (syndicate G3a); the beacon, the bluespace grounding implant and the exile's anti-teleport kind, the implant pad and the mindshield implanter with the genetic purifier (done, gaps DV2; win: ImplantPad, ImplantChair); the spell implant (gaps OG1); left: the tactical map, the abductor's, the battle royale's (not-translated.md 216), the camouflage, MOD and circuit ones
-- [ ] Ghost roles and spawners (`mob_spawn.dm`, the drone shells and the spawners menu done, silicons SI7; the corpse spawners done, gaps E2c and E3; the other ghost role spawners left; `modules/mob_spawn` 34/116, `/obj/effect/mob_spawn` 116/203; win: SpawnersMenu done), ghost polls and alerts (done, syndicate X2: SSpolling and the poll alert), DNR (done, silicons SI6), ghosts' scans and data HUDs, the minigames menu (done, gaps S4d, with Mafia; win: MinigamesMenu done), possession and deadchat control
+- [ ] Ghost roles and spawners (`mob_spawn.dm`, the drone shells and the spawners menu done, silicons SI7; the corpse spawners done, gaps E2c and E3; the other ghost role spawners left; `modules/mob_spawn` 34/116, `/obj/effect/mob_spawn` 118/203; win: SpawnersMenu done), ghost polls and alerts (done, syndicate X2: SSpolling and the poll alert), DNR (done, silicons SI6), ghosts' scans and data HUDs, the minigames menu (done, gaps S4d, with Mafia; win: MinigamesMenu done), possession and deadchat control
 
 ---
 
@@ -260,7 +260,7 @@ hallucinations, cryo cells, stasis beds, IV drips, buckling.
 - [x] **The labor camp**: the gulag teleporter and its console (Meta 1+1; win: GulagTeleporterConsole), the item reclaimer (Meta 1; win: GulagItemReclaimer), points and the claim console (win: LaborClaimConsole), the prison's plate press and produceporter (gaps LC1; the claim console and stacker: Lavaland L2b)
 - [ ] The labor shuttle's flight (Meta 1): the shuttle stands at its dock as the other shuttles do; it flies with shuttle travel
 - [ ] **The auxiliary base**: the construction console with its camera (Meta 1; done 2026-11-14: its drone kept in the aux base, the internal RCD, fans, turrets, Log out), the base's controller (win: AuxBaseConsole) and the base's landing (its docking port is live)
-- [ ] **Bitrunning** (`modules/bitrunning` 233/277): the netpods (done, gaps BR1; Meta 3; win: NetpodOutfits), the quantum server and its console (done, gaps BR1; Meta 1+1; win: QuantumConsole), the byteforge (done, gaps BR1; Meta 1), domains and avatars (the avatar, the safehouses and the test, gondola asteroid and grasslands hunt domains done, gaps BR1; win: AvatarHelp; the other domains wait for gaps BR2, the six megafauna domains for the owner's Lavaland mobs, D342), the bitrunning order console (done, gaps BR1), the glitch (section 3, gaps BR2); left: `not-translated.md` section 230
+- [ ] **Bitrunning** (`modules/bitrunning` 272/277): the netpods (done, gaps BR1; Meta 3; win: NetpodOutfits), the quantum server and its console (done, gaps BR1; Meta 1+1; win: QuantumConsole), the byteforge (done, gaps BR1; Meta 1), domains and avatars (the avatar, the safehouses and the test, gondola asteroid and grasslands hunt domains done, gaps BR1; win: AvatarHelp; the other domains with their mobs, spawners and secondary objectives done, gaps BR2; the six megafauna domains wait for Lavaland's mobs, gaps LV1-5, D353), the bitrunning order console (done, gaps BR1), the glitch (section 3; done, gaps BR2; win: AntagInfoGlitch); left: `not-translated.md` section 230
 
 ### 5.6 Security
 
@@ -389,7 +389,7 @@ ruins, the CentCom level and the transit and reserved levels. The port runs the 
 - [ ] The tgui windows the client does not draw: 396 of tg's 444; the full index is section 13
 - [ ] The HUDs of other mobs (`/datum/hud`: pAI (done, silicons SI6), alien and larva (done, gaps X5), blob overmind, revenant, guardian and dextrous (done, syndicate X2), soulscythe); the human and ghost HUDs are live (the robot's: silicons SI2, the AI's: SI4)
 - [ ] The remaining screen alerts (`/atom/movable/screen/alert` 183/201 live)
-- [ ] Action buttons: item actions (`/datum/action/item_action` 107/125 live); spells (226), innate actions (`/datum/action/innate` 64/162) and vehicle actions (`/datum/action/vehicle` 30/43) come with their owners
+- [ ] Action buttons: item actions (`/datum/action/item_action` 107/125 live); spells (226), innate actions (`/datum/action/innate` 65/162) and vehicle actions (`/datum/action/vehicle` 30/43) come with their owners
 - [ ] tg's stat panel (the Status tab: round time, the shuttle's ETA, the security level; the MC and admin tabs): the client has only the command verbs' tabs (silicons SI4's Commands window)
 - [x] tg's escape menu: an Esc menu with tg's items in the client's own style (D282; M10x G3-G6, 1.0.4-pre-alpha to 1.0.6-pre-alpha)
 - [ ] Hotkeys help (win: HotkeysHelp); tg's keybindings (`/datum/keybinding` 31/86 live; the client's Settings window has a Keybindings tab, D282)
@@ -468,7 +468,7 @@ Well-known SS13 mechanics that are not in tg any more; nothing to port. Checked 
 
 ## 13. Index of the tgui windows not drawn yet
 
-396 of tg's 444 windows (the client drew 48 when this index was made); 262 of the 396 are ticked now. One row per
+396 of tg's 444 windows (the client drew 48 when this index was made); 263 of the 396 are ticked now. One row per
 window, grouped by where its mechanic sits above; tick it when the client draws it (a registration in TguiWindows.cs), in the
 package that draws it. Windows of section 12 are listed for completeness.
 
@@ -487,7 +487,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] Supermatter (E2)
 - [x] Tank (E3)
 
-### The round and antagonists (sections 2, 3): 47 (24 drawn)
+### The round and antagonists (sections 2, 3): 47 (25 drawn)
 
 - [ ] AbductorConsole
 - [ ] Achievements
@@ -499,7 +499,7 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] AntagInfoChangeling (gaps K1)
 - [ ] AntagInfoDemon
 - [x] AntagInfoGeneric (syndicate A1)
-- [ ] AntagInfoGlitch
+- [x] AntagInfoGlitch (gaps BR2)
 - [ ] AntagInfoHeretic
 - [x] AntagInfoMalf (silicons SI8)
 - [ ] AntagInfoMorph

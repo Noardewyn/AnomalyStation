@@ -70,6 +70,28 @@ internal static class GapsHarness
         return found;
     }
 
+    /// <summary>
+    /// The last "update" message that carries the window's static data (its opening or a full update): the payload a test
+    /// reads the static data from, whatever data-only updates SStgui's process sent after it in the same steps.
+    /// </summary>
+    public static JsonElement LastFullUpdate(List<TguiOutput> outputs, out string windowId)
+    {
+        windowId = null;
+        JsonElement found = default;
+        foreach (TguiOutput o in outputs)
+        {
+            if (o.Kind != TguiOutputKind.Message)
+                continue;
+            using JsonDocument doc = JsonDocument.Parse(o.Json);
+            if (doc.RootElement.GetProperty("type").GetString() != "update" || !doc.RootElement.GetProperty("payload").TryGetProperty("static_data", out _))
+                continue;
+            found = doc.RootElement.GetProperty("payload").Clone();
+            windowId = o.WindowId;
+        }
+        Assert.True(found.ValueKind == JsonValueKind.Object, "no full update message: " + string.Join(" | ", outputs.Select(o => o.Kind + " " + o.Json)));
+        return found;
+    }
+
     public static string InterfaceOf(JsonElement payload) => payload.GetProperty("config").GetProperty("interface").GetProperty("name").GetString();
 
     /// <summary>The window's act, as the client sends it ("act/NAME" with its params).</summary>

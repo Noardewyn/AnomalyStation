@@ -69,6 +69,10 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         Dm.@new<datum_controller_subsystem_vis_overlays>(); // M3 P4: the plastic flaps' Initialize adds their vis overlay (plasticflaps.dm:121); tg's MC always creates it
         // Gaps S3: the fortune, fishing tip and junk mail papers pick from GLOB string lists that tg's GLOB reads at world start
         // (strings.dm:4-12), here after the strings' mount
+        GLOB.InitGlobalfirst_names(); // the bitrunning revolutionary names itself from them (revolutionary.dm:96-105)
+        GLOB.InitGlobalfirst_names_male();
+        GLOB.InitGlobalfirst_names_female();
+        GLOB.InitGloballast_names();
         GLOB.InitGlobalphonetic_alphabet(); // syndicate G3a: a deathrattle group names itself from it (implant_deathrattle.dm)
         GLOB.InitGlobalwisdoms();
         GLOB.InitGlobalfishing_tips();
@@ -169,8 +173,9 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         // configuration, which SSsecurity_level's level datums read (security_level_datums.dm:44; tg's runs with every subsystem). Gaps E2b
         uncreatables.Add(typeof(obj_effect_meteor_dark_matteor));
         // ADAPTED: the infected assistants' corpses dress in the assistant's outfit, whose ID trim reads SSid_access (outfit.dm:213), which the
-        // harness world does not initialize (tg's runs with every subsystem; the other job corpses are generated-only and skipped). Gaps E3
-        foreach (Type t in new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection) })
+        // harness world does not initialize (tg's runs with every subsystem; the other job corpses are generated-only and skipped). Gaps E3; the bitrunner's and the cyber police's corpses (the
+        // bitrunning domains) dress in outfits with an ID trim too
+        foreach (Type t in new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection), typeof(obj_effect_mob_spawn_corpse_human_bitrunner), typeof(obj_effect_mob_spawn_corpse_human_cyber_police) })
             uncreatables.Add(t);
         uncreatables.Add(typeof(obj_item_storage_box_syndie_kit_induction_kit_clown)); // tg's own stack trace, see VarBlockLeaves
         // ADAPTED: the second syndi-kit picks its kit at random (uplink_kits.dm:186, pick_weight): its bees kit holds the beesease bottle,

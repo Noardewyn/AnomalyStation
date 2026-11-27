@@ -205,6 +205,8 @@ internal sealed partial class Generator
         "/obj/item/integrated_circuit:cell",
         "/obj/item/circuit_component/mod_program:associated_program",
         "/obj/item/circuit_component/mod_program:start",
+        // The crate mimic's crate is the crate type it pretends to be, then the nullspaced crate made from it (mimic.dm:90).
+        "/mob/living/basic/mimic/crate:crate",
     };
 
     /// <summary>Typed vars that hold typepaths read from a list (rules 3.2, "typepaths read from a list": <c>Type</c>), which the V3

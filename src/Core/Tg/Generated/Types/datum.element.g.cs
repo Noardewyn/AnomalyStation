@@ -2017,9 +2017,9 @@ public partial class datum_element_rust
 [DmPath("/datum/element/rust/heretic"), DmGeneratedOnly, DmInert]
 public partial class datum_element_rust_heretic : datum_element_rust { }
 
-// tg: code/datums/elements/rust_healing.dm:3
-[DmPath("/datum/element/rust_healing"), DmGeneratedOnly, DmInert]
-public partial class datum_element_rust_healing : datum_element
+// tg: code/datums/elements/rust_healing.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/rust_healing")]
+public partial class datum_element_rust_healing
 {
     public object heal_amount; // tg: code/datums/elements/rust_healing.dm:6
     public object stamina_heal_amount; // tg: code/datums/elements/rust_healing.dm:8

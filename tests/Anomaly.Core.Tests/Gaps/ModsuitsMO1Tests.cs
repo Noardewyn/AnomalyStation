@@ -434,7 +434,7 @@ public class ModsuitsMO1Tests
         r.Command(() => Waiting.Detach(mod.ui_interact(bob)));
         r.Step(4);
         var outputs = r.In(() => Take(bob));
-        var payload = LastUpdate(outputs, out string window);
+        var payload = LastFullUpdate(outputs, out string window);
         Assert.Equal("MODsuit", InterfaceOf(payload));
         var data = payload.GetProperty("data");
         var status = data.GetProperty("suit_status");

@@ -10,7 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL: only the bouncy castle (gaps ST5, D333: the structures' leftovers): named after the mob it was made from, it leaves blood
-// as it moves and spreads it to whoever touches it, and it squelches when hit. The fugitive hunters' gear (the bounty locator, the
+// as it moves and spreads it to whoever touches it, and it squelches when hit; and the EVA crate with its three suits, helmets,
+// masks and oxygen tanks (the bitrunning psyker shuffle's crates). The fugitive hunters' gear (the bounty locator, the
 // psychic's and the bounty hunters' items) waits for the fugitive hunters (antagonists, not-translated.md 213). The var blocks are
 // generated (D111).
 
@@ -53,5 +54,23 @@ public partial class obj_structure_bouncy_castle : obj_structure
                 break;
         }
         return null;
+    }
+}
+
+// tg: code/modules/antagonists/fugitive/hunters/hunter_gear.dm:51
+public partial class obj_structure_closet_crate_eva : obj_structure_closet_crate
+{
+    // tg: code/modules/antagonists/fugitive/hunters/hunter_gear.dm:56
+    public override async DmTask PopulateContents(params object[] __extra)
+    {
+        await base.PopulateContents(__extra);
+        for (float i = 1; i <= 3; i++)
+            Dm.@new<obj_item_clothing_suit_space_eva>(this);
+        for (float i = 1; i <= 3; i++)
+            Dm.@new<obj_item_clothing_head_helmet_space_eva>(this);
+        for (float i = 1; i <= 3; i++)
+            Dm.@new<obj_item_clothing_mask_breath>(this);
+        for (float i = 1; i <= 3; i++)
+            Dm.@new<obj_item_tank_internals_oxygen>(this);
     }
 }

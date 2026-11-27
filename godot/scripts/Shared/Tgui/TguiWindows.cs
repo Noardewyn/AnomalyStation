@@ -303,6 +303,7 @@ public static class TguiInterfaces
         ["CellularEmporium"] = CellularEmporium.Render, // gaps K1
         ["LingMMITalk"] = LingMMITalk.Render, // gaps K1
         ["AntagInfoSentient"] = AntagInfoSentient.Render, // syndicate G3c
+        ["AntagInfoGlitch"] = AntagInfoGlitch.Render, // bitrunning
         ["Uplink"] = Uplink.Render, // syndicate package A2
         ["DynamicAdmin"] = DynamicAdmin.Render, // syndicate package A3
         ["DynamicTester"] = DynamicTester.Render, // syndicate package A3

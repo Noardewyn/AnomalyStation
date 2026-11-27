@@ -538,7 +538,7 @@ public class MobLifecycleTests
             .Where(t => t != typeof(obj_effect_bug_moving)) // unit_test.dm:286: not meant to spawn without the machine wand (gaps DV2)
             .Where(t => !typeof(obj_effect_skyfall_landingzone).IsAssignableFrom(t)) // unit_test.dm:358: needs a linked mecha (D321)
             .Where(t => !typeof(obj_effect_pod_landingzone).IsAssignableFrom(t) && !typeof(obj_effect_pod_landingzone_effect).IsAssignableFrom(t)) // unit_test.dm:318-319: need their pod (syndicate G4c)
-            .Where(t => !new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection) }.Contains(t)) // gaps E3: the assistant's outfit's ID trim reads SSid_access (outfit.dm:213), not in the harness world
+            .Where(t => !new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection), typeof(obj_effect_mob_spawn_corpse_human_bitrunner), typeof(obj_effect_mob_spawn_corpse_human_cyber_police) }.Contains(t)) // gaps E3: the assistant's outfit's ID trim reads SSid_access (outfit.dm:213), not in the harness world; the bitrunner's and the cyber police's outfits have one too
             .Where(t => !typeof(mob_eye_camera_remote_base_construction).IsAssignableFrom(t)) // unit_test.dm:327: no linked console (the aux base console)
             .Where(t => !typeof(mob_eye_camera_remote_shuttle_docker).IsAssignableFrom(t)) // unit_test.dm:329: no linked console (syndicate N1c)
             .Where(t => !typeof(mob_eye_imaginary_friend).IsAssignableFrom(t)) // unit_test.dm:323: no trauma to pass in (gaps K1)
@@ -596,6 +596,10 @@ public class MobLifecycleTests
         {
             // Gaps S3: the fortune, fishing tip and junk mail papers pick from GLOB string lists that tg's GLOB reads at world start
             // (strings.dm:4-12): the room mounts the strings after its GLOB
+            GLOB.InitGlobalfirst_names(); // the bitrunning revolutionary names itself from them (revolutionary.dm:96-105)
+            GLOB.InitGlobalfirst_names_male();
+            GLOB.InitGlobalfirst_names_female();
+            GLOB.InitGloballast_names();
             GLOB.InitGlobalphonetic_alphabet(); // syndicate G3a: a deathrattle group names itself from it (implant_deathrattle.dm)
             GLOB.InitGlobalwisdoms();
             GLOB.InitGlobalfishing_tips();

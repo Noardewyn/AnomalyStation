@@ -9,7 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The base attack (gaps package C4): rapid fire, the shotgun and the other megafauna's variants stay inert with their hosts.
+// The base attack (gaps package C4) and the rapid fire (the netguardian's rockets); the shrapnel fire, the shotgun and the other
+// megafauna's variants stay inert with their hosts.
 
 // tg: code/datums/actions/mobs/projectileattack.dm:2
 public partial class datum_action_cooldown_mob_cooldown_projectile_attack : datum_action_cooldown_mob_cooldown
@@ -73,5 +74,29 @@ public partial class datum_action_cooldown_mob_cooldown_projectile_attack : datu
         }
         Waiting.NoSleep(our_projectile.fire());
         return our_projectile;
+    }
+}
+
+// tg: code/datums/actions/mobs/projectileattack.dm:66
+public partial class datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire : datum_action_cooldown_mob_cooldown_projectile_attack
+{
+    // tg: code/datums/actions/mobs/projectileattack.dm:78
+    public override async DmTask<object> attack_sequence(mob_living firer = null, atom target = null)
+    {
+        for (float i = 1, i__end = shot_count; i <= i__end; i++)
+        {
+            shoot_projectile(firer, target, null, firer, rand(-default_projectile_spread, default_projectile_spread), null);
+            // SLEEP_CHECK_DEATH(shot_delay, firer) (__DEFINES/mobs.dm:627), expanded inline
+            await sleep(shot_delay);
+            if (QDELETED(firer))
+                return null;
+            if (ismob(firer))
+            {
+                mob sleep_check_death_mob = firer;
+                if (sleep_check_death_mob.stat == DEAD)
+                    return null;
+            }
+        }
+        return null;
     }
 }

@@ -1114,13 +1114,13 @@ public partial class datum_objective_escape_captivity { }
 [DmPath("/datum/objective/advance_hive")]
 public partial class datum_objective_advance_hive { }
 
-// tg: code/modules/bitrunning/antagonists/_parent.dm:41
-[DmPath("/datum/objective/bitrunning_glitch_fluff"), DmGeneratedOnly, DmInert]
-public partial class datum_objective_bitrunning_glitch_fluff : datum_objective { }
+// tg: code/modules/bitrunning/antagonists/_parent.dm:41 (the var block of a hand-written class)
+[DmPath("/datum/objective/bitrunning_glitch_fluff")]
+public partial class datum_objective_bitrunning_glitch_fluff { }
 
-// tg: code/modules/bitrunning/antagonists/ghost_role.dm:21
-[DmPath("/datum/objective/bitrunner_ghost_fluff"), DmGeneratedOnly, DmInert]
-public partial class datum_objective_bitrunner_ghost_fluff : datum_objective { }
+// tg: code/modules/bitrunning/antagonists/ghost_role.dm:21 (the var block of a hand-written class)
+[DmPath("/datum/objective/bitrunner_ghost_fluff")]
+public partial class datum_objective_bitrunner_ghost_fluff { }
 
 // tg: code/modules/mob/living/basic/space_fauna/revenant/revenant_objectives.dm:3
 [DmPath("/datum/objective/revenant"), DmGeneratedOnly, DmInert]

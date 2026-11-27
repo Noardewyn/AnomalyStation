@@ -2389,7 +2389,7 @@ public partial class datum_antagonist_xeno_captive
 }
 
 // tg: code/modules/bitrunning/antagonists/_parent.dm:6 (the var block of a hand-written class)
-[DmPath("/datum/antagonist/bitrunning_glitch"), DmInert]
+[DmPath("/datum/antagonist/bitrunning_glitch")]
 public partial class datum_antagonist_bitrunning_glitch
 {
     public float threat = 0; // tg: code/modules/bitrunning/antagonists/_parent.dm:17
@@ -2410,9 +2410,9 @@ public partial class datum_antagonist_bitrunning_glitch
     }
 }
 
-// tg: code/modules/bitrunning/antagonists/cyber_police.dm:2
-[DmPath("/datum/antagonist/bitrunning_glitch/cyber_police"), DmGeneratedOnly, DmInert]
-public partial class datum_antagonist_bitrunning_glitch_cyber_police : datum_antagonist_bitrunning_glitch
+// tg: code/modules/bitrunning/antagonists/cyber_police.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/antagonist/bitrunning_glitch/cyber_police")]
+public partial class datum_antagonist_bitrunning_glitch_cyber_police
 {
     // tg: code/modules/bitrunning/antagonists/cyber_police.dm:2
     public datum_antagonist_bitrunning_glitch_cyber_police()
@@ -2422,9 +2422,9 @@ public partial class datum_antagonist_bitrunning_glitch_cyber_police : datum_ant
     }
 }
 
-// tg: code/modules/bitrunning/antagonists/cyber_tac.dm:2
-[DmPath("/datum/antagonist/bitrunning_glitch/cyber_tac"), DmGeneratedOnly, DmInert]
-public partial class datum_antagonist_bitrunning_glitch_cyber_tac : datum_antagonist_bitrunning_glitch
+// tg: code/modules/bitrunning/antagonists/cyber_tac.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/antagonist/bitrunning_glitch/cyber_tac")]
+public partial class datum_antagonist_bitrunning_glitch_cyber_tac
 {
     // tg: code/modules/bitrunning/antagonists/cyber_tac.dm:2
     public datum_antagonist_bitrunning_glitch_cyber_tac()
@@ -2437,7 +2437,7 @@ public partial class datum_antagonist_bitrunning_glitch_cyber_tac : datum_antago
 }
 
 // tg: code/modules/bitrunning/antagonists/netguardian.dm:2
-[DmPath("/datum/antagonist/bitrunning_glitch/netguardian"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/antagonist/bitrunning_glitch/netguardian"), DmGeneratedOnly]
 public partial class datum_antagonist_bitrunning_glitch_netguardian : datum_antagonist_bitrunning_glitch
 {
     // tg: code/modules/bitrunning/antagonists/netguardian.dm:2
@@ -2449,9 +2449,9 @@ public partial class datum_antagonist_bitrunning_glitch_netguardian : datum_anta
     }
 }
 
-// tg: code/modules/bitrunning/antagonists/ghost_role.dm:2
-[DmPath("/datum/antagonist/domain_ghost_actor"), DmGeneratedOnly, DmInert]
-public partial class datum_antagonist_domain_ghost_actor : datum_antagonist
+// tg: code/modules/bitrunning/antagonists/ghost_role.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/antagonist/domain_ghost_actor")]
+public partial class datum_antagonist_domain_ghost_actor
 {
     // tg: code/modules/bitrunning/antagonists/ghost_role.dm:2
     public datum_antagonist_domain_ghost_actor()

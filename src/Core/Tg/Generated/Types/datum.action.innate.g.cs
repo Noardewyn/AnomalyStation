@@ -1561,10 +1561,6 @@ public partial class datum_action_innate_mimic_lock__2 : datum_action_innate
 [DmPath("/datum/action/innate/mimic"), DmGeneratedOnly]
 public partial class datum_action_innate_mimic : datum_action_innate { }
 
-// tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:246
-[DmPath("/datum/action/innate/mimic/lock"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_mimic_lock : datum_action_innate_mimic { }
-
 // tg: code/modules/mob/living/basic/slime/actions.dm:2 (the var block of a hand-written class)
 [DmPath("/datum/action/innate/slime")]
 public partial class datum_action_innate_slime

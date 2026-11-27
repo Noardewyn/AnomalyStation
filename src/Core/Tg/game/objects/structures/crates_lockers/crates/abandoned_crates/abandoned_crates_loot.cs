@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // gaps ST3 (D333): the file whole, the abandoned crate's loot spawners (each makes its loot list's things on its turf, then goes as
-// every spawner does). One of the things they make stays inert until its package: the crate mimic (`/mob/living/basic/mimic/crate`),
-// not-translated.md 207 (the bwoink sound mine is live since gaps ST5's mines). The var blocks are generated (D111).
+// every spawner does). The crate mimic it may make is live since the bitrunning domains, the bwoink sound mine since gaps ST5's
+// mines. The var blocks are generated (D111).
 
 // tg: code/game/objects/structures/crates_lockers/crates/abandoned_crates/abandoned_crates_loot.dm:6
 public partial class obj_effect_spawner_abandoned_crate : obj_effect_spawner

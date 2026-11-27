@@ -40,9 +40,9 @@ public partial class datum_round_event_control
     }
 }
 
-// tg: code/modules/bitrunning/event.dm:2
-[DmPath("/datum/round_event_control/bitrunning_glitch"), DmGeneratedOnly, DmInert]
-public partial class datum_round_event_control_bitrunning_glitch : datum_round_event_control
+// tg: code/modules/bitrunning/event.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/round_event_control/bitrunning_glitch")]
+public partial class datum_round_event_control_bitrunning_glitch
 {
     public DmList active_servers; // tg: code/modules/bitrunning/event.dm:14
 

@@ -57,8 +57,9 @@ public class CreateAndDestroyTests
         // unit_test.dm:325: the ethereal crystal needs its heart (live since gaps OG1)
         || typeof(obj_structure_ethereal_crystal).IsAssignableFrom(t)
         // the infected assistants' corpses dress in the assistant's outfit, whose ID trim reads SSid_access (outfit.dm:213), which the harness
-        // world does not initialize (the other job corpses are generated-only and skipped). Gaps E3
-        || new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection) }.Contains(t)
+        // world does not initialize (the other job corpses are generated-only and skipped). Gaps E3; the bitrunner's and the cyber
+        // police's corpses (the bitrunning domains) dress in outfits with an ID trim too
+        || new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection), typeof(obj_effect_mob_spawn_corpse_human_bitrunner), typeof(obj_effect_mob_spawn_corpse_human_cyber_police) }.Contains(t)
         // the improvised chem heater's RefreshParts reads its subsystem's wait (spaceheater.dm:537); the toy room's Master lists no SSmachines (E9)
         || typeof(obj_machinery_space_heater_improvised_chem_heater).IsAssignableFrom(t)
         // the manufacturing crafter's Initialize starts processing on SSmanufacturing (crafter.dm:25); the toy room's Master does not list it (E16)
@@ -121,6 +122,10 @@ public class CreateAndDestroyTests
             }
             // Gaps S3: the fortune, fishing tip and junk mail papers pick from GLOB string lists that tg's GLOB reads at world start
             // (strings.dm:4-12): the toy room mounts the strings after its GLOB
+            GLOB.InitGlobalfirst_names(); // the bitrunning revolutionary names itself from them (revolutionary.dm:96-105)
+            GLOB.InitGlobalfirst_names_male();
+            GLOB.InitGlobalfirst_names_female();
+            GLOB.InitGloballast_names();
             GLOB.InitGlobalphonetic_alphabet(); // syndicate G3a: a deathrattle group names itself from it (implant_deathrattle.dm)
             GLOB.InitGlobalwisdoms();
             GLOB.InitGlobalfishing_tips();

@@ -647,9 +647,9 @@ public partial class datum_action_cooldown_mob_cooldown_projectile_attack
     }
 }
 
-// tg: code/datums/actions/mobs/projectileattack.dm:66
-[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire : datum_action_cooldown_mob_cooldown_projectile_attack
+// tg: code/datums/actions/mobs/projectileattack.dm:66 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire")]
+public partial class datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire
 {
     public float shot_count = 60; // tg: code/datums/actions/mobs/projectileattack.dm:74
     public float shot_delay = 1; // tg: code/datums/actions/mobs/projectileattack.dm:76
@@ -668,7 +668,7 @@ public partial class datum_action_cooldown_mob_cooldown_projectile_attack_rapid_
 }
 
 // tg: code/datums/actions/mobs/projectileattack.dm:84
-[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/direct"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/direct"), DmGeneratedOnly]
 public partial class datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_direct : datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire
 {
     // tg: code/datums/actions/mobs/projectileattack.dm:84
@@ -724,9 +724,9 @@ public partial class datum_action_cooldown_mob_cooldown_projectile_attack_rapid_
     }
 }
 
-// tg: code/modules/bitrunning/antagonists/netguardian.dm:84
-[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/netguardian"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_netguardian : datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire
+// tg: code/modules/bitrunning/antagonists/netguardian.dm:84 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/netguardian")]
+public partial class datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_netguardian
 {
     // tg: code/modules/bitrunning/antagonists/netguardian.dm:84
     public datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_netguardian()

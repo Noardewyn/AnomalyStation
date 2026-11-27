@@ -43,7 +43,7 @@ public class MarketTests
     {
         Take(c.Bob);
         Click(c.R, c.Bob, console);
-        JsonElement payload = LastUpdate(Take(c.Bob), out string window);
+        JsonElement payload = LastFullUpdate(Take(c.Bob), out string window);
         Assert.Equal(@interface, InterfaceOf(payload));
         data = payload.GetProperty("data");
         statics = payload.GetProperty("static_data");

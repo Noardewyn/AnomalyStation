@@ -3575,9 +3575,9 @@ public partial class mob_living_basic_trader_mrbones : mob_living_basic_trader
     }
 }
 
-// tg: code/modules/bitrunning/antagonists/netguardian.dm:7
-[DmPath("/mob/living/basic/netguardian"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_netguardian : mob_living_basic
+// tg: code/modules/bitrunning/antagonists/netguardian.dm:7 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/netguardian")]
+public partial class mob_living_basic_netguardian
 {
     // tg: code/modules/bitrunning/antagonists/netguardian.dm:7
     public mob_living_basic_netguardian()
@@ -3786,9 +3786,9 @@ public partial class mob_living_basic_boss_thing : mob_living_basic_boss
 [DmPath("/mob/living/basic/boss/thing/with_ruin_loot"), DmGeneratedOnly, DmInert]
 public partial class mob_living_basic_boss_thing_with_ruin_loot : mob_living_basic_boss_thing { }
 
-// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:104
-[DmPath("/mob/living/basic/fake_crewman"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_fake_crewman : mob_living_basic
+// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:104 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/fake_crewman")]
+public partial class mob_living_basic_fake_crewman
 {
     public Type death_spawner = typeof(obj_effect_mob_spawn_corpse_human); // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:124
     public Type weapon = typeof(obj_item_storage_toolbox); // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:125
@@ -3822,7 +3822,7 @@ public partial class mob_living_basic_fake_crewman : mob_living_basic
 }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:142
-[DmPath("/mob/living/basic/fake_crewman/md"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/fake_crewman/md"), DmGeneratedOnly]
 public partial class mob_living_basic_fake_crewman_md : mob_living_basic_fake_crewman
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:142
@@ -3835,7 +3835,7 @@ public partial class mob_living_basic_fake_crewman_md : mob_living_basic_fake_cr
 }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:147
-[DmPath("/mob/living/basic/fake_crewman/sec"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/fake_crewman/sec"), DmGeneratedOnly]
 public partial class mob_living_basic_fake_crewman_sec : mob_living_basic_fake_crewman
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:147
@@ -3856,7 +3856,7 @@ public partial class mob_living_basic_fake_crewman_sec : mob_living_basic_fake_c
 }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:154
-[DmPath("/mob/living/basic/fake_crewman/engi"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/fake_crewman/engi"), DmGeneratedOnly]
 public partial class mob_living_basic_fake_crewman_engi : mob_living_basic_fake_crewman
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:154
@@ -3878,7 +3878,7 @@ public partial class mob_living_basic_fake_crewman_engi : mob_living_basic_fake_
 }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:162
-[DmPath("/mob/living/basic/fake_crewman/engi/mod"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/fake_crewman/engi/mod"), DmGeneratedOnly]
 public partial class mob_living_basic_fake_crewman_engi_mod : mob_living_basic_fake_crewman_engi
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:162
@@ -3896,7 +3896,7 @@ public partial class mob_living_basic_fake_crewman_engi_mod : mob_living_basic_f
 }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:166
-[DmPath("/mob/living/basic/fake_crewman/assistant"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/fake_crewman/assistant"), DmGeneratedOnly]
 public partial class mob_living_basic_fake_crewman_assistant : mob_living_basic_fake_crewman
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:166
@@ -3910,7 +3910,7 @@ public partial class mob_living_basic_fake_crewman_assistant : mob_living_basic_
 }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:172
-[DmPath("/mob/living/basic/fake_crewman/assistant/alt"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/fake_crewman/assistant/alt"), DmGeneratedOnly]
 public partial class mob_living_basic_fake_crewman_assistant_alt : mob_living_basic_fake_crewman_assistant
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:172
@@ -3921,7 +3921,7 @@ public partial class mob_living_basic_fake_crewman_assistant_alt : mob_living_ba
 }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:175
-[DmPath("/mob/living/basic/fake_crewman/boss"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/fake_crewman/boss"), DmGeneratedOnly]
 public partial class mob_living_basic_fake_crewman_boss : mob_living_basic_fake_crewman
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:175
@@ -3937,7 +3937,7 @@ public partial class mob_living_basic_fake_crewman_boss : mob_living_basic_fake_
 }
 
 // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:183
-[DmPath("/mob/living/basic/fake_crewman/boss/cmo"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/fake_crewman/boss/cmo"), DmGeneratedOnly]
 public partial class mob_living_basic_fake_crewman_boss_cmo : mob_living_basic_fake_crewman_boss
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:183
@@ -3949,9 +3949,9 @@ public partial class mob_living_basic_fake_crewman_boss_cmo : mob_living_basic_f
     }
 }
 
-// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:188
-[DmPath("/mob/living/basic/fake_crewman/boss/ce"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_fake_crewman_boss_ce : mob_living_basic_fake_crewman_boss
+// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:188 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/fake_crewman/boss/ce")]
+public partial class mob_living_basic_fake_crewman_boss_ce
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:188
     public mob_living_basic_fake_crewman_boss_ce()
@@ -3963,9 +3963,9 @@ public partial class mob_living_basic_fake_crewman_boss_ce : mob_living_basic_fa
     }
 }
 
-// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:198
-[DmPath("/mob/living/basic/fake_crewman/boss/hos"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_fake_crewman_boss_hos : mob_living_basic_fake_crewman_boss
+// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:198 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/fake_crewman/boss/hos")]
+public partial class mob_living_basic_fake_crewman_boss_hos
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:198
     public mob_living_basic_fake_crewman_boss_hos()
@@ -5583,9 +5583,9 @@ public partial class mob_living_basic_festivus : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/revolutionary.dm:2
-[DmPath("/mob/living/basic/revolutionary"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_revolutionary : mob_living_basic
+// tg: code/modules/mob/living/basic/revolutionary.dm:2 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/revolutionary")]
+public partial class mob_living_basic_revolutionary
 {
     // tg: code/modules/mob/living/basic/revolutionary.dm:2
     public mob_living_basic_revolutionary()
@@ -5673,9 +5673,9 @@ public partial class mob_living_basic_tree : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/alien/_alien.dm:2
-[DmPath("/mob/living/basic/alien"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_alien : mob_living_basic
+// tg: code/modules/mob/living/basic/alien/_alien.dm:2 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/alien")]
+public partial class mob_living_basic_alien
 {
     public DmList loot; // tg: code/modules/mob/living/basic/alien/_alien.dm:53
     public float can_plant_weeds = 1; // tg: code/modules/mob/living/basic/alien/_alien.dm:55
@@ -5732,7 +5732,7 @@ public partial class mob_living_basic_alien : mob_living_basic
 }
 
 // tg: code/modules/mob/living/basic/alien/drone.dm:2
-[DmPath("/mob/living/basic/alien/drone"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/alien/drone"), DmGeneratedOnly]
 public partial class mob_living_basic_alien_drone : mob_living_basic_alien
 {
     // tg: code/modules/mob/living/basic/alien/drone.dm:2
@@ -5748,9 +5748,9 @@ public partial class mob_living_basic_alien_drone : mob_living_basic_alien
     }
 }
 
-// tg: code/modules/mob/living/basic/alien/maid.dm:2
-[DmPath("/mob/living/basic/alien/maid"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_alien_maid : mob_living_basic_alien
+// tg: code/modules/mob/living/basic/alien/maid.dm:2 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/alien/maid")]
+public partial class mob_living_basic_alien_maid
 {
     // tg: code/modules/mob/living/basic/alien/maid.dm:2
     public mob_living_basic_alien_maid()
@@ -5789,9 +5789,9 @@ public partial class mob_living_basic_alien_maid_barmaid : mob_living_basic_alie
     }
 }
 
-// tg: code/modules/mob/living/basic/alien/queen.dm:2
-[DmPath("/mob/living/basic/alien/queen"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_alien_queen : mob_living_basic_alien
+// tg: code/modules/mob/living/basic/alien/queen.dm:2 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/alien/queen")]
+public partial class mob_living_basic_alien_queen
 {
     public Type projectiletype = typeof(obj_projectile_neurotoxin_damaging); // tg: code/modules/mob/living/basic/alien/queen.dm:16
     public object projectilesound = Dm.resource("sound/items/weapons/pierce.ogg"); // tg: code/modules/mob/living/basic/alien/queen.dm:18
@@ -5814,7 +5814,7 @@ public partial class mob_living_basic_alien_queen : mob_living_basic_alien
 }
 
 // tg: code/modules/mob/living/basic/alien/queen.dm:25
-[DmPath("/mob/living/basic/alien/queen/large"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/alien/queen/large"), DmGeneratedOnly]
 public partial class mob_living_basic_alien_queen_large : mob_living_basic_alien_queen
 {
     // tg: code/modules/mob/living/basic/alien/queen.dm:25
@@ -5841,9 +5841,9 @@ public partial class mob_living_basic_alien_queen_large : mob_living_basic_alien
     }
 }
 
-// tg: code/modules/mob/living/basic/alien/sentinel.dm:2
-[DmPath("/mob/living/basic/alien/sentinel"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_alien_sentinel : mob_living_basic_alien
+// tg: code/modules/mob/living/basic/alien/sentinel.dm:2 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/alien/sentinel")]
+public partial class mob_living_basic_alien_sentinel
 {
     public Type projectiletype = typeof(obj_projectile_neurotoxin_damaging); // tg: code/modules/mob/living/basic/alien/sentinel.dm:14
     public object projectilesound = Dm.resource("sound/items/weapons/pierce.ogg"); // tg: code/modules/mob/living/basic/alien/sentinel.dm:16
@@ -6088,9 +6088,9 @@ public partial class mob_living_basic_blob_minion_blobbernaut_independent : mob_
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:2
-[DmPath("/mob/living/basic/clown"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_clown : mob_living_basic
+// tg: code/modules/mob/living/basic/clown/clown.dm:2 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/clown")]
+public partial class mob_living_basic_clown
 {
     public DmList loot; // tg: code/modules/mob/living/basic/clown/clown.dm:32
     public DmList emotes; // tg: code/modules/mob/living/basic/clown/clown.dm:34
@@ -6139,9 +6139,9 @@ public partial class mob_living_basic_clown : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:75
-[DmPath("/mob/living/basic/clown/lube"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_clown_lube : mob_living_basic_clown
+// tg: code/modules/mob/living/basic/clown/clown.dm:75 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/clown/lube")]
+public partial class mob_living_basic_clown_lube
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:75
     public mob_living_basic_clown_lube()
@@ -6170,9 +6170,9 @@ public partial class mob_living_basic_clown_lube : mob_living_basic_clown
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:102
-[DmPath("/mob/living/basic/clown/honkling"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_clown_honkling : mob_living_basic_clown
+// tg: code/modules/mob/living/basic/clown/clown.dm:102 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/clown/honkling")]
+public partial class mob_living_basic_clown_honkling
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:102
     public mob_living_basic_clown_honkling()
@@ -6197,9 +6197,9 @@ public partial class mob_living_basic_clown_honkling : mob_living_basic_clown
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:131
-[DmPath("/mob/living/basic/clown/fleshclown"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_clown_fleshclown : mob_living_basic_clown
+// tg: code/modules/mob/living/basic/clown/clown.dm:131 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/clown/fleshclown")]
+public partial class mob_living_basic_clown_fleshclown
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:131
     public mob_living_basic_clown_fleshclown()
@@ -6270,7 +6270,7 @@ public partial class mob_living_basic_clown_longface : mob_living_basic_clown
 }
 
 // tg: code/modules/mob/living/basic/clown/clown.dm:209
-[DmPath("/mob/living/basic/clown/clownhulk"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/clown/clownhulk"), DmGeneratedOnly]
 public partial class mob_living_basic_clown_clownhulk : mob_living_basic_clown
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:209
@@ -6311,7 +6311,7 @@ public partial class mob_living_basic_clown_clownhulk : mob_living_basic_clown
 }
 
 // tg: code/modules/mob/living/basic/clown/clown.dm:245
-[DmPath("/mob/living/basic/clown/clownhulk/chlown"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/clown/clownhulk/chlown"), DmGeneratedOnly]
 public partial class mob_living_basic_clown_clownhulk_chlown : mob_living_basic_clown_clownhulk
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:245
@@ -6345,9 +6345,9 @@ public partial class mob_living_basic_clown_clownhulk_chlown : mob_living_basic_
     }
 }
 
-// tg: code/modules/mob/living/basic/clown/clown.dm:275
-[DmPath("/mob/living/basic/clown/clownhulk/honkmunculus"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_clown_clownhulk_honkmunculus : mob_living_basic_clown_clownhulk
+// tg: code/modules/mob/living/basic/clown/clown.dm:275 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/clown/clownhulk/honkmunculus")]
+public partial class mob_living_basic_clown_clownhulk_honkmunculus
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:275
     public mob_living_basic_clown_clownhulk_honkmunculus()
@@ -6378,7 +6378,7 @@ public partial class mob_living_basic_clown_clownhulk_honkmunculus : mob_living_
 }
 
 // tg: code/modules/mob/living/basic/clown/clown.dm:313
-[DmPath("/mob/living/basic/clown/clownhulk/destroyer"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/clown/clownhulk/destroyer"), DmGeneratedOnly]
 public partial class mob_living_basic_clown_clownhulk_destroyer : mob_living_basic_clown_clownhulk
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:313
@@ -6413,7 +6413,7 @@ public partial class mob_living_basic_clown_clownhulk_destroyer : mob_living_bas
 }
 
 // tg: code/modules/mob/living/basic/clown/clown.dm:344
-[DmPath("/mob/living/basic/clown/mutant"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/clown/mutant"), DmGeneratedOnly]
 public partial class mob_living_basic_clown_mutant : mob_living_basic_clown
 {
     // tg: code/modules/mob/living/basic/clown/clown.dm:344
@@ -10010,9 +10010,9 @@ public partial class mob_living_basic_stickman_ranged
     }
 }
 
-// tg: code/modules/mob/living/basic/ruin_defender/zombie.dm:3
-[DmPath("/mob/living/basic/zombie"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_zombie : mob_living_basic
+// tg: code/modules/mob/living/basic/ruin_defender/zombie.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/zombie")]
+public partial class mob_living_basic_zombie
 {
     public Type outfit = typeof(datum_outfit_corpse_doctor); // tg: code/modules/mob/living/basic/ruin_defender/zombie.dm:26
     public float infection_chance = 0; // tg: code/modules/mob/living/basic/ruin_defender/zombie.dm:29
@@ -10052,7 +10052,7 @@ public partial class mob_living_basic_zombie : mob_living_basic
 }
 
 // tg: code/modules/mob/living/basic/ruin_defender/zombie.dm:47
-[DmPath("/mob/living/basic/zombie/rotten"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/zombie/rotten"), DmGeneratedOnly]
 public partial class mob_living_basic_zombie_rotten : mob_living_basic_zombie
 {
     // tg: code/modules/mob/living/basic/ruin_defender/zombie.dm:47
@@ -10068,7 +10068,7 @@ public partial class mob_living_basic_zombie_rotten : mob_living_basic_zombie
 }
 
 // tg: code/modules/mob/living/basic/ruin_defender/zombie.dm:55
-[DmPath("/mob/living/basic/zombie/rotten/assistant"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/zombie/rotten/assistant"), DmGeneratedOnly]
 public partial class mob_living_basic_zombie_rotten_assistant : mob_living_basic_zombie_rotten
 {
     // tg: code/modules/mob/living/basic/ruin_defender/zombie.dm:55
@@ -10117,9 +10117,9 @@ public partial class mob_living_basic_mimic
     }
 }
 
-// tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:53
-[DmPath("/mob/living/basic/mimic/crate"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_mimic_crate : mob_living_basic_mimic
+// tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:53 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/mimic/crate")]
+public partial class mob_living_basic_mimic_crate
 {
     public float opened = 0; // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:65
     public float max_mob_size = 2; // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:67
@@ -10127,7 +10127,7 @@ public partial class mob_living_basic_mimic_crate : mob_living_basic_mimic
     public datum_action_innate_mimic_lock__2 @lock; // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:71
     public float storage_capacity = 50; // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:73
     public float mob_storage_capacity = 10; // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:75
-    public Type crate = typeof(obj_structure_closet_crate); // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:77
+    public object crate = typeof(obj_structure_closet_crate); // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:77
 
     // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:53
     public mob_living_basic_mimic_crate()
@@ -10153,7 +10153,7 @@ public partial class mob_living_basic_mimic_crate : mob_living_basic_mimic
 }
 
 // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:231
-[DmPath("/mob/living/basic/mimic/crate/xenobio"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/mimic/crate/xenobio"), DmGeneratedOnly]
 public partial class mob_living_basic_mimic_crate_xenobio : mob_living_basic_mimic_crate
 {
     // tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:231

@@ -340,7 +340,28 @@ public partial class turf_open : turf
     // tg: code/game/turfs/open/_open.dm:195
     public virtual void add_footprint(mob_living_carbon_human walker = null, object movement_direction = null)
     {
-        Dm.NotTranslated("code/game/turfs/open/_open.dm:195", "add_footprint: humans (body_position, shoes, bodyparts) are translated in M2");
+        if (!Dm.eq(walker.body_position, STANDING_UP) || walker.buckled != null || Dm.truthy(Dm.bitand(walker.movement_type, MOVETYPES_NOT_TOUCHING_GROUND)))
+            return;
+
+        if (walker.loc == this)
+            Dm.combine(ref footprint_entrance_dirs, movement_direction);
+        else
+            Dm.combine(ref footprint_exit_dirs, movement_direction);
+
+        if (walker.shoes != null)
+            LAZYOR(ref footprint_shoe_types, walker.shoes.type);
+        else
+        {
+            // we can't actually get which leg is the "front foot" so we'll just guess
+            string front_foot = prob(50) ? BODY_ZONE_R_LEG : BODY_ZONE_L_LEG;
+            string backup_foot = front_foot == BODY_ZONE_R_LEG ? BODY_ZONE_L_LEG : BODY_ZONE_R_LEG;
+            obj_item_bodypart_leg walking_on = (walker.get_bodypart(front_foot) ?? walker.get_bodypart(backup_foot)) as obj_item_bodypart_leg;
+            if (walking_on == null)
+                return;
+            LAZYOR(ref footprint_species_types, walking_on.limb_id);
+        }
+
+        update_appearance();
     }
 
     /// Clear all footprints on the turf
@@ -588,7 +609,7 @@ public partial class turf_open_indestructible_permalube : turf_open_indestructib
     {
         object dot = null;
         dot = base.Initialize(mapload, __extra);
-        Dm.NotTranslated("code/game/turfs/open/_open.dm:348", "Initialize: AddComponent(/datum/component/wet_floor, ...): the permanently wet permalube and honk floors (not on MetaStation; M10+)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_wet_floor), TURF_WET_LUBE, INFINITY, 0, INFINITY, TRUE));
         return dot;
     }
 }
@@ -616,7 +637,7 @@ public partial class turf_open_indestructible_honk : turf_open_indestructible
     {
         object dot = null;
         dot = base.Initialize(mapload, __extra);
-        Dm.NotTranslated("code/game/turfs/open/_open.dm:361", "Initialize: AddComponent(/datum/component/wet_floor, ...): the permanently wet permalube and honk floors (not on MetaStation; M10+)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_wet_floor), TURF_WET_SUPERLUBE, INFINITY, 0, INFINITY, TRUE));
         return dot;
     }
 

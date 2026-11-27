@@ -1813,7 +1813,7 @@ proc	/datum/controller/global_vars	InitGlobalgutlunch_count	code/__DEFINES/basic
 proc	/datum/controller/global_vars	InitGlobalcustomized_pets	code/__DEFINES/basic_mobs.dm:44		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalblend_names	code/__DEFINES/blend_modes.dm:29		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalcable_colors	code/__DEFINES/colors.dm:510		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalheretic_path_to_color	code/__DEFINES/colors.dm:522		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalheretic_path_to_color	code/__DEFINES/colors.dm:522		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalshove_disarming_types	code/__DEFINES/combat.dm:188		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalall_body_zones	code/__DEFINES/combat.dm:300		yes	full	proc root
 proc	/datum/controller/global_vars	InitGloballimb_zones	code/__DEFINES/combat.dm:301		yes	full	proc root
@@ -4175,14 +4175,14 @@ proc	/datum/controller/subsystem/movement/ai_movement	New	code/controllers/subsy
 proc	/datum/controller/subsystem/movement/ai_movement	fire	code/controllers/subsystem/movement/ai_movement.dm:2		yes	full	proc
 proc	/datum/controller/subsystem/movement/ai_movement	Initialize	code/controllers/subsystem/movement/ai_movement.dm:11		yes	full	proc
 proc	/datum/controller/subsystem/movement/ai_movement	SetupAIMovementInstances	code/controllers/subsystem/movement/ai_movement.dm:15		yes	full	proc root
-type	/datum/controller/subsystem/movement/cliff_falling	/datum/controller/subsystem/movement	code/controllers/subsystem/movement/cliff_falling.dm:3	inert	datum_controller_subsystem_movement_cliff_falling	0	0
-proc	/datum/controller/subsystem/movement/cliff_falling	New	code/controllers/subsystem/movement/cliff_falling.dm:2		no	-	proc
-proc	/datum/controller/subsystem/movement/cliff_falling	fire	code/controllers/subsystem/movement/cliff_falling.dm:2		no	-	proc
-proc	/datum/controller/subsystem/movement/cliff_falling	start_falling	code/controllers/subsystem/movement/cliff_falling.dm:11	faller,cliff	no	-	proc root
-proc	/datum/controller/subsystem/movement/cliff_falling	on_moved	code/controllers/subsystem/movement/cliff_falling.dm:22	mover,old_loc	no	-	proc root
-proc	/datum/controller/subsystem/movement/cliff_falling	on_qdel	code/controllers/subsystem/movement/cliff_falling.dm:40	deletee	no	-	proc root
-proc	/datum/controller/subsystem/movement/cliff_falling	clear_references	code/controllers/subsystem/movement/cliff_falling.dm:45	deletee	no	-	proc root
-proc	/datum/controller/subsystem/movement/cliff_falling	check_move	code/controllers/subsystem/movement/cliff_falling.dm:51	mover,target	no	-	proc root
+type	/datum/controller/subsystem/movement/cliff_falling	/datum/controller/subsystem/movement	code/controllers/subsystem/movement/cliff_falling.dm:3	live	datum_controller_subsystem_movement_cliff_falling	1	0
+proc	/datum/controller/subsystem/movement/cliff_falling	New	code/controllers/subsystem/movement/cliff_falling.dm:2		yes	full	proc
+proc	/datum/controller/subsystem/movement/cliff_falling	fire	code/controllers/subsystem/movement/cliff_falling.dm:2		yes	full	proc
+proc	/datum/controller/subsystem/movement/cliff_falling	start_falling	code/controllers/subsystem/movement/cliff_falling.dm:11	faller,cliff	yes	full	proc root
+proc	/datum/controller/subsystem/movement/cliff_falling	on_moved	code/controllers/subsystem/movement/cliff_falling.dm:22	mover,old_loc	yes	full	proc root
+proc	/datum/controller/subsystem/movement/cliff_falling	on_qdel	code/controllers/subsystem/movement/cliff_falling.dm:40	deletee	yes	full	proc root
+proc	/datum/controller/subsystem/movement/cliff_falling	clear_references	code/controllers/subsystem/movement/cliff_falling.dm:45	deletee	yes	full	proc root
+proc	/datum/controller/subsystem/movement/cliff_falling	check_move	code/controllers/subsystem/movement/cliff_falling.dm:51	mover,target	yes	full	proc root
 type	/datum/controller/subsystem/movement/hyperspace_drift	/datum/controller/subsystem/movement	code/controllers/subsystem/movement/hyperspace_drift.dm:3	inert	datum_controller_subsystem_movement_hyperspace_drift	1	0
 proc	/datum/controller/subsystem/movement/hyperspace_drift	New	code/controllers/subsystem/movement/hyperspace_drift.dm:2		yes	full	proc
 proc	/datum/controller/subsystem/movement/hyperspace_drift	fire	code/controllers/subsystem/movement/hyperspace_drift.dm:2		no	-	proc
@@ -5624,8 +5624,8 @@ type	/datum/action/innate/check_gondola_contents	/datum/action/innate	code/modul
 proc	/datum/action/innate/check_gondola_contents	Trigger	code/modules/mob/living/basic/pets/gondolas/gondolapod.dm:93	clicker,trigger_flags	no	-	proc
 type	/datum/action/innate/mimic_lock	/datum/action/innate	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:239	live	datum_action_innate_mimic_lock__2	0	0
 type	/datum/action/innate/mimic	/datum/action/innate	(implied by a subtype's path)	live	datum_action_innate_mimic	0	0
-type	/datum/action/innate/mimic/lock	/datum/action/innate/mimic	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:246	inert	datum_action_innate_mimic_lock	0	0
-proc	/datum/action/innate/mimic/lock	Activate	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:246		no	-	proc
+type	/datum/action/innate/mimic/lock	/datum/action/innate/mimic	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:246	live	datum_action_innate_mimic_lock	1	0
+proc	/datum/action/innate/mimic/lock	Activate	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:246		yes	full	proc
 type	/datum/action/innate/slime	/datum/action/innate	code/modules/mob/living/basic/slime/actions.dm:2	live	datum_action_innate_slime	1	0
 proc	/datum/action/innate/slime	create_button	code/modules/mob/living/basic/slime/actions.dm:14	viewer	yes	full	proc
 proc	/datum/action/innate/slime	IsAvailable	code/modules/mob/living/basic/slime/actions.dm:19	feedback	yes	full	proc
@@ -5952,15 +5952,15 @@ proc	/datum/action/cooldown/mob_cooldown/projectile_attack	Activate	code/datums/
 proc	/datum/action/cooldown/mob_cooldown/projectile_attack	on_move	code/datums/actions/mobs/projectileattack.dm:31	source,new_loc	yes	full	proc root
 proc	/datum/action/cooldown/mob_cooldown/projectile_attack	attack_sequence	code/datums/actions/mobs/projectileattack.dm:36	firer,target	yes	full	proc root
 proc	/datum/action/cooldown/mob_cooldown/projectile_attack	shoot_projectile	code/datums/actions/mobs/projectileattack.dm:39	origin,target,set_angle,firer,projectile_spread,speed_multiplier,override_projectile_type,override_homing	yes	full	proc root
-type	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	/datum/action/cooldown/mob_cooldown/projectile_attack	code/datums/actions/mobs/projectileattack.dm:66	inert	datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire	0	0
-proc	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	attack_sequence	code/datums/actions/mobs/projectileattack.dm:78	firer,target	no	-	proc
-type	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/direct	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	code/datums/actions/mobs/projectileattack.dm:84	inert	datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_direct	0	0
+type	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	/datum/action/cooldown/mob_cooldown/projectile_attack	code/datums/actions/mobs/projectileattack.dm:66	live	datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire	1	0
+proc	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	attack_sequence	code/datums/actions/mobs/projectileattack.dm:78	firer,target	yes	full	proc
+type	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/direct	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	code/datums/actions/mobs/projectileattack.dm:84	live	datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_direct	0	0
 type	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/shrapnel	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	code/datums/actions/mobs/projectileattack.dm:88	inert	datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_shrapnel	0	0
 proc	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/shrapnel	attack_sequence	code/datums/actions/mobs/projectileattack.dm:103	firer,target	no	-	proc
 proc	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/shrapnel	explode_into_shrapnel	code/datums/actions/mobs/projectileattack.dm:109	firer,target,to_explode	no	-	proc root
 type	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/shrapnel/strong	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/shrapnel	code/datums/actions/mobs/projectileattack.dm:118	inert	datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_shrapnel_strong	0	0
-type	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/netguardian	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	code/modules/bitrunning/antagonists/netguardian.dm:84	inert	datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_netguardian	0	0
-proc	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/netguardian	Activate	code/modules/bitrunning/antagonists/netguardian.dm:92	target_atom	no	-	proc
+type	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/netguardian	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	code/modules/bitrunning/antagonists/netguardian.dm:84	live	datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_netguardian	1	0
+proc	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/netguardian	Activate	code/modules/bitrunning/antagonists/netguardian.dm:92	target_atom	yes	full	proc
 type	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/kinetic_accelerator	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire	code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_actions.dm:44	inert	datum_action_cooldown_mob_cooldown_projectile_attack_rapid_fire_kinetic_accelerator	0	0
 proc	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/kinetic_accelerator	Activate	code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_actions.dm:62	target_atom	no	-	proc
 proc	/datum/action/cooldown/mob_cooldown/projectile_attack/rapid_fire/kinetic_accelerator	attack_sequence	code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_actions.dm:71	firer,target	no	-	proc
@@ -10762,14 +10762,14 @@ proc	/datum/lazy_template/virtual_domain	setup_domain	code/modules/bitrunning/vi
 proc	/datum/lazy_template/virtual_domain	submit_grade	code/modules/bitrunning/virtual_domain/virtual_domain.dm:144	new_grade	yes	full	proc root
 type	/datum/lazy_template/virtual_domain/abductor_ship	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/abductor_ship.dm:2	live	datum_lazy_template_virtual_domain_abductor_ship	0	0
 type	/datum/lazy_template/virtual_domain/ash_drake	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/ash_drake.dm:2	live	datum_lazy_template_virtual_domain_ash_drake	0	0
-type	/datum/lazy_template/virtual_domain/beach_bar	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:2	inert	datum_lazy_template_virtual_domain_beach_bar	0	0
-proc	/datum/lazy_template/virtual_domain/beach_bar	setup_domain	code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:11	created_atoms	no	-	proc
-proc	/datum/lazy_template/virtual_domain/beach_bar	on_vended_item	code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:20	vending_machine,vended_item	no	-	proc root
-proc	/datum/lazy_template/virtual_domain/beach_bar	on_drink_drank	code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:26	source	no	-	proc root
+type	/datum/lazy_template/virtual_domain/beach_bar	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:2	live	datum_lazy_template_virtual_domain_beach_bar	1	0
+proc	/datum/lazy_template/virtual_domain/beach_bar	setup_domain	code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:11	created_atoms	yes	full	proc
+proc	/datum/lazy_template/virtual_domain/beach_bar	on_vended_item	code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:20	vending_machine,vended_item	yes	full	proc root
+proc	/datum/lazy_template/virtual_domain/beach_bar	on_drink_drank	code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:26	source	yes	full	proc root
 type	/datum/lazy_template/virtual_domain/blood_drunk_miner	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/blood_drunk_miner.dm:2	live	datum_lazy_template_virtual_domain_blood_drunk_miner	0	0
-type	/datum/lazy_template/virtual_domain/breeze_bay	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/breeze_bay.dm:2	inert	datum_lazy_template_virtual_domain_breeze_bay	0	0
-proc	/datum/lazy_template/virtual_domain/breeze_bay	setup_domain	code/modules/bitrunning/virtual_domain/domains/breeze_bay.dm:10	created_atoms	no	-	proc
-proc	/datum/lazy_template/virtual_domain/breeze_bay	on_fish_caught	code/modules/bitrunning/virtual_domain/domains/breeze_bay.dm:17	source,reward	no	-	proc root
+type	/datum/lazy_template/virtual_domain/breeze_bay	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/breeze_bay.dm:2	live	datum_lazy_template_virtual_domain_breeze_bay	1	0
+proc	/datum/lazy_template/virtual_domain/breeze_bay	setup_domain	code/modules/bitrunning/virtual_domain/domains/breeze_bay.dm:10	created_atoms	yes	full	proc
+proc	/datum/lazy_template/virtual_domain/breeze_bay	on_fish_caught	code/modules/bitrunning/virtual_domain/domains/breeze_bay.dm:17	source,reward	yes	full	proc root
 type	/datum/lazy_template/virtual_domain/bubblegum	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/bubblegum.dm:2	live	datum_lazy_template_virtual_domain_bubblegum	0	0
 type	/datum/lazy_template/virtual_domain/clown_planet	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/clown_planet.dm:2	live	datum_lazy_template_virtual_domain_clown_planet	0	0
 type	/datum/lazy_template/virtual_domain/colossus	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/colossus.dm:2	live	datum_lazy_template_virtual_domain_colossus	0	0
@@ -10779,16 +10779,16 @@ type	/datum/lazy_template/virtual_domain/grasslands_hunt	/datum/lazy_template/vi
 proc	/datum/lazy_template/virtual_domain/grasslands_hunt	setup_domain	code/modules/bitrunning/virtual_domain/domains/grassland_hunt.dm:12	created_atoms	yes	full	proc
 proc	/datum/lazy_template/virtual_domain/grasslands_hunt	on_spawned	code/modules/bitrunning/virtual_domain/domains/grassland_hunt.dm:18	source,mobs	yes	full	proc root
 proc	/datum/lazy_template/virtual_domain/grasslands_hunt	on_death	code/modules/bitrunning/virtual_domain/domains/grassland_hunt.dm:26	source	yes	full	proc root
-type	/datum/lazy_template/virtual_domain/heretic_hunt	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:2	inert	datum_lazy_template_virtual_domain_heretic_hunt	0	0
-proc	/datum/lazy_template/virtual_domain/heretic_hunt	setup_domain	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:13	created_atoms	no	-	proc
-proc	/datum/lazy_template/virtual_domain/heretic_hunt	on_body_spawned	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:24	source,loot,gibbed	no	-	proc root
-proc	/datum/lazy_template/virtual_domain/heretic_hunt	check_loc	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:36	source	no	-	proc root
+type	/datum/lazy_template/virtual_domain/heretic_hunt	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:2	live	datum_lazy_template_virtual_domain_heretic_hunt	1	0
+proc	/datum/lazy_template/virtual_domain/heretic_hunt	setup_domain	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:13	created_atoms	yes	full	proc
+proc	/datum/lazy_template/virtual_domain/heretic_hunt	on_body_spawned	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:24	source,loot,gibbed	yes	full	proc root
+proc	/datum/lazy_template/virtual_domain/heretic_hunt	check_loc	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:36	source	yes	full	proc root
 type	/datum/lazy_template/virtual_domain/hierophant	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/hierophant.dm:2	live	datum_lazy_template_virtual_domain_hierophant	0	0
-type	/datum/lazy_template/virtual_domain/island_brawl	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:2	inert	datum_lazy_template_virtual_domain_island_brawl	0	0
-proc	/datum/lazy_template/virtual_domain/island_brawl	setup_domain	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:20	created_atoms	no	-	proc
-proc	/datum/lazy_template/virtual_domain/island_brawl	on_spawner_qdeleted	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:28	source	no	-	proc root
-proc	/datum/lazy_template/virtual_domain/island_brawl	on_spawn	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:36	source,spawned_mob	no	-	proc root
-proc	/datum/lazy_template/virtual_domain/island_brawl	on_death	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:43	source,gibbed	no	-	proc root
+type	/datum/lazy_template/virtual_domain/island_brawl	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:2	live	datum_lazy_template_virtual_domain_island_brawl	1	0
+proc	/datum/lazy_template/virtual_domain/island_brawl	setup_domain	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:20	created_atoms	yes	full	proc
+proc	/datum/lazy_template/virtual_domain/island_brawl	on_spawner_qdeleted	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:28	source	yes	full	proc root
+proc	/datum/lazy_template/virtual_domain/island_brawl	on_spawn	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:36	source,spawned_mob	yes	full	proc root
+proc	/datum/lazy_template/virtual_domain/island_brawl	on_death	code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:43	source,gibbed	yes	full	proc root
 type	/datum/lazy_template/virtual_domain/meta_central	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/meta_central.dm:2	live	datum_lazy_template_virtual_domain_meta_central	0	0
 type	/datum/lazy_template/virtual_domain/pipedream	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/pipedream.dm:2	live	datum_lazy_template_virtual_domain_pipedream	0	0
 type	/datum/lazy_template/virtual_domain/pirates	/datum/lazy_template/virtual_domain	code/modules/bitrunning/virtual_domain/domains/pirates.dm:2	live	datum_lazy_template_virtual_domain_pirates	0	0
@@ -11156,13 +11156,13 @@ proc	/datum/outfit/beachbum_combat	post_equip	code/modules/bitrunning/outfits.dm
 type	/datum/outfit/virtual_pirate	/datum/outfit	code/modules/bitrunning/spawners.dm:70	live	datum_outfit_virtual_pirate	0	0
 type	/datum/outfit/virtual_syndicate	/datum/outfit	code/modules/bitrunning/spawners.dm:95	live	datum_outfit_virtual_syndicate	1	0
 proc	/datum/outfit/virtual_syndicate	post_equip	code/modules/bitrunning/spawners.dm:104	user,visuals_only	yes	full	proc
-type	/datum/outfit/cyber_police	/datum/outfit	code/modules/bitrunning/antagonists/cyber_police.dm:18	inert	datum_outfit_cyber_police	0	0
-proc	/datum/outfit/cyber_police	pre_equip	code/modules/bitrunning/antagonists/cyber_police.dm:26	user,visuals_only	no	-	proc
-proc	/datum/outfit/cyber_police	post_equip	code/modules/bitrunning/antagonists/cyber_police.dm:34	user,visuals_only	no	-	proc
-type	/datum/outfit/cyber_police/tactical	/datum/outfit/cyber_police	code/modules/bitrunning/antagonists/cyber_tac.dm:17	inert	datum_outfit_cyber_police_tactical	0	0
-proc	/datum/outfit/cyber_police/tactical	post_equip	code/modules/bitrunning/antagonists/cyber_tac.dm:27	user,visuals_only	no	-	proc
-type	/datum/outfit/virtual_domain_heretic	/datum/outfit	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:63	inert	datum_outfit_virtual_domain_heretic	0	0
-proc	/datum/outfit/virtual_domain_heretic	pre_equip	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:75	user,visuals_only	no	-	proc
+type	/datum/outfit/cyber_police	/datum/outfit	code/modules/bitrunning/antagonists/cyber_police.dm:18	live	datum_outfit_cyber_police	1	0
+proc	/datum/outfit/cyber_police	pre_equip	code/modules/bitrunning/antagonists/cyber_police.dm:26	user,visuals_only	yes	full	proc
+proc	/datum/outfit/cyber_police	post_equip	code/modules/bitrunning/antagonists/cyber_police.dm:34	user,visuals_only	yes	full	proc
+type	/datum/outfit/cyber_police/tactical	/datum/outfit/cyber_police	code/modules/bitrunning/antagonists/cyber_tac.dm:17	live	datum_outfit_cyber_police_tactical	1	0
+proc	/datum/outfit/cyber_police/tactical	post_equip	code/modules/bitrunning/antagonists/cyber_tac.dm:27	user,visuals_only	yes	full	proc
+type	/datum/outfit/virtual_domain_heretic	/datum/outfit	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:63	live	datum_outfit_virtual_domain_heretic	1	0
+proc	/datum/outfit/virtual_domain_heretic	pre_equip	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:75	user,visuals_only	yes	full	proc
 type	/datum/outfit/factory	/datum/outfit	code/modules/bitrunning/virtual_domain/domains/pipedream.dm:53	live	datum_outfit_factory	0	0
 type	/datum/outfit/factory/guard	/datum/outfit/factory	code/modules/bitrunning/virtual_domain/domains/pipedream.dm:66	live	datum_outfit_factory_guard	0	0
 type	/datum/outfit/factory/qm	/datum/outfit/factory	code/modules/bitrunning/virtual_domain/domains/pipedream.dm:78	live	datum_outfit_factory_qm	0	0
@@ -13001,10 +13001,10 @@ proc	/datum/status_effect/cherenkov_radiation	on_creation	code/datums/status_eff
 proc	/datum/status_effect/cherenkov_radiation	on_apply	code/datums/status_effects/neutral.dm:633		yes	full	proc
 proc	/datum/status_effect/cherenkov_radiation	tick	code/datums/status_effects/neutral.dm:637	seconds_between_ticks	yes	full	proc
 proc	/datum/status_effect/cherenkov_radiation	on_remove	code/datums/status_effects/neutral.dm:641		yes	full	proc
-type	/datum/status_effect/gutted	/datum/status_effect	code/datums/status_effects/neutral.dm:645	inert	datum_status_effect_gutted	0	0
-proc	/datum/status_effect/gutted	on_apply	code/datums/status_effects/neutral.dm:650		no	-	proc
-proc	/datum/status_effect/gutted	on_remove	code/datums/status_effects/neutral.dm:654		no	-	proc
-proc	/datum/status_effect/gutted	stop_gutting	code/datums/status_effects/neutral.dm:657		no	-	proc root
+type	/datum/status_effect/gutted	/datum/status_effect	code/datums/status_effects/neutral.dm:645	live	datum_status_effect_gutted	1	0
+proc	/datum/status_effect/gutted	on_apply	code/datums/status_effects/neutral.dm:650		yes	full	proc
+proc	/datum/status_effect/gutted	on_remove	code/datums/status_effects/neutral.dm:654		yes	full	proc
+proc	/datum/status_effect/gutted	stop_gutting	code/datums/status_effects/neutral.dm:657		yes	full	proc root
 type	/datum/status_effect/washing_regen	/datum/status_effect	code/datums/status_effects/neutral.dm:662	live	datum_status_effect_washing_regen	1	0
 proc	/datum/status_effect/washing_regen	on_creation	code/datums/status_effects/neutral.dm:673	new_owner,shower_reagent	yes	full	proc
 proc	/datum/status_effect/washing_regen	on_apply	code/datums/status_effects/neutral.dm:678		yes	full	proc
@@ -15513,10 +15513,10 @@ type	/datum/bt_node/ai_behavior/robot_customer/find_exit_portal	/datum/bt_node/a
 proc	/datum/bt_node/ai_behavior/robot_customer/find_exit_portal	perform	code/datums/ai/robot_customer/robot_customer_behaviors.dm:119	seconds_per_tick,controller	no	-	proc
 type	/datum/bt_node/ai_behavior/robot_customer/leave_venue	/datum/bt_node/ai_behavior/robot_customer	code/datums/ai/robot_customer/robot_customer_behaviors.dm:136	inert	datum_bt_node_ai_behavior_robot_customer_leave_venue	0	0
 proc	/datum/bt_node/ai_behavior/robot_customer/leave_venue	perform	code/datums/ai/robot_customer/robot_customer_behaviors.dm:136	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/plant_alien_weeds	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/alien/alien_ai.dm:44	inert	datum_bt_node_ai_behavior_plant_alien_weeds	0	0
-proc	/datum/bt_node/ai_behavior/plant_alien_weeds	perform	code/modules/mob/living/basic/alien/alien_ai.dm:44	seconds_per_tick,controller	no	-	proc
-type	/datum/bt_node/ai_behavior/lay_alien_egg	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/alien/alien_ai.dm:53	inert	datum_bt_node_ai_behavior_lay_alien_egg	0	0
-proc	/datum/bt_node/ai_behavior/lay_alien_egg	perform	code/modules/mob/living/basic/alien/alien_ai.dm:53	seconds_per_tick,controller	no	-	proc
+type	/datum/bt_node/ai_behavior/plant_alien_weeds	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/alien/alien_ai.dm:44	live	datum_bt_node_ai_behavior_plant_alien_weeds	1	0
+proc	/datum/bt_node/ai_behavior/plant_alien_weeds	perform	code/modules/mob/living/basic/alien/alien_ai.dm:44	seconds_per_tick,controller	yes	full	proc
+type	/datum/bt_node/ai_behavior/lay_alien_egg	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/alien/alien_ai.dm:53	live	datum_bt_node_ai_behavior_lay_alien_egg	1	0
+proc	/datum/bt_node/ai_behavior/lay_alien_egg	perform	code/modules/mob/living/basic/alien/alien_ai.dm:53	seconds_per_tick,controller	yes	full	proc
 type	/datum/bt_node/ai_behavior/execute_clean	/datum/bt_node/ai_behavior	code/modules/mob/living/basic/bots/cleanbot/cleanbot_ai.dm:51	live	datum_bt_node_ai_behavior_execute_clean	1	0
 proc	/datum/bt_node/ai_behavior/execute_clean	perform	code/modules/mob/living/basic/bots/cleanbot/cleanbot_ai.dm:53	seconds_per_tick,controller	yes	full	proc
 proc	/datum/bt_node/ai_behavior/execute_clean	finish_action	code/modules/mob/living/basic/bots/cleanbot/cleanbot_ai.dm:65	controller,succeeded	yes	full	proc
@@ -24611,11 +24611,11 @@ proc	/datum/element/rust/heretic	Attach	code/datums/elements/rust.dm:99	target,r
 proc	/datum/element/rust/heretic	Detach	code/datums/elements/rust.dm:106	source	no	-	proc
 proc	/datum/element/rust/heretic	on_entered	code/datums/elements/rust.dm:115	source,entered	no	-	proc root
 proc	/datum/element/rust/heretic	on_exited	code/datums/elements/rust.dm:134	source,gone	no	-	proc root
-type	/datum/element/rust_healing	/datum/element	code/datums/elements/rust_healing.dm:3	inert	datum_element_rust_healing	0	0
-proc	/datum/element/rust_healing	Attach	code/datums/elements/rust_healing.dm:10	target,baton_resistance,heal_amount,stamina_heal_amount	no	-	proc
-proc	/datum/element/rust_healing	Detach	code/datums/elements/rust_healing.dm:23	source	no	-	proc
-proc	/datum/element/rust_healing	on_move	code/datums/elements/rust_healing.dm:33	source,old_loc,dir,forced,old_locs	no	-	proc root
-proc	/datum/element/rust_healing	on_life	code/datums/elements/rust_healing.dm:47	source,seconds_per_tick	no	-	proc root
+type	/datum/element/rust_healing	/datum/element	code/datums/elements/rust_healing.dm:3	live	datum_element_rust_healing	1	0
+proc	/datum/element/rust_healing	Attach	code/datums/elements/rust_healing.dm:10	target,baton_resistance,heal_amount,stamina_heal_amount	yes	full	proc
+proc	/datum/element/rust_healing	Detach	code/datums/elements/rust_healing.dm:23	source	yes	full	proc
+proc	/datum/element/rust_healing	on_move	code/datums/elements/rust_healing.dm:33	source,old_loc,dir,forced,old_locs	yes	full	proc root
+proc	/datum/element/rust_healing	on_life	code/datums/elements/rust_healing.dm:47	source,seconds_per_tick	yes	full	proc root
 type	/datum/element/selfknockback	/datum/element	code/datums/elements/selfknockback.dm:2	inert	datum_element_selfknockback	0	0
 proc	/datum/element/selfknockback	Attach	code/datums/elements/selfknockback.dm:11	target,throw_amount,speed_amount	no	-	proc
 proc	/datum/element/selfknockback	Detach	code/datums/elements/selfknockback.dm:23	source	no	-	proc
@@ -29294,20 +29294,20 @@ type	/datum/antagonist/xeno/captive	/datum/antagonist/xeno	code/modules/antagoni
 proc	/datum/antagonist/xeno/captive	create_team	code/modules/antagonists/xeno/xeno.dm:59	new_team	yes	full	proc
 proc	/datum/antagonist/xeno/captive	get_team	code/modules/antagonists/xeno/xeno.dm:73		yes	full	proc
 proc	/datum/antagonist/xeno/captive	forge_objectives	code/modules/antagonists/xeno/xeno.dm:76		yes	full	proc
-type	/datum/antagonist/bitrunning_glitch	/datum/antagonist	code/modules/bitrunning/antagonists/_parent.dm:6	inert	datum_antagonist_bitrunning_glitch	1	0
-proc	/datum/antagonist/bitrunning_glitch	greet	code/modules/bitrunning/antagonists/_parent.dm:19		no	-	proc
-proc	/datum/antagonist/bitrunning_glitch	on_gain	code/modules/bitrunning/antagonists/_parent.dm:24		no	-	proc
-proc	/datum/antagonist/bitrunning_glitch	forge_objectives	code/modules/bitrunning/antagonists/_parent.dm:34		no	-	proc
-proc	/datum/antagonist/bitrunning_glitch	convert_agent	code/modules/bitrunning/antagonists/_parent.dm:66		no	-	proc root
+type	/datum/antagonist/bitrunning_glitch	/datum/antagonist	code/modules/bitrunning/antagonists/_parent.dm:6	live	datum_antagonist_bitrunning_glitch	1	0
+proc	/datum/antagonist/bitrunning_glitch	greet	code/modules/bitrunning/antagonists/_parent.dm:19		yes	full	proc
+proc	/datum/antagonist/bitrunning_glitch	on_gain	code/modules/bitrunning/antagonists/_parent.dm:24		yes	full	proc
+proc	/datum/antagonist/bitrunning_glitch	forge_objectives	code/modules/bitrunning/antagonists/_parent.dm:34		yes	full	proc
+proc	/datum/antagonist/bitrunning_glitch	convert_agent	code/modules/bitrunning/antagonists/_parent.dm:66		yes	full	proc root
 proc	/datum/antagonist/bitrunning_glitch	fix_agent_id	code/modules/bitrunning/antagonists/_parent.dm:79		yes	full	proc root
-type	/datum/antagonist/bitrunning_glitch/cyber_police	/datum/antagonist/bitrunning_glitch	code/modules/bitrunning/antagonists/cyber_police.dm:2	inert	datum_antagonist_bitrunning_glitch_cyber_police	0	0
-proc	/datum/antagonist/bitrunning_glitch/cyber_police	on_gain	code/modules/bitrunning/antagonists/cyber_police.dm:5		no	-	proc
-type	/datum/antagonist/bitrunning_glitch/cyber_tac	/datum/antagonist/bitrunning_glitch	code/modules/bitrunning/antagonists/cyber_tac.dm:2	inert	datum_antagonist_bitrunning_glitch_cyber_tac	0	0
-proc	/datum/antagonist/bitrunning_glitch/cyber_tac	on_gain	code/modules/bitrunning/antagonists/cyber_tac.dm:7		no	-	proc
-type	/datum/antagonist/bitrunning_glitch/netguardian	/datum/antagonist/bitrunning_glitch	code/modules/bitrunning/antagonists/netguardian.dm:2	inert	datum_antagonist_bitrunning_glitch_netguardian	0	0
-type	/datum/antagonist/domain_ghost_actor	/datum/antagonist	code/modules/bitrunning/antagonists/ghost_role.dm:2	inert	datum_antagonist_domain_ghost_actor	0	0
-proc	/datum/antagonist/domain_ghost_actor	on_gain	code/modules/bitrunning/antagonists/ghost_role.dm:9		no	-	proc
-proc	/datum/antagonist/domain_ghost_actor	forge_objectives	code/modules/bitrunning/antagonists/ghost_role.dm:14		no	-	proc
+type	/datum/antagonist/bitrunning_glitch/cyber_police	/datum/antagonist/bitrunning_glitch	code/modules/bitrunning/antagonists/cyber_police.dm:2	live	datum_antagonist_bitrunning_glitch_cyber_police	1	0
+proc	/datum/antagonist/bitrunning_glitch/cyber_police	on_gain	code/modules/bitrunning/antagonists/cyber_police.dm:5		yes	full	proc
+type	/datum/antagonist/bitrunning_glitch/cyber_tac	/datum/antagonist/bitrunning_glitch	code/modules/bitrunning/antagonists/cyber_tac.dm:2	live	datum_antagonist_bitrunning_glitch_cyber_tac	1	0
+proc	/datum/antagonist/bitrunning_glitch/cyber_tac	on_gain	code/modules/bitrunning/antagonists/cyber_tac.dm:7		yes	full	proc
+type	/datum/antagonist/bitrunning_glitch/netguardian	/datum/antagonist/bitrunning_glitch	code/modules/bitrunning/antagonists/netguardian.dm:2	live	datum_antagonist_bitrunning_glitch_netguardian	0	0
+type	/datum/antagonist/domain_ghost_actor	/datum/antagonist	code/modules/bitrunning/antagonists/ghost_role.dm:2	live	datum_antagonist_domain_ghost_actor	1	0
+proc	/datum/antagonist/domain_ghost_actor	on_gain	code/modules/bitrunning/antagonists/ghost_role.dm:9		yes	full	proc
+proc	/datum/antagonist/domain_ghost_actor	forge_objectives	code/modules/bitrunning/antagonists/ghost_role.dm:14		yes	full	proc
 type	/datum/antagonist/recovered_crew	/datum/antagonist	code/modules/lost_crew/recovered_crew.dm:3	live	datum_antagonist_recovered_crew	0	0
 type	/datum/dampener_projectile_effects	/datum	code/datums/proximity_monitor/fields/projectile_dampener/projectile_dampener_effects.dm:4	live	datum_dampener_projectile_effects	1	0
 proc	/datum/dampener_projectile_effects	apply_effects	code/datums/proximity_monitor/fields/projectile_dampener/projectile_dampener_effects.dm:14	bullet	yes	full	proc root
@@ -31916,11 +31916,11 @@ proc	/datum/objective/escape_captivity	check_completion	code/modules/antagonists
 type	/datum/objective/advance_hive	/datum/objective	code/modules/antagonists/xeno/xeno.dm:94	live	datum_objective_advance_hive	1	0
 proc	/datum/objective/advance_hive	New	code/modules/antagonists/xeno/xeno.dm:94		yes	full	proc
 proc	/datum/objective/advance_hive	check_completion	code/modules/antagonists/xeno/xeno.dm:97		yes	full	proc
-type	/datum/objective/bitrunning_glitch_fluff	/datum/objective	code/modules/bitrunning/antagonists/_parent.dm:41	inert	datum_objective_bitrunning_glitch_fluff	0	0
-proc	/datum/objective/bitrunning_glitch_fluff	New	code/modules/bitrunning/antagonists/_parent.dm:41		no	-	proc
-proc	/datum/objective/bitrunning_glitch_fluff	check_completion	code/modules/bitrunning/antagonists/_parent.dm:58		no	-	proc
-type	/datum/objective/bitrunner_ghost_fluff	/datum/objective	code/modules/bitrunning/antagonists/ghost_role.dm:21	inert	datum_objective_bitrunner_ghost_fluff	0	0
-proc	/datum/objective/bitrunner_ghost_fluff	New	code/modules/bitrunning/antagonists/ghost_role.dm:21		no	-	proc
+type	/datum/objective/bitrunning_glitch_fluff	/datum/objective	code/modules/bitrunning/antagonists/_parent.dm:41	live	datum_objective_bitrunning_glitch_fluff	1	0
+proc	/datum/objective/bitrunning_glitch_fluff	New	code/modules/bitrunning/antagonists/_parent.dm:41		yes	full	proc
+proc	/datum/objective/bitrunning_glitch_fluff	check_completion	code/modules/bitrunning/antagonists/_parent.dm:58		yes	full	proc
+type	/datum/objective/bitrunner_ghost_fluff	/datum/objective	code/modules/bitrunning/antagonists/ghost_role.dm:21	live	datum_objective_bitrunner_ghost_fluff	1	0
+proc	/datum/objective/bitrunner_ghost_fluff	New	code/modules/bitrunning/antagonists/ghost_role.dm:21		yes	full	proc
 type	/datum/objective/revenant	/datum/objective	code/modules/mob/living/basic/space_fauna/revenant/revenant_objectives.dm:3	inert	datum_objective_revenant	0	0
 proc	/datum/objective/revenant	New	code/modules/mob/living/basic/space_fauna/revenant/revenant_objectives.dm:3		no	-	proc
 proc	/datum/objective/revenant	check_completion	code/modules/mob/living/basic/space_fauna/revenant/revenant_objectives.dm:8		no	-	proc
@@ -37925,9 +37925,9 @@ proc	/datum/round_event_control	preRunEvent	code/modules/events/_event.dm:106		y
 proc	/datum/round_event_control	Topic	code/modules/events/_event.dm:129	href,href_list	yes	full	proc
 proc	/datum/round_event_control	run_event	code/modules/events/_event.dm:155	random,announce_chance_override,admin_forced,event_cause	yes	full	proc root
 proc	/datum/round_event_control	stop_random_event	code/modules/events/_event.dm:194		yes	full	proc root
-type	/datum/round_event_control/bitrunning_glitch	/datum/round_event_control	code/modules/bitrunning/event.dm:2	inert	datum_round_event_control_bitrunning_glitch	0	0
-proc	/datum/round_event_control/bitrunning_glitch	can_spawn_event	code/modules/bitrunning/event.dm:16	players_amt,allow_magic	no	-	proc
-proc	/datum/round_event_control/bitrunning_glitch	validate_servers	code/modules/bitrunning/event.dm:29		no	-	proc root
+type	/datum/round_event_control/bitrunning_glitch	/datum/round_event_control	code/modules/bitrunning/event.dm:2	live	datum_round_event_control_bitrunning_glitch	1	0
+proc	/datum/round_event_control/bitrunning_glitch	can_spawn_event	code/modules/bitrunning/event.dm:16	players_amt,allow_magic	yes	full	proc
+proc	/datum/round_event_control/bitrunning_glitch	validate_servers	code/modules/bitrunning/event.dm:29		yes	full	proc root
 type	/datum/round_event_control/wizard	/datum/round_event_control	code/modules/events/_event.dm:68	live	datum_round_event_control_wizard	0	0
 type	/datum/round_event_control/wizard/robelesscasting	/datum/round_event_control/wizard	code/modules/events/wizard/aid.dm:5	live	datum_round_event_control_wizard_robelesscasting	0	0
 type	/datum/round_event_control/wizard/improvedcasting	/datum/round_event_control/wizard	code/modules/events/wizard/aid.dm:33	live	datum_round_event_control_wizard_improvedcasting	0	0
@@ -38234,8 +38234,8 @@ type	/datum/round_event/ghost_role	/datum/round_event	code/modules/events/ghost_
 proc	/datum/round_event/ghost_role	start	code/modules/events/ghost_role/_ghost_role.dm:17		yes	full	proc
 proc	/datum/round_event/ghost_role	try_spawning	code/modules/events/ghost_role/_ghost_role.dm:27		yes	full	proc root
 proc	/datum/round_event/ghost_role	spawn_role	code/modules/events/ghost_role/_ghost_role.dm:82		yes	full	proc root
-type	/datum/round_event/ghost_role/bitrunning_glitch	/datum/round_event/ghost_role	code/modules/bitrunning/event.dm:71	inert	datum_round_event_ghost_role_bitrunning_glitch	0	0
-proc	/datum/round_event/ghost_role/bitrunning_glitch	spawn_role	code/modules/bitrunning/event.dm:77		no	-	proc
+type	/datum/round_event/ghost_role/bitrunning_glitch	/datum/round_event/ghost_role	code/modules/bitrunning/event.dm:71	live	datum_round_event_ghost_role_bitrunning_glitch	1	0
+proc	/datum/round_event/ghost_role/bitrunning_glitch	spawn_role	code/modules/bitrunning/event.dm:77		yes	full	proc
 type	/datum/round_event/ghost_role/operative	/datum/round_event/ghost_role	code/modules/events/ghost_role/operative.dm:13	live	datum_round_event_ghost_role_operative	1	0
 proc	/datum/round_event/ghost_role/operative	spawn_role	code/modules/events/ghost_role/operative.dm:17		yes	full	proc
 type	/datum/round_event/ghost_role/sentience	/datum/round_event/ghost_role	code/modules/events/ghost_role/sentience.dm:36	live	datum_round_event_ghost_role_sentience	1	0
@@ -51374,7 +51374,7 @@ proc	/mob	default_lighting_cutoff	code/modules/mob/mob_helpers.dm:437		yes	full	
 proc	/mob	log_manual_zone_selected_update	code/modules/mob/mob_helpers.dm:505	source,new_target,old_target	no	-	proc root
 proc	/mob	copy_recent_speech	code/modules/mob/mob_helpers.dm:549	copy_amount,line_chance	yes	full	proc root
 proc	/mob	grant_actions_by_list	code/modules/mob/mob_helpers.dm:578	input	yes	full	proc root
-proc	/mob	is_touching_rust	code/modules/mob/mob_helpers.dm:593	check_flying	no	-	proc root
+proc	/mob	is_touching_rust	code/modules/mob/mob_helpers.dm:593	check_flying	yes	full	proc root
 proc	/mob	add_to_mob_list	code/modules/mob/mob_lists.dm:2		yes	full	proc root
 proc	/mob	remove_from_mob_list	code/modules/mob/mob_lists.dm:6		yes	full	proc root
 proc	/mob	add_to_alive_mob_list	code/modules/mob/mob_lists.dm:10		yes	full	proc root
@@ -54252,10 +54252,10 @@ proc	/mob/living/basic/trader	Initialize	code/modules/mob/living/basic/trader/tr
 proc	/mob/living/basic/trader	get_unconscious_appearance	code/modules/mob/living/basic/trader/trader.dm:61		no	-	proc
 type	/mob/living/basic/trader/mr_corporate	/mob/living/basic/trader	code/modules/awaymissions/mission_code/academy/academy_trader.dm:2	inert	mob_living_basic_trader_mr_corporate	0	0
 type	/mob/living/basic/trader/mrbones	/mob/living/basic/trader	code/modules/mob/living/basic/trader/trader.dm:65	inert	mob_living_basic_trader_mrbones	0	0
-type	/mob/living/basic/netguardian	/mob/living/basic	code/modules/bitrunning/antagonists/netguardian.dm:7	inert	mob_living_basic_netguardian	0	0
-proc	/mob/living/basic/netguardian	Initialize	code/modules/bitrunning/antagonists/netguardian.dm:56	mapload	no	-	proc
-proc	/mob/living/basic/netguardian	death	code/modules/bitrunning/antagonists/netguardian.dm:72	gibbed	no	-	proc
-proc	/mob/living/basic/netguardian	update_overlays	code/modules/bitrunning/antagonists/netguardian.dm:77		no	-	proc
+type	/mob/living/basic/netguardian	/mob/living/basic	code/modules/bitrunning/antagonists/netguardian.dm:7	live	mob_living_basic_netguardian	1	0
+proc	/mob/living/basic/netguardian	Initialize	code/modules/bitrunning/antagonists/netguardian.dm:56	mapload	yes	full	proc
+proc	/mob/living/basic/netguardian	death	code/modules/bitrunning/antagonists/netguardian.dm:72	gibbed	yes	full	proc
+proc	/mob/living/basic/netguardian	update_overlays	code/modules/bitrunning/antagonists/netguardian.dm:77		yes	full	proc
 type	/mob/living/basic/boss	/mob/living/basic	code/modules/mob/living/basic/boss/boss.dm:5	inert	mob_living_basic_boss	0	0
 proc	/mob/living/basic/boss	make_virtual_megafauna	code/modules/bitrunning/util/virtual_megafauna.dm:31		no	-	proc root
 proc	/mob/living/basic/boss	Initialize	code/modules/mob/living/basic/boss/boss.dm:37	mapload	no	-	proc
@@ -54311,20 +54311,20 @@ proc	/mob/living/basic/boss/thing	vv_edit_var	code/modules/mob/living/basic/boss
 proc	/mob/living/basic/boss/thing	Destroy	code/modules/mob/living/basic/boss/thing/thing.dm:196		no	-	proc
 type	/mob/living/basic/boss/thing/with_ruin_loot	/mob/living/basic/boss/thing	code/modules/mob/living/basic/boss/thing/thing.dm:200	inert	mob_living_basic_boss_thing_with_ruin_loot	0	0
 proc	/mob/living/basic/boss/thing/with_ruin_loot	Initialize	code/modules/mob/living/basic/boss/thing/thing.dm:200	mapload	no	-	proc
-type	/mob/living/basic/fake_crewman	/mob/living/basic	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:104	inert	mob_living_basic_fake_crewman	0	0
-proc	/mob/living/basic/fake_crewman	Initialize	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:127	mapload	no	-	proc
-type	/mob/living/basic/fake_crewman/md	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:142	inert	mob_living_basic_fake_crewman_md	0	0
-type	/mob/living/basic/fake_crewman/sec	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:147	inert	mob_living_basic_fake_crewman_sec	0	0
-type	/mob/living/basic/fake_crewman/engi	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:154	inert	mob_living_basic_fake_crewman_engi	0	0
-type	/mob/living/basic/fake_crewman/engi/mod	/mob/living/basic/fake_crewman/engi	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:162	inert	mob_living_basic_fake_crewman_engi_mod	0	0
-type	/mob/living/basic/fake_crewman/assistant	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:166	inert	mob_living_basic_fake_crewman_assistant	0	0
-type	/mob/living/basic/fake_crewman/assistant/alt	/mob/living/basic/fake_crewman/assistant	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:172	inert	mob_living_basic_fake_crewman_assistant_alt	0	0
-type	/mob/living/basic/fake_crewman/boss	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:175	inert	mob_living_basic_fake_crewman_boss	0	0
-type	/mob/living/basic/fake_crewman/boss/cmo	/mob/living/basic/fake_crewman/boss	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:183	inert	mob_living_basic_fake_crewman_boss_cmo	0	0
-type	/mob/living/basic/fake_crewman/boss/ce	/mob/living/basic/fake_crewman/boss	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:188	inert	mob_living_basic_fake_crewman_boss_ce	0	0
-proc	/mob/living/basic/fake_crewman/boss/ce	Initialize	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:193	mapload	no	-	proc
-type	/mob/living/basic/fake_crewman/boss/hos	/mob/living/basic/fake_crewman/boss	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:198	inert	mob_living_basic_fake_crewman_boss_hos	0	0
-proc	/mob/living/basic/fake_crewman/boss/hos	Initialize	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:204	mapload	no	-	proc
+type	/mob/living/basic/fake_crewman	/mob/living/basic	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:104	live	mob_living_basic_fake_crewman	1	0
+proc	/mob/living/basic/fake_crewman	Initialize	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:127	mapload	yes	full	proc
+type	/mob/living/basic/fake_crewman/md	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:142	live	mob_living_basic_fake_crewman_md	0	0
+type	/mob/living/basic/fake_crewman/sec	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:147	live	mob_living_basic_fake_crewman_sec	0	0
+type	/mob/living/basic/fake_crewman/engi	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:154	live	mob_living_basic_fake_crewman_engi	0	0
+type	/mob/living/basic/fake_crewman/engi/mod	/mob/living/basic/fake_crewman/engi	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:162	live	mob_living_basic_fake_crewman_engi_mod	0	0
+type	/mob/living/basic/fake_crewman/assistant	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:166	live	mob_living_basic_fake_crewman_assistant	0	0
+type	/mob/living/basic/fake_crewman/assistant/alt	/mob/living/basic/fake_crewman/assistant	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:172	live	mob_living_basic_fake_crewman_assistant_alt	0	0
+type	/mob/living/basic/fake_crewman/boss	/mob/living/basic/fake_crewman	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:175	live	mob_living_basic_fake_crewman_boss	0	0
+type	/mob/living/basic/fake_crewman/boss/cmo	/mob/living/basic/fake_crewman/boss	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:183	live	mob_living_basic_fake_crewman_boss_cmo	0	0
+type	/mob/living/basic/fake_crewman/boss/ce	/mob/living/basic/fake_crewman/boss	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:188	live	mob_living_basic_fake_crewman_boss_ce	1	0
+proc	/mob/living/basic/fake_crewman/boss/ce	Initialize	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:193	mapload	yes	full	proc
+type	/mob/living/basic/fake_crewman/boss/hos	/mob/living/basic/fake_crewman/boss	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:198	live	mob_living_basic_fake_crewman_boss_hos	1	0
+proc	/mob/living/basic/fake_crewman/boss/hos	Initialize	code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:204	mapload	yes	full	proc
 type	/mob/living/basic/tie	/mob/living/basic	code/modules/clothing/neck/horrific_necktie.dm:117	inert	mob_living_basic_tie	0	0
 proc	/mob/living/basic/tie	Initialize	code/modules/clothing/neck/horrific_necktie.dm:124	mapload	no	-	proc
 proc	/mob/living/basic/tie	Login	code/modules/clothing/neck/horrific_necktie.dm:128		no	-	proc
@@ -54594,32 +54594,32 @@ proc	/mob/living/basic/slime/transformed_slime	reproduce	code/modules/research/x
 type	/mob/living/basic/festivus	/mob/living/basic	code/modules/mob/living/basic/festivus_pole.dm:5	inert	mob_living_basic_festivus	0	0
 proc	/mob/living/basic/festivus	Initialize	code/modules/mob/living/basic/festivus_pole.dm:46	mapload	no	-	proc
 proc	/mob/living/basic/festivus	attack_hand	code/modules/mob/living/basic/festivus_pole.dm:62	user,modifiers	no	-	proc
-type	/mob/living/basic/revolutionary	/mob/living/basic	code/modules/mob/living/basic/revolutionary.dm:2	inert	mob_living_basic_revolutionary	0	0
-proc	/mob/living/basic/revolutionary	Initialize	code/modules/mob/living/basic/revolutionary.dm:75	mapload	no	-	proc
-proc	/mob/living/basic/revolutionary	get_unconscious_appearance	code/modules/mob/living/basic/revolutionary.dm:110		no	-	proc
+type	/mob/living/basic/revolutionary	/mob/living/basic	code/modules/mob/living/basic/revolutionary.dm:2	live	mob_living_basic_revolutionary	1	0
+proc	/mob/living/basic/revolutionary	Initialize	code/modules/mob/living/basic/revolutionary.dm:75	mapload	yes	full	proc
+proc	/mob/living/basic/revolutionary	get_unconscious_appearance	code/modules/mob/living/basic/revolutionary.dm:110		yes	full	proc
 type	/mob/living/basic/tree	/mob/living/basic	code/modules/mob/living/basic/tree.dm:2	inert	mob_living_basic_tree	0	0
 proc	/mob/living/basic/tree	Initialize	code/modules/mob/living/basic/tree.dm:55	mapload	no	-	proc
 proc	/mob/living/basic/tree	Life	code/modules/mob/living/basic/tree.dm:62	seconds_per_tick	no	-	proc
 proc	/mob/living/basic/tree	melee_attack	code/modules/mob/living/basic/tree.dm:78	target,modifiers,ignore_cooldown	no	-	proc
-type	/mob/living/basic/alien	/mob/living/basic	code/modules/mob/living/basic/alien/_alien.dm:2	inert	mob_living_basic_alien	0	0
-proc	/mob/living/basic/alien	Initialize	code/modules/mob/living/basic/alien/_alien.dm:59	mapload	no	-	proc
-proc	/mob/living/basic/alien	get_butt_sprite	code/modules/mob/living/basic/alien/_alien.dm:67		no	-	proc
-proc	/mob/living/basic/alien	place_weeds	code/modules/mob/living/basic/alien/_alien.dm:71		no	-	proc root
-proc	/mob/living/basic/alien	lay_alien_egg	code/modules/mob/living/basic/alien/_alien.dm:81		no	-	proc root
-proc	/mob/living/basic/alien	get_bloodtype	code/modules/mob/living/basic/alien/_alien.dm:90		no	-	proc
-proc	/mob/living/basic/alien	get_gibs_type	code/modules/mob/living/basic/alien/_alien.dm:93	drop_bitflags	no	-	proc
-type	/mob/living/basic/alien/drone	/mob/living/basic/alien	code/modules/mob/living/basic/alien/drone.dm:2	inert	mob_living_basic_alien_drone	0	0
-type	/mob/living/basic/alien/maid	/mob/living/basic/alien	code/modules/mob/living/basic/alien/maid.dm:2	inert	mob_living_basic_alien_maid	0	0
-proc	/mob/living/basic/alien/maid	Initialize	code/modules/mob/living/basic/alien/maid.dm:15	mapload	no	-	proc
-proc	/mob/living/basic/alien/maid	early_melee_attack	code/modules/mob/living/basic/alien/maid.dm:20	target,modifiers,ignore_cooldown	no	-	proc
+type	/mob/living/basic/alien	/mob/living/basic	code/modules/mob/living/basic/alien/_alien.dm:2	live	mob_living_basic_alien	1	0
+proc	/mob/living/basic/alien	Initialize	code/modules/mob/living/basic/alien/_alien.dm:59	mapload	yes	full	proc
+proc	/mob/living/basic/alien	get_butt_sprite	code/modules/mob/living/basic/alien/_alien.dm:67		yes	full	proc
+proc	/mob/living/basic/alien	place_weeds	code/modules/mob/living/basic/alien/_alien.dm:71		yes	full	proc root
+proc	/mob/living/basic/alien	lay_alien_egg	code/modules/mob/living/basic/alien/_alien.dm:81		yes	full	proc root
+proc	/mob/living/basic/alien	get_bloodtype	code/modules/mob/living/basic/alien/_alien.dm:90		yes	full	proc
+proc	/mob/living/basic/alien	get_gibs_type	code/modules/mob/living/basic/alien/_alien.dm:93	drop_bitflags	yes	full	proc
+type	/mob/living/basic/alien/drone	/mob/living/basic/alien	code/modules/mob/living/basic/alien/drone.dm:2	live	mob_living_basic_alien_drone	0	0
+type	/mob/living/basic/alien/maid	/mob/living/basic/alien	code/modules/mob/living/basic/alien/maid.dm:2	live	mob_living_basic_alien_maid	1	0
+proc	/mob/living/basic/alien/maid	Initialize	code/modules/mob/living/basic/alien/maid.dm:15	mapload	yes	full	proc
+proc	/mob/living/basic/alien/maid	early_melee_attack	code/modules/mob/living/basic/alien/maid.dm:20	target,modifiers,ignore_cooldown	yes	full	proc
 type	/mob/living/basic/alien/maid/barmaid	/mob/living/basic/alien/maid	code/modules/mob/living/basic/alien/maid.dm:37	inert	mob_living_basic_alien_maid_barmaid	0	0
 proc	/mob/living/basic/alien/maid/barmaid	Initialize	code/modules/mob/living/basic/alien/maid.dm:49	mapload	no	-	proc
 proc	/mob/living/basic/alien/maid/barmaid	Destroy	code/modules/mob/living/basic/alien/maid.dm:60		no	-	proc
-type	/mob/living/basic/alien/queen	/mob/living/basic/alien	code/modules/mob/living/basic/alien/queen.dm:2	inert	mob_living_basic_alien_queen	0	0
-proc	/mob/living/basic/alien/queen	Initialize	code/modules/mob/living/basic/alien/queen.dm:20	mapload	no	-	proc
-type	/mob/living/basic/alien/queen/large	/mob/living/basic/alien/queen	code/modules/mob/living/basic/alien/queen.dm:25	inert	mob_living_basic_alien_queen_large	0	0
-type	/mob/living/basic/alien/sentinel	/mob/living/basic/alien	code/modules/mob/living/basic/alien/sentinel.dm:2	inert	mob_living_basic_alien_sentinel	0	0
-proc	/mob/living/basic/alien/sentinel	Initialize	code/modules/mob/living/basic/alien/sentinel.dm:18	mapload	no	-	proc
+type	/mob/living/basic/alien/queen	/mob/living/basic/alien	code/modules/mob/living/basic/alien/queen.dm:2	live	mob_living_basic_alien_queen	1	0
+proc	/mob/living/basic/alien/queen	Initialize	code/modules/mob/living/basic/alien/queen.dm:20	mapload	yes	full	proc
+type	/mob/living/basic/alien/queen/large	/mob/living/basic/alien/queen	code/modules/mob/living/basic/alien/queen.dm:25	live	mob_living_basic_alien_queen_large	0	0
+type	/mob/living/basic/alien/sentinel	/mob/living/basic/alien	code/modules/mob/living/basic/alien/sentinel.dm:2	live	mob_living_basic_alien_sentinel	1	0
+proc	/mob/living/basic/alien/sentinel	Initialize	code/modules/mob/living/basic/alien/sentinel.dm:18	mapload	yes	full	proc
 type	/mob/living/basic/blob_minion	/mob/living/basic	code/modules/mob/living/basic/blob_minions/blob_mob.dm:3	inert	mob_living_basic_blob_minion	0	0
 proc	/mob/living/basic/blob_minion	New	code/modules/mob/living/basic/blob_minions/blob_mob.dm:29	loc,blob_borne	no	-	proc
 proc	/mob/living/basic/blob_minion	Initialize	code/modules/mob/living/basic/blob_minions/blob_mob.dm:34	mapload	no	-	proc
@@ -54666,25 +54666,25 @@ proc	/mob/living/basic/blob_minion/blobbernaut/minion	Life	code/modules/mob/livi
 proc	/mob/living/basic/blob_minion/blobbernaut/minion	assign_key	code/modules/mob/living/basic/blob_minions/blobbernaut.dm:164	ckey,blobstrain	no	-	proc root
 proc	/mob/living/basic/blob_minion/blobbernaut/minion	on_factory_destroyed	code/modules/mob/living/basic/blob_minions/blobbernaut.dm:176		no	-	proc
 type	/mob/living/basic/blob_minion/blobbernaut/independent	/mob/living/basic/blob_minion/blobbernaut	code/modules/mob/living/basic/blob_minions/blobbernaut.dm:183	inert	mob_living_basic_blob_minion_blobbernaut_independent	0	0
-type	/mob/living/basic/clown	/mob/living/basic	code/modules/mob/living/basic/clown/clown.dm:2	inert	mob_living_basic_clown	0	0
-proc	/mob/living/basic/clown	Initialize	code/modules/mob/living/basic/clown/clown.dm:43	mapload	no	-	proc
-proc	/mob/living/basic/clown	retaliate_callback	code/modules/mob/living/basic/clown/clown.dm:56	attacker	no	-	proc root
-proc	/mob/living/basic/clown	melee_attack	code/modules/mob/living/basic/clown/clown.dm:62	target,modifiers,ignore_cooldown	no	-	proc
-proc	/mob/living/basic/clown	get_bloodtype	code/modules/mob/living/basic/clown/clown.dm:69		no	-	proc
-type	/mob/living/basic/clown/lube	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:75	inert	mob_living_basic_clown_lube	0	0
-proc	/mob/living/basic/clown/lube	Initialize	code/modules/mob/living/basic/clown/clown.dm:97	mapload	no	-	proc
-type	/mob/living/basic/clown/honkling	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:102	inert	mob_living_basic_clown_honkling	0	0
-proc	/mob/living/basic/clown/honkling	Initialize	code/modules/mob/living/basic/clown/clown.dm:118	mapload	no	-	proc
-type	/mob/living/basic/clown/fleshclown	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:131	inert	mob_living_basic_clown_fleshclown	0	0
-proc	/mob/living/basic/clown/fleshclown	Initialize	code/modules/mob/living/basic/clown/clown.dm:169	mapload	no	-	proc
+type	/mob/living/basic/clown	/mob/living/basic	code/modules/mob/living/basic/clown/clown.dm:2	live	mob_living_basic_clown	1	0
+proc	/mob/living/basic/clown	Initialize	code/modules/mob/living/basic/clown/clown.dm:43	mapload	yes	full	proc
+proc	/mob/living/basic/clown	retaliate_callback	code/modules/mob/living/basic/clown/clown.dm:56	attacker	yes	full	proc root
+proc	/mob/living/basic/clown	melee_attack	code/modules/mob/living/basic/clown/clown.dm:62	target,modifiers,ignore_cooldown	yes	full	proc
+proc	/mob/living/basic/clown	get_bloodtype	code/modules/mob/living/basic/clown/clown.dm:69		yes	full	proc
+type	/mob/living/basic/clown/lube	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:75	live	mob_living_basic_clown_lube	1	0
+proc	/mob/living/basic/clown/lube	Initialize	code/modules/mob/living/basic/clown/clown.dm:97	mapload	yes	full	proc
+type	/mob/living/basic/clown/honkling	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:102	live	mob_living_basic_clown_honkling	1	0
+proc	/mob/living/basic/clown/honkling	Initialize	code/modules/mob/living/basic/clown/clown.dm:118	mapload	yes	full	proc
+type	/mob/living/basic/clown/fleshclown	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:131	live	mob_living_basic_clown_fleshclown	1	0
+proc	/mob/living/basic/clown/fleshclown	Initialize	code/modules/mob/living/basic/clown/clown.dm:169	mapload	yes	full	proc
 type	/mob/living/basic/clown/longface	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:174	inert	mob_living_basic_clown_longface	0	0
 proc	/mob/living/basic/clown/longface	Initialize	code/modules/mob/living/basic/clown/clown.dm:204	mapload	no	-	proc
-type	/mob/living/basic/clown/clownhulk	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:209	inert	mob_living_basic_clown_clownhulk	0	0
-type	/mob/living/basic/clown/clownhulk/chlown	/mob/living/basic/clown/clownhulk	code/modules/mob/living/basic/clown/clown.dm:245	inert	mob_living_basic_clown_clownhulk_chlown	0	0
-type	/mob/living/basic/clown/clownhulk/honkmunculus	/mob/living/basic/clown/clownhulk	code/modules/mob/living/basic/clown/clown.dm:275	inert	mob_living_basic_clown_clownhulk_honkmunculus	0	0
-proc	/mob/living/basic/clown/clownhulk/honkmunculus	Initialize	code/modules/mob/living/basic/clown/clown.dm:300	mapload	no	-	proc
-type	/mob/living/basic/clown/clownhulk/destroyer	/mob/living/basic/clown/clownhulk	code/modules/mob/living/basic/clown/clown.dm:313	inert	mob_living_basic_clown_clownhulk_destroyer	0	0
-type	/mob/living/basic/clown/mutant	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:344	inert	mob_living_basic_clown_mutant	0	0
+type	/mob/living/basic/clown/clownhulk	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:209	live	mob_living_basic_clown_clownhulk	0	0
+type	/mob/living/basic/clown/clownhulk/chlown	/mob/living/basic/clown/clownhulk	code/modules/mob/living/basic/clown/clown.dm:245	live	mob_living_basic_clown_clownhulk_chlown	0	0
+type	/mob/living/basic/clown/clownhulk/honkmunculus	/mob/living/basic/clown/clownhulk	code/modules/mob/living/basic/clown/clown.dm:275	live	mob_living_basic_clown_clownhulk_honkmunculus	1	0
+proc	/mob/living/basic/clown/clownhulk/honkmunculus	Initialize	code/modules/mob/living/basic/clown/clown.dm:300	mapload	yes	full	proc
+type	/mob/living/basic/clown/clownhulk/destroyer	/mob/living/basic/clown/clownhulk	code/modules/mob/living/basic/clown/clown.dm:313	live	mob_living_basic_clown_clownhulk_destroyer	0	0
+type	/mob/living/basic/clown/mutant	/mob/living/basic/clown	code/modules/mob/living/basic/clown/clown.dm:344	live	mob_living_basic_clown_mutant	0	0
 type	/mob/living/basic/clown/mutant/glutton	/mob/living/basic/clown/mutant	code/modules/mob/living/basic/clown/clown.dm:381	inert	mob_living_basic_clown_mutant_glutton	0	0
 proc	/mob/living/basic/clown/mutant/glutton	Initialize	code/modules/mob/living/basic/clown/clown.dm:412	mapload	no	-	proc
 proc	/mob/living/basic/clown/mutant/glutton	item_interaction	code/modules/mob/living/basic/clown/clown.dm:423	user,tool,modifiers	no	-	proc
@@ -55294,29 +55294,29 @@ type	/mob/living/basic/stickman/lesser	/mob/living/basic/stickman	code/modules/m
 type	/mob/living/basic/stickman/dog	/mob/living/basic/stickman	code/modules/mob/living/basic/ruin_defender/stickman.dm:43	live	mob_living_basic_stickman_dog	0	0
 type	/mob/living/basic/stickman/ranged	/mob/living/basic/stickman	code/modules/mob/living/basic/ruin_defender/stickman.dm:56	live	mob_living_basic_stickman_ranged	1	0
 proc	/mob/living/basic/stickman/ranged	Initialize	code/modules/mob/living/basic/ruin_defender/stickman.dm:68	mapload	yes	full	proc
-type	/mob/living/basic/zombie	/mob/living/basic	code/modules/mob/living/basic/ruin_defender/zombie.dm:3	inert	mob_living_basic_zombie	0	0
-proc	/mob/living/basic/zombie	Initialize	code/modules/mob/living/basic/ruin_defender/zombie.dm:31	mapload	no	-	proc
-proc	/mob/living/basic/zombie	get_unconscious_appearance	code/modules/mob/living/basic/ruin_defender/zombie.dm:36		no	-	proc
-proc	/mob/living/basic/zombie	melee_attack	code/modules/mob/living/basic/ruin_defender/zombie.dm:39	target,modifiers,ignore_cooldown	no	-	proc
-type	/mob/living/basic/zombie/rotten	/mob/living/basic/zombie	code/modules/mob/living/basic/ruin_defender/zombie.dm:47	inert	mob_living_basic_zombie_rotten	0	0
-type	/mob/living/basic/zombie/rotten/assistant	/mob/living/basic/zombie/rotten	code/modules/mob/living/basic/ruin_defender/zombie.dm:55	inert	mob_living_basic_zombie_rotten_assistant	0	0
+type	/mob/living/basic/zombie	/mob/living/basic	code/modules/mob/living/basic/ruin_defender/zombie.dm:3	live	mob_living_basic_zombie	1	0
+proc	/mob/living/basic/zombie	Initialize	code/modules/mob/living/basic/ruin_defender/zombie.dm:31	mapload	yes	full	proc
+proc	/mob/living/basic/zombie	get_unconscious_appearance	code/modules/mob/living/basic/ruin_defender/zombie.dm:36		yes	full	proc
+proc	/mob/living/basic/zombie	melee_attack	code/modules/mob/living/basic/ruin_defender/zombie.dm:39	target,modifiers,ignore_cooldown	yes	partial	proc
+type	/mob/living/basic/zombie/rotten	/mob/living/basic/zombie	code/modules/mob/living/basic/ruin_defender/zombie.dm:47	live	mob_living_basic_zombie_rotten	0	0
+type	/mob/living/basic/zombie/rotten/assistant	/mob/living/basic/zombie/rotten	code/modules/mob/living/basic/ruin_defender/zombie.dm:55	live	mob_living_basic_zombie_rotten_assistant	0	0
 type	/mob/living/basic/mimic	/mob/living/basic	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:11	base	mob_living_basic_mimic	1	0
 proc	/mob/living/basic/mimic	melee_attack	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:38	target,modifiers,ignore_cooldown	yes	full	proc
-type	/mob/living/basic/mimic/crate	/mob/living/basic/mimic	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:53	inert	mob_living_basic_mimic_crate	0	0
-proc	/mob/living/basic/mimic/crate	Initialize	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:80	mapload	no	-	proc
-proc	/mob/living/basic/mimic/crate	Destroy	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:96		no	-	proc
-proc	/mob/living/basic/mimic/crate	attack_hand	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:101	user,modifiers	no	-	proc
-proc	/mob/living/basic/mimic/crate	melee_attack	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:110	target,modifiers,ignore_cooldown	no	-	proc
-proc	/mob/living/basic/mimic/crate	trigger	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:114		no	-	proc root
-proc	/mob/living/basic/mimic/crate	on_damage_loss_changed	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:126	amount,updating_health,forced	no	-	proc
-proc	/mob/living/basic/mimic/crate	death	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:131		no	-	proc
-proc	/mob/living/basic/mimic/crate	early_melee_attack	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:138	target,modifiers,ignore_cooldown	no	-	proc
-proc	/mob/living/basic/mimic/crate	CanAllowThrough	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:144	mover,border_dir	no	-	proc
-proc	/mob/living/basic/mimic/crate	examine	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:149	user	no	-	proc
-proc	/mob/living/basic/mimic/crate	toggle_open	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:161	user	no	-	proc root
-proc	/mob/living/basic/mimic/crate	insert	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:192	movable	no	-	proc root
-proc	/mob/living/basic/mimic/crate	insertion_allowed	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:200	movable	no	-	proc root
-type	/mob/living/basic/mimic/crate/xenobio	/mob/living/basic/mimic/crate	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:231	inert	mob_living_basic_mimic_crate_xenobio	0	0
+type	/mob/living/basic/mimic/crate	/mob/living/basic/mimic	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:53	live	mob_living_basic_mimic_crate	1	0
+proc	/mob/living/basic/mimic/crate	Initialize	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:80	mapload	yes	full	proc
+proc	/mob/living/basic/mimic/crate	Destroy	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:96		yes	full	proc
+proc	/mob/living/basic/mimic/crate	attack_hand	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:101	user,modifiers	yes	full	proc
+proc	/mob/living/basic/mimic/crate	melee_attack	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:110	target,modifiers,ignore_cooldown	yes	full	proc
+proc	/mob/living/basic/mimic/crate	trigger	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:114		yes	full	proc root
+proc	/mob/living/basic/mimic/crate	on_damage_loss_changed	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:126	amount,updating_health,forced	yes	full	proc
+proc	/mob/living/basic/mimic/crate	death	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:131		yes	full	proc
+proc	/mob/living/basic/mimic/crate	early_melee_attack	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:138	target,modifiers,ignore_cooldown	yes	full	proc
+proc	/mob/living/basic/mimic/crate	CanAllowThrough	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:144	mover,border_dir	yes	full	proc
+proc	/mob/living/basic/mimic/crate	examine	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:149	user	yes	full	proc
+proc	/mob/living/basic/mimic/crate	toggle_open	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:161	user	yes	full	proc root
+proc	/mob/living/basic/mimic/crate	insert	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:192	movable	yes	full	proc root
+proc	/mob/living/basic/mimic/crate	insertion_allowed	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:200	movable	yes	full	proc root
+type	/mob/living/basic/mimic/crate/xenobio	/mob/living/basic/mimic/crate	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:231	live	mob_living_basic_mimic_crate_xenobio	0	0
 type	/mob/living/basic/mimic/copy	/mob/living/basic/mimic	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:259	base	mob_living_basic_mimic_copy	1	0
 proc	/mob/living/basic/mimic/copy	Initialize	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:274	mapload,copy,creator,destroy_original,no_googlies	yes	full	proc
 proc	/mob/living/basic/mimic/copy	Destroy	code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:281		yes	full	proc
@@ -84246,19 +84246,19 @@ proc	/obj/machinery/door/firedoor/border_only	on_exit	code/game/machinery/doors/
 proc	/obj/machinery/door/firedoor/border_only	can_atmos_pass	code/game/machinery/doors/firedoor.dm:787	T,vertical	yes	full	proc
 type	/obj/machinery/door/firedoor/border_only/closed	/obj/machinery/door/firedoor/border_only	code/game/machinery/doors/firedoor.dm:733	live	obj_machinery_door_firedoor_border_only_closed	0	0
 type	/obj/machinery/door/firedoor/heavy	/obj/machinery/door/firedoor	code/game/machinery/doors/firedoor.dm:794	live	obj_machinery_door_firedoor_heavy	0	1
-type	/obj/machinery/door/password	/obj/machinery/door	code/game/machinery/doors/passworddoor.dm:2	inert	obj_machinery_door_password	0	0
-proc	/obj/machinery/door/password	Initialize	code/game/machinery/doors/passworddoor.dm:38	mapload	no	-	proc
-proc	/obj/machinery/door/password	get_save_vars	code/game/machinery/doors/passworddoor.dm:44		no	-	proc
-proc	/obj/machinery/door/password	Hear	code/game/machinery/doors/passworddoor.dm:47	speaker,message_language,raw_message,radio_freq,radio_freq_name,radio_freq_color,spans,message_mods,message_range	no	-	proc
-proc	/obj/machinery/door/password	Bumped	code/game/machinery/doors/passworddoor.dm:54	AM	no	-	proc
-proc	/obj/machinery/door/password	try_to_activate_door	code/game/machinery/doors/passworddoor.dm:57	user,access_bypass,bumped	no	-	proc
-proc	/obj/machinery/door/password	update_icon_state	code/game/machinery/doors/passworddoor.dm:67		no	-	proc
-proc	/obj/machinery/door/password	animation_length	code/game/machinery/doors/passworddoor.dm:78	animation	no	-	proc
-proc	/obj/machinery/door/password	animation_segment_delay	code/game/machinery/doors/passworddoor.dm:85	animation	no	-	proc
-proc	/obj/machinery/door/password	animation_effects	code/game/machinery/doors/passworddoor.dm:96	animation	no	-	proc
-proc	/obj/machinery/door/password	ask_for_pass	code/game/machinery/doors/passworddoor.dm:105	user	no	-	proc root
-proc	/obj/machinery/door/password	ex_act	code/game/machinery/doors/passworddoor.dm:111	severity,target	no	-	proc
-type	/obj/machinery/door/password/voice	/obj/machinery/door/password	code/game/machinery/doors/passworddoor.dm:26	inert	obj_machinery_door_password_voice	0	0
+type	/obj/machinery/door/password	/obj/machinery/door	code/game/machinery/doors/passworddoor.dm:2	live	obj_machinery_door_password	1	0
+proc	/obj/machinery/door/password	Initialize	code/game/machinery/doors/passworddoor.dm:38	mapload	yes	full	proc
+proc	/obj/machinery/door/password	get_save_vars	code/game/machinery/doors/passworddoor.dm:44		yes	full	proc
+proc	/obj/machinery/door/password	Hear	code/game/machinery/doors/passworddoor.dm:47	speaker,message_language,raw_message,radio_freq,radio_freq_name,radio_freq_color,spans,message_mods,message_range	yes	full	proc
+proc	/obj/machinery/door/password	Bumped	code/game/machinery/doors/passworddoor.dm:54	AM	yes	full	proc
+proc	/obj/machinery/door/password	try_to_activate_door	code/game/machinery/doors/passworddoor.dm:57	user,access_bypass,bumped	yes	full	proc
+proc	/obj/machinery/door/password	update_icon_state	code/game/machinery/doors/passworddoor.dm:67		yes	full	proc
+proc	/obj/machinery/door/password	animation_length	code/game/machinery/doors/passworddoor.dm:78	animation	yes	full	proc
+proc	/obj/machinery/door/password	animation_segment_delay	code/game/machinery/doors/passworddoor.dm:85	animation	yes	full	proc
+proc	/obj/machinery/door/password	animation_effects	code/game/machinery/doors/passworddoor.dm:96	animation	yes	full	proc
+proc	/obj/machinery/door/password	ask_for_pass	code/game/machinery/doors/passworddoor.dm:105	user	yes	full	proc root
+proc	/obj/machinery/door/password	ex_act	code/game/machinery/doors/passworddoor.dm:111	severity,target	yes	full	proc
+type	/obj/machinery/door/password/voice	/obj/machinery/door/password	code/game/machinery/doors/passworddoor.dm:26	live	obj_machinery_door_password_voice	0	0
 type	/obj/machinery/door/password/voice/sfc	/obj/machinery/door/password/voice	code/modules/mapfluff/ruins/spaceruin_code/forgottenship.dm:10	inert	obj_machinery_door_password_voice_sfc	0	0
 proc	/obj/machinery/door/password/voice/sfc	Initialize	code/modules/mapfluff/ruins/spaceruin_code/forgottenship.dm:12	mapload	no	-	proc
 type	/obj/machinery/door/poddoor	/obj/machinery/door	code/game/machinery/doors/poddoor.dm:2	live	obj_machinery_door_poddoor	1	1
@@ -97843,10 +97843,10 @@ proc	/obj/effect/mob_spawn/corpse/human/skeleton/cerulean	special	code/modules/m
 type	/obj/effect/mob_spawn/corpse/human/factory	/obj/effect/mob_spawn/corpse/human	code/modules/bitrunning/virtual_domain/domains/pipedream.dm:92	live	obj_effect_mob_spawn_corpse_human_factory	0	0
 type	/obj/effect/mob_spawn/corpse/human/factory/guard	/obj/effect/mob_spawn/corpse/human/factory	code/modules/bitrunning/virtual_domain/domains/pipedream.dm:97	live	obj_effect_mob_spawn_corpse_human_factory_guard	0	0
 type	/obj/effect/mob_spawn/corpse/human/factory/qm	/obj/effect/mob_spawn/corpse/human/factory	code/modules/bitrunning/virtual_domain/domains/pipedream.dm:102	live	obj_effect_mob_spawn_corpse_human_factory_qm	0	0
-type	/obj/effect/mob_spawn/corpse/human/bitrunner	/obj/effect/mob_spawn/corpse/human	code/modules/mob_spawn/corpses/job_corpses.dm:88	inert	obj_effect_mob_spawn_corpse_human_bitrunner	0	0
-proc	/obj/effect/mob_spawn/corpse/human/bitrunner	special	code/modules/bitrunning/virtual_domain/domains/wendigo.dm:11	spawned_mob,mob_possessor,apply_prefs	no	-	proc
-type	/obj/effect/mob_spawn/corpse/human/cyber_police	/obj/effect/mob_spawn/corpse/human	code/modules/mob_spawn/corpses/mob_corpses.dm:410	inert	obj_effect_mob_spawn_corpse_human_cyber_police	0	0
-proc	/obj/effect/mob_spawn/corpse/human/cyber_police	special	code/modules/bitrunning/virtual_domain/domains/wendigo.dm:15	spawned_mob,mob_possessor,apply_prefs	no	-	proc
+type	/obj/effect/mob_spawn/corpse/human/bitrunner	/obj/effect/mob_spawn/corpse/human	code/modules/mob_spawn/corpses/job_corpses.dm:88	live	obj_effect_mob_spawn_corpse_human_bitrunner	1	0
+proc	/obj/effect/mob_spawn/corpse/human/bitrunner	special	code/modules/bitrunning/virtual_domain/domains/wendigo.dm:11	spawned_mob,mob_possessor,apply_prefs	yes	full	proc
+type	/obj/effect/mob_spawn/corpse/human/cyber_police	/obj/effect/mob_spawn/corpse/human	code/modules/mob_spawn/corpses/mob_corpses.dm:410	live	obj_effect_mob_spawn_corpse_human_cyber_police	1	0
+proc	/obj/effect/mob_spawn/corpse/human/cyber_police	special	code/modules/bitrunning/virtual_domain/domains/wendigo.dm:15	spawned_mob,mob_possessor,apply_prefs	yes	full	proc
 type	/obj/effect/mob_spawn/corpse/human/minesite	/obj/effect/mob_spawn/corpse/human	code/modules/mapfluff/ruins/icemoonruin_code/mining_site.dm:25	inert	obj_effect_mob_spawn_corpse_human_minesite	0	0
 proc	/obj/effect/mob_spawn/corpse/human/minesite	special	code/modules/mapfluff/ruins/icemoonruin_code/mining_site.dm:30	spawned_mob,mob_possessor,apply_prefs	no	-	proc
 type	/obj/effect/mob_spawn/corpse/human/minesite/overseer	/obj/effect/mob_spawn/corpse/human/minesite	code/modules/mapfluff/ruins/icemoonruin_code/mining_site.dm:35	inert	obj_effect_mob_spawn_corpse_human_minesite_overseer	0	0
@@ -99455,8 +99455,8 @@ proc	/obj/structure/closet/crate/secure/bitrunning/decrypted	spawn_loot	code/mod
 type	/obj/structure/closet/crate/wooden	/obj/structure/closet/crate	code/game/objects/structures/crates_lockers/crates/wooden.dm:2	live	obj_structure_closet_crate_wooden	0	1
 type	/obj/structure/closet/crate/wooden/toy	/obj/structure/closet/crate/wooden	code/game/objects/structures/crates_lockers/crates/wooden.dm:18	live	obj_structure_closet_crate_wooden_toy	1	1
 proc	/obj/structure/closet/crate/wooden/toy	PopulateContents	code/game/objects/structures/crates_lockers/crates/wooden.dm:21		yes	full	proc
-type	/obj/structure/closet/crate/eva	/obj/structure/closet/crate	code/modules/antagonists/fugitive/hunters/hunter_gear.dm:52	inert	obj_structure_closet_crate_eva	0	0
-proc	/obj/structure/closet/crate/eva	PopulateContents	code/modules/antagonists/fugitive/hunters/hunter_gear.dm:56		no	-	proc
+type	/obj/structure/closet/crate/eva	/obj/structure/closet/crate	code/modules/antagonists/fugitive/hunters/hunter_gear.dm:52	live	obj_structure_closet_crate_eva	1	0
+proc	/obj/structure/closet/crate/eva	PopulateContents	code/modules/antagonists/fugitive/hunters/hunter_gear.dm:56		yes	full	proc
 type	/obj/structure/closet/crate/grave	/obj/structure/closet/crate	code/modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.dm:133	live	obj_structure_closet_crate_grave	1	0
 proc	/obj/structure/closet/crate/grave	add_context	code/modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.dm:163	source,context,held_item,user	stub	deferred	proc
 proc	/obj/structure/closet/crate/grave	close	code/modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.dm:173	user	yes	full	proc
@@ -108596,7 +108596,7 @@ proc	/turf/open	update_icon	code/game/turfs/open/_open.dm:174		yes	full	proc
 proc	/turf/open	attack_ghost	code/game/turfs/open/_open.dm:179	user	yes	full	proc
 proc	/turf/open	CanBuildHere	code/game/turfs/open/_open.dm:185		yes	full	proc root
 proc	/turf/open	is_transition_turf	code/game/turfs/open/_open.dm:190		yes	full	proc
-proc	/turf/open	add_footprint	code/game/turfs/open/_open.dm:195	walker,movement_direction	yes	skeleton	proc root
+proc	/turf/open	add_footprint	code/game/turfs/open/_open.dm:195	walker,movement_direction	yes	full	proc root
 proc	/turf/open	clear_footprints	code/game/turfs/open/_open.dm:219		yes	full	proc root
 proc	/turf/open	Entered	code/game/turfs/open/_open.dm:226	arrived,old_loc,old_locs	yes	full	proc
 proc	/turf/open	initialize_occupant	code/game/turfs/open/_open.dm:236	occupant	yes	full	proc
@@ -109470,9 +109470,9 @@ type	/turf/open/indestructible/dark/textured	/turf/open/indestructible/dark	code
 type	/turf/open/indestructible/dark/smooth_large	/turf/open/indestructible/dark	code/game/turfs/open/_open.dm:335	base	turf_open_indestructible_dark_smooth_large	1	0
 type	/turf/open/indestructible/light	/turf/open/indestructible	code/game/turfs/open/_open.dm:338	base	turf_open_indestructible_light	1	0
 type	/turf/open/indestructible/permalube	/turf/open/indestructible	code/game/turfs/open/_open.dm:344	base	turf_open_indestructible_permalube	1	0
-proc	/turf/open/indestructible/permalube	Initialize	code/game/turfs/open/_open.dm:346	mapload	yes	partial	proc
+proc	/turf/open/indestructible/permalube	Initialize	code/game/turfs/open/_open.dm:346	mapload	yes	full	proc
 type	/turf/open/indestructible/honk	/turf/open/indestructible	code/game/turfs/open/_open.dm:351	base	turf_open_indestructible_honk	1	0
-proc	/turf/open/indestructible/honk	Initialize	code/game/turfs/open/_open.dm:359	mapload	yes	partial	proc
+proc	/turf/open/indestructible/honk	Initialize	code/game/turfs/open/_open.dm:359	mapload	yes	full	proc
 proc	/turf/open/indestructible/honk	Entered	code/game/turfs/open/_open.dm:363	arrived,old_loc,old_locs	yes	full	proc
 proc	/turf/open/indestructible/honk	initialize_occupant	code/game/turfs/open/_open.dm:368	occupant	yes	full	proc
 type	/turf/open/indestructible/necropolis	/turf/open/indestructible	code/game/turfs/open/_open.dm:374	base	turf_open_indestructible_necropolis	1	0
@@ -109734,21 +109734,21 @@ type	/turf/open/chasm/true/no_smooth/fake_motion_sand/fast	/turf/open/chasm/true
 type	/turf/open/chasm/true/fakeout	/turf/open/chasm/true	code/modules/deathmatch/deathmatch_mapping.dm:29	live	turf_open_chasm_true_fakeout	0	0
 type	/turf/open/chasm/pride	/turf/open/chasm	code/game/turfs/open/chasm.dm:146	live	turf_open_chasm_pride	1	0
 proc	/turf/open/chasm/pride	apply_components	code/game/turfs/open/chasm.dm:152	mapload	yes	full	proc
-type	/turf/open/cliff	/turf/open	code/game/turfs/open/cliff.dm:3	inert	turf_open_cliff	0	0
-proc	/turf/open/cliff	Initialize	code/game/turfs/open/cliff.dm:25	mapload	no	-	proc
-proc	/turf/open/cliff	Destroy	code/game/turfs/open/cliff.dm:38	force	no	-	proc
-proc	/turf/open/cliff	CanPass	code/game/turfs/open/cliff.dm:42	mover,border_dir	no	-	proc
-proc	/turf/open/cliff	Entered	code/game/turfs/open/cliff.dm:50	arrived,old_loc,old_locs	no	-	proc
-proc	/turf/open/cliff	initialize_occupant	code/game/turfs/open/cliff.dm:55	occupant	no	-	proc
-proc	/turf/open/cliff	zImpact	code/game/turfs/open/cliff.dm:59	falling,levels,prev_turf,flags	no	-	proc
-proc	/turf/open/cliff	on_turf_movable_throw_landed	code/game/turfs/open/cliff.dm:63	turf,arrived	no	-	proc root
-proc	/turf/open/cliff	try_fall	code/game/turfs/open/cliff.dm:69	arrived	no	-	proc root
-proc	/turf/open/cliff	can_fall	code/game/turfs/open/cliff.dm:74	arrived	no	-	proc root
-proc	/turf/open/cliff	fall	code/game/turfs/open/cliff.dm:98	arrived	no	-	proc root
-proc	/turf/open/cliff	on_fall	code/game/turfs/open/cliff.dm:103	faller	no	-	proc root
-proc	/turf/open/cliff	can_move	code/game/turfs/open/cliff.dm:111	mover,target	no	-	proc root
-type	/turf/open/cliff/snowrock	/turf/open/cliff	code/game/turfs/open/cliff.dm:124	inert	turf_open_cliff_snowrock	0	0
-type	/turf/open/cliff/snowrock/virtual_domain	/turf/open/cliff/snowrock	code/modules/bitrunning/virtual_domain/domains/stairs_and_cliffs.dm:18	inert	turf_open_cliff_snowrock_virtual_domain	0	0
+type	/turf/open/cliff	/turf/open	code/game/turfs/open/cliff.dm:3	live	turf_open_cliff	1	0
+proc	/turf/open/cliff	Initialize	code/game/turfs/open/cliff.dm:25	mapload	yes	full	proc
+proc	/turf/open/cliff	Destroy	code/game/turfs/open/cliff.dm:38	force	yes	full	proc
+proc	/turf/open/cliff	CanPass	code/game/turfs/open/cliff.dm:42	mover,border_dir	yes	full	proc
+proc	/turf/open/cliff	Entered	code/game/turfs/open/cliff.dm:50	arrived,old_loc,old_locs	yes	full	proc
+proc	/turf/open/cliff	initialize_occupant	code/game/turfs/open/cliff.dm:55	occupant	yes	full	proc
+proc	/turf/open/cliff	zImpact	code/game/turfs/open/cliff.dm:59	falling,levels,prev_turf,flags	yes	full	proc
+proc	/turf/open/cliff	on_turf_movable_throw_landed	code/game/turfs/open/cliff.dm:63	turf,arrived	yes	full	proc root
+proc	/turf/open/cliff	try_fall	code/game/turfs/open/cliff.dm:69	arrived	yes	full	proc root
+proc	/turf/open/cliff	can_fall	code/game/turfs/open/cliff.dm:74	arrived	yes	full	proc root
+proc	/turf/open/cliff	fall	code/game/turfs/open/cliff.dm:98	arrived	yes	full	proc root
+proc	/turf/open/cliff	on_fall	code/game/turfs/open/cliff.dm:103	faller	yes	full	proc root
+proc	/turf/open/cliff	can_move	code/game/turfs/open/cliff.dm:111	mover,target	yes	full	proc root
+type	/turf/open/cliff/snowrock	/turf/open/cliff	code/game/turfs/open/cliff.dm:124	live	turf_open_cliff_snowrock	0	0
+type	/turf/open/cliff/snowrock/virtual_domain	/turf/open/cliff/snowrock	code/modules/bitrunning/virtual_domain/domains/stairs_and_cliffs.dm:18	live	turf_open_cliff_snowrock_virtual_domain	0	0
 type	/turf/open/openspace	/turf/open	code/game/turfs/open/openspace.dm:2	live	turf_open_openspace	1	0
 proc	/turf/open/openspace	Initialize	code/game/turfs/open/openspace.dm:27	mapload	yes	full	proc
 proc	/turf/open/openspace	LateInitialize	code/game/turfs/open/openspace.dm:37		yes	full	proc

@@ -1958,3 +1958,24 @@ The nearby strip:
   examines it; a drag from a cell onto a hand box is the same pick-up. A drag from the inventory onto the strip
   drops the item (the move to the floor). No server change for the strip.
 - With nothing nearby the strip shows its title and one empty cell (the drop target).
+
+### For the contributor to tell the owner (collected 2026-11-27)
+
+- Upstream's photo upload (release 1.16.0), fixed on this branch in its own commit (the contributor: "we can fix it
+  ourselves"; "fix it on our branch"): `PhotoSeam.Develop` decoded a client's PNG before checking its claimed size
+  (a tiny upload claiming a huge picture made the server allocate for it); the decoder looped forever on a chunk
+  with a negative length; a finished upload answering no request wrote a log line each time and never struck the
+  sender. Left as upstream has it, for the owner to decide: accepted photos are kept for the whole round with no
+  cap and sent to every client (a camera and film bound the rate only).
+- A trash bag, or any storage that stacks its items by number, cannot be opened in the port: tg's
+  `/datum/numbered_display/New` was never translated, so `show_contents` throws in `orient_storage` (older than
+  this branch). Such a bag therefore cannot be the Tab inventory's other container. Not ported here (the
+  contributor: "list that to the owner for the trash bags").
+- Upstream's "Climb in" on an open closet and "Flip" on a table run for a paralysed, handcuffed or dead user (found
+  by the stress test of the merge of 1.15.0).
+- The version mismatch: this branch's builds call themselves upstream's released version while speaking protocol
+  100; only the owner's release step (`tools/release.sh`) fixes it. A client built from this branch cannot join a
+  server built from upstream's release, and the reverse.
+- Numbers: three upstream releases in a day each took the protocol version, message ids and deviation numbers this
+  branch was using, and each time this branch was renumbered. A reserved block of numbers for the branch, or
+  merging it upstream in parts, would stop that.

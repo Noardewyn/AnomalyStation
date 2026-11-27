@@ -14,8 +14,9 @@ namespace Anomaly.Core.Tg;
 // formaldehyde's; the acids (silicons SI1c, D326). The toxins' on_hydroponics_apply (gaps P2). The var blocks are generated (D111).
 // Silicons SI2 (D326): Tirizene (staminatoxin), the hacked peacekeeper cyborg's.
 // Gaps H3: the fake beer's glass style (it looks like a glass of beer). Gaps SP1: carpotoxin, harmless to a felinid's tongue.
-// Gaps RG2 (D339): every other toxin (gibbium's GBS since gaps VI1). Left (not-translated.md section 225): the fish procs
-// (used_on_fish, fishing), the spider serum's spider antagonist (D333) and the client's drawing of rotatium's turned plane masters.
+// Gaps RG2 (D339): every other toxin (gibbium's GBS since gaps VI1). Left (not-translated.md section 225): the spider
+// serum's spider antagonist (D333) and the client's drawing of rotatium's turned plane masters. Mutagen and bone hurting juice
+// fed to a fish came with the fish.
 
 // tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:4
 [DmPath("/datum/reagent/toxin")]
@@ -454,7 +455,7 @@ public partial class datum_glass_style_drinking_glass_fakebeer : datum_glass_sty
     }
 }
 
-// Gaps RG2 (D339): the rest of the toxins. The fish procs (mutagen's and bone hurting juice's used_on_fish) wait for fishing;
+// Gaps RG2 (D339): the rest of the toxins. Mutagen's and bone hurting juice's used_on_fish came with the fish;
 // gibbium's GBS came with the diseases (gaps VI1); the spider serum's spider antagonist is a row (D333); fentanyl's mood is live
 // since gaps MS1. Rotatium turns the game plane masters, which the client does not draw (a row, section 225).
 
@@ -493,6 +494,15 @@ public partial class datum_reagent_toxin_mutagen : datum_reagent_toxin
         if (Dm.truthy(await mob.adjust_tox_loss(0.25f * Dm.num(seconds_per_tick) * Dm.num(metabolization_ratio), required_biotype: affected_biotype)))
             return UPDATE_MOB_HEALTH;
         return dot;
+    }
+
+    // tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:80
+    public override async DmTask<object> used_on_fish(obj_item_fish fish = null)
+    {
+        await DmTask.CompletedTask;
+        ADD_TRAIT(fish, TRAIT_FISH_MUTAGENIC, type);
+        _addtimer(TRAIT_CALLBACK_REMOVE(fish, TRAIT_FISH_MUTAGENIC, type), fish.feeding_frequency * 0.8f, TIMER_UNIQUE | TIMER_OVERRIDE, file: "code/modules/reagents/chemistry/reagents/toxin_reagents.dm", line: 82);
+        return TRUE;
     }
 }
 
@@ -1639,6 +1649,17 @@ public partial class datum_reagent_toxin_bonehurtingjuice : datum_reagent_toxin
             }
         }
         return dot;
+    }
+
+    // tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1437
+    public override async DmTask<object> used_on_fish(obj_item_fish fish = null)
+    {
+        if (HAS_TRAIT(fish, TRAIT_FISH_MADE_OF_BONE))
+        {
+            await fish.damage_fish(30);
+            return TRUE;
+        }
+        return null;
     }
 }
 

@@ -334,9 +334,9 @@ public partial class datum_action_cooldown_mob_cooldown_charge_the_thing
     }
 }
 
-// tg: code/datums/actions/mobs/charge_apc.dm:5
-[DmPath("/datum/action/cooldown/mob_cooldown/charge_apc"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_mob_cooldown_charge_apc : datum_action_cooldown_mob_cooldown
+// tg: code/datums/actions/mobs/charge_apc.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/mob_cooldown/charge_apc")]
+public partial class datum_action_cooldown_mob_cooldown_charge_apc
 {
     // tg: code/datums/actions/mobs/charge_apc.dm:5
     public datum_action_cooldown_mob_cooldown_charge_apc()

@@ -83,6 +83,8 @@ public class GoldgrubTests
         var grub = r.In(() => Dm.@new<mob_living_basic_mining_goldgrub>(locate(4, 4, 1)));
         r.Step(2);
         var burrow = r.In(() => Dm.each<datum_action_cooldown_mob_cooldown_burrow>(grub.actions).First());
+        // back onto the asteroid patch if its idle wander took it off (the wander stops while it digs, a do_after)
+        r.In(() => Waiting.NoSleep(grub.forceMove(locate(4, 4, 1))));
         r.Command(() => Waiting.Detach(burrow.Trigger(null, null, grub)));
         Assert.True(RunUntil(r, 5 * Second, () => grub.loc is obj_effect_dummy_phased_mob_grub_burrow), "the grub went under");
         Assert.True(r.In(() => GlobalProcs.is_jaunting(grub)));

@@ -11,8 +11,8 @@ namespace Anomaly.Core.Tg;
 
 // Gaps H1: the whole file (the toilet: its lid and cistern, the flush and its overflow foam, the swirlie and the slam, the items hidden
 // in the cistern and dropped in the bowl, the plunger, the water reclaimer and the plumbing; the secret toilet; the flesh toilet). The
-// station toilets' fishing spot and the fish-safe storage element wait for the fishing (not-translated.md section 190); fish dropped
-// in the bowl are tg's (the fish items are generated). The swirlie's achievement waits with the achievements (D332). The var blocks
+// station toilets' fishing spot waits for the rods (not-translated.md section 190); the bowl keeps its fish alive (the fish-safe
+// storage). The swirlie's achievement waits with the achievements (D332). The var blocks
 // are generated (D111).
 
 // tg: code/game/objects/structures/water_structures/toilet.dm:1
@@ -30,7 +30,7 @@ public partial class obj_structure_toilet : obj_structure
         update_appearance(UPDATE_ICON);
         if (Dm.truthy(mapload) && Dm.truthy(SSmapping.level_trait(z, ZTRAIT_STATION)))
             Dm.Deferred("code/game/objects/structures/water_structures/toilet.dm:43", "the toilet's fishing spot (/datum/component/fishing_spot, GLOB.preset_fish_sources) waits for the fishing");
-        Dm.Deferred("code/game/objects/structures/water_structures/toilet.dm:44", "the fish-safe storage element (/datum/element/fish_safe_storage) waits for the fishing");
+        Waiting.NoSleep(AddElement(typeof(datum_element_fish_safe_storage)));
         register_context();
         create_reagents(reagent_capacity);
         if (Dm.truthy(this.has_water_reclaimer))

@@ -872,7 +872,7 @@ proc	/	init_air_alarm_modes	code/modules/atmospherics/machinery/air_alarm/air_al
 proc	/	init_all_languages	code/_globalvars/lists/languages.dm:20		yes	full	global
 proc	/	init_blood_types	code/_globalvars/lists/mobs.dm:72		yes	full	global
 proc	/	init_canvas_dimensions	code/modules/art/paintings.dm:3		yes	full	global
-proc	/	init_chasm_detritus	code/modules/fishing/fish/chasm_detritus.dm:11		no	-	global
+proc	/	init_chasm_detritus	code/modules/fishing/fish/chasm_detritus.dm:11		yes	full	global
 proc	/	init_chemical_reagent_list	code/_globalvars/lists/reagents.dm:74		yes	full	global
 proc	/	init_chemical_side_effects	code/_globalvars/lists/reagents.dm:235		yes	full	global
 proc	/	init_common_words_by_alphabetical	code/_globalvars/lists/languages.dm:32		yes	full	global
@@ -1025,7 +1025,7 @@ proc	/	log_econ	code/__HELPERS/logging/economy.dm:1	text,data	yes	full	global
 proc	/	log_emote	code/__HELPERS/logging/game.dm:6	text,data	yes	full	global
 proc	/	log_filter	code/__HELPERS/chat_filter.dm:97	scope,message,filter_result	no	-	global
 proc	/	log_filter_raw	code/__HELPERS/logging/debug.dm:11	text,data	yes	full	global
-proc	/	log_fish	code/__HELPERS/logging/fishing.dm:2	text,data	no	-	global
+proc	/	log_fish	code/__HELPERS/logging/fishing.dm:2	text,data	yes	full	global
 proc	/	log_game	code/__HELPERS/logging/game.dm:2	text,data	yes	full	global
 proc	/	log_ghost_poll	code/__HELPERS/logging/game.dm:33	text,data	yes	full	global
 proc	/	log_heretic_knowledge	code/__HELPERS/logging/antagonists.dm:18	text,data	yes	full	global
@@ -1132,7 +1132,7 @@ proc	/	notify_ghosts	code/modules/mob/mob_helpers.dm:285	message,source,header,a
 proc	/	nuke_gib	code/modules/antagonists/nukeop/equipment/nuclear_bomb/_nuclear_bomb.dm:748	gibbed,source	yes	full	global
 proc	/	nuke_request	code/modules/admin/verbs/pray.dm:78	text,sender	yes	full	global
 proc	/	num2loadingbar	code/__HELPERS/text.dm:1056	percent,numSquares,reverse	yes	full	global
-proc	/	objectify	code/modules/admin/verbs/adminfun.dm:276	target,path_or_instance	no	-	global
+proc	/	objectify	code/modules/admin/verbs/adminfun.dm:276	target,path_or_instance	yes	full	global
 proc	/	odd_organ_name	code/__HELPERS/names.dm:288		yes	full	global
 proc	/	offer_control	code/modules/mob/mob_helpers.dm:369	M	no	-	global
 proc	/	offset_to_screen_loc	code/__HELPERS/screen_objs.dm:51	x_offset,y_offset,view	no	-	global
@@ -1185,7 +1185,7 @@ proc	/	populate_editable_sign_types	code/game/objects/structures/signs/_signs.dm
 proc	/	populate_reta_job_trims	code/modules/reta/reta_system.dm:123		yes	full	global
 proc	/	populate_rtd_datums	code/_globalvars/lists/rtd.dm:116		yes	full	global
 proc	/	populate_safe_peanut_types	code/modules/food_and_drinks/food/snacks.dm:313		yes	full	global
-proc	/	populate_spontaneous_fish_traits	code/modules/fishing/fish/fish_traits.dm:10		no	-	global
+proc	/	populate_spontaneous_fish_traits	code/modules/fishing/fish/fish_traits.dm:10		yes	full	global
 proc	/	populate_total_uf_len_by_block	code/datums/dna/dna.dm:20		yes	full	global
 proc	/	populate_total_ui_len_by_block	code/datums/dna/dna.dm:9		yes	full	global
 proc	/	populate_virtual_areas	code/modules/bitrunning/areas.dm:80		yes	full	global
@@ -1231,7 +1231,7 @@ proc	/	random_color	code/__HELPERS/text.dm:456		yes	full	global
 proc	/	random_colour	code/__HELPERS/colors.dm:28	mode	yes	full	global
 proc	/	random_eye_color	code/__HELPERS/mobs.dm:38		yes	full	global
 proc	/	random_facial_hairstyle	code/__HELPERS/mobs.dm:110	gender	yes	full	global
-proc	/	random_fish_type	code/modules/fishing/fish/_fish.dm:1630	required_fluid	no	-	global
+proc	/	random_fish_type	code/modules/fishing/fish/_fish.dm:1630	required_fluid	yes	full	global
 proc	/	random_hair_color	code/__HELPERS/mobs.dm:57		yes	full	global
 proc	/	random_hairstyle	code/__HELPERS/mobs.dm:101	gender	yes	full	global
 proc	/	random_human_blood_type	code/__HELPERS/mobs.dm:10		yes	full	global
@@ -2710,11 +2710,11 @@ proc	/datum/controller/global_vars	InitGlobalexoscanner_controller	code/modules/
 proc	/datum/controller/global_vars	InitGlobalexoscanner_bands	code/modules/explorer_drone/scanner_array.dm:5		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalscan_conditions	code/modules/explorer_drone/scanner_array.dm:7		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalfish_compatible_fluid_types	code/modules/fishing/fish/_fish.dm:9		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalchasm_detritus_types	code/modules/fishing/fish/chasm_detritus.dm:9		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalfish_evolutions	code/modules/fishing/fish/fish_evolution.dm:2		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalfishes_by_fish_evolution	code/modules/fishing/fish/fish_evolution.dm:4		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalfish_traits	code/modules/fishing/fish/fish_traits.dm:2		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalspontaneous_fish_traits	code/modules/fishing/fish/fish_traits.dm:8		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalchasm_detritus_types	code/modules/fishing/fish/chasm_detritus.dm:9		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalfish_evolutions	code/modules/fishing/fish/fish_evolution.dm:2		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalfishes_by_fish_evolution	code/modules/fishing/fish/fish_evolution.dm:4		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalfish_traits	code/modules/fishing/fish/fish_traits.dm:2		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalspontaneous_fish_traits	code/modules/fishing/fish/fish_traits.dm:8		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalfishing_challenges_by_user	code/modules/fishing/fishing_minigame.dm:35		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalpreset_fish_sources	code/modules/fishing/sources/_fish_source.dm:1		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalspecific_fish_icons	code/modules/fishing/sources/_fish_source.dm:11		no	-	proc root
@@ -3256,10 +3256,10 @@ proc	/datum/controller/subsystem/processing/fastprocess	fire	code/controllers/su
 type	/datum/controller/subsystem/processing/burning	/datum/controller/subsystem/processing	code/controllers/subsystem/processing/fire_burning.dm:3	live	datum_controller_subsystem_processing_burning	1	0
 proc	/datum/controller/subsystem/processing/burning	New	code/controllers/subsystem/processing/fire_burning.dm:2		yes	full	proc
 proc	/datum/controller/subsystem/processing/burning	fire	code/controllers/subsystem/processing/fire_burning.dm:2		yes	full	proc
-type	/datum/controller/subsystem/processing/fishing	/datum/controller/subsystem/processing	code/controllers/subsystem/processing/fishing.dm:3	inert	datum_controller_subsystem_processing_fishing	0	0
-proc	/datum/controller/subsystem/processing/fishing	New	code/controllers/subsystem/processing/fishing.dm:2		no	-	proc
-proc	/datum/controller/subsystem/processing/fishing	fire	code/controllers/subsystem/processing/fishing.dm:2		no	-	proc
-proc	/datum/controller/subsystem/processing/fishing	Initialize	code/controllers/subsystem/processing/fishing.dm:22		no	-	proc
+type	/datum/controller/subsystem/processing/fishing	/datum/controller/subsystem/processing	code/controllers/subsystem/processing/fishing.dm:3	live	datum_controller_subsystem_processing_fishing	1	0
+proc	/datum/controller/subsystem/processing/fishing	New	code/controllers/subsystem/processing/fishing.dm:2		yes	full	proc
+proc	/datum/controller/subsystem/processing/fishing	fire	code/controllers/subsystem/processing/fishing.dm:2		yes	full	proc
+proc	/datum/controller/subsystem/processing/fishing	Initialize	code/controllers/subsystem/processing/fishing.dm:22		yes	full	proc
 type	/datum/controller/subsystem/processing/greyscale	/datum/controller/subsystem/processing	code/controllers/subsystem/processing/greyscale.dm:2	base	datum_controller_subsystem_processing_greyscale	1	0
 proc	/datum/controller/subsystem/processing/greyscale	New	code/controllers/subsystem/processing/greyscale.dm:1		yes	full	proc
 proc	/datum/controller/subsystem/processing/greyscale	fire	code/controllers/subsystem/processing/greyscale.dm:1		no	-	proc
@@ -5887,8 +5887,8 @@ type	/datum/action/cooldown/mob_cooldown/charge/the_thing	/datum/action/cooldown
 proc	/datum/action/cooldown/mob_cooldown/charge/the_thing	charge_sequence	code/modules/mob/living/basic/boss/thing/thing_abilities.dm:49	charger,target_atom,delay,past	yes	full	proc
 proc	/datum/action/cooldown/mob_cooldown/charge/the_thing	do_charge_indicator	code/modules/mob/living/basic/boss/thing/thing_abilities.dm:57	charger,charge_target	yes	full	proc
 proc	/datum/action/cooldown/mob_cooldown/charge/the_thing	hit_target	code/modules/mob/living/basic/boss/thing/thing_abilities.dm:65	source,target,damage_dealt	yes	full	proc
-type	/datum/action/cooldown/mob_cooldown/charge_apc	/datum/action/cooldown/mob_cooldown	code/datums/actions/mobs/charge_apc.dm:5	inert	datum_action_cooldown_mob_cooldown_charge_apc	0	0
-proc	/datum/action/cooldown/mob_cooldown/charge_apc	Activate	code/datums/actions/mobs/charge_apc.dm:11	target_atom	no	-	proc
+type	/datum/action/cooldown/mob_cooldown/charge_apc	/datum/action/cooldown/mob_cooldown	code/datums/actions/mobs/charge_apc.dm:5	live	datum_action_cooldown_mob_cooldown_charge_apc	1	0
+proc	/datum/action/cooldown/mob_cooldown/charge_apc	Activate	code/datums/actions/mobs/charge_apc.dm:11	target_atom	yes	full	proc
 type	/datum/action/cooldown/mob_cooldown/chase_target	/datum/action/cooldown/mob_cooldown	code/datums/actions/mobs/chase_target.dm:2	live	datum_action_cooldown_mob_cooldown_chase_target	1	0
 proc	/datum/action/cooldown/mob_cooldown/chase_target	Activate	code/datums/actions/mobs/chase_target.dm:10	target_atom	yes	full	proc
 proc	/datum/action/cooldown/mob_cooldown/chase_target	charge	code/datums/actions/mobs/chase_target.dm:18	target	yes	full	proc root
@@ -10115,8 +10115,8 @@ type	/datum/embedding/magic_knife	/datum/embedding	code/modules/antagonists/here
 type	/datum/embedding/rune_carver	/datum/embedding	code/modules/antagonists/heretic/structures/carving_knife.dm:39	live	datum_embedding_rune_carver	0	0
 type	/datum/embedding/global_funny	/datum/embedding	code/modules/events/wizard/embeddies.dm:50	live	datum_embedding_global_funny	0	0
 type	/datum/embedding/global_funny/sticky	/datum/embedding/global_funny	code/modules/events/wizard/embeddies.dm:98	live	datum_embedding_global_funny_sticky	0	0
-type	/datum/embedding/chrystarfish	/datum/embedding	code/modules/fishing/fish/types/rift.dm:48	inert	datum_embedding_chrystarfish	0	0
-proc	/datum/embedding/chrystarfish	jostle_effects	code/modules/fishing/fish/types/rift.dm:59		no	-	proc
+type	/datum/embedding/chrystarfish	/datum/embedding	code/modules/fishing/fish/types/rift.dm:48	live	datum_embedding_chrystarfish	1	0
+proc	/datum/embedding/chrystarfish	jostle_effects	code/modules/fishing/fish/types/rift.dm:59		yes	full	proc
 type	/datum/embedding/hatchet	/datum/embedding	code/modules/hydroponics/hydroponics_items.dm:142	live	datum_embedding_hatchet	0	0
 type	/datum/embedding/sticky_plant	/datum/embedding	code/modules/hydroponics/plant_genes.dm:936	live	datum_embedding_sticky_plant	0	0
 type	/datum/embedding/spiky_plant	/datum/embedding	code/modules/hydroponics/plant_genes.dm:941	live	datum_embedding_spiky_plant	0	0
@@ -17713,19 +17713,19 @@ proc	/datum/component/aquarium	set_aquarium_mode	code/datums/components/aquarium
 proc	/datum/component/aquarium	set_fluid_type	code/datums/components/aquarium.dm:692	new_fluid_type	no	-	proc root
 proc	/datum/component/aquarium	admire	code/datums/components/aquarium.dm:699	source,user	no	-	proc root
 proc	/datum/component/aquarium	on_requesting_context_from_item	code/datums/components/aquarium.dm:722	source,context,held_item,user	no	-	proc root
-type	/datum/component/aquarium_content	/datum/component	code/datums/components/aquarium_content.dm:5	inert	datum_component_aquarium_content	0	0
-proc	/datum/component/aquarium_content	Initialize	code/datums/components/aquarium_content.dm:25	animation_update_signals	no	-	proc
-proc	/datum/component/aquarium_content	Destroy	code/datums/components/aquarium_content.dm:39	force	no	-	proc
-proc	/datum/component/aquarium_content	enter_aquarium	code/datums/components/aquarium_content.dm:47	source,OldLoc,Dir,Forced	no	-	proc root
-proc	/datum/component/aquarium_content	on_inserted	code/datums/components/aquarium_content.dm:53	aquarium	no	-	proc root
-proc	/datum/component/aquarium_content	on_fluid_changed	code/datums/components/aquarium_content.dm:72	source,new_fluid_type	no	-	proc root
-proc	/datum/component/aquarium_content	animation_update_signal_proc	code/datums/components/aquarium_content.dm:78	source	no	-	proc root
-proc	/datum/component/aquarium_content	generate_animation	code/datums/components/aquarium_content.dm:82	reset	no	-	proc root
-proc	/datum/component/aquarium_content	generate_base_vc	code/datums/components/aquarium_content.dm:87	aquarium	no	-	proc root
-proc	/datum/component/aquarium_content	update_vc_color	code/datums/components/aquarium_content.dm:94	source	no	-	proc root
-proc	/datum/component/aquarium_content	set_vc_base_position	code/datums/components/aquarium_content.dm:102		no	-	proc root
-proc	/datum/component/aquarium_content	on_removed	code/datums/components/aquarium_content.dm:107	aquarium,gone,direction	no	-	proc root
-proc	/datum/component/aquarium_content	remove_from_aquarium	code/datums/components/aquarium_content.dm:113	aquarium	no	-	proc root
+type	/datum/component/aquarium_content	/datum/component	code/datums/components/aquarium_content.dm:5	live	datum_component_aquarium_content	1	0
+proc	/datum/component/aquarium_content	Initialize	code/datums/components/aquarium_content.dm:25	animation_update_signals	yes	full	proc
+proc	/datum/component/aquarium_content	Destroy	code/datums/components/aquarium_content.dm:39	force	yes	full	proc
+proc	/datum/component/aquarium_content	enter_aquarium	code/datums/components/aquarium_content.dm:47	source,OldLoc,Dir,Forced	yes	full	proc root
+proc	/datum/component/aquarium_content	on_inserted	code/datums/components/aquarium_content.dm:53	aquarium	yes	full	proc root
+proc	/datum/component/aquarium_content	on_fluid_changed	code/datums/components/aquarium_content.dm:72	source,new_fluid_type	yes	full	proc root
+proc	/datum/component/aquarium_content	animation_update_signal_proc	code/datums/components/aquarium_content.dm:78	source	yes	full	proc root
+proc	/datum/component/aquarium_content	generate_animation	code/datums/components/aquarium_content.dm:82	reset	yes	full	proc root
+proc	/datum/component/aquarium_content	generate_base_vc	code/datums/components/aquarium_content.dm:87	aquarium	yes	full	proc root
+proc	/datum/component/aquarium_content	update_vc_color	code/datums/components/aquarium_content.dm:94	source	yes	full	proc root
+proc	/datum/component/aquarium_content	set_vc_base_position	code/datums/components/aquarium_content.dm:102		yes	full	proc root
+proc	/datum/component/aquarium_content	on_removed	code/datums/components/aquarium_content.dm:107	aquarium,gone,direction	yes	full	proc root
+proc	/datum/component/aquarium_content	remove_from_aquarium	code/datums/components/aquarium_content.dm:113	aquarium	yes	full	proc root
 type	/datum/component/arbitrary_item_organ	/datum/component	code/datums/components/arbitrary_item_organ.dm:5	live	datum_component_arbitrary_item_organ	1	0
 proc	/datum/component/arbitrary_item_organ	Initialize	code/datums/components/arbitrary_item_organ.dm:7	base_item	yes	full	proc
 proc	/datum/component/arbitrary_item_organ	Destroy	code/datums/components/arbitrary_item_organ.dm:28		yes	full	proc
@@ -18570,13 +18570,13 @@ type	/datum/component/fertile_egg	/datum/component	code/datums/components/fertil
 proc	/datum/component/fertile_egg	Initialize	code/datums/components/fertile_egg.dm:35	embryo_type,minimum_growth_rate,maximum_growth_rate,total_growth_required,current_growth,location_allowlist,spoilable,examine_message,post_hatch	yes	full	proc
 proc	/datum/component/fertile_egg	Destroy	code/datums/components/fertile_egg.dm:51		yes	full	proc
 proc	/datum/component/fertile_egg	process	code/datums/components/fertile_egg.dm:55	seconds_per_tick	yes	full	proc
-type	/datum/component/fish_growth	/datum/component	code/datums/components/fish_growth.dm:3	inert	datum_component_fish_growth	0	0
-proc	/datum/component/fish_growth	Initialize	code/datums/components/fish_growth.dm:17	result_type,growth_time,use_drop_loc,del_on_grow,inherit_name	no	-	proc
-proc	/datum/component/fish_growth	CheckDupeComponent	code/datums/components/fish_growth.dm:27	new_growth,result_type,growth_time,use_drop_loc,del_on_grow,inherit_name	no	-	proc
-proc	/datum/component/fish_growth	RegisterWithParent	code/datums/components/fish_growth.dm:40		no	-	proc
-proc	/datum/component/fish_growth	UnregisterFromParent	code/datums/components/fish_growth.dm:48		no	-	proc
-proc	/datum/component/fish_growth	on_fish_life	code/datums/components/fish_growth.dm:51	source,seconds_per_tick	no	-	proc root
-proc	/datum/component/fish_growth	finish_growing	code/datums/components/fish_growth.dm:65	source	no	-	proc root
+type	/datum/component/fish_growth	/datum/component	code/datums/components/fish_growth.dm:3	live	datum_component_fish_growth	1	0
+proc	/datum/component/fish_growth	Initialize	code/datums/components/fish_growth.dm:17	result_type,growth_time,use_drop_loc,del_on_grow,inherit_name	yes	full	proc
+proc	/datum/component/fish_growth	CheckDupeComponent	code/datums/components/fish_growth.dm:27	new_growth,result_type,growth_time,use_drop_loc,del_on_grow,inherit_name	yes	full	proc
+proc	/datum/component/fish_growth	RegisterWithParent	code/datums/components/fish_growth.dm:40		yes	full	proc
+proc	/datum/component/fish_growth	UnregisterFromParent	code/datums/components/fish_growth.dm:48		yes	full	proc
+proc	/datum/component/fish_growth	on_fish_life	code/datums/components/fish_growth.dm:51	source,seconds_per_tick	yes	full	proc root
+proc	/datum/component/fish_growth	finish_growing	code/datums/components/fish_growth.dm:65	source	yes	full	proc root
 type	/datum/component/fishing_spot	/datum/component	code/datums/components/fishing_spot.dm:3	inert	datum_component_fishing_spot	0	0
 proc	/datum/component/fishing_spot	Initialize	code/datums/components/fishing_spot.dm:7	configuration	no	-	proc
 proc	/datum/component/fishing_spot	Destroy	code/datums/components/fishing_spot.dm:26		no	-	proc
@@ -20373,19 +20373,19 @@ proc	/datum/component/thermite	on_fire_act	code/datums/components/thermite.dm:16
 proc	/datum/component/thermite	on_attack_hand	code/datums/components/thermite.dm:174	source,user	yes	full	proc root
 proc	/datum/component/thermite	attackby_react	code/datums/components/thermite.dm:199	source,thing,user,params	yes	full	proc root
 proc	/datum/component/thermite	parent_qdeleting	code/datums/components/thermite.dm:206	source	yes	full	proc root
-type	/datum/component/throwbonus_on_windup	/datum/component	code/datums/components/throwbonus_on_windup.dm:3	inert	datum_component_throwbonus_on_windup	0	0
-proc	/datum/component/throwbonus_on_windup	Initialize	code/datums/components/throwbonus_on_windup.dm:23	maximum_bonus,windup_increment_speed,pass_maximum_callback,apply_bonus_callback,sound_on_success,effect_on_success,throw_text	no	-	proc
-proc	/datum/component/throwbonus_on_windup	on_equip	code/datums/components/throwbonus_on_windup.dm:36	source,equipper,slot	no	-	proc root
-proc	/datum/component/throwbonus_on_windup	start_windup	code/datums/components/throwbonus_on_windup.dm:47		no	-	proc root
-proc	/datum/component/throwbonus_on_windup	RegisterWithParent	code/datums/components/throwbonus_on_windup.dm:66		no	-	proc
-proc	/datum/component/throwbonus_on_windup	UnregisterFromParent	code/datums/components/throwbonus_on_windup.dm:71		no	-	proc
-proc	/datum/component/throwbonus_on_windup	Destroy	code/datums/components/throwbonus_on_windup.dm:77		no	-	proc
-proc	/datum/component/throwbonus_on_windup	throw_change	code/datums/components/throwbonus_on_windup.dm:83	source,throw_mode	no	-	proc root
-proc	/datum/component/throwbonus_on_windup	on_hands_swap	code/datums/components/throwbonus_on_windup.dm:94	source,swapped_to,swapped_from	no	-	proc root
-proc	/datum/component/throwbonus_on_windup	process	code/datums/components/throwbonus_on_windup.dm:104	seconds_per_tick	no	-	proc
-proc	/datum/component/throwbonus_on_windup	on_move	code/datums/components/throwbonus_on_windup.dm:114	source,entering_loc	no	-	proc root
-proc	/datum/component/throwbonus_on_windup	end_windup	code/datums/components/throwbonus_on_windup.dm:123		no	-	proc root
-proc	/datum/component/throwbonus_on_windup	on_thrown	code/datums/components/throwbonus_on_windup.dm:127	source,hit_atom,throwingdatum	no	-	proc root
+type	/datum/component/throwbonus_on_windup	/datum/component	code/datums/components/throwbonus_on_windup.dm:3	live	datum_component_throwbonus_on_windup	1	0
+proc	/datum/component/throwbonus_on_windup	Initialize	code/datums/components/throwbonus_on_windup.dm:23	maximum_bonus,windup_increment_speed,pass_maximum_callback,apply_bonus_callback,sound_on_success,effect_on_success,throw_text	yes	full	proc
+proc	/datum/component/throwbonus_on_windup	on_equip	code/datums/components/throwbonus_on_windup.dm:36	source,equipper,slot	yes	full	proc root
+proc	/datum/component/throwbonus_on_windup	start_windup	code/datums/components/throwbonus_on_windup.dm:47		yes	full	proc root
+proc	/datum/component/throwbonus_on_windup	RegisterWithParent	code/datums/components/throwbonus_on_windup.dm:66		yes	full	proc
+proc	/datum/component/throwbonus_on_windup	UnregisterFromParent	code/datums/components/throwbonus_on_windup.dm:71		yes	full	proc
+proc	/datum/component/throwbonus_on_windup	Destroy	code/datums/components/throwbonus_on_windup.dm:77		yes	full	proc
+proc	/datum/component/throwbonus_on_windup	throw_change	code/datums/components/throwbonus_on_windup.dm:83	source,throw_mode	yes	full	proc root
+proc	/datum/component/throwbonus_on_windup	on_hands_swap	code/datums/components/throwbonus_on_windup.dm:94	source,swapped_to,swapped_from	yes	full	proc root
+proc	/datum/component/throwbonus_on_windup	process	code/datums/components/throwbonus_on_windup.dm:104	seconds_per_tick	yes	full	proc
+proc	/datum/component/throwbonus_on_windup	on_move	code/datums/components/throwbonus_on_windup.dm:114	source,entering_loc	yes	full	proc root
+proc	/datum/component/throwbonus_on_windup	end_windup	code/datums/components/throwbonus_on_windup.dm:123		yes	full	proc root
+proc	/datum/component/throwbonus_on_windup	on_thrown	code/datums/components/throwbonus_on_windup.dm:127	source,hit_atom,throwingdatum	yes	full	proc root
 type	/datum/component/tippable	/datum/component	code/datums/components/tippable.dm:6	live	datum_component_tippable	1	0
 proc	/datum/component/tippable	Initialize	code/datums/components/tippable.dm:31	tip_time,untip_time,self_right_time,pre_tipped_callback,post_tipped_callback,post_untipped_callback,roleplay_friendly,roleplay_emotes,roleplay_callback	yes	full	proc
 proc	/datum/component/tippable	RegisterWithParent	code/datums/components/tippable.dm:56		yes	full	proc
@@ -24128,14 +24128,14 @@ proc	/datum/element/firestacker	stack_on	code/datums/elements/firestacker.dm:27	
 proc	/datum/element/firestacker	impact	code/datums/elements/firestacker.dm:30	source,hit_atom,throwing_datum,caught	no	-	proc root
 proc	/datum/element/firestacker	item_attack	code/datums/elements/firestacker.dm:36	source,target,user	no	-	proc root
 proc	/datum/element/firestacker	item_attack_self	code/datums/elements/firestacker.dm:42	source,user	no	-	proc root
-type	/datum/element/fish_safe_storage	/datum/element	code/datums/elements/fish_safe_storage.dm:3	inert	datum_element_fish_safe_storage	0	0
-proc	/datum/element/fish_safe_storage	New	code/datums/elements/fish_safe_storage.dm:6		no	-	proc
-proc	/datum/element/fish_safe_storage	Attach	code/datums/elements/fish_safe_storage.dm:10	target	no	-	proc
-proc	/datum/element/fish_safe_storage	Detach	code/datums/elements/fish_safe_storage.dm:23	source	no	-	proc
-proc	/datum/element/fish_safe_storage	on_enter	code/datums/elements/fish_safe_storage.dm:31	source,arrived	no	-	proc root
-proc	/datum/element/fish_safe_storage	on_init_on	code/datums/elements/fish_safe_storage.dm:37	source,created	no	-	proc root
-proc	/datum/element/fish_safe_storage	on_exit	code/datums/elements/fish_safe_storage.dm:43	source,gone	no	-	proc root
-proc	/datum/element/fish_safe_storage	process	code/datums/elements/fish_safe_storage.dm:49	seconds_per_tick	no	-	proc
+type	/datum/element/fish_safe_storage	/datum/element	code/datums/elements/fish_safe_storage.dm:3	live	datum_element_fish_safe_storage	1	0
+proc	/datum/element/fish_safe_storage	New	code/datums/elements/fish_safe_storage.dm:6		yes	full	proc
+proc	/datum/element/fish_safe_storage	Attach	code/datums/elements/fish_safe_storage.dm:10	target	yes	full	proc
+proc	/datum/element/fish_safe_storage	Detach	code/datums/elements/fish_safe_storage.dm:23	source	yes	full	proc
+proc	/datum/element/fish_safe_storage	on_enter	code/datums/elements/fish_safe_storage.dm:31	source,arrived	yes	full	proc root
+proc	/datum/element/fish_safe_storage	on_init_on	code/datums/elements/fish_safe_storage.dm:37	source,created	yes	full	proc root
+proc	/datum/element/fish_safe_storage	on_exit	code/datums/elements/fish_safe_storage.dm:43	source,gone	yes	full	proc root
+proc	/datum/element/fish_safe_storage	process	code/datums/elements/fish_safe_storage.dm:49	seconds_per_tick	yes	full	proc
 type	/datum/element/floor_placeable	/datum/element	code/datums/elements/floor_placeable.dm:6	live	datum_element_floor_placeable	1	0
 proc	/datum/element/floor_placeable	Attach	code/datums/elements/floor_placeable.dm:6	target	yes	full	proc
 proc	/datum/element/floor_placeable	Detach	code/datums/elements/floor_placeable.dm:14	source	yes	full	proc
@@ -30910,11 +30910,11 @@ type	/datum/storage/coffee_condi_display	/datum/storage	code/datums/storage/subt
 proc	/datum/storage/coffee_condi_display	New	code/datums/storage/subtypes/others/fancy_storage.dm:128	parent,max_slots,max_specific_storage,max_total_storage,rustle_sound,remove_rustle_sound	yes	full	proc
 type	/datum/storage/coffee_cart_rack	/datum/storage	code/datums/storage/subtypes/others/fancy_storage.dm:139	live	datum_storage_coffee_cart_rack	1	0
 proc	/datum/storage/coffee_cart_rack	New	code/datums/storage/subtypes/others/fancy_storage.dm:141	parent,max_slots,max_specific_storage,max_total_storage,rustle_sound,remove_rustle_sound	yes	full	proc
-type	/datum/storage/fish_case	/datum/storage	code/datums/storage/subtypes/others/fish_case.dm:2	inert	datum_storage_fish_case	0	0
-proc	/datum/storage/fish_case	can_insert	code/datums/storage/subtypes/others/fish_case.dm:6	to_insert,user,messages,force	no	-	proc
-type	/datum/storage/fish_case/adjust_size	/datum/storage/fish_case	code/datums/storage/subtypes/others/fish_case.dm:23	inert	datum_storage_fish_case_adjust_size	0	0
-proc	/datum/storage/fish_case/adjust_size	handle_enter	code/datums/storage/subtypes/others/fish_case.dm:23	source,arrived	no	-	proc
-proc	/datum/storage/fish_case/adjust_size	handle_exit	code/datums/storage/subtypes/others/fish_case.dm:32	source,gone	no	-	proc
+type	/datum/storage/fish_case	/datum/storage	code/datums/storage/subtypes/others/fish_case.dm:2	live	datum_storage_fish_case	1	0
+proc	/datum/storage/fish_case	can_insert	code/datums/storage/subtypes/others/fish_case.dm:6	to_insert,user,messages,force	yes	full	proc
+type	/datum/storage/fish_case/adjust_size	/datum/storage/fish_case	code/datums/storage/subtypes/others/fish_case.dm:23	live	datum_storage_fish_case_adjust_size	1	0
+proc	/datum/storage/fish_case/adjust_size	handle_enter	code/datums/storage/subtypes/others/fish_case.dm:23	source,arrived	yes	full	proc
+proc	/datum/storage/fish_case/adjust_size	handle_exit	code/datums/storage/subtypes/others/fish_case.dm:32	source,gone	yes	full	proc
 type	/datum/storage/test_tube_rack	/datum/storage	code/datums/storage/subtypes/others/misc.dm:5	live	datum_storage_test_tube_rack	1	0
 proc	/datum/storage/test_tube_rack	New	code/datums/storage/subtypes/others/misc.dm:11	parent,max_slots,max_specific_storage,max_total_storage,rustle_sound,remove_rustle_sound	yes	full	proc
 type	/datum/storage/surgery_tray	/datum/storage	code/datums/storage/subtypes/others/misc.dm:17	live	datum_storage_surgery_tray	1	0
@@ -34115,7 +34115,7 @@ proc	/datum/reagent	on_hydroponics_apply	code/modules/reagents/chemistry/reagent
 proc	/datum/reagent	get_taste_description	code/modules/reagents/chemistry/reagents.dm:292	taster	yes	full	proc root
 proc	/datum/reagent	normalise_creation_purity	code/modules/reagents/chemistry/reagents.dm:305	normalise_num_to,creation_purity	yes	full	proc root
 proc	/datum/reagent	get_inverse_purity	code/modules/reagents/chemistry/reagents.dm:318	purity	yes	full	proc root
-proc	/datum/reagent	used_on_fish	code/modules/reagents/chemistry/reagents.dm:326	fish	no	-	proc root
+proc	/datum/reagent	used_on_fish	code/modules/reagents/chemistry/reagents.dm:326	fish	yes	full	proc root
 type	/datum/reagent/blob	/datum/reagent	code/modules/antagonists/blob/blobstrains/_reagent.dm:29	inert	datum_reagent_blob	0	0
 proc	/datum/reagent/blob	New	code/modules/antagonists/blob/blobstrains/_reagent.dm:34		no	-	proc
 proc	/datum/reagent/blob	return_mob_expose_reac_volume	code/modules/antagonists/blob/blobstrains/_reagent.dm:43	exposed_mob,methods,reac_volume,show_message,touch_protection,overmind	no	-	proc root
@@ -34182,7 +34182,7 @@ type	/datum/reagent/toxin/mutagen	/datum/reagent/toxin	code/modules/reagents/che
 proc	/datum/reagent/toxin/mutagen	expose_mob	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:56	exposed_mob,methods,reac_volume,show_message,touch_protection	yes	full	proc
 proc	/datum/reagent/toxin/mutagen	on_mob_life	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:71	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
 proc	/datum/reagent/toxin/mutagen	on_hydroponics_apply	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:76	mytray,user	yes	full	proc
-proc	/datum/reagent/toxin/mutagen	used_on_fish	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:80	fish	stub	deferred	proc
+proc	/datum/reagent/toxin/mutagen	used_on_fish	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:80	fish	yes	full	proc
 type	/datum/reagent/toxin/mutagen/mutagenvirusfood	/datum/reagent/toxin/mutagen	code/modules/reagents/chemistry/reagents/other_reagents.dm:2597	live	datum_reagent_toxin_mutagen_mutagenvirusfood	0	0
 type	/datum/reagent/toxin/mutagen/mutagenvirusfood/sugar	/datum/reagent/toxin/mutagen/mutagenvirusfood	code/modules/reagents/chemistry/reagents/other_reagents.dm:2604	live	datum_reagent_toxin_mutagen_mutagenvirusfood_sugar	0	0
 type	/datum/reagent/toxin/plasma	/datum/reagent/toxin	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:91	live	datum_reagent_toxin_plasma	1	0
@@ -34310,7 +34310,7 @@ type	/datum/reagent/toxin/bonehurtingjuice	/datum/reagent/toxin	code/modules/rea
 proc	/datum/reagent/toxin/bonehurtingjuice	on_mob_add	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1404	affected_mob	yes	full	proc
 proc	/datum/reagent/toxin/bonehurtingjuice	on_mob_life	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1408	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
 proc	/datum/reagent/toxin/bonehurtingjuice	overdose_process	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1422	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
-proc	/datum/reagent/toxin/bonehurtingjuice	used_on_fish	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1437	fish	stub	deferred	proc
+proc	/datum/reagent/toxin/bonehurtingjuice	used_on_fish	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1437	fish	yes	full	proc
 type	/datum/reagent/toxin/bungotoxin	/datum/reagent/toxin	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1443	live	datum_reagent_toxin_bungotoxin	1	0
 proc	/datum/reagent/toxin/bungotoxin	on_mob_life	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1453	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
 type	/datum/reagent/toxin/leadacetate	/datum/reagent/toxin	code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1469	live	datum_reagent_toxin_leadacetate	1	0
@@ -34959,7 +34959,7 @@ type	/datum/reagent/consumable/plumjuice	/datum/reagent/consumable	code/modules/
 type	/datum/reagent/consumable/milk	/datum/reagent/consumable	code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:221	live	datum_reagent_consumable_milk	1	0
 proc	/datum/reagent/consumable/milk	on_hydroponics_apply	code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:232	mytray,user	yes	full	proc
 proc	/datum/reagent/consumable/milk	on_mob_life	code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:239	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
-proc	/datum/reagent/consumable/milk	used_on_fish	code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:247	fish	yes	deferred	proc
+proc	/datum/reagent/consumable/milk	used_on_fish	code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:247	fish	yes	full	proc
 type	/datum/reagent/consumable/milk/chocolate_milk	/datum/reagent/consumable/milk	code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:1001	live	datum_reagent_consumable_milk_chocolate_milk	0	0
 type	/datum/reagent/consumable/soymilk	/datum/reagent/consumable	code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:254	live	datum_reagent_consumable_soymilk	1	0
 proc	/datum/reagent/consumable/soymilk	on_mob_life	code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:262	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
@@ -35666,7 +35666,7 @@ proc	/datum/reagent/hellwater	on_mob_life	code/modules/reagents/chemistry/reagen
 type	/datum/reagent/lube	/datum/reagent	code/modules/reagents/chemistry/reagents/other_reagents.dm:548	live	datum_reagent_lube	1	0
 proc	/datum/reagent/lube	expose_turf	code/modules/reagents/chemistry/reagents/other_reagents.dm:556	exposed_turf,reac_volume	yes	full	proc
 proc	/datum/reagent/lube	expose_obj	code/modules/reagents/chemistry/reagents/other_reagents.dm:561	exposed_obj,reac_volume,methods,show_message	yes	full	proc
-proc	/datum/reagent/lube	used_on_fish	code/modules/reagents/chemistry/reagents/other_reagents.dm:573	fish	stub	deferred	proc
+proc	/datum/reagent/lube	used_on_fish	code/modules/reagents/chemistry/reagents/other_reagents.dm:573	fish	yes	full	proc
 type	/datum/reagent/lube/superlube	/datum/reagent/lube	code/modules/reagents/chemistry/reagents/other_reagents.dm:580	live	datum_reagent_lube_superlube	0	0
 type	/datum/reagent/spraytan	/datum/reagent	code/modules/reagents/chemistry/reagents/other_reagents.dm:587	live	datum_reagent_spraytan	1	0
 proc	/datum/reagent/spraytan	expose_mob	code/modules/reagents/chemistry/reagents/other_reagents.dm:600	exposed_mob,methods,reac_volume,show_message,touch_protection	yes	full	proc
@@ -35887,7 +35887,7 @@ proc	/datum/reagent/magillitis	on_mob_life	code/modules/reagents/chemistry/reage
 type	/datum/reagent/growthserum	/datum/reagent	code/modules/reagents/chemistry/reagents/other_reagents.dm:2722	live	datum_reagent_growthserum	1	0
 proc	/datum/reagent/growthserum	on_mob_life	code/modules/reagents/chemistry/reagents/other_reagents.dm:2730	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
 proc	/datum/reagent/growthserum	on_mob_end_metabolize	code/modules/reagents/chemistry/reagents/other_reagents.dm:2748	affected_mob	yes	full	proc
-proc	/datum/reagent/growthserum	used_on_fish	code/modules/reagents/chemistry/reagents/other_reagents.dm:2753	fish	stub	deferred	proc
+proc	/datum/reagent/growthserum	used_on_fish	code/modules/reagents/chemistry/reagents/other_reagents.dm:2753	fish	yes	full	proc
 type	/datum/reagent/plastic_polymers	/datum/reagent	code/modules/reagents/chemistry/reagents/other_reagents.dm:2759	live	datum_reagent_plastic_polymers	0	0
 type	/datum/reagent/glitter	/datum/reagent	code/modules/reagents/chemistry/reagents/other_reagents.dm:2768	live	datum_reagent_glitter	1	0
 proc	/datum/reagent/glitter	on_mob_life	code/modules/reagents/chemistry/reagents/other_reagents.dm:2776	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
@@ -36043,7 +36043,7 @@ proc	/datum/reagent/pyrosium	on_mob_life	code/modules/reagents/chemistry/reagent
 proc	/datum/reagent/pyrosium	burn	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:418	holder	yes	full	proc
 type	/datum/reagent/teslium	/datum/reagent	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:425	live	datum_reagent_teslium	1	0
 proc	/datum/reagent/teslium	on_mob_life	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:435	affected_mob,seconds_per_tick,metabolization_ratio	yes	full	proc
-proc	/datum/reagent/teslium	used_on_fish	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:443	fish	stub	deferred	proc
+proc	/datum/reagent/teslium	used_on_fish	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:443	fish	yes	full	proc
 proc	/datum/reagent/teslium	on_mob_metabolize	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:451	affected_mob	yes	full	proc
 proc	/datum/reagent/teslium	on_mob_end_metabolize	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:455	affected_mob	yes	full	proc
 proc	/datum/reagent/teslium	on_spark_act	code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:459	power_charge,spark_flags	yes	full	proc
@@ -36857,7 +36857,7 @@ type	/datum/export/antique	/datum/export	code/modules/cargo/exports/antiques.dm:
 type	/datum/export/bounty_box	/datum/export	code/modules/cargo/exports/civilain_bounty.dm:2	live	datum_export_bounty_box	1	0
 proc	/datum/export/bounty_box	get_base_cost	code/modules/cargo/exports/civilain_bounty.dm:7	cube	yes	full	proc
 type	/datum/export/fish	/datum/export	code/modules/cargo/exports/fish.dm:2	live	datum_export_fish	1	0
-proc	/datum/export/fish	get_base_cost	code/modules/cargo/exports/fish.dm:7	fish	yes	partial	proc
+proc	/datum/export/fish	get_base_cost	code/modules/cargo/exports/fish.dm:7	fish	yes	full	proc
 type	/datum/export/food	/datum/export	code/modules/cargo/exports/food_and_drink.dm:6	live	datum_export_food	1	0
 proc	/datum/export/food	get_base_cost	code/modules/cargo/exports/food_and_drink.dm:13	object	yes	full	proc
 type	/datum/export/sec_helmet	/datum/export	code/modules/cargo/exports/gear.dm:2	live	datum_export_sec_helmet	0	0
@@ -40977,176 +40977,176 @@ proc	/datum/fishing_challenge	process	code/modules/fishing/fishing_minigame.dm:6
 proc	/datum/fishing_challenge	select_active_effect	code/modules/fishing/fishing_minigame.dm:674		no	-	proc root
 proc	/datum/fishing_challenge	move_bait	code/modules/fishing/fishing_minigame.dm:714	seconds_per_tick	no	-	proc root
 proc	/datum/fishing_challenge	update_visuals	code/modules/fishing/fishing_minigame.dm:794	seconds_per_tick	no	-	proc root
-type	/datum/chasm_detritus	/datum	code/modules/fishing/fish/chasm_detritus.dm:21	inert	datum_chasm_detritus	0	0
-proc	/datum/chasm_detritus	dispense_detritus	code/modules/fishing/fish/chasm_detritus.dm:48	spawn_location,fishing_spot	no	-	proc root
-proc	/datum/chasm_detritus	determine_detritus	code/modules/fishing/fish/chasm_detritus.dm:55	chasm_stuff	no	-	proc root
-proc	/datum/chasm_detritus	find_chasm_contents	code/modules/fishing/fish/chasm_detritus.dm:59	fishing_spot,fisher_turf	no	-	proc root
-proc	/datum/chasm_detritus	get_chasm_contents	code/modules/fishing/fish/chasm_detritus.dm:70	fishing_spot	no	-	proc root
-type	/datum/chasm_detritus/restricted	/datum/chasm_detritus	code/modules/fishing/fish/chasm_detritus.dm:81	inert	datum_chasm_detritus_restricted	0	0
-proc	/datum/chasm_detritus/restricted	get_chasm_contents	code/modules/fishing/fish/chasm_detritus.dm:83	fishing_spot	no	-	proc
-type	/datum/chasm_detritus/restricted/objects	/datum/chasm_detritus/restricted	code/modules/fishing/fish/chasm_detritus.dm:92	inert	datum_chasm_detritus_restricted_objects	0	0
-type	/datum/chasm_detritus/restricted/bodies	/datum/chasm_detritus/restricted	code/modules/fishing/fish/chasm_detritus.dm:96	inert	datum_chasm_detritus_restricted_bodies	0	0
-proc	/datum/chasm_detritus/restricted/bodies	get_chasm_contents	code/modules/fishing/fish/chasm_detritus.dm:101	fishing_spot	no	-	proc
-proc	/datum/chasm_detritus/restricted/bodies	determine_detritus	code/modules/fishing/fish/chasm_detritus.dm:108	chasm_stuff	no	-	proc
-type	/datum/fish_evolution	/datum	code/modules/fishing/fish/fish_evolution.dm:14	inert	datum_fish_evolution	0	0
-proc	/datum/fish_evolution	New	code/modules/fishing/fish/fish_evolution.dm:34		no	-	proc
-proc	/datum/fish_evolution	check_conditions	code/modules/fishing/fish/fish_evolution.dm:46	source,mate,aquarium	no	-	proc root
-proc	/datum/fish_evolution	growth_checks	code/modules/fishing/fish/fish_evolution.dm:56	source,seconds_per_tick,growth	no	-	proc root
-proc	/datum/fish_evolution	get_evolution_tooltip	code/modules/fishing/fish/fish_evolution.dm:69		no	-	proc root
-type	/datum/fish_evolution/lubefish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:86	inert	datum_fish_evolution_lubefish	0	0
-proc	/datum/fish_evolution/lubefish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:91	source,mate,aquarium	no	-	proc
-type	/datum/fish_evolution/purple_sludgefish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:97	inert	datum_fish_evolution_purple_sludgefish	0	0
-type	/datum/fish_evolution/mastodon	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:103	inert	datum_fish_evolution_mastodon	0	0
-proc	/datum/fish_evolution/mastodon	check_conditions	code/modules/fishing/fish/fish_evolution.dm:110	source,mate,aquarium	no	-	proc
-type	/datum/fish_evolution/chasm_chrab	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:116	inert	datum_fish_evolution_chasm_chrab	0	0
-type	/datum/fish_evolution/ice_chrab	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:122	inert	datum_fish_evolution_ice_chrab	0	0
-type	/datum/fish_evolution/three_eyes	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:128	inert	datum_fish_evolution_three_eyes	0	0
-type	/datum/fish_evolution/chainsawfish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:133	inert	datum_fish_evolution_chainsawfish	0	0
-proc	/datum/fish_evolution/chainsawfish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:138	source,mate,aquarium	no	-	proc
-type	/datum/fish_evolution/armored_pike	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:146	inert	datum_fish_evolution_armored_pike	0	0
-proc	/datum/fish_evolution/armored_pike	check_conditions	code/modules/fishing/fish/fish_evolution.dm:150	source,mate,aquarium	no	-	proc
-type	/datum/fish_evolution/fritterish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:156	inert	datum_fish_evolution_fritterish	0	0
-type	/datum/fish_evolution/nessie	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:161	inert	datum_fish_evolution_nessie	0	0
-type	/datum/fish_evolution/nessiefish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:166	inert	datum_fish_evolution_nessiefish	0	0
-proc	/datum/fish_evolution/nessiefish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:166	source,mate,aquarium	no	-	proc
-type	/datum/fish_evolution/moonfish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:172	inert	datum_fish_evolution_moonfish	0	0
-proc	/datum/fish_evolution/moonfish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:176	source,mate,aquarium	no	-	proc
-type	/datum/fish_evolution/dwarf_moonfish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:184	inert	datum_fish_evolution_dwarf_moonfish	0	0
-proc	/datum/fish_evolution/dwarf_moonfish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:188	source,mate,aquarium	no	-	proc
-type	/datum/fish_evolution/lavaloop	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:196	inert	datum_fish_evolution_lavaloop	0	0
-type	/datum/fish_evolution/plasmaloop	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:201	inert	datum_fish_evolution_plasmaloop	0	0
-type	/datum/fish_trait	/datum	code/modules/fishing/fish/fish_traits.dm:25	inert	datum_fish_trait	0	0
-proc	/datum/fish_trait	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:48	rod,fisherman	no	-	proc root
-proc	/datum/fish_trait	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:53	rod,fisherman,location,fish_type	no	-	proc root
-proc	/datum/fish_trait	minigame_mod	code/modules/fishing/fish/fish_traits.dm:58	rod,fisherman,minigame	no	-	proc root
-proc	/datum/fish_trait	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:62	fish,initial	no	-	proc root
-proc	/datum/fish_trait	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:79	mob	no	-	proc root
-proc	/datum/fish_trait	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:83	fish	no	-	proc root
-proc	/datum/fish_trait	on_transformed	code/modules/fishing/fish/fish_traits.dm:91	source,desired_mob	no	-	proc root
-proc	/datum/fish_trait	eat_fish	code/modules/fishing/fish/fish_traits.dm:96	predator,prey	no	-	proc root
-proc	/datum/fish_trait	add_reagents	code/modules/fishing/fish/fish_traits.dm:108	fish,reagents	no	-	proc root
-proc	/datum/fish_trait	add_venom	code/modules/fishing/fish/fish_traits.dm:114	source,venom_path,new_weight,mult	no	-	proc root
-proc	/datum/fish_trait	change_venom	code/modules/fishing/fish/fish_traits.dm:123	source,venom_path,live_mult,dead_mult,just_remove	no	-	proc root
-type	/datum/fish_trait/wary	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:133	inert	datum_fish_trait_wary	0	0
-proc	/datum/fish_trait/wary	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:137	rod,fisherman	no	-	proc
-type	/datum/fish_trait/shiny_lover	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:146	inert	datum_fish_trait_shiny_lover	0	0
-proc	/datum/fish_trait/shiny_lover	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:150	rod,fisherman	no	-	proc
-proc	/datum/fish_trait/shiny_lover	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:156	rod,fisherman	no	-	proc
-type	/datum/fish_trait/picky_eater	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:163	inert	datum_fish_trait_picky_eater	0	0
-proc	/datum/fish_trait/picky_eater	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:167	rod,fisherman,location,fish_type	no	-	proc
-type	/datum/fish_trait/nocturnal	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:195	inert	datum_fish_trait_nocturnal	0	0
-proc	/datum/fish_trait/nocturnal	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:199	rod,fisherman,location,fish_type	no	-	proc
-proc	/datum/fish_trait/nocturnal	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:207	fish,initial	no	-	proc
-proc	/datum/fish_trait/nocturnal	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:211	fish	no	-	proc
-proc	/datum/fish_trait/nocturnal	check_light	code/modules/fishing/fish/fish_traits.dm:215	source,seconds_per_tick	no	-	proc root
-proc	/datum/fish_trait/nocturnal	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:223	mob	no	-	proc
-proc	/datum/fish_trait/nocturnal	on_non_stasis_life	code/modules/fishing/fish/fish_traits.dm:229	mob,seconds_per_tick	no	-	proc root
-type	/datum/fish_trait/heavy	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:239	inert	datum_fish_trait_heavy	0	0
-proc	/datum/fish_trait/heavy	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:242	mob	no	-	proc
-proc	/datum/fish_trait/heavy	minigame_mod	code/modules/fishing/fish/fish_traits.dm:251	rod,fisherman,minigame	no	-	proc
-type	/datum/fish_trait/carnivore	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:255	inert	datum_fish_trait_carnivore	0	0
-proc	/datum/fish_trait/carnivore	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:259	rod,fisherman,location,fish_type	no	-	proc
-type	/datum/fish_trait/vegan	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:276	inert	datum_fish_trait_vegan	0	0
-proc	/datum/fish_trait/vegan	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:280	rod,fisherman,location,fish_type	no	-	proc
-type	/datum/fish_trait/emulsijack	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:303	inert	datum_fish_trait_emulsijack	0	0
-proc	/datum/fish_trait/emulsijack	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:308	fish,initial	no	-	proc
-proc	/datum/fish_trait/emulsijack	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:312	fish	no	-	proc
-proc	/datum/fish_trait/emulsijack	emulsify	code/modules/fishing/fish/fish_traits.dm:316	source,seconds_per_tick	no	-	proc root
-proc	/datum/fish_trait/emulsijack	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:331	mob	no	-	proc
-proc	/datum/fish_trait/emulsijack	on_non_stasis_life	code/modules/fishing/fish/fish_traits.dm:335	mob,seconds_per_tick	no	-	proc root
-type	/datum/fish_trait/emulsijack/psychic	/datum/fish_trait/emulsijack	code/modules/fishing/fish/fish_traits.dm:348	inert	datum_fish_trait_emulsijack_psychic	0	0
-proc	/datum/fish_trait/emulsijack/psychic	on_non_stasis_life	code/modules/fishing/fish/fish_traits.dm:353	mob,seconds_per_tick	no	-	proc
-type	/datum/fish_trait/necrophage	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:357	inert	datum_fish_trait_necrophage	0	0
-proc	/datum/fish_trait/necrophage	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:361	fish,initial	no	-	proc
-proc	/datum/fish_trait/necrophage	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:365	fish	no	-	proc
-proc	/datum/fish_trait/necrophage	eat_dead_fishes	code/modules/fishing/fish/fish_traits.dm:369	source,seconds_per_tick	no	-	proc root
-type	/datum/fish_trait/parthenogenesis	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:380	inert	datum_fish_trait_parthenogenesis	0	0
-type	/datum/fish_trait/no_mating	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:391	inert	datum_fish_trait_no_mating	0	0
-type	/datum/fish_trait/recessive	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:404	inert	datum_fish_trait_recessive	0	0
-type	/datum/fish_trait/revival	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:411	inert	datum_fish_trait_revival	0	0
-proc	/datum/fish_trait/revival	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:416	fish,initial	no	-	proc
-proc	/datum/fish_trait/revival	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:420	fish	no	-	proc
-proc	/datum/fish_trait/revival	check_status	code/modules/fishing/fish/fish_traits.dm:424	source	no	-	proc root
-proc	/datum/fish_trait/revival	revive	code/modules/fishing/fish/fish_traits.dm:429	fish_ref	no	-	proc root
-proc	/datum/fish_trait/revival	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:440	mob	no	-	proc
-type	/datum/fish_trait/predator	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:445	inert	datum_fish_trait_predator	0	0
-proc	/datum/fish_trait/predator	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:450	rod,fisherman,location,fish_type	no	-	proc
-proc	/datum/fish_trait/predator	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:455	fish,initial	no	-	proc
-proc	/datum/fish_trait/predator	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:459	fish	no	-	proc
-proc	/datum/fish_trait/predator	eat_fishes	code/modules/fishing/fish/fish_traits.dm:463	source,seconds_per_tick	no	-	proc root
-type	/datum/fish_trait/yucky	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:476	inert	datum_fish_trait_yucky	0	0
-type	/datum/fish_trait/toxic	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:483	inert	datum_fish_trait_toxic	0	0
-proc	/datum/fish_trait/toxic	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:490	fish,initial	no	-	proc
-proc	/datum/fish_trait/toxic	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:498	fish	no	-	proc
-proc	/datum/fish_trait/toxic	make_venomous	code/modules/fishing/fish/fish_traits.dm:503	source,new_size,new_weight	no	-	proc root
-proc	/datum/fish_trait/toxic	on_status_change	code/modules/fishing/fish/fish_traits.dm:509	source	no	-	proc root
-proc	/datum/fish_trait/toxic	on_eaten	code/modules/fishing/fish/fish_traits.dm:515	source,predator	no	-	proc root
-proc	/datum/fish_trait/toxic	damage_predator	code/modules/fishing/fish/fish_traits.dm:521	source,seconds_per_tick	no	-	proc root
-proc	/datum/fish_trait/toxic	stop_damaging	code/modules/fishing/fish/fish_traits.dm:525	source	no	-	proc root
-proc	/datum/fish_trait/toxic	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:530	mob	no	-	proc
-type	/datum/fish_trait/toxic/carpotoxin	/datum/fish_trait/toxic	code/modules/fishing/fish/fish_traits.dm:535	inert	datum_fish_trait_toxic_carpotoxin	0	0
-type	/datum/fish_trait/toxin_immunity	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:543	inert	datum_fish_trait_toxin_immunity	0	0
-type	/datum/fish_trait/crossbreeder	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:549	inert	datum_fish_trait_crossbreeder	0	0
-type	/datum/fish_trait/territorial	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:557	inert	datum_fish_trait_territorial	0	0
-proc	/datum/fish_trait/territorial	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:561	fish,initial	no	-	proc
-proc	/datum/fish_trait/territorial	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:565	fish	no	-	proc
-proc	/datum/fish_trait/territorial	try_attack_fish	code/modules/fishing/fish/fish_traits.dm:569	source,seconds_per_tick	no	-	proc root
-type	/datum/fish_trait/lubed	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:585	inert	datum_fish_trait_lubed	0	0
-proc	/datum/fish_trait/lubed	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:592	rod,fisherman,location,fish_type	no	-	proc
-proc	/datum/fish_trait/lubed	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:597	fish,initial	no	-	proc
-proc	/datum/fish_trait/lubed	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:601	fish	no	-	proc
-proc	/datum/fish_trait/lubed	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:605	mob	no	-	proc
-proc	/datum/fish_trait/lubed	minigame_mod	code/modules/fishing/fish/fish_traits.dm:609	rod,fisherman,minigame	no	-	proc
-type	/datum/fish_trait/amphibious	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:614	inert	datum_fish_trait_amphibious	0	0
-proc	/datum/fish_trait/amphibious	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:620	fish,initial	no	-	proc
-proc	/datum/fish_trait/amphibious	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:625	fish	no	-	proc
-proc	/datum/fish_trait/amphibious	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:629	mob	no	-	proc
-type	/datum/fish_trait/mixotroph	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:634	inert	datum_fish_trait_mixotroph	0	0
-type	/datum/fish_trait/antigrav	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:640	inert	datum_fish_trait_antigrav	0	0
-proc	/datum/fish_trait/antigrav	minigame_mod	code/modules/fishing/fish/fish_traits.dm:645	rod,fisherman,minigame	no	-	proc
-proc	/datum/fish_trait/antigrav	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:648	fish,initial	no	-	proc
-proc	/datum/fish_trait/antigrav	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:652	fish	no	-	proc
-proc	/datum/fish_trait/antigrav	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:656	mob	no	-	proc
-type	/datum/fish_trait/anxiety	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:664	inert	datum_fish_trait_anxiety	0	0
-proc	/datum/fish_trait/anxiety	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:668	rod,fisherman	no	-	proc
-proc	/datum/fish_trait/anxiety	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:674	fish,initial	no	-	proc
-proc	/datum/fish_trait/anxiety	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:678	fish	no	-	proc
-proc	/datum/fish_trait/anxiety	on_fish_life	code/modules/fishing/fish/fish_traits.dm:683	fish,seconds_per_tick	no	-	proc root
-type	/datum/fish_trait/electrogenesis	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:696	inert	datum_fish_trait_electrogenesis	0	0
-proc	/datum/fish_trait/electrogenesis	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:701	fish,initial	no	-	proc
-proc	/datum/fish_trait/electrogenesis	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:708	fish	no	-	proc
-proc	/datum/fish_trait/electrogenesis	on_fish_cooked	code/modules/fishing/fish/fish_traits.dm:713	fish,cooked_time	no	-	proc root
-proc	/datum/fish_trait/electrogenesis	add_reagents	code/modules/fishing/fish/fish_traits.dm:720	fish,reagents	no	-	proc
-proc	/datum/fish_trait/electrogenesis	on_force_updated	code/modules/fishing/fish/fish_traits.dm:730	fish,weight_rank,bonus_or_malus	no	-	proc root
-proc	/datum/fish_trait/electrogenesis	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:739	mob	no	-	proc
-type	/datum/fish_trait/stunted	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:746	inert	datum_fish_trait_stunted	0	0
-proc	/datum/fish_trait/stunted	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:751	mob	no	-	proc
-type	/datum/fish_trait/stinger	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:756	inert	datum_fish_trait_stinger	0	0
-proc	/datum/fish_trait/stinger	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:766	fish,initial	no	-	proc
-proc	/datum/fish_trait/stinger	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:772	fish	no	-	proc
-proc	/datum/fish_trait/stinger	on_force_updated	code/modules/fishing/fish/fish_traits.dm:777	fish,weight_rank,bonus_or_malus	no	-	proc root
-type	/datum/fish_trait/toxic_barbs	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:782	inert	datum_fish_trait_toxic_barbs	0	0
-proc	/datum/fish_trait/toxic_barbs	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:787	fish,initial	no	-	proc
-proc	/datum/fish_trait/toxic_barbs	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:794	fish	no	-	proc
-proc	/datum/fish_trait/toxic_barbs	make_venomous	code/modules/fishing/fish/fish_traits.dm:799	source,new_size,new_weight	no	-	proc root
-proc	/datum/fish_trait/toxic_barbs	on_status_change	code/modules/fishing/fish/fish_traits.dm:807	source	no	-	proc root
-type	/datum/fish_trait/hallucinogenic	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:814	inert	datum_fish_trait_hallucinogenic	0	0
-proc	/datum/fish_trait/hallucinogenic	add_reagents	code/modules/fishing/fish/fish_traits.dm:819	fish,reagents	no	-	proc
-proc	/datum/fish_trait/hallucinogenic	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:823	fish,initial	no	-	proc
-proc	/datum/fish_trait/hallucinogenic	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:830	fish	no	-	proc
-proc	/datum/fish_trait/hallucinogenic	make_venomous	code/modules/fishing/fish/fish_traits.dm:835	source,new_size,new_weight	no	-	proc root
-proc	/datum/fish_trait/hallucinogenic	on_status_change	code/modules/fishing/fish/fish_traits.dm:844	source	no	-	proc root
-type	/datum/fish_trait/ink	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:851	inert	datum_fish_trait_ink	0	0
-proc	/datum/fish_trait/ink	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:857	fish,initial	no	-	proc
-proc	/datum/fish_trait/ink	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:862	fish	no	-	proc
-proc	/datum/fish_trait/ink	attacked_someone	code/modules/fishing/fish/fish_traits.dm:866	source,target,user,zone	no	-	proc root
-proc	/datum/fish_trait/ink	on_process	code/modules/fishing/fish/fish_traits.dm:883	source,user,process_item,results	no	-	proc root
-type	/datum/fish_trait/camouflage	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:888	inert	datum_fish_trait_camouflage	0	0
-proc	/datum/fish_trait/camouflage	minigame_mod	code/modules/fishing/fish/fish_traits.dm:894	rod,fisherman,minigame	no	-	proc
-proc	/datum/fish_trait/camouflage	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:897	fish,initial	no	-	proc
-proc	/datum/fish_trait/camouflage	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:902	fish	no	-	proc
-proc	/datum/fish_trait/camouflage	fade_out	code/modules/fishing/fish/fish_traits.dm:907	source,seconds_per_tick	no	-	proc root
-proc	/datum/fish_trait/camouflage	reset_alpha	code/modules/fishing/fish/fish_traits.dm:913	source	no	-	proc root
+type	/datum/chasm_detritus	/datum	code/modules/fishing/fish/chasm_detritus.dm:21	live	datum_chasm_detritus	1	0
+proc	/datum/chasm_detritus	dispense_detritus	code/modules/fishing/fish/chasm_detritus.dm:48	spawn_location,fishing_spot	yes	full	proc root
+proc	/datum/chasm_detritus	determine_detritus	code/modules/fishing/fish/chasm_detritus.dm:55	chasm_stuff	yes	full	proc root
+proc	/datum/chasm_detritus	find_chasm_contents	code/modules/fishing/fish/chasm_detritus.dm:59	fishing_spot,fisher_turf	yes	full	proc root
+proc	/datum/chasm_detritus	get_chasm_contents	code/modules/fishing/fish/chasm_detritus.dm:70	fishing_spot	yes	full	proc root
+type	/datum/chasm_detritus/restricted	/datum/chasm_detritus	code/modules/fishing/fish/chasm_detritus.dm:81	live	datum_chasm_detritus_restricted	1	0
+proc	/datum/chasm_detritus/restricted	get_chasm_contents	code/modules/fishing/fish/chasm_detritus.dm:83	fishing_spot	yes	full	proc
+type	/datum/chasm_detritus/restricted/objects	/datum/chasm_detritus/restricted	code/modules/fishing/fish/chasm_detritus.dm:92	live	datum_chasm_detritus_restricted_objects	0	0
+type	/datum/chasm_detritus/restricted/bodies	/datum/chasm_detritus/restricted	code/modules/fishing/fish/chasm_detritus.dm:96	live	datum_chasm_detritus_restricted_bodies	1	0
+proc	/datum/chasm_detritus/restricted/bodies	get_chasm_contents	code/modules/fishing/fish/chasm_detritus.dm:101	fishing_spot	yes	full	proc
+proc	/datum/chasm_detritus/restricted/bodies	determine_detritus	code/modules/fishing/fish/chasm_detritus.dm:108	chasm_stuff	yes	full	proc
+type	/datum/fish_evolution	/datum	code/modules/fishing/fish/fish_evolution.dm:14	live	datum_fish_evolution	1	0
+proc	/datum/fish_evolution	New	code/modules/fishing/fish/fish_evolution.dm:34		yes	full	proc
+proc	/datum/fish_evolution	check_conditions	code/modules/fishing/fish/fish_evolution.dm:46	source,mate,aquarium	yes	full	proc root
+proc	/datum/fish_evolution	growth_checks	code/modules/fishing/fish/fish_evolution.dm:56	source,seconds_per_tick,growth	yes	full	proc root
+proc	/datum/fish_evolution	get_evolution_tooltip	code/modules/fishing/fish/fish_evolution.dm:69		yes	full	proc root
+type	/datum/fish_evolution/lubefish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:86	live	datum_fish_evolution_lubefish	1	0
+proc	/datum/fish_evolution/lubefish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:91	source,mate,aquarium	yes	full	proc
+type	/datum/fish_evolution/purple_sludgefish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:97	live	datum_fish_evolution_purple_sludgefish	0	0
+type	/datum/fish_evolution/mastodon	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:103	live	datum_fish_evolution_mastodon	1	0
+proc	/datum/fish_evolution/mastodon	check_conditions	code/modules/fishing/fish/fish_evolution.dm:110	source,mate,aquarium	yes	full	proc
+type	/datum/fish_evolution/chasm_chrab	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:116	live	datum_fish_evolution_chasm_chrab	0	0
+type	/datum/fish_evolution/ice_chrab	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:122	live	datum_fish_evolution_ice_chrab	0	0
+type	/datum/fish_evolution/three_eyes	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:128	live	datum_fish_evolution_three_eyes	0	0
+type	/datum/fish_evolution/chainsawfish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:133	live	datum_fish_evolution_chainsawfish	1	0
+proc	/datum/fish_evolution/chainsawfish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:138	source,mate,aquarium	yes	full	proc
+type	/datum/fish_evolution/armored_pike	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:146	live	datum_fish_evolution_armored_pike	1	0
+proc	/datum/fish_evolution/armored_pike	check_conditions	code/modules/fishing/fish/fish_evolution.dm:150	source,mate,aquarium	yes	full	proc
+type	/datum/fish_evolution/fritterish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:156	live	datum_fish_evolution_fritterish	0	0
+type	/datum/fish_evolution/nessie	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:161	live	datum_fish_evolution_nessie	0	0
+type	/datum/fish_evolution/nessiefish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:166	live	datum_fish_evolution_nessiefish	1	0
+proc	/datum/fish_evolution/nessiefish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:166	source,mate,aquarium	yes	full	proc
+type	/datum/fish_evolution/moonfish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:172	live	datum_fish_evolution_moonfish	1	0
+proc	/datum/fish_evolution/moonfish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:176	source,mate,aquarium	yes	full	proc
+type	/datum/fish_evolution/dwarf_moonfish	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:184	live	datum_fish_evolution_dwarf_moonfish	1	0
+proc	/datum/fish_evolution/dwarf_moonfish	check_conditions	code/modules/fishing/fish/fish_evolution.dm:188	source,mate,aquarium	yes	full	proc
+type	/datum/fish_evolution/lavaloop	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:196	live	datum_fish_evolution_lavaloop	0	0
+type	/datum/fish_evolution/plasmaloop	/datum/fish_evolution	code/modules/fishing/fish/fish_evolution.dm:201	live	datum_fish_evolution_plasmaloop	0	0
+type	/datum/fish_trait	/datum	code/modules/fishing/fish/fish_traits.dm:25	live	datum_fish_trait	1	0
+proc	/datum/fish_trait	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:48	rod,fisherman	yes	full	proc root
+proc	/datum/fish_trait	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:53	rod,fisherman,location,fish_type	yes	full	proc root
+proc	/datum/fish_trait	minigame_mod	code/modules/fishing/fish/fish_traits.dm:58	rod,fisherman,minigame	yes	full	proc root
+proc	/datum/fish_trait	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:62	fish,initial	yes	full	proc root
+proc	/datum/fish_trait	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:79	mob	yes	full	proc root
+proc	/datum/fish_trait	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:83	fish	yes	full	proc root
+proc	/datum/fish_trait	on_transformed	code/modules/fishing/fish/fish_traits.dm:91	source,desired_mob	yes	full	proc root
+proc	/datum/fish_trait	eat_fish	code/modules/fishing/fish/fish_traits.dm:96	predator,prey	yes	full	proc root
+proc	/datum/fish_trait	add_reagents	code/modules/fishing/fish/fish_traits.dm:108	fish,reagents	yes	full	proc root
+proc	/datum/fish_trait	add_venom	code/modules/fishing/fish/fish_traits.dm:114	source,venom_path,new_weight,mult	yes	full	proc root
+proc	/datum/fish_trait	change_venom	code/modules/fishing/fish/fish_traits.dm:123	source,venom_path,live_mult,dead_mult,just_remove	yes	full	proc root
+type	/datum/fish_trait/wary	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:133	live	datum_fish_trait_wary	0	0
+proc	/datum/fish_trait/wary	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:137	rod,fisherman	stub	deferred	proc
+type	/datum/fish_trait/shiny_lover	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:146	live	datum_fish_trait_shiny_lover	1	0
+proc	/datum/fish_trait/shiny_lover	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:150	rod,fisherman	stub	deferred	proc
+proc	/datum/fish_trait/shiny_lover	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:156	rod,fisherman	yes	full	proc
+type	/datum/fish_trait/picky_eater	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:163	live	datum_fish_trait_picky_eater	0	0
+proc	/datum/fish_trait/picky_eater	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:167	rod,fisherman,location,fish_type	stub	deferred	proc
+type	/datum/fish_trait/nocturnal	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:195	live	datum_fish_trait_nocturnal	1	0
+proc	/datum/fish_trait/nocturnal	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:199	rod,fisherman,location,fish_type	yes	full	proc
+proc	/datum/fish_trait/nocturnal	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:207	fish,initial	yes	full	proc
+proc	/datum/fish_trait/nocturnal	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:211	fish	yes	full	proc
+proc	/datum/fish_trait/nocturnal	check_light	code/modules/fishing/fish/fish_traits.dm:215	source,seconds_per_tick	yes	full	proc root
+proc	/datum/fish_trait/nocturnal	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:223	mob	yes	full	proc
+proc	/datum/fish_trait/nocturnal	on_non_stasis_life	code/modules/fishing/fish/fish_traits.dm:229	mob,seconds_per_tick	yes	full	proc root
+type	/datum/fish_trait/heavy	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:239	live	datum_fish_trait_heavy	1	0
+proc	/datum/fish_trait/heavy	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:242	mob	yes	full	proc
+proc	/datum/fish_trait/heavy	minigame_mod	code/modules/fishing/fish/fish_traits.dm:251	rod,fisherman,minigame	yes	full	proc
+type	/datum/fish_trait/carnivore	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:255	live	datum_fish_trait_carnivore	0	0
+proc	/datum/fish_trait/carnivore	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:259	rod,fisherman,location,fish_type	stub	deferred	proc
+type	/datum/fish_trait/vegan	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:276	live	datum_fish_trait_vegan	0	0
+proc	/datum/fish_trait/vegan	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:280	rod,fisherman,location,fish_type	stub	deferred	proc
+type	/datum/fish_trait/emulsijack	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:303	live	datum_fish_trait_emulsijack	1	0
+proc	/datum/fish_trait/emulsijack	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:308	fish,initial	yes	full	proc
+proc	/datum/fish_trait/emulsijack	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:312	fish	yes	full	proc
+proc	/datum/fish_trait/emulsijack	emulsify	code/modules/fishing/fish/fish_traits.dm:316	source,seconds_per_tick	yes	full	proc root
+proc	/datum/fish_trait/emulsijack	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:331	mob	yes	full	proc
+proc	/datum/fish_trait/emulsijack	on_non_stasis_life	code/modules/fishing/fish/fish_traits.dm:335	mob,seconds_per_tick	yes	full	proc root
+type	/datum/fish_trait/emulsijack/psychic	/datum/fish_trait/emulsijack	code/modules/fishing/fish/fish_traits.dm:348	live	datum_fish_trait_emulsijack_psychic	1	0
+proc	/datum/fish_trait/emulsijack/psychic	on_non_stasis_life	code/modules/fishing/fish/fish_traits.dm:353	mob,seconds_per_tick	yes	full	proc
+type	/datum/fish_trait/necrophage	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:357	live	datum_fish_trait_necrophage	1	0
+proc	/datum/fish_trait/necrophage	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:361	fish,initial	yes	full	proc
+proc	/datum/fish_trait/necrophage	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:365	fish	yes	full	proc
+proc	/datum/fish_trait/necrophage	eat_dead_fishes	code/modules/fishing/fish/fish_traits.dm:369	source,seconds_per_tick	yes	full	proc root
+type	/datum/fish_trait/parthenogenesis	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:380	live	datum_fish_trait_parthenogenesis	0	0
+type	/datum/fish_trait/no_mating	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:391	live	datum_fish_trait_no_mating	0	0
+type	/datum/fish_trait/recessive	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:404	live	datum_fish_trait_recessive	0	0
+type	/datum/fish_trait/revival	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:411	live	datum_fish_trait_revival	1	0
+proc	/datum/fish_trait/revival	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:416	fish,initial	yes	full	proc
+proc	/datum/fish_trait/revival	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:420	fish	yes	full	proc
+proc	/datum/fish_trait/revival	check_status	code/modules/fishing/fish/fish_traits.dm:424	source	yes	full	proc root
+proc	/datum/fish_trait/revival	revive	code/modules/fishing/fish/fish_traits.dm:429	fish_ref	yes	full	proc root
+proc	/datum/fish_trait/revival	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:440	mob	yes	full	proc
+type	/datum/fish_trait/predator	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:445	live	datum_fish_trait_predator	1	0
+proc	/datum/fish_trait/predator	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:450	rod,fisherman,location,fish_type	stub	deferred	proc
+proc	/datum/fish_trait/predator	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:455	fish,initial	yes	full	proc
+proc	/datum/fish_trait/predator	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:459	fish	yes	full	proc
+proc	/datum/fish_trait/predator	eat_fishes	code/modules/fishing/fish/fish_traits.dm:463	source,seconds_per_tick	yes	full	proc root
+type	/datum/fish_trait/yucky	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:476	live	datum_fish_trait_yucky	0	0
+type	/datum/fish_trait/toxic	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:483	live	datum_fish_trait_toxic	1	0
+proc	/datum/fish_trait/toxic	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:490	fish,initial	yes	full	proc
+proc	/datum/fish_trait/toxic	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:498	fish	yes	full	proc
+proc	/datum/fish_trait/toxic	make_venomous	code/modules/fishing/fish/fish_traits.dm:503	source,new_size,new_weight	yes	full	proc root
+proc	/datum/fish_trait/toxic	on_status_change	code/modules/fishing/fish/fish_traits.dm:509	source	yes	full	proc root
+proc	/datum/fish_trait/toxic	on_eaten	code/modules/fishing/fish/fish_traits.dm:515	source,predator	yes	full	proc root
+proc	/datum/fish_trait/toxic	damage_predator	code/modules/fishing/fish/fish_traits.dm:521	source,seconds_per_tick	yes	full	proc root
+proc	/datum/fish_trait/toxic	stop_damaging	code/modules/fishing/fish/fish_traits.dm:525	source	yes	full	proc root
+proc	/datum/fish_trait/toxic	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:530	mob	yes	full	proc
+type	/datum/fish_trait/toxic/carpotoxin	/datum/fish_trait/toxic	code/modules/fishing/fish/fish_traits.dm:535	live	datum_fish_trait_toxic_carpotoxin	0	0
+type	/datum/fish_trait/toxin_immunity	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:543	live	datum_fish_trait_toxin_immunity	0	0
+type	/datum/fish_trait/crossbreeder	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:549	live	datum_fish_trait_crossbreeder	0	0
+type	/datum/fish_trait/territorial	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:557	live	datum_fish_trait_territorial	1	0
+proc	/datum/fish_trait/territorial	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:561	fish,initial	yes	full	proc
+proc	/datum/fish_trait/territorial	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:565	fish	yes	full	proc
+proc	/datum/fish_trait/territorial	try_attack_fish	code/modules/fishing/fish/fish_traits.dm:569	source,seconds_per_tick	yes	full	proc root
+type	/datum/fish_trait/lubed	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:585	live	datum_fish_trait_lubed	1	0
+proc	/datum/fish_trait/lubed	catch_weight_mod	code/modules/fishing/fish/fish_traits.dm:592	rod,fisherman,location,fish_type	yes	full	proc
+proc	/datum/fish_trait/lubed	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:597	fish,initial	yes	full	proc
+proc	/datum/fish_trait/lubed	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:601	fish	yes	full	proc
+proc	/datum/fish_trait/lubed	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:605	mob	yes	full	proc
+proc	/datum/fish_trait/lubed	minigame_mod	code/modules/fishing/fish/fish_traits.dm:609	rod,fisherman,minigame	yes	full	proc
+type	/datum/fish_trait/amphibious	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:614	live	datum_fish_trait_amphibious	1	0
+proc	/datum/fish_trait/amphibious	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:620	fish,initial	yes	full	proc
+proc	/datum/fish_trait/amphibious	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:625	fish	yes	full	proc
+proc	/datum/fish_trait/amphibious	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:629	mob	yes	full	proc
+type	/datum/fish_trait/mixotroph	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:634	live	datum_fish_trait_mixotroph	0	0
+type	/datum/fish_trait/antigrav	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:640	live	datum_fish_trait_antigrav	1	0
+proc	/datum/fish_trait/antigrav	minigame_mod	code/modules/fishing/fish/fish_traits.dm:645	rod,fisherman,minigame	yes	full	proc
+proc	/datum/fish_trait/antigrav	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:648	fish,initial	yes	full	proc
+proc	/datum/fish_trait/antigrav	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:652	fish	yes	full	proc
+proc	/datum/fish_trait/antigrav	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:656	mob	yes	full	proc
+type	/datum/fish_trait/anxiety	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:664	live	datum_fish_trait_anxiety	1	0
+proc	/datum/fish_trait/anxiety	difficulty_mod	code/modules/fishing/fish/fish_traits.dm:668	rod,fisherman	stub	deferred	proc
+proc	/datum/fish_trait/anxiety	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:674	fish,initial	yes	full	proc
+proc	/datum/fish_trait/anxiety	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:678	fish	yes	full	proc
+proc	/datum/fish_trait/anxiety	on_fish_life	code/modules/fishing/fish/fish_traits.dm:683	fish,seconds_per_tick	yes	full	proc root
+type	/datum/fish_trait/electrogenesis	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:696	live	datum_fish_trait_electrogenesis	1	0
+proc	/datum/fish_trait/electrogenesis	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:701	fish,initial	yes	full	proc
+proc	/datum/fish_trait/electrogenesis	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:708	fish	yes	full	proc
+proc	/datum/fish_trait/electrogenesis	on_fish_cooked	code/modules/fishing/fish/fish_traits.dm:713	fish,cooked_time	yes	full	proc root
+proc	/datum/fish_trait/electrogenesis	add_reagents	code/modules/fishing/fish/fish_traits.dm:720	fish,reagents	yes	full	proc
+proc	/datum/fish_trait/electrogenesis	on_force_updated	code/modules/fishing/fish/fish_traits.dm:730	fish,weight_rank,bonus_or_malus	yes	full	proc root
+proc	/datum/fish_trait/electrogenesis	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:739	mob	yes	full	proc
+type	/datum/fish_trait/stunted	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:746	live	datum_fish_trait_stunted	1	0
+proc	/datum/fish_trait/stunted	apply_to_mob	code/modules/fishing/fish/fish_traits.dm:751	mob	yes	full	proc
+type	/datum/fish_trait/stinger	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:756	live	datum_fish_trait_stinger	1	0
+proc	/datum/fish_trait/stinger	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:766	fish,initial	yes	full	proc
+proc	/datum/fish_trait/stinger	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:772	fish	yes	full	proc
+proc	/datum/fish_trait/stinger	on_force_updated	code/modules/fishing/fish/fish_traits.dm:777	fish,weight_rank,bonus_or_malus	yes	full	proc root
+type	/datum/fish_trait/toxic_barbs	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:782	live	datum_fish_trait_toxic_barbs	1	0
+proc	/datum/fish_trait/toxic_barbs	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:787	fish,initial	yes	full	proc
+proc	/datum/fish_trait/toxic_barbs	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:794	fish	yes	full	proc
+proc	/datum/fish_trait/toxic_barbs	make_venomous	code/modules/fishing/fish/fish_traits.dm:799	source,new_size,new_weight	yes	full	proc root
+proc	/datum/fish_trait/toxic_barbs	on_status_change	code/modules/fishing/fish/fish_traits.dm:807	source	yes	full	proc root
+type	/datum/fish_trait/hallucinogenic	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:814	live	datum_fish_trait_hallucinogenic	1	0
+proc	/datum/fish_trait/hallucinogenic	add_reagents	code/modules/fishing/fish/fish_traits.dm:819	fish,reagents	yes	full	proc
+proc	/datum/fish_trait/hallucinogenic	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:823	fish,initial	yes	full	proc
+proc	/datum/fish_trait/hallucinogenic	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:830	fish	yes	full	proc
+proc	/datum/fish_trait/hallucinogenic	make_venomous	code/modules/fishing/fish/fish_traits.dm:835	source,new_size,new_weight	yes	full	proc root
+proc	/datum/fish_trait/hallucinogenic	on_status_change	code/modules/fishing/fish/fish_traits.dm:844	source	yes	full	proc root
+type	/datum/fish_trait/ink	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:851	live	datum_fish_trait_ink	1	0
+proc	/datum/fish_trait/ink	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:857	fish,initial	yes	full	proc
+proc	/datum/fish_trait/ink	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:862	fish	yes	full	proc
+proc	/datum/fish_trait/ink	attacked_someone	code/modules/fishing/fish/fish_traits.dm:866	source,target,user,zone	yes	full	proc root
+proc	/datum/fish_trait/ink	on_process	code/modules/fishing/fish/fish_traits.dm:883	source,user,process_item,results	yes	full	proc root
+type	/datum/fish_trait/camouflage	/datum/fish_trait	code/modules/fishing/fish/fish_traits.dm:888	live	datum_fish_trait_camouflage	1	0
+proc	/datum/fish_trait/camouflage	minigame_mod	code/modules/fishing/fish/fish_traits.dm:894	rod,fisherman,minigame	yes	full	proc
+proc	/datum/fish_trait/camouflage	apply_to_fish	code/modules/fishing/fish/fish_traits.dm:897	fish,initial	yes	full	proc
+proc	/datum/fish_trait/camouflage	remove_from_fish	code/modules/fishing/fish/fish_traits.dm:902	fish	yes	full	proc
+proc	/datum/fish_trait/camouflage	fade_out	code/modules/fishing/fish/fish_traits.dm:907	source,seconds_per_tick	yes	full	proc root
+proc	/datum/fish_trait/camouflage	reset_alpha	code/modules/fishing/fish/fish_traits.dm:913	source	yes	full	proc root
 type	/datum/fish_source	/datum	code/modules/fishing/sources/_fish_source.dm:77	inert	datum_fish_source	0	0
 proc	/datum/fish_source	New	code/modules/fishing/sources/_fish_source.dm:126		no	-	proc
 proc	/datum/fish_source	Destroy	code/modules/fishing/sources/_fish_source.dm:142		no	-	proc
@@ -65814,22 +65814,22 @@ proc	/obj/item/storage/bubblegum_wrapper	click_alt	code/game/objects/items/stora
 type	/obj/item/storage/card_binder	/obj/item/storage	code/game/objects/items/tcg/tcg.dm:425	live	obj_item_storage_card_binder	0	0
 type	/obj/item/storage/spooky	/obj/item/storage	code/modules/events/holiday/halloween.dm:54	live	obj_item_storage_spooky	1	0
 proc	/obj/item/storage/spooky	Initialize	code/modules/events/holiday/halloween.dm:59	mapload	yes	full	proc
-type	/obj/item/storage/fish_case	/obj/item/storage	code/modules/fishing/aquarium/aquarium_kit.dm:23	inert	obj_item_storage_fish_case	0	0
-proc	/obj/item/storage/fish_case	Initialize	code/modules/fishing/aquarium/aquarium_kit.dm:34	mapload	no	-	proc
-proc	/obj/item/storage/fish_case	PopulateContents	code/modules/fishing/aquarium/aquarium_kit.dm:38		no	-	proc
-proc	/obj/item/storage/fish_case	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:45		no	-	proc root
-type	/obj/item/storage/fish_case/random	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:50	inert	obj_item_storage_fish_case_random	0	0
-proc	/obj/item/storage/fish_case/random	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:52		no	-	proc
-type	/obj/item/storage/fish_case/random/freshwater	/obj/item/storage/fish_case/random	code/modules/fishing/aquarium/aquarium_kit.dm:56	inert	obj_item_storage_fish_case_random_freshwater	0	0
-type	/obj/item/storage/fish_case/random/saltwater	/obj/item/storage/fish_case/random	code/modules/fishing/aquarium/aquarium_kit.dm:59	inert	obj_item_storage_fish_case_random_saltwater	0	0
-type	/obj/item/storage/fish_case/syndicate	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:62	inert	obj_item_storage_fish_case_syndicate	0	0
-proc	/obj/item/storage/fish_case/syndicate	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:64		no	-	proc
-type	/obj/item/storage/fish_case/tiziran	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:73	inert	obj_item_storage_fish_case_tiziran	0	0
-proc	/obj/item/storage/fish_case/tiziran	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:75		no	-	proc
-type	/obj/item/storage/fish_case/blackmarket	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:86	inert	obj_item_storage_fish_case_blackmarket	0	0
-proc	/obj/item/storage/fish_case/blackmarket	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:89		no	-	proc
-proc	/obj/item/storage/fish_case/blackmarket	Initialize	code/modules/fishing/aquarium/aquarium_kit.dm:107	mapload	no	-	proc
-type	/obj/item/storage/fish_case/bluespace	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:113	inert	obj_item_storage_fish_case_bluespace	0	0
+type	/obj/item/storage/fish_case	/obj/item/storage	code/modules/fishing/aquarium/aquarium_kit.dm:23	live	obj_item_storage_fish_case	1	0
+proc	/obj/item/storage/fish_case	Initialize	code/modules/fishing/aquarium/aquarium_kit.dm:34	mapload	yes	full	proc
+proc	/obj/item/storage/fish_case	PopulateContents	code/modules/fishing/aquarium/aquarium_kit.dm:38		yes	full	proc
+proc	/obj/item/storage/fish_case	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:45		yes	full	proc root
+type	/obj/item/storage/fish_case/random	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:50	live	obj_item_storage_fish_case_random	1	0
+proc	/obj/item/storage/fish_case/random	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:52		yes	full	proc
+type	/obj/item/storage/fish_case/random/freshwater	/obj/item/storage/fish_case/random	code/modules/fishing/aquarium/aquarium_kit.dm:56	live	obj_item_storage_fish_case_random_freshwater	0	0
+type	/obj/item/storage/fish_case/random/saltwater	/obj/item/storage/fish_case/random	code/modules/fishing/aquarium/aquarium_kit.dm:59	live	obj_item_storage_fish_case_random_saltwater	0	0
+type	/obj/item/storage/fish_case/syndicate	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:62	live	obj_item_storage_fish_case_syndicate	0	0
+proc	/obj/item/storage/fish_case/syndicate	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:64		stub	deferred	proc
+type	/obj/item/storage/fish_case/tiziran	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:73	live	obj_item_storage_fish_case_tiziran	1	0
+proc	/obj/item/storage/fish_case/tiziran	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:75		yes	full	proc
+type	/obj/item/storage/fish_case/blackmarket	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:86	live	obj_item_storage_fish_case_blackmarket	1	0
+proc	/obj/item/storage/fish_case/blackmarket	get_fish_type	code/modules/fishing/aquarium/aquarium_kit.dm:89		yes	full	proc
+proc	/obj/item/storage/fish_case/blackmarket	Initialize	code/modules/fishing/aquarium/aquarium_kit.dm:107	mapload	yes	full	proc
+type	/obj/item/storage/fish_case/bluespace	/obj/item/storage/fish_case	code/modules/fishing/aquarium/aquarium_kit.dm:113	live	obj_item_storage_fish_case_bluespace	0	0
 type	/obj/item/storage/drone_tools	/obj/item/storage	code/modules/mob/living/basic/drone/drone_tools.dm:2	live	obj_item_storage_drone_tools	1	0
 proc	/obj/item/storage/drone_tools	Initialize	code/modules/mob/living/basic/drone/drone_tools.dm:10	mapload	yes	full	proc
 proc	/obj/item/storage/drone_tools	PopulateContents	code/modules/mob/living/basic/drone/drone_tools.dm:15		yes	full	proc
@@ -70032,13 +70032,13 @@ type	/obj/item/book/manual/ripley_build_and_repair	/obj/item/book/manual	code/ga
 type	/obj/item/book/manual/chef_recipes	/obj/item/book/manual	code/game/objects/items/manuals.dm:87	live	obj_item_book_manual_chef_recipes	0	1
 type	/obj/item/book/manual/nuclear	/obj/item/book/manual	code/game/objects/items/manuals.dm:158	live	obj_item_book_manual_nuclear	0	1
 type	/obj/item/book/manual/ancient_parchment	/obj/item/book/manual	code/modules/antagonists/wizard/grand_ritual/fluff.dm:5	live	obj_item_book_manual_ancient_parchment	0	0
-type	/obj/item/book/manual/fish_catalog	/obj/item/book/manual	code/modules/fishing/fish_catalog.dm:3	inert	obj_item_book_manual_fish_catalog	0	0
-proc	/obj/item/book/manual/fish_catalog	Initialize	code/modules/fishing/fish_catalog.dm:9	mapload	no	-	proc
-proc	/obj/item/book/manual/fish_catalog	ui_interact	code/modules/fishing/fish_catalog.dm:13	user,ui	no	-	proc
-proc	/obj/item/book/manual/fish_catalog	ui_static_data	code/modules/fishing/fish_catalog.dm:19	user	no	-	proc
-proc	/obj/item/book/manual/fish_catalog	bait_description	code/modules/fishing/fish_catalog.dm:51	bait	no	-	proc root
-proc	/obj/item/book/manual/fish_catalog	build_fishing_tips	code/modules/fishing/fish_catalog.dm:70	fish_type	no	-	proc root
-proc	/obj/item/book/manual/fish_catalog	ui_assets	code/modules/fishing/fish_catalog.dm:112	user	no	-	proc
+type	/obj/item/book/manual/fish_catalog	/obj/item/book/manual	code/modules/fishing/fish_catalog.dm:3	live	obj_item_book_manual_fish_catalog	1	0
+proc	/obj/item/book/manual/fish_catalog	Initialize	code/modules/fishing/fish_catalog.dm:9	mapload	yes	full	proc
+proc	/obj/item/book/manual/fish_catalog	ui_interact	code/modules/fishing/fish_catalog.dm:13	user,ui	yes	full	proc
+proc	/obj/item/book/manual/fish_catalog	ui_static_data	code/modules/fishing/fish_catalog.dm:19	user	yes	full	proc
+proc	/obj/item/book/manual/fish_catalog	bait_description	code/modules/fishing/fish_catalog.dm:51	bait	yes	full	proc root
+proc	/obj/item/book/manual/fish_catalog	build_fishing_tips	code/modules/fishing/fish_catalog.dm:70	fish_type	yes	full	proc root
+proc	/obj/item/book/manual/fish_catalog	ui_assets	code/modules/fishing/fish_catalog.dm:112	user	yes	full	proc
 type	/obj/item/book/manual/random	/obj/item/book/manual	code/modules/library/random_books.dm:2	live	obj_item_book_manual_random	1	0
 proc	/obj/item/book/manual/random	Initialize	code/modules/library/random_books.dm:4	mapload	yes	full	proc
 type	/obj/item/book/granter	/obj/item/book	code/game/objects/items/granters/_granters.dm:7	live	obj_item_book_granter	1	1
@@ -70327,8 +70327,8 @@ proc	/obj/item/wallframe/painting/large	try_build	code/modules/art/paintings.dm:
 proc	/obj/item/wallframe/painting/large	after_attach	code/modules/art/paintings.dm:802	object	yes	full	proc
 type	/obj/item/wallframe/airalarm	/obj/item/wallframe	code/modules/atmospherics/machinery/air_alarm/air_alarm_interact.dm:191	live	obj_item_wallframe_airalarm	1	0
 proc	/obj/item/wallframe/airalarm	try_build	code/modules/atmospherics/machinery/air_alarm/air_alarm_interact.dm:198	support,user	yes	full	proc
-type	/obj/item/wallframe/fish	/obj/item/wallframe	code/modules/fishing/fish_mount.dm:2	inert	obj_item_wallframe_fish	0	0
-proc	/obj/item/wallframe/fish	after_attach	code/modules/fishing/fish_mount.dm:12	mount	no	-	proc
+type	/obj/item/wallframe/fish	/obj/item/wallframe	code/modules/fishing/fish_mount.dm:2	live	obj_item_wallframe_fish	1	0
+proc	/obj/item/wallframe/fish	after_attach	code/modules/fishing/fish_mount.dm:12	mount	yes	full	proc
 type	/obj/item/wallframe/ticket_machine	/obj/item/wallframe	code/modules/paperwork/ticketmachine.dm:74	live	obj_item_wallframe_ticket_machine	0	0
 type	/obj/item/wallframe/picture	/obj/item/wallframe	code/modules/photography/photos/frame.dm:4	inert	obj_item_wallframe_picture	0	0
 proc	/obj/item/wallframe/picture	item_interaction	code/modules/photography/photos/frame.dm:15	user,tool,modifiers	no	-	proc
@@ -74298,16 +74298,16 @@ type	/obj/item/organ/ears/stoat	/obj/item/organ/ears	code/game/machinery/dna_inf
 proc	/obj/item/organ/ears/stoat	Initialize	code/game/machinery/dna_infuser/organ_sets/stoat_organs.dm:220	mapload	yes	full	proc
 proc	/obj/item/organ/ears/stoat	on_mob_insert	code/game/machinery/dna_infuser/organ_sets/stoat_organs.dm:225	organ_owner,special,movement_flags	yes	full	proc
 proc	/obj/item/organ/ears/stoat	on_mob_remove	code/game/machinery/dna_infuser/organ_sets/stoat_organs.dm:229	organ_owner,special,movement_flags	yes	full	proc
-type	/obj/item/organ/ears/babbelfish	/obj/item/organ/ears	code/modules/fishing/fish/types/rift.dm:696	inert	obj_item_organ_ears_babbelfish	0	0
-proc	/obj/item/organ/ears/babbelfish	Initialize	code/modules/fishing/fish/types/rift.dm:731	mapload	no	-	proc
-proc	/obj/item/organ/ears/babbelfish	Destroy	code/modules/fishing/fish/types/rift.dm:737		no	-	proc
-proc	/obj/item/organ/ears/babbelfish	on_bodypart_insert	code/modules/fishing/fish/types/rift.dm:743	limb	no	-	proc
-proc	/obj/item/organ/ears/babbelfish	on_bodypart_remove	code/modules/fishing/fish/types/rift.dm:747	limb	no	-	proc
-proc	/obj/item/organ/ears/babbelfish	attack	code/modules/fishing/fish/types/rift.dm:751	target_mob,user,modifiers,attack_modifiers	no	-	proc
-proc	/obj/item/organ/ears/babbelfish	on_mob_insert	code/modules/fishing/fish/types/rift.dm:769	organ_owner,special,movement_flags	no	-	proc
-proc	/obj/item/organ/ears/babbelfish	on_mob_remove	code/modules/fishing/fish/types/rift.dm:810	organ_owner,special,movement_flags	no	-	proc
-proc	/obj/item/organ/ears/babbelfish	on_drain_magic	code/modules/fishing/fish/types/rift.dm:820	user	no	-	proc root
-proc	/obj/item/organ/ears/babbelfish	on_expire	code/modules/fishing/fish/types/rift.dm:824	user	no	-	proc root
+type	/obj/item/organ/ears/babbelfish	/obj/item/organ/ears	code/modules/fishing/fish/types/rift.dm:696	live	obj_item_organ_ears_babbelfish	1	0
+proc	/obj/item/organ/ears/babbelfish	Initialize	code/modules/fishing/fish/types/rift.dm:731	mapload	yes	full	proc
+proc	/obj/item/organ/ears/babbelfish	Destroy	code/modules/fishing/fish/types/rift.dm:737		yes	full	proc
+proc	/obj/item/organ/ears/babbelfish	on_bodypart_insert	code/modules/fishing/fish/types/rift.dm:743	limb	yes	full	proc
+proc	/obj/item/organ/ears/babbelfish	on_bodypart_remove	code/modules/fishing/fish/types/rift.dm:747	limb	yes	full	proc
+proc	/obj/item/organ/ears/babbelfish	attack	code/modules/fishing/fish/types/rift.dm:751	target_mob,user,modifiers,attack_modifiers	yes	full	proc
+proc	/obj/item/organ/ears/babbelfish	on_mob_insert	code/modules/fishing/fish/types/rift.dm:769	organ_owner,special,movement_flags	yes	full	proc
+proc	/obj/item/organ/ears/babbelfish	on_mob_remove	code/modules/fishing/fish/types/rift.dm:810	organ_owner,special,movement_flags	yes	full	proc
+proc	/obj/item/organ/ears/babbelfish	on_drain_magic	code/modules/fishing/fish/types/rift.dm:820	user	yes	full	proc root
+proc	/obj/item/organ/ears/babbelfish	on_expire	code/modules/fishing/fish/types/rift.dm:824	user	yes	full	proc root
 type	/obj/item/organ/ears/dullahan	/obj/item/organ/ears	code/modules/mob/living/carbon/human/species_types/dullahan.dm:210	live	obj_item_organ_ears_dullahan	0	0
 type	/obj/item/organ/ears/invincible	/obj/item/organ/ears	code/modules/surgery/organs/internal/ears/_ears.dm:143	live	obj_item_organ_ears_invincible	0	0
 type	/obj/item/organ/ears/cat	/obj/item/organ/ears	code/modules/surgery/organs/internal/ears/_ears.dm:146	live	obj_item_organ_ears_cat	0	0
@@ -81208,322 +81208,322 @@ proc	/obj/item/fish_analyzer	ui_status	code/modules/fishing/aquarium/fish_analyz
 proc	/obj/item/fish_analyzer	ui_data	code/modules/fishing/aquarium/fish_analyzer.dm:116	user	no	-	proc
 proc	/obj/item/fish_analyzer	extract_fish_info	code/modules/fishing/aquarium/fish_analyzer.dm:130	data,fishie	no	-	proc root
 type	/obj/item/fish	/obj/item	code/modules/fishing/fish/_fish.dm:20	base	obj_item_fish	1	0
-proc	/obj/item/fish	Initialize	code/modules/fishing/fish/_fish.dm:200	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish	grind_results	code/modules/fishing/fish/_fish.dm:252		no	-	proc
-proc	/obj/item/fish	fish_grind_results	code/modules/fishing/fish/_fish.dm:261		no	-	proc root
-proc	/obj/item/fish	suicide_act	code/modules/fishing/fish/_fish.dm:266	user	no	-	proc
-proc	/obj/item/fish	hit_reaction	code/modules/fishing/fish/_fish.dm:280	owner,hitby,attack_text,final_block_chance,damage,attack_type,damage_type	no	-	proc
-proc	/obj/item/fish	slapperoni	code/modules/fishing/fish/_fish.dm:285	user,iteration	no	-	proc root
-proc	/obj/item/fish	add_item_context	code/modules/fishing/fish/_fish.dm:295	source,context,held_item,user	no	-	proc
-proc	/obj/item/fish	add_context	code/modules/fishing/fish/_fish.dm:301	source,context,held_item,user	no	-	proc
-proc	/obj/item/fish	item_interaction	code/modules/fishing/fish/_fish.dm:316	user,tool,modifiers	no	-	proc
-proc	/obj/item/fish	interact_with_atom_secondary	code/modules/fishing/fish/_fish.dm:331	interacting_with,user,modifiers	no	-	proc
-proc	/obj/item/fish	released	code/modules/fishing/fish/_fish.dm:350	location,user	no	-	proc root
-proc	/obj/item/fish	make_edible	code/modules/fishing/fish/_fish.dm:356		no	-	proc root
-proc	/obj/item/fish	get_food_types	code/modules/fishing/fish/_fish.dm:381		no	-	proc root
-proc	/obj/item/fish	on_fish_cooked	code/modules/fishing/fish/_fish.dm:385	source,cooking_time	no	-	proc root
-proc	/obj/item/fish	on_fish_cooked_again	code/modules/fishing/fish/_fish.dm:418	source,cooking_time	no	-	proc root
-proc	/obj/item/fish	well_cooked	code/modules/fishing/fish/_fish.dm:426		no	-	proc root
-proc	/obj/item/fish	check_liked	code/modules/fishing/fish/_fish.dm:435	eater	no	-	proc root
-proc	/obj/item/fish	after_eat	code/modules/fishing/fish/_fish.dm:448	eater,feeder	no	-	proc root
-proc	/obj/item/fish	flinch_on_eat	code/modules/fishing/fish/_fish.dm:457	eater,feeder	no	-	proc root
-proc	/obj/item/fish	generate_fish_reagents	code/modules/fishing/fish/_fish.dm:464	multiplier	no	-	proc root
-proc	/obj/item/fish	get_fish_taste	code/modules/fishing/fish/_fish.dm:476		no	-	proc root
-proc	/obj/item/fish	get_fish_taste_cooked	code/modules/fishing/fish/_fish.dm:479		no	-	proc root
-proc	/obj/item/fish	get_base_edible_reagents_to_add	code/modules/fishing/fish/_fish.dm:483		no	-	proc root
-proc	/obj/item/fish	adjust_reagents_capacity	code/modules/fishing/fish/_fish.dm:497	amount_to_add	no	-	proc root
-proc	/obj/item/fish	on_grind	code/modules/fishing/fish/_fish.dm:507		no	-	proc
-proc	/obj/item/fish	UsedforProcessing	code/modules/fishing/fish/_fish.dm:515	user,used_item,chosen_option,created_atoms	no	-	proc
-proc	/obj/item/fish	update_icon_state	code/modules/fishing/fish/_fish.dm:529		no	-	proc
-proc	/obj/item/fish	item_interaction	code/modules/fishing/fish/_fish.dm:536	user,tool,modifiers	no	-	proc
+proc	/obj/item/fish	Initialize	code/modules/fishing/fish/_fish.dm:200	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish	grind_results	code/modules/fishing/fish/_fish.dm:252		yes	full	proc
+proc	/obj/item/fish	fish_grind_results	code/modules/fishing/fish/_fish.dm:261		yes	full	proc root
+proc	/obj/item/fish	suicide_act	code/modules/fishing/fish/_fish.dm:266	user	yes	full	proc
+proc	/obj/item/fish	hit_reaction	code/modules/fishing/fish/_fish.dm:280	owner,hitby,attack_text,final_block_chance,damage,attack_type,damage_type	yes	full	proc
+proc	/obj/item/fish	slapperoni	code/modules/fishing/fish/_fish.dm:285	user,iteration	yes	full	proc root
+proc	/obj/item/fish	add_item_context	code/modules/fishing/fish/_fish.dm:295	source,context,held_item,user	yes	full	proc
+proc	/obj/item/fish	add_context	code/modules/fishing/fish/_fish.dm:301	source,context,held_item,user	yes	full	proc
+proc	/obj/item/fish	item_interaction	code/modules/fishing/fish/_fish.dm:316	user,tool,modifiers	yes	full	proc
+proc	/obj/item/fish	interact_with_atom_secondary	code/modules/fishing/fish/_fish.dm:331	interacting_with,user,modifiers	yes	full	proc
+proc	/obj/item/fish	released	code/modules/fishing/fish/_fish.dm:350	location,user	yes	full	proc root
+proc	/obj/item/fish	make_edible	code/modules/fishing/fish/_fish.dm:356		yes	full	proc root
+proc	/obj/item/fish	get_food_types	code/modules/fishing/fish/_fish.dm:381		yes	full	proc root
+proc	/obj/item/fish	on_fish_cooked	code/modules/fishing/fish/_fish.dm:385	source,cooking_time	yes	full	proc root
+proc	/obj/item/fish	on_fish_cooked_again	code/modules/fishing/fish/_fish.dm:418	source,cooking_time	yes	full	proc root
+proc	/obj/item/fish	well_cooked	code/modules/fishing/fish/_fish.dm:426		yes	full	proc root
+proc	/obj/item/fish	check_liked	code/modules/fishing/fish/_fish.dm:435	eater	yes	full	proc root
+proc	/obj/item/fish	after_eat	code/modules/fishing/fish/_fish.dm:448	eater,feeder	yes	full	proc root
+proc	/obj/item/fish	flinch_on_eat	code/modules/fishing/fish/_fish.dm:457	eater,feeder	yes	full	proc root
+proc	/obj/item/fish	generate_fish_reagents	code/modules/fishing/fish/_fish.dm:464	multiplier	yes	full	proc root
+proc	/obj/item/fish	get_fish_taste	code/modules/fishing/fish/_fish.dm:476		yes	full	proc root
+proc	/obj/item/fish	get_fish_taste_cooked	code/modules/fishing/fish/_fish.dm:479		yes	full	proc root
+proc	/obj/item/fish	get_base_edible_reagents_to_add	code/modules/fishing/fish/_fish.dm:483		yes	full	proc root
+proc	/obj/item/fish	adjust_reagents_capacity	code/modules/fishing/fish/_fish.dm:497	amount_to_add	yes	full	proc root
+proc	/obj/item/fish	on_grind	code/modules/fishing/fish/_fish.dm:507		yes	full	proc
+proc	/obj/item/fish	UsedforProcessing	code/modules/fishing/fish/_fish.dm:515	user,used_item,chosen_option,created_atoms	yes	full	proc
+proc	/obj/item/fish	update_icon_state	code/modules/fishing/fish/_fish.dm:529		yes	full	proc
+proc	/obj/item/fish	item_interaction	code/modules/fishing/fish/_fish.dm:536	user,tool,modifiers	yes	full	proc
 proc	/obj/item/fish	examine	code/modules/fishing/fish/_fish.dm:552	user	yes	full	proc
 proc	/obj/item/fish	get_health_warnings	code/modules/fishing/fish/_fish.dm:572	user,always_deep	yes	full	proc root
-proc	/obj/item/fish	randomize_size_and_weight	code/modules/fishing/fish/_fish.dm:604	base_size,base_weight,deviation,update	no	-	proc root
-proc	/obj/item/fish	set_max_size_and_weight	code/modules/fishing/fish/_fish.dm:616	base_size,base_weight	no	-	proc root
-proc	/obj/item/fish	update_size_and_weight	code/modules/fishing/fish/_fish.dm:623	new_size,new_weight,update_materials	no	-	proc root
-proc	/obj/item/fish	remove_fillet_type	code/modules/fishing/fish/_fish.dm:722		no	-	proc root
-proc	/obj/item/fish	add_fillet_type	code/modules/fishing/fish/_fish.dm:729		no	-	proc root
-proc	/obj/item/fish	update_fish_force	code/modules/fishing/fish/_fish.dm:738		no	-	proc root
-proc	/obj/item/fish	calculate_fish_force_bonus	code/modules/fishing/fish/_fish.dm:789	bonus_malus	no	-	proc root
-proc	/obj/item/fish	get_force_rank	code/modules/fishing/fish/_fish.dm:794		no	-	proc root
-proc	/obj/item/fish	apply_single_mat_effect	code/modules/fishing/fish/_fish.dm:813	custom_material,amount,multiplier	no	-	proc
-proc	/obj/item/fish	apply_material_effects	code/modules/fishing/fish/_fish.dm:819		no	-	proc
-proc	/obj/item/fish	remove_material_effects	code/modules/fishing/fish/_fish.dm:827	replace_mats	no	-	proc
-proc	/obj/item/fish	inherit_traits	code/modules/fishing/fish/_fish.dm:844	x_traits,y_traits,fixed_traits,removed_traits	no	-	proc root
-proc	/obj/item/fish	apply_traits	code/modules/fishing/fish/_fish.dm:893		no	-	proc root
-proc	/obj/item/fish	Moved	code/modules/fishing/fish/_fish.dm:898	old_loc,movement_dir,forced,old_locs,momentum_change	no	-	proc
-proc	/obj/item/fish	enter_stasis	code/modules/fishing/fish/_fish.dm:903	source	no	-	proc root
-proc	/obj/item/fish	exit_stasis	code/modules/fishing/fish/_fish.dm:910	source	no	-	proc root
+proc	/obj/item/fish	randomize_size_and_weight	code/modules/fishing/fish/_fish.dm:604	base_size,base_weight,deviation,update	yes	full	proc root
+proc	/obj/item/fish	set_max_size_and_weight	code/modules/fishing/fish/_fish.dm:616	base_size,base_weight	yes	full	proc root
+proc	/obj/item/fish	update_size_and_weight	code/modules/fishing/fish/_fish.dm:623	new_size,new_weight,update_materials	yes	full	proc root
+proc	/obj/item/fish	remove_fillet_type	code/modules/fishing/fish/_fish.dm:722		yes	full	proc root
+proc	/obj/item/fish	add_fillet_type	code/modules/fishing/fish/_fish.dm:729		yes	full	proc root
+proc	/obj/item/fish	update_fish_force	code/modules/fishing/fish/_fish.dm:738		yes	full	proc root
+proc	/obj/item/fish	calculate_fish_force_bonus	code/modules/fishing/fish/_fish.dm:789	bonus_malus	yes	full	proc root
+proc	/obj/item/fish	get_force_rank	code/modules/fishing/fish/_fish.dm:794		yes	full	proc root
+proc	/obj/item/fish	apply_single_mat_effect	code/modules/fishing/fish/_fish.dm:813	custom_material,amount,multiplier	yes	full	proc
+proc	/obj/item/fish	apply_material_effects	code/modules/fishing/fish/_fish.dm:819		yes	full	proc
+proc	/obj/item/fish	remove_material_effects	code/modules/fishing/fish/_fish.dm:827	replace_mats	yes	full	proc
+proc	/obj/item/fish	inherit_traits	code/modules/fishing/fish/_fish.dm:844	x_traits,y_traits,fixed_traits,removed_traits	yes	full	proc root
+proc	/obj/item/fish	apply_traits	code/modules/fishing/fish/_fish.dm:893		yes	full	proc root
+proc	/obj/item/fish	Moved	code/modules/fishing/fish/_fish.dm:898	old_loc,movement_dir,forced,old_locs,momentum_change	yes	full	proc
+proc	/obj/item/fish	enter_stasis	code/modules/fishing/fish/_fish.dm:903	source	yes	full	proc root
+proc	/obj/item/fish	exit_stasis	code/modules/fishing/fish/_fish.dm:910	source	yes	full	proc root
 proc	/obj/item/fish	get_hunger	code/modules/fishing/fish/_fish.dm:918	cap	yes	full	proc root
 proc	/obj/item/fish	get_starvation_mult	code/modules/fishing/fish/_fish.dm:923		yes	full	proc root
-proc	/obj/item/fish	feed	code/modules/fishing/fish/_fish.dm:928	fed_reagents	no	-	proc root
-proc	/obj/item/fish	sate_hunger	code/modules/fishing/fish/_fish.dm:959		no	-	proc root
-proc	/obj/item/fish	check_flopping	code/modules/fishing/fish/_fish.dm:989		no	-	proc root
-proc	/obj/item/fish	process	code/modules/fishing/fish/_fish.dm:1005	seconds_per_tick	no	-	proc
-proc	/obj/item/fish	do_fish_process	code/modules/fishing/fish/_fish.dm:1017	seconds_per_tick	no	-	proc root
-proc	/obj/item/fish	set_status	code/modules/fishing/fish/_fish.dm:1032	new_status,silent	no	-	proc root
-proc	/obj/item/fish	vv_edit_var	code/modules/fishing/fish/_fish.dm:1059	var_name,var_value	no	-	proc
-proc	/obj/item/fish	expose_reagents	code/modules/fishing/fish/_fish.dm:1100	reagents,source,methods,volume_modifier,show_message	no	-	proc
-proc	/obj/item/fish	use_lazarus	code/modules/fishing/fish/_fish.dm:1114	source,injector,user	no	-	proc root
-proc	/obj/item/fish	update_aquarium_appearance	code/modules/fishing/fish/_fish.dm:1126	source,visual	no	-	proc root
-proc	/obj/item/fish	randomize_aquarium_position	code/modules/fishing/fish/_fish.dm:1131	source,current_aquarium,visual	no	-	proc root
-proc	/obj/item/fish	update_aquarium_animation	code/modules/fishing/fish/_fish.dm:1143	source,current_animation,visual,fluid_type	no	-	proc root
-proc	/obj/item/fish	get_aquarium_animation	code/modules/fishing/fish/_fish.dm:1154	fluid_type	no	-	proc root
-proc	/obj/item/fish	swim_animation	code/modules/fishing/fish/_fish.dm:1161	visual	no	-	proc root
-proc	/obj/item/fish	dead_animation	code/modules/fishing/fish/_fish.dm:1193	visual	no	-	proc root
-proc	/obj/item/fish	get_aquarium_beauty	code/modules/fishing/fish/_fish.dm:1207	source,beauty_holder	no	-	proc root
-proc	/obj/item/fish	proper_environment	code/modules/fishing/fish/_fish.dm:1220	temp_range_min,temp_range_max	no	-	proc root
-proc	/obj/item/fish	process_health	code/modules/fishing/fish/_fish.dm:1245	seconds_per_tick	no	-	proc root
-proc	/obj/item/fish	damage_fish	code/modules/fishing/fish/_fish.dm:1267	amount	no	-	proc root
-proc	/obj/item/fish	atom_break	code/modules/fishing/fish/_fish.dm:1274	damage_flag	no	-	proc
-proc	/obj/item/fish	repair_damage	code/modules/fishing/fish/_fish.dm:1278	amount	no	-	proc
-proc	/obj/item/fish	regenerate_bites	code/modules/fishing/fish/_fish.dm:1289	amount	no	-	proc root
+proc	/obj/item/fish	feed	code/modules/fishing/fish/_fish.dm:928	fed_reagents	yes	full	proc root
+proc	/obj/item/fish	sate_hunger	code/modules/fishing/fish/_fish.dm:959		yes	full	proc root
+proc	/obj/item/fish	check_flopping	code/modules/fishing/fish/_fish.dm:989		yes	full	proc root
+proc	/obj/item/fish	process	code/modules/fishing/fish/_fish.dm:1005	seconds_per_tick	yes	full	proc
+proc	/obj/item/fish	do_fish_process	code/modules/fishing/fish/_fish.dm:1017	seconds_per_tick	yes	full	proc root
+proc	/obj/item/fish	set_status	code/modules/fishing/fish/_fish.dm:1032	new_status,silent	yes	full	proc root
+proc	/obj/item/fish	vv_edit_var	code/modules/fishing/fish/_fish.dm:1059	var_name,var_value	yes	full	proc
+proc	/obj/item/fish	expose_reagents	code/modules/fishing/fish/_fish.dm:1100	reagents,source,methods,volume_modifier,show_message	yes	full	proc
+proc	/obj/item/fish	use_lazarus	code/modules/fishing/fish/_fish.dm:1114	source,injector,user	yes	full	proc root
+proc	/obj/item/fish	update_aquarium_appearance	code/modules/fishing/fish/_fish.dm:1126	source,visual	yes	full	proc root
+proc	/obj/item/fish	randomize_aquarium_position	code/modules/fishing/fish/_fish.dm:1131	source,current_aquarium,visual	yes	full	proc root
+proc	/obj/item/fish	update_aquarium_animation	code/modules/fishing/fish/_fish.dm:1143	source,current_animation,visual,fluid_type	yes	full	proc root
+proc	/obj/item/fish	get_aquarium_animation	code/modules/fishing/fish/_fish.dm:1154	fluid_type	yes	full	proc root
+proc	/obj/item/fish	swim_animation	code/modules/fishing/fish/_fish.dm:1161	visual	yes	full	proc root
+proc	/obj/item/fish	dead_animation	code/modules/fishing/fish/_fish.dm:1193	visual	yes	full	proc root
+proc	/obj/item/fish	get_aquarium_beauty	code/modules/fishing/fish/_fish.dm:1207	source,beauty_holder	yes	full	proc root
+proc	/obj/item/fish	proper_environment	code/modules/fishing/fish/_fish.dm:1220	temp_range_min,temp_range_max	yes	full	proc root
+proc	/obj/item/fish	process_health	code/modules/fishing/fish/_fish.dm:1245	seconds_per_tick	yes	full	proc root
+proc	/obj/item/fish	damage_fish	code/modules/fishing/fish/_fish.dm:1267	amount	yes	full	proc root
+proc	/obj/item/fish	atom_break	code/modules/fishing/fish/_fish.dm:1274	damage_flag	yes	full	proc
+proc	/obj/item/fish	repair_damage	code/modules/fishing/fish/_fish.dm:1278	amount	yes	full	proc
+proc	/obj/item/fish	regenerate_bites	code/modules/fishing/fish/_fish.dm:1289	amount	yes	full	proc root
 proc	/obj/item/fish	get_health_percentage	code/modules/fishing/fish/_fish.dm:1297		yes	full	proc root
-proc	/obj/item/fish	get_aquarium_fishes	code/modules/fishing/fish/_fish.dm:1303	shuffle,blacklist	no	-	proc root
-proc	/obj/item/fish	ready_to_reproduce	code/modules/fishing/fish/_fish.dm:1312	being_targeted	no	-	proc root
-proc	/obj/item/fish	try_to_reproduce	code/modules/fishing/fish/_fish.dm:1321		no	-	proc root
-proc	/obj/item/fish	create_offspring	code/modules/fishing/fish/_fish.dm:1389	chosen_type,partner,evolution	no	-	proc root
-proc	/obj/item/fish	flop_animation	code/modules/fishing/fish/_fish.dm:1449		no	-	proc root
-proc	/obj/item/fish	start_flopping	code/modules/fishing/fish/_fish.dm:1482		no	-	proc root
-proc	/obj/item/fish	stop_flopping	code/modules/fishing/fish/_fish.dm:1489		no	-	proc root
-proc	/obj/item/fish	on_temp_animation	code/modules/fishing/fish/_fish.dm:1495	source,animation_duration	no	-	proc root
-proc	/obj/item/fish	refresh_flopping	code/modules/fishing/fish/_fish.dm:1499		no	-	proc root
-proc	/obj/item/fish	try_electrogenesis	code/modules/fishing/fish/_fish.dm:1503		no	-	proc root
-proc	/obj/item/fish	get_export_price	code/modules/fishing/fish/_fish.dm:1532	price	no	-	proc root
-proc	/obj/item/fish	get_happiness_value	code/modules/fishing/fish/_fish.dm:1547		no	-	proc root
-proc	/obj/item/fish	attack_self	code/modules/fishing/fish/_fish.dm:1566	user	no	-	proc
-proc	/obj/item/fish	try_pet_fish	code/modules/fishing/fish/_fish.dm:1570	user	no	-	proc root
-proc	/obj/item/fish	pet_fish	code/modules/fishing/fish/_fish.dm:1581	user,in_aquarium	no	-	proc root
-proc	/obj/item/fish	undo_petted	code/modules/fishing/fish/_fish.dm:1618		no	-	proc root
-proc	/obj/item/fish	persistence_save	code/modules/fishing/fish/_fish.dm:1622	data	no	-	proc root
-proc	/obj/item/fish	persistence_load	code/modules/fishing/fish/_fish.dm:1626	data	no	-	proc root
+proc	/obj/item/fish	get_aquarium_fishes	code/modules/fishing/fish/_fish.dm:1303	shuffle,blacklist	yes	full	proc root
+proc	/obj/item/fish	ready_to_reproduce	code/modules/fishing/fish/_fish.dm:1312	being_targeted	yes	full	proc root
+proc	/obj/item/fish	try_to_reproduce	code/modules/fishing/fish/_fish.dm:1321		yes	full	proc root
+proc	/obj/item/fish	create_offspring	code/modules/fishing/fish/_fish.dm:1389	chosen_type,partner,evolution	yes	full	proc root
+proc	/obj/item/fish	flop_animation	code/modules/fishing/fish/_fish.dm:1449		yes	full	proc root
+proc	/obj/item/fish	start_flopping	code/modules/fishing/fish/_fish.dm:1482		yes	full	proc root
+proc	/obj/item/fish	stop_flopping	code/modules/fishing/fish/_fish.dm:1489		yes	full	proc root
+proc	/obj/item/fish	on_temp_animation	code/modules/fishing/fish/_fish.dm:1495	source,animation_duration	yes	full	proc root
+proc	/obj/item/fish	refresh_flopping	code/modules/fishing/fish/_fish.dm:1499		yes	full	proc root
+proc	/obj/item/fish	try_electrogenesis	code/modules/fishing/fish/_fish.dm:1503		yes	full	proc root
+proc	/obj/item/fish	get_export_price	code/modules/fishing/fish/_fish.dm:1532	price	yes	full	proc root
+proc	/obj/item/fish	get_happiness_value	code/modules/fishing/fish/_fish.dm:1547		yes	full	proc root
+proc	/obj/item/fish	attack_self	code/modules/fishing/fish/_fish.dm:1566	user	yes	full	proc
+proc	/obj/item/fish	try_pet_fish	code/modules/fishing/fish/_fish.dm:1570	user	yes	full	proc root
+proc	/obj/item/fish	pet_fish	code/modules/fishing/fish/_fish.dm:1581	user,in_aquarium	yes	full	proc root
+proc	/obj/item/fish	undo_petted	code/modules/fishing/fish/_fish.dm:1618		yes	full	proc root
+proc	/obj/item/fish	persistence_save	code/modules/fishing/fish/_fish.dm:1622	data	yes	full	proc root
+proc	/obj/item/fish	persistence_load	code/modules/fishing/fish/_fish.dm:1626	data	yes	full	proc root
 type	/obj/item/fish/sand_surfer	/obj/item/fish	code/modules/fishing/fish/types/air_space.dm:2	live	obj_item_fish_sand_surfer	0	0
-type	/obj/item/fish/sand_crab	/obj/item/fish	code/modules/fishing/fish/types/air_space.dm:22	inert	obj_item_fish_sand_crab	0	0
-proc	/obj/item/fish/sand_crab	get_fish_taste	code/modules/fishing/fish/types/air_space.dm:46		no	-	proc
-proc	/obj/item/fish/sand_crab	get_fish_taste_cooked	code/modules/fishing/fish/types/air_space.dm:49		no	-	proc
+type	/obj/item/fish/sand_crab	/obj/item/fish	code/modules/fishing/fish/types/air_space.dm:22	live	obj_item_fish_sand_crab	1	0
+proc	/obj/item/fish/sand_crab	get_fish_taste	code/modules/fishing/fish/types/air_space.dm:46		yes	full	proc
+proc	/obj/item/fish/sand_crab	get_fish_taste_cooked	code/modules/fishing/fish/types/air_space.dm:49		yes	full	proc
 type	/obj/item/fish/bumpy	/obj/item/fish	code/modules/fishing/fish/types/air_space.dm:53	live	obj_item_fish_bumpy	0	0
-type	/obj/item/fish/starfish	/obj/item/fish	code/modules/fishing/fish/types/air_space.dm:73	inert	obj_item_fish_starfish	0	0
-proc	/obj/item/fish/starfish	Initialize	code/modules/fishing/fish/types/air_space.dm:95	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/starfish	fish_grind_results	code/modules/fishing/fish/types/air_space.dm:99		no	-	proc
-proc	/obj/item/fish/starfish	update_overlays	code/modules/fishing/fish/types/air_space.dm:102		no	-	proc
-proc	/obj/item/fish/starfish	add_emissive	code/modules/fishing/fish/types/air_space.dm:106		no	-	proc root
-proc	/obj/item/fish/starfish	flop_animation	code/modules/fishing/fish/types/air_space.dm:111		no	-	proc
-proc	/obj/item/fish/starfish	suicide_act	code/modules/fishing/fish/types/air_space.dm:114	user	no	-	proc
-proc	/obj/item/fish/starfish	ascension	code/modules/fishing/fish/types/air_space.dm:121	user	no	-	proc root
-type	/obj/item/fish/starfish/chrystarfish	/obj/item/fish/starfish	code/modules/fishing/fish/types/rift.dm:2	inert	obj_item_fish_starfish_chrystarfish	0	0
-proc	/obj/item/fish/starfish/chrystarfish	set_status	code/modules/fishing/fish/types/rift.dm:63	new_status,silent	no	-	proc
-proc	/obj/item/fish/starfish/chrystarfish	add_emissive	code/modules/fishing/fish/types/rift.dm:71		no	-	proc
-proc	/obj/item/fish/starfish/chrystarfish	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/rift.dm:74		no	-	proc
-proc	/obj/item/fish/starfish/chrystarfish	flinch_on_eat	code/modules/fishing/fish/types/rift.dm:79	eater,feeder	no	-	proc
-proc	/obj/item/fish/starfish/chrystarfish	suicide_act	code/modules/fishing/fish/types/rift.dm:88	user	no	-	proc
-type	/obj/item/fish/baby_carp	/obj/item/fish	code/modules/fishing/fish/types/air_space.dm:129	inert	obj_item_fish_baby_carp	0	0
-proc	/obj/item/fish/baby_carp	Initialize	code/modules/fishing/fish/types/air_space.dm:166	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/baby_carp	suicide_act	code/modules/fishing/fish/types/air_space.dm:173	user	no	-	proc
-proc	/obj/item/fish/baby_carp	gestation	code/modules/fishing/fish/types/air_space.dm:190	user	no	-	proc root
-proc	/obj/item/fish/baby_carp	update_overlays	code/modules/fishing/fish/types/air_space.dm:204		no	-	proc
-proc	/obj/item/fish/baby_carp	update_size_and_weight	code/modules/fishing/fish/types/air_space.dm:214	new_size,new_weight,update_materials	no	-	proc
-proc	/obj/item/fish/baby_carp	growth_checks	code/modules/fishing/fish/types/air_space.dm:222	source,seconds_per_tick,growth,result_path	no	-	proc root
-proc	/obj/item/fish/baby_carp	on_growth	code/modules/fishing/fish/types/air_space.dm:236	source,result	no	-	proc root
-proc	/obj/item/fish/baby_carp	persistence_save	code/modules/fishing/fish/types/air_space.dm:243	data	no	-	proc
-proc	/obj/item/fish/baby_carp	persistence_load	code/modules/fishing/fish/types/air_space.dm:246	data	no	-	proc
-type	/obj/item/fish/sockeye_salmon	/obj/item/fish	code/modules/fishing/fish/types/anadromous.dm:2	inert	obj_item_fish_sockeye_salmon	0	0
-proc	/obj/item/fish/sockeye_salmon	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/anadromous.dm:15		no	-	proc
+type	/obj/item/fish/starfish	/obj/item/fish	code/modules/fishing/fish/types/air_space.dm:73	live	obj_item_fish_starfish	1	0
+proc	/obj/item/fish/starfish	Initialize	code/modules/fishing/fish/types/air_space.dm:95	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/starfish	fish_grind_results	code/modules/fishing/fish/types/air_space.dm:99		yes	full	proc
+proc	/obj/item/fish/starfish	update_overlays	code/modules/fishing/fish/types/air_space.dm:102		yes	full	proc
+proc	/obj/item/fish/starfish	add_emissive	code/modules/fishing/fish/types/air_space.dm:106		yes	full	proc root
+proc	/obj/item/fish/starfish	flop_animation	code/modules/fishing/fish/types/air_space.dm:111		yes	full	proc
+proc	/obj/item/fish/starfish	suicide_act	code/modules/fishing/fish/types/air_space.dm:114	user	yes	full	proc
+proc	/obj/item/fish/starfish	ascension	code/modules/fishing/fish/types/air_space.dm:121	user	yes	full	proc root
+type	/obj/item/fish/starfish/chrystarfish	/obj/item/fish/starfish	code/modules/fishing/fish/types/rift.dm:2	live	obj_item_fish_starfish_chrystarfish	1	0
+proc	/obj/item/fish/starfish/chrystarfish	set_status	code/modules/fishing/fish/types/rift.dm:63	new_status,silent	yes	full	proc
+proc	/obj/item/fish/starfish/chrystarfish	add_emissive	code/modules/fishing/fish/types/rift.dm:71		yes	full	proc
+proc	/obj/item/fish/starfish/chrystarfish	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/rift.dm:74		yes	full	proc
+proc	/obj/item/fish/starfish/chrystarfish	flinch_on_eat	code/modules/fishing/fish/types/rift.dm:79	eater,feeder	yes	full	proc
+proc	/obj/item/fish/starfish/chrystarfish	suicide_act	code/modules/fishing/fish/types/rift.dm:88	user	yes	full	proc
+type	/obj/item/fish/baby_carp	/obj/item/fish	code/modules/fishing/fish/types/air_space.dm:129	live	obj_item_fish_baby_carp	1	0
+proc	/obj/item/fish/baby_carp	Initialize	code/modules/fishing/fish/types/air_space.dm:166	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/baby_carp	suicide_act	code/modules/fishing/fish/types/air_space.dm:173	user	yes	full	proc
+proc	/obj/item/fish/baby_carp	gestation	code/modules/fishing/fish/types/air_space.dm:190	user	yes	full	proc root
+proc	/obj/item/fish/baby_carp	update_overlays	code/modules/fishing/fish/types/air_space.dm:204		yes	full	proc
+proc	/obj/item/fish/baby_carp	update_size_and_weight	code/modules/fishing/fish/types/air_space.dm:214	new_size,new_weight,update_materials	yes	full	proc
+proc	/obj/item/fish/baby_carp	growth_checks	code/modules/fishing/fish/types/air_space.dm:222	source,seconds_per_tick,growth,result_path	yes	full	proc root
+proc	/obj/item/fish/baby_carp	on_growth	code/modules/fishing/fish/types/air_space.dm:236	source,result	yes	full	proc root
+proc	/obj/item/fish/baby_carp	persistence_save	code/modules/fishing/fish/types/air_space.dm:243	data	yes	full	proc
+proc	/obj/item/fish/baby_carp	persistence_load	code/modules/fishing/fish/types/air_space.dm:246	data	yes	full	proc
+type	/obj/item/fish/sockeye_salmon	/obj/item/fish	code/modules/fishing/fish/types/anadromous.dm:2	live	obj_item_fish_sockeye_salmon	1	0
+proc	/obj/item/fish/sockeye_salmon	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/anadromous.dm:15		yes	full	proc
 type	/obj/item/fish/arctic_char	/obj/item/fish	code/modules/fishing/fish/types/anadromous.dm:21	live	obj_item_fish_arctic_char	0	0
-type	/obj/item/fish/pike	/obj/item/fish	code/modules/fishing/fish/types/anadromous.dm:36	inert	obj_item_fish_pike	0	0
-proc	/obj/item/fish/pike	Initialize	code/modules/fishing/fish/types/anadromous.dm:69	mapload	no	-	proc
-type	/obj/item/fish/pike/armored	/obj/item/fish/pike	code/modules/fishing/fish/types/syndicate.dm:218	inert	obj_item_fish_pike_armored	0	0
-proc	/obj/item/fish/pike/armored	get_fish_taste	code/modules/fishing/fish/types/syndicate.dm:254		no	-	proc
-proc	/obj/item/fish/pike/armored	get_fish_taste	code/modules/fishing/fish/types/syndicate.dm:257		no	-	proc
-proc	/obj/item/fish/pike/armored	get_force_rank	code/modules/fishing/fish/types/syndicate.dm:260		no	-	proc
-proc	/obj/item/fish/pike/armored	calculate_fish_force_bonus	code/modules/fishing/fish/types/syndicate.dm:307	bonus_malus	no	-	proc
-type	/obj/item/fish/goldfish	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:2	inert	obj_item_fish_goldfish	0	0
-proc	/obj/item/fish/goldfish	Initialize	code/modules/fishing/fish/types/freshwater.dm:21	mapload,apply_qualities	no	-	proc
-type	/obj/item/fish/goldfish/gill	/obj/item/fish/goldfish	code/modules/fishing/fish/types/freshwater.dm:26	inert	obj_item_fish_goldfish_gill	0	0
-proc	/obj/item/fish/goldfish/gill	get_fish_taste	code/modules/fishing/fish/types/freshwater.dm:36		no	-	proc
-type	/obj/item/fish/goldfish/three_eyes	/obj/item/fish/goldfish	code/modules/fishing/fish/types/freshwater.dm:40	inert	obj_item_fish_goldfish_three_eyes	0	0
-proc	/obj/item/fish/goldfish/three_eyes	get_fish_taste	code/modules/fishing/fish/types/freshwater.dm:59		no	-	proc
-type	/obj/item/fish/goldfish/three_eyes/gill	/obj/item/fish/goldfish/three_eyes	code/modules/fishing/fish/types/freshwater.dm:63	inert	obj_item_fish_goldfish_three_eyes_gill	0	0
-proc	/obj/item/fish/goldfish/three_eyes/gill	get_fish_taste	code/modules/fishing/fish/types/freshwater.dm:72		no	-	proc
+type	/obj/item/fish/pike	/obj/item/fish	code/modules/fishing/fish/types/anadromous.dm:36	live	obj_item_fish_pike	1	0
+proc	/obj/item/fish/pike	Initialize	code/modules/fishing/fish/types/anadromous.dm:69	mapload	yes	full	proc
+type	/obj/item/fish/pike/armored	/obj/item/fish/pike	code/modules/fishing/fish/types/syndicate.dm:218	live	obj_item_fish_pike_armored	1	0
+proc	/obj/item/fish/pike/armored	get_fish_taste	code/modules/fishing/fish/types/syndicate.dm:254		yes	full	proc
+proc	/obj/item/fish/pike/armored	get_fish_taste	code/modules/fishing/fish/types/syndicate.dm:257		yes	full	proc
+proc	/obj/item/fish/pike/armored	get_force_rank	code/modules/fishing/fish/types/syndicate.dm:260		yes	full	proc
+proc	/obj/item/fish/pike/armored	calculate_fish_force_bonus	code/modules/fishing/fish/types/syndicate.dm:307	bonus_malus	yes	full	proc
+type	/obj/item/fish/goldfish	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:2	live	obj_item_fish_goldfish	1	0
+proc	/obj/item/fish/goldfish	Initialize	code/modules/fishing/fish/types/freshwater.dm:21	mapload,apply_qualities	yes	full	proc
+type	/obj/item/fish/goldfish/gill	/obj/item/fish/goldfish	code/modules/fishing/fish/types/freshwater.dm:26	live	obj_item_fish_goldfish_gill	1	0
+proc	/obj/item/fish/goldfish/gill	get_fish_taste	code/modules/fishing/fish/types/freshwater.dm:36		yes	full	proc
+type	/obj/item/fish/goldfish/three_eyes	/obj/item/fish/goldfish	code/modules/fishing/fish/types/freshwater.dm:40	live	obj_item_fish_goldfish_three_eyes	1	0
+proc	/obj/item/fish/goldfish/three_eyes	get_fish_taste	code/modules/fishing/fish/types/freshwater.dm:59		yes	full	proc
+type	/obj/item/fish/goldfish/three_eyes/gill	/obj/item/fish/goldfish/three_eyes	code/modules/fishing/fish/types/freshwater.dm:63	live	obj_item_fish_goldfish_three_eyes_gill	1	0
+proc	/obj/item/fish/goldfish/three_eyes/gill	get_fish_taste	code/modules/fishing/fish/types/freshwater.dm:72		yes	full	proc
 type	/obj/item/fish/angelfish	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:76	live	obj_item_fish_angelfish	0	0
 type	/obj/item/fish/guppy	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:90	live	obj_item_fish_guppy	0	0
-type	/obj/item/fish/plasmatetra	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:105	inert	obj_item_fish_plasmatetra	0	0
-proc	/obj/item/fish/plasmatetra	Initialize	code/modules/fishing/fish/types/freshwater.dm:117	mapload,apply_qualities	no	-	proc
+type	/obj/item/fish/plasmatetra	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:105	live	obj_item_fish_plasmatetra	1	0
+proc	/obj/item/fish/plasmatetra	Initialize	code/modules/fishing/fish/types/freshwater.dm:117	mapload,apply_qualities	yes	full	proc
 type	/obj/item/fish/catfish	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:122	live	obj_item_fish_catfish	0	0
-type	/obj/item/fish/zipzap	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:143	inert	obj_item_fish_zipzap	0	0
-proc	/obj/item/fish/zipzap	get_fish_taste	code/modules/fishing/fish/types/freshwater.dm:168		no	-	proc
-proc	/obj/item/fish/zipzap	suicide_act	code/modules/fishing/fish/types/freshwater.dm:171	user	no	-	proc
-proc	/obj/item/fish/zipzap	slapperoni	code/modules/fishing/fish/types/freshwater.dm:178	user,iteration	no	-	proc
-type	/obj/item/fish/tadpole	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:183	inert	obj_item_fish_tadpole	0	0
-proc	/obj/item/fish/tadpole	Initialize	code/modules/fishing/fish/types/freshwater.dm:202	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/tadpole	make_edible	code/modules/fishing/fish/types/freshwater.dm:209		no	-	proc
-proc	/obj/item/fish/tadpole	set_status	code/modules/fishing/fish/types/freshwater.dm:212	new_status,silent	no	-	proc
-proc	/obj/item/fish/tadpole	Moved	code/modules/fishing/fish/types/freshwater.dm:220	old_loc,movement_dir,forced,old_locs,momentum_change	no	-	proc
-proc	/obj/item/fish/tadpole	growth_checks	code/modules/fishing/fish/types/freshwater.dm:226	source,seconds_per_tick,growth,result_path	no	-	proc root
-proc	/obj/item/fish/tadpole	on_growth	code/modules/fishing/fish/types/freshwater.dm:234	source,result	no	-	proc root
-proc	/obj/item/fish/tadpole	get_export_price	code/modules/fishing/fish/types/freshwater.dm:238	price,elasticity_percent	no	-	proc
-proc	/obj/item/fish/tadpole	suicide_act	code/modules/fishing/fish/types/freshwater.dm:241	user	no	-	proc
-proc	/obj/item/fish/tadpole	gestation	code/modules/fishing/fish/types/freshwater.dm:253	user	no	-	proc root
+type	/obj/item/fish/zipzap	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:143	live	obj_item_fish_zipzap	1	0
+proc	/obj/item/fish/zipzap	get_fish_taste	code/modules/fishing/fish/types/freshwater.dm:168		yes	full	proc
+proc	/obj/item/fish/zipzap	suicide_act	code/modules/fishing/fish/types/freshwater.dm:171	user	yes	full	proc
+proc	/obj/item/fish/zipzap	slapperoni	code/modules/fishing/fish/types/freshwater.dm:178	user,iteration	yes	full	proc
+type	/obj/item/fish/tadpole	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:183	live	obj_item_fish_tadpole	1	0
+proc	/obj/item/fish/tadpole	Initialize	code/modules/fishing/fish/types/freshwater.dm:202	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/tadpole	make_edible	code/modules/fishing/fish/types/freshwater.dm:209		yes	full	proc
+proc	/obj/item/fish/tadpole	set_status	code/modules/fishing/fish/types/freshwater.dm:212	new_status,silent	yes	full	proc
+proc	/obj/item/fish/tadpole	Moved	code/modules/fishing/fish/types/freshwater.dm:220	old_loc,movement_dir,forced,old_locs,momentum_change	yes	full	proc
+proc	/obj/item/fish/tadpole	growth_checks	code/modules/fishing/fish/types/freshwater.dm:226	source,seconds_per_tick,growth,result_path	yes	full	proc root
+proc	/obj/item/fish/tadpole	on_growth	code/modules/fishing/fish/types/freshwater.dm:234	source,result	yes	full	proc root
+proc	/obj/item/fish/tadpole	get_export_price	code/modules/fishing/fish/types/freshwater.dm:238	price,elasticity_percent	yes	full	proc
+proc	/obj/item/fish/tadpole	suicide_act	code/modules/fishing/fish/types/freshwater.dm:241	user	yes	full	proc
+proc	/obj/item/fish/tadpole	gestation	code/modules/fishing/fish/types/freshwater.dm:253	user	yes	full	proc root
 type	/obj/item/fish/perch	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:270	live	obj_item_fish_perch	0	0
-type	/obj/item/fish/sacabambaspis	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:294	inert	obj_item_fish_sacabambaspis	0	0
-proc	/obj/item/fish/sacabambaspis	get_export_price	code/modules/fishing/fish/types/freshwater.dm:309	price,percent	no	-	proc
-type	/obj/item/fish/holo	/obj/item/fish	code/modules/fishing/fish/types/holographic.dm:3	inert	obj_item_fish_holo	0	0
-proc	/obj/item/fish/holo	Initialize	code/modules/fishing/fish/types/holographic.dm:22	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/holo	make_edible	code/modules/fishing/fish/types/holographic.dm:30	weight_val	no	-	proc
-proc	/obj/item/fish/holo	set_status	code/modules/fishing/fish/types/holographic.dm:33	new_status,silent	no	-	proc
-proc	/obj/item/fish/holo	suicide_act	code/modules/fishing/fish/types/holographic.dm:39	user	no	-	proc
-type	/obj/item/fish/holo/crab	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:49	inert	obj_item_fish_holo_crab	0	0
-type	/obj/item/fish/holo/puffer	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:62	inert	obj_item_fish_holo_puffer	0	0
-type	/obj/item/fish/holo/angel	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:75	inert	obj_item_fish_holo_angel	0	0
-type	/obj/item/fish/holo/clown	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:88	inert	obj_item_fish_holo_clown	0	0
-type	/obj/item/fish/holo/checkered	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:102	inert	obj_item_fish_holo_checkered	0	0
-proc	/obj/item/fish/holo/checkered	suicide_act	code/modules/fishing/fish/types/holographic.dm:114	user	no	-	proc
-type	/obj/item/fish/holo/halffish	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:130	inert	obj_item_fish_holo_halffish	0	0
-type	/obj/item/fish/chasm_crab	/obj/item/fish	code/modules/fishing/fish/types/mining.dm:3	inert	obj_item_fish_chasm_crab	0	0
-proc	/obj/item/fish/chasm_crab	Initialize	code/modules/fishing/fish/types/mining.dm:34	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/chasm_crab	get_fish_taste	code/modules/fishing/fish/types/mining.dm:39		no	-	proc
-proc	/obj/item/fish/chasm_crab	get_fish_taste_cooked	code/modules/fishing/fish/types/mining.dm:42		no	-	proc
-proc	/obj/item/fish/chasm_crab	update_size_and_weight	code/modules/fishing/fish/types/mining.dm:46	new_size,new_weight,update_materials	no	-	proc
-proc	/obj/item/fish/chasm_crab	pet_fish	code/modules/fishing/fish/types/mining.dm:66	user	no	-	proc
-proc	/obj/item/fish/chasm_crab	growth_checks	code/modules/fishing/fish/types/mining.dm:71	source,seconds_per_tick,growth,result_path	no	-	proc root
-proc	/obj/item/fish/chasm_crab	on_growth	code/modules/fishing/fish/types/mining.dm:94	source,result	no	-	proc root
-type	/obj/item/fish/chasm_crab/ice	/obj/item/fish/chasm_crab	code/modules/fishing/fish/types/mining.dm:106	inert	obj_item_fish_chasm_crab_ice	0	0
-type	/obj/item/fish/boned	/obj/item/fish	code/modules/fishing/fish/types/mining.dm:118	inert	obj_item_fish_boned	0	0
-proc	/obj/item/fish/boned	Initialize	code/modules/fishing/fish/types/mining.dm:139	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/boned	fish_grind_results	code/modules/fishing/fish/types/mining.dm:143		no	-	proc
-proc	/obj/item/fish/boned	make_edible	code/modules/fishing/fish/types/mining.dm:146	weight_val	no	-	proc
-proc	/obj/item/fish/boned	get_health_warnings	code/modules/fishing/fish/types/mining.dm:149	user,always_deep	no	-	proc
-proc	/obj/item/fish/boned	suicide_act	code/modules/fishing/fish/types/mining.dm:152	user	no	-	proc
-proc	/obj/item/fish/boned	skeleton_appears	code/modules/fishing/fish/types/mining.dm:158	user	no	-	proc root
-type	/obj/item/fish/lavaloop	/obj/item/fish	code/modules/fishing/fish/types/mining.dm:170	inert	obj_item_fish_lavaloop	0	0
-proc	/obj/item/fish/lavaloop	Initialize	code/modules/fishing/fish/types/mining.dm:197	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/lavaloop	get_fish_taste	code/modules/fishing/fish/types/mining.dm:213		no	-	proc
-proc	/obj/item/fish/lavaloop	get_food_types	code/modules/fishing/fish/types/mining.dm:216		no	-	proc
-proc	/obj/item/fish/lavaloop	explode_on_user	code/modules/fishing/fish/types/mining.dm:219	user	no	-	proc root
-proc	/obj/item/fish/lavaloop	on_fish_land	code/modules/fishing/fish/types/mining.dm:227	target,bonus_value	no	-	proc root
-type	/obj/item/fish/lavaloop/plasma_river	/obj/item/fish/lavaloop	code/modules/fishing/fish/types/mining.dm:233	inert	obj_item_fish_lavaloop_plasma_river	0	0
-proc	/obj/item/fish/lavaloop/plasma_river	explode_on_user	code/modules/fishing/fish/types/mining.dm:244	user	no	-	proc
-proc	/obj/item/fish/lavaloop/plasma_river	on_fish_land	code/modules/fishing/fish/types/mining.dm:250	target,bonus_value	no	-	proc
-type	/obj/item/fish/dolphish	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:106	inert	obj_item_fish_dolphish	0	0
-proc	/obj/item/fish/dolphish	get_force_rank	code/modules/fishing/fish/types/rift.dm:168		no	-	proc
-proc	/obj/item/fish/dolphish	do_fish_process	code/modules/fishing/fish/types/rift.dm:194	seconds_per_tick	no	-	proc
-proc	/obj/item/fish/dolphish	pet_fish	code/modules/fishing/fish/types/rift.dm:256	user,in_aquarium	no	-	proc
-type	/obj/item/fish/flumpulus	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:268	inert	obj_item_fish_flumpulus	0	0
-proc	/obj/item/fish/flumpulus	suicide_act	code/modules/fishing/fish/types/rift.dm:307	user	no	-	proc
-proc	/obj/item/fish/flumpulus	flump_attack	code/modules/fishing/fish/types/rift.dm:315	user	no	-	proc root
-proc	/obj/item/fish/flumpulus	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/rift.dm:330		no	-	proc
-proc	/obj/item/fish/flumpulus	intercept_zImpact	code/modules/fishing/fish/types/rift.dm:336	falling_movables,levels	no	-	proc
-type	/obj/item/fish/gullion	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:351	inert	obj_item_fish_gullion	0	0
-proc	/obj/item/fish/gullion	suicide_act	code/modules/fishing/fish/types/rift.dm:395	user	no	-	proc
-type	/obj/item/fish/mossglob	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:414	inert	obj_item_fish_mossglob	0	0
-proc	/obj/item/fish/mossglob	Initialize	code/modules/fishing/fish/types/rift.dm:460	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/mossglob	set_status	code/modules/fishing/fish/types/rift.dm:464	new_status,silent	no	-	proc
-proc	/obj/item/fish/mossglob	suicide_act	code/modules/fishing/fish/types/rift.dm:471	user	no	-	proc
-proc	/obj/item/fish/mossglob	get_force_rank	code/modules/fishing/fish/types/rift.dm:481		no	-	proc
-type	/obj/item/fish/babbelfish	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:508	inert	obj_item_fish_babbelfish	0	0
-proc	/obj/item/fish/babbelfish	examine_more	code/modules/fishing/fish/types/rift.dm:545	user	no	-	proc
-proc	/obj/item/fish/babbelfish	suicide_act	code/modules/fishing/fish/types/rift.dm:568	user	no	-	proc
-proc	/obj/item/fish/babbelfish	fishes_die_twice	code/modules/fishing/fish/types/rift.dm:600		no	-	proc root
-proc	/obj/item/fish/babbelfish	check_loc	code/modules/fishing/fish/types/rift.dm:611		no	-	proc root
-proc	/obj/item/fish/babbelfish	set_status	code/modules/fishing/fish/types/rift.dm:617	new_status,silent	no	-	proc
-proc	/obj/item/fish/babbelfish	psy_wail	code/modules/fishing/fish/types/rift.dm:630		no	-	proc root
-proc	/obj/item/fish/babbelfish	attack_hand	code/modules/fishing/fish/types/rift.dm:669	user,modifiers	no	-	proc
-type	/obj/item/fish/mastodon	/obj/item/fish	code/modules/fishing/fish/types/ruins.dm:3	inert	obj_item_fish_mastodon	0	0
-proc	/obj/item/fish/mastodon	Initialize	code/modules/fishing/fish/types/ruins.dm:29	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/mastodon	fish_grind_results	code/modules/fishing/fish/types/ruins.dm:33		no	-	proc
-proc	/obj/item/fish/mastodon	make_edible	code/modules/fishing/fish/types/ruins.dm:36	weight_val	no	-	proc
-proc	/obj/item/fish/mastodon	get_export_price	code/modules/fishing/fish/types/ruins.dm:39	price,elasticity_percent	no	-	proc
-proc	/obj/item/fish/mastodon	get_health_warnings	code/modules/fishing/fish/types/ruins.dm:42	user,always_deep	no	-	proc
-proc	/obj/item/fish/mastodon	suicide_act	code/modules/fishing/fish/types/ruins.dm:45	user	no	-	proc
-proc	/obj/item/fish/mastodon	skeleton_appears	code/modules/fishing/fish/types/ruins.dm:52	user	no	-	proc root
-type	/obj/item/fish/soul	/obj/item/fish	code/modules/fishing/fish/types/ruins.dm:66	inert	obj_item_fish_soul	0	0
-proc	/obj/item/fish/soul	get_food_types	code/modules/fishing/fish/types/ruins.dm:89		no	-	proc
-proc	/obj/item/fish/soul	get_fish_taste	code/modules/fishing/fish/types/ruins.dm:92		no	-	proc
-proc	/obj/item/fish/soul	get_fish_taste_cooked	code/modules/fishing/fish/types/ruins.dm:95		no	-	proc
-proc	/obj/item/fish/soul	suicide_act	code/modules/fishing/fish/types/ruins.dm:98	user	no	-	proc
-proc	/obj/item/fish/soul	good_ending	code/modules/fishing/fish/types/ruins.dm:106	user	no	-	proc root
-proc	/obj/item/fish/soul	soul_attack	code/modules/fishing/fish/types/ruins.dm:117	user,iteration	no	-	proc root
-type	/obj/item/fish/skin_crab	/obj/item/fish	code/modules/fishing/fish/types/ruins.dm:133	inert	obj_item_fish_skin_crab	0	0
-proc	/obj/item/fish/skin_crab	get_fish_taste	code/modules/fishing/fish/types/ruins.dm:153		no	-	proc
-proc	/obj/item/fish/skin_crab	get_fish_taste_cooked	code/modules/fishing/fish/types/ruins.dm:156		no	-	proc
-proc	/obj/item/fish/skin_crab	suicide_act	code/modules/fishing/fish/types/ruins.dm:159	user	no	-	proc
-type	/obj/item/fish/clownfish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:2	inert	obj_item_fish_clownfish	0	0
-proc	/obj/item/fish/clownfish	get_fish_taste	code/modules/fishing/fish/types/saltwater.dm:18		no	-	proc
-type	/obj/item/fish/clownfish/lube	/obj/item/fish/clownfish	code/modules/fishing/fish/types/saltwater.dm:22	inert	obj_item_fish_clownfish_lube	0	0
-proc	/obj/item/fish/clownfish/lube	suicide_act	code/modules/fishing/fish/types/saltwater.dm:35	user	no	-	proc
+type	/obj/item/fish/sacabambaspis	/obj/item/fish	code/modules/fishing/fish/types/freshwater.dm:294	live	obj_item_fish_sacabambaspis	1	0
+proc	/obj/item/fish/sacabambaspis	get_export_price	code/modules/fishing/fish/types/freshwater.dm:309	price,percent	yes	full	proc
+type	/obj/item/fish/holo	/obj/item/fish	code/modules/fishing/fish/types/holographic.dm:3	live	obj_item_fish_holo	1	0
+proc	/obj/item/fish/holo	Initialize	code/modules/fishing/fish/types/holographic.dm:22	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/holo	make_edible	code/modules/fishing/fish/types/holographic.dm:30	weight_val	yes	full	proc
+proc	/obj/item/fish/holo	set_status	code/modules/fishing/fish/types/holographic.dm:33	new_status,silent	yes	full	proc
+proc	/obj/item/fish/holo	suicide_act	code/modules/fishing/fish/types/holographic.dm:39	user	yes	full	proc
+type	/obj/item/fish/holo/crab	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:49	live	obj_item_fish_holo_crab	0	0
+type	/obj/item/fish/holo/puffer	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:62	live	obj_item_fish_holo_puffer	0	0
+type	/obj/item/fish/holo/angel	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:75	live	obj_item_fish_holo_angel	0	0
+type	/obj/item/fish/holo/clown	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:88	live	obj_item_fish_holo_clown	0	0
+type	/obj/item/fish/holo/checkered	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:102	live	obj_item_fish_holo_checkered	1	0
+proc	/obj/item/fish/holo/checkered	suicide_act	code/modules/fishing/fish/types/holographic.dm:114	user	yes	full	proc
+type	/obj/item/fish/holo/halffish	/obj/item/fish/holo	code/modules/fishing/fish/types/holographic.dm:130	live	obj_item_fish_holo_halffish	0	0
+type	/obj/item/fish/chasm_crab	/obj/item/fish	code/modules/fishing/fish/types/mining.dm:3	live	obj_item_fish_chasm_crab	1	0
+proc	/obj/item/fish/chasm_crab	Initialize	code/modules/fishing/fish/types/mining.dm:34	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/chasm_crab	get_fish_taste	code/modules/fishing/fish/types/mining.dm:39		yes	full	proc
+proc	/obj/item/fish/chasm_crab	get_fish_taste_cooked	code/modules/fishing/fish/types/mining.dm:42		yes	full	proc
+proc	/obj/item/fish/chasm_crab	update_size_and_weight	code/modules/fishing/fish/types/mining.dm:46	new_size,new_weight,update_materials	yes	full	proc
+proc	/obj/item/fish/chasm_crab	pet_fish	code/modules/fishing/fish/types/mining.dm:66	user	yes	full	proc
+proc	/obj/item/fish/chasm_crab	growth_checks	code/modules/fishing/fish/types/mining.dm:71	source,seconds_per_tick,growth,result_path	yes	full	proc root
+proc	/obj/item/fish/chasm_crab	on_growth	code/modules/fishing/fish/types/mining.dm:94	source,result	yes	full	proc root
+type	/obj/item/fish/chasm_crab/ice	/obj/item/fish/chasm_crab	code/modules/fishing/fish/types/mining.dm:106	live	obj_item_fish_chasm_crab_ice	0	0
+type	/obj/item/fish/boned	/obj/item/fish	code/modules/fishing/fish/types/mining.dm:118	live	obj_item_fish_boned	1	0
+proc	/obj/item/fish/boned	Initialize	code/modules/fishing/fish/types/mining.dm:139	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/boned	fish_grind_results	code/modules/fishing/fish/types/mining.dm:143		yes	full	proc
+proc	/obj/item/fish/boned	make_edible	code/modules/fishing/fish/types/mining.dm:146	weight_val	yes	full	proc
+proc	/obj/item/fish/boned	get_health_warnings	code/modules/fishing/fish/types/mining.dm:149	user,always_deep	yes	full	proc
+proc	/obj/item/fish/boned	suicide_act	code/modules/fishing/fish/types/mining.dm:152	user	yes	full	proc
+proc	/obj/item/fish/boned	skeleton_appears	code/modules/fishing/fish/types/mining.dm:158	user	yes	full	proc root
+type	/obj/item/fish/lavaloop	/obj/item/fish	code/modules/fishing/fish/types/mining.dm:170	live	obj_item_fish_lavaloop	1	0
+proc	/obj/item/fish/lavaloop	Initialize	code/modules/fishing/fish/types/mining.dm:197	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/lavaloop	get_fish_taste	code/modules/fishing/fish/types/mining.dm:213		yes	full	proc
+proc	/obj/item/fish/lavaloop	get_food_types	code/modules/fishing/fish/types/mining.dm:216		yes	full	proc
+proc	/obj/item/fish/lavaloop	explode_on_user	code/modules/fishing/fish/types/mining.dm:219	user	yes	full	proc root
+proc	/obj/item/fish/lavaloop	on_fish_land	code/modules/fishing/fish/types/mining.dm:227	target,bonus_value	yes	full	proc root
+type	/obj/item/fish/lavaloop/plasma_river	/obj/item/fish/lavaloop	code/modules/fishing/fish/types/mining.dm:233	live	obj_item_fish_lavaloop_plasma_river	1	0
+proc	/obj/item/fish/lavaloop/plasma_river	explode_on_user	code/modules/fishing/fish/types/mining.dm:244	user	yes	full	proc
+proc	/obj/item/fish/lavaloop/plasma_river	on_fish_land	code/modules/fishing/fish/types/mining.dm:250	target,bonus_value	yes	full	proc
+type	/obj/item/fish/dolphish	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:106	live	obj_item_fish_dolphish	1	0
+proc	/obj/item/fish/dolphish	get_force_rank	code/modules/fishing/fish/types/rift.dm:168		yes	full	proc
+proc	/obj/item/fish/dolphish	do_fish_process	code/modules/fishing/fish/types/rift.dm:194	seconds_per_tick	yes	full	proc
+proc	/obj/item/fish/dolphish	pet_fish	code/modules/fishing/fish/types/rift.dm:256	user,in_aquarium	yes	full	proc
+type	/obj/item/fish/flumpulus	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:268	live	obj_item_fish_flumpulus	1	0
+proc	/obj/item/fish/flumpulus	suicide_act	code/modules/fishing/fish/types/rift.dm:307	user	yes	full	proc
+proc	/obj/item/fish/flumpulus	flump_attack	code/modules/fishing/fish/types/rift.dm:315	user	yes	full	proc root
+proc	/obj/item/fish/flumpulus	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/rift.dm:330		yes	full	proc
+proc	/obj/item/fish/flumpulus	intercept_zImpact	code/modules/fishing/fish/types/rift.dm:336	falling_movables,levels	yes	full	proc
+type	/obj/item/fish/gullion	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:351	live	obj_item_fish_gullion	1	0
+proc	/obj/item/fish/gullion	suicide_act	code/modules/fishing/fish/types/rift.dm:395	user	yes	full	proc
+type	/obj/item/fish/mossglob	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:414	live	obj_item_fish_mossglob	1	0
+proc	/obj/item/fish/mossglob	Initialize	code/modules/fishing/fish/types/rift.dm:460	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/mossglob	set_status	code/modules/fishing/fish/types/rift.dm:464	new_status,silent	yes	full	proc
+proc	/obj/item/fish/mossglob	suicide_act	code/modules/fishing/fish/types/rift.dm:471	user	yes	full	proc
+proc	/obj/item/fish/mossglob	get_force_rank	code/modules/fishing/fish/types/rift.dm:481		yes	full	proc
+type	/obj/item/fish/babbelfish	/obj/item/fish	code/modules/fishing/fish/types/rift.dm:508	live	obj_item_fish_babbelfish	1	0
+proc	/obj/item/fish/babbelfish	examine_more	code/modules/fishing/fish/types/rift.dm:545	user	yes	full	proc
+proc	/obj/item/fish/babbelfish	suicide_act	code/modules/fishing/fish/types/rift.dm:568	user	yes	full	proc
+proc	/obj/item/fish/babbelfish	fishes_die_twice	code/modules/fishing/fish/types/rift.dm:600		yes	full	proc root
+proc	/obj/item/fish/babbelfish	check_loc	code/modules/fishing/fish/types/rift.dm:611		yes	full	proc root
+proc	/obj/item/fish/babbelfish	set_status	code/modules/fishing/fish/types/rift.dm:617	new_status,silent	yes	full	proc
+proc	/obj/item/fish/babbelfish	psy_wail	code/modules/fishing/fish/types/rift.dm:630		yes	full	proc root
+proc	/obj/item/fish/babbelfish	attack_hand	code/modules/fishing/fish/types/rift.dm:669	user,modifiers	yes	full	proc
+type	/obj/item/fish/mastodon	/obj/item/fish	code/modules/fishing/fish/types/ruins.dm:3	live	obj_item_fish_mastodon	1	0
+proc	/obj/item/fish/mastodon	Initialize	code/modules/fishing/fish/types/ruins.dm:29	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/mastodon	fish_grind_results	code/modules/fishing/fish/types/ruins.dm:33		yes	full	proc
+proc	/obj/item/fish/mastodon	make_edible	code/modules/fishing/fish/types/ruins.dm:36	weight_val	yes	full	proc
+proc	/obj/item/fish/mastodon	get_export_price	code/modules/fishing/fish/types/ruins.dm:39	price,elasticity_percent	yes	full	proc
+proc	/obj/item/fish/mastodon	get_health_warnings	code/modules/fishing/fish/types/ruins.dm:42	user,always_deep	yes	full	proc
+proc	/obj/item/fish/mastodon	suicide_act	code/modules/fishing/fish/types/ruins.dm:45	user	yes	full	proc
+proc	/obj/item/fish/mastodon	skeleton_appears	code/modules/fishing/fish/types/ruins.dm:52	user	yes	full	proc root
+type	/obj/item/fish/soul	/obj/item/fish	code/modules/fishing/fish/types/ruins.dm:66	live	obj_item_fish_soul	1	0
+proc	/obj/item/fish/soul	get_food_types	code/modules/fishing/fish/types/ruins.dm:89		yes	full	proc
+proc	/obj/item/fish/soul	get_fish_taste	code/modules/fishing/fish/types/ruins.dm:92		yes	full	proc
+proc	/obj/item/fish/soul	get_fish_taste_cooked	code/modules/fishing/fish/types/ruins.dm:95		yes	full	proc
+proc	/obj/item/fish/soul	suicide_act	code/modules/fishing/fish/types/ruins.dm:98	user	yes	full	proc
+proc	/obj/item/fish/soul	good_ending	code/modules/fishing/fish/types/ruins.dm:106	user	yes	full	proc root
+proc	/obj/item/fish/soul	soul_attack	code/modules/fishing/fish/types/ruins.dm:117	user,iteration	yes	full	proc root
+type	/obj/item/fish/skin_crab	/obj/item/fish	code/modules/fishing/fish/types/ruins.dm:133	live	obj_item_fish_skin_crab	1	0
+proc	/obj/item/fish/skin_crab	get_fish_taste	code/modules/fishing/fish/types/ruins.dm:153		yes	full	proc
+proc	/obj/item/fish/skin_crab	get_fish_taste_cooked	code/modules/fishing/fish/types/ruins.dm:156		yes	full	proc
+proc	/obj/item/fish/skin_crab	suicide_act	code/modules/fishing/fish/types/ruins.dm:159	user	yes	full	proc
+type	/obj/item/fish/clownfish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:2	live	obj_item_fish_clownfish	1	0
+proc	/obj/item/fish/clownfish	get_fish_taste	code/modules/fishing/fish/types/saltwater.dm:18		yes	full	proc
+type	/obj/item/fish/clownfish/lube	/obj/item/fish/clownfish	code/modules/fishing/fish/types/saltwater.dm:22	live	obj_item_fish_clownfish_lube	1	0
+proc	/obj/item/fish/clownfish/lube	suicide_act	code/modules/fishing/fish/types/saltwater.dm:35	user	yes	full	proc
 type	/obj/item/fish/cardinal	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:43	live	obj_item_fish_cardinal	0	0
 type	/obj/item/fish/greenchromis	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:58	live	obj_item_fish_greenchromis	0	0
 type	/obj/item/fish/firefish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:74	live	obj_item_fish_firefish	0	0
-type	/obj/item/fish/pufferfish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:90	inert	obj_item_fish_pufferfish	0	0
-proc	/obj/item/fish/pufferfish	suicide_act	code/modules/fishing/fish/types/saltwater.dm:106	user	no	-	proc
+type	/obj/item/fish/pufferfish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:90	live	obj_item_fish_pufferfish	1	0
+proc	/obj/item/fish/pufferfish	suicide_act	code/modules/fishing/fish/types/saltwater.dm:106	user	yes	full	proc
 type	/obj/item/fish/lanternfish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:111	live	obj_item_fish_lanternfish	0	0
 type	/obj/item/fish/stingray	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:128	live	obj_item_fish_stingray	0	0
-type	/obj/item/fish/swordfish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:143	inert	obj_item_fish_swordfish	0	0
-proc	/obj/item/fish/swordfish	get_force_rank	code/modules/fishing/fish/types/saltwater.dm:186		no	-	proc
-proc	/obj/item/fish/swordfish	calculate_fish_force_bonus	code/modules/fishing/fish/types/saltwater.dm:232	bonus_malus	no	-	proc
-type	/obj/item/fish/squid	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:240	inert	obj_item_fish_squid	0	0
-proc	/obj/item/fish/squid	suicide_act	code/modules/fishing/fish/types/saltwater.dm:255	user	no	-	proc
-proc	/obj/item/fish/squid	get_fish_taste	code/modules/fishing/fish/types/saltwater.dm:280		no	-	proc
-proc	/obj/item/fish/squid	get_fish_taste_cooked	code/modules/fishing/fish/types/saltwater.dm:283		no	-	proc
-type	/obj/item/fish/monkfish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:287	inert	obj_item_fish_monkfish	0	0
-proc	/obj/item/fish/monkfish	Initialize	code/modules/fishing/fish/types/saltwater.dm:309	mapload,apply_qualities	no	-	proc
+type	/obj/item/fish/swordfish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:143	live	obj_item_fish_swordfish	1	0
+proc	/obj/item/fish/swordfish	get_force_rank	code/modules/fishing/fish/types/saltwater.dm:186		yes	full	proc
+proc	/obj/item/fish/swordfish	calculate_fish_force_bonus	code/modules/fishing/fish/types/saltwater.dm:232	bonus_malus	yes	full	proc
+type	/obj/item/fish/squid	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:240	live	obj_item_fish_squid	1	0
+proc	/obj/item/fish/squid	suicide_act	code/modules/fishing/fish/types/saltwater.dm:255	user	yes	full	proc
+proc	/obj/item/fish/squid	get_fish_taste	code/modules/fishing/fish/types/saltwater.dm:280		yes	full	proc
+proc	/obj/item/fish/squid	get_fish_taste_cooked	code/modules/fishing/fish/types/saltwater.dm:283		yes	full	proc
+type	/obj/item/fish/monkfish	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:287	live	obj_item_fish_monkfish	1	0
+proc	/obj/item/fish/monkfish	Initialize	code/modules/fishing/fish/types/saltwater.dm:309	mapload,apply_qualities	yes	full	proc
 type	/obj/item/fish/plaice	/obj/item/fish	code/modules/fishing/fish/types/saltwater.dm:314	live	obj_item_fish_plaice	0	0
-type	/obj/item/fish/ratfish	/obj/item/fish	code/modules/fishing/fish/types/station.dm:2	inert	obj_item_fish_ratfish	0	0
-proc	/obj/item/fish/ratfish	get_fish_taste	code/modules/fishing/fish/types/station.dm:24		no	-	proc
-proc	/obj/item/fish/ratfish	get_fish_taste_cooked	code/modules/fishing/fish/types/station.dm:27		no	-	proc
-proc	/obj/item/fish/ratfish	get_food_types	code/modules/fishing/fish/types/station.dm:30		no	-	proc
-proc	/obj/item/fish/ratfish	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/station.dm:33		no	-	proc
-proc	/obj/item/fish/ratfish	Initialize	code/modules/fishing/fish/types/station.dm:38	mapload,apply_qualities	no	-	proc
-type	/obj/item/fish/sludgefish	/obj/item/fish	code/modules/fishing/fish/types/station.dm:44	inert	obj_item_fish_sludgefish	0	0
-proc	/obj/item/fish/sludgefish	get_fish_taste	code/modules/fishing/fish/types/station.dm:62		no	-	proc
-type	/obj/item/fish/sludgefish/purple	/obj/item/fish/sludgefish	code/modules/fishing/fish/types/station.dm:66	inert	obj_item_fish_sludgefish_purple	0	0
-type	/obj/item/fish/slimefish	/obj/item/fish	code/modules/fishing/fish/types/station.dm:74	inert	obj_item_fish_slimefish	0	0
-proc	/obj/item/fish/slimefish	get_food_types	code/modules/fishing/fish/types/station.dm:102		no	-	proc
-proc	/obj/item/fish/slimefish	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/station.dm:105		no	-	proc
-type	/obj/item/fish/fryish	/obj/item/fish	code/modules/fishing/fish/types/station.dm:109	inert	obj_item_fish_fryish	0	0
-proc	/obj/item/fish/fryish	Initialize	code/modules/fishing/fish/types/station.dm:148	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/fryish	suicide_act	code/modules/fishing/fish/types/station.dm:154	user	no	-	proc
-proc	/obj/item/fish/fryish	update_size_and_weight	code/modules/fishing/fish/types/station.dm:160	new_size,new_weight,update_materials	no	-	proc
-proc	/obj/item/fish/fryish	get_fish_taste	code/modules/fishing/fish/types/station.dm:168		no	-	proc
-proc	/obj/item/fish/fryish	get_fish_taste_cooked	code/modules/fishing/fish/types/station.dm:171		no	-	proc
-proc	/obj/item/fish/fryish	get_food_types	code/modules/fishing/fish/types/station.dm:174		no	-	proc
-proc	/obj/item/fish/fryish	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/station.dm:177		no	-	proc
-type	/obj/item/fish/fryish/fritterish	/obj/item/fish/fryish	code/modules/fishing/fish/types/station.dm:189	inert	obj_item_fish_fryish_fritterish	0	0
-proc	/obj/item/fish/fryish/fritterish	Initialize	code/modules/fishing/fish/types/station.dm:207	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/fryish/fritterish	load_variant	code/modules/fishing/fish/types/station.dm:212	new_variant	no	-	proc root
-proc	/obj/item/fish/fryish/fritterish	persistence_save	code/modules/fishing/fish/types/station.dm:226	data	no	-	proc
-proc	/obj/item/fish/fryish/fritterish	persistence_load	code/modules/fishing/fish/types/station.dm:229	data	no	-	proc
-proc	/obj/item/fish/fryish/fritterish	update_name	code/modules/fishing/fish/types/station.dm:234		no	-	proc
-proc	/obj/item/fish/fryish/fritterish	update_desc	code/modules/fishing/fish/types/station.dm:242		no	-	proc
-type	/obj/item/fish/fryish/nessie	/obj/item/fish/fryish	code/modules/fishing/fish/types/station.dm:255	inert	obj_item_fish_fryish_nessie	0	0
-type	/obj/item/fish/emulsijack	/obj/item/fish	code/modules/fishing/fish/types/syndicate.dm:3	inert	obj_item_fish_emulsijack	0	0
-proc	/obj/item/fish/emulsijack	get_fish_taste	code/modules/fishing/fish/types/syndicate.dm:17		no	-	proc
-type	/obj/item/fish/donkfish	/obj/item/fish	code/modules/fishing/fish/types/syndicate.dm:21	inert	obj_item_fish_donkfish	0	0
-proc	/obj/item/fish/donkfish	suicide_act	code/modules/fishing/fish/types/syndicate.dm:35	user	no	-	proc
-type	/obj/item/fish/jumpercable	/obj/item/fish	code/modules/fishing/fish/types/syndicate.dm:48	inert	obj_item_fish_jumpercable	0	0
-proc	/obj/item/fish/jumpercable	get_export_price	code/modules/fishing/fish/types/syndicate.dm:70	price,elasticity_percent	no	-	proc
-proc	/obj/item/fish/jumpercable	suicide_act	code/modules/fishing/fish/types/syndicate.dm:74	user	no	-	proc
-type	/obj/item/fish/chainsawfish	/obj/item/fish	code/modules/fishing/fish/types/syndicate.dm:82	inert	obj_item_fish_chainsawfish	0	0
-proc	/obj/item/fish/chainsawfish	Initialize	code/modules/fishing/fish/types/syndicate.dm:123	mapload	no	-	proc
-proc	/obj/item/fish/chainsawfish	get_fish_taste	code/modules/fishing/fish/types/syndicate.dm:127		no	-	proc
-proc	/obj/item/fish/chainsawfish	update_icon_state	code/modules/fishing/fish/types/syndicate.dm:130		no	-	proc
-proc	/obj/item/fish/chainsawfish	get_force_rank	code/modules/fishing/fish/types/syndicate.dm:139		no	-	proc
-proc	/obj/item/fish/chainsawfish	calculate_fish_force_bonus	code/modules/fishing/fish/types/syndicate.dm:195	bonus_malus	no	-	proc
-proc	/obj/item/fish/chainsawfish	suicide_act	code/modules/fishing/fish/types/syndicate.dm:204	user	no	-	proc
-type	/obj/item/fish/moonfish	/obj/item/fish	code/modules/fishing/fish/types/tiziran.dm:4	inert	obj_item_fish_moonfish	0	0
-proc	/obj/item/fish/moonfish	Initialize	code/modules/fishing/fish/types/tiziran.dm:31	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/moonfish	egg_checks	code/modules/fishing/fish/types/tiziran.dm:37	source,seconds_per_tick,growth,result_path	no	-	proc root
-type	/obj/item/fish/moonfish/dwarf	/obj/item/fish/moonfish	code/modules/fishing/fish/types/tiziran.dm:49	inert	obj_item_fish_moonfish_dwarf	0	0
-proc	/obj/item/fish/moonfish/dwarf	update_size_and_weight	code/modules/fishing/fish/types/tiziran.dm:64	new_size,new_weight,update_materials	no	-	proc
-type	/obj/item/fish/gunner_jellyfish	/obj/item/fish	code/modules/fishing/fish/types/tiziran.dm:71	inert	obj_item_fish_gunner_jellyfish	0	0
-proc	/obj/item/fish/gunner_jellyfish	Initialize	code/modules/fishing/fish/types/tiziran.dm:89	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/gunner_jellyfish	get_fish_taste	code/modules/fishing/fish/types/tiziran.dm:93		no	-	proc
-proc	/obj/item/fish/gunner_jellyfish	get_fish_taste_cooked	code/modules/fishing/fish/types/tiziran.dm:96		no	-	proc
-type	/obj/item/fish/needlefish	/obj/item/fish	code/modules/fishing/fish/types/tiziran.dm:100	inert	obj_item_fish_needlefish	0	0
-proc	/obj/item/fish/needlefish	Initialize	code/modules/fishing/fish/types/tiziran.dm:116	mapload,apply_qualities	no	-	proc
-type	/obj/item/fish/armorfish	/obj/item/fish	code/modules/fishing/fish/types/tiziran.dm:121	inert	obj_item_fish_armorfish	0	0
-proc	/obj/item/fish/armorfish	Initialize	code/modules/fishing/fish/types/tiziran.dm:137	mapload,apply_qualities	no	-	proc
-proc	/obj/item/fish/armorfish	get_fish_taste	code/modules/fishing/fish/types/tiziran.dm:141		no	-	proc
-proc	/obj/item/fish/armorfish	get_fish_taste_cooked	code/modules/fishing/fish/types/tiziran.dm:144		no	-	proc
+type	/obj/item/fish/ratfish	/obj/item/fish	code/modules/fishing/fish/types/station.dm:2	live	obj_item_fish_ratfish	1	0
+proc	/obj/item/fish/ratfish	get_fish_taste	code/modules/fishing/fish/types/station.dm:24		yes	full	proc
+proc	/obj/item/fish/ratfish	get_fish_taste_cooked	code/modules/fishing/fish/types/station.dm:27		yes	full	proc
+proc	/obj/item/fish/ratfish	get_food_types	code/modules/fishing/fish/types/station.dm:30		yes	full	proc
+proc	/obj/item/fish/ratfish	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/station.dm:33		yes	full	proc
+proc	/obj/item/fish/ratfish	Initialize	code/modules/fishing/fish/types/station.dm:38	mapload,apply_qualities	yes	full	proc
+type	/obj/item/fish/sludgefish	/obj/item/fish	code/modules/fishing/fish/types/station.dm:44	live	obj_item_fish_sludgefish	1	0
+proc	/obj/item/fish/sludgefish	get_fish_taste	code/modules/fishing/fish/types/station.dm:62		yes	full	proc
+type	/obj/item/fish/sludgefish/purple	/obj/item/fish/sludgefish	code/modules/fishing/fish/types/station.dm:66	live	obj_item_fish_sludgefish_purple	0	0
+type	/obj/item/fish/slimefish	/obj/item/fish	code/modules/fishing/fish/types/station.dm:74	live	obj_item_fish_slimefish	1	0
+proc	/obj/item/fish/slimefish	get_food_types	code/modules/fishing/fish/types/station.dm:102		yes	full	proc
+proc	/obj/item/fish/slimefish	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/station.dm:105		yes	full	proc
+type	/obj/item/fish/fryish	/obj/item/fish	code/modules/fishing/fish/types/station.dm:109	live	obj_item_fish_fryish	1	0
+proc	/obj/item/fish/fryish	Initialize	code/modules/fishing/fish/types/station.dm:148	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/fryish	suicide_act	code/modules/fishing/fish/types/station.dm:154	user	yes	full	proc
+proc	/obj/item/fish/fryish	update_size_and_weight	code/modules/fishing/fish/types/station.dm:160	new_size,new_weight,update_materials	yes	full	proc
+proc	/obj/item/fish/fryish	get_fish_taste	code/modules/fishing/fish/types/station.dm:168		yes	full	proc
+proc	/obj/item/fish/fryish	get_fish_taste_cooked	code/modules/fishing/fish/types/station.dm:171		yes	full	proc
+proc	/obj/item/fish/fryish	get_food_types	code/modules/fishing/fish/types/station.dm:174		yes	full	proc
+proc	/obj/item/fish/fryish	get_base_edible_reagents_to_add	code/modules/fishing/fish/types/station.dm:177		yes	full	proc
+type	/obj/item/fish/fryish/fritterish	/obj/item/fish/fryish	code/modules/fishing/fish/types/station.dm:189	live	obj_item_fish_fryish_fritterish	1	0
+proc	/obj/item/fish/fryish/fritterish	Initialize	code/modules/fishing/fish/types/station.dm:207	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/fryish/fritterish	load_variant	code/modules/fishing/fish/types/station.dm:212	new_variant	yes	full	proc root
+proc	/obj/item/fish/fryish/fritterish	persistence_save	code/modules/fishing/fish/types/station.dm:226	data	yes	full	proc
+proc	/obj/item/fish/fryish/fritterish	persistence_load	code/modules/fishing/fish/types/station.dm:229	data	yes	full	proc
+proc	/obj/item/fish/fryish/fritterish	update_name	code/modules/fishing/fish/types/station.dm:234		yes	full	proc
+proc	/obj/item/fish/fryish/fritterish	update_desc	code/modules/fishing/fish/types/station.dm:242		yes	full	proc
+type	/obj/item/fish/fryish/nessie	/obj/item/fish/fryish	code/modules/fishing/fish/types/station.dm:255	live	obj_item_fish_fryish_nessie	0	0
+type	/obj/item/fish/emulsijack	/obj/item/fish	code/modules/fishing/fish/types/syndicate.dm:3	live	obj_item_fish_emulsijack	1	0
+proc	/obj/item/fish/emulsijack	get_fish_taste	code/modules/fishing/fish/types/syndicate.dm:17		yes	full	proc
+type	/obj/item/fish/donkfish	/obj/item/fish	code/modules/fishing/fish/types/syndicate.dm:21	live	obj_item_fish_donkfish	1	0
+proc	/obj/item/fish/donkfish	suicide_act	code/modules/fishing/fish/types/syndicate.dm:35	user	yes	full	proc
+type	/obj/item/fish/jumpercable	/obj/item/fish	code/modules/fishing/fish/types/syndicate.dm:48	live	obj_item_fish_jumpercable	1	0
+proc	/obj/item/fish/jumpercable	get_export_price	code/modules/fishing/fish/types/syndicate.dm:70	price,elasticity_percent	yes	full	proc
+proc	/obj/item/fish/jumpercable	suicide_act	code/modules/fishing/fish/types/syndicate.dm:74	user	yes	full	proc
+type	/obj/item/fish/chainsawfish	/obj/item/fish	code/modules/fishing/fish/types/syndicate.dm:82	live	obj_item_fish_chainsawfish	1	0
+proc	/obj/item/fish/chainsawfish	Initialize	code/modules/fishing/fish/types/syndicate.dm:123	mapload	yes	full	proc
+proc	/obj/item/fish/chainsawfish	get_fish_taste	code/modules/fishing/fish/types/syndicate.dm:127		yes	full	proc
+proc	/obj/item/fish/chainsawfish	update_icon_state	code/modules/fishing/fish/types/syndicate.dm:130		yes	full	proc
+proc	/obj/item/fish/chainsawfish	get_force_rank	code/modules/fishing/fish/types/syndicate.dm:139		yes	full	proc
+proc	/obj/item/fish/chainsawfish	calculate_fish_force_bonus	code/modules/fishing/fish/types/syndicate.dm:195	bonus_malus	yes	full	proc
+proc	/obj/item/fish/chainsawfish	suicide_act	code/modules/fishing/fish/types/syndicate.dm:204	user	yes	full	proc
+type	/obj/item/fish/moonfish	/obj/item/fish	code/modules/fishing/fish/types/tiziran.dm:4	live	obj_item_fish_moonfish	1	0
+proc	/obj/item/fish/moonfish	Initialize	code/modules/fishing/fish/types/tiziran.dm:31	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/moonfish	egg_checks	code/modules/fishing/fish/types/tiziran.dm:37	source,seconds_per_tick,growth,result_path	yes	full	proc root
+type	/obj/item/fish/moonfish/dwarf	/obj/item/fish/moonfish	code/modules/fishing/fish/types/tiziran.dm:49	live	obj_item_fish_moonfish_dwarf	1	0
+proc	/obj/item/fish/moonfish/dwarf	update_size_and_weight	code/modules/fishing/fish/types/tiziran.dm:64	new_size,new_weight,update_materials	yes	full	proc
+type	/obj/item/fish/gunner_jellyfish	/obj/item/fish	code/modules/fishing/fish/types/tiziran.dm:71	live	obj_item_fish_gunner_jellyfish	1	0
+proc	/obj/item/fish/gunner_jellyfish	Initialize	code/modules/fishing/fish/types/tiziran.dm:89	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/gunner_jellyfish	get_fish_taste	code/modules/fishing/fish/types/tiziran.dm:93		yes	full	proc
+proc	/obj/item/fish/gunner_jellyfish	get_fish_taste_cooked	code/modules/fishing/fish/types/tiziran.dm:96		yes	full	proc
+type	/obj/item/fish/needlefish	/obj/item/fish	code/modules/fishing/fish/types/tiziran.dm:100	live	obj_item_fish_needlefish	1	0
+proc	/obj/item/fish/needlefish	Initialize	code/modules/fishing/fish/types/tiziran.dm:116	mapload,apply_qualities	yes	full	proc
+type	/obj/item/fish/armorfish	/obj/item/fish	code/modules/fishing/fish/types/tiziran.dm:121	live	obj_item_fish_armorfish	1	0
+proc	/obj/item/fish/armorfish	Initialize	code/modules/fishing/fish/types/tiziran.dm:137	mapload,apply_qualities	yes	full	proc
+proc	/obj/item/fish/armorfish	get_fish_taste	code/modules/fishing/fish/types/tiziran.dm:141		yes	full	proc
+proc	/obj/item/fish/armorfish	get_fish_taste_cooked	code/modules/fishing/fish/types/tiziran.dm:144		yes	full	proc
 type	/obj/item/pizzabox	/obj/item	code/modules/food_and_drinks/pizzabox.dm:10	live	obj_item_pizzabox	1	0
 proc	/obj/item/pizzabox	Initialize	code/modules/food_and_drinks/pizzabox.dm:40	mapload	yes	full	proc
 proc	/obj/item/pizzabox	register_bomb	code/modules/food_and_drinks/pizzabox.dm:48	new_bomb	yes	full	proc root
@@ -94284,9 +94284,9 @@ type	/obj/effect/overlay/vis/ride_minigame	/obj/effect/overlay/vis	code/datums/c
 type	/obj/effect/overlay/vis/field	/obj/effect/overlay/vis	code/datums/proximity_monitor/fields/bubble.dm:124	live	obj_effect_overlay_vis_field	1	0
 proc	/obj/effect/overlay/vis/field	set_wobbly	code/datums/proximity_monitor/fields/bubble.dm:129	wobble_duration	yes	full	proc root
 proc	/obj/effect/overlay/vis/field	remove_wobbly	code/datums/proximity_monitor/fields/bubble.dm:136		yes	full	proc root
-type	/obj/effect/overlay/windup_bar	/obj/effect/overlay	code/datums/components/throwbonus_on_windup.dm:147	inert	obj_effect_overlay_windup_bar	0	0
-proc	/obj/effect/overlay/windup_bar	recalculate_position	code/datums/components/throwbonus_on_windup.dm:158	input_count	no	-	proc root
-proc	/obj/effect/overlay/windup_bar	update_overlays	code/datums/components/throwbonus_on_windup.dm:162		no	-	proc
+type	/obj/effect/overlay/windup_bar	/obj/effect/overlay	code/datums/components/throwbonus_on_windup.dm:147	live	obj_effect_overlay_windup_bar	1	0
+proc	/obj/effect/overlay/windup_bar	recalculate_position	code/datums/components/throwbonus_on_windup.dm:158	input_count	yes	full	proc root
+proc	/obj/effect/overlay/windup_bar	update_overlays	code/datums/components/throwbonus_on_windup.dm:162		yes	full	proc
 type	/obj/effect/overlay/holo_pad_hologram	/obj/effect/overlay	code/game/machinery/hologram.dm:932	live	obj_effect_overlay_holo_pad_hologram	1	0
 proc	/obj/effect/overlay/holo_pad_hologram	Initialize	code/game/machinery/hologram.dm:937	mapload	yes	full	proc
 proc	/obj/effect/overlay/holo_pad_hologram	Destroy	code/game/machinery/hologram.dm:941		yes	full	proc
@@ -105483,28 +105483,28 @@ proc	/obj/structure/spacevine	atmos_expose	code/modules/events/space_vines/vine_
 proc	/obj/structure/spacevine	CanAllowThrough	code/modules/events/space_vines/vine_structure.dm:215	mover,border_dir	yes	full	proc
 proc	/obj/structure/spacevine	block_sunlight	code/modules/events/space_vines/vine_structure.dm:220		yes	full	proc root
 proc	/obj/structure/spacevine	unblock_sunlight	code/modules/events/space_vines/vine_structure.dm:223		yes	full	proc root
-type	/obj/structure/fish_mount	/obj/structure	code/modules/fishing/fish_mount.dm:18	inert	obj_structure_fish_mount	0	1
-proc	/obj/structure/fish_mount	Initialize	code/modules/fishing/fish_mount.dm:37	mapload	no	-	proc
-proc	/obj/structure/fish_mount	Destroy	code/modules/fishing/fish_mount.dm:50	force	no	-	proc
-proc	/obj/structure/fish_mount	load_trophy_fish	code/modules/fishing/fish_mount.dm:54	source	no	-	proc root
-proc	/obj/structure/fish_mount	screwdriver_act	code/modules/fishing/fish_mount.dm:61	user,item	no	-	proc
-proc	/obj/structure/fish_mount	add_first_fish	code/modules/fishing/fish_mount.dm:71		no	-	proc root
-proc	/obj/structure/fish_mount	atom_deconstruct	code/modules/fishing/fish_mount.dm:82	disassembled	no	-	proc
-proc	/obj/structure/fish_mount	item_interaction	code/modules/fishing/fish_mount.dm:89	user,item,modifiers	no	-	proc
-proc	/obj/structure/fish_mount	IsContainedAtomAccessible	code/modules/fishing/fish_mount.dm:106	contained,user	no	-	proc
-proc	/obj/structure/fish_mount	add_fish	code/modules/fishing/fish_mount.dm:109	fish,from_persistence,catcher	no	-	proc root
-proc	/obj/structure/fish_mount	get_fish_beauty	code/modules/fishing/fish_mount.dm:139		no	-	proc root
-proc	/obj/structure/fish_mount	on_fish_attack_hand	code/modules/fishing/fish_mount.dm:146	source,user	no	-	proc root
-proc	/obj/structure/fish_mount	attack_hand_secondary	code/modules/fishing/fish_mount.dm:151	user,modifiers	no	-	proc
-proc	/obj/structure/fish_mount	remove_fish	code/modules/fishing/fish_mount.dm:159	user	no	-	proc root
-proc	/obj/structure/fish_mount	Exited	code/modules/fishing/fish_mount.dm:178	gone	no	-	proc
-proc	/obj/structure/fish_mount	roll_for_safe_removal	code/modules/fishing/fish_mount.dm:193	user	no	-	proc root
-type	/obj/structure/fish_mount/bar	/obj/structure/fish_mount	code/modules/fishing/fish_mount.dm:209	inert	obj_structure_fish_mount_bar	0	1
-type	/obj/structure/fish_mount/bar/directional	/obj/structure/fish_mount/bar	code/modules/fishing/fish_mount.dm:211	inert	obj_structure_fish_mount_bar_directional	0	1
-type	/obj/structure/fish_mount/bar/directional/north	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	inert	obj_structure_fish_mount_bar_directional_north	0	1
-type	/obj/structure/fish_mount/bar/directional/south	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	inert	obj_structure_fish_mount_bar_directional_south	0	0
-type	/obj/structure/fish_mount/bar/directional/east	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	inert	obj_structure_fish_mount_bar_directional_east	0	0
-type	/obj/structure/fish_mount/bar/directional/west	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	inert	obj_structure_fish_mount_bar_directional_west	0	0
+type	/obj/structure/fish_mount	/obj/structure	code/modules/fishing/fish_mount.dm:18	live	obj_structure_fish_mount	1	1
+proc	/obj/structure/fish_mount	Initialize	code/modules/fishing/fish_mount.dm:37	mapload	yes	full	proc
+proc	/obj/structure/fish_mount	Destroy	code/modules/fishing/fish_mount.dm:50	force	yes	full	proc
+proc	/obj/structure/fish_mount	load_trophy_fish	code/modules/fishing/fish_mount.dm:54	source	yes	full	proc root
+proc	/obj/structure/fish_mount	screwdriver_act	code/modules/fishing/fish_mount.dm:61	user,item	yes	full	proc
+proc	/obj/structure/fish_mount	add_first_fish	code/modules/fishing/fish_mount.dm:71		yes	full	proc root
+proc	/obj/structure/fish_mount	atom_deconstruct	code/modules/fishing/fish_mount.dm:82	disassembled	yes	full	proc
+proc	/obj/structure/fish_mount	item_interaction	code/modules/fishing/fish_mount.dm:89	user,item,modifiers	yes	full	proc
+proc	/obj/structure/fish_mount	IsContainedAtomAccessible	code/modules/fishing/fish_mount.dm:106	contained,user	yes	full	proc
+proc	/obj/structure/fish_mount	add_fish	code/modules/fishing/fish_mount.dm:109	fish,from_persistence,catcher	yes	full	proc root
+proc	/obj/structure/fish_mount	get_fish_beauty	code/modules/fishing/fish_mount.dm:139		yes	full	proc root
+proc	/obj/structure/fish_mount	on_fish_attack_hand	code/modules/fishing/fish_mount.dm:146	source,user	yes	full	proc root
+proc	/obj/structure/fish_mount	attack_hand_secondary	code/modules/fishing/fish_mount.dm:151	user,modifiers	yes	full	proc
+proc	/obj/structure/fish_mount	remove_fish	code/modules/fishing/fish_mount.dm:159	user	yes	full	proc root
+proc	/obj/structure/fish_mount	Exited	code/modules/fishing/fish_mount.dm:178	gone	yes	full	proc
+proc	/obj/structure/fish_mount	roll_for_safe_removal	code/modules/fishing/fish_mount.dm:193	user	yes	full	proc root
+type	/obj/structure/fish_mount/bar	/obj/structure/fish_mount	code/modules/fishing/fish_mount.dm:209	live	obj_structure_fish_mount_bar	0	1
+type	/obj/structure/fish_mount/bar/directional	/obj/structure/fish_mount/bar	code/modules/fishing/fish_mount.dm:211	live	obj_structure_fish_mount_bar_directional	0	1
+type	/obj/structure/fish_mount/bar/directional/north	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	live	obj_structure_fish_mount_bar_directional_north	0	1
+type	/obj/structure/fish_mount/bar/directional/south	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	live	obj_structure_fish_mount_bar_directional_south	0	0
+type	/obj/structure/fish_mount/bar/directional/east	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	live	obj_structure_fish_mount_bar_directional_east	0	0
+type	/obj/structure/fish_mount/bar/directional/west	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	live	obj_structure_fish_mount_bar_directional_west	0	0
 type	/obj/structure/aquarium	/obj/structure	code/modules/fishing/aquarium/aquarium.dm:2	inert	obj_structure_aquarium	0	0
 proc	/obj/structure/aquarium	Initialize	code/modules/fishing/aquarium/aquarium.dm:29	mapload	no	-	proc
 proc	/obj/structure/aquarium	update_icon	code/modules/fishing/aquarium/aquarium.dm:36		no	-	proc

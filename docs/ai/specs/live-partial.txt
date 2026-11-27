@@ -668,7 +668,6 @@
 ## Syndicate N2c (D316): the reinforcements and the assault pod; not-translated.md section 149.
 
 ## Syndicate N3 (D316): the clown operatives; not-translated.md section 150.
-/datum/reagent/lube	used_on_fish	M10+	deferred	fishing (not ported): a fish fed space lube grows into a lubefish
 
 ## Syndicate brig timers (D316): the brig cells' door timers and flashers; not-translated.md section 151.
 
@@ -755,12 +754,8 @@
 /obj/item/machine_remote	add_context	M10+	deferred	the context tips (screentips, not now: D291 keeps them deferred)
 
 ## Gaps RG2 (D339): the medicines, toxins and addictions, not-translated.md section 225
-/datum/reagent/toxin/mutagen	used_on_fish	M10+	deferred	fishing (not ported): mutagen makes a fish mutagenic for a while
-/datum/reagent/toxin/bonehurtingjuice	used_on_fish	M10+	deferred	fishing (not ported): bone hurting juice hurts a fish made of bone
 
 ## Gaps RG3 (D333, D339): the drugs, pyrotechnics and the other reagents, not-translated.md section 226
-/datum/reagent/teslium	used_on_fish	M10+	deferred	fishing (not ported, gaps FI1-3): a fish fed teslium is electrogenic for a while
-/datum/reagent/growthserum	used_on_fish	M10+	deferred	fishing (not ported, gaps FI1-3): a fish fed growth serum grows quickly for a while
 
 ## Species SP2a (D349): the moth and the plasmaman
 /obj/item/clothing/under/plasmaman/clown/magic	Initialize	D349	deferred	the wizard's enchanted clown suit adds the clown pockets spell (a wizard item, antagonist code not ported)

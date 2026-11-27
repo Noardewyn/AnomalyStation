@@ -565,9 +565,9 @@ public partial class datum_controller_subsystem_processing_burning
     }
 }
 
-// tg: code/controllers/subsystem/processing/fishing.dm:3
-[DmPath("/datum/controller/subsystem/processing/fishing"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_processing_fishing : datum_controller_subsystem_processing
+// tg: code/controllers/subsystem/processing/fishing.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/processing/fishing")]
+public partial class datum_controller_subsystem_processing_fishing
 {
     public DmList cached_fish_icons; // tg: code/controllers/subsystem/processing/fishing.dm:10
     public DmList cached_unknown_fish_icons; // tg: code/controllers/subsystem/processing/fishing.dm:12

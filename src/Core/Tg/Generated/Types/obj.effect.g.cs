@@ -165,9 +165,9 @@ public partial class obj_effect_overlay_vis_field
     }
 }
 
-// tg: code/datums/components/throwbonus_on_windup.dm:147
-[DmPath("/obj/effect/overlay/windup_bar"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_overlay_windup_bar : obj_effect_overlay
+// tg: code/datums/components/throwbonus_on_windup.dm:147 (the var block of a hand-written class)
+[DmPath("/obj/effect/overlay/windup_bar")]
+public partial class obj_effect_overlay_windup_bar
 {
     public float maximum_count = 1E+31f; // tg: code/datums/components/throwbonus_on_windup.dm:154
     public float current_count = 0; // tg: code/datums/components/throwbonus_on_windup.dm:156

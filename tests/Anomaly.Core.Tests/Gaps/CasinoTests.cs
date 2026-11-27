@@ -38,6 +38,8 @@ public class CasinoTests
             c.Wheel = Dm.@new<obj_machinery_roulette>(locate(5, 6, 1));
         });
         c.R.In(() => (get_area(locate(4, 5, 1)) as area).requires_power = FALSE);
+        // no payday inside a bet (an assistant's paycheck landed in one once the fish's subsystems moved the MC's ticks)
+        c.R.In(() => SSeconomy.can_fire = FALSE);
         c.Feed = Listen(c.R);
         c.Bob = c.R.Join(4, 5, "Bob");
         c.R.In(() => Waiting.NoSleep(c.Bob.fully_replace_character_name(c.Bob.real_name, "Bob")));

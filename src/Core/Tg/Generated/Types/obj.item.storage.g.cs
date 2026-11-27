@@ -3829,9 +3829,9 @@ public partial class obj_item_storage_spooky
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:23
-[DmPath("/obj/item/storage/fish_case"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_fish_case : obj_item_storage
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:23 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/fish_case")]
+public partial class obj_item_storage_fish_case
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:23
     public obj_item_storage_fish_case()
@@ -3855,15 +3855,15 @@ public partial class obj_item_storage_fish_case : obj_item_storage
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:50
-[DmPath("/obj/item/storage/fish_case/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_fish_case_random : obj_item_storage_fish_case
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:50 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/fish_case/random")]
+public partial class obj_item_storage_fish_case_random
 {
     public object fluid_type; // tg: code/modules/fishing/aquarium/aquarium_kit.dm:50
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:56
-[DmPath("/obj/item/storage/fish_case/random/freshwater"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/storage/fish_case/random/freshwater"), DmGeneratedOnly]
 public partial class obj_item_storage_fish_case_random_freshwater : obj_item_storage_fish_case_random
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:56
@@ -3874,7 +3874,7 @@ public partial class obj_item_storage_fish_case_random_freshwater : obj_item_sto
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:59
-[DmPath("/obj/item/storage/fish_case/random/saltwater"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/storage/fish_case/random/saltwater"), DmGeneratedOnly]
 public partial class obj_item_storage_fish_case_random_saltwater : obj_item_storage_fish_case_random
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:59
@@ -3885,7 +3885,7 @@ public partial class obj_item_storage_fish_case_random_saltwater : obj_item_stor
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:62
-[DmPath("/obj/item/storage/fish_case/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/storage/fish_case/syndicate"), DmGeneratedOnly]
 public partial class obj_item_storage_fish_case_syndicate : obj_item_storage_fish_case
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:62
@@ -3895,9 +3895,9 @@ public partial class obj_item_storage_fish_case_syndicate : obj_item_storage_fis
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:73
-[DmPath("/obj/item/storage/fish_case/tiziran"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_fish_case_tiziran : obj_item_storage_fish_case
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:73 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/fish_case/tiziran")]
+public partial class obj_item_storage_fish_case_tiziran
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:73
     public obj_item_storage_fish_case_tiziran()
@@ -3906,9 +3906,9 @@ public partial class obj_item_storage_fish_case_tiziran : obj_item_storage_fish_
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:86
-[DmPath("/obj/item/storage/fish_case/blackmarket"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_fish_case_blackmarket : obj_item_storage_fish_case
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:86 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/fish_case/blackmarket")]
+public partial class obj_item_storage_fish_case_blackmarket
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:86
     public obj_item_storage_fish_case_blackmarket()
@@ -3919,7 +3919,7 @@ public partial class obj_item_storage_fish_case_blackmarket : obj_item_storage_f
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:113
-[DmPath("/obj/item/storage/fish_case/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/storage/fish_case/bluespace"), DmGeneratedOnly]
 public partial class obj_item_storage_fish_case_bluespace : obj_item_storage_fish_case
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:113

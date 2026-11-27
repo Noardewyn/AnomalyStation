@@ -625,6 +625,19 @@ public partial class obj_item_storage_toolbox_guncase_traitor
     }
 }
 
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:62
+public partial class obj_item_storage_fish_case_syndicate
+{
+    // tg: code/modules/fishing/aquarium/aquarium_kit.dm:64
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object get_fish_type()
+    {
+        Dm.Deferred("code/modules/fishing/aquarium/aquarium_kit.dm:64", "get_fish_type: the syndicate fishing portal's fish (GLOB.preset_fish_sources, the fishing spots, FI2) (M10+)");
+        return default;
+    }
+}
+
 // tg: code/modules/reagents/chemistry/machinery/portable_chem_mixer.dm:2
 public partial class obj_item_storage_portable_chem_mixer
 {

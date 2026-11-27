@@ -4274,9 +4274,9 @@ public partial class obj_item_organ_ears_stoat
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:696
-[DmPath("/obj/item/organ/ears/babbelfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_ears_babbelfish : obj_item_organ_ears
+// tg: code/modules/fishing/fish/types/rift.dm:696 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/ears/babbelfish")]
+public partial class obj_item_organ_ears_babbelfish
 {
     public datum_bodypart_overlay_simple_babbearfish babbel_overlay; // tg: code/modules/fishing/fish/types/rift.dm:713
     public object bound_component; // tg: code/modules/fishing/fish/types/rift.dm:714

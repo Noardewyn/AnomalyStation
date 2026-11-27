@@ -4058,28 +4058,6 @@
 /obj/item/firelance	inhand_icon_state	override	code/modules/explorer_drone/loot.dm:150	{"K":"str","N":0,"S":"firelance"}
 /obj/item/firelance	righthand_file	override	code/modules/explorer_drone/loot.dm:151	{"K":"res","N":0,"S":"icons/mob/inhands/items/firelance_righthand.dmi"}
 /obj/item/firelance	lefthand_file	override	code/modules/explorer_drone/loot.dm:152	{"K":"res","N":0,"S":"icons/mob/inhands/items/firelance_lefthand.dmi"}
-/obj/item/fish	required_fluid_type	decl	code/modules/fishing/fish/_fish.dm:64	{"K":"str","N":0,"S":"Freshwater"}
-/obj/item/fish	name	override	code/modules/fishing/fish/_fish.dm:20	{"K":"str","N":0,"S":"fish"}
-/obj/item/fish	desc	override	code/modules/fishing/fish/_fish.dm:21	{"K":"str","N":0,"S":"very bland"}
-/obj/item/fish	abstract_type	override	code/modules/fishing/fish/_fish.dm:22	{"K":"type","N":0,"S":"/obj/item/fish"}
-/obj/item/fish	icon	override	code/modules/fishing/fish/_fish.dm:23	{"K":"res","N":0,"S":"icons/obj/aquarium/fish.dmi"}
-/obj/item/fish	lefthand_file	override	code/modules/fishing/fish/_fish.dm:24	{"K":"res","N":0,"S":"icons/mob/inhands/fish_lefthand.dmi"}
-/obj/item/fish	righthand_file	override	code/modules/fishing/fish/_fish.dm:25	{"K":"res","N":0,"S":"icons/mob/inhands/fish_righthand.dmi"}
-/obj/item/fish	icon_angle	override	code/modules/fishing/fish/_fish.dm:26	{"K":"num","N":180}
-/obj/item/fish	force	override	code/modules/fishing/fish/_fish.dm:27	{"K":"num","N":6}
-/obj/item/fish	throwforce	override	code/modules/fishing/fish/_fish.dm:28	{"K":"num","N":6}
-/obj/item/fish	throw_range	override	code/modules/fishing/fish/_fish.dm:29	{"K":"num","N":8}
-/obj/item/fish	attack_verb_continuous	init	code/modules/fishing/fish/_fish.dm:30	{"K":"list","N":0,"L":[{"Value":{"K":"str","N":0,"S":"slaps"}},{"Value":{"K":"str","N":0,"S":"whacks"}}]}
-/obj/item/fish	attack_verb_simple	init	code/modules/fishing/fish/_fish.dm:31	{"K":"list","N":0,"L":[{"Value":{"K":"str","N":0,"S":"slap"}},{"Value":{"K":"str","N":0,"S":"whack"}}]}
-/obj/item/fish	hitsound	override	code/modules/fishing/fish/_fish.dm:32	{"K":"str","N":0,"S":"default_fish_slap"}
-/obj/item/fish	drop_sound	override	code/modules/fishing/fish/_fish.dm:33	{"K":"res","N":0,"S":"sound/mobs/non-humanoids/fish/fish_drop1.ogg"}
-/obj/item/fish	pickup_sound	override	code/modules/fishing/fish/_fish.dm:34	{"K":"str","N":0,"S":"fish_pickup"}
-/obj/item/fish	sound_vary	override	code/modules/fishing/fish/_fish.dm:35	{"K":"num","N":1}
-/obj/item/fish	obj_flags	override	code/modules/fishing/fish/_fish.dm:36	{"K":"num","N":8}
-/obj/item/fish	item_flags	override	code/modules/fishing/fish/_fish.dm:37	{"K":"num","N":8}
-/obj/item/fish	material_flags	override	code/modules/fishing/fish/_fish.dm:39	{"K":"num","N":111}
-/obj/item/fish	max_integrity	override	code/modules/fishing/fish/_fish.dm:41	{"K":"num","N":200}
-/obj/item/fish	integrity_failure	override	code/modules/fishing/fish/_fish.dm:42	{"K":"num","N":0.5}
 /obj/item/pizzabox	pizza	decl	code/modules/food_and_drinks/pizzabox.dm:29	{"K":"null","N":0}
 /obj/item/pizzabox	name	override	code/modules/food_and_drinks/pizzabox.dm:10	{"K":"str","N":0,"S":"pizza box"}
 /obj/item/pizzabox	desc	override	code/modules/food_and_drinks/pizzabox.dm:11	{"K":"str","N":0,"S":"A box suited for pizzas."}

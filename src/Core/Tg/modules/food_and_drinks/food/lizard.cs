@@ -94,8 +94,7 @@ public partial class obj_item_food_moonfish_eggs : obj_item_food
         //Moonfish can lay eggs inside aquariums (unaffected by breeding, so think of them as unfertilizard)
         RegisterSignal(this, COMSIG_AQUARIUM_CONTENT_GENERATE_APPEARANCE, nameof(generate_aquarium_appearance));
         RegisterSignal(this, COMSIG_AQUARIUM_CONTENT_RANDOMIZE_POSITION, nameof(randomize_aquarium_position));
-        // AddComponent(/datum/component/aquarium_content): the aquariums come with the fishing (the component is inert until then)
-        Dm.Deferred("code/modules/food_and_drinks/food/lizard.dm:150", "Initialize: AddComponent(/datum/component/aquarium_content), the eggs put in an aquarium (the fishing's aquariums)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_aquarium_content)));
         RegisterSignal(this, COMSIG_MOVABLE_GET_AQUARIUM_BEAUTY, nameof(get_aquarium_beauty));
         return dot;
     }

@@ -1123,9 +1123,9 @@ public partial class obj_item_wallframe_airalarm
     }
 }
 
-// tg: code/modules/fishing/fish_mount.dm:2
-[DmPath("/obj/item/wallframe/fish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wallframe_fish : obj_item_wallframe
+// tg: code/modules/fishing/fish_mount.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/wallframe/fish")]
+public partial class obj_item_wallframe_fish
 {
     public object persistence_id; // tg: code/modules/fishing/fish_mount.dm:10
 

@@ -9,7 +9,7 @@ using Anomaly.Core.Kernel;
 
 namespace Anomaly.Core.Tg;
 
-// tg: code/modules/fishing/fish/_fish.dm:20 (the vars the hand-written class does not declare)
+// tg: code/modules/fishing/fish/_fish.dm:20 (the var block of a hand-written class)
 public partial class obj_item_fish
 {
     public float fish_flags = 11; // tg: code/modules/fishing/fish/_fish.dm:45
@@ -18,6 +18,7 @@ public partial class obj_item_fish
     public object dedicated_in_aquarium_icon = Dm.resource("icons/obj/aquarium/fish.dmi"); // tg: code/modules/fishing/fish/_fish.dm:53
     public object dedicated_in_aquarium_icon_state; // tg: code/modules/fishing/fish/_fish.dm:58
     public object aquarium_vc_color; // tg: code/modules/fishing/fish/_fish.dm:61
+    public string required_fluid_type = "Freshwater"; // tg: code/modules/fishing/fish/_fish.dm:64
     public float required_temperature_min = 273.15f; // tg: code/modules/fishing/fish/_fish.dm:66
     public float required_temperature_max = 373.15f; // tg: code/modules/fishing/fish/_fish.dm:68
     public Type food = typeof(datum_reagent_consumable_nutriment); // tg: code/modules/fishing/fish/_fish.dm:71
@@ -64,10 +65,36 @@ public partial class obj_item_fish
     public string suicide_slap_text = "*SLAP!*"; // tg: code/modules/fishing/fish/_fish.dm:196
     public float time_passed_on_safe_turf = 0; // tg: code/modules/fishing/fish/_fish.dm:198
 
-    // tg: code/modules/fishing/fish/_fish.dm:112
+    // tg: code/modules/fishing/fish/_fish.dm:20
+    public obj_item_fish()
+    {
+        name = "fish";
+        desc = "very bland";
+        abstract_type = typeof(obj_item_fish);
+        icon = Dm.resource("icons/obj/aquarium/fish.dmi");
+        lefthand_file = Dm.resource("icons/mob/inhands/fish_lefthand.dmi");
+        righthand_file = Dm.resource("icons/mob/inhands/fish_righthand.dmi");
+        icon_angle = 180;
+        force = 6;
+        throwforce = 6;
+        throw_range = 8;
+        hitsound = "default_fish_slap";
+        drop_sound = Dm.resource("sound/mobs/non-humanoids/fish/fish_drop1.ogg");
+        pickup_sound = "fish_pickup";
+        sound_vary = 1;
+        obj_flags = 8;
+        item_flags = 8;
+        material_flags = 111;
+        max_integrity = 200;
+        integrity_failure = 0.5f;
+    }
+
+    // tg: code/modules/fishing/fish/_fish.dm:30
     protected internal override void dm_init_vars()
     {
         base.dm_init_vars();
+        attack_verb_continuous = Dm.list("slaps", "whacks"); // tg: code/modules/fishing/fish/_fish.dm:30
+        attack_verb_simple = Dm.list("slap", "whack"); // tg: code/modules/fishing/fish/_fish.dm:31
         fish_traits = Dm.list(); // tg: code/modules/fishing/fish/_fish.dm:112
         favorite_bait = Dm.list(); // tg: code/modules/fishing/fish/_fish.dm:124
         disliked_bait = Dm.list(); // tg: code/modules/fishing/fish/_fish.dm:130
@@ -109,9 +136,9 @@ public partial class obj_item_fish_sand_surfer : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/air_space.dm:22
-[DmPath("/obj/item/fish/sand_crab"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_sand_crab : obj_item_fish
+// tg: code/modules/fishing/fish/types/air_space.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/sand_crab")]
+public partial class obj_item_fish_sand_crab
 {
     // tg: code/modules/fishing/fish/types/air_space.dm:22
     public obj_item_fish_sand_crab()
@@ -172,9 +199,9 @@ public partial class obj_item_fish_bumpy : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/air_space.dm:73
-[DmPath("/obj/item/fish/starfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_starfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/air_space.dm:73 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/starfish")]
+public partial class obj_item_fish_starfish
 {
     // tg: code/modules/fishing/fish/types/air_space.dm:73
     public obj_item_fish_starfish()
@@ -209,9 +236,9 @@ public partial class obj_item_fish_starfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:2
-[DmPath("/obj/item/fish/starfish/chrystarfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_starfish_chrystarfish : obj_item_fish_starfish
+// tg: code/modules/fishing/fish/types/rift.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/starfish/chrystarfish")]
+public partial class obj_item_fish_starfish_chrystarfish
 {
     // tg: code/modules/fishing/fish/types/rift.dm:2
     public obj_item_fish_starfish_chrystarfish()
@@ -265,9 +292,9 @@ public partial class obj_item_fish_starfish_chrystarfish : obj_item_fish_starfis
     }
 }
 
-// tg: code/modules/fishing/fish/types/air_space.dm:129
-[DmPath("/obj/item/fish/baby_carp"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_baby_carp : obj_item_fish
+// tg: code/modules/fishing/fish/types/air_space.dm:129 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/baby_carp")]
+public partial class obj_item_fish_baby_carp
 {
     // tg: code/modules/fishing/fish/types/air_space.dm:129
     public obj_item_fish_baby_carp()
@@ -300,9 +327,9 @@ public partial class obj_item_fish_baby_carp : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/anadromous.dm:2
-[DmPath("/obj/item/fish/sockeye_salmon"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_sockeye_salmon : obj_item_fish
+// tg: code/modules/fishing/fish/types/anadromous.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/sockeye_salmon")]
+public partial class obj_item_fish_sockeye_salmon
 {
     // tg: code/modules/fishing/fish/types/anadromous.dm:2
     public obj_item_fish_sockeye_salmon()
@@ -345,9 +372,9 @@ public partial class obj_item_fish_arctic_char : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/anadromous.dm:36
-[DmPath("/obj/item/fish/pike"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_pike : obj_item_fish
+// tg: code/modules/fishing/fish/types/anadromous.dm:36 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/pike")]
+public partial class obj_item_fish_pike
 {
     // tg: code/modules/fishing/fish/types/anadromous.dm:36
     public obj_item_fish_pike()
@@ -387,9 +414,9 @@ public partial class obj_item_fish_pike : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/syndicate.dm:218
-[DmPath("/obj/item/fish/pike/armored"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_pike_armored : obj_item_fish_pike
+// tg: code/modules/fishing/fish/types/syndicate.dm:218 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/pike/armored")]
+public partial class obj_item_fish_pike_armored
 {
     // tg: code/modules/fishing/fish/types/syndicate.dm:218
     public obj_item_fish_pike_armored()
@@ -432,9 +459,9 @@ public partial class obj_item_fish_pike_armored : obj_item_fish_pike
     }
 }
 
-// tg: code/modules/fishing/fish/types/freshwater.dm:2
-[DmPath("/obj/item/fish/goldfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_goldfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/freshwater.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/goldfish")]
+public partial class obj_item_fish_goldfish
 {
     // tg: code/modules/fishing/fish/types/freshwater.dm:2
     public obj_item_fish_goldfish()
@@ -465,9 +492,9 @@ public partial class obj_item_fish_goldfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/freshwater.dm:26
-[DmPath("/obj/item/fish/goldfish/gill"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_goldfish_gill : obj_item_fish_goldfish
+// tg: code/modules/fishing/fish/types/freshwater.dm:26 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/goldfish/gill")]
+public partial class obj_item_fish_goldfish_gill
 {
     // tg: code/modules/fishing/fish/types/freshwater.dm:26
     public obj_item_fish_goldfish_gill()
@@ -490,9 +517,9 @@ public partial class obj_item_fish_goldfish_gill : obj_item_fish_goldfish
     }
 }
 
-// tg: code/modules/fishing/fish/types/freshwater.dm:40
-[DmPath("/obj/item/fish/goldfish/three_eyes"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_goldfish_three_eyes : obj_item_fish_goldfish
+// tg: code/modules/fishing/fish/types/freshwater.dm:40 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/goldfish/three_eyes")]
+public partial class obj_item_fish_goldfish_three_eyes
 {
     // tg: code/modules/fishing/fish/types/freshwater.dm:40
     public obj_item_fish_goldfish_three_eyes()
@@ -518,9 +545,9 @@ public partial class obj_item_fish_goldfish_three_eyes : obj_item_fish_goldfish
     }
 }
 
-// tg: code/modules/fishing/fish/types/freshwater.dm:63
-[DmPath("/obj/item/fish/goldfish/three_eyes/gill"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_goldfish_three_eyes_gill : obj_item_fish_goldfish_three_eyes
+// tg: code/modules/fishing/fish/types/freshwater.dm:63 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/goldfish/three_eyes/gill")]
+public partial class obj_item_fish_goldfish_three_eyes_gill
 {
     // tg: code/modules/fishing/fish/types/freshwater.dm:63
     public obj_item_fish_goldfish_three_eyes_gill()
@@ -591,9 +618,9 @@ public partial class obj_item_fish_guppy : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/freshwater.dm:105
-[DmPath("/obj/item/fish/plasmatetra"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_plasmatetra : obj_item_fish
+// tg: code/modules/fishing/fish/types/freshwater.dm:105 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/plasmatetra")]
+public partial class obj_item_fish_plasmatetra
 {
     // tg: code/modules/fishing/fish/types/freshwater.dm:105
     public obj_item_fish_plasmatetra()
@@ -642,9 +669,9 @@ public partial class obj_item_fish_catfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/freshwater.dm:143
-[DmPath("/obj/item/fish/zipzap"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_zipzap : obj_item_fish
+// tg: code/modules/fishing/fish/types/freshwater.dm:143 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/zipzap")]
+public partial class obj_item_fish_zipzap
 {
     // tg: code/modules/fishing/fish/types/freshwater.dm:143
     public obj_item_fish_zipzap()
@@ -676,9 +703,9 @@ public partial class obj_item_fish_zipzap : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/freshwater.dm:183
-[DmPath("/obj/item/fish/tadpole"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_tadpole : obj_item_fish
+// tg: code/modules/fishing/fish/types/freshwater.dm:183 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/tadpole")]
+public partial class obj_item_fish_tadpole
 {
     public object del_timerid; // tg: code/modules/fishing/fish/types/freshwater.dm:200
 
@@ -740,9 +767,9 @@ public partial class obj_item_fish_perch : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/freshwater.dm:294
-[DmPath("/obj/item/fish/sacabambaspis"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_sacabambaspis : obj_item_fish
+// tg: code/modules/fishing/fish/types/freshwater.dm:294 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/sacabambaspis")]
+public partial class obj_item_fish_sacabambaspis
 {
     // tg: code/modules/fishing/fish/types/freshwater.dm:294
     public obj_item_fish_sacabambaspis()
@@ -770,9 +797,9 @@ public partial class obj_item_fish_sacabambaspis : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/holographic.dm:3
-[DmPath("/obj/item/fish/holo"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_holo : obj_item_fish
+// tg: code/modules/fishing/fish/types/holographic.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/holo")]
+public partial class obj_item_fish_holo
 {
     // tg: code/modules/fishing/fish/types/holographic.dm:3
     public obj_item_fish_holo()
@@ -805,7 +832,7 @@ public partial class obj_item_fish_holo : obj_item_fish
 }
 
 // tg: code/modules/fishing/fish/types/holographic.dm:49
-[DmPath("/obj/item/fish/holo/crab"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish/holo/crab"), DmGeneratedOnly]
 public partial class obj_item_fish_holo_crab : obj_item_fish_holo
 {
     // tg: code/modules/fishing/fish/types/holographic.dm:49
@@ -826,7 +853,7 @@ public partial class obj_item_fish_holo_crab : obj_item_fish_holo
 }
 
 // tg: code/modules/fishing/fish/types/holographic.dm:62
-[DmPath("/obj/item/fish/holo/puffer"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish/holo/puffer"), DmGeneratedOnly]
 public partial class obj_item_fish_holo_puffer : obj_item_fish_holo
 {
     // tg: code/modules/fishing/fish/types/holographic.dm:62
@@ -847,7 +874,7 @@ public partial class obj_item_fish_holo_puffer : obj_item_fish_holo
 }
 
 // tg: code/modules/fishing/fish/types/holographic.dm:75
-[DmPath("/obj/item/fish/holo/angel"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish/holo/angel"), DmGeneratedOnly]
 public partial class obj_item_fish_holo_angel : obj_item_fish_holo
 {
     // tg: code/modules/fishing/fish/types/holographic.dm:75
@@ -868,7 +895,7 @@ public partial class obj_item_fish_holo_angel : obj_item_fish_holo
 }
 
 // tg: code/modules/fishing/fish/types/holographic.dm:88
-[DmPath("/obj/item/fish/holo/clown"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish/holo/clown"), DmGeneratedOnly]
 public partial class obj_item_fish_holo_clown : obj_item_fish_holo
 {
     // tg: code/modules/fishing/fish/types/holographic.dm:88
@@ -889,9 +916,9 @@ public partial class obj_item_fish_holo_clown : obj_item_fish_holo
     }
 }
 
-// tg: code/modules/fishing/fish/types/holographic.dm:102
-[DmPath("/obj/item/fish/holo/checkered"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_holo_checkered : obj_item_fish_holo
+// tg: code/modules/fishing/fish/types/holographic.dm:102 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/holo/checkered")]
+public partial class obj_item_fish_holo_checkered
 {
     // tg: code/modules/fishing/fish/types/holographic.dm:102
     public obj_item_fish_holo_checkered()
@@ -911,7 +938,7 @@ public partial class obj_item_fish_holo_checkered : obj_item_fish_holo
 }
 
 // tg: code/modules/fishing/fish/types/holographic.dm:130
-[DmPath("/obj/item/fish/holo/halffish"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish/holo/halffish"), DmGeneratedOnly]
 public partial class obj_item_fish_holo_halffish : obj_item_fish_holo
 {
     // tg: code/modules/fishing/fish/types/holographic.dm:130
@@ -931,9 +958,9 @@ public partial class obj_item_fish_holo_halffish : obj_item_fish_holo
     }
 }
 
-// tg: code/modules/fishing/fish/types/mining.dm:3
-[DmPath("/obj/item/fish/chasm_crab"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_chasm_crab : obj_item_fish
+// tg: code/modules/fishing/fish/types/mining.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/chasm_crab")]
+public partial class obj_item_fish_chasm_crab
 {
     public float anger = 0; // tg: code/modules/fishing/fish/types/mining.dm:30
     public Type lob_type = typeof(mob_living_basic_mining_lobstrosity_juvenile_lava); // tg: code/modules/fishing/fish/types/mining.dm:32
@@ -969,7 +996,7 @@ public partial class obj_item_fish_chasm_crab : obj_item_fish
 }
 
 // tg: code/modules/fishing/fish/types/mining.dm:106
-[DmPath("/obj/item/fish/chasm_crab/ice"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish/chasm_crab/ice"), DmGeneratedOnly]
 public partial class obj_item_fish_chasm_crab_ice : obj_item_fish_chasm_crab
 {
     // tg: code/modules/fishing/fish/types/mining.dm:106
@@ -994,9 +1021,9 @@ public partial class obj_item_fish_chasm_crab_ice : obj_item_fish_chasm_crab
     }
 }
 
-// tg: code/modules/fishing/fish/types/mining.dm:118
-[DmPath("/obj/item/fish/boned"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_boned : obj_item_fish
+// tg: code/modules/fishing/fish/types/mining.dm:118 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/boned")]
+public partial class obj_item_fish_boned
 {
     // tg: code/modules/fishing/fish/types/mining.dm:118
     public obj_item_fish_boned()
@@ -1030,9 +1057,9 @@ public partial class obj_item_fish_boned : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/mining.dm:170
-[DmPath("/obj/item/fish/lavaloop"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_lavaloop : obj_item_fish
+// tg: code/modules/fishing/fish/types/mining.dm:170 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/lavaloop")]
+public partial class obj_item_fish_lavaloop
 {
     public float maximum_bonus = 25; // tg: code/modules/fishing/fish/types/mining.dm:195
 
@@ -1069,9 +1096,9 @@ public partial class obj_item_fish_lavaloop : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/mining.dm:233
-[DmPath("/obj/item/fish/lavaloop/plasma_river"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_lavaloop_plasma_river : obj_item_fish_lavaloop
+// tg: code/modules/fishing/fish/types/mining.dm:233 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/lavaloop/plasma_river")]
+public partial class obj_item_fish_lavaloop_plasma_river
 {
     // tg: code/modules/fishing/fish/types/mining.dm:233
     public obj_item_fish_lavaloop_plasma_river()
@@ -1095,9 +1122,9 @@ public partial class obj_item_fish_lavaloop_plasma_river : obj_item_fish_lavaloo
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:106
-[DmPath("/obj/item/fish/dolphish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_dolphish : obj_item_fish
+// tg: code/modules/fishing/fish/types/rift.dm:106 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/dolphish")]
+public partial class obj_item_fish_dolphish
 {
     public float max_patience = 20; // tg: code/modules/fishing/fish/types/rift.dm:162
     public float patience = 20; // tg: code/modules/fishing/fish/types/rift.dm:164
@@ -1164,9 +1191,9 @@ public partial class obj_item_fish_dolphish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:268
-[DmPath("/obj/item/fish/flumpulus"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_flumpulus : obj_item_fish
+// tg: code/modules/fishing/fish/types/rift.dm:268 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/flumpulus")]
+public partial class obj_item_fish_flumpulus
 {
     // tg: code/modules/fishing/fish/types/rift.dm:268
     public obj_item_fish_flumpulus()
@@ -1213,9 +1240,9 @@ public partial class obj_item_fish_flumpulus : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:351
-[DmPath("/obj/item/fish/gullion"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_gullion : obj_item_fish
+// tg: code/modules/fishing/fish/types/rift.dm:351 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/gullion")]
+public partial class obj_item_fish_gullion
 {
     // tg: code/modules/fishing/fish/types/rift.dm:351
     public obj_item_fish_gullion()
@@ -1266,9 +1293,9 @@ public partial class obj_item_fish_gullion : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:414
-[DmPath("/obj/item/fish/mossglob"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_mossglob : obj_item_fish
+// tg: code/modules/fishing/fish/types/rift.dm:414 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/mossglob")]
+public partial class obj_item_fish_mossglob
 {
     // tg: code/modules/fishing/fish/types/rift.dm:414
     public obj_item_fish_mossglob()
@@ -1319,9 +1346,9 @@ public partial class obj_item_fish_mossglob : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:508
-[DmPath("/obj/item/fish/babbelfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_babbelfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/rift.dm:508 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/babbelfish")]
+public partial class obj_item_fish_babbelfish
 {
     public mob_living moron_inside; // tg: code/modules/fishing/fish/types/rift.dm:541
 
@@ -1364,9 +1391,9 @@ public partial class obj_item_fish_babbelfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/ruins.dm:3
-[DmPath("/obj/item/fish/mastodon"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_mastodon : obj_item_fish
+// tg: code/modules/fishing/fish/types/ruins.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/mastodon")]
+public partial class obj_item_fish_mastodon
 {
     // tg: code/modules/fishing/fish/types/ruins.dm:3
     public obj_item_fish_mastodon()
@@ -1405,9 +1432,9 @@ public partial class obj_item_fish_mastodon : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/ruins.dm:66
-[DmPath("/obj/item/fish/soul"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_soul : obj_item_fish
+// tg: code/modules/fishing/fish/types/ruins.dm:66 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/soul")]
+public partial class obj_item_fish_soul
 {
     // tg: code/modules/fishing/fish/types/ruins.dm:66
     public obj_item_fish_soul()
@@ -1438,9 +1465,9 @@ public partial class obj_item_fish_soul : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/ruins.dm:133
-[DmPath("/obj/item/fish/skin_crab"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_skin_crab : obj_item_fish
+// tg: code/modules/fishing/fish/types/ruins.dm:133 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/skin_crab")]
+public partial class obj_item_fish_skin_crab
 {
     // tg: code/modules/fishing/fish/types/ruins.dm:133
     public obj_item_fish_skin_crab()
@@ -1468,9 +1495,9 @@ public partial class obj_item_fish_skin_crab : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/saltwater.dm:2
-[DmPath("/obj/item/fish/clownfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_clownfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/saltwater.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/clownfish")]
+public partial class obj_item_fish_clownfish
 {
     // tg: code/modules/fishing/fish/types/saltwater.dm:2
     public obj_item_fish_clownfish()
@@ -1499,9 +1526,9 @@ public partial class obj_item_fish_clownfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/saltwater.dm:22
-[DmPath("/obj/item/fish/clownfish/lube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_clownfish_lube : obj_item_fish_clownfish
+// tg: code/modules/fishing/fish/types/saltwater.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/clownfish/lube")]
+public partial class obj_item_fish_clownfish_lube
 {
     // tg: code/modules/fishing/fish/types/saltwater.dm:22
     public obj_item_fish_clownfish_lube()
@@ -1608,9 +1635,9 @@ public partial class obj_item_fish_firefish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/saltwater.dm:90
-[DmPath("/obj/item/fish/pufferfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_pufferfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/saltwater.dm:90 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/pufferfish")]
+public partial class obj_item_fish_pufferfish
 {
     // tg: code/modules/fishing/fish/types/saltwater.dm:90
     public obj_item_fish_pufferfish()
@@ -1699,9 +1726,9 @@ public partial class obj_item_fish_stingray : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/saltwater.dm:143
-[DmPath("/obj/item/fish/swordfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_swordfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/saltwater.dm:143 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/swordfish")]
+public partial class obj_item_fish_swordfish
 {
     // tg: code/modules/fishing/fish/types/saltwater.dm:143
     public obj_item_fish_swordfish()
@@ -1751,9 +1778,9 @@ public partial class obj_item_fish_swordfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/saltwater.dm:240
-[DmPath("/obj/item/fish/squid"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_squid : obj_item_fish
+// tg: code/modules/fishing/fish/types/saltwater.dm:240 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/squid")]
+public partial class obj_item_fish_squid
 {
     // tg: code/modules/fishing/fish/types/saltwater.dm:240
     public obj_item_fish_squid()
@@ -1781,9 +1808,9 @@ public partial class obj_item_fish_squid : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/saltwater.dm:287
-[DmPath("/obj/item/fish/monkfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_monkfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/saltwater.dm:287 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/monkfish")]
+public partial class obj_item_fish_monkfish
 {
     // tg: code/modules/fishing/fish/types/saltwater.dm:287
     public obj_item_fish_monkfish()
@@ -1843,9 +1870,9 @@ public partial class obj_item_fish_plaice : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/station.dm:2
-[DmPath("/obj/item/fish/ratfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_ratfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/station.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/ratfish")]
+public partial class obj_item_fish_ratfish
 {
     // tg: code/modules/fishing/fish/types/station.dm:2
     public obj_item_fish_ratfish()
@@ -1875,9 +1902,9 @@ public partial class obj_item_fish_ratfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/station.dm:44
-[DmPath("/obj/item/fish/sludgefish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_sludgefish : obj_item_fish
+// tg: code/modules/fishing/fish/types/station.dm:44 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/sludgefish")]
+public partial class obj_item_fish_sludgefish
 {
     // tg: code/modules/fishing/fish/types/station.dm:44
     public obj_item_fish_sludgefish()
@@ -1909,7 +1936,7 @@ public partial class obj_item_fish_sludgefish : obj_item_fish
 }
 
 // tg: code/modules/fishing/fish/types/station.dm:66
-[DmPath("/obj/item/fish/sludgefish/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish/sludgefish/purple"), DmGeneratedOnly]
 public partial class obj_item_fish_sludgefish_purple : obj_item_fish_sludgefish
 {
     // tg: code/modules/fishing/fish/types/station.dm:66
@@ -1930,9 +1957,9 @@ public partial class obj_item_fish_sludgefish_purple : obj_item_fish_sludgefish
     }
 }
 
-// tg: code/modules/fishing/fish/types/station.dm:74
-[DmPath("/obj/item/fish/slimefish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_slimefish : obj_item_fish
+// tg: code/modules/fishing/fish/types/station.dm:74 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/slimefish")]
+public partial class obj_item_fish_slimefish
 {
     // tg: code/modules/fishing/fish/types/station.dm:74
     public obj_item_fish_slimefish()
@@ -1963,9 +1990,9 @@ public partial class obj_item_fish_slimefish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/station.dm:109
-[DmPath("/obj/item/fish/fryish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_fryish : obj_item_fish
+// tg: code/modules/fishing/fish/types/station.dm:109 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/fryish")]
+public partial class obj_item_fish_fryish
 {
     public float is_bait = 1; // tg: code/modules/fishing/fish/types/station.dm:142
     public Type next_type = typeof(datum_fish_evolution_fritterish); // tg: code/modules/fishing/fish/types/station.dm:144
@@ -2005,9 +2032,9 @@ public partial class obj_item_fish_fryish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/station.dm:189
-[DmPath("/obj/item/fish/fryish/fritterish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_fryish_fritterish : obj_item_fish_fryish
+// tg: code/modules/fishing/fish/types/station.dm:189 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/fryish/fritterish")]
+public partial class obj_item_fish_fryish_fritterish
 {
     public string variant = "fritterish"; // tg: code/modules/fishing/fish/types/station.dm:205
 
@@ -2039,7 +2066,7 @@ public partial class obj_item_fish_fryish_fritterish : obj_item_fish_fryish
 }
 
 // tg: code/modules/fishing/fish/types/station.dm:255
-[DmPath("/obj/item/fish/fryish/nessie"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish/fryish/nessie"), DmGeneratedOnly]
 public partial class obj_item_fish_fryish_nessie : obj_item_fish_fryish
 {
     // tg: code/modules/fishing/fish/types/station.dm:255
@@ -2080,9 +2107,9 @@ public partial class obj_item_fish_fryish_nessie : obj_item_fish_fryish
     }
 }
 
-// tg: code/modules/fishing/fish/types/syndicate.dm:3
-[DmPath("/obj/item/fish/emulsijack"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_emulsijack : obj_item_fish
+// tg: code/modules/fishing/fish/types/syndicate.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/emulsijack")]
+public partial class obj_item_fish_emulsijack
 {
     // tg: code/modules/fishing/fish/types/syndicate.dm:3
     public obj_item_fish_emulsijack()
@@ -2109,9 +2136,9 @@ public partial class obj_item_fish_emulsijack : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/syndicate.dm:21
-[DmPath("/obj/item/fish/donkfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_donkfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/syndicate.dm:21 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/donkfish")]
+public partial class obj_item_fish_donkfish
 {
     // tg: code/modules/fishing/fish/types/syndicate.dm:21
     public obj_item_fish_donkfish()
@@ -2138,9 +2165,9 @@ public partial class obj_item_fish_donkfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/syndicate.dm:48
-[DmPath("/obj/item/fish/jumpercable"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_jumpercable : obj_item_fish
+// tg: code/modules/fishing/fish/types/syndicate.dm:48 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/jumpercable")]
+public partial class obj_item_fish_jumpercable
 {
     // tg: code/modules/fishing/fish/types/syndicate.dm:48
     public obj_item_fish_jumpercable()
@@ -2170,9 +2197,9 @@ public partial class obj_item_fish_jumpercable : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/syndicate.dm:82
-[DmPath("/obj/item/fish/chainsawfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_chainsawfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/syndicate.dm:82 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/chainsawfish")]
+public partial class obj_item_fish_chainsawfish
 {
     // tg: code/modules/fishing/fish/types/syndicate.dm:82
     public obj_item_fish_chainsawfish()
@@ -2221,9 +2248,9 @@ public partial class obj_item_fish_chainsawfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/tiziran.dm:4
-[DmPath("/obj/item/fish/moonfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_moonfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/tiziran.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/moonfish")]
+public partial class obj_item_fish_moonfish
 {
     public float egg_laying_time = 1650; // tg: code/modules/fishing/fish/types/tiziran.dm:29
 
@@ -2260,9 +2287,9 @@ public partial class obj_item_fish_moonfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/tiziran.dm:49
-[DmPath("/obj/item/fish/moonfish/dwarf"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_moonfish_dwarf : obj_item_fish_moonfish
+// tg: code/modules/fishing/fish/types/tiziran.dm:49 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/moonfish/dwarf")]
+public partial class obj_item_fish_moonfish_dwarf
 {
     // tg: code/modules/fishing/fish/types/tiziran.dm:49
     public obj_item_fish_moonfish_dwarf()
@@ -2290,9 +2317,9 @@ public partial class obj_item_fish_moonfish_dwarf : obj_item_fish_moonfish
     }
 }
 
-// tg: code/modules/fishing/fish/types/tiziran.dm:71
-[DmPath("/obj/item/fish/gunner_jellyfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_gunner_jellyfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/tiziran.dm:71 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/gunner_jellyfish")]
+public partial class obj_item_fish_gunner_jellyfish
 {
     // tg: code/modules/fishing/fish/types/tiziran.dm:71
     public obj_item_fish_gunner_jellyfish()
@@ -2320,9 +2347,9 @@ public partial class obj_item_fish_gunner_jellyfish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/tiziran.dm:100
-[DmPath("/obj/item/fish/needlefish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_needlefish : obj_item_fish
+// tg: code/modules/fishing/fish/types/tiziran.dm:100 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/needlefish")]
+public partial class obj_item_fish_needlefish
 {
     // tg: code/modules/fishing/fish/types/tiziran.dm:100
     public obj_item_fish_needlefish()
@@ -2351,9 +2378,9 @@ public partial class obj_item_fish_needlefish : obj_item_fish
     }
 }
 
-// tg: code/modules/fishing/fish/types/tiziran.dm:121
-[DmPath("/obj/item/fish/armorfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_armorfish : obj_item_fish
+// tg: code/modules/fishing/fish/types/tiziran.dm:121 (the var block of a hand-written class)
+[DmPath("/obj/item/fish/armorfish")]
+public partial class obj_item_fish_armorfish
 {
     // tg: code/modules/fishing/fish/types/tiziran.dm:121
     public obj_item_fish_armorfish()

@@ -1693,9 +1693,9 @@ public partial class datum_storage_coffee_cart_rack
     }
 }
 
-// tg: code/datums/storage/subtypes/others/fish_case.dm:2
-[DmPath("/datum/storage/fish_case"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_fish_case : datum_storage
+// tg: code/datums/storage/subtypes/others/fish_case.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/storage/fish_case")]
+public partial class datum_storage_fish_case
 {
     // tg: code/datums/storage/subtypes/others/fish_case.dm:2
     public datum_storage_fish_case()
@@ -1706,9 +1706,9 @@ public partial class datum_storage_fish_case : datum_storage
     }
 }
 
-// tg: code/datums/storage/subtypes/others/fish_case.dm:23
-[DmPath("/datum/storage/fish_case/adjust_size"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_fish_case_adjust_size : datum_storage_fish_case { }
+// tg: code/datums/storage/subtypes/others/fish_case.dm:23 (the var block of a hand-written class)
+[DmPath("/datum/storage/fish_case/adjust_size")]
+public partial class datum_storage_fish_case_adjust_size { }
 
 // tg: code/datums/storage/subtypes/others/misc.dm:5 (the var block of a hand-written class)
 [DmPath("/datum/storage/test_tube_rack")]

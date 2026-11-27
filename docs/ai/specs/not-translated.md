@@ -384,7 +384,7 @@ Template for a new row:
 | `code/modules/clothing/shoes/magboots.dm:77` | `/obj/item/clothing/shoes/magboots/attack_self`: `RemoveElement(/datum/element/adjust_fishing_difficulty)` | the mag-pulse turned off (boots without a modifier) | M10+ (fishing) | `modules/clothing/shoes/magboots.cs` |
 | `code/modules/reagents/reagent_dispenser.dm:62` | `/obj/structure/reagent_dispensers/Initialize`: `AddElement(/datum/element/climbable)` and `AddElement(/datum/element/elevation, pixel_shift = 14)`, climbing onto a tank and standing on it | the water, foam and fuel tanks' init | M9 (climbing) | `modules/reagents/reagent_dispenser.cs` |
 | `code/datums/materials/_material.dm:265` | `/datum/material/setup_glow`: the starlight of a transparent material turf over space | a glass floor built over space | the starlight pass (space's own starlight is an M3 deferred leaf) | `datums/materials/_material.cs` |
-| `code/game/atom/atom_materials.dm:351`, `:440` | `apply_single_mat_effect` / `remove_single_mat_effect`: the shiny bait element of a shiny material (the beauty element is live since gaps MS1, section 227) | every atom with material effects and such a material (glass, plasma, ...) | with fishing (gaps FI1) | `game/atom/atom_materials.cs` |
+| `code/game/atom/atom_materials.dm:351`, `:440` | `apply_single_mat_effect` / `remove_single_mat_effect`: the shiny bait element of a shiny material (the beauty element is live since gaps MS1, section 227) | every atom with material effects and such a material (glass, plasma, ...) | with fishing's bait (gaps FI2) | `game/atom/atom_materials.cs` |
 | `code/game/objects/items/stacks/sheets/sheet_types.dm:190`, `rods.dm:64`, `tiles/tile_iron.dm:111` | the iron sheet's, the rods' and the iron tile's `contextual_screentip_tools` (the welder's hints) | every iron sheet, rod and iron tile at init | M9 (screentips) | `sheet_types.cs`, `rods.cs`, `tile_iron.cs` |
 | `code/game/objects/items/stacks/stack.dm:101` | `/obj/item/stack/Initialize`: the golem food component (`GLOB.golem_stack_food_directory` is not declared) | every stack | M10+ (golems) | `game/objects/items/stacks/stack.cs` |
 | `code/game/objects/items/stacks/stack_recipe.dm:67` | `/datum/stack_recipe/New`: `result_image`, the base64 picture of a coloured result (`icon2base64`) | every recipe with a coloured result (comfy chairs, ...) | never as such: the server renders no icons (D104); the StackCrafting window shows the result's untinted icon | `game/objects/items/stacks/stack_recipe.cs` |
@@ -1255,7 +1255,7 @@ Translated whole: `code/modules/reagents/chemistry/holder/holder.dm` (the mob br
 `holder/mob_life.dm` (`metabolize`, `metabolize_reagent`, `end_metabolization`, `process_mob_reagent_purity`,
 `handle_stasis_chems`), `holder/properties.dm`, `code/modules/reagents/stacked_effects/` and `code/modules/reagents/chemistry/taste.dm`;
 the `/datum/reagent` base's metabolism hooks, overdose procs, spark act, taste description and purity helpers with
-`pretty_string_from_reagent_list` (`reagents.dm` but `on_hydroponics_apply` and `used_on_fish`); the liver base's chemical
+`pretty_string_from_reagent_list` (`reagents.dm` but `on_hydroponics_apply`); the liver base's chemical
 handling, examine, job trait transfer, failure stages and owner examine (`_liver.dm:54-213`); the stomach's digestion of
 reagents and of swallowed things (`_stomach.dm:61-131`, `:201-330`; hunger stays M2's, the disgust effects later); the living
 and carbon `get_fullness`, `has_reagent`, `reagent_tick` and `reagent_expose`; tasting (`taste.dm:1-94`); water's and welding
@@ -3469,7 +3469,6 @@ the infused tongues use.
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `infuser_tier_one_entries.dm:145` | a fish trait's own infusion entry (`GLOB.fish_traits`, a `Dm.Deferred` leaf: a fish infuses the plain fish entry) | infusing a fish with a trait | the fishing | `game/machinery/dna_infuser/infuser_entries/infuser_tier_one_entries.cs` |
 
 ## 167. The economy (gaps P4a, D327)
 
@@ -3505,7 +3504,7 @@ the budget, prices and private buying, NtosCargo and NtosCouponMaster (DV237 end
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `exports/fish.dm` | the fish's export value (a not-translated leaf: fishing) | selling a fish | fishing | `modules/cargo/exports/fish.cs` |
+| `explorer_drone/loot.dm:1-118`, `:142-end` | the exploration drone's loot generators and its other loot (the fire lance, the unique items) | the exodrone | the exploration drones | `modules/explorer_drone/loot.cs` |
 | `livestock.dm`, `imports.dm:92`, `:138`, `:380`, `costumes_toys.dm:294`, `organic.dm:209` | the packs' own fills and crates (the critters and their stasis, the dumpster corpse, the mafia and fan upgrade imports, the gift crate, the pizza's anomalies): these packs ship their plain contents | ordering them | with what they spawn | `modules/cargo/packs/_packs.cs` |
 | `budgetordering.dm:48` | `isAdminGhostAI` (no admin ghosts, GAP(lead) in `is_helpers.cs`) | an admin ghost | admin tooling | `programs/budgetordering.cs` |
 
@@ -3519,7 +3518,6 @@ the living mob's bank account (`living.dm:661`); the client's CivCargoHoldTermin
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `bounties/assistant.dm:229-284` | the fish bounties: translated, but the fish are a skeleton (fishing), so no fish is caught to ship | an assistant's fish bounty | fishing | `modules/cargo/bounties/assistant.cs` |
 | `pirate_shuttle_equipment.dm:1-171`, `:423-end` | the pirates' shuttle equipment, their exports (the ransom, the loot) and their CargoHoldTerminal window | the pirate event | the pirates (PORT-CHECKLIST, antagonists) | `modules/antagonists/pirate/pirate_shuttle_equipment.cs` |
 
 ## 170. The rest of cargo (gaps P4d, D327)
@@ -3946,8 +3944,7 @@ coupon, `coupon.dm:84`), the washing effect (`status_effects/neutral.dm:661-770`
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `toilet.dm:43-44`, `:160` | the station toilets' fishing spot (`/datum/component/fishing_spot` with the toilet's fish source) and the fish-safe storage element (`Dm.Deferred`; fish dropped in the bowl are kept, flushed and taken out as tg's); the swirlie's achievement (D332) | a fishing rod on a toilet; a swirlie that kills | the fishing (`modules/fishing`); the achievements | `game/objects/structures/water_structures/toilet.cs` |
-| `water_source.dm:153` | the puddle's tadpole (`/obj/item/fish/tadpole`, `Dm.Deferred` after tg's five seconds of scooping) | a right click on a puddle | the fishing | `game/objects/structures/water_structures/water_source.cs` |
+| `toilet.dm:43-44`, `:160` | the station toilets' fishing spot (`/datum/component/fishing_spot` with the toilet's fish source, `Dm.Deferred`; the fish-safe storage is live since gaps FI1); the swirlie's achievement (D332) | a fishing rod on a toilet; a swirlie that kills | the fishing (`modules/fishing`); the achievements | `game/objects/structures/water_structures/toilet.cs` |
 | `mirror.dm:68` | a round-start mirror's revenant prison (`/datum/component/revenant_prison`, 0.2% of the mapped mirrors; `Dm.Deferred`; the others get tg's cozy revenant home trait) | a mapped mirror | the revenant (antagonists, D333) | `game/objects/structures/mirror.cs` |
 | `bibles.dm:134` | the smiting's achievement (`gods_wrath`, `Dm.Deferred`, D332) | burning a bible twice | the achievements | `modules/library/bibles.cs` |
 | `modules_ninja.dm:608` | the recycler's `ninjadrain_act` (a `live-partial.txt` stub) | a space ninja's gloves on a recycler | the ninja (antagonists, D333) | (generated stub) |
@@ -3984,7 +3981,7 @@ slices.
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `food/_food.dm:228`, `decomposition.dm` | the decomposition of food left on the floor (the germs came with gaps VI1) | food on the floor | the food decomposition | `food/_food.cs` |
-| `machinery/deep_fryer.dm:63` | fishing in the deep fryer (the fishing spot and the fish-safe storage) | a fishing rod at the fryer | fishing | `machinery/deep_fryer.cs` |
+| `machinery/deep_fryer.dm:63` | fishing in the deep fryer (the fishing spot; the fish-safe storage is live since gaps FI1) | a fishing rod at the fryer | fishing (gaps FI2) | `machinery/deep_fryer.cs` |
 | `machinery/stove_component.dm:269`, `coffeemaker.dm:418`, `:670` | the steam particles' position over a pot (BYOND's `/particles` vars are not declared; particles are not drawn) | cooking soup, brewing coffee | the particles | `stove_component.cs`, `coffeemaker.cs` |
 | `components/ingredients_holder.dm:143` | the custom food's filling colour, read from the ingredient's sprite (`icon.GetPixel`; the server reads no tg icon, D104): the filling overlay is not drawn | putting an ingredient on bread, a bun, a pizza base | the client's icons (D104) | `components/ingredients_holder.cs` |
 
@@ -4333,7 +4330,7 @@ bedsheets and their bin, the syndicate crate's key and the tram plate stay live-
 | `signboards/_signboard.dm:173-200` (`MouseEntered`, `MouseExited`, `update_text`) | the text over a written signboard: tg gives the hovering client a private image whose maptext (Grand9K Pixel, 6 pt) shows the text above the board; the server makes the image and puts it in `client.images` as tg does, but the 3D client draws no private image's maptext (it draws maptext for the status displays only), so the text is read on examine | a written signboard looked at | a client change: drawing a private image's maptext (stopped and reported, as the brief asks) | `game/objects/structures/signboards/_signboard.cs` |
 | `traps.dm:99-181` | the bounty trap (`/obj/structure/trap/stun/hunter`, `/obj/item/bountytrap`, its radio mistyped as a type by the converter): a fugitive hunter's tool that only fugitives set off | the fugitive hunters' gear | the antagonists (D333), with the fugitive hunters | `game/objects/structures/traps.cs` |
 | `antagonists/fugitive/hunters/hunter_gear.dm` (all but the bouncy castle); `antagonists/cult/cult_structures.dm:91-` | the fugitive hunters' gear (the bounty locator, the psychic's and the bounty hunters' items); the cult's structures (the altar, forge, archives, pylon and their item dispensers) | the fugitive hunters, the cult | the antagonists (D333) | `modules/antagonists/fugitive/hunters/hunter_gear.cs`, `modules/antagonists/cult/cult_structures.cs` |
-| `maintenance.dm:22`, `:39` | the moisture trap's fish safe storage and fishing spot (`Dm.Deferred`; the fish source's `prob(50)` is drawn) | a fishing rod cast into a moisture trap | fishing | `game/objects/structures/maintenance.cs` |
+| `maintenance.dm:22`, `:39` | the moisture trap's fishing spot (`Dm.Deferred`; the fish source's `prob(50)` is drawn; the fish-safe storage is live since gaps FI1) | a fishing rod cast into a moisture trap | fishing | `game/objects/structures/maintenance.cs` |
 | `billboard.dm:16`, `containers.dm:17` | the see-through fade of the billboards and the shipping containers for a top-down viewer behind them (DV499, `Dm.Deferred`) | a player behind a billboard or a container | never (the first-person view, DV499) | `game/objects/structures/billboard.cs`, `containers.cs` |
 | `life_candle.dm:36`, `:93` | the life candle's light middleman (its flame's flicker, `fire_flicker_middleman`) | a lit life candle | never (client lighting, D24), as the welder's and the lighter's | `game/objects/structures/life_candle.cs` |
 | `items.dm:1904`, `bodypart/*.dm` `animate_atom_living`; `staff.dm`, `wand.dm`, `wand_animate.dm`, `wand_rebel.dm` | an item's, a gun's and a bodypart's own `animate_atom_living` (a mimic of the item, the wands' and staffs' animation); a structure and a petrified statue come alive (`structures.dm:71`, `petrified_statue.dm:92`) | the staff of animation, the wands, a DNA meltdown's vomited organ | the wizard (antagonists) and the magic projectiles | (generated stubs, `datums/instability_meltdown.cs`) |
@@ -4651,7 +4648,6 @@ blur, the held items' float, the alert and the reverb. Leaves:
 | `drunk.dm:122`, `:169` | the bibulous personality's after-drink moodlet and the whimsical scientist's Ballmer peak lines (`HAS_PERSONALITY` reads the personalities, which nobody has) | a drunk scientist or bibulous drinker | the personalities (owner-deferred) | `datums/status_effects/debuffs/drunk.cs` |
 | `alcohol_reagents.dm:1091`, `:1096` | the devil's kiss's blood crawl exit effect (`crawl.exit_blood_effect`, `Dm.Deferred`): the crawler is still expelled and hurt | a slaughter demon or a blood crawler who drank devil's kiss | the antagonists (D333): the slaughter demon and the blood crawl spell | `reagents/drinks/alcohol_reagents.cs` |
 | `alcohol_reagents.dm:3457` | the poet's dream's heretic dreams (`/datum/status_effect/grouped/heretic_dreams`, inert: `Dm.Deferred`) | drinking a poet's dream | the antagonists (D333): the heretic | `reagents/drinks/alcohol_reagents.cs` |
-| `drink_reagents.dm:247` | milk's `used_on_fish` (`Dm.Deferred`): a bone fish fed milk repaired and sated | feeding milk to a fish | fishing (M10+) | `reagents/drinks/drink_reagents.cs` |
 | `alcohol_reagents.dm:2227` | the bug spray's `/datum/element/bugkiller_reagent` (inert, as the toxins' insecticide's) | splashing bug spray on an insect | with the element's package | `reagents/drinks/alcohol_reagents.cs` |
 | `game/objects/effects/decals/cleanable/food.dm` | the file is PARTIAL: the salt pile and the squid ink (gaps KT1); the tomato smudge's `can_bloodcrawl_in` is left | a blood crawler | the antagonists (D333) | `game/objects/effects/decals/cleanable/food.cs` |
 ## 225. The medicines, toxins and addictions (gaps RG2, D333, D339)
@@ -4672,7 +4668,6 @@ mood event is live since gaps MS1 (section 227). Kept as tg has them: nicotine's
 proc does not pass (no jitter); the medicine addiction `QDEL_NULL`s its weak references; regenerative jelly's `expose_mob` names its
 second parameter `reac_volume` (the methods); corazargh and the oculater call their parent twice; spewium's first `vomit` is in the
 old argument order (`MOB_VOMIT_BLOOD`, so its `vomit_type` is never read). Left:
-| `toxin_reagents.dm:80`, `:1437` | mutagen's and bone hurting juice's `used_on_fish` (`Dm.Deferred` stubs, live-partial.txt) | a fish fed or dipped | with fishing (`modules/fishing`) | `modules/reagents/chemistry/reagents/toxin_reagents.cs` |
 | `toxin_reagents.dm:1792` | the spider serum's `mind?.add_antag_datum(/datum/antagonist/spider)` (`Dm.Deferred`; the spiderlings, the bloody vomit and the giant spider are translated) | thirty cycles of spider serum in a body with a mind | the spider antagonist (antagonist-only, D333) | `modules/reagents/chemistry/reagents/toxin_reagents.cs` |
 | `toxin_reagents.dm:1227-1243` | rotatium's turned game plane masters: the server animates their `transform`, the client draws no plane master transform | a player on rotatium | presentation (the plane masters' transform) | `modules/reagents/chemistry/reagents/toxin_reagents.cs` |
 | `generic_addictions.dm:85-97` | the hallucinogen withdrawal's `angular_blur` and `wave` filters on the game plane master: added and removed on the server; the client draws only the blur and colour filters of the game plane | a hallucinogen addict in withdrawal | presentation (the plane filters) | `modules/reagents/withdrawal/generic_addictions.cs` |
@@ -4706,7 +4701,6 @@ client: the game plane's colour filters in their colour spaces (HSL, HCY), its w
 | `other_reagents.dm:2679-2720` | romerol (inert: its zombie infection organ waits for the zombie species; the vaccine, the transformation toxins, the fungal spores, the gondola toxin and Agent-S came with VI1's diseases in gaps train 12) | its sources | the antagonists (D333), SP3 | (generated, inert) |
 | `other_reagents.dm:3685-3750` | concrete, hexacrete and pavement (inert: the concrete walls and floors are not ported) | a girder or catwalk splashed | the structures | (generated, inert) |
 | `other_reagents.dm:3611` | polyjuice's random transformation (`wabbajack`, `living.dm:1489`, not translated: `Dm.Deferred`) | polyjuice past its cycle | M10+ (the wizard's wabbajack) | `other_reagents.cs` |
-| `pyrotechnic_reagents.dm:443`, `other_reagents.dm:2753` | teslium and growth serum fed to a fish (`live-partial.txt` rows) | a fish | gaps FI1-3 | (generated stubs) |
 ## 227. The moods (gaps MS1, D333, D339)
 Translated whole: `datums/mood.dm` (the mood datum every human makes in `setup_mood`, the dummy's; the mood events' add, refresh,
 replace and clear with their timeouts and the conditional events' priorities; the mood level and the sanity with SSmood's drain and
@@ -4741,7 +4735,8 @@ moodless hugger is DV555. Left:
 | `modules/research/gizmo/gizmodes/gizmood.dm` | the gizmo's `gizmood` (the events `gizmo_positive` and `gizmo_negative` are live) | a gizmo | the gizmos (gaps OR1, D339) | (not translated) |
 | `jobs/job_types/chaplain/chaplain_vorpal_scythe.dm` | the vorpal scythe's moods (the sects', rites' and sparring moods came with gaps CH1) | a chaplain | the chapel (gaps CH1, D339) | (not translated) |
 | `game/turfs/open/water.dm:293-318` (the hot spring, inert) | the hot spring's mood (the arcade cabinets', roulette's and slot machines' came with gaps RC1, section 247) | a hot spring | the hot spring | (not translated) |
-| `components/aquarium.dm`, `fishing/fishing_minigame.dm`, `fishing/sources/_fish_source.dm`, `sources/subtypes/rifts.dm`, `fishing/fish/_fish.dm` | the fishing and aquarium moods (the fish petting and released events are live) | fishing | fishing (gaps FI1-3, D339) | (not translated) |
+| `machinery/computer/arcade/_arcade.dm`, `machinery/roulette_machine.dm`, `machinery/slotmachine.dm`, `game/turfs/open/water.dm:293-318` (the hot spring, inert) | the arcade cabinets', roulette's and slot machines' moods, the hot spring's | playing them; a hot spring | recreation (gaps RC1, D339) | (not translated) |
+| `components/aquarium.dm`, `fishing/fishing_minigame.dm`, `fishing/sources/_fish_source.dm`, `sources/subtypes/rifts.dm` | the fishing and aquarium moods (the fish petting and released events are live, and the pacifist's eating a fish since gaps FI1) | fishing | fishing (gaps FI2-3, D339) | (not translated) |
 | `clothing/neck/pearl.dm`, `clothing/suits/reactive_armour.dm`, `status_effects/debuffs/choke.dm`, `elements/art.dm:70-86` (the commoner's art, inert) | the pearl necklace's, the reactive armour's, the choking's and the proletarian art's moods | wearing them; choking on food | with their systems | (not translated) |
 | `modules/mob/living/living.dm:2248` | the View Variables dropdown's "Add Mood Event" (VV is admin tooling; the admin procs it calls are translated) | an admin | the admin tools | `modules/mob/living/living.cs` |
 | `carbon/life.dm:322-391` | the smells' and the chemical euphoria's moods of a carbon breathing without a species' lungs (`check_breath` of carbons, section 1; the lungs give them to humans) | a monkey or alien breathing | with the carbon `check_breath` | `modules/mob/living/carbon/life.cs` |
@@ -4993,8 +4988,8 @@ poster of Lavaland's base (`posters/official.dm:261`). DV611 (the shelters the h
 | `kheiral_cuffs.dm:103-110` | the cuffs' glow, worn and lying (`emissive_appearance`) | always | DV12 | `equipment/kheiral_cuffs.cs` |
 | `grapple_gun.dm:114-123` | the zipliner's body turned along the line (`animate(transform)`) is sent as tg's transform; whether the client tilts a first-person body is not checked | a grapple | the client's mob transforms | `equipment/grapple_gun.cs` |
 | `laborshuttle.dm:25` | tg compares the docked port's `name` (Lavaland's "labor camp") with the id "laborcamp_away", so "Shuttle is already at the outpost!" never shows; the console is locked there anyway (no destination left). A tg bug, kept | the camp's console with the shuttle docked | (tg) | `laborcamp/laborshuttle.cs` |
-| Lavaland's mapped inert things | the mech pad and its console (OR1), the arcades and the cards (RC1), the fish catalog and the bait (FI1-3), the RaptorDex and the troughs (LV3), the goliaths (LV2), the crusher's retool kit (LV2) | Lavaland's base and ruins | their packages (D353) | (inert) |
-| Lavaland's mapped inert things | the mech pad and its console (OR1), the arcades and the cards (RC1), the library console (LB1), the fish catalog and the bait (FI1-3), the RaptorDex and the troughs (LV3), the goliaths (LV2), the crusher's retool kit (LV2) | Lavaland's base and ruins | their packages (D353) | (inert) |
+| Lavaland's mapped inert things | the mech pad and its console (OR1), the arcades and the cards (RC1), the bait (FI2; the fish catalog is live since FI1), the RaptorDex and the troughs (LV3), the goliaths (LV2), the crusher's retool kit (LV2) | Lavaland's base and ruins | their packages (D353) | (inert) |
+| Lavaland's mapped inert things | the mech pad and its console (OR1), the arcades and the cards (RC1), the library console (LB1), the bait (FI2; the fish catalog is live since FI1), the RaptorDex and the troughs (LV3), the goliaths (LV2), the crusher's retool kit (LV2) | Lavaland's base and ruins | their packages (D353) | (inert) |
 | the gear's 3D models | the shelter's furniture, the jaunter, the grapple gun, the cuffs, the mine cart and its rails, the designator and the beacon keep tg's sprites (docs/ai/required-models.md) | always | the models | (client) |
 ## 235. Lavaland's fauna, the monster organs and the kinetic crusher (gaps LV2, D339, D353)
 Translated whole: `modules/mob/living/basic/lavaland/mining.dm` (the mining mob base with its crusher damage tracking and the
@@ -5312,7 +5307,7 @@ draw as an argument `update_use_power` ignores, the firepit's `Initialize` toggl
 | `abductor/machinery/`, `abductor/abductor_structures.dm`, `abductor/equipment/gear/abductor_items.dm:284` | the crashed UFO's experiment machine, gland dispenser, pad, operating table and guide are inert | the UFO crash ruin | the abductors (antagonist-only, D333) | (inert) |
 | `wizard/equipment/artefact.dm:29`, `guns/magic/staff.dm`, `items/dice.dm:279`, `machinery/wishgranter.dm` | the veal render, the staff of the honk, the one-use die of fate (greed's bag of money gives one) and the wish granter (its wish makes an antagonist) are inert | the clown biodome, greed's slot machine, the cube ruin | the wizard and the wish granter's antagonist (D333) | (inert) |
 | `computer/arcade/battle.dm`, `orion.dm`, `slotmachine.dm:736`, `cards/deck/cas.dm`, `items/skateboards.dm:17`, `holodeck/items.dm:61` | the arcade cabinets, the syndicate slot machine, the Cards Against Spess decks, the hoverboard and the dodgeball are inert | the syndicate base, the golem ship, the beach biodome | recreation (gaps RC1), the holodeck | (inert) |
-| `fishing/bait.dm`, `fishing/fish_catalog.dm`, `aquarium/`, the beach's, ice's and water's `add_lazy_fishing` | the ruins' fishing gear and aquariums are inert; the sand, coast, ice hole and beach water are not fishing spots yet | the beach biodome, the winter biodome, the golem ship | fishing (gaps FI1-3) | `turfs/open/sand.cs`, `ice.cs`, `water.cs` |
+| `fishing/bait.dm`, `aquarium/`, the beach's, ice's and water's `add_lazy_fishing` | the ruins' fishing gear and aquariums are inert (the fish catalog is live since gaps FI1); the sand, coast, ice hole and beach water are not fishing spots yet | the beach biodome, the winter biodome, the golem ship | fishing (gaps FI1-3) | `turfs/open/sand.cs`, `ice.cs`, `water.cs` |
 | `food/snacks.dm:88-110`, `:538`, `frozen.dm:354-397`, `packaged.dm:360` | the chips, the random corn chips, the creamsicles and the ration packs are inert | the ruins' snacks | the kitchen (gaps KT1) | (inert) |
 | `library/book.dm:384`, `library/lib_machines.dm:793` | the IDC manual and the bookbinder are inert | the syndicate base, the golem ship | the library (gaps LB1) | (inert) |
 | `game/machinery/sleepers.dm` | the syndicate base's and the survival pod ruin's sleepers are inert (D216: the sleeper is not ported, as MetaStation maps none; the ruins do) | the syndicate base, the survival pod ruin | an owner question (D216) | (inert) |
@@ -5333,7 +5328,7 @@ drink and soup orders; `customers/_customer.dm`: the eleven customer kinds with 
 behaviours; the tree was embedded), `elements/food/venue_price.dm` with its sites (`_food.dm:89`, `reagents.dm:107`,
 `clothing.dm:74`, `crayons.dm:216`), the round end's restaurant venues (`roundend.dm`), the portal's board
 (`machine_circuitboards.dm`); every food subtype's own proc left in `food/` (`snacks.dm`, `burgers.dm`, `soup.dm`, `bait.dm` whole;
-the rest of `misc.dm`, `bread.dm`, `lizard.dm` but the row below, `pastries.dm`, `cake.dm`, `frozen.dm`, `spaghetti.dm`,
+the rest of `misc.dm`, `bread.dm`, `lizard.dm` (its moonfish eggs' aquarium content since gaps FI1), `pastries.dm`, `cake.dm`, `frozen.dm`, `spaghetti.dm`,
 `martian.dm`, `mexican.dm`, `sweets.dm`, `vegetables.dm`, `pie.dm`, `packaged.dm`, `sandwichtoast.dm`), the recipe guides
 (`recipes_guide.dm`, `soup_guide.dm`) and the monkey recyclers' list. With them: `components/food/ghost_edible.dm`,
 `status_effects/limited_effect.dm` and the health buff of `buffs.dm`, the squid ink decal (`cleanable/food.dm`), and the crafting of
@@ -5342,7 +5337,6 @@ style picture of `assets/crafting.dm:37`; section 11's rows). Meta's two portals
 them: the moth clothing order is made with no venue (`order_food` passes only the customer, so its `New` reads a null venue); the
 ice cream cone sold to a customer reports no transaction, so it is not counted as served; the reaction guides' `New` runs the
 parent twice; the ice cream order's flavour list grows with every order; the crazy burger never stops processing.
-| `food/lizard.dm:150` | the moonfish eggs' aquarium content (`/datum/component/aquarium_content`, `Dm.Deferred`): the eggs put in an aquarium | an aquarium | fishing | `modules/food_and_drinks/food/lizard.cs` |
 | `restaurant/_venue.dm:285`, `:190` | the portal's context tips (`add_context`, a live-partial stub, and its `register_context`) | a held tool or ID over a portal | the screentips (D291) | `modules/food_and_drinks/restaurant/_venue.cs` |
 | `job_types/cook.dm:56`, `bartender.dm:38` | the cook's and bartender's tourist scores from their venue's income (`award_service`, live-partial rows of gaps J2) | the round end | the achievements (D332) | (live-partial) |
 | the restaurant's 3D models | the portal, the robot customers, the seat holosign and the thought bubble keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
@@ -5453,3 +5447,35 @@ admin spawns them, and the marine engineer's ERT outfit (inert, with the ERT) ca
 |---|---|---|---|---|
 | `veteran_advisor.dm:57`, `negative_quirks/paraplegic.dm`, `quirks/_quirk.dm`, `mob/living/status_procs.dm:458`, `vehicles/wheelchair.dm` | the veteran's paraplegic quirk (`Dm.Deferred`): the quirk datum's procs, `add_quirk`, the paraplegic quirk with its trauma and `put_in_wheelchair`, and the wheelchair (the vehicle, its folded item and its riding are inert), so the veteran walks | the veteran's spawn | the quirks (owner-deferred, D333, D339) | `modules/jobs/job_types/station_trait/veteran_advisor.cs` |
 | `awaymissions/mission_code/heretic/naval_cannon.dm:33` | the heretic away mission's naval cannon is live (a var-only deployable turret); its 40 mm shell's `on_hit` explosion (`/obj/projectile/bullet/mm40`, inert) waits with the mission | the away mission's cannon | the away missions | (generated) |
+## 250. The fish (gaps FI1, D339)
+Live: `fishing/fish/` whole (`_fish.dm`: the fish item with its size and weight and their force, health, hunger, feeding and
+growth by food, life in and out of water with the flop, death with its message and dead sprite, revival, breeding with its
+evolutions, the electrogenesis, petting, butchering into fillets, cooking and eating, grinding, the export price and the examine;
+`fish_traits.dm`: every trait with its effects on the fish, on its eater and on a grown mob, the spontaneous traits and their DNA
+infusions; `fish_evolution.dm`; `chasm_detritus.dm`; every fish of `types/`), with `components/aquarium_content.dm`,
+`components/fish_growth.dm`, `elements/fish_safe_storage.dm`, `components/throwbonus_on_windup.dm` (the lavaloop's wind-up bar),
+`actions/mobs/charge_apc.dm`, the shadow regeneration of `buffs.dm`, `__HELPERS/logging/fishing.dm`, `isfish`, the fish defines'
+`GET_FISH_SLOWDOWN` and `GET_FISH_WEIGHT_RANK`, the reagents fed to a fish (`reagents.dm:326` and milk's, mutagen's, bone hurting
+juice's, teslium's, space lube's and growth serum's `used_on_fish`), `fishing/fish_mount.dm`, `fishing/fish_catalog.dm` with its
+FishCatalog window and tg's fish sprite sheet (`assets/fish.dm`, drawn by the client), SSfishing (`processing/fishing.dm`: the
+fish's cached properties and beauty scores, the catchable fish by id, the fish evolutions' fish), the fish cases of
+`aquarium/aquarium_kit.dm` and `storage/subtypes/others/fish_case.dm`, the fish-safe toilet, moisture trap and deep fryer, the
+puddle's tadpoles (`water_source.dm:153`), the fish export (`exports/fish.dm`), the DNA infuser's fish traits
+(`infuser_tier_one_entries.dm:145`) and the moonfish eggs' aquarium content (`food/lizard.dm:150`). Kept as tg has them: the second
+of the fish's two `item_interaction` definitions replaces the first, so a stethoscope never checks a fish's pulse; the armored
+pike's second `get_fish_taste` replaces its raw taste with the cooked one; the fritterish picks its variant twice; the
+mastodon's suicide message misses a bracket; a fish's temperature check ignores the range it is given; `slapperoni` counts its
+iterations wrongly; the emulsify trait's `continue` does nothing; the anxiety trait unregisters a signal it never registered; the
+electrogenesis trait registers a trait name as a signal; the hallucinogenic trait checks the fish instead of its eater; the
+nessie-fish evolution is never used.
+| `fish_traits.dm:137`, `:150`, `:167`, `:259`, `:280`, `:450`, `:668` | the wary, shiny lover, picky eater, carnivore, vegan, predator and anxiety traits' fishing difficulty and catch weight from the rod's line and bait (`live-partial.txt` rows) | casting a rod | the rods (gaps FI2) | (generated stubs) |
+| `aquarium_kit.dm:64` | the syndicate fish case's fish, picked from the syndicate fishing portal's fish table (`GLOB.preset_fish_sources`, a `live-partial.txt` row: the case starts empty) | an ominous fish case spawned | the fishing spots (gaps FI2) | (generated stub) |
+| `fish_catalog.dm:11` | the encyclopedia's fishing-difficulty element held in hand (`/datum/element/adjust_fishing_difficulty`, `Dm.Deferred`) | fishing with the book in hand | the rods (gaps FI2) | `modules/fishing/fish_catalog.cs` |
+| `fish_catalog.dm:75`, `processing/fishing.dm:110` | the fishing spots that name a fish in the encyclopedia and the turfs a fish lives on safely (`GLOB.preset_fish_sources`, `__gap` locals: no spot, no safe turf) | the encyclopedia's tips; a fish on a fishing spot's turf | the fishing spots (gaps FI2) | `fish_catalog.cs`, `controllers/subsystem/processing/fishing.cs` |
+| `processing/fishing.dm:100` | the fish each lure can catch (`lure_catchables`, `Dm.Deferred`) | a lure on a rod | the rods (gaps FI2) | `controllers/subsystem/processing/fishing.cs` |
+| `processing/fishing.dm:29-45` | the fish's icons and their unknown outlines as base64 pictures (`icon2base64`; the server renders no icons, D104) | the fishing achievement's window | the achievements (D332) | `controllers/subsystem/processing/fishing.cs` |
+| `fish_mount.dm:56`, `:80`, `:137` | the bar's trophy fish kept between rounds (SSpersistence's `load_trophy_fish` and `save_trophy_fish`, `Dm.Deferred`: the mount starts with tg's first fish, as on an empty database) | a persistent mount loaded or a fish mounted on it | persistence (D332) | `modules/fishing/fish_mount.cs` |
+| `types/rift.dm:545` | the babbelfish's closer-look excerpt (DV675) | a closer look at a babbelfish | (a deviation) | `types/rift.cs` |
+| `types/air_space.dm`, `types/rift.dm:71` | the starfish's emissive glow (`emissive_appearance`, DV12) | a starfish seen in the dark | the emissive plane (DV12) | `types/air_space.cs` |
+| `components/aquarium_content.dm`, `_fish.dm` | the fish's aquarium visual, beauty and animations, the reproduction candidates and the evolutions' conditions an aquarium answers (`COMSIG_AQUARIUM_*`: no aquarium yet, so only self-reproducing fish breed and only growth evolves) | a fish in an aquarium | the aquariums (gaps FI3) | `datums/components/aquarium_content.cs`, `modules/fishing/fish/_fish.cs` |
+| the fish's 3D models | the fish, the mount, the fish cases, the encyclopedia and the babbel ears keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |

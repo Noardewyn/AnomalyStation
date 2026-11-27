@@ -419,9 +419,9 @@ public partial class datum_embedding_global_funny_sticky : datum_embedding_globa
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:48
-[DmPath("/datum/embedding/chrystarfish"), DmGeneratedOnly, DmInert]
-public partial class datum_embedding_chrystarfish : datum_embedding
+// tg: code/modules/fishing/fish/types/rift.dm:48 (the var block of a hand-written class)
+[DmPath("/datum/embedding/chrystarfish")]
+public partial class datum_embedding_chrystarfish
 {
     // tg: code/modules/fishing/fish/types/rift.dm:48
     public datum_embedding_chrystarfish()

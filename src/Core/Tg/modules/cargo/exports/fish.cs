@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps P4b (D327): the whole file; the fish's own price is fishing's (a fish is inert until then). The var blocks are generated.
+// Gaps P4b (D327): the whole file, the fish priced by their own export price. The var blocks are generated.
 
 // tg: code/modules/cargo/exports/fish.dm:1
 public partial class datum_export_fish : datum_export
@@ -17,7 +17,7 @@ public partial class datum_export_fish : datum_export
     // tg: code/modules/cargo/exports/fish.dm:7
     public override object get_base_cost(obj exported_item = null)
     {
-        Dm.NotTranslated("code/modules/cargo/exports/fish.dm:8", "get_base_cost: fish.get_export_price(..()), a fish's own export price (fishing, 0/787)");
-        return base.get_base_cost(exported_item);
+        obj_item_fish fish = (obj_item_fish)exported_item;
+        return fish.get_export_price(base.get_base_cost(exported_item));
     }
 }

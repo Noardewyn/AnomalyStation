@@ -485,9 +485,9 @@ public partial class obj_item_book_manual_ancient_parchment : obj_item_book_manu
     }
 }
 
-// tg: code/modules/fishing/fish_catalog.dm:3
-[DmPath("/obj/item/book/manual/fish_catalog"), DmGeneratedOnly, DmInert]
-public partial class obj_item_book_manual_fish_catalog : obj_item_book_manual
+// tg: code/modules/fishing/fish_catalog.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/book/manual/fish_catalog")]
+public partial class obj_item_book_manual_fish_catalog
 {
     // tg: code/modules/fishing/fish_catalog.dm:3
     public obj_item_book_manual_fish_catalog()

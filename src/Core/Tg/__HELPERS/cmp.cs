@@ -96,8 +96,10 @@ public static partial class GlobalProcs
         return sorttext(a.name, b.name);
     }
 
+    // PORT: a and b are atoms or typepaths (the slot's note: initial reads an instance or a type): its one tg caller, SSfishing's
+    // start, sorts the fish types by their initial names, and tg's atom/a does not check it; a typed parameter would read a type as null.
     // tg: code/__HELPERS/cmp.dm:39
-    public static object cmp_init_name_asc(atom a = null, atom b = null)
+    public static object cmp_init_name_asc(object a = null, object b = null)
     {
         return sorttext(Dm.initial(b, (atom p) => p.name), Dm.initial(a, (atom p) => p.name));
     }

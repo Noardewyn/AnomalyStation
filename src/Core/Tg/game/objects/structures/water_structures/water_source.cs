@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps H1: the whole file (the infinite water source and the puddle). The puddle's tadpole scooping waits for the fishing
-// (not-translated.md section 190: /obj/item/fish/tadpole). The var blocks are generated (D111).
+// Gaps H1: the whole file (the infinite water source and the puddle, whose tadpoles are scooped since the fish were ported).
+// The var blocks are generated (D111).
 
 // tg: code/game/objects/structures/water_structures/water_source.dm:2
 public partial class obj_structure_water_source : obj_structure
@@ -204,8 +204,9 @@ public partial class obj_structure_water_source_puddle : obj_structure_water_sou
         {
             playsound(loc, Dm.resource("sound/effects/slosh.ogg"), 15, TRUE);
             balloon_alert(user, "got a tadpole");
-            // the tadpole is a fish (modules/fishing), not ported yet
-            Dm.Deferred("code/game/objects/structures/water_structures/water_source.dm:153", "the tadpole waits for the fishing (/obj/item/fish/tadpole)");
+            obj_item_fish_tadpole tadpole = await Dm.new_async<obj_item_fish_tadpole>(loc);
+            await tadpole.randomize_size_and_weight();
+            await user.put_in_hands(tadpole);
         }
         icon_state = Dm.str(base_icon_state);
         return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN;

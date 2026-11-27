@@ -474,6 +474,10 @@ public class EnergyGunTests
         // the second lens heats: +100 and 10 fewer wet stacks
         r.In(() => Waiting.NoSleep(gun.attack_self(bob)));
         Assert.IsType<obj_projectile_temp_hot>(r.In(() => gun.chambered.loaded_projectile));
+        // the hot beam right after Rob's Life has run, so his body's own warming and cooling stays out of the shot
+        float fired = r.In(() => SSmobs.times_fired);
+        for (int i = 0; i < 4 * Second && r.In(() => SSmobs.times_fired) == fired; i++)
+            r.Step();
         float t1 = r.In(() => rob.bodytemperature);
         float protection2 = r.In(() => 1 - Dm.num(rob.get_insulation_protection(rob.bodytemperature + 100)));
         Shoot(r, bob, gun, rob);

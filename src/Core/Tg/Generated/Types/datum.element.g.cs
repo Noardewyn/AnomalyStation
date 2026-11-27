@@ -1071,9 +1071,9 @@ public partial class datum_element_firestacker : datum_element
     }
 }
 
-// tg: code/datums/elements/fish_safe_storage.dm:3
-[DmPath("/datum/element/fish_safe_storage"), DmGeneratedOnly, DmInert]
-public partial class datum_element_fish_safe_storage : datum_element
+// tg: code/datums/elements/fish_safe_storage.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/fish_safe_storage")]
+public partial class datum_element_fish_safe_storage
 {
     public DmList tracked_fish; // tg: code/datums/elements/fish_safe_storage.dm:4
 

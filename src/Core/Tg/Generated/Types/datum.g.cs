@@ -9582,9 +9582,9 @@ public partial class datum_bodypart_overlay_simple_golem_overlay
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:723
-[DmPath("/datum/bodypart_overlay/simple/babbearfish"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_simple_babbearfish : datum_bodypart_overlay_simple
+// tg: code/modules/fishing/fish/types/rift.dm:723 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/simple/babbearfish")]
+public partial class datum_bodypart_overlay_simple_babbearfish
 {
     // tg: code/modules/fishing/fish/types/rift.dm:723
     public datum_bodypart_overlay_simple_babbearfish()
@@ -41902,23 +41902,23 @@ public partial class datum_fishing_challenge : datum
     }
 }
 
-// tg: code/modules/fishing/fish/chasm_detritus.dm:21
-[DmPath("/datum/chasm_detritus"), DmGeneratedOnly, DmInert]
-public partial class datum_chasm_detritus : datum
+// tg: code/modules/fishing/fish/chasm_detritus.dm:21 (the var block of a hand-written class)
+[DmPath("/datum/chasm_detritus")]
+public partial class datum_chasm_detritus
 {
     public float default_contents_chance = 25; // tg: code/modules/fishing/fish/chasm_detritus.dm:21
     public string default_contents_key = "normal"; // tg: code/modules/fishing/fish/chasm_detritus.dm:23
 }
 
-// tg: code/modules/fishing/fish/chasm_detritus.dm:81
-[DmPath("/datum/chasm_detritus/restricted"), DmGeneratedOnly, DmInert]
-public partial class datum_chasm_detritus_restricted : datum_chasm_detritus
+// tg: code/modules/fishing/fish/chasm_detritus.dm:81 (the var block of a hand-written class)
+[DmPath("/datum/chasm_detritus/restricted")]
+public partial class datum_chasm_detritus_restricted
 {
     public Type chasm_storage_restricted_type = typeof(obj); // tg: code/modules/fishing/fish/chasm_detritus.dm:81
 }
 
 // tg: code/modules/fishing/fish/chasm_detritus.dm:92
-[DmPath("/datum/chasm_detritus/restricted/objects"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chasm_detritus/restricted/objects"), DmGeneratedOnly]
 public partial class datum_chasm_detritus_restricted_objects : datum_chasm_detritus_restricted
 {
     // tg: code/modules/fishing/fish/chasm_detritus.dm:92
@@ -41929,9 +41929,9 @@ public partial class datum_chasm_detritus_restricted_objects : datum_chasm_detri
     }
 }
 
-// tg: code/modules/fishing/fish/chasm_detritus.dm:96
-[DmPath("/datum/chasm_detritus/restricted/bodies"), DmGeneratedOnly, DmInert]
-public partial class datum_chasm_detritus_restricted_bodies : datum_chasm_detritus_restricted
+// tg: code/modules/fishing/fish/chasm_detritus.dm:96 (the var block of a hand-written class)
+[DmPath("/datum/chasm_detritus/restricted/bodies")]
+public partial class datum_chasm_detritus_restricted_bodies
 {
     // tg: code/modules/fishing/fish/chasm_detritus.dm:96
     public datum_chasm_detritus_restricted_bodies()
@@ -41942,9 +41942,9 @@ public partial class datum_chasm_detritus_restricted_bodies : datum_chasm_detrit
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:14
-[DmPath("/datum/fish_evolution"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution : datum
+// tg: code/modules/fishing/fish/fish_evolution.dm:14 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution")]
+public partial class datum_fish_evolution
 {
     public object name; // tg: code/modules/fishing/fish/fish_evolution.dm:14
     public float probability = 0; // tg: code/modules/fishing/fish/fish_evolution.dm:16
@@ -41958,9 +41958,9 @@ public partial class datum_fish_evolution : datum
     public float show_result_on_wiki = 1; // tg: code/modules/fishing/fish/fish_evolution.dm:32
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:86
-[DmPath("/datum/fish_evolution/lubefish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_lubefish : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:86 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/lubefish")]
+public partial class datum_fish_evolution_lubefish
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:86
     public datum_fish_evolution_lubefish()
@@ -41979,7 +41979,7 @@ public partial class datum_fish_evolution_lubefish : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:97
-[DmPath("/datum/fish_evolution/purple_sludgefish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/purple_sludgefish"), DmGeneratedOnly]
 public partial class datum_fish_evolution_purple_sludgefish : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:97
@@ -41998,9 +41998,9 @@ public partial class datum_fish_evolution_purple_sludgefish : datum_fish_evoluti
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:103
-[DmPath("/datum/fish_evolution/mastodon"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_mastodon : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:103 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/mastodon")]
+public partial class datum_fish_evolution_mastodon
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:103
     public datum_fish_evolution_mastodon()
@@ -42021,7 +42021,7 @@ public partial class datum_fish_evolution_mastodon : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:116
-[DmPath("/datum/fish_evolution/chasm_chrab"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/chasm_chrab"), DmGeneratedOnly]
 public partial class datum_fish_evolution_chasm_chrab : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:116
@@ -42035,7 +42035,7 @@ public partial class datum_fish_evolution_chasm_chrab : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:122
-[DmPath("/datum/fish_evolution/ice_chrab"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/ice_chrab"), DmGeneratedOnly]
 public partial class datum_fish_evolution_ice_chrab : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:122
@@ -42049,7 +42049,7 @@ public partial class datum_fish_evolution_ice_chrab : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:128
-[DmPath("/datum/fish_evolution/three_eyes"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/three_eyes"), DmGeneratedOnly]
 public partial class datum_fish_evolution_three_eyes : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:128
@@ -42067,9 +42067,9 @@ public partial class datum_fish_evolution_three_eyes : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:133
-[DmPath("/datum/fish_evolution/chainsawfish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_chainsawfish : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:133 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/chainsawfish")]
+public partial class datum_fish_evolution_chainsawfish
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:133
     public datum_fish_evolution_chainsawfish()
@@ -42087,9 +42087,9 @@ public partial class datum_fish_evolution_chainsawfish : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:146
-[DmPath("/datum/fish_evolution/armored_pike"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_armored_pike : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:146 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/armored_pike")]
+public partial class datum_fish_evolution_armored_pike
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:146
     public datum_fish_evolution_armored_pike()
@@ -42101,7 +42101,7 @@ public partial class datum_fish_evolution_armored_pike : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:156
-[DmPath("/datum/fish_evolution/fritterish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/fritterish"), DmGeneratedOnly]
 public partial class datum_fish_evolution_fritterish : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:156
@@ -42120,7 +42120,7 @@ public partial class datum_fish_evolution_fritterish : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:161
-[DmPath("/datum/fish_evolution/nessie"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/nessie"), DmGeneratedOnly]
 public partial class datum_fish_evolution_nessie : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:161
@@ -42133,13 +42133,13 @@ public partial class datum_fish_evolution_nessie : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:166
-[DmPath("/datum/fish_evolution/nessiefish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_nessiefish : datum_fish_evolution { }
+// tg: code/modules/fishing/fish/fish_evolution.dm:166 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/nessiefish")]
+public partial class datum_fish_evolution_nessiefish { }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:172
-[DmPath("/datum/fish_evolution/moonfish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_moonfish : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:172 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/moonfish")]
+public partial class datum_fish_evolution_moonfish
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:172
     public datum_fish_evolution_moonfish()
@@ -42150,9 +42150,9 @@ public partial class datum_fish_evolution_moonfish : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:184
-[DmPath("/datum/fish_evolution/dwarf_moonfish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_dwarf_moonfish : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:184 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/dwarf_moonfish")]
+public partial class datum_fish_evolution_dwarf_moonfish
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:184
     public datum_fish_evolution_dwarf_moonfish()
@@ -42164,7 +42164,7 @@ public partial class datum_fish_evolution_dwarf_moonfish : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:196
-[DmPath("/datum/fish_evolution/lavaloop"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/lavaloop"), DmGeneratedOnly]
 public partial class datum_fish_evolution_lavaloop : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:196
@@ -42177,7 +42177,7 @@ public partial class datum_fish_evolution_lavaloop : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:201
-[DmPath("/datum/fish_evolution/plasmaloop"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/plasmaloop"), DmGeneratedOnly]
 public partial class datum_fish_evolution_plasmaloop : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:201
@@ -42189,9 +42189,9 @@ public partial class datum_fish_evolution_plasmaloop : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:25
-[DmPath("/datum/fish_trait"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait : datum
+// tg: code/modules/fishing/fish/fish_traits.dm:25 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait")]
+public partial class datum_fish_trait
 {
     public string name = "Unnamed Trait"; // tg: code/modules/fishing/fish/fish_traits.dm:25
     public string catalog_description = "Uh uh, someone has forgotten to set description to this trait. Yikes!"; // tg: code/modules/fishing/fish/fish_traits.dm:27
@@ -42207,7 +42207,7 @@ public partial class datum_fish_trait : datum
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:133
-[DmPath("/datum/fish_trait/wary"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/wary"), DmGeneratedOnly]
 public partial class datum_fish_trait_wary : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:133
@@ -42219,9 +42219,9 @@ public partial class datum_fish_trait_wary : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:146
-[DmPath("/datum/fish_trait/shiny_lover"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_shiny_lover : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:146 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/shiny_lover")]
+public partial class datum_fish_trait_shiny_lover
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:146
     public datum_fish_trait_shiny_lover()
@@ -42233,7 +42233,7 @@ public partial class datum_fish_trait_shiny_lover : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:163
-[DmPath("/datum/fish_trait/picky_eater"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/picky_eater"), DmGeneratedOnly]
 public partial class datum_fish_trait_picky_eater : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:163
@@ -42245,9 +42245,9 @@ public partial class datum_fish_trait_picky_eater : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:195
-[DmPath("/datum/fish_trait/nocturnal"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_nocturnal : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:195 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/nocturnal")]
+public partial class datum_fish_trait_nocturnal
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:195
     public datum_fish_trait_nocturnal()
@@ -42258,9 +42258,9 @@ public partial class datum_fish_trait_nocturnal : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:239
-[DmPath("/datum/fish_trait/heavy"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_heavy : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:239 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/heavy")]
+public partial class datum_fish_trait_heavy
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:239
     public datum_fish_trait_heavy()
@@ -42271,7 +42271,7 @@ public partial class datum_fish_trait_heavy : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:255
-[DmPath("/datum/fish_trait/carnivore"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/carnivore"), DmGeneratedOnly]
 public partial class datum_fish_trait_carnivore : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:255
@@ -42290,7 +42290,7 @@ public partial class datum_fish_trait_carnivore : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:276
-[DmPath("/datum/fish_trait/vegan"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/vegan"), DmGeneratedOnly]
 public partial class datum_fish_trait_vegan : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:276
@@ -42308,9 +42308,9 @@ public partial class datum_fish_trait_vegan : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:303
-[DmPath("/datum/fish_trait/emulsijack"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_emulsijack : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:303 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/emulsijack")]
+public partial class datum_fish_trait_emulsijack
 {
     public DmList resistance_traits; // tg: code/modules/fishing/fish/fish_traits.dm:305
 
@@ -42330,9 +42330,9 @@ public partial class datum_fish_trait_emulsijack : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:348
-[DmPath("/datum/fish_trait/emulsijack/psychic"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_emulsijack_psychic : datum_fish_trait_emulsijack
+// tg: code/modules/fishing/fish/fish_traits.dm:348 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/emulsijack/psychic")]
+public partial class datum_fish_trait_emulsijack_psychic
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:348
     public datum_fish_trait_emulsijack_psychic()
@@ -42350,9 +42350,9 @@ public partial class datum_fish_trait_emulsijack_psychic : datum_fish_trait_emul
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:357
-[DmPath("/datum/fish_trait/necrophage"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_necrophage : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:357 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/necrophage")]
+public partial class datum_fish_trait_necrophage
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:357
     public datum_fish_trait_necrophage()
@@ -42370,7 +42370,7 @@ public partial class datum_fish_trait_necrophage : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:380
-[DmPath("/datum/fish_trait/parthenogenesis"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/parthenogenesis"), DmGeneratedOnly]
 public partial class datum_fish_trait_parthenogenesis : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:380
@@ -42390,7 +42390,7 @@ public partial class datum_fish_trait_parthenogenesis : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:391
-[DmPath("/datum/fish_trait/no_mating"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/no_mating"), DmGeneratedOnly]
 public partial class datum_fish_trait_no_mating : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:391
@@ -42412,7 +42412,7 @@ public partial class datum_fish_trait_no_mating : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:404
-[DmPath("/datum/fish_trait/recessive"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/recessive"), DmGeneratedOnly]
 public partial class datum_fish_trait_recessive : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:404
@@ -42432,9 +42432,9 @@ public partial class datum_fish_trait_recessive : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:411
-[DmPath("/datum/fish_trait/revival"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_revival : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:411 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/revival")]
+public partial class datum_fish_trait_revival
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:411
     public datum_fish_trait_revival()
@@ -42452,9 +42452,9 @@ public partial class datum_fish_trait_revival : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:445
-[DmPath("/datum/fish_trait/predator"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_predator : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:445 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/predator")]
+public partial class datum_fish_trait_predator
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:445
     public datum_fish_trait_predator()
@@ -42473,7 +42473,7 @@ public partial class datum_fish_trait_predator : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:476
-[DmPath("/datum/fish_trait/yucky"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/yucky"), DmGeneratedOnly]
 public partial class datum_fish_trait_yucky : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:476
@@ -42493,9 +42493,9 @@ public partial class datum_fish_trait_yucky : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:483
-[DmPath("/datum/fish_trait/toxic"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_toxic : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:483 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/toxic")]
+public partial class datum_fish_trait_toxic
 {
     public float venom_mult = 1; // tg: code/modules/fishing/fish/fish_traits.dm:488
 
@@ -42516,7 +42516,7 @@ public partial class datum_fish_trait_toxic : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:535
-[DmPath("/datum/fish_trait/toxic/carpotoxin"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/toxic/carpotoxin"), DmGeneratedOnly]
 public partial class datum_fish_trait_toxic_carpotoxin : datum_fish_trait_toxic
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:535
@@ -42538,7 +42538,7 @@ public partial class datum_fish_trait_toxic_carpotoxin : datum_fish_trait_toxic
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:543
-[DmPath("/datum/fish_trait/toxin_immunity"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/toxin_immunity"), DmGeneratedOnly]
 public partial class datum_fish_trait_toxin_immunity : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:543
@@ -42558,7 +42558,7 @@ public partial class datum_fish_trait_toxin_immunity : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:549
-[DmPath("/datum/fish_trait/crossbreeder"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/crossbreeder"), DmGeneratedOnly]
 public partial class datum_fish_trait_crossbreeder : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:549
@@ -42579,9 +42579,9 @@ public partial class datum_fish_trait_crossbreeder : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:557
-[DmPath("/datum/fish_trait/territorial"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_territorial : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:557 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/territorial")]
+public partial class datum_fish_trait_territorial
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:557
     public datum_fish_trait_territorial()
@@ -42592,9 +42592,9 @@ public partial class datum_fish_trait_territorial : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:585
-[DmPath("/datum/fish_trait/lubed"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_lubed : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:585 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/lubed")]
+public partial class datum_fish_trait_lubed
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:585
     public datum_fish_trait_lubed()
@@ -42614,9 +42614,9 @@ public partial class datum_fish_trait_lubed : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:614
-[DmPath("/datum/fish_trait/amphibious"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_amphibious : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:614 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/amphibious")]
+public partial class datum_fish_trait_amphibious
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:614
     public datum_fish_trait_amphibious()
@@ -42636,7 +42636,7 @@ public partial class datum_fish_trait_amphibious : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:634
-[DmPath("/datum/fish_trait/mixotroph"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/mixotroph"), DmGeneratedOnly]
 public partial class datum_fish_trait_mixotroph : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:634
@@ -42655,9 +42655,9 @@ public partial class datum_fish_trait_mixotroph : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:640
-[DmPath("/datum/fish_trait/antigrav"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_antigrav : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:640 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/antigrav")]
+public partial class datum_fish_trait_antigrav
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:640
     public datum_fish_trait_antigrav()
@@ -42675,9 +42675,9 @@ public partial class datum_fish_trait_antigrav : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:664
-[DmPath("/datum/fish_trait/anxiety"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_anxiety : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:664 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/anxiety")]
+public partial class datum_fish_trait_anxiety
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:664
     public datum_fish_trait_anxiety()
@@ -42688,9 +42688,9 @@ public partial class datum_fish_trait_anxiety : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:696
-[DmPath("/datum/fish_trait/electrogenesis"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_electrogenesis : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:696 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/electrogenesis")]
+public partial class datum_fish_trait_electrogenesis
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:696
     public datum_fish_trait_electrogenesis()
@@ -42708,9 +42708,9 @@ public partial class datum_fish_trait_electrogenesis : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:746
-[DmPath("/datum/fish_trait/stunted"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_stunted : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:746 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/stunted")]
+public partial class datum_fish_trait_stunted
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:746
     public datum_fish_trait_stunted()
@@ -42728,9 +42728,9 @@ public partial class datum_fish_trait_stunted : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:756
-[DmPath("/datum/fish_trait/stinger"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_stinger : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:756 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/stinger")]
+public partial class datum_fish_trait_stinger
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:756
     public datum_fish_trait_stinger()
@@ -42748,9 +42748,9 @@ public partial class datum_fish_trait_stinger : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:782
-[DmPath("/datum/fish_trait/toxic_barbs"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_toxic_barbs : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:782 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/toxic_barbs")]
+public partial class datum_fish_trait_toxic_barbs
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:782
     public datum_fish_trait_toxic_barbs()
@@ -42768,9 +42768,9 @@ public partial class datum_fish_trait_toxic_barbs : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:814
-[DmPath("/datum/fish_trait/hallucinogenic"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_hallucinogenic : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:814 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/hallucinogenic")]
+public partial class datum_fish_trait_hallucinogenic
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:814
     public datum_fish_trait_hallucinogenic()
@@ -42788,9 +42788,9 @@ public partial class datum_fish_trait_hallucinogenic : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:851
-[DmPath("/datum/fish_trait/ink"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_ink : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:851 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/ink")]
+public partial class datum_fish_trait_ink
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:851
     public datum_fish_trait_ink()
@@ -42809,9 +42809,9 @@ public partial class datum_fish_trait_ink : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:888
-[DmPath("/datum/fish_trait/camouflage"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_camouflage : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:888 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/camouflage")]
+public partial class datum_fish_trait_camouflage
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:888
     public datum_fish_trait_camouflage()

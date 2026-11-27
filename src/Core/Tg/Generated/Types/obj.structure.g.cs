@@ -15046,9 +15046,9 @@ public partial class obj_structure_spacevine
     }
 }
 
-// tg: code/modules/fishing/fish_mount.dm:18
-[DmPath("/obj/structure/fish_mount"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_fish_mount : obj_structure
+// tg: code/modules/fishing/fish_mount.dm:18 (the var block of a hand-written class)
+[DmPath("/obj/structure/fish_mount")]
+public partial class obj_structure_fish_mount
 {
     public obj_item_fish mounted_fish; // tg: code/modules/fishing/fish_mount.dm:31
     public object persistence_id; // tg: code/modules/fishing/fish_mount.dm:33
@@ -15079,7 +15079,7 @@ public partial class obj_structure_fish_mount : obj_structure
 }
 
 // tg: code/modules/fishing/fish_mount.dm:209
-[DmPath("/obj/structure/fish_mount/bar"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar : obj_structure_fish_mount
 {
     // tg: code/modules/fishing/fish_mount.dm:209
@@ -15090,7 +15090,7 @@ public partial class obj_structure_fish_mount_bar : obj_structure_fish_mount
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional : obj_structure_fish_mount_bar
 {
     // tg: code/modules/fishing/fish_mount.dm:211
@@ -15101,7 +15101,7 @@ public partial class obj_structure_fish_mount_bar_directional : obj_structure_fi
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional/north"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional/north"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional_north : obj_structure_fish_mount_bar_directional
 {
     // tg: code/modules/fishing/fish_mount.dm:211
@@ -15113,7 +15113,7 @@ public partial class obj_structure_fish_mount_bar_directional_north : obj_struct
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional/south"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional/south"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional_south : obj_structure_fish_mount_bar_directional
 {
     // tg: code/modules/fishing/fish_mount.dm:211
@@ -15125,7 +15125,7 @@ public partial class obj_structure_fish_mount_bar_directional_south : obj_struct
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional/east"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional/east"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional_east : obj_structure_fish_mount_bar_directional
 {
     // tg: code/modules/fishing/fish_mount.dm:211
@@ -15137,7 +15137,7 @@ public partial class obj_structure_fish_mount_bar_directional_east : obj_structu
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional/west"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional/west"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional_west : obj_structure_fish_mount_bar_directional
 {
     // tg: code/modules/fishing/fish_mount.dm:211

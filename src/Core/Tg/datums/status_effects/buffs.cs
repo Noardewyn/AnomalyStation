@@ -13,7 +13,8 @@ namespace Anomaly.Core.Tg;
 // (D327) the changeling's Fleshmend; gaps X5 the alien nest's sustenance; gaps MO1 (D333) the MODsuit jump jet's anti-gravity; gaps SL1
 // (D333) the exercised effect of a workout (its mood event since gaps MS1); gaps RG1
 // (D339) the garibaldi's revolutionary resilience; the Envirochow's health buff (the restaurant); the regenerative core's tendrils; the blood-drunk eye's blooddrunk; the bottle
-// of mayhem's frenzy; the Rod of Asclepius' hippocratic oath; the other buffs come with their systems.
+// of mayhem's frenzy; the Rod of Asclepius' hippocratic oath; the shadow regeneration (the nocturnal fish); the other
+// buffs come with their systems.
 
 //Largely beneficial effects go here, even if they have drawbacks.
 
@@ -356,6 +357,35 @@ public partial class datum_status_effect_good_music : datum_status_effect
             await owner.add_mood_event("goodmusic", typeof(datum_mood_event_goodmusic));
         }
         return null;
+    }
+}
+
+/// Same as above, but also heal in darkness!! Mostly superseded but some simple mobs use this
+// tg: code/datums/status_effects/buffs.dm:640  (the nocturnal fish's regeneration)
+public partial class datum_status_effect_shadow_regeneration : datum_status_effect_shadow
+{
+    // tg: code/datums/status_effects/buffs.dm:643
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        object dot = await base.on_apply(__extra);
+        if (!Dm.truthy(dot))
+            return FALSE;
+        await heal_owner();
+        return TRUE;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:650
+    public override async DmTask refresh(object effect = null, params object[] __extra)
+    {
+        await base.refresh(effect, __extra);
+        await heal_owner();
+    }
+
+    /// Regenerate health whenever this status effect is applied or reapplied
+    // tg: code/datums/status_effects/buffs.dm:655
+    public virtual async DmTask heal_owner()
+    {
+        await owner.heal_overall_damage(brute: 1, burn: 1, required_bodytype: BODYTYPE_ORGANIC);
     }
 }
 

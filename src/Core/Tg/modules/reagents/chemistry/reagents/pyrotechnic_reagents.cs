@@ -13,8 +13,8 @@ namespace Anomaly.Core.Tg;
 // and life (M8 slice C), the smoke powder (gaps F1), the tray effects (gaps P2) and gaps RG3 (D339) the rest: thermite on a wall
 // (datums/components/thermite.dm), the explosives' sparks (nitroglycerin, gunpowder, RDX, TaTP), clf3 burning through floors, the
 // vortexes of sorium and liquid dark matter, the flash and sonic powders, napalm and phlogiston lit, cryostylane and pyrosium
-// heating and cooling a container and a body, teslium's shocks and its zap. Teslium's used_on_fish waits for fishing (FI1-3,
-// live-partial.txt). The var blocks are generated (D111).
+// heating and cooling a container and a body, teslium's shocks and its zap, and teslium fed to a fish (it turns
+// electrogenic for a while). The var blocks are generated (D111).
 
 // tg: code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:2
 public partial class datum_reagent_thermite : datum_reagent
@@ -569,6 +569,18 @@ public partial class datum_reagent_teslium : datum_reagent
         await tesla_zap(source: holder.my_atom, zap_range: round(Dm.num(volume) / 5, 1), power: Dm.num(volume) * 20 + power_charge.Value, cutoff: 1 * KILO * JOULES, zap_flags: Dm.bitor(Dm.bitor(Dm.bitor(ZAP_MOB_DAMAGE, ZAP_OBJ_DAMAGE), ZAP_MOB_STUN), ZAP_LOW_POWER_GEN));
         playsound(holder.my_atom, Dm.resource("sound/machines/defib/defib_zap.ogg"), 50, TRUE);
         return SPARK_ACT_NON_DESTRUCTIVE;
+    }
+
+    // tg: code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:443
+    public override async DmTask<object> used_on_fish(obj_item_fish fish = null)
+    {
+        await DmTask.CompletedTask;
+        if (HAS_TRAIT_FROM(fish, TRAIT_FISH_ELECTROGENESIS, FISH_TRAIT_DATUM))
+            return FALSE;
+        fish.add_traits(Dm.list(TRAIT_FISH_ON_TESLIUM, TRAIT_FISH_ELECTROGENESIS), type);
+        _addtimer(TRAIT_CALLBACK_REMOVE(fish, TRAIT_FISH_ON_TESLIUM, type), fish.feeding_frequency * 0.75f, TIMER_UNIQUE | TIMER_OVERRIDE, file: "code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm", line: 447);
+        _addtimer(TRAIT_CALLBACK_REMOVE(fish, TRAIT_FISH_ELECTROGENESIS, type), fish.feeding_frequency * 0.75f, TIMER_UNIQUE | TIMER_OVERRIDE, file: "code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm", line: 448);
+        return TRUE;
     }
 }
 

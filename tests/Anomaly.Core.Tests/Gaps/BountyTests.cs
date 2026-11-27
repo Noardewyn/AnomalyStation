@@ -133,9 +133,11 @@ public class BountyTests
         var scanner = c.R.In(() => Dm.@new<obj_item_universal_scanner>(eve.loc));
         c.R.In(() => Waiting.NoSleep(scanner.export_scan(cube, eve)));
         Assert.Same(hers, c.R.In(() => cube.bounty_handler_account));
+        // each economy fire boosts a few random exports threefold (tg's EXPORT_BOOST_MULT), and the cube's may be among them
+        float boost = c.R.In(() => Dm.@in(typeof(datum_export_bounty_box), SSeconomy.boosted_exports)) ? EXPORT_BOOST_MULT : 1;
         c.R.In(() => Waiting.NoSleep(c.Shuttle.sell()));
         Assert.True(c.R.In(() => QDELETED(cube)));
-        float value = reward * 1.2f; // the speedy delivery bonus is still on
+        float value = (float)Math.Round(reward * 1.2 * boost, 2); // the speedy delivery bonus is still on
         float cut = round(value * 0.3f);
         float tip = round(value * 0.1f);
         Assert.Equal(cut, c.R.In(() => mine.account_balance));

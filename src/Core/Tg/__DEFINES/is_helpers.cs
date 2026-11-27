@@ -670,6 +670,9 @@ public static partial class GlobalProcs
     // tg: code/__DEFINES/is_helpers.dm:169  #define isalienqueen(A) (istype(A, /mob/living/carbon/alien/adult/royal/queen)) (gaps X5: the alien HUD)
     public static bool isalienqueen(object A) => A is mob_living_carbon_alien_adult_royal_queen;
 
+    // tg: code/__DEFINES/is_helpers.dm:257  #define isfish(A) (istype(A, /obj/item/fish)) (the fish)
+    public static bool isfish(object A) => A is obj_item_fish;
+
     // tg: code/__DEFINES/is_helpers.dm:364  #define isprojectilespell(thing) (istype(thing, /datum/action/cooldown/spell/pointed/projectile)) (gaps E4b: the on-hit effect element)
     public static bool isprojectilespell(object thing) => thing is datum_action_cooldown_spell_pointed_projectile;
 }

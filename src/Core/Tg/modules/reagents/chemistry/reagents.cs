@@ -12,8 +12,8 @@ namespace Anomaly.Core.Tg;
 // PARTIAL: the /datum/reagent base's name (the list, sort and comparator helpers name it), New, Destroy, on_new and on_merge
 // (M4a P4a: the welder's fuel), the expose procs and intercept_reagents_transfer (M4b: the fire extinguisher's water),
 // on_burn_wound_processing (M6 slice 3), and the metabolism hooks, burn, on_spark_act, the overdose procs, the taste
-// description, the purity helpers and pretty_string_from_reagent_list (M8 slice A); on_hydroponics_apply (gaps P2, D298).
-// used_on_fish (fishing, M10+) is not declared. The other vars of the block are generated (D111).
+// description, the purity helpers and pretty_string_from_reagent_list (M8 slice A); on_hydroponics_apply (gaps P2, D298);
+// used_on_fish (the fish). The other vars of the block are generated (D111).
 
 // tg: code/modules/reagents/chemistry/reagents.dm:2
 [DmPath("/datum/reagent")]
@@ -342,6 +342,14 @@ public partial class datum_reagent : datum
         if (!Dm.truthy(purity))
             purity = this.purity;
         return min(1 - inverse_chem_val + Dm.num(purity) + 0.01f, 1); //Gives inverse reactions a 1% purity threshold for being 100% pure to appease players with OCD.
+    }
+
+    ///Called when feeding a fish. If TRUE is returned, a portion of reagent will be consumed.
+    // tg: code/modules/reagents/chemistry/reagents.dm:326
+    public virtual async DmTask<object> used_on_fish(obj_item_fish fish = null)
+    {
+        await DmTask.CompletedTask;
+        return FALSE;
     }
 }
 

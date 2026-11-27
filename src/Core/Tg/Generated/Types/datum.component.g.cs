@@ -188,9 +188,9 @@ public partial class datum_component_aquarium : datum_component
     }
 }
 
-// tg: code/datums/components/aquarium_content.dm:5
-[DmPath("/datum/component/aquarium_content"), DmGeneratedOnly, DmInert]
-public partial class datum_component_aquarium_content : datum_component
+// tg: code/datums/components/aquarium_content.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/component/aquarium_content")]
+public partial class datum_component_aquarium_content
 {
     public obj_effect_aquarium vc_obj; // tg: code/datums/components/aquarium_content.dm:5
     public object current_animation; // tg: code/datums/components/aquarium_content.dm:17
@@ -1862,9 +1862,9 @@ public partial class datum_component_fertile_egg
     public datum_callback post_hatch; // tg: code/datums/components/fertile_egg.dm:33
 }
 
-// tg: code/datums/components/fish_growth.dm:3
-[DmPath("/datum/component/fish_growth"), DmGeneratedOnly, DmInert]
-public partial class datum_component_fish_growth : datum_component
+// tg: code/datums/components/fish_growth.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/fish_growth")]
+public partial class datum_component_fish_growth
 {
     public Type result_type; // tg: code/datums/components/fish_growth.dm:5
     public object maturation; // tg: code/datums/components/fish_growth.dm:7
@@ -4298,9 +4298,9 @@ public partial class datum_component_thermite
     }
 }
 
-// tg: code/datums/components/throwbonus_on_windup.dm:3
-[DmPath("/datum/component/throwbonus_on_windup"), DmGeneratedOnly, DmInert]
-public partial class datum_component_throwbonus_on_windup : datum_component
+// tg: code/datums/components/throwbonus_on_windup.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/throwbonus_on_windup")]
+public partial class datum_component_throwbonus_on_windup
 {
     public float maximum_bonus = 20; // tg: code/datums/components/throwbonus_on_windup.dm:3
     public datum_callback pass_maximum_callback; // tg: code/datums/components/throwbonus_on_windup.dm:5

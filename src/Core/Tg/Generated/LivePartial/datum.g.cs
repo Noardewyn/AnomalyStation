@@ -628,71 +628,6 @@ public partial class datum_team_cult
     }
 }
 
-// tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:44
-public partial class datum_reagent_toxin_mutagen
-{
-    // tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:80
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/toxin_reagents.dm:80", "used_on_fish: fishing (not ported): mutagen makes a fish mutagenic for a while (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1391
-public partial class datum_reagent_toxin_bonehurtingjuice
-{
-    // tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1437
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1437", "used_on_fish: fishing (not ported): bone hurting juice hurts a fish made of bone (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:548
-public partial class datum_reagent_lube
-{
-    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:573
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/other_reagents.dm:573", "used_on_fish: fishing (not ported): a fish fed space lube grows into a lubefish (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:2722
-public partial class datum_reagent_growthserum
-{
-    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:2753
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/other_reagents.dm:2753", "used_on_fish: fishing (not ported, gaps FI1-3): a fish fed growth serum grows quickly for a while (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:425
-public partial class datum_reagent_teslium
-{
-    // tg: code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:443
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:443", "used_on_fish: fishing (not ported, gaps FI1-3): a fish fed teslium is electrogenic for a while (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
 // tg: code/modules/jobs/job_types/bartender.dm:2
 public partial class datum_job_bartender
 {
@@ -736,6 +671,97 @@ public partial class datum_spacevine_controller
     {
         Dm.Deferred("code/modules/events/space_vines/vine_controller.dm:54", "vv_do_topic: the Delete Vines option of the view variables menu (admin tooling) (M10+)");
         return DmTask<object>.FromResult(default);
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:133
+public partial class datum_fish_trait_wary
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:137
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object difficulty_mod(obj_item_fishing_rod rod = null, mob fisherman = null)
+    {
+        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:137", "difficulty_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:146
+public partial class datum_fish_trait_shiny_lover
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:150
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object difficulty_mod(obj_item_fishing_rod rod = null, mob fisherman = null)
+    {
+        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:150", "difficulty_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:163
+public partial class datum_fish_trait_picky_eater
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:167
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    {
+        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:167", "catch_weight_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:255
+public partial class datum_fish_trait_carnivore
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:259
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    {
+        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:259", "catch_weight_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:276
+public partial class datum_fish_trait_vegan
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:280
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    {
+        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:280", "catch_weight_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:445
+public partial class datum_fish_trait_predator
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:450
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override DmTask<object> catch_weight_mod(obj_item_fishing_rod rod = null, mob fisherman = null, atom location = null, obj_item_fish fish_type = null)
+    {
+        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:450", "catch_weight_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+}
+
+// tg: code/modules/fishing/fish/fish_traits.dm:664
+public partial class datum_fish_trait_anxiety
+{
+    // tg: code/modules/fishing/fish/fish_traits.dm:668
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object difficulty_mod(obj_item_fishing_rod rod = null, mob fisherman = null)
+    {
+        Dm.Deferred("code/modules/fishing/fish/fish_traits.dm:668", "difficulty_mod: the fishing rod's line and bait (the rods, FI2; the rod's line and bait vars are untyped until then) (M10+)");
+        return default;
     }
 }
 

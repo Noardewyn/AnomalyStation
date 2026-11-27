@@ -6671,7 +6671,7 @@ public partial class obj_machinery_computer_old : obj_machinery_computer
     }
 }
 
-// tg: code/modules/mining/aux_base.dm:15 (the var block of a hand-written class)
+// tg: code/modules/mining/aux_base.dm:15 (the vars the hand-written class does not declare)
 [DmPath("/obj/machinery/computer/auxiliary_base")]
 public partial class obj_machinery_computer_auxiliary_base
 {
@@ -6679,28 +6679,7 @@ public partial class obj_machinery_computer_auxiliary_base
     public float launch_warning = 1; // tg: code/modules/mining/aux_base.dm:27
     public DmList turrets; // tg: code/modules/mining/aux_base.dm:29
     public object possible_destinations; // tg: code/modules/mining/aux_base.dm:31
-    public Type destination; // tg: code/modules/mining/aux_base.dm:33
     public float blind_drop_ready = 1; // tg: code/modules/mining/aux_base.dm:35
-
-    // tg: code/modules/mining/aux_base.dm:15
-    public obj_machinery_computer_auxiliary_base()
-    {
-        name = "auxiliary base management console";
-        desc = "Allows a deployable expedition base to be dropped from the station to a designated mining location. It can also interface with the mining shuttle at the landing site if a mobile beacon is also deployed.";
-        icon = Dm.resource("icons/obj/machines/wallmounts.dmi");
-        icon_state = "pod_off";
-        icon_keyboard = null;
-        icon_screen = "pod_on";
-        circuit = typeof(obj_item_circuitboard_computer_auxiliary_base);
-        density = 0;
-    }
-
-    // tg: code/modules/mining/aux_base.dm:22
-    protected internal override void dm_init_vars()
-    {
-        base.dm_init_vars();
-        req_one_access = Dm.list("aux_base", "command"); // tg: code/modules/mining/aux_base.dm:22
-    }
 }
 
 // tg: code/modules/mining/aux_base.dm:39

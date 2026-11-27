@@ -5781,9 +5781,9 @@ public partial class datum_map_template_map_module
     }
 }
 
-// tg: code/modules/mining/shelters.dm:3
-[DmPath("/datum/map_template/shelter"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter : datum_map_template
+// tg: code/modules/mining/shelters.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter")]
+public partial class datum_map_template_shelter
 {
     public object shelter_id; // tg: code/modules/mining/shelters.dm:7
     public object description; // tg: code/modules/mining/shelters.dm:9
@@ -5807,9 +5807,9 @@ public partial class datum_map_template_shelter : datum_map_template
     }
 }
 
-// tg: code/modules/mining/shelters.dm:49
-[DmPath("/datum/map_template/shelter/alpha"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_alpha : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:49 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/alpha")]
+public partial class datum_map_template_shelter_alpha
 {
     // tg: code/modules/mining/shelters.dm:49
     public datum_map_template_shelter_alpha()
@@ -5821,9 +5821,9 @@ public partial class datum_map_template_shelter_alpha : datum_map_template_shelt
     }
 }
 
-// tg: code/modules/mining/shelters.dm:63
-[DmPath("/datum/map_template/shelter/beta"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_beta : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:63 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/beta")]
+public partial class datum_map_template_shelter_beta
 {
     // tg: code/modules/mining/shelters.dm:63
     public datum_map_template_shelter_beta()
@@ -5835,9 +5835,9 @@ public partial class datum_map_template_shelter_beta : datum_map_template_shelte
     }
 }
 
-// tg: code/modules/mining/shelters.dm:78
-[DmPath("/datum/map_template/shelter/charlie"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_charlie : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:78 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/charlie")]
+public partial class datum_map_template_shelter_charlie
 {
     // tg: code/modules/mining/shelters.dm:78
     public datum_map_template_shelter_charlie()
@@ -5849,9 +5849,9 @@ public partial class datum_map_template_shelter_charlie : datum_map_template_she
     }
 }
 
-// tg: code/modules/mining/shelters.dm:93
-[DmPath("/datum/map_template/shelter/toilet"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_toilet : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:93 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/toilet")]
+public partial class datum_map_template_shelter_toilet
 {
     // tg: code/modules/mining/shelters.dm:93
     public datum_map_template_shelter_toilet()
@@ -5863,9 +5863,9 @@ public partial class datum_map_template_shelter_toilet : datum_map_template_shel
     }
 }
 
-// tg: code/modules/mining/shelters.dm:107
-[DmPath("/datum/map_template/shelter/fishing"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_fishing : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:107 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/fishing")]
+public partial class datum_map_template_shelter_fishing
 {
     public string radial_icon = "river"; // tg: code/modules/mining/shelters.dm:113
     public float safe = 1; // tg: code/modules/mining/shelters.dm:118
@@ -5882,7 +5882,7 @@ public partial class datum_map_template_shelter_fishing : datum_map_template_she
 }
 
 // tg: code/modules/mining/shelters.dm:133
-[DmPath("/datum/map_template/shelter/fishing/beach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/beach"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_beach : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:133
@@ -5897,7 +5897,7 @@ public partial class datum_map_template_shelter_fishing_beach : datum_map_templa
 }
 
 // tg: code/modules/mining/shelters.dm:140
-[DmPath("/datum/map_template/shelter/fishing/tizira"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/tizira"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_tizira : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:140
@@ -5912,7 +5912,7 @@ public partial class datum_map_template_shelter_fishing_tizira : datum_map_templ
 }
 
 // tg: code/modules/mining/shelters.dm:147
-[DmPath("/datum/map_template/shelter/fishing/hot_spring"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/hot_spring"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_hot_spring : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:147
@@ -5927,7 +5927,7 @@ public partial class datum_map_template_shelter_fishing_hot_spring : datum_map_t
 }
 
 // tg: code/modules/mining/shelters.dm:154
-[DmPath("/datum/map_template/shelter/fishing/ice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/ice"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_ice : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:154
@@ -5942,7 +5942,7 @@ public partial class datum_map_template_shelter_fishing_ice : datum_map_template
 }
 
 // tg: code/modules/mining/shelters.dm:161
-[DmPath("/datum/map_template/shelter/fishing/lava"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/lava"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_lava : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:161
@@ -5958,7 +5958,7 @@ public partial class datum_map_template_shelter_fishing_lava : datum_map_templat
 }
 
 // tg: code/modules/mining/shelters.dm:169
-[DmPath("/datum/map_template/shelter/fishing/plasma"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/plasma"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_plasma : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:169
@@ -5974,7 +5974,7 @@ public partial class datum_map_template_shelter_fishing_plasma : datum_map_templ
 }
 
 // tg: code/modules/mining/shelters.dm:177
-[DmPath("/datum/map_template/shelter/fishing/depths"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/depths"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_depths : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:177

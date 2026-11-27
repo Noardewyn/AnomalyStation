@@ -1635,32 +1635,6 @@ public partial class obj_item_barcodescanner
     }
 }
 
-// tg: code/modules/mining/equipment/mining_tools.dm:3
-public partial class obj_item_pickaxe
-{
-    // tg: code/modules/mining/equipment/mining_tools.dm:23
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public override DmTask<object> suicide_act(mob_living user = null)
-    {
-        Dm.Deferred("code/modules/mining/equipment/mining_tools.dm:23", "suicide_act: the suicide verb (M10+) (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/mining/equipment/mining_tools.dm:113
-public partial class obj_item_shovel
-{
-    // tg: code/modules/mining/equipment/mining_tools.dm:144
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public override DmTask<object> suicide_act(mob_living user = null)
-    {
-        Dm.Deferred("code/modules/mining/equipment/mining_tools.dm:144", "suicide_act: the suicide verb (M10+) (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
 // tg: code/modules/research/xenobiology/xenobiology.dm:736
 public partial class obj_item_slimepotion_sentience
 {
@@ -2206,63 +2180,6 @@ public partial class obj_machinery_computer_tram_controls
     public virtual DmTask<object> ninjadrain_act(mob_living_carbon_human ninja = null, obj_item_mod_module_hacker hacking_module = null)
     {
         Dm.Deferred("code/modules/mod/modules/modules_ninja.dm:637", "ninjadrain_act: the ninja's hack (the ninja, not ported) (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/mining/aux_base.dm:15
-public partial class obj_machinery_computer_auxiliary_base
-{
-    // tg: code/modules/mining/aux_base.dm:49
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public override DmTask<object> ui_interact(mob user = null, datum_tgui ui = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:49", "ui_interact: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/mining/aux_base.dm:56
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public override DmTask<object> ui_data(mob user = null)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:56", "ui_data: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/mining/aux_base.dm:136
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public override DmTask<object> ui_act(object action = null, DmList @params = null, datum_tgui ui = null, datum_ui_state state = null)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:136", "ui_act: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/mining/aux_base.dm:130
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public virtual object launch_check(mob user = null)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:130", "launch_check: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-        return default;
-    }
-
-    // tg: code/modules/mining/aux_base.dm:200
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public virtual void set_mining_mode()
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:200", "set_mining_mode: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-    }
-
-    // tg: code/modules/mining/aux_base.dm:206
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public virtual DmTask<object> set_landing_zone(turf T = null, mob user = null, object no_restrictions = null)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:206", "set_landing_zone: the landing designator (assault_pod/mining): the base's deployment to lavaland comes with mining (M10+)");
         return DmTask<object>.FromResult(default);
     }
 }

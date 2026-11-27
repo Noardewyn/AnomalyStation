@@ -16214,9 +16214,9 @@ public partial class obj_structure_meateor_fluff_eyeball : obj_structure_meateor
     }
 }
 
-// tg: code/modules/mining/aux_base.dm:333
-[DmPath("/obj/structure/mining_shuttle_beacon"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_mining_shuttle_beacon : obj_structure
+// tg: code/modules/mining/aux_base.dm:333 (the var block of a hand-written class)
+[DmPath("/obj/structure/mining_shuttle_beacon")]
+public partial class obj_structure_mining_shuttle_beacon
 {
     public string shuttle_ID = "landing_zone_dock"; // tg: code/modules/mining/aux_base.dm:337
     public obj_docking_port_stationary Mport; // tg: code/modules/mining/aux_base.dm:340
@@ -16268,9 +16268,9 @@ public partial class obj_structure_extraction_point_syndicate
     }
 }
 
-// tg: code/modules/mining/fulton.dm:348
-[DmPath("/obj/structure/extraction_point/networked"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_extraction_point_networked : obj_structure_extraction_point
+// tg: code/modules/mining/fulton.dm:348 (the var block of a hand-written class)
+[DmPath("/obj/structure/extraction_point/networked")]
+public partial class obj_structure_extraction_point_networked
 {
     // tg: code/modules/mining/fulton.dm:348
     public obj_structure_extraction_point_networked()
@@ -16282,9 +16282,9 @@ public partial class obj_structure_extraction_point_networked : obj_structure_ex
     }
 }
 
-// tg: code/modules/mining/mine_items.dm:531
-[DmPath("/obj/structure/minecart_rail"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_minecart_rail : obj_structure
+// tg: code/modules/mining/mine_items.dm:531 (the var block of a hand-written class)
+[DmPath("/obj/structure/minecart_rail")]
+public partial class obj_structure_minecart_rail
 {
     // tg: code/modules/mining/mine_items.dm:531
     public obj_structure_minecart_rail()
@@ -16300,9 +16300,9 @@ public partial class obj_structure_minecart_rail : obj_structure
     }
 }
 
-// tg: code/modules/mining/mine_items.dm:555
-[DmPath("/obj/structure/minecart_rail/railbreak"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_minecart_rail_railbreak : obj_structure_minecart_rail
+// tg: code/modules/mining/mine_items.dm:555 (the var block of a hand-written class)
+[DmPath("/obj/structure/minecart_rail/railbreak")]
+public partial class obj_structure_minecart_rail_railbreak
 {
     // tg: code/modules/mining/mine_items.dm:555
     public obj_structure_minecart_rail_railbreak()

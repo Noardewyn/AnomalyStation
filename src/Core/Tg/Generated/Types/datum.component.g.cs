@@ -2024,9 +2024,9 @@ public partial class datum_component_gps
     public DmList tagged; // tg: code/datums/components/gps.dm:8
 }
 
-// tg: code/datums/components/gps.dm:23
-[DmPath("/datum/component/gps/kheiral_cuffs"), DmGeneratedOnly, DmInert]
-public partial class datum_component_gps_kheiral_cuffs : datum_component_gps { }
+// tg: code/datums/components/gps.dm:23 (the var block of a hand-written class)
+[DmPath("/datum/component/gps/kheiral_cuffs")]
+public partial class datum_component_gps_kheiral_cuffs { }
 
 // tg: code/datums/components/gps.dm:43 (the var block of a hand-written class)
 [DmPath("/datum/component/gps/item")]

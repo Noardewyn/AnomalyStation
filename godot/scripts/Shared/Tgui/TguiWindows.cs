@@ -120,6 +120,7 @@ public static class TguiInterfaces
         ["NuclearBomb"] = NuclearBomb.Render,
         ["EmergencyShuttleConsole"] = EmergencyShuttleConsole.Render,
         ["ShuttleConsole"] = ShuttleConsole.Render,
+        ["AuxBaseConsole"] = AuxBaseConsole.Render,
         ["Cargo"] = Cargo.Render,
         ["StripMenu"] = StripMenu.Render,
         ["EmotePanel"] = EmotePanel.Render, // M9 slice B (D256)

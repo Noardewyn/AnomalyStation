@@ -810,9 +810,9 @@ public partial class obj_item_clothing_accessory_maidapron : obj_item_clothing_a
     }
 }
 
-// tg: code/modules/mining/equipment/kheiral_cuffs.dm:4
-[DmPath("/obj/item/clothing/accessory/kheiral_cuffs"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_accessory_kheiral_cuffs : obj_item_clothing_accessory
+// tg: code/modules/mining/equipment/kheiral_cuffs.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/accessory/kheiral_cuffs")]
+public partial class obj_item_clothing_accessory_kheiral_cuffs
 {
     public float on_wrist = 0; // tg: code/modules/mining/equipment/kheiral_cuffs.dm:23
     public float gps_enabled = 0; // tg: code/modules/mining/equipment/kheiral_cuffs.dm:25

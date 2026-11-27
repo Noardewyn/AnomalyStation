@@ -40,9 +40,9 @@ public class ClothingCL1MetaTests : IClassFixture<MetaWorldFixture>
     {
         "reactive", "plasmaman", "ethereal", "chameleon", "polymorph", "perceptomatrix", "horrific", "mind_monkey", "collar_bomb",
         "necklace_pearl", "gloves_fishing", "wheelys", "wizrobe_paper", // the skill capes came with gaps SL1
-        // the mining skull helmet (mining/equipment/explorer_gear.dm, its armour plate waits for the mining gear): a random roll that
-        // shows on Meta since gaps MO1's live MODsuits draw rand() at init (their MODlink ids), not CL1's
-        "helmet_skull",
+        // the chaplain's holiday priest robe (chaplain_costumes.dm, with the chapel): a random roll (one of the random costumes) that
+        // shows on Meta since the mining gear's live types draw from the random stream at init
+        "chaplainsuit_holidaypriest",
     };
 
     private static IEnumerable<atom> Walk(IEnumerable<atom> things)

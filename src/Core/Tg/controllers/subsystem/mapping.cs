@@ -110,7 +110,7 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
         determine_fake_sale();
         require_area_resort();
         process_teleport_locs(); //Sets up the wizard teleport locations
-        preloadTemplates(); // M10 slice G2: the shuttles' (the ruins, shelters and holodeck are deferred)
+        preloadTemplates(); // M10 slice G2: the shuttles'; the survival capsules' shelters (the ruins and holodeck are deferred)
         // tg: :134-158  #ifndef SKIP_SPACE_LEVELS: the space ruin and empty levels, the wilderness, the away missions and
         // setup_ruins(): D108 loads the station level only
         // Run map generation after ruin space is reserved, since this space is used for the cave gen.
@@ -649,7 +649,21 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
     // tg: code/controllers/subsystem/mapping.dm:583
     public virtual void preloadShelterTemplates()
     {
-        Dm.Deferred("code/controllers/subsystem/mapping.dm:583", "preloadShelterTemplates: the survival capsules' shelters (mining, after M10)");
+        foreach (Type item in Dm.each<Type>(subtypesof(typeof(datum_map_template_shelter))))
+        {
+            Type shelter_type = item;
+            object mappath = Dm.initial(shelter_type, (datum_map_template_shelter p) => p.mappath);
+            if (!Dm.truthy(mappath))
+                continue;
+            // DEVIATION(DV611): only the shelters whose map the host mounted (the converted _maps/templates/shelter_*.dmm); the fishing
+            // spots' maps are not converted, and a template whose file is absent would fail to load
+            if (!Dm.truthy(fexists(mappath)))
+                continue;
+            var S = (datum_map_template_shelter)Dm.@new(shelter_type);
+
+            shelter_templates[S.shelter_id] = S;
+            map_templates[S.shelter_id] = S;
+        }
     }
 
     // tg: code/controllers/subsystem/mapping.dm:593

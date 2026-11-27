@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // Lavaland L2c (D304): the whole file. The var block is generated (D111). The wave defence (the NODE drone, the clearing of the
 // vent's surroundings and the spawner's waves of fauna) waits for the fauna, L5: a confirmed excavation stops after tg's alert.
-// The tapped vent's emissive glow stays under DV12, the GPS signal waits for the GPS (L2d), and the trimming of the vent's top
+// The tapped vent's emissive glow stays under DV12, and the trimming of the vent's top
 // when a mob stands behind it is not done (DV261).
 
 // tg: code/game/objects/structures/lavaland/vent_mining/ore_vent.dm:8
@@ -519,8 +519,7 @@ public partial class obj_structure_ore_vent : obj_structure
             discovered = TRUE;
             balloon_alert(user, I18n.T("vent scanned!"));
             generate_description(user);
-            // AddComponent(/datum/component/gps, name): the vent's GPS signal
-            Dm.Deferred("code/game/objects/structures/lavaland/vent_mining/ore_vent.dm:513", "scan_and_confirm: the vent's GPS signal (the GPS, Lavaland L2d)");
+            await AddComponent(typeof(datum_component_gps), name);
             obj_item_card_id user_id_card = user.get_idcard(TRUE) as obj_item_card_id;
             if (user_id_card == null)
                 return;

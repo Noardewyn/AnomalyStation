@@ -85,7 +85,8 @@ public class ShuttleConsoleGameplayTests
         Assert.True(In(w, () => !Dm.truthy(console.locked) && !Dm.truthy(safe.atom_storage.locked) && Dm.str(safe.icon_state) == "wall_safe"));
 
         var pod = In(w, () => (obj_docking_port_mobile)SSshuttle.getShuttle(console.shuttleId));
-        object dock = In(w, () => Dm.text("[]_away", console.shuttleId));
+        // tg's pod console offers the pod's own landing spot on Lavaland (pods.dm's connect_to_shuttle)
+        object dock = In(w, () => Dm.text("[]_lavaland", console.shuttleId));
         window = OpenWindow(w, alice, console);
         window.Context.Act("move", ("shuttle_id", dock));
         for (int i = 0; i < 2000 && !In(w, () => pod.get_docked() is obj_docking_port_stationary d && Dm.eq(d.shuttle_id, dock)); i++)

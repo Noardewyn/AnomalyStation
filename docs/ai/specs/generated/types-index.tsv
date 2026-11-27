@@ -3629,7 +3629,7 @@ proc	/datum/controller/subsystem/mapping	run_map_terrain_population	code/control
 proc	/datum/controller/subsystem/mapping	preloadTemplates	code/controllers/subsystem/mapping.dm:532	path	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	preloadRuinTemplates	code/controllers/subsystem/mapping.dm:543		yes	deferred	proc root
 proc	/datum/controller/subsystem/mapping	preloadShuttleTemplates	code/controllers/subsystem/mapping.dm:568		yes	full	proc root
-proc	/datum/controller/subsystem/mapping	preloadShelterTemplates	code/controllers/subsystem/mapping.dm:583		yes	deferred	proc root
+proc	/datum/controller/subsystem/mapping	preloadShelterTemplates	code/controllers/subsystem/mapping.dm:583		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	preloadHolodeckTemplates	code/controllers/subsystem/mapping.dm:593		yes	deferred	proc root
 proc	/datum/controller/subsystem/mapping	add_reservation_zlevel	code/controllers/subsystem/mapping.dm:640	for_shuttles	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	request_turf_block_reservation	code/controllers/subsystem/mapping.dm:645	width,height,z_size,z_reservation,reservation_type,turf_type_override	yes	full	proc root
@@ -12030,26 +12030,26 @@ type	/datum/map_template/hilbertshotelstorage	/datum/map_template	code/modules/m
 type	/datum/map_template/map_module	/datum/map_template	code/modules/mapping/modular_map_loader/modular_map_loader.dm:41	live	datum_map_template_map_module	1	0
 proc	/datum/map_template/map_module	load	code/modules/mapping/modular_map_loader/modular_map_loader.dm:46	T,centered,mapfile	yes	full	proc
 proc	/datum/map_template/map_module	preload_size	code/modules/mapping/modular_map_loader/modular_map_loader.dm:58	path,cache	yes	full	proc
-type	/datum/map_template/shelter	/datum/map_template	code/modules/mining/shelters.dm:3	inert	datum_map_template_shelter	0	0
-proc	/datum/map_template/shelter	New	code/modules/mining/shelters.dm:17		no	-	proc
-proc	/datum/map_template/shelter	check_deploy	code/modules/mining/shelters.dm:22	deploy_location,capsule,ignore_flags	no	-	proc root
-type	/datum/map_template/shelter/alpha	/datum/map_template/shelter	code/modules/mining/shelters.dm:49	inert	datum_map_template_shelter_alpha	0	0
-proc	/datum/map_template/shelter/alpha	New	code/modules/mining/shelters.dm:57		no	-	proc
-type	/datum/map_template/shelter/beta	/datum/map_template/shelter	code/modules/mining/shelters.dm:63	inert	datum_map_template_shelter_beta	0	0
-proc	/datum/map_template/shelter/beta	New	code/modules/mining/shelters.dm:72		no	-	proc
-type	/datum/map_template/shelter/charlie	/datum/map_template/shelter	code/modules/mining/shelters.dm:78	inert	datum_map_template_shelter_charlie	0	0
-proc	/datum/map_template/shelter/charlie	New	code/modules/mining/shelters.dm:87		no	-	proc
-type	/datum/map_template/shelter/toilet	/datum/map_template/shelter	code/modules/mining/shelters.dm:93	inert	datum_map_template_shelter_toilet	0	0
-proc	/datum/map_template/shelter/toilet	New	code/modules/mining/shelters.dm:100		no	-	proc
-type	/datum/map_template/shelter/fishing	/datum/map_template/shelter	code/modules/mining/shelters.dm:107	inert	datum_map_template_shelter_fishing	0	0
-proc	/datum/map_template/shelter/fishing	New	code/modules/mining/shelters.dm:120		no	-	proc
-type	/datum/map_template/shelter/fishing/beach	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:133	inert	datum_map_template_shelter_fishing_beach	0	0
-type	/datum/map_template/shelter/fishing/tizira	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:140	inert	datum_map_template_shelter_fishing_tizira	0	0
-type	/datum/map_template/shelter/fishing/hot_spring	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:147	inert	datum_map_template_shelter_fishing_hot_spring	0	0
-type	/datum/map_template/shelter/fishing/ice	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:154	inert	datum_map_template_shelter_fishing_ice	0	0
-type	/datum/map_template/shelter/fishing/lava	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:161	inert	datum_map_template_shelter_fishing_lava	0	0
-type	/datum/map_template/shelter/fishing/plasma	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:169	inert	datum_map_template_shelter_fishing_plasma	0	0
-type	/datum/map_template/shelter/fishing/depths	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:177	inert	datum_map_template_shelter_fishing_depths	0	0
+type	/datum/map_template/shelter	/datum/map_template	code/modules/mining/shelters.dm:3	live	datum_map_template_shelter	1	0
+proc	/datum/map_template/shelter	New	code/modules/mining/shelters.dm:17		yes	full	proc
+proc	/datum/map_template/shelter	check_deploy	code/modules/mining/shelters.dm:22	deploy_location,capsule,ignore_flags	yes	full	proc root
+type	/datum/map_template/shelter/alpha	/datum/map_template/shelter	code/modules/mining/shelters.dm:49	live	datum_map_template_shelter_alpha	1	0
+proc	/datum/map_template/shelter/alpha	New	code/modules/mining/shelters.dm:57		yes	full	proc
+type	/datum/map_template/shelter/beta	/datum/map_template/shelter	code/modules/mining/shelters.dm:63	live	datum_map_template_shelter_beta	1	0
+proc	/datum/map_template/shelter/beta	New	code/modules/mining/shelters.dm:72		yes	full	proc
+type	/datum/map_template/shelter/charlie	/datum/map_template/shelter	code/modules/mining/shelters.dm:78	live	datum_map_template_shelter_charlie	1	0
+proc	/datum/map_template/shelter/charlie	New	code/modules/mining/shelters.dm:87		yes	full	proc
+type	/datum/map_template/shelter/toilet	/datum/map_template/shelter	code/modules/mining/shelters.dm:93	live	datum_map_template_shelter_toilet	1	0
+proc	/datum/map_template/shelter/toilet	New	code/modules/mining/shelters.dm:100		yes	full	proc
+type	/datum/map_template/shelter/fishing	/datum/map_template/shelter	code/modules/mining/shelters.dm:107	live	datum_map_template_shelter_fishing	1	0
+proc	/datum/map_template/shelter/fishing	New	code/modules/mining/shelters.dm:120		yes	full	proc
+type	/datum/map_template/shelter/fishing/beach	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:133	live	datum_map_template_shelter_fishing_beach	0	0
+type	/datum/map_template/shelter/fishing/tizira	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:140	live	datum_map_template_shelter_fishing_tizira	0	0
+type	/datum/map_template/shelter/fishing/hot_spring	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:147	live	datum_map_template_shelter_fishing_hot_spring	0	0
+type	/datum/map_template/shelter/fishing/ice	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:154	live	datum_map_template_shelter_fishing_ice	0	0
+type	/datum/map_template/shelter/fishing/lava	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:161	live	datum_map_template_shelter_fishing_lava	0	0
+type	/datum/map_template/shelter/fishing/plasma	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:169	live	datum_map_template_shelter_fishing_plasma	0	0
+type	/datum/map_template/shelter/fishing/depths	/datum/map_template/shelter/fishing	code/modules/mining/shelters.dm:177	live	datum_map_template_shelter_fishing_depths	0	0
 type	/datum/map_template/battlecruiser_starfury	/datum/map_template	code/modules/shuttle/mobile_port/variants/battlecruiser_starfury.dm:4	live	datum_map_template_battlecruiser_starfury	0	0
 type	/datum/saymode	/datum	code/datums/saymode.dm:3	live	datum_saymode	1	0
 proc	/datum/saymode	can_be_used_by	code/datums/saymode.dm:10	user	yes	full	proc root
@@ -18708,10 +18708,10 @@ proc	/datum/component/glass_passer	phase_through_glass	code/datums/components/gl
 type	/datum/component/gps	/datum/component	code/datums/components/gps.dm:5	live	datum_component_gps	1	0
 proc	/datum/component/gps	Initialize	code/datums/components/gps.dm:10	_gpstag,_tracking	yes	full	proc
 proc	/datum/component/gps	Destroy	code/datums/components/gps.dm:17		yes	full	proc
-type	/datum/component/gps/kheiral_cuffs	/datum/component/gps	code/datums/components/gps.dm:23	inert	datum_component_gps_kheiral_cuffs	0	0
-proc	/datum/component/gps/kheiral_cuffs	Initialize	code/datums/components/gps.dm:23	_gpstag	no	-	proc
-proc	/datum/component/gps/kheiral_cuffs	deactivate_kheiral_cuffs	code/datums/components/gps.dm:28	source	no	-	proc root
-proc	/datum/component/gps/kheiral_cuffs	deactivate_if_station	code/datums/components/gps.dm:32	moved_atom,old_turf,new_turf	no	-	proc root
+type	/datum/component/gps/kheiral_cuffs	/datum/component/gps	code/datums/components/gps.dm:23	live	datum_component_gps_kheiral_cuffs	1	0
+proc	/datum/component/gps/kheiral_cuffs	Initialize	code/datums/components/gps.dm:23	_gpstag	yes	full	proc
+proc	/datum/component/gps/kheiral_cuffs	deactivate_kheiral_cuffs	code/datums/components/gps.dm:28	source	yes	full	proc root
+proc	/datum/component/gps/kheiral_cuffs	deactivate_if_station	code/datums/components/gps.dm:32	moved_atom,old_turf,new_turf	yes	full	proc root
 type	/datum/component/gps/item	/datum/component/gps	code/datums/components/gps.dm:43	live	datum_component_gps_item	1	0
 proc	/datum/component/gps/item	Initialize	code/datums/components/gps.dm:49	_gpstag,_tracking,emp_proof,state,overlay_state,debug	yes	full	proc
 proc	/datum/component/gps/item	Destroy	code/datums/components/gps.dm:74		yes	full	proc
@@ -57177,8 +57177,8 @@ proc	/obj/item/clothing/head/helmet/changeling_hivehead	Initialize	code/modules/
 proc	/obj/item/clothing/head/helmet/changeling_hivehead	Initialize	code/modules/antagonists/changeling/powers/mutations.dm:654	mapload	yes	full	proc
 proc	/obj/item/clothing/head/helmet/changeling_hivehead	item_interaction	code/modules/antagonists/changeling/powers/mutations.dm:658	user,tool,modifiers	yes	full	proc
 type	/obj/item/clothing/head/helmet/changeling_hivehead/legion	/obj/item/clothing/head/helmet/changeling_hivehead	code/modules/antagonists/changeling/powers/mutations.dm:713	live	obj_item_clothing_head_helmet_changeling_hivehead_legion	0	0
-type	/obj/item/clothing/head/helmet/skull	/obj/item/clothing/head/helmet	code/modules/mining/equipment/explorer_gear.dm:208	inert	obj_item_clothing_head_helmet_skull	0	0
-proc	/obj/item/clothing/head/helmet/skull	Initialize	code/modules/mining/equipment/explorer_gear.dm:223	mapload	no	-	proc
+type	/obj/item/clothing/head/helmet/skull	/obj/item/clothing/head/helmet	code/modules/mining/equipment/explorer_gear.dm:208	live	obj_item_clothing_head_helmet_skull	1	0
+proc	/obj/item/clothing/head/helmet/skull	Initialize	code/modules/mining/equipment/explorer_gear.dm:223	mapload	yes	full	proc
 type	/obj/item/clothing/head/helmet/skull/cosmic	/obj/item/clothing/head/helmet/skull	code/modules/antagonists/voidwalker/voidwalker_loot.dm:3	inert	obj_item_clothing_head_helmet_skull_cosmic	0	0
 proc	/obj/item/clothing/head/helmet/skull/cosmic	attack_self	code/modules/antagonists/voidwalker/voidwalker_loot.dm:16	user,modifiers	no	-	proc
 type	/obj/item/clothing/head/helmet/sec	/obj/item/clothing/head/helmet	code/modules/clothing/head/helmet.dm:36	live	obj_item_clothing_head_helmet_sec	1	0
@@ -57446,12 +57446,12 @@ type	/obj/item/clothing/head/hooded/monkhabit	/obj/item/clothing/head/hooded	cod
 type	/obj/item/clothing/head/hooded/chaplain_hood	/obj/item/clothing/head/hooded	code/modules/jobs/job_types/chaplain/chaplain_costumes.dm:301	live	obj_item_clothing_head_hooded_chaplain_hood	0	0
 type	/obj/item/clothing/head/hooded/chaplain_hood/leader	/obj/item/clothing/head/hooded/chaplain_hood	code/modules/jobs/job_types/chaplain/chaplain_costumes.dm:317	live	obj_item_clothing_head_hooded_chaplain_hood_leader	0	0
 type	/obj/item/clothing/head/hooded/chaplain_hood/divine_archer	/obj/item/clothing/head/hooded/chaplain_hood	code/modules/jobs/job_types/chaplain/chaplain_divine_archer.dm:39	live	obj_item_clothing_head_hooded_chaplain_hood_divine_archer	0	0
-type	/obj/item/clothing/head/hooded/explorer	/obj/item/clothing/head/hooded	code/modules/mining/equipment/explorer_gear.dm:35	inert	obj_item_clothing_head_hooded_explorer	0	0
-proc	/obj/item/clothing/head/hooded/explorer	Initialize	code/modules/mining/equipment/explorer_gear.dm:54	mapload	no	-	proc
-type	/obj/item/clothing/head/hooded/explorer/syndicate	/obj/item/clothing/head/hooded/explorer	code/modules/mining/equipment/explorer_gear.dm:248	inert	obj_item_clothing_head_hooded_explorer_syndicate	0	0
+type	/obj/item/clothing/head/hooded/explorer	/obj/item/clothing/head/hooded	code/modules/mining/equipment/explorer_gear.dm:35	live	obj_item_clothing_head_hooded_explorer	1	0
+proc	/obj/item/clothing/head/hooded/explorer	Initialize	code/modules/mining/equipment/explorer_gear.dm:54	mapload	yes	full	proc
+type	/obj/item/clothing/head/hooded/explorer/syndicate	/obj/item/clothing/head/hooded/explorer	code/modules/mining/equipment/explorer_gear.dm:248	live	obj_item_clothing_head_hooded_explorer_syndicate	0	0
 type	/obj/item/clothing/head/hooded/cloakhood	/obj/item/clothing/head/hooded	(implied by a subtype's path)	live	obj_item_clothing_head_hooded_cloakhood	0	0
-type	/obj/item/clothing/head/hooded/cloakhood/goliath	/obj/item/clothing/head/hooded/cloakhood	code/modules/mining/equipment/explorer_gear.dm:167	inert	obj_item_clothing_head_hooded_cloakhood_goliath	0	0
-proc	/obj/item/clothing/head/hooded/cloakhood/goliath	Initialize	code/modules/mining/equipment/explorer_gear.dm:183	mapload	no	-	proc
+type	/obj/item/clothing/head/hooded/cloakhood/goliath	/obj/item/clothing/head/hooded/cloakhood	code/modules/mining/equipment/explorer_gear.dm:167	live	obj_item_clothing_head_hooded_cloakhood_goliath	1	0
+proc	/obj/item/clothing/head/hooded/cloakhood/goliath	Initialize	code/modules/mining/equipment/explorer_gear.dm:183	mapload	yes	full	proc
 type	/obj/item/clothing/head/hooded/cloakhood/godslayer	/obj/item/clothing/head/hooded/cloakhood	code/modules/mining/lavaland/mining_loot/godslayer.dm:64	live	obj_item_clothing_head_hooded_cloakhood_godslayer	0	0
 type	/obj/item/clothing/head/hooded/cloakhood/drake	/obj/item/clothing/head/hooded/cloakhood	code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:50	inert	obj_item_clothing_head_hooded_cloakhood_drake	0	0
 proc	/obj/item/clothing/head/hooded/cloakhood/drake	Initialize	code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:63	mapload	no	-	proc
@@ -58402,17 +58402,17 @@ type	/obj/item/clothing/accessory/waistcoat	/obj/item/clothing/accessory	code/mo
 type	/obj/item/clothing/accessory/sweatervest	/obj/item/clothing/accessory	code/modules/clothing/under/accessories/vests.dm:19	live	obj_item_clothing_accessory_sweatervest	0	0
 type	/obj/item/clothing/accessory/vest_sheriff	/obj/item/clothing/accessory	code/modules/clothing/under/accessories/vests.dm:35	live	obj_item_clothing_accessory_vest_sheriff	0	0
 type	/obj/item/clothing/accessory/maidapron	/obj/item/clothing/accessory	code/modules/clothing/under/accessories/vests.dm:45	live	obj_item_clothing_accessory_maidapron	0	0
-type	/obj/item/clothing/accessory/kheiral_cuffs	/obj/item/clothing/accessory	code/modules/mining/equipment/kheiral_cuffs.dm:4	inert	obj_item_clothing_accessory_kheiral_cuffs	0	0
-proc	/obj/item/clothing/accessory/kheiral_cuffs	Initialize	code/modules/mining/equipment/kheiral_cuffs.dm:29	mapload	no	-	proc
-proc	/obj/item/clothing/accessory/kheiral_cuffs	examine	code/modules/mining/equipment/kheiral_cuffs.dm:36	user	no	-	proc
-proc	/obj/item/clothing/accessory/kheiral_cuffs	equipped	code/modules/mining/equipment/kheiral_cuffs.dm:41	user,slot,initial	no	-	proc
-proc	/obj/item/clothing/accessory/kheiral_cuffs	dropped	code/modules/mining/equipment/kheiral_cuffs.dm:49	user,silent	no	-	proc
-proc	/obj/item/clothing/accessory/kheiral_cuffs	connect_kheiral_network	code/modules/mining/equipment/kheiral_cuffs.dm:57	user	no	-	proc root
-proc	/obj/item/clothing/accessory/kheiral_cuffs	remove_kheiral_network	code/modules/mining/equipment/kheiral_cuffs.dm:72	user	no	-	proc root
-proc	/obj/item/clothing/accessory/kheiral_cuffs	check_z	code/modules/mining/equipment/kheiral_cuffs.dm:82	source,old_turf,new_turf	no	-	proc root
-proc	/obj/item/clothing/accessory/kheiral_cuffs	worn_overlays	code/modules/mining/equipment/kheiral_cuffs.dm:103	standing,isinhands,icon_file,bodyshape	no	-	proc
-proc	/obj/item/clothing/accessory/kheiral_cuffs	update_overlays	code/modules/mining/equipment/kheiral_cuffs.dm:108		no	-	proc
-proc	/obj/item/clothing/accessory/kheiral_cuffs	suicide_act	code/modules/mining/equipment/kheiral_cuffs.dm:112	user	no	-	proc
+type	/obj/item/clothing/accessory/kheiral_cuffs	/obj/item/clothing/accessory	code/modules/mining/equipment/kheiral_cuffs.dm:4	live	obj_item_clothing_accessory_kheiral_cuffs	1	0
+proc	/obj/item/clothing/accessory/kheiral_cuffs	Initialize	code/modules/mining/equipment/kheiral_cuffs.dm:29	mapload	yes	full	proc
+proc	/obj/item/clothing/accessory/kheiral_cuffs	examine	code/modules/mining/equipment/kheiral_cuffs.dm:36	user	yes	full	proc
+proc	/obj/item/clothing/accessory/kheiral_cuffs	equipped	code/modules/mining/equipment/kheiral_cuffs.dm:41	user,slot,initial	yes	full	proc
+proc	/obj/item/clothing/accessory/kheiral_cuffs	dropped	code/modules/mining/equipment/kheiral_cuffs.dm:49	user,silent	yes	full	proc
+proc	/obj/item/clothing/accessory/kheiral_cuffs	connect_kheiral_network	code/modules/mining/equipment/kheiral_cuffs.dm:57	user	yes	full	proc root
+proc	/obj/item/clothing/accessory/kheiral_cuffs	remove_kheiral_network	code/modules/mining/equipment/kheiral_cuffs.dm:72	user	yes	full	proc root
+proc	/obj/item/clothing/accessory/kheiral_cuffs	check_z	code/modules/mining/equipment/kheiral_cuffs.dm:82	source,old_turf,new_turf	yes	full	proc root
+proc	/obj/item/clothing/accessory/kheiral_cuffs	worn_overlays	code/modules/mining/equipment/kheiral_cuffs.dm:103	standing,isinhands,icon_file,bodyshape	yes	full	proc
+proc	/obj/item/clothing/accessory/kheiral_cuffs	update_overlays	code/modules/mining/equipment/kheiral_cuffs.dm:108		yes	full	proc
+proc	/obj/item/clothing/accessory/kheiral_cuffs	suicide_act	code/modules/mining/equipment/kheiral_cuffs.dm:112	user	yes	full	proc
 type	/obj/item/clothing/accessory/pandora_hope	/obj/item/clothing/accessory	code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:182	inert	obj_item_clothing_accessory_pandora_hope	0	0
 proc	/obj/item/clothing/accessory/pandora_hope	accessory_equipped	code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:188	clothes,user	no	-	proc
 proc	/obj/item/clothing/accessory/pandora_hope	accessory_dropped	code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:191	clothes,user	no	-	proc
@@ -58622,14 +58622,14 @@ type	/obj/item/clothing/suit/hooded/chaplain_hoodie	/obj/item/clothing/suit/hood
 proc	/obj/item/clothing/suit/hooded/chaplain_hoodie	Initialize	code/modules/jobs/job_types/chaplain/chaplain_costumes.dm:296	mapload	no	-	proc
 type	/obj/item/clothing/suit/hooded/chaplain_hoodie/leader	/obj/item/clothing/suit/hooded/chaplain_hoodie	code/modules/jobs/job_types/chaplain/chaplain_costumes.dm:310	inert	obj_item_clothing_suit_hooded_chaplain_hoodie_leader	0	0
 type	/obj/item/clothing/suit/hooded/chaplain_hoodie/divine_archer	/obj/item/clothing/suit/hooded/chaplain_hoodie	code/modules/jobs/job_types/chaplain/chaplain_divine_archer.dm:15	inert	obj_item_clothing_suit_hooded_chaplain_hoodie_divine_archer	0	0
-type	/obj/item/clothing/suit/hooded/explorer	/obj/item/clothing/suit/hooded	code/modules/mining/equipment/explorer_gear.dm:3	inert	obj_item_clothing_suit_hooded_explorer	0	0
-proc	/obj/item/clothing/suit/hooded/explorer	get_general_color	code/modules/mining/equipment/explorer_gear.dm:21	base_icon	no	-	proc
-proc	/obj/item/clothing/suit/hooded/explorer	Initialize	code/modules/mining/equipment/explorer_gear.dm:49	mapload	no	-	proc
-type	/obj/item/clothing/suit/hooded/explorer/syndicate	/obj/item/clothing/suit/hooded/explorer	code/modules/mining/equipment/explorer_gear.dm:228	inert	obj_item_clothing_suit_hooded_explorer_syndicate	0	0
+type	/obj/item/clothing/suit/hooded/explorer	/obj/item/clothing/suit/hooded	code/modules/mining/equipment/explorer_gear.dm:3	live	obj_item_clothing_suit_hooded_explorer	1	0
+proc	/obj/item/clothing/suit/hooded/explorer	get_general_color	code/modules/mining/equipment/explorer_gear.dm:21	base_icon	yes	full	proc
+proc	/obj/item/clothing/suit/hooded/explorer	Initialize	code/modules/mining/equipment/explorer_gear.dm:49	mapload	yes	full	proc
+type	/obj/item/clothing/suit/hooded/explorer/syndicate	/obj/item/clothing/suit/hooded/explorer	code/modules/mining/equipment/explorer_gear.dm:228	live	obj_item_clothing_suit_hooded_explorer_syndicate	0	0
 type	/obj/item/clothing/suit/hooded/cloak	/obj/item/clothing/suit/hooded	code/modules/mining/equipment/explorer_gear.dm:110	live	obj_item_clothing_suit_hooded_cloak	0	0
-type	/obj/item/clothing/suit/hooded/cloak/goliath	/obj/item/clothing/suit/hooded/cloak	code/modules/mining/equipment/explorer_gear.dm:114	inert	obj_item_clothing_suit_hooded_cloak_goliath	0	0
-proc	/obj/item/clothing/suit/hooded/cloak/goliath	Initialize	code/modules/mining/equipment/explorer_gear.dm:128	mapload	no	-	proc
-proc	/obj/item/clothing/suit/hooded/cloak/goliath	click_alt	code/modules/mining/equipment/explorer_gear.dm:142	user	no	-	proc
+type	/obj/item/clothing/suit/hooded/cloak/goliath	/obj/item/clothing/suit/hooded/cloak	code/modules/mining/equipment/explorer_gear.dm:114	live	obj_item_clothing_suit_hooded_cloak_goliath	1	0
+proc	/obj/item/clothing/suit/hooded/cloak/goliath	Initialize	code/modules/mining/equipment/explorer_gear.dm:128	mapload	yes	full	proc
+proc	/obj/item/clothing/suit/hooded/cloak/goliath	click_alt	code/modules/mining/equipment/explorer_gear.dm:142	user	yes	full	proc
 type	/obj/item/clothing/suit/hooded/cloak/godslayer	/obj/item/clothing/suit/hooded/cloak	code/modules/mining/lavaland/mining_loot/godslayer.dm:2	inert	obj_item_clothing_suit_hooded_cloak_godslayer	0	0
 proc	/obj/item/clothing/suit/hooded/cloak/godslayer	Initialize	code/modules/mining/lavaland/mining_loot/godslayer.dm:34	mapload	no	-	proc
 proc	/obj/item/clothing/suit/hooded/cloak/godslayer	examine	code/modules/mining/lavaland/mining_loot/godslayer.dm:39	user	no	-	proc
@@ -76053,8 +76053,8 @@ type	/obj/item/pinpointer/nuke/syndicate	/obj/item/pinpointer/nuke	code/modules/
 type	/obj/item/pinpointer/syndicate_cyborg	/obj/item/pinpointer	code/modules/antagonists/nukeop/equipment/pinpointer.dm:72	live	obj_item_pinpointer_syndicate_cyborg	1	0
 proc	/obj/item/pinpointer/syndicate_cyborg	cyborg_unequip	code/modules/antagonists/nukeop/equipment/pinpointer.dm:77	user	yes	full	proc
 proc	/obj/item/pinpointer/syndicate_cyborg	scan_for_target	code/modules/antagonists/nukeop/equipment/pinpointer.dm:82		yes	full	proc
-type	/obj/item/pinpointer/vent	/obj/item/pinpointer	code/modules/mining/equipment/vent_pointer.dm:2	inert	obj_item_pinpointer_vent	0	0
-proc	/obj/item/pinpointer/vent	scan_for_target	code/modules/mining/equipment/vent_pointer.dm:9		no	-	proc
+type	/obj/item/pinpointer/vent	/obj/item/pinpointer	code/modules/mining/equipment/vent_pointer.dm:2	live	obj_item_pinpointer_vent	1	0
+proc	/obj/item/pinpointer/vent	scan_for_target	code/modules/mining/equipment/vent_pointer.dm:9		yes	full	proc
 type	/obj/item/pitchfork	/obj/item	code/game/objects/items/pitchfork.dm:8	live	obj_item_pitchfork	1	0
 proc	/obj/item/pitchfork	Initialize	code/game/objects/items/pitchfork.dm:32	mapload	yes	full	proc
 proc	/obj/item/pitchfork	update_icon_state	code/game/objects/items/pitchfork.dm:38		yes	full	proc
@@ -76889,9 +76889,9 @@ type	/obj/item/gps/cyborg	/obj/item/gps	code/game/objects/items/devices/gps.dm:4
 type	/obj/item/gps/pai	/obj/item/gps	code/game/objects/items/devices/gps.dm:61	live	obj_item_gps_pai	1	0
 proc	/obj/item/gps/pai	add_gps_component	code/game/objects/items/devices/gps.dm:63		yes	full	proc
 type	/obj/item/gps/visible_debug	/obj/item/gps	code/game/objects/items/devices/gps.dm:67	live	obj_item_gps_visible_debug	0	0
-type	/obj/item/gps/computer	/obj/item/gps	code/modules/mining/equipment/survival_pod.dm:208	inert	obj_item_gps_computer	0	0
-proc	/obj/item/gps/computer	wrench_act	code/modules/mining/equipment/survival_pod.dm:215	user,I	no	-	proc
-proc	/obj/item/gps/computer	attack_hand	code/modules/mining/equipment/survival_pod.dm:225	user,modifiers	no	-	proc
+type	/obj/item/gps/computer	/obj/item/gps	code/modules/mining/equipment/survival_pod.dm:208	live	obj_item_gps_computer	1	0
+proc	/obj/item/gps/computer	wrench_act	code/modules/mining/equipment/survival_pod.dm:215	user,I	yes	full	proc
+proc	/obj/item/gps/computer	attack_hand	code/modules/mining/equipment/survival_pod.dm:225	user,modifiers	yes	full	proc
 type	/obj/item/laser_pointer	/obj/item	code/game/objects/items/devices/laserpointer.dm:2	live	obj_item_laser_pointer	1	1
 proc	/obj/item/laser_pointer	Initialize	code/game/objects/items/devices/laserpointer.dm:44	mapload	yes	full	proc
 proc	/obj/item/laser_pointer	Destroy	code/game/objects/items/devices/laserpointer.dm:50	force	yes	full	proc
@@ -81126,16 +81126,16 @@ proc	/obj/item/fishing_hook/stabilized	examine	code/modules/fishing/fishing_equi
 type	/obj/item/fishing_hook/jaws	/obj/item/fishing_hook	code/modules/fishing/fishing_equipment.dm:541	inert	obj_item_fishing_hook_jaws	0	0
 proc	/obj/item/fishing_hook/jaws	can_be_hooked	code/modules/fishing/fishing_equipment.dm:551	target	no	-	proc
 proc	/obj/item/fishing_hook/jaws	hook_attached	code/modules/fishing/fishing_equipment.dm:554	target,rod	no	-	proc
-type	/obj/item/survivalcapsule	/obj/item	code/modules/mining/equipment/survival_pod.dm:13	inert	obj_item_survivalcapsule	0	0
-proc	/obj/item/survivalcapsule	get_template	code/modules/mining/equipment/survival_pod.dm:27		no	-	proc root
-proc	/obj/item/survivalcapsule	Destroy	code/modules/mining/equipment/survival_pod.dm:35		no	-	proc
-proc	/obj/item/survivalcapsule	examine	code/modules/mining/equipment/survival_pod.dm:39	user	no	-	proc
-proc	/obj/item/survivalcapsule	interact	code/modules/mining/equipment/survival_pod.dm:45	user	no	-	proc
-proc	/obj/item/survivalcapsule	expand	code/modules/mining/equipment/survival_pod.dm:64	triggerer	no	-	proc root
-proc	/obj/item/survivalcapsule	get_ignore_flags	code/modules/mining/equipment/survival_pod.dm:84		no	-	proc root
-proc	/obj/item/survivalcapsule	fail_feedback	code/modules/mining/equipment/survival_pod.dm:88	status	no	-	proc root
-proc	/obj/item/survivalcapsule	yote_nearby	code/modules/mining/equipment/survival_pod.dm:97	deploy_location	no	-	proc root
-proc	/obj/item/survivalcapsule	trigger_admin_alert	code/modules/mining/equipment/survival_pod.dm:126	triggerer,trigger_loc	no	-	proc root
+type	/obj/item/survivalcapsule	/obj/item	code/modules/mining/equipment/survival_pod.dm:13	live	obj_item_survivalcapsule	1	0
+proc	/obj/item/survivalcapsule	get_template	code/modules/mining/equipment/survival_pod.dm:27		yes	full	proc root
+proc	/obj/item/survivalcapsule	Destroy	code/modules/mining/equipment/survival_pod.dm:35		yes	full	proc
+proc	/obj/item/survivalcapsule	examine	code/modules/mining/equipment/survival_pod.dm:39	user	yes	full	proc
+proc	/obj/item/survivalcapsule	interact	code/modules/mining/equipment/survival_pod.dm:45	user	yes	full	proc
+proc	/obj/item/survivalcapsule	expand	code/modules/mining/equipment/survival_pod.dm:64	triggerer	yes	full	proc root
+proc	/obj/item/survivalcapsule	get_ignore_flags	code/modules/mining/equipment/survival_pod.dm:84		yes	full	proc root
+proc	/obj/item/survivalcapsule	fail_feedback	code/modules/mining/equipment/survival_pod.dm:88	status	yes	full	proc root
+proc	/obj/item/survivalcapsule	yote_nearby	code/modules/mining/equipment/survival_pod.dm:97	deploy_location	yes	full	proc root
+proc	/obj/item/survivalcapsule	trigger_admin_alert	code/modules/mining/equipment/survival_pod.dm:126	triggerer,trigger_loc	yes	full	proc root
 type	/obj/item/survivalcapsule/fishing	/obj/item/survivalcapsule	code/modules/fishing/fishing_equipment.dm:590	inert	obj_item_survivalcapsule_fishing	0	0
 proc	/obj/item/survivalcapsule/fishing	Initialize	code/modules/fishing/fishing_equipment.dm:600	mapload	no	-	proc
 proc	/obj/item/survivalcapsule/fishing	add_context	code/modules/fishing/fishing_equipment.dm:606	source,context,held_item,user	no	-	proc
@@ -81147,9 +81147,9 @@ proc	/obj/item/survivalcapsule/fishing	get_ignore_flags	code/modules/fishing/fis
 proc	/obj/item/survivalcapsule/fishing	fail_feedback	code/modules/fishing/fishing_equipment.dm:655	status	no	-	proc
 proc	/obj/item/survivalcapsule/fishing	trigger_admin_alert	code/modules/fishing/fishing_equipment.dm:668	triggerer,trigger_loc	no	-	proc
 type	/obj/item/survivalcapsule/fishing/hacked	/obj/item/survivalcapsule/fishing	code/modules/fishing/fishing_equipment.dm:680	inert	obj_item_survivalcapsule_fishing_hacked	0	0
-type	/obj/item/survivalcapsule/luxury	/obj/item/survivalcapsule	code/modules/mining/equipment/survival_pod.dm:137	inert	obj_item_survivalcapsule_luxury	0	0
-type	/obj/item/survivalcapsule/luxuryelite	/obj/item/survivalcapsule	code/modules/mining/equipment/survival_pod.dm:142	inert	obj_item_survivalcapsule_luxuryelite	0	0
-type	/obj/item/survivalcapsule/bathroom	/obj/item/survivalcapsule	code/modules/mining/equipment/survival_pod.dm:147	inert	obj_item_survivalcapsule_bathroom	0	0
+type	/obj/item/survivalcapsule/luxury	/obj/item/survivalcapsule	code/modules/mining/equipment/survival_pod.dm:137	live	obj_item_survivalcapsule_luxury	0	0
+type	/obj/item/survivalcapsule/luxuryelite	/obj/item/survivalcapsule	code/modules/mining/equipment/survival_pod.dm:142	live	obj_item_survivalcapsule_luxuryelite	0	0
+type	/obj/item/survivalcapsule/bathroom	/obj/item/survivalcapsule	code/modules/mining/equipment/survival_pod.dm:147	live	obj_item_survivalcapsule_bathroom	0	0
 type	/obj/item/fish_genegun	/obj/item	code/modules/fishing/fishing_equipment.dm:714	inert	obj_item_fish_genegun	0	0
 proc	/obj/item/fish_genegun	Initialize	code/modules/fishing/fishing_equipment.dm:733	mapload	no	-	proc
 proc	/obj/item/fish_genegun	examine	code/modules/fishing/fishing_equipment.dm:737	user	no	-	proc
@@ -81889,9 +81889,9 @@ type	/obj/item/petri_dish/random	/obj/item/petri_dish	code/modules/research/xeno
 proc	/obj/item/petri_dish/random	Initialize	code/modules/research/xenobiology/vatgrowing/petri_dish.dm:61	mapload	no	-	proc
 type	/obj/item/assault_pod	/obj/item	code/modules/shuttle/mobile_port/variants/assault_pod.dm:18	live	obj_item_assault_pod	1	1
 proc	/obj/item/assault_pod	attack_self	code/modules/shuttle/mobile_port/variants/assault_pod.dm:34	user	yes	full	proc
-type	/obj/item/assault_pod/mining	/obj/item/assault_pod	code/modules/mining/aux_base.dm:258	inert	obj_item_assault_pod_mining	0	1
-proc	/obj/item/assault_pod/mining	attack_self	code/modules/mining/aux_base.dm:270	user	no	-	proc
-type	/obj/item/assault_pod/mining/unrestricted	/obj/item/assault_pod/mining	code/modules/mining/aux_base.dm:307	inert	obj_item_assault_pod_mining_unrestricted	0	0
+type	/obj/item/assault_pod/mining	/obj/item/assault_pod	code/modules/mining/aux_base.dm:258	live	obj_item_assault_pod_mining	1	1
+proc	/obj/item/assault_pod/mining	attack_self	code/modules/mining/aux_base.dm:270	user	yes	full	proc
+type	/obj/item/assault_pod/mining/unrestricted	/obj/item/assault_pod/mining	code/modules/mining/aux_base.dm:307	live	obj_item_assault_pod_mining_unrestricted	0	0
 type	/obj/item/assault_pod/medieval	/obj/item/assault_pod	code/modules/shuttle/mobile_port/variants/assault_pod.dm:67	live	obj_item_assault_pod_medieval	1	0
 proc	/obj/item/assault_pod/medieval	Initialize	code/modules/shuttle/mobile_port/variants/assault_pod.dm:79	mapload	yes	full	proc
 type	/obj/item/extraction_pack	/obj/item	code/modules/mining/fulton.dm:4	live	obj_item_extraction_pack	1	0
@@ -81901,9 +81901,9 @@ proc	/obj/item/extraction_pack	interact_with_atom	code/modules/mining/fulton.dm:
 proc	/obj/item/extraction_pack	get_beacon	code/modules/mining/fulton.dm:131	user	yes	full	proc root
 proc	/obj/item/extraction_pack	create_balloon	code/modules/mining/fulton.dm:138	thing,user,holder_obj,balloon2,beacon_turf	yes	full	proc root
 proc	/obj/item/extraction_pack	check_for_living_mobs	code/modules/mining/fulton.dm:362	A	yes	full	proc root
-type	/obj/item/extraction_pack/networked	/obj/item/extraction_pack	code/modules/mining/fulton.dm:200	inert	obj_item_extraction_pack_networked	0	0
-proc	/obj/item/extraction_pack/networked	attack_self	code/modules/mining/fulton.dm:205	user	no	-	proc
-proc	/obj/item/extraction_pack/networked	get_beacon	code/modules/mining/fulton.dm:242	user	no	-	proc
+type	/obj/item/extraction_pack/networked	/obj/item/extraction_pack	code/modules/mining/fulton.dm:200	live	obj_item_extraction_pack_networked	1	0
+proc	/obj/item/extraction_pack/networked	attack_self	code/modules/mining/fulton.dm:205	user	yes	full	proc
+proc	/obj/item/extraction_pack/networked	get_beacon	code/modules/mining/fulton.dm:242	user	yes	full	proc
 type	/obj/item/extraction_pack/syndicate	/obj/item/extraction_pack	code/modules/mining/fulton.dm:381	live	obj_item_extraction_pack_syndicate	1	0
 type	/obj/item/fulton_core	/obj/item	code/modules/mining/fulton.dm:272	live	obj_item_fulton_core	1	0
 proc	/obj/item/fulton_core	attack_self	code/modules/mining/fulton.dm:279	user	yes	full	proc
@@ -81929,19 +81929,19 @@ proc	/obj/item/gibtonite	igniter_prime	code/modules/mining/ores_coins.dm:498		ye
 type	/obj/item/boulder_beacon	/obj/item	code/modules/mining/boulder_processing/beacon.dm:3	live	obj_item_boulder_beacon	1	0
 proc	/obj/item/boulder_beacon	attack_self	code/modules/mining/boulder_processing/beacon.dm:10		yes	full	proc
 proc	/obj/item/boulder_beacon	launch_payload	code/modules/mining/boulder_processing/beacon.dm:18		yes	full	proc root
-type	/obj/item/grapple_gun	/obj/item	code/modules/mining/equipment/grapple_gun.dm:4	inert	obj_item_grapple_gun	0	0
-proc	/obj/item/grapple_gun	Initialize	code/modules/mining/equipment/grapple_gun.dm:33	mapload	no	-	proc
-proc	/obj/item/grapple_gun	ranged_interact_with_atom	code/modules/mining/equipment/grapple_gun.dm:38	target,user,modifiers	no	-	proc
-proc	/obj/item/grapple_gun	emag_act	code/modules/mining/equipment/grapple_gun.dm:76	user,emag_card	no	-	proc
-proc	/obj/item/grapple_gun	on_grapple_hit	code/modules/mining/equipment/grapple_gun.dm:84	source,firer,target,Angle	no	-	proc root
-proc	/obj/item/grapple_gun	on_grapple_fail	code/modules/mining/equipment/grapple_gun.dm:99	source	no	-	proc root
-proc	/obj/item/grapple_gun	determine_distance	code/modules/mining/equipment/grapple_gun.dm:103	source	no	-	proc root
-proc	/obj/item/grapple_gun	apply_throw_traits	code/modules/mining/equipment/grapple_gun.dm:114	source,arguements	no	-	proc root
-proc	/obj/item/grapple_gun	launch_user	code/modules/mining/equipment/grapple_gun.dm:126	target_atom	no	-	proc root
-proc	/obj/item/grapple_gun	strike_target	code/modules/mining/equipment/grapple_gun.dm:136	source,victim,throwingdatum	no	-	proc root
-proc	/obj/item/grapple_gun	post_land	code/modules/mining/equipment/grapple_gun.dm:150		no	-	proc root
-proc	/obj/item/grapple_gun	cancel_hook	code/modules/mining/equipment/grapple_gun.dm:158		no	-	proc root
-proc	/obj/item/grapple_gun	update_overlays	code/modules/mining/equipment/grapple_gun.dm:172		no	-	proc
+type	/obj/item/grapple_gun	/obj/item	code/modules/mining/equipment/grapple_gun.dm:4	live	obj_item_grapple_gun	1	0
+proc	/obj/item/grapple_gun	Initialize	code/modules/mining/equipment/grapple_gun.dm:33	mapload	yes	full	proc
+proc	/obj/item/grapple_gun	ranged_interact_with_atom	code/modules/mining/equipment/grapple_gun.dm:38	target,user,modifiers	yes	full	proc
+proc	/obj/item/grapple_gun	emag_act	code/modules/mining/equipment/grapple_gun.dm:76	user,emag_card	yes	full	proc
+proc	/obj/item/grapple_gun	on_grapple_hit	code/modules/mining/equipment/grapple_gun.dm:84	source,firer,target,Angle	yes	full	proc root
+proc	/obj/item/grapple_gun	on_grapple_fail	code/modules/mining/equipment/grapple_gun.dm:99	source	yes	full	proc root
+proc	/obj/item/grapple_gun	determine_distance	code/modules/mining/equipment/grapple_gun.dm:103	source	yes	full	proc root
+proc	/obj/item/grapple_gun	apply_throw_traits	code/modules/mining/equipment/grapple_gun.dm:114	source,arguements	yes	full	proc root
+proc	/obj/item/grapple_gun	launch_user	code/modules/mining/equipment/grapple_gun.dm:126	target_atom	yes	full	proc root
+proc	/obj/item/grapple_gun	strike_target	code/modules/mining/equipment/grapple_gun.dm:136	source,victim,throwingdatum	yes	full	proc root
+proc	/obj/item/grapple_gun	post_land	code/modules/mining/equipment/grapple_gun.dm:150		yes	full	proc root
+proc	/obj/item/grapple_gun	cancel_hook	code/modules/mining/equipment/grapple_gun.dm:158		yes	full	proc root
+proc	/obj/item/grapple_gun	update_overlays	code/modules/mining/equipment/grapple_gun.dm:172		yes	full	proc
 type	/obj/item/lazarus_injector	/obj/item	code/modules/mining/equipment/lazarus_injector.dm:10	live	obj_item_lazarus_injector	1	1
 proc	/obj/item/lazarus_injector	interact_with_atom	code/modules/mining/equipment/lazarus_injector.dm:28	target,user,modifiers	yes	full	proc
 proc	/obj/item/lazarus_injector	expend	code/modules/mining/equipment/lazarus_injector.dm:48	revived_target,user	yes	full	proc root
@@ -81951,8 +81951,8 @@ type	/obj/item/mining_scanner	/obj/item	code/modules/mining/equipment/mineral_sc
 proc	/obj/item/mining_scanner	attack_self	code/modules/mining/equipment/mineral_scanner.dm:19	user	yes	full	proc
 type	/obj/item/mining_scanner/admin	/obj/item/mining_scanner	code/modules/mining/equipment/mineral_scanner.dm:29	live	obj_item_mining_scanner_admin	1	0
 proc	/obj/item/mining_scanner/admin	attack_self	code/modules/mining/equipment/mineral_scanner.dm:29	user	yes	full	proc
-type	/obj/item/pickaxe	/obj/item	code/modules/mining/equipment/mining_tools.dm:3	live	obj_item_pickaxe	0	1
-proc	/obj/item/pickaxe	suicide_act	code/modules/mining/equipment/mining_tools.dm:23	user	stub	deferred	proc
+type	/obj/item/pickaxe	/obj/item	code/modules/mining/equipment/mining_tools.dm:3	live	obj_item_pickaxe	1	1
+proc	/obj/item/pickaxe	suicide_act	code/modules/mining/equipment/mining_tools.dm:23	user	yes	full	proc
 type	/obj/item/pickaxe/rusted	/obj/item/pickaxe	code/modules/mining/equipment/mining_tools.dm:31	live	obj_item_pickaxe_rusted	0	0
 type	/obj/item/pickaxe/mini	/obj/item/pickaxe	code/modules/mining/equipment/mining_tools.dm:39	live	obj_item_pickaxe_mini	0	0
 type	/obj/item/pickaxe/silver	/obj/item/pickaxe	code/modules/mining/equipment/mining_tools.dm:50	live	obj_item_pickaxe_silver	0	0
@@ -81968,7 +81968,7 @@ type	/obj/item/pickaxe/improvised	/obj/item/pickaxe	code/modules/mining/equipmen
 type	/obj/item/pickaxe/emergency	/obj/item/pickaxe	code/modules/shuttle/mobile_port/variants/emergency/pods.dm:127	live	obj_item_pickaxe_emergency	0	0
 type	/obj/item/shovel	/obj/item	code/modules/mining/equipment/mining_tools.dm:113	live	obj_item_shovel	1	1
 proc	/obj/item/shovel	Initialize	code/modules/mining/equipment/mining_tools.dm:135	mapload	yes	full	proc
-proc	/obj/item/shovel	suicide_act	code/modules/mining/equipment/mining_tools.dm:144	user	stub	deferred	proc
+proc	/obj/item/shovel	suicide_act	code/modules/mining/equipment/mining_tools.dm:144	user	yes	full	proc
 type	/obj/item/shovel/spade	/obj/item/shovel	code/modules/mining/equipment/mining_tools.dm:152	live	obj_item_shovel_spade	0	1
 type	/obj/item/shovel/spade/cyborg	/obj/item/shovel/spade	code/modules/mining/equipment/mining_tools.dm:165	live	obj_item_shovel_spade_cyborg	0	0
 type	/obj/item/shovel/serrated	/obj/item/shovel	code/modules/mining/equipment/mining_tools.dm:173	live	obj_item_shovel_serrated	1	0
@@ -81993,18 +81993,18 @@ proc	/obj/item/resonator	create_resonance	code/modules/mining/equipment/resonato
 proc	/obj/item/resonator	pre_attack	code/modules/mining/equipment/resonator.dm:52	target,user,modifiers,attack_modifiers	yes	full	proc
 type	/obj/item/resonator/upgraded	/obj/item/resonator	code/modules/mining/equipment/resonator.dm:167	live	obj_item_resonator_upgraded	1	0
 proc	/obj/item/resonator/upgraded	attack_self	code/modules/mining/equipment/resonator.dm:175	user	yes	full	proc
-type	/obj/item/fakeartefact	/obj/item	code/modules/mining/equipment/survival_pod.dm:286	inert	obj_item_fakeartefact	0	0
-proc	/obj/item/fakeartefact	Initialize	code/modules/mining/equipment/survival_pod.dm:310	mapload	no	-	proc
-type	/obj/item/wormhole_jaunter	/obj/item	code/modules/mining/equipment/wormhole_jaunter.dm:3	inert	obj_item_wormhole_jaunter	0	0
-proc	/obj/item/wormhole_jaunter	attack_self	code/modules/mining/equipment/wormhole_jaunter.dm:17	user	no	-	proc
-proc	/obj/item/wormhole_jaunter	turf_check	code/modules/mining/equipment/wormhole_jaunter.dm:22	user	no	-	proc root
-proc	/obj/item/wormhole_jaunter	get_destinations	code/modules/mining/equipment/wormhole_jaunter.dm:30		no	-	proc root
-proc	/obj/item/wormhole_jaunter	can_jaunter_teleport	code/modules/mining/equipment/wormhole_jaunter.dm:40		no	-	proc root
-proc	/obj/item/wormhole_jaunter	activate	code/modules/mining/equipment/wormhole_jaunter.dm:44	user,adjacent,teleport	no	-	proc root
-proc	/obj/item/wormhole_jaunter	emp_act	code/modules/mining/equipment/wormhole_jaunter.dm:67	power	no	-	proc
-proc	/obj/item/wormhole_jaunter	equipped	code/modules/mining/equipment/wormhole_jaunter.dm:87	user,slot,initial	no	-	proc
-proc	/obj/item/wormhole_jaunter	dropped	code/modules/mining/equipment/wormhole_jaunter.dm:92	user,silent	no	-	proc
-proc	/obj/item/wormhole_jaunter	chasm_react	code/modules/mining/equipment/wormhole_jaunter.dm:96	user,chasm	no	-	proc root
+type	/obj/item/fakeartefact	/obj/item	code/modules/mining/equipment/survival_pod.dm:286	live	obj_item_fakeartefact	1	0
+proc	/obj/item/fakeartefact	Initialize	code/modules/mining/equipment/survival_pod.dm:310	mapload	yes	full	proc
+type	/obj/item/wormhole_jaunter	/obj/item	code/modules/mining/equipment/wormhole_jaunter.dm:3	live	obj_item_wormhole_jaunter	1	0
+proc	/obj/item/wormhole_jaunter	attack_self	code/modules/mining/equipment/wormhole_jaunter.dm:17	user	yes	full	proc
+proc	/obj/item/wormhole_jaunter	turf_check	code/modules/mining/equipment/wormhole_jaunter.dm:22	user	yes	full	proc root
+proc	/obj/item/wormhole_jaunter	get_destinations	code/modules/mining/equipment/wormhole_jaunter.dm:30		yes	full	proc root
+proc	/obj/item/wormhole_jaunter	can_jaunter_teleport	code/modules/mining/equipment/wormhole_jaunter.dm:40		yes	full	proc root
+proc	/obj/item/wormhole_jaunter	activate	code/modules/mining/equipment/wormhole_jaunter.dm:44	user,adjacent,teleport	yes	full	proc root
+proc	/obj/item/wormhole_jaunter	emp_act	code/modules/mining/equipment/wormhole_jaunter.dm:67	power	yes	full	proc
+proc	/obj/item/wormhole_jaunter	equipped	code/modules/mining/equipment/wormhole_jaunter.dm:87	user,slot,initial	yes	full	proc
+proc	/obj/item/wormhole_jaunter	dropped	code/modules/mining/equipment/wormhole_jaunter.dm:92	user,silent	yes	full	proc
+proc	/obj/item/wormhole_jaunter	chasm_react	code/modules/mining/equipment/wormhole_jaunter.dm:96	user,chasm	yes	full	proc root
 type	/obj/item/kinetic_crusher	/obj/item	code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:9	inert	obj_item_kinetic_crusher	0	0
 proc	/obj/item/kinetic_crusher	Initialize	code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:69	mapload	no	-	proc
 proc	/obj/item/kinetic_crusher	update_reskin	code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:88	default_skin_typepath	no	-	proc root
@@ -85507,9 +85507,9 @@ proc	/obj/machinery/vending/subtype_vendor	RefreshParts	code/modules/vending/sub
 proc	/obj/machinery/vending/subtype_vendor	attack_hand_secondary	code/modules/vending/subtype.dm:32	user,modifiers	no	-	proc
 type	/obj/machinery/vending/sustenance	/obj/machinery/vending	code/modules/vending/sustenance.dm:2	live	obj_machinery_vending_sustenance	1	1
 proc	/obj/machinery/vending/sustenance	interact	code/modules/vending/sustenance.dm:29	living_user	yes	full	proc
-type	/obj/machinery/vending/sustenance/labor_camp	/obj/machinery/vending/sustenance	code/modules/vending/sustenance.dm:47	inert	obj_machinery_vending_sustenance_labor_camp	0	0
-proc	/obj/machinery/vending/sustenance/labor_camp	proceed_payment	code/modules/vending/sustenance.dm:56	paying_scum_id,mob_paying,product_to_vend,price_to_use	no	-	proc
-proc	/obj/machinery/vending/sustenance/labor_camp	fetch_balance_to_use	code/modules/vending/sustenance.dm:70	passed_id	no	-	proc
+type	/obj/machinery/vending/sustenance/labor_camp	/obj/machinery/vending/sustenance	code/modules/vending/sustenance.dm:47	live	obj_machinery_vending_sustenance_labor_camp	1	0
+proc	/obj/machinery/vending/sustenance/labor_camp	proceed_payment	code/modules/vending/sustenance.dm:56	paying_scum_id,mob_paying,product_to_vend,price_to_use	yes	full	proc
+proc	/obj/machinery/vending/sustenance/labor_camp	fetch_balance_to_use	code/modules/vending/sustenance.dm:70	passed_id	yes	full	proc
 type	/obj/machinery/vending/syndichem	/obj/machinery/vending	code/modules/vending/syndichem.dm:2	live	obj_machinery_vending_syndichem	0	0
 type	/obj/machinery/vending/donksofttoyvendor	/obj/machinery/vending	code/modules/vending/toys.dm:2	live	obj_machinery_vending_donksofttoyvendor	0	0
 type	/obj/machinery/vending/wardrobe	/obj/machinery/vending	code/modules/vending/wardrobes.dm:9	live	obj_machinery_vending_wardrobe	1	1
@@ -86805,12 +86805,12 @@ proc	/obj/machinery/computer/old	Initialize	code/modules/mapfluff/ruins/spacerui
 type	/obj/machinery/computer/auxiliary_base	/obj/machinery/computer	code/modules/mining/aux_base.dm:15	live	obj_machinery_computer_auxiliary_base	1	0
 proc	/obj/machinery/computer/auxiliary_base	Initialize	code/modules/mining/aux_base.dm:41	mapload	yes	full	proc
 proc	/obj/machinery/computer/auxiliary_base	Destroy	code/modules/mining/aux_base.dm:45		yes	full	proc
-proc	/obj/machinery/computer/auxiliary_base	ui_interact	code/modules/mining/aux_base.dm:49	user,ui	stub	deferred	proc
-proc	/obj/machinery/computer/auxiliary_base	ui_data	code/modules/mining/aux_base.dm:56	user	stub	deferred	proc
-proc	/obj/machinery/computer/auxiliary_base	launch_check	code/modules/mining/aux_base.dm:130	user	stub	deferred	proc root
-proc	/obj/machinery/computer/auxiliary_base	ui_act	code/modules/mining/aux_base.dm:136	action,params,ui,state	stub	deferred	proc
-proc	/obj/machinery/computer/auxiliary_base	set_mining_mode	code/modules/mining/aux_base.dm:200		stub	deferred	proc root
-proc	/obj/machinery/computer/auxiliary_base	set_landing_zone	code/modules/mining/aux_base.dm:206	T,user,no_restrictions	stub	deferred	proc root
+proc	/obj/machinery/computer/auxiliary_base	ui_interact	code/modules/mining/aux_base.dm:49	user,ui	yes	full	proc
+proc	/obj/machinery/computer/auxiliary_base	ui_data	code/modules/mining/aux_base.dm:56	user	yes	full	proc
+proc	/obj/machinery/computer/auxiliary_base	launch_check	code/modules/mining/aux_base.dm:130	user	yes	full	proc root
+proc	/obj/machinery/computer/auxiliary_base	ui_act	code/modules/mining/aux_base.dm:136	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/computer/auxiliary_base	set_mining_mode	code/modules/mining/aux_base.dm:200		yes	full	proc root
+proc	/obj/machinery/computer/auxiliary_base	set_landing_zone	code/modules/mining/aux_base.dm:206	T,user,no_restrictions	yes	full	proc root
 proc	/obj/machinery/computer/auxiliary_base	afterShuttleMove	code/modules/shuttle/mobile_port/shuttle_move_callbacks.dm:261	oldT,movement_force,shuttle_dir,shuttle_preferred_direction,move_dir,rotation	yes	full	proc
 type	/obj/machinery/computer/auxiliary_base/directional	/obj/machinery/computer/auxiliary_base	code/modules/mining/aux_base.dm:39	live	obj_machinery_computer_auxiliary_base_directional	0	0
 type	/obj/machinery/computer/auxiliary_base/directional/north	/obj/machinery/computer/auxiliary_base/directional	code/modules/mining/aux_base.dm:39	live	obj_machinery_computer_auxiliary_base_directional_north	0	0
@@ -88025,8 +88025,8 @@ type	/obj/machinery/sleeper/self_control	/obj/machinery/sleeper	code/game/machin
 type	/obj/machinery/sleeper/old	/obj/machinery/sleeper	code/game/machinery/sleepers.dm:320	inert	obj_machinery_sleeper_old	0	0
 type	/obj/machinery/sleeper/party	/obj/machinery/sleeper	code/game/machinery/sleepers.dm:324	inert	obj_machinery_sleeper_party	0	0
 proc	/obj/machinery/sleeper/party	inject_chem	code/game/machinery/sleepers.dm:360	chem,user	no	-	proc
-type	/obj/machinery/sleeper/survival_pod	/obj/machinery/sleeper	code/modules/mining/equipment/survival_pod.dm:192	inert	obj_machinery_sleeper_survival_pod	0	0
-proc	/obj/machinery/sleeper/survival_pod	update_overlays	code/modules/mining/equipment/survival_pod.dm:196		no	-	proc
+type	/obj/machinery/sleeper/survival_pod	/obj/machinery/sleeper	code/modules/mining/equipment/survival_pod.dm:192	inert	obj_machinery_sleeper_survival_pod	1	0
+proc	/obj/machinery/sleeper/survival_pod	update_overlays	code/modules/mining/equipment/survival_pod.dm:196		yes	full	proc
 type	/obj/machinery/space_heater	/obj/machinery	code/game/machinery/spaceheater.dm:8	live	obj_machinery_space_heater	1	1
 proc	/obj/machinery/space_heater	get_cell	code/game/machinery/spaceheater.dm:49		yes	full	proc
 proc	/obj/machinery/space_heater	Initialize	code/game/machinery/spaceheater.dm:52	mapload	yes	full	proc
@@ -92590,11 +92590,11 @@ type	/obj/machinery/smartfridge/chemistry/virology	/obj/machinery/smartfridge/ch
 type	/obj/machinery/smartfridge/chemistry/virology/preloaded	/obj/machinery/smartfridge/chemistry/virology	code/modules/food_and_drinks/machinery/smartfridge.dm:799	live	obj_machinery_smartfridge_chemistry_virology_preloaded	0	1
 type	/obj/machinery/smartfridge/disks	/obj/machinery/smartfridge	code/modules/food_and_drinks/machinery/smartfridge.dm:814	live	obj_machinery_smartfridge_disks	1	0
 proc	/obj/machinery/smartfridge/disks	accept_check	code/modules/food_and_drinks/machinery/smartfridge.dm:825	weapon	yes	full	proc
-type	/obj/machinery/smartfridge/survival_pod	/obj/machinery/smartfridge	code/modules/mining/equipment/survival_pod.dm:242	inert	obj_machinery_smartfridge_survival_pod	0	0
-proc	/obj/machinery/smartfridge/survival_pod	Initialize	code/modules/mining/equipment/survival_pod.dm:253	mapload	no	-	proc
-proc	/obj/machinery/smartfridge/survival_pod	accept_check	code/modules/mining/equipment/survival_pod.dm:273	O	no	-	proc
-type	/obj/machinery/smartfridge/survival_pod/preloaded	/obj/machinery/smartfridge/survival_pod	code/modules/mining/equipment/survival_pod.dm:261	inert	obj_machinery_smartfridge_survival_pod_preloaded	0	0
-proc	/obj/machinery/smartfridge/survival_pod/preloaded	Initialize	code/modules/mining/equipment/survival_pod.dm:261	mapload	no	-	proc
+type	/obj/machinery/smartfridge/survival_pod	/obj/machinery/smartfridge	code/modules/mining/equipment/survival_pod.dm:242	live	obj_machinery_smartfridge_survival_pod	1	0
+proc	/obj/machinery/smartfridge/survival_pod	Initialize	code/modules/mining/equipment/survival_pod.dm:253	mapload	yes	full	proc
+proc	/obj/machinery/smartfridge/survival_pod	accept_check	code/modules/mining/equipment/survival_pod.dm:273	O	yes	full	proc
+type	/obj/machinery/smartfridge/survival_pod/preloaded	/obj/machinery/smartfridge/survival_pod	code/modules/mining/equipment/survival_pod.dm:261	live	obj_machinery_smartfridge_survival_pod_preloaded	1	0
+proc	/obj/machinery/smartfridge/survival_pod/preloaded	Initialize	code/modules/mining/equipment/survival_pod.dm:261	mapload	yes	full	proc
 type	/obj/machinery/stove	/obj/machinery	code/modules/food_and_drinks/machinery/stove.dm:2	live	obj_machinery_stove	1	0
 proc	/obj/machinery/stove	Initialize	code/modules/food_and_drinks/machinery/stove.dm:20	mapload	yes	full	proc
 type	/obj/machinery/restaurant_portal	/obj/machinery	code/modules/food_and_drinks/restaurant/_venue.dm:162	inert	obj_machinery_restaurant_portal	0	1
@@ -96182,8 +96182,8 @@ type	/obj/effect/portal/wormhole	/obj/effect/portal	code/modules/events/wormhole
 proc	/obj/effect/portal/wormhole	Initialize	code/modules/events/wormholes.dm:60	mapload,_creator,_lifespan,_linked,automatic_link,hard_target_override	yes	full	proc
 proc	/obj/effect/portal/wormhole	Destroy	code/modules/events/wormholes.dm:64		yes	full	proc
 proc	/obj/effect/portal/wormhole	teleport	code/modules/events/wormholes.dm:68	M,force	yes	full	proc
-type	/obj/effect/portal/jaunt_tunnel	/obj/effect/portal	code/modules/mining/equipment/wormhole_jaunter.dm:109	inert	obj_effect_portal_jaunt_tunnel	0	0
-proc	/obj/effect/portal/jaunt_tunnel	teleport	code/modules/mining/equipment/wormhole_jaunter.dm:118	M,force	no	-	proc
+type	/obj/effect/portal/jaunt_tunnel	/obj/effect/portal	code/modules/mining/equipment/wormhole_jaunter.dm:109	live	obj_effect_portal_jaunt_tunnel	1	0
+proc	/obj/effect/portal/jaunt_tunnel	teleport	code/modules/mining/equipment/wormhole_jaunter.dm:118	M,force	yes	full	proc
 type	/obj/effect/powerup	/obj/effect	code/game/objects/effects/powerup.dm:2	inert	obj_effect_powerup	0	0
 proc	/obj/effect/powerup	Initialize	code/game/objects/effects/powerup.dm:18	mapload	no	-	proc
 proc	/obj/effect/powerup	on_entered	code/game/objects/effects/powerup.dm:27	source,movable_atom	no	-	proc root
@@ -98188,14 +98188,14 @@ proc	/obj/effect/watcher_orbiter	on_glide_size_changed	code/modules/mapfluff/rui
 proc	/obj/effect/watcher_orbiter	on_parent_deleted	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:242		no	-	proc root
 proc	/obj/effect/watcher_orbiter	on_parent_died	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:248	parent	no	-	proc root
 proc	/obj/effect/watcher_orbiter	on_parent_revived	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:254	parent	no	-	proc root
-type	/obj/effect/light_emitter	/obj/effect	code/modules/mining/mine_items.dm:5	inert	obj_effect_light_emitter	0	0
-proc	/obj/effect/light_emitter	Initialize	code/modules/mining/mine_items.dm:12	mapload	no	-	proc
-proc	/obj/effect/light_emitter	singularity_pull	code/modules/mining/mine_items.dm:16	singularity,current_size	no	-	proc
-proc	/obj/effect/light_emitter	singularity_act	code/modules/mining/mine_items.dm:19		no	-	proc
-type	/obj/effect/light_emitter/tendril	/obj/effect/light_emitter	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:127	inert	obj_effect_light_emitter_tendril	0	0
-type	/obj/effect/light_emitter/podbay	/obj/effect/light_emitter	code/modules/mining/mine_items.dm:23	inert	obj_effect_light_emitter_podbay	0	0
-type	/obj/effect/light_emitter/thunderdome	/obj/effect/light_emitter	code/modules/mining/mine_items.dm:26	inert	obj_effect_light_emitter_thunderdome	0	0
-type	/obj/effect/light_emitter/fake_outdoors	/obj/effect/light_emitter	code/modules/mining/mine_items.dm:30	inert	obj_effect_light_emitter_fake_outdoors	0	0
+type	/obj/effect/light_emitter	/obj/effect	code/modules/mining/mine_items.dm:5	live	obj_effect_light_emitter	1	0
+proc	/obj/effect/light_emitter	Initialize	code/modules/mining/mine_items.dm:12	mapload	yes	full	proc
+proc	/obj/effect/light_emitter	singularity_pull	code/modules/mining/mine_items.dm:16	singularity,current_size	yes	full	proc
+proc	/obj/effect/light_emitter	singularity_act	code/modules/mining/mine_items.dm:19		yes	full	proc
+type	/obj/effect/light_emitter/tendril	/obj/effect/light_emitter	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:127	live	obj_effect_light_emitter_tendril	0	0
+type	/obj/effect/light_emitter/podbay	/obj/effect/light_emitter	code/modules/mining/mine_items.dm:23	live	obj_effect_light_emitter_podbay	0	0
+type	/obj/effect/light_emitter/thunderdome	/obj/effect/light_emitter	code/modules/mining/mine_items.dm:26	live	obj_effect_light_emitter_thunderdome	0	0
+type	/obj/effect/light_emitter/fake_outdoors	/obj/effect/light_emitter	code/modules/mining/mine_items.dm:30	live	obj_effect_light_emitter_fake_outdoors	0	0
 type	/obj/effect/collapse	/obj/effect	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:132	inert	obj_effect_collapse	0	0
 proc	/obj/effect/collapse	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:144	mapload	no	-	proc
 proc	/obj/effect/collapse	examine	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:152	user	no	-	proc
@@ -99471,32 +99471,32 @@ proc	/obj/structure/closet/crate/grave/filled	PopulateContents	code/modules/mapf
 type	/obj/structure/closet/crate/grave/filled/lead_researcher	/obj/structure/closet/crate/grave/filled	code/modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.dm:322	live	obj_structure_closet_crate_grave_filled_lead_researcher	1	0
 proc	/obj/structure/closet/crate/grave/filled/lead_researcher	PopulateContents	code/modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.dm:329		yes	full	proc
 type	/obj/structure/closet/crate/grave/fresh	/obj/structure/closet/crate/grave	code/modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.dm:314	live	obj_structure_closet_crate_grave_fresh	0	0
-type	/obj/structure/closet/crate/miningcar	/obj/structure/closet/crate	code/modules/mining/mine_items.dm:158	inert	obj_structure_closet_crate_miningcar	0	0
-proc	/obj/structure/closet/crate/miningcar	Initialize	code/modules/mining/mine_items.dm:174	mapload	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	examine	code/modules/mining/mine_items.dm:180	user	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	closet_update_overlays	code/modules/mining/mine_items.dm:188	new_overlays	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	Move	code/modules/mining/mine_items.dm:191	newloc,direct,glide_size_override,update_dir	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	Moved	code/modules/mining/mine_items.dm:202	old_loc,movement_dir,forced,old_locs,momentum_change	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	is_buckle_possible	code/modules/mining/mine_items.dm:218	target,force,check_loc	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	after_open	code/modules/mining/mine_items.dm:221	user,force	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	post_buckle_mob	code/modules/mining/mine_items.dm:227	buckled_mob	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	post_unbuckle_mob	code/modules/mining/mine_items.dm:231	unbuckled_mob	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	buckled_bumped	code/modules/mining/mine_items.dm:234	source,bumper	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	smack	code/modules/mining/mine_items.dm:245	smacked,damage_mod,momentum_mod	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	update_rail_state	code/modules/mining/mine_items.dm:283	new_state	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	block_bump_push	code/modules/mining/mine_items.dm:296	source,bumper,force	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	forceMove	code/modules/mining/mine_items.dm:304	destination	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	mouse_drop_dragged	code/modules/mining/mine_items.dm:308	over,user,src_location,over_location,params	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	try_take_off_rails	code/modules/mining/mine_items.dm:326	user,new_destination	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	try_put_on_rails	code/modules/mining/mine_items.dm:342	user,new_destination	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	Bump	code/modules/mining/mine_items.dm:356	bumped_atom	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	Bumped	code/modules/mining/mine_items.dm:369	bumped_atom	no	-	proc
-proc	/obj/structure/closet/crate/miningcar	shove_off	code/modules/mining/mine_items.dm:374	bumped_atom	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	check_rail	code/modules/mining/mine_items.dm:418	source	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	decay_momentum	code/modules/mining/mine_items.dm:450	source	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	calculate_delay	code/modules/mining/mine_items.dm:490		no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	can_travel_on_turf	code/modules/mining/mine_items.dm:494	next_turf,dir_to_check	no	-	proc root
-proc	/obj/structure/closet/crate/miningcar	throw_contents	code/modules/mining/mine_items.dm:502		no	-	proc root
+type	/obj/structure/closet/crate/miningcar	/obj/structure/closet/crate	code/modules/mining/mine_items.dm:158	live	obj_structure_closet_crate_miningcar	1	0
+proc	/obj/structure/closet/crate/miningcar	Initialize	code/modules/mining/mine_items.dm:174	mapload	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	examine	code/modules/mining/mine_items.dm:180	user	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	closet_update_overlays	code/modules/mining/mine_items.dm:188	new_overlays	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	Move	code/modules/mining/mine_items.dm:191	newloc,direct,glide_size_override,update_dir	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	Moved	code/modules/mining/mine_items.dm:202	old_loc,movement_dir,forced,old_locs,momentum_change	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	is_buckle_possible	code/modules/mining/mine_items.dm:218	target,force,check_loc	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	after_open	code/modules/mining/mine_items.dm:221	user,force	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	post_buckle_mob	code/modules/mining/mine_items.dm:227	buckled_mob	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	post_unbuckle_mob	code/modules/mining/mine_items.dm:231	unbuckled_mob	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	buckled_bumped	code/modules/mining/mine_items.dm:234	source,bumper	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	smack	code/modules/mining/mine_items.dm:245	smacked,damage_mod,momentum_mod	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	update_rail_state	code/modules/mining/mine_items.dm:283	new_state	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	block_bump_push	code/modules/mining/mine_items.dm:296	source,bumper,force	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	forceMove	code/modules/mining/mine_items.dm:304	destination	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	mouse_drop_dragged	code/modules/mining/mine_items.dm:308	over,user,src_location,over_location,params	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	try_take_off_rails	code/modules/mining/mine_items.dm:326	user,new_destination	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	try_put_on_rails	code/modules/mining/mine_items.dm:342	user,new_destination	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	Bump	code/modules/mining/mine_items.dm:356	bumped_atom	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	Bumped	code/modules/mining/mine_items.dm:369	bumped_atom	yes	full	proc
+proc	/obj/structure/closet/crate/miningcar	shove_off	code/modules/mining/mine_items.dm:374	bumped_atom	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	check_rail	code/modules/mining/mine_items.dm:418	source	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	decay_momentum	code/modules/mining/mine_items.dm:450	source	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	calculate_delay	code/modules/mining/mine_items.dm:490		yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	can_travel_on_turf	code/modules/mining/mine_items.dm:494	next_turf,dir_to_check	yes	full	proc root
+proc	/obj/structure/closet/crate/miningcar	throw_contents	code/modules/mining/mine_items.dm:502		yes	full	proc root
 type	/obj/structure/closet/crate/necropolis	/obj/structure/closet/crate	code/modules/mining/lavaland/necropolis_chests.dm:4	live	obj_structure_closet_crate_necropolis	0	1
 type	/obj/structure/closet/crate/necropolis/tendril	/obj/structure/closet/crate/necropolis	code/modules/mining/lavaland/necropolis_chests.dm:14	inert	obj_structure_closet_crate_necropolis_tendril	0	0
 proc	/obj/structure/closet/crate/necropolis/tendril	item_interaction	code/modules/mining/lavaland/necropolis_chests.dm:21	user,tool,modifiers	no	-	proc
@@ -101076,13 +101076,13 @@ type	/obj/structure/sign/poster/official/the_owl/directional/north	/obj/structur
 type	/obj/structure/sign/poster/official/the_owl/directional/south	/obj/structure/sign/poster/official/the_owl/directional	code/game/objects/effects/posters/official.dm:252	live	obj_structure_sign_poster_official_the_owl_directional_south	0	0
 type	/obj/structure/sign/poster/official/the_owl/directional/east	/obj/structure/sign/poster/official/the_owl/directional	code/game/objects/effects/posters/official.dm:252	live	obj_structure_sign_poster_official_the_owl_directional_east	0	0
 type	/obj/structure/sign/poster/official/the_owl/directional/west	/obj/structure/sign/poster/official/the_owl/directional	code/game/objects/effects/posters/official.dm:252	live	obj_structure_sign_poster_official_the_owl_directional_west	0	0
-type	/obj/structure/sign/poster/official/no_erp	/obj/structure/sign/poster/official	code/game/objects/effects/posters/official.dm:255	inert	obj_structure_sign_poster_official_no_erp	0	0
-proc	/obj/structure/sign/poster/official/no_erp	tear_poster	code/game/objects/effects/posters/official.dm:261	user	no	-	proc
-type	/obj/structure/sign/poster/official/no_erp/directional	/obj/structure/sign/poster/official/no_erp	code/game/objects/effects/posters/official.dm:278	inert	obj_structure_sign_poster_official_no_erp_directional	0	0
-type	/obj/structure/sign/poster/official/no_erp/directional/north	/obj/structure/sign/poster/official/no_erp/directional	code/game/objects/effects/posters/official.dm:278	inert	obj_structure_sign_poster_official_no_erp_directional_north	0	0
-type	/obj/structure/sign/poster/official/no_erp/directional/south	/obj/structure/sign/poster/official/no_erp/directional	code/game/objects/effects/posters/official.dm:278	inert	obj_structure_sign_poster_official_no_erp_directional_south	0	0
-type	/obj/structure/sign/poster/official/no_erp/directional/east	/obj/structure/sign/poster/official/no_erp/directional	code/game/objects/effects/posters/official.dm:278	inert	obj_structure_sign_poster_official_no_erp_directional_east	0	0
-type	/obj/structure/sign/poster/official/no_erp/directional/west	/obj/structure/sign/poster/official/no_erp/directional	code/game/objects/effects/posters/official.dm:278	inert	obj_structure_sign_poster_official_no_erp_directional_west	0	0
+type	/obj/structure/sign/poster/official/no_erp	/obj/structure/sign/poster/official	code/game/objects/effects/posters/official.dm:255	live	obj_structure_sign_poster_official_no_erp	1	0
+proc	/obj/structure/sign/poster/official/no_erp	tear_poster	code/game/objects/effects/posters/official.dm:261	user	yes	full	proc
+type	/obj/structure/sign/poster/official/no_erp/directional	/obj/structure/sign/poster/official/no_erp	code/game/objects/effects/posters/official.dm:278	live	obj_structure_sign_poster_official_no_erp_directional	0	0
+type	/obj/structure/sign/poster/official/no_erp/directional/north	/obj/structure/sign/poster/official/no_erp/directional	code/game/objects/effects/posters/official.dm:278	live	obj_structure_sign_poster_official_no_erp_directional_north	0	0
+type	/obj/structure/sign/poster/official/no_erp/directional/south	/obj/structure/sign/poster/official/no_erp/directional	code/game/objects/effects/posters/official.dm:278	live	obj_structure_sign_poster_official_no_erp_directional_south	0	0
+type	/obj/structure/sign/poster/official/no_erp/directional/east	/obj/structure/sign/poster/official/no_erp/directional	code/game/objects/effects/posters/official.dm:278	live	obj_structure_sign_poster_official_no_erp_directional_east	0	0
+type	/obj/structure/sign/poster/official/no_erp/directional/west	/obj/structure/sign/poster/official/no_erp/directional	code/game/objects/effects/posters/official.dm:278	live	obj_structure_sign_poster_official_no_erp_directional_west	0	0
 type	/obj/structure/sign/poster/official/wtf_is_co2	/obj/structure/sign/poster/official	code/game/objects/effects/posters/official.dm:281	live	obj_structure_sign_poster_official_wtf_is_co2	0	1
 type	/obj/structure/sign/poster/official/wtf_is_co2/directional	/obj/structure/sign/poster/official/wtf_is_co2	code/game/objects/effects/posters/official.dm:285	live	obj_structure_sign_poster_official_wtf_is_co2_directional	0	1
 type	/obj/structure/sign/poster/official/wtf_is_co2/directional/north	/obj/structure/sign/poster/official/wtf_is_co2/directional	code/game/objects/effects/posters/official.dm:285	live	obj_structure_sign_poster_official_wtf_is_co2_directional_north	0	1
@@ -105701,10 +105701,10 @@ proc	/obj/structure/meateor_fluff/eyeball	Initialize	code/modules/mob/living/bas
 proc	/obj/structure/meateor_fluff/eyeball	blink	code/modules/mob/living/basic/space_fauna/meteor_heart/meteor_eyeball.dm:23		no	-	proc root
 proc	/obj/structure/meateor_fluff/eyeball	atom_destruction	code/modules/mob/living/basic/space_fauna/meteor_heart/meteor_eyeball.dm:27	damage_flag	no	-	proc
 proc	/obj/structure/meateor_fluff/eyeball	Destroy	code/modules/mob/living/basic/space_fauna/meteor_heart/meteor_eyeball.dm:31		no	-	proc
-type	/obj/structure/mining_shuttle_beacon	/obj/structure	code/modules/mining/aux_base.dm:333	inert	obj_structure_mining_shuttle_beacon	0	0
-proc	/obj/structure/mining_shuttle_beacon	attack_hand	code/modules/mining/aux_base.dm:345	user,modifiers	no	-	proc
-proc	/obj/structure/mining_shuttle_beacon	clear_cooldown	code/modules/mining/aux_base.dm:437		no	-	proc root
-proc	/obj/structure/mining_shuttle_beacon	attack_robot	code/modules/mining/aux_base.dm:440	user	no	-	proc
+type	/obj/structure/mining_shuttle_beacon	/obj/structure	code/modules/mining/aux_base.dm:333	live	obj_structure_mining_shuttle_beacon	1	0
+proc	/obj/structure/mining_shuttle_beacon	attack_hand	code/modules/mining/aux_base.dm:345	user,modifiers	yes	full	proc
+proc	/obj/structure/mining_shuttle_beacon	clear_cooldown	code/modules/mining/aux_base.dm:437		yes	full	proc root
+proc	/obj/structure/mining_shuttle_beacon	attack_robot	code/modules/mining/aux_base.dm:440	user	yes	full	proc
 type	/obj/structure/extraction_point	/obj/structure	code/modules/mining/fulton.dm:302	live	obj_structure_extraction_point	1	0
 proc	/obj/structure/extraction_point	Initialize	code/modules/mining/fulton.dm:314	mapload,creator	yes	full	proc
 proc	/obj/structure/extraction_point	poll_name	code/modules/mining/fulton.dm:321	creator	yes	full	proc root
@@ -105712,14 +105712,14 @@ proc	/obj/structure/extraction_point	Destroy	code/modules/mining/fulton.dm:326	f
 proc	/obj/structure/extraction_point	attack_hand	code/modules/mining/fulton.dm:330	user,modifiers	yes	full	proc
 proc	/obj/structure/extraction_point	update_overlays	code/modules/mining/fulton.dm:339		yes	full	proc
 type	/obj/structure/extraction_point/syndicate	/obj/structure/extraction_point	code/modules/mining/fulton.dm:344	live	obj_structure_extraction_point_syndicate	1	0
-type	/obj/structure/extraction_point/networked	/obj/structure/extraction_point	code/modules/mining/fulton.dm:348	inert	obj_structure_extraction_point_networked	0	0
-proc	/obj/structure/extraction_point/networked	Initialize	code/modules/mining/fulton.dm:353	mapload	no	-	proc
-type	/obj/structure/minecart_rail	/obj/structure	code/modules/mining/mine_items.dm:531	inert	obj_structure_minecart_rail	0	0
-proc	/obj/structure/minecart_rail	Initialize	code/modules/mining/mine_items.dm:540	mapload	no	-	proc
-proc	/obj/structure/minecart_rail	examine	code/modules/mining/mine_items.dm:547	user	no	-	proc
-proc	/obj/structure/minecart_rail	rail_examine	code/modules/mining/mine_items.dm:551		no	-	proc root
-type	/obj/structure/minecart_rail/railbreak	/obj/structure/minecart_rail	code/modules/mining/mine_items.dm:555	inert	obj_structure_minecart_rail_railbreak	0	0
-proc	/obj/structure/minecart_rail/railbreak	rail_examine	code/modules/mining/mine_items.dm:562		no	-	proc
+type	/obj/structure/extraction_point/networked	/obj/structure/extraction_point	code/modules/mining/fulton.dm:348	live	obj_structure_extraction_point_networked	1	0
+proc	/obj/structure/extraction_point/networked	Initialize	code/modules/mining/fulton.dm:353	mapload	yes	full	proc
+type	/obj/structure/minecart_rail	/obj/structure	code/modules/mining/mine_items.dm:531	live	obj_structure_minecart_rail	1	0
+proc	/obj/structure/minecart_rail	Initialize	code/modules/mining/mine_items.dm:540	mapload	yes	full	proc
+proc	/obj/structure/minecart_rail	examine	code/modules/mining/mine_items.dm:547	user	yes	full	proc
+proc	/obj/structure/minecart_rail	rail_examine	code/modules/mining/mine_items.dm:551		yes	full	proc root
+type	/obj/structure/minecart_rail/railbreak	/obj/structure/minecart_rail	code/modules/mining/mine_items.dm:555	live	obj_structure_minecart_rail_railbreak	1	0
+proc	/obj/structure/minecart_rail/railbreak	rail_examine	code/modules/mining/mine_items.dm:562		yes	full	proc
 type	/obj/structure/ore_box	/obj/structure	code/modules/mining/satchel_ore_box.dm:5	live	obj_structure_ore_box	1	0
 proc	/obj/structure/ore_box	Initialize	code/modules/mining/satchel_ore_box.dm:13	mapload	yes	full	proc
 proc	/obj/structure/ore_box	dump_box_contents	code/modules/mining/satchel_ore_box.dm:18		yes	full	proc root

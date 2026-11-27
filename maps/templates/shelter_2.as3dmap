@@ -1,0 +1,44 @@
+anomaly-map 1
+source _maps/templates/shelter_2.dmm tg 1d99bd7f
+size 7 7 1
+chunk 32
+default /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+
+[chunk 1 1 1]
+2,7: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+4,7: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+6,7: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+1,6: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,6: /obj/structure/fans | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+3,6: /obj/machinery/smartfridge/survival_pod/preloaded | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+4,6: /obj/item/gps/computer | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+5,6: /obj/machinery/shower/directional/south | /obj/item/soap/deluxe | /obj/structure/curtain{alpha = 240; color = "#454545"; icon_state = "bathroom-closed"; open = 0} | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+6,6: /obj/structure/toilet/secret{secret_type = /obj/item/knife/combat/survival} | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+7,6: /obj/effect/turf_decal/mining/survival{dir = 4} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,5: /obj/machinery/stasis/survival_pod | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+3,5: /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+4,5: /obj/structure/bed/pod | /obj/item/bedsheet/black | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+5,5: /obj/structure/window/reinforced/survival_pod/spawner/directional/west | /obj/machinery/door/window/survival_pod/left/directional/north | /turf/open/floor/carpet/black | /area/misc/survivalpod
+6,5: /obj/structure/chair/comfy/black | /obj/item/cardboard_cutout{starting_cutout = "Xenomorph Maid"} | /obj/structure/window/reinforced/survival_pod/spawner/directional/north | /turf/open/floor/carpet/black | /area/misc/survivalpod
+1,4: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,4: /obj/structure/table/survival_pod | /obj/item/storage/medkit/regular | /obj/item/storage/medkit/brute{pixel_x = 5} | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+3,4: /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+4,4: /obj/structure/tubes | /obj/item/kirbyplants/random | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+5,4: /obj/structure/window/reinforced/survival_pod/spawner/directional/west | /turf/open/floor/carpet/black | /area/misc/survivalpod
+6,4: /obj/machinery/light/directional/east | /obj/structure/table/wood/fancy/black | /obj/item/reagent_containers/cup/glass/drinkingglass{pixel_x = 7; pixel_y = 2} | /obj/item/reagent_containers/cup/glass/bottle/wine{pixel_x = -6; pixel_y = 10} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+7,4: /obj/effect/turf_decal/mining/survival{dir = 4} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,3: /obj/machinery/microwave{pixel_y = -2} | /obj/structure/window/reinforced/survival_pod/spawner/directional/north | /obj/structure/table/wood/fancy/black{pixel_y = -9} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+3,3: /obj/machinery/door/window/survival_pod/left/directional/north | /turf/open/floor/carpet/black | /area/misc/survivalpod
+4,3: /obj/structure/window/reinforced/survival_pod/spawner/directional/north | /obj/structure/displaycase{alert = 0; desc = "A display case containing an expensive forgery, probably."; pixel_y = -4; req_access = list("mining"); start_showpiece_type = /obj/item/fakeartefact} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+5,3: /obj/structure/window/reinforced/survival_pod{density = 0; dir = 9} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+6,3: /obj/structure/table/wood/fancy/black | /obj/item/reagent_containers/cup/glass/drinkingglass{pixel_x = 7; pixel_y = 2} | /obj/effect/spawner/random/food_or_drink/three_course_meal | /turf/open/floor/carpet/black | /area/misc/survivalpod
+1,2: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,2: /obj/structure/sink/kitchen/directional/east | /turf/open/floor/carpet/black | /area/misc/survivalpod
+3,2: /obj/machinery/light/directional/south | /turf/open/floor/carpet/black | /area/misc/survivalpod
+4,2: /turf/open/floor/carpet/black | /area/misc/survivalpod
+5,2: /turf/open/floor/carpet/black | /area/misc/survivalpod
+6,2: /obj/structure/chair/comfy/black{dir = 1} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+7,2: /obj/effect/turf_decal/mining/survival{dir = 4} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,1: /obj/effect/turf_decal/mining/survival | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+4,1: /obj/structure/fans/tiny | /obj/machinery/door/airlock/survival_pod/glass | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+6,1: /obj/effect/turf_decal/mining | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod

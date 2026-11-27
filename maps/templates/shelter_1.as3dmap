@@ -1,0 +1,22 @@
+anomaly-map 1
+source _maps/templates/shelter_1.dmm tg 1d99bd7f
+size 5 5 1
+chunk 32
+default /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+
+[chunk 1 1 1]
+3,5: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,4: /obj/structure/fans | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+3,4: /obj/machinery/smartfridge/survival_pod/preloaded | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+4,4: /obj/item/gps/computer | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+1,3: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,3: /obj/machinery/stasis/survival_pod | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+3,3: /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+4,3: /obj/structure/bed/pod | /obj/item/bedsheet/black | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+5,3: /obj/effect/turf_decal/mining/survival{dir = 4} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,2: /obj/structure/table/survival_pod | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+3,2: /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+4,2: /obj/structure/tubes | /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+2,1: /obj/effect/turf_decal/mining/survival | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+3,1: /obj/structure/fans/tiny | /obj/machinery/door/airlock/survival_pod/glass | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+4,1: /obj/effect/turf_decal/mining | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod

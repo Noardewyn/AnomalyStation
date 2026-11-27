@@ -1672,9 +1672,9 @@ public partial class obj_item_clothing_head_helmet_changeling_hivehead_legion : 
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:208
-[DmPath("/obj/item/clothing/head/helmet/skull"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_helmet_skull : obj_item_clothing_head_helmet
+// tg: code/modules/mining/equipment/explorer_gear.dm:208 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/helmet/skull")]
+public partial class obj_item_clothing_head_helmet_skull
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:208
     public obj_item_clothing_head_helmet_skull()
@@ -4650,9 +4650,9 @@ public partial class obj_item_clothing_head_hooded_chaplain_hood_divine_archer :
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:35
-[DmPath("/obj/item/clothing/head/hooded/explorer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_hooded_explorer : obj_item_clothing_head_hooded
+// tg: code/modules/mining/equipment/explorer_gear.dm:35 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/hooded/explorer")]
+public partial class obj_item_clothing_head_hooded_explorer
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:35
     public obj_item_clothing_head_hooded_explorer()
@@ -4674,7 +4674,7 @@ public partial class obj_item_clothing_head_hooded_explorer : obj_item_clothing_
 }
 
 // tg: code/modules/mining/equipment/explorer_gear.dm:248
-[DmPath("/obj/item/clothing/head/hooded/explorer/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/hooded/explorer/syndicate"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_hooded_explorer_syndicate : obj_item_clothing_head_hooded_explorer
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:248
@@ -4691,9 +4691,9 @@ public partial class obj_item_clothing_head_hooded_explorer_syndicate : obj_item
 [DmPath("/obj/item/clothing/head/hooded/cloakhood"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_hooded_cloakhood : obj_item_clothing_head_hooded { }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:167
-[DmPath("/obj/item/clothing/head/hooded/cloakhood/goliath"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_hooded_cloakhood_goliath : obj_item_clothing_head_hooded_cloakhood
+// tg: code/modules/mining/equipment/explorer_gear.dm:167 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/hooded/cloakhood/goliath")]
+public partial class obj_item_clothing_head_hooded_cloakhood_goliath
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:167
     public obj_item_clothing_head_hooded_cloakhood_goliath()

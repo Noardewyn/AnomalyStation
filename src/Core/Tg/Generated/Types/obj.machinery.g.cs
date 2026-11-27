@@ -4383,9 +4383,9 @@ public partial class obj_machinery_sleeper_party : obj_machinery_sleeper
     }
 }
 
-// tg: code/modules/mining/equipment/survival_pod.dm:192
-[DmPath("/obj/machinery/sleeper/survival_pod"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_sleeper_survival_pod : obj_machinery_sleeper
+// tg: code/modules/mining/equipment/survival_pod.dm:192 (the var block of a hand-written class)
+[DmPath("/obj/machinery/sleeper/survival_pod"), DmInert]
+public partial class obj_machinery_sleeper_survival_pod
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:192
     public obj_machinery_sleeper_survival_pod()
@@ -12381,9 +12381,9 @@ public partial class obj_machinery_smartfridge_disks
     }
 }
 
-// tg: code/modules/mining/equipment/survival_pod.dm:242
-[DmPath("/obj/machinery/smartfridge/survival_pod"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_smartfridge_survival_pod : obj_machinery_smartfridge
+// tg: code/modules/mining/equipment/survival_pod.dm:242 (the var block of a hand-written class)
+[DmPath("/obj/machinery/smartfridge/survival_pod")]
+public partial class obj_machinery_smartfridge_survival_pod
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:242
     public obj_machinery_smartfridge_survival_pod()
@@ -12401,9 +12401,9 @@ public partial class obj_machinery_smartfridge_survival_pod : obj_machinery_smar
     }
 }
 
-// tg: code/modules/mining/equipment/survival_pod.dm:261
-[DmPath("/obj/machinery/smartfridge/survival_pod/preloaded"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_smartfridge_survival_pod_preloaded : obj_machinery_smartfridge_survival_pod { }
+// tg: code/modules/mining/equipment/survival_pod.dm:261 (the var block of a hand-written class)
+[DmPath("/obj/machinery/smartfridge/survival_pod/preloaded")]
+public partial class obj_machinery_smartfridge_survival_pod_preloaded { }
 
 // tg: code/modules/food_and_drinks/machinery/stove.dm:2 (the var block of a hand-written class)
 [DmPath("/obj/machinery/stove")]

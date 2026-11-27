@@ -1392,7 +1392,6 @@ HUD), the stamina display, `GLOB.human_heights_to_offsets` and `GLOB.security_ve
 | `code/game/data_huds.dm:490-513` | `get_cached_width` and `get_cached_height` of an image, `get_visual_width` and `get_visual_height` (DV108) | the temporary visuals of a throw bonus and the brimdust sac | M10+ | (not declared) |
 | `code/modules/clothing/glasses/hud.dm:26` | the suicide act of HUD glasses (live-partial row) | the suicide verb | M10 | (generated stub) |
 | `code/modules/clothing/glasses/hud.dm:120-165` | the diagnostic glasses show nothing: the diagnostic HUD is out | wearing them | M10+ | (traits only) |
-| `code/modules/mining/equipment/explorer_gear.dm:52` | the explorer suit's allowed list: `GLOB.mining_suit_allowed` is translated (gaps MO1, the mining MOD theme's suit storage), but the explorer gear is inert (section 115), so its Initialize never reads it: a miner cannot hang a tank on the suit | the two Shaft Miner outfits' suit store (the ported `outfit_sanity` skips that check) | M10 (mining) | (generated) |
 | `code/modules/clothing/suits/armor.dm:33-45`, `:69` and the other `Initialize` and `worn_overlays` of the armor subtypes | the fantasy bonuses (live-partial rows) and the cuirass, captain's formal carapace, detective's suit, durathread and military vests, press and security jackets stay inert | none of those is on a station job's outfit | M10+ | `modules/clothing/suits/armor.cs` |
 | `code/game/objects/items/implants/implant_pad.dm`, the locator and the tracking beacon's readers | the implant pad and the readers of a tracking implant (the console and its buttons came with gaps LC1) | reading an implant | M9+ (consoles) | `game/objects/items/implants/` |
 | `code/game/objects/items/implants/implant_mindshield.dm:26` | the deconverted mind's quip (`say`, `Dm.Deferred`) | a mindshield implanted into a converted mind | M10 (antagonists) | `implants/implant_mindshield.cs` |
@@ -1772,7 +1771,7 @@ Not translated, each recorded at its site:
 | the shuttle manipulator (the shuttle purchases came with gaps CM1, section 200; the navigation computers' dock overlap and hidden turfs with syndicate N1c) | after M10 | `shuttle.cs` |
 | the console's ninja drain and battlecruiser card, the cross-server messages (the emag came with G1a; the hacks, the syndicate console, the nuke codes and the spare ID safe codes with gaps CM1: section 200 lists what is left) | after M10 (antagonists, other servers) | `communications.cs` (live-partial stubs) |
 | the talk logs, the admins' links and the requests manager of the console and the shuttle calls | M10+ (the admin logs and panels, section 83) | `communications.cs`, `datums/communications.cs`, `pray.cs`, `supply.cs` |
-| the transit turfs' shuttle cling (things pulled along by a moving shuttle), the ruins', shelters' and holodeck's template preloads | after M10 | `transit.cs`, `mapping.cs` |
+| the transit turfs' shuttle cling (things pulled along by a moving shuttle), the ruins' and holodeck's template preloads (the shelters' came with gaps LV1, section 234) | after M10 | `transit.cs`, `mapping.cs` |
 | the round's shuttle name in the database, the admins' fly-shuttle verb and var editing of the arrivals shuttle | M10+ (section 83) | `emergency.cs`, `arrivals.cs` (live-partial stubs) |
 | the hulks' and rust's effect on titanium walls | after M10 | `mineral_walls.cs` (live-partial stubs) |
 
@@ -2179,7 +2178,7 @@ vendor of Meta, 92 machines), 7 left inert. The live-partial rows are in `live-p
 | `code/modules/vending/vendor/ui_data.dm:156` | `ui_act`'s `select_colors`: the greyscale colour menu of a colourable product (`Dm.Deferred`; `/datum/greyscale_modify_menu`, the GAGS editor, is not ported); `_vend_greyscale` is translated, unreached | the palette button of a colourable product | the GAGS editor (admin tooling) | `modules/vending/vendor/ui_data.cs` |
 | `code/modules/asset_cache/assets/vending.dm` | the vending sprite sheet (DEVIATION DV44): `collect_records_for_static_data` gives a GAGS product its client-composed GAGS name (DV19) and tg's preview state, and a coloured icon its icon and state, drawn without the colour | the Vending window | (DV44) | `modules/vending/vendor/ui_data.cs` |
 | `code/modules/vending/wardrobes.dm:37` | `take_damage`: the mothroaches flee through their AI's blackboard (`Dm.Deferred`; the mothroach is inert, the creatures' AI is C1); they still leave the wardrobe | a damaged wardrobe with mothroaches (5% of rounds, one wardrobe) | C1 | `modules/vending/wardrobes.cs` |
-| `code/modules/vending/custom.dm`, `runic_vendor.dm`, `subtype.dm`, `sustenance.dm:47`, `mapfluff/ruins/objects_and_mobs/museum.dm:162` | inert types, none on Meta: the custom vendor and its greed and unbreakable subtypes (players' own stock and prices; the economy came with gaps P4a, the vendor waits for its own package), the runic vendor (the wizard), the subtype vendor (admin), the labor camp's vendor (labor points: the gulag), the museum's hotdog vendor | an admin spawn | their own package, the antagonists, the gulag | (inert) |
+| `code/modules/vending/custom.dm`, `runic_vendor.dm`, `subtype.dm`, `mapfluff/ruins/objects_and_mobs/museum.dm:162` | inert types, none on Meta: the custom vendor and its greed and unbreakable subtypes (players' own stock and prices; the economy came with gaps P4a, the vendor waits for its own package), the runic vendor (the wizard), the subtype vendor (admin), the museum's hotdog vendor | an admin spawn | their own package, the antagonists, the gulag | (inert) |
 | `modules/modular_computers/file_system/programs/restock_tracker.dm` | the NtosRestock program (the vendors' restock tracker; the Coupon Master came with gaps P4b) | a PDA, the cargo interfacing console | the PDA's apps | (inert) |
 | `code/game/objects/items/food/` and the glassware | inert products spawn as tg's objects (rules: an inert type initializes with its presentation): the bar's glasses, mugs and bottles (`reagent_containers/cup/glass`: `glass.dm`'s smash needs the shim's `SwapColor` and the broken bottle, the drinking glass the glass styles; about 40 procs), the soda cans, cigarettes and lighters, the games and seeds; each turns usable with its own package | buying one | their packages | (inert) |
 
@@ -2404,7 +2403,6 @@ Package J2 translates the job datums and outfits that were inert (security offic
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `survival_pod.dm`, `shelters.dm`, `aux_base.dm:270` | the bluespace capsule and the landing field designator in the miner's locker: map templates loaded at run time (the `_maps/templates` shelters are not converted) and the auxiliary base's drop | the miner's locker | no package yet (open question in the J6 report) | inert types |
 | `minerals.dm:392` the random rocks, `:74` spread_vein, `ore_generation.dm` | ore generation on a mining level; Meta has no mining level. The tools work on `/turf/closed/mineral` and the ore rocks | no map uses them | no package yet (Lavaland is not in the plan) | inert types, live-partial row |
 | `vent_mining/ore_vent.dm`, `mineral_scanner.dm:80` | the ore vents' overlays and the radar ping | Lavaland only | not in the plan | `mineral_scanner.cs` leaf |
 | `openspace.dm`, the hook's hole on a stacked map | Meta is one level: the hook's climb is translated and tested on two stacked toy levels with a test double for the hole (`/turf/open/openspace` stays inert) | a multi-level map | no package yet | inert type |
@@ -2413,7 +2411,7 @@ Package J2 translates the job datums and outfits that were inert (security offic
 | `minerals.dm` gibtonite's overlays on the rock, `flick_overlay_view` | the wall model does not draw a rock's overlays: a struck deposit is heard and read, not seen pulsing | gibtonite in rock | open question in the J6 report | server state is translated |
 | `emissive_appearance` on the beacons and the radio | their glow overlays (DV12) | always | DV12 | leaves |
 | `album.dm` persistence_load, populate_from_id_list, the storage's save_everything | albums across rounds | SSpersistence | later | live-partial rows |
-| `explorer_gear.dm:21,:49` the explorer suit, `job_boxes.dm:273,:282` the bonus box and modkit box, `belt.dm:301` | the mining points' goods (the miner's default kit does not hold them) | the mining vendor | P4 | inert types |
+| `job_boxes.dm:273,:282` the bonus box and modkit box, `belt.dm:301` (the explorer suit came with gaps LV1, section 234) | the mining points' goods (the miner's default kit does not hold them) | the mining vendor | P4 | inert types |
 | skills: `datum/skill/mining`, athletics | mining and athletics modifiers and experience (skills are not ported, as `minerals.cs`) | every shot and climb: modifier 1 | later | leaves |
 | `mod_types.dm:122` loader | the cargo technician's alternate MODsuit outfit (`/datum/outfit/job/cargo_tech/mod`, not the default kit) | an admin outfit | the modsuits | inert type |
 
@@ -3061,12 +3059,11 @@ Translated (stage X1b): the contractor support unit (`contract_teammate.dm` whol
 objective and no uplink, its outfit with the lit cigarette; the support beacon itself was translated in G4c), the fulton kit's box
 (`job_boxes.dm:323`) and `mining/fulton.dm` but the networked pack, core and beacon (the pack's link, attaching, the balloon's lift
 and flight with tg's sounds and `animate()` chains, the landing next to the beacon; the beacon's core, naming, undeploying, the
-global list of beacons). A holder that lifts a mob is drawn as that mob (DV377).
+global list of beacons; the networked pack, core and beacon came with gaps LV1, section 234). A holder that lifts a mob is drawn as that mob (DV377).
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `syndicate_contract.dm:256` | the souvenir achievement | a victim in the syndicate souvenir uniform | the achievements | `syndicate_contract.cs` |
-| `fulton.dm:199-269`, `:292-296`, `:347-355` | the networked fulton pack, core and beacon (the "Candela" mining beacon networks, `candela_node`) | the mining vendor | the mining | (generated, inert) |
 | `fulton.dm:121-129`, `:138-196` (client) | a lifted thing the client draws as a 3D model (a crate, a closet) shows neither the balloon overlay nor the rise and the descent: the static props' models play no `animate()` chain and draw no overlay (a lifted mob is a node and shows both, DV377); the thing still lands at the beacon | a fulton pack used on a crate | the client's static props | `MapRenderer.cs` |
 | `lazy_template.dm:130-156` | the other lazy templates' maps (the nukie base and elevator, the wizard den, the abductor ships, the heretic room, the voidwalker void) are not converted: their load CRASHes on the missing map | their antagonists | their packages | `tools/Anomaly.Tools.Maps/Program.cs` |
 
@@ -3676,8 +3673,7 @@ DEVIATION(DV380): the false alarm leaves out the midround rulesets that are not 
 Translated: `structures/construction_console/` whole (the console, its drone kept in its `allowed_area`, the internal RCD, the build,
 configure, fan and turret actions, Log out; the aux and CentCom subtypes), and the aux base management console's `Initialize` and
 `Destroy` (`mining/aux_base.dm`), so the drone starts at it and placed turrets register with it. Its launch window, `set_mining_mode` and
-`set_landing_zone` are `live-partial.txt` rows: the base's deployment to lavaland, the landing designator and the mining shuttle beacon
-come with mining. The aux console's drone stands on the controller's turf (tg makes it inside the controller).
+`set_landing_zone` (the base's deployment to lavaland, the landing designator and the mining shuttle beacon) came with gaps LV1 (section 234). The aux console's drone stands on the controller's turf (tg makes it inside the controller).
 
 ## 176. The weather (gaps E2a, D327)
 
@@ -3949,7 +3945,6 @@ art (`elements/art.dm:54-66`).
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `mining/mine_items.dm:102-104` | the mining shuttle console's warning to a head revolutionary | the mining shuttle console | with the mining shuttle | none |
 | `spell_types/pointed/mind_transfer.dm:113` | the mind swap's refusal of a revolutionary | the wizard's mind swap | with the wizard | none |
 | `revolution_handler.dm:76-79`, `:106-109` | the loyalists' and the disillusioned's moods at the revolution's end (`add_personality_mood_to_viewers`) | either side's victory | with the personalities (M10+, as the slip's) | `antagonists/revolution/revolution_handler.cs` |
 ## 189. The xenomorphs (gaps X5, D333)
@@ -4233,7 +4228,6 @@ pointer, the laser pointer, the desk bell, the vehicle keys, the universal scann
 DV522 (the target's pixel test). At the snapshot `inspector.dm` holds only the N-spect scanner: no inspection report, no clown's scanner.
 | `items/dice.dm:267-446` | the Die of Fate (`/obj/item/dice/d20/fate` and its one-use, cursed and stealth kinds): its twenty outcomes on a roll (dust, death, a swarm of creatures, the gear destroyed, monkeying, the cold, the cookie, the cash, the Mateba, a random spellbook, the summoned servant, the wizard's robes and powers) and its pickup by a non-wizard; it needs the wizard's spells (`summon_mob/dice`, the random spell granter), `make_wizard` and `IS_WIZARD`, and `/datum/disease/cold`. The types stay inert. | the wizard's spellbook or an admin's spawn | with the wizard (D333: the antagonists are the xenomorphs alone) | `game/objects/items/dice.cs` |
 | `weaponry/melee/claymore.dm:55-79`, `:107-260` | the cutlass (its Initialize adds `/datum/element/cuffable_item`, inert) and the highlander's claymore with its robot kind (the notches, the pinpointer to the nearest highlander, the bloodthirst; an admin event's): the types stay inert. | the pirates' bitrunning domain, the mystery box, a cutlass crafted; the Highlander admin event | with the melee leftovers (cutlass) and the admin events (highlander) | `game/objects/items/weaponry/melee/claymore.cs` |
-| `modules/mining/equipment/vent_pointer.dm` | the vent pointer (`/obj/item/pinpointer/vent`), which points at Lavaland's and the icemoon's ore vents: the type stays inert | a miner's vent pointer | with mining's ore vents (Lavaland) | (none yet) |
 | `items/granters/magic/` (the wizard's) | the wizard's spellbooks wait for their spells (section 221); the skill, crafting, sign language, origami, chuunibyou and smoke books came with gaps SL1 | reading a manual | with the wizard | (inert) |
 
 ## 207. Closets, crates and dispensers left (gaps ST3, D333)
@@ -5049,3 +5043,26 @@ the implanter's `close_machine` takes the user as its density. No new adaptation
 | `wiremod/components/action/camera.dm:62-120` (`circuit_component/mod_program/camera`) | the camera app's circuit component: the app (`programs/maintenance/camera.dm`) waits for NtOS's image files (section 164) | a circuit in a computer with the camera app | with NtOS's image files | (inert) |
 | `messenger_program.dm:633-636` | the circuit sender's creator in the PDA message's talk log tag (`shell_addendum`): the talk log | a circuit's PDA message | the logs (M10) | `programs/messenger/messenger_program.cs` |
 | the BCI's and the circuit implant's 3D model | the chip keeps tg's sprite (`circuits.dmi` state `bci`) until its model is made (required-models.md); the implanter has its model (`machines/medical_wave/bci_implanter.glb`) | a BCI in hand or on the floor | the 3D models | — |
+## 234. The Lavaland shuttles' flights and the mining gear (gaps LV1, D339, D353)
+
+Checked and tested: the mining, common mining and labour shuttles fly between Meta's docks and Lavaland's with tg's ShuttleConsole
+windows, timings (ignition, then transit), ripples at the far dock in transit and the airlocks shutting (an ordinary shuttle has
+no hyperspace sounds in tg); the mining base's console calls the mining shuttle back; the camp's one-way console summons the labour shuttle and only brig access sends it home. Translated: the mining shuttle
+console's warning to a head revolutionary (`mine_items.dm:102`); `mine_items.dm` whole (the light emitters, the mine carts and their
+rails); `aux_base.dm` whole (the AuxBaseConsole window with its blind drop and turrets, the landing field designator, `set_landing_zone`,
+`set_mining_mode`, the mining shuttle beacon); `equipment/survival_pod.dm` and `shelters.dm` (the capsules unfolding the converted
+mining shelters, SSmapping's `preloadShelterTemplates`, the pod computer, the survival storage unit, the forgery);
+`wormhole_jaunter.dm`, `kheiral_cuffs.dm` with the cuffs' GPS component, `grapple_gun.dm`, `vent_pointer.dm`; the rest of
+`explorer_gear.dm` (the explorer suit and hood, the goliath cloak and hood, the skull helmet); `fulton.dm`'s networked pack and beacon;
+the ore vent's GPS signal (`ore_vent.dm:513`); the pickaxe's and shovel's suicides (`mining_tools.dm:23`, `:144`); the labour camp's sustenance vendor (`sustenance.dm:56-75`, labour points); the "No ERP"
+poster of Lavaland's base (`posters/official.dm:261`). DV611 (the shelters the host mounted), DV612 (the capsule's throw under DV416).
+
+| `survival_pod.dm:192-199`, `game/machinery/sleepers.dm` | the pod's sleeper: its overlay is translated, but the sleeper itself is not ported, so `/obj/machinery/sleeper/survival_pod` stays inert (no shelter template places one) | an admin spawn | the sleepers (medical) | `equipment/survival_pod.cs` |
+| `shelters.dm:105-182`, `fishing/fishing_equipment.dm:590-700` | the fishing spots' templates (their `New` is translated; their maps are not converted, DV611) and the fishing capsules | a fishing capsule | FI1-3 | `mining/shelters.cs` |
+| `explorer_gear.dm:201` | the bone armour: `equipment_bodypart_texture` (the drake-mesh body texture) is not ported, so the armour stays inert | ash walkers' crafting | the bodypart textures, the ash walkers (lavaland.md L8) | (generated) |
+| `kheiral_cuffs.dm:103-110` | the cuffs' glow, worn and lying (`emissive_appearance`) | always | DV12 | `equipment/kheiral_cuffs.cs` |
+| `grapple_gun.dm:114-123` | the zipliner's body turned along the line (`animate(transform)`) is sent as tg's transform; whether the client tilts a first-person body is not checked | a grapple | the client's mob transforms | `equipment/grapple_gun.cs` |
+| `laborshuttle.dm:25` | tg compares the docked port's `name` (Lavaland's "labor camp") with the id "laborcamp_away", so "Shuttle is already at the outpost!" never shows; the console is locked there anyway (no destination left). A tg bug, kept | the camp's console with the shuttle docked | (tg) | `laborcamp/laborshuttle.cs` |
+| Lavaland's mapped inert things | the mech pad and its console (OR1), the arcades and the cards (RC1), the library console (LB1), the fish catalog and the bait (FI1-3), the RaptorDex and the troughs (LV3), the goliaths (LV2), the legion with its gates and arch (LV4, LV5), the crusher's retool kit (LV2) | Lavaland's base and ruins | their packages (D353) | (inert) |
+| `mining/lavaland/` ruins, `mob_spawn/ghost_role` | Lavaland's ruins and ghost roles (the ash walkers, the free golems who may not fly the mining shuttle off the station) | Lavaland's ruins | lavaland.md L8 (in no package) | (not loaded) |
+| the gear's 3D models | the shelter's furniture, the jaunter, the grapple gun, the cuffs, the mine cart and its rails, the designator and the beacon keep tg's sprites (docs/ai/required-models.md) | always | the models | (client) |

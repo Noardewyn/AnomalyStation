@@ -237,6 +237,8 @@ public static class Program
         // safehouses their modular map roots load (maps/safehouses/<name>.as3dmap)
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(VirtualDomains);
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(Safehouses);
+        // The survival capsules' shelters (tg's /datum/map_template/shelter mappaths) the miners unfold on Lavaland, at maps/templates/<name>.as3dmap
+        if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(Shelters);
         foreach (string template in templates)
         {
             string relative = "_maps/" + template;
@@ -319,6 +321,12 @@ public static class Program
         "virtual_domains/pirates.dmm", "virtual_domains/psyker_shuffle.dmm", "virtual_domains/psyker_zombies.dmm",
         "virtual_domains/stairs_and_cliffs.dmm", "virtual_domains/syndicate_assault.dmm", "virtual_domains/test_only.dmm",
         "virtual_domains/vaporwave.dmm", "virtual_domains/wendigo.dmm", "virtual_domains/xeno_nest.dmm"];
+
+    /// <summary>
+    /// The survival capsules' shelters: the mining shelters of code/modules/mining/shelters.dm (the fishing spots come with fishing).
+    /// </summary>
+    internal static readonly string[] Shelters = ["templates/shelter_1.dmm", "templates/shelter_2.dmm", "templates/shelter_3.dmm",
+        "templates/shelter_t.dmm"];
 
     internal static readonly string[] Safehouses = ["safehouses/abductor.dmm", "safehouses/bathroom.dmm", "safehouses/den.dmm",
         "safehouses/dig.dmm", "safehouses/ice.dmm", "safehouses/lavaland_boss.dmm", "safehouses/maintsafe.dmm", "safehouses/mine.dmm",

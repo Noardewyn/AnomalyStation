@@ -4238,6 +4238,16 @@
 /obj/machinery/computer/cargo/express	req_access	init	code/modules/cargo/expressconsole.dm:13	{"K":"list","N":0,"L":[{"Value":{"K":"str","N":0,"S":"cargo"}}]}
 /obj/machinery/computer/cargo/express	is_express	override	code/modules/cargo/expressconsole.dm:14	{"K":"num","N":1}
 /obj/machinery/computer/cargo/express	interface_type	override	code/modules/cargo/expressconsole.dm:15	{"K":"str","N":0,"S":"CargoExpress"}
+/obj/machinery/computer/auxiliary_base	destination	decl	code/modules/mining/aux_base.dm:33	{"K":"null","N":0}
+/obj/machinery/computer/auxiliary_base	name	override	code/modules/mining/aux_base.dm:15	{"K":"str","N":0,"S":"auxiliary base management console"}
+/obj/machinery/computer/auxiliary_base	desc	override	code/modules/mining/aux_base.dm:16	{"K":"str","N":0,"S":"Allows a deployable expedition base to be dropped from the station to a designated mining location. It can also interface with the mining shuttle at the landing site if a mobile beacon is also deployed."}
+/obj/machinery/computer/auxiliary_base	icon	override	code/modules/mining/aux_base.dm:18	{"K":"res","N":0,"S":"icons/obj/machines/wallmounts.dmi"}
+/obj/machinery/computer/auxiliary_base	icon_state	override	code/modules/mining/aux_base.dm:19	{"K":"str","N":0,"S":"pod_off"}
+/obj/machinery/computer/auxiliary_base	icon_keyboard	override	code/modules/mining/aux_base.dm:20	{"K":"null","N":0}
+/obj/machinery/computer/auxiliary_base	icon_screen	override	code/modules/mining/aux_base.dm:21	{"K":"str","N":0,"S":"pod_on"}
+/obj/machinery/computer/auxiliary_base	req_one_access	init	code/modules/mining/aux_base.dm:22	{"K":"list","N":0,"L":[{"Value":{"K":"str","N":0,"S":"aux_base"}},{"Value":{"K":"str","N":0,"S":"command"}}]}
+/obj/machinery/computer/auxiliary_base	circuit	override	code/modules/mining/aux_base.dm:23	{"K":"type","N":0,"S":"/obj/item/circuitboard/computer/auxiliary_base"}
+/obj/machinery/computer/auxiliary_base	density	override	code/modules/mining/aux_base.dm:37	{"K":"num","N":0}
 /obj/machinery/hypnochair	timerid	decl	code/game/machinery/hypnochair.dm:21	{"K":"num","N":0}
 /obj/machinery/hypnochair	name	override	code/game/machinery/hypnochair.dm:2	{"K":"str","N":0,"S":"enhanced interrogation chamber"}
 /obj/machinery/hypnochair	desc	override	code/game/machinery/hypnochair.dm:3	{"K":"str","N":0,"S":"A device used to perform \u0022enhanced interrogation\u0022 through invasive mental conditioning."}

@@ -2894,9 +2894,9 @@ public partial class obj_effect_portal_wormhole
     }
 }
 
-// tg: code/modules/mining/equipment/wormhole_jaunter.dm:109
-[DmPath("/obj/effect/portal/jaunt_tunnel"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_portal_jaunt_tunnel : obj_effect_portal
+// tg: code/modules/mining/equipment/wormhole_jaunter.dm:109 (the var block of a hand-written class)
+[DmPath("/obj/effect/portal/jaunt_tunnel")]
+public partial class obj_effect_portal_jaunt_tunnel
 {
     // tg: code/modules/mining/equipment/wormhole_jaunter.dm:109
     public obj_effect_portal_jaunt_tunnel()
@@ -5995,9 +5995,9 @@ public partial class obj_effect_watcher_orbiter : obj_effect
     }
 }
 
-// tg: code/modules/mining/mine_items.dm:5
-[DmPath("/obj/effect/light_emitter"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_light_emitter : obj_effect
+// tg: code/modules/mining/mine_items.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/effect/light_emitter")]
+public partial class obj_effect_light_emitter
 {
     public float set_luminosity = 8; // tg: code/modules/mining/mine_items.dm:9
     public float set_cap = 0; // tg: code/modules/mining/mine_items.dm:10
@@ -6013,7 +6013,7 @@ public partial class obj_effect_light_emitter : obj_effect
 }
 
 // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:127
-[DmPath("/obj/effect/light_emitter/tendril"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/light_emitter/tendril"), DmGeneratedOnly]
 public partial class obj_effect_light_emitter_tendril : obj_effect_light_emitter
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:127
@@ -6026,7 +6026,7 @@ public partial class obj_effect_light_emitter_tendril : obj_effect_light_emitter
 }
 
 // tg: code/modules/mining/mine_items.dm:23
-[DmPath("/obj/effect/light_emitter/podbay"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/light_emitter/podbay"), DmGeneratedOnly]
 public partial class obj_effect_light_emitter_podbay : obj_effect_light_emitter
 {
     // tg: code/modules/mining/mine_items.dm:23
@@ -6037,7 +6037,7 @@ public partial class obj_effect_light_emitter_podbay : obj_effect_light_emitter
 }
 
 // tg: code/modules/mining/mine_items.dm:26
-[DmPath("/obj/effect/light_emitter/thunderdome"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/light_emitter/thunderdome"), DmGeneratedOnly]
 public partial class obj_effect_light_emitter_thunderdome : obj_effect_light_emitter
 {
     // tg: code/modules/mining/mine_items.dm:26
@@ -6049,7 +6049,7 @@ public partial class obj_effect_light_emitter_thunderdome : obj_effect_light_emi
 }
 
 // tg: code/modules/mining/mine_items.dm:30
-[DmPath("/obj/effect/light_emitter/fake_outdoors"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/light_emitter/fake_outdoors"), DmGeneratedOnly]
 public partial class obj_effect_light_emitter_fake_outdoors : obj_effect_light_emitter
 {
     // tg: code/modules/mining/mine_items.dm:30

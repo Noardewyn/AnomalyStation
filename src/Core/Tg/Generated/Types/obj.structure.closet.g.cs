@@ -1979,9 +1979,9 @@ public partial class obj_structure_closet_crate_grave_fresh : obj_structure_clos
     }
 }
 
-// tg: code/modules/mining/mine_items.dm:158
-[DmPath("/obj/structure/closet/crate/miningcar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_miningcar : obj_structure_closet_crate
+// tg: code/modules/mining/mine_items.dm:158 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/miningcar")]
+public partial class obj_structure_closet_crate_miningcar
 {
     public float on_rails = 0; // tg: code/modules/mining/mine_items.dm:170
     public float momentum = 0; // tg: code/modules/mining/mine_items.dm:172

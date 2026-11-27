@@ -415,7 +415,6 @@
 /turf/open/misc	blob_act	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall/mineral/plastitanium	rust_turf	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall/mineral/plastitanium	hulk_recoil	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
-/obj/item/pickaxe	suicide_act	M10+	deferred	the suicide verb (M10+)
 
 ## Gaps G4 (D291): the memories
 /datum/memory	serialize_list	M10+	deferred	the datum serialization (the persistence of engravings and the logs; /datum/serialize_list is not translated, datum.cs)
@@ -525,7 +524,6 @@
 /obj/item/book/manual/wiki	display_content	M10+	deferred	the wiki page in a browser window; the client has no web view (no wikiurl is configured either)
 
 ## Gaps J6 (D298): the mining and cargo gear
-/obj/item/shovel	suicide_act	M10+	deferred	the suicide verb (M10+)
 /obj/item/universal_scanner	add_context	M10+	deferred	screentips (D264)
 /obj/structure/closet/crate/grave	add_context	M10+	deferred	screentips (D264)
 
@@ -726,14 +724,6 @@
 /obj/item/beacon	add_context	M10+	deferred	the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred)
 /datum/component/deadchat_control	handle_vv_topic	M10+	deferred	the admins' removal from the variable editor's dropdown (view variables, admin tooling)
 /datum/component/deadchat_control	async_handle_vv_topic	M10+	deferred	the admins' removal from the variable editor's dropdown (view variables, admin tooling)
-
-## The aux base construction console (2026-11-14): not-translated.md section 175
-/obj/machinery/computer/auxiliary_base	ui_interact	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	ui_data	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	ui_act	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	launch_check	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	set_mining_mode	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	set_landing_zone	M10+	deferred	the landing designator (assault_pod/mining): the base's deployment to lavaland comes with mining
 
 ## Gaps E4b (D327): the space vines, not-translated.md section 181
 /datum/spacevine_controller	vv_get_dropdown	M10+	deferred	the Delete Vines option of the view variables menu (admin tooling)

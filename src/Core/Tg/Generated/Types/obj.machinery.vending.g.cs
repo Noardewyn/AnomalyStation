@@ -1459,9 +1459,9 @@ public partial class obj_machinery_vending_sustenance
     }
 }
 
-// tg: code/modules/vending/sustenance.dm:47
-[DmPath("/obj/machinery/vending/sustenance/labor_camp"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_vending_sustenance_labor_camp : obj_machinery_vending_sustenance
+// tg: code/modules/vending/sustenance.dm:47 (the var block of a hand-written class)
+[DmPath("/obj/machinery/vending/sustenance/labor_camp")]
+public partial class obj_machinery_vending_sustenance_labor_camp
 {
     // tg: code/modules/vending/sustenance.dm:47
     public obj_machinery_vending_sustenance_labor_camp()

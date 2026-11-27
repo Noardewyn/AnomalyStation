@@ -2473,9 +2473,9 @@ public partial class obj_structure_sign_poster_official_the_owl_directional_west
     }
 }
 
-// tg: code/game/objects/effects/posters/official.dm:255
-[DmPath("/obj/structure/sign/poster/official/no_erp"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_sign_poster_official_no_erp : obj_structure_sign_poster_official
+// tg: code/game/objects/effects/posters/official.dm:255 (the var block of a hand-written class)
+[DmPath("/obj/structure/sign/poster/official/no_erp")]
+public partial class obj_structure_sign_poster_official_no_erp
 {
     public float corrupted = 0; // tg: code/game/objects/effects/posters/official.dm:259
 
@@ -2489,7 +2489,7 @@ public partial class obj_structure_sign_poster_official_no_erp : obj_structure_s
 }
 
 // tg: code/game/objects/effects/posters/official.dm:278
-[DmPath("/obj/structure/sign/poster/official/no_erp/directional"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/no_erp/directional"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_no_erp_directional : obj_structure_sign_poster_official_no_erp
 {
     // tg: code/game/objects/effects/posters/official.dm:278
@@ -2500,7 +2500,7 @@ public partial class obj_structure_sign_poster_official_no_erp_directional : obj
 }
 
 // tg: code/game/objects/effects/posters/official.dm:278
-[DmPath("/obj/structure/sign/poster/official/no_erp/directional/north"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/no_erp/directional/north"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_no_erp_directional_north : obj_structure_sign_poster_official_no_erp_directional
 {
     // tg: code/game/objects/effects/posters/official.dm:278
@@ -2512,7 +2512,7 @@ public partial class obj_structure_sign_poster_official_no_erp_directional_north
 }
 
 // tg: code/game/objects/effects/posters/official.dm:278
-[DmPath("/obj/structure/sign/poster/official/no_erp/directional/south"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/no_erp/directional/south"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_no_erp_directional_south : obj_structure_sign_poster_official_no_erp_directional
 {
     // tg: code/game/objects/effects/posters/official.dm:278
@@ -2524,7 +2524,7 @@ public partial class obj_structure_sign_poster_official_no_erp_directional_south
 }
 
 // tg: code/game/objects/effects/posters/official.dm:278
-[DmPath("/obj/structure/sign/poster/official/no_erp/directional/east"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/no_erp/directional/east"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_no_erp_directional_east : obj_structure_sign_poster_official_no_erp_directional
 {
     // tg: code/game/objects/effects/posters/official.dm:278
@@ -2536,7 +2536,7 @@ public partial class obj_structure_sign_poster_official_no_erp_directional_east 
 }
 
 // tg: code/game/objects/effects/posters/official.dm:278
-[DmPath("/obj/structure/sign/poster/official/no_erp/directional/west"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/no_erp/directional/west"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_no_erp_directional_west : obj_structure_sign_poster_official_no_erp_directional
 {
     // tg: code/game/objects/effects/posters/official.dm:278

@@ -116,6 +116,15 @@ public static class MapSeam
                 seam.WriteText("_maps/templates/lazy_templates/" + Path.GetFileNameWithoutExtension(converted) + ".dmm", File.ReadAllText(converted));
         }
 
+        // The survival capsules' shelters, <MapsFolder>/templates/shelter_*.as3dmap, at tg's _maps/templates/shelter_*.dmm, where SSmapping's
+        // preloadShelterTemplates finds them (and preloadTemplates, as tg's every file of _maps/templates)
+        string templates = Path.Combine(selection.MapsFolder, "templates");
+        if (Directory.Exists(templates))
+        {
+            foreach (string converted in Directory.GetFiles(templates, "*" + MapText.Extension).OrderBy(f => f, StringComparer.Ordinal))
+                seam.WriteText("_maps/templates/" + Path.GetFileNameWithoutExtension(converted) + ".dmm", File.ReadAllText(converted));
+        }
+
         // Gaps S4d (D327): the converted Mafia maps, <MapsFolder>/minigame/mafia/<name>.as3dmap, at tg's _maps/minigame/mafia/<name>.dmm,
         // where /datum/map_template/mafia's New points its mappath
         string mafiaMaps = Path.Combine(selection.MapsFolder, "minigame", "mafia");

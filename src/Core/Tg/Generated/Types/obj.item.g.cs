@@ -13810,9 +13810,9 @@ public partial class obj_item_pinpointer_syndicate_cyborg
     }
 }
 
-// tg: code/modules/mining/equipment/vent_pointer.dm:2
-[DmPath("/obj/item/pinpointer/vent"), DmGeneratedOnly, DmInert]
-public partial class obj_item_pinpointer_vent : obj_item_pinpointer
+// tg: code/modules/mining/equipment/vent_pointer.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/pinpointer/vent")]
+public partial class obj_item_pinpointer_vent
 {
     // tg: code/modules/mining/equipment/vent_pointer.dm:2
     public obj_item_pinpointer_vent()
@@ -19688,9 +19688,9 @@ public partial class obj_item_gps_visible_debug : obj_item_gps
     }
 }
 
-// tg: code/modules/mining/equipment/survival_pod.dm:208
-[DmPath("/obj/item/gps/computer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gps_computer : obj_item_gps
+// tg: code/modules/mining/equipment/survival_pod.dm:208 (the var block of a hand-written class)
+[DmPath("/obj/item/gps/computer")]
+public partial class obj_item_gps_computer
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:208
     public obj_item_gps_computer()
@@ -35397,9 +35397,9 @@ public partial class obj_item_fishing_hook_jaws : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/mining/equipment/survival_pod.dm:13
-[DmPath("/obj/item/survivalcapsule"), DmGeneratedOnly, DmInert]
-public partial class obj_item_survivalcapsule : obj_item
+// tg: code/modules/mining/equipment/survival_pod.dm:13 (the var block of a hand-written class)
+[DmPath("/obj/item/survivalcapsule")]
+public partial class obj_item_survivalcapsule
 {
     public string template_id = "shelter_alpha"; // tg: code/modules/mining/equipment/survival_pod.dm:19
     public datum_map_template_shelter template; // tg: code/modules/mining/equipment/survival_pod.dm:21
@@ -35448,7 +35448,7 @@ public partial class obj_item_survivalcapsule_fishing_hacked : obj_item_survival
 }
 
 // tg: code/modules/mining/equipment/survival_pod.dm:137
-[DmPath("/obj/item/survivalcapsule/luxury"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/survivalcapsule/luxury"), DmGeneratedOnly]
 public partial class obj_item_survivalcapsule_luxury : obj_item_survivalcapsule
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:137
@@ -35461,7 +35461,7 @@ public partial class obj_item_survivalcapsule_luxury : obj_item_survivalcapsule
 }
 
 // tg: code/modules/mining/equipment/survival_pod.dm:142
-[DmPath("/obj/item/survivalcapsule/luxuryelite"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/survivalcapsule/luxuryelite"), DmGeneratedOnly]
 public partial class obj_item_survivalcapsule_luxuryelite : obj_item_survivalcapsule
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:142
@@ -35474,7 +35474,7 @@ public partial class obj_item_survivalcapsule_luxuryelite : obj_item_survivalcap
 }
 
 // tg: code/modules/mining/equipment/survival_pod.dm:147
-[DmPath("/obj/item/survivalcapsule/bathroom"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/survivalcapsule/bathroom"), DmGeneratedOnly]
 public partial class obj_item_survivalcapsule_bathroom : obj_item_survivalcapsule
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:147
@@ -38778,9 +38778,9 @@ public partial class obj_item_assault_pod
     }
 }
 
-// tg: code/modules/mining/aux_base.dm:258
-[DmPath("/obj/item/assault_pod/mining"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assault_pod_mining : obj_item_assault_pod
+// tg: code/modules/mining/aux_base.dm:258 (the var block of a hand-written class)
+[DmPath("/obj/item/assault_pod/mining")]
+public partial class obj_item_assault_pod_mining
 {
     public float? setting = 0; // tg: code/modules/mining/aux_base.dm:267
     public float no_restrictions = 0; // tg: code/modules/mining/aux_base.dm:268
@@ -38801,7 +38801,7 @@ public partial class obj_item_assault_pod_mining : obj_item_assault_pod
 }
 
 // tg: code/modules/mining/aux_base.dm:307
-[DmPath("/obj/item/assault_pod/mining/unrestricted"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/assault_pod/mining/unrestricted"), DmGeneratedOnly]
 public partial class obj_item_assault_pod_mining_unrestricted : obj_item_assault_pod_mining
 {
     // tg: code/modules/mining/aux_base.dm:307
@@ -38864,9 +38864,9 @@ public partial class obj_item_extraction_pack
     }
 }
 
-// tg: code/modules/mining/fulton.dm:200
-[DmPath("/obj/item/extraction_pack/networked"), DmGeneratedOnly, DmInert]
-public partial class obj_item_extraction_pack_networked : obj_item_extraction_pack
+// tg: code/modules/mining/fulton.dm:200 (the var block of a hand-written class)
+[DmPath("/obj/item/extraction_pack/networked")]
+public partial class obj_item_extraction_pack_networked
 {
     // tg: code/modules/mining/fulton.dm:200
     public obj_item_extraction_pack_networked()
@@ -38979,9 +38979,9 @@ public partial class obj_item_boulder_beacon
     }
 }
 
-// tg: code/modules/mining/equipment/grapple_gun.dm:4
-[DmPath("/obj/item/grapple_gun"), DmGeneratedOnly, DmInert]
-public partial class obj_item_grapple_gun : obj_item
+// tg: code/modules/mining/equipment/grapple_gun.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/grapple_gun")]
+public partial class obj_item_grapple_gun
 {
     public float hooked = 1; // tg: code/modules/mining/equipment/grapple_gun.dm:15
     public object grapple_timer_id; // tg: code/modules/mining/equipment/grapple_gun.dm:17
@@ -39057,9 +39057,9 @@ public partial class obj_item_mining_scanner
 [DmPath("/obj/item/mining_scanner/admin")]
 public partial class obj_item_mining_scanner_admin { }
 
-// tg: code/modules/mining/equipment/mining_tools.dm:3
-[DmPath("/obj/item/pickaxe"), DmGeneratedOnly]
-public partial class obj_item_pickaxe : obj_item
+// tg: code/modules/mining/equipment/mining_tools.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/pickaxe")]
+public partial class obj_item_pickaxe
 {
     // tg: code/modules/mining/equipment/mining_tools.dm:3
     public obj_item_pickaxe()
@@ -39552,9 +39552,9 @@ public partial class obj_item_resonator_upgraded
     }
 }
 
-// tg: code/modules/mining/equipment/survival_pod.dm:286
-[DmPath("/obj/item/fakeartefact"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fakeartefact : obj_item
+// tg: code/modules/mining/equipment/survival_pod.dm:286 (the var block of a hand-written class)
+[DmPath("/obj/item/fakeartefact")]
+public partial class obj_item_fakeartefact
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:286
     public obj_item_fakeartefact()
@@ -39565,9 +39565,9 @@ public partial class obj_item_fakeartefact : obj_item
     }
 }
 
-// tg: code/modules/mining/equipment/wormhole_jaunter.dm:3
-[DmPath("/obj/item/wormhole_jaunter"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wormhole_jaunter : obj_item
+// tg: code/modules/mining/equipment/wormhole_jaunter.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/wormhole_jaunter")]
+public partial class obj_item_wormhole_jaunter
 {
     // tg: code/modules/mining/equipment/wormhole_jaunter.dm:3
     public obj_item_wormhole_jaunter()

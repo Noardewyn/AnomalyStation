@@ -1118,6 +1118,9 @@ public partial class EntityLayer : Node3D
 
     /// <summary>DV96: tg's smart SMG lock reticle, drawn on the mob it locks onto (its host), this far toward the viewer (metres).</summary>
     private const string SmartLockType = "/obj/effect/temp_visual/smartgun_target";
+
+    /// <summary>DV659: how far under the ceiling a raised image over a mob stops (metres).</summary>
+    private const float CeilingClearance = 0.05f;
     private const float SmartLockLift = 0.4f;
 
     private void UpdateVisuals(double now, Camera3D camera)
@@ -1174,8 +1177,14 @@ public partial class EntityLayer : Node3D
                     // DV231: the job icon goes over the head's top right
                     (int right, int up) = DataHudPlacement.Shift(e.Billboard.Raster);
                     float m = TileSpace.TileSize / 32f * spot.Scale;
-                    e.Billboard.ShiftAcross((look.PixelW + right) * m);
-                    e.Billboard.Position += new Vector3(0f, (look.PixelZ + up) * m, 0f);
+                    // the image's own pixel_w and pixel_z are already in its picture (AppearanceCompositor gives the root its post offsets)
+                    e.Billboard.ShiftAcross(right * m);
+                    e.Billboard.Position += new Vector3(0f, up * m, 0f);
+                    // DEVIATION(DV659): an image tg lifts a whole tile over its mob (a robot customer's thought bubble, _venue.dm:93) would stand in
+                    // the ceiling in 3D: it is lowered to stay under the level's ceiling, never below its own place in the mob's cell
+                    float over = e.Billboard.ToGlobal(new Vector3(0f, (float)e.Billboard.Rect.Top, 0f)).Y - (TileSpace.WorldY(at.Z) + WorldScale.WallHeight - CeilingClearance);
+                    if (over > 0f && look.PixelZ > 0)
+                        e.Billboard.Position -= new Vector3(0f, Math.Min(over, look.PixelZ * m), 0f);
                 }
                 e.Node.Visible = drawn;
                 continue;

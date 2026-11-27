@@ -9,9 +9,9 @@ using Anomaly.Core.Kernel;
 
 namespace Anomaly.Core.Tg;
 
-// tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:136
-[DmPath("/datum/crafting_recipe/food/reaction"), DmGeneratedOnly, DmInert]
-public partial class datum_crafting_recipe_food_reaction : datum_crafting_recipe_food
+// tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:136 (the var block of a hand-written class)
+[DmPath("/datum/crafting_recipe/food/reaction")]
+public partial class datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:136
     public datum_crafting_recipe_food_reaction()
@@ -21,9 +21,9 @@ public partial class datum_crafting_recipe_food_reaction : datum_crafting_recipe
     }
 }
 
-// tg: code/modules/food_and_drinks/recipes/soup_guide.dm:2
-[DmPath("/datum/crafting_recipe/food/reaction/soup"), DmGeneratedOnly, DmInert]
-public partial class datum_crafting_recipe_food_reaction_soup : datum_crafting_recipe_food_reaction
+// tg: code/modules/food_and_drinks/recipes/soup_guide.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/crafting_recipe/food/reaction/soup")]
+public partial class datum_crafting_recipe_food_reaction_soup
 {
     public Type expected_container = typeof(obj_item_reagent_containers_cup_bowl); // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:8
 
@@ -44,7 +44,7 @@ public partial class datum_crafting_recipe_food_reaction_soup : datum_crafting_r
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:38
-[DmPath("/datum/crafting_recipe/food/reaction/soup/meatball_soup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/meatball_soup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_meatball_soup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:38
@@ -55,7 +55,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_meatball_soup : da
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:41
-[DmPath("/datum/crafting_recipe/food/reaction/soup/vegetable_soup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/vegetable_soup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_vegetable_soup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:41
@@ -66,7 +66,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_vegetable_soup : d
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:44
-[DmPath("/datum/crafting_recipe/food/reaction/soup/nettle"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/nettle"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_nettle : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:44
@@ -77,7 +77,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_nettle : datum_cra
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:47
-[DmPath("/datum/crafting_recipe/food/reaction/soup/wingfangchu"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/wingfangchu"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_wingfangchu : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:47
@@ -88,7 +88,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_wingfangchu : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:50
-[DmPath("/datum/crafting_recipe/food/reaction/soup/hotchili"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/hotchili"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_hotchili : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:50
@@ -101,7 +101,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_hotchili : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:55
-[DmPath("/datum/crafting_recipe/food/reaction/soup/hotchili/ghost"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/hotchili/ghost"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_hotchili_ghost : datum_crafting_recipe_food_reaction_soup_hotchili
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:55
@@ -113,7 +113,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_hotchili_ghost : d
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:59
-[DmPath("/datum/crafting_recipe/food/reaction/soup/coldchili"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/coldchili"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_coldchili : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:59
@@ -125,7 +125,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_coldchili : datum_
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:63
-[DmPath("/datum/crafting_recipe/food/reaction/soup/clownchili"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/clownchili"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_clownchili : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:63
@@ -137,7 +137,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_clownchili : datum
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:67
-[DmPath("/datum/crafting_recipe/food/reaction/soup/tomatosoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/tomatosoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_tomatosoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:67
@@ -148,7 +148,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_tomatosoup : datum
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:70
-[DmPath("/datum/crafting_recipe/food/reaction/soup/bloodsoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/bloodsoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_bloodsoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:70
@@ -163,7 +163,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_bloodsoup : datum_
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:79
-[DmPath("/datum/crafting_recipe/food/reaction/soup/eyeballsoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/eyeballsoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_eyeballsoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:79
@@ -174,7 +174,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_eyeballsoup : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:82
-[DmPath("/datum/crafting_recipe/food/reaction/soup/misosoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/misosoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_misosoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:82
@@ -185,7 +185,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_misosoup : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:85
-[DmPath("/datum/crafting_recipe/food/reaction/soup/slimesoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/slimesoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_slimesoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:85
@@ -196,7 +196,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_slimesoup : datum_
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:88
-[DmPath("/datum/crafting_recipe/food/reaction/soup/slimesoup_alt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/slimesoup_alt"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_slimesoup_alt : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:88
@@ -207,7 +207,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_slimesoup_alt : da
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:91
-[DmPath("/datum/crafting_recipe/food/reaction/soup/clownstears"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/clownstears"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_clownstears : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:91
@@ -218,7 +218,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_clownstears : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:94
-[DmPath("/datum/crafting_recipe/food/reaction/soup/mysterysoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/mysterysoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_mysterysoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:94
@@ -229,7 +229,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_mysterysoup : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:97
-[DmPath("/datum/crafting_recipe/food/reaction/soup/monkey"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/monkey"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_monkey : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:97
@@ -240,7 +240,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_monkey : datum_cra
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:100
-[DmPath("/datum/crafting_recipe/food/reaction/soup/mushroomsoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/mushroomsoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_mushroomsoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:100
@@ -251,7 +251,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_mushroomsoup : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:103
-[DmPath("/datum/crafting_recipe/food/reaction/soup/beetsoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/beetsoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_beetsoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:103
@@ -262,7 +262,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_beetsoup : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:106
-[DmPath("/datum/crafting_recipe/food/reaction/soup/stew"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/stew"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_stew : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:106
@@ -273,7 +273,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_stew : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:109
-[DmPath("/datum/crafting_recipe/food/reaction/soup/sweetpotatosoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/sweetpotatosoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_sweetpotatosoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:109
@@ -284,7 +284,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_sweetpotatosoup : 
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:112
-[DmPath("/datum/crafting_recipe/food/reaction/soup/redbeetsoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/redbeetsoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_redbeetsoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:112
@@ -295,7 +295,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_redbeetsoup : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:115
-[DmPath("/datum/crafting_recipe/food/reaction/soup/onionsoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/onionsoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_onionsoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:115
@@ -306,7 +306,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_onionsoup : datum_
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:118
-[DmPath("/datum/crafting_recipe/food/reaction/soup/bisque"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/bisque"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_bisque : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:118
@@ -317,7 +317,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_bisque : datum_cra
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:121
-[DmPath("/datum/crafting_recipe/food/reaction/soup/bungocurry"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/bungocurry"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_bungocurry : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:121
@@ -328,7 +328,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_bungocurry : datum
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:124
-[DmPath("/datum/crafting_recipe/food/reaction/soup/electron"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/electron"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_electron : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:124
@@ -339,7 +339,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_electron : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:127
-[DmPath("/datum/crafting_recipe/food/reaction/soup/peasoup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/peasoup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_peasoup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:127
@@ -350,7 +350,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_peasoup : datum_cr
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:130
-[DmPath("/datum/crafting_recipe/food/reaction/soup/indian_curry"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/indian_curry"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_indian_curry : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:130
@@ -361,7 +361,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_indian_curry : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:133
-[DmPath("/datum/crafting_recipe/food/reaction/soup/oatmeal"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/oatmeal"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_oatmeal : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:133
@@ -372,7 +372,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_oatmeal : datum_cr
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:136
-[DmPath("/datum/crafting_recipe/food/reaction/soup/zurek"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/zurek"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_zurek : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:136
@@ -383,7 +383,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_zurek : datum_craf
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:139
-[DmPath("/datum/crafting_recipe/food/reaction/soup/cullen_skink"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/cullen_skink"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_cullen_skink : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:139
@@ -394,7 +394,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_cullen_skink : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:142
-[DmPath("/datum/crafting_recipe/food/reaction/soup/chicken_noodle_soup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/chicken_noodle_soup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_chicken_noodle_soup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:142
@@ -405,7 +405,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_chicken_noodle_sou
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:145
-[DmPath("/datum/crafting_recipe/food/reaction/soup/corn_chowder"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/corn_chowder"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_corn_chowder : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:145
@@ -416,7 +416,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_corn_chowder : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:148
-[DmPath("/datum/crafting_recipe/food/reaction/soup/chili_sin_carne"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/chili_sin_carne"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_chili_sin_carne : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:148
@@ -429,7 +429,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_chili_sin_carne : 
 }
 
 // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:153
-[DmPath("/datum/crafting_recipe/food/reaction/soup/chili_sin_carne/ghost"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/chili_sin_carne/ghost"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_chili_sin_carne_ghost : datum_crafting_recipe_food_reaction_soup_chili_sin_carne
 {
     // tg: code/modules/food_and_drinks/recipes/soup_guide.dm:153
@@ -441,7 +441,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_chili_sin_carne_gh
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:552
-[DmPath("/datum/crafting_recipe/food/reaction/soup/atrakor_dumplings"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/atrakor_dumplings"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_atrakor_dumplings : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:552
@@ -453,7 +453,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_atrakor_dumplings 
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:556
-[DmPath("/datum/crafting_recipe/food/reaction/soup/meatball_noodles"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/meatball_noodles"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_meatball_noodles : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:556
@@ -465,7 +465,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_meatball_noodles :
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:560
-[DmPath("/datum/crafting_recipe/food/reaction/soup/black_broth"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/black_broth"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_black_broth : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:560
@@ -477,7 +477,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_black_broth : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:564
-[DmPath("/datum/crafting_recipe/food/reaction/soup/jellyfish_stew"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/jellyfish_stew"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_jellyfish_stew : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:564
@@ -489,7 +489,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_jellyfish_stew : d
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:568
-[DmPath("/datum/crafting_recipe/food/reaction/soup/jellyfish_stew_two"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/jellyfish_stew_two"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_jellyfish_stew_two : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:568
@@ -501,7 +501,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_jellyfish_stew_two
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:572
-[DmPath("/datum/crafting_recipe/food/reaction/soup/rootbread_soup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/rootbread_soup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_rootbread_soup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_lizard.dm:572
@@ -513,7 +513,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_rootbread_soup : d
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1051
-[DmPath("/datum/crafting_recipe/food/reaction/soup/boilednoodles"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/boilednoodles"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_boilednoodles : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1051
@@ -525,7 +525,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_boilednoodles : da
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1055
-[DmPath("/datum/crafting_recipe/food/reaction/soup/dashi"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/dashi"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_dashi : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1055
@@ -537,7 +537,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_dashi : datum_craf
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1059
-[DmPath("/datum/crafting_recipe/food/reaction/soup/teriyaki"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/teriyaki"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_teriyaki : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1059
@@ -549,7 +549,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_teriyaki : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1063
-[DmPath("/datum/crafting_recipe/food/reaction/soup/curry_sauce"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/curry_sauce"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_curry_sauce : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1063
@@ -561,7 +561,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_curry_sauce : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1067
-[DmPath("/datum/crafting_recipe/food/reaction/soup/shoyu_ramen"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/shoyu_ramen"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_shoyu_ramen : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1067
@@ -573,7 +573,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_shoyu_ramen : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1071
-[DmPath("/datum/crafting_recipe/food/reaction/soup/gyuramen"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/gyuramen"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_gyuramen : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1071
@@ -585,7 +585,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_gyuramen : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1075
-[DmPath("/datum/crafting_recipe/food/reaction/soup/new_osaka_sunrise"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/new_osaka_sunrise"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_new_osaka_sunrise : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1075
@@ -597,7 +597,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_new_osaka_sunrise 
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1079
-[DmPath("/datum/crafting_recipe/food/reaction/soup/satsuma_black"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/satsuma_black"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_satsuma_black : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1079
@@ -609,7 +609,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_satsuma_black : da
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1083
-[DmPath("/datum/crafting_recipe/food/reaction/soup/dragon_ramen"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/dragon_ramen"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_dragon_ramen : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1083
@@ -621,7 +621,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_dragon_ramen : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1087
-[DmPath("/datum/crafting_recipe/food/reaction/soup/hong_kong_borscht"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/hong_kong_borscht"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_hong_kong_borscht : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1087
@@ -633,7 +633,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_hong_kong_borscht 
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1091
-[DmPath("/datum/crafting_recipe/food/reaction/soup/hong_kong_macaroni"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/hong_kong_macaroni"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_hong_kong_macaroni : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1091
@@ -645,7 +645,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_hong_kong_macaroni
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1095
-[DmPath("/datum/crafting_recipe/food/reaction/soup/foxs_prize_soup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/foxs_prize_soup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_foxs_prize_soup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1095
@@ -657,7 +657,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_foxs_prize_soup : 
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1099
-[DmPath("/datum/crafting_recipe/food/reaction/soup/secret_noodle_soup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/secret_noodle_soup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_secret_noodle_soup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1099
@@ -669,7 +669,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_secret_noodle_soup
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1103
-[DmPath("/datum/crafting_recipe/food/reaction/soup/budae_jjigae"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/budae_jjigae"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_budae_jjigae : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1103
@@ -681,7 +681,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_budae_jjigae : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1107
-[DmPath("/datum/crafting_recipe/food/reaction/soup/volt_fish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/volt_fish"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_volt_fish : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_martian.dm:1107
@@ -694,7 +694,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_volt_fish : datum_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:400
-[DmPath("/datum/crafting_recipe/food/reaction/soup/cottonball"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/cottonball"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_cottonball : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:400
@@ -707,7 +707,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_cottonball : datum
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:405
-[DmPath("/datum/crafting_recipe/food/reaction/soup/cheese"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/cheese"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_cheese : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:405
@@ -720,7 +720,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_cheese : datum_cra
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:410
-[DmPath("/datum/crafting_recipe/food/reaction/soup/seed"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/seed"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_seed : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:410
@@ -733,7 +733,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_seed : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:415
-[DmPath("/datum/crafting_recipe/food/reaction/soup/beans"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/beans"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_beans : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:415
@@ -746,7 +746,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_beans : datum_craf
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:420
-[DmPath("/datum/crafting_recipe/food/reaction/soup/moth_oats"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/moth_oats"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_moth_oats : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:420
@@ -759,7 +759,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_moth_oats : datum_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:425
-[DmPath("/datum/crafting_recipe/food/reaction/soup/fire_soup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/fire_soup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_fire_soup : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:425
@@ -772,7 +772,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_fire_soup : datum_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:430
-[DmPath("/datum/crafting_recipe/food/reaction/soup/rice_porridge"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/rice_porridge"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_rice_porridge : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:430
@@ -784,7 +784,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_rice_porridge : da
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:434
-[DmPath("/datum/crafting_recipe/food/reaction/soup/toechtauese_rice_porridge"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/toechtauese_rice_porridge"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_toechtauese_rice_porridge : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:434
@@ -797,7 +797,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_toechtauese_rice_p
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:439
-[DmPath("/datum/crafting_recipe/food/reaction/soup/red_porridge"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/red_porridge"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_red_porridge : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:439
@@ -810,7 +810,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_red_porridge : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:444
-[DmPath("/datum/crafting_recipe/food/reaction/soup/cornmeal_porridge"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/cornmeal_porridge"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_cornmeal_porridge : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:444
@@ -822,7 +822,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_cornmeal_porridge 
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:448
-[DmPath("/datum/crafting_recipe/food/reaction/soup/cheese_porridge"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soup/cheese_porridge"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soup_cheese_porridge : datum_crafting_recipe_food_reaction_soup
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_moth.dm:448
@@ -834,7 +834,7 @@ public partial class datum_crafting_recipe_food_reaction_soup_cheese_porridge : 
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:164
-[DmPath("/datum/crafting_recipe/food/reaction/candle"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/candle"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_candle : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:164
@@ -847,7 +847,7 @@ public partial class datum_crafting_recipe_food_reaction_candle : datum_crafting
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:169
-[DmPath("/datum/crafting_recipe/food/reaction/tofu"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/tofu"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_tofu : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:169
@@ -860,7 +860,7 @@ public partial class datum_crafting_recipe_food_reaction_tofu : datum_crafting_r
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:174
-[DmPath("/datum/crafting_recipe/food/reaction/candycorn"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/candycorn"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_candycorn : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:174
@@ -874,7 +874,7 @@ public partial class datum_crafting_recipe_food_reaction_candycorn : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:180
-[DmPath("/datum/crafting_recipe/food/reaction/chocolatepudding"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/chocolatepudding"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_chocolatepudding : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:180
@@ -886,7 +886,7 @@ public partial class datum_crafting_recipe_food_reaction_chocolatepudding : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:184
-[DmPath("/datum/crafting_recipe/food/reaction/vanillapudding"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/vanillapudding"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_vanillapudding : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:184
@@ -898,7 +898,7 @@ public partial class datum_crafting_recipe_food_reaction_vanillapudding : datum_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:188
-[DmPath("/datum/crafting_recipe/food/reaction/chocolatebar"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/chocolatebar"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_chocolatebar : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:188
@@ -913,7 +913,7 @@ public partial class datum_crafting_recipe_food_reaction_chocolatebar : datum_cr
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:195
-[DmPath("/datum/crafting_recipe/food/reaction/chocolatebar/chocomilk"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/chocolatebar/chocomilk"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_chocolatebar_chocomilk : datum_crafting_recipe_food_reaction_chocolatebar
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:195
@@ -925,7 +925,7 @@ public partial class datum_crafting_recipe_food_reaction_chocolatebar_chocomilk 
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:199
-[DmPath("/datum/crafting_recipe/food/reaction/chocolatebar/vegan"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/chocolatebar/vegan"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_chocolatebar_vegan : datum_crafting_recipe_food_reaction_chocolatebar
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:199
@@ -937,7 +937,7 @@ public partial class datum_crafting_recipe_food_reaction_chocolatebar_vegan : da
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:203
-[DmPath("/datum/crafting_recipe/food/reaction/soysauce"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/soysauce"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_soysauce : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:203
@@ -949,7 +949,7 @@ public partial class datum_crafting_recipe_food_reaction_soysauce : datum_crafti
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:207
-[DmPath("/datum/crafting_recipe/food/reaction/corn_syrup"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/corn_syrup"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_corn_syrup : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:207
@@ -961,7 +961,7 @@ public partial class datum_crafting_recipe_food_reaction_corn_syrup : datum_craf
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:211
-[DmPath("/datum/crafting_recipe/food/reaction/caramel"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/caramel"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_caramel : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:211
@@ -974,7 +974,7 @@ public partial class datum_crafting_recipe_food_reaction_caramel : datum_craftin
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:216
-[DmPath("/datum/crafting_recipe/food/reaction/cheesewheel"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/cheesewheel"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_cheesewheel : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:216
@@ -986,7 +986,7 @@ public partial class datum_crafting_recipe_food_reaction_cheesewheel : datum_cra
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:220
-[DmPath("/datum/crafting_recipe/food/reaction/synthmeat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/synthmeat"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_synthmeat : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:220
@@ -999,7 +999,7 @@ public partial class datum_crafting_recipe_food_reaction_synthmeat : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:225
-[DmPath("/datum/crafting_recipe/food/reaction/imitationcarpmeat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/imitationcarpmeat"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_imitationcarpmeat : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:225
@@ -1012,7 +1012,7 @@ public partial class datum_crafting_recipe_food_reaction_imitationcarpmeat : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:230
-[DmPath("/datum/crafting_recipe/food/reaction/dough"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/dough"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_dough : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:230
@@ -1025,7 +1025,7 @@ public partial class datum_crafting_recipe_food_reaction_dough : datum_crafting_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:235
-[DmPath("/datum/crafting_recipe/food/reaction/cakebatter"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/cakebatter"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_cakebatter : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:235
@@ -1039,7 +1039,7 @@ public partial class datum_crafting_recipe_food_reaction_cakebatter : datum_craf
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:241
-[DmPath("/datum/crafting_recipe/food/reaction/cakebatter/vegan"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/cakebatter/vegan"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_cakebatter_vegan : datum_crafting_recipe_food_reaction_cakebatter
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:241
@@ -1052,7 +1052,7 @@ public partial class datum_crafting_recipe_food_reaction_cakebatter_vegan : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:246
-[DmPath("/datum/crafting_recipe/food/reaction/pancakebatter"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/pancakebatter"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_pancakebatter : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:246
@@ -1065,7 +1065,7 @@ public partial class datum_crafting_recipe_food_reaction_pancakebatter : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:251
-[DmPath("/datum/crafting_recipe/food/reaction/uncooked_rice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/uncooked_rice"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_uncooked_rice : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:251
@@ -1078,7 +1078,7 @@ public partial class datum_crafting_recipe_food_reaction_uncooked_rice : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:256
-[DmPath("/datum/crafting_recipe/food/reaction/bbqsauce"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/bbqsauce"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_bbqsauce : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:256
@@ -1091,7 +1091,7 @@ public partial class datum_crafting_recipe_food_reaction_bbqsauce : datum_crafti
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:261
-[DmPath("/datum/crafting_recipe/food/reaction/gravy"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/gravy"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_gravy : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:261
@@ -1104,7 +1104,7 @@ public partial class datum_crafting_recipe_food_reaction_gravy : datum_crafting_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:266
-[DmPath("/datum/crafting_recipe/food/reaction/mothic_pizza_dough"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/mothic_pizza_dough"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_mothic_pizza_dough : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:266
@@ -1118,7 +1118,7 @@ public partial class datum_crafting_recipe_food_reaction_mothic_pizza_dough : da
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:272
-[DmPath("/datum/crafting_recipe/food/reaction/curd_cheese"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/curd_cheese"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_curd_cheese : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:272
@@ -1130,7 +1130,7 @@ public partial class datum_crafting_recipe_food_reaction_curd_cheese : datum_cra
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:276
-[DmPath("/datum/crafting_recipe/food/reaction/mozzarella"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/mozzarella"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_mozzarella : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:276
@@ -1142,7 +1142,7 @@ public partial class datum_crafting_recipe_food_reaction_mozzarella : datum_craf
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:280
-[DmPath("/datum/crafting_recipe/food/reaction/cornmeal_batter"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/cornmeal_batter"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_cornmeal_batter : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:280
@@ -1155,7 +1155,7 @@ public partial class datum_crafting_recipe_food_reaction_cornmeal_batter : datum
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:285
-[DmPath("/datum/crafting_recipe/food/reaction/cornbread"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/cornbread"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_cornbread : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:285
@@ -1168,7 +1168,7 @@ public partial class datum_crafting_recipe_food_reaction_cornbread : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:290
-[DmPath("/datum/crafting_recipe/food/reaction/yoghurt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/yoghurt"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_yoghurt : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:290
@@ -1181,7 +1181,7 @@ public partial class datum_crafting_recipe_food_reaction_yoghurt : datum_craftin
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:295
-[DmPath("/datum/crafting_recipe/food/reaction/olive_oil"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/olive_oil"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_olive_oil : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:295
@@ -1194,7 +1194,7 @@ public partial class datum_crafting_recipe_food_reaction_olive_oil : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:300
-[DmPath("/datum/crafting_recipe/food/reaction/olive_oil/upconvert"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/olive_oil/upconvert"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_olive_oil_upconvert : datum_crafting_recipe_food_reaction_olive_oil
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:300
@@ -1205,7 +1205,7 @@ public partial class datum_crafting_recipe_food_reaction_olive_oil_upconvert : d
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:303
-[DmPath("/datum/crafting_recipe/food/reaction/moonshine"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/moonshine"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_moonshine : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:303
@@ -1217,7 +1217,7 @@ public partial class datum_crafting_recipe_food_reaction_moonshine : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:307
-[DmPath("/datum/crafting_recipe/food/reaction/martian_batter"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/martian_batter"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_martian_batter : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:307
@@ -1229,7 +1229,7 @@ public partial class datum_crafting_recipe_food_reaction_martian_batter : datum_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:311
-[DmPath("/datum/crafting_recipe/food/reaction/grounding_neutralise"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/grounding_neutralise"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_grounding_neutralise : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:311
@@ -1241,7 +1241,7 @@ public partial class datum_crafting_recipe_food_reaction_grounding_neutralise : 
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:315
-[DmPath("/datum/crafting_recipe/food/reaction/saltwater"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/saltwater"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_saltwater : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:315
@@ -1252,7 +1252,7 @@ public partial class datum_crafting_recipe_food_reaction_saltwater : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:318
-[DmPath("/datum/crafting_recipe/food/reaction/teslium"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/teslium"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_teslium : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:318
@@ -1263,7 +1263,7 @@ public partial class datum_crafting_recipe_food_reaction_teslium : datum_craftin
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:321
-[DmPath("/datum/crafting_recipe/food/reaction/vinegar_grape"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/vinegar_grape"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_vinegar_grape : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:321
@@ -1274,7 +1274,7 @@ public partial class datum_crafting_recipe_food_reaction_vinegar_grape : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:324
-[DmPath("/datum/crafting_recipe/food/reaction/vinegar_wine"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/vinegar_wine"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_vinegar_wine : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:324
@@ -1285,7 +1285,7 @@ public partial class datum_crafting_recipe_food_reaction_vinegar_wine : datum_cr
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:327
-[DmPath("/datum/crafting_recipe/food/reaction/salt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/reaction/salt"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_reaction_salt : datum_crafting_recipe_food_reaction
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:327

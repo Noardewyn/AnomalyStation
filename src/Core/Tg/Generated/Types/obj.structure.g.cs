@@ -6139,26 +6139,12 @@ public partial class obj_structure_holosign_barrier_medical
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/_venue.dm:319
-[DmPath("/obj/structure/holosign/robot_seat"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_holosign_robot_seat : obj_structure_holosign
-{
-    public Type linked_venue = typeof(datum_venue); // tg: code/modules/food_and_drinks/restaurant/_venue.dm:325
-
-    // tg: code/modules/food_and_drinks/restaurant/_venue.dm:319
-    public obj_structure_holosign_robot_seat()
-    {
-        density = 0;
-        desc = "Used to indicate a place to sit for a robot tourist. I better be careful.";
-        icon = Dm.resource("icons/effects/effects.dmi");
-        icon_state = "eating_zone";
-        layer = 3.7f;
-        use_vis_overlay = 0;
-    }
-}
+// tg: code/modules/food_and_drinks/restaurant/_venue.dm:319 (the vars the hand-written class does not declare)
+[DmPath("/obj/structure/holosign/robot_seat")]
+public partial class obj_structure_holosign_robot_seat { }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:65
-[DmPath("/obj/structure/holosign/robot_seat/restaurant"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/holosign/robot_seat/restaurant"), DmGeneratedOnly]
 public partial class obj_structure_holosign_robot_seat_restaurant : obj_structure_holosign_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:65
@@ -6171,7 +6157,7 @@ public partial class obj_structure_holosign_robot_seat_restaurant : obj_structur
 }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:98
-[DmPath("/obj/structure/holosign/robot_seat/bar"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/holosign/robot_seat/bar"), DmGeneratedOnly]
 public partial class obj_structure_holosign_robot_seat_bar : obj_structure_holosign_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:98

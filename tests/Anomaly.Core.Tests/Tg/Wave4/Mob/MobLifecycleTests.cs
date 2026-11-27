@@ -558,6 +558,8 @@ public class MobLifecycleTests
             .Where(t => !typeof(obj_structure_ethereal_crystal).IsAssignableFrom(t)) // unit_test.dm:325: the ethereal crystal needs its heart (gaps OG1)
             .Where(t => !typeof(obj_item_modular_computer_processor).IsAssignableFrom(t)) // unit_test.dm:309: the console's processing unit crashes outside its console (live since E2)
             .Where(t => !typeof(obj_machinery_space_heater_improvised_chem_heater).IsAssignableFrom(t)) // its RefreshParts reads its subsystem's wait (spaceheater.dm:537), and MobRoom's Master lists no SSmachines (E9)
+            .Where(t => t != typeof(obj_machinery_restaurant_portal) && t != typeof(obj_structure_holosign_robot_seat)) // unit_test.dm:276, :278: template types
+            .Where(t => t != typeof(mob_living_basic_robot_customer)) // its Initialize reads SSrestaurant (robot_customer.dm:34), which MobRoom's Master lacks
             .Where(t => !typeof(obj_machinery_power_manufacturing_crafter).IsAssignableFrom(t)) // its Initialize starts processing on SSmanufacturing (crafter.dm:25), which MobRoom's Master does not list (E16)
             // unit_test.dm:307, :339, :373 (silicons SI2): the silicons' PDAs delete themselves outside a silicon, the preset-model
             // cyborgs invoke async in their Initialize, and the robot models never spawn outside a robot

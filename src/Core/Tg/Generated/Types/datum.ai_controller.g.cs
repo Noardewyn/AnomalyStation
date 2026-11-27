@@ -3973,9 +3973,9 @@ public partial class datum_ai_controller_vending_machine_eventspawn : datum_ai_c
     }
 }
 
-// tg: code/datums/ai/robot_customer/robot_customer_controller.dm:2
-[DmPath("/datum/ai_controller/robot_customer"), DmGeneratedOnly, DmInert]
-public partial class datum_ai_controller_robot_customer : datum_ai_controller
+// tg: code/datums/ai/robot_customer/robot_customer_controller.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/ai_controller/robot_customer")]
+public partial class datum_ai_controller_robot_customer
 {
     // tg: code/datums/ai/robot_customer/robot_customer_controller.dm:2
     public datum_ai_controller_robot_customer()

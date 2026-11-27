@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Gaps S1 (D291): the whole file. The kitchen's links (the grill and the oven, the microwave) came with gaps H2 (D333); the venue
-// price (the restaurants) and the decomposition of food left on the floor (decomposition.dm) stay Dm.Deferred leaves; its germs came
-// with the diseases (gaps VI1). The var block is generated.
+// price came with the restaurant; the decomposition of food left on the floor (decomposition.dm) stays a Dm.Deferred leaf; its germs
+// came with the diseases (gaps VI1). The var block is generated.
 
 ///Abstract class to allow us to easily create all the generic "normal" food without too much copy pasta of adding more components
 // tg: code/modules/food_and_drinks/food/_food.dm:2
@@ -46,8 +46,7 @@ public partial class obj_item_food : obj_item
         if (Dm.truthy(eatverbs))
             eatverbs = string_list(eatverbs) as DmList;
         if (Dm.truthy(venue_value))
-            // AddElement(/datum/element/venue_price, venue_value)
-            Dm.Deferred("code/modules/food_and_drinks/food/_food.dm:89", "Initialize: the venue price of food (the restaurant venues, after the core version)");
+            Waiting.NoSleep(AddElement(typeof(datum_element_venue_price), venue_value));
 
         Waiting.NoSleep(make_edible());
         Waiting.NoSleep(make_processable());

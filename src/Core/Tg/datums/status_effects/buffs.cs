@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (syndicate G4c, D316): His Grace's effect and its alert; silicons SI2 (D326) the Synthpax immunity; gaps B1 (D327) the desensitization of the combat PTSD and the obsession; gaps K1
 // (D327) the changeling's Fleshmend; gaps X5 the alien nest's sustenance; gaps MO1 (D333) the MODsuit jump jet's anti-gravity; gaps SL1
 // (D333) the exercised effect of a workout (its mood event since gaps MS1); gaps RG1
-// (D339) the garibaldi's revolutionary resilience; the regenerative core's tendrils; the blood-drunk eye's blooddrunk; the bottle
+// (D339) the garibaldi's revolutionary resilience; the Envirochow's health buff (the restaurant); the regenerative core's tendrils; the blood-drunk eye's blooddrunk; the bottle
 // of mayhem's frenzy; the Rod of Asclepius' hippocratic oath; the other buffs come with their systems.
 
 //Largely beneficial effects go here, even if they have drawbacks.
@@ -738,4 +738,35 @@ public sealed partial class TgState
 {
     // tg: code/datums/status_effects/buffs.dm:280 (var/static/list/organ_healing)
     internal DmList datum_status_effect_hippocratic_oath__on_apply__organ_healing;
+}
+
+// tg: code/datums/status_effects/buffs.dm:500
+public partial class datum_status_effect_limited_buff_health_buff : datum_status_effect_limited_buff
+{
+    // tg: code/datums/status_effects/buffs.dm:512
+    public override async DmTask<object> on_creation(mob_living new_owner = null, params object[] __extra)
+    {
+        historic_max_health = new_owner.maxHealth;
+        return await base.on_creation(new_owner, __extra);
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:516
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        object dot = await base.on_apply(__extra);
+        float health_increase = round(max(fragile_mob_health_buff, Dm.num(historic_max_health) * health_buff_modifier));
+        owner.maxHealth += health_increase;
+        owner.balloon_alert_to_viewers(I18n.T("health buffed"));
+        to_chat(owner, span_nicegreen(I18n.T("You feel healthy, like if your body is little stronger than it was a moment ago.")));
+
+        await owner.adjust_brute_loss(-(health_increase * healing_modifier));
+        return dot;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:525
+    public override void maxed_out()
+    {
+        base.maxed_out();
+        to_chat(owner, span_warning(I18n.T("You don't feel any healthier.")));
+    }
 }

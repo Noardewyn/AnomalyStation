@@ -1902,25 +1902,25 @@ public partial class datum_bt_node_ai_behavior_vendor_rise_up
 [DmPath("/datum/bt_node/ai_behavior/robot_customer"), DmGeneratedOnly]
 public partial class datum_bt_node_ai_behavior_robot_customer : datum_bt_node_ai_behavior { }
 
-// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:5
-[DmPath("/datum/bt_node/ai_behavior/robot_customer/find_seat"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_robot_customer_find_seat : datum_bt_node_ai_behavior_robot_customer { }
+// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/robot_customer/find_seat")]
+public partial class datum_bt_node_ai_behavior_robot_customer_find_seat { }
 
-// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:38
-[DmPath("/datum/bt_node/ai_behavior/robot_customer/order_food"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_robot_customer_order_food : datum_bt_node_ai_behavior_robot_customer { }
+// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:38 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/robot_customer/order_food")]
+public partial class datum_bt_node_ai_behavior_robot_customer_order_food { }
 
-// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:72
-[DmPath("/datum/bt_node/ai_behavior/robot_customer/wait_for_food"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_robot_customer_wait_for_food : datum_bt_node_ai_behavior_robot_customer { }
+// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:72 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/robot_customer/wait_for_food")]
+public partial class datum_bt_node_ai_behavior_robot_customer_wait_for_food { }
 
-// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:119
-[DmPath("/datum/bt_node/ai_behavior/robot_customer/find_exit_portal"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_robot_customer_find_exit_portal : datum_bt_node_ai_behavior_robot_customer { }
+// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:119 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/robot_customer/find_exit_portal")]
+public partial class datum_bt_node_ai_behavior_robot_customer_find_exit_portal { }
 
-// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:136
-[DmPath("/datum/bt_node/ai_behavior/robot_customer/leave_venue"), DmGeneratedOnly, DmInert]
-public partial class datum_bt_node_ai_behavior_robot_customer_leave_venue : datum_bt_node_ai_behavior_robot_customer { }
+// tg: code/datums/ai/robot_customer/robot_customer_behaviors.dm:136 (the var block of a hand-written class)
+[DmPath("/datum/bt_node/ai_behavior/robot_customer/leave_venue")]
+public partial class datum_bt_node_ai_behavior_robot_customer_leave_venue { }
 
 // tg: code/modules/mob/living/basic/alien/alien_ai.dm:44 (the var block of a hand-written class)
 [DmPath("/datum/bt_node/ai_behavior/plant_alien_weeds")]

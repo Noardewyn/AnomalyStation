@@ -501,8 +501,8 @@
 /obj/effect/dummy/phased_mob	can_blob_attack	M10+	deferred	the blob (not ported)
 
 ## Gaps J2 (D298): the jobs that could not be taken, their gear, the mime's spells, the bible and null rod, the seed's stats
-/datum/job/bartender	award_service	M10+	deferred	the service awards (the medals and SSrestaurant's venues, after M10)
-/datum/job/cook	award_service	M10+	deferred	the service awards (the medals and SSrestaurant's venues, after M10)
+/datum/job/bartender	award_service	M10+	deferred	the service awards and the tourist scores (the achievements, D332; SSrestaurant's venues are live since gaps KT1)
+/datum/job/cook	award_service	M10+	deferred	the service awards and the tourist scores (the achievements, D332; SSrestaurant's venues are live since gaps KT1)
 /obj/item/book	add_context	M10+	deferred	the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred)
 
 ## Gaps J4 (D298): security and detective gear

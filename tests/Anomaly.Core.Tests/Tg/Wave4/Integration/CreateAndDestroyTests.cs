@@ -71,7 +71,12 @@ public class CreateAndDestroyTests
         || typeof(obj_item_modular_computer_pda_silicon).IsAssignableFrom(t) || typeof(mob_living_silicon_robot_model).IsAssignableFrom(t)
         || typeof(obj_item_robot_model).IsAssignableFrom(t)
         // unit_test.dm:343: the sliding puzzle "spawns turf changing stuff" (its vault floors and tiles; live since the Lavaland ruins)
-        || typeof(obj_effect_sliding_puzzle).IsAssignableFrom(t);
+        || typeof(obj_effect_sliding_puzzle).IsAssignableFrom(t)
+        // unit_test.dm:276, :278: the restaurant's portal and seat are template types
+        || t == typeof(obj_machinery_restaurant_portal) || t == typeof(obj_structure_holosign_robot_seat)
+        // the robot customer's Initialize reads SSrestaurant's venues and customers (robot_customer.dm:34), which the harness world
+        // does not initialize (tg's runs with every subsystem)
+        || t == typeof(mob_living_basic_robot_customer);
 
     private static List<Type> ValidMovableTypes() => datum_unit_test_create_and_destroy.TranslatedMovableTypes().Where(t => !Uncreatable(t)).ToList();
 

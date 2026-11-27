@@ -83,3 +83,74 @@ public partial class obj_item_food_rootdoughslice : obj_item_food
         await AddComponent(typeof(datum_component_bakeable), typeof(obj_item_food_rootroll), rand(15 * SECONDS, 25 * SECONDS), TRUE, TRUE);
     }
 }
+
+// tg: code/modules/food_and_drinks/food/lizard.dm:130
+public partial class obj_item_food_moonfish_eggs : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/lizard.dm:145
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        //Moonfish can lay eggs inside aquariums (unaffected by breeding, so think of them as unfertilizard)
+        RegisterSignal(this, COMSIG_AQUARIUM_CONTENT_GENERATE_APPEARANCE, nameof(generate_aquarium_appearance));
+        RegisterSignal(this, COMSIG_AQUARIUM_CONTENT_RANDOMIZE_POSITION, nameof(randomize_aquarium_position));
+        // AddComponent(/datum/component/aquarium_content): the aquariums come with the fishing (the component is inert until then)
+        Dm.Deferred("code/modules/food_and_drinks/food/lizard.dm:150", "Initialize: AddComponent(/datum/component/aquarium_content), the eggs put in an aquarium (the fishing's aquariums)");
+        RegisterSignal(this, COMSIG_MOVABLE_GET_AQUARIUM_BEAUTY, nameof(get_aquarium_beauty));
+        return dot;
+    }
+
+    // tg: code/modules/food_and_drinks/food/lizard.dm:153
+    [SignalHandler]
+    public virtual void generate_aquarium_appearance(datum source = null, obj_effect_aquarium visual = null)
+    {
+        visual.icon = icon;
+        visual.icon_state = "moonfish_eggs_aquarium";
+        visual.layer_mode = AQUARIUM_LAYER_MODE_BOTTOM;
+    }
+
+    // tg: code/modules/food_and_drinks/food/lizard.dm:159
+    [SignalHandler]
+    public virtual void randomize_aquarium_position(datum source = null, obj_structure_aquarium current_aquarium = null, obj_effect_aquarium visual = null)
+    {
+        float sprite_width = 5;
+        float sprite_height = 4;
+        float pw_min = Dm.num(visual.aquarium_zone_min_pw);
+        float pw_max = Dm.num(visual.aquarium_zone_max_pw) - sprite_width;
+        float pz_min = Dm.num(visual.aquarium_zone_min_pz) - sprite_height;
+
+        visual.pixel_w = rand(pw_min, pw_max);
+        visual.pixel_z = pz_min + rand(-1, 1);
+    }
+
+    // tg: code/modules/food_and_drinks/food/lizard.dm:170
+    [SignalHandler]
+    public virtual void get_aquarium_beauty(datum source = null, DmList beauty_holder = null)
+    {
+        Dm.append(beauty_holder, 100); //moonfish eggs are kinda eye candy
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/lizard.dm:537
+public partial class obj_item_food_bread_root : obj_item_food_bread
+{
+    // tg: code/modules/food_and_drinks/food/lizard.dm:549
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), typeof(obj_item_food_bread_empty), CUSTOM_INGREDIENT_ICON_FILL, Dm.named("max_ingredients", 8)));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/lizard.dm:557
+public partial class obj_item_food_breadslice_root : obj_item_food_breadslice
+{
+    // tg: code/modules/food_and_drinks/food/lizard.dm:567
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), null, CUSTOM_INGREDIENT_ICON_STACK));
+        return dot;
+    }
+}

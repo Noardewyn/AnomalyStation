@@ -158,8 +158,15 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         // valid_typesof drops the types whose abstract_type is themselves (__HELPERS/abstract_types.dm:25): since wave 4
         // that is /atom/movable, /obj and /mob (W4.M), so the abstract roots are no longer created.
         var uncreatables = new HashSet<Type> { typeof(obj_item_bodypart) };
+        //Yet more templates (unit_test.dm:276; live since the restaurant)
+        uncreatables.Add(typeof(obj_machinery_restaurant_portal));
+        //Template type (unit_test.dm:278)
+        uncreatables.Add(typeof(obj_structure_holosign_robot_seat));
         //Singleton (unit_test.dm:280; M7 power helpers slice: the dview mob, live since then)
         uncreatables.Add(typeof(mob_dview));
+        // ADAPTED: the robot customer's Initialize reads SSrestaurant's venues and customers (robot_customer.dm:34), which the harness
+        // world does not initialize (tg's runs with every subsystem)
+        uncreatables.Add(typeof(mob_living_basic_robot_customer));
         //Not meant to spawn without the machine wand (unit_test.dm:286; gaps DV2: live since then)
         uncreatables.Add(typeof(obj_effect_bug_moving));
         // ADAPTED, GAP(M3 P1 -> lead): the hand-written skeletons that got tg's var block reach a leaf of a later package

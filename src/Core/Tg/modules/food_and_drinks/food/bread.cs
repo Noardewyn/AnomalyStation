@@ -234,3 +234,39 @@ public partial class obj_item_food_breadslice_plain : obj_item_food_breadslice
         return dot;
     }
 }
+
+// tg: code/modules/food_and_drinks/food/bread.dm:89
+public partial class obj_item_food_breadslice_moldy_bacteria : obj_item_food_breadslice_moldy
+{
+    // tg: code/modules/food_and_drinks/food/bread.dm:94
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_MOLD, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 25));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/bread.dm:331
+public partial class obj_item_food_breadslice_empty : obj_item_food_breadslice
+{
+    // tg: code/modules/food_and_drinks/food/bread.dm:337
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), null, CUSTOM_INGREDIENT_ICON_FILL, Dm.named("max_ingredients", 8)));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/bread.dm:480
+public partial class obj_item_food_butterdog : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/bread.dm:496
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_slippery), 8 * SECONDS));
+        return dot;
+    }
+}

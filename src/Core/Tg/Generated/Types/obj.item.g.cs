@@ -11828,9 +11828,9 @@ public partial class obj_item_holosign_creator_cyborg
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/_venue.dm:307
-[DmPath("/obj/item/holosign_creator/robot_seat"), DmGeneratedOnly, DmInert]
-public partial class obj_item_holosign_creator_robot_seat : obj_item_holosign_creator
+// tg: code/modules/food_and_drinks/restaurant/_venue.dm:307 (the var block of a hand-written class)
+[DmPath("/obj/item/holosign_creator/robot_seat")]
+public partial class obj_item_holosign_creator_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/_venue.dm:307
     public obj_item_holosign_creator_robot_seat()
@@ -11852,7 +11852,7 @@ public partial class obj_item_holosign_creator_robot_seat : obj_item_holosign_cr
 }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:61
-[DmPath("/obj/item/holosign_creator/robot_seat/restaurant"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/holosign_creator/robot_seat/restaurant"), DmGeneratedOnly]
 public partial class obj_item_holosign_creator_robot_seat_restaurant : obj_item_holosign_creator_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:61
@@ -11864,7 +11864,7 @@ public partial class obj_item_holosign_creator_robot_seat_restaurant : obj_item_
 }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:94
-[DmPath("/obj/item/holosign_creator/robot_seat/bar"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/holosign_creator/robot_seat/bar"), DmGeneratedOnly]
 public partial class obj_item_holosign_creator_robot_seat_bar : obj_item_holosign_creator_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:94

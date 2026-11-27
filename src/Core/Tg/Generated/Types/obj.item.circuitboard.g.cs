@@ -3146,9 +3146,9 @@ public partial class obj_item_circuitboard_machine_sheetifier : obj_item_circuit
     }
 }
 
-// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1535
-[DmPath("/obj/item/circuitboard/machine/restaurant_portal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_machine_restaurant_portal : obj_item_circuitboard_machine
+// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1535 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/machine/restaurant_portal")]
+public partial class obj_item_circuitboard_machine_restaurant_portal
 {
     public Type venue_type = typeof(datum_venue_restaurant); // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1543
 

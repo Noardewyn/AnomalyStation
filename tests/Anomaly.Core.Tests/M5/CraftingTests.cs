@@ -3,6 +3,7 @@ using Anomaly.Core.DmShim;
 using Anomaly.Core.Kernel;
 using Anomaly.Core.Tests.M4bAudio;
 using Anomaly.Core.Tg;
+using Anomaly.Protocol;
 using Xunit.Abstractions;
 using static Anomaly.Core.DmShim.Dm;
 using static Anomaly.Core.Tg.Builtins;
@@ -44,6 +45,32 @@ public class CraftingTests
     private static datum_component_personal_crafting Crafting(AudioRoom r, mob who)
         => r.In(() => who.GetComponent(typeof(datum_component_personal_crafting)) as datum_component_personal_crafting);
 
+    // A tgui "update" payload as the server's UiWindow message (Replicator.Tgui: config, data and static data), encoded by the wire codec:
+    // its bytes and its values (each null, number, string, array and object, as the codec counts them).
+    private static (int Bytes, int Values) Encoded(JsonElement payload)
+    {
+        UiValue data = payload.TryGetProperty("data", out JsonElement d) ? UiValue.FromJson(d) : null;
+        UiValue statics = payload.TryGetProperty("static_data", out JsonElement st) ? UiValue.FromJson(st) : null;
+        var message = new UiWindowMessage
+        {
+            Kind = UiWindowKind.Update,
+            Window = 1,
+            Interface = payload.GetProperty("config").GetProperty("interface").GetProperty("name").GetString(),
+            Title = payload.GetProperty("config").GetProperty("title").GetString(),
+            Status = 2,
+            Data = data,
+            StaticData = statics,
+        };
+        return (Codec.Encode(message).Length, Count(data) + Count(statics));
+    }
+
+    private static int Count(UiValue value) => value == null ? 0 : value.Kind switch
+    {
+        UiValueKind.Array => 1 + value.Items.Sum(Count),
+        UiValueKind.Object => 1 + value.Fields.Sum(f => Count(f.Value)),
+        _ => 1,
+    };
+
     // The last tgui "update" message of the client: (window id, payload).
     private static (string Window, JsonElement Payload) LastUpdate(mob who, bool withStatic = false)
     {
@@ -84,14 +111,11 @@ public class CraftingTests
             // tg's recipes of rods (the slapcrafting ones), of the extinguisher and of the cell
             foreach (Type t in new[] { typeof(datum_crafting_recipe_spear), typeof(datum_crafting_recipe_ghettojetpack), typeof(datum_crafting_recipe_battery_match), typeof(datum_crafting_recipe_tether_anchor) })
                 Assert.True(GLOB.crafting_recipes_by_typepath[t] is datum_crafting_recipe, t.Name);
-            // no recipe in scope needs a reagent or a chemical reaction (reagent containers: chemistry, M8)
-            foreach (datum_crafting_recipe recipe in Dm.each_cast<datum_crafting_recipe>(Dm.add(GLOB.crafting_recipes, GLOB.cooking_recipes)))
-            {
-                Assert.Null(recipe.reaction);
-                Assert.DoesNotContain(Dm.each(recipe.reqs), req => ispath(req, typeof(datum_reagent)));
-            }
-            // the reagent recipes are left out: tg's "IED" needs 20 units of welding fuel
-            Assert.Null(GLOB.crafting_recipes_by_typepath[typeof(datum_crafting_recipe_improv_explosive)]);
+            // the recipes that need a reagent are listed (since the restaurant: the reagents of the containers around are
+            // ingredients): tg's "IED" needs 20 units of welding fuel; and the chemical reactions' recipe guides are in the cooking list
+            var improv = Assert.IsAssignableFrom<datum_crafting_recipe>(GLOB.crafting_recipes_by_typepath[typeof(datum_crafting_recipe_improv_explosive)]);
+            Assert.Contains(Dm.each(improv.reqs), req => ispath(req, typeof(datum_reagent_fuel)));
+            Assert.Contains(Dm.each_cast<datum_crafting_recipe>(GLOB.cooking_recipes), x => x is datum_crafting_recipe_food_reaction && x.reaction != null);
             // init_crafting_recipes_atoms: results, ingredients and tools of every recipe
             Assert.True(Dm.@in(typeof(obj_item_spear), GLOB.crafting_recipes_datums));
             Assert.True(Dm.@in(typeof(obj_item_restraints_handcuffs_cable), GLOB.crafting_recipes_datums));
@@ -174,8 +198,13 @@ public class CraftingTests
         Assert.Equal(r.In(() => Dm.length(GLOB.cooking_recipes_default)), cookingStatics.GetProperty("recipes").GetArrayLength());
         JsonElement burger = cookingStatics.GetProperty("recipes").EnumerateArray().First(x => x.TryGetProperty("foodtypes", out _));
         Assert.True(burger.TryGetProperty("cuisine_category", out _));
-        _output.WriteLine($"payload bytes: crafting {payload.GetRawText().Length}, cooking {cooking.GetRawText().Length}");
-        Assert.True(payload.GetRawText().Length < 256 * 1024 && cooking.GetRawText().Length < 256 * 1024, "the window's data fits protocol 16's 256 KiB");
+        // the window as the server sends it (Codec.V16): tg's crafting window sends every recipe of the tab at once, the cooking tab the
+        // most (its recipes with reagent ingredients and the chemical reactions' recipe guides)
+        var (craftingBytes, craftingValues) = Encoded(payload);
+        var (cookingBytes, cookingValues) = Encoded(cooking);
+        _output.WriteLine($"encoded window: crafting {craftingBytes} bytes, {craftingValues} values; cooking {cookingBytes} bytes, {cookingValues} values");
+        Assert.True(craftingBytes <= Limits.MaxUiWindowBytes && cookingBytes <= Limits.MaxUiWindowBytes, "the window fits Limits.MaxUiWindowBytes");
+        Assert.True(craftingValues <= Limits.MaxUiValues && cookingValues <= Limits.MaxUiValues, "the window fits Limits.MaxUiValues");
         r.AssertNoRuntimes();
     }
 

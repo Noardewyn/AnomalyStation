@@ -1875,9 +1875,9 @@ public partial class datum_controller_subsystem_radioactive_nebula : datum_contr
     }
 }
 
-// tg: code/controllers/subsystem/restaurant.dm:6
-[DmPath("/datum/controller/subsystem/restaurant"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_restaurant : datum_controller_subsystem
+// tg: code/controllers/subsystem/restaurant.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/restaurant")]
+public partial class datum_controller_subsystem_restaurant
 {
     public DmList all_venues; // tg: code/controllers/subsystem/restaurant.dm:10
     public DmList all_customers; // tg: code/controllers/subsystem/restaurant.dm:12

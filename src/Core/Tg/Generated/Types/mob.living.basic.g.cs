@@ -10741,9 +10741,9 @@ public partial class mob_living_basic_mushroom
     }
 }
 
-// tg: code/modules/mob/living/basic/space_fauna/robot_customer.dm:3
-[DmPath("/mob/living/basic/robot_customer"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_robot_customer : mob_living_basic
+// tg: code/modules/mob/living/basic/space_fauna/robot_customer.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/robot_customer")]
+public partial class mob_living_basic_robot_customer
 {
     public string clothes_set = "amerifat_clothes"; // tg: code/modules/mob/living/basic/space_fauna/robot_customer.dm:28
     public datum_atom_hud hud_to_show_on_hover; // tg: code/modules/mob/living/basic/space_fauna/robot_customer.dm:30

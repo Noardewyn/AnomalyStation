@@ -54,7 +54,8 @@ public class GuardAndHoverTests
     {
         Type table = typeof(datum).Assembly.GetType("Anomaly.Core.Tg.UndeclaredOverrides", throwOnError: true);
         var rows = (FrozenSet<(Type Type, string Proc)>)table.GetField("Rows", BindingFlags.NonPublic | BindingFlags.Static).GetValue(null);
-        Assert.True(rows.Count > 500, "the table covers Meta's untranslated item, structure and machine overrides"); // it shrinks as the gaps packages port
+        // The table shrinks as more of tg is ported (566 rows on 2026-11-25, 498 a day later): this only checks that the generator wrote it whole.
+        Assert.True(rows.Count > 200, "the table covers Meta's untranslated item, structure and machine overrides");
         Assert.Contains((typeof(obj_item_melee_baton_abductor), "attack_self"), (IEnumerable<(Type, string)>)rows);
         const BindingFlags declared = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly;
         foreach (var (type, proc) in rows)

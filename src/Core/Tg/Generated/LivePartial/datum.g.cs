@@ -701,7 +701,7 @@ public partial class datum_job_bartender
     [DmGeneratedStub]
     public override void award_service(client winner = null, object award = null)
     {
-        Dm.Deferred("code/modules/jobs/job_types/bartender.dm:38", "award_service: the service awards (the medals and SSrestaurant's venues, after M10) (M10+)");
+        Dm.Deferred("code/modules/jobs/job_types/bartender.dm:38", "award_service: the service awards and the tourist scores (the achievements, D332; SSrestaurant's venues are live since gaps KT1) (M10+)");
     }
 }
 
@@ -713,7 +713,7 @@ public partial class datum_job_cook
     [DmGeneratedStub]
     public override void award_service(client winner = null, object award = null)
     {
-        Dm.Deferred("code/modules/jobs/job_types/cook.dm:56", "award_service: the service awards (the medals and SSrestaurant's venues, after M10) (M10+)");
+        Dm.Deferred("code/modules/jobs/job_types/cook.dm:56", "award_service: the service awards and the tourist scores (the achievements, D332; SSrestaurant's venues are live since gaps KT1) (M10+)");
     }
 }
 

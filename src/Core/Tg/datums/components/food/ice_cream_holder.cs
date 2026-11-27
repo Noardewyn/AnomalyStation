@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The whole file (gaps package H2, D333): the ice cream holder (cones, waffles, sundaes) and every ice cream flavour, with
-// GLOB.ice_cream_flavours. The var blocks are generated (D111). Selling ice cream to a restaurant's customers (the venues and the
-// robot customers) is translated as tg has it; nothing sends those signals until the restaurants come.
+// GLOB.ice_cream_flavours. The var blocks are generated (D111). Selling ice cream to a restaurant's robot customers is translated as
+// tg has it (the sale pays but reports no transaction: the cone is not eaten and no customer is counted served, as in tg).
 
 /// Ice Cream Holder: Allows the edible parent object to be used as an ice cream cone (or cup... in a next future).
 // tg: code/datums/components/food/ice_cream_holder.dm:5

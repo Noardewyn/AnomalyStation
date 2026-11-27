@@ -13,9 +13,9 @@ namespace Anomaly.Core.Tg;
 // window, D148), construct_item and its checks, the mind's learned recipes and the machine crafter. Seams and leaves: the
 // window's sprite sheets are the client's own .dmi pictures (ui_assets; the atoms' icons travel in atom_data, DV44 and
 // crafting.cs of the asset cache), the investigate log is M10 (admin logs), and a result or component whose type has its own
-// untranslated on_craft_completion or used_in_craft is not called (DV27, InertSeam.MissingCraftOverride). The reagent
-// branches (reagent requirements, the reagent holder of get_used_reqs) are kept as tg wrote them; no recipe in scope reaches
-// them (init_crafting_recipes lists the recipes whose ingredients the port can hold, global_lists.cs). The var blocks are
+// untranslated on_craft_completion or used_in_craft is not called (DV27, InertSeam.MissingCraftOverride). The reagents
+// of the containers around count as requirements and are poured into the craft's holder, and a chemical reaction's recipe shows
+// its container, mixing and heating steps (the restaurant: the cook's recipes that need flour, milk or salt). The var blocks are
 // generated (D111); the static global_blacklist lives in TgState (rules 10.6).
 
 //list key declarations used in check_contents(), get_surroundings() and check_tools()
@@ -252,11 +252,12 @@ public partial class datum_component_personal_crafting : datum_component
                 else
                 {
                     Dm.append_at(reqs_count, item.type, 1);
-                    // tg: :199  if(is_reagent_container(item) && item.is_drainable() && length(item.reagents.reagent_list)): the reagent
-                    // containers are not translated (chemistry, M8: generated-only types whose reagents are never filled), so no item
-                    // here holds drainable reagents; no recipe in scope needs them (init_crafting_recipes).
-                    if (item is obj_item_reagent_containers && item.reagents is datum_reagents item_reagents && Dm.truthy(Dm.length(item_reagents.reagent_list)))
-                        Dm.NotTranslated("code/datums/components/crafting/_crafting.dm:197", "get_surroundings: the reagents of a drainable reagent container as crafting requirements (is_drainable: reagent containers, chemistry, M8)");
+                    if (is_reagent_container(item) && Dm.truthy(item.is_drainable()) && Dm.truthy(length(((datum_reagents)item.reagents).reagent_list))) //some container that has some reagents inside it that can be drained
+                    {
+                        obj_item_reagent_containers container = (obj_item_reagent_containers)item;
+                        foreach (datum_reagent reagent in Dm.each<datum_reagent>(((datum_reagents)container.reagents).reagent_list))
+                            Dm.append_at(reqs_count, reagent.type, reagent.volume);
+                    }
                 }
             }
             else if (ismachinery(@object))
@@ -575,6 +576,8 @@ public partial class datum_component_personal_crafting : datum_component
     {
         total_materials ??= Dm.list();
         DmList return_list = Dm.list();
+
+        datum_reagents holder = null;
         DmList requirements = Dm.list();
         if (Dm.truthy(recipe.reqs))
             Dm.append(ref requirements, recipe.reqs);
@@ -596,10 +599,34 @@ public partial class datum_component_personal_crafting : datum_component
                 continue;
             if (ispath(path_key, typeof(datum_reagent)))
             {
-                // tg: :437-455: the reagents of the requirement from the reagent containers around: no recipe in scope has a reagent
-                // requirement (init_crafting_recipes), and the containers' reagent transfer is chemistry (M8).
-                Dm.NotTranslated("code/datums/components/crafting/_crafting.dm:435", "get_used_reqs: a reagent requirement taken from the reagent containers around (reagent containers, chemistry, M8)");
-                continue;
+                if (!Dm.truthy(holder))
+                {
+                    holder = Dm.@new<datum_reagents>(INFINITY, NO_REACT); //an infinite volume holder than can store reagents without reacting
+                    Dm.append(ref return_list, holder);
+                }
+                DmList @checked = Dm.list();
+                while (amount > 0)
+                {
+                    obj_item_reagent_containers container = Dm.locate<obj_item_reagent_containers>(Dm.sub(Dm.bitor(surroundings, return_list), @checked));
+                    if (container == null) //This would only happen if the previous checks for contents and tools were flawed.
+                    {
+                        stack_trace(Dm.text("couldn't fulfill the required amount for []. Dangit", path_key), "code/datums/components/crafting/_crafting.dm", 443);
+                        break;
+                    }
+                    if (QDELING(container)) //it's deleting...
+                    {
+                        Dm.remove(ref surroundings, container);
+                        continue;
+                    }
+                    float reagent_volume = Dm.num(((datum_reagents)container.reagents).get_reagent_amount(path_key));
+                    if (Dm.truthy(reagent_volume))
+                    {
+                        await ((datum_reagents)container.reagents).trans_to(holder, min(amount, reagent_volume), target_id: path_key, no_react: TRUE);
+                        amount -= reagent_volume;
+                    }
+                    Dm.append(ref @checked, container);
+                    container.update_appearance(UPDATE_ICON);
+                }
             }
             else if (ispath(path_key, typeof(obj_item_stack)))
             {
@@ -997,9 +1024,27 @@ public partial class datum_component_personal_crafting : datum_component
         // Reaction data
         if (ispath(recipe.reaction))
         {
-            // tg: :738-754: the chemical reaction's container, mixing and heating steps (chemistry, M8): the recipes of a chemical
-            // reaction are not in scope (init_crafting_recipes), so none reaches here.
-            Dm.NotTranslated("code/datums/components/crafting/_crafting.dm:739", "build_crafting_data: a chemical reaction recipe's steps (GLOB.chemical_reactions_list, chemistry, M8)");
+            data["is_reaction"] = TRUE;
+            // May be called before chemical reactions list is setup
+            object or__1 = GLOB.chemical_reactions_list[recipe.reaction];
+            datum_chemical_reaction reaction = (Dm.truthy(or__1) ? or__1 : Dm.@new(recipe.reaction)) as datum_chemical_reaction;
+            if (reaction is datum_chemical_reaction)
+            {
+                if (!Dm.truthy(data["steps"]))
+                    data["steps"] = Dm.list();
+                if (reaction.required_container != null)
+                {
+                    float id = datums.Find(reaction.required_container);
+                    ((DmList)data["reqs"])[Dm.text("[]", id)] = 1;
+                    Dm.append_at(data, "steps", I18n.T("Add all ingredients into \\a []", Dm.initial(reaction.required_container, (atom a) => a.name)));
+                }
+                else if (length(recipe.reqs) > 1 || Dm.truthy(length(reaction.required_catalysts)))
+                    Dm.append_at(data, "steps", I18n.T("Mix all ingredients together"));
+                if (reaction.required_temp > T20C)
+                    Dm.append_at(data, "steps", I18n.T("Heat up to []K", reaction.required_temp));
+            }
+            else
+                stack_trace(Dm.text("Invalid reaction found in recipe code! ([])", recipe.reaction), "code/datums/components/crafting/_crafting.dm", 754);
         }
         else if (recipe.reaction != null)
             stack_trace(Dm.text("Invalid reaction found in recipe code! ([])", recipe.reaction), "code/datums/components/crafting/_crafting.dm", 757);

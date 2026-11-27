@@ -43983,9 +43983,9 @@ public partial class datum_food_processor_process_canned_ink : datum_food_proces
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/_venue.dm:4
-[DmPath("/datum/venue"), DmGeneratedOnly, DmInert]
-public partial class datum_venue : datum
+// tg: code/modules/food_and_drinks/restaurant/_venue.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/venue")]
+public partial class datum_venue
 {
     public string name = "unnamed venue"; // tg: code/modules/food_and_drinks/restaurant/_venue.dm:4
     public string venue_type = "Restaurant Venue"; // tg: code/modules/food_and_drinks/restaurant/_venue.dm:6
@@ -44014,9 +44014,9 @@ public partial class datum_venue : datum
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:4
-[DmPath("/datum/venue/restaurant"), DmGeneratedOnly, DmInert]
-public partial class datum_venue_restaurant : datum_venue
+// tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/venue/restaurant")]
+public partial class datum_venue_restaurant
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:4
     public datum_venue_restaurant()
@@ -44037,7 +44037,7 @@ public partial class datum_venue_restaurant : datum_venue
 }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:72
-[DmPath("/datum/venue/bar"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/venue/bar"), DmGeneratedOnly]
 public partial class datum_venue_bar : datum_venue
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:72
@@ -44058,20 +44058,20 @@ public partial class datum_venue_bar : datum_venue
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:13
-[DmPath("/datum/custom_order"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order : datum { }
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:13 (the var block of a hand-written class)
+[DmPath("/datum/custom_order")]
+public partial class datum_custom_order { }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:42
-[DmPath("/datum/custom_order/moth_clothing"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_moth_clothing : datum_custom_order
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:42 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/moth_clothing")]
+public partial class datum_custom_order_moth_clothing
 {
     public object wanted_clothing_type; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:42
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:89
-[DmPath("/datum/custom_order/icecream"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_icecream : datum_custom_order
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:89 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/icecream")]
+public partial class datum_custom_order_icecream
 {
     public DmList wanted_flavors; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:89
     public Type cone_type = typeof(obj_item_food_icecream); // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:91
@@ -44085,18 +44085,18 @@ public partial class datum_custom_order_icecream : datum_custom_order
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:135
-[DmPath("/datum/custom_order/reagent"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_reagent : datum_custom_order
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:135 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/reagent")]
+public partial class datum_custom_order_reagent
 {
     public Type reagent_type; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:135
     public Type container_needed; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:137
     public float reagents_needed = 10; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:139
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:188
-[DmPath("/datum/custom_order/reagent/drink"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_reagent_drink : datum_custom_order_reagent
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:188 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/reagent/drink")]
+public partial class datum_custom_order_reagent_drink
 {
     // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:188
     public datum_custom_order_reagent_drink()
@@ -44105,9 +44105,9 @@ public partial class datum_custom_order_reagent_drink : datum_custom_order_reage
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:198
-[DmPath("/datum/custom_order/reagent/soup"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_reagent_soup : datum_custom_order_reagent
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:198 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/reagent/soup")]
+public partial class datum_custom_order_reagent_soup
 {
     public object picked_serving; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:201
 
@@ -44118,9 +44118,9 @@ public partial class datum_custom_order_reagent_soup : datum_custom_order_reagen
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:3
-[DmPath("/datum/customer_data"), DmGeneratedOnly, DmInert]
-public partial class datum_customer_data : datum
+// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/customer_data")]
+public partial class datum_customer_data
 {
     public DmList orderable_objects; // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:3
     public DmList order_prices; // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:5
@@ -44160,7 +44160,7 @@ public partial class datum_customer_data : datum
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:66
-[DmPath("/datum/customer_data/american"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/american"), DmGeneratedOnly]
 public partial class datum_customer_data_american : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:71
@@ -44186,7 +44186,7 @@ public partial class datum_customer_data_american : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:107
-[DmPath("/datum/customer_data/italian"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/italian"), DmGeneratedOnly]
 public partial class datum_customer_data_italian : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:107
@@ -44214,9 +44214,9 @@ public partial class datum_customer_data_italian : datum_customer_data
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:157
-[DmPath("/datum/customer_data/french"), DmGeneratedOnly, DmInert]
-public partial class datum_customer_data_french : datum_customer_data
+// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:157 (the var block of a hand-written class)
+[DmPath("/datum/customer_data/french")]
+public partial class datum_customer_data_french
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:157
     public datum_customer_data_french()
@@ -44244,9 +44244,9 @@ public partial class datum_customer_data_french : datum_customer_data
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:201
-[DmPath("/datum/customer_data/japanese"), DmGeneratedOnly, DmInert]
-public partial class datum_customer_data_japanese : datum_customer_data
+// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:201 (the var block of a hand-written class)
+[DmPath("/datum/customer_data/japanese")]
+public partial class datum_customer_data_japanese
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:201
     public datum_customer_data_japanese()
@@ -44275,7 +44275,7 @@ public partial class datum_customer_data_japanese : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:245
-[DmPath("/datum/customer_data/japanese/salaryman"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/japanese/salaryman"), DmGeneratedOnly]
 public partial class datum_customer_data_japanese_salaryman : datum_customer_data_japanese
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:252
@@ -44302,9 +44302,9 @@ public partial class datum_customer_data_japanese_salaryman : datum_customer_dat
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:279
-[DmPath("/datum/customer_data/moth"), DmGeneratedOnly, DmInert]
-public partial class datum_customer_data_moth : datum_customer_data
+// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:279 (the var block of a hand-written class)
+[DmPath("/datum/customer_data/moth")]
+public partial class datum_customer_data_moth
 {
     public DmList wings_chosen; // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:303
 
@@ -44336,7 +44336,7 @@ public partial class datum_customer_data_moth : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:339
-[DmPath("/datum/customer_data/mexican"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/mexican"), DmGeneratedOnly]
 public partial class datum_customer_data_mexican : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:339
@@ -44366,7 +44366,7 @@ public partial class datum_customer_data_mexican : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:379
-[DmPath("/datum/customer_data/british"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/british"), DmGeneratedOnly]
 public partial class datum_customer_data_british : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:379
@@ -44390,7 +44390,7 @@ public partial class datum_customer_data_british : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:416
-[DmPath("/datum/customer_data/british/gent"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/british/gent"), DmGeneratedOnly]
 public partial class datum_customer_data_british_gent : datum_customer_data_british
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:416
@@ -44407,7 +44407,7 @@ public partial class datum_customer_data_british_gent : datum_customer_data_brit
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:425
-[DmPath("/datum/customer_data/british/bobby"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/british/bobby"), DmGeneratedOnly]
 public partial class datum_customer_data_british_bobby : datum_customer_data_british
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:425
@@ -44424,7 +44424,7 @@ public partial class datum_customer_data_british_bobby : datum_customer_data_bri
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:435
-[DmPath("/datum/customer_data/malfunction"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/malfunction"), DmGeneratedOnly]
 public partial class datum_customer_data_malfunction : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:435

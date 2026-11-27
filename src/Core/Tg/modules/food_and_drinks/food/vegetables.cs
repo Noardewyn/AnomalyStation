@@ -9,7 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (syndicate N2b, D316: the Donk pinata drops it): the tator tot; the other vegetables keep the base. The var blocks are
+// The whole file: the tator tot came with the Donk pinata (syndicate N2b, D316); the fries' dunking with the restaurant. The other
+// vegetables keep the base. The var blocks are
 // generated (D111).
 
 // Potatoes
@@ -17,6 +18,54 @@ namespace Anomaly.Core.Tg;
 public partial class obj_item_food_tatortot : obj_item_food
 {
     // tg: code/modules/food_and_drinks/food/vegetables.dm:55
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_dunkable), 10));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/vegetables.dm:105
+public partial class obj_item_food_fries : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/vegetables.dm:117
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_dunkable), 10));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/vegetables.dm:121
+public partial class obj_item_food_cheesyfries : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/vegetables.dm:136
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_dunkable), 10));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/vegetables.dm:140
+public partial class obj_item_food_carrotfries : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/vegetables.dm:152
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_dunkable), 10));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/vegetables.dm:156
+public partial class obj_item_food_poutine : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/vegetables.dm:168
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);

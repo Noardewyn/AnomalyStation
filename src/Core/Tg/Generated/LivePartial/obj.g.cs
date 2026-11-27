@@ -2766,6 +2766,19 @@ public partial class obj_machinery_ltsrbt
     }
 }
 
+// tg: code/modules/food_and_drinks/restaurant/_venue.dm:162
+public partial class obj_machinery_restaurant_portal
+{
+    // tg: code/modules/food_and_drinks/restaurant/_venue.dm:285
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/modules/food_and_drinks/restaurant/_venue.dm:285", "add_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
+        return default;
+    }
+}
+
 // tg: code/modules/recycling/conveyor.dm:12
 public partial class obj_machinery_conveyor
 {

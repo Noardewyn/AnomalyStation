@@ -1115,9 +1115,9 @@ public partial class obj_effect_decal_cleanable_food_flour : obj_effect_decal_cl
     }
 }
 
-// tg: code/game/objects/effects/decals/cleanable/food.dm:75
-[DmPath("/obj/effect/decal/cleanable/food/squid_ink"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_food_squid_ink : obj_effect_decal_cleanable_food
+// tg: code/game/objects/effects/decals/cleanable/food.dm:75 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/food/squid_ink")]
+public partial class obj_effect_decal_cleanable_food_squid_ink
 {
     // tg: code/game/objects/effects/decals/cleanable/food.dm:75
     public obj_effect_decal_cleanable_food_squid_ink()

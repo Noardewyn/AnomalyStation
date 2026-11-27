@@ -9,8 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (syndicate N2b, D316: the pinatas drop them): the bubblegum (the nicotine and HP+ gums with it), the gumball and the
-// lollipop; the bubblegum gum that Bubblegum leaves after devouring a corpse. The other sweets keep the base. The var blocks are generated
+// The whole file: the bubblegum (the nicotine and HP+ gums with it), the gumball and the lollipop came with the pinatas (syndicate
+// N2b, D316), with the bubblegum gum that Bubblegum leaves after devouring a corpse; the spider and swirl lollipops' chewing with the
+// restaurant. The other sweets keep the base. The var blocks are generated
 // (D111), except the lollipop's head below.
 
 // tg: code/modules/food_and_drinks/food/sweets.dm:195
@@ -125,5 +126,29 @@ public partial class obj_item_food_bubblegum_bubblegum : obj_item_food_bubblegum
     {
         await user.say(Dm.text(";[]", pick("I AM IMMORTAL.", "I SHALL TAKE YOUR WORLD.", "I SEE YOU.", "YOU CANNOT ESCAPE ME FOREVER.", "NOTHING CAN HOLD ME.")), spans: Dm.list(SPAN_COLOSSUS));
         return await base.suicide_act(user);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/sweets.dm:332
+public partial class obj_item_food_spiderlollipop : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/sweets.dm:350
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_chewable)));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/sweets.dm:354
+public partial class obj_item_food_swirl_lollipop : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/sweets.dm:371
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_chewable)));
+        return dot;
     }
 }

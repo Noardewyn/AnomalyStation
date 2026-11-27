@@ -922,9 +922,9 @@ public partial class datum_status_effect_speed_boost_commanded : datum_status_ef
     }
 }
 
-// tg: code/datums/status_effects/limited_effect.dm:3
-[DmPath("/datum/status_effect/limited_buff"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_limited_buff : datum_status_effect
+// tg: code/datums/status_effects/limited_effect.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/limited_buff")]
+public partial class datum_status_effect_limited_buff
 {
     public float stacks = 1; // tg: code/datums/status_effects/limited_effect.dm:8
     public float max_stacks = 3; // tg: code/datums/status_effects/limited_effect.dm:10
@@ -939,9 +939,9 @@ public partial class datum_status_effect_limited_buff : datum_status_effect
     }
 }
 
-// tg: code/datums/status_effects/buffs.dm:501
-[DmPath("/datum/status_effect/limited_buff/health_buff"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_limited_buff_health_buff : datum_status_effect_limited_buff
+// tg: code/datums/status_effects/buffs.dm:501 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/limited_buff/health_buff")]
+public partial class datum_status_effect_limited_buff_health_buff
 {
     public object historic_max_health; // tg: code/datums/status_effects/buffs.dm:504
     public float health_buff_modifier = 0.1f; // tg: code/datums/status_effects/buffs.dm:506

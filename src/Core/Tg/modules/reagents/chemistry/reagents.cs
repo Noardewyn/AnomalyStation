@@ -40,10 +40,7 @@ public partial class datum_reagent : datum
         if (material != null)
             material = await SSmaterials.get_material(material);
         if (Dm.truthy(glass_price))
-        {
-            // AddElement(/datum/element/venue_price, glass_price): the bar's drink prices (the restaurant venues, not ported)
-            Dm.Deferred("code/modules/reagents/chemistry/reagents.dm:107", "New: AddElement(/datum/element/venue_price, glass_price): the price a bar's robot customer pays for a drink (the restaurant venues, not ported)");
-        }
+            Waiting.NoSleep(AddElement(typeof(datum_element_venue_price), glass_price));
         if (!Dm.truthy(mass))
             mass = rand(10, 800);
     }

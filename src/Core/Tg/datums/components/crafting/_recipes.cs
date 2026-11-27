@@ -24,7 +24,8 @@ public partial class datum_crafting_recipe : datum
         if (!Dm.truthy(name) && result != null)
         {
             Type atom_result = result;
-            name = Dm.initial(atom_result, (atom a) => a.name);
+            // initial(atom_result.name) reads the var by name: a recipe's result may be a reagent (the recipe guides of food_mixtures.dm)
+            name = Dm.str(Dm.initial(atom_result, "name"));
         }
         if (result != null && blacklist_result == null && !Dm.@in(result, reqs))
             blacklist_result = ALWAYS_BLACKLIST_RESULT;

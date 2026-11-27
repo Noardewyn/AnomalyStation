@@ -8,7 +8,7 @@
 # working folder (ServerHost: the maps upward, config/server.txt, the sound index, the models' catalog for the "dir" rules): config/
 # (server.txt with REALTIME on, BIND_ADDRESS 0.0.0.0 and MAP metastation, a LAN or internet server: players' dev commands are then off unless DEV_COMMANDS 1
 # or an admin types them; tg's admins.txt and admin_ranks.txt, where the host names the admins; tg's dynamic.toml), maps/,
-# godot/assets/models/models.json, godot/assets/tg/sound/index.json, CHANGELOG.md (the changelog window), and tgstation/strings/ with tgstation/config/blanks.json and silicon_laws.txt
+# godot/assets/models/models.json, godot/assets/tg/sound/index.json, CHANGELOG.md (the changelog window), and tgstation/strings/ with tgstation/config/blanks.json, silicon_laws.txt and robot_voices.json
 # (tg's name lists and the two config files, TgStrings; tgstation.dme marks the folder).
 # run-server.cmd (Windows) and run-server.sh (macOS, Linux) start it from its folder; their arguments go to the server (--map metastation, --port 7778, ...).
 set -eu
@@ -57,7 +57,7 @@ cp -R "$tg/strings" "$out/tgstation/strings"
 rm -f "$out/tgstation/strings/cas_black.txt" "$out/tgstation/strings/cas_white.txt" # D343: CC BY-NC-SA 2.0, never mounted
 # the two tg config files TgStrings mounts with the strings (the photocopier's forms, the custom AI law board's default laws)
 mkdir -p "$out/tgstation/config"
-cp "$tg/config/blanks.json" "$tg/config/silicon_laws.txt" "$out/tgstation/config/"
+cp "$tg/config/blanks.json" "$tg/config/silicon_laws.txt" "$tg/config/robot_voices.json" "$out/tgstation/config/"
 : > "$out/tgstation/tgstation.dme"
 
 # cmd misreads a batch file with bare LF line ends (%~dp0 among others): CRLF.

@@ -105,9 +105,9 @@ public class InertMarkTests
         Assert.Equal("live", Index.ByPath["/obj/item/clothing/under/rank/security"].State);
         AssertInert(typeof(obj_item_clothing_under_rank_security), false);
         // A type with one undeclared proc under a live base type: inert.
-        // (the chicken cutlet's, the example until gaps H2 translated it)
-        Assert.Equal(new[] { "Initialize" }, Index.ProcsAt("/obj/item/food/okonomiyaki").Where(p => p.Translated == "no").Select(p => p.Name).Distinct());
-        AssertInert(typeof(obj_item_food_okonomiyaki), true);
+        // (the chicken cutlet's, the example until gaps H2 translated it; the okonomiyaki's until the restaurant; now the cult's unholy water)
+        Assert.Equal(new[] { "Initialize" }, Index.ProcsAt("/obj/item/reagent_containers/cup/beaker/unholywater").Where(p => p.Translated == "no").Select(p => p.Name).Distinct());
+        AssertInert(typeof(obj_item_reagent_containers_cup_beaker_unholywater), true);
         // A data-only datum type under /datum: live, and its class is generated only.
         AssertInert(typeof(datum_bitfield_status_flags), false);
         Assert.True(typeof(datum_bitfield_status_flags).IsDefined(typeof(DmGeneratedOnlyAttribute), false));

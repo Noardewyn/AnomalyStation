@@ -115,7 +115,12 @@ public static class TgStrings
         // modular_map_loader.dm:30, through rustg_read_toml_file)
         "strings/modular_maps/safehouse.toml",
         // Lavaland's syndicate base's rooms (its modular map roots, lavalandruin_code/syndicate_base.dm:3)
-        "strings/modular_maps/syndicatebase.toml"
+        "strings/modular_maps/syndicatebase.toml",
+        // the restaurant's robot customers: their kinds' name prefixes (food_and_drinks/restaurant/customers/_customer.dm:49, read at
+        // SSrestaurant's init) and their voices (space_fauna/robot_customer.dm:47, through strings() from the config folder)
+        "strings/names/american_prefix.txt", "strings/names/italian_prefix.txt", "strings/names/french_prefix.txt",
+        "strings/names/japanese_prefix.txt", "strings/names/moth_prefix.txt", "strings/names/mexican_prefix.txt",
+        "strings/names/british_prefix.txt", "strings/names/malf_prefix.txt", "config/robot_voices.json"
     ).AddRange(GeneticsFiles);
 
 

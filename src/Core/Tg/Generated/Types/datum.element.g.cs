@@ -2724,9 +2724,9 @@ public partial class datum_element_processable
     public object sound_to_play; // tg: code/datums/elements/food/processable.dm:18
 }
 
-// tg: code/datums/elements/food/venue_price.dm:3
-[DmPath("/datum/element/venue_price"), DmGeneratedOnly, DmInert]
-public partial class datum_element_venue_price : datum_element
+// tg: code/datums/elements/food/venue_price.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/element/venue_price")]
+public partial class datum_element_venue_price
 {
     public object venue_price; // tg: code/datums/elements/food/venue_price.dm:5
 

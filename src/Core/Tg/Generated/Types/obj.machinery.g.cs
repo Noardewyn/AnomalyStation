@@ -12430,32 +12430,12 @@ public partial class obj_machinery_stove
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/_venue.dm:162
-[DmPath("/obj/machinery/restaurant_portal"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_restaurant_portal : obj_machinery
-{
-    public Type linked_venue; // tg: code/modules/food_and_drinks/restaurant/_venue.dm:174
-    public datum_weakref turned_on_portal; // tg: code/modules/food_and_drinks/restaurant/_venue.dm:177
-
-    // tg: code/modules/food_and_drinks/restaurant/_venue.dm:162
-    public obj_machinery_restaurant_portal()
-    {
-        name = "restaurant portal";
-        desc = "A robot-only gate into the wonders of Space Station cuisine!";
-        icon = Dm.resource("icons/obj/machines/restaurant_portal.dmi");
-        icon_state = "portal";
-        base_icon_state = "portal";
-        anchored = 1;
-        density = 0;
-        circuit = typeof(obj_item_circuitboard_machine_restaurant_portal);
-        layer = 2.9f;
-        armor_type = typeof(datum_armor_restaurant_portal);
-        resistance_flags = 50;
-    }
-}
+// tg: code/modules/food_and_drinks/restaurant/_venue.dm:162 (the vars the hand-written class does not declare)
+[DmPath("/obj/machinery/restaurant_portal")]
+public partial class obj_machinery_restaurant_portal { }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:58
-[DmPath("/obj/machinery/restaurant_portal/restaurant"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/restaurant_portal/restaurant"), DmGeneratedOnly]
 public partial class obj_machinery_restaurant_portal_restaurant : obj_machinery_restaurant_portal
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:58
@@ -12466,7 +12446,7 @@ public partial class obj_machinery_restaurant_portal_restaurant : obj_machinery_
 }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:90
-[DmPath("/obj/machinery/restaurant_portal/bar"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/restaurant_portal/bar"), DmGeneratedOnly]
 public partial class obj_machinery_restaurant_portal_bar : obj_machinery_restaurant_portal
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:90

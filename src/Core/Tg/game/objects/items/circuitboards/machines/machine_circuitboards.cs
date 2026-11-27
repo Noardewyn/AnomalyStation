@@ -13,7 +13,8 @@ namespace Anomaly.Core.Tg;
 // cooling loop): the temperature control unit's board, whose piping layer its on_construction reads. Silicons SI4 (D326): the holopad's
 // board, whose security a multitool toggles. Gaps H2 (D333): the smart fridge's board, which a screwdriver switches between the
 // fridge kinds. Gaps MD1: the medical kiosk's board (a multitool sets its price) and the first aid station's (an emag fries its
-// safety chip; it is built against a wall). The processor's board, which a screwdriver switches between food and slimes. The other machine boards of
+// safety chip; it is built against a wall). The processor's board, which a screwdriver switches between food and slimes. The
+// restaurant portal's board: a multitool picks its venue, which the portal built from it serves. The other machine boards of
 // the file are var-only and live with the machine board (circuitboard.cs); their procs come with their machines. The var blocks are
 // generated (D111).
 
@@ -329,6 +330,57 @@ public partial class obj_item_circuitboard_machine_wall_healer : obj_item_circui
         }
 
         return TRUE;
+    }
+}
+
+// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1534
+public partial class obj_item_circuitboard_machine_restaurant_portal : obj_item_circuitboard_machine
+{
+    // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1545
+    public override async DmTask<object> multitool_act(mob_living user = null, obj_item tool = null)
+    {
+        DmList radial_items = Dm.list();
+        DmList radial_results = Dm.list();
+
+        foreach (object type_key in Dm.each(SSrestaurant.all_venues))
+        {
+            datum_venue venue = SSrestaurant.all_venues[type_key] as datum_venue;
+            radial_items[venue.name] = image(Dm.resource("icons/obj/machines/restaurant_portal.dmi"), venue.name);
+            radial_results[venue.name] = type_key;
+        }
+
+        object choice = await show_radial_menu(user, this, radial_items, null, require_near: TRUE);
+
+        if (!Dm.truthy(choice))
+            return ITEM_INTERACT_BLOCKING;
+
+        venue_type = radial_results[choice] as Type;
+        to_chat(user, span_notice(I18n.T("You change []'s linked venue.", this)));
+        return ITEM_INTERACT_SUCCESS;
+    }
+
+    // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1563
+    public override async DmTask<object> examine(mob user = null, params object[] __extra)
+    {
+        DmList dot = await base.examine(user, __extra) as DmList;
+        if (venue_type != null)
+        {
+            Type as_venue = venue_type;
+            Dm.append(ref dot, span_notice(I18n.T("[] is linked to \\a [] venue.", this, Dm.initial(as_venue, (datum_venue v) => v.name))));
+        }
+        return dot;
+    }
+
+    // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1569
+    public override void configure_machine(obj_machinery machine = null)
+    {
+        if (machine is not obj_machinery_restaurant_portal)
+        {
+            throw Dm.CRASH(Dm.text("Cargo board attempted to configure incorrect machine type: [] ([])", machine, machine?.type), "code/game/objects/items/circuitboards/machines/machine_circuitboards.dm", 1571);
+        }
+        obj_machinery_restaurant_portal portal = (obj_machinery_restaurant_portal)machine;
+        portal.linked_venue = SSrestaurant.all_venues[venue_type];
+        Dm.append(ref ((datum_venue)portal.linked_venue).restaurant_portals, portal);
     }
 }
 

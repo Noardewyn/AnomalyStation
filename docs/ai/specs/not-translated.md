@@ -264,7 +264,6 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/modules/reagents/chemistry/holder/reactions.dm:24` | `handle_reactions`: the reaction lookup over `GLOB.chemical_reactions_list_reactant_index` and starting reactions (fuel alone has none) | `add_reagent` once the MC runs | M8 (chemistry) | `modules/reagents/chemistry/holder/reactions.cs` |
 <!-- deferred leaves: append rows above this comment -->
 | `code/datums/outfit.dm:215` | `equip`: update_ID_card, the security HUD's job icon (data HUDs, M8) | `equip` | M8 (data HUDs) | `datums/outfit.cs` |
-| `code/modules/clothing/clothing.dm:74` | `Initialize`: `AddElement(/datum/element/venue_price, FOOD_PRICE_CHEAP)`, the venue price of clothing | `/obj/item/clothing/Initialize` | the restaurant venues (their robot customers; not ported) | `modules/clothing/clothing.cs` |
 | `code/modules/clothing/clothing.dm:77` | `Initialize`: `AddElement(/datum/element/attack_equip)`, equipping clothing on others by attacking | `/obj/item/clothing/Initialize` | M9 (equipping others) | `modules/clothing/clothing.cs` |
 | `code/modules/clothing/under/_under.dm:58` | `Initialize`: `register_context()`, the jumpsuit's screentips | `/obj/item/clothing/under/Initialize` | M9 (screentips) | `modules/clothing/under/_under.cs` |
 | `code/modules/clothing/under/_under.dm:59` | `Initialize`: `AddElement(/datum/element/update_icon_updates_onmob)`, redrawing the wearer when the jumpsuit's icon changes | `/obj/item/clothing/under/Initialize` | M9 (clothing: adjusting, damage, dyes) | `modules/clothing/under/_under.cs` |
@@ -546,14 +545,8 @@ leave for later:
 
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
-| `code/__HELPERS/global_lists.dm:20` | `init_crafting_recipes`: the recipes whose requirements or catalysts include a reagent (an IED's welding fuel, a molotov's fuel, most cooking recipes' salt, flour, milk...) are not listed: the reagent containers that hold them are not translated, so the port cannot hold their ingredients (the owner's scope of M5 slice 8) | the world start | M8 (chemistry) | `__HELPERS/global_lists.cs` |
-| `code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:139`, `soup_guide.dm:12` | the recipes of a chemical reaction (`/datum/crafting_recipe/food/reaction` and its soups: `New`, `setup_chemical_reaction_details`, `get_food_types` read `GLOB.chemical_reactions_list` and the glass styles): inert, not created (DV25) | the world start | M8 (chemistry) | `__HELPERS/global_lists.cs` |
-| `code/datums/components/crafting/_crafting.dm:199` | `get_surroundings`: the reagents of a drainable reagent container counted as requirements (`is_drainable`) | a crafting window or craft near a filled container | M8 (chemistry) | `datums/components/crafting/_crafting.cs` |
-| `code/datums/components/crafting/_crafting.dm:437` | `get_used_reqs`: a reagent requirement taken from the containers around (`trans_to` into the infinite holder) | a recipe with a reagent requirement (none is listed) | M8 (chemistry) | `datums/components/crafting/_crafting.cs` |
-| `code/datums/components/crafting/_crafting.dm:738` | `build_crafting_data`: a chemical reaction recipe's container, mixing and heating steps | a reaction recipe (none is listed) | M8 (chemistry) | `datums/components/crafting/_crafting.cs` |
 | `code/datums/components/crafting/_crafting.dm:381` | `construct_item`: an inert result (D132) keeps its type's declared `custom_materials` instead of its parts' (`set_custom_materials` would remove material effects its skipped Initialize never applied); a part made of a material SSmaterials does not create (meat, pizza: DV25) adds nothing to the result's materials | a craft whose result or parts are not ported | with each result's type; M8 (food materials) | `datums/components/crafting/_crafting.cs` |
 | `code/datums/components/crafting/tools.dm:108` | `/datum/crafting_recipe/shuttle_blueprints/check_tools`: the crayon's `use_charges` and `check_empty` (crayons are not translated): the crude shuttle blueprints never pass their tool check | the window's craftability of that recipe | M9 (crayons) | `datums/components/crafting/tools.cs` |
-| `code/modules/asset_cache/assets/crafting.dm:37` | `add_atom_icon`: a reagent's glass style picture (`GLOB.glass_style_singletons`); a reagent (a grinder recipe's result in the cooking list) is drawn as its default container | the cooking window | M8 (chemistry) | `modules/asset_cache/assets/crafting.cs` |
 | `code/datums/elements/slapcrafting.dm:135` | `topic_handler`: translated, and since D154 a chat link is sent back (`ClientSeam.Topic`), but the "See Recipe For ..." link is `examine_more`'s (`slapcrafting.dm:133`), which the minimal examine does not run | examining a slapcraft item twice | M9 (examine_more) | `datums/elements/slapcrafting.cs` |
 | `code/game/objects/items/handcuffs.dm:236`, `pillow.dm:48`, `crayons.dm:812`, `weaponry/ranged/flamethrower.dm:46`, `weaponry/melee/spear.dm:79`, `:405`, `:500`, `:524`, `weaponry/shields.dm:186`, `storage/backpack.dm:57`, `devices/flashlight.dm:64`, `devices/radio/radio.dm:123`, `scanners/gas_analyzer.dm:44`, `machinery/pipe/construction.dm:177`, `research/anomaly/anomaly_core.dm:187`, `wizard/equipment/soulstone.dm:37`, `fishing/aquarium/aquarium_kit.dm:131`, `clothing/glasses/_glasses.dm:416`, `:437`, `clothing/head/jobs.dm:439`, `clothing/glasses/hud.dm:115`, `:159`, `:205`, `clothing/gloves/boxing.dm:20`, `color.dm:18`, `:50`, `surgery/surgery_tools.dm:309`, `guns/energy/kinetic_accelerator.dm:35`, `laser.dm:19`, `energy_gun.dm:21`, `ammunition/ballistic/shotgun.dm:200`, `cups/glassbottle.dm:36`, `cups/soda.dm:34`, `crafting/guncrafting.dm:25`, `:41`, `:55` | the other slapcrafting hosts: their `Initialize` is not translated (their types are inert or their own init waits for its milestone), so they get the element with it; their recipes are listed in the window | the host's init | each host's milestone | (the hosts' files) |
 
@@ -1027,7 +1020,7 @@ The gas analyzer (`gas_analyzer.dm`, whole but the rows below), the atmos handbo
 | `code/_onclick/hud/rendering/render_plate.dm:337` | `set_light_cutoff` of the lighting plane master: the port has no plane masters (rules 13); `mob.sync_lighting_plane_cutoff` still has nothing to set. The cutoffs reach the client as the private block's vision (protocol 31, DV81) and the light grid takes its floor from them | the cutoffs of eyes and glasses | (none: the 3D client's, D24) | `modules/mob/mob.cs` |
 | `code/modules/mob/living/living.dm:2060` | `update_sight`: `eyes.see_invisible` / `invis_view` reach only the server's sight; the client draws no see-invisible layers of its own beyond the observer layer (protocol 22) | | (none) | `modules/mob/living/living.cs` |
 | `code/game/objects/items/holosign_creator.dm:161` | the holofan projector's `register_context()` (`Dm.Deferred`; `add_context` is translated) | every ATMOS holofan projector | M9 (screentips) | `game/objects/items/holosign_creator.cs` |
-| `code/modules/food_and_drinks/restaurant/_venue.dm`, `code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm` | `/obj/item/holosign_creator/robot_seat` (the bar's and restaurant's seat projectors), `/obj/structure/holosign/robot_seat` and `/obj/structure/holosign/barrier/cyborg/cybersun_ai_shield`: defined in other files, inert | | with their users (the restaurant venues: after the core version) | (generated, inert) |
+| `code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm` | `/obj/structure/holosign/barrier/cyborg/cybersun_ai_shield`: defined in another file, inert (the restaurant's seat projectors and seats came with gaps KT1, section 246) | | with its users | (generated, inert) |
 
 ## 38. The delamination left for later (the M7 delamination slice, G6, D163, D166)
 
@@ -1353,7 +1346,6 @@ the living's container flags, the item's `doMove` out of an inventory (`items.dm
 
 | tg | what | when it is reached | milestone | C# |
 |---|---|---|---|---|
-| `code/modules/reagents/chemistry/reagents.dm:107` | `New`: `AddElement(/datum/element/venue_price)`, a reagent's venue price (`Dm.Deferred`; was not translated) | every new reagent | the restaurant venues (their robot customers; not ported) | `modules/reagents/chemistry/reagents.cs` |
 | `code/modules/reagents/reagent_containers.dm` (`apply_fantasy_bonuses`, `remove_fantasy_bonuses`; the syringe gun's came with gaps GU1) | fantasy affixes (live-partial stubs) | a fantasy affix | M10 | (generated) |
 | `code/modules/reagents/reagent_containers/cups/_cup.dm:203` | `pour_concrete` (`Dm.NotTranslated`) | concrete poured from a cup | M10+ | `cups/_cup.cs:216` |
 | `code/modules/reagents/reagent_containers/syringes.dm:29` | `Initialize`: the `dart_insert` component (`Dm.Deferred`) | a syringe in a foam dart | toys, later | `syringes.cs:26` |
@@ -1793,7 +1785,7 @@ Not translated, each recorded at its site:
 |---|---|---|
 | the antagonists' round-end data and report, the antagonist HUD for all (SSdynamic's round result and its report lines: syndicate A3) | the alpha | `roundend.cs` |
 | the round's data file, the blackbox's counts and first death, the report files, the logs, the TGS events | not ported (section 83; the round id is translated) | `roundend.cs`, `ticker.cs`, `world.cs` |
-| the speed round and other achievements, the hardcore random score, the medals, the market report's restaurant venues (the economic summary came with gaps P4d, the station goals with gaps R1, the end credits and the commendations with gaps R5, section 186) | after M10 | `roundend.cs` |
+| the speed round and other achievements, the hardcore random score, the medals (the economic summary came with gaps P4d, the station goals with gaps R1, the end credits and the commendations with gaps R5, section 186, the market report's restaurant venues with gaps KT1, section 246) | after M10 | `roundend.cs` |
 | the report's action button and its browser window (DV192) | after M10 | `roundend.cs` |
 | the hard reboot through TGS | not ported | `world.cs` |
 
@@ -2144,7 +2136,6 @@ is live since gaps MS1 (section 227).
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `code/modules/food_and_drinks/food/_food.dm:89` | `Initialize`: the venue price element (`Dm.Deferred`) | a food with a `venue_value` | M10+ (the restaurants) | `modules/food_and_drinks/food/_food.cs` |
 | `code/modules/food_and_drinks/food/_food.dm:227` | `make_germ_sensitive`: the decomposition of food left on the floor (`Dm.Deferred`; `decomposition.dm` is inert: the mold, the ants and the stink particles; the germs came with gaps VI1, section 228) | every unwrapped food's init | the food decomposition | `modules/food_and_drinks/food/_food.cs` |
 | `code/datums/components/food/edible.dm:538` | `check_materials`: the golem food buffs of `GLOB.golem_stack_food_directory` (`Dm.Deferred`) | a rock eater eating a material | M10+ (golems) | `datums/components/food/edible.cs` |
 | `code/modules/reagents/reagent_containers/cups/drinks.dm`, `drinkingglass.dm`, `glassbottle.dm` | the drinking glasses, mugs and bottles of `/obj/item/reagent_containers/cup/glass` stay inert: their smash needs the broken bottle's icon mimicry (`icon.SwapColor`, not in the shim) and the glass's look the glass styles (`takes_reagent_appearance`); the live cups (beakers, chemistry bottles, buckets) are drunk from | Meta's bar and kitchen glasses | a later package (the bar's glasses and bottles) | (generated, inert) |
@@ -2224,7 +2215,7 @@ Package J3 makes live the job gear of smoking and the service tools: `game/objec
 | `code/game/objects/items/cigarettes.dm:320` | `on_forcesay`: choking on a cigarette when hit hard (`datums/status_effects/debuffs/choke.dm`, 301 lines, not ported) | a heavy hit that interrupts speech with a cigarette in the mouth | M10+ | `game/objects/items/cigarettes.cs` |
 | `code/game/objects/items/cigarettes.dm:291` | `on_consume`: the 500 cigarettes eaten achievement (awards) | eating cigarettes | M10+ | `game/objects/items/cigarettes.cs` |
 | `code/game/objects/items/lighter.dm:47`, `:80` | the light middleman's flicker (the lighting module, D24, as the welder's and flare's): the flame's light is steady | a lit lighter | never as such (D24) | `game/objects/items/lighter.cs` |
-| `code/game/objects/items/crayons.dm:216`, `:221` | the venue price (robot customers), the spray can's `palette` component (its colour wheel action; the window's colours and custom colour work) | a crayon sold at a restaurant, on an object; the spray can's action | M10+; M10+ | `game/objects/items/crayons.cs` |
+| `code/game/objects/items/crayons.dm:221` | the spray can's `palette` component (its colour wheel action; the window's colours and custom colour work; the venue price of `:216` came with gaps KT1) | the spray can's action | M10+ | `game/objects/items/crayons.cs` |
 | `code/game/objects/items/crayons.dm:811`, `:867`, `:925`, `:1022` | the spray can's coolant slapcraft, the sprayed face's overlay (`face_decal`), restyling a robotic limb (a radial menu) | a spray can on a face or a robotic limb | M10+; the limb with J5 and P1 | `game/objects/items/crayons.cs` |
 | `code/game/objects/effects/decals/crayon.dm:60`, `:64` | the chalk outline's alpha mask (`getFlatIcon` of a mob, the chat icons gap, section 76): the outline shows the whole body in chalk's colour | an outline around a corpse | M10+ | `game/objects/effects/decals/crayon.cs` |
 | `code/game/objects/items/devices/laserpointer.dm:112`, `:143` | `do_teleport`, the blink of a jammed bluespace lens (`datums/helper_datums/teleport.dm` is not ported; the items are removed or the lens consumed as tg's) | a tier 1-2 diode with a lens | with the teleport procs | `game/objects/items/devices/laserpointer.cs` |
@@ -2281,7 +2272,7 @@ Package C3 makes every bot of tg live with its controller, tree, leaves and stra
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `space_fauna/` `morph.dm`, `revenant/`, `space_dragon/`, `demon/`, `spider/` but Araneus, `meteor_heart/`, `robot_customer.dm`, `supermatter_spider.dm` | tied to an antagonist or event not ported (morph, revenant, dragon, demons, the spider nest, the meteor heart; the changeling's headslug came with gaps K1) or to the restaurant (robot customers) and the cascade | their antagonist or event | with them | none |
+| `space_fauna/` `morph.dm`, `revenant/`, `space_dragon/`, `demon/`, `spider/` but Araneus, `meteor_heart/`, `supermatter_spider.dm` | tied to an antagonist or event not ported (morph, revenant, dragon, demons, the spider nest, the meteor heart; the changeling's headslug came with gaps K1, the restaurant's robot customers with gaps KT1) or to the cascade | their antagonist or event | with them | none |
 | `modules/mob/living/basic/slime/` | `_onclick/hud/slime.dm` and `screen_objects.dm:1359`: a player slime's HUD and power display | a player slime | P-science | `slime/slime.cs`, `slime/life.cs` |
 | `controllers/subsystem/minor_mapping.dm:63`, `:108` | the flat satchels under the floor and the hull weakpoints (both types inert); the migration itself runs | round start | M10+ | `controllers/subsystem/minor_mapping.cs` |
 | `datums/components/butchering.dm:128`, `:280`, `:305`, `:312`, recycler, mecha, wearable | a person's limb cut for meat, the replacement limb, slitting a throat (`neck_slice` inert), the recycler's, the mech drill's and the wearable's variants | a person on a table, a recycler, a mech | surgery, M10+ | `datums/components/butchering.cs` |
@@ -3160,7 +3151,6 @@ silicon entries (the rows below; its MODsuit entries came with gaps MO2).
 |---|---|---|---|---|
 | `automatic.dm:51` | the C-20r's bayonet mount (`bayonet_attachable`, as the WT-550's) | a knife on the gun | M10+ (bayonets) | `automatic.cs` |
 | `cannonball.dm:90-170` | the ballista's spears | the ballista | the ballista | (generated) |
-| `sweets.dm:232-262` | the bubblegum gum (its bubblegum hallucination) | the bubblegum's loot | M10+ | (generated) |
 | `antag_spawner.dm:193-255` | the clown operatives' beacon (N3) and the cyborg teleporters (the silicons): inert, their uplink entries hidden | the uplink | N3, the silicons | (inert) |
 | `under/syndicate.dm:82` | the tacticool turtleneck's syndicate dye (the washing machine) | a washing machine | M10+ | live-partial |
 | `nukeops.dm` | the AI entries (the Syndicate intelliCard, the AI upgrade disk) stay hidden (the MODsuits and their modules are sold since gaps MO2) | the uplink | the syndicate silicons (SI8, SI9) | `uplink_items.cs` |
@@ -3501,7 +3491,6 @@ client's NtosPay, AccountingConsole, BankMachine and HoloPay windows.
 | `account.dm:120-139` | the CRAB-17's drain (`/obj/structure/checkoutmachine`: `dumpeet` and `stop_dump` are translated, the machine is inert) | a traitor's CRAB-17 | the traitor's uplink items | `modules/economy/account.cs` |
 | `cards_ids.dm:134`, `:704`, `:1034` | the card's fantasy bonuses, its admin var edits and the honorific toggle (`item_ctrl_click`) | — | the fantasy affixes, admin tooling, the honorifics | `game/objects/items/cards_ids.cs` |
 | `medical_kiosk.dm`, `wall_healer.dm` | the medical kiosk and the wall healer, machines that charge through the payment component | using them | with their machines | (inert) |
-| `datums/elements/venue_price.dm` | the restaurant venues' prices of drinks and clothes (`clothing.dm:74`, `reagents.dm:107`: `Dm.Deferred` leaves) | a bar's or a restaurant's robot customer | the restaurant venues | `modules/clothing/clothing.cs`, `modules/reagents/chemistry/reagents.cs` |
 
 ## 168. Cargo with the economy (gaps P4b, D327)
 
@@ -4671,7 +4660,7 @@ blur, the held items' float, the alert and the reverb. Leaves:
 | `alcohol_reagents.dm:3457` | the poet's dream's heretic dreams (`/datum/status_effect/grouped/heretic_dreams`, inert: `Dm.Deferred`) | drinking a poet's dream | the antagonists (D333): the heretic | `reagents/drinks/alcohol_reagents.cs` |
 | `drink_reagents.dm:247` | milk's `used_on_fish` (`Dm.Deferred`): a bone fish fed milk repaired and sated | feeding milk to a fish | fishing (M10+) | `reagents/drinks/drink_reagents.cs` |
 | `alcohol_reagents.dm:2227` | the bug spray's `/datum/element/bugkiller_reagent` (inert, as the toxins' insecticide's) | splashing bug spray on an insect | with the element's package | `reagents/drinks/alcohol_reagents.cs` |
-| `game/objects/effects/decals/cleanable/food.dm` | the file is PARTIAL: the salt pile only; the tomato smudge's `can_bloodcrawl_in` and the squid ink's `Initialize` are left | a blood crawler; squid ink | the antagonists (D333); the squid | `game/objects/effects/decals/cleanable/food.cs` |
+| `game/objects/effects/decals/cleanable/food.dm` | the file is PARTIAL: the salt pile and the squid ink (gaps KT1); the tomato smudge's `can_bloodcrawl_in` is left | a blood crawler | the antagonists (D333) | `game/objects/effects/decals/cleanable/food.cs` |
 ## 225. The medicines, toxins and addictions (gaps RG2, D333, D339)
 Translated whole: `chemistry/reagents/medicine_reagents.dm` (strange reagent's revival and the fishy reagent's, the stimulants,
 ephedrine, the trauma, mutation and drunkenness cures, flumpuline's eye stalks, earthsblood, modafinil's overdose, the rest of the
@@ -4792,7 +4781,6 @@ type. Left:
 | `abductor/equipment/glands/heal.dm`, `viral.dm` | the abductor glands' cure and random virus | an abductee | the abductors (D333) | (inert) |
 | `revenant/revenant_abilities.dm:371-376` | the revenant's blight ability (the blight is live) | a revenant | the revenant (D333) | (inert) |
 | `wands/wand_plague.dm` | the wand of plague's verminous plague (the plague is live) | the wizard | the wizard (D333) | (inert) |
-| `food/snacks.dm:44-49`, `food/sandwichtoast.dm:318` | the Bronx candy's parasite and the death sandwich's poisoning (the diseases are live; the foods are inert) | eating them | the foods | (inert) |
 | `spacesuits/_spacesuits.dm:393` | the space helmet suicide's advanced cold | a suicide | the suicides (M10) | `modules/clothing/spacesuits/_spacesuits.cs` (live-partial.txt) |
 | `items/dice.dm:384` | the Die of Fate's cold | the Die of Fate | the wizard (D333) | `game/objects/items/dice.cs` (inert type) |
 | `modules/antagonists/disease` | the sentient disease: not in the snapshot (D333) | | | |
@@ -5342,3 +5330,26 @@ draw as an argument `update_use_power` ignores, the firepit's `Initialize` toggl
 | `step_triggers.dm:47-190`, `:238-` | the thrower, the stopper and the teleporting step triggers (no Lavaland ruin places them) | away missions, the shuttles | with their maps | `game/objects/effects/step_triggers.cs` |
 | `mission_code/Cabin.dm:89-140`, `shuttle/misc/special.dm` but `:175-211` | the cabin's lumbermill, rune ladder and snowy map generator; the special shuttles' machines and the luxury shuttle's blockers | the away mission, the special shuttles | the away missions, gaps SH1 | `mission_code/Cabin.cs`, `shuttle/misc/special.cs` |
 | the ruins' 3D models | the nest, the eggs, the pillars, the slot machine, the dead god, the ATV and the gas miners keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 246. The restaurant and the food left (gaps KT1, D339)
+Translated whole: `food_and_drinks/restaurant/` (`_venue.dm` but the portal's context tips: the venue's processing, customers,
+orders and payments, its opening and closing by an ID with its access, the portal with its door overlay, its venue picked with an
+ID, its board, panel and wrench; the seat projectors and the seats; `generic_venues.dm`: the restaurant and the bar, the food's
+thought bubble, the food pushed into the mouth and the drink slurped; `custom_order.dm`: the moth clothing, ice cream, reagent,
+drink and soup orders; `customers/_customer.dm`: the eleven customer kinds with their prefixes, lines, looks and voices),
+`controllers/subsystem/restaurant.dm`, `basic/space_fauna/robot_customer.dm`, `datums/ai/robot_customer/` (the controller and the
+behaviours; the tree was embedded), `elements/food/venue_price.dm` with its sites (`_food.dm:89`, `reagents.dm:107`,
+`clothing.dm:74`, `crayons.dm:216`), the round end's restaurant venues (`roundend.dm`), the portal's board
+(`machine_circuitboards.dm`); every food subtype's own proc left in `food/` (`snacks.dm`, `burgers.dm`, `soup.dm`, `bait.dm` whole;
+the rest of `misc.dm`, `bread.dm`, `lizard.dm` but the row below, `pastries.dm`, `cake.dm`, `frozen.dm`, `spaghetti.dm`,
+`martian.dm`, `mexican.dm`, `sweets.dm`, `vegetables.dm`, `pie.dm`, `packaged.dm`, `sandwichtoast.dm`), the recipe guides
+(`recipes_guide.dm`, `soup_guide.dm`) and the monkey recyclers' list. With them: `components/food/ghost_edible.dm`,
+`status_effects/limited_effect.dm` and the health buff of `buffs.dm`, the squid ink decal (`cleanable/food.dm`), and the crafting of
+reagent ingredients the guides and most cooking recipes need (`global_lists.dm:20`, `_crafting.dm:199`, `:437`, `:738`, the glass
+style picture of `assets/crafting.dm:37`; section 11's rows). Meta's two portals and two seat projectors are live. Kept as tg has
+them: the moth clothing order is made with no venue (`order_food` passes only the customer, so its `New` reads a null venue); the
+ice cream cone sold to a customer reports no transaction, so it is not counted as served; the reaction guides' `New` runs the
+parent twice; the ice cream order's flavour list grows with every order; the crazy burger never stops processing.
+| `food/lizard.dm:150` | the moonfish eggs' aquarium content (`/datum/component/aquarium_content`, `Dm.Deferred`): the eggs put in an aquarium | an aquarium | fishing | `modules/food_and_drinks/food/lizard.cs` |
+| `restaurant/_venue.dm:285`, `:190` | the portal's context tips (`add_context`, a live-partial stub, and its `register_context`) | a held tool or ID over a portal | the screentips (D291) | `modules/food_and_drinks/restaurant/_venue.cs` |
+| `job_types/cook.dm:56`, `bartender.dm:38` | the cook's and bartender's tourist scores from their venue's income (`award_service`, live-partial rows of gaps J2) | the round end | the achievements (D332) | (live-partial) |
+| the restaurant's 3D models | the portal, the robot customers, the seat holosign and the thought bubble keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |

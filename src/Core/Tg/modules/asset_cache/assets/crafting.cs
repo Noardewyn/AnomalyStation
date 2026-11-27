@@ -36,10 +36,12 @@ public static partial class GlobalProcs
         {
             Type reagent = ingredient_typepath;
             preview_item = Dm.initial(reagent, (datum_reagent r) => r.default_container) as Type;
-            // GAP(M5 slice 8 -> chemistry, M8): var/datum/glass_style/style = GLOB.glass_style_singletons[preview_item]?[reagent]
-            // (:37-40): the glass styles are not translated, so a reagent (the result of a grinder recipe of the cooking list) is
-            // drawn as its default container, tg's own picture for a reagent without a style.
-            Dm.Deferred("code/modules/asset_cache/assets/crafting.dm:37", "add_atom_icon: a reagent's glass style picture (GLOB.glass_style_singletons, chemistry, M8)");
+            datum_glass_style style = (GLOB.glass_style_singletons[preview_item] as DmList)?[reagent] as datum_glass_style;
+            if (style is datum_glass_style)
+            {
+                icon_file = style.icon;
+                icon_state = style.icon_state;
+            }
         }
         // Hardcoded for now, I suppose. Revisit later with bespoke "generic" icons for abstract types i.e. if(ingredient_typepath == ingredient_typepath::abstract_type) ?
         else if (ingredient_typepath == typeof(obj_item_food) || ingredient_typepath == typeof(obj_item_food_grown) || ingredient_typepath == typeof(obj_item_grown))

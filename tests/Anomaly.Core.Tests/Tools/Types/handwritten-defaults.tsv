@@ -4399,6 +4399,19 @@
 /obj/machinery/grill	processing_flags	override	code/modules/food_and_drinks/machinery/grill.dm:13	{"K":"num","N":2}
 /obj/machinery/grill	use_power	override	code/modules/food_and_drinks/machinery/grill.dm:14	{"K":"num","N":0}
 /obj/machinery/grill	custom_materials	init	code/modules/food_and_drinks/machinery/grill.dm:15	{"K":"list","N":0,"L":[{"Key":{"K":"type","N":0,"S":"/datum/material/iron"},"Value":{"K":"num","N":800}},{"Key":{"K":"type","N":0,"S":"/datum/material/glass"},"Value":{"K":"num","N":5}}]}
+/obj/machinery/restaurant_portal	linked_venue	decl	code/modules/food_and_drinks/restaurant/_venue.dm:174	{"K":"null","N":0}
+/obj/machinery/restaurant_portal	turned_on_portal	decl	code/modules/food_and_drinks/restaurant/_venue.dm:177	{"K":"null","N":0}
+/obj/machinery/restaurant_portal	name	override	code/modules/food_and_drinks/restaurant/_venue.dm:162	{"K":"str","N":0,"S":"restaurant portal"}
+/obj/machinery/restaurant_portal	desc	override	code/modules/food_and_drinks/restaurant/_venue.dm:163	{"K":"str","N":0,"S":"A robot-only gate into the wonders of Space Station cuisine!"}
+/obj/machinery/restaurant_portal	icon	override	code/modules/food_and_drinks/restaurant/_venue.dm:164	{"K":"res","N":0,"S":"icons/obj/machines/restaurant_portal.dmi"}
+/obj/machinery/restaurant_portal	icon_state	override	code/modules/food_and_drinks/restaurant/_venue.dm:165	{"K":"str","N":0,"S":"portal"}
+/obj/machinery/restaurant_portal	base_icon_state	override	code/modules/food_and_drinks/restaurant/_venue.dm:166	{"K":"str","N":0,"S":"portal"}
+/obj/machinery/restaurant_portal	anchored	override	code/modules/food_and_drinks/restaurant/_venue.dm:167	{"K":"num","N":1}
+/obj/machinery/restaurant_portal	density	override	code/modules/food_and_drinks/restaurant/_venue.dm:168	{"K":"num","N":0}
+/obj/machinery/restaurant_portal	circuit	override	code/modules/food_and_drinks/restaurant/_venue.dm:169	{"K":"type","N":0,"S":"/obj/item/circuitboard/machine/restaurant_portal"}
+/obj/machinery/restaurant_portal	layer	override	code/modules/food_and_drinks/restaurant/_venue.dm:170	{"K":"num","N":2.9}
+/obj/machinery/restaurant_portal	armor_type	override	code/modules/food_and_drinks/restaurant/_venue.dm:171	{"K":"type","N":0,"S":"/datum/armor/restaurant_portal"}
+/obj/machinery/restaurant_portal	resistance_flags	override	code/modules/food_and_drinks/restaurant/_venue.dm:172	{"K":"num","N":50}
 /obj/machinery/hydroponics	myseed	decl	code/modules/hydroponics/hydroponics.dm:44	{"K":"null","N":0}
 /obj/machinery/hydroponics	name	override	code/modules/hydroponics/hydroponics.dm:2	{"K":"str","N":0,"S":"hydroponics tray"}
 /obj/machinery/hydroponics	desc	override	code/modules/hydroponics/hydroponics.dm:3	{"K":"str","N":0,"S":"A basin used to grow plants in."}
@@ -4547,6 +4560,13 @@
 /obj/structure/headpike	density	override	code/game/objects/structures/headpike.dm:6	{"K":"num","N":0}
 /obj/structure/headpike	anchored	override	code/game/objects/structures/headpike.dm:7	{"K":"num","N":1}
 /obj/structure/headpike	custom_materials	init	code/game/objects/structures/headpike.dm:8	{"K":"list","N":0,"L":[{"Key":{"K":"type","N":0,"S":"/datum/material/glass"},"Value":{"K":"num","N":115}},{"Key":{"K":"type","N":0,"S":"/datum/material/iron"},"Value":{"K":"num","N":65}}]}
+/obj/structure/holosign/robot_seat	linked_venue	decl	code/modules/food_and_drinks/restaurant/_venue.dm:325	{"K":"type","N":0,"S":"/datum/venue"}
+/obj/structure/holosign/robot_seat	density	override	code/modules/food_and_drinks/restaurant/_venue.dm:319	{"K":"num","N":0}
+/obj/structure/holosign/robot_seat	desc	override	code/modules/food_and_drinks/restaurant/_venue.dm:320	{"K":"str","N":0,"S":"Used to indicate a place to sit for a robot tourist. I better be careful."}
+/obj/structure/holosign/robot_seat	icon	override	code/modules/food_and_drinks/restaurant/_venue.dm:321	{"K":"res","N":0,"S":"icons/effects/effects.dmi"}
+/obj/structure/holosign/robot_seat	icon_state	override	code/modules/food_and_drinks/restaurant/_venue.dm:322	{"K":"str","N":0,"S":"eating_zone"}
+/obj/structure/holosign/robot_seat	layer	override	code/modules/food_and_drinks/restaurant/_venue.dm:323	{"K":"num","N":3.7}
+/obj/structure/holosign/robot_seat	use_vis_overlay	override	code/modules/food_and_drinks/restaurant/_venue.dm:324	{"K":"num","N":0}
 /obj/structure/tray	connected	decl	code/game/objects/structures/morgue.dm:540	{"K":"null","N":0}
 /obj/structure/tray	icon	override	code/game/objects/structures/morgue.dm:532	{"K":"res","N":0,"S":"icons/obj/machines/crematorium.dmi"}
 /obj/structure/tray	density	override	code/game/objects/structures/morgue.dm:533	{"K":"num","N":1}

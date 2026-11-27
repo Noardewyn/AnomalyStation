@@ -1814,11 +1814,13 @@ was looser than tg):
 - Hand-only items (a slap, a kiss) can only be dropped, as in tg.
 - Opening by Tab is opening the bag in tg's sense: tg's checks and tg's `on_found` pass run, so an armed mousetrap
   in the bag, or in another listed storage, snaps on Tab as when it is opened by hand.
-- A belt item moved to a hand keeps its cell on the bar reserved, as its number key does. The number keys and the
-  moves share one rule for when the body can act (hands blocked and a mech stop both); tg's click cooldown applies
+- A belt item moved to a hand keeps its cell on the bar reserved, as its number key does. The number keys check what tg's own quick-equip keys check, and the
+  moves what tg's own click for that move checks (the first wording here was stricter than tg and was dropped); tg's click cooldown applies
   to moves and not to the keys.
 - Storages whose contents tg hides (a cigarette pack) are listed without items and get no panel in the client.
 - For the contributor to tell the owner: D226 lists "hands full" among a drag's refusals (moves out of a storage
   need no hand: DV692); D40 (no hidden data sent): the owner of a body receives the contents of every storage they
   carry at all times, locked and hidden ones withheld; D131 and D225: the move request is a path beside tg's
   storage screen entries that calls tg's procs.
+- The move to the floor is tg's drop key: a cuffed player can drop, as in tg. A worn storage comes off by tg's drag
+  of it onto the hand (tg's click on a worn bag opens it).

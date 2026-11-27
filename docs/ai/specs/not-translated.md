@@ -5520,6 +5520,7 @@ pump's multitool overclock.
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `tools/engineering/wrench.dm:70` | the medical wrench's `suicide_act` (the prayer, the light and the servitude overlay; a live-partial row, as the other suicide acts) | the suicide verb | M10+ (the suicide verb) | `game/objects/items/tools/engineering/wrench.cs` |
+| `effects/landmarks.dm:621-635` | the navigate destinations (52 on MetaStation, `/obj/effect/landmark/navigate_destination` and its subtypes) stay inert: they only fill `GLOB.navigate_destinations` for the Navigate verb and the HUD's navigate button, which are not ported (`mob/living/navigation.dm`; the HUDs' navigate buttons are deferred leaves too) | the Navigate verb | with the verbs (M10+) | (generated, inert) |
 
 ## 256. MetaStation's machines with windows (gaps MT2, the 2026-11-26 audit)
 Live: `machinery/PDApainter.dm` whole (the painter and its five departmental variants with their PDA and trim lists from SSid_access,

@@ -1691,3 +1691,42 @@ Settled design (client only; built right after slice 4A, since both touch the sa
 - Known limits: a second hit inside the same level of tg's health doll does not close the overlay again; tg's
   round-start intro text draws over the panel for the first seconds of a round; the panel has no backing, so the
   world shows through it.
+
+### Slice 4B: settled design (from the points the designer confirmed in section 12; the panels' look to confirm)
+
+Built in two parts, as package 3 was: 4B-1 the server and the wire, 4B-2 the right column and the moves in the
+client. One commit after the contributor's sign-off (it changes the wire: HIGH).
+
+What the player gets:
+- Under Tab the right column (from 64% of the width to the vitals) lists every storage the player carries, top to
+  bottom: the backpack (the back slot), then the belt when it holds more than the bar's seven cells show (only the
+  items beyond the seventh), then a storage worn in the suit-storage slot, in a pocket or as the ID (a wallet), then
+  a storage held in a hand. Each panel: the storage's picture and name, its room as tg counts it ("14 / 21": the
+  summed weight classes of what is in it against its limit), and a grid of cells of the bar's size and look, one
+  per slot tg gives the storage, filled in tg's order, the empty ones drop targets. The column scrolls with the
+  wheel when the panels do not fit. A storage tg keeps locked shows its name and "Locked" and no cells.
+- Pressing Tab opens the backpack as opening it by hand does in tg: tg's own rustle is played where tg plays it
+  (others near hear it, as in tg), at most once a second. tg's own storage window is not shown for a storage the
+  right column shows (each thing once).
+- Dragging: an item can be dragged from any of a hand box, a bar cell (belt, pocket, ID), a worn slot's cell or a
+  storage panel's cell onto any other of them, and onto the own sprite (used on oneself at the part, as a click
+  with it in hand) and onto the view (dropped, as tg's drop). Each drop is one request; the server does it with
+  tg's own procs and checks (what tg lets out of a storage or off a slot, what the target accepts, tg's equip
+  delays where tg has them), or refuses it with tg's message and the cell's red blink. A move between two
+  storages or slots needs no free hand: it is done as taking the item out and putting it in, and it goes back
+  where it was if the target refuses (DEVIATION, to record: tg needs a hand to carry it across).
+- Ctrl+click on an item (the quick transfer; its own rebindable action, default Ctrl+left click): in a storage
+  panel, a bar cell or a worn slot: to the active hand if it is empty, otherwise refused; in a hand box: into the
+  backpack as tg's own "put in bag" key does, or refused with tg's message. In the inventory tg's own Ctrl-click
+  action of a carried item is reached from the right-click wheel.
+- Tooltips and the hint strip name the item under the pointer in a panel as they do for the bar.
+
+The wire (protocol 98, unreleased, so no new version number), for 4B-1:
+- To the owning player only, when it changes: the list of carried storages in the order above, each with its
+  entity, where it is carried, its name, tg's slot count and room (used and limit), a locked flag, and its items in
+  tg's order (entity, name, and what the client needs to draw it and its count, as the hotbar message does for the
+  belt). Bounded: at most 8 storages and 64 items a storage; names cut at the hotbar message's limit.
+- From the client: one "move" request naming the item and a target (a storage with or without a cell, a worn slot,
+  a hand, the floor); one "inventory opened" notice. Nothing else is trusted: the server checks that the item is
+  the sender's own (in a hand, a worn slot or a carried storage), that the target is the sender's own, that the
+  sender can act (tg's incapacitated, restrained and reach rules), and that every number is in range.

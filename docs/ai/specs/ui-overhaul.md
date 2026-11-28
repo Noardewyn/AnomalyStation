@@ -54,6 +54,8 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `1e37154c` | First person: dragging oneself onto an object by looking down; DEVIATION markers and dated comments cleaned (client only; DV695; section 17) |
 | `cea8fa48` | Package 4, slice 4B: every carried storage in a right column, drags between everything, the quick transfer, Shift+click examine, Tab's rustle and traps (server and client; DV696, DV694, DV693; section 12; signed off by the contributor 2026-11-27) |
 | `2d4468d8` | Merge of `origin/main` (release 1.16.0, upstream's protocol 99: photos): this branch's wire changes are protocol 100, its messages Hotbar 34 and Storages 35 (were 32 and 33), its deviations DV689 to DV696 (were DV685 to DV692); signed off by the contributor 2026-11-27 |
+| `63b52a97` | Upstream's photo upload hardened on this branch (the PNG's claimed size checked before decoding, a negative chunk length, an upload answering no request) |
+| `0872734f` | Package 4, slice 4C: the container the player opens as a pinned panel, the Nearby row, a container closing when the player walks out of reach (server and client; DV696, DV694; section 12; signed off by the contributor 2026-11-28) |
 
 The numbers in this table are today's. Commit messages carry the numbers of their time. This branch's wire changes
 were built as protocol 95 and became 98 in the merge of release 1.14.0, 99 in the merge of 1.15.0 and 100 in the

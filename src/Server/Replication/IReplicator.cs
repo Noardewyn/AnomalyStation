@@ -195,6 +195,9 @@ public interface IReplicator
     /// <summary>Version 100 also (DV696): the Storages message of a session's last <see cref="BuildPrivate"/> or join (its carried storages changed, or a move was refused), or null.</summary>
     StoragesMessage TakeStorages(int session) => null;
 
+    /// <summary>Version 100 also (DV698): the Actions message of a session's last <see cref="BuildPrivate"/> or join (its action buttons, their states or the palette changed), or null.</summary>
+    ActionsMessage TakeActions(int session) => null;
+
     /// <summary>
     /// Version 42: the Motion messages of a session for the last <see cref="BuildDelta"/>, after its <see cref="BuildPrivate"/> (the observer
     /// layer's held entities decide which ghosts it names): the capsule mobs whose position or yaw changed within

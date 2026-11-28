@@ -379,6 +379,7 @@ public sealed class GameClient : IWorldFeed, IDisposable
             case MessageId.HeldMotion: // version 54: the replica raises HeldMotionReceived (the first-person gun moves, Hud/ViewModel)
             case MessageId.Hotbar: // version 100 also (DV693): the replica keeps the own hotbar and counts its refusals
             case MessageId.Storages: // version 100 also (DV696): the replica keeps the own carried storages and counts the refused moves
+            case MessageId.Actions: // version 100 also (DV698): the replica keeps the own action buttons
                 if (_phase == FeedPhase.BetweenRounds)
                     break; // D306: the old world's last messages
                 try

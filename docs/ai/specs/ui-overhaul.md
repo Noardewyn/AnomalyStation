@@ -1566,6 +1566,19 @@ Slice 4E settled (2026-11-28, from the builder's reading of tg and Space Station
   as in tg ("Only with an empty hand, as tg"); with an item held it does nothing. Only with the cursor captured; in
   the inventory a right click stays the item menu.
 
+The hints, improved (asked for by the designer 2026-11-28, "Full list" chosen from three mockups; "Hold RMB" is not
+listed, since a held right click already opens the radial):
+- Beside the crosshair, for the thing looked at (in reach, as now): its name, then one line per way to act on it,
+  each with the player's own key for it as a chip: the left click with what the active hand holds (tg's screentip
+  for that), E (tg's empty-hand click on it, slice 4E; shown only when it would do something different from the
+  left click or the hand holds an item), Alt (tg's alt-click), Ctrl (pull, or tg's own Ctrl action), Ctrl+right
+  click "Move here" on a turf next to the player while pulling with an empty hand. A line only where tg gives that
+  click an action.
+- Over the hands (the hint strip): the held item's name and its own keys: Z use (tg's activate in hand), Alt+Z
+  (tg's alt-click on it) where it has one, Q drop, R quick equip where it would go somewhere.
+- Both refresh when the held item changes (swap hands, pick up, drop) or combat mode toggles, not only on a new look.
+- The keys shown follow the player's bindings (F10), so a rebound key shows its new chip.
+
 ## 13. The chat window in first person (asked for by the designer, 2026-11-27)
 
 "we imght have to move the chat too to make the hotbar work, and maybe change it ui so its less intusive", then,

@@ -32,7 +32,8 @@ namespace Anomaly.Client.Hud;
 /// taking its alert's clicks and hover. Slice E, on the human HUD: the doll, tg's health indicator and mood face stand bare against the screen's
 /// right edge (or the doll alone left of tg's right column on a crowded screen), tg's status indicators and sleep button are chips, tg's combat
 /// toggle is in the corner with, under Tab only, the zone selector, the memories button and the area creator left of it, and tg's buttons that a
-/// key does are neither drawn nor clicked.
+/// key does are neither drawn nor clicked. Section 15 (DV698), on every HUD: tg's action buttons are drawn only in the actions menu's slots of the
+/// top-left row (<see cref="ActionSlots"/>), still tg's for clicks, and tg's action palette not at all.
 /// </para>
 /// </summary>
 public partial class HudLayer : CanvasLayer, IHudSurface
@@ -288,8 +289,8 @@ void fragment() {
     }
 
     // the role an item is drawn in this frame: the hands, the bottom slots and the alerts only on the human HUD, tg's right-column indicators
-    // only with its full vitals stack (slices D and E)
-    private LiveHudRole RoleNow(Item item) => LiveHud.Placed(item.Role, _humanHud, _layout.Vitals);
+    // only with its full vitals stack (slices D and E); section 15: an action button or palette object is never re-placed as anything else
+    private LiveHudRole RoleNow(Item item) => IsActionEntry(item) ? LiveHudRole.Tg : LiveHud.Placed(item.Role, _humanHud, _layout.Vitals);
 
     private static bool IsHand(LiveHudRole role) => role is LiveHudRole.LeftHand or LiveHudRole.RightHand;
 
@@ -421,7 +422,7 @@ void fragment() {
             bottomToTop.Add(new HudDrawn(TabInventory.SpriteId, _panel.Sprite, _spriteShown, 0, 0));
         foreach (Item item in _order)
         {
-            if (!item.Container.Visible || !item.HasSpec || item.Hidden || !LiveHud.Shown(RoleNow(item), CursorMode))
+            if (!item.Container.Visible || !item.HasSpec && ActionSlotOf(item) == 0 || item.Hidden || !LiveHud.Shown(RoleNow(item), CursorMode))
                 continue;
             if (RoleNow(item) == LiveHudRole.WornSlot) // slice 4A: the panel's cell is tg's slot for clicks, drags and its tooltip
             {
@@ -480,45 +481,47 @@ void fragment() {
         foreach (Item item in _order)
         {
             if (item.Container.Visible && !item.Hidden && item.Whole != null && item.Whole.Visible && !item.Fullscreen
-                && item.LastRect.Top < band && item.LastRect.Left < band * 6)
+                && (ActionSlotOf(item) > 0 || item.LastRect.Top < band && item.LastRect.Left < band * 6)) // section 15: the whole row of slots
                 right = Mathf.Max(right, item.LastRect.Right);
         }
         return right;
     }
 
-    /// <summary>The owner (2026-10-29): the id of the <paramref name="number"/>th (from 1) shown item action button, top row first and left to right; 0 when none.</summary>
-    public long ActionButtonNumber(int number) => _numbered.ElementAtOrDefault(number - 1)?.Entry.Id ?? 0;
+    /// <summary>Section 15 (DV698): the own action buttons and tg's palette objects the server last sent (<see cref="ReplicaWorld.Actions"/>). Set by the scene each frame.</summary>
+    public ActionsMessage Actions { get; set; } = ActionsMessage.None;
 
-    private readonly List<Item> _numbered = new();
+    /// <summary>Section 15: the actions menu's nine slots: tg's button of each is drawn in the top-left row's slot. Set by the scene each frame.</summary>
+    public ActionSlots ActionSlots { get; set; }
 
-    // The shown item action buttons in reading order, each with its key (ActionButton1-9) as a key cap in its top left corner, so the key that uses
-    // each one is on it
-    private void NumberActionButtons(float unit)
+    /// <summary>Section 15: the top-left row's nine slots this frame (<see cref="ActionsMenu.Row"/>), slot 1 first.</summary>
+    public IReadOnlyList<HudRect> ActionRow => _actionRow;
+
+    /// <summary>Section 15: the side of a slot (the bar's cell) and the unit, screen pixels, this frame.</summary>
+    public float ActionCell { get; private set; }
+
+    /// <inheritdoc cref="ActionCell"/>
+    public float ActionUnit { get; private set; }
+
+    private HudRect[] _actionRow = Array.Empty<HudRect>();
+    private readonly HashSet<long> _actionIds = new(); // the buttons and palette objects of _actionsSeen
+    private ActionsMessage _actionsSeen;
+
+    // Section 15: the slot (1 to 9) whose top-left row draws this entry, 0 for none
+    private int ActionSlotOf(Item item) => ActionSlots?.SlotOf(item.Entry.Id) ?? 0;
+
+    // Section 15: an action button or a palette object of tg's (the row draws the slotted buttons, the menu lists them all; none is at tg's place)
+    private bool IsActionEntry(Item item)
     {
-        _numbered.Clear();
-        _numbered.AddRange(_order.Where(item => item.Entry.ActionTarget > 0 && item.Container.Visible && !item.Hidden && item.Whole != null && item.Whole.Visible && !item.Fullscreen)
-            .OrderBy(item => Mathf.Round(item.LastRect.Top / 4f)).ThenBy(item => item.LastRect.Left));
-        foreach (Item item in _order)
+        if (!ReferenceEquals(Actions, _actionsSeen))
         {
-            int number = _numbered.IndexOf(item) + 1;
-            IReadOnlyList<string> keys = number is >= 1 and <= 9 ? _options.Bindings.KeysOf(PlayAction.ActionButton1 + (byte)(number - 1)) : null;
-            if (keys == null || keys.Count == 0)
-            {
-                if (item.KeyHint != null)
-                    item.KeyHint.Visible = false;
-                continue;
-            }
-            // a key cap in the button's top left corner, as a hotbar cell's (its label made smaller, then cut, to fit)
-            if (item.KeyHint == null)
-            {
-                item.KeyHint = new LiveHudView.KeyCap();
-                item.KeyHint.SetAnchorsPreset(Control.LayoutPreset.FullRect);
-                item.Container.AddChild(item.KeyHint);
-            }
-            item.Container.MoveChild(item.KeyHint, -1); // over the button's picture
-            item.KeyHint.Set(item.LastRect, KeyChips.Label(keys[0]), unit);
-            item.KeyHint.Visible = true;
+            _actionsSeen = Actions;
+            _actionIds.Clear();
+            foreach (ActionButtonState b in Actions?.Buttons ?? Array.Empty<ActionButtonState>())
+                _actionIds.Add(b.Button);
+            foreach (long id in Actions?.Palette ?? Array.Empty<long>())
+                _actionIds.Add(id);
         }
+        return _actionIds.Contains(item.Entry.Id);
     }
 
     private double _lastNow;
@@ -573,12 +576,15 @@ void fragment() {
         }
         _zoneStates.Clear();
         _zoneRects.Clear();
+        // section 15: the top-left row of action slots, cells of the bar's size, laid out before the entries are placed in it
+        ActionUnit = UiTokens.Unit(metrics);
+        ActionCell = MathF.Round(UiTokens.HotbarSlot * ActionUnit);
+        _actionRow = ActionsMenu.Row(ActionCell, ActionUnit);
         UpdateLiveHud(metrics);
         MeasureAlertColumn(metrics);
         int total = 0;
         foreach (Item item in _order)
             UpdateItem(item, metrics, nowSeconds, ref total);
-        NumberActionButtons(UiTokens.Unit(metrics));
         UpdateLabels(metrics);
         if (_zoneStates.Count > 0)
         {
@@ -1281,6 +1287,11 @@ void fragment() {
     // The health doll is re-placed (ui-overhaul.md section 6, LiveHud.Layout), its icon pixels kept: its zones, Collect and a click go through here.
     private HudRect Place(Item item, in HudMetrics metrics, int width, int height, int originX, int originY, out bool fullscreen)
     {
+        if (ActionSlotOf(item) is int actionSlot and > 0 && actionSlot <= _actionRow.Length) // section 15: tg's action button in its slot of the top-left row
+        {
+            fullscreen = false;
+            return ScreenLoc.FitIcon(_actionRow[actionSlot - 1], width, height, originX, originY);
+        }
         if (item.Role == LiveHudRole.Doll)
         {
             fullscreen = false;
@@ -1384,7 +1395,10 @@ void fragment() {
 
     private void UpdateItem(Item item, in HudMetrics metrics, double now, ref int total)
     {
-        if (!item.HasSpec || item.Hidden)
+        // section 15 (DV698): tg's action buttons are drawn only in their slots of the top-left row (a button tg keeps in its palette has no
+        // screen_loc, and is drawn there all the same), never at tg's places; tg's palette objects never
+        bool action = IsActionEntry(item);
+        if (action && ActionSlotOf(item) == 0 || !item.HasSpec && !action || item.Hidden)
         {
             item.Container.Visible = false;
             return;
@@ -1586,7 +1600,9 @@ void fragment() {
         }
 
         LiveHudRole role = RoleNow(item);
-        HudRect? square = role == LiveHudRole.Alert && item.Cell < _chips.Count ? LiveHud.AlertPicture(_chips[item.Cell])
+        int actionSlot = ActionSlotOf(item); // section 15: a slotted action button's count in its slot's square
+        HudRect? square = actionSlot > 0 && actionSlot <= _actionRow.Length ? _actionRow[actionSlot - 1]
+            : role == LiveHudRole.Alert && item.Cell < _chips.Count ? LiveHud.AlertPicture(_chips[item.Cell])
             : LiveHud.VitalSquare(role, _layout) ?? LiveHud.MaptextSquare(role, _hands, _panel, item.Cell);
         HudRect tile = square ?? Place(item, metrics, 32, 32, 0, 0, out _);
         item.Text.Modulate = item.Whole != null && !IsHand(role) ? item.Whole.Modulate : Colors.White;
@@ -1787,7 +1803,6 @@ void fragment() {
         public int Indicator = -1;
         public TextureRect Whole;
         public readonly List<TextureRect> Fitted = new(); // DV575: the slot's items too big for it, fitted into its square
-        public LiveHudView.KeyCap KeyHint; // its action button's key cap
         public MultitoolIndicator Scanner;
         public MaptextNode Text; // protocol version 18: the entry's maptexts
         public TableRef FlickSeen; // M4v slice 4: the flick whose length FlickLength is

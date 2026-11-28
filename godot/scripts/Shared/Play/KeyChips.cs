@@ -53,6 +53,7 @@ public static class KeyChips
         "Minus" => "-",
         "Equal" => "=",
         "Escape" => "Esc",
+        "Capslock" => "Caps Lock",
         _ when key.Length == 4 && key.StartsWith("Key", StringComparison.Ordinal) && char.IsAsciiDigit(key[3]) => key[3..],
         _ when key.Length == 3 && key.StartsWith("Kp", StringComparison.Ordinal) && char.IsAsciiDigit(key[2]) => key[2..],
         _ => key,

@@ -776,6 +776,7 @@ public sealed partial class ServerHost
             SendPhotoRequests(s); // version 99
             SendHotbar(s); // version 100 (DV693)
             SendStorages(s); // version 100 also (DV696)
+            SendActions(s); // version 100 also (DV698)
             SendWeather(s); // version 84
         }
     }
@@ -905,6 +906,15 @@ public sealed partial class ServerHost
             Send(s, Channel.State, Codec.Encode(hotbar));
     }
 
+    // Version 100 also (DV698): the own action buttons when they, their states or tg's palette objects changed, after the Delta or Snapshot whose
+    // screen entries they name.
+    private void SendActions(Session s)
+    {
+        ActionsMessage actions = _replicator.TakeActions(s.Ordinal);
+        if (actions != null)
+            Send(s, Channel.State, Codec.Encode(actions));
+    }
+
     private void SendRadials(Session s)
     {
         foreach (RadialMenuMessage radial in _replicator.TakeRadials(s.Ordinal))
@@ -961,6 +971,7 @@ public sealed partial class ServerHost
         SendTooltip(s); // version 19: the tooltip shown at the join
         SendHotbar(s); // version 100 (DV693): the hotbar at the join, its pictures in the Snapshot's tables
         SendStorages(s); // version 100 also (DV696): the carried storages at the join, their pictures in the Snapshot's tables
+        SendActions(s); // version 100 also (DV698): the action buttons at the join, after the Snapshot that has their screen entries
         s.MinimapLevels.Clear(); // version 67: a join's client has no minimap yet
         s.BuildPreview = BuildPreviewMessage.None; // version 70: nor a build preview
         s.GunSight = GunSightMessage.None; // version 92: nor a gun sight

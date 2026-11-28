@@ -351,6 +351,11 @@ public sealed partial class ReplicaWorld
                     return false;
                 Apply(storages);
                 return true;
+            case MessageId.Actions: // version 100 also (DV698)
+                if (!Codec.TryDecode(message, out ActionsMessage actions, out error))
+                    return false;
+                Apply(actions);
+                return true;
             default:
                 error = ProtocolError.WrongMessage;
                 return false;

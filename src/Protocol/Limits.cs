@@ -711,6 +711,24 @@ public static class Limits
     /// the limit, the flags, the item count and its items: an entity, a name, a picture and a count each) and the refused item.
     /// </summary>
     public const int MaxStoragesBytes = 1 + 1 + MaxStorageEntries * (10 + 1 + 1 + 2 + MaxStorageNameBytes + 3 * 3 + 1 + 1 + MaxStorageItems * (10 + 2 + MaxStorageNameBytes + 5 + 3)) + 10;
+
+    /// <summary>Version 100 also (DV698): the most action buttons an <see cref="ActionsMessage"/> lists (a mob with more lists the first ones).</summary>
+    public const int MaxActionButtons = 64;
+
+    /// <summary>Version 100 also (DV698): the most UTF-8 bytes of an action's name in an <see cref="ActionsMessage"/>.</summary>
+    public const int MaxActionNameBytes = 64;
+
+    /// <summary>Version 100 also (DV698): the most palette objects an <see cref="ActionsMessage"/> lists.</summary>
+    public const int MaxActionPalette = 8;
+
+    /// <summary>Version 100 also (DV698): the most server ticks a cooldown in an <see cref="ActionsMessage"/> may last (a longer one is sent as this).</summary>
+    public const int MaxActionCooldownTicks = 20 * 60 * 60;
+
+    /// <summary>
+    /// Version 100 also (DV698): an <see cref="ActionsMessage"/>: the id, the count, each button (its id, its name, the flags, the cooldown's end and
+    /// length), the palette's count and ids.
+    /// </summary>
+    public const int MaxActionsBytes = 1 + 1 + MaxActionButtons * (10 + 2 + MaxActionNameBytes + 1 + 10 + 5) + 1 + MaxActionPalette * 10;
 }
 
 /// <summary>A token bucket: <see cref="PerSecond"/> tokens refill per second of game time (20 ticks), at most <see cref="Burst"/> are kept.</summary>

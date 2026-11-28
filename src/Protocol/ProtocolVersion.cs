@@ -215,6 +215,8 @@ public static class ProtocolVersion
     /// the <see cref="ActionKind.InventoryOpen"/> action (tg's opening rustle of the back storage); with slice 4C-1 the message's last entry may be
     /// the other container (<see cref="StoragePlace.Other"/>, the storage the player has open that is none of the carried ones; 9 entries at most),
     /// which a move may take an item out of or put one into.
+    /// Version 100 also (ui-overhaul.md section 15, DV698; MessagesV100Actions.cs): the Actions message, the own action buttons with their names,
+    /// active states and cooldowns, and tg's action palette's screen objects, for the client's actions menu and its nine slots.
     public const ushort Current = 100;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>

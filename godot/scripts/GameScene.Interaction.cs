@@ -1580,10 +1580,11 @@ public partial class GameScene
                 _session.HotbarPress(HotbarModel.CellOf(action.Value)); // ui-overhaul.md section 10 (DV693): the server decides; nothing predicted
                 break;
             case >= PlayAction.ActionButton1 and <= PlayAction.ActionButton9:
-                // the owner (2026-10-29): tg's click on the shown action button of that number
-                long button = _hudLayer.ActionButtonNumber(action.Value - PlayAction.ActionButton1 + 1);
-                if (button != 0)
-                    _session.Click(new ClickTarget(TargetKind.Screen, button, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
+                // section 15: tg's click on the action button in that slot, with the actions menu open or closed
+                UseActionSlot(action.Value - PlayAction.ActionButton1 + 1);
+                break;
+            case PlayAction.ActionsMenu:
+                ToggleActionsMenu(); // section 15: Space Station 14's OpenAbilitiesMenu
                 break;
             case PlayAction.Examine:
                 // tg's shift-click on what is under the crosshair (ShiftClickOn -> examinate), with a modifier held on top of the binding
@@ -1698,7 +1699,7 @@ public partial class GameScene
     }
 
     // D292: Esc closes the top window, a machine's first, then the open storage (tg's close button); false when none is open
-    private bool CloseTopWindow() => CloseInventoryMenu() || _tguiWindows?.CloseTop() == true || CloseStorage();
+    private bool CloseTopWindow() => CloseInventoryMenu() || CloseActionsMenu() || _tguiWindows?.CloseTop() == true || CloseStorage();
 
     // D292: the close-windows key (Shift+Esc)
     private void CloseAllWindows()
@@ -1774,6 +1775,8 @@ public partial class GameScene
         if (!_mouse.CursorMode)
             _inventoryOpen = false; // DV694: the inventory overlay is never shown with the view captured
         _drag.Cancel(); // version 17: a cursor-mode drag ends with cursor mode
+        if (!_mouse.CursorMode)
+            _actionsView?.SetOpen(false); // section 15: the actions menu needs the pointer: it closes with cursor mode (Tab)
         (_dragFrom, _pressQuick) = (default, false);
         _selfDrag.Cancel(); // DV695: and the first-person drag of oneself ends when cursor mode starts (Tab, a window), with nothing sent
         if (_dragIcon != null)

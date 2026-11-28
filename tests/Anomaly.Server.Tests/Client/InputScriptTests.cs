@@ -96,7 +96,7 @@ public class InputScriptTests
     [InlineData("   ")]
     [InlineData("W+")]
     [InlineData("x:W+")]
-    [InlineData("1:K+")]
+    [InlineData("1:N+")] // a key the script does not know (K is the actions menu's since ui-overhaul.md section 15)
     [InlineData("1:W")]
     [InlineData("1:yaw=north")]
     [InlineData("-1:W+")]
@@ -119,7 +119,7 @@ public class InputScriptTests
         args = ClientArgs.Parse(new[] { "--keys=1:Z+,1.1:Z-,2:TAB+,2.1:TAB-" }); // the action keys (use in hand, cursor mode)
         Assert.Empty(args.Errors);
         Assert.Equal(4, args.Keys.Count);
-        args = ClientArgs.Parse(new[] { "--keys=1:K+" });
+        args = ClientArgs.Parse(new[] { "--keys=1:N+" });
         Assert.Single(args.Errors);
         Assert.Empty(args.Keys);
     }

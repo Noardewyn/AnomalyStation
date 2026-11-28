@@ -3489,3 +3489,30 @@ while in combat mode, nothing on an item lying elsewhere while the active hand i
 23 `QuickEquipRightPocket`, 24 `QuickEquipSuitStorage` (`KeybindingCode.Last`). The keybinding bucket, as every keybinding.
 
 Tests: `Protocol/ProtocolV100KeysTests`, `M4aContracts/ProtocolV4ContractTests`, `M4aServer/P6/CodecV4Tests`, `Integration/KeysSlice4EGameplayTests`.
+
+**Actions** (ui-overhaul.md section 15, DV698; server to client, State channel, id 36, after the tick's Delta or a join's Snapshot, when it changed; to
+the owning session only; `MessagesV100Actions.cs`, `Codec.V100Actions.cs`): the own mob's action buttons (tg's
+`/atom/movable/screen/movable/action_button` with a linked action) that are on the client's screen this tick, with what the client cannot read
+for certain from a button's picture, and the screen objects of tg's action palette, which the client does not draw since it lays the buttons out
+itself (the actions menu and its nine slots).
+
+```
+[varuint count 0..64] then each button, in increasing id:
+  [varuint button >= 1] [str(0..64) name, or none] [u8 flags: bit 0 active, bit 1 cooling down; bits 2-7 zero]
+  ([varuint cooldown end tick] [varuint cooldown ticks 1..72000] when cooling down)
+[varuint palette count 0..8] then each palette object [varuint id >= 1], in increasing id, none of them a button
+```
+
+The button is the screen object a click names (tg's `action_button/Click` runs the action, with tg's own checks); its picture, its colour (tg's red
+while unavailable) and its maptext (tg's count: a charge, a growth, a cooldown's seconds) are the screen entry's as before. The name is the button's
+(tg's `update_button_name`), plain, cut at 64 bytes. Active is tg's `is_action_active(button)`. A cooldown action (`/datum/action/cooldown`) still
+cooling down (`next_use_time` after `world.time`) sends the server tick it ends at and its length in ticks (its `cooldown_time`, or the time left
+when an overridden cooldown is longer; at most 72000, one hour), so the client draws the share still to run as `(end - tick) / length`; the end
+moves only when a cooldown starts, so the message is not resent every tick. The palette objects are tg's `button_palette`, `palette_scroll` (up and
+down) and `action_landing` on the screen. At most 64 buttons (`Limits.MaxActionButtons`; a mob with more sends the first 64) and 8 palette objects;
+anything out of order, a button twice, a palette object that is a button, unknown flag bits, a cooldown of 0 ticks with an end or past the cap is
+refused at both ends (`BadValue`, a long name `BadString`, too many `CountTooLarge`). A mob with no buttons sends `24 00 00`, 3 bytes; a button 12
+named "Toggle Light", not active, starts `0C 0D 54 6F ...`. The server reads them from the screen objects of the tick's screen entries
+(`Replicator.Actions.cs`), so it never names a button the client has no entry for unless the screen held more than `Limits.MaxScreenEntries`.
+
+Tests: `Protocol/ProtocolV100ActionsTests`, `Protocol/CodecTests`, `Client/Play/ActionsMenuClientTests`, `Integration/ActionsMenuGameplayTests`.

@@ -2137,6 +2137,7 @@ public sealed partial class Replicator : IReplicator
             UpdateRadioChannels(owner, player, full); // version 40
             UpdateHotbar(player, tick, full); // version 100 also (DV693), before the tables' new rows are taken: its pictures are among them
             UpdateStorages(owner, player, tick, full); // version 100 also (DV696), the same
+            UpdateActions(tick, full); // version 100 also (DV698): the action buttons among this tick's screen objects
 
             // The private tables' new entries (all of them in a join: the tables start afresh).
             AppearanceTables t = Tables;

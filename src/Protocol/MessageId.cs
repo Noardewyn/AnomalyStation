@@ -126,4 +126,7 @@ public enum MessageId : byte
 
     /// <summary>Version 100 also: <see cref="Anomaly.Protocol.StoragesMessage"/>: server to client, State channel (the storages the own human carries and their items, after the tick's Delta, when they change or a move was refused).</summary>
     Storages = 35,
+
+    /// <summary>Version 100 also (DV698): <see cref="Anomaly.Protocol.ActionsMessage"/>: server to client, State channel (the own action buttons with their names, active states and cooldowns, after the tick's Delta, when they change).</summary>
+    Actions = 36,
 }

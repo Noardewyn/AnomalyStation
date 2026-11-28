@@ -212,7 +212,7 @@ public enum PlayAction : byte
     /// </summary>
     Pull,
 
-    /// <summary>DV585 (protocol version 93): the deathmatch scoreboard, held [K]: the kills and deaths of a deathmatch map's players.</summary>
+    /// <summary>DV585 (protocol version 93): the deathmatch scoreboard, held [Caps Lock; K before section 15]: the kills and deaths of a deathmatch map's players.</summary>
     Scoreboard,
 
     /// <summary>
@@ -249,10 +249,10 @@ public enum PlayAction : byte
     /// <summary>Slice 4E: tg's <c>quick_equip_suit_storage</c> [Shift+F, SS14's SmartEquipSuitStorage].</summary>
     QuickEquipSuitStorage,
 
-    /// <summary>Slice 4E (SS14's OpenBackpack) [V]: the inventory, as its own key opens it, with the backpack's panel in view; closes it when open.</summary>
+    /// <summary>Slice 4E (SS14's OpenBackpack) [unbound; V before section 15]: the inventory, as its own key opens it, with the backpack's panel in view; closes it when open.</summary>
     OpenBackpack,
 
-    /// <summary>Slice 4E (SS14's OpenBelt) [Shift+V]: the inventory with the belt's panel in view (the bar alone when the belt has none); closes it when open.</summary>
+    /// <summary>Slice 4E (SS14's OpenBelt) [unbound; Shift+V before section 15]: the inventory with the belt's panel in view (the bar alone when the belt has none); closes it when open.</summary>
     OpenBelt,
 
     /// <summary>Slice 4E (SS14's FocusWhisperChatWindow) [Comma]: the chat input on Whisper, or the say window with tg's <c>#</c> typed.</summary>
@@ -263,6 +263,9 @@ public enum PlayAction : byte
     /// <c>Move_Pulled</c>), only with the active hand empty and the cursor captured.
     /// </summary>
     MovePulled,
+
+    /// <summary>ui-overhaul.md section 15 (DV698, Space Station 14's OpenAbilitiesMenu) [K]: opens and closes the actions menu, which frees the cursor while open.</summary>
+    ActionsMenu,
 }
 
 /// <summary>The colourblind palettes of the health HUD (D70: the colours of medical parameters are never the only carrier).</summary>
@@ -334,9 +337,7 @@ public sealed class KeyBindings
         b.Set(PlayAction.QuickEquipBelt, "Shift_E");
         b.Set(PlayAction.QuickEquipLeftPocket, "Shift_G");
         b.Set(PlayAction.QuickEquipRightPocket, "Shift_H");
-        b.Set(PlayAction.QuickEquipSuitStorage, "Shift_F");
-        b.Set(PlayAction.OpenBackpack, "V");
-        b.Set(PlayAction.OpenBelt, "Shift_V");
+        b.Set(PlayAction.QuickEquipSuitStorage, "Shift_F"); // section 15: the open-backpack and open-belt keys have no default (the inventory key, I)
         b.Set(PlayAction.Whisper, "Comma");
         b.Set(PlayAction.MovePulled, "Ctrl_MouseRight");
         b.Set(PlayAction.CursorMode, "Tab");
@@ -375,7 +376,8 @@ public sealed class KeyBindings
         b.Set(PlayAction.DebugHud, "F3");
         b.Set(PlayAction.HideInterface, "Shift_F4");
         b.Set(PlayAction.Flashlight, "U"); // slice E: L is the language menu
-        b.Set(PlayAction.Scoreboard, "K");
+        b.Set(PlayAction.Scoreboard, "Capslock"); // section 15: K is the actions menu
+        b.Set(PlayAction.ActionsMenu, "K");
         b.Set(PlayAction.Fullscreen, "F11");
         b.Set(PlayAction.QuickTransfer, "Ctrl_MouseLeft"); // slice 4B-2: on an inventory item under Tab; Pull keeps the same press elsewhere
         return b;
@@ -652,6 +654,7 @@ public sealed class KeyBindings
         PlayAction.OpenBelt => "Open the belt",
         PlayAction.Whisper => "Whisper",
         PlayAction.MovePulled => "Move what you pull onto the tile at the crosshair",
+        PlayAction.ActionsMenu => "Actions menu",
         _ => action.ToString(),
     };
 
@@ -1009,12 +1012,13 @@ public sealed class PlayOptions
     public const float MaxFov = 110f;
 
     /// <summary>
-    /// The options file's version (<c>options_version</c>): 6 since slice 4E's keys (5 since DV422, 4 since D315's minimap size, 3 since D157, 2 since
-    /// D137). A file without it (or older) that still has a default that was changed since gets the new one: the eye height of D120 (1.2 m) or D137
-    /// (1.5 m) becomes D157's 1.3 m, the dev menu on F8 moves to the | key, the minimap's first size (100 per cent) becomes 200, quick equip on E
-    /// moves to R and the action buttons on the plain digits to Shift and the digits (<see cref="UpgradeTo6"/>).
+    /// The options file's version (<c>options_version</c>): 7 since the actions menu's keys (6 since slice 4E's keys, 5 since DV422, 4 since D315's
+    /// minimap size, 3 since D157, 2 since D137). A file without it (or older) that still has a default that was changed since gets the new one: the
+    /// eye height of D120 (1.2 m) or D137 (1.5 m) becomes D157's 1.3 m, the dev menu on F8 moves to the | key, the minimap's first size (100 per cent)
+    /// becomes 200, quick equip on E moves to R and the action buttons on the plain digits to Shift and the digits (<see cref="UpgradeTo6"/>), the
+    /// scoreboard on K moves to Caps Lock and K opens the actions menu, and V and Shift+V no longer open the backpack and the belt (<see cref="UpgradeTo7"/>).
     /// </summary>
-    public const int FileVersion = 6;
+    public const int FileVersion = 7;
 
     /// <summary>The version the file was read with (<see cref="FileVersion"/> when new).</summary>
     public int ReadVersion { get; private set; } = FileVersion;
@@ -1054,7 +1058,24 @@ public sealed class PlayOptions
         }
         if (ReadVersion < 6)
             UpgradeTo6();
+        if (ReadVersion < 7)
+            UpgradeTo7();
         ReadVersion = FileVersion;
+    }
+
+    // ui-overhaul.md section 15: the scoreboard moves from K to Caps Lock when the file kept the old default and Caps Lock is free, and K then opens
+    // the actions menu (the file's scoreboard line took K from the menu's default) when nothing else has it; the open-backpack and open-belt keys
+    // lose V and Shift+V where the file kept those defaults (the inventory key does the same).
+    private void UpgradeTo7()
+    {
+        if (IsOnly(PlayAction.Scoreboard, "K") && Bindings.ActionOf("Capslock") == null)
+            Bindings.Set(PlayAction.Scoreboard, "Capslock");
+        if (Bindings.KeysOf(PlayAction.ActionsMenu).Count == 0 && Bindings.ActionOf("K") == null)
+            Bindings.Set(PlayAction.ActionsMenu, "K");
+        if (IsOnly(PlayAction.OpenBackpack, "V"))
+            Bindings.Set(PlayAction.OpenBackpack);
+        if (IsOnly(PlayAction.OpenBelt, "Shift_V"))
+            Bindings.Set(PlayAction.OpenBelt);
     }
 
     // Slice 4E: quick equip moves from E to R (E is world interact) when the file kept the old default and R is free; and a file from before

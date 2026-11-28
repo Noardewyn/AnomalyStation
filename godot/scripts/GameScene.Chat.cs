@@ -29,7 +29,7 @@ public partial class GameScene
     private bool ChatTyping => _chatWindow?.Typing == true;
 
     /// <summary>A window that frees the pointer is open (D282, MouseOwner): a tgui window, an open storage or the chat window typed in.</summary>
-    private bool WindowsOpen => TguiOpen || _storageWindow?.IsOpen == true || ChatTyping; // the owner (2026-10-26): an open chat window not typed in leaves the game playable
+    private bool WindowsOpen => TguiOpen || _storageWindow?.IsOpen == true || ChatTyping || ActionsMenuOpen; // the owner (2026-10-26): an open chat window not typed in leaves the game playable
 
     private void BuildChatWindow(CanvasLayer ui)
     {

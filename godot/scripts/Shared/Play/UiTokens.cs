@@ -98,6 +98,18 @@ public static class UiTokens
     /// <summary>The light rim on the cell under the pointer while an item is dragged.</summary>
     public const uint InventoryDragRim = 0xFFFFFFCC;
 
+    /// <summary>Section 15: an active toggle's square in the actions row and menu: a light fill over it ...</summary>
+    public const uint ActionActiveFill = 0xFFE15640;
+
+    /// <summary>... a rim round it ...</summary>
+    public const uint ActionActiveRim = Command;
+
+    /// <summary>... that wide.</summary>
+    public const float ActionActiveRimWidth = 2f;
+
+    /// <summary>Section 15: a cooldown's wheel over the square, the share still to run.</summary>
+    public const uint ActionCooldownShade = 0x000000A6;
+
     /// <summary>Slice 4C-2: the line between the own storages and the pinned panel and strip under them: its thickness ...</summary>
     public const float StorageLineWidth = 1f;
 

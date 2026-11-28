@@ -68,6 +68,7 @@ public static class InputScript
         "KEY1", "KEY2", "KEY3", "KEY4", "EQUAL", "MINUS", "PERIOD", "COMMA", "PAGEUP", "PAGEDOWN", "HOME", "KPADD", "KPSUBTRACT", "G",
         "KEY5", "KEY6", "KEY7", "KEY8", "KEY9", "KEY0", // ui-overhaul.md section 10: the hotbar's other number keys
         "I", // DV694: the inventory key
+        "K", // ui-overhaul.md section 15: the actions menu
         "MOUSELEFT", "MOUSERIGHT", "MOUSEMIDDLE" }; // a mouse button pressed (+) and let go (-) at the crosshair, with view steps between (ui-overhaul.md section 17)
 
     /// <summary>Parses a script; on an error returns false with the problem.</summary>

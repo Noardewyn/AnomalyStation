@@ -60,7 +60,8 @@ public class PlayOptionsTests
         Assert.Equal(new[] { "Ctrl_MouseLeft" }, keys.KeysOf(PlayAction.Pull));
         Assert.Equal(new[] { "Space" }, keys.KeysOf(PlayAction.MoveUpLevel)); // DV422: the owner's level keys
         Assert.Equal(new[] { "Ctrl" }, keys.KeysOf(PlayAction.MoveDownLevel));
-        Assert.Equal(new[] { "K" }, keys.KeysOf(PlayAction.Scoreboard)); // DV585: held, the deathmatch scoreboard
+        Assert.Equal(new[] { "Capslock" }, keys.KeysOf(PlayAction.Scoreboard)); // DV585: held, the deathmatch scoreboard; section 15: Caps Lock (K is the actions menu)
+        Assert.Equal(new[] { "K" }, keys.KeysOf(PlayAction.ActionsMenu)); // section 15: Space Station 14's OpenAbilitiesMenu
         Assert.Equal("stop_pulling", KeyBindings.IdOf(PlayAction.StopPulling));
         // the owner (2026-10-09, 2026-10-13): neither a tile nor a thing under the crosshair is outlined by default
         Assert.False(options.HighlightTile);
@@ -76,7 +77,9 @@ public class PlayOptionsTests
         var seen = new HashSet<string>();
         foreach (PlayAction action in Enum.GetValues<PlayAction>())
         {
-            if (action != PlayAction.HoldThrow) // DV422: the server takes Space as hold throw mode for a mob that cannot change level
+            // DV422: the server takes Space as hold throw mode for a mob that cannot change level; section 15: the open-backpack and open-belt keys have
+            // no default (V and Shift+V are free; the inventory key does the same)
+            if (action is not (PlayAction.HoldThrow or PlayAction.OpenBackpack or PlayAction.OpenBelt))
                 Assert.NotEmpty(keys.KeysOf(action));
             foreach (string key in keys.KeysOf(action))
             {
@@ -524,8 +527,8 @@ public class PlayOptionsTests
         [PlayAction.QuickEquipLeftPocket] = new[] { "Shift_G" },
         [PlayAction.QuickEquipRightPocket] = new[] { "Shift_H" },
         [PlayAction.QuickEquipSuitStorage] = new[] { "Shift_F" },
-        [PlayAction.OpenBackpack] = new[] { "V" },
-        [PlayAction.OpenBelt] = new[] { "Shift_V" },
+        [PlayAction.OpenBackpack] = Array.Empty<string>(), // section 15: no default (V and Shift+V are free; the inventory key is I)
+        [PlayAction.OpenBelt] = Array.Empty<string>(),
         [PlayAction.Whisper] = new[] { "Comma" },
         [PlayAction.MovePulled] = new[] { "Ctrl_MouseRight" },
         // the last row: resist, pray, push to talk, scoreboard, levels, the other function keys, the | key; slice E (section 6): the flashlight moved
@@ -537,7 +540,8 @@ public class PlayOptionsTests
         [PlayAction.Navigate] = new[] { "M" },
         [PlayAction.PushToTalk] = new[] { "N" },
         [PlayAction.Flashlight] = new[] { "U" },
-        [PlayAction.Scoreboard] = new[] { "K" },
+        [PlayAction.Scoreboard] = new[] { "Capslock" }, // section 15: K is the actions menu
+        [PlayAction.ActionsMenu] = new[] { "K" },
         [PlayAction.MoveUpLevel] = new[] { "Space" },
         [PlayAction.MoveDownLevel] = new[] { "Ctrl" },
         [PlayAction.CameraMode] = new[] { "F1" },
@@ -694,11 +698,18 @@ public class PlayOptionsTests
                 Assert.Equal(new[] { "Shift_" + pair[1].Split(',')[0] }, options.Bindings.KeysOf(action));
                 continue;
             }
+            if (action == PlayAction.Scoreboard)
+            {
+                // section 15 (options version 7): the scoreboard left on K moves to Caps Lock, and K opens the actions menu
+                Assert.Equal(new[] { "Capslock" }, options.Bindings.KeysOf(action));
+                Assert.Equal(new[] { "K" }, options.Bindings.KeysOf(PlayAction.ActionsMenu));
+                continue;
+            }
             Assert.True(string.Join(",", options.Bindings.KeysOf(action)) == pair[1], $"{pair[0]}: {string.Join(",", options.Bindings.KeysOf(action))}, saved {pair[1]}");
         }
         // every action of the time, the give key among them: today's actions less slice E's three menu keys, section 10's ten hotbar keys, slice
-        // 4B-2's quick transfer and slice 4E's twelve keys, and the give and analyzer keys
-        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 - 10 - 1 - 12 + 2, lines);
+        // 4B-2's quick transfer, slice 4E's twelve keys and section 15's actions menu key, and the give and analyzer keys
+        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 - 10 - 1 - 12 - 1 + 2, lines);
         // slice 4E: quick equip stays on E there, as R is that file's throw key; the world interact key then has none
         Assert.Equal(new[] { "E" }, options.Bindings.KeysOf(PlayAction.QuickEquip));
         Assert.Empty(options.Bindings.KeysOf(PlayAction.WorldInteract));
@@ -752,8 +763,8 @@ public class PlayOptionsTests
         Assert.Equal(PlayAction.QuickEquipRightPocket, keys.ActionOfPress("H", shift: true));
         Assert.Equal(PlayAction.QuickEquipSuitStorage, keys.ActionOfPress("F", shift: true));
         Assert.Equal(PlayAction.ToggleCombatMode, keys.ActionOfPress("F", shift: false));
-        Assert.Equal(PlayAction.OpenBackpack, keys.ActionOfPress("V", shift: false));
-        Assert.Equal(PlayAction.OpenBelt, keys.ActionOfPress("V", shift: true));
+        Assert.Null(keys.ActionOfPress("V", shift: false)); // section 15: V and Shift+V are free by default
+        Assert.Null(keys.ActionOfPress("V", shift: true));
         Assert.Equal(PlayAction.Whisper, keys.ActionOfPress("Comma", shift: false));
         Assert.Equal(ChatInputModel.Whisper, ChatInputModel.ChannelOfKey(PlayAction.Whisper)); // the chat input's whisper; tg's # in the say window
         Assert.Equal("#", ChatInputModel.WhisperKey);
@@ -779,7 +790,7 @@ public class PlayOptionsTests
         PlayOptions back = PlayOptions.Parse(new PlayOptions().ToText(), errors);
         Assert.Empty(errors);
         Assert.Equal(new[] { "Alt_E" }, back.Bindings.KeysOf(PlayAction.AltInteract));
-        Assert.Contains("options_version=6\n", ShippedDefaults());
+        Assert.Contains("options_version=7\n", ShippedDefaults());
     }
 
     [Fact]

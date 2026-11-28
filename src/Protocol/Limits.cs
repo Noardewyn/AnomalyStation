@@ -242,8 +242,9 @@ public static class Limits
     /// <summary>The byte cap of <see cref="ContextHintsMessage.Name"/>.</summary>
     public const int MaxContextNameBytes = 256;
 
-    /// <summary>The largest <see cref="ContextHintsMessage"/> on the wire.</summary>
-    public const int MaxContextHintsMessageBytes = 1 + 1 + 10 + 1 + 1 + 5 + 3 + MaxContextNameBytes + 1 + MaxContextHints * (1 + 1 + 1 + 2 + MaxContextLabelBytes);
+    /// <summary>The largest <see cref="ContextHintsMessage"/> on the wire (version 100 also: the tail's flags and three labels).</summary>
+    public const int MaxContextHintsMessageBytes = 1 + 1 + 10 + 1 + 1 + 5 + 3 + MaxContextNameBytes + 1 + MaxContextHints * (1 + 1 + 1 + 2 + MaxContextLabelBytes)
+        + 1 + 3 * (1 + MaxContextLabelBytes);
 
     /// <summary>Private images (<c>client.images</c>, <see cref="ImageEntry"/>) of one session: in all, and in each of the added, changed and removed lists of one private block.</summary>
     public const int MaxPrivateImages = 512; // version 30: 64 before; a T-ray scanner's pulse shows every hidden object within 3 tiles

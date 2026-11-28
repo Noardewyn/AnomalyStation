@@ -1,3 +1,4 @@
+using Anomaly.Core.DmShim;
 using Anomaly.Protocol;
 
 namespace Anomaly.Client.Shared;
@@ -14,7 +15,7 @@ public readonly record struct PromptLine(string Key, string Text);
 public static class KeyChips
 {
     /// <summary>The most click and key lines drawn beside the crosshair; the stop-pulling line comes on top of them (<see cref="MaxPromptLines"/>).</summary>
-    public const int MaxClickLines = 3;
+    public const int MaxClickLines = 6;
 
     /// <summary>The most lines in all: <see cref="MaxClickLines"/> and the stop-pulling line.</summary>
     public const int MaxPromptLines = MaxClickLines + 1;
@@ -80,9 +81,14 @@ public static class KeyChips
         return null;
     }
 
-    // The actions a hint's chord is pressed with, in the order of tg's screentip keys (code/__DEFINES/screentips.dm: LMB, RMB, Shift-LMB,
-    // Ctrl-LMB), then the port's stop pulling.
-    private static readonly PlayAction[] Order = { PlayAction.PrimaryClick, PlayAction.SecondaryClick, PlayAction.Examine, PlayAction.Pull, PlayAction.StopPulling };
+    // The actions a line is pressed with, in the order the prompt lists them (ui-overhaul.md section 12, "The hints, improved"): the left click with
+    // the held item, the world interact key (tg's empty-hand click), then tg's screentip keys (code/__DEFINES/screentips.dm: RMB, Alt-LMB, Ctrl-LMB,
+    // Shift-LMB), the move-pulled key, and the port's stop pulling.
+    private static readonly PlayAction[] Order =
+    {
+        PlayAction.PrimaryClick, PlayAction.WorldInteract, PlayAction.SecondaryClick, PlayAction.AltInteract, PlayAction.Pull, PlayAction.Examine,
+        PlayAction.MovePulled, PlayAction.StopPulling,
+    };
 
     private static PlayAction? ActionOf(ContextHint hint) => hint.Action switch
     {
@@ -92,34 +98,48 @@ public static class KeyChips
             (ClickButton.Right, ClickModifiers.None) => PlayAction.SecondaryClick,
             (ClickButton.Left, ClickModifiers.Shift) => PlayAction.Examine,
             (ClickButton.Left, ClickModifiers.Ctrl) => PlayAction.Pull,
-            _ => null, // Alt, Ctrl+right, Ctrl+Shift: no action of their own to name a key
+            (ClickButton.Left, ClickModifiers.Alt) => PlayAction.AltInteract, // tg's alt-click: Alt+left click, or the alt interact key
+            _ => null, // Alt+right, Ctrl+right, Ctrl+Shift: no action of their own to name a key
         },
         ContextHintAction.StopPulling => PlayAction.StopPulling,
         _ => null, // the radial's drags and extras are no key press
     };
 
-    private static string ChipOf(KeyBindings bindings, PlayAction action) =>
-        action is PlayAction.PrimaryClick or PlayAction.SecondaryClick ? MouseButtonOf(bindings, action) : KeyOf(bindings, action);
+    private static string ChipOf(KeyBindings bindings, PlayAction action) => action switch
+    {
+        PlayAction.PrimaryClick or PlayAction.SecondaryClick => MouseButtonOf(bindings, action),
+        // tg's alt-click is also Alt with the primary click, which is not rebindable: its chip when the alt interact key is unbound
+        PlayAction.AltInteract => KeyOf(bindings, action) ?? (MouseButtonOf(bindings, PlayAction.PrimaryClick) is string click ? "Alt+" + click : null),
+        _ => KeyOf(bindings, action),
+    };
 
     /// <summary>
-    /// The prompt lines for the hovered target: one per chord, the first hint of each, in <see cref="Order"/>, each with its action's key
-    /// (the primary and secondary click's mouse button, <see cref="MouseButtonOf"/>; the first key of the others); a chord no action is pressed
-    /// with, or whose action has no such key, is left out. At most <see cref="MaxClickLines"/> lines, and the stop-pulling line after them
-    /// when the server sent one, so it is never the line cut.
+    /// The prompt lines for the hovered target: one per way to act on it, in <see cref="Order"/>, each with the player's own key for it (the primary
+    /// and secondary click's mouse button, <see cref="MouseButtonOf"/>; the first key of the others): tg's screentip entries, the first hint of each
+    /// chord; the world interact key with the server's empty-hand line (<see cref="ContextHintsMessage.EmptyHand"/>, sent only while an item is held);
+    /// the move-pulled key's "Move here" on a turf the server marks (<see cref="ContextHintsMessage.MoveHere"/>). A chord no action is pressed with, or
+    /// whose action has no key, is left out. At most <see cref="MaxClickLines"/> lines, and the stop-pulling line after them when the server sent
+    /// one, so it is never the line cut.
     /// </summary>
     public static List<PromptLine> Prompts(ContextHintsMessage hints, KeyBindings bindings)
     {
         var found = new PromptLine?[Order.Length];
+        void Found(PlayAction action, string label)
+        {
+            int rank = Array.IndexOf(Order, action);
+            if (found[rank] == null && !string.IsNullOrEmpty(label) && ChipOf(bindings, action) is string key)
+                found[rank] = new PromptLine(key, label);
+        }
         if (hints != null)
         {
             foreach (ContextHint hint in hints.Hints)
             {
-                if (ActionOf(hint) is not PlayAction action || string.IsNullOrEmpty(hint.Label))
-                    continue;
-                int rank = Array.IndexOf(Order, action);
-                if (found[rank] == null && ChipOf(bindings, action) is string key)
-                    found[rank] = new PromptLine(key, hint.Label);
+                if (ActionOf(hint) is PlayAction action)
+                    Found(action, hint.Label);
             }
+            Found(PlayAction.WorldInteract, hints.EmptyHand);
+            if (hints.MoveHere)
+                Found(PlayAction.MovePulled, I18n.T("Move here"));
         }
         var lines = new List<PromptLine>(MaxPromptLines);
         for (int rank = 0; rank < Order.Length; rank++)
@@ -202,9 +222,14 @@ public static class KeyChips
                 w = Math.Max(0f, rightRoom);
         }
         left = Math.Clamp(left, 0f, Math.Max(0f, metrics.Width - margin - w)); // only a screen narrower than the sight moves it over the anchor
-        float top = Math.Max(margin, Math.Min(anchorY + UiTokens.PromptOffsetY * u, metrics.Height - margin - height));
+        // a block of more than four lines is raised so its bottom stays where a four-line block's is (above the balloon row under the crosshair)
+        float top = Math.Min(anchorY + UiTokens.PromptOffsetY * u, anchorY + (UiTokens.PromptOffsetY + PromptHeight(LinesBelowAnchor)) * u - height);
+        top = Math.Max(margin, Math.Min(top, metrics.Height - margin - height));
         return new HudRect(left, top, w, height);
     }
+
+    // The most lines a block holds below its usual top; a taller one grows upwards.
+    private const int LinesBelowAnchor = 4;
 
     /// <summary>The mark a cut text ends with.</summary>
     public const string Ellipsis = "…";

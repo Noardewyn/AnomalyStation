@@ -313,6 +313,24 @@ public sealed class ContextHintsMessage
 
     /// <summary>tg's context entries in tg's order of lines (LMB, RMB, Ctrl-LMB, Ctrl-RMB, Alt-LMB, Alt-RMB, Shift-LMB, Ctrl-Shift-LMB), at most <see cref="Limits.MaxContextHints"/>.</summary>
     public List<ContextHint> Hints { get; } = new();
+
+    /// <summary>
+    /// Version 100 also (ui-overhaul.md section 12, "The hints, improved"; DV697): tg's left-click label for this target with an EMPTY hand (what the
+    /// world interact key does), sent only while the active hand holds an item and the key would act on the target; null for none.
+    /// </summary>
+    public string EmptyHand { get; set; }
+
+    /// <summary>Version 100 also: the label of tg's activate in hand of the held item (tg's own screentip for it in hand, else "Use" where it has an <c>attack_self</c>); null for none.</summary>
+    public string HeldUse { get; set; }
+
+    /// <summary>Version 100 also: the label of tg's alt-click on the held item (tg's own screentip for it in hand, else "Alt use" where it has one); null for none.</summary>
+    public string HeldAlt { get; set; }
+
+    /// <summary>Version 100 also: tg's quick equip would put the held item somewhere (a slot or a storage).</summary>
+    public bool HeldEquips { get; set; }
+
+    /// <summary>Version 100 also: the target is a turf the empty hand's click moves the pulled thing onto (tg's <c>turf/attack_hand</c>, <c>Move_Pulled</c>).</summary>
+    public bool MoveHere { get; set; }
 }
 
 /// <summary>Version 4 of <see cref="OwnBlock"/>: the private images (<c>client.images</c>).</summary>

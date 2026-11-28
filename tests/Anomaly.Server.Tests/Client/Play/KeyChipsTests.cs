@@ -115,7 +115,7 @@ public class KeyChipsTests
     public void Rebinding_pull_changes_its_chip_and_drops_examine_that_lost_its_key()
     {
         ContextHintsMessage hints = Hints(new ContextHint(ClickButton.Left, ClickModifiers.Shift, "Examine"), new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, "Pull"));
-        Assert.Equal(new[] { new PromptLine("Shift+LMB", "Examine"), new PromptLine("Ctrl+LMB", "Pull") }, KeyChips.Prompts(hints, KeyBindings.Defaults()));
+        Assert.Equal(new[] { new PromptLine("Ctrl+LMB", "Pull"), new PromptLine("Shift+LMB", "Examine") }, KeyChips.Prompts(hints, KeyBindings.Defaults()));
         KeyBindings b = KeyBindings.Defaults();
         Assert.Equal(PlayAction.Examine, b.Bind(PlayAction.Pull, "Shift_MouseLeft"));
         Assert.Equal(new[] { new PromptLine("Shift+LMB", "Pull") }, KeyChips.Prompts(hints, b));
@@ -134,7 +134,6 @@ public class KeyChipsTests
     public void Chords_without_an_action_of_their_own_are_dropped()
     {
         ContextHintsMessage hints = Hints(
-            new ContextHint(ClickButton.Left, ClickModifiers.Alt, "Rotate"),
             new ContextHint(ClickButton.Right, ClickModifiers.Alt, "Eject"),
             new ContextHint(ClickButton.Right, ClickModifiers.Ctrl, "Toggle"),
             new ContextHint(ClickButton.Left, ClickModifiers.Ctrl | ClickModifiers.Shift, "Wrench"),
@@ -156,32 +155,98 @@ public class KeyChipsTests
     }
 
     [Fact]
-    public void At_most_three_click_lines_in_tgs_order_the_first_hint_of_a_chord_winning()
+    public void Every_way_to_act_gets_a_line_in_the_prompts_order_the_first_hint_of_a_chord_winning()
     {
         ContextHintsMessage hints = Hints(
             new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, "Pull"),
             new ContextHint(ClickButton.Left, ClickModifiers.Shift, "Examine"),
+            new ContextHint(ClickButton.Left, ClickModifiers.Alt, "Rotate"),
             new ContextHint(ClickButton.Right, ClickModifiers.None, "Open"),
             new ContextHint(ClickButton.Left, ClickModifiers.None, "Pick up"),
             new ContextHint(ClickButton.Left, ClickModifiers.None, "Unbuckle"));
+        hints.EmptyHand = "Take";
         List<PromptLine> lines = KeyChips.Prompts(hints, KeyBindings.Defaults());
-        Assert.Equal(new[] { new PromptLine("LMB", "Pick up"), new PromptLine("RMB", "Open"), new PromptLine("Shift+LMB", "Examine") }, lines);
+        Assert.Equal(new[]
+        {
+            new PromptLine("LMB", "Pick up"), new PromptLine("E", "Take"), new PromptLine("RMB", "Open"), new PromptLine("Alt+E", "Rotate"),
+            new PromptLine("Ctrl+LMB", "Pull"), new PromptLine("Shift+LMB", "Examine"),
+        }, lines);
         Assert.Equal(KeyChips.MaxClickLines, lines.Count);
     }
 
     [Fact]
     public void Stop_pulling_is_never_the_line_cut()
     {
-        // what the server sends while the player pulls a mob: tg's LMB and RMB, the port's Pull and Stop pulling (ServerHost.World.cs)
+        // more click lines than fit: the last (Move here) is cut, the stop-pulling line kept
         ContextHintsMessage hints = Hints(
             new ContextHint(ClickButton.Left, ClickModifiers.None, "Hug"),
             new ContextHint(ClickButton.Right, ClickModifiers.None, "Shove"),
+            new ContextHint(ClickButton.Left, ClickModifiers.Alt, "Look"),
             new ContextHint(ClickButton.Left, ClickModifiers.Shift, "Examine"),
             new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, "Grab"),
             new ContextHint(ClickButton.Left, ClickModifiers.None, "Stop pulling", ContextHintAction.StopPulling));
+        hints.EmptyHand = "Hug";
+        hints.MoveHere = true;
         List<PromptLine> lines = KeyChips.Prompts(hints, KeyBindings.Defaults());
-        Assert.Equal(new[] { new PromptLine("LMB", "Hug"), new PromptLine("RMB", "Shove"), new PromptLine("Shift+LMB", "Examine"), new PromptLine("H", "Stop pulling") }, lines);
+        Assert.Equal(new[]
+        {
+            new PromptLine("LMB", "Hug"), new PromptLine("E", "Hug"), new PromptLine("RMB", "Shove"), new PromptLine("Alt+E", "Look"),
+            new PromptLine("Ctrl+LMB", "Grab"), new PromptLine("Shift+LMB", "Examine"), new PromptLine("H", "Stop pulling"),
+        }, lines);
         Assert.Equal(KeyChips.MaxPromptLines, lines.Count);
+    }
+
+    [Fact]
+    public void The_world_interact_line_comes_from_the_servers_empty_hand_line_with_the_players_own_key()
+    {
+        // a crowbar in hand on an airlock: tg's left click pries it, an empty hand opens it
+        ContextHintsMessage hints = Hints(new ContextHint(ClickButton.Left, ClickModifiers.None, "Pry open"));
+        Assert.Equal(new[] { new PromptLine("LMB", "Pry open") }, KeyChips.Prompts(hints, KeyBindings.Defaults())); // no empty-hand line: none
+        hints.EmptyHand = "Open";
+        Assert.Equal(new[] { new PromptLine("LMB", "Pry open"), new PromptLine("E", "Open") }, KeyChips.Prompts(hints, KeyBindings.Defaults()));
+        KeyBindings b = KeyBindings.Defaults();
+        b.Bind(PlayAction.WorldInteract, "V"); // rebound: the chip follows
+        Assert.Equal(new[] { new PromptLine("LMB", "Pry open"), new PromptLine("V", "Open") }, KeyChips.Prompts(hints, b));
+        b.Set(PlayAction.WorldInteract); // unbound: no line
+        Assert.Equal(new[] { new PromptLine("LMB", "Pry open") }, KeyChips.Prompts(hints, b));
+    }
+
+    [Fact]
+    public void The_alt_line_shows_the_alt_interact_key_or_alt_with_the_primary_click_when_that_is_unbound()
+    {
+        ContextHintsMessage hints = Hints(new ContextHint(ClickButton.Left, ClickModifiers.Alt, "Toggle safety"));
+        Assert.Equal(new[] { new PromptLine("Alt+E", "Toggle safety") }, KeyChips.Prompts(hints, KeyBindings.Defaults()));
+        KeyBindings b = KeyBindings.Defaults();
+        b.Bind(PlayAction.AltInteract, "Alt_R");
+        Assert.Equal(new[] { new PromptLine("Alt+R", "Toggle safety") }, KeyChips.Prompts(hints, b));
+        b.Set(PlayAction.AltInteract);
+        Assert.Equal(new[] { new PromptLine("Alt+LMB", "Toggle safety") }, KeyChips.Prompts(hints, b));
+        // no alt-click in tg's context: no line
+        Assert.Empty(KeyChips.Prompts(Hints(), KeyBindings.Defaults()));
+    }
+
+    [Fact]
+    public void Move_here_shows_only_on_a_turf_the_server_marks_with_the_move_pulled_key()
+    {
+        var turf = new ContextHintsMessage { TargetKind = TargetKind.Turf, TurfX = 3, TurfY = 4, TurfZ = 1 };
+        Assert.Empty(KeyChips.Prompts(turf, KeyBindings.Defaults())); // not pulling, or an item in hand: the server leaves it unmarked
+        turf.MoveHere = true;
+        Assert.Equal(new[] { new PromptLine("Ctrl+RMB", "Move here") }, KeyChips.Prompts(turf, KeyBindings.Defaults()));
+        KeyBindings b = KeyBindings.Defaults();
+        b.Set(PlayAction.MovePulled, "Shift_MouseRight");
+        Assert.Equal(new[] { new PromptLine("Shift+RMB", "Move here") }, KeyChips.Prompts(turf, b));
+    }
+
+    [Fact]
+    public void A_tall_prompt_block_grows_upwards_so_its_bottom_stays_above_the_balloon_row()
+    {
+        var metrics = new HudMetrics(1920, 1080, 1f);
+        HudRect four = KeyChips.PromptBlock(metrics, 4, 300f, 960f, 540f, 10f);
+        HudRect seven = KeyChips.PromptBlock(metrics, KeyChips.MaxPromptLines, 300f, 960f, 540f, 10f);
+        Assert.Equal(four.Bottom, seven.Bottom, 3);
+        Assert.True(seven.Top < four.Top);
+        Assert.True(seven.Bottom < KeyChips.BalloonRow(metrics).Top);
+        Assert.Equal(KeyChips.PromptBlock(metrics, 1, 300f, 960f, 540f, 10f).Top, four.Top, 3); // a short block keeps its place
     }
 
     [Fact]
@@ -244,7 +309,7 @@ public class KeyChipsTests
         var metrics = new HudMetrics(1920, 1080, 1f);
         Assert.Equal(300f, KeyChips.PromptBlock(metrics, 2, 300f, 960, 540, 34f).Width);
         Assert.True(KeyChips.PromptBlock(metrics, 4, 300f, 960, 540, 34f).Height > KeyChips.PromptBlock(metrics, 3, 300f, 960, 540, 34f).Height);
-        Assert.Equal(KeyChips.PromptBlock(metrics, 4, 300f, 960, 540, 34f).Height, KeyChips.PromptBlock(metrics, 9, 300f, 960, 540, 34f).Height);
+        Assert.Equal(KeyChips.PromptBlock(metrics, KeyChips.MaxPromptLines, 300f, 960, 540, 34f).Height, KeyChips.PromptBlock(metrics, 9, 300f, 960, 540, 34f).Height);
         Assert.Equal(KeyChips.PromptBlock(metrics, 1, 300f, 960, 540, 0f).Left + 34f, KeyChips.PromptBlock(metrics, 1, 300f, 960, 540, 34f).Left);
     }
 
@@ -300,8 +365,9 @@ public class KeyChipsTests
             Assert.True(block.Left >= 0 && block.Top >= 0 && block.Right <= 1920 && block.Bottom <= 1080, $"on screen: {block}");
             // beside the pointer: left of it or right of it, clear of its arrow, never across it
             Assert.True(block.Left >= x + KeyChips.PointerReach || block.Right <= x - KeyChips.PointerReach, $"clear of the pointer at {x}: {block}");
-            // and near it: the block's top at the pointer's offset unless the screen's edge moved it
-            float wantedTop = y + UiTokens.PromptOffsetY * u;
+            // and near it: the block's top at the pointer's offset (a block taller than four lines grown upwards from a four-line block's bottom)
+            // unless the screen's edge moved it
+            float wantedTop = Math.Min(y + UiTokens.PromptOffsetY * u, y + (UiTokens.PromptOffsetY + KeyChips.PromptHeight(4)) * u - block.Height);
             if (wantedTop >= UiTokens.ScreenMargin * u && wantedTop + block.Height <= 1080 - UiTokens.ScreenMargin * u)
                 Assert.Equal(wantedTop, block.Top, 3);
         }

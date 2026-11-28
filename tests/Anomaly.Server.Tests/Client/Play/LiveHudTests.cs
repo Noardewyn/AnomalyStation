@@ -452,14 +452,29 @@ public class LiveHudTests
     {
         KeyBindings bindings = KeyBindings.Defaults();
         Assert.Equal("X", LiveHud.SwapKey(bindings));
-        Assert.Equal(new[] { new PromptLine("Z", "Use"), new PromptLine("Q", "Drop"), new PromptLine("Ctrl+Q", "Throw") }, // swapping is the cap on the other hand
-            LiveHud.HintLines(bindings));
+        // before the server's answer only drop is known; swapping is the cap on the other hand
+        Assert.Equal(new[] { new PromptLine("Q", "Drop") }, LiveHud.HintLines(bindings));
+        var held = new ContextHintsMessage { HeldUse = "Toggle", HeldAlt = "Toggle safety", HeldEquips = true };
+        Assert.Equal(new[] { new PromptLine("Z", "Toggle"), new PromptLine("Alt+Z", "Toggle safety"), new PromptLine("Q", "Drop"), new PromptLine("R", "Equip") },
+            LiveHud.HintLines(bindings, held));
         bindings.Set(PlayAction.SwapHand, "V", "MouseMiddle");
         bindings.Set(PlayAction.DropItem); // unbound: its line is left out
+        bindings.Bind(PlayAction.ActivateInHand, "U"); // rebound: its chip follows
         Assert.Equal("V", LiveHud.SwapKey(bindings));
-        Assert.Equal(new[] { "Z", "Ctrl+Q" }, LiveHud.HintLines(bindings).Select(l => l.Key));
+        Assert.Equal(new[] { "U", "Alt+Z", "R" }, LiveHud.HintLines(bindings, held).Select(l => l.Key));
         bindings.Set(PlayAction.SwapHand);
         Assert.Null(LiveHud.SwapKey(bindings));
+    }
+
+    [Fact]
+    public void TheHintStripListsOnlyTheKeysTheServerSaysTheHeldItemHas()
+    {
+        KeyBindings bindings = KeyBindings.Defaults();
+        // a crowbar: no activate in hand, no alt-click, nowhere to go
+        Assert.Equal(new[] { new PromptLine("Q", "Drop") }, LiveHud.HintLines(bindings, new ContextHintsMessage()));
+        // a flashlight: tg's attack_self without a screentip ("Use"), fits a pocket
+        Assert.Equal(new[] { new PromptLine("Z", "Use"), new PromptLine("Q", "Drop"), new PromptLine("R", "Equip") },
+            LiveHud.HintLines(bindings, new ContextHintsMessage { HeldUse = "Use", HeldEquips = true }));
     }
 
     // 16:9, 16:10, 4:3, 5:4 and 21:9 screens at every HUD scale the options offer in steps of 5 (50 to 300 %)

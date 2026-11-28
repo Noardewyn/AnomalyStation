@@ -3516,3 +3516,28 @@ named "Toggle Light", not active, starts `0C 0D 54 6F ...`. The server reads the
 (`Replicator.Actions.cs`), so it never names a button the client has no entry for unless the screen held more than `Limits.MaxScreenEntries`.
 
 Tests: `Protocol/ProtocolV100ActionsTests`, `Protocol/CodecTests`, `Client/Play/ActionsMenuClientTests`, `Integration/ActionsMenuGameplayTests`.
+
+**The ContextHints tail** (ui-overhaul.md section 12, "The hints, improved", DV697; server to client, version 4's ContextHints, id 11): after the
+hints, only when one of its fields is set (so a message without them keeps the bytes it had):
+
+```
+[u8 flags: bit 0 empty-hand label, bit 1 held use label, bit 2 held alt label, bit 3 quick equip goes somewhere, bit 4 move here; bits 5-7 zero, never 0]
+then each label whose bit is set, in bit order: [str(1..64)]
+```
+
+The empty-hand label is tg's left-click screentip label for the target with an empty hand (`HintExtras.EmptyHandLabel`: the target's context asked
+with no held item), sent only while the active hand holds an item and the world interact key would act there (`WorldInteract.Acts`, in reach of an
+empty hand); none on a screen target or out of reach (DV691). The held labels are the active hand's item's: tg's screentip for the item hovered in
+hand (`COMSIG_ATOM_REQUESTING_CONTEXT_FROM_ITEM` and `COMSIG_ITEM_REQUESTING_CONTEXT_FOR_TARGET` with the item as both), its LMB label for activate in
+hand, else "Use" where its type or a component has an `attack_self`; its Alt-LMB label for the alt-click, else "Alt use" where it has a `click_alt`.
+Quick equip is tg's `equip_to_best_slot` asked without acting (`mob_can_equip` per slot, then `can_insert` of the open storage, the other held items
+and the worn storages; a human's only). Move here: the target is a turf and the player pulls something with the active hand empty (tg's
+`turf/attack_hand`, `Move_Pulled`). The held fields go with every answer whatever is looked at (also out of reach and on a ceiling cell), so the
+client's hint strip keeps them. They are asked in the tick with the session's chat muted, as the radial's extras are. A label is plain text (tags
+removed), cut at 64 bytes, never empty. A zero flags byte, an unknown bit, a missing or empty label or a byte after the tail is refused at both ends.
+`Limits.MaxContextHintsMessageBytes` grows by the tail's 196 bytes. Example: a tail of the empty-hand label "Open" and quick equip is `09 05 4F 70 65 6E` (empty-hand
+"Open", quick equip). The client hovers the thing looked at again at once when the active hand, its item or combat mode changes
+(`PlaySession.HandsNow`), so the answer follows without a new look.
+
+Tests: `M4aServer/P6/CodecV4Tests`, `Client/Play/KeyChipsTests`, `Client/Play/LiveHudTests`, `Client/Play/PlaySessionTests`,
+`Integration/HintsImprovedGameplayTests`.

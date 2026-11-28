@@ -14,6 +14,10 @@ namespace Anomaly.Core.Tg;
 
 public static class WorldInteract
 {
+    /// <summary>The key's own refusals (before tg's click gates): false on a mob while in combat mode, and on an item lying elsewhere while the active hand is full.</summary>
+    public static bool Acts(mob_living user, atom target)
+        => !(target is mob && Dm.truthy(user.combat_mode)) && !(target is obj_item item && user.get_active_held_item() != null && !Dm.truthy(user.is_holding(item)));
+
     /// <summary>
     /// The player pressed the world interact key on <paramref name="target"/>: only a connected client's own living mob; never on a mob while
     /// in combat mode (the key never hits), never on an item while the active hand is full (tg's pick-up would drop it at the feet). Runs
@@ -24,9 +28,7 @@ public static class WorldInteract
         ArgumentNullException.ThrowIfNull(player);
         if (!player.dm_connected || player.gc_destroyed != null || player.mob is not mob_living user || QDELETED(user) || target == null || target.gc_destroyed != null)
             return;
-        if (target is mob && Dm.truthy(user.combat_mode))
-            return;
-        if (target is obj_item item && user.get_active_held_item() != null && !Dm.truthy(user.is_holding(item)))
+        if (!Acts(user, target))
             return;
         World world = World.Current;
         object caller_usr = world.usr;

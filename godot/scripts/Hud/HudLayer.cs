@@ -132,6 +132,12 @@ void fragment() {
     /// <summary>Slice 4B-2: the item in the active hand (0: none).</summary>
     public long HeldItem { get; private set; }
 
+    /// <summary>tg's combat toggle shows combat mode on (its icon state <c>combat</c>), as of the last update.</summary>
+    public bool CombatOn { get; private set; }
+
+    /// <summary>The server's newest answer carrying the held item's own lines (<c>PlaySession.Held</c>), for the hint strip. Set by the scene each frame.</summary>
+    public ContextHintsMessage HeldHints { get; set; }
+
     /// <summary>Slice 4B-2: the storage worn on the back (the quick transfer's backpack), 0 for none.</summary>
     public long BackStorage => Storages?.At(StoragePlace.Back)?.Entity ?? 0;
 
@@ -607,6 +613,7 @@ void fragment() {
         Array.Clear(_barSlots);
         _alerts.Clear();
         (DollEntry, CollapsedToggle, ExpandedToggle) = (0, 0, 0);
+        bool combat = false;
         foreach (Item item in _order)
         {
             if (!item.HasSpec || item.Hidden)
@@ -615,6 +622,9 @@ void fragment() {
                 Analyze(item);
             switch (item.Role)
             {
+                case LiveHudRole.CombatToggle:
+                    combat = _replica.TryGetAppearance(item.Entry.Appearance, out AppearanceEntry toggle) && _replica.ResolveString(toggle.IconState) == "combat";
+                    break;
                 case LiveHudRole.Doll:
                     doll = true;
                     DollEntry = item.Entry.Id;
@@ -648,6 +658,7 @@ void fragment() {
         (_left, _right) = (left, right);
         ActiveHand = active?.Entry.HandIndex ?? 0;
         HeldItem = active == null ? 0 : InventoryRules.ItemIn(active.Entry);
+        CombatOn = combat;
         UpdateInventoryState();
         _layout = LiveHud.Layout(metrics, human);
         // slice D: on the human HUD tg's alerts are chips by the vitals, in tg's order, and with the full stack slice E's status chips (hunger,
@@ -1178,7 +1189,7 @@ void fragment() {
     // (`name`, null: none) measured at the verbs' size (`named`, 0: none).
     private float HintNatural(float unit, string name, bool selfDrag, out float named)
     {
-        _hintLines = selfDrag ? Shared.SelfDrag.HintLines(_options.Bindings) : LiveHud.HintLines(_options.Bindings);
+        _hintLines = selfDrag ? Shared.SelfDrag.HintLines(_options.Bindings) : LiveHud.HintLines(_options.Bindings, HeldHints);
         Font font = ThemeDB.FallbackFont;
         float k = unit * UiTokens.HintShare;
         int capSize = Math.Max(1, (int)Math.Round(UiTokens.ChipFont * k)), verbSize = Math.Max(1, (int)Math.Round(UiTokens.PromptFont * k));

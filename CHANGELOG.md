@@ -22,6 +22,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - The inventory now opens with I only; Tab just frees the cursor, so using a machine no longer opens the inventory.
 - Right-clicking an item in the inventory opens a wheel of what to do with it (internals, toggles, examine) instead of taking it in hand.
 - More Space Station 14 keys: E uses things with an empty hand, R quick equips, Shift+B/E/G/H/F fill or empty a slot, comma whispers.
+- The prompt now lists every key for the thing you look at (E, Alt, Ctrl, Move here), and the strip over your hands the held item's own keys.
 - K opens an actions menu: click an action to use it, drag it onto one of nine Shift+number slots shown at the top left; the scoreboard moved to Caps Lock.
 - Number keys 1 to 9 work the belt bar again for settings saved before the bar (they had stayed on the action buttons, now on Shift).
 - Alerts, hunger and stamina are small chips above the health doll, or left of it on a crowded screen, instead of a column at the right edge.

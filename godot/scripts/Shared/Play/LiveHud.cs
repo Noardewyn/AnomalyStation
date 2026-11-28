@@ -528,21 +528,24 @@ public static class LiveHud
         return new HudRect(leftActive ? box.Right - inset - w : box.Left + inset, box.Top + inset, w, height);
     }
 
-    // what the player can do with a held item using keys that exist today (ui-overhaul.md section 6); swapping hands is the cap on the other hand
-    private static readonly (PlayAction Action, string Text)[] HeldActions =
+    /// <summary>
+    /// The hint strip's entries for the held item (ui-overhaul.md section 12, "The hints, improved"), each with the first key bound to it, an unbound one
+    /// left out: activate in hand with the server's label for it and tg's alt-click on it where the server's newest answer (<paramref name="held"/>,
+    /// null: none yet) names one, drop always, quick equip where the server says it would go somewhere. Swapping hands is the cap on the other hand.
+    /// </summary>
+    public static List<PromptLine> HintLines(KeyBindings bindings, ContextHintsMessage held = null)
     {
-        (PlayAction.ActivateInHand, "Use"), (PlayAction.DropItem, "Drop"), (PlayAction.ThrowMode, "Throw"),
-    };
-
-    /// <summary>The hint strip's entries: use, drop and throw, each with the first key bound to it; an unbound one is left out.</summary>
-    public static List<PromptLine> HintLines(KeyBindings bindings)
-    {
-        var lines = new List<PromptLine>(HeldActions.Length);
-        foreach ((PlayAction action, string text) in HeldActions)
+        var lines = new List<PromptLine>(4);
+        void Add(PlayAction action, string text)
         {
-            if (KeyChips.KeyOf(bindings, action) is string key)
-                lines.Add(new PromptLine(key, I18n.T(text)));
+            if (!string.IsNullOrEmpty(text) && KeyChips.KeyOf(bindings, action) is string key)
+                lines.Add(new PromptLine(key, text));
         }
+        Add(PlayAction.ActivateInHand, held?.HeldUse);
+        Add(PlayAction.AltUseInHand, held?.HeldAlt);
+        Add(PlayAction.DropItem, I18n.T("Drop"));
+        if (held?.HeldEquips == true)
+            Add(PlayAction.QuickEquip, I18n.T("Equip"));
         return lines;
     }
 

@@ -555,7 +555,33 @@ public sealed class PlaySession
     public ContextHintsMessage Hints { get; private set; }
 
     /// <summary>A ContextHints message from the server: the newest answer to this look's hovers.</summary>
-    public void HintsArrived(ContextHintsMessage hints) => Hints = hints;
+    public void HintsArrived(ContextHintsMessage hints) => Hints = Held = hints;
+
+    /// <summary>
+    /// The server's newest answer, kept whatever is looked at (also after a look at nothing), for the held item's own lines in the hint strip
+    /// (<see cref="ContextHintsMessage.HeldUse"/>, <see cref="ContextHintsMessage.HeldAlt"/>, <see cref="ContextHintsMessage.HeldEquips"/>); null after
+    /// the held item or combat mode changed (<see cref="HandsNow"/>) until the next answer, so the strip never shows another item's lines.
+    /// </summary>
+    public ContextHintsMessage Held { get; private set; }
+
+    private (int Hand, long Item, bool Combat)? _hands;
+
+    /// <summary>
+    /// The active hand, the item in it (0: none) and combat mode as the HUD shows them this frame: when any changed (a swap, a pick-up, a drop, combat
+    /// mode toggled) the held lines are dropped and the thing hovered is hovered again at once (<see cref="Rehover"/>), so the prompt and the hint strip
+    /// get the server's fresh answer without a new look.
+    /// </summary>
+    public void HandsNow(int hand, long item, bool combat)
+    {
+        if (_hands == (hand, item, combat))
+            return;
+        bool first = _hands == null;
+        _hands = (hand, item, combat);
+        if (first)
+            return;
+        Held = null;
+        Rehover();
+    }
 
     private ClickTarget _hintsLook;
 

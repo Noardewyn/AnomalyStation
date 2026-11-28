@@ -343,6 +343,43 @@ public class PlaySessionTests
     }
 
     [Fact]
+    public void ANewHeldItemOrCombatModeHoversTheSameThingAgainAtOnceAndDropsTheHeldLines()
+    {
+        // ui-overhaul.md section 12, "The hints, improved": the prompt and the hint strip refresh on a swap, a pick-up, a drop or combat mode,
+        // not only on a new look (well inside PlaySession.RepeatHoverInterval)
+        (RecordingFeed feed, PlayRig rig) = Rig(bots: 0);
+        rig.Run(0.5);
+        int Hovers() => feed.Actions.Count(a => a.Kind == ActionKind.Hover);
+        var door = new ClickTarget(TargetKind.Entity, 7, 0, 0, 0, 16, 16);
+        const double t = 100;
+        rig.Session.HandsNow(1, 50, false); // the first state seen is no change
+        Assert.True(rig.Session.Hover(door, t));
+        var answer = new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7, Name = "airlock", HeldUse = "Use", EmptyHand = "Open" };
+        rig.Session.HintsArrived(answer);
+        Assert.Same(answer, rig.Session.Held);
+        int before = Hovers();
+
+        rig.Session.HandsNow(1, 50, false); // nothing changed: no hover
+        Assert.False(rig.Session.Hover(door, t + 0.15));
+        Assert.Same(answer, rig.Session.Held);
+
+        rig.Session.HandsNow(1, 0, false); // dropped: the held lines go and the door is hovered again without a new look
+        Assert.Null(rig.Session.Held);
+        Assert.True(rig.Session.Hover(door, t + 0.2));
+        rig.Session.HandsNow(1, 0, true); // combat mode on: again
+        Assert.True(rig.Session.Hover(door, t + 0.35));
+        rig.Session.HandsNow(2, 0, true); // a swap to the other hand: again
+        Assert.True(rig.Session.Hover(door, t + 0.5));
+        Assert.Equal(before + 3, Hovers());
+
+        // the held lines stay whatever is looked at, also nothing
+        rig.Session.HintsArrived(answer);
+        rig.Session.Hover(ClickTarget.None, t + 0.7);
+        Assert.Null(rig.Session.Hints);
+        Assert.Same(answer, rig.Session.Held);
+    }
+
+    [Fact]
     public void TheKeyToMotionProbeSeesTheFirstFrameAfterTheKey()
     {
         (RecordingFeed feed, PlayRig rig) = Rig(bots: 0);

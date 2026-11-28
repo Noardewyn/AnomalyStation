@@ -873,8 +873,10 @@ public partial class GameScene : Node3D
         UpdateStripView(); // slice 4D-1: the strip view's window and target
         // slice T5c: the doll's part under the free pointer, so its eyes and mouth show tg's hover pictures
         _hudLayer.DollHover = _hudHover.Kind == TargetKind.Screen ? BodyZoneAim.DollFaceAt(_hudLayer.DollZoneAt(_hudHover.Id, _hudHover.IconX, _hudHover.IconY), _hudHover.IconX, _hudHover.IconY) : AimZone.None;
+        _hudLayer.HeldHints = _session.Held; // the hint strip's lines for the held item
         using (Dev.FrameProbe.Scope("GameScene/hud.Update"))
             _hudLayer.Update(now);
+        _session.HandsNow(_hudLayer.ActiveHand, _hudLayer.HeldItem, _hudLayer.CombatOn); // a new held item or combat mode: fresh hints without a new look
         FrameActionsMenu(now); // section 15: over the row the HUD laid out this frame
         ExpandInventory(); // slice 4A: tg's worn slots kept on the screen for the Tab inventory
         UpdateRates(now);

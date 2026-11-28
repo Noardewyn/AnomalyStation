@@ -943,6 +943,8 @@ public sealed partial class ServerHost
             // (the ceiling's range, CeilingSystem's, for every living mob whatever it holds: a gun's shot from afar shows nothing either)
             if (s.Client.mob is mob_living reacher && !Waiting.NoSleep(CeilingSystem.InReach(reacher, ceilingCell)))
                 hint.Name = "";
+            if (s.Client.mob is mob_living holder)
+                ScreentipRouter.Tail(this, s, hint, holder, null); // DV697: the held item's lines for the hint strip
             while (s.ControlOutbox.Count >= Session.ControlOutboxCap) s.ControlOutbox.Dequeue();
             s.ControlOutbox.Enqueue(Codec.Encode(hint));
             return;
@@ -1125,9 +1127,35 @@ public sealed partial class ServerHost
             }
 
             if (message.TargetKind == TargetKind.Entity && message.Target < 1) return; // an object the replica cannot name
+            if (viewer.mob is mob_living living)
+                Tail(_host, s, message, living, outOfReach || message.TargetKind == TargetKind.Screen ? null : target);
             while (s.ControlOutbox.Count >= Session.ControlOutboxCap) s.ControlOutbox.Dequeue();
             s.ControlOutbox.Enqueue(Codec.Encode(message));
         }
+
+        // DEVIATION(DV697) (protocol version 100's ContextHints tail): the world interact key's line on the target (null: none; out of reach and on a
+        // screen target there is none), the move-pulled turf, and the held item's own lines for the hint strip, which every answer carries whatever
+        // is looked at. Asked of tg's own checks with the session's chat muted, as the extras are (QuietExtras).
+        internal static void Tail(ServerHost host, Session s, ContextHintsMessage message, mob_living user, atom target)
+        {
+            host._chatMutedFor = s;
+            try
+            {
+                if (target != null)
+                {
+                    message.EmptyHand = TailLabel(HintExtras.EmptyHandLabel(user, target));
+                    message.MoveHere = HintExtras.MovesPulled(user, target);
+                }
+                (string use, string alt, bool equips) = HintExtras.Held(user);
+                (message.HeldUse, message.HeldAlt, message.HeldEquips) = (TailLabel(use), TailLabel(alt), equips);
+            }
+            finally
+            {
+                host._chatMutedFor = null;
+            }
+        }
+
+        private static string TailLabel(string label) => PlainLabel(label) is { Length: > 0 } plain ? Truncate(plain, Limits.MaxContextLabelBytes) : null;
 
         // DV691: the extras ask tg's own checks (can_perform_action and its overrides), which tell the mob each refusal in the chat; a hover asks
         // twice a second and must not talk, so the hovering session's chat is muted while they are worked out. The call is synchronous on the

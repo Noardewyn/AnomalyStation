@@ -1998,6 +1998,71 @@ The nearby strip:
   drops the item (the move to the floor). No server change for the strip.
 - With nothing nearby the strip shows its title and one empty cell (the drop target).
 
+### Slice 4D: settled design (the strip view and the search; confirmed by the designer from mockups, 2026-11-28)
+
+What tg and the port have (read from tg's source, 2026-11-28; this corrects "tg has no way to look into a worn bag"
+above): tg's strip is the tgui `StripMenu` (`strippable.dm`, `human_stripping.dm`), translated in the port and drawn
+as a native window (D236). A click on a worn item strips it (the item's `strip_delay`, 4 s by default; it falls to
+the floor); a click on an empty slot with an item in the active hand puts it on (2 s; pockets 1 s). A full pocket is
+hidden until emptied (4 s, no message unless it fails). tg's `strip_accessible_storage` gives a worn backpack, belt
+or wallet an "Open" action: one wait (`strip_delay` + 1 s), tg's warning to the wearer and bystanders, then tg's
+storage window for the stripper. The port has not translated that element. The designer's search replaces its "all
+at once" with item by item (agreed by the lead developer).
+
+The designer's choices: the layout "Theirs on the right"; search times 1.5 s per item for a backpack or other bag,
+0.75 s for a belt or wallet, no wait before the first item, and the search goes on while revealed items are taken;
+the wearer and bystanders get tg's warning once when a search of a bag, belt or wallet starts; a pocket's Search
+takes 0.5 s, is silent, and shows what is in the pocket, and taking it stays tg's 4 s pickpocket.
+
+Built in two slices.
+
+Slice 4D-1, the strip view (client only; tg's strip window's own data and acts, nothing new on the wire):
+- While tg's `StripMenu` window is open for the player on the human HUD, the native window is not drawn and the Tab
+  inventory shows the strip view: the chat at the left; in the middle the player's own storages (the column that
+  normally stands at the right: the carried storages scrolling, the pinned other container, the Nearby row) and no
+  sprite of the player; at the right the strip panel. The bar and the hands stay at the bottom. Opening the strip
+  (tg's ways: the wheel's "Strip", a drag of the body onto oneself) turns the Tab inventory on. With several strip
+  windows open the last opened shows. Other HUDs keep tg's window.
+- The strip panel, top to bottom: a title "Stripping: <name>" with an X (it closes tg's window; Esc does too; the
+  Tab inventory then shows its normal layout and stays on); the target's sprite facing south, drawn as the
+  player's own is, with the worn slots round it in the own panel's arrangement (ears, head, eyes above; suit,
+  uniform, gloves at the left; back, suit storage, belt at the right; mask and neck under; shoes below); a row of
+  the left and right hand, with handcuffs and legcuffs at its end only when tg shows them; a row of the ID and the
+  two pockets. 4D-2 adds the storages under a line.
+- A slot shows what tg's window shows: the item's picture and name; an empty slot its blank slot art; a slot tg
+  hides completely a "blocked" mark; a full pocket a "?"; an item tg shows but lets nobody touch at half strength.
+- A left click on a slot is tg's click on it (`use`): a worn item is stripped; an empty slot takes the active
+  hand's item. A right click opens a small menu of tg's other actions for that slot with tg's labels (sensors,
+  adjust, internals, shoelaces, accessories) and a pick sends tg's `alt`. Shift+click on the sprite examines the
+  person. A drag of the active hand's item onto an EMPTY slot of theirs is that `use`; onto a full one nothing. A
+  drag of their worn item onto anything of the player's (a hand box, a storage, the Nearby row) is the strip; the
+  item falls to the floor as in tg and shows in the Nearby row (4D-2 makes it go where it was dropped).
+- The timer: while tg marks a slot as being worked on, a bar fills along the cell's bottom, with the seconds left
+  when the client knows the time; tg's ordinary progress bar is then not drawn a second time if the client can
+  tell it is the same action.
+- When tg's window is not interactive (too far, hands blocked) the slots are drawn at half strength and take no
+  clicks; when tg closes it the strip view ends.
+- On a screen too narrow for both columns the strip panel stays and the player's storages give way.
+
+Slice 4D-2, the search (server, wire and client; a mechanic tg does not have: its own deviation row; HIGH):
+- Under the slots, behind a line, one panel for each worn storage tg's "Open" would apply to (a backpack, a belt, a
+  wallet, where tg's `can_access_storage` holds), each with a "Search" prompt; a pocket with something in it has a
+  "Search" of its own on its slot.
+- Search reveals the storage's items one at a time in tg's order, 1.5 s each for a bag, 0.75 s for a belt or
+  wallet, with no wait before the first, as a timed action on the wearer by tg's rules (it stops when either
+  moves, when the searcher is stunned or cuffed, when the wearer is out of reach, when the storage is locked or
+  taken off); taking a revealed item does not stop it. The panel does not show how many items there are until the
+  search has finished. Pressing Search again goes on from where it stopped.
+- When a search of a bag, belt or wallet starts, tg's own lines of its "Open" go out once (to bystanders, the
+  wearer, the searcher, with tg's blind variants). A pocket's search (0.5 s) is silent and shows the pocket's item
+  on its slot for that searcher; taking it is tg's pocket strip.
+- A revealed item stays revealed for that searcher, also after the view is closed, until it leaves that storage;
+  what the searcher puts in is revealed for them.
+- A revealed item is taken by the slice 4B moves (to a hand, to one of the player's storages, the quick transfer)
+  through tg's own procs with tg's reach; an item of the player's goes into a storage being searched the same
+  way. A worn item dragged onto a hand box or a storage is stripped by tg's strip and then taken there.
+- Nothing unrevealed is ever sent to the searcher's client.
+
 ### For the contributor to tell the owner (collected 2026-11-27)
 
 - Upstream's photo upload (release 1.16.0), fixed on this branch in its own commit (the contributor: "we can fix it

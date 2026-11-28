@@ -379,6 +379,45 @@ public static class InventoryRules
     }
 
     /// <summary>
+    /// DV694, the inventory's right-click wheel: the item a right click (a tap) with no modifier held at <paramref name="at"/> opens the wheel for:
+    /// the item in a hand box, a belt, pocket or ID cell of the bar, a worn slot's cell or a storage panel's cell (the pinned other container's
+    /// included); 0 where the right click stays what it was: an empty place (tg's own right click on an empty hand box or slot; nothing on a panel's
+    /// empty cell or header, nor on a belt cell), a modifier held, and anything else (another HUD entry, the Nearby strip, the strip view, another HUD).
+    /// </summary>
+    public static long MenuItem(in InvPlace at, ClickModifiers modifiers)
+        => modifiers == ClickModifiers.None && at.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell ? at.Item : 0;
+
+    /// <summary>
+    /// What the wheel's entries act on: the item itself named as a screen target, as tg's screen shows it (an item in a hand or a worn slot is drawn
+    /// in tg's slot; a stored one the server takes for an item the player's own listed storages show, DV696).
+    /// </summary>
+    public static ClickTarget MenuTarget(long item) => new(TargetKind.Screen, item, 0, 0, 0, 16, 16);
+
+    /// <summary>
+    /// The wheel's entries for an item, from the server's answer to the hover of it (<paramref name="hints"/>, null until it comes), in this order:
+    /// the item's action buttons by their names (the server's entries that are no click, <see cref="ContextHintAction.Extra"/>: tg grants them while
+    /// the item is held or worn), tg's context entries for it (each its click with its modifiers), "Use in hand" when it is in the active hand
+    /// (<paramref name="inActiveHand"/>), and Examine. Never empty: with nothing else, Examine.
+    /// </summary>
+    public static List<RadialEntry> MenuEntries(ContextHintsMessage hints, bool inActiveHand)
+    {
+        var entries = new List<RadialEntry>();
+        if (hints != null)
+        {
+            foreach (ContextHint hint in hints.Hints)
+                if (hint.Action == ContextHintAction.Extra)
+                    entries.Add(new RadialEntry(RadialKind.Extra, hint.Label));
+            foreach (ContextHint hint in hints.Hints)
+                if (hint.Action == ContextHintAction.Click)
+                    entries.Add(new RadialEntry(RadialKind.Hint, hint.Label, hint.Button, hint.Modifiers));
+        }
+        if (inActiveHand)
+            entries.Add(new RadialEntry(RadialKind.UseInHand, "Use in hand"));
+        entries.Add(new RadialEntry(RadialKind.Examine, "Examine", ClickButton.Left, ClickModifiers.Shift));
+        return entries;
+    }
+
+    /// <summary>
     /// Slice 4D-1: tg's alternate actions a right click on <paramref name="at"/> offers, as (tg's action, tg's label): those of a strip slot showing an
     /// item that tg lets be used, while tg's window is interactive (<paramref name="strip"/>), that tg's window draws (StripMenu.tsx's
     /// <c>ALTERNATE_ACTIONS</c>); none for anything else.
@@ -463,7 +502,7 @@ public static class InventoryRules
 }
 
 /// <summary>
-/// The "inventory opened" notice (protocol 100's InventoryOpen): sent once per turning the Tab inventory on with Tab or the inventory key, and no more
+/// The "inventory opened" notice (protocol 100's InventoryOpen): sent once per opening of the inventory overlay with the inventory key, and no more
 /// often than the server takes it (<see cref="Seconds"/>: the server's own limit, once a second, DV696).
 /// </summary>
 public sealed class InventoryNotice
@@ -474,10 +513,10 @@ public sealed class InventoryNotice
     private double _last = double.NegativeInfinity;
 
     /// <summary>
-    /// Tab or the inventory key (both are cursor mode's key, <see cref="TabInventory.KeyAction"/>) was pressed at <paramref name="now"/>, turning cursor
-    /// mode on (<paramref name="turnedOn"/>) or off: whether the notice goes out: only when it turned on, on the human HUD (<paramref name="humanHud"/>:
-    /// the Tab inventory), and a second after the last one at the soonest. Cursor mode that comes on by itself (the chat typed in, a window) is no
-    /// press of the key and never asks.
+    /// The inventory key was pressed at <paramref name="now"/>, opening the inventory overlay (<paramref name="turnedOn"/>) or closing it
+    /// (<see cref="TabInventory.InventoryPressed"/>, DV694): whether the notice goes out: only when it opened, on the human HUD (<paramref name="humanHud"/>:
+    /// the inventory overlay), and a second after the last one at the soonest. Tab (cursor mode only), cursor mode that comes on by itself (the chat
+    /// typed in, a machine's window) and the inventory opened by what tg opened (a container, a strip window) are no press of the key and never ask.
     /// </summary>
     public bool Opened(bool turnedOn, bool humanHud, double now)
     {

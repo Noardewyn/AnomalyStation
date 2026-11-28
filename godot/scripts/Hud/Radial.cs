@@ -32,6 +32,27 @@ public partial class Radial : Control
     /// <summary>The owner (2026-10-30): how opaque the backgrounds and buttons are (PlayOptions.RadialOpacity); text and icons stay solid.</summary>
     public float Opacity { get; set; } = 1f;
 
+    /// <summary>DV694: where the client's own wheel is centred (the inventory's right-click wheel: at the pointer); null: the screen's centre, the crosshair.</summary>
+    public Vector2? Centre { get; set; }
+
+    // the ring's sizes, the reference being a window 1650 px high (the owner, 2026-10-30): its radius and an entry's height
+    private (float Ui, float Radius, float Height) Ring()
+    {
+        float ui = Mathf.Clamp(UiScale, 0.5f, 2f) * GetViewportRect().Size.Y / 1650f;
+        return (ui, 300f * ui, 56f * ui);
+    }
+
+    /// <summary>DV694: the centre for a wheel opened at <paramref name="at"/>, moved in from the screen's edges so the ring and its entries stay on it.</summary>
+    public Vector2 CentreNear(Vector2 at)
+    {
+        Vector2 size = GetViewportRect().Size;
+        (_, float radius, float height) = Ring();
+        float marginX = radius + 3.5f * height, marginY = radius + 1.5f * height; // an entry's label reaches out sideways; the title stands above
+        float x = size.X <= 2f * marginX ? size.X / 2f : Mathf.Clamp(at.X, marginX, size.X - marginX);
+        float y = size.Y <= 2f * marginY ? size.Y / 2f : Mathf.Clamp(at.Y, marginY, size.Y - marginY);
+        return new Vector2(x, y);
+    }
+
     public void Bind(RadialModel model, ReplicaWorld replica = null, IAppearanceTextures textures = null)
     {
         _model = model;
@@ -61,11 +82,11 @@ public partial class Radial : Control
             DrawServer();
             return;
         }
-        Vector2 centre = GetViewportRect().Size / 2f;
+        Vector2 centre = Centre ?? GetViewportRect().Size / 2f;
         Font font = ThemeDB.FallbackFont;
         // the owner (2026-10-30): a wider ring of larger buttons, each with an icon (a pile item its own sprite); the ring and its
         // buttons keep their share of the screen at every resolution, the sizes below being those of a window 1650 px high
-        float ui = Mathf.Clamp(UiScale, 0.5f, 2f) * GetViewportRect().Size.Y / 1650f;
+        float ui = Ring().Ui;
         int size = Mathf.RoundToInt(19 * ui), chordSize = Mathf.RoundToInt(13 * ui);
         float icon = 40f * ui, pad = 8f * ui, height = icon + 2f * pad;
         float radius = 300f * ui, line = Mathf.Max(1f, ui);

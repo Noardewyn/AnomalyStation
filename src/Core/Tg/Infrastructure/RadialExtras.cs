@@ -49,6 +49,12 @@ public enum RadialExtra : byte
     /// (living_item_handling.dm:130), which was the give key's.
     /// </summary>
     Offer = 11,
+
+    /// <summary>
+    /// DV694 (the inventory's right-click wheel): one of tg's action buttons of an item the player holds or wears (tg grants an item's actions
+    /// there only: <c>item_action_slot_check</c>), by the action's name; picking it is tg's click on that button (<c>action_button/Click</c>).
+    /// </summary>
+    ItemAction = 12,
 }
 
 public static class RadialExtras
@@ -67,6 +73,12 @@ public static class RadialExtras
     public static List<(RadialExtra Kind, string Label)> Of(mob user, atom target)
     {
         var entries = new List<(RadialExtra, string)>();
+        // DV694: an item of the own inventory offers its action buttons (none for one in a bag, as tg grants none there); the rest is for things on a turf
+        if (target is obj_item own)
+        {
+            foreach ((datum_action action, _) in ItemButtons(user, own))
+                entries.Add((RadialExtra.ItemAction, action.name));
+        }
         if (user is not mob_living living || target is not atom_movable thing || thing == user || QDELETED(thing) || QDELETED(user)
             || !isturf(thing.loc) || !Dm.truthy(Waiting.NoSleep(thing.Adjacent(user))))
             return entries;
@@ -113,6 +125,17 @@ public static class RadialExtras
         ArgumentNullException.ThrowIfNull(player);
         if (!player.dm_connected || player.gc_destroyed != null || player.mob is not mob user || target == null)
             return;
+        if (target is obj_item own)
+        {
+            // DV694: tg's click on the item's action button of that name, as the button's own click (its can_use, cooldown and Trigger)
+            foreach ((datum_action action, atom_movable_screen_movable_action_button button) in ItemButtons(user, own))
+            {
+                if (action.name != label)
+                    continue;
+                ClientSeam.Click(player, button, ClientSeam.ClickParams(LEFT_CLICK, false, false, false, 0, 0, button.screen_loc));
+                return;
+            }
+        }
         foreach ((RadialExtra kind, string offered) in Of(user, target))
         {
             if (offered != label || !(kind == RadialExtra.Flip && target is obj_structure_table || kind == RadialExtra.StepIn && target is obj_structure_closet && user is mob_living
@@ -150,6 +173,20 @@ public static class RadialExtras
             return false;
         return giver.get_active_held_item() is obj_item item && (!Dm.truthy(Dm.bitand(item.item_flags, ABSTRACT)) || HAS_TRAIT(item, TRAIT_BORG_GIVE)
             || HAS_TRAIT(item, TRAIT_OFFERED_WHEN_PULLED) || Dm.truthy(Dm.bitand(item.item_flags, HAND_ITEM)));
+    }
+
+    // DV694: the action buttons tg shows the user for the item: his own actions whose target it is, each with its button on his HUD
+    // (action.viewers[hud], what the action bar draws; the client's screen entry names the same item, ScreenEntry.ActionTarget)
+    private static IEnumerable<(datum_action Action, atom_movable_screen_movable_action_button Button)> ItemButtons(mob user, obj_item item)
+    {
+        if (user == null || item == null || QDELETED(user) || QDELETED(item) || user.hud_used is not datum_hud hud)
+            yield break;
+        foreach (datum_action action in Dm.each_cast<datum_action>(user.actions))
+        {
+            if (action != null && action.target == item && action.owner == user
+                && action.viewers?[hud] is atom_movable_screen_movable_action_button button && !QDELETED(button))
+                yield return (action, button);
+        }
     }
 
     // DEVIATION(DV156): tg's climbable element would start a climb on the drag (mousedrop_receive's checks and can_climb, asked of the thing's own element).

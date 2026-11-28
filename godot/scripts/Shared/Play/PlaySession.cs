@@ -773,9 +773,10 @@ public sealed class PlaySession
     /// <summary>Version 86 (DV503): the radial's entry <paramref name="label"/> that is no click (the table's Flip) picked on an entity <paramref name="target"/>.</summary>
     public bool ContextPick(in ClickTarget target, string label)
     {
-        if (!target.IsSet || target.Kind != TargetKind.Entity || string.IsNullOrEmpty(label))
+        // DV694: a screen target too, an item in a hand or a worn slot (the inventory's right-click wheel: its action buttons)
+        if (!target.IsSet || target.Kind is not (TargetKind.Entity or TargetKind.Screen) || LiveHud.IsOurs(target) || string.IsNullOrEmpty(label))
             return false;
-        Send(new ActionMessage(Prediction.NewestSeq, ActionKind.ContextPick, target.Id, ClickButton.None, ClickModifiers.None, label) { TargetKind = TargetKind.Entity });
+        Send(new ActionMessage(Prediction.NewestSeq, ActionKind.ContextPick, target.Id, ClickButton.None, ClickModifiers.None, label) { TargetKind = target.Kind });
         return true;
     }
 

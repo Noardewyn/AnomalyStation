@@ -355,8 +355,8 @@ public partial class GameScene : Node3D
             _session.Camera.AddShake(0.035f, 0.25f);
             _screenEffects.Hit();
             // slice 4A: the Tab inventory closes when the player takes damage, unless the player types or a window needs the pointer
-            if (_hudLayer.HumanHud && TabInventory.CloseOnDamage(true, _mouse.CursorMode, KeyboardTaken, WindowsOpen || PanelsOpen || DevMenuHasMouse))
-                SetCursorMode(false);
+            if (_hudLayer.HumanHud && TabInventory.CloseOnDamage(true, InventoryShown, KeyboardTaken, WindowsOpen || PanelsOpen || DevMenuHasMouse))
+                SetView((false, false)); // DV694: the inventory overlay closes, back to the view; Tab's cursor mode alone stays
         };
 
         var ui = new CanvasLayer { Name = "Ui", Layer = 3 };
@@ -863,6 +863,7 @@ public partial class GameScene : Node3D
         UpdateEditor();
         _hudLayer.RenderTick = _session.RenderTick; // M4v slice 4: the screen objects' flicks and animate() chains play at the entities' render tick
         _hudLayer.CursorMode = _mouse.CursorMode; // ui-overhaul.md 6: tg's zone selector shows only while the cursor is free
+        _hudLayer.InventoryOpen = InventoryShown; // DV694: the inventory overlay (the inventory key), never for cursor mode alone
         _hudLayer.SelfDrag = _selfDrag.Holding; // DV695: the hint strip reads "Yourself" while the own body is dragged
         _hudLayer.SelfDragPicture = _selfDrag.HintPicture(_feed.Replica); // with the own body's picture, as the drag mark shows it
         _hudLayer.Hotbar = _session.Hotbar; // ui-overhaul.md section 10: the bar's cells
@@ -960,7 +961,7 @@ public partial class GameScene : Node3D
                 CloseAllWindows();
             else if (GetViewport().GuiGetFocusOwner() is LineEdit or TextEdit)
                 GetViewport().GuiReleaseFocus();
-            else if (_escMenu.IsOpen || !CloseTopWindow())
+            else if (_escMenu.IsOpen || !CloseTopWindow() && !CloseInventory())
                 ToggleEscMenu();
             return;
         }
@@ -984,7 +985,7 @@ public partial class GameScene : Node3D
         // Ctrl alone (down a level) waits for its release with nothing else pressed, and does nothing while a text field has the keyboard (ModifierTap)
         string name = key.PhysicalKeycode.ToString();
         (PlayAction? pressed, bool ownShift, bool ownCtrl) = _options.Bindings.MatchPress(name, key.ShiftPressed, key.CtrlPressed);
-        PlayAction? action = TabInventory.KeyAction(pressed); // slice 4A: the inventory key runs Tab's own handler
+        PlayAction? action = pressed;
         // a key bound to Pull or Examine: only a modifier held on top of its binding goes with tg's click (KeyBindings.ModifiedClick)
         (_pressExtraShift, _pressExtraCtrl) = (key.ShiftPressed && !ownShift, key.CtrlPressed && !ownCtrl);
         if (!_modifierTap.Wait(name, action, KeyboardTaken || _rig.Mode == CameraMode.Free, ModifierTap.OtherModifiers(name, key.ShiftPressed, key.CtrlPressed, key.AltPressed, key.MetaPressed), (long)Input.GetMouseButtonMask()))

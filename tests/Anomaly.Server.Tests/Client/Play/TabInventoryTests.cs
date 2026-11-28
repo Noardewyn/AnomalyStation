@@ -252,18 +252,40 @@ public class TabInventoryTests
     }
 
     [Fact]
-    public void TheInventoryKeyRunsTabsOwnAction()
+    public void TabOnlyFreesTheCursorAndTheInventoryKeyOpensTheInventory()
     {
-        // one handler: the inventory key's press is cursor mode's action, whatever state the game is in (the dev menu's focus included)
-        Assert.Equal(PlayAction.CursorMode, TabInventory.KeyAction(PlayAction.Inventory));
-        Assert.Equal(PlayAction.CursorMode, TabInventory.KeyAction(PlayAction.CursorMode));
-        foreach (PlayAction other in Enum.GetValues<PlayAction>().Where(a => a is not PlayAction.Inventory))
-            Assert.Equal(other, TabInventory.KeyAction(other));
-        Assert.Null(TabInventory.KeyAction(null));
-        // the default keys: I and Tab both come to that action
+        // DV694: the default keys are two actions: Tab cursor mode, I the inventory
         KeyBindings keys = KeyBindings.Defaults();
-        Assert.Equal(PlayAction.CursorMode, TabInventory.KeyAction(keys.ActionOfPress("I", false)));
-        Assert.Equal(PlayAction.CursorMode, TabInventory.KeyAction(keys.ActionOfPress("Tab", false)));
+        Assert.Equal(PlayAction.CursorMode, keys.ActionOfPress("Tab", false));
+        Assert.Equal(PlayAction.Inventory, keys.ActionOfPress("I", false));
+        // Tab from the view: the cursor free, no inventory overlay; Tab again: the view
+        Assert.Equal((true, false), TabInventory.TabPressed(cursor: false, inventory: false));
+        Assert.Equal((false, false), TabInventory.TabPressed(cursor: true, inventory: false));
+        // Tab with the inventory open closes it too and returns to the view
+        Assert.Equal((false, false), TabInventory.TabPressed(cursor: true, inventory: true));
+        // I on the human HUD: the inventory with the cursor free, from the view or from Tab's cursor mode; I again: the view
+        Assert.Equal((true, true), TabInventory.InventoryPressed(cursor: false, inventory: false, humanHud: true));
+        Assert.Equal((true, true), TabInventory.InventoryPressed(cursor: true, inventory: false, humanHud: true));
+        Assert.Equal((false, false), TabInventory.InventoryPressed(cursor: true, inventory: true, humanHud: true));
+        // another HUD has no inventory overlay: its I does what Tab does, as before
+        Assert.Equal((true, false), TabInventory.InventoryPressed(cursor: false, inventory: false, humanHud: false));
+        Assert.Equal((false, false), TabInventory.InventoryPressed(cursor: true, inventory: false, humanHud: false));
+    }
+
+    [Fact]
+    public void WhatTgOpensOpensTheInventoryAndAMachinesWindowOnlyFreesTheCursor()
+    {
+        // a container opened (or opened again), a strip window, a listed storage's window: the inventory with the cursor free, on the human HUD
+        Assert.Equal((true, true), TabInventory.InventoryEvent(cursor: false, inventory: false, humanHud: true));
+        Assert.Equal((true, true), TabInventory.InventoryEvent(cursor: true, inventory: false, humanHud: true));
+        Assert.Equal((true, true), TabInventory.InventoryEvent(cursor: true, inventory: true, humanHud: true));
+        Assert.Equal((false, false), TabInventory.InventoryEvent(cursor: false, inventory: false, humanHud: false)); // no overlay elsewhere
+        // a machine's (or any tgui) window opening frees the cursor by itself (MouseOwner) and opens no inventory; its closing takes the cursor back
+        var mouse = new MouseOwner();
+        Assert.True(mouse.Windows(true) && mouse.CursorMode);
+        bool inventory = false; // nothing in the window's path opens it
+        Assert.False(TabInventory.CloseOnDamage(damaged: true, inventoryOpen: inventory, typing: false, pointerWindow: true));
+        Assert.True(mouse.Windows(false) && !mouse.CursorMode);
     }
 
     [Fact]
@@ -434,12 +456,13 @@ public class TabInventoryTests
     [Fact]
     public void TheOverlayClosesOnDamageUnlessThePlayerTypesOrAWindowNeedsThePointer()
     {
-        Assert.True(TabInventory.CloseOnDamage(damaged: true, cursorMode: true, typing: false, pointerWindow: false));
-        Assert.False(TabInventory.CloseOnDamage(damaged: true, cursorMode: true, typing: true, pointerWindow: false));
-        Assert.False(TabInventory.CloseOnDamage(damaged: true, cursorMode: true, typing: false, pointerWindow: true));
-        Assert.False(TabInventory.CloseOnDamage(damaged: true, cursorMode: true, typing: true, pointerWindow: true));
-        Assert.False(TabInventory.CloseOnDamage(damaged: true, cursorMode: false, typing: false, pointerWindow: false)); // first person: nothing to close
-        Assert.False(TabInventory.CloseOnDamage(damaged: false, cursorMode: true, typing: false, pointerWindow: false)); // no damage, no close
+        Assert.True(TabInventory.CloseOnDamage(damaged: true, inventoryOpen: true, typing: false, pointerWindow: false));
+        Assert.False(TabInventory.CloseOnDamage(damaged: true, inventoryOpen: true, typing: true, pointerWindow: false));
+        Assert.False(TabInventory.CloseOnDamage(damaged: true, inventoryOpen: true, typing: false, pointerWindow: true));
+        Assert.False(TabInventory.CloseOnDamage(damaged: true, inventoryOpen: true, typing: true, pointerWindow: true));
+        // first person, or Tab's cursor mode with no inventory open (DV694): nothing to close, cursor mode alone is not ended by damage
+        Assert.False(TabInventory.CloseOnDamage(damaged: true, inventoryOpen: false, typing: false, pointerWindow: false));
+        Assert.False(TabInventory.CloseOnDamage(damaged: false, inventoryOpen: true, typing: false, pointerWindow: false)); // no damage, no close
     }
 
     [Fact]

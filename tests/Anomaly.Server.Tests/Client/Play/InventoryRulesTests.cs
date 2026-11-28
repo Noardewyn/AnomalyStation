@@ -36,6 +36,70 @@ public class InventoryRulesTests
 
     [Theory]
     [MemberData(nameof(Sources))]
+    public void ARightClickOnAnItemInEveryInventoryPlaceOpensTheInventoryWheelForThatItem(string source)
+    {
+        // DV694: a right tap with no modifier on the item of a hand box, a bar cell, a pocket or worn slot's cell or a panel's cell: the wheel for it
+        InvPlace at = SourceOf(source);
+        Assert.Equal(at.Item, InventoryRules.MenuItem(at, ClickModifiers.None));
+        // the wheel acts on the item itself as a screen target (the server resolves a held or worn one on screen, a stored one as DV696 says)
+        Assert.Equal(new ClickTarget(TargetKind.Screen, at.Item, 0, 0, 0, 16, 16), InventoryRules.MenuTarget(at.Item));
+        // with a modifier held the right click stays what it was
+        foreach (ClickModifiers held in new[] { ClickModifiers.Shift, ClickModifiers.Ctrl, ClickModifiers.Alt, ClickModifiers.Ctrl | ClickModifiers.Shift })
+            Assert.Equal(0, InventoryRules.MenuItem(at, held));
+        // the same place empty: nothing opens (tg's own right click on an empty hand box or slot; nothing at all on our empty cells)
+        Assert.Equal(0, InventoryRules.MenuItem(at with { Item = 0 }, ClickModifiers.None));
+        // the left click, the Shift+click, the quick transfer and the drags are those of slice 4B-2 still
+        Assert.Equal(at.Kind == InvKind.Cell ? InvSend.Move(at.Item, InventoryTarget.Hand, 0, Active) : null, InventoryRules.Click(at, ClickModifiers.None, Active, 11));
+        Assert.Equal(at.Kind == InvKind.Cell ? new InvSend(InvSendKind.Examine, at.Item) : null, InventoryRules.Click(at, ClickModifiers.Shift, Active, 11));
+        Assert.NotNull(InventoryRules.QuickTransfer(at, Active, 100));
+        Assert.Equal(InvSendKind.Move, InventoryRules.Drop(at, new InvPlace(InvKind.Floor), Active).Kind);
+    }
+
+    [Fact]
+    public void TheInventoryWheelOpensOnThePinnedContainersItemsAndNowhereElse()
+    {
+        // the pinned other container's cell is a panel cell like the backpack's
+        var otherCell = new InvPlace(InvKind.Cell, 702, 0, 700, 1);
+        Assert.Equal(702, InventoryRules.MenuItem(otherCell, ClickModifiers.None));
+        // a panel's header or backing, the own sprite, the Nearby strip, the strip view, a HUD entry of tg's, the view: nothing (the right click stays)
+        foreach (InvPlace none in new[]
+        {
+            new InvPlace(InvKind.Panel, Storage: 100), new InvPlace(InvKind.Sprite), new InvPlace(InvKind.Nearby, 55, 0), new InvPlace(InvKind.Strip, StripView.FullMark, 2),
+            new InvPlace(InvKind.StripSprite), new InvPlace(InvKind.Hud), new InvPlace(InvKind.Thing, 55), new InvPlace(InvKind.Floor), new InvPlace(InvKind.None),
+        })
+            Assert.Equal(0, InventoryRules.MenuItem(none, ClickModifiers.None));
+        // on another HUD nothing is an inventory place (Resolve), so no wheel opens there
+        var screen = new Dictionary<long, ScreenEntry> { [41] = new ScreenEntry(41, default, "WEST,SOUTH") { HandIndex = 1 } };
+        InvPlace onOther = InventoryRules.Resolve(new ClickTarget(TargetKind.Screen, 41, 0, 0, 0, 16, 16), screen, Array.Empty<StoragePanel>(), 0, Array.Empty<long>(), humanHud: false);
+        Assert.Equal(0, InventoryRules.MenuItem(onOther, ClickModifiers.None));
+    }
+
+    [Fact]
+    public void TheInventoryWheelListsTheItemsActionsThenTgsEntriesThenUseInHandThenExamine()
+    {
+        // before the server's answer: Examine alone, and Use in hand on the active hand's item
+        Assert.Equal(new[] { "Examine" }, InventoryRules.MenuEntries(null, inActiveHand: false).Select(e => e.Label));
+        Assert.Equal(new[] { "Use in hand", "Examine" }, InventoryRules.MenuEntries(null, inActiveHand: true).Select(e => e.Label));
+        // the answer: tg's context entries as the server lists them, then the item's action buttons (entries that are no click)
+        var hints = new ContextHintsMessage { TargetKind = TargetKind.Screen, Target = 11, Name = "oxygen tank" };
+        hints.Hints.Add(new ContextHint(ClickButton.Left, ClickModifiers.Alt, "Toggle valve"));
+        hints.Hints.Add(new ContextHint(ClickButton.Right, ClickModifiers.Ctrl, "Adjust"));
+        hints.Hints.Add(new ContextHint(ClickButton.Left, ClickModifiers.None, "Set Internals", ContextHintAction.Extra));
+        List<RadialEntry> entries = InventoryRules.MenuEntries(hints, inActiveHand: true);
+        Assert.Equal(new[] { "Set Internals", "Toggle valve", "Adjust", "Use in hand", "Examine" }, entries.Select(e => e.Label));
+        // each does what its kind says: the action a ContextPick of its name, a context entry its click with its modifiers, Use in hand tg's
+        // activate-in-hand key, Examine a Shift+left click
+        Assert.Equal(RadialKind.Extra, entries[0].Kind);
+        Assert.Equal((RadialKind.Hint, ClickButton.Left, ClickModifiers.Alt), (entries[1].Kind, entries[1].Button, entries[1].Modifiers));
+        Assert.Equal((RadialKind.Hint, ClickButton.Right, ClickModifiers.Ctrl), (entries[2].Kind, entries[2].Button, entries[2].Modifiers));
+        Assert.Equal(RadialKind.UseInHand, entries[3].Kind);
+        Assert.Equal((RadialKind.Examine, ClickButton.Left, ClickModifiers.Shift), (entries[4].Kind, entries[4].Button, entries[4].Modifiers));
+        // not in the active hand (the other hand, a slot, a bag): no Use in hand
+        Assert.DoesNotContain(InventoryRules.MenuEntries(hints, inActiveHand: false), e => e.Kind == RadialKind.UseInHand);
+    }
+
+    [Theory]
+    [MemberData(nameof(Sources))]
     public void ADragFromAnyPlaceSendsOneMoveForEveryInventoryTargetAndTheViewsAsTheDesignSays(string source)
     {
         InvPlace from = SourceOf(source);
@@ -257,9 +321,9 @@ public class InventoryRulesTests
         var quick = new InventoryNotice();
         int sent = new[] { (true, 0.0), (false, 0.4), (true, 0.8), (false, 1.2), (true, 1.6) }.Count(p => quick.Opened(p.Item1, true, p.Item2));
         Assert.Equal(2, sent);
-        // the inventory key is cursor mode's key, so it goes the same way; nothing else turns the notice on (chat typing turns cursor mode on by
-        // itself, MouseOwner.Windows, and presses no key)
-        Assert.Equal(PlayAction.CursorMode, TabInventory.KeyAction(PlayAction.Inventory));
+        // DV694: only the inventory key opening the inventory asks (Tab frees the cursor with no inventory); nothing else turns the notice on (chat
+        // typing turns cursor mode on by itself, MouseOwner.Windows, and presses no key)
+        Assert.Equal((true, false), TabInventory.TabPressed(cursor: false, inventory: false));
         var mouse = new MouseOwner();
         Assert.True(mouse.Windows(true) && mouse.CursorMode);
     }

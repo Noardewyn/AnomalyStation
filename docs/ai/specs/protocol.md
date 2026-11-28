@@ -3454,9 +3454,19 @@ index in `TurfY` and the storage in `RadialMenu` (`QueuedCommand`). Examples: `0
 **A Shift+click on a stored item** (slice 4B-2, DV696): a Click (version 2's Action) with the left button, Shift alone and a `Screen` target naming an
 item the sender's own carried storages show now (`CarriedStorages.ShowsItem`: directly in one of its listed storages, or in the other container it has
 open by tg's state (slice 4C-1, `CarriedStorages.Other`: what its Storages message lists; no reach is asked, as tg's Shift+click asks none), among the first 64, the storage neither locked nor hidden) is taken although that item is no screen entry, and runs tg's Click with it (`ClickOn` -> `ShiftClickOn` -> `examinate`),
-as a Shift+click on tg's storage screen would; the screen-loc param is empty. Every other click naming a stored item (another button, any other
-modifier, an `Entity` target, an item of anyone else's storage, of a locked or hidden one, or deeper) is refused as before (`ClicksRejected`); the click
-bucket applies as to every click (`ServerHost.TryStoredExamine`). Tests: `Integration/StorageExamineGameplayTests`.
+as a Shift+click on tg's storage screen would; the screen-loc param is empty. The inventory's right-click wheel (DV694) widens this, with no
+change to any encoding: a Click with the left or right button and any modifiers, and a Hover (version 4's), naming such an item as a `Screen` target
+are taken and run tg's Click (`ClickOn`, as on tg's storage screen, which takes every click on the item) or tg's MouseEntered with it; the server's
+ContextHints answer to that hover names it as a `Screen` target. A click with the middle button, an `Entity` target, an item of anyone else's storage,
+of a locked or hidden one, or deeper is refused as before (`ClicksRejected`); the click and hover buckets apply as to every click and hover
+(`ServerHost.TryStoredTarget`). Tests: `Integration/StorageExamineGameplayTests`, `Integration/InventoryWheelGameplayTests`.
+
+**The wheel's item actions** (DV694, no change to any encoding): the ContextHints answer to a hover of an item the player holds or wears (a `Screen`
+target) adds, after tg's entries, one hint of the Extra action (section 83) per action button tg shows the player for that item (his own actions whose
+target it is, with a button on his HUD), labelled with the action's name ("Set Internals", "Toggle Light"); a ContextPick (version 86's) may now name a
+`Screen` target (the encoding always allowed it); for such an item it runs tg's click on the button of the action of that name
+(`RadialExtras.Pick`: `action_button/Click`, its `can_use`, cooldown and `Trigger`), and does nothing when no such button is the player's now (a
+forged name, another's item, an item in a bag, where tg grants no action).
 
 **InventoryOpen** (client to server, an Action of kind 30, `ActionKind.InventoryOpen`): no fields (`0A 09 1E`). It takes the overall and the
 keybinding buckets (a key); the server runs `CarriedStorages.Opened`: tg's opening of the carried storages without its screen, at most once a second (the back storage's checks, its `on_found` pass, rustle and animation; the `on_found` pass of each other listed storage; DV696).

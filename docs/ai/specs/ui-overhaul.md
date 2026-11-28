@@ -1534,6 +1534,30 @@ Ctrl+click in the inventory. Anatomical focus (package 6): the backtick was with
 Space Station 14: "dont use `"); chosen from four candidates: the middle mouse button, held ("do middle mouse"). The
 middle click's second binding for swapping hands goes then; X stays.
 
+Slice 4E settled (2026-11-28, from the builder's reading of tg and Space Station 14 and the designer's answers):
+- E: tg's empty-hand click on the thing under the crosshair, also while an item is held ("Empty-hand use,
+  always"): ClickOn's own gates (incapacitated, `next_move`, obscured, tg's reach), then `UnarmedAttack(target,
+  proximity)` as with an empty hand; never on a mob while in combat mode (E never hits). A new client action with a
+  target (server). The free camera keeps E for flying.
+- R: tg's quick equip (moves from E). Old settings files whose quick equip is exactly E get it moved to R and E
+  given to interact (an options version step), unless R is taken there.
+- Alt+left click stays tg's alt-click as now (not rebindable); Alt+E sends it on the thing under the crosshair (or
+  the pointer's in cursor mode); Alt+Z on the held item. Bindings learn an Alt modifier.
+- Shift+B, Shift+E, Shift+G, Shift+H, Shift+F: tg's `quick_equip_bag`, `quick_equip_belt`, `quick_equip_lpocket`,
+  `quick_equip_rpocket`, `quick_equip_suit_storage` (`smart_equip_targeted`, translated with this slice; new
+  keybinding codes on the wire, protocol 100 kept since it is unreleased).
+- V opens the inventory (as I, tg's opening of the carried storages with its sound) with the backpack's panel
+  scrolled into view, and closes it when open; Shift+V the same for the belt's panel, just the inventory when the
+  belt has no panel (seven items or fewer: the bar shows them).
+- Shift+middle click: point, as built.
+- Comma: whisper. With the chat window open, its input focused on the Whisper channel; with it closed, the say
+  window opened with tg's `#` already typed.
+- Ctrl+left click: pull (as built); in the inventory it stays the quick transfer.
+- Ctrl+right click: tg's way of moving the pulled thing: tg's empty-hand click on the turf under the crosshair
+  (`turf/attack_hand` to `Move_Pulled`: one step, onto a turf next to the player), only with the active hand empty,
+  as in tg ("Only with an empty hand, as tg"); with an item held it does nothing. Only with the cursor captured; in
+  the inventory a right click stays the item menu.
+
 ## 13. The chat window in first person (asked for by the designer, 2026-11-27)
 
 "we imght have to move the chat too to make the hotbar work, and maybe change it ui so its less intusive", then,

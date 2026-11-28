@@ -1,4 +1,5 @@
 using Anomaly.Core.DmShim;
+using System.Collections.Immutable;
 using System.Linq;
 using Anomaly.Core.Kernel;
 using static Anomaly.Core.DmShim.Dm;
@@ -62,11 +63,9 @@ public sealed class CarriedStorages
     public const float OpenInterval = 10;
 
     /// <summary>tg's worn slots a move may name, in the order a source is looked for (the suit to the back, the neck, suit storage, the pockets).</summary>
-    public static readonly int[] WornSlots =
-    {
+    public static readonly ImmutableArray<int> WornSlots = ImmutableArray.Create(
         ITEM_SLOT_OCLOTHING, ITEM_SLOT_ICLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_EYES, ITEM_SLOT_EARS, ITEM_SLOT_MASK, ITEM_SLOT_HEAD, ITEM_SLOT_FEET,
-        ITEM_SLOT_ID, ITEM_SLOT_BELT, ITEM_SLOT_BACK, ITEM_SLOT_NECK, ITEM_SLOT_SUITSTORE, ITEM_SLOT_LPOCKET, ITEM_SLOT_RPOCKET,
-    };
+        ITEM_SLOT_ID, ITEM_SLOT_BELT, ITEM_SLOT_BACK, ITEM_SLOT_NECK, ITEM_SLOT_SUITSTORE, ITEM_SLOT_LPOCKET, ITEM_SLOT_RPOCKET);
 
     // The incapacitated flags tg's inventory clicks ignore (INCAPACITATED_IGNORING): a click on a worn slot ignores stasis
     // (screen_objects.dm:206); a click on a storage cell (:661) or a hand (:299) ignores nothing; a click on an item (click.dm ClickOn) ignores
@@ -429,7 +428,7 @@ public sealed class CarriedStorages
                 }
                 return false;
             case MoveTarget.Slot:
-                return storageId == 0 && Array.IndexOf(WornSlots, index) >= 0;
+                return storageId == 0 && WornSlots.Contains(index);
             case MoveTarget.Hand:
                 return storageId == 0 && index >= 1 && index <= Math.Min((int)Dm.length(user.held_items), MaxHands);
             case MoveTarget.Floor:

@@ -14,8 +14,9 @@ namespace Anomaly.Server.Tests.Integration;
 /// <summary>
 /// ui-overhaul.md section 12, slice 4B-2 (DV696): tg's Shift+click on an item the Tab inventory's panels show examines it, as a Shift+click on tg's
 /// storage screen does. Through a real server and raw headless clients: Alice's own stored screwdriver examines (tg's examine box reaches her); the
-/// wrench in Bob's backpack, the pen in her locked lockbox and the crayon in a box inside her backpack (two levels deep) do not; a plain, Ctrl, Alt,
-/// right or middle click on her own stored item, and a Shift+click naming it as a world entity, are refused as before.
+/// wrench in Bob's backpack, the pen in her locked lockbox and the crayon in a box inside her backpack (two levels deep) do not; a middle click on
+/// her own stored item, and a Shift+click naming it as a world entity, are refused as before. DV694: a left or right click with any modifiers on her
+/// own stored item reaches tg's ClickOn (the inventory wheel's context entries): a right Shift+click examines, a plain left click picks it up.
 /// </summary>
 public class StorageExamineGameplayTests
 {
@@ -88,18 +89,35 @@ public class StorageExamineGameplayTests
         // Bob's wrench, the pen in her locked lockbox, the crayon two levels deep: as before, nothing
         foreach (obj_item notShown in new[] { wrench, pen, crayon })
             Assert.Null(ExamineBox(notShown));
-        // any other click on her own stored item, and a Shift+click naming it as a world entity: refused as before; the screwdriver stays in her bag
+        // a middle click on her own stored item, and a Shift+click naming it as a world entity: refused as before; the screwdriver stays in her bag
+        Session session = w.Host.Sessions.Single(s => s.Client != null && ReferenceEquals(s.Client.mob, her));
         foreach ((ClickButton button, ClickModifiers modifiers, TargetKind kind) in new[]
         {
-            (ClickButton.Left, ClickModifiers.None, TargetKind.Screen), (ClickButton.Left, ClickModifiers.Ctrl, TargetKind.Screen),
-            (ClickButton.Left, ClickModifiers.Alt, TargetKind.Screen), (ClickButton.Left, ClickModifiers.Shift | ClickModifiers.Ctrl, TargetKind.Screen),
-            (ClickButton.Right, ClickModifiers.Shift, TargetKind.Screen), (ClickButton.Middle, ClickModifiers.Shift, TargetKind.Screen),
+            (ClickButton.Middle, ClickModifiers.Shift, TargetKind.Screen), (ClickButton.Middle, ClickModifiers.None, TargetKind.Screen),
             (ClickButton.Left, ClickModifiers.Shift, TargetKind.Entity),
         })
         {
+            int rejected = session.ClicksRejected;
             Assert.Null(ExamineBox(screwdriver, button, modifiers, kind));
+            Assert.Equal(rejected + 1, session.ClicksRejected);
             Assert.True(In(w, () => screwdriver.loc == her.back), $"{button}+{modifiers} on {kind} moved it");
         }
+        // DV694: the inventory wheel sends tg's context entries' clicks on a stored item, so a left or right click with any modifiers reaches tg's
+        // ClickOn as on tg's storage screen: a right Shift+click is tg's examine too (ShiftClickOn), and with her active hand empty a plain left click
+        // is tg's pick-up of the screwdriver into it
+        int before = session.ClicksRejected;
+        Assert.NotNull(ExamineBox(screwdriver, ClickButton.Right, ClickModifiers.Shift));
+        Assert.True(In(w, () => screwdriver.loc == her.back));
+        In(w, () =>
+        {
+            if (her.get_active_held_item() != null)
+                her.swap_hand();
+            return 0;
+        });
+        Assert.Null(In(w, () => her.get_active_held_item()));
+        Assert.Null(ExamineBox(screwdriver, ClickButton.Left, ClickModifiers.None));
+        Assert.Same(screwdriver, In(w, () => her.get_active_held_item()));
+        Assert.Equal(before, session.ClicksRejected);
         Assert.Equal(runtimes, w.World.RuntimeErrorCount);
     }
 }

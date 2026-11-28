@@ -7,6 +7,8 @@ namespace Anomaly.Client.Shared;
 // tests/Anomaly.Server.Tests too). Under Tab the chat window is docked as the left column, and the middle column holds the character panel: the own
 // sprite facing the viewer with tg's worn slots round it by body position. The slots are tg's own screen entries re-placed; the sprite is ours.
 // DEVIATION(DV694): the character panel is not tg's (its native inventory panel is gone); the sprite takes clicks as the health doll does.
+// The overlay opens with the inventory key (I) only, so a machine's window freeing the cursor does not open it; Tab frees the cursor and shows no
+// overlay (TabPressed, InventoryPressed).
 
 /// <summary>Where the Tab inventory's parts go this frame, screen pixels (<see cref="TabInventory.Layout"/>).</summary>
 /// <param name="Chat">The chat window's docked place (the left column); empty where it has no room.</param>
@@ -245,11 +247,11 @@ public static class TabInventory
         => a.Width > 0 && a.Height > 0 && b.Width > 0 && b.Height > 0 && a.Left < b.Right && b.Left < a.Right && a.Top < b.Bottom && b.Top < a.Bottom;
 
     /// <summary>
-    /// Where the chat window is docked: the layout's chat column under Tab (<paramref name="cursorMode"/>) on the human HUD
+    /// Where the chat window is docked: the layout's chat column while the inventory overlay is open (<paramref name="inventoryOpen"/>, DV694) on the human HUD
     /// (<paramref name="humanHud"/>) where the column has room; null otherwise (the window stands at its own place).
     /// </summary>
-    public static HudRect? ChatDock(bool cursorMode, bool humanHud, in TabInventoryLayout layout)
-        => cursorMode && humanHud && layout.Chat.Width > 0f && layout.Chat.Height > 0f ? layout.Chat : null;
+    public static HudRect? ChatDock(bool inventoryOpen, bool humanHud, in TabInventoryLayout layout)
+        => inventoryOpen && humanHud && layout.Chat.Width > 0f && layout.Chat.Height > 0f ? layout.Chat : null;
 
     /// <summary>
     /// What a click on the own sprite (<paramref name="clicked"/>, the HUD pick's <see cref="SpriteId"/>) is, as a click on the health doll is
@@ -299,10 +301,24 @@ public static class TabInventory
     }
 
     /// <summary>
-    /// The action a key press runs (slice 4A): the inventory key's is cursor mode's, so it goes through Tab's own handler in every state (the dev
-    /// menu's focus, the panels, the windows); every other action is itself.
+    /// DV694: Tab (cursor mode's key) pressed with cursor mode <paramref name="cursor"/> and the inventory overlay <paramref name="inventory"/>: what
+    /// they become. Tab only frees the cursor, with no overlay; pressed again (cursor mode on for any reason, the inventory open or not) it returns
+    /// to the view and closes the inventory.
     /// </summary>
-    public static PlayAction? KeyAction(PlayAction? action) => action == PlayAction.Inventory ? PlayAction.CursorMode : action;
+    public static (bool Cursor, bool Inventory) TabPressed(bool cursor, bool inventory) => cursor ? (false, false) : (true, false);
+
+    /// <summary>
+    /// DV694: the inventory key (I by default) pressed: on the human HUD it opens the inventory overlay, freeing the cursor, or closes it and returns
+    /// to the view; on another HUD (no inventory overlay) it does what Tab does, as it did before.
+    /// </summary>
+    public static (bool Cursor, bool Inventory) InventoryPressed(bool cursor, bool inventory, bool humanHud)
+        => !humanHud ? TabPressed(cursor, inventory) : inventory ? (false, false) : (true, true);
+
+    /// <summary>
+    /// DV694: something tg opens that the inventory shows (a container opened or opened again, a strip window, a listed storage's window): on the
+    /// human HUD the inventory opens with the cursor free; elsewhere nothing changes (such events only come on the human HUD).
+    /// </summary>
+    public static (bool Cursor, bool Inventory) InventoryEvent(bool cursor, bool inventory, bool humanHud) => humanHud ? (true, true) : (cursor, inventory);
 
     /// <summary>The words the pointer's prompt names a part of the sprite by; null for none.</summary>
     public static string PartName(AimZone zone) => zone switch
@@ -320,11 +336,12 @@ public static class TabInventory
     };
 
     /// <summary>
-    /// Whether the player taking damage (<paramref name="damaged"/>: the health doll shows more damage than before) turns cursor mode off: only while it
-    /// is on, and not while the player types in a text field (<paramref name="typing"/>) or a window that needs the pointer is open
-    /// (<paramref name="pointerWindow"/>).
+    /// Whether the player taking damage (<paramref name="damaged"/>: the health doll shows more damage than before) closes the inventory overlay and
+    /// returns to the view: only while the inventory is open (<paramref name="inventoryOpen"/>; cursor mode alone, Tab's, is not closed by damage, as
+    /// before the inventory overlay existed), and not while the player types in a text field (<paramref name="typing"/>) or a window that needs the
+    /// pointer is open (<paramref name="pointerWindow"/>).
     /// </summary>
-    public static bool CloseOnDamage(bool damaged, bool cursorMode, bool typing, bool pointerWindow) => damaged && cursorMode && !typing && !pointerWindow;
+    public static bool CloseOnDamage(bool damaged, bool inventoryOpen, bool typing, bool pointerWindow) => damaged && inventoryOpen && !typing && !pointerWindow;
 }
 
 /// <summary>

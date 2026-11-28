@@ -240,6 +240,12 @@ void fragment() {
     /// <summary>Whether the cursor is free (cursor mode, Tab): tg's zone selector is shown then only (<see cref="LiveHud.Shown"/>). Set by the scene each frame.</summary>
     public bool CursorMode { get; set; }
 
+    /// <summary>
+    /// DV694: whether the inventory overlay is open (the inventory key, I): the chat column, the character panel, the storages column, the pinned
+    /// container, the Nearby row and the strip view are drawn then only, never for cursor mode alone (Tab). Set by the scene each frame.
+    /// </summary>
+    public bool InventoryOpen { get; set; }
+
     /// <summary>DV695: whether the own body is being dragged in first person: the hint strip reads "Yourself" and "Release on an object". Set by the scene each frame.</summary>
     public bool SelfDrag { get; set; }
 
@@ -721,7 +727,7 @@ void fragment() {
         _belt = belt?.Entity ?? 0;
         _beltItems = StorageColumn.BeltOnBar(Hotbar);
         _panels = StorageColumn.Panels(storages, _beltItems);
-        _nearby = _humanHud && CursorMode ? NearbyItems.Of(_replica) : _nearby.Count == 0 ? _nearby : new List<StorageItem>();
+        _nearby = _humanHud && InventoryOpen ? NearbyItems.Of(_replica) : _nearby.Count == 0 ? _nearby : new List<StorageItem>();
         _blink = InventoryRules.Blinking(Storages, _lastNow);
         _over = DragOver.IsSet ? PlaceOf(DragOver) : default;
     }
@@ -742,11 +748,11 @@ void fragment() {
     private void UpdateColumn(bool human)
     {
         LiveHudView.ColumnView view = _view.Column;
-        if (!human || !CursorMode)
+        if (!human || !InventoryOpen)
             (_scroll, _otherScroll, _stripScroll) = (0f, 0f, 0f);
         if (OtherStorage != _otherSeen) // another container's rows start at the top
             (_otherSeen, _otherScroll) = (OtherStorage, 0f);
-        if (!human || !CursorMode || !_root.Visible || _panel.Column.Width <= 0f)
+        if (!human || !InventoryOpen || !_root.Visible || _panel.Column.Width <= 0f)
         {
             _column = StorageColumnLayout.None;
             _shownScratch.Clear();
@@ -915,7 +921,7 @@ void fragment() {
         _spriteLook = TableRef.None;
         _spriteShown = null; // no pick on the sprite unless it is drawn this frame
         (_stripShown, _strip) = (null, StripLayout.None);
-        if (human && CursorMode)
+        if (human && InventoryOpen)
         {
             _tgDrawn.Clear();
             foreach (Item item in _order)
@@ -938,7 +944,7 @@ void fragment() {
                 _panel = _panel with { Sprite = default, SpriteScale = 0, Cells = null, Column = _strip.Storages };
             }
         }
-        ChatDock = TabInventory.ChatDock(CursorMode, human, _panel);
+        ChatDock = TabInventory.ChatDock(InventoryOpen, human, _panel);
         _panelCells.Clear();
         if (!_panel.Shown || !_root.Visible)
         {

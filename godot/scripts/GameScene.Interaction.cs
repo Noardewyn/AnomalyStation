@@ -41,6 +41,11 @@ public partial class GameScene
     private readonly MouseOwner _mouse = new(); // D282: cursor mode and the pointer
     private bool _throwModeOn;
     private bool _radialSticky;
+    // DV694: the inventory overlay (the inventory key), shown only while the cursor is free on the human HUD; Tab alone frees the cursor
+    private bool _inventoryOpen;
+    private bool InventoryShown => _inventoryOpen && _mouse.CursorMode && _hudLayer?.HumanHud == true;
+    // DV694: the open sticky wheel is the inventory's right-click wheel on an item (_radialTarget), centred at the pointer; on the active hand's item
+    private bool _inventoryMenu, _inventoryMenuHand;
     private ClickTarget _rightTarget, _radialTarget;
     private PickRay? _throwRay; // D328: the crosshair's ray this frame, for the one-key throw
     private bool _throwThird;
@@ -204,6 +209,18 @@ public partial class GameScene
     private void OnHints(ContextHintsMessage hints)
     {
         _session.HintsArrived(hints);
+        // DV694: the answer to the hover of the inventory wheel's item brings its action buttons and tg's context entries
+        if (_inventoryMenu && _radialModel.Phase == RadialPhase.Open && HintsFor(_radialTarget) == hints)
+        {
+            List<RadialEntry> entries = InventoryRules.MenuEntries(hints, _inventoryMenuHand);
+            if (!entries.SequenceEqual(_radialModel.Entries))
+                _radialModel.SetEntries(entries);
+            if (KeyChips.ServerName(hints) is string named)
+                _radial.Title = named;
+            if (App.Instance.Args.Automated)
+                GD.Print($"[anomaly] inventory wheel: {Describe(_radialTarget)} offers {string.Join(", ", entries.Select(e => "\"" + e.Label + "\""))}");
+            return;
+        }
         // Version 36 (D230): the answer to the radial's re-hover (OpenRadial) brings the entries possible now; they replace the open radial's
         // only when they differ (a replacement re-centres the aim).
         if (_radialModel.Phase != RadialPhase.Open || _radialSticky || _radialModel.ServerMenu != 0 || HintsFor(_radialTarget) != hints)
@@ -444,8 +461,12 @@ public partial class GameScene
         // states: the suit display's percentage, an inventory slot's outline, the action buttons' names), and leaving it is an unhover.
         if (_mouse.CursorMode && _session.Predicting && !PanelsOpen && !pointerAim)
             hover = ClickTarget.Of(_hudPicker.PickScreen(GetViewport().GetMousePosition().X, GetViewport().GetMousePosition().Y));
+        // DV694: while the inventory wheel is open its item stays hovered (the server's hints for it fill the wheel), and no tooltip shows over it
+        bool menu = _inventoryMenu && _radialModel.Phase == RadialPhase.Open;
+        if (menu)
+            hover = _radialTarget;
         _session.Hover(hover, now);
-        _hudHover = hover.Kind == TargetKind.Screen ? hover : default;
+        _hudHover = hover.Kind == TargetKind.Screen && !menu ? hover : default;
         _crosshair.Visible = (firstPerson || thirdPerson) && !PanelsOpen && !_mouse.CursorMode && !_selfDrag.Holding; // DV695: the drag mark replaces it
         _crosshair.Set(_hit.Kind == TargetKind.Entity, reach);
         GunSightMessage sight = _shotGunSight ?? _feed.GunSight; // DV96: the shooter's crosshair while a gun is held (a shot scenario's own, below)
@@ -492,7 +513,7 @@ public partial class GameScene
         else if (listed != 0 && listed != _closedListed)
         {
             _closedListed = listed;
-            SetCursorMode(true);
+            OpenInventoryFor();
             _session.Click(new ClickTarget(TargetKind.Screen, listed, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
             if (App.Instance.Args.Automated)
                 GD.Print($"[anomaly] storage window: a listed storage opened by tg's click, shown in the Tab inventory (tg's window closed, screen #{listed})");
@@ -501,20 +522,28 @@ public partial class GameScene
         // (the flag is taken only on the human HUD, so a container still open at join turns it on once that HUD is up)
         if (InventoryRules.TabOnForOther(_hudLayer.HumanHud, _session?.Storages))
         {
-            SetCursorMode(true);
+            OpenInventoryFor();
             if (App.Instance.Args.Automated)
                 GD.Print($"[anomaly] storage window: the other container #{_hudLayer.OtherStorage} opened, shown in the Tab inventory");
         }
         // slice 4D-1: a strip window that opened turns the Tab inventory on, once per window (taken only on the human HUD, as the other container's)
         if (_stripOpenings.TakeNew(_tguiWindows.Open.Where(w => w.Interface == StripView.Interface).Select(w => w.Index), _hudLayer.HumanHud))
         {
-            SetCursorMode(true);
+            OpenInventoryFor();
             if (App.Instance.Args.Automated)
                 GD.Print("[anomaly] strip: tg's strip window opened, shown in the Tab inventory");
         }
 
         if (_radialModel.Phase == RadialPhase.Pressed && _radialModel.Update(now))
             OpenRadial();
+        // DV694: the inventory wheel is aimed by the free pointer from its centre; it ends when the wheel closes (a pick, a cancel, cursor mode off)
+        if (_inventoryMenu && (!_radialSticky || _radialModel.Phase != RadialPhase.Open || _radialModel.ServerMenu != 0 || !_mouse.CursorMode))
+            EndInventoryMenu();
+        else if (_inventoryMenu && _radial.Centre is Vector2 wheel)
+        {
+            Vector2 aim = GetViewport().GetMousePosition() - wheel;
+            _radialModel.AimAt(aim.X, aim.Y);
+        }
         if (_radialModel.ServerMenu != 0 && _radialModel.Phase == RadialPhase.Open)
         {
             if (_mouse.CursorMode)
@@ -652,7 +681,7 @@ public partial class GameScene
         if (sent)
         {
             // slice 4C-2: tg's way of opening the container already open as the other container shows it again: the Tab inventory turns on
-            if (InventoryRules.ReopensOther(button, modifiers, target.Kind == TargetKind.Entity ? target.Id : 0, _hudLayer.OtherStorage, _mouse.CursorMode, _hudLayer.HumanHud))
+            if (InventoryRules.ReopensOther(button, modifiers, target.Kind == TargetKind.Entity ? target.Id : 0, _hudLayer.OtherStorage, InventoryShown, _hudLayer.HumanHud))
                 ReopenOther();
             double now = App.NowSeconds;
             // slice 4B-2: what was clicked (the item in a clicked hand box or slot), for telling a listed storage's window opening by it
@@ -824,9 +853,15 @@ public partial class GameScene
         }
         if (_radialSticky && _radialModel.Phase == RadialPhase.Open)
         {
-            // The pile list stays open: a left click chooses, anything else cancels.
+            // The pile list stays open: a left click chooses, anything else cancels. DV694: so does the inventory wheel, aimed at the click's point.
+            if (_inventoryMenu && _radial.Centre is Vector2 wheelAt)
+                _radialModel.AimAt(button.Position.X - wheelAt.X, button.Position.Y - wheelAt.Y);
             RadialOutcome sticky = action == PlayAction.PrimaryClick ? _radialModel.Confirm(out RadialEntry picked) : CancelSticky(out picked);
             _radialSticky = false;
+            if (_inventoryMenu && App.Instance.Args.Automated)
+                GD.Print(sticky == RadialOutcome.Choice ? $"[anomaly] inventory wheel: picked \"{picked.Label}\" on {Describe(_radialTarget)}" : "[anomaly] inventory wheel: closed, nothing picked");
+            if (_inventoryMenu)
+                EndInventoryMenu();
             if (sticky == RadialOutcome.Choice)
                 ExecuteChoice(picked, _radialTarget);
             return;
@@ -864,6 +899,8 @@ public partial class GameScene
             case PlayAction.SecondaryClick:
                 if (_mouse.CursorMode && OpenStripMenu(button.Position))
                     break; // slice 4D-1: the strip panel's own right click
+                if (_mouse.CursorMode && OpenInventoryMenu(button.Position, modifiers))
+                    break; // DV694: on an inventory item the wheel of what can be done with it, not tg's right click (which took it to the hand)
                 if (_mouse.CursorMode)
                     ClickAtCrosshair(ClickButton.Right, modifiers);
                 else
@@ -1066,6 +1103,50 @@ public partial class GameScene
         return true;
     }
 
+    // DV694: a right click (a tap, no modifier) on an item of the inventory (a hand box, a bar cell, a worn slot's cell, a storage panel's cell) opens
+    // the wheel of what can be done with it where it is, centred at the pointer and kept on the screen (InventoryRules.MenuItem, MenuEntries); false
+    // anywhere else, where the right click stays what it was. The item is hovered at once so the server's hints for it fill the wheel (OnHints).
+    private bool OpenInventoryMenu(Vector2 at, ClickModifiers modifiers)
+    {
+        InvPlace place = _hudLayer.PlaceOf(PointerHud());
+        long item = InventoryRules.MenuItem(place, modifiers);
+        if (item == 0)
+            return false;
+        _radialTarget = InventoryRules.MenuTarget(item);
+        _inventoryMenuHand = place.Kind == InvKind.Hand && place.Index == _hudLayer.ActiveHand;
+        _inventoryMenu = true;
+        _radialSticky = true;
+        _radialModel.OpenSticky(InventoryRules.MenuEntries(HintsFor(_radialTarget), _inventoryMenuHand));
+        _radial.Centre = _radial.CentreNear(at);
+        _radial.MoveToFront(); // over the docked chat column, which the wheel may reach into
+        _radial.Title = _hudLayer.ItemOf(place).Name ?? KeyChips.ServerName(HintsFor(_radialTarget)) ?? string.Empty;
+        _session.Rehover(); // fresh hints for what is possible now
+        _session.Hover(_radialTarget, App.NowSeconds);
+        _radial.Refresh();
+        if (App.Instance.Args.Automated)
+            GD.Print($"[anomaly] inventory wheel: opened on item #{item} ({place.Kind}) at {_radial.Centre.Value.X:0},{_radial.Centre.Value.Y:0}: {string.Join(", ", _radialModel.Entries.Select(e => "\"" + e.Label + "\""))}");
+        return true;
+    }
+
+    // DV694: the inventory wheel is over (picked, cancelled, replaced by a server menu, cursor mode off): the client's wheel is drawn at the crosshair again
+    private void EndInventoryMenu()
+    {
+        _inventoryMenu = false;
+        _radial.Centre = null;
+        _radial.Refresh();
+    }
+
+    // DV694: Esc closes the open inventory wheel first, as the top thing over the view (true: it was open)
+    private bool CloseInventoryMenu()
+    {
+        if (!_inventoryMenu || _radialModel.Phase != RadialPhase.Open)
+            return false;
+        _radialModel.Reset();
+        _radialSticky = false;
+        EndInventoryMenu();
+        return true;
+    }
+
     // Slice 4D-1: a pick in that menu: tg's `alt` act on the strip window it was opened for, while that window is still the strip window
     private void OnStripMenuPicked(long id)
     {
@@ -1084,7 +1165,7 @@ public partial class GameScene
     {
         StripModel model = StripView.ModelOf(StripView.Current(_tguiWindows?.Open));
         _hudLayer.Strip = model;
-        _hudLayer.StripTarget = model != null && _hudLayer.HumanHud && _mouse.CursorMode ? StripView.TargetOf(model.Name, _strippedDrag, StripMobs()) : 0;
+        _hudLayer.StripTarget = model != null && _hudLayer.HumanHud && InventoryShown ? StripView.TargetOf(model.Name, _strippedDrag, StripMobs()) : 0;
         if (App.Instance.Args.Automated)
         {
             // for scripted runs: where the strip panel and each slot's middle are, whenever they move
@@ -1118,9 +1199,9 @@ public partial class GameScene
         _strippedDrag = dragged;
         bool mob = _feed.Replica?.TryGet(dragged, out ReplicaEntity e) == true && e.IsMob();
         bool open = _tguiWindows?.Open.Any(w => w.Interface == StripView.Interface) == true;
-        if (!StripView.ReopensStrip(dragged, _feed.OwnEntity, _feed.OwnEntity, mob, open, _mouse.CursorMode, _hudLayer.HumanHud))
+        if (!StripView.ReopensStrip(dragged, _feed.OwnEntity, _feed.OwnEntity, mob, open, InventoryShown, _hudLayer.HumanHud))
             return;
-        SetCursorMode(true);
+        OpenInventoryFor();
         if (App.Instance.Args.Automated)
             GD.Print($"[anomaly] strip: tg's strip opened again by its way (#{dragged} onto oneself), shown in the Tab inventory");
     }
@@ -1131,7 +1212,7 @@ public partial class GameScene
         if (sent && release.Source.Kind == TargetKind.Entity && release.Over.Kind == TargetKind.Entity && release.Over.Id == _feed.OwnEntity && release.Source.Id != _feed.OwnEntity)
             StripDropSent(release.Source.Id); // slice 4D-1: a body dragged onto oneself (the doll counts) opens its strip window
         if (sent && InventoryRules.ReopensOtherByDrag(release.Source.Kind == TargetKind.Entity ? release.Source.Id : 0, release.Over.Kind == TargetKind.Entity ? release.Over.Id : 0,
-                _feed.OwnEntity, _hudLayer.OtherStorage, _mouse.CursorMode, _hudLayer.HumanHud))
+                _feed.OwnEntity, _hudLayer.OtherStorage, InventoryShown, _hudLayer.HumanHud))
             ReopenOther(); // slice 4C-2: the other container dragged onto oneself, tg's way of opening it
         if (App.Instance.Args.Automated)
             GD.Print($"[anomaly] drop: {Describe(release.Source)} onto {Describe(release.Over)}{(sent ? string.Empty : " (not sent)")} after {release.DragTime} ds");
@@ -1337,7 +1418,12 @@ public partial class GameScene
                     StripDropSent(target.Id); // slice 4D-1: tg's way of opening the strip window
                 break;
             case RadialKind.Extra:
-                _session.ContextPick(target, choice.Label); // version 86 (DV503): the table's Flip
+                _session.ContextPick(target, choice.Label); // version 86 (DV503): the table's Flip; DV694: an item's action button
+                break;
+            case RadialKind.UseInHand:
+                // DV694: the inventory wheel's "Use in hand" on the active hand's item: tg's activate-in-hand keybinding, as the Z key
+                _actedOn = (_hudLayer.HeldItem, App.NowSeconds);
+                _session.Keybinding(KeybindingCode.ActivateInhand);
                 break;
             case RadialKind.ThingsHere:
                 var items = PileAt(target).Select(e => new RadialEntry(RadialKind.Item, string.IsNullOrEmpty(e.State.Name) ? "thing #" + e.Id : e.State.Name, ClickButton.Left, ClickModifiers.None, e.Id, Icon: e.State.Appearance)).ToList();
@@ -1376,19 +1462,26 @@ public partial class GameScene
 
     private void OnInteractionKey(PlayAction? action)
     {
+        if (action is PlayAction.Inventory && _hudLayer?.HumanHud != true)
+            action = PlayAction.CursorMode; // another HUD has no inventory overlay: its inventory key is Tab's, as before
         if (action is PlayAction.CursorMode && _devMenuOpen && !_mouse.CursorMode)
         {
             ToggleDevMenuFocus(); // the owner (2026-11-10): the dev menu stays open, Tab gives the mouse to the game and back
             return;
         }
-        if (action is PlayAction.CursorMode) // slice 4A: the inventory key's press arrives here as this action too (TabInventory.KeyAction)
+        // DV694: Tab only frees the cursor; the inventory key opens and closes the inventory overlay on the human HUD (elsewhere it is Tab's)
+        if (action is PlayAction.CursorMode or PlayAction.Inventory)
         {
             if (InLobby) // the lobby has no view to give the mouse to: a stray Tab would only hide the pointer
                 return;
-            bool on = !_mouse.CursorMode;
-            SetCursorMode(on);
-            // slice 4B-2: turning the Tab inventory on opens the carried storages as tg's opening does (the rustle), at most once a second
-            if (_inventoryNotice.Opened(on, _hudLayer.HumanHud, App.NowSeconds))
+            bool was = InventoryShown;
+            (bool Cursor, bool Inventory) view = action == PlayAction.CursorMode ? TabInventory.TabPressed(_mouse.CursorMode, was)
+                : TabInventory.InventoryPressed(_mouse.CursorMode, was, _hudLayer.HumanHud);
+            SetView(view);
+            if (App.Instance.Args.Automated)
+                GD.Print($"[anomaly] {(action == PlayAction.CursorMode ? "cursor mode key" : "inventory key")}: cursor {(view.Cursor ? "free" : "captured")}, inventory {(InventoryShown ? "open" : "closed")}");
+            // slice 4B-2: opening the inventory opens the carried storages as tg's opening does (the rustle), at most once a second
+            if (_inventoryNotice.Opened(InventoryShown && !was, _hudLayer.HumanHud, App.NowSeconds))
             {
                 _session.InventoryOpened();
                 if (App.Instance.Args.Automated)
@@ -1559,7 +1652,7 @@ public partial class GameScene
     }
 
     // D292: Esc closes the top window, a machine's first, then the open storage (tg's close button); false when none is open
-    private bool CloseTopWindow() => _tguiWindows?.CloseTop() == true || CloseStorage();
+    private bool CloseTopWindow() => CloseInventoryMenu() || _tguiWindows?.CloseTop() == true || CloseStorage();
 
     // D292: the close-windows key (Shift+Esc)
     private void CloseAllWindows()
@@ -1585,9 +1678,9 @@ public partial class GameScene
 
     private void ReopenOther()
     {
-        SetCursorMode(true);
+        OpenInventoryFor();
         if (App.Instance.Args.Automated)
-            GD.Print($"[anomaly] storage window: the other container #{_hudLayer.OtherStorage} opened again by tg's way, shown in the Tab inventory");
+            GD.Print($"[anomaly] storage window: the other container #{_hudLayer.OtherStorage} opened again by tg's way, shown in the inventory");
     }
 
     private void SetCursorMode(bool on)
@@ -1598,11 +1691,42 @@ public partial class GameScene
         CursorModeChanged();
     }
 
+    // DV694: cursor mode and the inventory overlay as the key rules give them (TabInventory.TabPressed, InventoryPressed, InventoryEvent); the
+    // inventory only with the cursor free. Opening the inventory makes cursor mode the player's own, so a machine's window closing does not end it.
+    private void SetView((bool Cursor, bool Inventory) view)
+    {
+        bool open = view.Cursor && view.Inventory;
+        if (_mouse.CursorMode != view.Cursor)
+        {
+            _mouse.Set(view.Cursor);
+            CursorModeChanged();
+        }
+        else if (open && !_inventoryOpen)
+            _mouse.Set(true);
+        _inventoryOpen = open;
+    }
+
+    // DV694: Esc with nothing else over the view closes the inventory overlay and returns to the view (true: it was open)
+    private bool CloseInventory()
+    {
+        if (!InventoryShown)
+            return false;
+        SetView((false, false));
+        return true;
+    }
+
+    // DV694: something tg opened that the inventory shows (a container, a strip window, a listed storage's window): the inventory opens
+    private void OpenInventoryFor() => SetView(TabInventory.InventoryEvent(_mouse.CursorMode, _inventoryOpen, _hudLayer.HumanHud));
+
     // Cursor mode was turned on or off (by Tab or by a window, MouseOwner); the pointer follows in SyncMouse.
     private void CursorModeChanged()
     {
         _radialModel.Reset();
         _radialSticky = false;
+        if (_inventoryMenu)
+            EndInventoryMenu();
+        if (!_mouse.CursorMode)
+            _inventoryOpen = false; // DV694: the inventory overlay is never shown with the view captured
         _drag.Cancel(); // version 17: a cursor-mode drag ends with cursor mode
         (_dragFrom, _pressQuick) = (default, false);
         _selfDrag.Cancel(); // DV695: and the first-person drag of oneself ends when cursor mode starts (Tab, a window), with nothing sent

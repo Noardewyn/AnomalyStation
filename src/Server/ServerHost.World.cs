@@ -639,7 +639,7 @@ public sealed partial class ServerHost
             ClickButton.Middle => MIDDLE_CLICK,
             _ => null,
         };
-        if (button == null || (!TryResolveTarget(s, command, out atom target) && !TryStoredExamine(s, command, out target)))
+        if (button == null || (!TryResolveTarget(s, command, out atom target) && !TryStoredTarget(s, command, out target)))
         {
             s.ClicksRejected++;
             return;
@@ -669,20 +669,25 @@ public sealed partial class ServerHost
         _clients.Click(s.Client, target, clickParams);
     }
 
-    // DEVIATION(DV696): slice 4B-2: tg's Shift+click (ShiftClickOn: examinate) on an item the sender's own carried storages show now
-    // (CarriedStorages.ShowsItem: in one of its listed storages or, slice 4C-1, in the other container it has open by tg's state, no reach asked, not locked, not
-    // hidden, not deeper), named as a screen target, as tg's storage screen would show it; only a plain left click with Shift alone. Any other click
-    // on a stored item, or on anyone else's, is refused as before.
-    private bool TryStoredExamine(Session s, in QueuedCommand command, out atom target)
+    // DEVIATION(DV696): a click or a hover named as a screen target on an item the sender's own carried storages show now (CarriedStorages.ShowsItem:
+    // in one of its listed storages or, slice 4C-1, in the other container it has open by tg's state, no reach asked, not locked, not hidden, not
+    // deeper), as tg's storage screen would show it, though the item is no screen entry here. Slice 4B-2 took only the Shift+click (tg's examine);
+    // the inventory's right-click wheel (DV694) also sends tg's context entries' clicks on it, so a left or right click with any modifiers is taken,
+    // as tg's ClickOn takes them on the item's screen object (a middle click is not). A hover asks tg's screentip of it. Anyone else's stored item,
+    // or one named as a world entity, is refused as before.
+    private bool TryStoredTarget(Session s, in QueuedCommand command, out atom target)
     {
         target = null;
-        if (command.TargetKind != TargetKind.Screen || command.Button != ClickButton.Left || command.Modifiers != ClickModifiers.Shift
-            || s.Client?.mob is not mob_living_carbon_human user || QDELETED(user)
-            || !World.Objects.TryGet(command.Target, out object found) || found is not obj_item item || !CarriedStorages.ShowsItem(user, item))
+        if (command.TargetKind != TargetKind.Screen || command.Action != ActionKind.Hover && command.Button is not (ClickButton.Left or ClickButton.Right)
+            || s.Client?.mob is not mob user || !World.Objects.TryGet(command.Target, out object found) || found is not atom item || !IsStoredShown(user, item))
             return false;
         target = item;
         return true;
     }
+
+    // DV696: whether the item is one the human's carried storages (or its open other container) show it now
+    private static bool IsStoredShown(mob viewer, atom target)
+        => viewer is mob_living_carbon_human user && !QDELETED(user) && target is obj_item item && !QDELETED(item) && CarriedStorages.ShowsItem(user, item);
 
     // Version 81 (D328): a throw at the target, tg's left click in throw mode with the click's params and the camera's aim (ClientSeam.Throw)
     private void ApplyThrow(Session s, in QueuedCommand command)
@@ -916,7 +921,7 @@ public sealed partial class ServerHost
 
     private void ApplyHover(Session s, in QueuedCommand command)
     {
-        if (!TryResolveTarget(s, command, out atom target))
+        if (!TryResolveTarget(s, command, out atom target) && !TryStoredTarget(s, command, out target))
         {
             s.ClicksRejected++;
             return;
@@ -1056,7 +1061,8 @@ public sealed partial class ServerHost
             s.HoverOutOfReach = null;
             if (s.Connection == null || s.State != SessionState.Joined) return;
             var message = new ContextHintsMessage { Name = name == null ? null : Truncate(name, Limits.MaxContextNameBytes) };
-            if (ClientSeam.IsScreenTarget(viewer, target)) // version 12: an item in a hand or slot is a screen target too
+            // version 12: an item in a hand or slot is a screen target too; DV696: so is an item the player's carried storages show (hovered by its id)
+            if (ClientSeam.IsScreenTarget(viewer, target) || IsStoredShown(viewer.mob, target))
             {
                 message.TargetKind = TargetKind.Screen;
                 message.Target = target.dm_id;
@@ -1106,7 +1112,7 @@ public sealed partial class ServerHost
                     RadialExtra.Pull => new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, label),
                     RadialExtra.StopPulling => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.StopPulling),
                     RadialExtra.Strip => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.DropOntoSelf),
-                    RadialExtra.Flip or RadialExtra.StepIn or RadialExtra.TurnOver or RadialExtra.Offer => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503, DV640); 100 (DV690); DV139 slice E
+                    RadialExtra.Flip or RadialExtra.StepIn or RadialExtra.TurnOver or RadialExtra.Offer or RadialExtra.ItemAction => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503, DV640); 100 (DV690); DV139 slice E; DV694's item actions
                     _ => new ContextHint(ClickButton.Left, ClickModifiers.None, label), // Unbuckle: the empty hand's click
                 });
             }

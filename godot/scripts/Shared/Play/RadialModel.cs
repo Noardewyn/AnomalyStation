@@ -55,6 +55,9 @@ public enum RadialKind : byte
 
     /// <summary>Version 86 (DV503): the server's entry that is no click (<see cref="ContextHintAction.Extra"/>, the table's Flip): a ContextPick of its label.</summary>
     Extra = 15,
+
+    /// <summary>DV694: the inventory wheel's "Use in hand" on the active hand's item: tg's activate-in-hand keybinding (the Z key's).</summary>
+    UseInHand = 16,
 }
 
 /// <summary>One entry of the radial.</summary>
@@ -111,6 +114,7 @@ public readonly record struct RadialEntry(RadialKind Kind, string Label, ClickBu
         RadialKind.Emote => "smile",
         RadialKind.EmotePanel => "ellipsis-h",
         RadialKind.Extra => ClimbsIn(Label) ? "sign-in-alt" : "undo",
+        RadialKind.UseInHand => "hand-holding",
         _ => null,
     };
 

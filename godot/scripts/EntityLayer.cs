@@ -21,7 +21,7 @@ public readonly record struct EntityPick(long EntityId, float Distance, Vector3 
 /// (the replicated yaw), or tg's rotated sprite on a floor quad when it lies (<c>Posture</c>). An entity that has no appearance (or whose icons
 /// are not converted) keeps M1's placeholder: a capsule with a nose for a mob, a box for anything else. Poses come from <see cref="Poses"/>
 /// (M2 P8's source: the interpolated samples, the predicted own capsule) or, until one is set, from the replica's own samples. The own
-/// capsule can be hidden (first person, D101). Names are never drawn above heads (D56); a debug overlay can show them (F3).
+/// capsule can be hidden (first person, D101). Names are never drawn above heads (D56); a debug overlay can show them (F4).
 /// <para>
 /// <see cref="TryPick"/> is the pick interface of the click ray (M2 P8): the entity whose picture the ray hits, walls in front of it hiding it.
 /// </para>
@@ -61,6 +61,9 @@ public partial class EntityLayer : Node3D
 
     /// <summary>Where the mirror that reflects the view now sees the world from (tile coordinates; null: no mirror): the own body, not drawn in first person, shows it its side.</summary>
     public Vector2? MirrorViewer { get; set; }
+
+    /// <summary>T5a: the first-person eye looks down at its own body (<see cref="LookDown.ShowsOwnBody"/>): the body is drawn whole, not as its shadow alone.</summary>
+    public bool OwnBodyInView { get; set; }
 
     /// <summary>
     /// shortcut: a mob farther than this from the mirror's own eye (tiles) keeps the main camera's facing in the mirror too (a long reach
@@ -198,14 +201,12 @@ public partial class EntityLayer : Node3D
             _host.PropMoved -= AddNode;
     }
 
-    // A point two tiles before the eye (tile coordinates), on the ground; looking straight down, the top of the screen is before it.
+    // A point two tiles before the eye (tile coordinates), on the ground, the way the view faces (its yaw: past straight down the camera's
+    // forward points back, T5a).
     private static (double X, double Y) FrontViewer(Camera3D camera, double viewerX, double viewerY)
     {
-        Vector3 ahead = -camera.GlobalBasis.Z;
-        if (new Vector2(ahead.X, ahead.Z).Length() < 0.1f)
-            ahead = camera.GlobalBasis.Y;
-        Vector2 flat = new Vector2(ahead.X, -ahead.Z).Normalized() * 2f;
-        return (viewerX + flat.X, viewerY + flat.Y);
+        (double aheadX, double aheadZ) = LookDown.Ahead(camera.GlobalBasis.X.X, camera.GlobalBasis.X.Z);
+        return (viewerX + aheadX * 2, viewerY - aheadZ * 2);
     }
 
     private static readonly byte[] SelfSideDirs = { ByondDir.South, ByondDir.East, ByondDir.North, ByondDir.West };
@@ -390,7 +391,7 @@ public partial class EntityLayer : Node3D
                 position = pointedAt.LastPosition + Vector3.Up * (pointedAt.Entity.IsMob() ? PointOverMob : PointOverThing);
             bool own = e.Entity.Id == ownId;
             // the own hidden body shows the side the mirror before it sees (MirrorViewer), not its back
-            bool mirrored = own && hideOwn && MirrorViewer is Vector2;
+            bool mirrored = own && hideOwn && !OwnBodyInView && MirrorViewer is Vector2;
             // with no mirror it shows its front (its shadow's side); the windows and wet floors show the side each turns to (NoteSelfSides)
             (double eyeX, double eyeY) = mirrored ? (MirrorViewer.Value.X, MirrorViewer.Value.Y) : own && hideOwn && hasViewer ? FrontViewer(camera, viewerX, viewerY) : (viewerX, viewerY);
             bool shownAsPicture = UpdateVisual(e, pose, position, nowSeconds, hasViewer, eyeX, eyeY);
@@ -413,7 +414,8 @@ public partial class EntityLayer : Node3D
             bool throughWalls = !own && SeeMobs && e.Entity.IsMob();
             if (e.Billboard != null)
             {
-                e.Billboard.ShadowOnly = own && hideOwn; // reset when no longer own: an exosuit the pilot left stayed shadow-only
+                e.Billboard.ShadowOnly = own && hideOwn && !OwnBodyInView; // reset when no longer own: an exosuit the pilot left stayed shadow-only
+                e.Billboard.FacesBack = own && hideOwn && !e.Billboard.FacesEye; // T5a: its picture and its shadow, standing
                 e.Billboard.ThroughWalls = throughWalls;
             }
             bool ownShadow = own && hideOwn && shownAsPicture; // its shadow, and its reflection in a mirror (Billboard.ShadowOnly)
@@ -772,12 +774,15 @@ public partial class EntityLayer : Node3D
         byte dir;
         // A lying mob is drawn like a standing one from the side it is seen from (its facing is the way it crawls, or the side it lies on).
         // The replicated yaw is the player's look: a body on the floor keeps the way it fell (LyingFacing). A conscious one lies face down (its back
-        // is seen), a limp one front or back by the viewer's side (BillboardMath.ChooseLyingDir).
+        // is seen), a limp one front or back by the viewer's side (BillboardMath.ChooseLyingDir). Slice T4c: one turned over shows the side it was turned
+        // to, one buckled to a bed or a table its front, from every side (the replicated posture's bits: the own pose re-encodes only lying and limp).
+        bool lyingBuckled = PostureBits.IsBuckled(e.Entity.State.Posture);
+        bool? turnedFaceUp = PostureBits.TurnedFaceUp(e.Entity.State.Posture);
         byte yaw = e.Entity.IsMob() ? e.Facing.Update(lying, pose.Yaw) : pose.Yaw;
         if (liesFlat || (!e.Entity.HasPos && !e.Entity.IsMob()) || !hasViewer) // a mob with an AI has no capsule, only its dir, and is seen from each side too (its yaw is the dir's)
             dir = pose.Dir == 0 ? ByondDir.South : pose.Dir;
         else if (lying)
-            dir = BillboardMath.ChooseLyingDir(yaw, pose.X, pose.Y, viewerX, viewerY, Textures.Directions(tables, appearance), PostureBits.IsLimp(pose.Posture));
+            dir = BillboardMath.ChooseLyingDir(yaw, pose.X, pose.Y, viewerX, viewerY, Textures.Directions(tables, appearance), PostureBits.IsLimp(pose.Posture), lyingBuckled, turnedFaceUp);
         else if (PropKinds.IsItem(e.Entity.TypePath))
             dir = BillboardMath.ChooseSideDir(yaw, pose.X, pose.Y, viewerX, viewerY, Textures.Directions(tables, appearance));
         else
@@ -833,11 +838,11 @@ public partial class EntityLayer : Node3D
         if (MirrorViewer is Vector2 mirrorEye && reflectable
             && MathF.Abs(mirrorEye.X - pose.X) <= MirrorReflectRangeTiles && MathF.Abs(mirrorEye.Y - pose.Y) <= MirrorReflectRangeTiles)
         {
-            if (isOwnMob && _hideOwn)
+            if (isOwnMob && _hideOwn && !OwnBodyInView)
                 e.Billboard.SetReflection(picture);
             else
             {
-                byte mirrorDir = lying ? BillboardMath.ChooseLyingDir(yaw, pose.X, pose.Y, mirrorEye.X, mirrorEye.Y, Textures.Directions(tables, appearance), PostureBits.IsLimp(pose.Posture))
+                byte mirrorDir = lying ? BillboardMath.ChooseLyingDir(yaw, pose.X, pose.Y, mirrorEye.X, mirrorEye.Y, Textures.Directions(tables, appearance), PostureBits.IsLimp(pose.Posture), lyingBuckled, turnedFaceUp)
                     : PropKinds.IsItem(e.Entity.TypePath) ? BillboardMath.ChooseSideDir(yaw, pose.X, pose.Y, mirrorEye.X, mirrorEye.Y, Textures.Directions(tables, appearance))
                     : BillboardMath.ChooseDir(yaw, pose.X, pose.Y, mirrorEye.X, mirrorEye.Y, Textures.Directions(tables, appearance));
                 e.Billboard.SetReflection(Textures.TryGet(tables, appearance, mirrorDir, seconds, out _, out GodotPicture mirrorPicture, rootOpaque: false, filterLooks: filterLooks)
@@ -1779,8 +1784,8 @@ public partial class EntityLayer : Node3D
             // the owner (2026-11-20): the muzzle's flash lights the world for a moment, a little ahead of the shooter and below the eye
             if (camera != null)
             {
-                Vector3 ahead = -camera.GlobalBasis.Z with { Y = 0f };
-                Vector3 lit = eye + (ahead.LengthSquared() > 1e-6f ? ahead.Normalized() : Vector3.Zero) * OwnFlashAhead + Vector3.Down * OwnFlashBelow;
+                (double aheadX, double aheadZ) = LookDown.Ahead(camera.GlobalBasis.X.X, camera.GlobalBasis.X.Z); // (the yaw's: T5a)
+                Vector3 lit = eye + new Vector3((float)aheadX, 0f, (float)aheadZ) * OwnFlashAhead + Vector3.Down * OwnFlashBelow;
                 Remember(ShotFlash.Spawn(this, lit, fired, 0f, OwnFlashRange, OwnFlashEnergy, OwnFlashSeconds), eye);
             }
             return;
@@ -2066,9 +2071,10 @@ public partial class EntityLayer : Node3D
 
     /// <summary>
     /// DV30 (the owner's play test, 2026-10-09): the body zone of entity <paramref name="id"/>'s picture, as it is drawn now, under tg's
-    /// (<paramref name="iconX"/>, <paramref name="iconY"/>) of a click (<see cref="BodyZoneAim"/>); None for a thing that is not a mob or has no body part there.
+    /// (<paramref name="iconX"/>, <paramref name="iconY"/>) of a click (<see cref="BodyZoneAim"/>); None for a thing that is not a mob or has no body part there
+    /// (package T, slice T1: a mob built from body parts is picked on its body alone, <see cref="CollectPickShapes"/>, so a click on it has one).
     /// </summary>
-    public AimZone AimZoneAt(long id, byte iconX, byte iconY)
+    public AimZone AimZoneAt(long id, byte iconX, byte iconY, (int X, int Y)? picture = null)
     {
         if (Textures == null || _tables == null)
             return AimZone.None;
@@ -2078,7 +2084,12 @@ public partial class EntityLayer : Node3D
                 continue;
             if (!e.Entity.IsMob() || e.Billboard == null || !e.Billboard.Visible)
                 return AimZone.None;
-            return BodyZoneAim.ZoneAt(_tables, Textures.Compositor, e.Entity.State.Appearance, e.DrawnDir, iconX, iconY);
+            // the pick's unclamped pixel when it has one: a giant's or a lying body's parts reach past the icon square the click's pixel is clamped to;
+            // package T, slice T4a: a lookup in the frame's cached zone map (ZoneMapOf)
+            (int X, int Y)? at = picture;
+            if (at == null && iconX != 0 && iconY != 0)
+                at = (iconX, iconY);
+            return at is (int x, int y) ? BodyZoneAim.ZoneAtPixel(_tables, Textures.Compositor, e.Entity.State.Appearance, ZoneMapOf(e), x, y) : AimZone.None;
         }
         return AimZone.None;
     }
@@ -2087,6 +2098,9 @@ public partial class EntityLayer : Node3D
     /// M4a P7 (interaction.md 4.1): the pick shapes of everything this layer draws as a node (mobs, items that moved, thrown things): a picture as a
     /// standing or flat quad on its opaque pixels, a placeholder as a box. <paramref name="exclude"/> is the own mob.
     /// </summary>
+    /// <summary>Whether <see cref="ClickThrough"/>'s types are left out of the pick shapes (the game: yes; the map editor, which places and selects them: no).</summary>
+    public bool EffectsClickThrough { get; set; } = true;
+
     public void CollectPickShapes(List<PickShape> into, long exclude)
     {
         foreach (Entry e in _list)
@@ -2096,6 +2110,9 @@ public partial class EntityLayer : Node3D
             // tg's particle effects are mouse-transparent (effect_system.dm:13, effects_water.dm:7: MOUSE_OPACITY_TRANSPARENT): a click goes
             // through a water puff or a trail to what is behind it.
             if (NearEyeFade.Applies(e.Entity.TypePath))
+                continue;
+            // tg's short-lived visuals (the attack's flick visual, temp visuals, a shot's effects) are mouse-transparent too (ClickThrough); not for the map editor
+            if (EffectsClickThrough && ClickThrough.IsType(e.Entity.TypePath))
                 continue;
             int z = e.Pose.Z;
             double floor = TileSpace.WorldY(z);
@@ -2115,6 +2132,8 @@ public partial class EntityLayer : Node3D
                 PickShape picture = PickShape.StandingPicture(e.Entity.Id, surface, tx, ty, z, at.X, -at.Z, at.Y - floor, e.Billboard.Rect, e.Billboard.Raster.Image, e.Billboard.Raster.OriginX, e.Billboard.Raster.OriginY);
                 picture.OnTop = e.OnSlot; // a thing put on a rack's shelf is clicked over the rack (PickShape.OnTop)
                 picture.FacesEye = e.Billboard.FacesEye;
+                picture.FacesBack = e.Billboard.FacesBack;
+                picture.HitMask = e.Entity.IsMob() ? BodyMaskOf(e) : null; // package T, slice T1: a carbon is hit on its body, not its clothes or carried things
                 into.Add(picture);
                 continue;
             }
@@ -2139,6 +2158,33 @@ public partial class EntityLayer : Node3D
             into.Add(PickShape.StandingPicture(host, PickSurface.Billboard, (int)Math.Round(hidden.Pose.X), (int)Math.Round(hidden.Pose.Y), z, at.X, -at.Z, at.Y - TileSpace.WorldY(z),
                 o.Billboard.Rect, o.Billboard.Raster.Image, o.Billboard.Raster.OriginX, o.Billboard.Raster.OriginY));
         }
+    }
+
+    // Package T, slice T1: the body-only hit mask of a mob's drawn picture (BodyZoneAim.BodyMask; null: no body parts, the whole picture is hit), made
+    // again only when the picture, the appearance or the frame changed.
+    private Raster BodyMaskOf(Entry e)
+    {
+        if (Textures == null || _tables == null)
+            return null; // as before slice T4a: no cached mask without the tables it was made from
+        ZoneMapOf(e);
+        return e.Mask;
+    }
+
+    // Package T, slice T4a: the zone map of a mob's drawn frame (BodyZoneAim.ZoneMap: the zone of each pixel, the eyes, mouth and groin included; null: no
+    // body parts) and the hit mask made from it, made again only when the picture, the appearance or the frame changed.
+    private BodyZoneMap ZoneMapOf(Entry e)
+    {
+        if (Textures == null || _tables == null)
+            return null;
+        ComposedRaster raster = e.Billboard?.Raster;
+        TableRef look = e.Entity.State.Appearance;
+        if (!ReferenceEquals(raster, e.MaskRaster) || look != e.MaskLook || e.DrawnDir != e.MaskDir)
+        {
+            e.ZoneMap = BodyZoneAim.ZoneMap(_tables, Textures.Compositor, look, e.DrawnDir);
+            e.Mask = BodyZoneAim.BodyMask(_tables, Textures.Compositor, look, raster, e.ZoneMap);
+            (e.MaskRaster, e.MaskLook, e.MaskDir) = (raster, look, e.DrawnDir);
+        }
+        return e.ZoneMap;
     }
 
     /// <summary>D288: whether the mobs' pictures cast shadows (the preset's character shadows).</summary>
@@ -2349,7 +2395,7 @@ public partial class EntityLayer : Node3D
     /// <summary>DV374: the own mob sees the other mobs through the walls (its SEE_MOBS: <see cref="ObserverVision.SeesMobs"/>).</summary>
     public bool SeeMobs { get; set; }
 
-    // A mob's name tag: its replicated name over the head, hidden behind walls (unlike the F3 overlay's labels). It sits above
+    // A mob's name tag: its replicated name over the head, hidden behind walls (unlike the names overlay's labels, F4). It sits above
     // the top of the drawn picture (the owner's play test, 2026-10-10: at the eye height it covered the head), low over a
     // lying mob, at the old height over a placeholder.
     private static void UpdateNameTag(Entry e, bool show)
@@ -2442,6 +2488,11 @@ public partial class EntityLayer : Node3D
         public bool Spinning;
         public ShaderMaterial SpinMaterial;
         public byte DrawnDir;
+        public BodyZoneMap ZoneMap; // ZoneMapOf's cache (with Mask) and what it was made for
+        public Raster Mask;
+        public ComposedRaster MaskRaster;
+        public TableRef MaskLook;
+        public byte MaskDir;
         public bool HitSeen;
         public double HitStart = double.NegativeInfinity;
         public WalkSway Walk;

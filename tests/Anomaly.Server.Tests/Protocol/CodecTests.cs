@@ -772,7 +772,13 @@ public class CodecTests
         Assert.Equal(MessageId.PhotoRequest, photoRequest);
         Assert.True(Codec.TryPeekId(new byte[] { 33 }, out MessageId photoPart)); // version 99
         Assert.Equal(MessageId.PhotoPart, photoPart);
-        Assert.False(Codec.TryPeekId(new byte[] { 34 }, out _));
+        Assert.True(Codec.TryPeekId(new byte[] { 34 }, out MessageId hotbar)); // version 100
+        Assert.Equal(MessageId.Hotbar, hotbar);
+        Assert.True(Codec.TryPeekId(new byte[] { 35 }, out MessageId storages)); // version 100 also (DV696)
+        Assert.Equal(MessageId.Storages, storages);
+        Assert.True(Codec.TryPeekId(new byte[] { 36 }, out MessageId actions)); // version 100 also (DV698)
+        Assert.Equal(MessageId.Actions, actions);
+        Assert.False(Codec.TryPeekId(new byte[] { 37 }, out _));
         Assert.False(Codec.TryPeekId(new byte[] { 255 }, out _));
 
         // Each decoder refuses every other message as WrongMessage, an unknown id as UnknownMessage, and nothing as Truncated.

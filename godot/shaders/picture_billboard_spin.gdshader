@@ -20,6 +20,8 @@ instance uniform bool face_eye = false;
 instance uniform bool lie_flat = false;
 instance uniform float depth_rank = 0.0;
 instance uniform bool depth_snap = false;
+// T5a: the own body for its own eye, its picture's right on the view's left (picture_billboard.gdshader's face_back)
+instance uniform bool face_back = false;
 
 varying vec3 v_world;
 
@@ -30,7 +32,11 @@ void vertex() {
 	VERTEX.xy = vec2(p.x * c - p.y * s, p.x * s + p.y * c) + pivot;
 	// D288: turned to the main camera in the shadow passes too, so its shadow is the picture the eye sees and it never shades itself
 	vec3 right = normalize(vec3(MAIN_CAM_INV_VIEW_MATRIX[0].x, 0.0, MAIN_CAM_INV_VIEW_MATRIX[0].z));
-	vec3 up = face_eye ? normalize(cross(MAIN_CAM_INV_VIEW_MATRIX[2].xyz, right)) : vec3(0.0, 1.0, 0.0);
+	vec3 up = face_eye ? cross(MAIN_CAM_INV_VIEW_MATRIX[2].xyz, right) : vec3(0.0, 1.0, 0.0);
+	up = normalize(vec3(up.x, max(up.y, 0.0), up.z)); // T5a: past straight down the camera's up points into the floor; there it lies flat
+	if (face_back) {
+		right = -right;
+	}
 	vec3 back = cross(right, up);
 	if (lie_flat) {
 		right = vec3(1.0, 0.0, 0.0);

@@ -10,7 +10,7 @@
 # GODOT overrides the Godot 4.7.2 mono binary (default: the usual place on this OS, export-common.sh's find_godot).
 # tg's icons, sounds and maps must be converted first: tools/convert-tg.sh does that, this script converts nothing.
 # When maps/ holds MetaStation, a headless run of the fake server on it checks the chunked world renderer at its real size.
-# SMOKE_META_SHOTS=DIR also saves windowed screenshots of MetaStation (a lit hall, a wall corner, a corridor with windows, a room with a table and props, a wall with lamps and signs, the hull against the starfield, an airlock opening) as DIR/<name>.png; the debug HUD is hidden (F4 by --keys) so that the whole view, ceiling included, can be judged (M3 R1, D119).
+# SMOKE_META_SHOTS=DIR also saves windowed screenshots of MetaStation (a lit hall, a wall corner, a corridor with windows, a room with a table and props, a wall with lamps and signs, the hull against the starfield, an airlock opening) as DIR/<name>.png; the debug HUD is hidden (F3 by --keys) so that the whole view, ceiling included, can be judged (M3 R1, D119).
 # SMOKE_SHOWCASE=DIR also renders the renderers' showcase scenarios (room, dirs, lying, damage) as DIR/<scenario>.png (windows open).
 set -eu
 
@@ -104,7 +104,7 @@ if [ -n "${SMOKE_META_SHOTS:-}" ] && [ -f "$meta" ]; then
         shift
         echo "== MetaStation $name to $SMOKE_META_SHOTS/$name.png (opens a window)"
         rm -f "$SMOKE_META_SHOTS/$name.png"
-        "$GODOT" --path "$project" --resolution 1280x720 -- --fake-server --fake-map="$meta" --fake-bots=0 --ceiling --keys=1:F4+,1.1:F4- "$@" --screenshot-after=4.5,"$SMOKE_META_SHOTS/$name.png"
+        "$GODOT" --path "$project" --resolution 1280x720 -- --fake-server --fake-map="$meta" --fake-bots=0 --ceiling --keys=1:F3+,1.1:F3- "$@" --screenshot-after=4.5,"$SMOKE_META_SHOTS/$name.png"
         test -s "$SMOKE_META_SHOTS/$name.png" || { echo "smoke: no Meta screenshot written" >&2; exit 1; }
     }
     shot hall --view=100,115,1.6,-90,0
@@ -115,7 +115,7 @@ if [ -n "${SMOKE_META_SHOTS:-}" ] && [ -f "$meta" ]; then
     shot lampsign --view=133,151,1.6,0,4
     shot hull --view=22,128,10,-60,-22
     echo "== MetaStation airlock opening to $SMOKE_META_SHOTS/airlock*.png (opens a window)"
-    "$GODOT" --path "$project" --resolution 1280x720 -- --fake-server --fake-map="$meta" --fake-bots=0 --ceiling --view=39,122,1.6,180,-5 --keys=1:F4+,1.1:F4- \
+    "$GODOT" --path "$project" --resolution 1280x720 -- --fake-server --fake-map="$meta" --fake-bots=0 --ceiling --view=39,122,1.6,180,-5 --keys=1:F3+,1.1:F3- \
         --dev-after=3,"door 39 120 open" --screenshot-after=2.5,"$SMOKE_META_SHOTS/airlock0.png" --screenshot-after=3.25,"$SMOKE_META_SHOTS/airlock1.png" \
         --screenshot-after=5,"$SMOKE_META_SHOTS/airlock2.png"
 fi

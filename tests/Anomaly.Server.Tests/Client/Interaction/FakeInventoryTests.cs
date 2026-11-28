@@ -39,26 +39,49 @@ public class FakeInventoryTests
     {
         (PlayRig rig, FakeFeed feed, _) = Start();
         ReplicaWorld world = feed.Replica;
-        Assert.Equal(new long[] { 2001, 2002, 2003, 2004 }, world.ScreenGroup(HudGroup.Static).Select(e => e.Id));
-        Assert.Equal(new long[] { 2005 }, world.ScreenGroup(HudGroup.Hotkeys).Select(e => e.Id));
+        // tg's move intent and zone selector (HUD_GROUP_STATIC), then the hands, drop, swap and the inventory toggle, the six bottom slots (the ID,
+        // back, the pockets, suit storage and belt: hud/human.dm builds them in no screen group, so they stay with the static HUD), and since
+        // ui-overhaul.md section 6, slice E the crafting, language, navigate, memories and area creator buttons, the floor changer and pull; the
+        // combat toggle is in HUD_GROUP_INFO; throw, resist and rest are hotkeys
+        Assert.Equal(new long[] { 1004, FakeServer.ZoneSelId, 2001, 2002, 2003, 2004, FakeServer.InventoryToggleId, 2012, 2015, 2016, 2017, 2018, 2024,
+                FakeServer.CraftId, FakeServer.LanguageId, FakeServer.NavigateId, FakeServer.MemoriesId, FakeServer.AreaCreatorId, FakeServer.FloorChangerId, FakeServer.PullButtonId },
+            world.ScreenGroup(HudGroup.Static).Select(e => e.Id));
+        Assert.Equal(new long[] { FakeServer.CombatId }, world.ScreenGroup(HudGroup.Info).Select(e => e.Id));
+        Assert.Equal(new long[] { 2005, FakeServer.ResistId, FakeServer.RestId }, world.ScreenGroup(HudGroup.Hotkeys).Select(e => e.Id));
         IReadOnlyList<ScreenEntry> slots = world.ScreenGroup(HudGroup.ToggleableInventory);
-        Assert.Equal(15, slots.Count);
+        Assert.Equal(9, slots.Count); // the worn slots the toggle shows: uniform, suit, mask, neck, gloves, eyes, ears, head, shoes
         Assert.StartsWith("CENTER+-1:", world.Screen[2001].ScreenLoc, StringComparison.Ordinal); // ui_hand_position with a negative offset: the left hand (DV212)
         Assert.True(ScreenLoc.TryParse(world.Screen[2001].ScreenLoc, out ScreenLocSpec hand));
         Assert.Equal(-1, hand.X.Tile);
         Assert.Empty(world.ScreenGroup(HudGroup.Storage));
+        // version 43: tg's held_index on the hand boxes (odd: left) and its slot_id bit on every slot box
+        Assert.Equal((byte)1, world.Screen[2001].HandIndex);
+        Assert.Equal((byte)2, world.Screen[2002].HandIndex);
+        Assert.Equal(1u << 9, world.Screen[2024].SlotId); // ITEM_SLOT_BELT
+        Assert.Equal(1u << 15, world.Screen[2016].SlotId); // ITEM_SLOT_LPOCKET
+        Assert.All(slots.Concat(world.ScreenGroup(HudGroup.Static).Where(e => e.Id is >= 2010 and < FakeServer.CraftId)), e => Assert.Equal(1, System.Numerics.BitOperations.PopCount(e.SlotId)));
+        Assert.Equal(15, slots.Concat(world.ScreenGroup(HudGroup.Static)).Select(e => e.SlotId).Where(s => s != 0).Distinct().Count());
 
-        var inventory = new ContainerLayout(HudGroup.ToggleableInventory);
-        inventory.Rebuild(slots, world);
-        Assert.True(inventory.IsOpen);
-        Assert.Equal(15, inventory.Cells.Count);
-        Assert.All(inventory.Cells, c => Assert.Equal(ContainerCellRole.Slot, c.Role));
-        Assert.All(inventory.Cells, c => Assert.NotEqual(string.Empty, c.Label)); // D70: every slot has a text label
-        Assert.Contains(inventory.Cells, c => c.Label == "Belt");
-        Assert.Contains(inventory.Cells, c => c.Label == "Left pocket" || c.Label == "Pocket");
-        // D70: no two slots share a grid position.
-        Assert.Equal(inventory.Cells.Count, inventory.Cells.Select(c => (c.Column, c.Row)).Distinct().Count());
+        // slice 4A: the toggled inventory's slots are worn slots of the Tab inventory's character panel, each in a cell of its own
+        Assert.All(slots, s => Assert.Equal(LiveHudRole.WornSlot, LiveHud.RoleOf(world, s)));
+        Assert.Equal(9, slots.Select(s => TabInventory.CellOf(s.SlotId)).Where(c => c >= 0).Distinct().Count());
         _ = rig;
+    }
+
+    [Fact]
+    public void AnItemTakenOffABottomSlotGoesToTheActiveHandAndAnEmptyBottomSlotTakesTheHeldItem()
+    {
+        // slice C: the bottom slots are clicked where the live HUD draws them; the fake answers as tg's screen/inventory Click does
+        (PlayRig rig, FakeFeed feed, FakeServer server) = Start();
+        ReplicaWorld world = feed.Replica;
+        Click(rig, Entity(server.WelderId));
+        Assert.Equal(server.WelderId, server.HeldId(0));
+        Click(rig, Screen(2024)); // the empty belt slot with the welder in the active hand: it is put on
+        Assert.Equal(0, server.HeldId(0));
+        Assert.Equal(server.WelderId, Assert.Single(world.Screen[2024].VisChildren.Items).Id);
+        Click(rig, Screen(server.WelderId)); // the item on the belt, the active hand empty: it comes to the hand
+        Assert.Equal(server.WelderId, server.HeldId(0));
+        Assert.Null(world.Screen[2024].VisChildren);
     }
 
     [Fact]
@@ -263,10 +286,10 @@ public class FakeInventoryTests
         // A file written by M2 holds no key for the new actions: their tg defaults stand.
         PlayOptions m2 = PlayOptions.Parse("bind.help=MouseLeft\nbind.shove=MouseRight\n");
         Assert.Equal(new[] { "Q" }, m2.Bindings.KeysOf(PlayAction.DropItem));
-        Assert.Equal(new[] { "R" }, m2.Bindings.KeysOf(PlayAction.ThrowMode));
+        Assert.Equal(new[] { "Ctrl_Q" }, m2.Bindings.KeysOf(PlayAction.ThrowMode)); // ui-overhaul.md section 3 (R before)
         Assert.Equal(new[] { "X" }, m2.Bindings.KeysOf(PlayAction.SwapHand));
         Assert.Equal(new[] { "Z" }, m2.Bindings.KeysOf(PlayAction.ActivateInHand));
-        Assert.Equal(new[] { "E" }, m2.Bindings.KeysOf(PlayAction.QuickEquip));
+        Assert.Equal(new[] { "R" }, m2.Bindings.KeysOf(PlayAction.QuickEquip)); // ui-overhaul.md section 12, slice 4E (E before; E is world interact)
         Assert.Equal(new[] { "Space" }, m2.Bindings.KeysOf(PlayAction.MoveUpLevel)); // DV422: Space, which is hold throw mode for a mob that cannot change level
         Assert.Equal(new[] { "MouseMiddle" }, m2.Bindings.KeysOf(PlayAction.MiddleClick));
     }

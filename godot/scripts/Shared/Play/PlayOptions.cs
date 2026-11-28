@@ -23,10 +23,14 @@ public enum PlayAction : byte
     MoveLeft,
     MoveRight,
 
-    /// <summary>tg's <c>/datum/keybinding/living/rest</c> (<c>U</c>): lie down, or get up.</summary>
+    /// <summary>tg's <c>/datum/keybinding/living/rest</c> (<c>U</c> in tg): lie down, or get up [C, SS14's ToggleKnockdown].</summary>
     Rest,
 
-    /// <summary>tg's <c>toggle_move_intent_alternative</c>: press to cycle between walking and running.</summary>
+    /// <summary>
+    /// tg's <c>toggle_move_intent_alternative</c>: press to switch between walking and running [Shift, ui-overhaul.md section 3; C before]. On Shift
+    /// alone it acts when Shift is let go with nothing else pressed meanwhile (<see cref="ModifierTap"/>), so Shift+left click and the Shift pairs
+    /// do not switch it.
+    /// </summary>
     ToggleMoveIntent,
 
     /// <summary>tg's <c>/datum/keybinding/living/toggle_combat_mode</c> (<c>F</c>).</summary>
@@ -72,7 +76,7 @@ public enum PlayAction : byte
     DropItem,
 
     /// <summary>
-    /// [R] The owner (2026-11-13, D328): throws the held thing at once where the crosshair points (tg's hold throw mode for that one click). It
+    /// [Ctrl+Q, SS14's ThrowItemInHand; R before] D328: throws the held thing at once where the crosshair points (tg's hold throw mode for that one click). It
     /// was tg's <c>/datum/keybinding/living/toggle_throw_mode</c> (M4a, D124); the HUD's throw button and the held <see cref="HoldThrow"/> still turn
     /// throw mode on. The name stays, so saved key layouts keep their key.
     /// </summary>
@@ -94,15 +98,15 @@ public enum PlayAction : byte
     CursorMode,
 
     /// <summary>
-    /// M4a (the owner, 2026-10-09): examine what is under the crosshair [V]: tg's shift-click (<c>ShiftClickOn</c>, examinate).
-    /// A plain Shift held at a click is not tg's shift any more (players hold it out of habit to run), only with Ctrl or Alt.
+    /// M4a: examine what is under the crosshair: tg's shift-click (<c>ShiftClickOn</c>, examinate) [Shift+left click,
+    /// SS14's ExamineEntity; V before]. Bound to a mouse button, it is that button's press as a left click with Shift (GameScene.OnMouseButton).
     /// </summary>
     Examine,
 
-    /// <summary>D137 (the owner, 2026-10-13): the window fullscreen or windowed [F12].</summary>
+    /// <summary>D137: the window fullscreen or windowed [F11, SS14's ToggleFullscreen; F12 before].</summary>
     Fullscreen,
 
-    /// <summary>Pulling (protocol version 20): tg's <c>/datum/keybinding/mob/stop_pulling</c> [Delete].</summary>
+    /// <summary>Pulling (protocol version 20): tg's <c>/datum/keybinding/mob/stop_pulling</c> [H, SS14's ReleasePulledObject, and Delete, as in tg].</summary>
     StopPulling,
 
     /// <summary>M8z (protocol version 37): tg's <c>/datum/keybinding/living/resist</c> [B].</summary>
@@ -111,28 +115,38 @@ public enum PlayAction : byte
     /// <summary>M9 (protocol version 38): tg's <c>/datum/keybinding/client/communication/say</c> [T]: the say window on Say.</summary>
     Say,
 
-    /// <summary>M9: tg's <c>communication/radio</c> [Y]: the say window on Radio.</summary>
+    /// <summary>M9: tg's <c>communication/radio</c> [;, SS14's FocusRadioWindow; Y before]: the say window on Radio.</summary>
     Radio,
 
-    /// <summary>M9: tg's <c>communication/me</c> [M]: the say window on Me.</summary>
+    /// <summary>M9: tg's <c>communication/me</c> [Shift+', SS14's FocusEmote; M before]: the say window on Me.</summary>
     Me,
 
-    /// <summary>M9: tg's <c>communication/ooc</c> [O]: the say window on OOC.</summary>
+    /// <summary>M9: tg's <c>communication/ooc</c> [[, SS14's FocusOOCWindow; O before]: the say window on OOC.</summary>
     Ooc,
 
     /// <summary>M9: tg's <c>communication/pray</c> [P]: the say window on Pray.</summary>
     Pray,
 
-    /// <summary>M9 slice B (protocol version 39, D256): the emote wheel [J] (tg has no emote key; J is one tg leaves free).</summary>
+    /// <summary>M9 slice B (protocol version 39, D256): the emote wheel [Y, SS14's OpenEmotesMenu; J before] (tg has no emote key).</summary>
     EmoteWheel,
 
     /// <summary>M9 slice C (D247): the big chat window [Shift+T].</summary>
     ChatWindow,
 
-    /// <summary>M9 slice F (protocol version 41): tg's <c>/datum/keybinding/living/give</c> [G]: offer the held item.</summary>
-    GiveItem,
+    /// <summary>
+    /// ui-overhaul.md section 6, slice E: tg's crafting menu [G, SS14's OpenCraftingMenu]: the click of tg's crafting button, which the human HUD no
+    /// longer draws (<see cref="LiveHud.ButtonEntry"/>). It took the place of M9 slice F's give key (<c>give_item</c>, read and ignored in an old file);
+    /// "Offer item" is in the radial now.
+    /// </summary>
+    CraftingMenu,
 
-    /// <summary>Gaps C2 (protocol version 59): tg's <c>/datum/keybinding/living/view_pet_data</c> [Shift]: held, hovering a friendly pet opens its commands' radial.</summary>
+    /// <summary>Slice E: tg's language menu [L, SS14's OpenLanguageMenu]: the click of tg's language button.</summary>
+    LanguageMenu,
+
+    /// <summary>Slice E: tg's navigate [M; SS14 has no such function]: the click of tg's navigate button.</summary>
+    Navigate,
+
+    /// <summary>Gaps C2 (protocol version 59): tg's <c>/datum/keybinding/living/view_pet_data</c> [J; Shift before, which is Walk now]: held, hovering a friendly pet opens its commands' radial.</summary>
     ViewPetCommands,
 
     /// <summary>D292 (the owner, 2026-10-29): closes every open window, the machines' and the storage [Shift+Esc] (tg has no such key).</summary>
@@ -141,7 +155,25 @@ public enum PlayAction : byte
     /// <summary>The owner (2026-10-29): opens and closes the inventory panel [I] (it shows in cursor mode, so this is cursor mode too; tg has no such key).</summary>
     Inventory,
 
-    /// <summary>The owner (2026-10-29): the number keys click the shown item action buttons at the top left, in reading order [1 to 9] (tg has no such keys).</summary>
+    /// <summary>
+    /// ui-overhaul.md section 10 (DV693, protocol version 100's HotbarPress): the ten hotbar cells [1 to 9 and 0, the number row and the keypad]: 1 to 7
+    /// the belt, 8 and 9 the pockets, 0 (Hotbar10) the ID slot. A press is sent to the server, which decides what it does (tg has no such keys).
+    /// </summary>
+    Hotbar1,
+    Hotbar2,
+    Hotbar3,
+    Hotbar4,
+    Hotbar5,
+    Hotbar6,
+    Hotbar7,
+    Hotbar8,
+    Hotbar9,
+    Hotbar10,
+
+    /// <summary>
+    /// Shift and the number keys click the shown item action buttons at the top left, in reading order [Shift+1 to Shift+9; the plain number keys
+    /// are the hotbar's, ui-overhaul.md section 10] (tg has no such keys).
+    /// </summary>
     ActionButton1,
     ActionButton2,
     ActionButton3,
@@ -164,20 +196,76 @@ public enum PlayAction : byte
     /// </summary>
     MoveUpLevel,
 
-    /// <summary>D325, DV422: tg's <c>zlevel_downwards</c> [Ctrl]: <c>mob.down()</c> for the same mobs (Ctrl is no click modifier any more: <see cref="Pull"/>).</summary>
+    /// <summary>
+    /// D325, DV422: tg's <c>zlevel_downwards</c> [Ctrl]: <c>mob.down()</c> for the same mobs. Ctrl alone acts when it is let go with nothing
+    /// else pressed meanwhile (<see cref="ModifierTap"/>), so Ctrl+Q and Ctrl+left click do not also go down a level.
+    /// </summary>
     MoveDownLevel,
 
-    /// <summary>The owner (2026-11-11): hides or shows the whole interface (the console's <c>ui toggle</c>) [F6].</summary>
+    /// <summary>Hides or shows the whole interface (the console's <c>ui toggle</c>) [Shift+F4, SS14's HideUI; F6 before].</summary>
     HideInterface,
 
     /// <summary>
-    /// DV422 (the owner, 2026-11-13: pulling off Ctrl, which goes down a level) [H]: tg's Ctrl-click on what the crosshair points at (pull, a stronger
-    /// grab of the one pulled, a machine's Ctrl-click; with Shift tg's Ctrl-Shift-click); with nothing there, tg's stop_pulling.
+    /// tg's Ctrl-click on what the crosshair points at (pull, a stronger grab of the one pulled, a machine's Ctrl-click; with Shift tg's
+    /// Ctrl-Shift-click) [Ctrl+left click, SS14's TryPullObject; H before, DV422]. Bound to a mouse button, it is that button's press as a left
+    /// click with Ctrl (GameScene.OnMouseButton); bound to a key, with nothing there it is tg's stop_pulling.
     /// </summary>
     Pull,
 
-    /// <summary>DV585 (protocol version 93): the deathmatch scoreboard, held [K]: the kills and deaths of a deathmatch map's players.</summary>
+    /// <summary>DV585 (protocol version 93): the deathmatch scoreboard, held [Caps Lock; K before section 15]: the kills and deaths of a deathmatch map's players.</summary>
     Scoreboard,
+
+    /// <summary>
+    /// ui-overhaul.md section 12, slice 4B-2: the quick transfer of the Tab inventory [Ctrl+left click]: on an item in a storage panel, a bar cell or a
+    /// worn slot it goes to the active hand, on a held item into the backpack (an InventoryMove). It shares its default with <see cref="Pull"/>: it acts
+    /// only on an item of the inventory under Tab, Pull everywhere else (<see cref="KeyBindings.SharesKeys"/>).
+    /// </summary>
+    QuickTransfer,
+
+    /// <summary>
+    /// ui-overhaul.md section 12, slice 4E (DV697, SS14's ActivateItemInWorld) [E]: tg's empty-hand click on the thing under the crosshair, also while
+    /// an item is held (the server's Interact action; never on a mob in combat mode).
+    /// </summary>
+    WorldInteract,
+
+    /// <summary>Slice 4E (SS14's AltActivateItemInWorld) [Alt+E]: tg's alt-click on the thing under the crosshair, the pointer's in cursor mode.</summary>
+    AltInteract,
+
+    /// <summary>Slice 4E (SS14's AltActivateItemInHand) [Alt+Z]: tg's alt-click on the item in the active hand.</summary>
+    AltUseInHand,
+
+    /// <summary>Slice 4E: tg's <c>/datum/keybinding/human/quick_equip_belt/quick_equip_bag</c> [Shift+B, SS14's SmartEquipBackpack].</summary>
+    QuickEquipBag,
+
+    /// <summary>Slice 4E: tg's <c>/datum/keybinding/human/quick_equip_belt</c> [Shift+E, SS14's SmartEquipBelt].</summary>
+    QuickEquipBelt,
+
+    /// <summary>Slice 4E: tg's <c>quick_equip_lpocket</c> [Shift+G, SS14's SmartEquipPocket1].</summary>
+    QuickEquipLeftPocket,
+
+    /// <summary>Slice 4E: tg's <c>quick_equip_rpocket</c> [Shift+H, SS14's SmartEquipPocket2].</summary>
+    QuickEquipRightPocket,
+
+    /// <summary>Slice 4E: tg's <c>quick_equip_suit_storage</c> [Shift+F, SS14's SmartEquipSuitStorage].</summary>
+    QuickEquipSuitStorage,
+
+    /// <summary>Slice 4E (SS14's OpenBackpack) [unbound; V before section 15]: the inventory, as its own key opens it, with the backpack's panel in view; closes it when open.</summary>
+    OpenBackpack,
+
+    /// <summary>Slice 4E (SS14's OpenBelt) [unbound; Shift+V before section 15]: the inventory with the belt's panel in view (the bar alone when the belt has none); closes it when open.</summary>
+    OpenBelt,
+
+    /// <summary>Slice 4E (SS14's FocusWhisperChatWindow) [Comma]: the chat input on Whisper, or the say window with tg's <c>#</c> typed.</summary>
+    Whisper,
+
+    /// <summary>
+    /// Slice 4E (SS14's MovePulledObject) [Ctrl+right click]: tg's empty-hand click on the turf under the crosshair (<c>turf/attack_hand</c>,
+    /// <c>Move_Pulled</c>), only with the active hand empty and the cursor captured.
+    /// </summary>
+    MovePulled,
+
+    /// <summary>ui-overhaul.md section 15 (DV698, Space Station 14's OpenAbilitiesMenu) [K]: opens and closes the actions menu, which frees the cursor while open.</summary>
+    ActionsMenu,
 }
 
 /// <summary>The colourblind palettes of the health HUD (D70: the colours of medical parameters are never the only carrier).</summary>
@@ -191,7 +279,7 @@ public enum ZeroGLevel : byte
 
 public enum ColorblindMode : byte
 {
-    /// <summary>tg's own sprite colours.</summary>
+    /// <summary>No colourblind palette: the standard ramp, green to red (<see cref="HealthZones.StandardColor"/>).</summary>
     Off,
 
     /// <summary>For red-green deficiencies (deuteranopia, protanopia): blue to orange.</summary>
@@ -220,7 +308,10 @@ public sealed class KeyBindings
             _keys[action] = new List<string>();
     }
 
-    /// <summary>The default layout: WASD and the arrows, tg's own keys for rest (U), combat mode (F) and the move intent (C).</summary>
+    /// <summary>
+    /// The default layout (ui-overhaul.md section 3): Space Station 14's key where SS14 has the same function (Shift to switch walk and run, C to lie
+    /// down, Ctrl+Q to throw, Shift and Ctrl with the left click to examine and pull), and tg's or the port's own keys for the rest.
+    /// </summary>
     public static KeyBindings Defaults()
     {
         var b = new KeyBindings();
@@ -228,51 +319,67 @@ public sealed class KeyBindings
         b.Set(PlayAction.MoveBack, "S", "Down");
         b.Set(PlayAction.MoveLeft, "A", "Left");
         b.Set(PlayAction.MoveRight, "D", "Right");
-        b.Set(PlayAction.Rest, "U");
-        b.Set(PlayAction.ToggleMoveIntent, "C");
+        b.Set(PlayAction.Rest, "C");
+        b.Set(PlayAction.ToggleMoveIntent, "Shift");
         b.Set(PlayAction.ToggleCombatMode, "F");
         b.Set(PlayAction.PrimaryClick, "MouseLeft");
         b.Set(PlayAction.SecondaryClick, "MouseRight");
         b.Set(PlayAction.MiddleClick, "MouseMiddle");
         b.Set(PlayAction.DropItem, "Q");
-        b.Set(PlayAction.ThrowMode, "R");
+        b.Set(PlayAction.ThrowMode, "Ctrl_Q");
         b.Set(PlayAction.SwapHand, "X");
         b.Set(PlayAction.ActivateInHand, "Z");
-        b.Set(PlayAction.QuickEquip, "E");
+        b.Set(PlayAction.QuickEquip, "R"); // slice 4E: E is world interact
+        b.Set(PlayAction.WorldInteract, "E");
+        b.Set(PlayAction.AltInteract, "Alt_E");
+        b.Set(PlayAction.AltUseInHand, "Alt_Z");
+        b.Set(PlayAction.QuickEquipBag, "Shift_B");
+        b.Set(PlayAction.QuickEquipBelt, "Shift_E");
+        b.Set(PlayAction.QuickEquipLeftPocket, "Shift_G");
+        b.Set(PlayAction.QuickEquipRightPocket, "Shift_H");
+        b.Set(PlayAction.QuickEquipSuitStorage, "Shift_F"); // section 15: the open-backpack and open-belt keys have no default (the inventory key, I)
+        b.Set(PlayAction.Whisper, "Comma");
+        b.Set(PlayAction.MovePulled, "Ctrl_MouseRight");
         b.Set(PlayAction.CursorMode, "Tab");
-        b.Set(PlayAction.Examine, "V");
-        b.Set(PlayAction.StopPulling, "Delete");
-        b.Set(PlayAction.Pull, "H");
+        b.Set(PlayAction.Examine, "Shift_MouseLeft");
+        b.Set(PlayAction.StopPulling, "H", "Delete");
+        b.Set(PlayAction.Pull, "Ctrl_MouseLeft");
         b.Set(PlayAction.Resist, "B");
         b.Set(PlayAction.Say, "T");
-        b.Set(PlayAction.Radio, "Y");
-        b.Set(PlayAction.Me, "M");
-        b.Set(PlayAction.Ooc, "O");
+        b.Set(PlayAction.Radio, "Semicolon");
+        b.Set(PlayAction.Me, "Shift_Apostrophe");
+        b.Set(PlayAction.Ooc, "Bracketleft");
         b.Set(PlayAction.Pray, "P");
-        b.Set(PlayAction.EmoteWheel, "J");
+        b.Set(PlayAction.EmoteWheel, "Y");
         b.Set(PlayAction.ChatWindow, "Shift_T");
-        b.Set(PlayAction.GiveItem, "G");
-        b.Set(PlayAction.ViewPetCommands, "Shift");
+        b.Set(PlayAction.CraftingMenu, "G");
+        b.Set(PlayAction.LanguageMenu, "L");
+        b.Set(PlayAction.Navigate, "M");
+        b.Set(PlayAction.ViewPetCommands, "J");
         b.Set(PlayAction.CloseWindows, "Shift_Escape");
         b.Set(PlayAction.Inventory, "I");
         b.Set(PlayAction.PushToTalk, "N");
         b.Set(PlayAction.PushToTalkTyping, "Alt");
         b.Set(PlayAction.MoveUpLevel, "Space");
         b.Set(PlayAction.MoveDownLevel, "Ctrl");
+        for (int n = 1; n <= 10; n++)
+            b.Set((PlayAction)((int)PlayAction.Hotbar1 + n - 1), "Key" + n % 10, "Kp" + n % 10); // section 10: the hotbar on 1 to 9 and 0
         for (int n = 1; n <= 9; n++)
-            b.Set((PlayAction)((int)PlayAction.ActionButton1 + n - 1), "Key" + n, "Kp" + n);
+            b.Set((PlayAction)((int)PlayAction.ActionButton1 + n - 1), "Shift_Key" + n); // section 10: tg's action buttons on Shift+1 to Shift+9
         b.Set(PlayAction.Console, "Quoteleft");
         b.Set(PlayAction.Options, "F10");
         b.Set(PlayAction.DevMenu, "Backslash");
         b.Set(PlayAction.CameraMode, "F1");
         b.Set(PlayAction.ThirdPersonView, "F5");
         b.Set(PlayAction.Ceiling, "F2");
-        b.Set(PlayAction.Names, "F3");
-        b.Set(PlayAction.DebugHud, "F4");
-        b.Set(PlayAction.HideInterface, "F6");
-        b.Set(PlayAction.Flashlight, "L");
-        b.Set(PlayAction.Scoreboard, "K");
-        b.Set(PlayAction.Fullscreen, "F12");
+        b.Set(PlayAction.Names, "F4");
+        b.Set(PlayAction.DebugHud, "F3");
+        b.Set(PlayAction.HideInterface, "Shift_F4");
+        b.Set(PlayAction.Flashlight, "U"); // slice E: L is the language menu
+        b.Set(PlayAction.Scoreboard, "Capslock"); // section 15: K is the actions menu
+        b.Set(PlayAction.ActionsMenu, "K");
+        b.Set(PlayAction.Fullscreen, "F11");
+        b.Set(PlayAction.QuickTransfer, "Ctrl_MouseLeft"); // slice 4B-2: on an inventory item under Tab; Pull keeps the same press elsewhere
         return b;
     }
 
@@ -285,6 +392,12 @@ public sealed class KeyBindings
         _keys[action] = new List<string>(keys);
     }
 
+    /// <summary>
+    /// Slice 4B-2: whether two actions may hold the same key, since they act in different places: <see cref="PlayAction.Pull"/> (tg's Ctrl-click on
+    /// the world and the HUD) and <see cref="PlayAction.QuickTransfer"/> (on an item of the Tab inventory only). Every other key serves one action.
+    /// </summary>
+    public static bool SharesKeys(PlayAction a, PlayAction b) => (a, b) is (PlayAction.Pull, PlayAction.QuickTransfer) or (PlayAction.QuickTransfer, PlayAction.Pull);
+
     /// <summary>Sets the keys of <paramref name="action"/> and takes each of them from any other action that had it (a key serves one action).</summary>
     public void Claim(PlayAction action, params string[] keys)
     {
@@ -292,7 +405,7 @@ public sealed class KeyBindings
         {
             foreach (PlayAction other in Enum.GetValues<PlayAction>())
             {
-                if (other != action)
+                if (other != action && !SharesKeys(action, other))
                     _keys[other].Remove(key);
             }
         }
@@ -310,7 +423,7 @@ public sealed class KeyBindings
         PlayAction? displaced = null;
         foreach (PlayAction other in Enum.GetValues<PlayAction>())
         {
-            if (other != action && _keys[other].Remove(key))
+            if (other != action && !SharesKeys(action, other) && _keys[other].Remove(key))
                 displaced = other;
         }
         _keys[action] = new List<string> { key };
@@ -329,13 +442,87 @@ public sealed class KeyBindings
     }
 
     /// <summary>
-    /// M9 slice C: the action a key press does: a key pressed with Shift held is first looked up as the pair (<see cref="NameOf"/>), then
-    /// alone (Shift held to run keeps the keys working).
+    /// M9 slice C: the action a key or mouse button press does: pressed with Shift or Ctrl held it is first looked up with them
+    /// (<see cref="NameOf"/>), with both held then with Ctrl alone and with Shift alone, and last alone (a modifier held out of habit keeps the keys working).
     /// </summary>
-    public PlayAction? ActionOfPress(string key, bool shift) => (shift ? ActionOf(NameOf(key, true)) : null) ?? ActionOf(key);
+    public PlayAction? ActionOfPress(string key, bool shift, bool ctrl = false, bool alt = false) => MatchPress(key, shift, ctrl, alt).Action;
 
-    /// <summary>M9 slice C: a key's binding name, <c>Shift_</c> before it when Shift is held (Shift itself stays <c>Shift</c>).</summary>
-    public static string NameOf(string key, bool shift) => shift && key != "Shift" ? "Shift_" + key : key;
+    /// <summary>
+    /// <see cref="ActionOfPress"/> with the modifiers that are part of the binding it matched (<c>Shift_MouseLeft</c>: Shift); a modifier held and
+    /// not among them is one held on top of the binding (ui-overhaul.md section 5, <see cref="ModifiedClick"/>). Slice 4E: with Alt held a binding
+    /// with Alt is looked for first (<c>Alt_E</c>, with Shift and Ctrl as held, then alone), then the press as without Alt.
+    /// </summary>
+    public (PlayAction? Action, bool Shift, bool Ctrl) MatchPress(string key, bool shift, bool ctrl = false, bool alt = false)
+    {
+        (bool Shift, bool Ctrl)[] tries = shift && ctrl ? new[] { (true, true), (false, true), (true, false), (false, false) } : new[] { (shift, ctrl), (false, false) };
+        if (alt && key != "Alt")
+        {
+            foreach ((bool s, bool c) in tries)
+            {
+                if (ActionOf(NameOf(key, s, c, alt: true)) is PlayAction action)
+                    return (action, s && key != "Shift", c && key != "Ctrl");
+            }
+        }
+        foreach ((bool s, bool c) in tries)
+        {
+            if (ActionOf(NameOf(key, s, c)) is PlayAction action)
+                return (action, s && key != "Shift", c && key != "Ctrl");
+        }
+        return (null, false, false);
+    }
+
+    /// <summary>
+    /// M9 slice C: a key's binding name, <c>Shift_</c> before it when Shift is held, <c>Alt_</c> before that when Alt is (slice 4E) and <c>Ctrl_</c>
+    /// before that when Ctrl is (<c>Ctrl_Shift_T</c>, <c>Alt_E</c>); a modifier key itself is not named twice (Shift stays <c>Shift</c>, Ctrl <c>Ctrl</c>,
+    /// Alt <c>Alt</c>).
+    /// </summary>
+    public static string NameOf(string key, bool shift, bool ctrl = false, bool alt = false)
+    {
+        string name = shift && key != "Shift" ? "Shift_" + key : key;
+        name = alt && key != "Alt" ? "Alt_" + name : name;
+        return ctrl && key != "Ctrl" ? "Ctrl_" + name : name;
+    }
+
+    /// <summary>
+    /// The actions the game acts on with a mouse button pressed with Shift or Ctrl (GameScene.OnMouseButton: tg's left click with that modifier);
+    /// for any other action such a binding would do nothing.
+    /// </summary>
+    public static bool TakesModifiedMouse(PlayAction? action) => action is PlayAction.Examine or PlayAction.Pull;
+
+    /// <summary>
+    /// ui-overhaul.md section 5: the binding name the options panel records for <paramref name="button"/> pressed for <paramref name="action"/>, or
+    /// null when the panel does not take that press (it keeps waiting): a plain button for the three click actions only (a modifier held then is
+    /// not recorded); for Examine and Pull the left button with Shift, Ctrl or both, the one whose whole click (press, release, cursor mode's
+    /// drag) the game handles as tg's left click, so they never take a button from a click action; for any other action nothing from the mouse.
+    /// </summary>
+    public static string MouseBindingName(PlayAction action, string button, bool shift, bool ctrl) => action switch
+    {
+        PlayAction.PrimaryClick or PlayAction.SecondaryClick or PlayAction.MiddleClick => button,
+        PlayAction.Examine or PlayAction.Pull or PlayAction.QuickTransfer when button == "MouseLeft" && (shift || ctrl) => NameOf(button, shift, ctrl),
+        PlayAction.MovePulled when button == "MouseRight" && (shift || ctrl) => NameOf(button, shift, ctrl), // slice 4E: the right button with a modifier
+        _ => null,
+    };
+
+    /// <summary>
+    /// ui-overhaul.md section 5: the modifiers of tg's left click that a press bound to Examine or Pull sends: Shift for Examine, Ctrl for Pull, and
+    /// a modifier held on top of the binding (<paramref name="extraShift"/>, <paramref name="extraCtrl"/>: held and not part of the binding matched,
+    /// <see cref="MatchPress"/>), so Pull bound to Shift+left click is tg's Ctrl-click and Ctrl+left click with Shift held tg's Ctrl-Shift-click.
+    /// </summary>
+    public static Anomaly.Protocol.ClickModifiers ModifiedClick(PlayAction action, bool extraShift, bool extraCtrl)
+        => (action == PlayAction.Pull ? Anomaly.Protocol.ClickModifiers.Ctrl : Anomaly.Protocol.ClickModifiers.Shift)
+            | (extraShift ? Anomaly.Protocol.ClickModifiers.Shift : Anomaly.Protocol.ClickModifiers.None)
+            | (extraCtrl ? Anomaly.Protocol.ClickModifiers.Ctrl : Anomaly.Protocol.ClickModifiers.None);
+
+    /// <summary>Slice 4E: the tg keybinding a quick-equip key of a slot sends (tg's <c>quick_equip_belt</c> and its subtypes), None for any other action.</summary>
+    public static Anomaly.Protocol.KeybindingCode QuickEquipCodeOf(PlayAction action) => action switch
+    {
+        PlayAction.QuickEquipBag => Anomaly.Protocol.KeybindingCode.QuickEquipBag,
+        PlayAction.QuickEquipBelt => Anomaly.Protocol.KeybindingCode.QuickEquipBelt,
+        PlayAction.QuickEquipLeftPocket => Anomaly.Protocol.KeybindingCode.QuickEquipLeftPocket,
+        PlayAction.QuickEquipRightPocket => Anomaly.Protocol.KeybindingCode.QuickEquipRightPocket,
+        PlayAction.QuickEquipSuitStorage => Anomaly.Protocol.KeybindingCode.QuickEquipSuitStorage,
+        _ => Anomaly.Protocol.KeybindingCode.None,
+    };
 
     /// <summary>True when <paramref name="key"/> is one of the keys of <paramref name="action"/>.</summary>
     public bool Has(PlayAction action, string key) => _keys[action].Contains(key);
@@ -380,6 +567,9 @@ public sealed class KeyBindings
         ["shove"] = PlayAction.SecondaryClick,
     };
 
+    /// <summary>The ids of actions the client no longer has, which an old options file may still name: read and ignored (slice E: the give key; the readout panel's key, gone with the panel, D184).</summary>
+    public static readonly IReadOnlySet<string> RetiredIds = new HashSet<string>(StringComparer.Ordinal) { "give_item", "analyzer" };
+
     /// <summary>The action of an id (<see cref="IdOf"/>, or a <see cref="LegacyIds"/> one), or null.</summary>
     public static PlayAction? ActionOfId(string id)
     {
@@ -401,10 +591,10 @@ public sealed class KeyBindings
         PlayAction.MoveLeft => "Move left",
         PlayAction.MoveRight => "Move right",
         PlayAction.Rest => "Rest / get up",
-        PlayAction.ToggleMoveIntent => "Walk / run",
+        PlayAction.ToggleMoveIntent => "Walk / run (switch)",
         PlayAction.ToggleCombatMode => "Combat mode",
-        PlayAction.PrimaryClick => "Primary click (left: tg's left click)",
-        PlayAction.SecondaryClick => "Secondary click (right: tap for tg's right click, hold for the radial)",
+        PlayAction.PrimaryClick => "Primary click (tg's left click)",
+        PlayAction.SecondaryClick => "Secondary click (a tap is tg's right click, a hold the radial)",
         PlayAction.MiddleClick => "Middle click (swap hands)",
         PlayAction.DropItem => "Put the item in hand down at the crosshair",
         PlayAction.ThrowMode => "Throw the held item at the crosshair",
@@ -422,10 +612,16 @@ public sealed class KeyBindings
         PlayAction.Ooc => "OOC",
         PlayAction.Pray => "Pray",
         PlayAction.EmoteWheel => "Emote wheel",
-        PlayAction.GiveItem => "Give item",
+        PlayAction.CraftingMenu => "Crafting menu",
+        PlayAction.LanguageMenu => "Language menu",
+        PlayAction.Navigate => "Navigate",
         PlayAction.ViewPetCommands => "View pet commands",
         PlayAction.CloseWindows => "Close all windows",
         PlayAction.Inventory => "Inventory",
+        >= PlayAction.Hotbar1 and <= PlayAction.Hotbar7 => "Hotbar " + (action - PlayAction.Hotbar1 + 1) + " (belt)",
+        PlayAction.Hotbar8 => "Hotbar 8 (left pocket)",
+        PlayAction.Hotbar9 => "Hotbar 9 (right pocket)",
+        PlayAction.Hotbar10 => "Hotbar 0 (ID slot)",
         >= PlayAction.ActionButton1 and <= PlayAction.ActionButton9 => "Action button " + (action - PlayAction.ActionButton1 + 1),
         PlayAction.ChatWindow => "Chat window",
         PlayAction.Console => "Dev console",
@@ -443,8 +639,22 @@ public sealed class KeyBindings
         PlayAction.PushToTalkTyping => "Push to talk while typing in the chat",
         PlayAction.MoveUpLevel => "Up a level (flying; else throw mode while held)",
         PlayAction.MoveDownLevel => "Down a level (flying)",
-        PlayAction.Pull => "Pull what the crosshair points at (Ctrl-click)",
+        PlayAction.Pull => "Pull what the crosshair points at",
         PlayAction.Scoreboard => "Scoreboard (deathmatch, while held)",
+        PlayAction.QuickTransfer => "Quick transfer (an item of the Tab inventory to the hand, a held one into the backpack)",
+        PlayAction.WorldInteract => "Interact (an empty hand's use of what the crosshair points at)",
+        PlayAction.AltInteract => "Alt-click what the crosshair points at",
+        PlayAction.AltUseInHand => "Alt-click the item in hand",
+        PlayAction.QuickEquipBag => "Quick equip: backpack",
+        PlayAction.QuickEquipBelt => "Quick equip: belt",
+        PlayAction.QuickEquipLeftPocket => "Quick equip: left pocket",
+        PlayAction.QuickEquipRightPocket => "Quick equip: right pocket",
+        PlayAction.QuickEquipSuitStorage => "Quick equip: suit storage",
+        PlayAction.OpenBackpack => "Open the backpack",
+        PlayAction.OpenBelt => "Open the belt",
+        PlayAction.Whisper => "Whisper",
+        PlayAction.MovePulled => "Move what you pull onto the tile at the crosshair",
+        PlayAction.ActionsMenu => "Actions menu",
         _ => action.ToString(),
     };
 
@@ -766,6 +976,24 @@ public sealed class PlayOptions
     public const int MinWindowScale = 50, MaxWindowScale = 300, WindowScaleStep = 10;
 
     /// <summary>
+    /// The window scale after Ctrl with <paramref name="key"/> (an engine key name) from <paramref name="now"/>: = or the
+    /// keypad's + grow it a step, - or the keypad's - shrink it, 0 or the keypad's 0 resets it to 100; -1 for any other key (GameScene.WindowScaleKey).
+    /// </summary>
+    public static int WindowScaleAfterKey(string key, int now) => key switch
+    {
+        "Equal" or "KpAdd" => now + WindowScaleStep,
+        "Minus" or "KpSubtract" => now - WindowScaleStep,
+        "Key0" or "Kp0" => 100,
+        _ => -1,
+    };
+
+    /// <summary>
+    /// ui-overhaul.md section 5: Ctrl (with Shift or not) and <paramref name="key"/> is a window scale key, which the game takes before the bindings
+    /// (<see cref="WindowScaleAfterKey"/>), so the options panel refuses it as a binding.
+    /// </summary>
+    public static bool IsWindowScalePair(string key, bool ctrl) => ctrl && WindowScaleAfterKey(key, 100) >= 0;
+
+    /// <summary>
     /// The scale tg's windows and the tooltips are drawn at on a screen <paramref name="screenHeight"/> pixels high: tgui's pixel sizes hold
     /// on a 1080-pixel-high screen and grow with taller ones (a 4K or Retina screen, where the client draws in physical pixels: 2x at 2160),
     /// never below 1, times <see cref="WindowScalePercent"/>.
@@ -784,11 +1012,13 @@ public sealed class PlayOptions
     public const float MaxFov = 110f;
 
     /// <summary>
-    /// The options file's version (<c>options_version</c>): 4 since D315's minimap size (3 since D157, 2 since D137). A file without it (or older)
-    /// that still has a default that was changed since gets the new one: the eye height of D120 (1.2 m) or D137 (1.5 m) becomes D157's 1.3 m,
-    /// the dev menu on F8 moves to the | key, the minimap's first size (100 per cent) becomes 200.
+    /// The options file's version (<c>options_version</c>): 7 since the actions menu's keys (6 since slice 4E's keys, 5 since DV422, 4 since D315's
+    /// minimap size, 3 since D157, 2 since D137). A file without it (or older) that still has a default that was changed since gets the new one: the
+    /// eye height of D120 (1.2 m) or D137 (1.5 m) becomes D157's 1.3 m, the dev menu on F8 moves to the | key, the minimap's first size (100 per cent)
+    /// becomes 200, quick equip on E moves to R and the action buttons on the plain digits to Shift and the digits (<see cref="UpgradeTo6"/>), the
+    /// scoreboard on K moves to Caps Lock and K opens the actions menu, and V and Shift+V no longer open the backpack and the belt (<see cref="UpgradeTo7"/>).
     /// </summary>
-    public const int FileVersion = 5;
+    public const int FileVersion = 7;
 
     /// <summary>The version the file was read with (<see cref="FileVersion"/> when new).</summary>
     public int ReadVersion { get; private set; } = FileVersion;
@@ -826,7 +1056,57 @@ public sealed class PlayOptions
             if (Bindings.KeysOf(PlayAction.Pull).Count == 0 && Bindings.Has(PlayAction.StopPulling, "H"))
                 Bindings.Claim(PlayAction.Pull, "H");
         }
+        if (ReadVersion < 6)
+            UpgradeTo6();
+        if (ReadVersion < 7)
+            UpgradeTo7();
         ReadVersion = FileVersion;
+    }
+
+    // ui-overhaul.md section 15: the scoreboard moves from K to Caps Lock when the file kept the old default and Caps Lock is free, and K then opens
+    // the actions menu (the file's scoreboard line took K from the menu's default) when nothing else has it; the open-backpack and open-belt keys
+    // lose V and Shift+V where the file kept those defaults (the inventory key does the same).
+    private void UpgradeTo7()
+    {
+        if (IsOnly(PlayAction.Scoreboard, "K") && Bindings.ActionOf("Capslock") == null)
+            Bindings.Set(PlayAction.Scoreboard, "Capslock");
+        if (Bindings.KeysOf(PlayAction.ActionsMenu).Count == 0 && Bindings.ActionOf("K") == null)
+            Bindings.Set(PlayAction.ActionsMenu, "K");
+        if (IsOnly(PlayAction.OpenBackpack, "V"))
+            Bindings.Set(PlayAction.OpenBackpack);
+        if (IsOnly(PlayAction.OpenBelt, "Shift_V"))
+            Bindings.Set(PlayAction.OpenBelt);
+    }
+
+    // Slice 4E: quick equip moves from E to R (E is world interact) when the file kept the old default and R is free; and a file from before
+    // ui-overhaul.md section 10 that still has the action buttons on the plain digits gets them on Shift and the digits, and the number row back
+    // for the hotbar (its digits were taken from the hotbar by those lines, so the belt cells had only the keypad).
+    private void UpgradeTo6()
+    {
+        if (IsOnly(PlayAction.QuickEquip, "E") && Bindings.ActionOf("R") == null)
+        {
+            Bindings.Set(PlayAction.QuickEquip, "R");
+            Bindings.Claim(PlayAction.WorldInteract, "E");
+        }
+        for (int n = 1; n <= 9; n++)
+        {
+            var button = (PlayAction)((int)PlayAction.ActionButton1 + n - 1);
+            string digit = "Key" + n, pad = "Kp" + n, shifted = "Shift_Key" + n;
+            IReadOnlyList<string> keys = Bindings.KeysOf(button);
+            if (keys.SequenceEqual(new[] { digit }) || keys.SequenceEqual(new[] { digit, pad }))
+                Bindings.Set(button, Bindings.ActionOf(shifted) == null ? new[] { shifted } : Array.Empty<string>());
+        }
+        for (int n = 1; n <= 10; n++)
+        {
+            var cell = (PlayAction)((int)PlayAction.Hotbar1 + n - 1);
+            var keys = new List<string>(Bindings.KeysOf(cell));
+            foreach (string key in new[] { "Kp" + n % 10, "Key" + n % 10 })
+            {
+                if (Bindings.ActionOf(key) == null)
+                    keys.Insert(0, key);
+            }
+            Bindings.Set(cell, keys.ToArray());
+        }
     }
 
     /// <summary>The file's text.</summary>
@@ -1371,8 +1651,8 @@ public sealed class PlayOptions
     {
         problem = null;
         PlayAction? action = KeyBindings.ActionOfId(id);
-        if (action == null && id == "analyzer")
-            return true; // the readout panel's key, gone with the panel (D184): an older options file still reads clean
+        if (action == null && KeyBindings.RetiredIds.Contains(id))
+            return true; // an action the client no longer has: its keys stay free for today's actions
         if (action == null)
         {
             problem = "unknown action '" + id + "'";

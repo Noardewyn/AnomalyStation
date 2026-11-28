@@ -14,8 +14,7 @@ public partial class GameScene
 {
     private const string ChatRoundName = "chat_round", ChatLobbyName = "chat_lobby";
 
-    // the owner (2026-10-28): in the round at the right of the middle, in the lobby the left half up to the lobby's menu at the top middle
-    private static readonly Rect2 ChatRoundDefault = new(0.006f, 0.631f, 0.39f, 0.319f); // the owner's layout (2026-10-30): bottom left, under the inventory
+    // in the round at the bottom left, clear of the bottom row (ChatPlace.RoundDefault); in the lobby the left half up to the lobby's menu at the top middle
     private const float LobbyMenuHalfWidth = 80; // the lobby menu's left edge from the middle, px at the lobby's scale (its shutter: -73)
 
     private string _chatPlace; // whose place the chat window has: ChatRoundName, ChatLobbyName or null (none yet)
@@ -30,7 +29,7 @@ public partial class GameScene
     private bool ChatTyping => _chatWindow?.Typing == true;
 
     /// <summary>A window that frees the pointer is open (D282, MouseOwner): a tgui window, an open storage or the chat window typed in.</summary>
-    private bool WindowsOpen => TguiOpen || _storageWindow?.IsOpen == true || ChatTyping; // the owner (2026-10-26): an open chat window not typed in leaves the game playable
+    private bool WindowsOpen => TguiOpen || _storageWindow?.IsOpen == true || ChatTyping || ActionsMenuOpen; // the owner (2026-10-26): an open chat window not typed in leaves the game playable
 
     private void BuildChatWindow(CanvasLayer ui)
     {
@@ -71,6 +70,9 @@ public partial class GameScene
             _chatInput.Lobby = lobby;
         if (_tguiHost == null || lobby == _chatOverLobby.Count > 0)
             return;
+        // moving the chat window between the lobby screen and the game takes the keyboard from its input: a line being typed keeps it, and its
+        // rows stay shown (ui-overhaul.md section 13)
+        bool typing = ChatTyping;
         if (lobby)
         {
             foreach (Control node in new Control[] { _chatLines, _sayWindow, _chatWindow })
@@ -80,12 +82,16 @@ public partial class GameScene
             }
             foreach (Control node in _chatOverLobby.Keys)
                 _tguiHost.Adopt(node);
-            return;
         }
-        Node ui = GetNode("Ui");
-        foreach ((Control node, int index) in _chatOverLobby.OrderBy(p => p.Value))
-            _tguiHost.Release(node, ui, index);
-        _chatOverLobby.Clear();
+        else
+        {
+            Node ui = GetNode("Ui");
+            foreach ((Control node, int index) in _chatOverLobby.OrderBy(p => p.Value))
+                _tguiHost.Release(node, ui, index);
+            _chatOverLobby.Clear();
+        }
+        if (typing && !ChatTyping)
+            _chatWindow.FocusInput();
     }
 
     // Entering the lobby or the round: the chat window opens at that one's place and size.
@@ -94,15 +100,21 @@ public partial class GameScene
         if (place == _chatPlace || place == null || _chatWindow == null)
             return;
         _chatPlace = place;
+        _chatWindow.Round = place == ChatRoundName; // ui-overhaul.md section 13: see-through, its rows shown only while typing
         if (place == ChatLobbyName)
         {
             Vector2 screen = GetViewport().GetVisibleRect().Size;
             float lobbyScale = Math.Min(screen.X / 608f, screen.Y / 480f); // LobbyScreen's scale (tgui-lobby's scaling.ts)
             float right = Math.Max(0.2f, 0.5f - LobbyMenuHalfWidth * lobbyScale / screen.X - 0.01f);
             _chatWindow.DefaultShare = new Rect2(0.005f, 0.01f, right - 0.005f, 0.98f);
+            _chatWindow.DefaultPlace = null;
         }
         else
-            _chatWindow.DefaultShare = ChatRoundDefault;
+            _chatWindow.DefaultPlace = (screen, scale) =>
+            {
+                HudRect r = ChatPlace.RoundDefault(new HudMetrics(screen.X, screen.Y, _options.UiScale), scale);
+                return new Rect2(r.Left, r.Top, r.Width, r.Height);
+            };
         Vector2? size = _options.WindowSizes.TryGetValue(place, out (int Width, int Height) s) ? new Vector2(s.Width, s.Height) : null;
         _chatWindow.SetGeometry(SavedShare(place), size);
         _chatWindow.Open();

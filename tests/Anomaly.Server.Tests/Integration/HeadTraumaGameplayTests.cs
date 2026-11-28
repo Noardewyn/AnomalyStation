@@ -1,4 +1,5 @@
 using Anomaly.Client.Shared;
+using Anomaly.Client.Shared.Icons;
 using Anomaly.Client.Shared.World;
 using Anomaly.Core.DmShim;
 using Anomaly.Core.Kernel;
@@ -16,8 +17,9 @@ namespace Anomaly.Server.Tests.Integration;
 /// (<see cref="PlaySession"/>). A player in combat mode hits another on the head with a toolbox (aimed at the head, DV30) until tg's
 /// roll knocks the victim senseless: the victim's brain is damaged, its client's game plane carries tg's eye blur (protocol version
 /// 29) and the client would blur its view by it, and the victim's walk east strays off its row (the confusion's scramble, DV15). A
-/// bleeding player selects its left arm on tg's zone selector, swaps to the right hand and ctrl-clicks its own health doll (DV72):
-/// after tg's 0.75 seconds the self-grasp is in its hand, drawn in its HUD's hand slot, and the arm bleeds slower.
+/// bleeding player selects its right leg on tg's zone selector, swaps to the right hand and ctrl-clicks its own health doll's left arm
+/// (DV72, slice T5c: the click carries the doll's part): after tg's 0.75 seconds the self-grasp of the arm is in its hand, drawn in its HUD's
+/// hand slot, and the arm bleeds slower.
 /// </summary>
 public class HeadTraumaGameplayTests(ITestOutputHelper output)
 {
@@ -49,6 +51,14 @@ public class HeadTraumaGameplayTests(ITestOutputHelper output)
         var zones = new List<FoundZone>();
         HudReader.Collect(replica, entry.Appearance, zones);
         return zones.Count > 0;
+    }
+
+    // The client's ReplicaTables (godot/scripts/Render, not in this test project): the replica's tables for the compositor.
+    private sealed class Tables(ReplicaWorld replica) : IAppearanceSource
+    {
+        public bool TryGetAppearance(TableRef reference, out AppearanceEntry entry) => replica.TryGetAppearance(reference, out entry);
+        public string ResolveString(TableRef reference) => replica.ResolveString(reference);
+        public string ResolveResource(TableRef reference) => replica.ResolveResource(reference);
     }
 
     [Fact]
@@ -141,25 +151,51 @@ public class HeadTraumaGameplayTests(ITestOutputHelper output)
         w.Run(10 * Second);
         float lostUnheld = blood0 - In(w, () => Dm.num(me.get_blood_volume()));
 
-        // tg's zone selector: the left arm (get_zone_at: x 21 to 24, y 10 to 13); then the right hand (X).
+        // tg's zone selector: the right leg (get_zone_at: x 10 to 15, y 1 to 9), so the grasp below can only take the arm from the doll's click;
+        // then the right hand (X).
         ScreenEntry selector = EntryOf<atom_movable_screen_zone_sel>(w, p);
-        Assert.True(p.Session.Click(new ClickTarget(TargetKind.Screen, selector.Id, 0, 0, 0, 22, 12), ClickButton.Left, ClickModifiers.None));
+        Assert.True(p.Session.Click(new ClickTarget(TargetKind.Screen, selector.Id, 0, 0, 0, 12, 5), ClickButton.Left, ClickModifiers.None));
         w.Run(5);
-        Assert.Equal(BODY_ZONE_L_ARM, In(w, () => me.zone_selected));
+        Assert.Equal(BODY_ZONE_R_LEG, In(w, () => me.zone_selected));
         p.Session.Keybinding(KeybindingCode.SwapHands);
         w.Run(5);
         Assert.Equal(2f, In(w, () => me.active_hand_index));
 
-        // The ctrl-click on the HUD's health doll, which the client sends as a ctrl-click on the own mob (DV72).
+        // The ctrl-click on the HUD's health doll's left arm, which the client sends as a ctrl-click on the own mob aimed at it (DV72, slice T5c).
         long doll = replica.Screen.Keys.Single(id => IsDoll(replica, id));
-        ClickTarget target = DragModel.SelfCtrlClickOnDoll(new ClickTarget(TargetKind.Screen, doll, 0, 0, 0, 16, 16), ClickModifiers.Ctrl, id => IsDoll(replica, id), replica.OwnEntity);
-        Assert.Equal(new ClickTarget(TargetKind.Entity, me.dm_id, 0, 0, 0), target);
+        (byte x, byte y, AimZone zone) = (22, 16, AimZone.LeftArm);
+        string root = Anomaly.Server.Tests.M3Maps.I1d.MetaPictureTests.IconRoot();
+        if (root != null)
+        {
+            // the pixel of the doll's left arm as the client finds it under the pointer (BodyZoneAim.DollZoneAt over tg's healthdoll states)
+            var compositor = new AppearanceCompositor(new IconLibrary(new DirectoryIconFiles(root)));
+            var tables = new Tables(replica);
+            TableRef dollLook = replica.Screen[doll].Appearance;
+            (x, y) = Enumerable.Range(1, 32).SelectMany(px => Enumerable.Range(1, 32).Select(py => ((byte)px, (byte)py)))
+                .First(q => BodyZoneAim.DollZoneAt(tables, compositor, dollLook, q.Item1, q.Item2) == AimZone.LeftArm);
+            zone = BodyZoneAim.DollZoneAt(tables, compositor, dollLook, x, y);
+            // slice T5c: tg's eyes and mouth pixels all lie on the doll's drawn head (the limb found there), so each is refined to them
+            for (byte fx = 1; fx <= 32; fx++)
+                for (byte fy = 1; fy <= 32; fy++)
+                {
+                    AimZone face = BodyZoneAim.DollFaceAt(AimZone.Head, fx, fy);
+                    if (face == AimZone.Head)
+                        continue;
+                    AimZone limb = BodyZoneAim.DollZoneAt(tables, compositor, dollLook, fx, fy);
+                    Assert.Equal(AimZone.Head, limb);
+                    Assert.Equal(face, BodyZoneAim.DollFaceAt(limb, fx, fy));
+                }
+            Assert.Equal(AimZone.Head, BodyZoneAim.DollZoneAt(tables, compositor, dollLook, 16, 28));
+        }
+        ClickTarget target = DragModel.SelfCtrlClickOnDoll(new ClickTarget(TargetKind.Screen, doll, 0, 0, 0, x, y), ClickModifiers.Ctrl, id => IsDoll(replica, id), replica.OwnEntity, zone);
+        Assert.Equal(new ClickTarget(TargetKind.Entity, me.dm_id, 0, 0, 0, 0, 0, AimZone.LeftArm), target);
         Assert.True(p.Session.Click(target, ClickButton.Left, ClickModifiers.Ctrl));
         w.Run(Second / 2);
         Assert.Null(In(w, () => me.get_active_held_item())); // tg's 0.75 s do_after
         w.Run(Second);
         var grasp = In(w, () => me.get_active_held_item()) as obj_item_hand_item_self_grasp;
         Assert.NotNull(grasp);
+        Assert.Equal(BODY_ZONE_L_ARM, In(w, () => me.zone_selected)); // the doll's click selected the arm over the selector's leg
         Assert.Same(grasp, In(w, () => arm.grasped_by));
         Assert.Equal(rate * 0.7f, In(w, () => arm.cached_bleed_rate), 4);
         Assert.Contains(texts, t => t.Contains("You grab hold of your human left arm tightly.", StringComparison.Ordinal));
@@ -177,5 +213,52 @@ public class HeadTraumaGameplayTests(ITestOutputHelper output)
         float lostHeld = blood1 - In(w, () => Dm.num(me.get_blood_volume()));
         output.WriteLine($"blood lost in ten seconds: {lostUnheld:0.00} unheld, {lostHeld:0.00} held");
         Assert.True(lostHeld < lostUnheld * 0.85f, $"the grasped arm bleeds slower ({lostHeld} against {lostUnheld})");
+    }
+
+    [Fact]
+    public void A_ctrl_click_on_the_health_dolls_eyes_or_mouth_grasps_the_bleeding_head()
+    {
+        // Slice T5c: the doll's eyes and mouth are the head's pixels; a ctrl-click there carries the limb (the head), not the eyes or the mouth,
+        // which tg's get_bodypart has no part for (the grasp would find nothing and do nothing)
+        using var w = new RealHeadlessWorld(new LoopbackOptions { Seed = 31, TimeoutSteps = 20000 });
+        RealHeadlessWorld.Player p = w.Join("Bleeder");
+        var me = (mob_living_carbon_human)w.MobOf(p);
+        ReplicaWorld replica = p.Session.Replica;
+        var texts = new List<string>();
+        p.Client.ServerTextReceived += t => texts.Add(t.Html);
+        w.Run(10);
+        w.Host.EnqueueConsoleLine("bleed Bleeder head 30");
+        w.Run(5);
+        obj_item_bodypart head = In(w, () => me.get_bodypart(BODY_ZONE_HEAD) as obj_item_bodypart);
+        Assert.True(In(w, () => head.cached_bleed_rate) > 0f, "the head bleeds");
+
+        long doll = replica.Screen.Keys.Single(id => IsDoll(replica, id));
+        string root = Anomaly.Server.Tests.M3Maps.I1d.MetaPictureTests.IconRoot();
+        output.WriteLine($"icon root: {root ?? "none (the doll's limb is taken as the head)"}");
+        foreach ((byte x, byte y, AimZone face) in new[] { ((byte)16, (byte)26, AimZone.Eyes), ((byte)16, (byte)23, AimZone.Mouth) })
+        {
+            AimZone limb = AimZone.Head;
+            if (root != null)
+            {
+                // the limb the client finds under the pointer (BodyZoneAim.DollZoneAt over tg's healthdoll states), which an item click refines
+                var compositor = new AppearanceCompositor(new IconLibrary(new DirectoryIconFiles(root)));
+                limb = BodyZoneAim.DollZoneAt(new Tables(replica), compositor, replica.Screen[doll].Appearance, x, y);
+            }
+            Assert.Equal(AimZone.Head, limb);
+            Assert.Equal(face, BodyZoneAim.DollFaceAt(limb, x, y));
+            ClickTarget target = DragModel.SelfCtrlClickOnDoll(new ClickTarget(TargetKind.Screen, doll, 0, 0, 0, x, y), ClickModifiers.Ctrl, id => IsDoll(replica, id), replica.OwnEntity, limb);
+            Assert.Equal(new ClickTarget(TargetKind.Entity, me.dm_id, 0, 0, 0, 0, 0, AimZone.Head), target);
+            int grabs = texts.Count(t => t.Contains("You grab hold of your human head tightly.", StringComparison.Ordinal));
+            Assert.True(p.Session.Click(target, ClickButton.Left, ClickModifiers.Ctrl));
+            w.Run(Second + Second / 2); // tg's 0.75 s do_after
+            var grasp = In(w, () => me.get_active_held_item()) as obj_item_hand_item_self_grasp;
+            Assert.NotNull(grasp);
+            Assert.Same(grasp, In(w, () => head.grasped_by));
+            Assert.Equal(BODY_ZONE_HEAD, In(w, () => me.zone_selected));
+            Assert.Equal(grabs + 1, texts.Count(t => t.Contains("You grab hold of your human head tightly.", StringComparison.Ordinal)));
+            Do(w, () => Waiting.NoSleep(me.dropItemToGround(grasp))); // let go for the next click
+            w.Run(5);
+            Assert.Null(In(w, () => head.grasped_by));
+        }
     }
 }

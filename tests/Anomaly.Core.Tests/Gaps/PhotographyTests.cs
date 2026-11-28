@@ -261,6 +261,61 @@ public class PhotographyTests
         r.In(() => Assert.Null(PhotoSeam.Develop(bob.client, request.Id, Png(144, 144))));
     }
 
+    // a 1 x 1 PNG whose header claims another size (the CRC is left stale: the decoder reads none): its image data is a few bytes
+    private static byte[] ClaimedPng(uint width, uint height)
+    {
+        byte[] png = DmPng.Encode(1, 1, new[] { 0x808080FFu });
+        System.Buffers.Binary.BinaryPrimitives.WriteUInt32BigEndian(png.AsSpan(16), width);
+        System.Buffers.Binary.BinaryPrimitives.WriteUInt32BigEndian(png.AsSpan(20), height);
+        return png;
+    }
+
+    [Fact]
+    public void APhotoPngWhoseHeaderClaimsAWrongSizeIsRefusedBeforeItIsDecoded()
+    {
+        var (r, bob) = Room(15308);
+        r.In(() =>
+        {
+            datum_picture picture = Dm.@new<datum_picture>();
+            // Develop answering a fresh 3 x 3 tile (192 x 192 pixel) request, with the bytes this thread allocated meanwhile: a decode of the
+            // claimed size would allocate its rows (900 MB for 15000 x 15000), so a refusal under a megabyte was never decoded
+            (string Refused, long Allocated) Answer(byte[] png)
+            {
+                uint id = PhotoSeam.Request(bob, picture, locate(7, 5, 1) as turf, 3, 3);
+                Assert.NotEqual(0u, id);
+                long before = GC.GetAllocatedBytesForCurrentThread();
+                string refused = PhotoSeam.Develop(bob.client, id, png);
+                return (refused, GC.GetAllocatedBytesForCurrentThread() - before);
+            }
+            foreach ((uint w, uint h, string shown) in new[]
+            {
+                (15000u, 15000u, "15000 x 15000"), (0u, 0u, "0 x 0"), (193u, 192u, "193 x 192"), (192u, 193u, "192 x 193"),
+                ((uint)int.MaxValue, (uint)int.MaxValue, "2147483647 x 2147483647"), (0x80000000u, 0x80000000u, "-2147483648 x -2147483648"),
+            })
+            {
+                (string refused, long allocated) = Answer(ClaimedPng(w, h));
+                Assert.Equal("it is " + shown + " pixels, not 16 to 192 x 192", refused);
+                Assert.True(allocated < 1024 * 1024, shown + ": " + allocated + " bytes allocated");
+            }
+            // a real 1 x 1 image is below the smallest side taken
+            (string small, long smallAllocated) = Answer(Png(1, 1));
+            Assert.Equal("it is 1 x 1 pixels, not 16 to 192 x 192", small);
+            Assert.True(smallAllocated < 1024 * 1024);
+            // a header cut at 23 bytes is no PNG
+            (string cut, long cutAllocated) = Answer(Png(192, 192)[..23]);
+            Assert.StartsWith("it is not a PNG the server reads (", cut);
+            Assert.True(cutAllocated < 1024 * 1024);
+            Assert.Null(picture.picture_image);
+        });
+        // exactly the requested size with real data is taken, as before
+        var (photo, request) = Shoot(r, bob, 8, 6);
+        r.In(() =>
+        {
+            Assert.Null(PhotoSeam.Develop(bob.client, request.Id, Png(request.Width, request.Height)));
+            Assert.NotNull(photo.picture.picture_image);
+        });
+    }
+
     [Fact]
     public void APhotocopiersGreyCopyOfAPhotoKeepsItsImageInGrey()
     {

@@ -85,7 +85,7 @@ public sealed class WalkFixEyeTests
         PlayOptions old = PlayOptions.Parse("eye_height=1.2\nbind.dev_menu=F8\nbind.debug_hud=F4\n", null);
         Assert.Equal(1.3f, old.EyeHeight);
         Assert.Equal(new[] { "Backslash" }, old.Bindings.KeysOf(PlayAction.DevMenu));
-        Assert.Equal(new[] { "F12" }, old.Bindings.KeysOf(PlayAction.Fullscreen));
+        Assert.Equal(new[] { "F11" }, old.Bindings.KeysOf(PlayAction.Fullscreen)); // the default, the file has none (F12 before ui-overhaul.md section 3)
         Assert.Equal(PlayOptions.FileVersion, old.ReadVersion);
 
         // a value the player chose stays

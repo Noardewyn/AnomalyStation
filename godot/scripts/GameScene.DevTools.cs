@@ -231,8 +231,7 @@ public partial class GameScene
         Vector3 origin = camera.ProjectRayOrigin(screen), normal = camera.ProjectRayNormal(screen);
         int z = _cameraCell.Z;
         _pickWorld.PickExclude = _feed.OwnEntity;
-        Vector3 view = (-camera.GlobalTransform.Basis.Z).Normalized(); // the camera's forward: an item's picture is square to it (PickShape.FacesEye)
-        var ray = new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, normal.X, -normal.Z, normal.Y, 64.0, view.X, -view.Z, view.Y);
+        PickRay ray = Viewed(new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, normal.X, -normal.Z, normal.Y, 64.0), camera);
         // D295: a type that goes on a ceiling, aimed up through a hole, lands on the empty ceiling there
         _picker.PickEmptyCeilings = _devTool == DevTool.Spawn && _spawnSelected != null && CeilingSpawnLine(_spawnSelected.Path, 0, 0, 0) != null;
         _toolHit = _picker.Pick(ray, _feed.OwnEntity, entitiesOnly: false);

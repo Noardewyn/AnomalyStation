@@ -120,4 +120,13 @@ public enum MessageId : byte
 
     /// <summary>Version 99: <see cref="Anomaly.Protocol.PhotoPart"/>: client to server, State channel (a part of the rendered picture's PNG).</summary>
     PhotoPart = 33,
+
+    /// <summary>Version 100: <see cref="Anomaly.Protocol.HotbarMessage"/>: server to client, State channel (the own hotbar's ten cells and the held items' names, after the tick's Delta, when they change or a press was refused).</summary>
+    Hotbar = 34,
+
+    /// <summary>Version 100 also: <see cref="Anomaly.Protocol.StoragesMessage"/>: server to client, State channel (the storages the own human carries and their items, after the tick's Delta, when they change or a move was refused).</summary>
+    Storages = 35,
+
+    /// <summary>Version 100 also (DV698): <see cref="Anomaly.Protocol.ActionsMessage"/>: server to client, State channel (the own action buttons with their names, active states and cooldowns, after the tick's Delta, when they change).</summary>
+    Actions = 36,
 }

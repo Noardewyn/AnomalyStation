@@ -58,6 +58,10 @@ public static class DmPng
     public static (int Width, int Height, uint[] Rgba) Decode(byte[] png)
     {
         (int width, int height) = SizeOf(png);
+        if (width < 1 || height < 1)
+            throw new InvalidDataException("a PNG of " + width + " x " + height + " pixels");
+        if (png.Length < 33)
+            throw new InvalidDataException("a PNG's header is short");
         byte depth = png[24], type = png[25];
         if (depth != 8 || png[28] != 0 || type is not (0 or 2 or 3 or 4 or 6))
             throw new InvalidDataException("a PNG this decoder does not read (depth " + depth + ", type " + type + ", interlaced " + png[28] + ")");
@@ -68,7 +72,7 @@ public static class DmPng
         {
             int length = (int)ReadBig(png, at);
             string name = System.Text.Encoding.ASCII.GetString(png, at + 4, 4);
-            if (at + 12 + length > png.Length)
+            if (length < 0 || at + 12L + length > png.Length) // a negative length would step back and loop forever
                 throw new InvalidDataException("a PNG chunk runs past the file");
             if (name == "IDAT")
                 data.Write(png, at + 8, length);
@@ -80,6 +84,11 @@ public static class DmPng
                 break;
             at += 12 + length;
         }
+        // The header's size is the sender's claim: nothing is allocated for it before it is checked against what can be held and what the
+        // image data can fill. Deflate inflates at most 1032 bytes per compressed byte, so more raw bytes than that are refused here.
+        long pixelCount = (long)width * height;
+        if (pixelCount > Array.MaxLength || pixelCount * channels + height > Math.Min(Array.MaxLength, data.Length * 1032L))
+            throw new InvalidDataException("a PNG's image data is short");
         int stride = width * channels;
         var raw = new byte[height * (stride + 1)];
         data.Position = 0;

@@ -34,8 +34,8 @@ public enum ContainerCellRole : byte
 }
 
 /// <summary>
-/// A native window over one HUD group's screen entries (D131): <see cref="HudGroup.Storage"/> for the open container window,
-/// <see cref="HudGroup.ToggleableInventory"/> for the inventory panel around the doll. Rebuilt whenever the group's entries
+/// A native window over one HUD group's screen entries (D131): <see cref="HudGroup.Storage"/> for the open container window (tg's
+/// toggled inventory is the Tab inventory's character panel since ui-overhaul.md slice 4A, <see cref="TabInventory"/>). Rebuilt whenever the group's entries
 /// change; it never sends anything itself (the window's clicks are screen clicks on <see cref="ContainerCell.EntryId"/>).
 /// </summary>
 public interface IContainerView

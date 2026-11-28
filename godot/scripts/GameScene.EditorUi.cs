@@ -154,6 +154,8 @@ public partial class GameScene
 
     public override void _Notification(int what)
     {
+        if (what == NotificationApplicationFocusOut || what == NotificationWMWindowFocusOut)
+            OnFocusLost(); // GameScene.Interaction.cs
         // the window's close button: the editor asks about changes that are not saved first (StartEditor turned the automatic quit off)
         if (what == NotificationWMCloseRequest && EditorOn)
             EditorGuard(() => App.Instance.Quit(0));

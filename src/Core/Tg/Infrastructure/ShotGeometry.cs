@@ -660,18 +660,28 @@ public static class ShotGeometry
         if (TryFlight(standing, cx, cy, out double lift, out _))
             height -= lift;
         bool lying = target.body_position == LYING_DOWN;
-        byte dir = lying ? ChooseLyingDir(mobYaw, cx, cy, cx - ux, cy - uy, IsLimp(target)) : ChooseDir(mobYaw, cx, cy, cx - ux, cy - uy);
-        List<Layer> layers = Layers(parts, dir);
-        Affine? turn = TurnOf(target.transform as matrix);
-        int trim = TrimRows(layers, turn);
-        int col = (int)Math.Floor(lateral / MobScale + 16), fromBottom = (int)Math.Floor(height / MobScale + trim);
-        if (col < 0 || col > 31 || fromBottom < 0 || fromBottom > 31)
-            return Crossing.Miss;
-        int sx = col, sy = fromBottom;
-        if (turn.HasValue && !Unturn(turn.Value, col, fromBottom, out sx, out sy))
-            return Crossing.Miss;
-        zone = ZoneAt(layers, sx, sy);
+        byte dir = lying ? LyingFrame(target, mobYaw, cx, cy, cx - ux, cy - uy) : ChooseDir(mobYaw, cx, cy, cx - ux, cy - uy);
+        zone = ZoneAtPoint(Layers(parts, dir), PlacementOf(target), lateral / MobScale, height / MobScale);
         return zone == null ? Crossing.Miss : Crossing.Hit;
+    }
+
+    /// <summary>
+    /// DEVIATION(DV95): the zone at a point of the carbon's drawn picture in frame <paramref name="dir"/>, <paramref name="right"/> icon pixels right of
+    /// its centre and <paramref name="up"/> over the floor (the mob scale undone), null for none. Package T, slice T2: the body is placed as the client
+    /// draws it (<c>AppearanceCompositor.TryRootPlacement</c>: the root's transform about the icon's middle, then its <c>pixel_w</c> and
+    /// <c>pixel_z</c>; a giant's picture reaches past the icon square), its lowest drawn body row on the floor (the client's billboard).
+    /// </summary>
+    public static string ZoneAtPoint(mob_living_carbon carbon, byte dir, double right, double up)
+        => carbon.overlays_standing?[BODYPARTS_LAYER] is DmList parts ? ZoneAtPoint(Layers(parts, dir), PlacementOf(carbon), right, up) : null;
+
+    private static string ZoneAtPoint(List<Layer> layers, Affine? placement, double right, double up)
+    {
+        int trim = TrimRows(layers, placement);
+        int col = (int)Math.Floor(right + 16), row = (int)Math.Floor(up + trim);
+        int sx = col, sy = row;
+        if (placement.HasValue && !Unturn(placement.Value, col, row, out sx, out sy))
+            return null;
+        return ZoneAt(layers, sx, sy);
     }
 
     /// <summary>
@@ -715,6 +725,13 @@ public static class ShotGeometry
 
     private static bool IsLimp(mob_living target) => Dm.num(target.stat) != 0; // the replicator's limp posture bit: stat 0 is conscious
 
+    /// <summary>
+    /// The frame a lying <paramref name="target"/> shows a viewer at (<paramref name="viewerX"/>, <paramref name="viewerY"/>), from its own state as the
+    /// replicator sends it in the posture byte: limp, lying buckled to an object (slice T4c) and the side it was turned to (DV690).
+    /// </summary>
+    public static byte LyingFrame(mob_living target, byte yaw, double mobX, double mobY, double viewerX, double viewerY)
+        => ChooseLyingDir(yaw, mobX, mobY, viewerX, viewerY, IsLimp(target), target.dm_lies_buckled, target.dm_turned_face_up);
+
     // One body-part image: its zone, its mask in the frame (rows from the bottom), its pixel offsets and its layer order.
     private readonly record struct Layer(string Zone, uint[] Rows, int OffsetX, int OffsetY);
 
@@ -733,11 +750,29 @@ public static class ShotGeometry
             uint[] rows = BodyMasks.Find(FileOf(img.icon), state, dir) ?? BodyMasks.Find(BodyMasks.HumanFile, "human_" + StateZoneSuffix(state), dir);
             if (rows == null)
                 continue;
-            found.Add((img.layer, order, new Layer(zone, rows, (int)Math.Round(img.pixel_x), (int)Math.Round(img.pixel_y))));
+            found.Add((img.layer, order, new Layer(zone, Cut(img.icon, rows, dir), (int)Math.Round(img.pixel_x), (int)Math.Round(img.pixel_y))));
         }
         // BYOND draws a higher layer over a lower one and, on one layer, the later overlay over the earlier: the topmost first
         found.Sort((a, b) => a.Layer != b.Layer ? b.Layer.CompareTo(a.Layer) : b.Order.CompareTo(a.Order));
         return found.Select(f => f.Item).ToList();
+    }
+
+    // Package T, slice T2: a made icon's mask with its Blends by a mask in the table applied (ICON_MULTIPLY keeps the pixels both have): tg's handle_masking
+    // cuts each leg into the part over the other leg (leg_masks.dmi right_leg/left_leg, on BODYPARTS_LAYER) and the rest (the _lower states, BODYPARTS_LOW_LAYER).
+    private static uint[] Cut(object picture, uint[] rows, byte dir)
+    {
+        if (picture is not icon made)
+            return rows;
+        foreach ((int function, object with, int x, int y) in made.dm_ops)
+        {
+            if (function != (int)ICON_MULTIPLY || x != 1 || y != 1 || with is not icon mask || BodyMasks.Find(FileOf(mask.dm_file), mask.dm_state, dir) is not uint[] cut)
+                continue;
+            var kept = new uint[32];
+            for (int row = 0; row < 32; row++)
+                kept[row] = rows[row] & cut[row];
+            rows = kept;
+        }
+        return rows;
     }
 
     private static string ZoneAt(List<Layer> layers, int x, int y)
@@ -751,14 +786,16 @@ public static class ShotGeometry
         return null;
     }
 
-    // The clear rows under the drawn pixels of the (turned) picture: the client stands the picture's lowest opaque row on the floor.
-    private static int TrimRows(List<Layer> layers, Affine? turn)
+    // The row of the lowest drawn body pixel of the placed picture (below the icon square's bottom when negative): the client stands the picture's lowest
+    // opaque row on the floor. A placed picture reaches at most a square past the icon square (a giant's 1.25 plus its lift, a raised body's pixel_z).
+    private static int TrimRows(List<Layer> layers, Affine? placement)
     {
-        for (int y = 0; y < 32; y++)
-            for (int x = 0; x < 32; x++)
+        int from = placement.HasValue ? -32 : 0, to = placement.HasValue ? 64 : 32;
+        for (int y = from; y < to; y++)
+            for (int x = from; x < to; x++)
             {
                 int sx = x, sy = y;
-                if (turn.HasValue && !Unturn(turn.Value, x, y, out sx, out sy))
+                if (placement.HasValue && !Unturn(placement.Value, x, y, out sx, out sy))
                     continue;
                 if (ZoneAt(layers, sx, sy) != null)
                     return y;
@@ -781,9 +818,17 @@ public static class ShotGeometry
         return FrontClockwise[((int)Math.Floor((relative + 45.0) / 90.0) % 4) * 2];
     }
 
-    /// <summary>The client's <c>BillboardMath.ChooseLyingDir</c>: a conscious body lies face down (its back, north), a limp one by the viewer's side.</summary>
-    public static byte ChooseLyingDir(byte yaw, double mobX, double mobY, double viewerX, double viewerY, bool limp)
+    /// <summary>
+    /// The client's <c>BillboardMath.ChooseLyingDir</c>: a body turned over shows the side it was turned to (DV690, <paramref name="turnedFaceUp"/>), one
+    /// lying buckled to an object its front (slice T4c), from every side; otherwise a conscious body lies face down (its back, north), a limp one by the
+    /// viewer's side.
+    /// </summary>
+    public static byte ChooseLyingDir(byte yaw, double mobX, double mobY, double viewerX, double viewerY, bool limp, bool buckled = false, bool? turnedFaceUp = null)
     {
+        if (turnedFaceUp is bool up)
+            return up ? (byte)2 : (byte)1;
+        if (buckled)
+            return 2;
         if (!limp)
             return 1;
         double dx = viewerX - mobX, dy = viewerY - mobY;
@@ -840,14 +885,17 @@ public static class ShotGeometry
     // BYOND's matrix(a, b, c, d, e, f): x' = a x + b y + c, y' = d x + e y + f, turned about the icon square's middle (the client's compositor).
     private readonly record struct Affine(double A, double B, double C, double D, double E, double F);
 
-    private static Affine? TurnOf(matrix m)
+    // The root's placement in its picture (the client's AppearanceCompositor.TryRootPlacement): its transform, then its pixel_w and pixel_z (a body raised by a
+    // stool or a table, moved by a handrail); null for none.
+    private static Affine? PlacementOf(atom root)
     {
-        if (m == null || (m.a == 1 && m.b == 0 && m.c == 0 && m.d == 0 && m.e == 1 && m.f == 0))
-            return null;
-        return new Affine(m.a, m.b, m.c, m.d, m.e, m.f);
+        matrix m = root.transform as matrix;
+        var placement = m == null ? new Affine(1, 0, 0, 0, 1, 0) : new Affine(m.a, m.b, m.c, m.d, m.e, m.f);
+        placement = placement with { C = placement.C + root.pixel_w, F = placement.F + root.pixel_z };
+        return placement == new Affine(1, 0, 0, 0, 1, 0) ? null : placement;
     }
 
-    // The source pixel under the turned picture's pixel (x, y from 0): BodyZoneAim.ZoneAt's undo of the root's transform.
+    // The source pixel under the placed picture's pixel (x, y from 0): BodyZoneAim.ZoneAt's undo of the root's placement.
     private static bool Unturn(Affine t, int x, int y, out int sx, out int sy)
     {
         sx = sy = 0;

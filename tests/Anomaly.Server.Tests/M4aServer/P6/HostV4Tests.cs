@@ -307,7 +307,7 @@ public class HostV4Tests
 
     [Theory]
     [InlineData((KeybindingCode)0, false, 0L)]    // no code
-    [InlineData((KeybindingCode)20, false, 0L)]   // past the last (version 93: 19 is the scoreboard)
+    [InlineData((KeybindingCode)25, false, 0L)]   // past the last (slice 4E: 24 is the suit storage quick equip; version 93: 19 the scoreboard)
     [InlineData((KeybindingCode)255, true, 0L)]
     [InlineData(KeybindingCode.DropItem, false, 5L)]  // a target on a keybinding
     public void AMalformedKeybindingIsAStrikeAndNeverQueued(KeybindingCode code, bool up, long target)

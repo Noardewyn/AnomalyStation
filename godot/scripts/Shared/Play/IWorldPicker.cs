@@ -59,8 +59,9 @@ public readonly record struct PickRay(double OriginEast, double OriginNorth, dou
 /// <param name="HitUp">The hit point, up from the level's floor.</param>
 /// <param name="IconX">tg's <c>icon-x</c> of the hit, 1 to 32 (0: none): the picture pixel of a billboard or prop (left is 1), or the tile-relative point of a floor or table top (east is x).</param>
 /// <param name="IconY">tg's <c>icon-y</c>, 1 to 32: up in a picture (bottom is 1), north on a floor or table top.</param>
+/// <param name="Picture">An entity's picture: tg's icon pixel before it is clamped into the icon square (a giant's or a lying body's picture reaches past it), for its body zone; null otherwise.</param>
 public readonly record struct PickHit(PickSurface Surface, TargetKind Kind, long Id, int X, int Y, int Z, double Distance,
-    double HitEast, double HitNorth, double HitUp, byte IconX, byte IconY)
+    double HitEast, double HitNorth, double HitUp, byte IconX, byte IconY, (int X, int Y)? Picture = null)
 {
     /// <summary>No hit.</summary>
     public static PickHit None => default;

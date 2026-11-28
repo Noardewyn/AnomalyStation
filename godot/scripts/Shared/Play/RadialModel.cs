@@ -55,6 +55,9 @@ public enum RadialKind : byte
 
     /// <summary>Version 86 (DV503): the server's entry that is no click (<see cref="ContextHintAction.Extra"/>, the table's Flip): a ContextPick of its label.</summary>
     Extra = 15,
+
+    /// <summary>DV694: the inventory wheel's "Use in hand" on the active hand's item: tg's activate-in-hand keybinding (the Z key's).</summary>
+    UseInHand = 16,
 }
 
 /// <summary>One entry of the radial.</summary>
@@ -111,6 +114,7 @@ public readonly record struct RadialEntry(RadialKind Kind, string Label, ClickBu
         RadialKind.Emote => "smile",
         RadialKind.EmotePanel => "ellipsis-h",
         RadialKind.Extra => ClimbsIn(Label) ? "sign-in-alt" : "undo",
+        RadialKind.UseInHand => "hand-holding",
         _ => null,
     };
 
@@ -265,6 +269,22 @@ public sealed class RadialModel
         _x = 0;
         _y = 0;
         Motion(x, y);
+    }
+
+    /// <summary>
+    /// The input script's <c>radial=LABEL</c> (slice T4c): aims at the open radial's entry labelled <paramref name="label"/> (case and outer spaces
+    /// ignored) as the mouse would, at its slice's middle, so a <see cref="Release"/> chooses it; with no such entry the aim goes back to the
+    /// centre (a release cancels) and it returns false.
+    /// </summary>
+    public bool AimAtLabel(string label)
+    {
+        if (Phase != RadialPhase.Open)
+            return false;
+        string wanted = (label ?? string.Empty).Trim();
+        int index = _entries.FindIndex(e => string.Equals((e.Label ?? string.Empty).Trim(), wanted, StringComparison.OrdinalIgnoreCase));
+        (double x, double y) = index < 0 ? (0.0, 0.0) : PositionOf(index, _entries.Count, MaxReach);
+        AimAt(x, y);
+        return index >= 0 && Highlight == index;
     }
 
     /// <summary>The right button went up at <paramref name="now"/>.</summary>

@@ -6,8 +6,8 @@ namespace Anomaly.Client.Shared;
 // Protocol version 17 (drag and drop; docs/ai/specs/interaction.md section 8). Engine-free: no Godot API here (it is compiled into
 // tests/Anomaly.Server.Tests too). BYOND's client turns a press into a drag once the mouse moves with the button held (OpenDream's
 // MouseInputSystem: 3 screen pixels) and calls MouseDrop on the release over the thing under the mouse; a press and a release without
-// that move is a click. The game scene feeds the cursor mode's (Tab) left button and pointer moves into this model; the captured view
-// has no drags.
+// that move is a click. The game scene feeds the cursor mode's (Tab) left button and pointer moves into this model; the captured view's
+// only drag is of the own body (SelfDrag, DV695).
 
 /// <summary>What a release does (<see cref="DragModel.Release"/>).</summary>
 public enum DragOutcome : byte
@@ -147,12 +147,14 @@ public sealed class DragModel
     /// <summary>
     /// DEVIATION(DV72): in first person the own body is never under the pointer, so a ctrl-click on the HUD's health doll (cursor mode)
     /// is a ctrl-click on the own mob, as <see cref="SelfOnDoll"/> makes a drop on it one: tg's ctrl-click on oneself grasps the
-    /// bleeding limb of the zone selected (<c>grabbedby</c>, carbon_defense.dm:518). The target names no icon pixel, so it aims at
-    /// no zone (DV30): the zone is the zone selector's, as in tg. tg's own ctrl-click on the doll does nothing. Any other click is kept.
+    /// bleeding limb of the zone selected (<c>grabbedby</c>, carbon_defense.dm:518). Slice T5c: it aims at the doll's part clicked
+    /// (<paramref name="zone"/>, <see cref="BodyZoneAim.DollZoneAt"/>; the server selects it as tg's <c>zone_selected</c>, DV30), so the limb
+    /// clicked is grasped; off the doll's parts (None) the zone selector's stays, as in tg. tg's own ctrl-click on the doll does nothing.
+    /// Any other click is kept.
     /// </summary>
-    public static ClickTarget SelfCtrlClickOnDoll(in ClickTarget target, ClickModifiers modifiers, Func<long, bool> isDoll, long ownEntity)
+    public static ClickTarget SelfCtrlClickOnDoll(in ClickTarget target, ClickModifiers modifiers, Func<long, bool> isDoll, long ownEntity, AimZone zone)
         => (modifiers & ClickModifiers.Ctrl) != 0 && target.Kind == TargetKind.Screen && ownEntity != 0 && isDoll(target.Id)
-            ? new ClickTarget(TargetKind.Entity, ownEntity, 0, 0, 0)
+            ? new ClickTarget(TargetKind.Entity, ownEntity, 0, 0, 0, 0, 0, zone)
             : target;
 
     /// <summary>

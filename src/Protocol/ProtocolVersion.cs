@@ -202,7 +202,22 @@ public static class ProtocolVersion
     /// client and sent to the server, which gives it to every client as a RuntimeResource; <see cref="Limits.MaxRuntimeResourceBytes"/> is 512 KiB.
     /// Version 99, also (DV687, DV688; docs/ai/specs/protocol.md section 95): an appearance's particles (BYOND particles, a particle set's vars as
     /// JSON: a cigarette's smoke) and a light's flicker bit (a flame's light, tg's fire_flicker_middleman).
-    public const ushort Current = 99;
+    /// Version 100 (package T, slice T4a, DV30; Codec.V100.cs): a click's and a throw's aim zone gains <see cref="AimZone.Eyes"/>,
+    /// <see cref="AimZone.Mouth"/> and <see cref="AimZone.Groin"/>, the modifiers byte's spare bit 3 its high bit.
+    /// Version 100 also (package T, slice T4b, DV30): a hover on an entity may end with the zone looked at (one byte, 1 to 9), which the server
+    /// selects without logging before tg's hover, so the hints name what a click there does.
+    /// Version 100 also (package T, slice T4c, DV690): the posture byte's bits 6 and 7 (<see cref="PostureBits.SideFixed"/>,
+    /// <see cref="PostureBits.FaceUp"/>), the side a lying body was turned to from the radial's Turn over (a ContextPick of that label).
+    /// Version 100 also (ui-overhaul.md section 10, slice 3A, DV693; MessagesV100Hotbar.cs): the Hotbar message, the own human's ten hotbar cells
+    /// and the held items' names, and the <see cref="ActionKind.HotbarPress"/> action, a press of one cell.
+    /// Version 100 also (ui-overhaul.md section 12, slice 4B-1, DV696; MessagesV100Storages.cs): the Storages message, the storages the own human
+    /// carries and their items, and the <see cref="ActionKind.InventoryMove"/> action (one item to a storage, a worn slot, a hand or the floor) and
+    /// the <see cref="ActionKind.InventoryOpen"/> action (tg's opening rustle of the back storage); with slice 4C-1 the message's last entry may be
+    /// the other container (<see cref="StoragePlace.Other"/>, the storage the player has open that is none of the carried ones; 9 entries at most),
+    /// which a move may take an item out of or put one into.
+    /// Version 100 also (ui-overhaul.md section 15, DV698; MessagesV100Actions.cs): the Actions message, the own action buttons with their names,
+    /// active states and cooldowns, and tg's action palette's screen objects, for the client's actions menu and its nine slots.
+    public const ushort Current = 100;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

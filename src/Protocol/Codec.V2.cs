@@ -116,7 +116,7 @@ public static partial class Codec
 
     // [u8 id = 10] [varuint frameSeq] [u8 kind] then by kind:
     //   Click (4):      [u8 target kind 1..3] [target] [u8 button] [u8 modifiers] [u8 icon-x 0..32] [u8 icon-y 0..32]
-    //   Hover (7):      [u8 target kind 1..3] [target]
+    //   Hover (7):      [u8 target kind 1..3] [target] [version 100: u8 aim zone 1..9 on an entity, absent for none (Codec.V100.cs)]
     //                   target: Entity and Screen [varuint id >= 1]; Turf [u8 x 1..255] [u8 y 1..255] [varuint z 1..16]
     //   DevGasProbe (8, version 5): [target: a turf]
     //   Unhover (9, version 14): nothing
@@ -128,11 +128,13 @@ public static partial class Codec
     //   MouseDown (15), MouseDrag (16), MouseUp (17) (version 34), MouseWheel (21, version 70: the button 1 up, 2 down):
     //                   [u8 target kind 0..3] [target unless 0] [u8 button 1..3]
     //                   [u8 modifiers: shift 1, ctrl 2, alt 4, bit 7 aim] [u8 icon-x 0..32] [u8 icon-y 0..32] [aim if bit 7]
+    //   a Click's modifiers byte bits 4-6 are its aim zone (DV30); version 100: bit 3 is the zone's high bit (Codec.V100.cs)
     //   version 34: a Click's modifiers byte bit 7 says an aim follows its icon-y (Codec.V34.cs:
     //                   [varint east] [varint north] [u16 up mm] [u16 yaw] [i16 pitch -16384..16384])
     //   Keybinding (6): [u8 code 1..13] [u8 key up 0|1]
     //   Emote (19, version 39): [str(32) emote key: a-z, 0-9, _]
     //   DevCommand (5): [str(200) text]
+    //   HotbarPress (28, version 100): [u8 cell 1..10]; InventoryMove (29, version 100): Codec.V100Storages.cs
     //   others:         nothing
     // (docs/ai/specs/protocol.md section 14.1). A version-3 click (target kind None, a target above 0) is written as an
     // entity click: ActionMessage.EffectiveTargetKind.
@@ -154,8 +156,8 @@ public static partial class Codec
             throw Bad("a button, modifiers or an icon pixel on an action that is not a click, a drop or a mouse action");
         if (message.Kind is not (ActionKind.Click or ActionKind.Throw or ActionKind.PutDown) && !message.IsMouse && message.Aim.HasValue)
             throw Bad("an aim on an action that is not a click or a mouse action");
-        if (message.Kind is not (ActionKind.Click or ActionKind.Throw or ActionKind.PutDown) && message.AimZone != AimZone.None)
-            throw Bad("an aim zone on an action that is not a click");
+        if (message.Kind is not (ActionKind.Click or ActionKind.Throw or ActionKind.PutDown or ActionKind.Hover) && message.AimZone != AimZone.None)
+            throw Bad("an aim zone on an action that is not a click or a hover");
         if (message.Kind != ActionKind.Drop && (message.OverKind != TargetKind.None || message.OverTarget != 0 || message.OverX != 0 || message.OverY != 0 || message.OverZ != 0 || message.DragTime != 0))
             throw Bad("a drop's fields on an action that is not a drop");
         if (message.Kind != ActionKind.Keybinding && (message.Keybinding != KeybindingCode.None || message.KeyUp))
@@ -168,11 +170,24 @@ public static partial class Codec
             throw Bad("a radial menu or element on an action that is not a radial pick");
         if (message.Kind != ActionKind.UiAct && message.Kind != ActionKind.UiClose && (message.UiWindow != 0 || message.UiAction != null || message.UiParams != null))
             throw Bad("a UI window, action or params on an action that is not a UI act or close");
+        if (message.Kind != ActionKind.HotbarPress && message.HotbarCell != 0)
+            throw Bad("a hotbar cell on an action that is not a hotbar press");
+        if (message.Kind != ActionKind.InventoryMove && (message.MoveItem != 0 || message.MoveTo != InventoryTarget.None || message.MoveStorage != 0 || message.MoveIndex != 0))
+            throw Bad("an inventory move's fields on an action that is not an inventory move");
         switch (message.Kind)
         {
             case ActionKind.UiAct:
             case ActionKind.UiClose:
                 WriteUiAction(ref w, message);
+                break;
+            case ActionKind.InventoryMove:
+                WriteInventoryMove(ref w, message); // version 100 also (DV696, Codec.V100Storages.cs)
+                break;
+            case ActionKind.HotbarPress:
+                // version 100 also (DV693): the cell, 1 to 10
+                if (message.HotbarCell < 1 || message.HotbarCell > HotbarMessage.CellCount)
+                    throw Bad("a hotbar press of cell " + message.HotbarCell);
+                w.WriteByte((byte)message.HotbarCell);
                 break;
             case ActionKind.RadialPick:
                 if (message.RadialMenu < 1)
@@ -209,7 +224,10 @@ public static partial class Codec
             case ActionKind.Hover:
                 WriteTarget(ref w, targetKind, message.Target, message.TurfX, message.TurfY, message.TurfZ, "a click or hover");
                 if (message.Kind == ActionKind.Hover)
+                {
+                    WriteHoverZone(ref w, message.AimZone, targetKind); // version 100 (slice T4b)
                     break;
+                }
                 if (message.Button < ClickButton.Left || message.Button > ClickButton.Middle)
                     throw Bad("a click with an unknown button");
                 if (message.Kind is ActionKind.Throw or ActionKind.PutDown && (message.Button != ClickButton.Left || message.Modifiers != ClickModifiers.None))
@@ -221,7 +239,7 @@ public static partial class Codec
                 if (message.AimZone > AimZone.Last)
                     throw Bad("a click with an unknown aim zone");
                 w.WriteByte((byte)message.Button);
-                w.WriteByte((byte)((byte)message.Modifiers | ((byte)message.AimZone << 4) | (message.Aim.HasValue ? ModifierAimBit : 0)));
+                w.WriteByte((byte)((byte)message.Modifiers | ZoneBits(message.AimZone) | (message.Aim.HasValue ? ModifierAimBit : 0))); // version 100: bit 3 the zone's high bit
                 w.WriteByte(message.IconX);
                 w.WriteByte(message.IconY);
                 if (message.Aim.HasValue)
@@ -288,6 +306,12 @@ public static partial class Codec
                 WriteTarget(ref w, targetKind, message.Target, message.TurfX, message.TurfY, message.TurfZ, "a context pick");
                 w.WriteString(message.Text, Limits.MaxContextLabelBytes);
                 break;
+            case ActionKind.Interact:
+                // version 100 also (DV697): a thing or a turf of the world
+                if (targetKind is not (TargetKind.Entity or TargetKind.Turf))
+                    throw Bad("a world interact whose target is not an entity or a turf");
+                WriteTarget(ref w, targetKind, message.Target, message.TurfX, message.TurfY, message.TurfZ, "a world interact");
+                break;
         }
 
         return Finish(ref w, message.Kind == ActionKind.Say ? Limits.MaxSayActionBytes : Limits.MaxActionMessageBytes);
@@ -342,11 +366,23 @@ public static partial class Codec
             int uiWindow = 0;
             string uiAction = null;
             UiValue uiParams = null;
+            int hotbarCell = 0;
+            long moveItem = 0, moveStorage = 0;
+            InventoryTarget moveTo = InventoryTarget.None;
+            int moveIndex = 0;
             switch (kind)
             {
                 case ActionKind.UiAct:
                 case ActionKind.UiClose:
                     ReadUiAction(ref r, kind, out uiWindow, out uiAction, out uiParams);
+                    break;
+                case ActionKind.InventoryMove:
+                    ReadInventoryMove(ref r, out moveItem, out moveTo, out moveStorage, out moveIndex); // version 100 also (DV696)
+                    break;
+                case ActionKind.HotbarPress:
+                    hotbarCell = r.ReadByte(); // version 100 also (DV693)
+                    if (hotbarCell < 1 || hotbarCell > HotbarMessage.CellCount)
+                        throw Bad("a hotbar press of cell " + hotbarCell);
                     break;
                 case ActionKind.Drop:
                     ReadTarget(ref r, out targetKind, out target, out turfX, out turfY, out turfZ, "a drop's dragged thing");
@@ -385,18 +421,21 @@ public static partial class Codec
                 case ActionKind.Hover:
                     ReadTarget(ref r, out targetKind, out target, out turfX, out turfY, out turfZ, "a click or hover");
                     if (kind == ActionKind.Hover)
+                    {
+                        aimZone = ReadHoverZone(ref r, targetKind); // version 100 (slice T4b)
                         break;
+                    }
                     byte buttonByte = r.ReadByte();
                     if (buttonByte < (byte)ClickButton.Left || buttonByte > (byte)ClickButton.Middle)
                         throw Bad("a click with an unknown button");
                     button = (ClickButton)buttonByte;
                     byte mods = r.ReadByte();
-                    if ((mods & 0x0F & ~(byte)ClickModifiers.All) != 0)
-                        throw Bad("a click with unknown modifier bits");
-                    if (((mods >> 4) & 7) > (byte)AimZone.Last)
+                    // version 100: bit 3 is the zone's high bit (Codec.V100.cs), no longer an unknown modifier
+                    int zone = ZoneOfModifiers(mods);
+                    if (zone > (byte)AimZone.Last)
                         throw Bad("a click with an unknown aim zone");
-                    modifiers = (ClickModifiers)(mods & 0x0F);
-                    aimZone = (AimZone)((mods >> 4) & 7);
+                    modifiers = (ClickModifiers)(mods & (byte)ClickModifiers.All);
+                    aimZone = (AimZone)zone;
                     iconX = r.ReadByte();
                     iconY = r.ReadByte();
                     if (iconX > Limits.MaxIconPixel || iconY > Limits.MaxIconPixel)
@@ -463,6 +502,11 @@ public static partial class Codec
                     if (string.IsNullOrEmpty(text))
                         throw Bad("a context pick without a label");
                     break;
+                case ActionKind.Interact:
+                    ReadTarget(ref r, out targetKind, out target, out turfX, out turfY, out turfZ, "a world interact"); // version 100 also (DV697)
+                    if (targetKind is not (TargetKind.Entity or TargetKind.Turf))
+                        throw Bad("a world interact whose target is not an entity or a turf");
+                    break;
             }
 
             r.ExpectEnd();
@@ -494,6 +538,11 @@ public static partial class Codec
                 SayType = sayType,
                 SayChannel = sayChannel,
                 SayVisible = sayVisible,
+                HotbarCell = hotbarCell,
+                MoveItem = moveItem,
+                MoveTo = moveTo,
+                MoveStorage = moveStorage,
+                MoveIndex = moveIndex,
             };
             return true;
         }

@@ -22,9 +22,10 @@ namespace Anomaly.Client;
 /// camera layer; this scene reads the keys, draws, and turns the player's actions into the messages the server takes.
 /// <para>
 /// Controls (all remappable, D53 and D70; the defaults): mouse look (captured; Esc releases, a click captures again), WASD or
-/// the arrows move relative to the view, U rest or get up, C walk or run, F combat mode, the left mouse button the help click and
-/// the right button the shove on the mob under the crosshair, ` the dev console, F9 the analyzer, F10 the options, F1 camera
-/// (first person, free fly, orbit), F2 ceiling, F3 names overlay, F4 debug HUD, F8 the dev menu (GameScene.Dev.cs). In the free camera WASD (Shift faster), Q and E
+/// the arrows move relative to the view, C rest or get up, Shift (tapped alone) walk or run, F combat mode, the left mouse button tg's left click and
+/// the right button tg's right click (held: the radial), ` the dev console, F9 the analyzer, F10 the options, F1 camera
+/// (first person, free fly, orbit), F2 ceiling, F3 debug HUD, F4 names overlay, \ the dev menu (GameScene.Dev.cs); the rest is
+/// docs/running.md's table (ui-overhaul.md section 3). In the free camera WASD (Shift faster), Q and E
 /// fly the camera and the avatar stands still. The orbit is the third-person play view (DV53): the keys, the clicks and the crosshair
 /// work as in the first person, the mouse wheel zooms, cursor mode's pointer clicks the world, and what the mob cannot see is shaded.
 /// </para>
@@ -353,6 +354,9 @@ public partial class GameScene : Node3D
         {
             _session.Camera.AddShake(0.035f, 0.25f);
             _screenEffects.Hit();
+            // slice 4A: the Tab inventory closes when the player takes damage, unless the player types or a window needs the pointer
+            if (_hudLayer.HumanHud && TabInventory.CloseOnDamage(true, InventoryShown, KeyboardTaken, WindowsOpen || PanelsOpen || DevMenuHasMouse))
+                SetView((false, false)); // DV694: the inventory overlay closes, back to the view; Tab's cursor mode alone stays
         };
 
         var ui = new CanvasLayer { Name = "Ui", Layer = 3 };
@@ -395,6 +399,7 @@ public partial class GameScene : Node3D
         BuildTextToSpeech();
         BuildChatWindow(ui);
         BuildEmoteWheel(ui);
+        BuildActionsMenu(ui); // ui-overhaul.md section 15: the actions menu (K) and the top-left row's states and keys
         BuildEscMenu();
     }
 
@@ -541,6 +546,9 @@ public partial class GameScene : Node3D
 
         if (_cover == null) // (the script's clock stands while the loading screen is up: GameScene.Loading.cs)
             RunScript(now);
+        // a mouse press another part of the interface took (the dev menu) cancels a lone modifier too; one whose release went elsewhere is dropped
+        _modifierTap.Frame((long)Input.GetMouseButtonMask(), _modifierTap.Waiting is string waiting && Enum.TryParse(waiting, out Key held) && Input.IsPhysicalKeyPressed(held));
+        _session?.ReleaseLetGo(HeldKeyDown); // a held keybinding whose release went to a panel, the free camera or another window: released now
         // the keys are polled, so a field of the dev menu being typed in (ImGui's) is a UI that holds them too
         bool uiOpen = PanelsOpen || _imgui?.WantsText == true || _tguiHost?.Typing == true || SayOpen || ChatTyping;
         MoveKeys keys = _rig.Mode == CameraMode.Free || uiOpen ? MoveKeys.None : (_walker != null ? WalkerKeys(now) : ReadMoveKeys());
@@ -750,6 +758,13 @@ public partial class GameScene : Node3D
             _feed.Replica.TryGet(own, out ReplicaEntity seer) ? seer.State.Posture : (byte)0);
         _entities.PlayerNames = _options.PlayerNames && !_interfaceHiddenNow; // the hidden interface hides the names over heads too
         _entities.MirrorViewer = _mirrors.Update(_rig.Camera, _map, delta); // the camera's place is last frame's: a frame late, unseen
+        // T5a: looking down far enough, the own body is drawn for its own eye (its pose's posture: lying and limp, as the entity layer draws it)
+        ReplicaEntity body = null;
+        bool onTurf = own != 0 && _feed.Replica.TryGet(own, out body);
+        _entities.OwnBodyInView = _rig.Camera != null && LookDown.ShowsOwnBody(_rig.Pitch, _rig.FovDegrees, _rig.Camera.Near, _rig.EyeUp, _rig.Mode == CameraMode.FirstPerson,
+            onTurf, ghost, observing, PostureBits.IsLying(pose.Posture), PostureBits.IsLimp(pose.Posture), onTurf && body.IsExosuit(), _scopeZoom >= 1.01f);
+        _ownBodyShowable = LookDown.CanShowOwnBody(_rig.Mode == CameraMode.FirstPerson, onTurf, ghost, observing, PostureBits.IsLying(pose.Posture),
+            PostureBits.IsLimp(pose.Posture), onTurf && body.IsExosuit(), _scopeZoom >= 1.01f); // DV695: a held drag of oneself ends when the body cannot be shown
         using (Dev.FrameProbe.Scope("GameScene/entities.Update"))
             _entities.Update(_session.RenderTick, now, observing ? eye : own, observing || (_rig.Mode == CameraMode.FirstPerson && !ghost), _names);
 
@@ -811,7 +826,11 @@ public partial class GameScene : Node3D
         if (_tguiHost != null)
             _tguiHost.Opacity = _options.WindowOpacity;
         if (_chatWindow != null)
+        {
             _chatWindow.Opacity = _options.WindowOpacity;
+            _chatWindow.CursorMode = _mouse.CursorMode;
+            _chatWindow.Docked = InLobby ? null : _hudLayer.ChatDock; // slice 4A: the left column of the Tab inventory
+        }
         using (Dev.FrameProbe.Scope("GameScene/tgui.Update"))
             _tguiHost?.Update(_feed.Replica, windowScale);
         UpdateSpeech(now, windowScale, _chatLines?.TextScale ?? 1f);
@@ -844,8 +863,22 @@ public partial class GameScene : Node3D
         UpdateDev(now, hasOwn, pose);
         UpdateEditor();
         _hudLayer.RenderTick = _session.RenderTick; // M4v slice 4: the screen objects' flicks and animate() chains play at the entities' render tick
+        _hudLayer.CursorMode = _mouse.CursorMode; // ui-overhaul.md 6: tg's zone selector shows only while the cursor is free
+        _hudLayer.InventoryOpen = InventoryShown; // DV694: the inventory overlay (the inventory key), never for cursor mode alone
+        _hudLayer.SelfDrag = _selfDrag.Holding; // DV695: the hint strip reads "Yourself" while the own body is dragged
+        _hudLayer.SelfDragPicture = _selfDrag.HintPicture(_feed.Replica); // with the own body's picture, as the drag mark shows it
+        _hudLayer.Hotbar = _session.Hotbar; // ui-overhaul.md section 10: the bar's cells
+        _hudLayer.Storages = _session.Storages; // slice 4B-2: the right column's panels
+        UpdateActionSlots(); // section 15: the slots follow the server's action buttons; the row draws the slotted ones
+        UpdateStripView(); // slice 4D-1: the strip view's window and target
+        // slice T5c: the doll's part under the free pointer, so its eyes and mouth show tg's hover pictures
+        _hudLayer.DollHover = _hudHover.Kind == TargetKind.Screen ? BodyZoneAim.DollFaceAt(_hudLayer.DollZoneAt(_hudHover.Id, _hudHover.IconX, _hudHover.IconY), _hudHover.IconX, _hudHover.IconY) : AimZone.None;
+        _hudLayer.HeldHints = _session.Held; // the hint strip's lines for the held item
         using (Dev.FrameProbe.Scope("GameScene/hud.Update"))
             _hudLayer.Update(now);
+        _session.HandsNow(_hudLayer.ActiveHand, _hudLayer.HeldItem, _hudLayer.CombatOn); // a new held item or combat mode: fresh hints without a new look
+        FrameActionsMenu(now); // section 15: over the row the HUD laid out this frame
+        ExpandInventory(); // slice 4A: tg's worn slots kept on the screen for the Tab inventory
         UpdateRates(now);
         _statsPose = pose;
         _statsHasOwn = hasOwn;
@@ -929,11 +962,11 @@ public partial class GameScene : Node3D
         if (key.PhysicalKeycode == Key.Escape)
         {
             // D282, D292: a focused text field lets the keyboard go, else the top window closes, else Esc opens and closes the menu
-            if (_options.Bindings.ActionOfPress(key.PhysicalKeycode.ToString(), key.ShiftPressed) == PlayAction.CloseWindows)
+            if (_options.Bindings.ActionOfPress(key.PhysicalKeycode.ToString(), key.ShiftPressed, key.CtrlPressed) == PlayAction.CloseWindows)
                 CloseAllWindows();
             else if (GetViewport().GuiGetFocusOwner() is LineEdit or TextEdit)
                 GetViewport().GuiReleaseFocus();
-            else if (_escMenu.IsOpen || !CloseTopWindow())
+            else if (_escMenu.IsOpen || !CloseTopWindow() && !CloseInventory())
                 ToggleEscMenu();
             return;
         }
@@ -953,7 +986,23 @@ public partial class GameScene : Node3D
                 _optionsPanel.Visible = false;
             return;
         }
-        PlayAction? action = _options.Bindings.ActionOfPress(key.PhysicalKeycode.ToString(), key.ShiftPressed);
+        // ui-overhaul.md section 5, a press does one thing: Ctrl+Q throws and does not also drop (the pair's action first, else the key's), and
+        // Ctrl alone (down a level) waits for its release with nothing else pressed, and does nothing while a text field has the keyboard (ModifierTap)
+        string name = key.PhysicalKeycode.ToString();
+        (PlayAction? pressed, bool ownShift, bool ownCtrl) = _options.Bindings.MatchPress(name, key.ShiftPressed, key.CtrlPressed, key.AltPressed);
+        PlayAction? action = pressed;
+        // a key bound to Pull or Examine: only a modifier held on top of its binding goes with tg's click (KeyBindings.ModifiedClick)
+        (_pressExtraShift, _pressExtraCtrl) = (key.ShiftPressed && !ownShift, key.CtrlPressed && !ownCtrl);
+        if (!_modifierTap.Wait(name, action, KeyboardTaken || _rig.Mode == CameraMode.Free, ModifierTap.OtherModifiers(name, key.ShiftPressed, key.CtrlPressed, key.AltPressed, key.MetaPressed), (long)Input.GetMouseButtonMask()))
+            RunKeyAction(action, name);
+    }
+
+    private readonly ModifierTap _modifierTap = new();
+    private bool _pressExtraShift, _pressExtraCtrl;
+
+    // The action of a key press (key: the physical key's name), or of a lone Ctrl or Shift let go (ModifierTap).
+    private void RunKeyAction(PlayAction? action, string key)
+    {
         switch (action)
         {
             case PlayAction.Rest:
@@ -1127,13 +1176,7 @@ public partial class GameScene : Node3D
     private bool WindowScaleKey(Key key)
     {
         int now = _options.WindowScalePercent;
-        int next = key switch
-        {
-            Key.Equal or Key.KpAdd => now + PlayOptions.WindowScaleStep,
-            Key.Minus or Key.KpSubtract => now - PlayOptions.WindowScaleStep,
-            Key.Key0 or Key.Kp0 => 100,
-            _ => -1,
-        };
+        int next = PlayOptions.WindowScaleAfterKey(key.ToString(), now);
         if (next < 0)
             return false;
         _options.WindowScalePercent = Math.Clamp(next, PlayOptions.MinWindowScale, PlayOptions.MaxWindowScale);
@@ -1161,7 +1204,7 @@ public partial class GameScene : Node3D
         _console.ApplyScale(scale);
     }
 
-    // D137: F12 switches the window between fullscreen and windowed.
+    // D137: the fullscreen key (F11) switches the window between fullscreen and windowed.
     private void ToggleFullscreen()
     {
         DisplayServer.WindowSetMode(IsFullscreen() ? DisplayServer.WindowMode.Windowed : DisplayServer.WindowMode.Fullscreen);
@@ -1193,6 +1236,13 @@ public partial class GameScene : Node3D
                 Dev.Tracy.Message($"script: {step.Action} {step.Key}{(step.Action == ScriptAction.Press ? "+" : step.Action == ScriptAction.Release ? "-" : "")}");
             switch (step.Action)
             {
+                case ScriptAction.Press or ScriptAction.Release when step.Key.StartsWith("MOUSE", StringComparison.Ordinal):
+                {
+                    // MOUSELEFT+ ... MOUSELEFT-: a mouse button held at the crosshair (the screen's centre) until its release step, so view steps can come between
+                    Vector2 centre = GetViewport().GetVisibleRect().Size / 2f;
+                    Input.ParseInputEvent(WithHeldKeys(new InputEventMouseButton { ButtonIndex = ScriptButton(step.Key[5..]), Pressed = step.Action == ScriptAction.Press, Position = centre, GlobalPosition = centre }));
+                    break;
+                }
                 case ScriptAction.Press:
                 case ScriptAction.Release:
                     Key key = ScriptKey(step.Key);
@@ -1247,6 +1297,16 @@ public partial class GameScene : Node3D
                     for (int i = 1; i <= 5; i++)
                         _pendingMoves.Enqueue((now + 0.05 * i, start.Lerp(end, i / 5f)));
                     _pendingReleases.Enqueue((now + 0.35, held, end));
+                    break;
+                }
+                case ScriptAction.Radial:
+                {
+                    // slice T4c: the right button held at the crosshair (the radial opens after RadialModel.HoldSeconds), the entry aimed by its label
+                    // at 0.5 s (fresh hints have come by then), then let go: the release chooses it (OnRightReleased)
+                    Vector2 centre = GetViewport().GetVisibleRect().Size / 2f;
+                    Input.ParseInputEvent(WithHeldKeys(new InputEventMouseButton { ButtonIndex = MouseButton.Right, Pressed = true, Position = centre, GlobalPosition = centre }));
+                    _pendingRadial = (now + 0.5, step.Text);
+                    _pendingReleases.Enqueue((now + 0.5, MouseButton.Right, centre));
                     break;
                 }
                 case ScriptAction.Type:
@@ -1387,34 +1447,33 @@ public partial class GameScene : Node3D
         _rateAt = now;
     }
 
-    // D137: the debug HUD's numbers, which the dev menu's Stats tab shows (and F4's pinned window): the connection, the
+    // D137: the debug HUD's numbers, which the dev menu's Stats tab shows (and the debug HUD key's (F3) pinned window): the connection, the
     // prediction, the player and the server's last text.
     private RenderPose _statsPose;
     private bool _statsHasOwn;
 
-    // D138: F4's corner, drawn by the game's UI: the FPS, then the server's numbers as this client sees them.
+    // D138: the debug HUD key's (F3) corner, drawn by the game's UI: the FPS, then the server's numbers as this client sees them.
     private void UpdateStatsCorner()
     {
         // the HUD's text size (HudMetrics.TextScale), for the version tag as well, which the App draws on every screen
         Vector2 view = GetViewport().GetVisibleRect().Size;
-        App.Instance.HudTextScale = new HudMetrics(view.X, view.Y, _options.UiScale).TextScale;
+        var metrics = new HudMetrics(view.X, view.Y, _options.UiScale);
+        App.Instance.HudTextScale = metrics.TextScale;
         StatsCorner.TextAlpha = _options.HudTextOpacity;
         _statsCorner.Visible = _options.ShowStats;
-        if (_chatLines != null)
-            _chatLines.StatsLines = 0; // the screentip stands under the corner's lines, when they are on
         if (!_statsCorner.Visible) return;
         CultureInfo c = CultureInfo.InvariantCulture;
-        _statsCorner.TextScale = App.Instance.HudTextScale.Value;
+        _statsCorner.TextScale = metrics.TextScale;
+        _statsCorner.Unit = UiTokens.Unit(metrics);
+        // ui-overhaul.md section 6: the ping and the FPS in one chip, the numbers as the template's arguments
+        _statsCorner.Chip = Anomaly.Core.DmShim.I18n.T("Ping [] ms | [] FPS", _feed.RoundTripMs, (int)Math.Round(Engine.GetFramesPerSecond()));
         _statsCorner.Lines = new[]
         {
-            string.Create(c, $"{Engine.GetFramesPerSecond():0} fps"),
-            string.Create(c, $"ping {_feed.RoundTripMs} ms   tick {_feed.Tick} (lag {_session.Clock.LagTicks:0.0})"),
+            string.Create(c, $"tick {_feed.Tick} (lag {_session.Clock.LagTicks:0.0})"),
             PredictionLine(c),
             string.Create(c, $"in {Bytes(_receivedPerSecond)}/s   out {Bytes(_sentPerSecond)}/s"),
             WhereLine(c),
         };
-        if (_chatLines != null)
-            _chatLines.StatsLines = _statsCorner.Lines.Length;
     }
 
     // The owner (2026-10-15): where the player stands (tg's tile x, y, z) and where the camera looks (a compass bearing, clockwise from north, and
@@ -1440,7 +1499,7 @@ public partial class GameScene : Node3D
         yield return string.Create(c, $"seq sent {_feed.LastSentSeq} acked {_feed.LastAppliedSeq}");
     }
 
-    // the owner (2026-10-28): the prediction in brief in F4's corner (the dev menu's Stats tab has it all, PredictionLines)
+    // the prediction in brief in the debug HUD's (F3) corner (the dev menu's Stats tab has it all, PredictionLines)
     private string PredictionLine(CultureInfo c)
     {
         OwnPrediction p = _session.Prediction;

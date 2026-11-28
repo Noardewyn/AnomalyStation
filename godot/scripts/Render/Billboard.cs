@@ -251,6 +251,26 @@ public partial class Billboard : Node3D
         }
     }
 
+    private bool _facesBack;
+
+    /// <summary>
+    /// T5a: the own body in first person (its picture and its shadow): its eye is ahead of it, so the card across the view shows the face a viewer
+    /// ahead of the body sees, its picture's right on the view's left (the shaders' <c>face_back</c>), where any other picture's right is the view's.
+    /// </summary>
+    public bool FacesBack
+    {
+        get => _facesBack;
+        set
+        {
+            if (value == _facesBack)
+                return;
+            if (_instance == null)
+                _Ready();
+            _facesBack = value;
+            _instance.SetInstanceShaderParameter("face_back", value);
+        }
+    }
+
     private bool _flat;
 
     /// <summary>
@@ -401,12 +421,13 @@ public partial class Billboard : Node3D
             found = BillboardMath.RayPlane(from, dir, maxDistance, feet, new Vec3(1, 0, 0), new Vec3(0, 0, -1), Rect, _raster.Image, out hit); // (east, north)
         else if (_facesEye)
         {
-            // the shader's up: the camera's back x the ground right
-            Vector3 up = camera.Z.Cross(new Vector3((float)right.X, 0, (float)right.Z)).Normalized();
+            // the shader's up: the camera's back x the ground right, flat on the floor past straight down
+            Vector3 up = camera.Z.Cross(new Vector3((float)right.X, 0, (float)right.Z));
+            up = (up with { Y = Mathf.Max(up.Y, 0f) }).Normalized();
             found = BillboardMath.RayPlane(from, dir, maxDistance, feet, right, new Vec3(up.X, up.Y, up.Z), Rect, _raster.Image, out hit);
         }
-        else
-            found = BillboardMath.RayStanding(from, dir, maxDistance, feet, right, Rect, _raster.Image, out hit);
+        else // T5b: the own body for its own eye is laid out along the view's left, as the shader draws it (face_back)
+            found = BillboardMath.RayStanding(from, dir, maxDistance, feet, _facesBack ? right * -1 : right, Rect, _raster.Image, out hit);
         if (!found)
             return false;
         distance = (float)hit.Distance;

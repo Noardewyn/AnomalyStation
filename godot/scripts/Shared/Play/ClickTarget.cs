@@ -15,7 +15,8 @@ namespace Anomaly.Client.Shared;
 /// <param name="IconX">tg's icon-x, 1 to 32 (0: none).</param>
 /// <param name="IconY">tg's icon-y, 1 to 32 (0: none).</param>
 /// <param name="Aim">The body zone under the point of a mob's picture (DV30), None otherwise.</param>
-public readonly record struct ClickTarget(TargetKind Kind, long Id, int X, int Y, int Z, byte IconX = 0, byte IconY = 0, AimZone Aim = AimZone.None)
+/// <param name="Picture">An entity pick's unclamped picture pixel (<see cref="PickHit.Picture"/>), for the client's zone lookup only; never sent.</param>
+public readonly record struct ClickTarget(TargetKind Kind, long Id, int X, int Y, int Z, byte IconX = 0, byte IconY = 0, AimZone Aim = AimZone.None, (int X, int Y)? Picture = null)
 {
     /// <summary>No target.</summary>
     public static ClickTarget None => default;
@@ -30,7 +31,7 @@ public readonly record struct ClickTarget(TargetKind Kind, long Id, int X, int Y
         {
             case TargetKind.Entity:
             case TargetKind.Screen:
-                return new ClickTarget(hit.Kind, hit.Id, 0, 0, 0, hit.IconX, hit.IconY);
+                return new ClickTarget(hit.Kind, hit.Id, 0, 0, 0, hit.IconX, hit.IconY, Picture: hit.Picture);
             case TargetKind.Ceiling:
             case TargetKind.Turf:
                 return new ClickTarget(hit.Kind, 0, hit.X, hit.Y, hit.Z, hit.IconX, hit.IconY);

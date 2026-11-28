@@ -1475,11 +1475,18 @@ public partial class mob_living : mob
             await puller.set_pull_offsets(this, puller.grab_state);
         }
 
+        // tg: code/modules/mob/living/living.dm:1070-1074
+        // DEVIATION(DV696): a port guard: a storage destroyed while this mob was not among its is_using (the port's show_contents throws in
+        // orient_storage for a numbered-stack storage after setting active_storage) has no parent; tg's own hide_contents, which its Destroy would
+        // have run for this mob, clears active_storage (its interfaces are gone, so it does nothing else)
+        if (Dm.truthy(active_storage) && active_storage.parent == null)
+            active_storage.hide_contents(this);
         if (Dm.truthy(active_storage))
         {
-            // tg: :1069-1072  the reach check of the open storage UI (active_storage.parent, IsReachableBy, hide_contents)
-            // GAP(lead): /datum/storage (datums/storage/storage.dm) has no procs declared; storage UIs are M4a.
-            Dm.NotTranslated("code/modules/mob/living/living.dm:1069", "Move: hiding an out-of-reach open storage (storage, M4a)");
+            bool storage_is_important_recurisve = Dm.@in(active_storage.parent, important_recursive_contents?[RECURSIVE_CONTENTS_ACTIVE_STORAGE]);
+            bool can_reach_active_storage = Dm.truthy(await active_storage.parent.IsReachableBy(this));
+            if (!storage_is_important_recurisve && !can_reach_active_storage)
+                active_storage.hide_contents(this);
         }
 
         if (!Dm.truthy(buckled) && !Dm.truthy(moving_diagonally) && loc != old_loc)
@@ -2877,6 +2884,8 @@ public partial class mob_living : mob
             return null;
         dot = body_position;
         body_position = Dm.num(new_value);
+        if (body_position != LYING_DOWN)
+            dm_turned_side = 0; // DEVIATION(DV690): the side the radial's Turn over put the body on is forgotten when it gets up
         if (Dm.truthy(_listen_lookup?[COMSIG_LIVING_SET_BODY_POSITION]))
             _SendSignal(COMSIG_LIVING_SET_BODY_POSITION, Dm.list(this, new_value, dot));
         if (Dm.eq(new_value, LYING_DOWN)) // From standing to lying down.

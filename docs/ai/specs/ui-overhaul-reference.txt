@@ -1,0 +1,248 @@
+UI/UX Design Specification
+Document Scope & Goal: Establish a cohesive, low-fatigue first-person 3D UI/UX architecture for a /tg/station Space Station 13 conversion, preserving deep item-interaction complexity while feeling responsive in real-time 3D.
+
+📝 Appendix A: Original Designer Prompt & Raw UI Notes
+im making a first person TG station space station 13 conversion/port. im the ui designer for the team. here are my notes so far cna you make this into a design document and also research online for improvmeents other design tips ect: UI notes:
+
+- classic tab inventory
+
+show items in on-person storage like backpacks, pockects ect
+
+show all equipped items next to health doll like barotrauma/neo scavenger.
+
+- quick swap hotbar config items in storage to specific slots 1-9. or like zomboid where you can equip items to belt to be able to access quick.
+
+left and right of hotbar show hand slots, when you select item from hotbar or inventory it goes to active hand.
+
+- make sure drag, drop works for everything when inventory is open.
+
+health ui on side of screen, screen effects when damage ect.
+
+- V.A.T.S like system that highlights body parts on other entities and displays which parts of the body are head, legs ect. mainly for non humanoids so you know which bits to target for combat or surgery.
+
+- 100% need on screen tips when hovering over item that tells you what you can do with that item.
+
+extend this to onscreen tip when holding item in hand.
+
+- need to look at visibility of certain interactions when in first person. e.g. wrestling and picking people up. also hallucinations.
+
+- local chat to display above peoples heads
+
+what about when youre not looking at them?
+
+what about radio - small chat box in bottom left, when you press tab for inventory it shows the full chat covering left side of screen.
+
+- color code for radio channel, like department specific channels.
+
+- also highlight relevant words (see starlight ss14 system, highlights your name, your department ect if mentioned).
+
+(improve readability basically)
+
+handheld radios should have text pop out of them, need to find way to display this in first person and to other people around you also in first person.
+
+- ads with guns?
+
+- ui for displaying 2 inventories side by side or above and below, not obscuring the chat, so you can transfer items when stripping someone, or searching.
+
+- ui for items, should it stay as the TG item ui e.g. for medical scanner ect. or make a metadata driven generated ui or our own design?
+-inventory ui that shows sprite in the middle, lets you use items on sprite like using on self this targets the body part you target on the sprite. so you can like grab syringe on cursor and click on chest for example. have backpack pockets belts ect all around the sprite with their items displayed and layed out intuitively where they are on the sprite. think project zomboid and barotrauma inventory systems.
+
+🎯 1. Core Architectural Recommendation
+Prioritize a context-driven HUD with a three-zone Tab overlay (Left: Expanded Chat — Center: Character Doll & Equipped Gear — Right: Dual Stacked Containers) paired with a 3-Tier Hybrid Item UI where 65% of station machines render automatically from JSON/metadata schemas. Keeping the live first-person viewport clean while docking external loot/strip panels exclusively on the right guarantees chat is never blocked during high-stakes social or combat moments.
+
+🖥️ 2. Screen Layout & Dual-Inventory System
+To ensure stripping, searching, and crate transfers never obscure the chat feed, split the Tab overlay into three strict horizontal columns. When Tab is closed, collapse all center and container panels down to lightweight peripheral status anchors.
+
+Screen Column
+
+Closed HUD State (Live 1P Gameplay)
+
+Open Tab Overlay State (Cursor Unlocked)
+
+Key UX Rules & Thresholds
+
+Left Zone (0%–28% W)
+
+Compact 6-line chat & radio box at bottom-left; background fades to 0% opacity after 8s idle
+
+Full-height scrollable chat log, channel filter toggles, and whisper/radio input bar
+
+Preserves 100% chat visibility during looting, surgery, or stripping
+
+Center Zone (28%–64% W)
+
+Minimal center crosshair with 2-line contextual hover prompt; bottom hotbar + Hand slots
+
+Barotrauma / Neo Scavenger anatomical doll surrounded by clothing slots, pockets, and belt
+
+Keeps drag-and-drop travel under 300px between hands, pockets, and equipment
+
+Right Zone (64%–100% W)
+
+Compact status Health Doll + critical alerts (Internals, Gravity, Temp) at middle-right
+
+Vertically stacked dual containers: Top-Right = Your Backpack; Bottom-Right = Target Container / Stripped Player
+
+Supports universal drag-and-drop plus Shift+LMB instant transfer; auto-closes target panel beyond 1.8m
+
+For stripping or searching other crewmates in 3D, render radial timer overlays directly onto target equipment slots (e.g., 4.0s for jumpsuits, 2.0s for pockets) so progress is immediately readable without adding floating modal bars. Add a "Nearby Floor / Surface" strip below the external container slot so small dropped items (syringes, scalpels, IDs) are easy to grab without pixel-hunting in 3D.
+
+🤲 3. Hotbar, Active Hands & Firearms ADS Matrix
+Binding 1–9 to items buried inside backpacks undermines /tg/station storage balance. Enforce a physicalized Project Zomboid / Tarkov rig rule: only items currently stored in Pockets, Belt/Toolbelt, Suit Storage, or ID/PDA slots can be bound to hotbar keys 1–9.
+
+Control / Slot
+
+Specification
+
+Design Rationale
+
+Left & Right Hand Slots
+
+Oversized anchor slots flanking 1–9 (Left Hand on left, Right Hand on right) with high-contrast highlight on Active Hand
+
+Retains iconic two-handed SS13 item juggling; X (or Q) toggles Active Hand instantly
+
+Quick-Swap (1–9)
+
+Pressing 1–9 moves the bound belt/pocket item into your Active Hand; pressing the same number again stows it back to its rig slot
+
+Keeps interaction logic consistent—every world interaction always checks what is physically in your Active Hand
+
+Combat Mode Toggle (C or F)
+
+Binary HUD state banner (Peaceful vs. Combat) adapting modern /tg/station Combat Mode
+
+Prevents accidental tool attacks when repairing walls or opening unpowered doors
+
+Contextual Right-Click & ADS
+
+If holding an Aimable firearm: Hold RMB for ADS (move Rack Slide / Chamber to R or Alt+RMB). If holding non-firearm / empty hand: RMB executes Secondary Use or Shove/Disarm
+
+Resolves the classic FPS ADS vs. SS13 secondary-interaction conflict cleanly
+
+🩺 4. Health Doll, V.A.T.S. Limb Targeting & 1P Visibility
+Because multiplayer SS13 cannot pause time, implement your V.A.T.S. concept as a real-time "Anatomical Focus" sub-mesh highlighter so players can identify alien/non-humanoid anatomy (xenomorphs, space carp, golems, megafauna) on the fly for both combat and surgery.
+
+Subsystem
+
+Functional Design
+
+First-Person Polish & Edge Cases
+
+V.A.T.S. Limb Selector (Hold Alt or MMB)
+
+Raycasts up to 15m, highlighting anatomical sub-meshes with floating tags (Head, Torso, L-Tendril / Leg)
+
+Releasing Alt while aiming at a sub-mesh locks that limb on your HUD targeting doll until changed
+
+Damage HUD & Screen FX
+
+Limb-by-limb Health Doll shifting Green → Yellow → Red → Flashing Black (0% / Missing)
+
+Directional blood vignette for Brute, heat-wave border for Burn, cyan frost creep for OxyLoss, and audio muffling below 20% HP
+
+1P Wrestling, Grabs & Carries
+
+Edge-of-screen grip brackets color-coded by /tg/ grab tier: Yellow (Passive), Orange (Aggressive + sway), Red (Chokehold + tunnel vision)
+
+Display a centered [Space / WASD] Break Free stamina bar; during Fireman Carry, tilt victim camera 25° with over-shoulder view
+
+1P Hallucinations
+
+Client-only UI deception mirroring /tg/'s screwy_health_doll, inhand_fake_item, and fake_chat hooks
+
+Briefly flash fake severed limbs on the Health Doll, swap held item viewmodels for 3s, or spawn phantom off-screen speech pills
+
+💬 5. Contextual Prompts, Spatial Chat & Radio Readability
+In 3D, players lose top-down situational awareness of people speaking behind them and hidden item combinations. Combine a two-part crosshair verb prompt with clamped off-screen speech pills and Starlight SS14-style keyword highlighting.
+
+Communication / Tip Layer
+
+UI Behavior
+
+Readability Thresholds & Styling
+
+Hover + Held Item Tips
+
+Dynamic prompt below-right of reticle updates based on Active Hand item + target object + Combat Mode
+
+Format: [LMB] Weld Hull Breach / [RMB] Slice. Holding F1 expands a card listing all verbs for your held item
+
+On-Screen & Off-Screen Local Chat
+
+3D bubbles above heads inside 100° FOV; clamped edge-of-screen directional pills with arrows when speakers are behind you
+
+Scale font opacity/size from 0m–10m; whispers render italicized within 2m only
+
+Department Radio & Highlights
+
+Color-coded channel tags ([SEC] Red, [ENG] Orange, [MED] Cyan, [SCI] Purple, [CMD] Gold) in bottom-left log
+
+Auto-highlight Character Name, Job Title, Department, and Syndicate Codewords with colored pill badges and soft audio ticks
+
+Handheld & Bounced Radios
+
+Dual representation so both the holder and nearby bystanders see transmissions
+
+1P Holder: Scrolling OLED text on the 3D radio screen + chat log. 3D World (<4m): Small floating [145.9] "..." pop-out text above the physical radio prop
+
+📟 6. Item & Machine UI Strategy (3-Tier Hybrid)
+Rebuilding hundreds of /tg/station TGUI windows by hand will stall production, whereas forcing everything into generic menus kills immersion. Split all item and machine interfaces across three strict production tiers:
+
+Tier
+
+Coverage
+
+Architecture
+
+Target Items
+
+Tier 1: Diegetic 3D Screen
+
+~25%
+
+Live UI texture rendered straight onto the 1P viewmodel; hold I (Inspect) to bring close to camera without unlocking cursor
+
+Health Analyzer, Gas Analyzer, T-Ray Scanner, Radiation Geiger Counter
+
+Tier 2: Metadata Schema UI
+
+~65%
+
+Single TGUI-style JSON/metadata renderer generating standardized cards, sliders, reagent bars, and buttons automatically
+
+APCs, Air Alarms, Vending Machines, Autolathes, Cryo/Sleeper Pods
+
+Tier 3: Bespoke Custom UI
+
+~10%
+
+Hand-designed flagship interfaces with custom layouts, mini-games, or node graphs
+
+PDA & Crew Manifest, ChemMaster, Surgery Console, Telecomms, Nuclear Bomb
+
+⚠️ 7. Critical UX Risks & Guardrails
+Risk
+
+Impact in First-Person 3D
+
+Design Rule
+
+Cursor-Lock Ambush
+
+Full-screen opaque menus blind players to traitors sneaking up behind them
+
+Never blur the center 3D viewport; auto-close machine/loot panels on taking damage or moving >1.5m
+
+Radio Scroll Overload
+
+High-pop Common Radio (;) pushes local in-room speech off-screen in seconds
+
+Give Local Speech a distinct white pill outline in the log and add a 1-click Local Only mini-tab
+
+Motion Sickness in Grabs/Crits
+
+Aggressive camera ragdolling in 1P triggers severe nausea
+
+Keep player horizon locked upright during trips/stuns—communicate knockdowns via lowered camera height + screen vignette instead of spinning the camera
+

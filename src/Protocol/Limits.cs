@@ -242,8 +242,9 @@ public static class Limits
     /// <summary>The byte cap of <see cref="ContextHintsMessage.Name"/>.</summary>
     public const int MaxContextNameBytes = 256;
 
-    /// <summary>The largest <see cref="ContextHintsMessage"/> on the wire.</summary>
-    public const int MaxContextHintsMessageBytes = 1 + 1 + 10 + 1 + 1 + 5 + 3 + MaxContextNameBytes + 1 + MaxContextHints * (1 + 1 + 1 + 2 + MaxContextLabelBytes);
+    /// <summary>The largest <see cref="ContextHintsMessage"/> on the wire (version 100 also: the tail's flags and three labels).</summary>
+    public const int MaxContextHintsMessageBytes = 1 + 1 + 10 + 1 + 1 + 5 + 3 + MaxContextNameBytes + 1 + MaxContextHints * (1 + 1 + 1 + 2 + MaxContextLabelBytes)
+        + 1 + 3 * (1 + MaxContextLabelBytes);
 
     /// <summary>Private images (<c>client.images</c>, <see cref="ImageEntry"/>) of one session: in all, and in each of the added, changed and removed lists of one private block.</summary>
     public const int MaxPrivateImages = 512; // version 30: 64 before; a T-ray scanner's pulse shows every hidden object within 3 tiles
@@ -682,6 +683,53 @@ public static class Limits
 
     /// <summary>Version 99: the largest <see cref="PhotoPart"/> message (the id, the total, the offset and the part's length of up to 5 bytes each, and the part).</summary>
     public const int MaxPhotoPartMessageBytes = 1 + 4 * 5 + MaxPhotoPartBytes;
+    /// <summary>Version 100 (DV693): the most UTF-8 bytes of a held item's name in a <see cref="HotbarMessage"/>.</summary>
+    public const int MaxHotbarNameBytes = 128;
+
+    /// <summary>Version 100: a <see cref="HotbarMessage"/>: the id, the flags, ten cells (a state, an appearance and an item's entity each), two names and the refused cell.</summary>
+    public const int MaxHotbarBytes = 1 + 1 + HotbarMessage.CellCount * (1 + 5 + 10) + 2 * (2 + MaxHotbarNameBytes) + 1;
+
+    /// <summary>Version 100 also (DV696): the carried storages of a <see cref="StoragesMessage"/>.</summary>
+    public const int MaxStorages = 8;
+
+    /// <summary>Version 100 also (DV696, slice 4C-1): the entries of a <see cref="StoragesMessage"/>: the carried storages and the other container.</summary>
+    public const int MaxStorageEntries = MaxStorages + 1;
+
+    /// <summary>Version 100 also: the items of one <see cref="CarriedStorage"/> (a storage that holds more sends the first ones, <see cref="CarriedStorage.Cut"/>); also the highest cell an inventory move may wish for.</summary>
+    public const int MaxStorageItems = 64;
+
+    /// <summary>Version 100 also: the cap of a storage's slots, room and limit and of a stack's count (a bigger number is sent as the cap).</summary>
+    public const int MaxStorageNumber = 65535;
+
+    /// <summary>Version 100 also: the highest held index a <see cref="CarriedStorage"/> or an inventory move names.</summary>
+    public const int MaxStorageHands = 8;
+
+    /// <summary>Version 100 also: the most UTF-8 bytes of a storage's or an item's name in a <see cref="StoragesMessage"/> (the hotbar's cap).</summary>
+    public const int MaxStorageNameBytes = MaxHotbarNameBytes;
+
+    /// <summary>
+    /// Version 100 also: a <see cref="StoragesMessage"/>: the id, the count, each entry (an entity, the place and a hand, a name, the slots, the room and
+    /// the limit, the flags, the item count and its items: an entity, a name, a picture and a count each) and the refused item.
+    /// </summary>
+    public const int MaxStoragesBytes = 1 + 1 + MaxStorageEntries * (10 + 1 + 1 + 2 + MaxStorageNameBytes + 3 * 3 + 1 + 1 + MaxStorageItems * (10 + 2 + MaxStorageNameBytes + 5 + 3)) + 10;
+
+    /// <summary>Version 100 also (DV698): the most action buttons an <see cref="ActionsMessage"/> lists (a mob with more lists the first ones).</summary>
+    public const int MaxActionButtons = 64;
+
+    /// <summary>Version 100 also (DV698): the most UTF-8 bytes of an action's name in an <see cref="ActionsMessage"/>.</summary>
+    public const int MaxActionNameBytes = 64;
+
+    /// <summary>Version 100 also (DV698): the most palette objects an <see cref="ActionsMessage"/> lists.</summary>
+    public const int MaxActionPalette = 8;
+
+    /// <summary>Version 100 also (DV698): the most server ticks a cooldown in an <see cref="ActionsMessage"/> may last (a longer one is sent as this).</summary>
+    public const int MaxActionCooldownTicks = 20 * 60 * 60;
+
+    /// <summary>
+    /// Version 100 also (DV698): an <see cref="ActionsMessage"/>: the id, the count, each button (its id, its name, the flags, the cooldown's end and
+    /// length), the palette's count and ids.
+    /// </summary>
+    public const int MaxActionsBytes = 1 + 1 + MaxActionButtons * (10 + 2 + MaxActionNameBytes + 1 + 10 + 5) + 1 + MaxActionPalette * 10;
 }
 
 /// <summary>A token bucket: <see cref="PerSecond"/> tokens refill per second of game time (20 ticks), at most <see cref="Burst"/> are kept.</summary>

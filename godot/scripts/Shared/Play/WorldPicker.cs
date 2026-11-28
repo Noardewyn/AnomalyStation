@@ -224,11 +224,12 @@ public sealed class WorldPicker : IWorldPicker
         PickShape best = null;
         double bestT = tStop, bestE = 0, bestN = 0, bestU = 0;
         byte bestIx = 0, bestIy = 0;
+        int bestPx = 0, bestPy = 0;
         foreach (PickShape shape in _shapes)
         {
             if (shape.EntityId == exclude || shape.TileZ != z)
                 continue;
-            if (shape.TryHit(ray, bestT, out double t, out double e, out double n, out double u, out byte ix, out byte iy) && t <= bestT)
+            if (shape.TryHit(ray, bestT, out double t, out double e, out double n, out double u, out byte ix, out byte iy, out int px, out int py) && t <= bestT)
             {
                 best = shape;
                 bestT = t;
@@ -237,6 +238,7 @@ public sealed class WorldPicker : IWorldPicker
                 bestU = u;
                 bestIx = ix;
                 bestIy = iy;
+                (bestPx, bestPy) = (px, py);
             }
         }
         // A shape drawn over its tile's things (PickShape.OnTop: an item on a rack's shelf) takes the click from a nearer hit on its tile (the rack's picture),
@@ -247,20 +249,21 @@ public sealed class WorldPicker : IWorldPicker
             PickShape top = null;
             double topT = tStop, topE = 0, topN = 0, topU = 0;
             byte topIx = 0, topIy = 0;
+            int topPx = 0, topPy = 0;
             foreach (PickShape shape in _shapes)
             {
                 if (!(shape.OnTop || best.Yields && !shape.Yields && shape.Surface != PickSurface.Piece && shape.EntityId != best.EntityId) || shape.EntityId == exclude || !SameTile(shape, best))
                     continue;
-                if (shape.TryHit(ray, topT, out double t, out double e, out double n, out double u, out byte ix, out byte iy) && t <= topT)
-                    (top, topT, topE, topN, topU, topIx, topIy) = (shape, t, e, n, u, ix, iy);
+                if (shape.TryHit(ray, topT, out double t, out double e, out double n, out double u, out byte ix, out byte iy, out int px, out int py) && t <= topT)
+                    (top, topT, topE, topN, topU, topIx, topIy, topPx, topPy) = (shape, t, e, n, u, ix, iy, px, py);
             }
             if (top != null && !OtherTileBefore(ray, best, topT, exclude, z))
-                (best, bestT, bestE, bestN, bestU, bestIx, bestIy) = (top, topT, topE, topN, topU, topIx, topIy);
+                (best, bestT, bestE, bestN, bestU, bestIx, bestIy, bestPx, bestPy) = (top, topT, topE, topN, topU, topIx, topIy, topPx, topPy);
         }
         if (best != null)
         {
             LastShape = best;
-            return new PickHit(best.Surface, TargetKind.Entity, best.EntityId, best.TileX, best.TileY, best.TileZ, bestT, bestE, bestN, bestU, bestIx, bestIy);
+            return new PickHit(best.Surface, TargetKind.Entity, best.EntityId, best.TileX, best.TileY, best.TileZ, bestT, bestE, bestN, bestU, bestIx, bestIy, (bestPx, bestPy));
         }
         // D325: a ray that reaches the floor over open space goes on into the level below, one that reaches a cell with no ceiling under a level into the level
         // above (through its open space) or hits that level's turf, whose underside is the ceiling (the owner: hovering, examining and pointing see the other levels)

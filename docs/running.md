@@ -51,21 +51,34 @@ Unzip it anywhere and keep its folders together.
 
 ## Controls
 
-The defaults; F10 rebinds them.
+The defaults, Space Station 14's where it has the same function; F10 rebinds them. A settings file saved before keeps its
+own keys, except some old defaults: quick equip left on E moves to R (E is interact) when R is free, action buttons left on the
+plain digits move to Shift and the digits, which go back to the belt bar, the scoreboard left on K moves to Caps Lock (K is the
+actions menu), and V and Shift+V left on opening the backpack and the belt are unbound.
 
 | Input | Action |
 |---|---|
 | WASD, mouse | move, look |
-| C / U / F | walk or run / lie down and get up / combat mode |
+| Shift / C / F | switch walk and run (tap Shift alone; Shift with a click or a key does not switch) / lie down and get up / combat mode |
 | Left click / right tap / right hold | tg's left click / tg's right click / the radial menu |
 | Middle click, X | swap hands |
-| Q / E / Z | drop / quick equip / use the held item (tg's activate in hand) |
-| R, or hold Space | throw mode |
-| Tab | cursor mode: the mouse is free for the HUD, the inventory slots and open storage |
+| Q / Ctrl+Q / R / Z | drop / throw the held item at the crosshair / quick equip / use the held item (tg's activate in hand) |
+| E / Alt+E or Alt+left click / Alt+Z | use what is under the crosshair with an empty hand, even while holding something (a mob only out of combat mode) / alt-click it / alt-click the held item |
+| Shift+B / Shift+E / Shift+G / Shift+H / Shift+F | quick equip into or out of the backpack / belt / left pocket / right pocket / suit storage |
+| 1 to 9, 0 / Shift+1 to 9 | the belt bar (1 to 7 the belt, 8 and 9 the pockets, 0 the ID slot) / the action slots at the top left |
+| K | the actions menu: click an action to use it, drag it onto a slot to put it on Shift and that digit, right click a slot to empty it |
+| I | the inventory |
+| Ctrl+right click | move what you pull one step toward the tile under the crosshair (empty hand only) |
+| Shift+middle click | point |
+| Space / Ctrl | up a level / down a level (a ghost, a flyer, one on a ladder or without gravity); Ctrl acts when it is let go with nothing else pressed, so Ctrl+Q and Ctrl+click do not also go down. Any other mob holds throw mode while Space is held |
+| Tab | cursor mode: the mouse is free for the HUD and open windows |
 | Shift+left click | examine |
 | Ctrl+left click / H or Delete | pull what is under the crosshair (or the pointer in cursor mode) / stop pulling (also the HUD's pull button) |
+| T / , / ; / Shift+' / [ / Y | say / whisper / radio / me (an emote) / OOC / the emote wheel |
+| hold J / hold Caps Lock | pet commands (hover a friendly pet) / the deathmatch scoreboard |
 | ` (backtick) | the dev console (the commands below) |
-| F1 / F2 / F3 / F4 | camera (first person, free fly, orbit) / ceiling / names / debug HUD |
+| F1 / F2 / F3 / F4 | camera (first person, free fly, orbit) / ceiling / debug HUD / names |
+| Shift+F4 / F11 | hide the interface / fullscreen |
 | F9 / F10 | the health analyzer panel / options |
 
 ## Commands

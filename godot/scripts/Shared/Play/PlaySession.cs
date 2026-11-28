@@ -135,6 +135,8 @@ public sealed class PlaySession
         _feed.Poll(now);
         if (_feed.Phase != FeedPhase.Playing)
             return;
+        Hotbar.Apply(_feed.Hotbar, _feed.HotbarRefusals, _feed.HotbarRefusedCell, now); // version 100 also (DV693)
+        Storages.Apply(_feed.Storages, _feed.StoragesRefusals, _feed.StoragesRefusedItem, now); // version 100 also (DV696)
         long newest = Math.Max(_feed.Tick, _replica.MotionTick); // version 42: a Motion runs ahead of a Delta the reliable channel holds back
         if (newest != _lastTick)
         {
@@ -287,11 +289,19 @@ public sealed class PlaySession
     /// <summary>
     /// M4a (interaction.md 2): a click on <paramref name="target"/> (an entity, a turf by its cell or a screen entry) with tg's pixel inside the clicked icon.
     /// Version 34: <paramref name="aim"/> is the camera's ray (<see cref="AimOf"/>) of a click on the world, so a shot flies along the crosshair (DV94).
-    /// False, and nothing sent, when there is no target or no button.
+    /// False, and nothing sent, when there is no target or no button. Package 3 (ui-overhaul.md section 10): a belt cell of the bar
+    /// (<see cref="LiveHud.BeltCellOf"/>) is ours, not a tg entry: a plain left click on it is that cell's <see cref="HotbarPress"/>, as its key
+    /// is, and no click goes out (false).
     /// </summary>
     public bool Click(in ClickTarget target, ClickButton button, ClickModifiers modifiers, ShotAim? aim = null)
     {
-        if (!target.IsSet || button == ClickButton.None)
+        if (LiveHud.BeltCellOf(target) is int cell and > 0)
+        {
+            if (button == ClickButton.Left && modifiers == ClickModifiers.None)
+                HotbarPress(cell);
+            return false;
+        }
+        if (!target.IsSet || button == ClickButton.None || LiveHud.IsOurs(target)) // slice 4A: any other of ours (the own sprite) is never sent
             return false;
         if (target.Kind == TargetKind.Entity)
             NotePull(target.Id, button, modifiers);
@@ -355,7 +365,7 @@ public sealed class PlaySession
             TurfZ = target.Kind is TargetKind.Turf or TargetKind.Ceiling ? target.Z : 0,
             IconX = pixel ? target.IconX : (byte)0,
             IconY = pixel ? target.IconY : (byte)0,
-            AimZone = kind is ActionKind.Click or ActionKind.Throw && target.Kind == TargetKind.Entity ? target.Aim : AimZone.None,
+            AimZone = kind is ActionKind.Click or ActionKind.Throw or ActionKind.Hover && target.Kind == TargetKind.Entity ? target.Aim : AimZone.None, // version 100 also: a hover's zone
             // version 88 (DV527): the tick the world was drawn at, for the server's lag compensation
             Aim = pixel && kind != ActionKind.DblClick && aim is ShotAim a ? a with { Seen = (long)Math.Round(Math.Max(0, RenderTick) * 16) } : null,
         };
@@ -445,7 +455,32 @@ public sealed class PlaySession
             return;
         if (code == KeybindingCode.StopPulling)
             Poses.PullTarget = 0;
+        if (up)
+            _heldKeybindings.Remove(code);
+        else if (HasRelease(code))
+            _heldKeybindings.Add(code);
         Send(new ActionMessage(Prediction.NewestSeq, ActionKind.Keybinding, 0, ClickButton.None, ClickModifiers.None, null) { Keybinding = code, KeyUp = up });
+    }
+
+    // The keybindings the scene also sends on the key's release (GameScene.OnKeyUp): tg acts on both, and keeps a state while one is held.
+    private static bool HasRelease(KeybindingCode code) => code is KeybindingCode.HoldThrowMode or KeybindingCode.ZLevelUp or KeybindingCode.Resist
+        or KeybindingCode.ViewPetCommands or KeybindingCode.Scoreboard;
+
+    private readonly HashSet<KeybindingCode> _heldKeybindings = new(); // sent down, their release not yet sent
+
+    /// <summary>
+    /// Each frame: a keybinding sent down whose key is no longer down (<paramref name="keyDown"/>) gets its release now. Its own release can be
+    /// lost: the window lost the focus (Godot sends no key release then), or a panel or the free camera took the key as it was let go.
+    /// </summary>
+    public void ReleaseLetGo(Func<KeybindingCode, bool> keyDown)
+    {
+        if (_heldKeybindings.Count == 0)
+            return;
+        foreach (KeybindingCode code in _heldKeybindings.ToArray())
+        {
+            if (!keyDown(code))
+                Keybinding(code, up: true);
+        }
     }
 
     /// <summary>Protocol version 38: a message of the say window to the server's /datum/tgui_say (<see cref="SayModel"/>).</summary>
@@ -487,6 +522,69 @@ public sealed class PlaySession
     /// <summary>The shortest time between two hovers (the server's bucket lets 10 a second through, ActionLimits.Hover).</summary>
     public const double HoverInterval = 0.1;
 
+    /// <summary>
+    /// Version 100 also (slice T4b): the shortest time between two hovers of the same thing whose zone changed: 8 a second. It mirrors the server's
+    /// <c>ActionLimits.Hover</c> (a bucket of 5 hovers refilled at 10 a second, <see cref="HoverInterval"/>): the zone's resends share
+    /// <see cref="HoverInterval"/>'s clock, so a sweep, however long, never sends faster than the refill and the server never drops its newest zone;
+    /// the quarter below the refill leaves the bucket's burst for the arrival jitter.
+    /// </summary>
+    public const double ZoneHoverInterval = HoverInterval * 1.25;
+
+    /// <summary>
+    /// Version 100 also (slice T4b): whether a hover on <paramref name="target"/> carries the body zone looked at: a picked entity pixel seen through
+    /// the crosshair. In cursor mode (Tab) it carries none: the free pointer passing over a person must not overwrite the zone chosen on tg's zone
+    /// selector, which shows there; a click there still carries its zone.
+    /// </summary>
+    public static bool HoverCarriesZone(in ClickTarget target, bool cursorMode) => !cursorMode && target.Kind == TargetKind.Entity && target.IconX != 0;
+
+    /// <summary>
+    /// DV691: while the same world thing stays hovered, the hover goes out again this long after the last hover or unhover, so the server's answer
+    /// follows reach (the prompt shows only in reach: the player walks up, steps back, or the thing moves), the held item and combat mode. Two a
+    /// second, on <see cref="HoverInterval"/>'s clock, well inside the server's bucket (10 a second, 5 at once), so the zone's resends are not starved.
+    /// None while the pet-commands key is held: tg's pets listen to MouseEntered then (obeys_commands.dm), and each repeat would be a new entering
+    /// that opens a befriended pet's command radial again; the prompt does not follow reach meanwhile.
+    /// </summary>
+    public const double RepeatHoverInterval = 0.5;
+
+
+    /// <summary>
+    /// DV691: the server's newest hints (<see cref="HintsArrived"/>), kept only while <see cref="Hover"/> is given the same thing (any zone):
+    /// a look at another thing, or at nothing, drops them, so an answer from an earlier look at a thing never stands for a new one (it may have
+    /// been in reach then). Match them to a target with <see cref="KeyChips.AnswerFor"/>.
+    /// </summary>
+    public ContextHintsMessage Hints { get; private set; }
+
+    /// <summary>A ContextHints message from the server: the newest answer to this look's hovers.</summary>
+    public void HintsArrived(ContextHintsMessage hints) => Hints = Held = hints;
+
+    /// <summary>
+    /// The server's newest answer, kept whatever is looked at (also after a look at nothing), for the held item's own lines in the hint strip
+    /// (<see cref="ContextHintsMessage.HeldUse"/>, <see cref="ContextHintsMessage.HeldAlt"/>, <see cref="ContextHintsMessage.HeldEquips"/>); null after
+    /// the held item or combat mode changed (<see cref="HandsNow"/>) until the next answer, so the strip never shows another item's lines.
+    /// </summary>
+    public ContextHintsMessage Held { get; private set; }
+
+    private (int Hand, long Item, bool Combat)? _hands;
+
+    /// <summary>
+    /// The active hand, the item in it (0: none) and combat mode as the HUD shows them this frame: when any changed (a swap, a pick-up, a drop, combat
+    /// mode toggled) the held lines are dropped and the thing hovered is hovered again at once (<see cref="Rehover"/>), so the prompt and the hint strip
+    /// get the server's fresh answer without a new look.
+    /// </summary>
+    public void HandsNow(int hand, long item, bool combat)
+    {
+        if (_hands == (hand, item, combat))
+            return;
+        bool first = _hands == null;
+        _hands = (hand, item, combat);
+        if (first)
+            return;
+        Held = null;
+        Rehover();
+    }
+
+    private ClickTarget _hintsLook;
+
     private ClickTarget _hovered;
     private ClickTarget _pendingHover;
     private bool _hasPendingHover;
@@ -515,10 +613,17 @@ public sealed class PlaySession
     /// M4a (D125): the crosshair's target (or, in cursor mode, the HUD entry under the pointer) is <paramref name="target"/> now. A hover goes
     /// out when the thing changed, at most once per <see cref="HoverInterval"/> (the newest change waits for the interval). Version 14: nothing
     /// under it clears the hints at once and, when the server was told of a thing, sends an <see cref="ActionKind.Unhover"/> (BYOND's
-    /// <c>MouseExited</c>), on the same interval. Returns true when a hover or an unhover was sent.
+    /// <c>MouseExited</c>), on the same interval. Version 100 also (slice T4b): the hover carries the target's <see cref="ClickTarget.Aim"/>, the zone looked
+    /// at, and goes out again when only that zone changed, at most once per <see cref="ZoneHoverInterval"/>. Returns true when a hover or an unhover was sent.
+    /// A belt cell of the bar (package 3) or the Tab inventory's own sprite (slice 4A) is no tg entry: over it the pointer hovers nothing.
     /// </summary>
     public bool Hover(in ClickTarget target, double now)
     {
+        if (LiveHud.IsOurs(target)) // a belt cell, the own sprite (slice 4A)
+            return Hover(ClickTarget.None, now);
+        if (!target.SameThing(_hintsLook))
+            (_hintsLook, Hints) = (target, null); // DV691: a new look, or none: the answer in hand was for an earlier one
+        bool repeat = target.IsSet && target.Kind != TargetKind.Screen && !_heldKeybindings.Contains(KeybindingCode.ViewPetCommands) && now - _lastHoverAt >= RepeatHoverInterval; // DV691
         if (!target.IsSet)
         {
             _hovered = default;
@@ -528,11 +633,12 @@ public sealed class PlaySession
                 return false;
             }
         }
-        else if (!_hasPendingHover && target.SameThing(_hovered) && target.SameThing(_serverHovered))
+        else if (!_hasPendingHover && target.SameThing(_hovered) && target.SameThing(_serverHovered) && target.Aim == _serverHovered.Aim && !repeat)
             return false;
         _pendingHover = target;
         _hasPendingHover = true;
-        if (now - _lastHoverAt < HoverInterval)
+        // version 100 also: a new zone on the same thing goes out too, at most ZoneHoverInterval apart (the newest waits for it)
+        if (now - _lastHoverAt < (_pendingHover.IsSet && _pendingHover.SameThing(_serverHovered) ? ZoneHoverInterval : HoverInterval))
             return false;
         _lastHoverAt = now;
         _hasPendingHover = false;
@@ -543,7 +649,7 @@ public sealed class PlaySession
             Send(Make(ActionKind.Unhover));
             return true;
         }
-        if (_pendingHover.SameThing(_serverHovered))
+        if (_pendingHover.SameThing(_serverHovered) && _pendingHover.Aim == _serverHovered.Aim && !repeat)
         {
             _hovered = _pendingHover; // back on what the server still has: nothing to send
             return false;
@@ -644,6 +750,44 @@ public sealed class PlaySession
     /// <summary>Version 16: tgui window closes sent.</summary>
     public int UiClosesSent { get; private set; }
 
+    /// <summary>Version 100 also (DV693): the own hotbar as the server last sent it (the cells, the held names, the last refused press).</summary>
+    public HotbarModel Hotbar { get; } = new();
+
+    /// <summary>
+    /// Version 100 also (DV693, ui-overhaul.md section 10): a press of hotbar cell <paramref name="cell"/> (1 to 10), sent as it is; the server decides
+    /// what it does (nothing is predicted). False, and nothing sent, for a cell out of range.
+    /// </summary>
+    public bool HotbarPress(int cell)
+    {
+        if (cell is < 1 or > HotbarMessage.CellCount)
+            return false;
+        Send(new ActionMessage(Prediction.NewestSeq, ActionKind.HotbarPress, 0, ClickButton.None, ClickModifiers.None, null) { HotbarCell = cell });
+        return true;
+    }
+
+    /// <summary>Version 100 also (DV696): the own carried storages as the server last sent them (their items, the last refused move).</summary>
+    public StoragesModel Storages { get; } = new();
+
+    /// <summary>
+    /// Version 100 also (DV696, ui-overhaul.md section 12, slice 4B): a move of the own item <paramref name="item"/> (an entity id) to
+    /// <paramref name="to"/>: a carried storage <paramref name="storage"/> at the wished cell <paramref name="index"/> (1 to 64, 0 for none), a worn slot
+    /// (tg's slot id), a hand (tg's held index) or the floor; sent as it is, the server decides (nothing is predicted). False, and nothing sent, for
+    /// fields out of range.
+    /// </summary>
+    public bool InventoryMove(long item, InventoryTarget to, long storage = 0, int index = 0)
+    {
+        if (item < 1 || !Codec.IsValidInventoryMoveTarget(to, storage, index))
+            return false;
+        Send(new ActionMessage(Prediction.NewestSeq, ActionKind.InventoryMove, 0, ClickButton.None, ClickModifiers.None, null)
+        {
+            MoveItem = item, MoveTo = to, MoveStorage = storage, MoveIndex = index,
+        });
+        return true;
+    }
+
+    /// <summary>Version 100 also (DV696): the Tab inventory was opened; the server plays tg's opening rustle of the back storage (at most once a second).</summary>
+    public void InventoryOpened() => Send(new ActionMessage(Prediction.NewestSeq, ActionKind.InventoryOpen, 0, ClickButton.None, ClickModifiers.None, null));
+
     /// <summary>
     /// Protocol version 17 (drag and drop): the player dragged <see cref="DragRelease.Source"/> with its button held and let go over
     /// <see cref="DragRelease.Over"/> (BYOND's MouseDrop; the server runs tg's /client/MouseDrop). The icon pixel is the one under the
@@ -652,18 +796,37 @@ public sealed class PlaySession
     /// <summary>Version 97 (DV597): the world is built and loaded (the loading screen is done): the server may late-join the new player now.</summary>
     public void Loaded() => Send(new ActionMessage(Prediction.NewestSeq, ActionKind.Loaded, 0, ClickButton.None, ClickModifiers.None, null));
 
-    /// <summary>Version 86 (DV503): the radial's entry <paramref name="label"/> that is no click (the table's Flip) picked on an entity <paramref name="target"/>.</summary>
-    public bool ContextPick(in ClickTarget target, string label)
+    /// <summary>
+    /// Version 100 also (DV697, ui-overhaul.md section 12, slice 4E): the world interact key on <paramref name="target"/>, a thing or a turf of the
+    /// world (the server runs tg's empty-hand click on it); false, and nothing sent, for anything else.
+    /// </summary>
+    public bool Interact(in ClickTarget target)
     {
-        if (!target.IsSet || target.Kind != TargetKind.Entity || string.IsNullOrEmpty(label))
+        if (!target.IsSet || target.Kind is not (TargetKind.Entity or TargetKind.Turf))
             return false;
-        Send(new ActionMessage(Prediction.NewestSeq, ActionKind.ContextPick, target.Id, ClickButton.None, ClickModifiers.None, label) { TargetKind = TargetKind.Entity });
+        Send(MakeTargeted(ActionKind.Interact, target, ClickButton.None, ClickModifiers.None));
         return true;
     }
 
+    /// <summary>Version 86 (DV503): the radial's entry <paramref name="label"/> that is no click (the table's Flip) picked on an entity <paramref name="target"/>.</summary>
+    public bool ContextPick(in ClickTarget target, string label)
+    {
+        // DV694: a screen target too, an item in a hand or a worn slot (the inventory's right-click wheel: its action buttons)
+        if (!target.IsSet || target.Kind is not (TargetKind.Entity or TargetKind.Screen) || LiveHud.IsOurs(target) || string.IsNullOrEmpty(label))
+            return false;
+        Send(new ActionMessage(Prediction.NewestSeq, ActionKind.ContextPick, target.Id, ClickButton.None, ClickModifiers.None, label) { TargetKind = target.Kind });
+        return true;
+    }
+
+    /// <summary>
+    /// Protocol version 17 (drag and drop): the player dragged <see cref="DragRelease.Source"/> with its button held and let go over
+    /// <see cref="DragRelease.Over"/> (BYOND's MouseDrop; the server runs tg's /client/MouseDrop). The icon pixel is the one under the
+    /// pointer at the release (the over thing's). False, and nothing sent, without both things or a button.
+    /// </summary>
     public bool Drop(in DragRelease drop)
     {
-        if (!drop.Source.IsSet || !drop.Over.IsSet || drop.Button == ClickButton.None)
+        // package 3: a belt cell of the bar (slice 4A: or the own sprite) is no tg entry the server knows; dragging to or from it does nothing yet
+        if (!drop.Source.IsSet || !drop.Over.IsSet || drop.Button == ClickButton.None || LiveHud.IsOurs(drop.Source) || LiveHud.IsOurs(drop.Over))
             return false;
         bool sourceCell = drop.Source.Kind is TargetKind.Turf or TargetKind.Ceiling, overCell = drop.Over.Kind is TargetKind.Turf or TargetKind.Ceiling;
         Send(new ActionMessage(Prediction.NewestSeq, ActionKind.Drop, sourceCell ? 0 : drop.Source.Id, drop.Button, drop.Modifiers, null)

@@ -189,6 +189,15 @@ public interface IReplicator
     /// <summary>Version 40: the RadioChannels message of a session's last <see cref="BuildPrivate"/> (its worn headset's prefixes changed), or null.</summary>
     RadioChannelsMessage TakeRadioChannels(int session) => null;
 
+    /// <summary>Version 100 also (DV693): the Hotbar message of a session's last <see cref="BuildPrivate"/> or join (its cells or held names changed, or a press was refused), or null.</summary>
+    HotbarMessage TakeHotbar(int session) => null;
+
+    /// <summary>Version 100 also (DV696): the Storages message of a session's last <see cref="BuildPrivate"/> or join (its carried storages changed, or a move was refused), or null.</summary>
+    StoragesMessage TakeStorages(int session) => null;
+
+    /// <summary>Version 100 also (DV698): the Actions message of a session's last <see cref="BuildPrivate"/> or join (its action buttons, their states or the palette changed), or null.</summary>
+    ActionsMessage TakeActions(int session) => null;
+
     /// <summary>
     /// Version 42: the Motion messages of a session for the last <see cref="BuildDelta"/>, after its <see cref="BuildPrivate"/> (the observer
     /// layer's held entities decide which ghosts it names): the capsule mobs whose position or yaw changed within

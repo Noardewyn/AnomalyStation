@@ -516,7 +516,7 @@ public partial class GameScene
         bool markers = _playerMarkersOn;
         if (ImGui.Checkbox("Markers over every player of the level (through walls)", ref markers))
             SetPlayerMarkers(markers);
-        ImGui.Checkbox("Names overlay (F3)", ref _names);
+        ImGui.Checkbox("Names overlay (" + KeyLabel(PlayAction.Names) + ")", ref _names);
         if (_light != null)
         {
             // D288: the Godot lights or, for comparison, the old light grid
@@ -566,7 +566,7 @@ public partial class GameScene
         }
         StatsCornerCheckbox();
         bool full = DisplayServer.WindowGetMode() is DisplayServer.WindowMode.Fullscreen or DisplayServer.WindowMode.ExclusiveFullscreen;
-        if (ImGui.Checkbox("Fullscreen (F12)", ref full))
+        if (ImGui.Checkbox("Fullscreen (" + KeyLabel(PlayAction.Fullscreen) + ")", ref full))
             ToggleFullscreen();
         bool changed = false;
         bool playerNames = _options.PlayerNames, tile = _options.HighlightTile, thing = _options.HighlightThing, fov = _options.ThirdPersonFov;
@@ -687,20 +687,12 @@ public partial class GameScene
         ImGui.EndTable();
     }
 
-    // The keys of an action as a player reads them (Backslash is the | key).
+    // The keys of an action as a player reads them (KeyChips.Label).
     private string KeyLabel(PlayAction action)
     {
         IReadOnlyList<string> keys = _options.Bindings.KeysOf(action);
         if (keys.Count == 0) return "unbound";
-        return string.Join(", ", keys.Select(k => k switch
-        {
-            "Backslash" => "|",
-            "Quoteleft" => "`",
-            "MouseLeft" => "LMB",
-            "MouseRight" => "RMB",
-            "MouseMiddle" => "MMB",
-            _ => k,
-        }));
+        return string.Join(", ", keys.Select(KeyChips.Label));
     }
 
     private void DrawLegend(DevGasReport report)

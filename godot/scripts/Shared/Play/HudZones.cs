@@ -62,6 +62,33 @@ public enum HatchStyle : byte
     Stripes = 8,
 }
 
+/// <summary>The lines a hatching is drawn with (HudLayer's shader draws the same: <see cref="HealthZones.Hatched"/>).</summary>
+public enum HatchShape : byte
+{
+    None = 0,
+
+    /// <summary>Diagonal lines, rising to the right.</summary>
+    Diagonal = 1,
+
+    /// <summary>Both diagonals.</summary>
+    Cross = 2,
+
+    /// <summary>Round dots on a square grid.</summary>
+    Dots = 3,
+
+    /// <summary>Vertical bars.</summary>
+    Vertical = 4,
+
+    /// <summary>Horizontal stripes.</summary>
+    Horizontal = 5,
+
+    /// <summary>Both diagonals and vertical lines.</summary>
+    Star = 6,
+}
+
+/// <summary>A hatching's lines: their shape, how far apart they repeat and how wide they are (a dot's radius), in cells of about one of the doll's tg pixels.</summary>
+public readonly record struct HatchPattern(HatchShape Shape, float Period, float Width);
+
 /// <summary>The zones of tg's health doll and what the client makes of their icon states.</summary>
 public static class HealthZones
 {
@@ -134,6 +161,61 @@ public static class HealthZones
         };
     }
 
+    /// <summary>The most of a part a hatching covers: the rest shows the part's colour (ui-overhaul.md section 6, D70: the hatch tells the levels apart, the colour stays readable).</summary>
+    public const float MaxHatchCoverage = 0.35f;
+
+    /// <summary>
+    /// The lines of a hatching style. Thin lines (half a cell) spaced several cells apart, so even the worst level leaves most of the part in its
+    /// colour; the levels differ by shape and spacing: one diagonal sparse and dense, both diagonals sparse and dense, then both with vertical lines.
+    /// Missing, disabled and dead: dots, vertical bars, horizontal stripes.
+    /// </summary>
+    public static HatchPattern Pattern(HatchStyle style) => style switch
+    {
+        HatchStyle.Light => new(HatchShape.Diagonal, 5f, 0.5f),
+        HatchStyle.Medium => new(HatchShape.Diagonal, 3f, 0.5f),
+        HatchStyle.Cross => new(HatchShape.Cross, 5f, 0.5f),
+        HatchStyle.DenseCross => new(HatchShape.Cross, 3f, 0.5f),
+        HatchStyle.Solid => new(HatchShape.Star, 4f, 0.5f),
+        HatchStyle.Dots => new(HatchShape.Dots, 4f, 0.9f),
+        HatchStyle.Bars => new(HatchShape.Vertical, 4f, 1f),
+        HatchStyle.Stripes => new(HatchShape.Horizontal, 4f, 1f),
+        _ => new(HatchShape.None, 1f, 0f),
+    };
+
+    /// <summary>The share of a large area <paramref name="pattern"/> covers.</summary>
+    public static float Coverage(HatchPattern pattern)
+    {
+        float line = Math.Clamp(pattern.Width / pattern.Period, 0f, 1f);
+        return pattern.Shape switch
+        {
+            HatchShape.Diagonal or HatchShape.Vertical or HatchShape.Horizontal => line,
+            HatchShape.Cross => 1f - (1f - line) * (1f - line),
+            HatchShape.Star => 1f - (1f - line) * (1f - line) * (1f - line),
+            HatchShape.Dots => Math.Min(1f, MathF.PI * pattern.Width * pattern.Width / (pattern.Period * pattern.Period)),
+            _ => 0f,
+        };
+    }
+
+    /// <summary>Whether the screen pixel centred at (<paramref name="x"/>, <paramref name="y"/>) is on a line of <paramref name="pattern"/> with cells of <paramref name="cell"/> pixels (the shader's <c>hatch</c>).</summary>
+    public static bool Hatched(HatchPattern pattern, float cell, float x, float y)
+    {
+        float per = pattern.Period * cell, w = pattern.Width * cell;
+        static float Mod(float a, float b) => a - b * MathF.Floor(a / b); // GLSL's mod
+        bool Line(float v) => Mod(v, per) < w;
+        switch (pattern.Shape)
+        {
+            case HatchShape.Diagonal: return Line(x + y);
+            case HatchShape.Cross: return Line(x + y) || Line(x - y);
+            case HatchShape.Star: return Line(x + y) || Line(x - y) || Line(x);
+            case HatchShape.Vertical: return Line(x);
+            case HatchShape.Horizontal: return Line(y);
+            case HatchShape.Dots:
+                float qx = Mod(x, per) - per / 2f, qy = Mod(y, per) - per / 2f;
+                return qx * qx + qy * qy < w * w;
+            default: return false;
+        }
+    }
+
     /// <summary>The hatching of a zone.</summary>
     public static HatchStyle Hatch(ZoneState state) => state.Kind switch
     {
@@ -152,14 +234,15 @@ public static class HealthZones
     };
 
     /// <summary>
-    /// The colour a zone is drawn in under a colourblind palette; null for <see cref="ColorblindMode.Off"/> (tg's own sprite
-    /// colours stay). The ramps are those of Okabe and Ito's colour-universal set, ordered so that each level differs from
-    /// its neighbours in lightness as well as hue; the hatching carries the level on its own besides.
+    /// The colour a zone is drawn in (null: tg's own picture, untinted). With no colourblind palette (<see cref="ColorblindMode.Off"/>) it is
+    /// the standard ramp (ui-overhaul.md section 6, <see cref="StandardColor"/>). The colourblind ramps are those of Okabe and Ito's colour-universal set,
+    /// ordered so that each level differs from its neighbours in lightness as well as hue; the hatching carries the level on its own
+    /// besides (D70).
     /// </summary>
     public static Rgb? PaletteColor(ColorblindMode mode, ZoneState state)
     {
         if (mode == ColorblindMode.Off)
-            return null;
+            return StandardColor(state);
         switch (state.Kind)
         {
             case ZoneKind.Missing: return new Rgb(0.45f, 0.45f, 0.45f);
@@ -178,6 +261,43 @@ public static class HealthZones
                 float grey = 0.88f - 0.74f * t;
                 return new Rgb(grey, grey, grey);
         }
+    }
+
+    /// <summary>
+    /// The standard ramp (wireframes, Mockup 1: green, yellow, orange, red, dark grey): level 0 green, 1 to 2 yellow, 3 to 4 orange,
+    /// 5 red, a missing part dark grey, a dead mob near black (<see cref="UiTokens"/>). A disabled part has none (null): tg's own picture, a
+    /// dark grey part with bright red marks, says it best; tinted by its red marks it would read as a dark maroon.
+    /// </summary>
+    public static Rgb? StandardColor(ZoneState state) => state.Kind switch
+    {
+        ZoneKind.Disabled => null,
+        ZoneKind.Missing => UiTokens.ToRgb(UiTokens.DollMissing),
+        ZoneKind.Dead => UiTokens.ToRgb(UiTokens.DollDead),
+        _ => UiTokens.ToRgb(state.Level switch
+        {
+            <= 0 => UiTokens.DollUnharmed,
+            <= 2 => UiTokens.DollMinor,
+            <= 4 => UiTokens.DollModerate,
+            _ => UiTokens.DollSevere,
+        }),
+    };
+
+    /// <summary>
+    /// The brightest colour channel among a picture's opaque pixels, 0 to 1 (0 for none). tg's doll sprites shade every level alike (the main
+    /// tone, one a tenth darker, a dark edge), so a pixel's brightest channel over this is its shade: the standard ramp's colour times it is
+    /// the ramp colour itself on the main tone (HudLayer's shader).
+    /// </summary>
+    public static float Brightest(Icons.Raster image)
+    {
+        if (image?.Pixels == null)
+            return 0f;
+        int best = 0;
+        for (int i = 0; i + 3 < image.Pixels.Length; i += 4)
+        {
+            if (image.Pixels[i + 3] >= 128)
+                best = Math.Max(best, Math.Max(image.Pixels[i], Math.Max(image.Pixels[i + 1], image.Pixels[i + 2])));
+        }
+        return best / 255f;
     }
 
     private static readonly Rgb[] RedGreenRamp =

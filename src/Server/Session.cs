@@ -148,6 +148,9 @@ public sealed class Session
 
     public int PhotosRefused { get; set; }
 
+    /// <summary>Version 99: the refusals of a photo answering no request, or one too late, already logged (each once a session).</summary>
+    internal HashSet<string> PhotoRefusalsLogged { get; } = new();
+
     /// <summary>Version 53: the bug report being received (its parts so far), or null; true in <see cref="BugReportRefused"/> while a refused one's parts still come.</summary>
     internal System.IO.MemoryStream BugReportBody { get; set; }
 
@@ -306,6 +309,15 @@ public sealed class Session
     // acknowledgement and also follows the frames that were no command.
     internal uint LastFrameSeq;
     internal ushort LastYaw;
+
+    // Version 100 also (slice T4b, world half): the last hover whose zone was skipped while a do-after ran for the mob, applied once it has
+    // none left (ServerHost.CatchUpLooks); set and cleared only by applied commands and the world, so a replay holds the same.
+    internal QueuedCommand? FrozenLook;
+
+    // DEVIATION(DV691): the world thing the applied hover named when the mob could not reach it (ServerHost.NoteReach, before tg's hover); the
+    // screentip router, which tg calls for that hover later in the tick (SSmouse_entered's fire), sends its hints empty and clears this. Null
+    // when it was in reach, a screen target, or the mob's clicks are not gated by reach.
+    internal Anomaly.Core.Tg.atom HoverOutOfReach;
 
     // The close the host does after the tick (set inside the world, done outside it).
     internal bool CloseAfterTick;

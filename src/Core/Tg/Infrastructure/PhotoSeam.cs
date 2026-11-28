@@ -45,6 +45,19 @@ public static class PhotoSeam
     /// <summary>The most bytes of a picture's PNG (the protocol's <c>Limits.MaxPhotoBytes</c>).</summary>
     public const int MaxBytes = 512 * 1024;
 
+    /// <summary><see cref="Develop"/>'s refusal of an image that answers no request of its client: none, another client's, or one answered.</summary>
+    public const string NoRequest = "it answers no request of this client";
+
+    /// <summary><see cref="Develop"/>'s refusal of the first answer to a request of its client that expired unanswered within <see cref="GraceTicks"/>.</summary>
+    public const string Late = "it answers a request of this client too late";
+
+    /// <summary>
+    /// How long after its deadline an expired request is remembered, in ticks (a minute, six deadlines): a client that stalled (a window
+    /// dragged or minimised, a slow render) sends its queued answers late, and each is told from an answer to nothing for this long. Only
+    /// requests a camera shot made are remembered, so a client cannot grow the set by sending answers.
+    /// </summary>
+    public const long GraceTicks = 60 * 20;
+
     /// <summary>
     /// The camera of <paramref name="user"/> took <paramref name="picture"/> of <paramref name="target"/>, <paramref name="tilesX"/> by
     /// <paramref name="tilesY"/> tiles: its client is asked to render it. Returns the request's id, 0 when there is no client to ask (the
@@ -89,21 +102,30 @@ public static class PhotoSeam
         Holder holder = Holder.Of(world);
         holder.Prune(world.Tick);
         if (!holder.Pending.TryGetValue(id, out Pending pending) || pending.Asked != from)
-            return "it answers no request of this client";
+        {
+            // a request of this client that expired unanswered is forgiven once: an honest client answers every request it was sent
+            if (holder.Expired.TryGetValue(id, out Expired expired) && expired.Asked == from)
+            {
+                holder.Expired.Remove(id);
+                return Late;
+            }
+            return NoRequest;
+        }
         holder.Pending.Remove(id);
         if (png == null || png.Length < 1 || png.Length > MaxBytes)
             return "it is not 1 to " + MaxBytes + " bytes";
-        int width, height;
         try
         {
-            (width, height, _) = DmPng.Decode(png);
+            // the size the header claims is checked before decoding, so a hostile header never makes the decoder allocate for it
+            (int width, int height) = DmPng.SizeOf(png);
+            if (width < MinSide || height < MinSide || width > pending.Width || height > pending.Height)
+                return "it is " + width + " x " + height + " pixels, not " + MinSide + " to " + pending.Width + " x " + pending.Height;
+            DmPng.Decode(png);
         }
         catch (Exception e) when (e is not OutOfMemoryException) // a client's bytes: whatever the decoder trips on refuses them
         {
             return "it is not a PNG the server reads (" + e.Message + ")";
         }
-        if (width < MinSide || height < MinSide || width > pending.Width || height > pending.Height)
-            return "it is " + width + " x " + height + " pixels, not " + MinSide + " to " + pending.Width + " x " + pending.Height;
         datum_picture picture = pending.Picture;
         if (picture == null || picture.gc_destroyed != null)
             return "its picture is gone";
@@ -127,20 +149,35 @@ public static class PhotoSeam
     /// <summary>The requests still waiting for their image (tests).</summary>
     public static int PendingCount(World world) => Holder.Of(world).Pending.Count;
 
+    /// <summary>The expired requests still remembered for a late answer (tests).</summary>
+    public static int ExpiredCount(World world) => Holder.Of(world).Expired.Count;
+
     private readonly record struct Pending(datum_picture Picture, client Asked, long Deadline, int Width, int Height);
+
+    private readonly record struct Expired(client Asked, long Forget);
 
     // The per-world requests (World.GetExtension: no static state).
     private sealed class Holder
     {
         internal uint LastId;
         internal readonly Dictionary<uint, Pending> Pending = new();
+        internal readonly Dictionary<uint, Expired> Expired = new();
 
         internal void Prune(long tick)
         {
-            if (Pending.Count == 0)
-                return;
-            foreach (uint stale in Pending.Where(kv => kv.Value.Deadline < tick).Select(kv => kv.Key).ToList())
-                Pending.Remove(stale);
+            if (Pending.Count > 0)
+            {
+                foreach (KeyValuePair<uint, Pending> stale in Pending.Where(kv => kv.Value.Deadline < tick).ToList())
+                {
+                    Pending.Remove(stale.Key);
+                    Expired[stale.Key] = new Expired(stale.Value.Asked, stale.Value.Deadline + GraceTicks);
+                }
+            }
+            if (Expired.Count > 0)
+            {
+                foreach (uint forgotten in Expired.Where(kv => kv.Value.Forget < tick).Select(kv => kv.Key).ToList())
+                    Expired.Remove(forgotten);
+            }
         }
 
         internal static Holder Of(World world) => world.GetExtension(static _ => new Holder());

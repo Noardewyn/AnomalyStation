@@ -61,6 +61,7 @@ public sealed partial class ServerHost
         }
 
         FindSubsystems();
+        TrackHotbars(); // version 100 also (DV693): before the presses, after everything the last tick moved
         _due.Clear();
         _queue.TakeDue(world.Tick, _due);
         foreach (QueuedCommand command in _due)
@@ -81,6 +82,8 @@ public sealed partial class ServerHost
             }
         }
         _due.Clear();
+        if (_frozenLooks.Count > 0)
+            CatchUpLooks(world); // version 100 also (slice T4b): the looks skipped during do-afters that are over now
         AutoRespawns(world); // DV580: before the direct joins, which late-join the respawned players
         DirectJoins(world);
     }
@@ -131,9 +134,9 @@ public sealed partial class ServerHost
                     s.PendingStamps[kept++] = stamp;
                     continue;
                 }
-                _queue.Enqueue(new QueuedCommand(applyTick, s.Ordinal, taken, CommandKind.Action, a.Text, Action: a.Kind, Target: a.Target, Button: a.Button, Modifiers: a.Modifiers,
-                    TargetKind: a.EffectiveTargetKind, TurfX: a.TurfX, TurfY: a.TurfY, TurfZ: a.TurfZ, IconX: a.IconX, IconY: a.IconY, Keybinding: a.Keybinding, KeyUp: a.KeyUp, AimZone: a.AimZone,
-                    RadialMenu: a.RadialMenu, RadialElement: a.RadialElement,
+                _queue.Enqueue(new QueuedCommand(applyTick, s.Ordinal, taken, CommandKind.Action, a.Text, Action: a.Kind, Target: a.Kind switch { ActionKind.HotbarPress => a.HotbarCell, ActionKind.InventoryMove => a.MoveItem, _ => a.Target }, Button: a.Button, Modifiers: a.Modifiers,
+                    TargetKind: a.EffectiveTargetKind, TurfX: a.Kind == ActionKind.InventoryMove ? (int)a.MoveTo : a.TurfX, TurfY: a.Kind == ActionKind.InventoryMove ? a.MoveIndex : a.TurfY, TurfZ: a.TurfZ, IconX: a.IconX, IconY: a.IconY, Keybinding: a.Keybinding, KeyUp: a.KeyUp, AimZone: a.AimZone,
+                    RadialMenu: a.Kind == ActionKind.InventoryMove ? a.MoveStorage : a.RadialMenu, RadialElement: a.RadialElement,
                     UiWindow: a.UiWindow, UiParams: a.UiParams?.ToJson(), OverKind: a.OverKind, OverTarget: a.OverTarget, OverX: a.OverX, OverY: a.OverY, OverZ: a.OverZ,
                     DragTime: a.DragTime, Aim: a.Aim, SayType: a.SayType, SayChannel: a.SayChannel, SayVisible: a.SayVisible) with { Text = a.Kind == ActionKind.UiAct ? a.UiAction : a.Text });
                 if (a.Kind is ActionKind.Click or ActionKind.Throw or ActionKind.PutDown) _clickStamps.Add(stamp);
@@ -358,6 +361,17 @@ public sealed partial class ServerHost
         }
     }
 
+    // DV693: each player's human brings its hotbar cells up to date in the command phase (a replay's too), so the items that came into the belt
+    // last tick take their cells in the order they came, as the replicator showed them (BeltHotbar.Peek after that tick).
+    private void TrackHotbars()
+    {
+        foreach (Session s in _sessions)
+        {
+            if (s.Client != null && MobOf(s) is mob_living_carbon_human human)
+                BeltHotbar.Track(human);
+        }
+    }
+
     private mob MobOf(Session s)
     {
         if (s.OwnEntity == 0 || !World.Objects.TryGet(s.OwnEntity, out object o)) return null;
@@ -424,6 +438,8 @@ public sealed partial class ServerHost
     {
         if (s == null || s.Client == null) return;
         world.usr = MobOf(s);
+        if (command.Action is ActionKind.Hover or ActionKind.Unhover or ActionKind.Click or ActionKind.Throw)
+            s.FrozenLook = null; // version 100 also (slice T4b): a newer look, or a click's or a throw's own zone, replaces a skipped look
         switch (command.Action)
         {
             case ActionKind.Rest:
@@ -511,9 +527,28 @@ public sealed partial class ServerHost
                 else
                     s.ClicksRejected++;
                 break;
+            case ActionKind.Interact:
+                // version 100 also (DV697): the world interact key, on a target checked as a click's
+                if (TryResolveTarget(s, command, out atom used))
+                    _clients.Interact(s.Client, used);
+                else
+                    s.ClicksRejected++;
+                break;
             case ActionKind.PopupClose:
                 // version 78 (DV387): a popup window's on-close command
                 _clients.ClosePopup(s.Client, command.Text);
+                break;
+            case ActionKind.HotbarPress:
+                // version 100 also (DV693): a hotbar cell's press, the cell in the command's target field (QueuedCommand)
+                _clients.HotbarPress(s.Client, (int)command.Target);
+                break;
+            case ActionKind.InventoryMove:
+                // version 100 also (DV696): the item in the target field, the storage in the radial menu field, the target kind and the index in the turf
+                // fields (QueuedCommand), so the command log keeps them
+                _clients.InventoryMove(s.Client, command.Target, (MoveTarget)command.TurfX, command.RadialMenu, command.TurfY);
+                break;
+            case ActionKind.InventoryOpen:
+                _clients.InventoryOpen(s.Client); // version 100 also (DV696)
                 break;
             default:
                 return;
@@ -611,7 +646,7 @@ public sealed partial class ServerHost
             ClickButton.Middle => MIDDLE_CLICK,
             _ => null,
         };
-        if (button == null || !TryResolveTarget(s, command, out atom target))
+        if (button == null || (!TryResolveTarget(s, command, out atom target) && !TryStoredTarget(s, command, out target)))
         {
             s.ClicksRejected++;
             return;
@@ -623,8 +658,8 @@ public sealed partial class ServerHost
             : null;
         string clickParams = ClientSeam.ClickParams(button, (command.Modifiers & ClickModifiers.Shift) != 0, (command.Modifiers & ClickModifiers.Ctrl) != 0,
             (command.Modifiers & ClickModifiers.Alt) != 0, command.IconX, command.IconY, screenLoc) + AimParamOf(s, command.Aim);
-        if (command.AimZone != AimZone.None && command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob aimer)
-            AimAt(aimer, command.AimZone);
+        if (command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob aimer && ActedZone(command, target, aimer) is var aimZone and not AimZone.None)
+            AimAt(aimer, aimZone);
         // the dev hook of `shoot WHO TYPE` (M7x slice A): the click fires a projectile with its params, as a gun's would
         if (s.Client.dm_dev_shot is Type shot && (_config.DevCommandsEnabled || s.Client.holder != null) && s.Client.mob is mob shooter)
         {
@@ -641,6 +676,26 @@ public sealed partial class ServerHost
         _clients.Click(s.Client, target, clickParams);
     }
 
+    // DEVIATION(DV696): a click or a hover named as a screen target on an item the sender's own carried storages show now (CarriedStorages.ShowsItem:
+    // in one of its listed storages or, slice 4C-1, in the other container it has open by tg's state, no reach asked, not locked, not hidden, not
+    // deeper), as tg's storage screen would show it, though the item is no screen entry here. Slice 4B-2 took only the Shift+click (tg's examine);
+    // the inventory's right-click wheel (DV694) also sends tg's context entries' clicks on it, so a left or right click with any modifiers is taken,
+    // as tg's ClickOn takes them on the item's screen object (a middle click is not). A hover asks tg's screentip of it. Anyone else's stored item,
+    // or one named as a world entity, is refused as before.
+    private bool TryStoredTarget(Session s, in QueuedCommand command, out atom target)
+    {
+        target = null;
+        if (command.TargetKind != TargetKind.Screen || command.Action != ActionKind.Hover && command.Button is not (ClickButton.Left or ClickButton.Right)
+            || s.Client?.mob is not mob user || !World.Objects.TryGet(command.Target, out object found) || found is not atom item || !IsStoredShown(user, item))
+            return false;
+        target = item;
+        return true;
+    }
+
+    // DV696: whether the item is one the human's carried storages (or its open other container) show it now
+    private static bool IsStoredShown(mob viewer, atom target)
+        => viewer is mob_living_carbon_human user && !QDELETED(user) && target is obj_item item && !QDELETED(item) && CarriedStorages.ShowsItem(user, item);
+
     // Version 81 (D328): a throw at the target, tg's left click in throw mode with the click's params and the camera's aim (ClientSeam.Throw)
     private void ApplyThrow(Session s, in QueuedCommand command)
     {
@@ -650,8 +705,8 @@ public sealed partial class ServerHost
             return;
         }
         string clickParams = ClientSeam.ClickParams(LEFT_CLICK, false, false, false, command.IconX, command.IconY, null) + AimParamOf(s, command.Aim);
-        if (command.AimZone != AimZone.None && command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob aimer)
-            AimAt(aimer, command.AimZone);
+        if (command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob aimer && ActedZone(command, target, aimer) is var aimZone and not AimZone.None)
+            AimAt(aimer, aimZone);
         _clients.Throw(s.Client, target, clickParams);
     }
 
@@ -787,9 +842,18 @@ public sealed partial class ServerHost
             ? (Dm.@in(shown, s.Client.screen) ? shown : ClientSeam.ScreenHolderOf(s.Client, shown))?.screen_loc
             : null;
 
+    // DEVIATION(DV692): the zone a click or a throw selects. A carbon drawn as one icon (an alien: no body part images) gets no zone from the
+    // client; when the zone selected (chosen on tg's selector, or left by a look at another body) names a part that carbon lacks, tg's own test
+    // (aimed_limb_missing's check_zone and get_bodypart) would refuse the hit, so the action counts as aimed at the chest. Otherwise the selected
+    // zone stands, as in tg. A hover never changes it, and a human (a monkey too) always gets the client's zone or none.
+    private static AimZone ActedZone(in QueuedCommand command, atom target, mob aimer)
+        => command.AimZone == AimZone.None && target is mob_living_carbon carbon and not mob_living_carbon_human
+            && !Dm.truthy(carbon.get_bodypart(Dm.str(check_zone(aimer.zone_selected)))) ? AimZone.Chest : command.AimZone;
+
     // DEVIATION(DV30): a click on a carbon's picture selects the body zone under the crosshair before tg's Click, through tg's
     // own zone selector (set_selected_zone, so the HUD's doll shows it), where tg selects it on the zone selector alone.
-    private static void AimAt(mob aimer, AimZone aim)
+    // Version 100 also (slice T4b): a hover selects the zone looked at with tg's should_log = FALSE (a look is no choice to log).
+    private static void AimAt(mob aimer, AimZone aim, bool log = true)
     {
         string zone = aim switch
         {
@@ -799,12 +863,16 @@ public sealed partial class ServerHost
             AimZone.RightArm => BODY_ZONE_R_ARM,
             AimZone.LeftLeg => BODY_ZONE_L_LEG,
             AimZone.RightLeg => BODY_ZONE_R_LEG,
+            // version 100 (package T, slice T4a): the precise zones of tg's doll (get_zone_at), which tg's readers of zone_selected handle as on tg
+            AimZone.Eyes => BODY_ZONE_PRECISE_EYES,
+            AimZone.Mouth => BODY_ZONE_PRECISE_MOUTH,
+            AimZone.Groin => BODY_ZONE_PRECISE_GROIN,
             _ => null,
         };
         if (zone == null)
             return;
         if (aimer.hud_used?.screen_objects?[HUD_MOB_ZONE_SELECTOR] is atom_movable_screen_zone_sel selector)
-            selector.set_selected_zone(zone, aimer);
+            selector.set_selected_zone(zone, aimer, log ? Dm.TRUE : Dm.FALSE);
         else
             aimer.zone_selected = zone;
     }
@@ -860,7 +928,7 @@ public sealed partial class ServerHost
 
     private void ApplyHover(Session s, in QueuedCommand command)
     {
-        if (!TryResolveTarget(s, command, out atom target))
+        if (!TryResolveTarget(s, command, out atom target) && !TryStoredTarget(s, command, out target))
         {
             s.ClicksRejected++;
             return;
@@ -871,18 +939,114 @@ public sealed partial class ServerHost
             var hint = new ContextHintsMessage { TargetKind = TargetKind.Ceiling, TurfX = (int)ceilingCell.x, TurfY = (int)ceilingCell.y, TurfZ = (int)ceilingCell.z,
                 Name = $"Ceiling: {CeilingSystem.Of(World).NameAt((int)ceilingCell.x, (int)ceilingCell.y, (int)ceilingCell.z)}"
                     + (state.Broken != 0 ? " (broken)" : "") + (state.Damage != 0 ? $" ({CeilingState.LatticeIntegrity - state.Damage / 10f:0.#}/{CeilingState.LatticeIntegrity})" : "") + (state.Exists && !state.Supported ? " (NO SUPPORT)" : "") };
+            // DEVIATION(DV691): out of the ceiling click's range the ceiling is not named
+            // (the ceiling's range, CeilingSystem's, for every living mob whatever it holds: a gun's shot from afar shows nothing either)
+            if (s.Client.mob is mob_living reacher && !Waiting.NoSleep(CeilingSystem.InReach(reacher, ceilingCell)))
+                hint.Name = "";
+            if (s.Client.mob is mob_living holder)
+                ScreentipRouter.Tail(this, s, hint, holder, null); // DV697: the held item's lines for the hint strip
             while (s.ControlOutbox.Count >= Session.ControlOutboxCap) s.ControlOutbox.Dequeue();
             s.ControlOutbox.Enqueue(Codec.Encode(hint));
             return;
         }
+        // DEVIATION(DV30), version 100 also (slice T4b): the zone looked at on a carbon becomes tg's zone_selected before tg's hover, so the
+        // screentip is built from it (carbon_context's Headpat, Hug, Pull tail). Not while any of tg's do-afters runs for the mob:
+        // a surgery step or the gun at the mouth keeps the zone it started with, and the look is applied once the
+        // do-afters are over (CatchUpLooks); a click still sets it (ApplyClick). tg's MouseEntered of the same atom runs on_mouse_enter
+        // again, so a zone change on the same mob rebuilds the hints too.
+        if (command.AimZone != AimZone.None && command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob looker)
+        {
+            if (LAZYLEN(looker.do_afters) == 0)
+                AimAt(looker, command.AimZone, log: false);
+            else
+                RememberFrozenLook(s, command);
+        }
+        NoteReach(s, target, command.TargetKind);
         _clients.Hover(s.Client, target);
         s.HoversApplied++;
+    }
+
+    // DEVIATION(DV691): tg's screentip shows at any distance; here the prompt shows only where a click would reach, so the
+    // router sends a world thing's hints empty when the mob cannot reach it by tg's own test of a click (ClickOn's IsReachableBy with the held
+    // item's reach, click.dm:171). tg's MouseEntered still runs, so the hover's own effects (dm_mouse_over, the aimed turf, MouseExited) stay.
+    private static void NoteReach(Session s, atom target, TargetKind kind)
+    {
+        s.HoverOutOfReach = null;
+        if (kind == TargetKind.Screen || ReachGated(s) is not mob_living user)
+            return;
+        if (!Dm.truthy(Waiting.NoSleep(target.IsReachableBy(user, (user.get_active_held_item() as obj_item)?.reach))))
+            s.HoverOutOfReach = target;
+    }
+
+    // The mob gated by tg's reach test: a living one acting from where it stands (on a turf, or in a loc whose AllowClick is true), whatever its
+    // state of the moment (cuffed, incapacitated, a cooldown, throw mode). Any other keeps tg's screentip (as before DV691), since tg handles its
+    // clicks by another rule: not living (observer.dm:13), the AI (ai.dm:18), a cyborg with no module out (interaction_range, cyborg.dm:51), the
+    // hunter while leap_on_click is on (hunter.dm:36), and a mob inside a thing that does not allow the click (a mech, a locker: click.dm:161).
+    private static mob_living ReachGated(Session s)
+    {
+        if (s.Client?.mob is not mob_living m || m is mob_living_silicon_ai || m is mob_living_silicon_robot && m.get_active_held_item() == null
+            || m is mob_living_carbon_alien_adult_hunter { leap_on_click: var leap } && Dm.truthy(leap))
+            return null;
+        return m.loc is turf || Dm.truthy(m.loc?.AllowClick()) ? m : null;
+    }
+
+    // Version 100 also (slice T4b): the sessions holding a look skipped during a do-after, in the order the looks were applied (a list, so
+    // the catch-up's order is the commands' order in a replay too).
+    private readonly List<Session> _frozenLooks = new();
+
+    private void RememberFrozenLook(Session s, in QueuedCommand command)
+    {
+        s.FrozenLook = command;
+        if (!_frozenLooks.Contains(s))
+            _frozenLooks.Add(s);
+    }
+
+    // The command phase, after the tick's commands: a skipped look is applied once the looker's mob has no do-after left (tg's zone selected
+    // without logging, then tg's hover of the same target again, so its hints are built from it). The target must still resolve as a hover's
+    // does (exists, in view) and be a carbon. It is the session's hovered thing by construction: any later hover, unhover, click or throw
+    // cleared the look (ApplyAction). Only the sessions in _frozenLooks are looked at.
+    private void CatchUpLooks(World world)
+    {
+        for (int i = 0; i < _frozenLooks.Count; i++)
+        {
+            Session s = _frozenLooks[i];
+            if (s.FrozenLook.HasValue && s.Client?.mob is mob looker && LAZYLEN(looker.do_afters) != 0)
+                continue; // still busy: kept for a later tick
+            _frozenLooks.RemoveAt(i--);
+            if (s.FrozenLook is not QueuedCommand due || s.Client?.mob is not mob mob)
+            {
+                s.FrozenLook = null;
+                continue;
+            }
+            s.FrozenLook = null;
+            try
+            {
+                world.usr = mob;
+                if (TryResolveTarget(s, due, out atom target) && target is mob_living_carbon)
+                {
+                    AimAt(mob, due.AimZone, log: false);
+                    NoteReach(s, target, due.TargetKind);
+                    _clients.Hover(s.Client, target);
+                }
+            }
+            catch (Exception e)
+            {
+                world.ReportRuntime(e); // an isolation boundary, as each command is
+            }
+            finally
+            {
+                world.usr = null;
+            }
+        }
     }
 
     // ---- screentips (D125): tg's on_mouse_enter publishes the hovered target's name and context; the router turns it into a
     // ContextHints message for the hovering session (sent after the tick, with the chat). It only records: a sink never changes
     // the world (presentation-seam.md). A replay has no connections, so nothing is queued there.
     private bool _screentipsInstalled;
+
+    // DV691: the session whose chat is muted while its hover's radial extras are worked out (ScreentipRouter.QuietExtras), else null.
+    private Session _chatMutedFor;
 
     private void InstallScreentips(World world)
     {
@@ -900,9 +1064,14 @@ public sealed partial class ServerHost
         public void Screentip(client viewer, atom target, string name, IReadOnlyList<ScreentipHint> hints)
         {
             Session s = _host.SessionOfClient(viewer);
-            if (s == null || s.Connection == null || s.State != SessionState.Joined) return;
+            if (s == null) return;
+            // DV691: the reach of the hover this screentip answers (tg builds it later in the tick, in SSmouse_entered's fire): read once and let go
+            atom outOfReachTarget = s.HoverOutOfReach;
+            s.HoverOutOfReach = null;
+            if (s.Connection == null || s.State != SessionState.Joined) return;
             var message = new ContextHintsMessage { Name = name == null ? null : Truncate(name, Limits.MaxContextNameBytes) };
-            if (ClientSeam.IsScreenTarget(viewer, target)) // version 12: an item in a hand or slot is a screen target too
+            // version 12: an item in a hand or slot is a screen target too; DV696: so is an item the player's carried storages show (hovered by its id)
+            if (ClientSeam.IsScreenTarget(viewer, target) || IsStoredShown(viewer.mob, target))
             {
                 message.TargetKind = TargetKind.Screen;
                 message.Target = target.dm_id;
@@ -920,17 +1089,29 @@ public sealed partial class ServerHost
                 message.Target = target.dm_id;
             }
 
+            // DEVIATION(DV691): out of reach (ApplyHover's NoteReach) the thing's message is empty: a zero-length name (null is tg's "no screentip",
+            // which every floor sends and the client then names the floor itself), no hints, no radial extras
+            bool outOfReach = outOfReachTarget != null && outOfReachTarget == target && message.TargetKind != TargetKind.Screen;
+            if (outOfReach)
+            {
+                message.Name = "";
+                hints = Array.Empty<ScreentipHint>();
+            }
+
             foreach (ScreentipHint hint in hints)
             {
                 if (message.Hints.Count >= Limits.MaxContextHints) break;
                 ClickModifiers modifiers = (hint.Shift ? ClickModifiers.Shift : 0) | (hint.Ctrl ? ClickModifiers.Ctrl : 0) | (hint.Alt ? ClickModifiers.Alt : 0);
                 ClickButton button = hint.Button == RIGHT_CLICK ? ClickButton.Right : hint.Button == LEFT_CLICK ? ClickButton.Left : ClickButton.None;
                 if (button == ClickButton.None) continue;
+                // DEVIATION(DV139): tg's "Offer item" of a carbon (carbon_context.dm, the Ctrl+Shift-click, offered with any item in hand) is the wheel's
+                // Offer item extra now, offered only when tg's give would go through; the Ctrl+Shift-click itself is tg's still
+                if (modifiers == (ClickModifiers.Ctrl | ClickModifiers.Shift) && button == ClickButton.Left && PlainLabel(hint.Label) == "Offer item") continue; // tg's words, untranslated there
                 message.Hints.Add(new ContextHint(button, modifiers, Truncate(PlainLabel(hint.Label), Limits.MaxContextLabelBytes)));
             }
 
             // D230 (version 36), D238: the radial's Buckle, Unbuckle, Climb in, Climb, Pull and Stop pulling after tg's entries, a label tg gives not repeated.
-            foreach ((RadialExtra kind, string label) in RadialExtras.Of(viewer.mob, target))
+            foreach ((RadialExtra kind, string label) in outOfReach ? Enumerable.Empty<(RadialExtra, string)>() : QuietExtras(s, viewer.mob, target))
             {
                 if (message.Hints.Count >= Limits.MaxContextHints) break;
                 if (message.Hints.Exists(h => string.Equals(h.Label, label, StringComparison.OrdinalIgnoreCase))) continue;
@@ -940,14 +1121,57 @@ public sealed partial class ServerHost
                     RadialExtra.Pull => new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, label),
                     RadialExtra.StopPulling => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.StopPulling),
                     RadialExtra.Strip => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.DropOntoSelf),
-                    RadialExtra.Flip or RadialExtra.StepIn => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503, DV640)
+                    RadialExtra.Flip or RadialExtra.StepIn or RadialExtra.TurnOver or RadialExtra.Offer or RadialExtra.ItemAction => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503, DV640); 100 (DV690); DV139 slice E; DV694's item actions
                     _ => new ContextHint(ClickButton.Left, ClickModifiers.None, label), // Unbuckle: the empty hand's click
                 });
             }
 
             if (message.TargetKind == TargetKind.Entity && message.Target < 1) return; // an object the replica cannot name
+            if (viewer.mob is mob_living living)
+                Tail(_host, s, message, living, outOfReach || message.TargetKind == TargetKind.Screen ? null : target);
             while (s.ControlOutbox.Count >= Session.ControlOutboxCap) s.ControlOutbox.Dequeue();
             s.ControlOutbox.Enqueue(Codec.Encode(message));
+        }
+
+        // DEVIATION(DV697) (protocol version 100's ContextHints tail): the world interact key's line on the target (null: none; out of reach and on a
+        // screen target there is none), the move-pulled turf, and the held item's own lines for the hint strip, which every answer carries whatever
+        // is looked at. Asked of tg's own checks with the session's chat muted, as the extras are (QuietExtras).
+        internal static void Tail(ServerHost host, Session s, ContextHintsMessage message, mob_living user, atom target)
+        {
+            host._chatMutedFor = s;
+            try
+            {
+                if (target != null)
+                {
+                    message.EmptyHand = TailLabel(HintExtras.EmptyHandLabel(user, target));
+                    message.MoveHere = HintExtras.MovesPulled(user, target);
+                }
+                (string use, string alt, bool equips) = HintExtras.Held(user);
+                (message.HeldUse, message.HeldAlt, message.HeldEquips) = (TailLabel(use), TailLabel(alt), equips);
+            }
+            finally
+            {
+                host._chatMutedFor = null;
+            }
+        }
+
+        private static string TailLabel(string label) => PlainLabel(label) is { Length: > 0 } plain ? Truncate(plain, Limits.MaxContextLabelBytes) : null;
+
+        // DV691: the extras ask tg's own checks (can_perform_action and its overrides), which tell the mob each refusal in the chat; a hover asks
+        // twice a second and must not talk, so the hovering session's chat is muted while they are worked out. The call is synchronous on the
+        // world's thread: what reaches that session's chat meanwhile was posted by it. The world is untouched (only the outbox is), so a replay,
+        // which has no sinks, holds the same.
+        private List<(RadialExtra Kind, string Label)> QuietExtras(Session s, mob user, atom target)
+        {
+            _host._chatMutedFor = s;
+            try
+            {
+                return RadialExtras.Of(user, target);
+            }
+            finally
+            {
+                _host._chatMutedFor = null;
+            }
         }
 
         // tg's labels are plain words; a stray tag or entity from a context builder is removed.
@@ -1180,9 +1404,9 @@ public sealed partial class ServerHost
         }
 
         // Version 24 (D154): the session keeps the hrefs of the chat links it is sent, the only ones it may click back.
-        private static void Send(Session s, ServerText text)
+        private void Send(Session s, ServerText text)
         {
-            if (s == null) return;
+            if (s == null || s == _host._chatMutedFor) return;
             s.Outbox.Enqueue(text);
             s.ChatLinks.Record(text.Html);
         }

@@ -106,6 +106,16 @@ public static partial class Codec
             w.WriteString(hint.Label, Limits.MaxContextLabelBytes);
         }
 
+        // version 100 also: the tail, present only when one of its fields is set
+        byte tail = ContextTailFlags(message);
+        if (tail != 0)
+        {
+            w.WriteByte(tail);
+            WriteContextTailLabel(ref w, message.EmptyHand);
+            WriteContextTailLabel(ref w, message.HeldUse);
+            WriteContextTailLabel(ref w, message.HeldAlt);
+        }
+
         return Finish(ref w, Limits.MaxContextHintsMessageBytes);
     }
 
@@ -147,6 +157,20 @@ public static partial class Codec
                 result.Hints.Add(new ContextHint((ClickButton)button, (ClickModifiers)mods, label, (ContextHintAction)action));
             }
 
+            if (!r.End)
+            {
+                byte tail = r.ReadByte();
+                if (tail == 0) // no tail is written without a field: a zero byte is one past the end
+                    throw new ProtocolException(ProtocolError.TrailingBytes, "a byte follows the message");
+                if ((tail & ~ContextTailAll) != 0)
+                    throw Bad("a context hints tail with unknown flag bits");
+                result.EmptyHand = ReadContextTailLabel(ref r, tail, ContextTailEmptyHand);
+                result.HeldUse = ReadContextTailLabel(ref r, tail, ContextTailHeldUse);
+                result.HeldAlt = ReadContextTailLabel(ref r, tail, ContextTailHeldAlt);
+                result.HeldEquips = (tail & ContextTailEquips) != 0;
+                result.MoveHere = (tail & ContextTailMoveHere) != 0;
+            }
+
             r.ExpectEnd();
             value = result;
             return true;
@@ -157,6 +181,34 @@ public static partial class Codec
             error = e.Error;
             return false;
         }
+    }
+
+    // Version 100 also (protocol.md section 100, "the hints, improved"): after the hints, only when one is set,
+    // [u8 flags: bit 0 empty-hand label, 1 held item's use label, 2 its alt label, 3 quick equip goes somewhere, 4 move here; bits 5-7 zero, never 0]
+    // then each label whose bit is set, in that order: [str(1..64)].
+    private const byte ContextTailEmptyHand = 1, ContextTailHeldUse = 2, ContextTailHeldAlt = 4, ContextTailEquips = 8, ContextTailMoveHere = 16;
+    private const byte ContextTailAll = ContextTailEmptyHand | ContextTailHeldUse | ContextTailHeldAlt | ContextTailEquips | ContextTailMoveHere;
+
+    private static byte ContextTailFlags(ContextHintsMessage m) => (byte)((m.EmptyHand != null ? ContextTailEmptyHand : 0) | (m.HeldUse != null ? ContextTailHeldUse : 0)
+        | (m.HeldAlt != null ? ContextTailHeldAlt : 0) | (m.HeldEquips ? ContextTailEquips : 0) | (m.MoveHere ? ContextTailMoveHere : 0));
+
+    private static void WriteContextTailLabel(ref WireWriter w, string label)
+    {
+        if (label == null)
+            return;
+        if (label.Length == 0)
+            throw Bad("an empty context hints tail label");
+        w.WriteString(label, Limits.MaxContextLabelBytes);
+    }
+
+    private static string ReadContextTailLabel(ref WireReader r, byte tail, byte bit)
+    {
+        if ((tail & bit) == 0)
+            return null;
+        string label = r.ReadString(Limits.MaxContextLabelBytes);
+        if (string.IsNullOrEmpty(label))
+            throw Bad("an empty context hints tail label");
+        return label;
     }
 
     // ---- private images (the private block) ----

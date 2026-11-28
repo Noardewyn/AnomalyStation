@@ -280,4 +280,44 @@ public class HeldPoseTests
         Assert.Equal(new HeldGlobal(), HeldTurns.Parse("{}").All);
         Assert.DoesNotContain("_all", HeldTurns.Parse("{}").ToJson());
     }
+
+    [Fact]
+    public void TheHandBoxesAndTheHintStripShowTheHandTheViewModelHolds()
+    {
+        // ui-overhaul.md section 6, slice C: the live HUD reads the active hand off the hand boxes by hand index (LiveHud), the view model off their
+        // icon states (HeldHands): through pick-ups and swaps they agree, and the active hand holds an item (the hint strip shows) exactly when the view
+        // model holds one there
+        var feed = new FakeFeed("Tester", seed: 1, size: 32, bots: 0, inventory: true);
+        var rig = new PlayRig(feed);
+        rig.Run(0.5);
+        Anomaly.Protocol.ReplicaWorld world = feed.Replica;
+        FakeServer server = feed.Server;
+        Anomaly.Protocol.ScreenEntry Hand(int index) => world.Screen.Values.Single(e => e.HandIndex == index);
+        void Agree(bool leftActive, long heldId)
+        {
+            HeldHandsView view = HeldHands.Find(world);
+            Assert.Equal(leftActive, LiveHud.IsActiveHand(world, Hand(1)));
+            Assert.Equal(!leftActive, LiveHud.IsActiveHand(world, Hand(2)));
+            Assert.Equal(leftActive, view.LeftActive);
+            Anomaly.Protocol.ScreenChild[] shown = Hand(leftActive ? 1 : 2).VisChildren?.Items;
+            Assert.Equal(heldId, shown?.Single().Id ?? 0);
+            Assert.Equal(heldId != 0, !(leftActive ? view.Left : view.Right).IsNone);
+        }
+        Agree(true, 0);
+        void Pick(long id)
+        {
+            Assert.True(rig.Session.Click(new ClickTarget(Anomaly.Protocol.TargetKind.Entity, id, 0, 0, 0, 16, 16), Anomaly.Protocol.ClickButton.Left, Anomaly.Protocol.ClickModifiers.None));
+            rig.Run(0.4);
+        }
+        Pick(server.ToolboxId);
+        Agree(true, server.ToolboxId);
+        rig.Session.Keybinding(Anomaly.Protocol.KeybindingCode.SwapHands);
+        rig.Run(0.3);
+        Agree(false, 0); // the right hand, empty: no hint strip
+        Pick(server.WelderId);
+        Agree(false, server.WelderId);
+        rig.Session.Keybinding(Anomaly.Protocol.KeybindingCode.SwapHands);
+        rig.Run(0.3);
+        Agree(true, server.ToolboxId);
+    }
 }

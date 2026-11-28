@@ -113,8 +113,23 @@ public enum KeybindingCode : byte
     /// <summary>Version 93 (DV585): the deathmatch scoreboard [K]: held, the kills and deaths table shows on the screen; released, it goes.</summary>
     Scoreboard = 19,
 
+    /// <summary>Version 100 also (ui-overhaul.md section 12, slice 4E): <c>/datum/keybinding/human/quick_equip_belt/quick_equip_bag</c> [Shift+B]: <c>smart_equip_targeted</c> of the back slot.</summary>
+    QuickEquipBag = 20,
+
+    /// <summary>Version 100 also: <c>/datum/keybinding/human/quick_equip_belt</c> [Shift+E]: <c>smart_equip_targeted</c> of the belt slot.</summary>
+    QuickEquipBelt = 21,
+
+    /// <summary>Version 100 also: <c>quick_equip_belt/quick_equip_lpocket</c> [Shift+G]: <c>smart_equip_targeted</c> of the left pocket.</summary>
+    QuickEquipLeftPocket = 22,
+
+    /// <summary>Version 100 also: <c>quick_equip_belt/quick_equip_rpocket</c> [Shift+H]: <c>smart_equip_targeted</c> of the right pocket.</summary>
+    QuickEquipRightPocket = 23,
+
+    /// <summary>Version 100 also: <c>quick_equip_belt/quick_equip_suit_storage</c> [Shift+F]: <c>smart_equip_targeted</c> of the suit storage slot.</summary>
+    QuickEquipSuitStorage = 24,
+
     /// <summary>The largest valid code; a decoder refuses any other.</summary>
-    Last = Scoreboard,
+    Last = QuickEquipSuitStorage,
 }
 
 /// <summary>
@@ -151,7 +166,8 @@ public static class HudGroup
 
 /// <summary>
 /// The body zone a click aims at (the owner's play test 2026-10-09, DV30): the body part of a carbon's picture under the
-/// crosshair, which the server selects as tg's <c>zone_selected</c> before the click. Bits 4-6 of a click's modifiers byte.
+/// crosshair, which the server selects as tg's <c>zone_selected</c> before the click. Bits 4-6 of a click's modifiers byte, and since
+/// version 100 bit 3 as the zone's high bit (<c>((mods &gt;&gt; 4) &amp; 7) | (mods &amp; 8)</c>), so every byte of version 97 keeps its meaning.
 /// </summary>
 public enum AimZone : byte
 {
@@ -163,8 +179,17 @@ public enum AimZone : byte
     LeftLeg = 5,
     RightLeg = 6,
 
+    /// <summary>Version 100 (package T, slice T4a): tg's <c>BODY_ZONE_PRECISE_EYES</c>, the eyes of the head looked at.</summary>
+    Eyes = 7,
+
+    /// <summary>Version 100: tg's <c>BODY_ZONE_PRECISE_MOUTH</c>, the mouth of the head looked at.</summary>
+    Mouth = 8,
+
+    /// <summary>Version 100: tg's <c>BODY_ZONE_PRECISE_GROIN</c>, the lowest rows of the chest looked at.</summary>
+    Groin = 9,
+
     /// <summary>The largest valid zone; a decoder refuses any other.</summary>
-    Last = RightLeg,
+    Last = Groin,
 }
 
 /// <summary>The bits of an entity's flags byte (<see cref="NetField.Flags"/>, <see cref="EntityState.Flags"/>).</summary>
@@ -288,6 +313,24 @@ public sealed class ContextHintsMessage
 
     /// <summary>tg's context entries in tg's order of lines (LMB, RMB, Ctrl-LMB, Ctrl-RMB, Alt-LMB, Alt-RMB, Shift-LMB, Ctrl-Shift-LMB), at most <see cref="Limits.MaxContextHints"/>.</summary>
     public List<ContextHint> Hints { get; } = new();
+
+    /// <summary>
+    /// Version 100 also (ui-overhaul.md section 12, "The hints, improved"; DV697): tg's left-click label for this target with an EMPTY hand (what the
+    /// world interact key does), sent only while the active hand holds an item and the key would act on the target; null for none.
+    /// </summary>
+    public string EmptyHand { get; set; }
+
+    /// <summary>Version 100 also: the label of tg's activate in hand of the held item (tg's own screentip for it in hand, else "Use" where it has an <c>attack_self</c>); null for none.</summary>
+    public string HeldUse { get; set; }
+
+    /// <summary>Version 100 also: the label of tg's alt-click on the held item (tg's own screentip for it in hand, else "Alt use" where it has one); null for none.</summary>
+    public string HeldAlt { get; set; }
+
+    /// <summary>Version 100 also: tg's quick equip would put the held item somewhere (a slot or a storage).</summary>
+    public bool HeldEquips { get; set; }
+
+    /// <summary>Version 100 also: the target is a turf the empty hand's click moves the pulled thing onto (tg's <c>turf/attack_hand</c>, <c>Move_Pulled</c>).</summary>
+    public bool MoveHere { get; set; }
 }
 
 /// <summary>Version 4 of <see cref="OwnBlock"/>: the private images (<c>client.images</c>).</summary>

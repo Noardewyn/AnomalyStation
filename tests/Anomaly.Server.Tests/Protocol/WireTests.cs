@@ -278,7 +278,7 @@ public class WireTests
         for (int id = 0; id < 256; id++)
         {
             byte value = (byte)id;
-            bool known = id >= 1 && id <= 33; // version 99: PhotoRequest = 32, PhotoPart = 33; version 92: GunSight = 31; version 84: Weather = 30; version 79: RuntimeResource = 29; version 70: BuildPreview = 28; version 38: SayModal = 19, Runechat = 20; version 40: RadioChannels = 21; version 42: Motion = 22; version 53: BugReport = 23; version 54: HeldMotion = 24; version 63: Tts = 25; version 67: Minimap = 26; version 68: MinimapMobs = 27
+            bool known = id >= 1 && id <= 36; // version 100: Hotbar = 34, Storages = 35, Actions = 36; version 99: PhotoRequest = 32, PhotoPart = 33; version 92: GunSight = 31; version 84: Weather = 30; version 79: RuntimeResource = 29; version 70: BuildPreview = 28; version 38: SayModal = 19, Runechat = 20; version 40: RadioChannels = 21; version 42: Motion = 22; version 53: BugReport = 23; version 54: HeldMotion = 24; version 63: Tts = 25; version 67: Minimap = 26; version 68: MinimapMobs = 27
             Assert.Equal(known, WireReader.IsKnownMessageId(value));
             if (known)
                 Assert.Equal((MessageId)id, new WireReader(new[] { value }).ReadMessageId());

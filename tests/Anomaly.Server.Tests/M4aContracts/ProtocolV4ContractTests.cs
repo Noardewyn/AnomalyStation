@@ -57,7 +57,7 @@ public class ProtocolV4ContractTests
         Assert.Equal(expected, actual);
         // version 37 (D244): the two codes after the keybindings are the hidden verbs Sleep and Succumb, no keybinding type
         Assert.Equal((byte)KeybindingCode.VerbSleep, (byte)(codes.Length + 1));
-        Assert.Equal(KeybindingCode.Scoreboard, KeybindingCode.Last); // version 93 (DV585): the scoreboard key (version 83, DV422): the level keys (version 59: view pet commands; version 41: give; version 40: the Message button)
+        Assert.Equal(KeybindingCode.QuickEquipSuitStorage, KeybindingCode.Last); // version 100 also (slice 4E): the quick-equip keys of a slot, 20 to 24 (ProtocolV100KeysTests); version 93 (DV585): the scoreboard key (version 83, DV422): the level keys (version 59: view pet commands; version 41: give; version 40: the Message button)
         Assert.Equal(17, (int)KeybindingCode.ZLevelUp);
         Assert.Equal(typeof(datum_keybinding_living_view_pet_data), ClientSeam.KeybindingType((byte)KeybindingCode.ViewPetCommands));
         Assert.Equal(typeof(datum_keybinding_living_give), ClientSeam.KeybindingType((byte)KeybindingCode.GiveItem));

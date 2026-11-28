@@ -75,6 +75,17 @@ public sealed partial class SayWindow : Control
         _text.GrabFocus();
     }
 
+    /// <summary>Slice 4E: opens the window on <paramref name="channel"/> with <paramref name="typed"/> already in it (the whisper key: tg's <c>#</c>), the caret after it.</summary>
+    public void Open(string channel, string typed)
+    {
+        if (_model == null)
+            return;
+        _model.Open(channel);
+        _model.Input(typed, Now());
+        Sync(); // the caret goes after the text
+        _text.GrabFocus();
+    }
+
     /// <summary>D307: speech to text's words after what is typed, for the player to send or fix.</summary>
     public void AppendText(string text)
     {

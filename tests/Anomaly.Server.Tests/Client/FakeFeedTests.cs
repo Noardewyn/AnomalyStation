@@ -108,7 +108,7 @@ public class FakeFeedTests
         Assert.True(own.HasMotion);
         Assert.Equal(feed.Size / 2, own.Motion.TileX);
         Assert.Equal(MotionMath.DefaultRadius, own.Params.Radius);
-        Assert.Equal(3, feed.Replica.Screen.Count); // the doll, the indicator and the move intent; no damage overlay yet
+        Assert.Equal(5, feed.Replica.Screen.Count); // the doll, the indicator, the move intent, the zone selector and the combat toggle; no damage overlay yet
         Assert.True(feed.Replica.Screen.ContainsKey(1001));
         ScreenEntry doll = feed.Replica.Screen[1001];
         Assert.Equal("EAST-1:28,CENTER-2:17", doll.ScreenLoc);

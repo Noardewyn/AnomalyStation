@@ -333,6 +333,98 @@ public sealed partial class AppearanceCompositor
         public int Seq;
     }
 
+    // An entry's own transform about the centre of its icon (width x height), then, with withOffset, its pixel_x and pixel_y.
+    private static Affine Own(AppearanceEntry e, int width, int height, bool withOffset)
+    {
+        Affine own = Affine.Identity;
+        if (e.Transform != null)
+            own = Affine.Translate(-width / 2.0, -height / 2.0).Then(Affine.FromMatrix(e.Transform)).Then(Affine.Translate(width / 2.0, height / 2.0));
+        return withOffset ? own.Then(Affine.Translate(e.PixelX, e.PixelY)) : own;
+    }
+
+    /// <summary>
+    /// Package T, slice T1: where a world picture (<see cref="TryCompose(IAppearanceSource, TableRef, byte, double, out ComposedRaster, bool, bool)"/>
+    /// without the root offset) puts a point of the root's icon square, in the icon square's pixels from its lower left: the root's transform about the
+    /// middle of its icon (its own state's size, the default square without one), then its <c>pixel_w</c> and <c>pixel_z</c>; its <c>pixel_x</c> and
+    /// <c>pixel_y</c> are the placement's, not the picture's. As the picture does, an icon still loading counts as the default square. False when
+    /// the root is unknown.
+    /// </summary>
+    public bool TryRootPlacement(IAppearanceSource tables, TableRef root, out Affine placement)
+    {
+        placement = Affine.Identity;
+        if (tables == null || !tables.TryGetAppearance(root, out AppearanceEntry e))
+            return false;
+        int width = DefaultIconSize, height = DefaultIconSize;
+        string icon = e.Icon.IsNone ? null : tables.ResolveResource(e.Icon);
+        if (icon != null && _library.TryGetIconNow(icon, out IIcon source, out _)
+            && source.TryGetShown(tables.ResolveString(e.IconState) ?? string.Empty, out IIconState state))
+            (width, height) = (state.Width, state.Height);
+        placement = Own(e, width, height, false).Then(Affine.Translate(e.PixelW, e.PixelZ));
+        return true;
+    }
+
+    /// <summary>
+    /// Package T, slice T2: the overlays of <paramref name="root"/> that <paramref name="isPart"/> picks (and those nested in the overlays it does not
+    /// pick; a picked one is not looked into), the one drawn on top first: the order <see cref="TryCompose(IAppearanceSource, TableRef, byte, double, out ComposedRaster, bool, bool)"/>
+    /// draws them in (their layers relative to their parents, a float layer by its value, then list order). Nothing is composed.
+    /// </summary>
+    public static List<TableRef> OverlaysOnTopFirst(IAppearanceSource tables, AppearanceEntry root, Func<AppearanceEntry, bool> isPart)
+    {
+        var found = new List<(double[] Path, int Seq, TableRef Reference)>();
+        Collect(root, Array.Empty<double>(), 0);
+        found.Sort((a, b) => DrawOrder(a.Path, a.Seq, b.Path, b.Seq));
+        var result = new List<TableRef>(found.Count);
+        for (int i = found.Count - 1; i >= 0; i--)
+            result.Add(found[i].Reference);
+        return result;
+
+        void Collect(AppearanceEntry e, double[] path, int depth)
+        {
+            if (depth > MaxDepth)
+                return;
+            foreach ((TableRef reference, AppearanceEntry child, double relative, int place) in OverlaysOf(tables, e))
+            {
+                double[] at = Run.Append(Run.Append(path, relative), place);
+                if (isPart(child))
+                    found.Add((Run.Append(at, 0.0), found.Count, reference)); // its own picture's path, as Run.EmitOwn gives it
+                else
+                    Collect(child, at, depth + 1);
+            }
+        }
+    }
+
+    // The overlays of an entry with their layer relative to it and their place among its children (after the underlays found), in list
+    // order (Run.Children's overlays).
+    private static IEnumerable<(TableRef Reference, AppearanceEntry Child, double Relative, int Place)> OverlaysOf(IAppearanceSource tables, AppearanceEntry e)
+    {
+        double basis = Math.Max(0, e.Layer);
+        int place = 0;
+        foreach (TableRef reference in e.Underlays)
+        {
+            if (tables.TryGetAppearance(reference, out _))
+                place++;
+        }
+        foreach (TableRef reference in e.Overlays)
+        {
+            if (tables.TryGetAppearance(reference, out AppearanceEntry child))
+                yield return (reference, child, Run.Relative(child, basis, false, child.Plane != FloorLayers.FloatPlane && child.Plane < e.Plane), place++);
+        }
+    }
+
+    // Render's order: the sort paths level by level, then the shorter path, then the walk's order; the later one is drawn over the earlier.
+    private static int DrawOrder(double[] a, int aSeq, double[] b, int bSeq)
+    {
+        int n = Math.Min(a.Length, b.Length);
+        for (int i = 0; i < n; i++)
+        {
+            int c = a[i].CompareTo(b[i]);
+            if (c != 0)
+                return c;
+        }
+        int byLength = a.Length.CompareTo(b.Length);
+        return byLength != 0 ? byLength : aSeq.CompareTo(bSeq);
+    }
+
     private sealed class Run
     {
         private readonly AppearanceCompositor _owner;
@@ -400,12 +492,8 @@ public sealed partial class AppearanceCompositor
             byte dir = isRoot ? parent.Dir : (e.Dir != 0 && e.Dir != ByondDir.South ? e.Dir : parent.Dir);
 
             // Own transform about the centre of the icon, then pixel_x and pixel_y; then the parent's transform.
-            Affine own = Affine.Identity;
-            if (e.Transform != null)
-                own = Affine.Translate(-width / 2.0, -height / 2.0).Then(Affine.FromMatrix(e.Transform)).Then(Affine.Translate(width / 2.0, height / 2.0));
             // The root's own offset is the placement's (M3 R2): only a caller with no placement asks for it in the picture.
-            if (!isRoot || _rootOffset)
-                own = own.Then(Affine.Translate(e.PixelX, e.PixelY));
+            Affine own = Own(e, width, height, !isRoot || _rootOffset);
             Affine parentTransform = (flags & AppearanceFlag.ResetTransform) != 0 ? Affine.Translate(parent.ToRoot.C, parent.ToRoot.F) : parent.ToRoot;
 
             ColorMatrix ownColor = e.ColorMatrix != null ? ColorMatrix.FromList(e.ColorMatrix) : ColorMatrix.Tint(e.Rgba);
@@ -488,11 +576,8 @@ public sealed partial class AppearanceCompositor
                 if (_tables.TryGetAppearance(reference, out AppearanceEntry child))
                     yield return (child, Relative(child, basis, true, child.Plane < e.Plane), index++);
             }
-            foreach (TableRef reference in e.Overlays)
-            {
-                if (_tables.TryGetAppearance(reference, out AppearanceEntry child))
-                    yield return (child, Relative(child, basis, false, child.Plane != FloorLayers.FloatPlane && child.Plane < e.Plane), index++);
-            }
+            foreach ((_, AppearanceEntry child, double relative, int place) in OverlaysOf(_tables, e))
+                yield return (child, relative, place);
         }
 
         // An overlay on its parent's own layer sorts with the top float layer (FLOAT_LAYER, -1), so that list order decides between
@@ -502,7 +587,7 @@ public sealed partial class AppearanceCompositor
 
         // belowPlane: an underlay or overlay on a lower plane than its parent is under it whatever its layer (a diagonal wall's space underlay is on tg's floor plane at layer 10002, over the wall's 2.058 by layer alone;
         // a rock's wall-plane copy, add_large_wall_overlay, is under its smoothed game-plane picture)
-        private static double Relative(AppearanceEntry child, double basis, bool underlay, bool belowPlane)
+        public static double Relative(AppearanceEntry child, double basis, bool underlay, bool belowPlane)
         {
             if (belowPlane)
                 return -1e-9;
@@ -536,7 +621,7 @@ public sealed partial class AppearanceCompositor
             });
         }
 
-        private static double[] Append(double[] path, double value)
+        public static double[] Append(double[] path, double value)
         {
             var result = new double[path.Length + 1];
             Array.Copy(path, result, path.Length);
@@ -549,18 +634,7 @@ public sealed partial class AppearanceCompositor
 
     private ComposedRaster Render(List<Sprite> sprites, int squareWidth, int squareHeight, bool animated)
     {
-        sprites.Sort(static (a, b) =>
-        {
-            int n = Math.Min(a.Path.Length, b.Path.Length);
-            for (int i = 0; i < n; i++)
-            {
-                int c = a.Path[i].CompareTo(b.Path[i]);
-                if (c != 0)
-                    return c;
-            }
-            int byLength = a.Path.Length.CompareTo(b.Path.Length);
-            return byLength != 0 ? byLength : a.Seq.CompareTo(b.Seq);
-        });
+        sprites.Sort(static (a, b) => DrawOrder(a.Path, a.Seq, b.Path, b.Seq));
 
         // The union of the transformed sprites and the icon square (so that the square's origin is stable).
         double minX = 0, minY = 0, maxX = squareWidth, maxY = squareHeight;

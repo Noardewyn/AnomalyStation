@@ -177,6 +177,9 @@ public sealed partial class CeilingSystem
     private bool HasValidSupport(int x, int y, int z) => Neighbors(x, y, z).Any(p => At(p.X, p.Y, p.Z).Sealed);
 
     private static async DmTask<bool> Reachable(mob_living user, turf target)
-        => !QDELETED(user) && !QDELETED(target) && !Dm.truthy(user.incapacitated)
-            && Dm.eq(user.z, target.z) && Dm.num(get_dist(user, target)) <= 1 && Dm.truthy(await user.Adjacent(target));
+        => !QDELETED(user) && !QDELETED(target) && !Dm.truthy(user.incapacitated) && await InReach(user, target);
+
+    /// <summary>The range a ceiling click enforces (the hover's prompt follows it, DV691): the cell over the user's tile or the next one, on its level.</summary>
+    public static async DmTask<bool> InReach(mob_living user, turf target)
+        => Dm.eq(user.z, target.z) && Dm.num(get_dist(user, target)) <= 1 && Dm.truthy(await user.Adjacent(target));
 }

@@ -258,10 +258,130 @@ public class HudTests
         Assert.NotNull(HealthZones.PaletteColor(mode, new ZoneState("chest", ZoneKind.Missing, 0)));
     }
 
-    [Fact]
-    public void WithoutAPaletteTgsColoursStay()
+    // ui-overhaul.md section 6: with no colourblind palette, one standard ramp replaces tg's own sprite colours
+    [Theory]
+    [InlineData(ZoneKind.Level, 0, 0x8FD694FF)]
+    [InlineData(ZoneKind.Level, 1, 0xFFE156FF)]
+    [InlineData(ZoneKind.Level, 2, 0xFFE156FF)]
+    [InlineData(ZoneKind.Level, 3, 0xFFA62BFF)]
+    [InlineData(ZoneKind.Level, 4, 0xFFA62BFF)]
+    [InlineData(ZoneKind.Level, 5, 0xFF4D4DFF)]
+    [InlineData(ZoneKind.Missing, 0, UiTokens.DollMissing)]
+    [InlineData(ZoneKind.Dead, 0, UiTokens.DollDead)]
+    public void WithoutAColourblindPaletteTheStandardRampColoursTheDoll(ZoneKind kind, int level, uint rgba)
     {
-        Assert.Null(HealthZones.PaletteColor(ColorblindMode.Off, new ZoneState("chest", ZoneKind.Level, 3)));
+        var state = new ZoneState("chest", kind, level);
+        Rgb? colour = HealthZones.PaletteColor(ColorblindMode.Off, state);
+        Assert.Equal(UiTokens.ToRgb(rgba), colour);
+        Assert.Equal(colour, HealthZones.StandardColor(state));
+    }
+
+    [Fact]
+    public void TheStandardRampsMissingPartIsDarkGreyAndADeadMobNearBlack()
+    {
+        float Light(Rgb c) => 0.299f * c.R + 0.587f * c.G + 0.114f * c.B;
+        Rgb missing = HealthZones.StandardColor(new ZoneState("l_leg", ZoneKind.Missing, 0)).Value;
+        Rgb dead = HealthZones.StandardColor(new ZoneState("l_leg", ZoneKind.Dead, 0)).Value;
+        Assert.True(Math.Abs(missing.R - missing.G) < 0.05f && Math.Abs(missing.G - missing.B) < 0.05f, "grey");
+        Assert.InRange(Light(missing), 0.2f, 0.4f);
+        Assert.True(Light(dead) < 0.12f);
+        // every level and state keeps its own hatching besides (D70), whatever the colour
+        Assert.Equal(HatchStyle.DenseCross, HealthZones.Hatch(new ZoneState("chest", ZoneKind.Level, 4)));
+        Assert.NotEqual(HealthZones.Hatch(new ZoneState("chest", ZoneKind.Level, 3)), HealthZones.Hatch(new ZoneState("chest", ZoneKind.Level, 4)));
+    }
+
+    // tg's disabled sprite (dark grey with bright red marks) is drawn untinted: tinted by its red marks it would read as a dark maroon
+    [Fact]
+    public void WithoutAColourblindPaletteADisabledPartIsTgsOwnPictureAndKeepsItsHatch()
+    {
+        foreach (string zone in HealthZones.Zones)
+        {
+            var disabled = new ZoneState(zone, ZoneKind.Disabled, 0);
+            Assert.Null(HealthZones.PaletteColor(ColorblindMode.Off, disabled));
+            Assert.Null(HealthZones.StandardColor(disabled));
+            Assert.Equal(HatchStyle.Bars, HealthZones.Hatch(disabled));
+            foreach (ColorblindMode mode in new[] { ColorblindMode.RedGreen, ColorblindMode.BlueYellow, ColorblindMode.Mono })
+                Assert.NotNull(HealthZones.PaletteColor(mode, disabled));
+        }
+    }
+
+    [Fact]
+    public void TheColourblindPalettesAreUnchanged()
+    {
+        Assert.Equal(new Rgb(0.00f, 0.45f, 0.70f), HealthZones.PaletteColor(ColorblindMode.RedGreen, new ZoneState("chest", ZoneKind.Level, 0)));
+        Assert.Equal(new Rgb(0.25f, 0.05f, 0.00f), HealthZones.PaletteColor(ColorblindMode.RedGreen, new ZoneState("chest", ZoneKind.Level, 5)));
+        Assert.Equal(new Rgb(0.00f, 0.60f, 0.53f), HealthZones.PaletteColor(ColorblindMode.BlueYellow, new ZoneState("chest", ZoneKind.Level, 0)));
+        Assert.Equal(new Rgb(0.51f, 0.00f, 0.24f), HealthZones.PaletteColor(ColorblindMode.BlueYellow, new ZoneState("chest", ZoneKind.Level, 5)));
+        Assert.Equal(new Rgb(0.88f, 0.88f, 0.88f), HealthZones.PaletteColor(ColorblindMode.Mono, new ZoneState("chest", ZoneKind.Level, 0)));
+        foreach (ColorblindMode mode in new[] { ColorblindMode.RedGreen, ColorblindMode.BlueYellow, ColorblindMode.Mono })
+        {
+            Assert.Equal(new Rgb(0.45f, 0.45f, 0.45f), HealthZones.PaletteColor(mode, new ZoneState("chest", ZoneKind.Missing, 0)));
+            Assert.Equal(new Rgb(0.35f, 0.40f, 0.60f), HealthZones.PaletteColor(mode, new ZoneState("chest", ZoneKind.Disabled, 0)));
+            Assert.Equal(new Rgb(0.12f, 0.12f, 0.12f), HealthZones.PaletteColor(mode, new ZoneState("chest", ZoneKind.Dead, 0)));
+        }
+    }
+
+    [Fact]
+    public void TheBrightestChannelOfASpritesOpaquePixelsIsItsMainTone()
+    {
+        // tg's chest3: main tone BD7E00, the darker one A87100, the edge 5E4000; a see-through pixel brighter than all does not count
+        var image = new Anomaly.Client.Shared.Icons.Raster(4, 1, new byte[] { 0xBD, 0x7E, 0x00, 255, 0xA8, 0x71, 0x00, 255, 0x5E, 0x40, 0x00, 255, 0xFF, 0xFF, 0xFF, 0 });
+        Assert.Equal(0xBD / 255f, HealthZones.Brightest(image), 4);
+        Assert.Equal(0f, HealthZones.Brightest(new Anomaly.Client.Shared.Icons.Raster(1, 1, new byte[] { 255, 255, 255, 10 })));
+        Assert.Equal(0f, HealthZones.Brightest(null));
+    }
+
+    private static readonly HatchStyle[] AllHatched =
+        { HatchStyle.Light, HatchStyle.Medium, HatchStyle.Cross, HatchStyle.DenseCross, HatchStyle.Solid, HatchStyle.Dots, HatchStyle.Bars, HatchStyle.Stripes };
+
+    // ui-overhaul.md 6: every hatching leaves most of the part in its colour, so levels 4 and 5 do not read near-black
+    [Fact]
+    public void EveryHatchingLeavesMostOfThePartInItsColourAndTheLevelsStayApart()
+    {
+        var seen = new HashSet<HatchPattern>();
+        foreach (HatchStyle style in AllHatched)
+        {
+            HatchPattern pattern = HealthZones.Pattern(style);
+            Assert.NotEqual(HatchShape.None, pattern.Shape);
+            float coverage = HealthZones.Coverage(pattern);
+            Assert.InRange(coverage, 0.05f, HealthZones.MaxHatchCoverage);
+            Assert.True(seen.Add(pattern), $"{style} looks like another level");
+        }
+        Assert.Equal(HatchShape.None, HealthZones.Pattern(HatchStyle.None).Shape);
+        // a worse level never covers less than a lighter one
+        for (int level = 2; level <= HealthZones.MaxLevel; level++)
+        {
+            float before = HealthZones.Coverage(HealthZones.Pattern(HealthZones.Hatch(new ZoneState("chest", ZoneKind.Level, level - 1))));
+            float now = HealthZones.Coverage(HealthZones.Pattern(HealthZones.Hatch(new ZoneState("chest", ZoneKind.Level, level))));
+            Assert.True(now >= before, $"level {level}");
+        }
+    }
+
+    [Theory]
+    [InlineData(2f)]
+    [InlineData(3f)]
+    [InlineData(6f)]
+    [InlineData(9f)]
+    public void TheDrawnLinesCoverWhatThePatternSaysAtEveryDollScale(float cell)
+    {
+        // the shader's lines (HealthZones.Hatched) over an area of a few doll parts, at a doll scale of 1x (cell 2) to 9x
+        foreach (HatchStyle style in AllHatched)
+        {
+            HatchPattern pattern = HealthZones.Pattern(style);
+            int hit = 0, all = 0;
+            for (int y = 0; y < 240; y++)
+            {
+                for (int x = 0; x < 240; x++, all++)
+                {
+                    if (HealthZones.Hatched(pattern, cell, x + 0.5f, y + 0.5f))
+                        hit++;
+                }
+            }
+            float share = hit / (float)all;
+            Assert.True(share <= HealthZones.MaxHatchCoverage + 0.06f, $"{style} at {cell}: {share}");
+            Assert.True(share > 0.03f, $"{style} at {cell} draws nothing");
+        }
+        Assert.False(HealthZones.Hatched(HealthZones.Pattern(HatchStyle.None), cell, 0.5f, 0.5f));
     }
 
     [Fact]

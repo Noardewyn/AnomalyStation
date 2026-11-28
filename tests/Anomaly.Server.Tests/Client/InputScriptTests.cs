@@ -22,8 +22,35 @@ public class InputScriptTests
     [Fact]
     public void TheDebugHudKeyCanBeScriptedToHideItForAScreenshot()
     {
-        Assert.True(InputScript.TryParse("1:F4+,1.1:F4-", out List<ScriptedInput> steps, out _));
-        Assert.Equal(new[] { new ScriptedInput(1, ScriptAction.Press, "F4", 0), new ScriptedInput(1.1, ScriptAction.Release, "F4", 0) }, steps);
+        // ui-overhaul.md section 3: the debug HUD is on F3 (SS14's ShowDebugMonitors); F4, the names overlay's now, still parses
+        Assert.True(InputScript.TryParse("1:F3+,1.1:F3-", out List<ScriptedInput> steps, out _));
+        Assert.Equal(new[] { new ScriptedInput(1, ScriptAction.Press, "F3", 0), new ScriptedInput(1.1, ScriptAction.Release, "F3", 0) }, steps);
+        Assert.True(InputScript.TryParse("1:F4+,1.1:F4-", out _, out _));
+    }
+
+    [Fact]
+    public void TheRadioOocMeAndFullscreenKeysCanBeScripted()
+    {
+        // ui-overhaul.md section 5: ;, [, ' (Shift+' is me) and F11 for a scripted run without the operating system's key events
+        Assert.True(InputScript.TryParse("1:SEMICOLON+,1.1:SEMICOLON-,2:BRACKETLEFT+,2.1:BRACKETLEFT-,3:SHIFT+,3.1:APOSTROPHE+,3.2:APOSTROPHE-,3.3:SHIFT-,4:F11+,4.1:F11-",
+            out List<ScriptedInput> steps, out string error), error);
+        Assert.Equal(new[] { "SEMICOLON", "BRACKETLEFT", "SHIFT", "APOSTROPHE", "F11" }, steps.Where(s => s.Action == ScriptAction.Press).Select(s => s.Key));
+        // the engine's names of the keys (GameScene.ScriptKey parses them so), which the default bindings name
+        foreach (string key in new[] { "SEMICOLON", "BRACKETLEFT", "APOSTROPHE", "F11" })
+            Assert.Contains(KeyBindings.Defaults().ActionOfPress(key == "F11" ? "F11" : char.ToUpperInvariant(key[0]) + key.Substring(1).ToLowerInvariant(), shift: key == "APOSTROPHE"),
+                new PlayAction?[] { PlayAction.Radio, PlayAction.Ooc, PlayAction.Me, PlayAction.Fullscreen });
+        Assert.False(InputScript.TryParse("1:COLON+", out _, out _));
+    }
+
+    [Fact]
+    public void TheHotbarsNumberKeysCanBeScripted()
+    {
+        // ui-overhaul.md section 10: 1 to 9 and 0 press the hotbar's cells; the engine's names (Key1 to Key0) are what the bindings name
+        string script = string.Join(",", Enumerable.Range(0, 10).Select(n => $"{n + 1}:KEY{n}+,{n + 1}.1:KEY{n}-"));
+        Assert.True(InputScript.TryParse(script, out List<ScriptedInput> steps, out string error), error);
+        Assert.Equal(10, steps.Count(s => s.Action == ScriptAction.Press));
+        for (int n = 0; n <= 9; n++)
+            Assert.Equal(PlayAction.Hotbar1 + (byte)((n + 9) % 10), KeyBindings.Defaults().ActionOfPress("Key" + n, shift: false));
     }
 
     [Fact]
@@ -69,7 +96,7 @@ public class InputScriptTests
     [InlineData("   ")]
     [InlineData("W+")]
     [InlineData("x:W+")]
-    [InlineData("1:K+")]
+    [InlineData("1:N+")] // a key the script does not know (K is the actions menu's since ui-overhaul.md section 15)
     [InlineData("1:W")]
     [InlineData("1:yaw=north")]
     [InlineData("-1:W+")]
@@ -92,7 +119,7 @@ public class InputScriptTests
         args = ClientArgs.Parse(new[] { "--keys=1:Z+,1.1:Z-,2:TAB+,2.1:TAB-" }); // the action keys (use in hand, cursor mode)
         Assert.Empty(args.Errors);
         Assert.Equal(4, args.Keys.Count);
-        args = ClientArgs.Parse(new[] { "--keys=1:K+" });
+        args = ClientArgs.Parse(new[] { "--keys=1:N+" });
         Assert.Single(args.Errors);
         Assert.Empty(args.Keys);
     }
@@ -106,5 +133,35 @@ public class InputScriptTests
         Assert.Equal((ScriptAction.Gesture, (640f, 360f), 1.25), (steps[1].Action, steps[1].At.Value, steps[1].Value));
         Assert.False(InputScript.TryParse("1:pan=3@10x10", out _, out _));
         Assert.False(InputScript.TryParse("1:pinch=0@10x10", out _, out _));
+    }
+
+    [Fact]
+    public void TheContextRadialsEntryIsPickedByItsLabel()
+    {
+        // slice T4c: radial=LABEL, an underscore for a space (no quotes needed in a shell), a quoted space works too
+        Assert.True(InputScript.TryParse("6:radial=Turn_over,7:radial=Turn over, 8:radial= Pull ", out List<ScriptedInput> steps, out string error), error);
+        Assert.Equal(new[] { (6.0, "Turn over"), (7.0, "Turn over"), (8.0, "Pull") }, steps.Select(s => (s.AtSeconds, s.Text)));
+        Assert.All(steps, s => Assert.Equal(ScriptAction.Radial, s.Action));
+        Assert.False(InputScript.TryParse("1:radial=", out _, out error));
+        Assert.Contains("radial=LABEL", error);
+        Assert.False(InputScript.TryParse("1:radial=___", out _, out _)); // only spaces
+        Assert.False(InputScript.TryParse("1:radial=" + new string('a', 65), out _, out _));
+        Assert.False(InputScript.TryParse("radial=Turn_over", out _, out _)); // no time
+    }
+
+    [Fact]
+    public void AMouseButtonIsHeldFromItsPressStepToItsReleaseStepWithViewStepsBetween()
+    {
+        // ui-overhaul.md section 17: the drag of oneself in first person, a press on the own body, a turn, the release elsewhere
+        Assert.True(InputScript.TryParse("2:pitch=-105,3:mouseleft+,3.5:pitch=-60,4:MOUSELEFT-,5:MOUSERIGHT+,5.1:MOUSERIGHT-,6:MOUSEMIDDLE+", out List<ScriptedInput> steps, out string error), error);
+        Assert.Equal(new[]
+        {
+            new ScriptedInput(2, ScriptAction.Pitch, null, -105), new ScriptedInput(3, ScriptAction.Press, "MOUSELEFT", 0),
+            new ScriptedInput(3.5, ScriptAction.Pitch, null, -60), new ScriptedInput(4, ScriptAction.Release, "MOUSELEFT", 0),
+            new ScriptedInput(5, ScriptAction.Press, "MOUSERIGHT", 0), new ScriptedInput(5.1, ScriptAction.Release, "MOUSERIGHT", 0),
+            new ScriptedInput(6, ScriptAction.Press, "MOUSEMIDDLE", 0),
+        }, steps);
+        Assert.False(InputScript.TryParse("1:MOUSEWHEEL+", out _, out error));
+        Assert.Contains("unknown key", error);
     }
 }

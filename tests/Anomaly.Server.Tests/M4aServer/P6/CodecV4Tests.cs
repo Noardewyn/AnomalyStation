@@ -98,7 +98,7 @@ public class CodecV4Tests
         Refused(Hover(TargetKind.Entity, 5) with { Modifiers = ClickModifiers.Shift });
         Refused(Hover(TargetKind.Entity, 5) with { IconX = 1 });
         Refused(Key(KeybindingCode.None, false));
-        Refused(Key((KeybindingCode)20, false)); // past the last (version 93: 19 is the scoreboard)
+        Refused(Key((KeybindingCode)25, false)); // past the last (version 100 also, slice 4E: 24 is the suit storage quick equip; version 93: 19 the scoreboard)
         Refused(Key(KeybindingCode.DropItem, false) with { Target = 5 });
         Refused(Key(KeybindingCode.DropItem, false) with { TargetKind = TargetKind.Entity });
         Refused(new ActionMessage(1, ActionKind.Rest, 0, ClickButton.None, ClickModifiers.None, null) { Keybinding = KeybindingCode.DropItem });
@@ -125,10 +125,12 @@ public class CodecV4Tests
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(0).Byte(33).Byte(1)),                 // icon-x 33
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(0).Byte(1).Byte(255)),                // icon-y 255
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(0).Byte(1)),                          // icon-y missing
-                     Craft(r => r.VarUInt(1).Byte(7).Byte(1).VarUInt(5).Byte(1)),                                          // a hover with a button
+                     // corrected by protocol 100's slice T4b: one byte after an entity hover's target is its zone now (1 the head), so a
+                     // click's button and modifiers after it are what stays refused (the 0 trails the zone)
+                     Craft(r => r.VarUInt(1).Byte(7).Byte(1).VarUInt(5).Byte(1).Byte(0)),                                  // a hover with a button and modifiers
                      Craft(r => r.VarUInt(1).Byte(7).Byte(2).Byte(5).Byte(5)),                                             // a turf hover cut short
                      Craft(r => r.VarUInt(1).Byte(6).Byte(0).Byte(0)),                                                     // keybinding code 0
-                     Craft(r => r.VarUInt(1).Byte(6).Byte(20).Byte(0)),                                                    // past the last (19 since version 93)
+                     Craft(r => r.VarUInt(1).Byte(6).Byte(25).Byte(0)),                                                    // past the last (24 since slice 4E; 19 since version 93)
                      Craft(r => r.VarUInt(1).Byte(6).Byte(255).Byte(0)),
                      Craft(r => r.VarUInt(1).Byte(6).Byte(5).Byte(2)),                                                     // key-up flag 2
                      Craft(r => r.VarUInt(1).Byte(6).Byte(5)),                                                             // cut short
@@ -195,6 +197,54 @@ public class CodecV4Tests
     }
 
     [Fact]
+    public void ContextHintsTailRoundTripsAndIsAbsentWhenNothingIsSet()
+    {
+        // version 100 also (protocol.md section 100, the hints, improved): [u8 flags] then the labels whose bit is set, only when a field is set
+        ContextHintsMessage m = Hints(TargetKind.Entity, "airlock", new ContextHint(ClickButton.Left, ClickModifiers.None, "Pry open"));
+        byte[] plain = Codec.Encode(m);
+        m.EmptyHand = "Open";
+        m.HeldAlt = "Toggle";
+        m.HeldEquips = true;
+        byte[] bytes = Codec.Encode(m);
+        Assert.Equal(plain.Concat(new byte[] { 1 | 4 | 8, 5 }).Concat(System.Text.Encoding.UTF8.GetBytes("Open"))
+            .Concat(new byte[] { 7 }).Concat(System.Text.Encoding.UTF8.GetBytes("Toggle")).ToArray(), bytes);
+        Assert.True(Codec.TryDecode(bytes, out ContextHintsMessage decoded, out ProtocolError error), error.ToString());
+        AssertEqual(m, decoded);
+        Assert.Equal(("Open", (string)null, "Toggle", true, false), (decoded.EmptyHand, decoded.HeldUse, decoded.HeldAlt, decoded.HeldEquips, decoded.MoveHere));
+        Assert.Equal(bytes, Codec.Encode(decoded));
+
+        var turf = Hints(TargetKind.Turf, null);
+        turf.MoveHere = true;
+        turf.HeldUse = "Use";
+        Assert.True(Codec.TryDecode(Codec.Encode(turf), out decoded, out error), error.ToString());
+        Assert.Equal(((string)null, "Use", (string)null, false, true), (decoded.EmptyHand, decoded.HeldUse, decoded.HeldAlt, decoded.HeldEquips, decoded.MoveHere));
+
+        // without a set field there is no tail: the version-36 bytes
+        Assert.True(Codec.TryDecode(plain, out decoded, out error), error.ToString());
+        Assert.Equal(((string)null, (string)null, (string)null, false, false), (decoded.EmptyHand, decoded.HeldUse, decoded.HeldAlt, decoded.HeldEquips, decoded.MoveHere));
+
+        // refused: an empty or too long label, unknown or no flag bits, a label bit without its label
+        var empty = Hints(TargetKind.Entity, "x");
+        empty.HeldUse = "";
+        Assert.Throws<ProtocolException>(() => Codec.Encode(empty));
+        var tooLong = Hints(TargetKind.Entity, "x");
+        tooLong.EmptyHand = new string('l', Limits.MaxContextLabelBytes + 1);
+        Assert.Throws<ProtocolException>(() => Codec.Encode(tooLong));
+        foreach (byte[] bad in new[]
+                 {
+                     Msg.Raw(MessageId.ContextHints, r => r.Byte(1).VarUInt(5).String("x").VarUInt(0).Byte(32)),               // unknown bit
+                     Msg.Raw(MessageId.ContextHints, r => r.Byte(1).VarUInt(5).String("x").VarUInt(0).Byte(0)),                // no bits
+                     Msg.Raw(MessageId.ContextHints, r => r.Byte(1).VarUInt(5).String("x").VarUInt(0).Byte(2)),                // a label missing
+                     Msg.Raw(MessageId.ContextHints, r => r.Byte(1).VarUInt(5).String("x").VarUInt(0).Byte(2).String("")),     // an empty label
+                     Msg.Raw(MessageId.ContextHints, r => r.Byte(1).VarUInt(5).String("x").VarUInt(0).Byte(8).Byte(0)),        // a byte after the tail
+                 })
+        {
+            Assert.False(Codec.TryDecode(bad, out ContextHintsMessage _, out ProtocolError refused), "accepted " + BitConverter.ToString(bad));
+            Assert.NotEqual(ProtocolError.None, refused);
+        }
+    }
+
+    [Fact]
     public void TheLargestContextHintsMessageFitsItsCap()
     {
         var m = Hints(TargetKind.Turf, new string('n', Limits.MaxContextNameBytes));
@@ -203,6 +253,8 @@ public class CodecV4Tests
         m.TurfZ = 16;
         for (int i = 0; i < Limits.MaxContextHints; i++)
             m.Hints.Add(new ContextHint(ClickButton.Right, ClickModifiers.All, new string('l', Limits.MaxContextLabelBytes)));
+        (m.EmptyHand, m.HeldUse, m.HeldAlt, m.HeldEquips, m.MoveHere) = (new string('e', Limits.MaxContextLabelBytes), new string('u', Limits.MaxContextLabelBytes),
+            new string('a', Limits.MaxContextLabelBytes), true, true); // version 100 also: the whole tail
         byte[] bytes = Codec.Encode(m);
         Assert.True(bytes.Length <= Limits.MaxContextHintsMessageBytes, bytes.Length + " bytes");
         Assert.True(Limits.MaxContextHintsMessageBytes <= Limits.MaxOutboundMessageBytes);

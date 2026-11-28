@@ -12,8 +12,26 @@ public sealed class ChatInputModel
     public const string Whisper = "Whisper";
     public const string Shout = "Shout";
 
+    /// <summary>tg's say mode key of a whisper (<c>#</c>, say.dm's get_message_mods).</summary>
+    public const string WhisperKey = "#";
+
     /// <summary>The channels Tab cycles, in the action row's order (Admin is not one: no admins yet).</summary>
     public static readonly IReadOnlyList<string> Channels = new[] { SayChannels.Say, Whisper, Shout, SayChannels.Radio, SayChannels.Me, SayChannels.Ooc, SayChannels.Pray };
+
+    /// <summary>
+    /// tg's communication keybindings: the channel a speech key opens the say window on, or selects in this input when the chat window is open
+    /// (ui-overhaul.md section 5: the radio, OOC and me keys as well as say); null for any other action.
+    /// </summary>
+    public static string ChannelOfKey(PlayAction? action) => action switch
+    {
+        PlayAction.Say => SayChannels.Say,
+        PlayAction.Radio => SayChannels.Radio,
+        PlayAction.Me => SayChannels.Me,
+        PlayAction.Ooc => SayChannels.Ooc,
+        PlayAction.Pray => SayChannels.Pray,
+        PlayAction.Whisper => Whisper, // slice 4E: SS14's FocusWhisperChatWindow
+        _ => null,
+    };
 
     // tg's ChannelIterator quiet channels: no typing indicator
     private static bool IsQuiet(string channel) => channel is SayChannels.Ooc or SayChannels.Pray;
@@ -223,7 +241,7 @@ public sealed class ChatInputModel
         string said = (prefix ?? "") + value;
         return channel switch
         {
-            Whisper => "#" + said,
+            Whisper => WhisperKey + said,
             Shout => said.EndsWith("!!", StringComparison.Ordinal) ? said : said.TrimEnd('!', '.', ' ') + "!!",
             SayChannels.Say => said,
             _ => value,

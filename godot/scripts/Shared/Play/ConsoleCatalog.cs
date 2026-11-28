@@ -45,7 +45,7 @@ public static class ConsoleCatalog
     {
         new("help", ConsoleRoute.Client, "help [VERB]", "this list, or one command in detail", "?"),
         new("clear", ConsoleRoute.Client, "clear", "empty the log"),
-        new("ui", ConsoleRoute.Client, "ui hide|show|toggle", "hide or show the whole interface (the HUD, the chat, the windows, the minimap; this console and the menu stay); its key: F6"),
+        new("ui", ConsoleRoute.Client, "ui hide|show|toggle", "hide or show the whole interface (the HUD, the chat, the windows, the minimap; this console and the menu stay); its key: Shift+F4"),
 
         new("damage", ConsoleRoute.Dev, "damage WHO KIND N [ZONE]", "hurt by N (0 to 1000), on a body part or spread"),
         new("heal", ConsoleRoute.Dev, "heal WHO [KIND]", "heal one kind of damage, or all four"),

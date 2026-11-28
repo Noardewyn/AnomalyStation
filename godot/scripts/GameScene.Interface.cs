@@ -7,7 +7,7 @@ namespace Anomaly.Client;
 // tooltips, the stats and the names over heads), for tg's cinematics now, an immersive mode and cutscenes later. The owner (2026-11-19):
 // the windows a thing in the world opens (tgui's consoles and computers, an open container) still open while it is hidden. The console and the Esc menu
 // (the Menu layer) stay, so the interface can be brought back; the world's own overlays (tg's fullscreens, the screen effects) and the
-// build tag stay too. The player's switch is the console's "ui hide|show|toggle" and its key (F6); a cinematic on tg's splash plane
+// build tag stay too. The player's switch is the console's "ui hide|show|toggle" and its key (Shift+F4); a cinematic on tg's splash plane
 // (HudLayer.SplashShown) hides the interface while it shows.
 public partial class GameScene
 {

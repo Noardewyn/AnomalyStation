@@ -3,7 +3,7 @@ namespace Anomaly.Client.Shared;
 // M9 slice B (D256, docs/ai/specs/chat.md 5). Engine-free: no Godot API here (it is compiled into tests/Anomaly.Server.Tests too).
 
 /// <summary>
-/// The emote wheel on its key (J): held and released over a segment it sends that emote (tg's emote keybinding, protocol version 39);
+/// The emote wheel on its key (Y): held and released over a segment it sends that emote (tg's emote keybinding, protocol version 39);
 /// tapped it stays open until a click picks a segment or Esc closes it. Eight of tg's emotes and "More...", which opens tg's emote
 /// panel. The aiming and timing are the radial's (<see cref="RadialModel"/>).
 /// </summary>

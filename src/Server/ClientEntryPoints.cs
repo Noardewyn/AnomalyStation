@@ -101,6 +101,18 @@ public interface IClientEntryPoints
     /// <summary>Version 86 (DV503): the radial's entry that is no click (<see cref="RadialExtras.Pick"/>: the table's Flip).</summary>
     void ContextPick(client player, atom target, string label) => RadialExtras.Pick(player, target, label);
 
+    /// <summary>Version 100 also (DV697): the world interact key on <paramref name="target"/> (<see cref="WorldInteract.Use"/>: tg's empty-hand click, also with an item held).</summary>
+    void Interact(client player, atom target) => WorldInteract.Use(player, target);
+
+    /// <summary>Version 100 also (DV693): a press of hotbar cell <paramref name="cell"/> (<see cref="BeltHotbar.Press"/>: the own human's cells, by tg's procs).</summary>
+    void HotbarPress(client player, int cell) => BeltHotbar.Press(player, cell);
+
+    /// <summary>Version 100 also (DV696): an inventory move (<see cref="CarriedStorages.Move"/>: the own item to a carried storage, a worn slot, a hand or the floor, by tg's procs).</summary>
+    void InventoryMove(client player, long item, MoveTarget to, long storage, int index) => CarriedStorages.Move(player, item, to, storage, index);
+
+    /// <summary>Version 100 also (DV696): the Tab inventory was opened (<see cref="CarriedStorages.Opened"/>: tg's rustle of the back storage).</summary>
+    void InventoryOpen(client player) => CarriedStorages.Opened(player);
+
     /// <summary>Version 78: the player clicked a command verb of the stat panel (<see cref="ClientSeam.RunVerb"/>: BYOND runs the verb with usr the mob).</summary>
     void Verb(client player, string path) => ClientSeam.RunVerb(player, path);
 

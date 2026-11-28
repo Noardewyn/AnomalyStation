@@ -7,6 +7,45 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+### Changed
+
+- New default keys follow Space Station 14: Shift switches walk and run, C lies down, Ctrl+Q throws, Shift+click examines; saved keys stay as they were.
+- What you can do with the thing under the crosshair now shows beside it, each with your key; F3 shows ping and FPS in one chip at the top right.
+- The health doll, health and mood stand bare at the right edge over the combat toggle in the corner; the zone selector shows only in cursor mode.
+- Your hands sit either side of a ten-cell bar of belt, pockets and ID at the bottom centre; a strip above them names the held item and its keys.
+- The hand boxes, the bar's cells and the worn slots under Tab are drawn with tg's own slot pictures of your HUD style.
+- Tab (or I) shows your character with its worn slots round it and the chat at the left; click the sprite to use an item on yourself; damage closes it.
+- Under Tab every bag, box and belt you carry is listed at the right with its room; drag items between hands, slots, bags and the floor, or Ctrl+click to transfer.
+- A container you have open now closes when you walk out of its reach, as in tg.
+- A container you open shows in the Tab inventory under your bags, and items lying next to you show in a "Nearby" row you can click and drop onto.
+- Stripping someone now shows them beside your storages in the Tab inventory: click, drag or right-click their slots instead of a separate window.
+- The inventory now opens with I only; Tab just frees the cursor, so using a machine no longer opens the inventory.
+- Right-clicking an item in the inventory opens a wheel of what to do with it (internals, toggles, examine) instead of taking it in hand.
+- More Space Station 14 keys: E uses things with an empty hand, R quick equips, Shift+B/E/G/H/F fill or empty a slot, comma whispers.
+- The prompt now lists every key for the thing you look at (E, Alt, Ctrl, Move here), and the strip over your hands the held item's own keys.
+- K opens an actions menu: click an action to use it, drag it onto one of nine Shift+number slots shown at the top left; the scoreboard moved to Caps Lock.
+- Number keys 1 to 9 work the belt bar again for settings saved before the bar (they had stayed on the action buttons, now on Shift).
+- Alerts, hunger and stamina are small chips above the health doll, or left of it on a crowded screen, instead of a column at the right edge.
+- Every chip's picture is centred and scaled so its art fills the chip, so hunger, stamina and alerts no longer sit small or off-centre.
+- The swap-hands key sits on the corner of the other hand; a cuffed or missing hand gets a red border.
+- HUD buttons that a key does are gone; G opens crafting, L languages, M navigate, and Offer item is in the right-click wheel.
+- Aiming at a person hits their body, not their clothes, hair, backpack or held items, so every click on them targets the body part you aim at.
+- Aiming or shooting at a person from the side hits the leg in front where the legs overlap; shots hit a giant's head and a body moved by a handrail.
+- Attack and hit effects no longer take the next click, so a quick second attack lands on the person instead of the effect.
+- Looking at someone's eyes, mouth or groin now targets it, as on tg's targeting doll: a screwdriver aimed at the eyes stabs them.
+- A gun held to someone's mouth from the next tile is tg's twelve-second execution shot; from further away it is an ordinary shot at the head.
+- The prompt beside the crosshair follows the body part you look at (Headpat on the head, Hug on the chest), except during a timed action.
+- A patient on a bed or operating table lies face up, and a lying person can be turned over from the radial.
+- The number keys now take items from your belt, pockets and ID slot and put them back; item action buttons moved to Shift+number.
+- Looking down now shows your own body in the lower half of the view with the floor ahead above it; held items lower out of the way.
+- Your own body is a target while you look down at it: the part under the crosshair is the one a click, a throw or an attack takes.
+- Looking down goes further, to 135 degrees, and shows more of your own body: the crosshair climbs from your feet to your chest.
+- The health doll's head has eyes and a mouth to use items on, and a Ctrl-click on the doll grasps the limb clicked.
+- The prompt beside the crosshair shows only for things within reach; anything further away leaves the crosshair bare.
+- A hit on an alien aimed at a body part it lacks lands on its chest instead of being refused.
+- The chat window sits above the hotbar, see-through until you type; its buttons and input show only while you type, and chat lines clear the bar.
+- Look down, hold the left button on your own body and let go on a table, chair, bed or closet to climb, sit, lie or get in; a click on yourself lands on release.
+
 ## [1.16.0-pre-alpha] - 2026-11-27
 
 ### Protocol

@@ -1333,8 +1333,9 @@ public static partial class Codec
 
     private static void CheckPosture(byte posture)
     {
-        if ((posture & ~63) != 0)
-            throw Bad("a posture byte " + posture + " sets bits that are not defined");
+        // version 100 (DV690): the turned side's two bits, only on a lying body, face up only with the side fixed
+        if ((posture & PostureBits.SideFixed) != 0 && (posture & PostureBits.Lying) == 0 || (posture & (PostureBits.SideFixed | PostureBits.FaceUp)) == PostureBits.FaceUp)
+            throw Bad("a posture byte " + posture + " sets a turned side that is not defined");
     }
 
     // ---- ids: zigzag differences from the previous id of the list (0 before the first) ----

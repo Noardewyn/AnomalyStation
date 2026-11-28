@@ -149,7 +149,7 @@ public sealed class AppearanceEntry
     public const short DefaultMaptextSize = 32;
 }
 
-/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte.</summary>
+/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte; all eight bits are used (version 100).</summary>
 public static class PostureBits
 {
     /// <summary>Bit 0: lying (tg <c>LYING_DOWN</c>).</summary>
@@ -176,9 +176,25 @@ public static class PostureBits
     /// </summary>
     public const byte Buckled = 32;
 
-    /// <summary>The byte of a body position and lying angle (the angle is taken modulo 360 in quarter turns).</summary>
-    public static byte Encode(bool lying, int lyingAngle, bool limp = false, bool incorporeal = false, bool buckled = false)
-        => (byte)((lying ? Lying : 0) | (((lyingAngle / 90) & 3) << AngleShift) | (lying && limp ? Limp : 0) | (incorporeal ? Incorporeal : 0) | (buckled ? Buckled : 0));
+    /// <summary>
+    /// Bit 6 (version 100, slice T4c, DV690): someone turned the lying body over, so its side up is fixed (<see cref="FaceUp"/>) for every viewer.
+    /// Set only while lying; the server forgets the side when the body stands up.
+    /// </summary>
+    public const byte SideFixed = 64;
+
+    /// <summary>Bit 7 (version 100, slice T4c, DV690): with <see cref="SideFixed"/>, the turned body lies face up (its front is drawn); without, back up.</summary>
+    public const byte FaceUp = 128;
+
+    /// <summary>
+    /// The byte of a body position and lying angle (the angle is taken modulo 360 in quarter turns). <paramref name="turnedFaceUp"/>: the side a
+    /// turned lying body lies on (true face up, false back up), null when no one turned it; written only while lying.
+    /// </summary>
+    public static byte Encode(bool lying, int lyingAngle, bool limp = false, bool incorporeal = false, bool buckled = false, bool? turnedFaceUp = null)
+        => (byte)((lying ? Lying : 0) | (((lyingAngle / 90) & 3) << AngleShift) | (lying && limp ? Limp : 0) | (incorporeal ? Incorporeal : 0) | (buckled ? Buckled : 0)
+            | (lying && turnedFaceUp is bool up ? SideFixed | (up ? FaceUp : 0) : 0));
+
+    /// <summary>The side a turned lying body lies on (<see cref="SideFixed"/>, <see cref="FaceUp"/>): true face up, false back up, null when not turned.</summary>
+    public static bool? TurnedFaceUp(byte posture) => (posture & SideFixed) != 0 ? (posture & FaceUp) != 0 : null;
 
     /// <summary>True when the byte says buckled to an object (<see cref="Buckled"/>).</summary>
     public static bool IsBuckled(byte posture) => (posture & Buckled) != 0;
@@ -481,6 +497,25 @@ public enum ActionKind : byte
     /// fields. Without tg's lobby the server late-joins its new player now.
     /// </summary>
     Loaded = 27,
+    /// <summary>
+    /// Version 100 (DV693, ui-overhaul.md section 10): a press of hotbar cell <see cref="ActionMessage.HotbarCell"/> (1 to 10: 1 to 7 the belt,
+    /// 8 and 9 the pockets, 10 the ID slot), untargeted. The server does what the cell's rules say with tg's procs, or tells the client it refused.
+    /// </summary>
+    HotbarPress = 28,
+    /// <summary>
+    /// Version 100 also (DV696, ui-overhaul.md section 12, slice 4B): move <see cref="ActionMessage.MoveItem"/>, an item of the own inventory, to
+    /// <see cref="ActionMessage.MoveTo"/> (a carried storage <see cref="ActionMessage.MoveStorage"/> at a wished cell, a worn slot, a hand or the floor;
+    /// <see cref="ActionMessage.MoveIndex"/>), untargeted. The server checks every field and does the move with tg's procs, or refuses it.
+    /// </summary>
+    InventoryMove = 29,
+    /// <summary>Version 100 also (DV696): the Tab inventory was opened; the server plays tg's opening of the back storage (its rustle), no fields.</summary>
+    InventoryOpen = 30,
+
+    /// <summary>
+    /// Version 100 also (DV697, ui-overhaul.md section 12, slice 4E): the world interact key on a target (an entity or a turf): tg's click with an empty
+    /// hand on it, also while an item is held. The server makes tg's click checks and does nothing on a mob while in combat mode.
+    /// </summary>
+    Interact = 31,
 }
 
 /// <summary>The mouse button of a click (tg's <c>params</c>: <c>button=left</c>, <c>right</c>, <c>middle</c>).</summary>
@@ -531,10 +566,10 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
     public TargetKind TargetKind { get; init; }
 
     /// <summary>The target's kind as the server reads it: <see cref="TargetKind"/>, or <see cref="TargetKind.Entity"/> for a version-3 click (kind None, <see cref="Target"/> above 0).</summary>
-    public TargetKind EffectiveTargetKind => TargetKind != TargetKind.None ? TargetKind : (Kind is ActionKind.Click or ActionKind.Hover or ActionKind.DblClick or ActionKind.Throw or ActionKind.PutDown or ActionKind.ContextPick && Target > 0 ? TargetKind.Entity : TargetKind.None);
+    public TargetKind EffectiveTargetKind => TargetKind != TargetKind.None ? TargetKind : (Kind is ActionKind.Click or ActionKind.Hover or ActionKind.DblClick or ActionKind.Throw or ActionKind.PutDown or ActionKind.ContextPick or ActionKind.Interact && Target > 0 ? TargetKind.Entity : TargetKind.None);
 
     /// <summary>Whether the kind names a target (a click, a hover; version 5: a dev gas probe, always a turf).</summary>
-    public bool IsTargeted => Kind is ActionKind.Click or ActionKind.Hover or ActionKind.DevGasProbe or ActionKind.Drop or ActionKind.DblClick or ActionKind.Throw or ActionKind.PutDown or ActionKind.ContextPick || IsMouse;
+    public bool IsTargeted => Kind is ActionKind.Click or ActionKind.Hover or ActionKind.DevGasProbe or ActionKind.Drop or ActionKind.DblClick or ActionKind.Throw or ActionKind.PutDown or ActionKind.ContextPick or ActionKind.Interact || IsMouse;
 
     /// <summary>Version 34: a <see cref="ActionKind.MouseDown"/>, <see cref="ActionKind.MouseDrag"/> or <see cref="ActionKind.MouseUp"/> (their target may be none).</summary>
     public bool IsMouse => Kind is ActionKind.MouseDown or ActionKind.MouseDrag or ActionKind.MouseUp or ActionKind.MouseWheel; // version 70: the wheel
@@ -560,7 +595,7 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
     /// <summary>Version 4: tg's <c>icon-y</c>, 1 to 32 (0: absent): north (or up on a billboard) is y.</summary>
     public byte IconY { get; init; }
 
-    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte; None otherwise.</summary>
+    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte (version 100: bit 3 its high bit); version 100 also: the zone a hover on an entity looks at, a byte after its target; None otherwise.</summary>
     public AimZone AimZone { get; init; }
 
     /// <summary>Version 4: the keybinding of a <see cref="ActionKind.Keybinding"/> (<see cref="KeybindingCode"/>), else None.</summary>
@@ -618,4 +653,22 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
 
     /// <summary>Version 38: a <see cref="ActionKind.Say"/> of type "thinking": tg's <c>payload["visible"]</c>; false otherwise.</summary>
     public bool SayVisible { get; init; }
+
+    /// <summary>Version 100 also (DV693): the cell of a <see cref="ActionKind.HotbarPress"/>, 1 to <see cref="HotbarMessage.CellCount"/>; 0 for every other kind.</summary>
+    public int HotbarCell { get; init; }
+
+    /// <summary>Version 100 also (DV696): the item an <see cref="ActionKind.InventoryMove"/> moves (an entity id, above 0); 0 for every other kind.</summary>
+    public long MoveItem { get; init; }
+
+    /// <summary>Version 100 also: where an <see cref="ActionKind.InventoryMove"/> puts its item; <see cref="InventoryTarget.None"/> for every other kind.</summary>
+    public InventoryTarget MoveTo { get; init; }
+
+    /// <summary>Version 100 also: the storage (an entity id, above 0) of a move to <see cref="InventoryTarget.Storage"/>, else 0.</summary>
+    public long MoveStorage { get; init; }
+
+    /// <summary>
+    /// Version 100 also: a move's index: the wished cell of a storage (1 to <see cref="Limits.MaxStorageItems"/>, 0 for none), tg's slot id of a worn slot
+    /// (<see cref="InventorySlots.Worn"/>), tg's held index of a hand (1 to <see cref="Limits.MaxStorageHands"/>); 0 for the floor and every other kind.
+    /// </summary>
+    public int MoveIndex { get; init; }
 }

@@ -386,7 +386,7 @@ public sealed partial class ServerHost
         if (!clicked && !dropped && !mouse && (action.Button != ClickButton.None || action.Modifiers != ClickModifiers.None || action.IconX != 0 || action.IconY != 0)) { why = "fields that this kind does not use"; return false; }
         if (!clicked && !mouse && action.Aim.HasValue) { why = "an aim on an action that is not a click or a mouse action"; return false; }
         if (action.Aim is ShotAim aim && !aim.InRange) { why = "an aim out of range"; return false; }
-        if (!clicked && action.AimZone != AimZone.None) { why = "an aim zone on an action that is not a click"; return false; }
+        if (!clicked && action.Kind != ActionKind.Hover && action.AimZone != AimZone.None) { why = "an aim zone on an action that is not a click or a hover"; return false; }
         if (!dropped && (action.OverKind != TargetKind.None || action.OverTarget != 0 || action.OverX != 0 || action.OverY != 0 || action.OverZ != 0 || action.DragTime != 0)) { why = "a drop's fields on another action"; return false; }
         if (!keyed && (action.Keybinding != KeybindingCode.None || action.KeyUp)) { why = "a keybinding on an action that is not one"; return false; }
         if (action.Kind is not (ActionKind.DevCommand or ActionKind.Topic or ActionKind.Say or ActionKind.Emote or ActionKind.Verb or ActionKind.PopupClose or ActionKind.ContextPick) && action.Text != null) { why = "text on an action that has none"; return false; }
@@ -394,8 +394,16 @@ public sealed partial class ServerHost
         if (action.Kind != ActionKind.RadialPick && (action.RadialMenu != 0 || action.RadialElement != 0)) { why = "a radial pick's fields on another action"; return false; }
         bool ui = action.Kind is ActionKind.UiAct or ActionKind.UiClose;
         if (!ui && (action.UiWindow != 0 || action.UiAction != null || action.UiParams != null)) { why = "a UI action's fields on another action"; return false; }
+        if (action.Kind != ActionKind.HotbarPress && action.HotbarCell != 0) { why = "a hotbar cell on another action"; return false; }
+        if (action.Kind != ActionKind.InventoryMove && (action.MoveItem != 0 || action.MoveTo != InventoryTarget.None || action.MoveStorage != 0 || action.MoveIndex != 0)) { why = "an inventory move's fields on another action"; return false; }
         switch (action.Kind)
         {
+            case ActionKind.InventoryMove: // version 100 also (DV696): the item and the target in range; whose they are is CarriedStorages.Move's check
+                if (action.MoveItem < 1 || !Codec.IsValidInventoryMoveTarget(action.MoveTo, action.MoveStorage, action.MoveIndex)) { why = "an inventory move out of range"; return false; }
+                return true;
+            case ActionKind.HotbarPress: // version 100 also (DV693): the cell; whether the mob has a hotbar and can act is BeltHotbar.Press's check
+                if (action.HotbarCell < 1 || action.HotbarCell > HotbarMessage.CellCount) { why = "a hotbar press of a cell out of range"; return false; }
+                return true;
             case ActionKind.UiAct: // version 16: the window, the action, the params; whether the window is the player's is tgui_Topic's check
             case ActionKind.UiClose:
                 if (action.UiWindow < 1 || action.UiWindow > Limits.MaxUiWindows) { why = "a UI action on a window out of range"; return false; }
@@ -408,6 +416,7 @@ public sealed partial class ServerHost
             case ActionKind.ToggleCombatMode:
             case ActionKind.Unhover: // version 14: untargeted
             case ActionKind.Loaded: // version 97: untargeted
+            case ActionKind.InventoryOpen: // version 100 also (DV696): untargeted
                 return true;
             case ActionKind.RadialPick: // version 15: the menu and the element; whether the menu is shown to the player is ClientSeam's check
                 if (action.RadialMenu < 1) { why = "a radial pick without a menu"; return false; }
@@ -443,11 +452,16 @@ public sealed partial class ServerHost
                         why = "a click or hover without a target";
                         return false;
                 }
-                if (action.Kind == ActionKind.Hover) return true;
+                if (action.AimZone > AimZone.Last) { why = "an unknown aim zone"; return false; }
+                if (action.Kind == ActionKind.Hover)
+                {
+                    // version 100 (slice T4b): the zone looked at, on an entity only
+                    if (action.AimZone != AimZone.None && action.EffectiveTargetKind != TargetKind.Entity) { why = "an aim zone on a hover that is not on an entity"; return false; }
+                    return true;
+                }
                 if (action.Button is not (ClickButton.Left or ClickButton.Right or ClickButton.Middle)) { why = "a click without a button"; return false; }
                 if ((action.Modifiers & ~ClickModifiers.All) != 0) { why = "unknown click modifiers"; return false; }
                 if (action.IconX > Limits.MaxIconPixel || action.IconY > Limits.MaxIconPixel) { why = "an icon pixel over " + Limits.MaxIconPixel; return false; }
-                if (action.AimZone > AimZone.Last) { why = "an unknown aim zone"; return false; }
                 return true;
             case ActionKind.MouseDown: // version 34: a target or none, a button, modifiers, an icon pixel, an aim
             case ActionKind.MouseDrag:
@@ -494,6 +508,9 @@ public sealed partial class ServerHost
                 if (!ValidTarget(action.EffectiveTargetKind, action.Target, action.TurfX, action.TurfY, action.TurfZ, out why)) return false;
                 if (string.IsNullOrEmpty(action.Text) || Encoding.UTF8.GetByteCount(action.Text) > Limits.MaxContextLabelBytes) { why = "a context pick with no label or too long a one"; return false; }
                 return true;
+            case ActionKind.Interact: // version 100 also (DV697): a thing or a turf of the world; tg's click checks are WorldInteract.Use's
+                if (action.EffectiveTargetKind is not (TargetKind.Entity or TargetKind.Turf)) { why = "a world interact on neither a thing nor a turf"; return false; }
+                return ValidTarget(action.EffectiveTargetKind, action.Target, action.TurfX, action.TurfY, action.TurfZ, out why);
             case ActionKind.PopupClose: // version 78 (DV387): a popup's name; whether the client has it open is ClientSeam.ClosePopup's check
                 if (string.IsNullOrEmpty(action.Text) || Encoding.UTF8.GetByteCount(action.Text) > Limits.MaxPopupNameBytes) { why = "a popup close with no name or too long a one"; return false; }
                 return true;
@@ -558,6 +575,13 @@ public sealed partial class ServerHost
             ActionKind.Topic => s.ClickBucket.Take(tick),
             // Version 86: a context pick takes the click bucket (it stands for one).
             ActionKind.ContextPick => s.ClickBucket.Take(tick),
+            // Version 100 also (DV697): the world interact key takes the click bucket (it stands for a click).
+            ActionKind.Interact => s.ClickBucket.Take(tick),
+            // Version 100 also (DV693): a hotbar press takes the keybinding bucket (it is a key, as tg's quick-equip keys are).
+            ActionKind.HotbarPress => s.KeybindingBucket.Take(tick),
+            // Version 100 also (DV696): an inventory move takes the click bucket (it is a drop of a drag, or a click); the Tab notice the keybinding bucket (a key).
+            ActionKind.InventoryMove => s.ClickBucket.Take(tick),
+            ActionKind.InventoryOpen => s.KeybindingBucket.Take(tick),
             // Version 51: a double click takes only the overall bucket (it always comes with its press's click, which the click bucket counts).
             ActionKind.DblClick => true,
             // Version 34: a press and a release take only the overall bucket (each comes with a click or ends one, which the click bucket counts).
@@ -750,6 +774,9 @@ public sealed partial class ServerHost
             SendBuildPreview(s); // version 70
             SendGunSight(s); // version 92
             SendPhotoRequests(s); // version 99
+            SendHotbar(s); // version 100 (DV693)
+            SendStorages(s); // version 100 also (DV696)
+            SendActions(s); // version 100 also (DV698)
             SendWeather(s); // version 84
         }
     }
@@ -861,6 +888,33 @@ public sealed partial class ServerHost
             Send(s, Channel.State, Codec.Encode(held));
     }
 
+    // Version 100 also (DV696): the own carried storages when they changed or a move was refused, to this session only, after the Delta or Snapshot
+    // whose private tables carry their pictures.
+    private void SendStorages(Session s)
+    {
+        StoragesMessage storages = _replicator.TakeStorages(s.Ordinal);
+        if (storages != null)
+            Send(s, Channel.State, Codec.Encode(storages));
+    }
+
+    // Version 100 also (DV693): the own hotbar when its cells or the held names changed or a press was refused, after the Delta or Snapshot whose
+    // private tables carry its pictures.
+    private void SendHotbar(Session s)
+    {
+        HotbarMessage hotbar = _replicator.TakeHotbar(s.Ordinal);
+        if (hotbar != null)
+            Send(s, Channel.State, Codec.Encode(hotbar));
+    }
+
+    // Version 100 also (DV698): the own action buttons when they, their states or tg's palette objects changed, after the Delta or Snapshot whose
+    // screen entries they name.
+    private void SendActions(Session s)
+    {
+        ActionsMessage actions = _replicator.TakeActions(s.Ordinal);
+        if (actions != null)
+            Send(s, Channel.State, Codec.Encode(actions));
+    }
+
     private void SendRadials(Session s)
     {
         foreach (RadialMenuMessage radial in _replicator.TakeRadials(s.Ordinal))
@@ -915,6 +969,9 @@ public sealed partial class ServerHost
         SendRadials(s); // version 15: the menus open at the join
         SendUiWindows(s); // version 16: the tgui windows open at the join
         SendTooltip(s); // version 19: the tooltip shown at the join
+        SendHotbar(s); // version 100 (DV693): the hotbar at the join, its pictures in the Snapshot's tables
+        SendStorages(s); // version 100 also (DV696): the carried storages at the join, their pictures in the Snapshot's tables
+        SendActions(s); // version 100 also (DV698): the action buttons at the join, after the Snapshot that has their screen entries
         s.MinimapLevels.Clear(); // version 67: a join's client has no minimap yet
         s.BuildPreview = BuildPreviewMessage.None; // version 70: nor a build preview
         s.GunSight = GunSightMessage.None; // version 92: nor a gun sight

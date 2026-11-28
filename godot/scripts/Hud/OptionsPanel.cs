@@ -20,6 +20,7 @@ public partial class OptionsPanel : PanelContainer
 {
     private PlayOptions _options;
     private PlayAction? _capturing;
+    private readonly ModifierTap _modifierCapture = new(); // ui-overhaul.md section 5: a Shift or Ctrl binds itself only when it was alone
     private readonly Dictionary<PlayAction, Button> _bindButtons = new();
     private Label _hint;
     private Label _ttsStatus;
@@ -266,7 +267,7 @@ public partial class OptionsPanel : PanelContainer
 
         VBoxContainer access = Tab(tabs, "Accessibility");
         var palette = new OptionButton { SizeFlagsHorizontal = SizeFlags.ExpandFill };
-        palette.AddItem("tg's own", (int)ColorblindMode.Off);
+        palette.AddItem("Standard: green to red", (int)ColorblindMode.Off);
         palette.AddItem("Colourblind: red-green", (int)ColorblindMode.RedGreen);
         palette.AddItem("Colourblind: blue-yellow", (int)ColorblindMode.BlueYellow);
         palette.AddItem("Colourblind: grey", (int)ColorblindMode.Mono);
@@ -307,6 +308,8 @@ public partial class OptionsPanel : PanelContainer
 
     public override void _Process(double delta)
     {
+        // ui-overhaul.md section 5: a capture's modifier no longer down (its release went elsewhere, the window lost the focus) is dropped, so the next tap binds
+        _modifierCapture.Frame(0, _modifierCapture.Waiting is string waiting && Enum.TryParse(waiting, out Key held) && Input.IsPhysicalKeyPressed(held));
         if (!Visible || _ttsStatus == null)
             return;
         _ttsStatus.Text = SpeechDownloads.Status(SpeechModel.Tts);
@@ -336,28 +339,40 @@ public partial class OptionsPanel : PanelContainer
         if (_capturing == null || !Visible)
             return;
         string name = null;
-        if (@event is InputEventKey { Echo: false, PhysicalKeycode: Key.Shift } shift)
+        if (@event is InputEventKey { Echo: false, PhysicalKeycode: Key.Shift or Key.Ctrl or Key.Alt } modifier)
         {
-            // M9 slice C: Shift held with a key binds the pair (Shift_T); Shift let go alone binds Shift
-            if (shift.Pressed)
+            // M9 slice C: Shift or Ctrl (slice 4E: or Alt) held with a key or a mouse button binds the pair (Shift_T, Ctrl_Q, Ctrl_MouseLeft, Alt_E); let go it binds itself,
+            // only when it was alone (ui-overhaul.md section 5, ModifierTap: no other modifier down as it went down, nothing pressed while held,
+            // a refused mouse press included); else the panel keeps waiting
+            string own = modifier.PhysicalKeycode.ToString();
+            if (modifier.Pressed)
+                _modifierCapture.Arm(own, ModifierTap.OtherModifiers(own, modifier.ShiftPressed, modifier.CtrlPressed, modifier.AltPressed, modifier.MetaPressed), 0);
+            if (modifier.Pressed || !_modifierCapture.ReleaseAlone(own))
             {
                 GetViewport().SetInputAsHandled();
                 return;
             }
-            name = "Shift";
+            name = own;
         }
         else if (@event is InputEventKey { Pressed: true, Echo: false } key)
         {
+            _modifierCapture.AnyPress(key.PhysicalKeycode.ToString());
             if (key.PhysicalKeycode == Key.Escape)
             {
                 EndCapture("Cancelled.");
                 GetViewport().SetInputAsHandled();
                 return;
             }
-            name = KeyBindings.NameOf(key.PhysicalKeycode.ToString(), key.ShiftPressed);
+            name = KeyBindings.NameOf(key.PhysicalKeycode.ToString(), key.ShiftPressed, key.CtrlPressed, key.AltPressed); // slice 4E: Alt too (Alt_E)
+            if (PlayOptions.IsWindowScalePair(key.PhysicalKeycode.ToString(), key.CtrlPressed))
+            {
+                GetViewport().SetInputAsHandled(); // the game takes Ctrl with =, - and 0 before the bindings (the window scale): the panel keeps waiting
+                return;
+            }
         }
         else if (@event is InputEventMouseButton { Pressed: true } mouse)
         {
+            _modifierCapture.AnyPress("Mouse" + mouse.ButtonIndex); // any button and a wheel notch, a refused press too: a Shift or Ctrl held meanwhile does not bind itself
             name = mouse.ButtonIndex switch
             {
                 MouseButton.Left => "MouseLeft",
@@ -365,6 +380,15 @@ public partial class OptionsPanel : PanelContainer
                 MouseButton.Middle => "MouseMiddle",
                 _ => null,
             };
+            if (name == null)
+                return; // the wheel and the other buttons: the panel scrolls
+            // ui-overhaul.md section 5: only a press the game acts on for this action (KeyBindings.MouseBindingName)
+            name = KeyBindings.MouseBindingName(_capturing.Value, name, mouse.ShiftPressed, mouse.CtrlPressed);
+            if (name == null)
+            {
+                GetViewport().SetInputAsHandled(); // not taken: the panel keeps waiting for a key (Escape cancels)
+                return;
+            }
         }
         if (name == null || !KeyBindings.IsValidKeyName(name))
             return;
@@ -379,6 +403,7 @@ public partial class OptionsPanel : PanelContainer
     private void BeginCapture(PlayAction action)
     {
         _capturing = action;
+        _modifierCapture.Drop(); // a modifier held from before the capture does not bind itself on its release
         _bindButtons[action].Text = "press a key...";
         _hint.Text = $"Press the new key for '{KeyBindings.TitleOf(action)}' (Escape cancels).";
     }
@@ -535,6 +560,9 @@ public partial class Crosshair : Control
     private double _pulseUntil = -1, _now;
     private float _scale = 1f;
 
+    /// <summary>How far right of the middle the crosshair or the gun sight reaches on the screen, a shot's bloom and the shadow included (KeyChips.SightReach): the prompts start past it.</summary>
+    public float Extent => KeyChips.SightReach(_gun, _cone, _fov, GetViewportRect().Size.Y, _scale);
+
     /// <summary>The crosshair's size as a multiple of its default (the options' crosshair size).</summary>
     public void SetScale(float scale)
     {
@@ -623,8 +651,8 @@ public partial class Crosshair : Control
         {
             foreach (Vector2 d in new[] { Vector2.Left, Vector2.Right, Vector2.Up, Vector2.Down })
             {
-                DrawLine(c + d * 8f, c + d * 15f, shadow, 4f);
-                DrawLine(c + d * 8f, c + d * 15f, color, 2f);
+                DrawLine(c + d * 8f, c + d * GunSightGap.ArmEndPixels, shadow, 4f);
+                DrawLine(c + d * 8f, c + d * GunSightGap.ArmEndPixels, color, 2f);
             }
         }
     }
@@ -634,7 +662,7 @@ public partial class Crosshair : Control
     private void DrawGun(Color color, Color shadow)
     {
         float gap = GunSightGap.Pixels(_cone, _fov, GetViewportRect().Size.Y, _now - _firedAt) / _scale;
-        const float length = 8f;
+        const float length = GunSightGap.LinePixels;
         foreach (Vector2 d in new[] { Vector2.Left, Vector2.Right, Vector2.Up, Vector2.Down })
         {
             DrawLine(d * gap, d * (gap + length), shadow, 4f);

@@ -112,6 +112,51 @@ public class ModelTests
         Assert.Equal((0.0, -100.0), (Math.Round(x, 6), Math.Round(y, 6)));
     }
 
+    /// <summary>
+    /// Slice T4c: the input script's radial=LABEL aims the open radial at the entry of that label (case and outer spaces ignored), so the release
+    /// chooses exactly that entry, with the dispatch a mouse release has (here the Extra entry the server offers, Turn over); an absent label
+    /// aims at the centre and the release cancels; a radial that is not open aims at nothing.
+    /// </summary>
+    [Fact]
+    public void AnInputScriptPicksTheRadialsEntryByItsLabel()
+    {
+        var hints = new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7 };
+        hints.Hints.Add(new ContextHint(ClickButton.Left, ClickModifiers.None, "Hug"));
+        hints.Hints.Add(new ContextHint(ClickButton.Left, ClickModifiers.None, "Turn over", ContextHintAction.Extra));
+        hints.Hints.Add(new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, "Pull"));
+        var radial = new RadialModel();
+        Assert.False(radial.AimAtLabel("Turn over")); // closed
+        radial.Press(0);
+        Assert.False(radial.AimAtLabel("Turn over")); // pressed, not open yet
+        radial.Update(0.3);
+        radial.SetEntries(RadialModel.Build(hints, 1, true));
+        Assert.True(radial.AimAtLabel("  turn OVER "));
+        Assert.Equal(RadialOutcome.Choice, radial.Release(0.5, out RadialEntry choice));
+        Assert.Equal((RadialKind.Extra, "Turn over"), (choice.Kind, choice.Label));
+
+        // every entry, whichever its place on the circle, is the one aimed
+        List<RadialEntry> entries = RadialModel.Build(hints, 3, true);
+        foreach (RadialEntry wanted in entries)
+        {
+            radial.Press(1);
+            radial.Update(1.3);
+            radial.SetEntries(entries);
+            Assert.True(radial.AimAtLabel(wanted.Label), wanted.Label);
+            Assert.Equal(RadialOutcome.Choice, radial.Release(1.5, out choice));
+            Assert.Equal(wanted, choice);
+        }
+
+        // a label not offered: no entry, the release cancels, even after the mouse had aimed somewhere
+        radial.Press(2);
+        radial.Update(2.3);
+        radial.SetEntries(RadialModel.Build(hints, 1, true));
+        radial.Motion(100, 0);
+        Assert.NotEqual(-1, radial.Highlight);
+        Assert.False(radial.AimAtLabel("Strip"));
+        Assert.Equal(-1, radial.Highlight);
+        Assert.Equal(RadialOutcome.Cancel, radial.Release(2.5, out _));
+    }
+
     [Fact]
     public void TheEntriesAreTgsContextThenTheFixedOnes()
     {
@@ -215,6 +260,24 @@ public class ModelTests
         var picker = new HudPicker(surface);
         Assert.Equal(400200, picker.PickScreen(4, 28).Id); // the lower left
         Assert.Equal(2014, picker.PickScreen(28, 4).Id); // the cell's box elsewhere
+    }
+
+    [Fact]
+    public void AnEntryWithNoPictureGivesTheIconPixelUnderEveryScreenPixelOnBothAxes()
+    {
+        // a window cell (ContainerWindow) or the live HUD's doll square: no picture, the rectangle is the icon square, here at 2 screen pixels per
+        // tg pixel; a screen pixel on the top line of a row is in that row (it came back as the row above)
+        var surface = new Surface();
+        surface.Drawn.Add(new HudDrawn(2014, new HudRect(10, 20, 64, 64), null, 0, 0));
+        var picker = new HudPicker(surface);
+        for (int y = 0; y < 64; y++)
+        {
+            for (int x = 0; x < 64; x++)
+            {
+                PickHit hit = picker.PickScreen(10 + x, 20 + y);
+                Assert.Equal(((byte)(x / 2 + 1), (byte)(32 - y / 2)), (hit.IconX, hit.IconY));
+            }
+        }
     }
 
     [Fact]

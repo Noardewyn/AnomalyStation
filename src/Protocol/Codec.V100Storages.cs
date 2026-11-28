@@ -2,13 +2,15 @@ namespace Anomaly.Protocol;
 
 // Version 100 also (MessagesV100Storages.cs, docs/ai/specs/protocol.md section 100; ui-overhaul.md section 12, slice 4B-1, DV696):
 //
-//   Storages (server to client, State): [u8 id = 35] [varuint count 0..8] then each carried storage, in the order of their places (and hands):
-//     [varuint entity >= 1] [u8 place 1..7] ([u8 hand 1..8] when the place is 7, a hand) [str(1..128) name]
+//   Storages (server to client, State): [u8 id = 35] [varuint count 0..9] then each entry, in the order of their places (and hands):
+//     [varuint entity >= 1] [u8 place 1..8] ([u8 hand 1..8] when the place is 7, a hand) [str(1..128) name]
 //     [varuint slots 0..65535] [varuint used 0..65535] [varuint limit 0..65535] [u8 flags: bit 0 locked, bit 1 hidden, bit 2 cut; bits 3-7 zero]
 //     [varuint item count 0..64] then each item: [varuint entity >= 1] [str(1..128) name] [tableref picture (may be none)] [varuint count 0..65535]
 //   then [varuint refused item, 0 for none].
-//   a locked or hidden storage has no items; cut only with 64 items; every entity (storage or item) once; the places strictly in order, a place
-//   other than a hand once, hands by increasing index. A tableref is a varuint (appearance index << 1) | private, as everywhere (Codec.V2).
+//   a locked or hidden storage has no items; cut only with 64 items; every entity (storage or item) once, but the other container's own entity may
+//   also be an item of a carried storage (a box opened inside the backpack); the places strictly in order, a place other than a hand once, hands by
+//   increasing index; at most 8 carried storages (places 1 to 7) and one other container (place 8, so last), which is neither locked nor hidden.
+//   A tableref is a varuint (appearance index << 1) | private, as everywhere (Codec.V2).
 //
 //   InventoryMove (Action kind 29, client to server, Control): [varuint item >= 1] [u8 target 1..4] then by target:
 //     1 storage: [varuint storage >= 1] [u8 cell 0..64, 0 for none]; 2 slot: [varuint slot id, one of InventorySlots.Worn];
@@ -33,14 +35,15 @@ public static partial class Codec
             var w = new WireWriter(buffer);
             w.WriteMessageId(MessageId.Storages);
             IReadOnlyList<CarriedStorage> storages = message.Storages ?? throw Bad("a storages message without its list");
-            w.WriteCount(storages.Count, Limits.MaxStorages);
+            w.WriteCount(storages.Count, Limits.MaxStorageEntries);
             var seen = new HashSet<long>();
+            var storageEntities = new HashSet<long>();
             int lastOrder = 0;
             foreach (CarriedStorage s in storages)
             {
                 if (s == null)
                     throw Bad("a null carried storage");
-                CheckStorageHeader(s.Entity, s.Place, s.Hand, s.Name, s.Slots, s.Used, s.Limit, s.Locked, s.Hidden, s.Cut, s.Items?.Count ?? -1, seen, ref lastOrder);
+                CheckStorageHeader(s.Entity, s.Place, s.Hand, s.Name, s.Slots, s.Used, s.Limit, s.Locked, s.Hidden, s.Cut, s.Items?.Count ?? -1, seen, storageEntities, ref lastOrder);
                 w.WriteVarUInt((ulong)s.Entity);
                 w.WriteByte((byte)s.Place);
                 if (s.Place == StoragePlace.Hand)
@@ -68,8 +71,8 @@ public static partial class Codec
     }
 
     /// <summary>
-    /// Decodes a <see cref="StoragesMessage"/>: at most eight storages in the order of their places, each named, with numbers within the cap, known flags
-    /// and at most 64 items (none when locked or hidden), every entity once, and the refused item.
+    /// Decodes a <see cref="StoragesMessage"/>: at most eight carried storages and then one other container in the order of their places, each named,
+    /// with numbers within the cap, known flags and at most 64 items (none when locked or hidden), every entity once, and the refused item.
     /// </summary>
     public static bool TryDecode(ReadOnlySpan<byte> message, out StoragesMessage value, out ProtocolError error)
     {
@@ -80,15 +83,16 @@ public static partial class Codec
         {
             var r = new WireReader(message);
             r.ReadMessageId();
-            int count = r.ReadCount(Limits.MaxStorages, 1);
+            int count = r.ReadCount(Limits.MaxStorageEntries, 1);
             var storages = new CarriedStorage[count];
             var seen = new HashSet<long>();
+            var storageEntities = new HashSet<long>();
             int lastOrder = 0;
             for (int i = 0; i < count; i++)
             {
                 long entity = ReadNonNegativeLong(ref r, "a carried storage's entity");
                 byte placeByte = r.ReadByte();
-                if (placeByte < (byte)StoragePlace.Back || placeByte > (byte)StoragePlace.Hand)
+                if (placeByte < (byte)StoragePlace.Back || placeByte > (byte)StoragePlace.Other)
                     throw Bad("a carried storage of an unknown place " + placeByte);
                 var place = (StoragePlace)placeByte;
                 byte hand = place == StoragePlace.Hand ? r.ReadByte() : (byte)0;
@@ -101,7 +105,7 @@ public static partial class Codec
                     throw Bad("a carried storage with unknown flag bits");
                 bool locked = (flags & StorageFlagLocked) != 0, hidden = (flags & StorageFlagHidden) != 0, cut = (flags & StorageFlagCut) != 0;
                 int itemCount = r.ReadCount(Limits.MaxStorageItems, 4);
-                CheckStorageHeader(entity, place, hand, name, slots, used, limit, locked, hidden, cut, itemCount, seen, ref lastOrder);
+                CheckStorageHeader(entity, place, hand, name, slots, used, limit, locked, hidden, cut, itemCount, seen, storageEntities, ref lastOrder);
                 var items = new StorageItem[itemCount];
                 for (int k = 0; k < itemCount; k++)
                 {
@@ -139,15 +143,20 @@ public static partial class Codec
         return (int)value;
     }
 
-    // One storage's header: a positive entity seen once, a known place after the last one (a hand by its index), a name, numbers within the cap, and
-    // items only when the storage shows them (cut only when full).
+    // One entry's header: a positive entity seen once (the other container's may also be an item of a carried storage, never another entry's), a known
+    // place after the last one (a hand by its index; the other container, place 8, so last and once), at most 8 carried storages, a name, numbers
+    // within the cap, and items only when the storage shows them (cut only when full; the other container is never locked or hidden).
     private static void CheckStorageHeader(long entity, StoragePlace place, byte hand, string name, int slots, int used, int limit, bool locked, bool hidden,
-        bool cut, int itemCount, HashSet<long> seen, ref int lastOrder)
+        bool cut, int itemCount, HashSet<long> seen, HashSet<long> storageEntities, ref int lastOrder)
     {
-        if (entity < 1 || !seen.Add(entity))
+        if (entity < 1 || !storageEntities.Add(entity) || (!seen.Add(entity) && place != StoragePlace.Other))
             throw Bad("a carried storage's entity that is not positive or is named twice");
-        if (place < StoragePlace.Back || place > StoragePlace.Hand)
+        if (place < StoragePlace.Back || place > StoragePlace.Other)
             throw Bad("a carried storage of an unknown place " + (byte)place);
+        if (place != StoragePlace.Other && storageEntities.Count > Limits.MaxStorages)
+            throw Bad("more than " + Limits.MaxStorages + " carried storages");
+        if (place == StoragePlace.Other && (locked || hidden))
+            throw Bad("a locked or hidden other container");
         if (place == StoragePlace.Hand ? hand < 1 || hand > Limits.MaxStorageHands : hand != 0)
             throw Bad("a carried storage's hand " + hand + " for its place");
         int order = (int)place * (Limits.MaxStorageHands + 1) + hand;

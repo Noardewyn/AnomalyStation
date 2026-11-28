@@ -17,6 +17,9 @@ namespace Anomaly.Core.Tg;
 // by its storage's own removal, then goes on. What tg needs a free hand for, the port does without one only for an item taken out of a storage (it
 // goes straight on to its target) and between the hands: tg carries the item in a hand from one click to the next. A target that refuses an item
 // already taken out sends it back where it was. The Tab notice opens the carried storages as tg's open_storage does, without tg's screen.
+// Slice 4C-1: the storage the player has open by tg's own means that is none of the carried ones (tg's active_storage, while tg keeps it open) is
+// listed after them as the other container, and a move may take an item out of it or put one into it, tg's reach asked each time; tg would show that
+// storage's window instead of the backpack's, here both are listed.
 
 /// <summary>Where a carried storage is (the Tab inventory's order; protocol version 100's <c>StoragePlace</c> has the same numbers).</summary>
 public enum CarriedPlace : byte
@@ -28,6 +31,9 @@ public enum CarriedPlace : byte
     RightPocket = 5,
     Id = 6,
     Hand = 7,
+
+    /// <summary>Slice 4C-1: the other container, the storage the player has open that is none of the carried ones (<see cref="CarriedStorages.Other"/>).</summary>
+    Other = 8,
 }
 
 /// <summary>What an inventory move puts its item into (protocol version 100's <c>InventoryTarget</c> has the same numbers).</summary>
@@ -75,7 +81,15 @@ public sealed class CarriedStorages
 
     private enum Source { Hand, Slot, Storage }
 
-    private readonly HashSet<obj_item> _moving = new(); // the items a move or a hotbar press of this human is moving (one at a time each)
+    // The items a move or a hotbar press is moving now, of every human of the world (one at a time each): two players with the same container open
+    // never move one item at once.
+    private sealed class Moving
+    {
+        public readonly HashSet<obj_item> Items = new();
+    }
+
+    private static HashSet<obj_item> MovingNow => World.Current.GetExtension(static _ => new Moving()).Items;
+
     private float _openedAt = float.NegativeInfinity;
 
     /// <summary>How many moves were refused so far (the replicator sends a refusal once per count).</summary>
@@ -115,6 +129,51 @@ public sealed class CarriedStorages
             list.Add(new Carried(item, storage, place, hand));
     }
 
+    /// <summary>
+    /// Slice 4C-1: the storage <paramref name="user"/> has open that is none of its carried storages (the other container), while tg keeps it open for
+    /// it: tg's <c>active_storage</c>, the user among the storage's <c>is_using</c> and with a client (tg's <c>can_see_contents</c>), the storage's
+    /// parent not deleted, neither locked nor hidden (tg's <c>set_locked</c> closes a locked one and <c>show_contents</c> never opens a hidden one),
+    /// the hands not blocked (tg's <c>on_handsblocked_start</c> closes it: a stun, being cuffed, death and unconsciousness block them), and none of
+    /// <see cref="List"/> (a carried storage is listed once, as carried). It is what the Storages message lists: what tg's own storage window would
+    /// show, no reach being polled; tg closes it by its own events (living.dm Move and storage.dm close_distance for its reach, the hands blocked, the
+    /// lock, the storage's Destroy, another storage opened). A request asks tg's reach again (<see cref="OtherInReachForMove"/>). Reads fields and
+    /// traits only (and the carried list's held items): the replicator calls it from outside the world.
+    /// </summary>
+    // tg: code/datums/storage/storage.dm:1053-1058 (can_see_contents), :1076 (show_contents), :1221-1226 (set_locked);
+    // code/modules/mob/living/living.dm:2743-2745 (on_handsblocked_start)
+    public static datum_storage Other(mob_living_carbon_human user)
+    {
+        if (user == null || QDELETED(user) || user.active_storage is not datum_storage storage || storage.real_location == null
+            || storage.parent is not atom parent || QDELETED(parent) || user.client == null || !Dm.@in(user, storage.is_using) || !ShowsItems(storage)
+            || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED))
+            return null;
+        foreach (Carried carried in List(user))
+        {
+            if (carried.Storage == storage)
+                return null;
+        }
+        return storage;
+    }
+
+    /// <summary>
+    /// For a player's request (a move, an examine), as tg's click asks it: <see cref="Other"/> while tg's reach rule for it holds now: the storage's
+    /// parent is inside the user (tg's <c>important_recursive_contents</c>) or the user can reach it (<c>IsReachableBy</c>: adjacent to it, or to
+    /// what holds it; for a reach over one tile with tg's probe object, <c>RangedReachCheck</c>). Inside the world.
+    /// </summary>
+    // tg: code/modules/mob/living/living.dm:1070-1074, code/datums/storage/storage.dm:1019-1028 (close_distance, can_be_reached_by)
+    public static datum_storage OtherInReachForMove(mob_living_carbon_human user)
+    {
+        datum_storage storage = Other(user);
+        if (storage == null || Dm.@in(storage.parent, user.important_recursive_contents?[RECURSIVE_CONTENTS_ACTIVE_STORAGE]) || Beside(user, storage))
+            return storage;
+        return Dm.truthy(Waiting.NoSleep(storage.parent.IsReachableBy(user))) ? storage : null;
+    }
+
+    // A storage on a turf beside the user: IsReachableBy's own answer (CheckReachableAdjacency's Adjacent, click.dm:244), without building
+    // DirectAccess's list of everything the user holds first.
+    private static bool Beside(mob_living_carbon_human user, datum_storage storage)
+        => isturf(storage.parent.loc) && Dm.truthy(Waiting.NoSleep(user.Adjacent(storage.parent)));
+
     /// <summary>Whether tg lets the living see the storage's contents: not locked (tg's <c>locked</c>) and shown (<c>display_contents</c>).</summary>
     public static bool ShowsItems(datum_storage storage) => !Dm.truthy(storage.locked) && Dm.truthy(storage.display_contents);
 
@@ -135,8 +194,9 @@ public sealed class CarriedStorages
 
     /// <summary>
     /// Whether <paramref name="item"/> is one of the items <paramref name="user"/>'s listed storages show now (what its own Storages message lists): in
-    /// one of them directly, among its first <see cref="MaxItems"/>, the storage neither locked nor hidden. Slice 4B-2: such an item takes tg's
-    /// Shift+click (its examine) as one shown in tg's own storage screen would.
+    /// one of them directly, among its first <see cref="MaxItems"/>, the storage neither locked nor hidden, or so in the other container (slice
+    /// 4C-1: <see cref="Other"/>, tg's state only). Slice 4B-2: such an item takes tg's Shift+click (its examine) as one shown in tg's own storage
+    /// screen would; tg's Shift+click asks no reach (ClickOn returns at ShiftClickOn, click.dm), so nothing here does either: fields only.
     /// </summary>
     public static bool ShowsItem(mob_living_carbon_human user, obj_item item)
     {
@@ -147,7 +207,7 @@ public sealed class CarriedStorages
             if (item.loc == carried.Storage.real_location && ShownItems(carried.Storage).Contains(item))
                 return true;
         }
-        return false;
+        return Other(user) is datum_storage other && item.loc == other.real_location && ShownItems(other).Contains(item);
     }
 
     /// <summary>Whether a storage holds more items than <see cref="ShownItems"/> lists.</summary>
@@ -162,40 +222,53 @@ public sealed class CarriedStorages
         => user.stat != DEAD && world.time > Dm.num(user.next_move) && !Dm.truthy(INCAPACITATED_IGNORING(user, ignoring))
             && !istype(user.loc, typeof(obj_vehicle_sealed_mecha));
 
-    // tg's checks of a click on an item inside a carried storage (click.dm ClickOn: incapacitated ignoring restraints and stasis :115, the cooldown
-    // :120, blocked hands :126, whose UnarmedAttack refuses (other_mobs.dm:17-18), and a loc that allows the click :161, which a mech or a closet
-    // does not); a dead body acts on nothing.
-    private static bool CanClickStored(mob_living_carbon_human user)
+    // tg's checks of a click on a stored item (click.dm ClickOn: incapacitated ignoring restraints and stasis :115, the cooldown :120, blocked hands
+    // :126, whose UnarmedAttack refuses (other_mobs.dm:17-18); an item inside the user is in her DirectAccess (:150, mob/living DirectAccess
+    // :294-295), answered before :161; any other needs a loc that allows the click (:161), which a mech or a closet does not); a dead body acts on
+    // nothing.
+    private static bool CanClickStored(mob_living_carbon_human user, obj_item item)
         => user.stat != DEAD && world.time > Dm.num(user.next_move) && !Dm.truthy(INCAPACITATED_IGNORING(user, ItemClick))
-            && !HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) && user.loc is atom loc && Dm.truthy(loc.AllowClick());
+            && !HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) && (Within(item, user) || (user.loc is atom loc && Dm.truthy(loc.AllowClick())));
+
+    // The thing is somewhere inside the user (her get_all_contents, which tg's DirectAccess of a living mob holds).
+    private static bool Within(atom thing, mob_living_carbon_human user)
+    {
+        for (atom at = thing?.loc; at != null; at = at.loc)
+        {
+            if (at == user)
+                return true;
+        }
+        return false;
+    }
 
     /// <summary>
-    /// Marks <paramref name="items"/> (nulls skipped) as being moved for <paramref name="user"/>, false (nothing marked) when one already is: a move and
-    /// a hotbar press never move the same item at once. Every true is followed by <see cref="Release"/>.
+    /// Marks <paramref name="a"/> and <paramref name="b"/> (nulls skipped) as being moved for <paramref name="user"/>, false (nothing marked) when one
+    /// already is, by anyone: a move and a hotbar press never move the same item at once, nor two players' moves an item of a container both have open.
+    /// Every true is followed by <see cref="Release"/>.
     /// </summary>
     public static bool Claim(mob_living_carbon_human user, obj_item a, obj_item b = null)
     {
-        CarriedStorages state = Of(user);
-        if ((a != null && state._moving.Contains(a)) || (b != null && state._moving.Contains(b)))
+        HashSet<obj_item> moving = MovingNow;
+        if ((a != null && moving.Contains(a)) || (b != null && moving.Contains(b)))
             return false;
         if (a != null)
-            state._moving.Add(a);
+            moving.Add(a);
         if (b != null)
-            state._moving.Add(b);
+            moving.Add(b);
         return true;
     }
 
-    /// <summary>Whether a move or a hotbar press of <paramref name="user"/> is moving <paramref name="item"/> now (<see cref="Claim"/>).</summary>
-    public static bool IsClaimed(mob_living_carbon_human user, obj_item item) => item != null && user?.dm_carried is CarriedStorages state && state._moving.Contains(item);
+    /// <summary>Whether a move or a hotbar press is moving <paramref name="item"/> now (<see cref="Claim"/>).</summary>
+    public static bool IsClaimed(mob_living_carbon_human user, obj_item item) => item != null && MovingNow.Contains(item);
 
     /// <summary>Ends a <see cref="Claim"/>.</summary>
     public static void Release(mob_living_carbon_human user, obj_item a, obj_item b = null)
     {
-        CarriedStorages state = Of(user);
+        HashSet<obj_item> moving = MovingNow;
         if (a != null)
-            state._moving.Remove(a);
+            moving.Remove(a);
         if (b != null)
-            state._moving.Remove(b);
+            moving.Remove(b);
     }
 
     // ---- the moves ----
@@ -203,7 +276,8 @@ public sealed class CarriedStorages
     /// <summary>
     /// A move from <paramref name="player"/>'s client (protocol version 100's InventoryMove): the item of world id <paramref name="itemId"/> to
     /// <paramref name="to"/> (the storage of world id <paramref name="storageId"/> at cell <paramref name="index"/>, 0 for none; tg's slot id; a held
-    /// index; the floor). Only a connected client's own human; an item it holds, wears or sees in a listed storage; a target of its own and in range.
+    /// index; the floor). Only a connected client's own human; an item it holds, wears or sees in a listed storage or in its other container in
+    /// reach (<see cref="OtherInReachForMove"/>); a target of its own (or that other container) and in range.
     /// Anything else does nothing and is not reported. Runs detached with usr the mob, as BYOND runs a verb.
     /// </summary>
     public static void Move(client player, long itemId, MoveTarget to, long storageId, int index)
@@ -245,7 +319,7 @@ public sealed class CarriedStorages
             try
             {
                 done = barCell > 0 && item.loc == user.belt.atom_storage?.real_location
-                    ? CanClickStored(user) && Dm.truthy(await user.can_perform_action(user.belt, FORBID_TELEKINESIS_REACH))
+                    ? CanClickStored(user, item) && Dm.truthy(await user.can_perform_action(user.belt, FORBID_TELEKINESIS_REACH))
                     : await Apply(user, item, to, storageId, index);
                 if (done && barCell > 0)
                     BeltHotbar.PlaceInCell(user, item, barCell);
@@ -293,7 +367,7 @@ public sealed class CarriedStorages
         }
     }
 
-    // Where the item is now: in a hand, in one of the worn slots, or among the items a listed storage shows (no deeper).
+    // Where the item is now: in a hand, in one of the worn slots, or among the items a listed storage or the other container in reach shows (no deeper).
     private static bool FindSource(mob_living_carbon_human user, obj_item item, out Source source, out int at, out datum_storage storage)
     {
         storage = null;
@@ -320,10 +394,16 @@ public sealed class CarriedStorages
                 return true;
             }
         }
+        if (item.loc != null && item.loc == user.active_storage?.real_location && OtherInReachForMove(user) is datum_storage other && ShownItems(other).Contains(item))
+        {
+            storage = other;
+            return true;
+        }
         return false;
     }
 
-    // The target is the user's own and in range: a listed storage (cell 0 to MaxItems), a worn slot, a hand the mob has, the floor.
+    // The target is the user's own and in range: a listed storage or the other container in reach (cell 0 to MaxItems), a worn slot, a hand the mob
+    // has, the floor.
     private static bool ValidTarget(mob_living_carbon_human user, MoveTarget to, long storageId, int index, out datum_storage storage)
     {
         storage = null;
@@ -341,6 +421,12 @@ public sealed class CarriedStorages
                         return carried.Place != CarriedPlace.Belt || index <= BeltHotbar.BeltCells;
                     }
                 }
+                // slice 4C-1: the other container as a target asks tg's state only, as tg's window click does (screen_objects.dm:653-667: no reach)
+                if (user.active_storage?.parent?.dm_id == storageId && Other(user) is datum_storage other)
+                {
+                    storage = other;
+                    return true;
+                }
                 return false;
             case MoveTarget.Slot:
                 return storageId == 0 && Array.IndexOf(WornSlots, index) >= 0;
@@ -353,7 +439,8 @@ public sealed class CarriedStorages
         }
     }
 
-    // The target storage is still one the user carries (it may have been dropped or deleted during a wait).
+    // The target storage is still one the user carries, or still the other container as tg's state has it (Other: open to the user; no reach is
+    // asked for a put-in), since it may have been dropped, closed or deleted during a wait.
     private static bool StillCarried(mob_living_carbon_human user, long storageId, datum_storage into)
         => ValidTarget(user, MoveTarget.Storage, storageId, 0, out datum_storage now) && now == into && !QDELETED(into.parent);
 
@@ -523,7 +610,7 @@ public sealed class CarriedStorages
         datum_storage into, int index)
     {
         // tg: code/_onclick/click.dm:115-161 (ClickOn on the stored item; the take-out's checks, the floor's too: tg's player takes it out first)
-        if (!CanClickStored(user))
+        if (!CanClickStored(user, item))
             return false;
         if (to == MoveTarget.Storage && into == from)
             return await Reorder(user, into, item, index);
@@ -577,8 +664,16 @@ public sealed class CarriedStorages
                 return false;
         }
         bool Free() => TargetStill(user, to, storageId, into, index);
+        bool fromOther = !List(user).Exists(c => c.Storage == from);
         if (!await PickUp(user, item, from, Free))
             return false;
+        // slice 4C-1: out of the other container, after its own removal (a trash bag's search): the user must still be using it, as tg's reach rule
+        // asks, or the item goes back
+        if (fromOther && OtherInReachForMove(user) != from)
+        {
+            await PutBack(user, item, from);
+            return false;
+        }
         // the item is out, inside the mob, after its storage's own removal (which may have waited): every target is asked again, and one that no
         // longer takes it sends it back
         switch (to)
@@ -673,14 +768,15 @@ public sealed class CarriedStorages
         await user.put_in_hands(item);
     }
 
-    // A stored item is reached into: tg's on_found (a mousetrap snaps) runs as when tg's storage is opened over it or the hotbar takes it; true when
-    // the item stopped the reach, or the item or the user changed meanwhile.
+    // A stored item is reached into: tg's on_found (a mousetrap snaps) runs as when tg's storage is opened over it or the hotbar takes it, but not for
+    // the other container, which tg searched when it was opened (a click in an open window runs no on_found); true when the item stopped the reach,
+    // or the item or the user changed meanwhile.
     // tg: code/datums/storage/storage.dm:1080-1084 (show_contents' on_found pass), code/game/objects/items.dm on_found
     private static async DmTask<bool> Reach(mob_living_carbon_human user, obj_item item, datum_storage from)
     {
-        if (Dm.truthy(await item.on_found(user)))
+        if (List(user).Exists(c => c.Storage == from) && Dm.truthy(await item.on_found(user)))
             return true;
-        return !Still(user, item, from) || !CanClickStored(user);
+        return !Still(user, item, from) || !CanClickStored(user, item);
     }
 
     // After a wait: the stored item is still among the items of the storage the move found it in.

@@ -51,6 +51,19 @@ public sealed class StoragesModel
         return null;
     }
 
+    private bool _otherOpened;
+
+    /// <summary>
+    /// Slice 4C-2: whether a message brought an other container (<see cref="StoragePlace.Other"/>) that the one before did not have (none, or another
+    /// one), since the last call: true once (the Tab inventory turns on, as tg's window appearing did), and false again once it has gone.
+    /// </summary>
+    public bool TakeOtherOpened()
+    {
+        bool opened = _otherOpened;
+        _otherOpened = false;
+        return opened;
+    }
+
     /// <summary>Slice 4B-2: a move the client had no target to send for (a quick transfer with no backpack worn) blinks as a refused one, dated <paramref name="now"/>.</summary>
     public void RefuseLocally(long item, double now)
     {
@@ -64,7 +77,11 @@ public sealed class StoragesModel
     /// </summary>
     public void Apply(StoragesMessage message, int refusals, long refusedItem, double now)
     {
+        long had = At(StoragePlace.Other)?.Entity ?? 0;
         Storages = (message ?? StoragesMessage.None).Storages;
+        long has = At(StoragePlace.Other)?.Entity ?? 0;
+        if (has != had)
+            _otherOpened = has != 0; // another container opened while one was (tg closes the first and shows the second) counts too
         if (refusals != _refusalsSeen)
         {
             if (refusals > _refusalsSeen && refusedItem > 0)

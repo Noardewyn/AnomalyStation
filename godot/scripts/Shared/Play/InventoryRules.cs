@@ -39,6 +39,9 @@ public enum InvKind : byte
 
     /// <summary>A HUD entry of tg's that is none of the above (the health doll, an open container's window, an action button).</summary>
     Hud,
+
+    /// <summary>Slice 4C-2: the Nearby strip: a cell (<see cref="InvPlace.Index"/>: from 0; <see cref="InvPlace.Item"/>: the item lying there, 0 for the empty cell) or its backing and title (index -1).</summary>
+    Nearby,
 }
 
 /// <summary>
@@ -72,10 +75,14 @@ public enum InvSendKind : byte
 
     /// <summary>tg's Shift+click on the item (its examine): a click with Shift on the item's entity as a screen target (the server takes it for an item its own carried storages show).</summary>
     Examine,
+
+    /// <summary>Slice 4C-2: tg's click on an item lying nearby (<see cref="InvSend.Item"/>, with <see cref="InvSend.Modifiers"/>), the click the world sends when it is clicked where it lies.</summary>
+    WorldClick,
 }
 
 /// <summary>What one drag, click or quick transfer sends.</summary>
-public readonly record struct InvSend(InvSendKind Kind, long Item = 0, InventoryTarget To = InventoryTarget.None, long Storage = 0, int Index = 0)
+public readonly record struct InvSend(InvSendKind Kind, long Item = 0, InventoryTarget To = InventoryTarget.None, long Storage = 0, int Index = 0,
+    ClickModifiers Modifiers = ClickModifiers.None)
 {
     public static readonly InvSend Nothing = default;
 
@@ -89,10 +96,11 @@ public static class InventoryRules
     /// The inventory place a HUD pick's <paramref name="target"/> names: the own sprite, a belt cell (its item: <paramref name="beltItems"/>, the worn
     /// belt <paramref name="belt"/>), a panel's cell or header (<paramref name="panels"/>), tg's hand box or worn, pocket or ID slot (the entry, or
     /// the item drawn in it, whose holder it is; <paramref name="screen"/>); <see cref="InvKind.Hud"/> for any other screen entry; a world thing is
-    /// <see cref="InvKind.Thing"/>, a turf or nothing <see cref="InvKind.Floor"/>.
+    /// <see cref="InvKind.Thing"/>, a turf or nothing <see cref="InvKind.Floor"/>. Slice 4C-2: a cell of the Nearby strip, with the item
+    /// <paramref name="nearby"/> lists there (<see cref="NearbyItems"/>; null: no strip shown, so none of its ids is a place).
     /// </summary>
     public static InvPlace Resolve(in ClickTarget target, IReadOnlyDictionary<long, ScreenEntry> screen, IReadOnlyList<StoragePanel> panels, long belt, IReadOnlyList<long> beltItems,
-        bool humanHud = true)
+        bool humanHud = true, IReadOnlyList<StorageItem> nearby = null)
     {
         // the Tab inventory is the human HUD's (the server takes a move from a human only): on any other HUD nothing is an inventory place, so its
         // drags, clicks and Ctrl+clicks keep exactly the paths they had (tg's drop, tg's clicks)
@@ -126,6 +134,12 @@ public static class InventoryRules
             if (at >= p.Cells.Length)
                 return new InvPlace(InvKind.None);
             return new InvPlace(InvKind.Cell, p.Cells[at].Entity, at, p.Storage, p.Wishes[at]);
+        }
+        if (StorageColumn.DecodeStrip(id, out int near))
+        {
+            if (nearby == null)
+                return new InvPlace(InvKind.None);
+            return new InvPlace(InvKind.Nearby, near >= 0 && near < nearby.Count ? nearby[near].Entity : 0, near);
         }
         if (id < 0 || screen == null)
             return new InvPlace(InvKind.None);
@@ -176,12 +190,20 @@ public static class InventoryRules
     /// place (the health doll, an open container's window): from one of tg's own entries (a hand box, a worn slot's, a pocket's or the ID slot's cell)
     /// tg's drop, as before this slice (D224, D225: a worn backpack dragged onto a table empties onto it); from one of our cells (a storage panel's, a
     /// belt cell of the bar), which never had a tg drag, nothing;</description></item>
+    /// <item><description>slice 4C-2: onto the Nearby strip: the move to the floor (a drop); from a cell of the strip onto a hand box: tg's click on
+    /// that item where it lies (its pick-up), onto anything else: nothing;</description></item>
     /// <item><description>released where it was pressed, from a place with no item, or anywhere else: nothing.</description></item>
     /// </list>
     /// </summary>
     public static InvSend Drop(in InvPlace from, in InvPlace over, int activeHand)
     {
-        if (from.Item == 0 || from.Kind is not (InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell) || from.SamePlace(over))
+        if (from.Item == 0 || from.Kind is not (InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell or InvKind.Nearby) || from.SamePlace(over))
+            return InvSend.Nothing;
+        if (from.Kind == InvKind.Nearby)
+            return over.Kind == InvKind.Hand ? new InvSend(InvSendKind.WorldClick, from.Item) : InvSend.Nothing;
+        // a storage onto its own panel, header, cell or bar cell (the other container lying in the own backpack, the worn belt onto the bar): tg
+        // never puts a storage into itself, so nothing is sent and nothing blinks
+        if (over.Kind is InvKind.Belt or InvKind.Cell or InvKind.Panel && over.Storage == from.Item)
             return InvSend.Nothing;
         switch (over.Kind)
         {
@@ -198,6 +220,7 @@ public static class InventoryRules
             case InvKind.Sprite:
                 return from.Kind == InvKind.Hand && from.Index == activeHand ? new InvSend(InvSendKind.SelfUse, from.Item) : InvSend.Nothing;
             case InvKind.Floor:
+            case InvKind.Nearby:
                 return InvSend.Move(from.Item, InventoryTarget.Floor);
             case InvKind.Thing:
             case InvKind.Hud:
@@ -212,10 +235,13 @@ public static class InventoryRules
     /// slot, a belt cell's press): on a panel's item, the move to the active hand (as tg's click on it in tg's storage window); on an empty cell, or
     /// a header or backing, with an item <paramref name="held"/> in the active hand, that item into the storage there (an empty cell: simply in);
     /// Shift alone on a panel's item tg's Shift+click on it (its examine); any other click on a panel (another modifier held, an empty hand on an
-    /// empty cell) nothing.
+    /// empty cell) nothing. Slice 4C-2: on an item of the Nearby strip a plain click or Shift+click is tg's click on that item where it lies (picked up
+    /// by the active hand when tg allows, or the held item used on it; with Shift its examine); any other click on the strip nothing.
     /// </summary>
     public static InvSend? Click(in InvPlace at, ClickModifiers modifiers, int activeHand, long held)
     {
+        if (at.Kind == InvKind.Nearby)
+            return at.Item != 0 && modifiers is ClickModifiers.None or ClickModifiers.Shift ? new InvSend(InvSendKind.WorldClick, at.Item, Modifiers: modifiers) : InvSend.Nothing;
         if (at.Kind is not (InvKind.Cell or InvKind.Panel))
             return null;
         if (modifiers == ClickModifiers.Shift && at.Kind == InvKind.Cell && at.Item != 0)
@@ -224,8 +250,35 @@ public static class InventoryRules
             return InvSend.Nothing;
         if (at.Kind == InvKind.Cell && at.Item != 0)
             return activeHand > 0 ? InvSend.Move(at.Item, InventoryTarget.Hand, 0, activeHand) : InvSend.Nothing;
-        return held != 0 ? InvSend.Move(held, InventoryTarget.Storage, at.Storage, 0) : InvSend.Nothing;
+        // a held storage clicked on its own panel's empty cell or header: never into itself
+        return held != 0 && held != at.Storage ? InvSend.Move(held, InventoryTarget.Storage, at.Storage, 0) : InvSend.Nothing;
     }
+
+    /// <summary>
+    /// Slice 4C-2: whether a world click the client sends is one of tg's ways of opening the storage <paramref name="target"/> that is already the
+    /// listed other container (<paramref name="other"/>), so the Tab inventory turns on at once (tg shows its window again; the Storages message does
+    /// not change): on the human HUD (<paramref name="humanHud"/>) with Tab off (<paramref name="tabOn"/>). tg's ways a click is (storage.dm): the right
+    /// click with no modifier (<c>COMSIG_ATOM_ATTACK_HAND_SECONDARY</c>, and with an item in hand <c>base_item_interaction</c>'s secondary fallback,
+    /// <c>open_storage</c>) and Alt+click (<c>on_click_alt</c>, <c>click_alt_open</c>). A plain left click is not: tg's <c>on_attack</c> opens only a
+    /// storage the user holds (<c>parent.loc == user</c>), never one lying elsewhere; Shift (examine) and Ctrl (pull) are not either.
+    /// </summary>
+    public static bool ReopensOther(ClickButton button, ClickModifiers modifiers, long target, long other, bool tabOn, bool humanHud)
+        => humanHud && !tabOn && other != 0 && target == other
+            && (button == ClickButton.Right && modifiers == ClickModifiers.None || button == ClickButton.Left && modifiers == ClickModifiers.Alt);
+
+    /// <summary>
+    /// Slice 4C-2: the same for a drag the client sends: the other container (<paramref name="dragged"/>) dropped onto the own mob
+    /// (<paramref name="over"/> is <paramref name="own"/>: tg's <c>on_mousedrop_onto</c> with <c>over_object == user</c> opens it).
+    /// </summary>
+    public static bool ReopensOtherByDrag(long dragged, long over, long own, long other, bool tabOn, bool humanHud)
+        => humanHud && !tabOn && other != 0 && dragged == other && own != 0 && over == own;
+
+    /// <summary>
+    /// Slice 4C-2: whether the Tab inventory turns on because a Storages message brought the other container (<see cref="StoragesModel.TakeOtherOpened"/>):
+    /// only on the human HUD, and the model's flag is taken only then, so a container already open at join (tg's <c>show_hud</c> shows it again on
+    /// login) turns Tab on once the human HUD is up; one that went meanwhile cleared the flag in the model.
+    /// </summary>
+    public static bool TabOnForOther(bool humanHud, StoragesModel model) => humanHud && model != null && model.TakeOtherOpened();
 
     /// <summary>What the client's balloon says when a quick transfer from a hand has no backpack to go into (nothing is sent).</summary>
     public const string NoBackpack = "no backpack!";
@@ -239,18 +292,21 @@ public static class InventoryRules
 
     /// <summary>
     /// The quick transfer on <paramref name="at"/> (ui-overhaul.md section 12: its own action, Ctrl+left click by default), null where it is no item of
-    /// the inventory (the click stays tg's Ctrl-click): an item in a panel, a bar cell or a worn slot goes to the active hand; an item in a hand box
-    /// into the backpack (<paramref name="back"/>: the storage worn on the back), or, with none, is refused; on a panel's header or empty cell nothing.
+    /// the inventory (the click stays tg's Ctrl-click): an item in a panel (the other container's included), a bar cell or a worn slot goes to the active
+    /// hand; an item in a hand box into the other container while one is open (<paramref name="other"/>, slice 4C-2: the transfer between two
+    /// inventories), else into the backpack (<paramref name="back"/>: the storage worn on the back), or, with neither, is refused; on a panel's header
+    /// or empty cell, or on the Nearby strip, nothing.
     /// </summary>
-    public static InvSend? QuickTransfer(in InvPlace at, int activeHand, long back)
+    public static InvSend? QuickTransfer(in InvPlace at, int activeHand, long back, long other = 0)
     {
         switch (at.Kind)
         {
             case InvKind.Cell or InvKind.Belt or InvKind.Slot when at.Item != 0:
                 return activeHand > 0 ? InvSend.Move(at.Item, InventoryTarget.Hand, 0, activeHand) : InvSend.Nothing;
             case InvKind.Hand when at.Item != 0:
-                return back != 0 ? InvSend.Move(at.Item, InventoryTarget.Storage, back, 0) : new InvSend(InvSendKind.Refused, at.Item);
-            case InvKind.Cell or InvKind.Panel:
+                long into = other != 0 ? other : back;
+                return into != 0 ? InvSend.Move(at.Item, InventoryTarget.Storage, into, 0) : new InvSend(InvSendKind.Refused, at.Item);
+            case InvKind.Cell or InvKind.Panel or InvKind.Nearby:
                 return InvSend.Nothing;
             default:
                 return null;
@@ -278,7 +334,7 @@ public static class InventoryRules
     /// </summary>
     public static uint Rim(long item, in InvPlace place, long blinking, in InvPlace over)
         => item != 0 && item == blinking ? UiTokens.HotbarRefusedRim
-            : over.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell && over.SamePlace(place) ? UiTokens.InventoryDragRim : 0u;
+            : over.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell or InvKind.Nearby && over.SamePlace(place) ? UiTokens.InventoryDragRim : 0u;
 
     /// <summary>
     /// How long after the player clicked a thing or used the held one, seconds, an empty storage window that opens counts as opened by it
@@ -290,7 +346,8 @@ public static class InventoryRules
     /// <summary>
     /// Whether tg's storage window now open shows a storage the column lists (each thing is shown once, so it is not drawn and the Tab inventory comes
     /// on instead): one of its items (<paramref name="windowItems"/>) is in a listed storage, or, holding none, the thing the player last acted on
-    /// (<paramref name="actedOn"/>: clicked, or used in hand) is a listed storage holding none. Any other container keeps tg's window.
+    /// (<paramref name="actedOn"/>: clicked, or used in hand) is a listed storage holding none. The other container (slice 4C-2) is none of them: the
+    /// server lists it only while tg keeps it open, so the client never closes it unseen (on the human HUD its window is withheld instead).
     /// </summary>
     public static bool ListedWindow(IEnumerable<long> windowItems, IReadOnlyList<CarriedStorage> storages, long actedOn)
     {
@@ -302,6 +359,8 @@ public static class InventoryRules
             any = true;
             foreach (CarriedStorage s in storages)
             {
+                if (s.Place == StoragePlace.Other)
+                    continue; // the other container stays open in tg: the server lists it only while it is
                 foreach (StorageItem i in s.Items)
                 {
                     if (i.Entity == item)
@@ -313,7 +372,7 @@ public static class InventoryRules
             return false;
         foreach (CarriedStorage s in storages)
         {
-            if (s.Entity == actedOn && s.Items.Count == 0)
+            if (s.Entity == actedOn && s.Items.Count == 0 && s.Place != StoragePlace.Other)
                 return true;
         }
         return false;

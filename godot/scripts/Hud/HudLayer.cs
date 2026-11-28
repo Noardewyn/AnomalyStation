@@ -135,26 +135,48 @@ void fragment() {
     /// <summary>Slice 4B-2: the storage worn on the back (the quick transfer's backpack), 0 for none.</summary>
     public long BackStorage => Storages?.At(StoragePlace.Back)?.Entity ?? 0;
 
+    /// <summary>Slice 4C-2: the other container the player has open (the quick transfer's target from a hand while there is one), 0 for none.</summary>
+    public long OtherStorage => Storages?.At(StoragePlace.Other)?.Entity ?? 0;
+
     /// <summary>Slice 4B-2: the right column as drawn this frame.</summary>
     public StorageColumnLayout Column => _column;
 
     private List<StoragePanel> _panels = new(); // slice 4B-2: the right column's panels this frame
     private StorageColumnLayout _column = StorageColumnLayout.None;
     private float _scroll; // kept while Tab stays on, back to the top on each opening
+    private float _otherScroll, _stripScroll; // slice 4C-2: the pinned panel's rows (back to the top for another container) and the strip's row
+    private long _otherSeen;
+    private List<StorageItem> _nearby = new(); // slice 4C-2: the items lying round the player, under Tab on the human HUD (NearbyItems)
     private long _belt; // the worn belt's storage (0: none) and the item each belt cell of the bar shows
     private long[] _beltItems = new long[HotbarMessage.BeltCells];
     private long _blink; // the item whose cell blinks red now (InventoryRules.Blinking)
     private InvPlace _over; // the inventory place a drag is over now
     private Item _left, _right;
-    private readonly List<LiveHudView.PanelScene> _panelScenesCol = new(), _panelsShown = new();
-    private readonly List<MaptextNode> _columnTexts = new();
+    private readonly List<LiveHudView.PanelScene> _panelScenesCol = new(), _panelsShown = new(), _shownScratch = new();
+    private readonly LiveHudView.PanelScene _pinnedBack = new(), _pinnedCells = new(), _stripBack = new(), _stripCells = new();
+    private readonly Counts _ownTexts = new(), _pinnedTexts = new(), _stripTexts = new();
 
     /// <summary>Slice 4B-2: the inventory place a HUD pick's <paramref name="target"/> names (<see cref="InventoryRules.Resolve"/>), against this frame's panels.</summary>
-    public InvPlace PlaceOf(in ClickTarget target) => InventoryRules.Resolve(target, _replica?.Screen, _panels, _belt, _beltItems, _humanHud);
+    public InvPlace PlaceOf(in ClickTarget target)
+        => InventoryRules.Resolve(target, _replica?.Screen, _panels, _belt, _beltItems, _humanHud, _column.Strip != null ? _nearby : null);
 
-    /// <summary>Slice 4B-2: the item a place of ours shows (a panel's cell, a belt cell of the bar): its picture and its name; none for anything else.</summary>
+    /// <summary>Slice 4C-2: the items the Nearby strip lists this frame (empty while it is not shown).</summary>
+    public IReadOnlyList<StorageItem> Nearby => _nearby;
+
+    /// <summary>
+    /// Slice 4B-2: the item a place of ours shows (a panel's cell, a belt cell of the bar; slice 4C-2: a cell of the Nearby strip): its picture and its
+    /// name; none for anything else.
+    /// </summary>
     public (TableRef Picture, string Name) ItemOf(in InvPlace place)
     {
+        if (place.Kind == InvKind.Nearby && place.Item != 0)
+        {
+            foreach (StorageItem i in _nearby)
+            {
+                if (i.Entity == place.Item)
+                    return (i.Appearance, i.Name);
+            }
+        }
         foreach (CarriedStorage s in Storages?.Storages ?? Array.Empty<CarriedStorage>())
         {
             if ((place.Kind == InvKind.Cell || place.Kind == InvKind.Belt) && place.Item != 0 && s.Entity == place.Storage)
@@ -171,15 +193,25 @@ void fragment() {
 
     /// <summary>
     /// Slice 4B-2: the mouse wheel at the screen point (<paramref name="x"/>, <paramref name="y"/>), <paramref name="steps"/> steps (positive: down):
-    /// over the right column's panels it scrolls them (true: the wheel is the column's), anywhere else it is not the column's.
+    /// over the right column's panels it scrolls them (true: the wheel is the column's), anywhere else it is not the column's. Slice 4C-2: over the
+    /// pinned panel it scrolls that panel's rows, over the Nearby strip its row.
     /// </summary>
     public bool ScrollColumn(float x, float y, int steps)
     {
-        HudRect c = _column.Column;
-        if (_column.Panels.Length == 0 || x < c.Left || x >= c.Right || y < c.Top || y >= c.Bottom)
-            return false;
-        _scroll = StorageColumn.Scrolled(_column.Scroll, steps, _hands.Unit, _column.MaxScroll);
-        return true;
+        switch (StorageColumn.AreaAt(_column, x, y))
+        {
+            case ColumnArea.Own:
+                _scroll = StorageColumn.Scrolled(_column.Scroll, steps, _hands.Unit, _column.MaxScroll);
+                return true;
+            case ColumnArea.Other:
+                _otherScroll = StorageColumn.Scrolled(_column.PinnedScroll, steps, _hands.Unit, _column.PinnedMax);
+                return true;
+            case ColumnArea.Nearby:
+                _stripScroll = StorageColumn.Scrolled(_column.Strip.Scroll, steps, _hands.Unit, _column.Strip.MaxScroll);
+                return true;
+            default:
+                return false;
+        }
     }
 
     // a refused move's red blink on the cell of its item, else the light rim of a drag over this place
@@ -668,6 +700,7 @@ void fragment() {
         _belt = belt?.Entity ?? 0;
         _beltItems = StorageColumn.BeltOnBar(Hotbar);
         _panels = StorageColumn.Panels(storages, _beltItems);
+        _nearby = _humanHud && CursorMode ? NearbyItems.Of(_replica) : _nearby.Count == 0 ? _nearby : new List<StorageItem>();
         _blink = InventoryRules.Blinking(Storages, _lastNow);
         _over = DragOver.IsSet ? PlaceOf(DragOver) : default;
     }
@@ -683,23 +716,32 @@ void fragment() {
     // Slice 4B-2: under Tab on the human HUD the right column's storage panels (StorageColumn.Layout), each a backing, a header (the storage's
     // picture, its name, its room) and the cells drawn as the bar's: tg's blank slot picture, the item, its stack's count; the scroll place starts
     // at the top on each opening.
+    // Slice 4C-2: the other container's panel pinned under them (its rows in a view of their own under its header), the Nearby strip at the bottom
+    // (its cells in a view of their own), the line over what is pinned.
     private void UpdateColumn(bool human)
     {
         LiveHudView.ColumnView view = _view.Column;
         if (!human || !CursorMode)
-            _scroll = 0f;
+            (_scroll, _otherScroll, _stripScroll) = (0f, 0f, 0f);
+        if (OtherStorage != _otherSeen) // another container's rows start at the top
+            (_otherSeen, _otherScroll) = (OtherStorage, 0f);
         if (!human || !CursorMode || !_root.Visible || _panel.Column.Width <= 0f)
         {
             _column = StorageColumnLayout.None;
-            _panelsShown.Clear();
-            view.Show(_column, _panelsShown, 0f);
-            foreach (MaptextNode t in _columnTexts)
-                t.Visible = false;
+            _shownScratch.Clear();
+            foreach (LiveHudView.ColumnView v in new[] { view, _view.Pinned, _view.PinnedCells, _view.Strip, _view.StripCells })
+                v.Show(default, _shownScratch, default, 0f);
+            _view.Line.Visible = false;
+            foreach (Counts c in new[] { _ownTexts, _pinnedTexts, _stripTexts })
+            {
+                c.Begin();
+                c.End();
+            }
             return;
         }
         float unit = _hands.Unit;
-        _column = StorageColumn.Layout(_panel.Column, LiveHud.BarCell(_hands, 1).Width, unit, _panels, _scroll);
-        _scroll = _column.Scroll;
+        _column = StorageColumn.Layout(_panel.Column, LiveHud.BarCell(_hands, 1).Width, unit, _panels, _scroll, _nearby.Count, _otherScroll, _stripScroll);
+        (_scroll, _otherScroll, _stripScroll) = (_column.Scroll, _column.PinnedScroll, _column.Strip?.Scroll ?? 0f);
         _styled.Clear();
         foreach (Item slot in _barSlots)
         {
@@ -711,64 +753,137 @@ void fragment() {
         if (_right != null)
             _styled.Add(_right.Entry);
         Texture2D blank = StatePicture(LiveHud.BlankSlotArt(_replica, _styled));
-        var real = _textures as AppearanceTextures;
-        var origin = new Vector2(_column.Column.Left, _column.Column.Top);
-        int texts = 0;
+        foreach (Counts c in new[] { _ownTexts, _pinnedTexts, _stripTexts })
+            c.Begin();
         _panelsShown.Clear();
-        // the layout's panels, which are this frame's panels or none (a column too narrow for a cell): the view draws only what the layout placed
+        // the layout's panels, which are this frame's panels or none (a column too narrow for a cell): the views draw only what the layout placed
         for (int p = 0; p < _column.Panels.Length; p++)
         {
             if (_panelScenesCol.Count == p)
                 _panelScenesCol.Add(new LiveHudView.PanelScene());
-            LiveHudView.PanelScene scene = _panelScenesCol[p];
+            bool pinned = p == _column.Pinned;
             StoragePanel panel = _panels[p];
+            if (panel.Place == StoragePlace.Other && !pinned)
+                continue; // the other container with no room left to pin it: not drawn
+            LiveHudView.PanelScene scene = pinned ? _pinnedBack : _panelScenesCol[p];
             StoragePanelRects rects = _column.Panels[p];
             (scene.Rects, scene.Title, scene.Room, scene.Locked, scene.Header) = (rects, panel.Title, panel.Room, panel.Locked, null);
+            // the storage's picture: the item drawn in its slot or hand, or for the other container the thing where it lies (none for one in another's bag)
             TableRef own = StorageColumn.PictureOf(_replica.Screen, panel.Storage);
+            if (own.IsNone && _replica.TryGet(panel.Storage, out ReplicaEntity lying))
+                own = lying.State.Appearance;
             if (!own.IsNone && _textures.TryCompose(_replica, own, 2, _lastNow, out ComposedAppearance header))
             {
                 HudRect at = LiveHud.ChildPicture(rects.Picture, header.PixelWidth, header.PixelHeight, header.OriginX, header.OriginY);
                 scene.Header = new LiveHudView.Picture(header.Texture, new Rect2(at.Left, at.Top, at.Width, at.Height));
             }
-            while (scene.Cells.Count < rects.Cells.Length)
-                scene.Cells.Add(new LiveHudView.CellScene());
-            while (scene.Cells.Count > rects.Cells.Length)
-                scene.Cells.RemoveAt(scene.Cells.Count - 1);
-            for (int c = 0; c < rects.Cells.Length; c++)
+            if (pinned)
             {
-                LiveHudView.CellScene cell = scene.Cells[c];
-                HudRect rect = rects.Cells[c];
-                StorageItem item = panel.Cells[c];
-                cell.Rect = rect;
-                cell.Look = new HotbarCellLook(1f, item.Appearance, 1f, null, 1f, RimOf(item.Entity, new InvPlace(InvKind.Cell, item.Entity, c, panel.Storage)));
-                HudRect art = LiveHud.SlotArtSquare(rect), square = LiveHud.HandPicture(rect, unit);
-                cell.Art.Clear();
-                if (blank != null)
-                    cell.Art.Add(new LiveHudView.Picture(blank, new Rect2(art.Left, art.Top, art.Width, art.Height), LiveHud.SlotTint(_replica, null)));
-                cell.Pictures.Clear();
-                cell.Overlays.Clear();
-                if (item.Entity == 0 || item.Appearance.IsNone || !_textures.TryCompose(_replica, item.Appearance, 2, _lastNow, out ComposedAppearance composed))
-                    continue;
-                HudRect pic = LiveHud.ChildPicture(square, composed.PixelWidth, composed.PixelHeight, composed.OriginX, composed.OriginY);
-                cell.Pictures.Add(new LiveHudView.Picture(composed.Texture, new Rect2(pic.Left, pic.Top, pic.Width, pic.Height)));
-                // a stack's amount, tg's maptext of the item's picture as on the bar, for a cell at least partly in the column
-                if (real == null || StorageColumn.Cut(rect, _column.Column) == null)
-                    continue;
-                if (_columnTexts.Count == texts)
-                {
-                    var node = new MaptextNode { Name = "ColumnMaptext" + texts };
-                    view.AddChild(node);
-                    _columnTexts.Add(node);
-                }
-                MaptextNode text = _columnTexts[texts++];
-                text.SetText(MaptextRenderer.Shared, real, _replica, item.Appearance, new Vector2(square.Left, square.Bottom) - origin, square.Width / 32f);
-                text.Visible = true;
+                // the backing and header in one view, the rows cut under the header in another
+                scene.Cells.Clear();
+                _pinnedCells.Rects = new StoragePanelRects(default, default, default, rects.Cells);
+                (_pinnedCells.Title, _pinnedCells.Room, _pinnedCells.Header) = (null, null, null);
+                FillCells(_pinnedCells, panel.Cells, panel.Storage, InvKind.Cell, _column.PinnedClip, _view.PinnedCells, _pinnedTexts, blank, unit);
+                continue;
             }
+            FillCells(scene, panel.Cells, panel.Storage, InvKind.Cell, _column.Column, view, _ownTexts, blank, unit);
             _panelsShown.Add(scene);
         }
-        for (int t = texts; t < _columnTexts.Count; t++)
-            _columnTexts[t].Visible = false;
-        view.Show(_column, _panelsShown, unit);
+        view.Show(_column.Column, _panelsShown, _column.Thumb, unit);
+        ShowOne(_view.Pinned, _column.Pinned >= 0 ? _column.Panels[_column.Pinned].Backing : default, _pinnedBack, unit);
+        ShowOne(_view.PinnedCells, _column.Pinned >= 0 ? _column.PinnedClip : default, _pinnedCells, unit);
+        // the Nearby strip: its title, and a cell for each item lying near (one empty cell, the drop target, when none)
+        NearbyStripRects strip = _column.Strip;
+        if (strip != null)
+        {
+            _stripBack.Rects = new StoragePanelRects(strip.Backing, strip.Title, default, Array.Empty<HudRect>());
+            (_stripBack.Title, _stripBack.Room, _stripBack.Locked, _stripBack.Header) = (StorageColumn.NearbyTitle, null, false, null);
+            _stripBack.Cells.Clear();
+            _stripCells.Rects = new StoragePanelRects(default, default, default, strip.Cells);
+            (_stripCells.Title, _stripCells.Room, _stripCells.Header) = (null, null, null);
+            StorageItem[] items = _nearby.Count > 0 ? _nearby.ToArray() : new StorageItem[1];
+            FillCells(_stripCells, items, 0, InvKind.Nearby, strip.Clip, _view.StripCells, _stripTexts, blank, unit);
+        }
+        ShowOne(_view.Strip, strip?.Backing ?? default, _stripBack, unit);
+        ShowOne(_view.StripCells, strip?.Clip ?? default, _stripCells, unit);
+        HudRect line = _column.Line;
+        _view.Line.Visible = line.Width > 0f && line.Height > 0f;
+        (_view.Line.Position, _view.Line.Size) = (new Vector2(line.Left, line.Top), new Vector2(line.Width, line.Height));
+        foreach (Counts c in new[] { _ownTexts, _pinnedTexts, _stripTexts })
+            c.End();
+    }
+
+    // one scene in a view cut at `clip` (an empty clip hides the view)
+    private void ShowOne(LiveHudView.ColumnView view, HudRect clip, LiveHudView.PanelScene scene, float unit)
+    {
+        _shownScratch.Clear();
+        if (clip.Width > 0f && clip.Height > 0f)
+            _shownScratch.Add(scene);
+        view.Show(clip, _shownScratch, default, unit);
+    }
+
+    // Slice 4B-2: a panel's cells (the scene's rects) drawn as the bar's: tg's blank slot picture, the item, its stack's count (a maptext node, a child of
+    // `parent`, which is cut at `clip`); a refused move's blink or a drag's rim on the place each cell is (slice 4C-2: a storage's cell or the strip's).
+    private void FillCells(LiveHudView.PanelScene scene, StorageItem[] items, long storage, InvKind kind, HudRect clip, LiveHudView.ColumnView parent, Counts texts,
+        Texture2D blank, float unit)
+    {
+        HudRect[] rects = scene.Rects.Cells;
+        var real = _textures as AppearanceTextures;
+        var origin = new Vector2(clip.Left, clip.Top);
+        while (scene.Cells.Count < rects.Length)
+            scene.Cells.Add(new LiveHudView.CellScene());
+        while (scene.Cells.Count > rects.Length)
+            scene.Cells.RemoveAt(scene.Cells.Count - 1);
+        for (int c = 0; c < rects.Length; c++)
+        {
+            LiveHudView.CellScene cell = scene.Cells[c];
+            HudRect rect = rects[c];
+            StorageItem item = c < items.Length ? items[c] : default;
+            cell.Rect = rect;
+            cell.Look = new HotbarCellLook(1f, item.Appearance, 1f, null, 1f, RimOf(item.Entity, new InvPlace(kind, item.Entity, c, storage)));
+            HudRect art = LiveHud.SlotArtSquare(rect), square = LiveHud.HandPicture(rect, unit);
+            cell.Art.Clear();
+            if (blank != null)
+                cell.Art.Add(new LiveHudView.Picture(blank, new Rect2(art.Left, art.Top, art.Width, art.Height), LiveHud.SlotTint(_replica, null)));
+            cell.Pictures.Clear();
+            cell.Overlays.Clear();
+            if (item.Entity == 0 || item.Appearance.IsNone || !_textures.TryCompose(_replica, item.Appearance, 2, _lastNow, out ComposedAppearance composed))
+                continue;
+            HudRect pic = LiveHud.ChildPicture(square, composed.PixelWidth, composed.PixelHeight, composed.OriginX, composed.OriginY);
+            cell.Pictures.Add(new LiveHudView.Picture(composed.Texture, new Rect2(pic.Left, pic.Top, pic.Width, pic.Height)));
+            // a stack's amount, tg's maptext of the item's picture as on the bar, for a cell at least partly seen
+            if (real == null || StorageColumn.Cut(rect, clip) == null)
+                continue;
+            texts.Next(parent).SetText(MaptextRenderer.Shared, real, _replica, item.Appearance, new Vector2(square.Left, square.Bottom) - origin, square.Width / 32f);
+        }
+    }
+
+    // the stack counts' maptext nodes of one view, made as needed and kept; those not used this frame are hidden
+    private sealed class Counts
+    {
+        private readonly List<MaptextNode> _nodes = new();
+        private int _used;
+
+        public void Begin() => _used = 0;
+
+        public MaptextNode Next(Control parent)
+        {
+            if (_used == _nodes.Count)
+            {
+                var node = new MaptextNode { Name = "ColumnMaptext" + _used };
+                parent.AddChild(node);
+                _nodes.Add(node);
+            }
+            MaptextNode next = _nodes[_used++];
+            next.Visible = true;
+            return next;
+        }
+
+        public void End()
+        {
+            for (int i = _used; i < _nodes.Count; i++)
+                _nodes[i].Visible = false;
+        }
     }
 
     // Slice 4A: under Tab on the human HUD the chat column and the character panel (TabInventory.Layout), clear of tg's entries still drawn there;

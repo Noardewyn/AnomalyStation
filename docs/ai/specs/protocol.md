@@ -3380,16 +3380,16 @@ came.
 Tests: `Protocol/ProtocolV100HotbarTests`, `Protocol/WireTests` (server), `UiOverhaul/BeltHotbarTests` (core), `Integration/HotbarGameplayTests`,
 `Client/Play/HotbarClientTests`.
 
-## 100. Version 100, also (ui-overhaul.md section 12, slice 4B-1, DV696: the Tab inventory's storages and moves)
+## 100. Version 100, also (ui-overhaul.md section 12, slices 4B-1 and 4C-1, DV696: the Tab inventory's storages, the other container and the moves)
 
 **Storages** (server to client, State channel, id 35, after the tick's Delta or a join's Snapshot, when it changed or a move was refused; to the
 owning session only; `MessagesV100Storages.cs`, `Codec.V100Storages.cs`): the storages the own human carries, in the Tab inventory's order (the back's,
 the belt's, one in the suit-storage slot, the left pocket's, the right pocket's, the ID slot's, then those held, by held index), each with its items
-in tg's order.
+in tg's order; then, last (slice 4C-1), the other container: the storage the player has open by tg's own means that is none of the carried ones.
 
 ```
-[varuint count 0..8] then each storage, in the order of its place (and hand):
-  [varuint entity >= 1] [u8 place: 1 back, 2 belt, 3 suit storage, 4 left pocket, 5 right pocket, 6 ID, 7 hand] ([u8 held index 1..8] for a hand)
+[varuint count 0..9] then each entry, in the order of its place (and hand):
+  [varuint entity >= 1] [u8 place: 1 back, 2 belt, 3 suit storage, 4 left pocket, 5 right pocket, 6 ID, 7 hand, 8 the other container] ([u8 held index 1..8] for a hand)
   [str(1..128) name] [varuint slots 0..65535] [varuint used 0..65535] [varuint limit 0..65535]
   [u8 flags: bit 0 locked, bit 1 hidden, bit 2 cut; bits 3-7 zero]
   [varuint item count 0..64] then each item: [varuint entity >= 1] [str(1..128) name] [tableref picture, may be none] [varuint count 0..65535]
@@ -3401,9 +3401,11 @@ The slots are tg's `max_slots`, the limit `max_total_storage`, used `get_total_w
 used is 0 (tg shows nothing of what is in them). A storage holds more than 64 items only past tg's own limits; it then sends the first 64 and the cut
 flag. An item's count is a stack's amount, 0 for an item that is no stack. A name is the thing's plain name (no article), cut at 128 bytes, never
 empty. The picture is the item drawn alone, the private row a slot's `ScreenChild` uses (`AppearanceTables.InternVisChild`), interned before the
-Delta's tables are taken, so the Delta or Snapshot before the message carries it. Every entity (a storage's or an item's) appears once; the places
-are strictly in order, a place other than a hand once, hands by increasing index; anything else is refused at both ends (`BadValue`, a long name
-`BadString`, too many entries `CountTooLarge`). Every mob that is not a human sends the empty message: `23 00 00`, 3 bytes. The refused item is an
+Delta's tables are taken, so the Delta or Snapshot before the message carries it. Every entity (a storage's or an item's) appears once, except that
+the other container's own entity may also be an item of a carried storage (a box opened inside the backpack); the places are strictly in order, a
+place other than a hand once, hands by increasing index; at most 8 carried storages (places 1 to 7, `Limits.MaxStorages`) and at most one other
+container (place 8, so always last; 9 entries in all, `Limits.MaxStorageEntries`), which is never locked or hidden and has no held index; anything
+else is refused at both ends (`BadValue`, a long name `BadString`, too many entries `CountTooLarge`). Every mob that is not a human sends the empty message: `23 00 00`, 3 bytes. The refused item is an
 event: the server's last move of that item, named by this client and its own, did not reach its target (dead or unable to act, tg refused it, the item's
 earlier move or a hotbar press still moving it, or a worn item that came off into the hand and the target then refused); the next message carries 0 again.
 
@@ -3413,6 +3415,22 @@ stack amounts, no strings, no interning) and builds the message only when the pr
 named one of the storages or items last sent; it sends it when it differs from the last sent, when the move refusal count grew, and in a join. A
 backpack filled to tg's limit with pens, with a toolbelt and a box: 294 bytes (`StoragesGameplayTests`); the bound is `Limits.MaxStoragesBytes`.
 
+The other container (slice 4C-1, `CarriedStorages.Other`) is the player's tg `active_storage` while tg's state says the player has it open: the
+player in the storage's `is_using` and with a client (tg's `can_see_contents`), the storage's parent not deleted, neither locked (tg's `set_locked`
+closes it) nor hidden (tg's `show_contents` never opens it), the hands not blocked (tg's `on_handsblocked_start` closes it: a stun, cuffs, crit,
+death), and none of the carried storages (a carried one is listed once, as carried). The replicator reads it after the tick from outside the world:
+fields and traits only, no proc that acts. The listing follows tg's state and tg's own closing events, exactly as tg's storage window would show
+the container; nothing is polled: tg closes it when the player steps out of reach (`living/Move`, translated with this slice), when the container
+moves out of her reach (the storage's `close_distance` on its parent's move), when her hands are blocked, when it is locked or destroyed, or when
+she opens another, and the next message has no such entry; while tg keeps it open it stays listed, also out of her reach (a box someone carried
+off, a teleport), and a move out of it is then refused, as tg's ClickOn on the item would be, while a move into it goes in, as tg's window click
+does. Its entity is the storage's parent's, its fields those of a
+carried storage. It is sent to the player who has it open only; several players with the same container open each get their own entry. The print
+covers it as it covers the carried storages, so it is not rebuilt while nothing changes. Measured with 50 players idle, each with a box of seven
+items open: the print's state read 0.02 ms a tick for all of them, no rebuild (`Replication/Bench/StoragesOtherIdleBench`, a bench run with
+`ANOMALY_BENCH=1`); `Integration/StoragesOtherNoPollTests`: a prison gate under an open box and a proximity sensor beside a long-reach player's
+open box do nothing while the player stands still.
+
 **InventoryMove** (client to server, an Action of kind 29, `ActionKind.InventoryMove`): `[varuint item >= 1] [u8 target]` after the kind, then by the
 target: `1` a storage `[varuint storage >= 1] [u8 cell 0..64, 0 for none]` (into the worn belt the cell is a bar cell, 1 to 7, which the item takes on the bar once it is in the belt, DV693; a belt cell over 7 does nothing, and tg's order in the belt is left to tg); `2` a worn slot `[varuint tg slot id]`, one of
 `InventorySlots.Worn` (the suit, the uniform, the gloves, the eyes, the ears, the mask, the head, the feet, the ID, the belt, the back, the neck, suit
@@ -3420,15 +3438,22 @@ storage, the two pockets: one bit each); `3` a hand `[u8 held index 1..8]`; `4` 
 (`ActionMessage.MoveItem`, `MoveTo`, `MoveStorage`, `MoveIndex`; the fields on another kind are refused). The server checks the fields again
 (`ValidAction`), takes the request from the overall action bucket and the click bucket (`ActionLimits.Click`, as a drop), and in the command phase
 runs `CarriedStorages.Move` with usr the player's mob: nothing (and no refusal reported) unless the client's mob is a human, the item is one it
-holds, wears in one of those slots or sees in one of its listed storages, the storage is one of its listed storages, the hand is one it has; then
-the move through the steps a player's hands take in tg (DV696), or a refusal counted. The command log keeps the item in the action's target field, the target kind in `TurfX`, the
+holds, wears in one of those slots or sees in one of its listed storages or in its other container, the storage is one of its listed storages or its
+other container, the hand is one it has; then the move through the steps a player's hands take in tg (DV696), or a refusal counted. The other
+container (slice 4C-1) is asked again inside the world for every move: a move OUT of it as tg's ClickOn on the item asks it (`CarriedStorages.OtherInReachForMove`: still the
+sender's `active_storage`, kept open by tg as above, and tg's reach rule holding now; no `on_found`, which tg ran at the opening), a move INTO it as
+tg's window click asks it (screen_objects.dm:653-667: only tg's state, `CarriedStorages.Other`, and the click cooldown, incapacitated and a mech,
+then `attempt_insert`, none of which asks reach), before and after every wait of the move and at the moment of the move (but not after the heavy-gravity wait inside tg's own pick-up, `attempt_pickup`,
+which a move into the active hand runs as tg's click does: tg asks nothing again there either); a request naming any
+other container (one beside the sender not opened, one another player has open, a locked or hidden one, an item deeper inside, or one tg should
+have closed in the same tick) does what a request naming a stranger's item does. The command log keeps the item in the action's target field, the target kind in `TurfX`, the
 index in `TurfY` and the storage in `RadialMenu` (`QueuedCommand`). Examples: `0A 09 1D 05 04` item 5 to the floor in frame 9,
 `0A 09 1D 05 01 64 03` item 5 into storage 100 at cell 3; `0A 09 1D 05 01 64 41` (cell 65), `0A 09 1D 05 02 03` (two slots), `0A 09 1D 05 03 09`
 (hand 9) and `0A 09 1D 05 05` (an unknown target) refused.
 
 **A Shift+click on a stored item** (slice 4B-2, DV696): a Click (version 2's Action) with the left button, Shift alone and a `Screen` target naming an
-item the sender's own carried storages show now (`CarriedStorages.ShowsItem`: directly in one of its listed storages, among the first 64, the storage
-neither locked nor hidden) is taken although that item is no screen entry, and runs tg's Click with it (`ClickOn` -> `ShiftClickOn` -> `examinate`),
+item the sender's own carried storages show now (`CarriedStorages.ShowsItem`: directly in one of its listed storages, or in the other container it has
+open by tg's state (slice 4C-1, `CarriedStorages.Other`: what its Storages message lists; no reach is asked, as tg's Shift+click asks none), among the first 64, the storage neither locked nor hidden) is taken although that item is no screen entry, and runs tg's Click with it (`ClickOn` -> `ShiftClickOn` -> `examinate`),
 as a Shift+click on tg's storage screen would; the screen-loc param is empty. Every other click naming a stored item (another button, any other
 modifier, an `Entity` target, an item of anyone else's storage, of a locked or hidden one, or deeper) is refused as before (`ClicksRejected`); the click
 bucket applies as to every click (`ServerHost.TryStoredExamine`). Tests: `Integration/StorageExamineGameplayTests`.
@@ -3436,5 +3461,8 @@ bucket applies as to every click (`ServerHost.TryStoredExamine`). Tests: `Integr
 **InventoryOpen** (client to server, an Action of kind 30, `ActionKind.InventoryOpen`): no fields (`0A 09 1E`). It takes the overall and the
 keybinding buckets (a key); the server runs `CarriedStorages.Opened`: tg's opening of the carried storages without its screen, at most once a second (the back storage's checks, its `on_found` pass, rustle and animation; the `on_found` pass of each other listed storage; DV696).
 
-Tests: `Protocol/ProtocolV100StoragesTests`, `Protocol/CodecTests`, `Protocol/WireTests` (server), `UiOverhaul/CarriedStoragesTests` (core),
-`Integration/StoragesGameplayTests`, `Integration/StoragesHostileTests`, `Client/Play/StoragesClientTests`.
+Tests: `Protocol/ProtocolV100StoragesTests`, `Protocol/CodecTests`, `Protocol/WireTests` (server), `UiOverhaul/CarriedStoragesTests`,
+`UiOverhaul/CarriedStoragesOtherTests` (core), `Integration/StoragesGameplayTests`, `Integration/StoragesHostileTests`,
+`Integration/StoragesOtherGameplayTests`, `Integration/StoragesOtherHostileTests`, `Integration/StoragesOtherReplayTests`, `Integration/StoragesOtherNoPollTests`, `Client/Play/StoragesClientTests`, `Client/Play/InventoryRulesTests`.
+The client (slice 4C-2, DV694) draws the other container's entry as the last panel of the Tab inventory's column, pinned above the nearby strip
+(`StorageColumn.Panels`), and on the human HUD never shows tg's own storage window for it (`ContainerWindow.Withheld`).

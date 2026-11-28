@@ -95,6 +95,15 @@ public partial class LiveHudView : Control
         SetAnchorsPreset(LayoutPreset.FullRect);
         Column = new ColumnView { Name = "StorageColumn", Visible = false };
         AddChild(Column);
+        // slice 4C-2: the pinned panel (its backing and header, then its rows cut under the header), the Nearby strip (likewise) and the line over them
+        foreach (ColumnView view in new[]
+        {
+            Pinned = new ColumnView { Name = "PinnedPanel", Visible = false }, PinnedCells = new ColumnView { Name = "PinnedCells", Visible = false },
+            Strip = new ColumnView { Name = "NearbyStrip", Visible = false }, StripCells = new ColumnView { Name = "NearbyCells", Visible = false },
+        })
+            AddChild(view);
+        Line = new ColorRect { Name = "ColumnLine", Color = ChatLines.Rgba(UiTokens.StorageLine), MouseFilter = MouseFilterEnum.Ignore, Visible = false };
+        AddChild(Line);
     }
 
     /// <summary>Slice C: <see cref="Hands"/> was filled for this frame (the held items' pictures animate, so it is drawn afresh while shown).</summary>
@@ -291,7 +300,6 @@ public partial class LiveHudView : Control
     {
         private readonly StyleBoxFlat _back = new(), _frame = new() { DrawCenter = false };
         private readonly List<PanelScene> _panels = new();
-        private StorageColumnLayout _layout = StorageColumnLayout.None;
         private float _unit;
 
         public ColumnView()
@@ -301,21 +309,26 @@ public partial class LiveHudView : Control
             TextureFilter = TextureFilterEnum.Nearest;
         }
 
-        /// <summary>The panels of <paramref name="layout"/> at <paramref name="unit"/> screen pixels per reference pixel; none hides the view.</summary>
-        public void Show(StorageColumnLayout layout, List<PanelScene> panels, float unit)
+        /// <summary>
+        /// The panels <paramref name="panels"/> cut at <paramref name="clip"/>, with a scroll bar's <paramref name="thumb"/> (empty for none), at
+        /// <paramref name="unit"/> screen pixels per reference pixel; none hides the view. Slice 4C-2: a panel with an empty backing is drawn without
+        /// one, and one with no title without its header's text.
+        /// </summary>
+        public void Show(HudRect clip, List<PanelScene> panels, HudRect thumb, float unit)
         {
-            bool shown = layout.Panels.Length > 0;
+            bool shown = panels.Count > 0 && clip.Width > 0f && clip.Height > 0f;
             if (!shown && _panels.Count == 0)
             {
                 Visible = false;
                 return;
             }
             Visible = shown;
-            (_layout, _unit) = (layout, unit);
+            (_thumb, _unit) = (thumb, unit);
             _panels.Clear();
-            _panels.AddRange(panels);
-            Position = new Vector2(layout.Column.Left, layout.Column.Top);
-            Size = new Vector2(layout.Column.Width, layout.Column.Height);
+            if (shown)
+                _panels.AddRange(panels);
+            Position = new Vector2(clip.Left, clip.Top);
+            Size = new Vector2(clip.Width, clip.Height);
             QueueRedraw();
         }
 
@@ -329,7 +342,8 @@ public partial class LiveHudView : Control
             _back.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.DollPanelRadius * k)));
             foreach (PanelScene p in _panels)
             {
-                DrawStyleBox(_back, R(p.Rects.Backing));
+                if (p.Rects.Backing.Width > 0f)
+                    DrawStyleBox(_back, R(p.Rects.Backing));
                 HudRect header = p.Rects.Header;
                 if (p.Header is Picture picture)
                     DrawTextureRect(picture.Texture, picture.Rect, false);
@@ -337,18 +351,36 @@ public partial class LiveHudView : Control
                 float room = p.Room == null ? 0f : font.GetStringSize(p.Room, HorizontalAlignment.Left, -1, size).X;
                 if (p.Room != null)
                     DrawString(font, new Vector2(header.Right - room, baseline), p.Room, HorizontalAlignment.Left, -1, size, ChatLines.Rgba(UiTokens.LocalText));
-                float left = p.Rects.Picture.Right + MathF.Round(UiTokens.StoragePanelPad * k), width = header.Right - room - MathF.Round(UiTokens.StoragePanelPad * 2 * k) - left;
-                string title = LiveHud.HintName(p.Title, width, t => font.GetStringSize(t, HorizontalAlignment.Left, -1, size).X);
+                float left = p.Rects.Picture.Width > 0f ? p.Rects.Picture.Right + MathF.Round(UiTokens.StoragePanelPad * k) : header.Left;
+                float width = header.Right - room - MathF.Round(UiTokens.StoragePanelPad * 2 * k) - left;
+                string title = p.Title == null ? null : LiveHud.HintName(p.Title, width, t => font.GetStringSize(t, HorizontalAlignment.Left, -1, size).X);
                 if (!string.IsNullOrEmpty(title) && width > 0f)
                     DrawString(font, new Vector2(left, baseline), title, HorizontalAlignment.Left, -1, size, ChatLines.Rgba(UiTokens.LocalText));
                 foreach (CellScene cell in p.Cells)
                     DrawCellOn(this, font, cell, k, _frame);
             }
-            if (_layout.Thumb.Height > 0f)
-                DrawRect(R(_layout.Thumb), ChatLines.Rgba(UiTokens.StorageScrollThumb));
+            if (_thumb.Height > 0f)
+                DrawRect(R(_thumb), ChatLines.Rgba(UiTokens.StorageScrollThumb));
         }
+
+        private HudRect _thumb;
     }
 
-    /// <summary>Slice 4B-2: the right column's view (<see cref="HudLayer"/> fills it each frame); its children are the cells' stack counts.</summary>
+    /// <summary>Slice 4B-2: the right column's view of the own storages (<see cref="HudLayer"/> fills it each frame); its children are the cells' stack counts.</summary>
     public ColumnView Column { get; private set; }
+
+    /// <summary>Slice 4C-2: the pinned panel's backing and header, and its rows (cut under the header; their children the stack counts).</summary>
+    public ColumnView Pinned { get; private set; }
+
+    /// <inheritdoc cref="Pinned"/>
+    public ColumnView PinnedCells { get; private set; }
+
+    /// <summary>Slice 4C-2: the Nearby strip's backing and title, and its row of cells (cut at the row; their children the stack counts).</summary>
+    public ColumnView Strip { get; private set; }
+
+    /// <inheritdoc cref="Strip"/>
+    public ColumnView StripCells { get; private set; }
+
+    /// <summary>Slice 4C-2: the line between the own storages and what is pinned under them.</summary>
+    public ColorRect Line { get; private set; }
 }

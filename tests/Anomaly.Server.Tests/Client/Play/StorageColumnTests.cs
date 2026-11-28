@@ -332,7 +332,8 @@ public class StorageColumnTests
         var ids = new HashSet<long> { TabInventory.SpriteId };
         for (int c = 1; c <= HotbarMessage.BeltCells; c++)
             ids.Add(LiveHud.BeltCellId(c));
-        for (int p = 0; p < Limits.MaxStorages; p++)
+        // slice 4C-2: every entry of the message has ids, the other container's (the last) too
+        for (int p = 0; p < Limits.MaxStorageEntries; p++)
         {
             Assert.True(StorageColumn.Decode(StorageColumn.PanelId(p), out int panel, out int cell));
             Assert.Equal((p, -1), (panel, cell));
@@ -346,8 +347,25 @@ public class StorageColumnTests
                 Assert.True(ids.Add(id), $"{id} named twice");
             }
         }
-        foreach (long other in new long[] { 0, 5, -1, -7, -100, -999, StorageColumn.PanelId(Limits.MaxStorages), StorageColumn.CellId(0, UiTokens.StorageMaxCells) })
+        // slice 4C-2: the Nearby strip's backing and each of its cells: ours, named once, none a panel's
+        Assert.True(StorageColumn.DecodeStrip(StorageColumn.StripId, out int strip) && strip == -1);
+        Assert.True(ids.Add(StorageColumn.StripId));
+        for (int c = 0; c < NearbyItems.MaxItems; c++)
+        {
+            long id = StorageColumn.StripCellId(c);
+            Assert.True(StorageColumn.DecodeStrip(id, out strip));
+            Assert.Equal(c, strip);
+            Assert.False(StorageColumn.Decode(id, out _, out _));
+            Assert.True(LiveHud.IsOurs(new ClickTarget(TargetKind.Screen, id, 0, 0, 0, 0, 0)));
+            Assert.True(ids.Add(id), $"{id} named twice");
+        }
+        foreach (long other in new long[] { 0, 5, -1, -7, -100, -999, StorageColumn.PanelId(Limits.MaxStorageEntries), StorageColumn.CellId(0, UiTokens.StorageMaxCells) })
+        {
             Assert.False(StorageColumn.Decode(other, out _, out _), other.ToString());
+            Assert.False(StorageColumn.DecodeStrip(other, out _), other.ToString());
+        }
+        Assert.False(StorageColumn.DecodeStrip(StorageColumn.StripCellId(NearbyItems.MaxItems), out _));
+        Assert.False(StorageColumn.DecodeStrip(StorageColumn.StripId + 1, out _));
     }
 
     [Fact]

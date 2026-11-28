@@ -9,7 +9,8 @@ namespace Anomaly.Server.Replication;
 // is not rebuilt every tick: a cheap print of what tg's state says (the storages, their numbers and flags, their items' ids, weights and stack
 // counts) is taken each tick, and the message (names and pictures interned) is built only when the print changed or a hint of the tick named one of
 // the storages or items last sent (a move, a new look, a new name). An item's picture is the item drawn alone, as a slot's vis_contents child (the
-// private row the HUD's slot and the hotbar use).
+// private row the HUD's slot and the hotbar use). Slice 4C-1: the other container the player has open by tg's state (CarriedStorages.Other, fields only) is the
+// last entry, in the print and the message alike.
 
 public sealed partial class Replicator
 {
@@ -81,73 +82,80 @@ public sealed partial class Replicator
         {
             var hash = new HashCode();
             foreach (CarriedStorages.Carried c in CarriedStorages.List(human))
-            {
-                datum_storage s = c.Storage;
-                hash.Add(c.Item.dm_id);
-                hash.Add((byte)c.Place);
-                hash.Add(c.Hand);
-                hash.Add(s.locked);
-                hash.Add(s.display_contents);
-                hash.Add(s.max_slots);
-                hash.Add(s.max_total_storage);
-                int n = 0;
-                foreach (obj_item item in Dm.each<obj_item>(s.real_location.contents))
-                {
-                    hash.Add(item.dm_id);
-                    hash.Add(item.w_class);
-                    if (item is obj_item_stack stack)
-                        hash.Add(stack.amount);
-                    n++;
-                }
-                hash.Add(n);
-            }
+                Print(ref hash, c.Item, c.Storage, c.Place, c.Hand);
+            if (CarriedStorages.Other(human) is datum_storage other)
+                Print(ref hash, other.parent, other, CarriedPlace.Other, 0);
             return hash.ToHashCode();
+        }
+
+        private static void Print(ref HashCode hash, atom parent, datum_storage s, CarriedPlace place, int hand)
+        {
+            hash.Add(parent.dm_id);
+            hash.Add((byte)place);
+            hash.Add(hand);
+            hash.Add(s.locked);
+            hash.Add(s.display_contents);
+            hash.Add(s.max_slots);
+            hash.Add(s.max_total_storage);
+            int n = 0;
+            foreach (obj_item item in Dm.each<obj_item>(s.real_location.contents))
+            {
+                hash.Add(item.dm_id);
+                hash.Add(item.w_class);
+                if (item is obj_item_stack stack)
+                    hash.Add(stack.amount);
+                n++;
+            }
+            hash.Add(n);
         }
 
         private StoragesMessage Build(mob_living_carbon_human human)
         {
             _storagesWatched.Clear();
-            List<CarriedStorages.Carried> carried = CarriedStorages.List(human);
-            var storages = new CarriedStorage[carried.Count];
-            for (int i = 0; i < carried.Count; i++)
+            var storages = new List<CarriedStorage>();
+            foreach (CarriedStorages.Carried c in CarriedStorages.List(human))
+                storages.Add(Entry(c.Item, c.Storage, c.Place, c.Hand));
+            // slice 4C-1: the other container, last, while tg keeps it open for this player
+            if (CarriedStorages.Other(human) is datum_storage other)
+                storages.Add(Entry(other.parent, other, CarriedPlace.Other, 0));
+            return new StoragesMessage { Storages = storages.ToArray() };
+        }
+
+        private CarriedStorage Entry(atom parent, datum_storage s, CarriedPlace place, int hand)
+        {
+            bool shows = CarriedStorages.ShowsItems(s);
+            List<obj_item> shown = CarriedStorages.ShownItems(s);
+            var items = new StorageItem[shown.Count];
+            for (int k = 0; k < shown.Count; k++)
             {
-                CarriedStorages.Carried c = carried[i];
-                datum_storage s = c.Storage;
-                bool shows = CarriedStorages.ShowsItems(s);
-                List<obj_item> shown = CarriedStorages.ShownItems(s);
-                var items = new StorageItem[shown.Count];
-                for (int k = 0; k < shown.Count; k++)
-                {
-                    obj_item item = shown[k];
-                    _storagesWatched.Add(item.dm_id);
-                    uint look = Tables.InternVisChild(item);
-                    int count = item is obj_item_stack stack ? Cap(Dm.num(stack.amount)) : 0;
-                    items[k] = new StorageItem(item.dm_id, NameOf(item), look == 0 ? TableRef.None : new TableRef(look, true), count);
-                }
-                _storagesWatched.Add(c.Item.dm_id);
-                storages[i] = new CarriedStorage
-                {
-                    Entity = c.Item.dm_id,
-                    Place = (StoragePlace)(byte)c.Place,
-                    Hand = (byte)c.Hand,
-                    Name = NameOf(c.Item),
-                    Slots = Cap(s.max_slots),
-                    // a locked or hidden storage's room is not sent either: tg shows nothing of what is in it
-                    Used = shows ? Cap(Dm.num(s.get_total_weight())) : 0,
-                    Limit = Cap(s.max_total_storage),
-                    Locked = Dm.truthy(s.locked),
-                    Hidden = !Dm.truthy(s.locked) && !Dm.truthy(s.display_contents),
-                    Cut = CarriedStorages.IsCut(s),
-                    Items = items,
-                };
+                obj_item item = shown[k];
+                _storagesWatched.Add(item.dm_id);
+                uint look = Tables.InternVisChild(item);
+                int count = item is obj_item_stack stack ? Cap(Dm.num(stack.amount)) : 0;
+                items[k] = new StorageItem(item.dm_id, NameOf(item), look == 0 ? TableRef.None : new TableRef(look, true), count);
             }
-            return new StoragesMessage { Storages = storages };
+            _storagesWatched.Add(parent.dm_id);
+            return new CarriedStorage
+            {
+                Entity = parent.dm_id,
+                Place = (StoragePlace)(byte)place,
+                Hand = (byte)hand,
+                Name = NameOf(parent),
+                Slots = Cap(s.max_slots),
+                // a locked or hidden storage's room is not sent either: tg shows nothing of what is in it
+                Used = shows ? Cap(Dm.num(s.get_total_weight())) : 0,
+                Limit = Cap(s.max_total_storage),
+                Locked = Dm.truthy(s.locked),
+                Hidden = !Dm.truthy(s.locked) && !Dm.truthy(s.display_contents),
+                Cut = CarriedStorages.IsCut(s),
+                Items = items,
+            };
         }
 
         private static int Cap(float value) => float.IsNaN(value) || value <= 0 ? 0 : value >= Limits.MaxStorageNumber ? Limits.MaxStorageNumber : (int)value;
 
         // The thing's name as plain text (no article, no markers), cut at the cap; never empty.
-        private static string NameOf(obj_item item)
+        private static string NameOf(atom item)
         {
             string name = Dm.jointext(Dm.list(item), "");
             return string.IsNullOrEmpty(name) ? "?" : ServerHost.Truncate(name, Limits.MaxStorageNameBytes);

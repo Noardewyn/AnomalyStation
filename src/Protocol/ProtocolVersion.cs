@@ -212,7 +212,9 @@ public static class ProtocolVersion
     /// and the held items' names, and the <see cref="ActionKind.HotbarPress"/> action, a press of one cell.
     /// Version 100 also (ui-overhaul.md section 12, slice 4B-1, DV696; MessagesV100Storages.cs): the Storages message, the storages the own human
     /// carries and their items, and the <see cref="ActionKind.InventoryMove"/> action (one item to a storage, a worn slot, a hand or the floor) and
-    /// the <see cref="ActionKind.InventoryOpen"/> action (tg's opening rustle of the back storage).
+    /// the <see cref="ActionKind.InventoryOpen"/> action (tg's opening rustle of the back storage); with slice 4C-1 the message's last entry may be
+    /// the other container (<see cref="StoragePlace.Other"/>, the storage the player has open that is none of the carried ones; 9 entries at most),
+    /// which a move may take an item out of or put one into.
     public const ushort Current = 100;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>

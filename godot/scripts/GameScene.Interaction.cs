@@ -471,6 +471,8 @@ public partial class GameScene
         Vector2 size = GetViewport().GetVisibleRect().Size;
         var metrics = new HudMetrics(size.X, size.Y, _options.UiScale);
         _viewModel.Update(now, _handsShown, _feed.OwnEntity, HeldHolder());
+        // slice 4C-2: tg's storage window is never shown on the human HUD: the Tab inventory shows the storage open (the other container's panel)
+        _storageWindow.Withheld = _hudLayer.HumanHud;
         _storageWindow.Update(now, metrics);
         // slice 4B-2: a storage the column lists opened by tg's click (the worn bag clicked, a held box used): the Tab inventory comes on where it is
         // and tg's storage is closed unseen, once per opening
@@ -484,6 +486,14 @@ public partial class GameScene
             _session.Click(new ClickTarget(TargetKind.Screen, listed, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
             if (App.Instance.Args.Automated)
                 GD.Print($"[anomaly] storage window: a listed storage opened by tg's click, shown in the Tab inventory (tg's window closed, screen #{listed})");
+        }
+        // slice 4C-2: the Storages message brought an other container where the last had none: the Tab inventory turns on, as tg's window appearing did
+        // (the flag is taken only on the human HUD, so a container still open at join turns it on once that HUD is up)
+        if (InventoryRules.TabOnForOther(_hudLayer.HumanHud, _session?.Storages))
+        {
+            SetCursorMode(true);
+            if (App.Instance.Args.Automated)
+                GD.Print($"[anomaly] storage window: the other container #{_hudLayer.OtherStorage} opened, shown in the Tab inventory");
         }
 
         if (_radialModel.Phase == RadialPhase.Pressed && _radialModel.Update(now))
@@ -624,6 +634,9 @@ public partial class GameScene
         bool sent = _session.Click(aimed, button, modifiers, target.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling ? aim ?? _aim : null);
         if (sent)
         {
+            // slice 4C-2: tg's way of opening the container already open as the other container shows it again: the Tab inventory turns on
+            if (InventoryRules.ReopensOther(button, modifiers, target.Kind == TargetKind.Entity ? target.Id : 0, _hudLayer.OtherStorage, _mouse.CursorMode, _hudLayer.HumanHud))
+                ReopenOther();
             double now = App.NowSeconds;
             // slice 4B-2: what was clicked (the item in a clicked hand box or slot), for telling a listed storage's window opening by it
             InvPlace clickedPlace = _hudLayer.PlaceOf(target);
@@ -817,7 +830,7 @@ public partial class GameScene
                 bool wallMount = source.Kind == TargetKind.Entity && _feed.Replica?.TryGet(source.Id, out ReplicaEntity pressed) == true && pressed.TypePath != null && Shared.World.PropKinds.IsWallMountType(pressed.TypePath);
                 // slice 4B-2: a press on an item of the Tab inventory (its drag follows InventoryRules.Drop), and whether it is the quick transfer's
                 InvPlace pressedPlace = source.Kind == TargetKind.Screen ? _hudLayer.PlaceOf(source) : default;
-                _dragFrom = pressedPlace.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell && pressedPlace.Item != 0 ? pressedPlace : default;
+                _dragFrom = pressedPlace.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell or InvKind.Nearby && pressedPlace.Item != 0 ? pressedPlace : default;
                 _pressQuick = InventoryRules.IsQuickTransfer(_options.Bindings, KeyBindings.NameOf(name, button.ShiftPressed, button.CtrlPressed), button.AltPressed);
                 if (!_drag.Press(source, ClickButton.Left, modifiers, button.Position.X, button.Position.Y, App.NowSeconds, !wallMount))
                     ClickAtCrosshair(ClickButton.Left, modifiers); // nothing under the pointer: as before
@@ -914,7 +927,7 @@ public partial class GameScene
         if (outcome == DragOutcome.Click && release.Source.Kind == TargetKind.Screen)
         {
             InvPlace place = _hudLayer.PlaceOf(release.Source);
-            InvSend? send = quick ? InventoryRules.QuickTransfer(place, _hudLayer.ActiveHand, _hudLayer.BackStorage)
+            InvSend? send = quick ? InventoryRules.QuickTransfer(place, _hudLayer.ActiveHand, _hudLayer.BackStorage, _hudLayer.OtherStorage)
                 : InventoryRules.Click(place, release.Modifiers, _hudLayer.ActiveHand, _hudLayer.HeldItem);
             if (send is InvSend inventory)
             {
@@ -975,6 +988,10 @@ public partial class GameScene
                 // tg's Shift+click on a stored item: the server takes it for an item its own carried storages show (DV696)
                 SendClick(new ClickTarget(TargetKind.Screen, send.Item, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.Shift);
                 break;
+            case InvSendKind.WorldClick:
+                // slice 4C-2: an item of the Nearby strip: tg's click on it where it lies, as the world's click on it (tg decides reach)
+                SendClick(new ClickTarget(TargetKind.Entity, send.Item, 0, 0, 0, 16, 16), ClickButton.Left, send.Modifiers);
+                break;
             case InvSendKind.Refused:
                 // nothing was sent: the client's own balloon says why, as tg's balloon alerts say a refusal's reason
                 _session.Storages.RefuseLocally(send.Item, App.NowSeconds);
@@ -992,6 +1009,9 @@ public partial class GameScene
     private void SendDrop(in DragRelease release)
     {
         bool sent = _session.Drop(release);
+        if (sent && InventoryRules.ReopensOtherByDrag(release.Source.Kind == TargetKind.Entity ? release.Source.Id : 0, release.Over.Kind == TargetKind.Entity ? release.Over.Id : 0,
+                _feed.OwnEntity, _hudLayer.OtherStorage, _mouse.CursorMode, _hudLayer.HumanHud))
+            ReopenOther(); // slice 4C-2: the other container dragged onto oneself, tg's way of opening it
         if (App.Instance.Args.Automated)
             GD.Print($"[anomaly] drop: {Describe(release.Source)} onto {Describe(release.Over)}{(sent ? string.Empty : " (not sent)")} after {release.DragTime} ds");
     }
@@ -1439,6 +1459,13 @@ public partial class GameScene
     {
         long close = _storageWindow?.CloseEntry ?? 0;
         return close != 0 && _session.Click(new ClickTarget(TargetKind.Screen, close, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
+    }
+
+    private void ReopenOther()
+    {
+        SetCursorMode(true);
+        if (App.Instance.Args.Automated)
+            GD.Print($"[anomaly] storage window: the other container #{_hudLayer.OtherStorage} opened again by tg's way, shown in the Tab inventory");
     }
 
     private void SetCursorMode(bool on)

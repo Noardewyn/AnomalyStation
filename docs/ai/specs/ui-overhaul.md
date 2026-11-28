@@ -1903,6 +1903,13 @@ Human HUD, cursor mode (Tab or the inventory key), as slice 4A.
   told why, besides the blink.
 - tg's own Ctrl-click on a carried item has no way in under Tab until the keys slice builds the wheel entry for
   it (the wheel opens only on things in the view today): for the contributor to know.
+- A click on a panel's item with an item in hand asks for the stored item into the full hand and is refused (a
+  blink). tg uses the held item on the stored one (click.dm:150-173: a held box takes it, stacks merge). Found by
+  the comparison with tg for slice 4C; for the keys slice (4E) with tg's other clicks on a stored item. The other
+  container's items are in the opener's `client.screen`, so tg's own click on one already reaches the server;
+  a carried storage's items are not on screen under Tab and need a server path.
+- Inside a closet tg lets a player take items out of containers inside the mob (click.dm:150 before :161); the
+  port refused until slice 4C's fix round corrected `CanClickStored`.
 
 ### Slice 4B-2 as built and reviewed (2026-11-27; uncommitted until the contributor signs off both halves)
 
@@ -1947,6 +1954,36 @@ The other container:
   lets the player see into it (it is their `active_storage`, tg's reach and tg's own checks hold); a move may take
   an item out of it and put one into it by tg's own procs with tg's reach rule asked each time; nothing else of
   another's or of the world can be named.
+
+4C-1 as built (after four review rounds, 2026-11-28; DV696 holds the detail). This replaces "tg's reach holds" for
+the listing above:
+- The listing follows tg's state only (`CarriedStorages.Other`: `active_storage`, the player in `is_using`, not
+  locked, contents shown, hands free). The server polls no reach: every per-tick reach check tried had side
+  effects in tg's code (the ranged reach probe sets off proximity sensors; `Adjacent` asks `CanPass`, and a prison
+  gate answers aloud). tg's own events close it: the player steps out of reach (`living/Move`, translated with
+  this slice), the container moves out of reach (`close_distance`), hands blocked, locked, destroyed, another
+  storage opened.
+- So where tg keeps a window open out of reach (a box carried off while the opener stands still, a teleport), the
+  panel stays too, and a move from it is refused: a move asks tg's reach at the request and after each wait.
+- The Shift+click examine asks only tg's state, as tg's Shift+click does. A click on an item of the other container
+  reaches the server as a screen entry (tg's `show_contents` puts the items in the opener's `client.screen`).
+- `StoragePlace.Other = 8`, last entry, at most once, never locked or hidden. One move of an item at a time
+  world-wide.
+- After the comparison with tg (the gate on both halves): a move OUT of the other container asks tg's reach; a
+  move INTO it asks only tg's state and tg's window-click checks (tg's window click asks no reach); no `on_found`
+  on a take-out from it (tg ran it at the opening); from inside a closet an item inside the mob is clickable
+  (also for carried storages); under heavy gravity tg's own pick-up wait is not re-checked, as in tg.
+
+4C-2 as built (two fix rounds; DV694 holds the detail):
+- The pinned panel takes at most half the usable height and scrolls its own rows under its header (no scroll
+  bar; cut rows show it scrolls). The thin line also stands above the strip when no container is open and there
+  are own storages. On a column too short the own storages give way first.
+- The Tab inventory turns on when a message brings a different other container (also a second one opened while
+  one is open), when the client sends one of tg's ways of opening at the container already open (right click,
+  Alt+click, the container dragged onto the own mob), and at join with a container still open.
+- The strip leaves out wall-mounted items of tg's item type (an intercom). A storage is never sent into itself.
+- No equivalent of tg's "up a storage level" button. Not seen in the real client: the pinned panel's own scroll
+  (no container tall enough could be spawned; the layout tests cover it) and a non-human HUD keeping tg's window.
 
 The nearby strip:
 - One row of cells at the very bottom of the right column, titled "Nearby": the items lying on the player's own

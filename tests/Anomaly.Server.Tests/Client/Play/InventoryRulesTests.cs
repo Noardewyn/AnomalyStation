@@ -52,10 +52,12 @@ public class InventoryRulesTests
         // onto a pocket, ID or worn slot's cell: onto that slot (its own: nothing)
         Assert.Equal(from.SamePlace(Worn) ? InvSend.Nothing : InvSend.Move(item, InventoryTarget.Slot, 0, (int)Gloves), InventoryRules.Drop(from, Worn with { Item = 0 }, Active));
         Assert.Equal(from.SamePlace(Pocket) ? InvSend.Nothing : InvSend.Move(item, InventoryTarget.Slot, 0, (int)LeftPocket), InventoryRules.Drop(from, Pocket, Active));
-        // onto a panel's cell: into that storage at its item; an empty cell simply in; onto the header or backing simply in
-        Assert.Equal(InvSend.Move(item, InventoryTarget.Storage, 300, 2), InventoryRules.Drop(from, new InvPlace(InvKind.Cell, 302, 1, 300, 2), Active));
-        Assert.Equal(InvSend.Move(item, InventoryTarget.Storage, 300, 0), InventoryRules.Drop(from, new InvPlace(InvKind.Cell, 0, 5, 300, 0), Active));
-        Assert.Equal(InvSend.Move(item, InventoryTarget.Storage, 300, 0), InventoryRules.Drop(from, new InvPlace(InvKind.Panel, Storage: 300), Active));
+        // onto a panel's cell: into that storage at its item; an empty cell simply in; onto the header or backing simply in (the pocket's item is the
+        // box 300 itself: never into itself, slice 4C-2)
+        bool self = item == 300;
+        Assert.Equal(self ? InvSend.Nothing : InvSend.Move(item, InventoryTarget.Storage, 300, 2), InventoryRules.Drop(from, new InvPlace(InvKind.Cell, 302, 1, 300, 2), Active));
+        Assert.Equal(self ? InvSend.Nothing : InvSend.Move(item, InventoryTarget.Storage, 300, 0), InventoryRules.Drop(from, new InvPlace(InvKind.Cell, 0, 5, 300, 0), Active));
+        Assert.Equal(self ? InvSend.Nothing : InvSend.Move(item, InventoryTarget.Storage, 300, 0), InventoryRules.Drop(from, new InvPlace(InvKind.Panel, Storage: 300), Active));
         // within its own storage onto another cell: the reorder tg's storage does
         Assert.Equal(InvSend.Move(item, InventoryTarget.Storage, 100, 4), InventoryRules.Drop(from, new InvPlace(InvKind.Cell, 104, 3, 100, 4), Active));
         // onto the own sprite: the active hand's item used on oneself there; anything else nothing
@@ -279,6 +281,250 @@ public class InventoryRulesTests
         Assert.False(InventoryRules.ListedWindow(Array.Empty<long>(), storages, actedOn: 300)); // the box holds items: its window would show them
         // no storages listed (another mob): tg's window always
         Assert.False(InventoryRules.ListedWindow(new long[] { 101 }, StoragesMessage.None.Storages, actedOn: 100));
+    }
+
+    [Fact]
+    public void TheOtherContainerIsTheLastPanelEveryDragAndClickWorksWithItAndTgsStorageIsNeverClosedUnseen()
+    {
+        // slice 4C-2: the server lists the other container last; the column pins it as its last panel, a source and a target as a carried one is
+        (List<CarriedStorage> storages, HotbarModel bar) = StorageColumnTests.Carried(7, 3);
+        CarriedStorage box = StorageColumnTests.Storage(900, StoragePlace.Other, "box", 7, 2, 14, new[] { StorageColumnTests.Item(901), StorageColumnTests.Item(902) });
+        var withOther = new List<CarriedStorage>(storages) { box };
+        long[] belt = StorageColumn.BeltOnBar(bar);
+        List<StoragePanel> panels = StorageColumn.Panels(withOther, belt);
+        Assert.Equal(StorageColumn.Panels(storages, belt).Select(p => p.Storage).Append(900L), panels.Select(p => p.Storage));
+        // wherever a message put it, it is the last panel (the one the layout pins)
+        Assert.Equal(panels.Select(p => p.Storage), StorageColumn.Panels(new[] { box }.Concat(storages).ToList(), belt).Select(p => p.Storage));
+        int pinned = panels.Count - 1;
+        StoragePanel other = panels[pinned];
+        Assert.Equal((StoragePlace.Other, "box", "2 / 14", 7), (other.Place, other.Title, other.Room, other.Cells.Length));
+        Assert.Equal(new long[] { 901, 902, 0, 0, 0, 0, 0 }, other.Cells.Select(c => c.Entity));
+        Assert.Equal(new[] { 1, 2, 0, 0, 0, 0, 0 }, other.Wishes);
+        // the HUD pick names its cells and its header
+        Dictionary<long, ScreenEntry> screen = Screen();
+        InvPlace Of(long id) => InventoryRules.Resolve(Screen(id), screen, panels, 200, belt);
+        InvPlace item = Of(StorageColumn.CellId(pinned, 1)), empty = Of(StorageColumn.CellId(pinned, 4)), header = Of(StorageColumn.PanelId(pinned));
+        Assert.Equal(new InvPlace(InvKind.Cell, 902, 1, 900, 2), item);
+        Assert.Equal(new InvPlace(InvKind.Cell, 0, 4, 900, 0), empty);
+        Assert.Equal(new InvPlace(InvKind.Panel, Storage: 900), header);
+        // a full message (eight carried storages and the other container): the ninth panel's ids are decoded too
+        Assert.True(StorageColumn.Decode(StorageColumn.CellId(Limits.MaxStorageEntries - 1, 3), out int ninth, out int cell) && (ninth, cell) == (Limits.MaxStorageEntries - 1, 3));
+        // its item is a source: to a hand box, a belt cell, a worn slot, a carried storage's header and cell, the floor and the Nearby strip; onto a
+        // thing in the view, tg's other entries or the sprite nothing (it is one of our cells)
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Hand, 0, Other), InventoryRules.Drop(item, HandOther with { Item = 0 }, Active));
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Storage, 200, 5), InventoryRules.Drop(item, new InvPlace(InvKind.Belt, 0, 5, 200, 5), Active));
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Slot, 0, (int)Gloves), InventoryRules.Drop(item, Worn with { Item = 0 }, Active));
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Storage, 100, 0), InventoryRules.Drop(item, new InvPlace(InvKind.Panel, Storage: 100), Active));
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Storage, 100, 2), InventoryRules.Drop(item, PanelCell, Active));
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Floor), InventoryRules.Drop(item, new InvPlace(InvKind.Floor), Active));
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Floor), InventoryRules.Drop(item, new InvPlace(InvKind.Nearby, 0, -1), Active));
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Storage, 900, 1), InventoryRules.Drop(item, Of(StorageColumn.CellId(pinned, 0)), Active)); // tg's reorder
+        foreach (InvPlace view in new[] { new InvPlace(InvKind.Thing, 77), new InvPlace(InvKind.Hud), new InvPlace(InvKind.Sprite), new InvPlace(InvKind.None) })
+            Assert.Equal(InvSend.Nothing, InventoryRules.Drop(item, view, Active));
+        // its header, empty cells and item cells are targets: from a hand, a worn slot, a pocket, a carried storage's cell, a belt cell
+        // (the worn gloves as item 950 here: the shared fixture's 900 is this test's box)
+        foreach (InvPlace from in new[] { HandActive, HandOther, Worn with { Item = 950 }, Pocket, PanelCell, BeltCell })
+        {
+            Assert.Equal(InvSend.Move(from.Item, InventoryTarget.Storage, 900, 0), InventoryRules.Drop(from, header, Active));
+            Assert.Equal(InvSend.Move(from.Item, InventoryTarget.Storage, 900, 0), InventoryRules.Drop(from, empty, Active));
+            Assert.Equal(InvSend.Move(from.Item, InventoryTarget.Storage, 900, 2), InventoryRules.Drop(from, item, Active));
+        }
+        // a click on its item takes it to the active hand; with an item held a click on its empty cell or its header puts it in; Shift+click examines
+        // it (the message the carried storages' Shift+click sends); with an empty hand an empty cell nothing
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Hand, 0, Active), InventoryRules.Click(item, ClickModifiers.None, Active, held: 0));
+        Assert.Equal(InvSend.Move(11, InventoryTarget.Storage, 900, 0), InventoryRules.Click(empty, ClickModifiers.None, Active, held: 11));
+        Assert.Equal(InvSend.Move(11, InventoryTarget.Storage, 900, 0), InventoryRules.Click(header, ClickModifiers.None, Active, held: 11));
+        Assert.Equal(new InvSend(InvSendKind.Examine, 902), InventoryRules.Click(item, ClickModifiers.Shift, Active, held: 0));
+        Assert.Equal(InvSend.Nothing, InventoryRules.Click(empty, ClickModifiers.None, Active, held: 0));
+        // a refused move of its item blinks its cell red; a drag over its cell rims it
+        Assert.Equal(UiTokens.HotbarRefusedRim, InventoryRules.Rim(902, item, 902, default));
+        Assert.Equal(UiTokens.InventoryDragRim, InventoryRules.Rim(0, empty, 0, empty));
+        // tg's storage stays open for it (the server lists it only while tg keeps it open): its items, or it clicked while empty, are no listed
+        // storage's, so the client never closes it unseen
+        Assert.False(InventoryRules.ListedWindow(new long[] { 901, 902 }, withOther, actedOn: 900));
+        var emptyBox = new List<CarriedStorage>(storages) { StorageColumnTests.Storage(900, StoragePlace.Other, "box", 7, 0, 14) };
+        Assert.False(InventoryRules.ListedWindow(Array.Empty<long>(), emptyBox, actedOn: 900));
+        Assert.True(InventoryRules.ListedWindow(new long[] { 101 }, withOther, actedOn: 0)); // the backpack's window still is not shown
+        // the model keeps the message as it is
+        var model = new StoragesModel();
+        model.Apply(new StoragesMessage { Storages = withOther }, 0, 0, 0);
+        Assert.Same(model.Storages[^1], model.At(StoragePlace.Other));
+        Assert.Same(model.At(StoragePlace.Back), model.Holding(101, out _));
+    }
+
+    [Fact]
+    public void TheQuickTransferFromAHandGoesIntoTheOtherContainerWhileOneIsOpenAndFromItToTheActiveHand()
+    {
+        // from a hand, either: into the other container while one is open (no backpack needed), else into the backpack, else refused
+        Assert.Equal(InvSend.Move(11, InventoryTarget.Storage, 900, 0), InventoryRules.QuickTransfer(HandActive, Active, back: 100, other: 900));
+        Assert.Equal(InvSend.Move(12, InventoryTarget.Storage, 900, 0), InventoryRules.QuickTransfer(HandOther, Active, back: 100, other: 900));
+        Assert.Equal(InvSend.Move(11, InventoryTarget.Storage, 900, 0), InventoryRules.QuickTransfer(HandActive, Active, back: 0, other: 900));
+        Assert.Equal(InvSend.Move(11, InventoryTarget.Storage, 100, 0), InventoryRules.QuickTransfer(HandActive, Active, back: 100, other: 0));
+        Assert.Equal(new InvSend(InvSendKind.Refused, 11), InventoryRules.QuickTransfer(HandActive, Active, back: 0, other: 0));
+        // from the other container: to the active hand
+        var otherItem = new InvPlace(InvKind.Cell, 902, 1, 900, 2);
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Hand, 0, Active), InventoryRules.QuickTransfer(otherItem, Active, back: 100, other: 900));
+        Assert.Equal(InvSend.Move(902, InventoryTarget.Hand, 0, Other), InventoryRules.QuickTransfer(otherItem, Other, back: 100, other: 900));
+        // from a carried storage, a bar cell or a worn slot as before, whether an other container is open or not
+        foreach (InvPlace from in new[] { BeltCell, Pocket, Worn, PanelCell })
+        {
+            Assert.Equal(InvSend.Move(from.Item, InventoryTarget.Hand, 0, Active), InventoryRules.QuickTransfer(from, Active, back: 100, other: 900));
+            Assert.Equal(InvSend.Move(from.Item, InventoryTarget.Hand, 0, Active), InventoryRules.QuickTransfer(from, Active, back: 100, other: 0));
+        }
+        // on its header or an empty cell, or on the Nearby strip: nothing
+        Assert.Equal(InvSend.Nothing, InventoryRules.QuickTransfer(new InvPlace(InvKind.Panel, Storage: 900), Active, 100, 900));
+        Assert.Equal(InvSend.Nothing, InventoryRules.QuickTransfer(otherItem with { Item = 0 }, Active, 100, 900));
+        Assert.Equal(InvSend.Nothing, InventoryRules.QuickTransfer(new InvPlace(InvKind.Nearby, 501, 0), Active, 100, 900));
+        Assert.Equal(InvSend.Nothing, InventoryRules.QuickTransfer(new InvPlace(InvKind.Nearby, 0, -1), Active, 100, 900));
+    }
+
+    [Fact]
+    public void TheNearbyStripsCellsAreTgsWorldClickOnTheirItemsAndTheStripIsADropTarget()
+    {
+        (List<CarriedStorage> storages, HotbarModel bar) = StorageColumnTests.Carried(7, 3);
+        long[] belt = StorageColumn.BeltOnBar(bar);
+        List<StoragePanel> panels = StorageColumn.Panels(storages, belt);
+        Dictionary<long, ScreenEntry> screen = Screen();
+        var nearby = new List<StorageItem> { StorageColumnTests.Item(501), StorageColumnTests.Item(502) };
+        InvPlace Of(long id, bool human = true, IReadOnlyList<StorageItem> list = null) => InventoryRules.Resolve(Screen(id), screen, panels, 200, belt, human, list ?? nearby);
+        // the pick: a cell and its item, the empty cell past the items, the backing and title
+        InvPlace first = Of(StorageColumn.StripCellId(0)), second = Of(StorageColumn.StripCellId(1));
+        Assert.Equal(new InvPlace(InvKind.Nearby, 501, 0), first);
+        Assert.Equal(new InvPlace(InvKind.Nearby, 502, 1), second);
+        Assert.Equal(new InvPlace(InvKind.Nearby, 0, 2), Of(StorageColumn.StripCellId(2)));
+        Assert.Equal(new InvPlace(InvKind.Nearby, 0, -1), Of(StorageColumn.StripId));
+        Assert.Equal(new InvPlace(InvKind.Nearby, 0, 0), Of(StorageColumn.StripCellId(0), list: new List<StorageItem>())); // nothing nearby: the empty cell
+        // no strip shown (null), or another HUD: none of its ids is a place
+        Assert.Equal(InvKind.None, InventoryRules.Resolve(Screen(StorageColumn.StripCellId(0)), screen, panels, 200, belt).Kind);
+        Assert.Equal(InvKind.None, Of(StorageColumn.StripCellId(0), human: false).Kind);
+        // a click on an item: tg's click on it where it lies; Shift+click: the world's Shift+click (its examine); any other modifier, an empty cell or
+        // the title: nothing (never the click on our cell)
+        Assert.Equal(new InvSend(InvSendKind.WorldClick, 501), InventoryRules.Click(first, ClickModifiers.None, Active, held: 0));
+        Assert.Equal(new InvSend(InvSendKind.WorldClick, 502), InventoryRules.Click(second, ClickModifiers.None, Active, held: 11)); // the held item used on it, as tg's click
+        Assert.Equal(new InvSend(InvSendKind.WorldClick, 501, Modifiers: ClickModifiers.Shift), InventoryRules.Click(first, ClickModifiers.Shift, Active, held: 0));
+        foreach (ClickModifiers m in new[] { ClickModifiers.Ctrl, ClickModifiers.Alt, ClickModifiers.Shift | ClickModifiers.Ctrl })
+            Assert.Equal(InvSend.Nothing, InventoryRules.Click(first, m, Active, held: 0));
+        Assert.Equal(InvSend.Nothing, InventoryRules.Click(Of(StorageColumn.StripCellId(2)), ClickModifiers.None, Active, held: 11));
+        Assert.Equal(InvSend.Nothing, InventoryRules.Click(Of(StorageColumn.StripId), ClickModifiers.None, Active, held: 11));
+        // a drag from a cell onto a hand box (either): the same click (its pick-up); onto anything else nothing
+        Assert.Equal(new InvSend(InvSendKind.WorldClick, 501), InventoryRules.Drop(first, HandActive with { Item = 0 }, Active));
+        Assert.Equal(new InvSend(InvSendKind.WorldClick, 501), InventoryRules.Drop(first, HandOther, Active));
+        foreach (InvPlace over in new[] { BeltCell, Pocket, Worn, PanelCell, new InvPlace(InvKind.Panel, Storage: 100), new InvPlace(InvKind.Cell, 0, 3, 900, 0),
+            new InvPlace(InvKind.Sprite), new InvPlace(InvKind.Floor), new InvPlace(InvKind.Thing, 77), new InvPlace(InvKind.Hud), new InvPlace(InvKind.None),
+            second, Of(StorageColumn.StripId), first })
+            Assert.Equal(InvSend.Nothing, InventoryRules.Drop(first, over, Active));
+        Assert.Equal(InvSend.Nothing, InventoryRules.Drop(Of(StorageColumn.StripCellId(2)), HandActive, Active)); // the empty cell is no source
+        // a drag from the inventory (a hand, the belt, a pocket, a worn slot, a panel's cell, the other container's cell) onto the strip (an item's cell,
+        // the empty cell, the title): the move to the floor
+        foreach (InvPlace from in new[] { HandActive, HandOther, BeltCell, Pocket, Worn, PanelCell, new InvPlace(InvKind.Cell, 902, 1, 900, 2) })
+        {
+            foreach (InvPlace onto in new[] { first, Of(StorageColumn.StripCellId(2)), Of(StorageColumn.StripId) })
+                Assert.Equal(InvSend.Move(from.Item, InventoryTarget.Floor), InventoryRules.Drop(from, onto, Active));
+        }
+        // a drag over a cell of the strip rims it; another cell none
+        Assert.Equal(UiTokens.InventoryDragRim, InventoryRules.Rim(501, first, 0, first));
+        Assert.Equal(0u, InventoryRules.Rim(502, second, 0, first));
+        // a drag from a cell ends once the list no longer shows its item there (the player stepped, the item was taken)
+        Assert.True(InventoryRules.DragHolds(first, Of(StorageColumn.StripCellId(0))));
+        Assert.False(InventoryRules.DragHolds(first, Of(StorageColumn.StripCellId(0), list: new List<StorageItem> { StorageColumnTests.Item(502) })));
+    }
+
+    [Fact]
+    public void AMessageBringingAnOtherContainerTheLastDidNotHaveTurnsTheTabInventoryOnOnce()
+    {
+        (List<CarriedStorage> storages, _) = StorageColumnTests.Carried(7, 3);
+        var with = new List<CarriedStorage>(storages) { StorageColumnTests.Storage(900, StoragePlace.Other, "box", 7, 0, 14) };
+        var another = new List<CarriedStorage>(storages) { StorageColumnTests.Storage(950, StoragePlace.Other, "crate", 7, 0, 14) };
+        var model = new StoragesModel();
+        Assert.False(model.TakeOtherOpened());
+        model.Apply(new StoragesMessage { Storages = storages }, 0, 0, 0);
+        Assert.False(model.TakeOtherOpened()); // carried storages only
+        model.Apply(new StoragesMessage { Storages = with }, 0, 0, 1);
+        Assert.True(model.TakeOtherOpened()); // it came: once
+        Assert.False(model.TakeOtherOpened());
+        model.Apply(new StoragesMessage { Storages = with }, 0, 0, 2);
+        Assert.False(model.TakeOtherOpened()); // the same again
+        model.Apply(new StoragesMessage { Storages = another }, 0, 0, 3);
+        Assert.True(model.TakeOtherOpened()); // another opened while one was (tg closes the first and shows the second): once
+        model.Apply(new StoragesMessage { Storages = another }, 0, 0, 3.5);
+        Assert.False(model.TakeOtherOpened()); // the same one staying open: a Tab closed by hand stays closed
+        model.Apply(new StoragesMessage { Storages = storages }, 0, 0, 4);
+        Assert.False(model.TakeOtherOpened()); // it went: Tab stays as it is
+        model.Apply(new StoragesMessage { Storages = with }, 0, 0, 5);
+        model.Apply(new StoragesMessage { Storages = storages }, 0, 0, 6);
+        Assert.False(model.TakeOtherOpened()); // came and went before the frame looked: nothing to show
+        model.Apply(new StoragesMessage { Storages = with }, 0, 0, 7);
+        Assert.True(model.TakeOtherOpened());
+    }
+
+    [Fact]
+    public void TgsWaysOfOpeningTheContainerAlreadyOpenTurnTheTabInventoryOnAndNothingElseDoes()
+    {
+        const long box = 900, own = 77;
+        // the right click with no modifier and Alt+click on it, with Tab off on the human HUD: on
+        Assert.True(InventoryRules.ReopensOther(ClickButton.Right, ClickModifiers.None, box, box, tabOn: false, humanHud: true));
+        Assert.True(InventoryRules.ReopensOther(ClickButton.Left, ClickModifiers.Alt, box, box, tabOn: false, humanHud: true));
+        // not: a plain left click (tg's on_attack opens only a storage the user holds; it picks the box up or uses the held item on it), Shift
+        // (examine), Ctrl (pull), other modifiers with the right button, the middle button
+        foreach ((ClickButton b, ClickModifiers m) in new[] { (ClickButton.Left, ClickModifiers.None), (ClickButton.Left, ClickModifiers.Shift), (ClickButton.Left, ClickModifiers.Ctrl),
+            (ClickButton.Right, ClickModifiers.Shift), (ClickButton.Right, ClickModifiers.Ctrl), (ClickButton.Right, ClickModifiers.Alt), (ClickButton.Middle, ClickModifiers.None),
+            (ClickButton.Left, ClickModifiers.Alt | ClickModifiers.Shift) })
+            Assert.False(InventoryRules.ReopensOther(b, m, box, box, false, true), $"{b} {m}");
+        // not at another thing, with no other container, with Tab already on, or on another HUD
+        Assert.False(InventoryRules.ReopensOther(ClickButton.Right, ClickModifiers.None, 901, box, false, true));
+        Assert.False(InventoryRules.ReopensOther(ClickButton.Right, ClickModifiers.None, box, 0, false, true));
+        Assert.False(InventoryRules.ReopensOther(ClickButton.Right, ClickModifiers.None, 0, 0, false, true));
+        Assert.False(InventoryRules.ReopensOther(ClickButton.Right, ClickModifiers.None, box, box, tabOn: true, humanHud: true));
+        Assert.False(InventoryRules.ReopensOther(ClickButton.Right, ClickModifiers.None, box, box, tabOn: false, humanHud: false));
+        // the drag of it onto the own mob (tg's on_mousedrop_onto, over_object == user): on; onto anything else, or another thing dragged: not
+        Assert.True(InventoryRules.ReopensOtherByDrag(box, own, own, box, false, true));
+        Assert.False(InventoryRules.ReopensOtherByDrag(box, 500, own, box, false, true));
+        Assert.False(InventoryRules.ReopensOtherByDrag(box, 0, own, box, false, true)); // onto a turf or nothing
+        Assert.False(InventoryRules.ReopensOtherByDrag(901, own, own, box, false, true));
+        Assert.False(InventoryRules.ReopensOtherByDrag(box, own, own, 0, false, true));
+        Assert.False(InventoryRules.ReopensOtherByDrag(0, 0, 0, box, false, true)); // no own mob
+        Assert.False(InventoryRules.ReopensOtherByDrag(box, own, own, box, true, true));
+        Assert.False(InventoryRules.ReopensOtherByDrag(box, own, own, box, false, false));
+    }
+
+    [Fact]
+    public void AnOtherContainerStillOpenAtJoinTurnsTabOnOnceTheHumanHudIsUpAndNotIfItWentMeanwhile()
+    {
+        (List<CarriedStorage> storages, _) = StorageColumnTests.Carried(7, 3);
+        var with = new List<CarriedStorage>(storages) { StorageColumnTests.Storage(900, StoragePlace.Other, "box", 7, 0, 14) };
+        // the first message at join lists it while the HUD is not the human one yet: the flag waits, then fires once on the human HUD
+        var model = new StoragesModel();
+        model.Apply(new StoragesMessage { Storages = with }, 0, 0, 0);
+        Assert.False(InventoryRules.TabOnForOther(humanHud: false, model));
+        Assert.False(InventoryRules.TabOnForOther(humanHud: false, model));
+        Assert.True(InventoryRules.TabOnForOther(humanHud: true, model));
+        Assert.False(InventoryRules.TabOnForOther(humanHud: true, model));
+        // listed and gone again before the human HUD came: nothing fires later
+        var gone = new StoragesModel();
+        gone.Apply(new StoragesMessage { Storages = with }, 0, 0, 0);
+        Assert.False(InventoryRules.TabOnForOther(humanHud: false, gone));
+        gone.Apply(new StoragesMessage { Storages = storages }, 0, 0, 1);
+        Assert.False(InventoryRules.TabOnForOther(humanHud: true, gone));
+        Assert.False(InventoryRules.TabOnForOther(humanHud: true, null));
+    }
+
+    [Fact]
+    public void AStorageIsNeverSentIntoItselfAndAnotherItemStillMovesOntoItsPanel()
+    {
+        // the other container (900) is a box lying in the own backpack (100), at the backpack's cell 2; it is also the pinned panel
+        var boxInBag = new InvPlace(InvKind.Cell, 900, 2, 100, 3);
+        foreach (InvPlace own in new[] { new InvPlace(InvKind.Panel, Storage: 900), new InvPlace(InvKind.Cell, 0, 4, 900, 0), new InvPlace(InvKind.Cell, 902, 1, 900, 2) })
+            Assert.Equal(InvSend.Nothing, InventoryRules.Drop(boxInBag, own, Active));
+        // another item of the backpack onto that panel still moves; the box onto another storage still moves
+        Assert.Equal(InvSend.Move(102, InventoryTarget.Storage, 900, 0), InventoryRules.Drop(PanelCell, new InvPlace(InvKind.Panel, Storage: 900), Active));
+        Assert.Equal(InvSend.Move(900, InventoryTarget.Storage, 300, 0), InventoryRules.Drop(boxInBag, new InvPlace(InvKind.Panel, Storage: 300), Active));
+        // the worn belt (its slot's item) onto a cell of the bar, its own: nothing
+        var beltSlot = new InvPlace(InvKind.Slot, 200, (int)(1u << 9));
+        Assert.Equal(InvSend.Nothing, InventoryRules.Drop(beltSlot, new InvPlace(InvKind.Belt, 0, 4, 200, 4), Active));
+        // a held storage clicked on its own panel's empty cell or header: nothing; another held item still goes in
+        Assert.Equal(InvSend.Nothing, InventoryRules.Click(new InvPlace(InvKind.Cell, 0, 3, 500, 0), ClickModifiers.None, Active, held: 500));
+        Assert.Equal(InvSend.Nothing, InventoryRules.Click(new InvPlace(InvKind.Panel, Storage: 500), ClickModifiers.None, Active, held: 500));
+        Assert.Equal(InvSend.Move(11, InventoryTarget.Storage, 500, 0), InventoryRules.Click(new InvPlace(InvKind.Panel, Storage: 500), ClickModifiers.None, Active, held: 11));
     }
 
     [Fact]

@@ -55,8 +55,17 @@ public partial class ContainerWindow : Control, IHudSurface
     /// <summary>Slice 4B-2: the screen entry of tg's close button of the storage open now, shown or not, else 0.</summary>
     public long OpenCloseEntry => _layout != null && _layout.IsOpen ? _layout.Cells.FirstOrDefault(c => c.Role == ContainerCellRole.Close).EntryId : 0;
 
-    /// <summary>D292: the screen entry of tg's close button while the window is open (a click on it closes the storage), else 0.</summary>
-    public long CloseEntry => IsOpen ? _layout.Cells.FirstOrDefault(c => c.Role == ContainerCellRole.Close).EntryId : 0;
+    /// <summary>
+    /// D292: the screen entry of tg's close button while the window is open (a click on it closes the storage), else 0. Slice 4C-2: also while the
+    /// storage is open but withheld (<see cref="Withheld"/>: the Tab inventory shows it), so the close key still closes it.
+    /// </summary>
+    public long CloseEntry => IsOpen || (Withheld && !Suppressed && _layout != null && _layout.IsOpen) ? _layout.Cells.FirstOrDefault(c => c.Role == ContainerCellRole.Close).EntryId : 0;
+
+    /// <summary>
+    /// Slice 4C-2: the window is never shown (the human HUD, whose Tab inventory shows the storage open as the other container's panel); tg's storage
+    /// stays open. Set by the scene each frame.
+    /// </summary>
+    public bool Withheld { get; set; }
 
     public void Bind(ReplicaWorld replica, IAppearanceTextures textures, byte group, string title, string key, PlayOptions options, Action saved)
     {
@@ -129,7 +138,7 @@ public partial class ContainerWindow : Control, IHudSurface
         }
         // slice 4B-2: a storage the Tab inventory's right column lists is never shown here (each thing once; InventoryRules.ListedWindow)
         Suppressed = _layout.IsOpen && Suppress != null && Suppress(_layout.Cells.Where(c => c.Role == ContainerCellRole.Item).Select(c => c.EntryId));
-        bool show = _layout.IsOpen && !Suppressed;
+        bool show = _layout.IsOpen && !Suppressed && !Withheld;
         if (Visible != show)
             Visible = show;
         _rects.Clear();

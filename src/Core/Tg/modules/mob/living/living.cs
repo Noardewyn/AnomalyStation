@@ -1475,11 +1475,18 @@ public partial class mob_living : mob
             await puller.set_pull_offsets(this, puller.grab_state);
         }
 
+        // tg: code/modules/mob/living/living.dm:1070-1074
+        // DEVIATION(DV696): a port guard: a storage destroyed while this mob was not among its is_using (the port's show_contents throws in
+        // orient_storage for a numbered-stack storage after setting active_storage) has no parent; tg's own hide_contents, which its Destroy would
+        // have run for this mob, clears active_storage (its interfaces are gone, so it does nothing else)
+        if (Dm.truthy(active_storage) && active_storage.parent == null)
+            active_storage.hide_contents(this);
         if (Dm.truthy(active_storage))
         {
-            // tg: :1069-1072  the reach check of the open storage UI (active_storage.parent, IsReachableBy, hide_contents)
-            // GAP(lead): /datum/storage (datums/storage/storage.dm) has no procs declared; storage UIs are M4a.
-            Dm.NotTranslated("code/modules/mob/living/living.dm:1069", "Move: hiding an out-of-reach open storage (storage, M4a)");
+            bool storage_is_important_recurisve = Dm.@in(active_storage.parent, important_recursive_contents?[RECURSIVE_CONTENTS_ACTIVE_STORAGE]);
+            bool can_reach_active_storage = Dm.truthy(await active_storage.parent.IsReachableBy(this));
+            if (!storage_is_important_recurisve && !can_reach_active_storage)
+                active_storage.hide_contents(this);
         }
 
         if (!Dm.truthy(buckled) && !Dm.truthy(moving_diagonally) && loc != old_loc)

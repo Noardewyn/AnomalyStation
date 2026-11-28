@@ -670,8 +670,9 @@ public sealed partial class ServerHost
     }
 
     // DEVIATION(DV696): slice 4B-2: tg's Shift+click (ShiftClickOn: examinate) on an item the sender's own carried storages show now
-    // (CarriedStorages.ShowsItem: in one of its listed storages, not locked, not hidden, not deeper), named as a screen target, as tg's storage screen
-    // would show it; only a plain left click with Shift alone. Any other click on a stored item, or on anyone else's, is refused as before.
+    // (CarriedStorages.ShowsItem: in one of its listed storages or, slice 4C-1, in the other container it has open by tg's state, no reach asked, not locked, not
+    // hidden, not deeper), named as a screen target, as tg's storage screen would show it; only a plain left click with Shift alone. Any other click
+    // on a stored item, or on anyone else's, is refused as before.
     private bool TryStoredExamine(Session s, in QueuedCommand command, out atom target)
     {
         target = null;

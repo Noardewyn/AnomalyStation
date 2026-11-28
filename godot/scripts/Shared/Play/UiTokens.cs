@@ -98,6 +98,12 @@ public static class UiTokens
     /// <summary>The light rim on the cell under the pointer while an item is dragged.</summary>
     public const uint InventoryDragRim = 0xFFFFFFCC;
 
+    /// <summary>Slice 4C-2: the line between the own storages and the pinned panel and strip under them: its thickness ...</summary>
+    public const float StorageLineWidth = 1f;
+
+    /// <summary>... and its colour, white at half strength.</summary>
+    public const uint StorageLine = 0xFFFFFF80;
+
     // ---- chips: a key label or a short status in a small rounded box, white on the local pill's slate with a white rim ----
 
     /// <summary>A chip's fill: <see cref="LocalBack"/>, a little see-through.</summary>

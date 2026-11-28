@@ -691,6 +691,9 @@ public static class Limits
     /// <summary>Version 100 also (DV696): the carried storages of a <see cref="StoragesMessage"/>.</summary>
     public const int MaxStorages = 8;
 
+    /// <summary>Version 100 also (DV696, slice 4C-1): the entries of a <see cref="StoragesMessage"/>: the carried storages and the other container.</summary>
+    public const int MaxStorageEntries = MaxStorages + 1;
+
     /// <summary>Version 100 also: the items of one <see cref="CarriedStorage"/> (a storage that holds more sends the first ones, <see cref="CarriedStorage.Cut"/>); also the highest cell an inventory move may wish for.</summary>
     public const int MaxStorageItems = 64;
 
@@ -704,10 +707,10 @@ public static class Limits
     public const int MaxStorageNameBytes = MaxHotbarNameBytes;
 
     /// <summary>
-    /// Version 100 also: a <see cref="StoragesMessage"/>: the id, the count, each storage (an entity, the place and a hand, a name, the slots, the room and
+    /// Version 100 also: a <see cref="StoragesMessage"/>: the id, the count, each entry (an entity, the place and a hand, a name, the slots, the room and
     /// the limit, the flags, the item count and its items: an entity, a name, a picture and a count each) and the refused item.
     /// </summary>
-    public const int MaxStoragesBytes = 1 + 1 + MaxStorages * (10 + 1 + 1 + 2 + MaxStorageNameBytes + 3 * 3 + 1 + 1 + MaxStorageItems * (10 + 2 + MaxStorageNameBytes + 5 + 3)) + 10;
+    public const int MaxStoragesBytes = 1 + 1 + MaxStorageEntries * (10 + 1 + 1 + 2 + MaxStorageNameBytes + 3 * 3 + 1 + 1 + MaxStorageItems * (10 + 2 + MaxStorageNameBytes + 5 + 3)) + 10;
 }
 
 /// <summary>A token bucket: <see cref="PerSecond"/> tokens refill per second of game time (20 ticks), at most <see cref="Burst"/> are kept.</summary>

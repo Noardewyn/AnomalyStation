@@ -3,7 +3,8 @@ namespace Anomaly.Protocol;
 // Protocol version 100 also (ui-overhaul.md section 12, slice 4B-1, DV696; docs/ai/specs/protocol.md section 100; the codec: Codec.V100Storages.cs).
 // - Storages (server to client, State channel, after the tick's Delta, when it changed or a move was refused): the storages the own human carries,
 //   in the Tab inventory's order (the back's, the belt's, a storage in the suit-storage slot, the pockets and the ID slot, then one held in a hand),
-//   each with where it is carried, its name, tg's slot count, its room as tg counts it, whether tg keeps it locked, and its items in tg's order.
+//   each with where it is carried, its name, tg's slot count, its room as tg counts it, whether tg keeps it locked, and its items in tg's order;
+//   then, as the last entry (slice 4C-1), the other container the player has open (StoragePlace.Other), when tg keeps one open.
 // - InventoryMove (client to server, an Action of kind 29): one item of the own inventory to a storage (a cell wished for or not), a worn slot, a
 //   hand or the floor (ActionMessage.MoveItem, MoveTo, MoveStorage, MoveIndex, MessagesV2.cs).
 // - InventoryOpen (client to server, an Action of kind 30): the Tab inventory was opened (tg's rustle of the back storage), no fields.
@@ -31,6 +32,12 @@ public enum StoragePlace : byte
 
     /// <summary>A hand (<see cref="CarriedStorage.Hand"/> says which: tg's held index).</summary>
     Hand = 7,
+
+    /// <summary>
+    /// Slice 4C-1: the other container, the storage the player has open by tg's own means that is none of the carried ones (tg's <c>active_storage</c>,
+    /// while tg keeps it open); at most one, always the last entry, never locked or hidden. A move may name it as its target and its items as sources.
+    /// </summary>
+    Other = 8,
 }
 
 /// <summary>Version 100: what an inventory move puts its item into (<see cref="ActionMessage.MoveTo"/>).</summary>
@@ -39,7 +46,7 @@ public enum InventoryTarget : byte
     /// <summary>None: every action that is not an inventory move.</summary>
     None = 0,
 
-    /// <summary>A carried storage (<see cref="ActionMessage.MoveStorage"/>), at a wished cell (<see cref="ActionMessage.MoveIndex"/>, 1 to <see cref="Limits.MaxStorageItems"/>) or 0 for none.</summary>
+    /// <summary>A carried storage or the other container (<see cref="ActionMessage.MoveStorage"/>), at a wished cell (<see cref="ActionMessage.MoveIndex"/>, 1 to <see cref="Limits.MaxStorageItems"/>) or 0 for none.</summary>
     Storage = 1,
 
     /// <summary>A worn slot (<see cref="ActionMessage.MoveIndex"/>: tg's slot id, one of <see cref="InventorySlots.Worn"/>).</summary>
@@ -140,7 +147,7 @@ public sealed class StoragesMessage : IEquatable<StoragesMessage>
     /// <summary>No storages and nothing refused: what a client starts from.</summary>
     public static readonly StoragesMessage None = new();
 
-    /// <summary>The carried storages, at most <see cref="Limits.MaxStorages"/>.</summary>
+    /// <summary>The carried storages, at most <see cref="Limits.MaxStorages"/>, then the other container, if any (<see cref="Limits.MaxStorageEntries"/> in all).</summary>
     public IReadOnlyList<CarriedStorage> Storages { get; init; } = NoStorages;
 
     /// <summary>The item whose move was refused this tick (an entity the client named), 0 for none.</summary>

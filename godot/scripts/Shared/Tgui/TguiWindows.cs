@@ -486,6 +486,18 @@ public sealed class TguiWindows
 
     public bool AnyOpen => _windows.Count > 0;
 
+    /// <summary>
+    /// Slice 4D-1: which open windows are not drawn (the strip window on the human HUD, whose Tab inventory shows it); null: every window is drawn. A
+    /// withheld window stays open in tg: its acts, Esc and the close-windows key still reach it.
+    /// </summary>
+    public Func<TguiWindow, bool> Withhold { get; set; }
+
+    /// <summary>Whether <paramref name="window"/> is withheld now (<see cref="Withhold"/>).</summary>
+    public bool IsWithheld(TguiWindow window) => window != null && Withhold?.Invoke(window) == true;
+
+    /// <summary>Whether a window is open and drawn (the mouse is free for it).</summary>
+    public bool AnyShown => _windows.Values.Any(w => !IsWithheld(w));
+
     public TguiWindow Top => _order.Count > 0 ? _windows[_order[^1]] : null;
 
     public TguiWindow Get(int index) => _windows.TryGetValue(index, out TguiWindow w) ? w : null;
@@ -714,7 +726,7 @@ public sealed class TguiWindows
         for (int i = _order.Count - 1; i >= 0; i--)
         {
             TguiWindow w = _windows[_order[i]];
-            if (w.Rect(scale).Contains(x, y))
+            if (!IsWithheld(w) && w.Rect(scale).Contains(x, y))
                 return w;
         }
         return null;

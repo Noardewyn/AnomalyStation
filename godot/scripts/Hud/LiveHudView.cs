@@ -104,6 +104,8 @@ public partial class LiveHudView : Control
             AddChild(view);
         Line = new ColorRect { Name = "ColumnLine", Color = ChatLines.Rgba(UiTokens.StorageLine), MouseFilter = MouseFilterEnum.Ignore, Visible = false };
         AddChild(Line);
+        StripPanel = new StripPanelView { Name = "StripPanel", Visible = false };
+        AddChild(StripPanel);
     }
 
     /// <summary>Slice C: <see cref="Hands"/> was filled for this frame (the held items' pictures animate, so it is drawn afresh while shown).</summary>
@@ -383,4 +385,128 @@ public partial class LiveHudView : Control
 
     /// <summary>Slice 4C-2: the line between the own storages and what is pinned under them.</summary>
     public ColorRect Line { get; private set; }
+
+    /// <summary>Slice 4D-1: the strip panel (<see cref="HudLayer"/> fills it each frame).</summary>
+    public StripPanelView StripPanel { get; private set; }
+
+    /// <summary>Slice 4D-1: one slot of the strip panel this frame: its cell drawn as the bar's, tg's mark over it, and whether tg marks it as being worked on.</summary>
+    public sealed class StripCellScene
+    {
+        public readonly CellScene Cell = new();
+        public StripMark Mark;
+        public bool Working;
+    }
+
+    /// <summary>Slice 4D-1: tg's mark over a strip slot.</summary>
+    public enum StripMark : byte
+    {
+        None = 0,
+        Blocked, // tg's "ban" icon: the slot is completely obscured
+        Hidden, // a "?": a pocket with something unseen in it
+    }
+
+    /// <summary>Slice 4D-1: the strip panel this frame: its backing, the title and the X, the target's sprite and the slots.</summary>
+    public sealed class StripScene
+    {
+        public HudRect Panel, Title, Close;
+        public string TitleText;
+        public float Unit;
+        public Texture2D Sprite;
+        public Rect2 SpriteAt, SpriteFrom;
+        public readonly List<StripCellScene> Cells = new();
+    }
+
+    /// <summary>
+    /// Slice 4D-1: the strip panel, drawn in a view of its own cut at the panel's backing: the backing as a storage panel's, the title and an X at its
+    /// right, the target's sprite, the slots drawn as the bar's cells with tg's marks, and on a slot tg marks as being worked on a bar along its bottom
+    /// that runs back and forth (the client is not told how long the action takes, so the bar does not count down).
+    /// </summary>
+    public sealed partial class StripPanelView : Control
+    {
+        private readonly StyleBoxFlat _back = new(), _frame = new() { DrawCenter = false };
+        private StripScene _scene;
+
+        public StripPanelView()
+        {
+            MouseFilter = MouseFilterEnum.Ignore;
+            ClipContents = true;
+            TextureFilter = TextureFilterEnum.Nearest;
+        }
+
+        /// <summary>The panel this frame; null hides it.</summary>
+        public void Show(StripScene scene)
+        {
+            bool shown = scene != null && scene.Panel.Width > 0f && scene.Panel.Height > 0f;
+            if (!shown && _scene == null)
+            {
+                Visible = false;
+                return;
+            }
+            Visible = shown;
+            _scene = shown ? scene : null;
+            if (shown)
+            {
+                Position = new Vector2(scene.Panel.Left, scene.Panel.Top);
+                Size = new Vector2(scene.Panel.Width, scene.Panel.Height);
+            }
+            QueueRedraw(); // the sprite and the working bars move: drawn afresh while shown
+        }
+
+        public override void _Draw()
+        {
+            if (_scene == null)
+                return;
+            DrawSetTransform(-Position); // drawn in the screen's pixels, cut at this view's rectangle
+            StripScene s = _scene;
+            Font font = ThemeDB.FallbackFont;
+            float k = s.Unit;
+            _back.BgColor = ChatLines.Rgba(UiTokens.StoragePanelBack);
+            _back.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.DollPanelRadius * k)));
+            DrawStyleBox(_back, R(s.Panel));
+            int size = FontPx(UiTokens.StorageHeaderFont, k);
+            float baseline = s.Title.Top + (s.Title.Height + font.GetAscent(size) - font.GetDescent(size)) / 2f;
+            float width = (s.Close.Width > 0f ? s.Close.Left - MathF.Round(UiTokens.StoragePanelPad * k) : s.Title.Right) - s.Title.Left;
+            string title = LiveHud.HintName(s.TitleText, width, t => font.GetStringSize(t, HorizontalAlignment.Left, -1, size).X);
+            if (!string.IsNullOrEmpty(title) && width > 0f)
+                DrawString(font, new Vector2(s.Title.Left, baseline), title, HorizontalAlignment.Left, -1, size, ChatLines.Rgba(UiTokens.LocalText));
+            if (s.Close.Width > 0f)
+            {
+                // the X: two strokes in the middle half of its square
+                float inset = s.Close.Width / 4f, line = Math.Max(1f, MathF.Round(2f * k));
+                Color ink = ChatLines.Rgba(UiTokens.LocalText);
+                DrawLine(new Vector2(s.Close.Left + inset, s.Close.Top + inset), new Vector2(s.Close.Right - inset, s.Close.Bottom - inset), ink, line);
+                DrawLine(new Vector2(s.Close.Right - inset, s.Close.Top + inset), new Vector2(s.Close.Left + inset, s.Close.Bottom - inset), ink, line);
+            }
+            if (s.Sprite != null)
+                DrawTextureRectRegion(s.Sprite, s.SpriteAt, s.SpriteFrom);
+            double seconds = Time.GetTicksMsec() / 1000.0;
+            foreach (StripCellScene c in s.Cells)
+            {
+                DrawCellOn(this, font, c.Cell, k, _frame);
+                HudRect r = c.Cell.Rect;
+                string mark = c.Mark switch
+                {
+                    StripMark.Blocked => Tgui.FontAwesomeFont.Glyph("ban") ?? "X", // tg's StripMenu: <Icon name="ban" />
+                    StripMark.Hidden => "?",
+                    _ => null,
+                };
+                if (mark != null)
+                {
+                    int markSize = Math.Max(1, (int)MathF.Round(r.Height * 0.55f));
+                    float markBase = r.Top + (r.Height + font.GetAscent(markSize) - font.GetDescent(markSize)) / 2f;
+                    DrawString(font, new Vector2(r.Left, markBase), mark, HorizontalAlignment.Center, r.Width, markSize, ChatLines.Rgba(UiTokens.LocalText, c.Cell.Look.Alpha));
+                }
+                if (c.Working)
+                {
+                    // a track along the cell's bottom and a third of it running back and forth across it
+                    float h = Math.Max(2f, MathF.Round(UiTokens.StripWorkingBar * k)), inset = Math.Max(1f, MathF.Round(2f * k));
+                    var track = new Rect2(r.Left + inset, r.Bottom - inset - h, Math.Max(0f, r.Width - 2 * inset), h);
+                    DrawRect(track, ChatLines.Rgba(UiTokens.StripWorkingTrack));
+                    float run = track.Size.X / 3f, phase = (float)(seconds / UiTokens.StripWorkingSeconds % 2.0);
+                    float at = (phase <= 1f ? phase : 2f - phase) * (track.Size.X - run);
+                    DrawRect(new Rect2(track.Position.X + at, track.Position.Y, run, h), ChatLines.Rgba(UiTokens.StripWorkingFill));
+                }
+            }
+        }
+    }
 }

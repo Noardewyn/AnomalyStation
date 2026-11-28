@@ -27,7 +27,7 @@ public partial class GameScene
     private Hud.TooltipView _tooltipView; // protocol version 19: tg's tooltip of the hovered HUD object
 
     /// <summary>M5 slice 3: a tgui window is open (the mouse is free for it, as for the dev menu).</summary>
-    private bool TguiOpen => _tguiWindows?.AnyOpen == true;
+    private bool TguiOpen => _tguiWindows?.AnyShown == true; // slice 4D-1: a withheld strip window holds no pointer, as a withheld storage window does not
     private readonly InventoryExpander _inventoryExpander = new(); // slice 4A: keeps tg's inventory expanded on the human HUD
     private readonly RadialModel _radialModel = new();
     private readonly ChatFeed _chat = new();
@@ -55,6 +55,10 @@ public partial class GameScene
     private readonly InventoryNotice _inventoryNotice = new(); // slice 4B-2: the "inventory opened" notice, once per opening
     private (long Item, double At) _actedOn; // slice 4B-2: what the player last clicked or used in hand (a listed storage opening by it)
     private long _closedListed; // slice 4B-2: tg's close button of the listed storage last closed unseen
+    private readonly StripOpenings _stripOpenings = new(); // slice 4D-1: each strip window that opens turns the Tab inventory on once
+    private long _strippedDrag; // slice 4D-1: the mob last dragged onto the own mob (tg's way of opening its strip window), for telling the strip target
+    private PopupMenu _stripMenu; // slice 4D-1: tg's alternate actions on a strip slot
+    private (int Window, string Key, List<(string Action, string Label)> Offered) _stripMenuFor;
     // DV695: the first-person drag of oneself (a press on the own body held until the release); whether the own body can be shown at all
     private readonly SelfDrag _selfDrag = new();
     private bool _ownBodyShowable;
@@ -108,7 +112,13 @@ public partial class GameScene
             SendAct = (window, action, parameters) => _session.UiAct(window, action, parameters),
             SendClose = window => _session.UiClose(window),
             SendTopic = href => _session?.Topic(href),
+            // slice 4D-1: on the human HUD tg's strip window is shown by the Tab inventory's strip view, never as the native window
+            Withhold = window => window.Interface == StripView.Interface && _hudLayer?.HumanHud == true,
         };
+        // slice 4D-1: the strip view's right-click menu of tg's alternate actions on a slot (a small menu at the pointer, as the chat's radio menu)
+        _stripMenu = new PopupMenu { Name = "StripMenu" };
+        _stripMenu.IdPressed += OnStripMenuPicked;
+        ui.AddChild(_stripMenu);
         _tguiWindows.PositionsChanged += SaveOptions;
         _tguiHost = new Hud.Tgui.TguiHost();
         _tguiHost.LobbySettings = () => _optionsPanel.Visible = true; // D282
@@ -495,6 +505,13 @@ public partial class GameScene
             if (App.Instance.Args.Automated)
                 GD.Print($"[anomaly] storage window: the other container #{_hudLayer.OtherStorage} opened, shown in the Tab inventory");
         }
+        // slice 4D-1: a strip window that opened turns the Tab inventory on, once per window (taken only on the human HUD, as the other container's)
+        if (_stripOpenings.TakeNew(_tguiWindows.Open.Where(w => w.Interface == StripView.Interface).Select(w => w.Index), _hudLayer.HumanHud))
+        {
+            SetCursorMode(true);
+            if (App.Instance.Args.Automated)
+                GD.Print("[anomaly] strip: tg's strip window opened, shown in the Tab inventory");
+        }
 
         if (_radialModel.Phase == RadialPhase.Pressed && _radialModel.Update(now))
             OpenRadial();
@@ -830,7 +847,7 @@ public partial class GameScene
                 bool wallMount = source.Kind == TargetKind.Entity && _feed.Replica?.TryGet(source.Id, out ReplicaEntity pressed) == true && pressed.TypePath != null && Shared.World.PropKinds.IsWallMountType(pressed.TypePath);
                 // slice 4B-2: a press on an item of the Tab inventory (its drag follows InventoryRules.Drop), and whether it is the quick transfer's
                 InvPlace pressedPlace = source.Kind == TargetKind.Screen ? _hudLayer.PlaceOf(source) : default;
-                _dragFrom = pressedPlace.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell or InvKind.Nearby && pressedPlace.Item != 0 ? pressedPlace : default;
+                _dragFrom = pressedPlace.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell or InvKind.Nearby or InvKind.Strip && pressedPlace.Item != 0 ? pressedPlace : default;
                 _pressQuick = InventoryRules.IsQuickTransfer(_options.Bindings, KeyBindings.NameOf(name, button.ShiftPressed, button.CtrlPressed), button.AltPressed);
                 if (!_drag.Press(source, ClickButton.Left, modifiers, button.Position.X, button.Position.Y, App.NowSeconds, !wallMount))
                     ClickAtCrosshair(ClickButton.Left, modifiers); // nothing under the pointer: as before
@@ -845,6 +862,8 @@ public partial class GameScene
                 ClickAtCrosshair(ClickButton.Left, modifiers);
                 break;
             case PlayAction.SecondaryClick:
+                if (_mouse.CursorMode && OpenStripMenu(button.Position))
+                    break; // slice 4D-1: the strip panel's own right click
                 if (_mouse.CursorMode)
                     ClickAtCrosshair(ClickButton.Right, modifiers);
                 else
@@ -920,7 +939,7 @@ public partial class GameScene
         // slice 4B-2: a drag of an item of the Tab inventory, released over anything (nothing at all is the floor): one move, tg's drop, a use on oneself or nothing
         if (dragged && from.Item != 0)
         {
-            SendInventory(InventoryRules.Drop(from, _hudLayer.PlaceOf(over), _hudLayer.ActiveHand), release);
+            SendInventory(InventoryRules.Drop(from, _hudLayer.PlaceOf(over), _hudLayer.ActiveHand, _hudLayer.StripShown), release);
             return;
         }
         // slice 4B-2: a click on a storage panel, and the quick transfer on an item of the inventory; anything else stays what it was
@@ -928,7 +947,7 @@ public partial class GameScene
         {
             InvPlace place = _hudLayer.PlaceOf(release.Source);
             InvSend? send = quick ? InventoryRules.QuickTransfer(place, _hudLayer.ActiveHand, _hudLayer.BackStorage, _hudLayer.OtherStorage)
-                : InventoryRules.Click(place, release.Modifiers, _hudLayer.ActiveHand, _hudLayer.HeldItem);
+                : InventoryRules.Click(place, release.Modifiers, _hudLayer.ActiveHand, _hudLayer.HeldItem, _hudLayer.StripShown);
             if (send is InvSend inventory)
             {
                 SendInventory(inventory, release);
@@ -992,6 +1011,27 @@ public partial class GameScene
                 // slice 4C-2: an item of the Nearby strip: tg's click on it where it lies, as the world's click on it (tg decides reach)
                 SendClick(new ClickTarget(TargetKind.Entity, send.Item, 0, 0, 0, 16, 16), ClickButton.Left, send.Modifiers);
                 break;
+            case InvSendKind.StripUse:
+            case InvSendKind.StripClose:
+                // slice 4D-1: tg's own act on the strip window shown (its slot button's `use`), or the close its own X sends
+                Anomaly.Client.Shared.Tgui.TguiWindow strip = _hudLayer.StripShown is StripModel shown ? _tguiWindows.Get(shown.Window) : null;
+                string key = send.Index >= 0 && send.Index < StripView.Keys.Length ? StripView.Keys[send.Index] : null;
+                if (strip?.Context == null || strip.Interface != StripView.Interface || send.Kind == InvSendKind.StripUse && key == null)
+                    break;
+                if (send.Kind == InvSendKind.StripClose)
+                    _tguiWindows.Close(strip);
+                else
+                    strip.Context.Act("use", ("key", key));
+                if (App.Instance.Args.Automated)
+                    GD.Print(send.Kind == InvSendKind.StripClose ? $"[anomaly] strip: window {strip.Index} closed" : $"[anomaly] strip: use {key} (window {strip.Index})");
+                break;
+            case InvSendKind.StripExamine:
+                // slice 4D-1: the world's Shift+click on the strip target, where the client can tell which mob it is
+                if (_hudLayer.StripTarget != 0)
+                    SendClick(new ClickTarget(TargetKind.Entity, _hudLayer.StripTarget, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.Shift);
+                else if (App.Instance.Args.Automated)
+                    GD.Print("[anomaly] strip: the target is not known, no examine sent");
+                break;
             case InvSendKind.Refused:
                 // nothing was sent: the client's own balloon says why, as tg's balloon alerts say a refusal's reason
                 _session.Storages.RefuseLocally(send.Item, App.NowSeconds);
@@ -1006,9 +1046,90 @@ public partial class GameScene
         }
     }
 
+    // Slice 4D-1: a right click on the strip panel (true: it was on the panel, nothing else is done with it): on a slot with tg's alternate actions a
+    // small menu of them at the pointer with tg's labels (InventoryRules.StripAlternates); anywhere else on the panel nothing.
+    private bool OpenStripMenu(Vector2 at)
+    {
+        InvPlace place = _hudLayer.PlaceOf(PointerHud());
+        if (place.Kind is not (InvKind.Strip or InvKind.StripSprite or InvKind.StripClose))
+            return false;
+        List<(string Action, string Label)> offered = InventoryRules.StripAlternates(place, _hudLayer.StripShown).ToList();
+        if (offered.Count == 0 || _hudLayer.StripShown is not StripModel strip)
+            return true;
+        _stripMenuFor = (strip.Window, StripView.Keys[place.Index], offered);
+        _stripMenu.Clear();
+        for (int i = 0; i < offered.Count; i++)
+            _stripMenu.AddItem(offered[i].Label, i);
+        _stripMenu.Popup(new Rect2I((int)at.X, (int)at.Y, 0, 0));
+        if (App.Instance.Args.Automated)
+            GD.Print($"[anomaly] strip: the menu of {StripView.Keys[place.Index]}: {string.Join(", ", offered.Select(o => o.Label))}");
+        return true;
+    }
+
+    // Slice 4D-1: a pick in that menu: tg's `alt` act on the strip window it was opened for, while that window is still the strip window
+    private void OnStripMenuPicked(long id)
+    {
+        (int window, string key, List<(string Action, string Label)> offered) = _stripMenuFor;
+        Anomaly.Client.Shared.Tgui.TguiWindow strip = _tguiWindows?.Get(window);
+        if (offered == null || id < 0 || id >= offered.Count || strip?.Context == null || strip.Interface != StripView.Interface)
+            return;
+        strip.Context.Act("alt", ("key", key), ("alternate_action", offered[(int)id].Action));
+        if (App.Instance.Args.Automated)
+            GD.Print($"[anomaly] strip: alt {key} {offered[(int)id].Action} (window {window})");
+    }
+
+    // Slice 4D-1: the strip window the Tab inventory shows (the last opened), and its target as far as the client can tell (the window names no
+    // entity: the mob last dragged onto oneself, else the one mob of that name next to the player)
+    private void UpdateStripView()
+    {
+        StripModel model = StripView.ModelOf(StripView.Current(_tguiWindows?.Open));
+        _hudLayer.Strip = model;
+        _hudLayer.StripTarget = model != null && _hudLayer.HumanHud && _mouse.CursorMode ? StripView.TargetOf(model.Name, _strippedDrag, StripMobs()) : 0;
+        if (App.Instance.Args.Automated)
+        {
+            // for scripted runs: where the strip panel and each slot's middle are, whenever they move
+            StripLayout placed = _hudLayer.StripPlaced;
+            string where = !placed.Shown ? "none" : $"panel {placed.Panel}, target #{_hudLayer.StripTarget}, X at {Middle(placed.Close)}, sprite at {Middle(placed.Sprite)}, "
+                + string.Join(", ", StripView.Keys.Select((k, i) => placed.Cells[i].Width > 0f ? k + " at " + Middle(placed.Cells[i]) : null).Where(s => s != null));
+            if (where != _stripLogged)
+                GD.Print("[anomaly] strip view: " + (_stripLogged = where));
+            static string Middle(HudRect r) => $"{r.Left + r.Width / 2f:0}x{r.Top + r.Height / 2f:0}";
+        }
+    }
+
+    private string _stripLogged = "none";
+
+    private IEnumerable<(long Id, string Name, int Distance)> StripMobs()
+    {
+        ReplicaWorld replica = _feed.Replica;
+        if (replica == null || !replica.TryGet(_feed.OwnEntity, out ReplicaEntity me))
+            yield break;
+        foreach (ReplicaEntity e in replica.Entities)
+        {
+            if (e.Id != me.Id && e.State.Z == me.State.Z && e.IsMob())
+                yield return (e.Id, e.State.Name, Math.Max(Math.Abs(e.State.X - me.State.X), Math.Abs(e.State.Y - me.State.Y)));
+        }
+    }
+
+    // Slice 4D-1: the client sent tg's way of opening a strip window (the mob `dragged` dropped onto oneself): it is the strip target, and with a strip
+    // window already open and Tab off the Tab inventory turns on at once (tg only brings its window forward; ours is withheld)
+    private void StripDropSent(long dragged)
+    {
+        _strippedDrag = dragged;
+        bool mob = _feed.Replica?.TryGet(dragged, out ReplicaEntity e) == true && e.IsMob();
+        bool open = _tguiWindows?.Open.Any(w => w.Interface == StripView.Interface) == true;
+        if (!StripView.ReopensStrip(dragged, _feed.OwnEntity, _feed.OwnEntity, mob, open, _mouse.CursorMode, _hudLayer.HumanHud))
+            return;
+        SetCursorMode(true);
+        if (App.Instance.Args.Automated)
+            GD.Print($"[anomaly] strip: tg's strip opened again by its way (#{dragged} onto oneself), shown in the Tab inventory");
+    }
+
     private void SendDrop(in DragRelease release)
     {
         bool sent = _session.Drop(release);
+        if (sent && release.Source.Kind == TargetKind.Entity && release.Over.Kind == TargetKind.Entity && release.Over.Id == _feed.OwnEntity && release.Source.Id != _feed.OwnEntity)
+            StripDropSent(release.Source.Id); // slice 4D-1: a body dragged onto oneself (the doll counts) opens its strip window
         if (sent && InventoryRules.ReopensOtherByDrag(release.Source.Kind == TargetKind.Entity ? release.Source.Id : 0, release.Over.Kind == TargetKind.Entity ? release.Over.Id : 0,
                 _feed.OwnEntity, _hudLayer.OtherStorage, _mouse.CursorMode, _hudLayer.HumanHud))
             ReopenOther(); // slice 4C-2: the other container dragged onto oneself, tg's way of opening it
@@ -1211,8 +1332,9 @@ public partial class GameScene
                 break;
             case RadialKind.DropOntoSelf:
                 // version 37 (D238): Strip, tg's drag of the mob onto oneself (the doll in first person) opens his strip window
-                if (_feed.OwnEntity != 0)
-                    _session.Drop(new DragRelease(target, new ClickTarget(TargetKind.Entity, _feed.OwnEntity, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None, 255));
+                if (_feed.OwnEntity != 0 && _session.Drop(new DragRelease(target, new ClickTarget(TargetKind.Entity, _feed.OwnEntity, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None, 255))
+                    && target.Kind == TargetKind.Entity)
+                    StripDropSent(target.Id); // slice 4D-1: tg's way of opening the strip window
                 break;
             case RadialKind.Extra:
                 _session.ContextPick(target, choice.Label); // version 86 (DV503): the table's Flip

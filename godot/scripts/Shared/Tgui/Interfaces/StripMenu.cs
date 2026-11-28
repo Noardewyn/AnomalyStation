@@ -73,6 +73,12 @@ public static class StripMenu
         ["right_pocket"] = new("right pocket", 4, 5, "inventory-pocket.png"),
     };
 
+    /// <summary>Slice 4D-1 (the Tab inventory's strip view): tg's label of an alternate action (<c>ALTERNATE_ACTIONS</c>), null for one tg's window does not draw.</summary>
+    public static string AlternateLabel(string action) => action != null && AlternateActions.TryGetValue(action, out (string Icon, string Text) a) ? a.Text : null;
+
+    /// <summary>Slice 4D-1: tg's display name of a strip slot (<c>SLOTS</c>: "left pocket"), null for a key tg's window does not place.</summary>
+    public static string DisplayName(string key) => key != null && Slots.TryGetValue(key, out Slot slot) ? slot.DisplayName : null;
+
     // tg: StripMenu.tsx:222  enum ObscuringLevel
     private const int Completely = 1;
     private const int Hidden = 2;

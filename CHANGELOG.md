@@ -18,6 +18,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - Under Tab every bag, box and belt you carry is listed at the right with its room; drag items between hands, slots, bags and the floor, or Ctrl+click to transfer.
 - A container you have open now closes when you walk out of its reach, as in tg.
 - A container you open shows in the Tab inventory under your bags, and items lying next to you show in a "Nearby" row you can click and drop onto.
+- Stripping someone now shows them beside your storages in the Tab inventory: click, drag or right-click their slots instead of a separate window.
 - Alerts, hunger and stamina are small chips above the health doll, or left of it on a crowded screen, instead of a column at the right edge.
 - Every chip's picture is centred and scaled so its art fills the chip, so hunger, stamina and alerts no longer sit small or off-centre.
 - The swap-hands key sits on the corner of the other hand; a cuffed or missing hand gets a red border.

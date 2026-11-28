@@ -104,6 +104,20 @@ public static class UiTokens
     /// <summary>... and its colour, white at half strength.</summary>
     public const uint StorageLine = 0xFFFFFF80;
 
+    // ---- the Tab inventory's strip view (StripView; ui-overhaul.md section 12, slice 4D-1) ----
+
+    /// <summary>The bar along the bottom of a strip slot tg marks as being worked on: its height ...</summary>
+    public const float StripWorkingBar = 6f;
+
+    /// <summary>... its track ...</summary>
+    public const uint StripWorkingTrack = 0xFFFFFF59;
+
+    /// <summary>... the part that runs along it, the amber of tg's slot being used (StripMenu.tsx's hsl(39, 73%, 30%)) made light enough to read ...</summary>
+    public const uint StripWorkingFill = 0xE0A93AFF;
+
+    /// <summary>... and the seconds it takes to cross the track once.</summary>
+    public const double StripWorkingSeconds = 0.8;
+
     // ---- chips: a key label or a short status in a small rounded box, white on the local pill's slate with a white rim ----
 
     /// <summary>A chip's fill: <see cref="LocalBack"/>, a little see-through.</summary>

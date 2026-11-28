@@ -172,6 +172,7 @@ public partial class TguiHost : Control
             // self_modulate tints only the panel's own box, not the children (the text, the controls)
             frame.Root.SelfModulate = frame.Bar.SelfModulate = new Color(1, 1, 1, Opacity);
             frame.Root.Position = new Vector2((float)window.X, (float)window.Y);
+            frame.Root.Visible = !_windows.IsWithheld(window); // slice 4D-1: the strip window on the human HUD is shown by the Tab inventory
             MoveChild(frame.Root, z++);
         }
     }

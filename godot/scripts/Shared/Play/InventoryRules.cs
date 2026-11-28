@@ -42,6 +42,18 @@ public enum InvKind : byte
 
     /// <summary>Slice 4C-2: the Nearby strip: a cell (<see cref="InvPlace.Index"/>: from 0; <see cref="InvPlace.Item"/>: the item lying there, 0 for the empty cell) or its backing and title (index -1).</summary>
     Nearby,
+
+    /// <summary>
+    /// Slice 4D-1: a slot of the strip panel (<see cref="InvPlace.Index"/>: its index in <see cref="StripView.Keys"/>; <see cref="InvPlace.Item"/>:
+    /// <see cref="StripView.FullMark"/> while something is in it, else 0) or the panel's backing and title (index -1).
+    /// </summary>
+    Strip,
+
+    /// <summary>Slice 4D-1: the strip target's sprite.</summary>
+    StripSprite,
+
+    /// <summary>Slice 4D-1: the strip panel's X.</summary>
+    StripClose,
 }
 
 /// <summary>
@@ -78,6 +90,15 @@ public enum InvSendKind : byte
 
     /// <summary>Slice 4C-2: tg's click on an item lying nearby (<see cref="InvSend.Item"/>, with <see cref="InvSend.Modifiers"/>), the click the world sends when it is clicked where it lies.</summary>
     WorldClick,
+
+    /// <summary>Slice 4D-1: tg's <c>use</c> act on the strip window for the slot of <see cref="StripView.Keys"/>' index <see cref="InvSend.Index"/> (strip it, or put the held item on).</summary>
+    StripUse,
+
+    /// <summary>Slice 4D-1: tg's close of the strip window (the close its own X sends).</summary>
+    StripClose,
+
+    /// <summary>Slice 4D-1: the world's Shift+click on the strip target (its examine).</summary>
+    StripExamine,
 }
 
 /// <summary>What one drag, click or quick transfer sends.</summary>
@@ -87,6 +108,9 @@ public readonly record struct InvSend(InvSendKind Kind, long Item = 0, Inventory
     public static readonly InvSend Nothing = default;
 
     public static InvSend Move(long item, InventoryTarget to, long storage = 0, int index = 0) => new(InvSendKind.Move, item, to, storage, index);
+
+    /// <summary>Slice 4D-1: tg's <c>use</c> on the strip slot of <see cref="StripView.Keys"/>' index <paramref name="index"/>.</summary>
+    public static InvSend StripUse(int index) => new(InvSendKind.StripUse, Index: index);
 }
 
 /// <summary>The Tab inventory's places and the rules that map a drag, a click and the quick transfer to what is sent (ui-overhaul.md section 12, slice 4B-2).</summary>
@@ -97,10 +121,11 @@ public static class InventoryRules
     /// belt <paramref name="belt"/>), a panel's cell or header (<paramref name="panels"/>), tg's hand box or worn, pocket or ID slot (the entry, or
     /// the item drawn in it, whose holder it is; <paramref name="screen"/>); <see cref="InvKind.Hud"/> for any other screen entry; a world thing is
     /// <see cref="InvKind.Thing"/>, a turf or nothing <see cref="InvKind.Floor"/>. Slice 4C-2: a cell of the Nearby strip, with the item
-    /// <paramref name="nearby"/> lists there (<see cref="NearbyItems"/>; null: no strip shown, so none of its ids is a place).
+    /// <paramref name="nearby"/> lists there (<see cref="NearbyItems"/>; null: no strip shown, so none of its ids is a place). Slice 4D-1: a part of
+    /// the strip panel, against the strip window shown (<paramref name="strip"/>; null: no strip view, so none of its ids is a place).
     /// </summary>
     public static InvPlace Resolve(in ClickTarget target, IReadOnlyDictionary<long, ScreenEntry> screen, IReadOnlyList<StoragePanel> panels, long belt, IReadOnlyList<long> beltItems,
-        bool humanHud = true, IReadOnlyList<StorageItem> nearby = null)
+        bool humanHud = true, IReadOnlyList<StorageItem> nearby = null, StripModel strip = null)
     {
         // the Tab inventory is the human HUD's (the server takes a move from a human only): on any other HUD nothing is an inventory place, so its
         // drags, clicks and Ctrl+clicks keep exactly the paths they had (tg's drop, tg's clicks)
@@ -140,6 +165,19 @@ public static class InventoryRules
             if (nearby == null)
                 return new InvPlace(InvKind.None);
             return new InvPlace(InvKind.Nearby, near >= 0 && near < nearby.Count ? nearby[near].Entity : 0, near);
+        }
+        if (StripView.Decode(id, out StripPart part, out int slot))
+        {
+            if (strip == null)
+                return new InvPlace(InvKind.None);
+            return part switch
+            {
+                StripPart.Close => new InvPlace(InvKind.StripClose),
+                StripPart.Sprite => new InvPlace(InvKind.StripSprite),
+                StripPart.Slot when strip.At(slot) is StripSlot s => new InvPlace(InvKind.Strip, s.Full ? StripView.FullMark : 0, slot),
+                StripPart.Slot => new InvPlace(InvKind.None),
+                _ => new InvPlace(InvKind.Strip, Index: -1),
+            };
         }
         if (id < 0 || screen == null)
             return new InvPlace(InvKind.None);
@@ -193,10 +231,22 @@ public static class InventoryRules
     /// <item><description>slice 4C-2: onto the Nearby strip: the move to the floor (a drop); from a cell of the strip onto a hand box: tg's click on
     /// that item where it lies (its pick-up), onto anything else: nothing;</description></item>
     /// <item><description>released where it was pressed, from a place with no item, or anywhere else: nothing.</description></item>
+    /// <item><description>slice 4D-1, the strip view (<paramref name="strip"/>, while tg's window is interactive): the active hand's item onto an
+    /// empty slot of theirs that tg lets be used: tg's <c>use</c> on it (put on); a worn item of theirs (a full slot tg lets be used) onto a hand box,
+    /// a bar cell, a storage panel or its cell, the Nearby strip or the floor: tg's <c>use</c> on its slot (stripped, as tg's strip; it falls to the
+    /// floor); any other drag onto or from their panel: nothing.</description></item>
     /// </list>
     /// </summary>
-    public static InvSend Drop(in InvPlace from, in InvPlace over, int activeHand)
+    public static InvSend Drop(in InvPlace from, in InvPlace over, int activeHand, StripModel strip = null)
     {
+        if (from.Kind == InvKind.Strip)
+            return from.Item != 0 && strip is { Interactive: true } && strip.At(from.Index) is { Full: true, Usable: true }
+                && over.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell or InvKind.Panel or InvKind.Nearby or InvKind.Floor
+                ? InvSend.StripUse(from.Index) : InvSend.Nothing;
+        if (over.Kind is InvKind.Strip or InvKind.StripSprite or InvKind.StripClose)
+            return over.Kind == InvKind.Strip && from.Kind == InvKind.Hand && from.Item != 0 && from.Index == activeHand && strip is { Interactive: true }
+                && strip.At(over.Index) is { Full: false, Usable: true }
+                ? InvSend.StripUse(over.Index) : InvSend.Nothing;
         if (from.Item == 0 || from.Kind is not (InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell or InvKind.Nearby) || from.SamePlace(over))
             return InvSend.Nothing;
         if (from.Kind == InvKind.Nearby)
@@ -236,10 +286,25 @@ public static class InventoryRules
     /// a header or backing, with an item <paramref name="held"/> in the active hand, that item into the storage there (an empty cell: simply in);
     /// Shift alone on a panel's item tg's Shift+click on it (its examine); any other click on a panel (another modifier held, an empty hand on an
     /// empty cell) nothing. Slice 4C-2: on an item of the Nearby strip a plain click or Shift+click is tg's click on that item where it lies (picked up
-    /// by the active hand when tg allows, or the held item used on it; with Shift its examine); any other click on the strip nothing.
+    /// by the active hand when tg allows, or the held item used on it; with Shift its examine); any other click on the strip nothing. Slice 4D-1, the
+    /// strip view (<paramref name="strip"/>): a plain click on a slot tg lets be used, while tg's window is interactive, is tg's <c>use</c> on it,
+    /// empty-looking or not, as tg's window sends it (tg's data shows some worn items as an empty slot); a plain click on the X closes tg's window (whatever its status); Shift+click on the
+    /// target's sprite is the world's examine of the target; any other click on the panel nothing.
     /// </summary>
-    public static InvSend? Click(in InvPlace at, ClickModifiers modifiers, int activeHand, long held)
+    public static InvSend? Click(in InvPlace at, ClickModifiers modifiers, int activeHand, long held, StripModel strip = null)
     {
+        switch (at.Kind)
+        {
+            case InvKind.StripClose:
+                return modifiers == ClickModifiers.None ? new InvSend(InvSendKind.StripClose) : InvSend.Nothing;
+            case InvKind.StripSprite:
+                return modifiers == ClickModifiers.Shift ? new InvSend(InvSendKind.StripExamine) : InvSend.Nothing;
+            case InvKind.Strip:
+                // always tg's `use`, as tg's window sends it: tg's data shows a worn item with TRAIT_NO_STRIP or TRAIT_EXAMINE_SKIP (a wig) as an
+                // empty slot, and tg decides (a truly empty slot with an empty hand does nothing there)
+                return modifiers == ClickModifiers.None && strip is { Interactive: true } && strip.At(at.Index) is { Usable: true }
+                    ? InvSend.StripUse(at.Index) : InvSend.Nothing;
+        }
         if (at.Kind == InvKind.Nearby)
             return at.Item != 0 && modifiers is ClickModifiers.None or ClickModifiers.Shift ? new InvSend(InvSendKind.WorldClick, at.Item, Modifiers: modifiers) : InvSend.Nothing;
         if (at.Kind is not (InvKind.Cell or InvKind.Panel))
@@ -306,11 +371,29 @@ public static class InventoryRules
             case InvKind.Hand when at.Item != 0:
                 long into = other != 0 ? other : back;
                 return into != 0 ? InvSend.Move(at.Item, InventoryTarget.Storage, into, 0) : new InvSend(InvSendKind.Refused, at.Item);
-            case InvKind.Cell or InvKind.Panel or InvKind.Nearby:
+            case InvKind.Cell or InvKind.Panel or InvKind.Nearby or InvKind.Strip or InvKind.StripSprite or InvKind.StripClose:
                 return InvSend.Nothing;
             default:
                 return null;
         }
+    }
+
+    /// <summary>
+    /// Slice 4D-1: tg's alternate actions a right click on <paramref name="at"/> offers, as (tg's action, tg's label): those of a strip slot showing an
+    /// item that tg lets be used, while tg's window is interactive (<paramref name="strip"/>), that tg's window draws (StripMenu.tsx's
+    /// <c>ALTERNATE_ACTIONS</c>); none for anything else.
+    /// </summary>
+    public static IReadOnlyList<(string Action, string Label)> StripAlternates(in InvPlace at, StripModel strip)
+    {
+        var offered = new List<(string Action, string Label)>();
+        if (at.Kind != InvKind.Strip || strip is not { Interactive: true } || strip.At(at.Index) is not { Look: StripLook.Item, Inaccessible: false } slot)
+            return offered;
+        foreach (string action in slot.Alternates)
+        {
+            if (Tgui.Interfaces.StripMenu.AlternateLabel(action) is string label)
+                offered.Add((action, label));
+        }
+        return offered;
     }
 
     /// <summary>
@@ -334,7 +417,7 @@ public static class InventoryRules
     /// </summary>
     public static uint Rim(long item, in InvPlace place, long blinking, in InvPlace over)
         => item != 0 && item == blinking ? UiTokens.HotbarRefusedRim
-            : over.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell or InvKind.Nearby && over.SamePlace(place) ? UiTokens.InventoryDragRim : 0u;
+            : over.Kind is InvKind.Hand or InvKind.Belt or InvKind.Slot or InvKind.Cell or InvKind.Nearby or InvKind.Strip && over.SamePlace(place) ? UiTokens.InventoryDragRim : 0u;
 
     /// <summary>
     /// How long after the player clicked a thing or used the held one, seconds, an empty storage window that opens counts as opened by it

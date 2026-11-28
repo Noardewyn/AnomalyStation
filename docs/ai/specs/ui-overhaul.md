@@ -2031,11 +2031,14 @@ Slice 4D-1, the strip view (client only; tg's strip window's own data and acts, 
   two pockets. 4D-2 adds the storages under a line.
 - A slot shows what tg's window shows: the item's picture and name; an empty slot its blank slot art; a slot tg
   hides completely a "blocked" mark; a full pocket a "?"; an item tg shows but lets nobody touch at half strength.
-- A left click on a slot is tg's click on it (`use`): a worn item is stripped; an empty slot takes the active
-  hand's item. A right click opens a small menu of tg's other actions for that slot with tg's labels (sensors,
+- A left click on a slot is tg's click on it (`use`), always sent for a slot tg lets be used, as tg's window
+  sends it: a worn item is stripped; an empty slot takes the active hand's item; tg decides. (A slot can look
+  empty and hold something: tg's window shows nothing for an item it hides from examining, a wig for one, and a
+  click still strips it.) A right click opens a small menu of tg's other actions for that slot with tg's labels (sensors,
   adjust, internals, shoelaces, accessories) and a pick sends tg's `alt`. Shift+click on the sprite examines the
   person. A drag of the active hand's item onto an EMPTY slot of theirs is that `use`; onto a full one nothing. A
-  drag of their worn item onto anything of the player's (a hand box, a storage, the Nearby row) is the strip; the
+  drag of their worn item onto anything of the player's (a hand box, a bar cell, a storage, the Nearby row) or onto
+  the floor is the strip; the
   item falls to the floor as in tg and shows in the Nearby row (4D-2 makes it go where it was dropped).
 - The timer: while tg marks a slot as being worked on, a bar fills along the cell's bottom, with the seconds left
   when the client knows the time; tg's ordinary progress bar is then not drawn a second time if the client can
@@ -2062,6 +2065,45 @@ Slice 4D-2, the search (server, wire and client; a mechanic tg does not have: it
   through tg's own procs with tg's reach; an item of the player's goes into a storage being searched the same
   way. A worn item dragged onto a hand box or a storage is stripped by tg's strip and then taken there.
 - Nothing unrevealed is ever sent to the searcher's client.
+
+Slice 4D-2, how it is built (two halves as 4B and 4C were: 4D-2a the server and the wire, 4D-2b the client; one
+commit after the contributor's sign-off; a new deviation row, DV697, for the search):
+- The rule lives in Core beside `CarriedStorages` (its own file). The search stands in for tg's
+  `strip_accessible_storage` ("Open"), which stays untranslated: the searched storage never becomes the searcher's
+  `active_storage` and tg's `show_contents` is never run for the searcher (it would put every item on the
+  searcher's screen). The strip view's menu never offers tg's `access_storage`, should the element be translated
+  later.
+- What can be searched: the item in a strip slot of the target when it is one tg's element applies to
+  (`/obj/item/storage/backpack`, `/obj/item/storage/belt`, `/obj/item/storage/wallet`) and tg's
+  `can_access_storage` holds (not locked, the searcher has `MOBILITY_STORAGE`, not a quickdraw storage), the slot
+  not hidden or blocked by tg's obscuring; and a pocket holding an item. Only for a searcher whose strip window on
+  that target is open and interactive by tg's `ui_status`.
+- A new client action, the search (the strip window's number the client already knows, and the slot's key). The
+  server re-derives everything; a request that names anything else does nothing and reports nothing.
+- A bag, belt or wallet: tg's `access_storage` lines go out at each start (bystanders, the wearer, the searcher,
+  the blind variants). Then one timed action per unrevealed item in tg's order, on the wearer, by tg's `do_after`
+  with the held-item rule off (taking a revealed item must not stop it) and a check that the storage is still worn
+  there, still searchable and the window still interactive: 1.5 s (a backpack or other bag), 0.75 s (a belt, a
+  wallet). One search of a storage per searcher at a time.
+- A pocket: one timed action of 0.5 s, hidden as tg's pocket strip is (no cog for onlookers), no lines; it reveals
+  the pocket's item to that searcher. Taking it is tg's `use` on the pocket (4 s), unchanged.
+- Revealed: per searcher and storage, the items revealed; an item leaves the set when it leaves the storage (also
+  when it comes back); what the searcher puts in is revealed for them. Kept in the world's state, the same in a
+  replay.
+- The Storages message gains, for each strip window the player has open (at most four), keyed by the window's
+  number: the target's entity (the sprite and the examine no longer rest on a guess by name); for the slot the
+  player is working on, the frame at which tg's action ends (the in-slot timer gets its seconds); each searchable
+  storage with its slot key, its state (not searched, searching with the frame of the next reveal, searched) and
+  ONLY its revealed items, its room and count withheld until searched; each pocket's revealed item. Protocol 100
+  is unreleased, so the version stays.
+- Moves: a revealed item is a source for the slice 4B moves (to a hand, to one of the player's storages, the
+  floor), through tg's own pick-up from a storage with tg's reach (an item in a storage worn by a mob beside the
+  player is in tg's reach); a storage the searcher has started searching is a target for an item of the player's,
+  by tg's insert with tg's window-click checks. A worn item dragged onto a hand box or a storage: tg's strip (its
+  wait and lines), then, with the active hand empty, tg's pick-up from the floor and, for a storage, the 4B way
+  in; when a later step fails the item stays where tg left it.
+- Bounds and limits: four strip windows, six storages each, 64 items each; the search request is rate limited as
+  a click.
 
 ### For the contributor to tell the owner (collected 2026-11-27)
 

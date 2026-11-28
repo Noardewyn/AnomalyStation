@@ -410,8 +410,8 @@ public static class StorageColumn
         return TableRef.None;
     }
 
-    // a header is as tall as an item's picture in a cell (LiveHud.HandPicture: the cell less the hand's inset each side)
-    private static float HeaderHeight(float side, float unit) => Math.Max(1f, side - 2 * MathF.Round(UiTokens.HandInset * unit));
+    // a header is as tall as an item's picture in a cell (LiveHud.HandPicture: the cell less the hand's inset each side); slice 4D-1's strip title too
+    internal static float HeaderHeight(float side, float unit) => Math.Max(1f, side - 2 * MathF.Round(UiTokens.HandInset * unit));
 
     private static (int PerRow, float Side) Grid(float width, float cell, float pad, float gap)
     {

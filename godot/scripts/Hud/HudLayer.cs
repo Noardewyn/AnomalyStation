@@ -110,7 +110,6 @@ void fragment() {
     private readonly List<HudRect> _tgDrawn = new(); // tg's entries still drawn under Tab, which the Tab inventory keeps clear of
     private ComposedRaster _spriteRaster; // slice 4A: the own sprite's last picture, and its icon square as the HUD pick gets it (TabInventory.SpritePick)
     private Anomaly.Client.Shared.Icons.Raster _spritePick, _spriteShown; // the pick's square of that picture; the one this frame (null: no sprite drawn)
-    private HudRect _spriteRect;
     private TableRef _spriteLook; // the appearance it was composed from, and its zone map (made once per appearance)
     private BodyZoneMap _spriteMap;
     private TableRef _spriteMapLook;
@@ -158,7 +157,24 @@ void fragment() {
 
     /// <summary>Slice 4B-2: the inventory place a HUD pick's <paramref name="target"/> names (<see cref="InventoryRules.Resolve"/>), against this frame's panels.</summary>
     public InvPlace PlaceOf(in ClickTarget target)
-        => InventoryRules.Resolve(target, _replica?.Screen, _panels, _belt, _beltItems, _humanHud, _column.Strip != null ? _nearby : null);
+        => InventoryRules.Resolve(target, _replica?.Screen, _panels, _belt, _beltItems, _humanHud, _column.Strip != null ? _nearby : null, _stripShown);
+
+    /// <summary>Slice 4D-1: tg's strip window the strip view would show (the last opened; null: none). Set by the scene each frame.</summary>
+    public StripModel Strip { get; set; }
+
+    /// <summary>Slice 4D-1: the strip target's entity as far as the client can tell (<see cref="StripView.TargetOf"/>; 0: unknown, no sprite). Set by the scene each frame.</summary>
+    public long StripTarget { get; set; }
+
+    /// <summary>Slice 4D-1: the strip window the strip view shows this frame (null: none: Tab off, another HUD, no strip window).</summary>
+    public StripModel StripShown => _stripShown;
+
+    /// <summary>Slice 4D-1: where the strip view's parts are this frame.</summary>
+    public StripLayout StripPlaced => _strip;
+
+    private StripModel _stripShown;
+    private StripLayout _strip = StripLayout.None;
+    private readonly LiveHudView.StripScene _stripScene = new();
+    private readonly Dictionary<(string Icon, string State), Texture2D> _itemIcons = new();
 
     /// <summary>Slice 4C-2: the items the Nearby strip lists this frame (empty while it is not shown).</summary>
     public IReadOnlyList<StorageItem> Nearby => _nearby;
@@ -169,6 +185,8 @@ void fragment() {
     /// </summary>
     public (TableRef Picture, string Name) ItemOf(in InvPlace place)
     {
+        if (place.Kind == InvKind.Strip && _stripShown?.At(place.Index) is StripSlot slot) // slice 4D-1: a strip slot's tooltip as tg's window words it
+            return (TableRef.None, slot.Tooltip);
         if (place.Kind == InvKind.Nearby && place.Item != 0)
         {
             foreach (StorageItem i in _nearby)
@@ -386,6 +404,8 @@ void fragment() {
             LiveHud.BeltDrawn(_hands, bottomToTop, hidden: !_root.Visible);
         if (_root.Visible) // slice 4B-2: the storage panels' backings and cells, ours, cut at the column's edges
             StorageColumn.Drawn(_column, bottomToTop);
+        if (_root.Visible) // slice 4D-1: the strip panel's backing, sprite, slots and X, ours, cut at the panel
+            StripView.Drawn(_strip, bottomToTop);
         // slice 4A: the own sprite under the slots' cells, on the pixels drawn of it: its icon square alone (TabInventory.SpritePick; a transparent
         // pixel, or a part of a larger picture cut off at the square, is no click on it)
         if (_root.Visible && _panel.Shown && _spriteShown != null)
@@ -640,6 +660,7 @@ void fragment() {
         _hands = LiveHud.Hands(metrics, leftActive, rightActive, human ? _layout : default, hint, named, CursorMode);
         UpdatePanel(metrics, human);
         UpdateColumn(human);
+        UpdateStrip();
         PanelLeftEdge = doll ? LiveHud.LeftOfVitals(_layout, metrics) : float.PositiveInfinity;
         if (_chips.Count > 0) // slice D: the prompts end before alert chips left of the vitals too
             PanelLeftEdge = Math.Min(PanelLeftEdge, LiveHud.LeftOfAlerts(_chips, metrics));
@@ -893,6 +914,7 @@ void fragment() {
         _panel = default;
         _spriteLook = TableRef.None;
         _spriteShown = null; // no pick on the sprite unless it is drawn this frame
+        (_stripShown, _strip) = (null, StripLayout.None);
         if (human && CursorMode)
         {
             _tgDrawn.Clear();
@@ -908,6 +930,13 @@ void fragment() {
                     _tgDrawn.Add(at);
             }
             _panel = TabInventory.Layout(metrics, _hands, _layout, _tgDrawn);
+            if (Strip != null)
+            {
+                // slice 4D-1: the strip view: the storages in the middle column, the strip panel at the right, no character panel
+                _stripShown = Strip;
+                _strip = StripView.Layout(_panel.Middle, _panel.Column, _panel.Both, LiveHud.BarCell(_hands, 1).Width, TabInventory.FirstScale(metrics), _hands.Unit, Strip);
+                _panel = _panel with { Sprite = default, SpriteScale = 0, Cells = null, Column = _strip.Storages };
+            }
         }
         ChatDock = TabInventory.ChatDock(CursorMode, human, _panel);
         _panelCells.Clear();
@@ -934,27 +963,114 @@ void fragment() {
             cell.Look = cell.Look with { Rim = RimOf(worn, new InvPlace(InvKind.Slot, worn, (int)item.Entry.SlotId)) };
             _panelCells.Add(cell);
         }
-        Texture2D sprite = null;
-        Rect2 shown = default, source = default;
-        if (_textures is AppearanceTextures real && _replica.TryGet(_replica.OwnEntity, out ReplicaEntity me) && !me.State.Appearance.IsNone
-            && real.TryGet(real.TablesOf(_replica), me.State.Appearance, ByondDir.South, _lastNow, out ComposedRaster raster, out GodotPicture picture) && raster.Image != null)
+        if (SquarePicture(_replica.OwnEntity, _panel.Sprite, out TableRef look, out ComposedRaster raster, out Texture2D sprite, out Rect2 shown, out Rect2 source))
         {
-            _spriteLook = me.State.Appearance;
+            _spriteLook = look;
             if (!ReferenceEquals(_spriteRaster?.Image, raster.Image)) // the pick's square, made once per picture (the compositor keeps its pictures)
                 (_spriteRaster, _spritePick) = (raster, TabInventory.SpritePick(raster.Image, raster.OriginX, raster.OriginY));
             _spriteShown = _spritePick;
-            _spriteRect = ScreenLoc.FitIcon(_panel.Sprite, raster.Image.Width, raster.Image.Height, raster.OriginX, raster.OriginY);
-            // a picture larger than the icon square (a big hat, a lying body's turned corners) is cut at the square, so it never covers a cell
-            var whole = new Rect2(_spriteRect.Left, _spriteRect.Top, _spriteRect.Width, _spriteRect.Height);
-            shown = whole.Intersection(new Rect2(_panel.Sprite.Left, _panel.Sprite.Top, _panel.Sprite.Width, _panel.Sprite.Height));
-            float k = _spriteRect.Width / raster.Image.Width;
-            if (shown.Size.X > 0f && shown.Size.Y > 0f && k > 0f)
-            {
-                sprite = picture.Texture;
-                source = new Rect2((shown.Position - whole.Position) / k, shown.Size / k);
-            }
         }
         _view.ShowPanel(_panelCells, _panel.CellUnit, sprite, shown, source);
+    }
+
+    // Slice 4A: an entity's picture facing south, as the game draws the body, fitted to `square` as its icon square and cut at it (a picture larger than
+    // the square, a big hat or a lying body's turned corners, never covers a cell): the texture (null where nothing of it is inside) and the part of it
+    // drawn where; false without a picture. Slice 4D-1: the strip target's sprite too.
+    private bool SquarePicture(long entity, HudRect square, out TableRef look, out ComposedRaster raster, out Texture2D texture, out Rect2 shown, out Rect2 source)
+    {
+        (look, raster, texture, shown, source) = (TableRef.None, null, null, default, default);
+        if (_textures is not AppearanceTextures real || entity == 0 || !_replica.TryGet(entity, out ReplicaEntity e) || e.State.Appearance.IsNone
+            || !real.TryGet(real.TablesOf(_replica), e.State.Appearance, ByondDir.South, _lastNow, out raster, out GodotPicture picture) || raster.Image == null)
+            return false;
+        look = e.State.Appearance;
+        HudRect fitted = ScreenLoc.FitIcon(square, raster.Image.Width, raster.Image.Height, raster.OriginX, raster.OriginY);
+        var whole = new Rect2(fitted.Left, fitted.Top, fitted.Width, fitted.Height);
+        shown = whole.Intersection(new Rect2(square.Left, square.Top, square.Width, square.Height));
+        float k = fitted.Width / raster.Image.Width;
+        if (shown.Size.X > 0f && shown.Size.Y > 0f && k > 0f)
+        {
+            texture = picture.Texture;
+            source = new Rect2((shown.Position - whole.Position) / k, shown.Size / k);
+        }
+        return true;
+    }
+
+    // Slice 4D-1: under Tab on the human HUD with tg's strip window open, the strip panel (StripView.Layout): its backing, title and X, the target's
+    // sprite, and each slot tg's window shows drawn as a bar cell: tg's slot picture of the player's HUD style (an empty slot's own, a full one's
+    // template), the item's picture (tg's icon file and state), tg's marks, half strength where tg lets nobody use it or the window is not
+    // interactive, and the working bar while tg marks it.
+    private void UpdateStrip()
+    {
+        if (_stripShown == null || !_strip.Shown || !_root.Visible)
+        {
+            _view.StripPanel.Show(null);
+            return;
+        }
+        LiveHudView.StripScene scene = _stripScene;
+        float unit = _hands.Unit;
+        (scene.Panel, scene.Title, scene.Close, scene.TitleText, scene.Unit) = (_strip.Panel, _strip.Title, _strip.Close, _stripShown.Title, unit);
+        SquarePicture(StripTarget, _strip.Sprite, out _, out _, out scene.Sprite, out scene.SpriteAt, out scene.SpriteFrom);
+        _styled.Clear();
+        foreach (Item slot in _barSlots)
+        {
+            if (slot != null)
+                _styled.Add(slot.Entry);
+        }
+        if (_left != null)
+            _styled.Add(_left.Entry);
+        if (_right != null)
+            _styled.Add(_right.Entry);
+        string style = LiveHud.BlankSlotArt(_replica, _styled)?.Icon;
+        int n = 0;
+        for (int i = 0; i < StripView.Keys.Length; i++)
+        {
+            HudRect rect = _strip.Cells[i];
+            if (rect.Width <= 0f || _stripShown.At(i) is not StripSlot slot)
+                continue;
+            if (scene.Cells.Count == n)
+                scene.Cells.Add(new LiveHudView.StripCellScene());
+            LiveHudView.StripCellScene shown = scene.Cells[n++];
+            LiveHudView.CellScene cell = shown.Cell;
+            float alpha = slot.Look == StripLook.Blocked || slot.Inaccessible || !_stripShown.Interactive ? 0.5f : 1f;
+            cell.Rect = rect;
+            cell.Look = new HotbarCellLook(alpha, default, 1f, null, 1f, RimOf(0, new InvPlace(InvKind.Strip, slot.Full ? StripView.FullMark : 0, i)));
+            HudRect art = LiveHud.SlotArtSquare(rect), square = LiveHud.HandPicture(rect, _strip.Cell / UiTokens.HotbarSlot);
+            cell.Art.Clear();
+            if (style != null && StatePicture((style, StripView.ArtState(i, slot.Look == StripLook.Item))) is Texture2D blank)
+                cell.Art.Add(new LiveHudView.Picture(blank, new Rect2(art.Left, art.Top, art.Width, art.Height), LiveHud.SlotTint(_replica, null, alpha)));
+            cell.Pictures.Clear();
+            cell.Overlays.Clear();
+            if (slot.Look == StripLook.Item && ItemIcon(slot.Icon, slot.IconState) is Texture2D item)
+            {
+                // the item's own picture in the cell's picture square, at whole multiples of tg's pixels where it is larger than 32 x 32
+                float k = Math.Min(square.Width / Math.Max(item.GetWidth(), 32), square.Height / Math.Max(item.GetHeight(), 32));
+                var size = new Vector2(item.GetWidth() * k, item.GetHeight() * k);
+                var at = new Vector2(square.Left + (square.Width - size.X) / 2f, square.Top + (square.Height - size.Y) / 2f);
+                cell.Pictures.Add(new LiveHudView.Picture(item, new Rect2(at.Round(), size.Round())));
+            }
+            shown.Mark = slot.Look switch
+            {
+                StripLook.Blocked => LiveHudView.StripMark.Blocked,
+                StripLook.Hidden => LiveHudView.StripMark.Hidden,
+                _ => LiveHudView.StripMark.None,
+            };
+            shown.Working = slot.Interacting;
+        }
+        scene.Cells.RemoveRange(n, scene.Cells.Count - n);
+        _view.StripPanel.Show(scene);
+    }
+
+    // Slice 4D-1: a strip slot's item picture: tg's icon file and state as the strip window's data names them (DV150), its first frame facing south,
+    // made once; null where the file or the state is missing (as TguiHost draws the native window's).
+    private Texture2D ItemIcon(string icon, string state)
+    {
+        if (string.IsNullOrEmpty(icon) || _textures is not AppearanceTextures real)
+            return null;
+        if (_itemIcons.TryGetValue((icon, state ?? ""), out Texture2D known))
+            return known;
+        Texture2D made = real.Library.TryGetIcon(icon, out IIcon sheet) && sheet.TryGetShown(state ?? "", out IIconState found)
+            ? ImageTexture.CreateFromImage(AppearanceTextures.ToImage(found.Get(0, 0))) : null;
+        return _itemIcons[(icon, state ?? "")] = made;
     }
 
     private readonly List<LiveHudView.CellScene> _panelCells = new(), _panelScenes = new(); // the cells shown this frame; every scene made so far

@@ -867,6 +867,7 @@ public partial class GameScene : Node3D
         _hudLayer.SelfDragPicture = _selfDrag.HintPicture(_feed.Replica); // with the own body's picture, as the drag mark shows it
         _hudLayer.Hotbar = _session.Hotbar; // ui-overhaul.md section 10: the bar's cells
         _hudLayer.Storages = _session.Storages; // slice 4B-2: the right column's panels
+        UpdateStripView(); // slice 4D-1: the strip view's window and target
         // slice T5c: the doll's part under the free pointer, so its eyes and mouth show tg's hover pictures
         _hudLayer.DollHover = _hudHover.Kind == TargetKind.Screen ? BodyZoneAim.DollFaceAt(_hudLayer.DollZoneAt(_hudHover.Id, _hudHover.IconX, _hudHover.IconY), _hudHover.IconX, _hudHover.IconY) : AimZone.None;
         using (Dev.FrameProbe.Scope("GameScene/hud.Update"))

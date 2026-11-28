@@ -21,6 +21,8 @@ client's top-right corner, in its window title and in the first line of the serv
 - Stripping someone now shows them beside your storages in the Tab inventory: click, drag or right-click their slots instead of a separate window.
 - The inventory now opens with I only; Tab just frees the cursor, so using a machine no longer opens the inventory.
 - Right-clicking an item in the inventory opens a wheel of what to do with it (internals, toggles, examine) instead of taking it in hand.
+- More Space Station 14 keys: E uses things with an empty hand, R quick equips, Shift+B/E/G/H/F fill or empty a slot, V opens your bag, comma whispers.
+- Number keys 1 to 9 work the belt bar again for settings saved before the bar (they had stayed on the action buttons, now on Shift).
 - Alerts, hunger and stamina are small chips above the health doll, or left of it on a crowded screen, instead of a column at the right edge.
 - Every chip's picture is centred and scaled so its art fills the chip, so hunger, stamina and alerts no longer sit small or off-centre.
 - The swap-hands key sits on the corner of the other hand; a cuffed or missing hand gets a red border.

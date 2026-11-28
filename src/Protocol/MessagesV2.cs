@@ -510,6 +510,12 @@ public enum ActionKind : byte
     InventoryMove = 29,
     /// <summary>Version 100 also (DV696): the Tab inventory was opened; the server plays tg's opening of the back storage (its rustle), no fields.</summary>
     InventoryOpen = 30,
+
+    /// <summary>
+    /// Version 100 also (DV697, ui-overhaul.md section 12, slice 4E): the world interact key on a target (an entity or a turf): tg's click with an empty
+    /// hand on it, also while an item is held. The server makes tg's click checks and does nothing on a mob while in combat mode.
+    /// </summary>
+    Interact = 31,
 }
 
 /// <summary>The mouse button of a click (tg's <c>params</c>: <c>button=left</c>, <c>right</c>, <c>middle</c>).</summary>
@@ -560,10 +566,10 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
     public TargetKind TargetKind { get; init; }
 
     /// <summary>The target's kind as the server reads it: <see cref="TargetKind"/>, or <see cref="TargetKind.Entity"/> for a version-3 click (kind None, <see cref="Target"/> above 0).</summary>
-    public TargetKind EffectiveTargetKind => TargetKind != TargetKind.None ? TargetKind : (Kind is ActionKind.Click or ActionKind.Hover or ActionKind.DblClick or ActionKind.Throw or ActionKind.PutDown or ActionKind.ContextPick && Target > 0 ? TargetKind.Entity : TargetKind.None);
+    public TargetKind EffectiveTargetKind => TargetKind != TargetKind.None ? TargetKind : (Kind is ActionKind.Click or ActionKind.Hover or ActionKind.DblClick or ActionKind.Throw or ActionKind.PutDown or ActionKind.ContextPick or ActionKind.Interact && Target > 0 ? TargetKind.Entity : TargetKind.None);
 
     /// <summary>Whether the kind names a target (a click, a hover; version 5: a dev gas probe, always a turf).</summary>
-    public bool IsTargeted => Kind is ActionKind.Click or ActionKind.Hover or ActionKind.DevGasProbe or ActionKind.Drop or ActionKind.DblClick or ActionKind.Throw or ActionKind.PutDown or ActionKind.ContextPick || IsMouse;
+    public bool IsTargeted => Kind is ActionKind.Click or ActionKind.Hover or ActionKind.DevGasProbe or ActionKind.Drop or ActionKind.DblClick or ActionKind.Throw or ActionKind.PutDown or ActionKind.ContextPick or ActionKind.Interact || IsMouse;
 
     /// <summary>Version 34: a <see cref="ActionKind.MouseDown"/>, <see cref="ActionKind.MouseDrag"/> or <see cref="ActionKind.MouseUp"/> (their target may be none).</summary>
     public bool IsMouse => Kind is ActionKind.MouseDown or ActionKind.MouseDrag or ActionKind.MouseUp or ActionKind.MouseWheel; // version 70: the wheel

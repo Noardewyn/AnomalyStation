@@ -3476,3 +3476,16 @@ Tests: `Protocol/ProtocolV100StoragesTests`, `Protocol/CodecTests`, `Protocol/Wi
 `Integration/StoragesOtherGameplayTests`, `Integration/StoragesOtherHostileTests`, `Integration/StoragesOtherReplayTests`, `Integration/StoragesOtherNoPollTests`, `Client/Play/StoragesClientTests`, `Client/Play/InventoryRulesTests`.
 The client (slice 4C-2, DV694) draws the other container's entry as the last panel of the Tab inventory's column, pinned above the nearby strip
 (`StorageColumn.Panels`), and on the human HUD never shows tg's own storage window for it (`ContainerWindow.Withheld`).
+
+**Interact** (slice 4E, DV697; client to server, an Action of kind 31, `ActionKind.Interact`, the last kind): the world interact key (E,
+Space Station 14's ActivateItemInWorld) on a target, written as a click's target and nothing else: an entity (`0A 09 1F 01 <id varint>`) or a turf
+(`... 1F 02 <x> <y> <z varint>`); a screen, ceiling or missing target, a button, modifiers, an icon pixel, an aim or a text are refused by both
+ends. It takes the overall and the click buckets; the server resolves the target as a click's (unknown or unseen: `ClicksRejected`) and runs
+`WorldInteract.Use`: tg's plain left click with the held item left out (ClickOn's gates, then `UnarmedAttack`; nothing out of reach, nothing on a mob
+while in combat mode, nothing on an item lying elsewhere while the active hand is full).
+
+**Keybinding codes 20 to 24** (slice 4E): tg's quick-equip keys of a slot, `/datum/keybinding/human/quick_equip_belt` and its subtypes, whose
+`down` calls `smart_equip_targeted(slot_type, slot_item_name)`: 20 `QuickEquipBag` (the back), 21 `QuickEquipBelt`, 22 `QuickEquipLeftPocket`,
+23 `QuickEquipRightPocket`, 24 `QuickEquipSuitStorage` (`KeybindingCode.Last`). The keybinding bucket, as every keybinding.
+
+Tests: `Protocol/ProtocolV100KeysTests`, `M4aContracts/ProtocolV4ContractTests`, `M4aServer/P6/CodecV4Tests`, `Integration/KeysSlice4EGameplayTests`.

@@ -400,19 +400,33 @@ public class HotbarClientTests
     }
 
     [Fact]
-    public void AnOldFileKeepsItsNumberKeysOnTheActionButtonsAndTheHotbarGetsOnlyWhatIsFree()
+    public void AnOldFileWithTheActionButtonsOnTheDigitsGivesTheNumberRowBackToTheHotbar()
     {
-        // an options file saved before section 10: the numbers click the action buttons, and so they still do
+        // an options file saved before section 10 (the designer's: pressing 1 with a toolbelt on turned the PDA's light on): slice 4E's options
+        // version 6 moves the action buttons to Shift and the digits and gives the digits and the keypad back to the hotbar
         string old = "options_version=5\n" + string.Concat(Enumerable.Range(1, 9).Select(n => $"bind.action_button{n}=Key{n},Kp{n}\n"));
         var errors = new List<string>();
         PlayOptions options = PlayOptions.Parse(old, errors);
         Assert.Empty(errors);
         for (int n = 1; n <= 9; n++)
         {
-            Assert.Equal(new[] { "Key" + n, "Kp" + n }, options.Bindings.KeysOf(PlayAction.ActionButton1 + (byte)(n - 1)));
-            Assert.Empty(options.Bindings.KeysOf(PlayAction.Hotbar1 + (byte)(n - 1)));
+            Assert.Equal(new[] { "Shift_Key" + n }, options.Bindings.KeysOf(PlayAction.ActionButton1 + (byte)(n - 1)));
+            Assert.Equal(new[] { "Key" + n, "Kp" + n }, options.Bindings.KeysOf(PlayAction.Hotbar1 + (byte)(n - 1)));
         }
         Assert.Equal(new[] { "Key0", "Kp0" }, options.Bindings.KeysOf(PlayAction.Hotbar10)); // 0 was free
+        Assert.Equal(PlayAction.Hotbar1, options.Bindings.ActionOfPress("Key1", shift: false));
+        Assert.Equal(PlayAction.ActionButton1, options.Bindings.ActionOfPress("Key1", shift: true));
+        Assert.Contains("options_version=" + PlayOptions.FileVersion + "\n", options.ToText());
+        Assert.Contains("bind.hotbar1=Key1,Kp1\n", options.ToText());
+        // a digit the player gave to something else stays theirs: the hotbar does not take it back
+        PlayOptions own = PlayOptions.Parse("options_version=5\nbind.action_button1=Key1,Kp1\nbind.flashlight=Key2\n", errors);
+        Assert.Equal(new[] { "Kp2" }, own.Bindings.KeysOf(PlayAction.Hotbar2));
+        Assert.Equal(new[] { "Key2" }, own.Bindings.KeysOf(PlayAction.Flashlight));
+        Assert.Equal(new[] { "Shift_Key2" }, own.Bindings.KeysOf(PlayAction.ActionButton2));
+        // a file written after section 10 is left as it is
+        PlayOptions after = PlayOptions.Parse("options_version=5\nbind.action_button1=Shift_Key1\nbind.hotbar1=Key1,Kp1\n", errors);
+        Assert.Equal(new[] { "Shift_Key1" }, after.Bindings.KeysOf(PlayAction.ActionButton1));
+        Assert.Equal(new[] { "Key1", "Kp1" }, after.Bindings.KeysOf(PlayAction.Hotbar1));
         // a saved file round trips with the new keys
         PlayOptions fresh = new();
         PlayOptions back = PlayOptions.Parse(fresh.ToText(), errors);

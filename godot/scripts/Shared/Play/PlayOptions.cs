@@ -221,6 +221,48 @@ public enum PlayAction : byte
     /// only on an item of the inventory under Tab, Pull everywhere else (<see cref="KeyBindings.SharesKeys"/>).
     /// </summary>
     QuickTransfer,
+
+    /// <summary>
+    /// ui-overhaul.md section 12, slice 4E (DV697, SS14's ActivateItemInWorld) [E]: tg's empty-hand click on the thing under the crosshair, also while
+    /// an item is held (the server's Interact action; never on a mob in combat mode).
+    /// </summary>
+    WorldInteract,
+
+    /// <summary>Slice 4E (SS14's AltActivateItemInWorld) [Alt+E]: tg's alt-click on the thing under the crosshair, the pointer's in cursor mode.</summary>
+    AltInteract,
+
+    /// <summary>Slice 4E (SS14's AltActivateItemInHand) [Alt+Z]: tg's alt-click on the item in the active hand.</summary>
+    AltUseInHand,
+
+    /// <summary>Slice 4E: tg's <c>/datum/keybinding/human/quick_equip_belt/quick_equip_bag</c> [Shift+B, SS14's SmartEquipBackpack].</summary>
+    QuickEquipBag,
+
+    /// <summary>Slice 4E: tg's <c>/datum/keybinding/human/quick_equip_belt</c> [Shift+E, SS14's SmartEquipBelt].</summary>
+    QuickEquipBelt,
+
+    /// <summary>Slice 4E: tg's <c>quick_equip_lpocket</c> [Shift+G, SS14's SmartEquipPocket1].</summary>
+    QuickEquipLeftPocket,
+
+    /// <summary>Slice 4E: tg's <c>quick_equip_rpocket</c> [Shift+H, SS14's SmartEquipPocket2].</summary>
+    QuickEquipRightPocket,
+
+    /// <summary>Slice 4E: tg's <c>quick_equip_suit_storage</c> [Shift+F, SS14's SmartEquipSuitStorage].</summary>
+    QuickEquipSuitStorage,
+
+    /// <summary>Slice 4E (SS14's OpenBackpack) [V]: the inventory, as its own key opens it, with the backpack's panel in view; closes it when open.</summary>
+    OpenBackpack,
+
+    /// <summary>Slice 4E (SS14's OpenBelt) [Shift+V]: the inventory with the belt's panel in view (the bar alone when the belt has none); closes it when open.</summary>
+    OpenBelt,
+
+    /// <summary>Slice 4E (SS14's FocusWhisperChatWindow) [Comma]: the chat input on Whisper, or the say window with tg's <c>#</c> typed.</summary>
+    Whisper,
+
+    /// <summary>
+    /// Slice 4E (SS14's MovePulledObject) [Ctrl+right click]: tg's empty-hand click on the turf under the crosshair (<c>turf/attack_hand</c>,
+    /// <c>Move_Pulled</c>), only with the active hand empty and the cursor captured.
+    /// </summary>
+    MovePulled,
 }
 
 /// <summary>The colourblind palettes of the health HUD (D70: the colours of medical parameters are never the only carrier).</summary>
@@ -284,7 +326,19 @@ public sealed class KeyBindings
         b.Set(PlayAction.ThrowMode, "Ctrl_Q");
         b.Set(PlayAction.SwapHand, "X");
         b.Set(PlayAction.ActivateInHand, "Z");
-        b.Set(PlayAction.QuickEquip, "E");
+        b.Set(PlayAction.QuickEquip, "R"); // slice 4E: E is world interact
+        b.Set(PlayAction.WorldInteract, "E");
+        b.Set(PlayAction.AltInteract, "Alt_E");
+        b.Set(PlayAction.AltUseInHand, "Alt_Z");
+        b.Set(PlayAction.QuickEquipBag, "Shift_B");
+        b.Set(PlayAction.QuickEquipBelt, "Shift_E");
+        b.Set(PlayAction.QuickEquipLeftPocket, "Shift_G");
+        b.Set(PlayAction.QuickEquipRightPocket, "Shift_H");
+        b.Set(PlayAction.QuickEquipSuitStorage, "Shift_F");
+        b.Set(PlayAction.OpenBackpack, "V");
+        b.Set(PlayAction.OpenBelt, "Shift_V");
+        b.Set(PlayAction.Whisper, "Comma");
+        b.Set(PlayAction.MovePulled, "Ctrl_MouseRight");
         b.Set(PlayAction.CursorMode, "Tab");
         b.Set(PlayAction.Examine, "Shift_MouseLeft");
         b.Set(PlayAction.StopPulling, "H", "Delete");
@@ -389,15 +443,24 @@ public sealed class KeyBindings
     /// M9 slice C: the action a key or mouse button press does: pressed with Shift or Ctrl held it is first looked up with them
     /// (<see cref="NameOf"/>), with both held then with Ctrl alone and with Shift alone, and last alone (a modifier held out of habit keeps the keys working).
     /// </summary>
-    public PlayAction? ActionOfPress(string key, bool shift, bool ctrl = false) => MatchPress(key, shift, ctrl).Action;
+    public PlayAction? ActionOfPress(string key, bool shift, bool ctrl = false, bool alt = false) => MatchPress(key, shift, ctrl, alt).Action;
 
     /// <summary>
     /// <see cref="ActionOfPress"/> with the modifiers that are part of the binding it matched (<c>Shift_MouseLeft</c>: Shift); a modifier held and
-    /// not among them is one held on top of the binding (ui-overhaul.md section 5, <see cref="ModifiedClick"/>).
+    /// not among them is one held on top of the binding (ui-overhaul.md section 5, <see cref="ModifiedClick"/>). Slice 4E: with Alt held a binding
+    /// with Alt is looked for first (<c>Alt_E</c>, with Shift and Ctrl as held, then alone), then the press as without Alt.
     /// </summary>
-    public (PlayAction? Action, bool Shift, bool Ctrl) MatchPress(string key, bool shift, bool ctrl = false)
+    public (PlayAction? Action, bool Shift, bool Ctrl) MatchPress(string key, bool shift, bool ctrl = false, bool alt = false)
     {
         (bool Shift, bool Ctrl)[] tries = shift && ctrl ? new[] { (true, true), (false, true), (true, false), (false, false) } : new[] { (shift, ctrl), (false, false) };
+        if (alt && key != "Alt")
+        {
+            foreach ((bool s, bool c) in tries)
+            {
+                if (ActionOf(NameOf(key, s, c, alt: true)) is PlayAction action)
+                    return (action, s && key != "Shift", c && key != "Ctrl");
+            }
+        }
         foreach ((bool s, bool c) in tries)
         {
             if (ActionOf(NameOf(key, s, c)) is PlayAction action)
@@ -407,12 +470,14 @@ public sealed class KeyBindings
     }
 
     /// <summary>
-    /// M9 slice C: a key's binding name, <c>Shift_</c> before it when Shift is held and <c>Ctrl_</c> before that when Ctrl is (<c>Ctrl_Shift_T</c>);
-    /// a modifier key itself is not named twice (Shift stays <c>Shift</c>, Ctrl <c>Ctrl</c>).
+    /// M9 slice C: a key's binding name, <c>Shift_</c> before it when Shift is held, <c>Alt_</c> before that when Alt is (slice 4E) and <c>Ctrl_</c>
+    /// before that when Ctrl is (<c>Ctrl_Shift_T</c>, <c>Alt_E</c>); a modifier key itself is not named twice (Shift stays <c>Shift</c>, Ctrl <c>Ctrl</c>,
+    /// Alt <c>Alt</c>).
     /// </summary>
-    public static string NameOf(string key, bool shift, bool ctrl = false)
+    public static string NameOf(string key, bool shift, bool ctrl = false, bool alt = false)
     {
         string name = shift && key != "Shift" ? "Shift_" + key : key;
+        name = alt && key != "Alt" ? "Alt_" + name : name;
         return ctrl && key != "Ctrl" ? "Ctrl_" + name : name;
     }
 
@@ -432,6 +497,7 @@ public sealed class KeyBindings
     {
         PlayAction.PrimaryClick or PlayAction.SecondaryClick or PlayAction.MiddleClick => button,
         PlayAction.Examine or PlayAction.Pull or PlayAction.QuickTransfer when button == "MouseLeft" && (shift || ctrl) => NameOf(button, shift, ctrl),
+        PlayAction.MovePulled when button == "MouseRight" && (shift || ctrl) => NameOf(button, shift, ctrl), // slice 4E: the right button with a modifier
         _ => null,
     };
 
@@ -444,6 +510,17 @@ public sealed class KeyBindings
         => (action == PlayAction.Pull ? Anomaly.Protocol.ClickModifiers.Ctrl : Anomaly.Protocol.ClickModifiers.Shift)
             | (extraShift ? Anomaly.Protocol.ClickModifiers.Shift : Anomaly.Protocol.ClickModifiers.None)
             | (extraCtrl ? Anomaly.Protocol.ClickModifiers.Ctrl : Anomaly.Protocol.ClickModifiers.None);
+
+    /// <summary>Slice 4E: the tg keybinding a quick-equip key of a slot sends (tg's <c>quick_equip_belt</c> and its subtypes), None for any other action.</summary>
+    public static Anomaly.Protocol.KeybindingCode QuickEquipCodeOf(PlayAction action) => action switch
+    {
+        PlayAction.QuickEquipBag => Anomaly.Protocol.KeybindingCode.QuickEquipBag,
+        PlayAction.QuickEquipBelt => Anomaly.Protocol.KeybindingCode.QuickEquipBelt,
+        PlayAction.QuickEquipLeftPocket => Anomaly.Protocol.KeybindingCode.QuickEquipLeftPocket,
+        PlayAction.QuickEquipRightPocket => Anomaly.Protocol.KeybindingCode.QuickEquipRightPocket,
+        PlayAction.QuickEquipSuitStorage => Anomaly.Protocol.KeybindingCode.QuickEquipSuitStorage,
+        _ => Anomaly.Protocol.KeybindingCode.None,
+    };
 
     /// <summary>True when <paramref name="key"/> is one of the keys of <paramref name="action"/>.</summary>
     public bool Has(PlayAction action, string key) => _keys[action].Contains(key);
@@ -563,6 +640,18 @@ public sealed class KeyBindings
         PlayAction.Pull => "Pull what the crosshair points at",
         PlayAction.Scoreboard => "Scoreboard (deathmatch, while held)",
         PlayAction.QuickTransfer => "Quick transfer (an item of the Tab inventory to the hand, a held one into the backpack)",
+        PlayAction.WorldInteract => "Interact (an empty hand's use of what the crosshair points at)",
+        PlayAction.AltInteract => "Alt-click what the crosshair points at",
+        PlayAction.AltUseInHand => "Alt-click the item in hand",
+        PlayAction.QuickEquipBag => "Quick equip: backpack",
+        PlayAction.QuickEquipBelt => "Quick equip: belt",
+        PlayAction.QuickEquipLeftPocket => "Quick equip: left pocket",
+        PlayAction.QuickEquipRightPocket => "Quick equip: right pocket",
+        PlayAction.QuickEquipSuitStorage => "Quick equip: suit storage",
+        PlayAction.OpenBackpack => "Open the backpack",
+        PlayAction.OpenBelt => "Open the belt",
+        PlayAction.Whisper => "Whisper",
+        PlayAction.MovePulled => "Move what you pull onto the tile at the crosshair",
         _ => action.ToString(),
     };
 
@@ -920,11 +1009,12 @@ public sealed class PlayOptions
     public const float MaxFov = 110f;
 
     /// <summary>
-    /// The options file's version (<c>options_version</c>): 4 since D315's minimap size (3 since D157, 2 since D137). A file without it (or older)
-    /// that still has a default that was changed since gets the new one: the eye height of D120 (1.2 m) or D137 (1.5 m) becomes D157's 1.3 m,
-    /// the dev menu on F8 moves to the | key, the minimap's first size (100 per cent) becomes 200.
+    /// The options file's version (<c>options_version</c>): 6 since slice 4E's keys (5 since DV422, 4 since D315's minimap size, 3 since D157, 2 since
+    /// D137). A file without it (or older) that still has a default that was changed since gets the new one: the eye height of D120 (1.2 m) or D137
+    /// (1.5 m) becomes D157's 1.3 m, the dev menu on F8 moves to the | key, the minimap's first size (100 per cent) becomes 200, quick equip on E
+    /// moves to R and the action buttons on the plain digits to Shift and the digits (<see cref="UpgradeTo6"/>).
     /// </summary>
-    public const int FileVersion = 5;
+    public const int FileVersion = 6;
 
     /// <summary>The version the file was read with (<see cref="FileVersion"/> when new).</summary>
     public int ReadVersion { get; private set; } = FileVersion;
@@ -962,7 +1052,40 @@ public sealed class PlayOptions
             if (Bindings.KeysOf(PlayAction.Pull).Count == 0 && Bindings.Has(PlayAction.StopPulling, "H"))
                 Bindings.Claim(PlayAction.Pull, "H");
         }
+        if (ReadVersion < 6)
+            UpgradeTo6();
         ReadVersion = FileVersion;
+    }
+
+    // Slice 4E: quick equip moves from E to R (E is world interact) when the file kept the old default and R is free; and a file from before
+    // ui-overhaul.md section 10 that still has the action buttons on the plain digits gets them on Shift and the digits, and the number row back
+    // for the hotbar (its digits were taken from the hotbar by those lines, so the belt cells had only the keypad).
+    private void UpgradeTo6()
+    {
+        if (IsOnly(PlayAction.QuickEquip, "E") && Bindings.ActionOf("R") == null)
+        {
+            Bindings.Set(PlayAction.QuickEquip, "R");
+            Bindings.Claim(PlayAction.WorldInteract, "E");
+        }
+        for (int n = 1; n <= 9; n++)
+        {
+            var button = (PlayAction)((int)PlayAction.ActionButton1 + n - 1);
+            string digit = "Key" + n, pad = "Kp" + n, shifted = "Shift_Key" + n;
+            IReadOnlyList<string> keys = Bindings.KeysOf(button);
+            if (keys.SequenceEqual(new[] { digit }) || keys.SequenceEqual(new[] { digit, pad }))
+                Bindings.Set(button, Bindings.ActionOf(shifted) == null ? new[] { shifted } : Array.Empty<string>());
+        }
+        for (int n = 1; n <= 10; n++)
+        {
+            var cell = (PlayAction)((int)PlayAction.Hotbar1 + n - 1);
+            var keys = new List<string>(Bindings.KeysOf(cell));
+            foreach (string key in new[] { "Kp" + n % 10, "Key" + n % 10 })
+            {
+                if (Bindings.ActionOf(key) == null)
+                    keys.Insert(0, key);
+            }
+            Bindings.Set(cell, keys.ToArray());
+        }
     }
 
     /// <summary>The file's text.</summary>

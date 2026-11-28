@@ -113,8 +113,23 @@ public enum KeybindingCode : byte
     /// <summary>Version 93 (DV585): the deathmatch scoreboard [K]: held, the kills and deaths table shows on the screen; released, it goes.</summary>
     Scoreboard = 19,
 
+    /// <summary>Version 100 also (ui-overhaul.md section 12, slice 4E): <c>/datum/keybinding/human/quick_equip_belt/quick_equip_bag</c> [Shift+B]: <c>smart_equip_targeted</c> of the back slot.</summary>
+    QuickEquipBag = 20,
+
+    /// <summary>Version 100 also: <c>/datum/keybinding/human/quick_equip_belt</c> [Shift+E]: <c>smart_equip_targeted</c> of the belt slot.</summary>
+    QuickEquipBelt = 21,
+
+    /// <summary>Version 100 also: <c>quick_equip_belt/quick_equip_lpocket</c> [Shift+G]: <c>smart_equip_targeted</c> of the left pocket.</summary>
+    QuickEquipLeftPocket = 22,
+
+    /// <summary>Version 100 also: <c>quick_equip_belt/quick_equip_rpocket</c> [Shift+H]: <c>smart_equip_targeted</c> of the right pocket.</summary>
+    QuickEquipRightPocket = 23,
+
+    /// <summary>Version 100 also: <c>quick_equip_belt/quick_equip_suit_storage</c> [Shift+F]: <c>smart_equip_targeted</c> of the suit storage slot.</summary>
+    QuickEquipSuitStorage = 24,
+
     /// <summary>The largest valid code; a decoder refuses any other.</summary>
-    Last = Scoreboard,
+    Last = QuickEquipSuitStorage,
 }
 
 /// <summary>

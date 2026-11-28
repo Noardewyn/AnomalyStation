@@ -289,7 +289,7 @@ public class FakeInventoryTests
         Assert.Equal(new[] { "Ctrl_Q" }, m2.Bindings.KeysOf(PlayAction.ThrowMode)); // ui-overhaul.md section 3 (R before)
         Assert.Equal(new[] { "X" }, m2.Bindings.KeysOf(PlayAction.SwapHand));
         Assert.Equal(new[] { "Z" }, m2.Bindings.KeysOf(PlayAction.ActivateInHand));
-        Assert.Equal(new[] { "E" }, m2.Bindings.KeysOf(PlayAction.QuickEquip));
+        Assert.Equal(new[] { "R" }, m2.Bindings.KeysOf(PlayAction.QuickEquip)); // ui-overhaul.md section 12, slice 4E (E before; E is world interact)
         Assert.Equal(new[] { "Space" }, m2.Bindings.KeysOf(PlayAction.MoveUpLevel)); // DV422: Space, which is hold throw mode for a mob that cannot change level
         Assert.Equal(new[] { "MouseMiddle" }, m2.Bindings.KeysOf(PlayAction.MiddleClick));
     }

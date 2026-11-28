@@ -71,6 +71,12 @@ public static partial class ClientSeam
         10 => typeof(datum_keybinding_living_resist), // version 37 (M8z)
         15 => typeof(datum_keybinding_living_give), // version 41 (M9 slice F)
         16 => typeof(datum_keybinding_living_view_pet_data), // version 59 (gaps C2)
+        // version 100 also (ui-overhaul.md section 12, slice 4E): tg's quick-equip keys of the bag, the belt, the pockets and the suit storage
+        20 => typeof(datum_keybinding_human_quick_equip_belt_quick_equip_bag),
+        21 => typeof(datum_keybinding_human_quick_equip_belt),
+        22 => typeof(datum_keybinding_human_quick_equip_belt_quick_equip_lpocket),
+        23 => typeof(datum_keybinding_human_quick_equip_belt_quick_equip_rpocket),
+        24 => typeof(datum_keybinding_human_quick_equip_belt_quick_equip_suit_storage),
         _ => null,
     };
 
@@ -244,12 +250,27 @@ public static partial class ClientSeam
         {
             world.usr = player.mob;
             if (Dm.truthy(kb.can_use(player)))
-                Waiting.Detach(down ? kb.down(player, null, null, null) : kb.up(player, null)); // BYOND: a verb call per key event, its own call
+                Waiting.Detach(kb is datum_keybinding_human_quick_equip_belt equip && down ? QuickEquipSlotDown(player, equip)
+                    : down ? kb.down(player, null, null, null) : kb.up(player, null)); // BYOND: a verb call per key event, its own call
         }
         finally
         {
             world.usr = caller_usr;
         }
+    }
+
+    // tg: code/datums/keybinding/human.dm:34 (/datum/keybinding/human/quick_equip_belt/down, the five subtypes' slot and name): written here, not as
+    // the type's own down, because declaring it in the Tg tree changes the generated index and inert marks, which only the types tool rewrites.
+    // shortcut: a host-side copy of tg's down, move it into datums/keybinding/human.cs at the next types-tool run.
+    private static async DmTask<object> QuickEquipSlotDown(client user, datum_keybinding_human_quick_equip_belt kb)
+    {
+        object dot = await kb.down(user, null, null, null);
+        if (Dm.truthy(dot))
+            return dot;
+        if (user.mob is not mob_living_carbon_human H)
+            return Dm.FALSE;
+        await H.smart_equip_targeted(kb.slot_type, kb.slot_item_name);
+        return Dm.TRUE;
     }
 
     // The per-world keybinding instances (World.GetExtension: no static state). A datum is created inside the world, in

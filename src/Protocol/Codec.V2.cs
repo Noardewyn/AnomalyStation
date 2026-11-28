@@ -306,6 +306,12 @@ public static partial class Codec
                 WriteTarget(ref w, targetKind, message.Target, message.TurfX, message.TurfY, message.TurfZ, "a context pick");
                 w.WriteString(message.Text, Limits.MaxContextLabelBytes);
                 break;
+            case ActionKind.Interact:
+                // version 100 also (DV697): a thing or a turf of the world
+                if (targetKind is not (TargetKind.Entity or TargetKind.Turf))
+                    throw Bad("a world interact whose target is not an entity or a turf");
+                WriteTarget(ref w, targetKind, message.Target, message.TurfX, message.TurfY, message.TurfZ, "a world interact");
+                break;
         }
 
         return Finish(ref w, message.Kind == ActionKind.Say ? Limits.MaxSayActionBytes : Limits.MaxActionMessageBytes);
@@ -495,6 +501,11 @@ public static partial class Codec
                     text = r.ReadString(Limits.MaxContextLabelBytes);
                     if (string.IsNullOrEmpty(text))
                         throw Bad("a context pick without a label");
+                    break;
+                case ActionKind.Interact:
+                    ReadTarget(ref r, out targetKind, out target, out turfX, out turfY, out turfZ, "a world interact"); // version 100 also (DV697)
+                    if (targetKind is not (TargetKind.Entity or TargetKind.Turf))
+                        throw Bad("a world interact whose target is not an entity or a turf");
                     break;
             }
 

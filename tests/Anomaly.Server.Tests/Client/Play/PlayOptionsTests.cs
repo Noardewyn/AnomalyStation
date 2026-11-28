@@ -514,7 +514,20 @@ public class PlayOptionsTests
         [PlayAction.Names] = new[] { "F4" },
         [PlayAction.ViewPetCommands] = new[] { "J" },
         [PlayAction.CursorMode] = new[] { "Tab" },
-        [PlayAction.QuickEquip] = new[] { "E" },
+        [PlayAction.QuickEquip] = new[] { "R" }, // section 12, slice 4E: E is world interact
+        // section 12, slice 4E: Space Station 14's keys
+        [PlayAction.WorldInteract] = new[] { "E" },
+        [PlayAction.AltInteract] = new[] { "Alt_E" },
+        [PlayAction.AltUseInHand] = new[] { "Alt_Z" },
+        [PlayAction.QuickEquipBag] = new[] { "Shift_B" },
+        [PlayAction.QuickEquipBelt] = new[] { "Shift_E" },
+        [PlayAction.QuickEquipLeftPocket] = new[] { "Shift_G" },
+        [PlayAction.QuickEquipRightPocket] = new[] { "Shift_H" },
+        [PlayAction.QuickEquipSuitStorage] = new[] { "Shift_F" },
+        [PlayAction.OpenBackpack] = new[] { "V" },
+        [PlayAction.OpenBelt] = new[] { "Shift_V" },
+        [PlayAction.Whisper] = new[] { "Comma" },
+        [PlayAction.MovePulled] = new[] { "Ctrl_MouseRight" },
         // the last row: resist, pray, push to talk, scoreboard, levels, the other function keys, the | key; slice E (section 6): the flashlight moved
         // to U, L is the language menu, G (the give key's, which is gone) crafting, M navigate
         [PlayAction.Resist] = new[] { "B" },
@@ -577,7 +590,8 @@ public class PlayOptionsTests
         Assert.Equal(PlayAction.Pull, keys.ActionOfPress("MouseLeft", shift: false, ctrl: true));
         Assert.Equal(PlayAction.Pull, keys.ActionOfPress("MouseLeft", shift: true, ctrl: true));
         Assert.Equal(PlayAction.PrimaryClick, keys.ActionOfPress("MouseLeft", shift: false));
-        Assert.Equal(PlayAction.SecondaryClick, keys.ActionOfPress("MouseRight", shift: true, ctrl: true));
+        Assert.Equal(PlayAction.MovePulled, keys.ActionOfPress("MouseRight", shift: true, ctrl: true)); // slice 4E: Ctrl+right click moves the pulled thing
+        Assert.Equal(PlayAction.SecondaryClick, keys.ActionOfPress("MouseRight", shift: true));
         // the Shift pairs of the table
         Assert.Equal(PlayAction.HideInterface, keys.ActionOfPress("F4", shift: true));
         Assert.Equal(PlayAction.Names, keys.ActionOfPress("F4", shift: false));
@@ -674,11 +688,20 @@ public class PlayOptionsTests
                 continue;
             }
             PlayAction action = KeyBindings.ActionOfId(pair[0]).Value;
+            if (action is >= PlayAction.ActionButton1 and <= PlayAction.ActionButton9)
+            {
+                // slice 4E (options version 6): the action buttons left on the plain digits move to Shift and the digits, the digits go back to the hotbar
+                Assert.Equal(new[] { "Shift_" + pair[1].Split(',')[0] }, options.Bindings.KeysOf(action));
+                continue;
+            }
             Assert.True(string.Join(",", options.Bindings.KeysOf(action)) == pair[1], $"{pair[0]}: {string.Join(",", options.Bindings.KeysOf(action))}, saved {pair[1]}");
         }
-        // every action of the time, the give key among them: today's actions less slice E's three menu keys, section 10's ten hotbar keys and slice
-        // 4B-2's quick transfer, and the give and analyzer keys
-        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 - 10 - 1 + 2, lines);
+        // every action of the time, the give key among them: today's actions less slice E's three menu keys, section 10's ten hotbar keys, slice
+        // 4B-2's quick transfer and slice 4E's twelve keys, and the give and analyzer keys
+        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 - 10 - 1 - 12 + 2, lines);
+        // slice 4E: quick equip stays on E there, as R is that file's throw key; the world interact key then has none
+        Assert.Equal(new[] { "E" }, options.Bindings.KeysOf(PlayAction.QuickEquip));
+        Assert.Empty(options.Bindings.KeysOf(PlayAction.WorldInteract));
         // slice E's menu keys keep their defaults where the old file left the key free (G: the give key's line is ignored), and lose it where the old
         // file gave it to another action (L the flashlight's, M the me key's), as a key serves one action
         Assert.Equal(new[] { "G" }, options.Bindings.KeysOf(PlayAction.CraftingMenu));
@@ -695,6 +718,68 @@ public class PlayOptionsTests
         Assert.False(KeyBindings.TakesModifiedMouse(PlayAction.QuickTransfer));
         Assert.Equal(PlayAction.Examine, options.Bindings.ActionOf("V"));
         Assert.Equal(PlayAction.ViewPetCommands, options.Bindings.ActionOfPress("Shift", shift: true));
+    }
+
+    [Fact]
+    public void Slice4EOptionsUpgradeMovesQuickEquipToRAndGivesETheWorldInteractKey()
+    {
+        var errors = new List<string>();
+        PlayOptions options = PlayOptions.Parse("options_version=5\nbind.quick_equip=E\nbind.throw_mode=Ctrl_Q\n", errors);
+        Assert.Empty(errors);
+        Assert.Equal(new[] { "R" }, options.Bindings.KeysOf(PlayAction.QuickEquip));
+        Assert.Equal(new[] { "E" }, options.Bindings.KeysOf(PlayAction.WorldInteract));
+        Assert.Equal(PlayAction.WorldInteract, options.Bindings.ActionOfPress("E", shift: false));
+        // a version 6 file is read as it is: quick equip on E stays the player's choice
+        PlayOptions chosen = PlayOptions.Parse("options_version=6\nbind.quick_equip=E\n", errors);
+        Assert.Equal(new[] { "E" }, chosen.Bindings.KeysOf(PlayAction.QuickEquip));
+        Assert.Empty(chosen.Bindings.KeysOf(PlayAction.WorldInteract));
+        // the defaults and the shipped starting file agree
+        Assert.Equal(new[] { "R" }, KeyBindings.Defaults().KeysOf(PlayAction.QuickEquip));
+        Assert.Equal(new[] { "E" }, KeyBindings.Defaults().KeysOf(PlayAction.WorldInteract));
+    }
+
+    [Fact]
+    public void Slice4EKeysMatchWithAltShiftAndCtrlAndTheirNamesRoundTrip()
+    {
+        KeyBindings keys = KeyBindings.Defaults();
+        Assert.Equal(PlayAction.AltInteract, keys.ActionOfPress("E", shift: false, ctrl: false, alt: true));
+        Assert.Equal(PlayAction.AltUseInHand, keys.ActionOfPress("Z", shift: false, ctrl: false, alt: true));
+        Assert.Equal(PlayAction.WorldInteract, keys.ActionOfPress("E", shift: false));
+        Assert.Equal(PlayAction.QuickEquipBelt, keys.ActionOfPress("E", shift: true));
+        Assert.Equal(PlayAction.QuickEquipBag, keys.ActionOfPress("B", shift: true));
+        Assert.Equal(PlayAction.Resist, keys.ActionOfPress("B", shift: false));
+        Assert.Equal(PlayAction.QuickEquipLeftPocket, keys.ActionOfPress("G", shift: true));
+        Assert.Equal(PlayAction.QuickEquipRightPocket, keys.ActionOfPress("H", shift: true));
+        Assert.Equal(PlayAction.QuickEquipSuitStorage, keys.ActionOfPress("F", shift: true));
+        Assert.Equal(PlayAction.ToggleCombatMode, keys.ActionOfPress("F", shift: false));
+        Assert.Equal(PlayAction.OpenBackpack, keys.ActionOfPress("V", shift: false));
+        Assert.Equal(PlayAction.OpenBelt, keys.ActionOfPress("V", shift: true));
+        Assert.Equal(PlayAction.Whisper, keys.ActionOfPress("Comma", shift: false));
+        Assert.Equal(ChatInputModel.Whisper, ChatInputModel.ChannelOfKey(PlayAction.Whisper)); // the chat input's whisper; tg's # in the say window
+        Assert.Equal("#", ChatInputModel.WhisperKey);
+        Assert.Equal(PlayAction.MovePulled, keys.ActionOfPress("MouseRight", shift: false, ctrl: true));
+        Assert.Equal(PlayAction.SecondaryClick, keys.ActionOfPress("MouseRight", shift: false));
+        Assert.Equal(PlayAction.Pull, keys.ActionOfPress("MouseLeft", shift: false, ctrl: true));
+        // Alt with a key that has no Alt binding is the key's own action (as Shift and Ctrl held out of habit), and Alt alone the push to talk key
+        Assert.Equal(PlayAction.QuickEquip, keys.ActionOfPress("R", shift: false, ctrl: false, alt: true));
+        Assert.Equal(PlayAction.PushToTalkTyping, keys.ActionOfPress("Alt", shift: false, ctrl: false, alt: true));
+        Assert.Equal("Alt_E", KeyBindings.NameOf("E", false, false, alt: true));
+        Assert.Equal("Ctrl_Alt_Shift_E", KeyBindings.NameOf("E", true, true, alt: true));
+        Assert.Equal("Alt", KeyBindings.NameOf("Alt", false, false, alt: true));
+        Assert.Equal("Alt+E", KeyChips.Label("Alt_E"));
+        // the options panel takes Ctrl+right click for the move-pulled key only
+        Assert.Equal("Ctrl_MouseRight", KeyBindings.MouseBindingName(PlayAction.MovePulled, "MouseRight", false, true));
+        Assert.Null(KeyBindings.MouseBindingName(PlayAction.MovePulled, "MouseRight", false, false));
+        Assert.Null(KeyBindings.MouseBindingName(PlayAction.Pull, "MouseRight", false, true));
+        Assert.Equal(Anomaly.Protocol.KeybindingCode.QuickEquipBag, KeyBindings.QuickEquipCodeOf(PlayAction.QuickEquipBag));
+        Assert.Equal(Anomaly.Protocol.KeybindingCode.QuickEquipSuitStorage, KeyBindings.QuickEquipCodeOf(PlayAction.QuickEquipSuitStorage));
+        Assert.Equal(Anomaly.Protocol.KeybindingCode.None, KeyBindings.QuickEquipCodeOf(PlayAction.QuickEquip));
+        // a saved file keeps the new keys (the shipped starting file: TheSettingsANewPlayerStartsFromHaveTheDefaultKeys)
+        var errors = new List<string>();
+        PlayOptions back = PlayOptions.Parse(new PlayOptions().ToText(), errors);
+        Assert.Empty(errors);
+        Assert.Equal(new[] { "Alt_E" }, back.Bindings.KeysOf(PlayAction.AltInteract));
+        Assert.Contains("options_version=6\n", ShippedDefaults());
     }
 
     [Fact]

@@ -984,7 +984,7 @@ public partial class GameScene : Node3D
         // ui-overhaul.md section 5, a press does one thing: Ctrl+Q throws and does not also drop (the pair's action first, else the key's), and
         // Ctrl alone (down a level) waits for its release with nothing else pressed, and does nothing while a text field has the keyboard (ModifierTap)
         string name = key.PhysicalKeycode.ToString();
-        (PlayAction? pressed, bool ownShift, bool ownCtrl) = _options.Bindings.MatchPress(name, key.ShiftPressed, key.CtrlPressed);
+        (PlayAction? pressed, bool ownShift, bool ownCtrl) = _options.Bindings.MatchPress(name, key.ShiftPressed, key.CtrlPressed, key.AltPressed);
         PlayAction? action = pressed;
         // a key bound to Pull or Examine: only a modifier held on top of its binding goes with tg's click (KeyBindings.ModifiedClick)
         (_pressExtraShift, _pressExtraCtrl) = (key.ShiftPressed && !ownShift, key.CtrlPressed && !ownCtrl);

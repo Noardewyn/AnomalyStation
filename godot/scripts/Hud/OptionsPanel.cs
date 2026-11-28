@@ -339,9 +339,9 @@ public partial class OptionsPanel : PanelContainer
         if (_capturing == null || !Visible)
             return;
         string name = null;
-        if (@event is InputEventKey { Echo: false, PhysicalKeycode: Key.Shift or Key.Ctrl } modifier)
+        if (@event is InputEventKey { Echo: false, PhysicalKeycode: Key.Shift or Key.Ctrl or Key.Alt } modifier)
         {
-            // M9 slice C: Shift or Ctrl held with a key or a mouse button binds the pair (Shift_T, Ctrl_Q, Ctrl_MouseLeft); let go it binds itself,
+            // M9 slice C: Shift or Ctrl (slice 4E: or Alt) held with a key or a mouse button binds the pair (Shift_T, Ctrl_Q, Ctrl_MouseLeft, Alt_E); let go it binds itself,
             // only when it was alone (ui-overhaul.md section 5, ModifierTap: no other modifier down as it went down, nothing pressed while held,
             // a refused mouse press included); else the panel keeps waiting
             string own = modifier.PhysicalKeycode.ToString();
@@ -363,7 +363,7 @@ public partial class OptionsPanel : PanelContainer
                 GetViewport().SetInputAsHandled();
                 return;
             }
-            name = KeyBindings.NameOf(key.PhysicalKeycode.ToString(), key.ShiftPressed, key.CtrlPressed);
+            name = KeyBindings.NameOf(key.PhysicalKeycode.ToString(), key.ShiftPressed, key.CtrlPressed, key.AltPressed); // slice 4E: Alt too (Alt_E)
             if (PlayOptions.IsWindowScalePair(key.PhysicalKeycode.ToString(), key.CtrlPressed))
             {
                 GetViewport().SetInputAsHandled(); // the game takes Ctrl with =, - and 0 before the bindings (the window scale): the panel keeps waiting

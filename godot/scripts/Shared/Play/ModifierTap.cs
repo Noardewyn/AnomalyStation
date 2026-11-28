@@ -23,7 +23,7 @@ public sealed class ModifierTap
 
     /// <summary>Whether a modifier key other than <paramref name="key"/> itself is down (an event's own Shift, Ctrl, Alt and Meta flags).</summary>
     public static bool OtherModifiers(string key, bool shift, bool ctrl, bool alt, bool meta)
-        => (shift && key != "Shift") || (ctrl && key != "Ctrl") || alt || meta;
+        => (shift && key != "Shift") || (ctrl && key != "Ctrl") || (alt && key != "Alt") || meta;
 
     /// <summary>Any key or mouse button went down (seen before the press's own action is resolved): it cancels the waiting modifier, even a second key of its name.</summary>
     public void AnyPress(string key)

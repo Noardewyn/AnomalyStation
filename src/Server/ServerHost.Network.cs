@@ -508,6 +508,9 @@ public sealed partial class ServerHost
                 if (!ValidTarget(action.EffectiveTargetKind, action.Target, action.TurfX, action.TurfY, action.TurfZ, out why)) return false;
                 if (string.IsNullOrEmpty(action.Text) || Encoding.UTF8.GetByteCount(action.Text) > Limits.MaxContextLabelBytes) { why = "a context pick with no label or too long a one"; return false; }
                 return true;
+            case ActionKind.Interact: // version 100 also (DV697): a thing or a turf of the world; tg's click checks are WorldInteract.Use's
+                if (action.EffectiveTargetKind is not (TargetKind.Entity or TargetKind.Turf)) { why = "a world interact on neither a thing nor a turf"; return false; }
+                return ValidTarget(action.EffectiveTargetKind, action.Target, action.TurfX, action.TurfY, action.TurfZ, out why);
             case ActionKind.PopupClose: // version 78 (DV387): a popup's name; whether the client has it open is ClientSeam.ClosePopup's check
                 if (string.IsNullOrEmpty(action.Text) || Encoding.UTF8.GetByteCount(action.Text) > Limits.MaxPopupNameBytes) { why = "a popup close with no name or too long a one"; return false; }
                 return true;
@@ -572,6 +575,8 @@ public sealed partial class ServerHost
             ActionKind.Topic => s.ClickBucket.Take(tick),
             // Version 86: a context pick takes the click bucket (it stands for one).
             ActionKind.ContextPick => s.ClickBucket.Take(tick),
+            // Version 100 also (DV697): the world interact key takes the click bucket (it stands for a click).
+            ActionKind.Interact => s.ClickBucket.Take(tick),
             // Version 100 also (DV693): a hotbar press takes the keybinding bucket (it is a key, as tg's quick-equip keys are).
             ActionKind.HotbarPress => s.KeybindingBucket.Take(tick),
             // Version 100 also (DV696): an inventory move takes the click bucket (it is a drop of a drag, or a click); the Tab notice the keybinding bucket (a key).

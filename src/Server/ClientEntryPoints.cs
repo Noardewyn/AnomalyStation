@@ -101,6 +101,9 @@ public interface IClientEntryPoints
     /// <summary>Version 86 (DV503): the radial's entry that is no click (<see cref="RadialExtras.Pick"/>: the table's Flip).</summary>
     void ContextPick(client player, atom target, string label) => RadialExtras.Pick(player, target, label);
 
+    /// <summary>Version 100 also (DV697): the world interact key on <paramref name="target"/> (<see cref="WorldInteract.Use"/>: tg's empty-hand click, also with an item held).</summary>
+    void Interact(client player, atom target) => WorldInteract.Use(player, target);
+
     /// <summary>Version 100 also (DV693): a press of hotbar cell <paramref name="cell"/> (<see cref="BeltHotbar.Press"/>: the own human's cells, by tg's procs).</summary>
     void HotbarPress(client player, int cell) => BeltHotbar.Press(player, cell);
 

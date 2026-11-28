@@ -770,6 +770,18 @@ public sealed class PlaySession
     /// <summary>Version 97 (DV597): the world is built and loaded (the loading screen is done): the server may late-join the new player now.</summary>
     public void Loaded() => Send(new ActionMessage(Prediction.NewestSeq, ActionKind.Loaded, 0, ClickButton.None, ClickModifiers.None, null));
 
+    /// <summary>
+    /// Version 100 also (DV697, ui-overhaul.md section 12, slice 4E): the world interact key on <paramref name="target"/>, a thing or a turf of the
+    /// world (the server runs tg's empty-hand click on it); false, and nothing sent, for anything else.
+    /// </summary>
+    public bool Interact(in ClickTarget target)
+    {
+        if (!target.IsSet || target.Kind is not (TargetKind.Entity or TargetKind.Turf))
+            return false;
+        Send(MakeTargeted(ActionKind.Interact, target, ClickButton.None, ClickModifiers.None));
+        return true;
+    }
+
     /// <summary>Version 86 (DV503): the radial's entry <paramref name="label"/> that is no click (the table's Flip) picked on an entity <paramref name="target"/>.</summary>
     public bool ContextPick(in ClickTarget target, string label)
     {

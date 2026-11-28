@@ -98,7 +98,7 @@ public class CodecV4Tests
         Refused(Hover(TargetKind.Entity, 5) with { Modifiers = ClickModifiers.Shift });
         Refused(Hover(TargetKind.Entity, 5) with { IconX = 1 });
         Refused(Key(KeybindingCode.None, false));
-        Refused(Key((KeybindingCode)20, false)); // past the last (version 93: 19 is the scoreboard)
+        Refused(Key((KeybindingCode)25, false)); // past the last (version 100 also, slice 4E: 24 is the suit storage quick equip; version 93: 19 the scoreboard)
         Refused(Key(KeybindingCode.DropItem, false) with { Target = 5 });
         Refused(Key(KeybindingCode.DropItem, false) with { TargetKind = TargetKind.Entity });
         Refused(new ActionMessage(1, ActionKind.Rest, 0, ClickButton.None, ClickModifiers.None, null) { Keybinding = KeybindingCode.DropItem });
@@ -130,7 +130,7 @@ public class CodecV4Tests
                      Craft(r => r.VarUInt(1).Byte(7).Byte(1).VarUInt(5).Byte(1).Byte(0)),                                  // a hover with a button and modifiers
                      Craft(r => r.VarUInt(1).Byte(7).Byte(2).Byte(5).Byte(5)),                                             // a turf hover cut short
                      Craft(r => r.VarUInt(1).Byte(6).Byte(0).Byte(0)),                                                     // keybinding code 0
-                     Craft(r => r.VarUInt(1).Byte(6).Byte(20).Byte(0)),                                                    // past the last (19 since version 93)
+                     Craft(r => r.VarUInt(1).Byte(6).Byte(25).Byte(0)),                                                    // past the last (24 since slice 4E; 19 since version 93)
                      Craft(r => r.VarUInt(1).Byte(6).Byte(255).Byte(0)),
                      Craft(r => r.VarUInt(1).Byte(6).Byte(5).Byte(2)),                                                     // key-up flag 2
                      Craft(r => r.VarUInt(1).Byte(6).Byte(5)),                                                             // cut short

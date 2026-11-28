@@ -12,6 +12,9 @@ public sealed class ChatInputModel
     public const string Whisper = "Whisper";
     public const string Shout = "Shout";
 
+    /// <summary>tg's say mode key of a whisper (<c>#</c>, say.dm's get_message_mods).</summary>
+    public const string WhisperKey = "#";
+
     /// <summary>The channels Tab cycles, in the action row's order (Admin is not one: no admins yet).</summary>
     public static readonly IReadOnlyList<string> Channels = new[] { SayChannels.Say, Whisper, Shout, SayChannels.Radio, SayChannels.Me, SayChannels.Ooc, SayChannels.Pray };
 
@@ -26,6 +29,7 @@ public sealed class ChatInputModel
         PlayAction.Me => SayChannels.Me,
         PlayAction.Ooc => SayChannels.Ooc,
         PlayAction.Pray => SayChannels.Pray,
+        PlayAction.Whisper => Whisper, // slice 4E: SS14's FocusWhisperChatWindow
         _ => null,
     };
 
@@ -237,7 +241,7 @@ public sealed class ChatInputModel
         string said = (prefix ?? "") + value;
         return channel switch
         {
-            Whisper => "#" + said,
+            Whisper => WhisperKey + said,
             Shout => said.EndsWith("!!", StringComparison.Ordinal) ? said : said.TrimEnd('!', '.', ' ') + "!!",
             SayChannels.Say => said,
             _ => value,

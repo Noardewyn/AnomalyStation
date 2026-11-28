@@ -866,6 +866,13 @@ public partial class GameScene
                 ExecuteChoice(picked, _radialTarget);
             return;
         }
+        // slice 4E (SS14's MovePulledObject): the right button bound with a modifier moves the pulled thing with the cursor captured; in cursor mode
+        // the press stays the right click (the inventory's item menu)
+        if (modified == PlayAction.MovePulled && !_mouse.CursorMode)
+        {
+            MovePulledAtCrosshair();
+            return;
+        }
         switch (action)
         {
             case PlayAction.PrimaryClick when _mouse.CursorMode && button.ButtonIndex == MouseButton.Left && _chatLines.LinkAt(button.Position) is string href:
@@ -1462,6 +1469,10 @@ public partial class GameScene
 
     private void OnInteractionKey(PlayAction? action)
     {
+        // slice 4E: V and Shift+V are the inventory key with the backpack's or the belt's panel scrolled into view when it opens
+        StoragePlace? panel = action switch { PlayAction.OpenBackpack => StoragePlace.Back, PlayAction.OpenBelt => StoragePlace.Belt, _ => null };
+        if (panel != null)
+            action = PlayAction.Inventory;
         if (action is PlayAction.Inventory && _hudLayer?.HumanHud != true)
             action = PlayAction.CursorMode; // another HUD has no inventory overlay: its inventory key is Tab's, as before
         if (action is PlayAction.CursorMode && _devMenuOpen && !_mouse.CursorMode)
@@ -1478,8 +1489,10 @@ public partial class GameScene
             (bool Cursor, bool Inventory) view = action == PlayAction.CursorMode ? TabInventory.TabPressed(_mouse.CursorMode, was)
                 : TabInventory.InventoryPressed(_mouse.CursorMode, was, _hudLayer.HumanHud);
             SetView(view);
+            if (panel != null && InventoryShown && !was)
+                _hudLayer.ScrollToPlace = panel;
             if (App.Instance.Args.Automated)
-                GD.Print($"[anomaly] {(action == PlayAction.CursorMode ? "cursor mode key" : "inventory key")}: cursor {(view.Cursor ? "free" : "captured")}, inventory {(InventoryShown ? "open" : "closed")}");
+                GD.Print($"[anomaly] {(action == PlayAction.CursorMode ? "cursor mode key" : "inventory key")}: cursor {(view.Cursor ? "free" : "captured")}, inventory {(InventoryShown ? "open" : "closed")}{(panel != null ? ", panel " + panel : "")}");
             // slice 4B-2: opening the inventory opens the carried storages as tg's opening does (the rustle), at most once a second
             if (_inventoryNotice.Opened(InventoryShown && !was, _hudLayer.HumanHud, App.NowSeconds))
             {
@@ -1511,6 +1524,29 @@ public partial class GameScene
                 break;
             case PlayAction.QuickEquip:
                 _session.Keybinding(KeybindingCode.QuickEquip);
+                break;
+            case PlayAction.QuickEquipBag or PlayAction.QuickEquipBelt or PlayAction.QuickEquipLeftPocket or PlayAction.QuickEquipRightPocket or PlayAction.QuickEquipSuitStorage:
+                _session.Keybinding(KeyBindings.QuickEquipCodeOf(action.Value)); // slice 4E: tg's quick_equip_belt keybindings (smart_equip_targeted)
+                break;
+            case PlayAction.WorldInteract:
+                // slice 4E (DV697): tg's empty-hand click on what the crosshair points at (the pointer's world pick in cursor mode), the server's to check
+                _session.Interact(_mouse.CursorMode ? ClickTarget.Of(PointerWorldPick(_rig.Camera, out _)) : _target);
+                break;
+            case PlayAction.AltInteract:
+                // slice 4E: tg's alt-click on what the crosshair points at; in cursor mode on what the pointer is over (a HUD entry, else the world)
+                ClickTarget altTarget = _mouse.CursorMode ? PointerHud() : _target;
+                if (_mouse.CursorMode && !altTarget.IsSet)
+                    altTarget = ClickTarget.Of(PointerWorldPick(_rig.Camera, out _));
+                if (altTarget.IsSet)
+                    SendClick(altTarget, ClickButton.Left, ClickModifiers.Alt);
+                break;
+            case PlayAction.AltUseInHand:
+                // slice 4E: tg's alt-click on the item in the active hand, as a click on it in its hand slot with Alt
+                if (_hudLayer.HeldItem != 0)
+                    SendClick(InventoryRules.MenuTarget(_hudLayer.HeldItem), ClickButton.Left, ClickModifiers.Alt);
+                break;
+            case PlayAction.MovePulled:
+                MovePulledAtCrosshair();
                 break;
             case PlayAction.HoldThrow:
                 _session.Keybinding(KeybindingCode.HoldThrowMode);
@@ -1554,6 +1590,16 @@ public partial class GameScene
                 ClickAtCrosshair(ClickButton.Left, KeyBindings.ModifiedClick(PlayAction.Examine, _pressExtraShift, _pressExtraCtrl));
                 break;
         }
+    }
+
+    // Slice 4E: tg's way of moving the pulled thing, its empty-hand click on the turf under the crosshair (turf/attack_hand: Move_Pulled, one step
+    // onto a turf next to the player; tg's reach decides), only with the active hand empty (with an item held tg's click would use it on the floor)
+    // and the cursor captured
+    private void MovePulledAtCrosshair()
+    {
+        if (_mouse.CursorMode || _hudLayer.HeldItem != 0 || !_hit.IsHit || _hit.Kind is not (TargetKind.Entity or TargetKind.Turf))
+            return;
+        SendClick(new ClickTarget(TargetKind.Turf, 0, _hit.X, _hit.Y, _hit.Z, 16, 16), ClickButton.Left, ClickModifiers.None);
     }
 
     // Whether a key of the action a held keybinding came from is down now (a binding's key past its modifiers; a mouse binding counts as down)

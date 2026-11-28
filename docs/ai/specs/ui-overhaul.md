@@ -177,7 +177,15 @@ an existing function. Saved options files keep the keys their player had.
 | Names | F3 | none | F4 |
 | Pet commands (held) | Shift | none; Shift is Walk | J |
 | Cursor mode / Tab overlay | Tab | none in play | unchanged |
-| Quick equip | E | (E is ActivateItemInWorld) | unchanged until package 4 adds world interact |
+| Quick equip | E | (E is ActivateItemInWorld) | R (slice 4E; an old file's E moves to R when R is free) |
+| World interact (slice 4E, DV697) | none | ActivateItemInWorld: E | E: tg's empty-hand click, also while holding an item; never on a mob in combat mode |
+| Alt-click (slice 4E) | Alt+left click | AltActivateItemInWorld: Alt+left click, Alt+E | Alt+left click (not rebindable) and Alt+E |
+| Alt-click the held item (slice 4E) | none | AltActivateItemInHand: Alt+Z | Alt+Z |
+| Quick equip of a slot (slice 4E) | none | SmartEquipBackpack, Belt, Pocket1, Pocket2, SuitStorage: Shift+B, E, G, H, F | Shift+B, Shift+E, Shift+G, Shift+H, Shift+F (tg's quick_equip_belt keybindings) |
+| Open the backpack, the belt (slice 4E) | none | OpenBackpack: V, OpenBelt: Shift+V | V, Shift+V: the inventory with that panel in view |
+| Whisper (slice 4E) | none | FocusWhisperChatWindow: , | , (comma) |
+| Move the pulled thing (slice 4E) | none | MovePulledObject: Ctrl+right click | Ctrl+right click, with an empty hand and the cursor captured |
+| Point | Shift+middle click | Point: Shift+middle click | unchanged |
 | Up a level, down a level | Space, Ctrl | none; Ctrl is the modifier of pull and throw | unchanged keys (DV422). Ctrl alone acts when it is let go with nothing else pressed meanwhile, so Ctrl+Q and Ctrl+left click do not also go down a level |
 | Resist, pray, give, push to talk, flashlight, scoreboard, the other function keys | B, P, G, N, L, K, F1 F2 F5 F9 F10, \ | none | unchanged |
 

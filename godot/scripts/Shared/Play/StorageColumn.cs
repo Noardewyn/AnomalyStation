@@ -351,6 +351,23 @@ public static class StorageColumn
         return layout.HasOwn && In(layout.Column, x, y) ? ColumnArea.Own : ColumnArea.None;
     }
 
+    /// <summary>
+    /// Slice 4E (the open-backpack and open-belt keys): the scroll place of the own storages that brings the first panel of <paramref name="place"/> to
+    /// the column's top (as far as the scroll goes), or null when no own panel is of that place (a belt of seven items or fewer has none).
+    /// </summary>
+    public static float? ScrollTo(StorageColumnLayout layout, IReadOnlyList<StoragePanel> panels, StoragePlace place)
+    {
+        if (layout == null || panels == null)
+            return null;
+        int own = layout.Pinned >= 0 ? layout.Pinned : Math.Min(panels.Count, layout.Panels.Length);
+        for (int p = 0; p < own; p++)
+        {
+            if (panels[p].Place == place)
+                return Math.Clamp(layout.Panels[p].Backing.Top - layout.Column.Top + layout.Scroll, 0f, layout.MaxScroll);
+        }
+        return null;
+    }
+
     /// <summary>The scroll place after <paramref name="steps"/> wheel steps (positive: down) from <paramref name="scroll"/>, kept from 0 to <paramref name="max"/>.</summary>
     public static float Scrolled(float scroll, int steps, float unit, float max)
         => Math.Clamp(scroll + steps * MathF.Round(UiTokens.StorageScrollStep * unit), 0f, Math.Max(0f, max));

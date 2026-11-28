@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL: the M4a inventory procs translated (M4a P2: the slot lookups, the visible items, equip_to_slot, doUnEquip,
-// the coverage); the rest stays for its milestone: smart_equip_targeted (the belt and bag bindings, M9),
+// the coverage); smart_equip_targeted (ui-overhaul.md section 12, slice 4E: the quick-equip keys); the rest stays for its milestone:
 // delete_equipment (M10; syndicate N1 ported equip_species_outfit), change_number_of_hands (the
 // wizard's extra hands, M10). The internals and breathing checks
 // (toggle_internals, toggle_externals, can_breathe_helmet, can_breathe_mask, can_breathe_internals) are M4c slice 1's.
@@ -289,7 +289,62 @@ public partial class mob_living_carbon_human : mob_living_carbon
     // tg: code/modules/mob/living/carbon/human/inventory.dm:385
     public virtual async DmTask smart_equip_targeted(float? slot_type = null, string slot_item_name = null)
     {
-        Dm.NotTranslated("code/modules/mob/living/carbon/human/inventory.dm:385", "smart_equip_targeted: M4a P2 (skeleton)");
+        slot_type ??= ITEM_SLOT_BELT;
+        slot_item_name ??= "belt";
+        if (Dm.truthy(incapacitated))
+            return;
+        obj_item thing = get_active_held_item() as obj_item;
+        obj_item equipped_item = get_item_by_slot(slot_type) as obj_item;
+        object thing_reject = NONE;
+        if (thing != null)
+            thing_reject = !Dm.truthy(thing._listen_lookup?[COMSIG_HUMAN_NON_STORAGE_HOTKEY]) ? NONE : thing._SendSignal(COMSIG_HUMAN_NON_STORAGE_HOTKEY, Dm.list(this, equipped_item));
+        if (equipped_item == null) // We also let you equip an item like this
+        {
+            if (thing == null)
+            {
+                to_chat(this, span_warning(I18n.T("You have no [] to take something out of!", slot_item_name)));
+                return;
+            }
+            if (Dm.truthy(await equip_to_slot_if_possible(thing, slot_type)))
+                await update_held_items();
+            return;
+        }
+        datum_storage storage = equipped_item.atom_storage;
+        if (storage == null)
+        {
+            if (thing == null)
+                await equipped_item.attack_hand(this);
+            else
+            {
+                if (Dm.truthy(Dm.bitand(thing_reject, COMPONENT_STORAGE_HOTKEY_HANDLED)))
+                    return;
+                to_chat(this, span_warning(I18n.T("You can't fit [] into your []!", thing, equipped_item.name)));
+            }
+            return;
+        }
+        if (!Dm.truthy(storage.supports_smart_equip))
+            return;
+        if (Dm.truthy(equipped_item.atom_storage.locked)) // Determines if container is locked before trying to put something in or take something out so we dont give out information on contents (or lack of)
+        {
+            to_chat(this, span_warning(I18n.T("\\The [] is locked!", equipped_item)));
+            return;
+        }
+        if (thing != null) // put thing in storage item
+        {
+            if (!Dm.truthy(equipped_item.atom_storage?.attempt_insert(thing, this)))
+                to_chat(this, span_warning(I18n.T("You can't fit [] into your []!", thing, equipped_item.name)));
+            return;
+        }
+        DmList contents = storage.real_location.contents;
+        if (!Dm.truthy(contents.len)) // nothing to take out
+        {
+            to_chat(this, span_warning(I18n.T("There's nothing in your [] to take out!", equipped_item.name)));
+            return;
+        }
+        obj_item stored = contents[contents.len] as obj_item;
+        if (stored == null || Dm.truthy(await stored.on_found(this)))
+            return;
+        await stored.attack_hand(this); // take out thing from item in storage slot
     }
 
     /// Returns the helmet if an air tank compatible helmet is equipped.

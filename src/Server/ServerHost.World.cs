@@ -527,6 +527,13 @@ public sealed partial class ServerHost
                 else
                     s.ClicksRejected++;
                 break;
+            case ActionKind.Interact:
+                // version 100 also (DV697): the world interact key, on a target checked as a click's
+                if (TryResolveTarget(s, command, out atom used))
+                    _clients.Interact(s.Client, used);
+                else
+                    s.ClicksRejected++;
+                break;
             case ActionKind.PopupClose:
                 // version 78 (DV387): a popup window's on-close command
                 _clients.ClosePopup(s.Client, command.Text);

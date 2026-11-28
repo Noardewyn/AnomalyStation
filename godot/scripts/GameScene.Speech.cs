@@ -87,7 +87,10 @@ public partial class GameScene
             GetViewport().SetInputAsHandled();
             return true;
         }
-        _sayWindow.Open(channel);
+        if (channel == ChatInputModel.Whisper)
+            _sayWindow.Open(SayChannels.Say, ChatInputModel.WhisperKey); // slice 4E: tg's say window has no whisper channel; tg's # mode key does it
+        else
+            _sayWindow.Open(channel);
         GetViewport().SetInputAsHandled();
         return true;
     }

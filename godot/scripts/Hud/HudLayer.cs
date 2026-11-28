@@ -143,6 +143,9 @@ void fragment() {
     private List<StoragePanel> _panels = new(); // slice 4B-2: the right column's panels this frame
     private StorageColumnLayout _column = StorageColumnLayout.None;
     private float _scroll; // kept while Tab stays on, back to the top on each opening
+
+    /// <summary>Slice 4E: the storage whose panel the next laid-out frame of the open inventory scrolls into view (the V and Shift+V keys), then null.</summary>
+    public StoragePlace? ScrollToPlace { get; set; }
     private float _otherScroll, _stripScroll; // slice 4C-2: the pinned panel's rows (back to the top for another container) and the strip's row
     private long _otherSeen;
     private List<StorageItem> _nearby = new(); // slice 4C-2: the items lying round the player, under Tab on the human HUD (NearbyItems)
@@ -749,7 +752,7 @@ void fragment() {
     {
         LiveHudView.ColumnView view = _view.Column;
         if (!human || !InventoryOpen)
-            (_scroll, _otherScroll, _stripScroll) = (0f, 0f, 0f);
+            (_scroll, _otherScroll, _stripScroll, ScrollToPlace) = (0f, 0f, 0f, null);
         if (OtherStorage != _otherSeen) // another container's rows start at the top
             (_otherSeen, _otherScroll) = (OtherStorage, 0f);
         if (!human || !InventoryOpen || !_root.Visible || _panel.Column.Width <= 0f)
@@ -768,6 +771,10 @@ void fragment() {
         }
         float unit = _hands.Unit;
         _column = StorageColumn.Layout(_panel.Column, LiveHud.BarCell(_hands, 1).Width, unit, _panels, _scroll, _nearby.Count, _otherScroll, _stripScroll);
+        // slice 4E: the open-backpack or open-belt key's panel brought into view on its first frame (none when that storage has no panel)
+        if (ScrollToPlace is StoragePlace wanted && StorageColumn.ScrollTo(_column, _panels, wanted) is float to && to != _column.Scroll)
+            _column = StorageColumn.Layout(_panel.Column, LiveHud.BarCell(_hands, 1).Width, unit, _panels, to, _nearby.Count, _otherScroll, _stripScroll);
+        ScrollToPlace = null;
         (_scroll, _otherScroll, _stripScroll) = (_column.Scroll, _column.PinnedScroll, _column.Strip?.Scroll ?? 0f);
         _styled.Clear();
         foreach (Item slot in _barSlots)

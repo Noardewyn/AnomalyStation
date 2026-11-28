@@ -353,7 +353,7 @@ public class ProtocolV100StoragesTests
     [Fact]
     public void TheInventoryOpenNoticeHasNoFields()
     {
-        Assert.Equal(ActionKind.InventoryOpen, ActionKinds.Last);
+        Assert.True(ActionKinds.Last >= ActionKind.InventoryOpen); // slice 4E: Interact (31) is the last kind now (ProtocolV100KeysTests)
         var open = new ActionMessage(9, ActionKind.InventoryOpen, 0, ClickButton.None, ClickModifiers.None, null);
         byte[] encoded = Codec.Encode(open);
         Assert.Equal(new byte[] { 10, 9, 30 }, encoded);
@@ -363,6 +363,7 @@ public class ProtocolV100StoragesTests
         Assert.Throws<ProtocolException>(() => Codec.Encode(open with { Target = 5, TargetKind = TargetKind.Entity }));
         Assert.False(Codec.TryDecode(new byte[] { 10, 9, 30, 0 }, out ActionMessage _, out error));
         Assert.Equal(ProtocolError.TrailingBytes, error);
-        Assert.False(Codec.TryDecode(new byte[] { 10, 9, 31 }, out ActionMessage _, out _)); // the next kind is unknown
+        Assert.False(Codec.TryDecode(new byte[] { 10, 9, 31 }, out ActionMessage _, out _)); // 31 is slice 4E's Interact, which needs a target
+        Assert.False(Codec.TryDecode(new byte[] { 10, 9, (byte)(ActionKinds.Last + 1) }, out ActionMessage _, out _)); // the next kind is unknown
     }
 }
